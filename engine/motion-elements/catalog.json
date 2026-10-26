@@ -543,6 +543,44 @@
         "originalProductionTransfer": "NOT_RUN"
       },
       "knowledgeLinks": []
+    },
+    {
+      "id": "reveal.local-geometry",
+      "version": 1,
+      "kind": "reveal",
+      "status": "experimental",
+      "summary": "对象局部圆角几何与方向条带交集裁切，不是字形alpha mask",
+      "api": "withLocalReveal",
+      "entry": "lib/index.mjs",
+      "example": {
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 240,
+          "height": 140
+        },
+        "progress": 0.6,
+        "radius": 12,
+        "direction": "left-to-right"
+      },
+      "applicability": [
+        "局部图表窗口",
+        "透明图标几何展示"
+      ],
+      "counterexamples": [
+        "不是字形alpha扫光",
+        "不接管父矩阵",
+        "不接受任意SVG或多边形"
+      ],
+      "evidence": {
+        "tests": [
+          "test/local-reveal.test.mjs"
+        ],
+        "demo": "examples/settle-reveal-scene.mjs",
+        "artisticReview": "NOT_RUN",
+        "originalProductionTransfer": "NOT_RUN"
+      },
+      "knowledgeLinks": []
     }
   ]
 }

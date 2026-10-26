@@ -8,3 +8,5 @@ export {sampleTransition} from './transitions.mjs';
 export {sampleOffsetReassembly} from './recipes.mjs';
 export {withMotion,drawTransition} from '../adapters/canvas.mjs';
 export {compilePolyline,samplePath,sampleTrail} from './path.mjs';
+export {sampleFiniteSettle} from './settle.mjs';
+export {withLocalReveal} from '../adapters/local-reveal.mjs';

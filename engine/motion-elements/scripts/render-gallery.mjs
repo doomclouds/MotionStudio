@@ -7,13 +7,13 @@ import {loadNativeCanvas} from '../../motion-render-core/lib/native.mjs';
 
 const args=process.argv.slice(2);let out,reducedMotion=false,frame,demo='gallery';
 for(let i=0;i<args.length;i++){if(args[i]==='--out')out=args[++i];else if(args[i]==='--reduced-motion')reducedMotion=true;else if(args[i]==='--demo')demo=args[++i];else if(args[i]==='--frame')frame=Number(args[++i]);else throw Error('Unknown argument '+args[i]);}
-if(!['gallery','path'].includes(demo))throw Error('demo must be gallery or path');
-const {createGalleryScene,config}=await import(demo==='path'?'../examples/path-scene.mjs':'../examples/gallery-scene.mjs');
-if(!out)throw Error('Usage: node scripts/render-gallery.mjs --out NEW_DIRECTORY [--frame 0..239] [--reduced-motion] [--demo gallery|path]');
+if(!['gallery','path','settle-reveal'].includes(demo))throw Error('demo must be gallery, path or settle-reveal');
+const {createGalleryScene,config}=await import(demo==='path'?'../examples/path-scene.mjs':demo==='settle-reveal'?'../examples/settle-reveal-scene.mjs':'../examples/gallery-scene.mjs');
+if(!out)throw Error('Usage: node scripts/render-gallery.mjs --out NEW_DIRECTORY [--frame 0..239] [--reduced-motion] [--demo gallery|path|settle-reveal]');
 if(frame!==undefined&&(!Number.isSafeInteger(frame)||frame<0||frame>=240))throw Error('frame must be 0..239');
 out=resolve(out);await mkdir(out,{recursive:false});
 const {api,version}=loadNativeCanvas(),canvas=api.createCanvas(config.width,config.height),ctx=canvas.getContext('2d');
-const scene=await createGalleryScene({canvas,ctx,GlobalFonts:api.GlobalFonts,config},{reducedMotion});
+const scene=await createGalleryScene({canvas,ctx,GlobalFonts:api.GlobalFonts,canvasApi:api,config},{reducedMotion});
 if(frame!==undefined){scene.renderFrame(frame);await writeFile(join(out,'frame.png'),canvas.toBuffer('image/png'));console.log(JSON.stringify({out,frame,demo,reducedMotion,font:scene.font}));}
 else {
   const output=join(out,'motion-elements-gallery.mp4'),partial=join(out,'gallery.partial.mp4');

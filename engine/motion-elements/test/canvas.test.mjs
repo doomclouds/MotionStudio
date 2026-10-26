@@ -45,3 +45,14 @@ test('path two-content demo seeks pixel-identically with normal and reduced moti
  for(const f of [...frames].reverse()){scene.renderFrame(f);assert.equal(createHash('sha256').update(canvas.toBuffer('image/png')).digest('hex'),hashes.get(f));}
  }
 });
+test('settle and local reveal demo preserves frame timing and seek pixels in both motion modes',async()=>{
+ const {createGalleryScene:createStudy}=await import('../examples/settle-reveal-scene.mjs');
+ for(const reducedMotion of [false,true]){
+  const canvas=api.createCanvas(config.width,config.height),ctx=canvas.getContext('2d'),scene=await createStudy({canvas,ctx,canvasApi:api,config},{reducedMotion});
+  const hashes=new Map(),frames=[0,15,43,59,60,61,104,105,119,120,239];
+  const hash=()=>createHash('sha256').update(canvas.toBuffer('image/png')).digest('hex');
+  for(const f of frames){scene.renderFrame(f);hashes.set(f,hash());}
+  for(const f of [...frames].reverse()){scene.renderFrame(f);assert.equal(hash(),hashes.get(f));}
+  assert.equal(hashes.get(0),hashes.get(120));
+ }
+});
