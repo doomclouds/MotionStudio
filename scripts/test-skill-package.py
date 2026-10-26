@@ -21,6 +21,7 @@ def main():
                     sources.append(str(path.relative_to(ROOT)))
         sources.extend(['tools/reference-benchmark/event_intervals.py', 'tools/reference-benchmark/test_event_intervals.py', 'tools/reference-benchmark/event-intervals.example.synthetic.json', 'tools/reference-benchmark/EVENT_INTERVALS.md', 'tools/reference-benchmark/event_interval_report.py', 'tools/reference-benchmark/test_event_interval_report.py', 'tools/reference-benchmark/EVENT_INTERVAL_REPORT.md'])
         sources.extend(['skills/motion-film-director/references/motion-elements.md', 'skills/motion-film-director/scripts/test-audio-timeline.mjs', 'skills/motion-film-director/references/knowledge-decision-example/index.json', 'skills/motion-film-director/references/knowledge-decision-example/cases/plan.json'])
+        sources.extend(['skills/motion-film-director/scripts/static_knowledge.py', 'skills/motion-film-director/scripts/test_static_knowledge.py', 'skills/motion-film-director/research/video-knowledge/STATIC-SCHEMA.md'])
         sources.extend(subprocess.check_output(['git', 'diff', '--name-only'], cwd=ROOT).decode().splitlines())
         run(['git', 'add', '--', *sources], env=env)
         run(['python3', 'scripts/check-source-tree.py'], env=env)
@@ -48,13 +49,22 @@ def main():
             assert not any(n.endswith(('.wav', '.mp4', '.mp3')) or '/node_modules/' in n for n in names)
             z.extractall(temp / 'fresh')
         skill = temp / 'fresh/motion-film-director'
+        for test in ('test_video_knowledge.py', 'test_static_knowledge.py'):
+            run(['python3', str(skill / 'scripts' / test)])
+        kb_cli = skill / 'scripts/video_knowledge.py'
+        empty_kb = json.loads(subprocess.check_output(['python3', str(kb_cli), 'validate']))
+        assert empty_kb == {'valid': True, 'cases': 0, 'techniques': 0}
+        no_match = json.loads(subprocess.check_output(['python3', str(kb_cli), 'decide', '--text', 'iris']))
+        assert no_match['status'] == 'no-match' and no_match['recommendations'] == []
+        assert (skill / 'research/video-knowledge/STATIC-SCHEMA.md').is_file()
+        print('Extracted legacy/static knowledge tests and empty-default validate/decide passed')
         elements = skill / 'runtime/motion-elements'
         tests = sorted(elements.glob('test/*.test.mjs'))
         assert tests, 'Portable motion-elements tests missing'
         run(['node', '--test', *map(str, tests)])
         query_cli = elements / 'scripts/query-catalog.mjs'
         listed = json.loads(subprocess.check_output(['node', str(query_cli), 'list']))
-        assert listed['total'] == 16 and len(listed['results']) == 16
+        assert listed['total'] == 17 and len(listed['results']) == 17
         recipes = json.loads(subprocess.check_output(['node', str(query_cli), 'list', '--kind', 'recipe']))
         assert recipes['total'] == 3 and len(recipes['results']) == 3
         empty = json.loads(subprocess.check_output(['node', str(query_cli), 'find', '--text', 'no-such-mechanism-29461']))
@@ -84,7 +94,7 @@ def main():
         stale = subprocess.run([*cli_args, '--out', str(stale_path)], capture_output=True)
         assert stale.returncode == 1 and json.loads(stale_path.read_text())['collection_status'] == 'STALE'
         assert json.loads(stale_path.read_text())['events'] == []
-        print('Catalog 16/recipe3/no-match and standalone interval CLI synthetic/unsupported/stale gates passed; no decoding or approval')
+        print('Catalog 17/recipe3/no-match and standalone interval CLI synthetic/unsupported/stale gates passed; no decoding or approval')
         gallery = temp / 'fresh-gallery'
         run(['node', str(elements / 'scripts/render-gallery.mjs'), '--out', str(gallery)])
         movie = gallery / 'motion-elements-gallery.mp4'
@@ -100,8 +110,8 @@ def main():
         assert (reduced / 'frame.png').read_bytes().startswith(b'\x89PNG\r\n\x1a\n')
         print('Fresh portable gallery: 240 frames, 8 seconds, full decode passed; reduced-motion frame rendered (not an artistic review)')
         # Separate synthetic demos; no production footage or artistic gate claims.
-        for demo in ('path', 'settle-reveal', 'tiles', 'focus-handoff', 'tile-signature', 'iris'):
-            width, height, frames, duration = (1920, 1080, 210, 7) if demo == 'focus-handoff' else (1920, 1080, 240, 8) if demo == 'tile-signature' else (1280, 720, 240, 8)
+        for demo in ('path', 'settle-reveal', 'tiles', 'focus-handoff', 'tile-signature', 'iris', 'registered-polygon-morph'):
+            width, height, frames, duration = (960, 640, 240, 8) if demo == 'registered-polygon-morph' else (1920, 1080, 210, 7) if demo == 'focus-handoff' else (1920, 1080, 240, 8) if demo == 'tile-signature' else (1280, 720, 240, 8)
             path_gallery = temp / ('fresh-' + demo)
             run(['node', str(elements / 'scripts/render-gallery.mjs'), '--out', str(path_gallery), '--demo', demo])
             path_movie = path_gallery / 'motion-elements-gallery.mp4'

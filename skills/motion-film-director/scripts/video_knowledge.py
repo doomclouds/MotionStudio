@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Offline, standard-library-only discovery and structural validation of video knowledge."""
 import argparse
+import importlib.util
 import json
 import math
 import re
@@ -10,6 +11,16 @@ DEFAULT_ROOT = Path(__file__).resolve().parents[1] / 'research/video-knowledge'
 CASE_STATES = {'unverified', 'observed-with-limits', 'tested-with-limits', 'superseded', 'withdrawn'}
 TECH_STATES = {'hypothesis', 'tested-with-limits', 'superseded', 'withdrawn'}
 METHODS = {'sampled-frames', 'dense-frames', 'continuous-muted', 'actual-listening', 'metadata-probe', 'source-text'}
+
+_STATIC = None
+
+def static_module():
+    global _STATIC
+    if _STATIC is None:
+        spec = importlib.util.spec_from_file_location('motion_static_knowledge', Path(__file__).with_name('static_knowledge.py'))
+        _STATIC = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(_STATIC)
+    return _STATIC
 
 def load(path):
     return json.loads(path.read_text(encoding='utf-8'))
@@ -142,6 +153,11 @@ def decide(cards, tags=(), text='', limit=3):
         d=c.get('decision')
         if not d or not set(tags)<=set(c['tags']): continue
         if not all(t in json.dumps(c,ensure_ascii=False).casefold() for t in terms): continue
+        if c.get('schema_version') == 2:
+            rejected,item=static_module().decision_item(c,tags,terms)
+            item['unavailable_reasons'] = static_module().unavailable_reasons(cid, cards)
+            (negative if rejected else positive).append(item)
+            continue
         chosen=next(o for o in d['options'] if o['id']==d['chosen_option_id'])
         unavailable=decision_unavailable_reasons(cid,cards)
         rejected=bool(unavailable)
@@ -172,6 +188,10 @@ def validate(root):
         check(not re.search(r'libfile_[0-9a-f]+|CalpicoFile_|/workspace/|/home/|[?&](?:sig|token|X-Amz-Signature)=',raw,re.I), f'private/ephemeral locator: {p.relative_to(root)}')
     try: index = load(root/'index.json')
     except (OSError, ValueError) as e: return errors+[f'index invalid: {e}'], {}
+    if not isinstance(index, dict): return errors+['index must be an object'], {}
+    if index.get('schema_version') == 2:
+        static_errors,cards=static_module().validate_library(root,index)
+        return errors+static_errors,cards
     check(index.get('schema_version') == 1, 'index schema_version must be 1')
     indexed = set()
     for group, kind in [('cases','case'),('techniques','technique')]:
@@ -243,7 +263,7 @@ def validate(root):
                 check(c['validation']['state'] in {'not-tested-in-transfer','tested-with-limits'}, f'invalid validation state: {cid}')
                 supported=set()
                 for r in results:
-                    check(cards.get(r['case_id'],{}).get('kind')=='case' and cards.get(r['case_id'],{}).get('source',{}).get('origin')=='original-production', f'validation must reference actual transfer case: {cid}')
+                    check(cards.get(r['case_id'],{}).get('kind')=='case' and cards.get(r['case_id'],{}).get('schema_version')==1 and cards.get(r['case_id'],{}).get('source',{}).get('origin')=='original-production', f'validation must reference actual transfer case: {cid}')
                     check(r['outcome'] in {'supports','contradicts','inconclusive'} and bool(r['scope']) and bool(r['methods']) and set(r['methods'])<=METHODS and type(r['unresolved_contradiction']) is bool, f'invalid validation result: {cid}')
                     if r['outcome']=='supports':
                         supported.add(r['case_id'])
@@ -273,7 +293,8 @@ def query(cards, tags=(), text='', kind=None, status=None, limit=3, method=None,
         if not status and c['status'] in {'superseded','withdrawn'}: continue
         if rule_level and c.get('rule_level') != rule_level: continue
         evidence_cases=[c] if c['kind']=='case' else [cards[e['case_id']] for e in c['evidence']]
-        if method and not any(method in ec['inspection']['methods'] for ec in evidence_cases): continue
+        if not status and any(ec.get('schema_version') == 2 for ec in evidence_cases) and static_module().unavailable_reasons(cid, cards): continue
+        if method and not any(method in (ec.get('inspection',{}).get('methods',[]) if ec.get('schema_version') == 1 else [o['method'] for o in ec.get('observations',[])]) for ec in evidence_cases): continue
         if not set(tags)<=set(c['tags']): continue
         hay=json.dumps(c,ensure_ascii=False).casefold()
         if not all(t in hay for t in terms): continue
@@ -283,11 +304,17 @@ def query(cards, tags=(), text='', kind=None, status=None, limit=3, method=None,
 def main():
     p=argparse.ArgumentParser(description=__doc__); p.add_argument('--root',type=Path,default=DEFAULT_ROOT)
     s=p.add_subparsers(dest='command',required=True); s.add_parser('validate')
-    q=s.add_parser('query'); q.add_argument('--tag',action='append',default=[]);q.add_argument('--text',default='');q.add_argument('--kind',choices=['case','technique']);q.add_argument('--status');q.add_argument('--method',choices=sorted(METHODS));q.add_argument('--rule-level',choices=['candidate','tested-in-scope','reusable-in-scope']);q.add_argument('--limit',type=int,default=3)
+    q=s.add_parser('query'); q.add_argument('--tag',action='append',default=[]);q.add_argument('--text',default='');q.add_argument('--kind',choices=['case','technique']);q.add_argument('--status');q.add_argument('--method',choices=sorted(METHODS | {'static-pixel-probe','code-test'}));q.add_argument('--rule-level',choices=['candidate','tested-in-scope','reusable-in-scope']);q.add_argument('--limit',type=int,default=3)
     q=s.add_parser('decide'); q.add_argument('--tag',action='append',default=[]); q.add_argument('--text',default=''); q.add_argument('--limit',type=int,default=3)
+    v=s.add_parser('verify-artifacts'); v.add_argument('--artifact-root',type=Path,required=True); v.add_argument('--max-file-bytes',type=int,default=64*1024*1024); v.add_argument('--max-total-bytes',type=int,default=256*1024*1024)
     a=p.parse_args();errors,cards=validate(a.root)
     if errors: print(json.dumps({'valid':False,'errors':errors},ensure_ascii=False,indent=2));return 1
     if a.command=='validate': print(json.dumps({'valid':True,'cases':sum(c['kind']=='case' for c in cards.values()),'techniques':sum(c['kind']=='technique' for c in cards.values())}));return 0
+    if a.command=='verify-artifacts':
+        if not any(c.get('schema_version')==2 and c.get('kind')=='case' for c in cards.values()): p.error('verify-artifacts requires typed static Cases')
+        if a.max_file_bytes<=0 or a.max_total_bytes<=0: p.error('byte budgets must be positive')
+        result=static_module().verify_artifacts(cards,a.artifact_root,a.max_file_bytes,a.max_total_bytes)
+        print(json.dumps(result,ensure_ascii=False,indent=2)); return 0 if result['status']=='checked' else 1
     if not 1<=a.limit<=10: p.error('--limit must be 1..10')
     if a.command=='decide':
         print(json.dumps(decide(cards,a.tag,a.text,a.limit),ensure_ascii=False,indent=2)); return 0

@@ -907,6 +907,87 @@
         "揭示",
         "转场"
       ]
+    },
+    {
+      "id": "geometry.registered-polygon-morph",
+      "version": 1,
+      "kind": "geometry",
+      "status": "experimental",
+      "summary": "显式顶点对应的受限多边形插值；逐次采样拒绝退化与自交，不证明连续拓扑安全",
+      "api": "compileRegisteredPolygonMorph",
+      "entry": "lib/index.mjs",
+      "example": {
+        "vertexIds": [
+          "tl",
+          "tr",
+          "br",
+          "bl"
+        ],
+        "from": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 240,
+            "y": 0
+          },
+          {
+            "x": 240,
+            "y": 140
+          },
+          {
+            "x": 0,
+            "y": 140
+          }
+        ],
+        "to": [
+          {
+            "x": 20,
+            "y": 10
+          },
+          {
+            "x": 200,
+            "y": 0
+          },
+          {
+            "x": 250,
+            "y": 150
+          },
+          {
+            "x": 0,
+            "y": 120
+          }
+        ]
+      },
+      "applicability": [
+        "3..32个语义对应顶点的单轮廓",
+        "非仿射卡面与凹箭头图解"
+      ],
+      "counterexamples": [
+        "不是任意image/glyph morph",
+        "不配对、补点、重排顶点，不支持洞",
+        "端点或采样网格合法不证明连续时间拓扑安全",
+        "ID语义由caller断言，不由库识别"
+      ],
+      "evidence": {
+        "tests": [
+          "test/registered-polygon-morph.test.mjs"
+        ],
+        "demo": "examples/registered-polygon-morph-scene.mjs",
+        "artisticReview": "NOT_RUN",
+        "originalProductionTransfer": "NOT_RUN"
+      },
+      "knowledgeLinks": [],
+      "tags": [
+        "polygon",
+        "morph",
+        "registered",
+        "correspondence",
+        "多边形",
+        "形变",
+        "对应"
+      ]
     }
   ]
 }

@@ -14,3 +14,5 @@ export {compileTileScatter,sampleTileScatter} from './tiles.mjs';
 export {drawTileScatter} from '../adapters/tiles.mjs';
 export {compileFocusHandoff,sampleFocusHandoff} from './recipes/focus-handoff.mjs';
 export {compileTileSignature,sampleTileSignature} from './recipes/tile-signature.mjs';
+export {compileRegisteredPolygonMorph,sampleRegisteredPolygonMorph} from './registered-polygon-morph.mjs';
+export {drawRegisteredPolygonMorph} from '../adapters/registered-polygon-morph.mjs';

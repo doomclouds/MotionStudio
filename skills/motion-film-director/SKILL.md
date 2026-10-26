@@ -15,6 +15,8 @@ description: 从一句话委托独立研究、制作和验证中文动效影片�
 
 研究参考时记录观察方法、授权范围、可迁移关系、反例与未验项；实际媒体和研究记录保存在用户自己的私有工作目录。公开版不含历史案例库或素材目录，也不声称那些案例已获公开许可。通用[知识工作流](research/video-knowledge/WORKFLOW.md)、[卡片契约](research/video-knowledge/SCHEMA.md)与检索/校验 CLI 仍可读取用户自备的外置私有库；默认库为空。
 
+合成静态/代码探针另用显式 [index v2 静态契约](research/video-knowledge/STATIC-SCHEMA.md)，不伪装成带时长的视频或生产迁移。复用静态记录前必须先对明确授权的本地素材根运行 `video_knowledge.py --root <库> verify-artifacts --artifact-root <授权根>`；missing/mismatch/blocked/stale 均禁止据此复用，须复核或新 run。`decide` 不自动读取此报告，也不证明文件仍新鲜；即使 hash 全部匹配，也只证明字节身份，不证明执行、观看、听审或艺术/生产验收。
+
 用户指定参考的外观或形式时，先按[指定参考保留合同](references/reference-mechanism.md)锁定媒介、像素/角色场景样式、视角、玩法形式与叙事机制中的必留项，再做抽象迁移；自驱不能擅改已定风格。形式或故事被否决先停对应制作，两者都被否决不能只换皮续用旧故事。
 
 代码美术不足或要把生成场景做成可控动作时，按[混合美术生产](references/hybrid-art-workflow.md)选择代码/imagegen/真3D分工，并用其brief、分层manifest与检查单；不把整图平移当完整动画，也不默认全片生成化。
