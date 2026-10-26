@@ -89,3 +89,14 @@ test('tile signature two-source 8s sequence has repeatable normal/reduced and ne
   for(const f of [...frames].reverse()){scene.renderFrame(f);assert.equal(hash(),hashes.get(f));}
  }
 });
+test('iris two-compositing-case demo seeks identically and checker stays inside its viewport',async()=>{
+ const {createGalleryScene:createStudy,config:cfg}=await import('../examples/iris-scene.mjs');
+ for(const reducedMotion of [false,true]){
+  const canvas=api.createCanvas(cfg.width,cfg.height),ctx=canvas.getContext('2d'),scene=await createStudy({canvas,ctx,canvasApi:api,config:cfg},{reducedMotion});
+  const hashes=new Map(),frames=[0,29,30,60,89,90,120,149,150,151,239];
+  const hash=()=>createHash('sha256').update(canvas.toBuffer('image/png')).digest('hex');
+  for(const f of frames){scene.renderFrame(f);hashes.set(f,hash());}
+  for(const f of [...frames].reverse()){scene.renderFrame(f);assert.equal(hash(),hashes.get(f));}
+  scene.renderFrame(150);assert.deepEqual([...ctx.getImageData(613,200,1,1).data],[27,41,53,255]);
+ }
+});

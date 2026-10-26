@@ -33,7 +33,7 @@ node engine/motion-elements/scripts/query-catalog.mjs find --text 重组
 node engine/motion-elements/scripts/query-catalog.mjs show --id fragment.fixed-tiles
 ```
 
-解包 Skill 将 `engine/` 换成 `runtime/`。输出 JSON 包含完整条目与反例；`find` 是字面元数据匹配，反例也可能命中，不是适合度排名、语义推荐、置信度或艺术分数。多个筛选条件取交集，无匹配就返回空结果，不编造推荐。先完整读 `counterexamples`、状态与证据边界，再决定试用。查询不执行示例、不导入目录中的入口、不联网、不写案例；查询不增加机制数量；配方 B 收录后共 15 条（其中 recipe 类 3 条）。
+解包 Skill 将 `engine/` 换成 `runtime/`。输出 JSON 包含完整条目与反例；`find` 是字面元数据匹配，反例也可能命中，不是适合度排名、语义推荐、置信度或艺术分数。多个筛选条件取交集，无匹配就返回空结果，不编造推荐。先完整读 `counterexamples`、状态与证据边界，再决定试用。查询不执行示例、不导入目录中的入口、不联网、不写案例；查询不增加机制数量；Iris 收录后共 16 条（其中 recipe 类 3 条）。
 
 ## 视听事件复查：独立区间 sidecar
 
@@ -154,3 +154,13 @@ node engine/motion-elements/scripts/render-gallery.mjs --out /tmp/motion-signatu
 已有双方外部 profile、annotations、证据绑定并生成事件 receipt，需要检查复刻差异时，可用 `runtime/review-tools/event_interval_report.py render --receipt /local/receipt.json --out /local/new-report.html`；仓库入口替换为 `tools/reference-benchmark/`。详细字段与合成示例见同目录 `EVENT_INTERVAL_REPORT.md`。没有这些输入时先记录缺失，不虚构事件或把工具当自动听审。
 
 报告是静态 HTML 内嵌 SVG，四条 lane 保留各自原始时间，不自动对齐。unknown、ambiguous、planned 各自显示，不擅选候选或补零；区间为算术包络，不是统计置信度。renderer 只读 receipt，不重新打开媒体、验证旧证据或认证听看，不提供艺术评分。HTML/SVG生成与结构测试通过，不等于完整浏览器交互、常速播放或听觉审核已完成。输入与报告保持仓库外；默认公开 KB 仍为空。
+
+## Iris 圆形揭示：OVER 而非透明替换
+
+`transition.iris-reveal` 按半径进度（不是面积）扩大局部圆。`drawTransition` 第四参数显式注入 `{Path2D}`；parent 由 caller 施加一次，非均匀缩放在屏幕成为椭圆。独立路径不污染 current path，callback 自己的改动不在回滚保证内。
+
+A 始终完整保底，B 在圆内 source-over；**end/after 仍调用 A+B**，B 透明孔透出 A，不是透明 B-only replacement，不能擅自撤销 A 生命周期。终态只 clip viewport 避免角点抗锯齿漏角，不用互补圆内/圆外 clip 或装饰环遮缝。共享 hero 要从两背景移出，由 caller 在背景后单独画一次；库不自动角色去重。
+
+适用于 Clawd 等角色连续、B 背景不透明的场景切换，但需项目自己保持角色身份与层序；不是已验证任意真实场景。reduced 在 raw progress=0.5 切 A-only→完整 A+B，保留时段，不按 eased 半径切换。真实复刻、艺术与声音验收仍独立。
+
+合成预览：`node engine/motion-elements/scripts/render-gallery.mjs --out /tmp/iris-new --demo iris`；portable 将 `engine/` 换成 `runtime/`。8 秒240帧720p无声，四panel展示opaque与透明OVER两类语义；不包含私有角色素材。

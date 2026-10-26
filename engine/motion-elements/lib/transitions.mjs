@@ -1,10 +1,12 @@
+import {sampleIris} from './iris.mjs';
 import {object,number,optional,choice,bool,freeze} from './validate.mjs';
 import {range,progress} from './time.mjs';
 import {curve} from './math.mjs';
 import {composeTransform,identity} from './matrix.mjs';
 export function sampleTransition(input,at,context={}) {
   object(input,['type','version','range','curve','params'],['type','version','range','params']);
-  choice(input.type,['transition.push','transition.rect-wipe']);if(input.version!==1)throw Error('Unsupported element version');
+  choice(input.type,['transition.push','transition.rect-wipe','transition.iris-reveal']);if(input.version!==1)throw Error('Unsupported element version');
+  if(input.type==='transition.iris-reveal')return sampleIris(input,at,context);
   object(input.params,['width','height','direction'],['width','height','direction']);
   const w=number(input.params.width,.001,100000),h=number(input.params.height,.001,100000),dir=choice(input.params.direction,['left','right','up','down']);
   object(context,['reducedMotion']);const reduced=bool(optional(context.reducedMotion,false));

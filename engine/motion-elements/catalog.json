@@ -847,6 +847,66 @@
         "署名",
         "回归"
       ]
+    },
+    {
+      "id": "transition.iris-reveal",
+      "version": 1,
+      "kind": "transition",
+      "status": "experimental",
+      "summary": "A完整保底，B圆域source-over揭示；透明孔有意透A，非replacement",
+      "api": "sampleTransition",
+      "entry": "lib/index.mjs",
+      "example": {
+        "type": "transition.iris-reveal",
+        "version": 1,
+        "range": {
+          "start": {
+            "n": "0",
+            "d": "1"
+          },
+          "end": {
+            "n": "2",
+            "d": "1"
+          }
+        },
+        "params": {
+          "width": 640,
+          "height": 360,
+          "center": {
+            "x": 210.35,
+            "y": 180.65
+          }
+        }
+      },
+      "applicability": [
+        "两个opaque世界的portal揭示",
+        "保留旧背景的透明内容覆盖"
+      ],
+      "counterexamples": [
+        "不是透明scene replacement",
+        "after仍须A callback可绘",
+        "非面积进度",
+        "不自动匹配或去重shared actor"
+      ],
+      "evidence": {
+        "tests": [
+          "test/iris.test.mjs"
+        ],
+        "demo": "examples/iris-scene.mjs",
+        "artisticReview": "NOT_RUN",
+        "originalProductionTransfer": "NOT_RUN"
+      },
+      "knowledgeLinks": [],
+      "tags": [
+        "iris",
+        "circle",
+        "over-reveal",
+        "portal",
+        "transition",
+        "圆形",
+        "揭示",
+        "转场"
+      ]
     }
   ]
 }

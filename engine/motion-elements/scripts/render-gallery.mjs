@@ -7,9 +7,9 @@ import {loadNativeCanvas} from '../../motion-render-core/lib/native.mjs';
 
 const args=process.argv.slice(2);let out,reducedMotion=false,frame,demo='gallery';
 for(let i=0;i<args.length;i++){if(args[i]==='--out')out=args[++i];else if(args[i]==='--reduced-motion')reducedMotion=true;else if(args[i]==='--demo')demo=args[++i];else if(args[i]==='--frame')frame=Number(args[++i]);else throw Error('Unknown argument '+args[i]);}
-if(!['gallery','path','settle-reveal','tiles','focus-handoff','tile-signature'].includes(demo))throw Error('demo must be gallery, path, settle-reveal, tiles, focus-handoff or tile-signature');
-const {createGalleryScene,config}=await import(demo==='tile-signature'?'../examples/tile-signature-scene.mjs':demo==='focus-handoff'?'../examples/focus-handoff-scene.mjs':demo==='tiles'?'../examples/tiles-scene.mjs':demo==='path'?'../examples/path-scene.mjs':demo==='settle-reveal'?'../examples/settle-reveal-scene.mjs':'../examples/gallery-scene.mjs');
-if(!out)throw Error('Usage: node scripts/render-gallery.mjs --out NEW_DIRECTORY [--frame 0..239] [--reduced-motion] [--demo gallery|path|settle-reveal|tiles|focus-handoff|tile-signature]');
+if(!['gallery','path','settle-reveal','tiles','focus-handoff','tile-signature','iris'].includes(demo))throw Error('demo must be gallery, path, settle-reveal, tiles, focus-handoff, tile-signature or iris');
+const {createGalleryScene,config}=await import(demo==='iris'?'../examples/iris-scene.mjs':demo==='tile-signature'?'../examples/tile-signature-scene.mjs':demo==='focus-handoff'?'../examples/focus-handoff-scene.mjs':demo==='tiles'?'../examples/tiles-scene.mjs':demo==='path'?'../examples/path-scene.mjs':demo==='settle-reveal'?'../examples/settle-reveal-scene.mjs':'../examples/gallery-scene.mjs');
+if(!out)throw Error('Usage: node scripts/render-gallery.mjs --out NEW_DIRECTORY [--frame 0..239] [--reduced-motion] [--demo gallery|path|settle-reveal|tiles|focus-handoff|tile-signature|iris]');
 const frameCount=config.duration*config.fps;
 if(frame!==undefined&&(!Number.isSafeInteger(frame)||frame<0||frame>=frameCount))throw Error('frame must be 0..'+(frameCount-1));
 out=resolve(out);await mkdir(out,{recursive:false});
