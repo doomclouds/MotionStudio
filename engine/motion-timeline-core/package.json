@@ -1,0 +1,10 @@
+{
+  "name": "@motionstudio/motion-timeline-core",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "engines": {"node": ">=24"},
+  "exports": "./lib/timeline.mjs",
+  "scripts": {"test": "node --test test/*.test.mjs"}
+}

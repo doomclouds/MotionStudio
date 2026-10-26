@@ -26,3 +26,18 @@
 需外部辅助且已有具体授权时可查[可选模型审查](optional-media-review.md)；没有授权就保留未听，不以传输格式变化绕过拒绝，也不把模型判断冒充人耳。
 
 需要新音色或用户要求找SFX时，按[主动寻源与选择](sfx-sourcing.md)从视觉职责搜索单条合法素材，与原创选项做同画面比较；不是只列供应商或继续用合成占位。
+
+
+## 实际音频编辑/混音入口（初始阶段）
+
+按[引擎使用](engine-use.md)使用 `--audio-timeline`。支持裁切、移动、拆分、暂停/恢复源读取、
+多 clip 重叠、clip/stem/bus/master gain、显式淡入淡出和线性幅度自动化。
+拆分/裁切保留原包络坐标，不自动给切点添加淡化。EQ、压缩、sidechain ducking、插件、
+变速和完整视频剪辑 adapter 尚未实现；需要这些处理时明确交给获授权的外部工具，不能写入 JSON 后声称执行成功。
+
+- 局部事件平衡先改 clip gain；整体音乐职责改 stem gain；最终全局电平才考虑 master gain。
+- gain 是作者决定，不是 loudness normalize。当前不自动归一化、限制峰值或指定通用 LUFS 目标。
+  先确定交付目标与听感问题；峰值/响度只作为测量证据，不能“数值合格即好听”。
+- 创作 fade 写在 clip；review/export view 的 boundaryFade 只处理导出边界，不能污染完整 master 或冒充创作修复。
+- plan 身份、源身份、执行身份和输出身份分开；换源、改参数或重新编码均须重新绑定相关证据。
+- 最终 MP4 后编码技术检查 PASS 只说明已执行对应测量；NOT_RUN、UNAVAILABLE、FAIL 都不能改写成听审通过。

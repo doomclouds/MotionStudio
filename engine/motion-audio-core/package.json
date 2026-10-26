@@ -1,0 +1,1 @@
+{"name":"motion-audio-core","version":"0.1.0","private":true,"type":"module","engines":{"node":">=24"},"scripts":{"test":"node --test test/*.test.mjs"}}

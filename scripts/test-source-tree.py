@@ -46,6 +46,16 @@ class SourceTreeFixtures(unittest.TestCase):
         self.add('src/main.ts', b'export const answer = 42;\n')
         self.git('commit', '-qm', 'source')
         self.audit(True)
+    def test_audio_timeline_source_only(self):
+        self.add('engine/motion-timeline-core/lib/timeline.mjs', b'export const version = 1;\n')
+        self.add('engine/motion-audio-core/lib/audio.mjs', b'export {};\n')
+        self.audit(True)
+    def test_audio_core_media_still_rejected(self):
+        self.add('engine/motion-audio-core/test/sample.wav', b'RIFF' + b'\0' * 4 + b'WAVE')
+        self.audit(False, 'unapproved-media')
+    def test_audio_core_private_metadata_still_rejected(self):
+        self.add('engine/motion-audio-core/private.json', b'{"path":"/workspace/private/project.wav"}')
+        self.audit(False, 'private-production-metadata')
     def test_misnamed_video(self):
         self.add('foo.mp4.bin', MP4)
         self.audit(False, 'ISO/QuickTime-media')

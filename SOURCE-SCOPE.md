@@ -4,7 +4,7 @@ This is a deliberately narrow **toolkit source snapshot**, not a publication of 
 
 ## Included
 
-- Native Canvas rendering core, small original technical fixture, and tests.
+- Native Canvas rendering core, bounded local audio edit/mix core, shared rational audio-timeline contract, small original technical fixtures, and synthetic tests. Video clip editing remains deferred.
 - General director guidance and reusable authoring/review helpers.
 - Source packaging and source-boundary checks.
 - On `dev`: generic reference-benchmark and content-review tools, schemas, and explicitly synthetic examples. These tools require user-supplied, authorized local media; no private films or observations are bundled.

@@ -69,3 +69,34 @@ worker/编码器失败、身份不一致或 SIGINT/SIGTERM 均中止并回收自
 预检、ffprobe 与完整解码阶段也回收自有子进程。失败可能留下 `shot.partial.mp4` 与诊断报告，但不晋升为成片；重试用新工作目录。
 不支持断点续传、并行 worker 或自动重试已送入编码器的帧。以 `shot-report.json`
 为最终技术结果，原生帧报告通过不等于视频检查通过或艺术认可。
+
+
+## 音频时间线 → 混音 → 成片后编码测量
+
+第一阶段是音频编辑/混音，不是完整视频 NLE；视频 clip adapter、多场景剪辑仍未实现。
+三个 sibling core 在仓库 `engine/`，可移植包在 `runtime/`。共享时间线只提供精确有理数时间网格。
+
+```sh
+# 从 Skill 根运行；JSON 和实际音源均由使用者在私有目录提供
+node scripts/render-shot.mjs --work /project/new-shot --scene /project/scene.mjs --audio-timeline /project/audio/timeline.json --source-root /project/audio
+# 也可加 --chunk-frames 30；未加时仍默认保留 PNG 到磁盘
+```
+
+`--audio-timeline` 与旧 `--audio` 互斥；后者保持冻结单音轨输入，不会自动转为混音。
+`--source-root` 可重复，权限由命令行提供，不能由 JSON 扩权；不提供时仅授权时间线文件的所在目录。
+音源可写绝对本地路径，或相对 timeline.json 所在目录的本地路径（不依赖调用者 cwd）；原始路径先校验，`..` 仍拒绝。软链接解析后也必须在授权根内。JSON 不接受网络 URL、shell 或任意 FFmpeg filter。
+project.frameRate `{n,d}` 必须与视频 fpsNum/fpsDen 精确相等，duration 必须等于 frameCount/fps；
+不是浮点容差匹配。不得为了通过校验悄悄补音、删样本或改播放速率。
+
+时间线契约见 `motion-timeline-core/README.md`，执行边界见 `motion-audio-core/README.md`。
+仓库根可运行 `node engine/motion-audio-core/scripts/audio.mjs capabilities`；
+解压 Skill 根改为 `node runtime/motion-audio-core/scripts/audio.mjs capabilities`。
+同一路径入口支持 `validate --timeline FILE` 和
+`render --timeline FILE --source-root ROOT --work FRESH_DIR [--view ID] [--aac]`。
+
+混音在 output 内的新私有子目录准备，输出 float PCM master 后走原有视频 AAC 编码策略。
+shot-report 绑定原始时间线 hash、creative/source/preparation/execution/view/output identity、
+master hash 与实际 MP4 hash。成片临时 MP4 必须完整解码，实际 AAC 另测样本数、峰值/RMS、
+可用时的 EBU 响度与真峰；允许并记录 0–1024 个 AAC 尾部填充样本，不把源 WAV 测量冒充成片测量。
+成功后才原子晋升 shot.mp4。技术 PASS 不代表悦耳、事件可听、声画同步或 OWNER 接受；
+listening / owner / avSync 仍是 NOT_RUN，必须真实复看/合听才能另记判断。

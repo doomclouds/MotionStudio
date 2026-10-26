@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "case-synthetic-decision-plan",
+      "path": "cases/plan.json",
+      "tags": [
+        "audio",
+        "masking"
+      ]
+    }
+  ],
+  "techniques": [],
+  "legacy": []
+}

@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "kind": "case",
+  "id": "case-synthetic-decision-plan",
+  "revision": 1,
+  "title": "SYNTHETIC planned masking experiment, not production experience",
+  "status": "unverified",
+  "tags": [
+    "audio",
+    "masking"
+  ],
+  "source": {
+    "origin": "synthetic",
+    "creator": "Synthetic example",
+    "title": "No actual media",
+    "rights": "No asset or action permission asserted.",
+    "access": "No media created or acquired.",
+    "url": null,
+    "media_url": null,
+    "artifact_filename": "not-created.mp4",
+    "sha256": null,
+    "duration_seconds": null
+  },
+  "inspection": {
+    "methods": [],
+    "coverage": "None: synthetic plan only.",
+    "not_verified": [
+      "All perception and results."
+    ]
+  },
+  "observations": [],
+  "interpretations": [],
+  "technique_ids": [],
+  "feedback": [],
+  "revision_note": "Synthetic schema demonstration only.",
+  "supersedes": [],
+  "decision": {
+    "schema_version": 1,
+    "lifecycle": "active",
+    "problem": {
+      "symptom": "A fictional UI confirmation sound may be masked by music.",
+      "goal": "Test event audibility without changing the edit.",
+      "hard_constraints": [
+        "No new paid service."
+      ],
+      "preserve": [
+        "Keep picture timing unchanged."
+      ]
+    },
+    "options": [
+      {
+        "id": "duck",
+        "action": "Try local music ducking.",
+        "cost": "One local preview and a comparison listen; estimate, not a measurement.",
+        "risks": [
+          "An audible dip may disrupt music."
+        ]
+      },
+      {
+        "id": "replace",
+        "action": "Try a different sound timbre.",
+        "cost": "Requires a suitably licensed sound and another preview.",
+        "risks": [
+          "The new sound may not fit the event."
+        ]
+      }
+    ],
+    "chosen_option_id": "duck",
+    "rationale": "First isolate masking before replacing the sound. This is a hypothesis.",
+    "experiment": {
+      "baseline_binding": null,
+      "candidate_binding": null,
+      "variables": [
+        "Local music gain only."
+      ],
+      "control_validity": "not-assessed",
+      "confounders": [],
+      "protocol": "Render comparable baseline and candidate; actually listen to the final encoded event and adjacent music.",
+      "acceptance": "Event is discernible without a new music discontinuity; record disagreement.",
+      "stop_condition": "Stop expanding edits when the scoped defect is resolved; otherwise revisit the masking hypothesis.",
+      "regression_scope": [
+        "Adjacent musical phrase",
+        "Unchanged picture edit"
+      ]
+    },
+    "bindings": [],
+    "evidence_refs": [],
+    "result": {
+      "outcome": "not-tested",
+      "evidence_ids": [],
+      "owner_feedback_refs": []
+    },
+    "applies_when": "A real listening review identifies possible masking in a fixed edit.",
+    "counterexample": "The music is already quiet; the sound identity or timing may instead be wrong.",
+    "not_verified": [
+      "Entirely synthetic plan; no media exists, no listening, test or owner acceptance occurred."
+    ],
+    "permission_semantics": "informational-only-not-authorization"
+  }
+}

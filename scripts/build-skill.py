@@ -21,13 +21,15 @@ def main():
     for name in names:
         if name.startswith('skills/motion-film-director/'):
             rel = name.removeprefix('skills/motion-film-director/')
-        elif name.startswith('engine/motion-render-core/'):
-            rel = 'runtime/motion-render-core/' + name.removeprefix('engine/motion-render-core/')
+        elif any(name.startswith('engine/' + core + '/') for core in ('motion-render-core', 'motion-timeline-core', 'motion-audio-core')):
+            rel = 'runtime/' + name.removeprefix('engine/')
+        elif name == 'LICENSE':
+            rel = 'LICENSE'
         else: continue
         source = ROOT / name
         if source.is_symlink() or not source.is_file(): raise SystemExit('Missing or symlink source: ' + name)
         payload[rel] = source.read_bytes()
-    required = ['SKILL.md', 'NOTICE.md', 'LICENSES/huashu-motion-MIT.txt', 'runtime/motion-render-core/lib/native.mjs', 'runtime/motion-render-core/LICENSES/napi-rs-canvas-MIT.txt']
+    required = ['SKILL.md', 'NOTICE.md', 'LICENSES/huashu-motion-MIT.txt', 'runtime/motion-render-core/lib/native.mjs', 'runtime/motion-render-core/LICENSES/napi-rs-canvas-MIT.txt', 'LICENSE', 'runtime/motion-timeline-core/lib/timeline.mjs', 'runtime/motion-timeline-core/LICENSE', 'runtime/motion-audio-core/LICENSE', 'runtime/motion-audio-core/lib/audio.mjs', 'runtime/motion-audio-core/scripts/audio.mjs']
     if any(name not in payload for name in required): raise SystemExit('Required source/license missing')
     payload['runtime-source.json'] = (json.dumps({'schema': 1, 'mode': 'bundled', 'relativePath': 'runtime/motion-render-core', 'policy': 'Generated snapshot; edit canonical MotionStudio source and rebuild.'}, indent=2)+'\n').encode()
     manifest = {'schema': 1, 'files': [{'path': name, 'bytes': len(data), 'sha256': hashlib.sha256(data).hexdigest()} for name, data in sorted(payload.items())]}
