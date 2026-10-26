@@ -62,7 +62,17 @@
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN"
       },
-      "knowledgeLinks": []
+      "knowledgeLinks": [],
+      "tags": [
+        "transform",
+        "position",
+        "rotation",
+        "scale",
+        "pivot",
+        "位移",
+        "旋转",
+        "尺度"
+      ]
     },
     {
       "id": "motion.opacity",
@@ -108,7 +118,13 @@
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN"
       },
-      "knowledgeLinks": []
+      "knowledgeLinks": [],
+      "tags": [
+        "opacity",
+        "fade",
+        "透明度",
+        "淡入"
+      ]
     },
     {
       "id": "motion.stagger",
@@ -152,7 +168,12 @@
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN"
       },
-      "knowledgeLinks": []
+      "knowledgeLinks": [],
+      "tags": [
+        "stagger",
+        "timing",
+        "错峰"
+      ]
     },
     {
       "id": "motion.anchored-squash",
@@ -202,7 +223,14 @@
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN"
       },
-      "knowledgeLinks": []
+      "knowledgeLinks": [],
+      "tags": [
+        "squash",
+        "pivot",
+        "area-preserving",
+        "挤压",
+        "锚点"
+      ]
     },
     {
       "id": "motion.shake",
@@ -252,7 +280,12 @@
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN"
       },
-      "knowledgeLinks": []
+      "knowledgeLinks": [],
+      "tags": [
+        "shake",
+        "seeded",
+        "抖动"
+      ]
     },
     {
       "id": "transition.push",
@@ -299,7 +332,13 @@
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN"
       },
-      "knowledgeLinks": []
+      "knowledgeLinks": [],
+      "tags": [
+        "transition",
+        "push",
+        "转场",
+        "推移"
+      ]
     },
     {
       "id": "transition.rect-wipe",
@@ -346,7 +385,14 @@
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN"
       },
-      "knowledgeLinks": []
+      "knowledgeLinks": [],
+      "tags": [
+        "transition",
+        "wipe",
+        "reveal",
+        "转场",
+        "揭示"
+      ]
     },
     {
       "id": "composition.offset-cards",
@@ -392,7 +438,13 @@
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN"
       },
-      "knowledgeLinks": []
+      "knowledgeLinks": [],
+      "tags": [
+        "layout",
+        "cards",
+        "布局",
+        "卡片"
+      ]
     },
     {
       "id": "composition.split-panels",
@@ -430,7 +482,13 @@
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN"
       },
-      "knowledgeLinks": []
+      "knowledgeLinks": [],
+      "tags": [
+        "layout",
+        "panels",
+        "布局",
+        "面板"
+      ]
     },
     {
       "id": "recipe.offset-reassembly",
@@ -500,7 +558,14 @@
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN"
       },
-      "knowledgeLinks": []
+      "knowledgeLinks": [],
+      "tags": [
+        "recipe",
+        "cards",
+        "stagger",
+        "配方",
+        "重组"
+      ]
     },
     {
       "id": "geometry.polyline-trail",
@@ -542,7 +607,14 @@
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN"
       },
-      "knowledgeLinks": []
+      "knowledgeLinks": [],
+      "tags": [
+        "path",
+        "polyline",
+        "trail",
+        "路径",
+        "拖尾"
+      ]
     },
     {
       "id": "reveal.local-geometry",
@@ -580,7 +652,14 @@
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN"
       },
-      "knowledgeLinks": []
+      "knowledgeLinks": [],
+      "tags": [
+        "reveal",
+        "clip",
+        "rounded-rectangle",
+        "揭示",
+        "裁切"
+      ]
     },
     {
       "id": "fragment.fixed-tiles",
@@ -639,7 +718,15 @@
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN"
       },
-      "knowledgeLinks": []
+      "knowledgeLinks": [],
+      "tags": [
+        "fragment",
+        "tiles",
+        "scatter",
+        "reassembly",
+        "片块",
+        "重组"
+      ]
     }
   ]
 }

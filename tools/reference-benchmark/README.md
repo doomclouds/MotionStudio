@@ -87,3 +87,7 @@ node tools/reference-benchmark/test_report_js.cjs
 测试应覆盖 identical、已知正/负 lag、gain、左右互换、静止/静音、同运动24/30fps原生PTS、缺失事件、反相立体声、非零起始PTS，以及同直方图不同结构。夹具只验证测量/不确定性/契约，不计为影片审美通过。实际源/候选相同参数与同 schema；同一采样时刻记录各自原生 frame index 与 PTS，不用 `fps×t` 猜帧。
 
 本模块是本地私有研究工具。报告不内嵌完整参考片，仅少量短窗、帧和图表；不公开发布、不建立 Sites、不上传 Library，交付/权限由操作者另行决定。
+
+## 可选：独立事件区间复查
+
+[事件区间sidecar](EVENT_INTERVALS.md)在显式事件对应和同一证据层内传播lag/跨片shift范围，输出缺失/歧义与复查窗；不改变本工具事件schema、默认流程或报告，不解码/听审，也不生成艺术分。

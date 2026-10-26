@@ -25,6 +25,31 @@
 5. **接回镜头。** 锁定对象身份、层序、读时、离位/接触交接与语义 cue。视觉库不自动播放音效，不修改音乐淡入淡出；同一个 cue 可交给音频时间线，但同步还需实测与合听。
 6. **验证再沉淀。** 先检技术，再常速观看；回写适用边界与反例。某次失败后补限制、修测试也是积累，不要求每次都新增模块。
 
+## 离线目录：先查反例再选机制
+
+```sh
+node engine/motion-elements/scripts/query-catalog.mjs list
+node engine/motion-elements/scripts/query-catalog.mjs find --text 重组
+node engine/motion-elements/scripts/query-catalog.mjs show --id fragment.fixed-tiles
+```
+
+解包 Skill 将 `engine/` 换成 `runtime/`。输出 JSON 包含完整条目与反例；`find` 是字面元数据匹配，反例也可能命中，不是适合度排名、语义推荐、置信度或艺术分数。多个筛选条件取交集，无匹配就返回空结果，不编造推荐。先完整读 `counterexamples`、状态与证据边界，再决定试用。查询不执行示例、不导入目录中的入口、不联网、不写案例；仍为 13 个机制。
+
+## 视听事件复查：独立区间 sidecar
+
+仓库入口 `tools/reference-benchmark/event_intervals.py`；解包 Skill 入口 `runtime/review-tools/event_intervals.py`。只打包这个标准库模块、合成示例、测试及说明，适用 Skill 根 `LICENSE`；不打包整套依赖数值库的 profile 生成工具。
+
+```sh
+python3 runtime/review-tools/event_intervals.py --help
+python3 -m unittest discover -s runtime/review-tools -p test_event_intervals.py -v
+```
+
+从仓库运行时将 `runtime/review-tools/` 换成 `tools/reference-benchmark/`。详细 `evaluate` 参数和纯合成 CLI 演示见同目录 `EVENT_INTERVALS.md`；该上游说明里的仓库路径，在解包后同样替换。输出选已有临时目录下的新 JSON 文件，不覆盖输入或旧报告。
+
+必须显式提供双方媒体、外部已有 profile、注释和证据根目录。profile 生成仍需仓库的完整 reference-benchmark 工作流；sidecar **不解码视频、不听声音、不检测事件、不生成 profile**，只核对绑定并做已声明事件的区间算术。合成演示的 bytes 故意不是媒体，不算影片证据。
+
+成功仅 `COLLECTED_NOT_APPROVED`，时间验证仅 `BOUND_PROFILE_NOT_REDECODED`。`STALE/MISSING/BLOCKED` 是失败收据，无测量结果；未知、歧义、计划不能变成实测零值。区间差不是统计置信区间，含零不代表同步通过。先按 review actions/windows 回看原始证据，再作人工判断；首版无 HTML、不改旧 benchmark schema，不提供自动艺术评分或通过门。
+
 ## 时间、坐标和转场边界
 
 - 渲染器给出 global frame，通过已有 timeline-core 的 `framesToTime` 转为 rational Time。不要按调用次数累加进度、使用 `Date.now()`、隐式读取全局随机数，或在片段导出时擅自从零重播。

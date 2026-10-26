@@ -1,0 +1,116 @@
+{
+  "schema_version": "motionstudio.event-intervals/1.0",
+  "dataset_kind": "synthetic",
+  "inputs": {
+    "reference": {
+      "media_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "profile_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "candidate": {
+      "media_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "profile_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+    }
+  },
+  "time_basis": "RELATIVE_TO_EACH_FIRST_VIDEO_PTS_NO_ALIGNMENT",
+  "evidence": [
+    {
+      "id": "ev_r",
+      "relative_path": "reference-observation.json",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "kind": "manual_record"
+    },
+    {
+      "id": "ev_c",
+      "relative_path": "candidate-observation.json",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "kind": "manual_record"
+    }
+  ],
+  "observations": [
+    {
+      "id": "rv1",
+      "role": "reference",
+      "modality": "visual",
+      "layer": "manual",
+      "state": "candidate",
+      "interval_s": [
+        "1.000",
+        "1.040"
+      ],
+      "interval_kind": "event_boundary_bracket",
+      "evidence_id": "ev_r",
+      "locator": "Synthetic record; not an actual observation",
+      "note": "Synthetic demonstration"
+    },
+    {
+      "id": "ra1",
+      "role": "reference",
+      "modality": "audio",
+      "layer": "manual",
+      "state": "candidate",
+      "interval_s": [
+        "1.020",
+        "1.060"
+      ],
+      "interval_kind": "reviewer_event_range",
+      "evidence_id": "ev_r",
+      "locator": "Synthetic record; not an actual observation",
+      "note": "Synthetic demonstration"
+    },
+    {
+      "id": "cv1",
+      "role": "candidate",
+      "modality": "visual",
+      "layer": "manual",
+      "state": "candidate",
+      "interval_s": [
+        "1.200",
+        "1.240"
+      ],
+      "interval_kind": "event_boundary_bracket",
+      "evidence_id": "ev_c",
+      "locator": "Synthetic record; not an actual observation",
+      "note": "Synthetic demonstration"
+    },
+    {
+      "id": "ca1",
+      "role": "candidate",
+      "modality": "audio",
+      "layer": "manual",
+      "state": "candidate",
+      "interval_s": [
+        "1.220",
+        "1.260"
+      ],
+      "interval_kind": "reviewer_event_range",
+      "evidence_id": "ev_c",
+      "locator": "Synthetic record; not an actual observation",
+      "note": "Synthetic demonstration"
+    }
+  ],
+  "events": [
+    {
+      "id": "contact_a",
+      "label": "Synthetic contact A",
+      "purpose": "contact",
+      "layer": "manual",
+      "mapping": "explicit",
+      "mapping_note": "Declared synthetic correspondence, not detected",
+      "slots": {
+        "reference_visual": [
+          "rv1"
+        ],
+        "reference_audio": [
+          "ra1"
+        ],
+        "candidate_visual": [
+          "cv1"
+        ],
+        "candidate_audio": [
+          "ca1"
+        ]
+      },
+      "review_note": "Inspect whole-event phase, not only internal lag"
+    }
+  ]
+}

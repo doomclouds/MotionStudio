@@ -1,7 +1,7 @@
 """Build from a disposable index and smoke the portable four-package Skill in /tmp.
 Does not alter the canonical Git index, install dependencies, or retain media.
 """
-import hashlib, json, os, shutil, subprocess, tempfile, zipfile
+import hashlib, importlib.util, json, os, shutil, subprocess, tempfile, zipfile
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 def run(args, **kwargs):
@@ -19,6 +19,7 @@ def main():
             for path in (ROOT / 'engine' / core).rglob('*'):
                 if path.is_file() and (path.suffix in {'.mjs', '.md', '.json', '.html'} or path.name == 'LICENSE'):
                     sources.append(str(path.relative_to(ROOT)))
+        sources.extend(['tools/reference-benchmark/event_intervals.py', 'tools/reference-benchmark/test_event_intervals.py', 'tools/reference-benchmark/event-intervals.example.synthetic.json', 'tools/reference-benchmark/EVENT_INTERVALS.md'])
         sources.extend(['skills/motion-film-director/references/motion-elements.md', 'skills/motion-film-director/scripts/test-audio-timeline.mjs', 'skills/motion-film-director/references/knowledge-decision-example/index.json', 'skills/motion-film-director/references/knowledge-decision-example/cases/plan.json'])
         sources.extend(subprocess.check_output(['git', 'diff', '--name-only'], cwd=ROOT).decode().splitlines())
         run(['git', 'add', '--', *sources], env=env)
@@ -35,7 +36,7 @@ def main():
             for name in names:
                 rel = name.removeprefix('motion-film-director/')
                 if rel in {'runtime-source.json', 'manifest.json'}: continue
-                source = ROOT / ('engine/' + rel.removeprefix('runtime/') if rel.startswith('runtime/') else 'LICENSE' if rel == 'LICENSE' else 'skills/motion-film-director/' + rel)
+                source = ROOT / ('tools/reference-benchmark/' + rel.removeprefix('runtime/review-tools/') if rel.startswith('runtime/review-tools/') else 'engine/' + rel.removeprefix('runtime/') if rel.startswith('runtime/') else 'LICENSE' if rel == 'LICENSE' else 'skills/motion-film-director/' + rel)
                 assert z.read(name) == source.read_bytes(), 'Stale packaged source: ' + name
             default_kb = json.loads(z.read('motion-film-director/research/video-knowledge/index.json'))
             assert all(default_kb[key] == [] for key in ('cases', 'techniques', 'legacy'))
@@ -51,6 +52,32 @@ def main():
         tests = sorted(elements.glob('test/*.test.mjs'))
         assert tests, 'Portable motion-elements tests missing'
         run(['node', '--test', *map(str, tests)])
+        query_cli = elements / 'scripts/query-catalog.mjs'
+        listed = json.loads(subprocess.check_output(['node', str(query_cli), 'list']))
+        assert listed['total'] == 13 and len(listed['results']) == 13
+        empty = json.loads(subprocess.check_output(['node', str(query_cli), 'find', '--text', 'no-such-mechanism-29461']))
+        assert empty['total'] == 0 and empty['results'] == []
+        review = skill / 'runtime/review-tools'
+        run(['python3', str(review / 'test_event_intervals.py')])
+        fixture_spec = importlib.util.spec_from_file_location('portable_interval_fixture', review / 'test_event_intervals.py')
+        fixture_module = importlib.util.module_from_spec(fixture_spec); fixture_spec.loader.exec_module(fixture_module)
+        fixture_args, fixture_data = fixture_module.make_fixture(temp / 'synthetic-interval-inputs')
+        cli_args = ['python3', str(review / 'event_intervals.py'), 'evaluate']
+        for key, value in fixture_args.items(): cli_args += ['--' + key.replace('_', '-'), str(value)]
+        result_path = temp / 'synthetic-interval-result.json'
+        run([*cli_args, '--out', str(result_path)])
+        receipt = json.loads(result_path.read_text())
+        assert receipt['collection_status'] == 'COLLECTED_NOT_APPROVED'
+        assert receipt['synthetic_notice'] == 'SYNTHETIC_NOT_FILM_EVIDENCE'
+        assert receipt['timing_validation'] == 'BOUND_PROFILE_NOT_REDECODED'
+        bad = subprocess.run([*cli_args, '--unsupported', '--out', str(temp / 'bad-output.json')], capture_output=True)
+        assert bad.returncode == 2 and not (temp / 'bad-output.json').exists()
+        fixture_args['reference_media'].write_bytes(b'changed synthetic identity')
+        stale_path = temp / 'synthetic-stale.json'
+        stale = subprocess.run([*cli_args, '--out', str(stale_path)], capture_output=True)
+        assert stale.returncode == 1 and json.loads(stale_path.read_text())['collection_status'] == 'STALE'
+        assert json.loads(stale_path.read_text())['events'] == []
+        print('Catalog 13/no-match and standalone interval CLI synthetic/unsupported/stale gates passed; no decoding or approval')
         gallery = temp / 'fresh-gallery'
         run(['node', str(elements / 'scripts/render-gallery.mjs'), '--out', str(gallery)])
         movie = gallery / 'motion-elements-gallery.mp4'
