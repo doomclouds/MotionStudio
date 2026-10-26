@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="810" viewBox="0 0 1440 810" role="img" aria-labelledby="title desc">
+<title id="title">MotionStudio — Direct the motion. Keep the evidence.</title><desc id="desc">Original conceptual artwork: luminous motion paths pass through three layers representing source, frames and evidence. This is not a product screenshot or a rendered film.</desc>
+<defs>
+<linearGradient id="bg" x2="1" y2="1"><stop stop-color="#070e1c"/><stop offset=".55" stop-color="#101e37"/><stop offset="1" stop-color="#070c16"/></linearGradient>
+<radialGradient id="halo"><stop stop-color="#597ab5" stop-opacity=".34"/><stop offset="1" stop-color="#253757" stop-opacity="0"/></radialGradient>
+<linearGradient id="glass" x2=".8" y2="1"><stop stop-color="#6684b7" stop-opacity=".16"/><stop offset="1" stop-color="#17253c" stop-opacity=".06"/></linearGradient>
+<linearGradient id="line"><stop stop-color="#7494c2" stop-opacity=".04"/><stop offset=".43" stop-color="#c4daf5"/><stop offset="1" stop-color="#6d8ebf" stop-opacity=".12"/></linearGradient>
+<pattern id="dots" width="32" height="32" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".8" fill="#b0c9ee" opacity=".13"/></pattern>
+</defs>
+<rect width="1440" height="810" rx="24" fill="url(#bg)"/><rect width="1440" height="810" rx="24" fill="url(#dots)"/>
+<ellipse cx="1020" cy="430" rx="590" ry="390" fill="url(#halo)"/>
+<g font-family="Arial, Helvetica, sans-serif">
+<g transform="translate(70 66)" fill="none" stroke="#dbe6f6" stroke-width="2.4"><path d="M0 26V0l13 15L26 0v26"/><path d="M38 1h16M38 13h12M38 25h16" stroke="#7697c9"/></g>
+<text x="147" y="85" fill="#c0ccde" font-size="16" letter-spacing="4">MOTION / ENGINEERING</text>
+<rect x="1170" y="60" width="200" height="37" rx="18.5" fill="#b3d0ff" fill-opacity=".06" stroke="#577091" stroke-opacity=".5"/>
+<circle cx="1193" cy="78.5" r="4" fill="#c5d9f4"/><text x="1210" y="84" font-size="13" fill="#c5d3e7" letter-spacing="1.5">BUILT WITH DOTS</text>
+<text x="66" y="238" fill="#f0f4fa" font-size="100" font-weight="700" letter-spacing="-6">MotionStudio</text>
+<text x="72" y="290" fill="#c4d2e6" font-size="26" letter-spacing=".25">Direct the motion. Keep the evidence.</text>
+<text x="73" y="344" fill="#8196b6" font-size="14" letter-spacing="2.2">NATIVE CANVAS  /  FFMPEG  /  DIRECTOR SKILL</text>
+</g>
+<g fill="url(#glass)" stroke="#a6bfdf" stroke-opacity=".25" stroke-width="1.25">
+<path d="M677 450l266-115 244 141-266 124z"/><path d="M677 503l266-115 244 141-266 124z"/><path d="M677 556l266-115 244 141-266 124z"/>
+</g>
+<g fill="none" stroke="url(#line)">
+<path d="M160 581C409 363 553 714 816 486S1140 373 1326 486" stroke-width="2"/>
+<path d="M160 591C409 373 553 724 816 496S1140 383 1326 496" opacity=".45"/>
+<path d="M160 601C409 383 553 734 816 506S1140 393 1326 506" opacity=".2"/>
+</g>
+<g stroke="#9eb7da" stroke-opacity=".36" fill="none"><path d="M735 479l177-78 176 99-177 80z"/><path d="M765 479l147-65 146 84-147 67z" stroke-dasharray="3 6"/><path d="M944 335v371" stroke-dasharray="3 8"/><path d="M921 600v106" stroke-dasharray="3 8"/></g>
+<g fill="#dbe8fa"><circle cx="816" cy="486" r="5"/><circle cx="1074" cy="415" r="3"/><circle cx="483" cy="558" r="3"/></g>
+<g font-family="Arial, Helvetica, sans-serif" font-size="12" letter-spacing="2"><text x="1212" y="480" fill="#b5c8e3">01 / SOURCE</text><text x="1212" y="533" fill="#8fa8ca">02 / FRAMES</text><text x="1212" y="586" fill="#728caf">03 / EVIDENCE</text></g>
+<path d="M70 723h1300" stroke="#819bc0" stroke-opacity=".2"/>
+<g font-family="Arial, Helvetica, sans-serif" font-size="12" letter-spacing="2"><text x="72" y="759" fill="#8fa4c2">A CODE-FIRST MOTION PICTURE TOOLKIT</text><text x="1130" y="759" fill="#627c9e">CONCEPT ART / 001</text></g>
+</svg>

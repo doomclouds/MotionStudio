@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "kind": "technique",
+  "id": "tech-new-mechanism",
+  "revision": 1,
+  "title": "新机制名称",
+  "status": "hypothesis",
+  "tags": [],
+  "claim_type": "inferred",
+  "hypothesis": "待提出可推翻的解释。",
+  "evidence": [],
+  "applies_when": "待限定",
+  "limits": "待限定",
+  "counterexample": "待寻找反例",
+  "falsification_test": "待设计实际测试",
+  "validation": {
+    "state": "not-tested-in-transfer",
+    "results": []
+  },
+  "rule_level": "candidate",
+  "revision_note": "模板，不是已成立知识。",
+  "supersedes": []
+}

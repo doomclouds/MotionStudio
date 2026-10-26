@@ -1,0 +1,44 @@
+"""Build a portable Skill from tracked source; never writes into the repository."""
+import argparse, hashlib, importlib.util, json, subprocess, zipfile
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+spec = importlib.util.spec_from_file_location('source_policy', ROOT / 'scripts/check-source-tree.py')
+policy = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(policy)
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--output', required=True, type=Path)
+    args = parser.parse_args()
+    out = args.output.expanduser().resolve()
+    if out == ROOT or ROOT in out.parents: parser.error('Output must be outside repository')
+    if out.exists(): parser.error('Refusing to overwrite existing output')
+    names = policy.paths(policy.git('ls-files', '-z'))
+    bad = [name for name in names if policy.forbidden(name)]
+    if bad: raise SystemExit('Generated paths tracked: ' + ', '.join(bad))
+    payload = {}
+    for name in names:
+        if name.startswith('skills/motion-film-director/'):
+            rel = name.removeprefix('skills/motion-film-director/')
+        elif name.startswith('engine/motion-render-core/'):
+            rel = 'runtime/motion-render-core/' + name.removeprefix('engine/motion-render-core/')
+        else: continue
+        source = ROOT / name
+        if source.is_symlink() or not source.is_file(): raise SystemExit('Missing or symlink source: ' + name)
+        payload[rel] = source.read_bytes()
+    required = ['SKILL.md', 'NOTICE.md', 'LICENSES/huashu-motion-MIT.txt', 'runtime/motion-render-core/lib/native.mjs', 'runtime/motion-render-core/LICENSES/napi-rs-canvas-MIT.txt']
+    if any(name not in payload for name in required): raise SystemExit('Required source/license missing')
+    payload['runtime-source.json'] = (json.dumps({'schema': 1, 'mode': 'bundled', 'relativePath': 'runtime/motion-render-core', 'policy': 'Generated snapshot; edit canonical MotionStudio source and rebuild.'}, indent=2)+'\n').encode()
+    manifest = {'schema': 1, 'files': [{'path': name, 'bytes': len(data), 'sha256': hashlib.sha256(data).hexdigest()} for name, data in sorted(payload.items())]}
+    payload['manifest.json'] = (json.dumps(manifest, ensure_ascii=False, indent=2)+'\n').encode()
+    out.parent.mkdir(parents=True, exist_ok=True)
+    with zipfile.ZipFile(out, 'x', compression=zipfile.ZIP_DEFLATED, compresslevel=9) as archive:
+        for name, data in sorted(payload.items()):
+            info = zipfile.ZipInfo('motion-film-director/' + name, (2026, 1, 1, 0, 0, 0))
+            info.compress_type = zipfile.ZIP_DEFLATED
+            info.external_attr = 0o100644 << 16
+            archive.writestr(info, data)
+    print(json.dumps({'output': str(out), 'files': len(payload), 'sha256': hashlib.sha256(out.read_bytes()).hexdigest()}))
+
+if __name__ == '__main__': main()

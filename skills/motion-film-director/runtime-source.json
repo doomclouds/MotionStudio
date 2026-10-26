@@ -1,0 +1,6 @@
+{
+  "schema": 1,
+  "mode": "workspace",
+  "relativePath": "../../engine/motion-render-core",
+  "policy": "Canonical MotionStudio engine; portable bundles generate a snapshot at build time."
+}

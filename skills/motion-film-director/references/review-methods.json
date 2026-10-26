@@ -1,0 +1,171 @@
+{
+  "schema": 1,
+  "policy": "Implementation availability, this-film execution, and artistic acceptance are separate. No numerical taste score.",
+  "methods": [
+    {
+      "id": "decode-census",
+      "select": "always",
+      "implementation": "motion-check",
+      "title": "实际帧数/时长/完整解码",
+      "when": "成片存在即检查；不要由 fps×时长推算帧数",
+      "outputs": "report.frame_census/full_decode 与错误日志",
+      "how_to_read": "退出码0、实际计数、时间戳、全量解码一起核；缺字段不通过",
+      "false_positives": "可解码不代表浏览器能常速播放",
+      "corrective_action_and_retest": "定位错误流/时间窗，修编码后重跑全解码"
+    },
+    {
+      "id": "rgb-change",
+      "select": "always",
+      "implementation": "motion-check",
+      "title": "低清 RGB 帧差与接触表",
+      "when": "先定位节奏/切镜/静止候选再原生复看",
+      "outputs": "motion-energy.csv、时空/空间变化图、contact sheets",
+      "how_to_read": "4Hz 图找时间窗；沿横向平均丢失水平位置；再看原生邻帧",
+      "false_positives": "有意静止不坏，切镜/曝光可高峰；不是光流/注意力，漏单帧短闪",
+      "corrective_action_and_retest": "按候选窗逐帧查原生编码与源帧；改后重测同窗及相邻镜头"
+    },
+    {
+      "id": "audio-engineering",
+      "select": "audio",
+      "implementation": "motion-check",
+      "title": "响度与真峰",
+      "when": "有音轨或尚不确定；最终编码后测",
+      "outputs": "audio_measurements + ebur128 日志",
+      "how_to_read": "记录 LUFS/dBTP/LRA 与目标规范，不自动宣布响度达标",
+      "false_positives": "测量非合听，安全峰值不能证明心跳清晰或音乐合适",
+      "corrective_action_and_retest": "调整混音/掩蔽后编码复测，再实际合听"
+    },
+    {
+      "id": "visual-causal-review",
+      "select": "always",
+      "implementation": "manual",
+      "title": "密集帧与因果/读时/双锚",
+      "when": "所有片；按 brief 写3–5个可观察成功条件",
+      "outputs": "版本hash、时间窗/帧号、原生帧、两固定世界锚轨迹、反证与修复",
+      "how_to_read": "先需求与真实输出后作者解释；检查预备→接触→后果→恢复和目标尺寸读时",
+      "false_positives": "抽帧不等于连续观看；bbox不等于全局相机；正常原作纹理可能被误诊",
+      "corrective_action_and_retest": "同帧邻帧/源片排除误诊；最小机制修复，回归附属物近远景与留出时间"
+    },
+    {
+      "id": "browser-normal-play",
+      "select": "always",
+      "implementation": "manual",
+      "title": "目标播放器常速播放",
+      "when": "最终交付文件；独立于 ffmpeg decode",
+      "outputs": "人工/connector日志：hash、播放器版本、从0到ended、速率1、静音/音量、停顿/掉帧及实际听看人",
+      "how_to_read": "明确连续看了哪些范围；ended仅证明播放状态，不证明有人听了",
+      "false_positives": "静音旧片通过不能覆盖新片；截图/seek不等于全程常速",
+      "corrective_action_and_retest": "检查资源/封装/编码并同设备复播；保留未完成区间"
+    },
+    {
+      "id": "source-tests",
+      "select": "always",
+      "implementation": "manual",
+      "title": "项目源码与时间线回归",
+      "when": "状态驱动动画/图表/字体/事件边界",
+      "outputs": "测试命令、退出码、测试数、source hash、测试范围",
+      "how_to_read": "先读项目 README；运行实际测试，查随机跳时/逆序/中点/结尾/字体/图表投影",
+      "false_positives": "测试一致不等于美观；旧日志不能覆盖源码变动",
+      "corrective_action_and_retest": "最小修复后重跑相关+全套项目回归，不把少量技术夹具当整片通过"
+    },
+    {
+      "id": "claims-proof",
+      "select": "claims",
+      "implementation": "manual",
+      "title": "主张/图表事实",
+      "when": "发布片、产品能力或数据图表",
+      "outputs": "brief主张→可用来源→画面结果→独立验证与授权",
+      "how_to_read": "事实/虚构分清；查数字、轴域、读时及结果是否真的展示",
+      "false_positives": "有出处不代表图表编码正确；有动画不等于能力证据",
+      "corrective_action_and_retest": "更正来源/表述/映射后重跑图表测试并看真实编码"
+    },
+    {
+      "id": "source-window",
+      "select": "reference",
+      "implementation": "local-comparison+manual",
+      "title": "显式配对PTS/解码帧与人工语义对照",
+      "when": "含原片/参考复刻/缓存片段",
+      "outputs": "review_film.py compare: 两文件/源码hash、timebase/真实解码帧、明确时间配对、文案字体差异、录屏限制，可选本地PNG/HTML；许可与语义对应另验",
+      "how_to_read": "逐帧PTS选当前显示帧，不以fps或近似seek猜；声明裁切/字体/文案与相位差，collected仅采集，report重核hash与配对；run不自动调用",
+      "false_positives": "名义同时间不证明动作相位同一；替代字形bbox不等于baseline半径；浏览器录屏卡顿不等于原作easing；静帧不等于常速观看",
+      "corrective_action_and_retest": "先核源身份/时间映射/几何基线/捕获限制，再修画面；同窗、邻窗、留出帧重验，单独保留实际观看与用户反馈"
+    },
+    {
+      "id": "audio-cues",
+      "select": "audio",
+      "implementation": "manual",
+      "title": "BGM/SFX事件职责与合听",
+      "when": "关键动作、心跳、biu、掩蔽、结尾",
+      "outputs": "事件表→有声/有意静默→编码后时间窗→真实合听记录",
+      "how_to_read": "按每个事件核落点和层次，记录实际听了哪个版本",
+      "false_positives": "事件25项不等于25项可听清；波形峰不是音色识别",
+      "corrective_action_and_retest": "调整落点/电平/频段后同窗声画合听，回归相邻音乐句法"
+    },
+    {
+      "id": "native-audio",
+      "select": "audio",
+      "implementation": "explicit-operator",
+      "title": "原生音频模型缺陷听审",
+      "when": "真实授权+预算+凭据均满足后独立操作；默认dry-run",
+      "outputs": "scripts/audio_review.py 的结构化结果；原始音频hash/提取源窗另绑成片hash",
+      "how_to_read": "读取 AUDIO-REVIEW.md；python3 scripts/audio_review.py --audio <PCM16 WAV<=20s> 默认仅预检；不得自动加执行标志",
+      "false_positives": "历史三段10秒成功不覆盖本片；mock/dryrun不是live；模型不是人耳或OWNER审美",
+      "corrective_action_and_retest": "将模型候选回到编码后声画复核；修复后同窗重新授权复验"
+    },
+    {
+      "id": "encode-ssim-psnr",
+      "select": "requested",
+      "implementation": "historical-outside-git",
+      "title": "母版/预览编码对照",
+      "when": "另有母版与预览且需要验证压缩退化",
+      "outputs": "两文件hash、对齐PTS/帧、尺寸/色彩合同、逐窗SSIM/PSNR日志",
+      "how_to_read": "本入口暂不实现；历史实验在仓库外。必须先验证相同内容和帧对齐再比较",
+      "false_positives": "错一帧/缩放/色彩转换可低分；高指标不代表叙事好",
+      "corrective_action_and_retest": "复核对齐后定位细字/运动窗，调整编码并同条件复测"
+    },
+    {
+      "id": "full-frame-anomaly",
+      "select": "requested",
+      "implementation": "historical-outside-git",
+      "title": "全帧异常与源帧hash",
+      "when": "单帧闪动/缓存替换风险且4Hz不够",
+      "outputs": "全帧统计/阈值/候选窗、源帧hash对照",
+      "how_to_read": "本入口不实现历史仓库外扫描；项目逐帧稀疏亮度不冒称全像素检查",
+      "false_positives": "切镜正常高差，低差可以留读；非光敏安全认证",
+      "corrective_action_and_retest": "原生候选+邻帧与源帧复核；修复后全量再扫"
+    },
+    {
+      "id": "optical-flow",
+      "select": "requested",
+      "implementation": "unsupported",
+      "title": "真实光流",
+      "when": "需要物体/相机运动方向时",
+      "outputs": "缺口：未实现",
+      "how_to_read": "不能把 RGB 变化图改名光流",
+      "false_positives": "颜色变化不等于运动向量",
+      "corrective_action_and_retest": "保留未验；可先人工双锚跟踪，不自动安装重依赖"
+    },
+    {
+      "id": "saliency-eye-tracking",
+      "select": "requested",
+      "implementation": "unsupported",
+      "title": "显著性/眼动",
+      "when": "需要注意力证据时",
+      "outputs": "缺口：未实现",
+      "how_to_read": "算法显著性也不等于真实眼动",
+      "false_positives": "中央变化亮不能推出观众看中央",
+      "corrective_action_and_retest": "保留未验，按需求另设计观察研究"
+    },
+    {
+      "id": "owner-approval",
+      "select": "always",
+      "implementation": "manual",
+      "title": "OWNER艺术接受",
+      "when": "最终片需用户接受",
+      "outputs": "用户实际观看版本hash/日期/原话/接受或否决范围",
+      "how_to_read": "仅用户明确反馈；技术与内部意见不能替填",
+      "false_positives": "没有反馈不等于满意；局部喜欢不等于整片接受",
+      "corrective_action_and_retest": "用户否决优先修方向/材料/结构，再申请当前版本反馈"
+    }
+  ]
+}

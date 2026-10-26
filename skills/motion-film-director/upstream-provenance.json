@@ -1,0 +1,69 @@
+{
+  "repository": "https://github.com/alchaincyf/huashu-motion",
+  "commit": "52467f99c602b76ba86d511d37acdfe93fa1e16e",
+  "metadata_version": "0.3.1",
+  "scope": "historical four-document guidance snapshot; the false runtime flags below describe that earlier review only, not the integrated candidate",
+  "files": [
+    {
+      "repository_path": "skills/huashu-motion/SKILL.md",
+      "snapshot_basename": "SKILL.md",
+      "url": "https://raw.githubusercontent.com/alchaincyf/huashu-motion/52467f99c602b76ba86d511d37acdfe93fa1e16e/skills/huashu-motion/SKILL.md",
+      "sha256": "fb114d4dfacbe64a39255e90806958140d7eab4b58fce1de66c07512f93a951f",
+      "local_sha256_verified": true,
+      "historical_git_blob_sha1": "7ee79026ef01f7760c191dbab70dfa15cc351ce6",
+      "historical_tree_match": true
+    },
+    {
+      "repository_path": "skills/huashu-motion/references/director.md",
+      "snapshot_basename": "director.md",
+      "url": "https://raw.githubusercontent.com/alchaincyf/huashu-motion/52467f99c602b76ba86d511d37acdfe93fa1e16e/skills/huashu-motion/references/director.md",
+      "sha256": "f2edb6c10c50e7307efd703e7413c5ab3840ba7acbb65c98a8a3088778502052",
+      "local_sha256_verified": true,
+      "historical_git_blob_sha1": "553613260c751774b69e67218018656b5dad73ba",
+      "historical_tree_match": true
+    },
+    {
+      "repository_path": "skills/huashu-motion/references/music.md",
+      "snapshot_basename": "music.md",
+      "url": "https://raw.githubusercontent.com/alchaincyf/huashu-motion/52467f99c602b76ba86d511d37acdfe93fa1e16e/skills/huashu-motion/references/music.md",
+      "sha256": "4f7a1f475f331fc5474f75d812b0c84ca5e76650d559e277a0c9a43d6e8e545b",
+      "local_sha256_verified": true,
+      "historical_git_blob_sha1": "b3c1efafb0c09453ee7e9c52fa44b63f8fd3ed54",
+      "historical_tree_match": true
+    },
+    {
+      "repository_path": "skills/huashu-motion/references/sound.md",
+      "snapshot_basename": "sound.md",
+      "url": "https://raw.githubusercontent.com/alchaincyf/huashu-motion/52467f99c602b76ba86d511d37acdfe93fa1e16e/skills/huashu-motion/references/sound.md",
+      "sha256": "558aed0984e895c588fbc782ff4001b53d896f099ad7783adbd6b6447099f31e",
+      "local_sha256_verified": true,
+      "historical_git_blob_sha1": "81470225dfff26146b9ea583108c0db33deb8182",
+      "historical_tree_match": true
+    }
+  ],
+  "role": "historical guidance provenance, not runtime dependency",
+  "license_review": {
+    "verified_by": "independent read-only research worker",
+    "date": "2026-10-24",
+    "commit_confirmed": "52467f99c602b76ba86d511d37acdfe93fa1e16e",
+    "license": "MIT",
+    "copyright": "Copyright (c) 2026 Huashu",
+    "license_file": "LICENSES/huashu-motion-MIT.txt",
+    "runtime_imported": false
+  },
+  "runtime_integration": {
+    "module": "runtime/motion-render-core",
+    "provenance": "runtime/motion-render-core/upstream-provenance.json",
+    "reviewed_commit": "52467f99c602b76ba86d511d37acdfe93fa1e16e",
+    "scope": "Historical browser core; moved intact to archive/browser-core-20261024. Not a current runtime dependency.",
+    "validation": "validation/mac6s-20261024",
+    "automatic_upstream_sync": false,
+    "historical": true
+  },
+  "current_runtime": {
+    "backend": "native-canvas",
+    "relativePath": "runtime/motion-render-core",
+    "huashuCodeIncluded": false,
+    "historicalGuidanceAttributionRetained": true
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "motion-render-core",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Native Canvas production renderer for MotionStudio",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "render": "node scripts/render.mjs",
+    "test:native": "node --test test/native.test.mjs"
+  },
+  "dependencies": {
+    "@napi-rs/canvas": "0.1.100"
+  }
+}

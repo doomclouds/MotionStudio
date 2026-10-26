@@ -1,0 +1,5 @@
+{
+  "schema": 1,
+  "policy": "This public toolkit snapshot distributes no project media or font files. Any future asset requires explicit path/digest review and a separately authorized scope change.",
+  "assets": {}
+}

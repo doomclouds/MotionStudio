@@ -1,0 +1,10 @@
+{
+  "backend": "native-canvas",
+  "nodeObserved": "v24.22.1",
+  "canvasPackage": "@napi-rs/canvas",
+  "canvasVersionObserved": "0.1.100",
+  "ffmpeg": "system executable",
+  "runtimeInstall": "external existing installation; not bundled",
+  "verification": "30 PNG frames encoded and ffprobe verified at 320x180/30fps; native tests passed",
+  "limitations": "not cross-platform pixel parity or complete Earshot acceptance"
+}

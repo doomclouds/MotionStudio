@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "kind": "case",
+  "id": "case-new-reference",
+  "revision": 1,
+  "title": "新参考名称",
+  "status": "unverified",
+  "tags": [],
+  "source": {
+    "creator": "待核",
+    "title": "待核",
+    "url": "https://example.org/reference",
+    "media_url": "https://example.org/reference.mp4",
+    "sha256": null,
+    "duration_seconds": null,
+    "rights": "未核验",
+    "access": "尚未获取媒体"
+  },
+  "inspection": {
+    "date": "YYYY-MM-DD",
+    "methods": [],
+    "coverage": "尚未检查",
+    "not_verified": [
+      "全部画面与声音"
+    ]
+  },
+  "observations": [],
+  "interpretations": [],
+  "technique_ids": [],
+  "transfer_boundary": "Placeholder: document permitted transferable relationships and prohibited reuse after checking the actual source and intended use.",
+  "feedback": [],
+  "revision_note": "待按实际参考填写。",
+  "supersedes": [],
+  "unverified_questions": [
+    "先确认作品身份、来源、实际时长与权限。"
+  ]
+}

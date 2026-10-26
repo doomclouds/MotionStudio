@@ -1,0 +1,232 @@
+{
+  "schema_version": 1,
+  "contract": "planning-example-not-runtime-api",
+  "status": "planned",
+  "coordinate_convention": "pixels; x right/y down; affine [a,b,c,d,tx,ty] maps local to world before camera; local_origin is metadata, not an implicit subtraction",
+  "output": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30
+  },
+  "camera_plan": {
+    "safe_frame_xywh": [
+      160,
+      90,
+      1600,
+      900
+    ],
+    "overscan_verified": false,
+    "maximum_view_change": "set from actual shot before generation"
+  },
+  "layers": [
+    {
+      "id": "clean-plate",
+      "kind": "raster",
+      "role": "static-background",
+      "status": "planned",
+      "file": "assets/clean-plate.png",
+      "sha256": null,
+      "pixel_size": [
+        1920,
+        1080
+      ],
+      "local_origin_px": [
+        0,
+        0
+      ],
+      "anchors_local_px": {},
+      "local_to_world": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "draw_order": 0,
+      "camera_group": "world",
+      "extra_parallax": [
+        0,
+        0
+      ],
+      "alpha_required": false,
+      "alpha_measured_range": null,
+      "baked_content": [
+        "static stage",
+        "fixed lighting"
+      ],
+      "allowed_motion": [],
+      "provenance": {
+        "method": "imagegen",
+        "prompt_record": "asset-notes/clean-plate-prompt.txt",
+        "rights_review": "pending"
+      }
+    },
+    {
+      "id": "button",
+      "kind": "raster",
+      "role": "dynamic-object",
+      "status": "planned",
+      "file": "assets/button.png",
+      "sha256": null,
+      "pixel_size": [
+        256,
+        128
+      ],
+      "local_origin_px": [
+        0,
+        0
+      ],
+      "anchors_local_px": {
+        "top": [
+          128,
+          32
+        ]
+      },
+      "local_to_world": [
+        1,
+        0,
+        0,
+        1,
+        832,
+        668
+      ],
+      "draw_order": 10,
+      "camera_group": "world",
+      "extra_parallax": [
+        0,
+        0
+      ],
+      "alpha_required": true,
+      "alpha_measured_range": null,
+      "baked_content": [],
+      "allowed_motion": [
+        "translate"
+      ],
+      "provenance": {
+        "method": "imagegen",
+        "prompt_record": "asset-notes/button-prompt.txt",
+        "rights_review": "pending"
+      }
+    },
+    {
+      "id": "actor",
+      "kind": "native",
+      "role": "independent-actor",
+      "status": "planned",
+      "file": null,
+      "sha256": null,
+      "pixel_size": [
+        32,
+        20
+      ],
+      "local_origin_px": [
+        0,
+        0
+      ],
+      "anchors_local_px": {
+        "feet": [
+          16,
+          20
+        ]
+      },
+      "local_to_world": [
+        1,
+        0,
+        0,
+        1,
+        944,
+        680
+      ],
+      "draw_order": 20,
+      "camera_group": "world",
+      "extra_parallax": [
+        0,
+        0
+      ],
+      "alpha_required": true,
+      "alpha_measured_range": null,
+      "baked_content": [],
+      "allowed_motion": [],
+      "provenance": {
+        "method": "native-canvas",
+        "prompt_record": null,
+        "rights_review": "pending"
+      }
+    },
+    {
+      "id": "foreground",
+      "kind": "raster",
+      "role": "occluder",
+      "status": "planned",
+      "file": "assets/foreground.png",
+      "sha256": null,
+      "pixel_size": [
+        1920,
+        1080
+      ],
+      "local_origin_px": [
+        0,
+        0
+      ],
+      "anchors_local_px": {},
+      "local_to_world": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "draw_order": 30,
+      "camera_group": "world",
+      "extra_parallax": [
+        0,
+        0
+      ],
+      "alpha_required": true,
+      "alpha_measured_range": null,
+      "baked_content": [],
+      "allowed_motion": [],
+      "provenance": {
+        "method": "imagegen",
+        "prompt_record": "asset-notes/foreground-prompt.txt",
+        "rights_review": "pending"
+      }
+    }
+  ],
+  "clean_plate_excludes": [
+    "button",
+    "actor",
+    "foreground"
+  ],
+  "contacts": [
+    {
+      "id": "first-press",
+      "actor": "actor",
+      "actor_anchor": "feet",
+      "target": "button",
+      "target_anchor": "top",
+      "phase": "contact-pose-only",
+      "event_time_seconds": null,
+      "effect": "button depresses only after contact; UI updates from same state",
+      "sfx_event": "press",
+      "sfx_time_authority": "actual rendered contact frame"
+    }
+  ],
+  "evidence": {
+    "native_frames": [],
+    "alpha_and_dedup_review": "not-run",
+    "change_region_regression": "not-run",
+    "fresh_output_review": "not-run",
+    "normal_speed_viewing": "not-run",
+    "actual_listening": "not-run",
+    "clean_restore": "not-run",
+    "owner_acceptance": "not-requested"
+  },
+  "notes": [
+    "All dimensions/positions are illustrative planning values, not measured assets.",
+    "No PNGs are bundled. Fill actual relative file/hash/size/alpha/source before rendering.",
+    "Texture resolution is distinct from output resolution; no true3D claim."
+  ]
+}
