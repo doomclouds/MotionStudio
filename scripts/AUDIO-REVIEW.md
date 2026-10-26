@@ -84,7 +84,11 @@ Snapshot checked 2026-10-25: Beijing input ¥0.8/million tokens, output
 The reservation includes twice that audio estimate, UTF-8 prompt bytes plus
 512 framing tokens and 2,058 output tokens. This is conservative budgeting,
 **not a provider-enforced billing cap or a guarantee about tokenization**.
-Thinking is disabled and `max_tokens=2048` limits the non-thinking answer.
+The request disables thinking with top-level `reasoning_effort="none"` for
+Qwen3.8-Omni, not the older `enable_thinking` field; no `thinking_budget` is
+sent. `max_tokens=2048` is unchanged. This request contract is offline-tested,
+not live-verified. Cost uses total `completion_tokens` without adding nested
+reasoning tokens again.
 Total local budget is >0 and ≤¥0.10. Actual usage is priced without assuming
 cache discounts, so the report is an estimate rather than an invoice.
 
@@ -110,6 +114,7 @@ excerpts, even if all return valid model critiques.
 ## Primary sources checked
 
 - [Official model and Beijing default endpoint](https://www.qianwenai.com/models/qwen3.8-omni-flash)
+- [Qwen3.8 thinking controls](https://help.aliyun.cn/zh/model-studio/qwen-omni)
 - [Native audio, Base64 and token conversion](https://help.aliyun.com/en/model-studio/qwen-omni)
 - [Current Beijing pricing](https://help.aliyun.com/zh/model-studio/model-pricing)
 - [Chat endpoint migration, thinking and max_tokens](https://help.aliyun.com/zh/model-studio/qwen-api-via-openai-chat-completions)

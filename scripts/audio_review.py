@@ -112,7 +112,7 @@ def request_review(raw, base, key):
     payload = {'model': MODEL, 'messages': [{'role': 'user', 'content': [
         {'type': 'text', 'text': PROMPT},
         {'type': 'input_audio', 'input_audio': {'data': 'data:;base64,' + base64.b64encode(raw).decode('ascii'), 'format': 'wav'}}]}],
-        'modalities': ['text'], 'enable_thinking': False, 'max_tokens': MAX_OUTPUT,
+        'modalities': ['text'], 'reasoning_effort': 'none', 'max_tokens': MAX_OUTPUT,
         'stream': True, 'stream_options': {'include_usage': True}}
     req = urllib.request.Request(endpoint(base) + '/chat/completions',
         data=json.dumps(payload).encode(), headers={'Authorization': 'Bearer ' + key, 'Content-Type': 'application/json'})

@@ -108,7 +108,13 @@ class AudioReviewTests(unittest.TestCase):
         class MockOpener:
             def open(inner, req, timeout):
                 payload = json.loads(req.data)
-                self.assertFalse(payload['enable_thinking'])
+                self.assertEqual(payload['model'], 'qwen3.8-omni-flash')
+                self.assertEqual(payload['reasoning_effort'], 'none')
+                self.assertNotIn('enable_thinking', payload)
+                self.assertNotIn('thinking_budget', payload)
+                self.assertEqual(payload['modalities'], ['text'])
+                self.assertTrue(payload['stream'])
+                self.assertEqual(payload['stream_options'], {'include_usage': True})
                 self.assertEqual(payload['max_tokens'], a.MAX_OUTPUT)
                 self.assertEqual(payload['messages'][0]['content'][1]['type'], 'input_audio')
                 self.assertEqual(req.full_url, a.BASE_URL + '/chat/completions')
@@ -179,6 +185,12 @@ class AudioReviewTests(unittest.TestCase):
     def test_redirect_handler_refuses(self):
         with self.assertRaises(a.ReviewError):
             a.NoRedirect().redirect_request(None, None, 302, '', {}, 'https://evil.example')
+    def test_usage_cost_counts_reasoning_within_completion_total_once(self):
+        tokens, value = a.usage_cost({
+            'prompt_tokens': 1_000_000, 'completion_tokens': 1_000_000,
+            'completion_tokens_details': {'reasoning_tokens': 400_000}})
+        self.assertEqual(tokens, {'prompt_tokens': 1_000_000, 'completion_tokens': 1_000_000})
+        self.assertEqual(value, 3.5)
     def test_usage_cost_does_not_assume_cached_discount(self):
         _, value = a.usage_cost({'prompt_tokens': 1_000_000, 'completion_tokens': 1_000_000})
         self.assertEqual(value, 3.5)
