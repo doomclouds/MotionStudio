@@ -415,9 +415,9 @@ def validate_output_policy(out, script_path=__file__):
         require(check.returncode==0,'Inside-repository output must already be Git-ignored')
 
 
-def write_fresh_json(out, result):
-    """Complete/fsync a sibling temp then atomically publish with no overwrite."""
-    payload=json.dumps(result,ensure_ascii=True,indent=2,allow_nan=False)+'\n'
+def write_fresh_text(out, payload):
+    """Complete/fsync text in a sibling temp; atomically publish without overwrite."""
+    require(isinstance(payload,str),'Text payload required')
     fd,name=tempfile.mkstemp(prefix='.event-interval-',suffix='.tmp',dir=out.parent)
     try:
         with os.fdopen(fd,'w',encoding='utf-8') as stream:
@@ -427,6 +427,10 @@ def write_fresh_json(out, result):
         os.link(name,out)
     finally:
         os.unlink(name)
+
+
+def write_fresh_json(out, result):
+    write_fresh_text(out,json.dumps(result,ensure_ascii=True,indent=2,allow_nan=False)+'\n')
 
 
 def main(argv=None):

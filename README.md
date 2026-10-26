@@ -16,11 +16,11 @@ MotionStudio 把可编辑的制作过程，留在每一帧背后。
 <img alt="Built with Dots" src="https://img.shields.io/badge/Built%20with-Dots-111111" />
 <a href="#许可与素材"><img alt="License: MIT; third-party materials retain their own terms" src="https://img.shields.io/badge/License-MIT-blue" /></a>
 
-[快速开始](#快速开始) · [工作方式](#工作方式) · [开发中的审查工具](#开发中的审查工具) · [项目地图](#项目地图)
+[快速开始](#快速开始) · [工作方式](#工作方式) · [动效积木与配方](#动效积木与配方) · [声音与证据](#声音与证据) · [开发中的审查工具](#开发中的审查工具) · [项目地图](#项目地图)
 
 </div>
 
-> **正在 `dev` 开发。** `main` 保留稳定的原生渲染核心与导演 Skill；新的视听对照、内容证据校验在 [`dev`](https://github.com/doomclouds/MotionStudio/tree/dev)。上方为原创概念图，不是软件界面或成片截图。
+> **正在 `dev` 开发。** `main` 保留稳定的原生渲染核心与导演 Skill；动效基础库、声音编辑与视听证据工具在 [`dev`](https://github.com/doomclouds/MotionStudio/tree/dev)。上方为原创概念图，不是软件界面或成片截图。
 
 ## 不止生成画面，更要掌握制作过程
 
@@ -41,7 +41,7 @@ MotionStudio 是一个**源码优先的影片制作工具集**，不是时间轴
 
 ### 02 · 生产链轻量
 
-Node.js + Native Canvas 输出 PNG 帧，再由 FFmpeg 编码。生产核心不依赖浏览器、CDP 或 GSAP。
+Node.js + Native Canvas 默认输出 PNG 帧，再由 FFmpeg 编码；可选顺序分块 PNG 流。生产核心不依赖浏览器、CDP 或 GSAP。
 
 </td>
 <td width="33%" valign="top">
@@ -107,11 +107,35 @@ python3 scripts/build-skill.py \
   --output /absolute/path/outside-repository/motion-film-director.zip
 ```
 
-请在已提交、干净的恢复目录中构建。打包器以 Git 索引列出的 Skill 和核心源码为范围，读取当前文件字节，加入原生 runtime 快照及校验清单。新建但未进入索引的文件不会自动进入包。
+请在已提交、干净的恢复目录中构建。打包器以 Git 索引列出的 Skill 和核心源码为范围，读取当前文件字节，加入 render、timeline、audio、elements 四个 runtime 快照、独立 review-tools 及校验清单。新建但未进入索引的文件不会自动进入包。
 
-可移植 Skill **不包含完整仓库中的视听对照与审查 CLI**。法律说明及依赖署名必须随实际分发内容保留。
+可移植 Skill 包含标准库实现的事件区间 sidecar，**不包含完整的 NumPy / SciPy 视听 benchmark**；使用 sidecar 时仍须显式提供已有 profile、媒体与证据。包内不附带项目媒体、字体、Canvas 原生依赖或 FFmpeg 二进制，须自行准备并核对许可。法律说明及依赖署名必须随实际分发内容保留。
 
 </details>
+
+## 动效积木与配方
+
+**先选动作，再组织镜头。** [`Motion Elements`](https://github.com/doomclouds/MotionStudio/tree/dev/engine/motion-elements) 提供可组合的变换、错峰、转场、路径拖尾、局部揭示与固定片块；配方包括错位卡片重组、焦点接力、片块回归与署名揭示，完整条目与数量以 catalog CLI 输出为准。配方复用已有机制，不把参数变体算作新效果。
+
+全部仍为 **`experimental`**。每个条目附适用条件、反例与验证状态；纯状态按绝对时间求值，Canvas 适配负责绘制，不是完整 NLE，也不代表已获艺术认可。[目录检索 CLI](https://github.com/doomclouds/MotionStudio/blob/dev/engine/motion-elements/scripts/query-catalog.mjs) 支持 `list / find / show`，只筛选元数据，不自动推荐、不执行示例。
+
+在 `dev` 分支的仓库根目录，先看看现有配方（仅需 Node.js ≥ 24）：
+
+```bash
+node engine/motion-elements/scripts/query-catalog.mjs list --kind recipe
+```
+
+## 声音与证据
+
+**声音也能编辑，判断仍需听见。** [Timeline Core](https://github.com/doomclouds/MotionStudio/tree/dev/engine/motion-timeline-core) 管理有理数时间、裁剪／拆分／移动、暂停续播与声部路由；[Audio Core](https://github.com/doomclouds/MotionStudio/tree/dev/engine/motion-audio-core) 执行本地混音、增益／淡变／自动化，并检查编码后的声音。它不是 DAW，不含自动均衡、压缩或 ducking，更不把技术测量当成听审。
+
+[事件区间 sidecar](https://github.com/doomclouds/MotionStudio/blob/dev/tools/reference-benchmark/EVENT_INTERVALS.md) 在显式事件对应和同一证据层内计算 lag／跨片 shift 区间，保留缺失、歧义与复查窗。它独立于现有 benchmark 报告，仅用 Python 标准库；不解码、不识别事件、不自动判断音画同步或艺术质量。 [静态 HTML / SVG 报告](https://github.com/doomclouds/MotionStudio/blob/dev/tools/reference-benchmark/EVENT_INTERVAL_REPORT.md) 将已有 receipt 展开为事件泳道与复查表；它不重新验证媒体、不播放或听审，也不代表浏览器端完整体验已验收。
+
+无需媒体即可查看参数；真正评估时须显式提供双方媒体、已有 profile、注释与证据根目录：
+
+```bash
+python3 tools/reference-benchmark/event_intervals.py evaluate --help
+```
 
 ## 开发中的审查工具
 
@@ -163,9 +187,13 @@ node tools/reference-benchmark/test_report_js.cjs
 | 入口 | 内容 | 分支 |
 | :--- | :--- | :--- |
 | [`engine/motion-render-core/`](engine/motion-render-core/) | 唯一维护的原生渲染核心、夹具与测试 | `main` / `dev` |
+| [`engine/motion-elements/`](https://github.com/doomclouds/MotionStudio/tree/dev/engine/motion-elements) | 动效积木、配方、catalog 检索与合成示例 | `dev` |
+| [`engine/motion-timeline-core/`](https://github.com/doomclouds/MotionStudio/tree/dev/engine/motion-timeline-core) | 有理数时间、音频编辑契约与纯编辑操作 | `dev` |
+| [`engine/motion-audio-core/`](https://github.com/doomclouds/MotionStudio/tree/dev/engine/motion-audio-core) | 本地音频执行、混音与编码后检查 | `dev` |
 | [`skills/motion-film-director/`](skills/motion-film-director/) | 导演工作流、知识参考、渲染入口与权利说明 | `main` / `dev` |
 | [`scripts/build-skill.py`](scripts/build-skill.py) | 可移植 Skill 打包 | `main` / `dev` |
 | [`tools/reference-benchmark/`](https://github.com/doomclouds/MotionStudio/tree/dev/tools/reference-benchmark) | 同格式视听对照、报告与内容证据校验 | `dev` |
+| [`tools/reference-benchmark/event_intervals.py`](https://github.com/doomclouds/MotionStudio/blob/dev/tools/reference-benchmark/event_intervals.py) | 独立事件区间 sidecar、证据绑定与复查窗 | `dev` |
 | [`scripts/review_film.py`](https://github.com/doomclouds/MotionStudio/blob/dev/scripts/review_film.py) | 引导式自审计划与本地技术检查 | `dev` |
 
 项目影片工程、私有研究库、素材索引与评审记录不在此公开工具集内。原始私有工作区保留不动；本仓库可直接运行的是上述技术夹具，不宣称发布全部影片项目。详见 [SOURCE-SCOPE.md](SOURCE-SCOPE.md)。

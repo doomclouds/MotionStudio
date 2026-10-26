@@ -166,6 +166,17 @@
       "how_to_read": "仅用户明确反馈；技术与内部意见不能替填",
       "false_positives": "没有反馈不等于满意；局部喜欢不等于整片接受",
       "corrective_action_and_retest": "用户否决优先修方向/材料/结构，再申请当前版本反馈"
+    },
+    {
+      "id": "event-interval-report",
+      "select": "explicit",
+      "implementation": "manual-local-sidecar",
+      "title": "事件区间静态对比（按需本地工具）",
+      "when": "已有双方profile与显式annotations并生成绑定receipt，需要复查事件差异时；缺输入先收集，不补零，不默认每片运行。",
+      "outputs": "静态HTML/内嵌SVG；来源仅声明，renderer不重验媒体或艺术。",
+      "how_to_read": "四lane原始时间不自动对齐；unknown/ambiguous/planned保留；区间不是统计置信度。参见references/motion-elements.md视听事件复查及runtime/review-tools/EVENT_INTERVAL_REPORT.md。",
+      "false_positives": "COLLECTED_NOT_APPROVED不是同步通过、实际听审或素材授权。",
+      "corrective_action_and_retest": "依review windows回看显式证据并修注释/重新生成receipt；不得改hash掩盖stale。"
     }
   ]
 }

@@ -19,7 +19,7 @@ def main():
             for path in (ROOT / 'engine' / core).rglob('*'):
                 if path.is_file() and (path.suffix in {'.mjs', '.md', '.json', '.html'} or path.name == 'LICENSE'):
                     sources.append(str(path.relative_to(ROOT)))
-        sources.extend(['tools/reference-benchmark/event_intervals.py', 'tools/reference-benchmark/test_event_intervals.py', 'tools/reference-benchmark/event-intervals.example.synthetic.json', 'tools/reference-benchmark/EVENT_INTERVALS.md'])
+        sources.extend(['tools/reference-benchmark/event_intervals.py', 'tools/reference-benchmark/test_event_intervals.py', 'tools/reference-benchmark/event-intervals.example.synthetic.json', 'tools/reference-benchmark/EVENT_INTERVALS.md', 'tools/reference-benchmark/event_interval_report.py', 'tools/reference-benchmark/test_event_interval_report.py', 'tools/reference-benchmark/EVENT_INTERVAL_REPORT.md'])
         sources.extend(['skills/motion-film-director/references/motion-elements.md', 'skills/motion-film-director/scripts/test-audio-timeline.mjs', 'skills/motion-film-director/references/knowledge-decision-example/index.json', 'skills/motion-film-director/references/knowledge-decision-example/cases/plan.json'])
         sources.extend(subprocess.check_output(['git', 'diff', '--name-only'], cwd=ROOT).decode().splitlines())
         run(['git', 'add', '--', *sources], env=env)
@@ -61,6 +61,7 @@ def main():
         assert empty['total'] == 0 and empty['results'] == []
         review = skill / 'runtime/review-tools'
         run(['python3', str(review / 'test_event_intervals.py')])
+        run(['python3', str(review / 'test_event_interval_report.py')])
         fixture_spec = importlib.util.spec_from_file_location('portable_interval_fixture', review / 'test_event_intervals.py')
         fixture_module = importlib.util.module_from_spec(fixture_spec); fixture_spec.loader.exec_module(fixture_module)
         fixture_args, fixture_data = fixture_module.make_fixture(temp / 'synthetic-interval-inputs')
@@ -72,6 +73,10 @@ def main():
         assert receipt['collection_status'] == 'COLLECTED_NOT_APPROVED'
         assert receipt['synthetic_notice'] == 'SYNTHETIC_NOT_FILM_EVIDENCE'
         assert receipt['timing_validation'] == 'BOUND_PROFILE_NOT_REDECODED'
+        html_path = temp / 'synthetic-interval-report.html'
+        run(['python3', str(review / 'event_interval_report.py'), 'render', '--receipt', str(result_path), '--out', str(html_path)])
+        html = html_path.read_text()
+        assert '<svg' in html and '<html' in html and '<script' not in html
         bad = subprocess.run([*cli_args, '--unsupported', '--out', str(temp / 'bad-output.json')], capture_output=True)
         assert bad.returncode == 2 and not (temp / 'bad-output.json').exists()
         fixture_args['reference_media'].write_bytes(b'changed synthetic identity')

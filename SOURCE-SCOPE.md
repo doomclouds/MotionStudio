@@ -7,7 +7,7 @@ This is a deliberately narrow **toolkit source snapshot**, not a publication of 
 - Native Canvas rendering core, bounded local audio edit/mix core, shared rational audio-timeline contract, small original technical fixtures, and synthetic tests. Video clip editing remains deferred.
 - A reusable motion-elements package: pure time-sampled actions, transitions, layouts and recipes, static metadata, synthetic example source and regression tests. Generated previews remain outside Git. These elements do not turn the audio timeline into a video NLE or establish artistic approval.
 - General director guidance and reusable authoring/review helpers.
-- Source packaging and source-boundary checks. Portable review-tools includes only the standalone stdlib event-interval arithmetic module, its synthetic example/tests, under the root MIT LICENSE; the full profile-generating reference benchmark and its numerical dependencies remain repository-only.
+- Source packaging and source-boundary checks. Portable review-tools includes only the standalone stdlib event-interval arithmetic and static receipt-report modules, their documentation and synthetic example/tests, under the root MIT LICENSE; the full profile-generating reference benchmark and its numerical dependencies remain repository-only.
 - On `dev`: generic reference-benchmark and content-review tools, schemas, and explicitly synthetic examples. These tools require user-supplied, authorized local media; no private films or observations are bundled.
 - Applicable upstream copyright, license, provenance and rights notices; original documentation illustrations.
 

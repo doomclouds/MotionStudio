@@ -48,7 +48,7 @@ python3 -m unittest discover -s runtime/review-tools -p test_event_intervals.py 
 
 必须显式提供双方媒体、外部已有 profile、注释和证据根目录。profile 生成仍需仓库的完整 reference-benchmark 工作流；sidecar **不解码视频、不听声音、不检测事件、不生成 profile**，只核对绑定并做已声明事件的区间算术。合成演示的 bytes 故意不是媒体，不算影片证据。
 
-成功仅 `COLLECTED_NOT_APPROVED`，时间验证仅 `BOUND_PROFILE_NOT_REDECODED`。`STALE/MISSING/BLOCKED` 是失败收据，无测量结果；未知、歧义、计划不能变成实测零值。区间差不是统计置信区间，含零不代表同步通过。先按 review actions/windows 回看原始证据，再作人工判断；首版无 HTML、不改旧 benchmark schema，不提供自动艺术评分或通过门。
+成功仅 `COLLECTED_NOT_APPROVED`，时间验证仅 `BOUND_PROFILE_NOT_REDECODED`。`STALE/MISSING/BLOCKED` 是失败收据，无测量结果；未知、歧义、计划不能变成实测零值。区间差不是统计置信区间，含零不代表同步通过。先按 review actions/windows 回看原始证据，再作人工判断；算术 sidecar 不生成 HTML、不改旧 benchmark schema，不提供自动艺术评分或通过门。
 
 ## 时间、坐标和转场边界
 
@@ -148,3 +148,9 @@ node engine/motion-elements/scripts/render-gallery.mjs --out /tmp/motion-signatu
 可移植构建须验证四个相邻包、目录与许可齐全，解包到新目录后运行元素测试和 Gallery；不能只检 ZIP 文件存在。旧音频入口和渲染默认保持不变。Gallery 技术成功只证明例子可运行，不证明任意影片的节奏或美学已过审。
 
 仍需执行[动作与接触门](motion.md)、[混合美术流程](hybrid-art-workflow.md)和[有引导的自审](guided-self-review.md)。基础库降低重复编码成本，不替代导演判断。
+
+## 已声明事件的静态可视化（按需，不默认强跑）
+
+已有双方外部 profile、annotations、证据绑定并生成事件 receipt，需要检查复刻差异时，可用 `runtime/review-tools/event_interval_report.py render --receipt /local/receipt.json --out /local/new-report.html`；仓库入口替换为 `tools/reference-benchmark/`。详细字段与合成示例见同目录 `EVENT_INTERVAL_REPORT.md`。没有这些输入时先记录缺失，不虚构事件或把工具当自动听审。
+
+报告是静态 HTML 内嵌 SVG，四条 lane 保留各自原始时间，不自动对齐。unknown、ambiguous、planned 各自显示，不擅选候选或补零；区间为算术包络，不是统计置信度。renderer 只读 receipt，不重新打开媒体、验证旧证据或认证听看，不提供艺术评分。HTML/SVG生成与结构测试通过，不等于完整浏览器交互、常速播放或听觉审核已完成。输入与报告保持仓库外；默认公开 KB 仍为空。
