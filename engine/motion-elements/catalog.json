@@ -786,6 +786,67 @@
         "卡片",
         "配方"
       ]
+    },
+    {
+      "id": "recipe.tile-signature",
+      "version": 1,
+      "kind": "recipe",
+      "status": "experimental",
+      "summary": "同一片块轨迹归位后整体落定，并轻揭示署名",
+      "api": "compileTileSignature",
+      "entry": "lib/index.mjs",
+      "example": {
+        "type": "recipe.tile-signature",
+        "version": 1,
+        "sourceId": "source",
+        "signatureId": "signature",
+        "sourceRect": {
+          "x": 0,
+          "y": 0,
+          "width": 641,
+          "height": 359
+        },
+        "grid": "8x5",
+        "seed": "demo",
+        "instanceId": "study",
+        "start": {
+          "n": "0",
+          "d": "1"
+        },
+        "displacement": {
+          "x": 60,
+          "y": 35
+        },
+        "maxRotation": 0.16
+      },
+      "applicability": [
+        "完整栅格图归位后收尾",
+        "短文本卡与简短署名"
+      ],
+      "counterexamples": [
+        "不是字形拆分或物理碰撞",
+        "source像素不可变由caller保证",
+        "固定8秒不允许吞掉归位读图时间"
+      ],
+      "evidence": {
+        "tests": [
+          "test/tile-signature.test.mjs"
+        ],
+        "demo": "examples/tile-signature-scene.mjs",
+        "artisticReview": "NOT_RUN",
+        "originalProductionTransfer": "NOT_RUN"
+      },
+      "knowledgeLinks": [],
+      "tags": [
+        "recipe",
+        "tiles",
+        "signature",
+        "return",
+        "配方",
+        "片块",
+        "署名",
+        "回归"
+      ]
     }
   ]
 }

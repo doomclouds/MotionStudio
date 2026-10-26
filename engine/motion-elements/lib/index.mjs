@@ -13,3 +13,4 @@ export {withLocalReveal} from '../adapters/local-reveal.mjs';
 export {compileTileScatter,sampleTileScatter} from './tiles.mjs';
 export {drawTileScatter} from '../adapters/tiles.mjs';
 export {compileFocusHandoff,sampleFocusHandoff} from './recipes/focus-handoff.mjs';
+export {compileTileSignature,sampleTileSignature} from './recipes/tile-signature.mjs';

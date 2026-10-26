@@ -78,3 +78,14 @@ test('focus handoff two-content 7s demo seeks consistently in both motion modes'
   for(const f of [...frames].reverse()){scene.renderFrame(f);assert.equal(hash(),hashes.get(f));}
  }
 });
+test('tile signature two-source 8s sequence has repeatable normal/reduced and near-home pixels',async()=>{
+ const {createGalleryScene:createStudy,config:cfg}=await import('../examples/tile-signature-scene.mjs');
+ assert.equal(cfg.duration*cfg.fps,240);
+ for(const reducedMotion of [false,true]){
+  const canvas=api.createCanvas(cfg.width,cfg.height),ctx=canvas.getContext('2d'),scene=await createStudy({canvas,ctx,canvasApi:api,config:cfg},{reducedMotion});
+  const hashes=new Map(),frames=[0,29,30,66,76,77,90,111,112,113,120,136,137,151,160,161,169,170,239];
+  const hash=()=>createHash('sha256').update(canvas.toBuffer('image/png')).digest('hex');
+  for(const f of frames){scene.renderFrame(f);hashes.set(f,hash());}
+  for(const f of [...frames].reverse()){scene.renderFrame(f);assert.equal(hash(),hashes.get(f));}
+ }
+});
