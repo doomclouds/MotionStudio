@@ -1,0 +1,21 @@
+{
+  "schema_version": "motionstudio.reference-events/1.0",
+  "inputs": {
+    "reference_sha256": "REPLACE_WITH_ACTUAL_REFERENCE_SHA256",
+    "candidate_sha256": "REPLACE_WITH_ACTUAL_CANDIDATE_SHA256"
+  },
+  "events": [
+    {
+      "label": "合成示例：接触事件；非真实影片观察",
+      "cause": "接触到声音的时差由人工验证；预先填计划不算观察",
+      "source_certainty": "EXAMPLE_NOT_OBSERVED",
+      "expected_lag_s": 0,
+      "reference_visual_s": null,
+      "reference_audio_s": null,
+      "candidate_visual_s": null,
+      "candidate_audio_s": null,
+      "candidate_planned_visual_s": null,
+      "candidate_planned_audio_s": null
+    }
+  ]
+}

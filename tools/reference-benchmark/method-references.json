@@ -1,0 +1,358 @@
+[
+  {
+    "id": "ssim_2004",
+    "title": "Image Quality Assessment: From Error Visibility to Structural Similarity",
+    "authors": [
+      "Zhou Wang",
+      "Alan C. Bovik",
+      "Hamid R. Sheikh",
+      "Eero P. Simoncelli"
+    ],
+    "year": 2004,
+    "venue": "IEEE Transactions on Image Processing",
+    "publication_status": "peer_reviewed_journal",
+    "url": "https://ece.uwaterloo.ca/~z70wang/publications/ssim.pdf",
+    "role": "CPU local luma SSIM map and timeline, with documented preprocessing and valid region.",
+    "limitations": [
+      "Requires meaningful spatial/temporal correspondence.",
+      "Not a material, motion, semantic, or artistic acceptance metric."
+    ],
+    "runtime_status": "ADAPTED_LOCAL_BASELINE",
+    "code_license": "NOT_APPLICABLE"
+  },
+  {
+    "id": "lpips_2018",
+    "title": "The Unreasonable Effectiveness of Deep Features as a Perceptual Metric",
+    "authors": [
+      "Richard Zhang",
+      "Phillip Isola",
+      "Alexei A. Efros",
+      "Eli Shechtman",
+      "Oliver Wang"
+    ],
+    "year": 2018,
+    "venue": "Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)",
+    "publication_status": "peer_reviewed_conference",
+    "url": "https://openaccess.thecvf.com/content_cvpr_2018/html/Zhang_The_Unreasonable_Effectiveness_CVPR_2018_paper.html",
+    "role": "Optional phase-matched frame/ROI perceptual distance; lower is more similar.",
+    "limitations": [
+      "Image/patch similarity does not evaluate temporal event order or aesthetic direction.",
+      "Network, resize, crop, and weights affect comparability."
+    ],
+    "runtime_status": "NOT_RUN",
+    "code_license": "BSD-2-Clause"
+  },
+  {
+    "id": "dists_2022",
+    "title": "Image Quality Assessment: Unifying Structure and Texture Similarity",
+    "authors": [
+      "Keyan Ding",
+      "Kede Ma",
+      "Shiqi Wang",
+      "Eero P. Simoncelli"
+    ],
+    "year": 2022,
+    "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+    "publication_status": "peer_reviewed_journal",
+    "url": "https://scholars.cityu.edu.hk/en/publications/image-quality-assessment-unifying-structure-and-texture-similarit/",
+    "role": "Optional full-image and reviewed material-ROI appearance distance.",
+    "limitations": [
+      "Tolerance to texture resampling can hide exact pattern differences that matter for recreation.",
+      "Mild geometric tolerance must not erase framing errors.",
+      "Appearance features do not identify physical roughness, thickness, normals, transparency, or lighting correctness."
+    ],
+    "runtime_status": "NOT_RUN",
+    "code_license": "MIT"
+  },
+  {
+    "id": "farneback_2003",
+    "title": "Two-Frame Motion Estimation Based on Polynomial Expansion",
+    "authors": [
+      "Gunnar Farnebäck"
+    ],
+    "year": 2003,
+    "venue": "Image Analysis, 13th Scandinavian Conference on Image Analysis (SCIA 2003), LNCS 2749",
+    "publication_status": "peer_reviewed_conference",
+    "url": "https://link.springer.com/chapter/10.1007/3-540-45103-X_50",
+    "role": "Optional CPU dense optical-flow estimator when OpenCV is already present.",
+    "limitations": [
+      "No trained weights, but not currently installed according to implementation agent.",
+      "Two-frame displacement is not 3D motion, camera pose, or artistic fidelity."
+    ],
+    "runtime_status": "NOT_RUN",
+    "code_license": "OpenCV >=4.5 Apache-2.0; older versions BSD-3-Clause, per https://opencv.org/license/"
+  },
+  {
+    "id": "raft_2020",
+    "title": "RAFT: Recurrent All-Pairs Field Transforms for Optical Flow",
+    "authors": [
+      "Zachary Teed",
+      "Jia Deng"
+    ],
+    "year": 2020,
+    "venue": "European Conference on Computer Vision (ECCV 2020)",
+    "publication_status": "peer_reviewed_conference",
+    "url": "https://www.ecva.net/papers/eccv_2020/papers_ECCV/html/3526_ECCV_2020_paper.php",
+    "role": "Optional learned flow maps and within-stream motion descriptors, not a cross-film fidelity score.",
+    "limitations": [
+      "Fast motion, occlusion, blur, textureless surfaces and stylization complicate correspondence.",
+      "Flow measures projected image motion, not volume, physical causality or emotion."
+    ],
+    "runtime_status": "NOT_RUN",
+    "code_license": "BSD-3-Clause"
+  },
+  {
+    "id": "transnetv2_2020",
+    "title": "TransNet V2: An effective deep network architecture for fast shot transition detection",
+    "authors": [
+      "Tomáš Souček",
+      "Jakub Lokoč"
+    ],
+    "year": 2020,
+    "venue": "arXiv:2008.04838",
+    "publication_status": "arxiv_preprint_no_peer_reviewed_venue_established_in_checked_primary_sources",
+    "url": "https://arxiv.org/abs/2008.04838",
+    "role": "Optional per-frame transition probability and proposed shot boundaries for human verification.",
+    "limitations": [
+      "False detections and misses remain possible.",
+      "Do not relabel a coarse frame-difference detector as TransNet.",
+      "Map frame-index results to actual source PTS; validate flashes/fades/rapid cuts."
+    ],
+    "runtime_status": "NOT_RUN",
+    "code_license": "MIT"
+  },
+  {
+    "id": "vbench_2024",
+    "title": "VBench: Comprehensive Benchmark Suite for Video Generative Models",
+    "authors": [
+      "Ziqi Huang",
+      "Yinan He",
+      "Jiashuo Yu",
+      "Fan Zhang",
+      "Chenyang Si",
+      "Yuming Jiang",
+      "Yuanhan Zhang",
+      "Tianxing Wu",
+      "Qingyang Jin",
+      "Nattapol Chanpaisit",
+      "Yaohui Wang",
+      "Xinyuan Chen",
+      "Limin Wang",
+      "Dahua Lin",
+      "Yu Qiao",
+      "Ziwei Liu"
+    ],
+    "year": 2024,
+    "venue": "Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
+    "publication_status": "peer_reviewed_conference",
+    "url": "https://openaccess.thecvf.com/content/CVPR2024/html/Huang_VBench_Comprehensive_Benchmark_Suite_for_Video_Generative_Models_CVPR_2024_paper.html",
+    "role": "Adopt disentangled dashboard dimensions and human checks, not official aggregate score or numerical claims.",
+    "limitations": [
+      "Model/quality/condition evaluation is not paired full-reference reconstruction validation.",
+      "A stable frozen clip can still omit the reference action.",
+      "Current repository includes multiple VBench generations; pin exact method/version if later enabled."
+    ],
+    "runtime_status": "NOT_RUN",
+    "code_license": "Apache-2.0"
+  },
+  {
+    "id": "fvd_2018",
+    "title": "Towards Accurate Generative Models of Video: A New Metric & Challenges",
+    "authors": [
+      "Thomas Unterthiner",
+      "Sjoerd van Steenkiste",
+      "Karol Kurach",
+      "Raphael Marinier",
+      "Marcin Michalski",
+      "Sylvain Gelly"
+    ],
+    "year": 2018,
+    "venue": "arXiv:1812.01717",
+    "publication_status": "arxiv_preprint_no_peer_reviewed_venue_established_in_checked_primary_sources",
+    "url": "https://arxiv.org/abs/1812.01717",
+    "role": "Do not implement as a single-reference/candidate acceptance score.",
+    "limitations": [
+      "Compares distributions of video embeddings; sample size affects estimates.",
+      "One pair cannot support the intended distribution/covariance estimation.",
+      "Overlapping windows are correlated and do not turn one film into a validated independent benchmark dataset.",
+      "A distribution match is not proof of paired event timing, framing, material, or shot fidelity."
+    ],
+    "runtime_status": "NOT_APPLICABLE_SINGLE_CLIP",
+    "code_license": "Apache-2.0 (official implementation file header)"
+  },
+  {
+    "id": "ellis2007beat",
+    "title": "Beat Tracking by Dynamic Programming",
+    "authors": [
+      "Daniel P. W. Ellis"
+    ],
+    "year": 2007,
+    "venue": "Journal of New Music Research",
+    "publication_status": "PUBLISHED_PEER_REVIEWED",
+    "url": "https://www.ee.columbia.edu/~dpwe/pubs/Ellis07-beattrack.pdf",
+    "role": "Plot onset envelope and multiple tempo hypotheses, including half/double-tempo ambiguity. If only spectral flux/autocorrelation are implemented, label Ellis-inspired baseline, not an implementation of the full DP tracker.",
+    "limitations": [
+      "Beat/onset/BPM do not determine mood or musical suitability.",
+      "Global-tempo assumption and metrical ambiguity limit inference.",
+      "Short, quiet, non-pulsed, or SFX-dominant excerpts may have no defensible beat estimate."
+    ],
+    "runtime_status": "ADAPTED_ONSET_AND_TEMPO_ONLY_NO_DP",
+    "code_license": "NOT_VERIFIED"
+  },
+  {
+    "id": "wu2023clap",
+    "title": "Large-Scale Contrastive Language-Audio Pretraining with Feature Fusion and Keyword-to-Caption Augmentation",
+    "authors": [
+      "Yusong Wu",
+      "Ke Chen",
+      "Tianyu Zhang",
+      "Yuchen Hui",
+      "Taylor Berg-Kirkpatrick",
+      "Shlomo Dubnov"
+    ],
+    "year": 2023,
+    "venue": "ICASSP 2023",
+    "publication_status": "PUBLISHED_PEER_REVIEWED",
+    "url": "https://arxiv.org/abs/2211.06687",
+    "role": "Optional time-windowed reference/candidate audio embedding distance and descriptive prompt retrieval. Store checkpoint identity, preprocessing, prompt set, crop length, and retrieval margin.",
+    "limitations": [
+      "Cosine similarity is an embedding proxy, not probability of good music or emotional correctness.",
+      "Prompt wording and checkpoint training domain can influence comparisons.",
+      "No frame-accurate synchronization or stereo object tracking claim follows from audio-text similarity."
+    ],
+    "runtime_status": "NOT_RUN",
+    "code_license": "CC0-1.0"
+  },
+  {
+    "id": "mckee2023viml",
+    "title": "Language-Guided Music Recommendation for Video via Prompt Analogies",
+    "authors": [
+      "Daniel McKee",
+      "Justin Salamon",
+      "Josef Sivic",
+      "Bryan Russell"
+    ],
+    "year": 2023,
+    "venue": "CVPR 2023",
+    "publication_status": "PUBLISHED_PEER_REVIEWED",
+    "url": "https://openaccess.thecvf.com/content/CVPR2023/html/McKee_Language-Guided_Music_Recommendation_for_Video_via_Prompt_Analogies_CVPR_2023_paper.html",
+    "role": "Create an explicit music brief describing intended role, instrumentation, mood, density, and changes, then compare candidates with the same visual segment. Treat text labels as requirements/evidence, not fabricated hearing.",
+    "limitations": [
+      "Retrieval on music-video data is not a calibrated soundtrack-acceptance metric for MotionStudio animation.",
+      "Does not establish that a retrieved track is tasteful or that SFX timing is correct.",
+      "No model implementation or code availability should be implied by adopting the interface idea."
+    ],
+    "runtime_status": "NOT_RUN",
+    "code_license": "NO_OFFICIAL_CODE_RELEASE_FOUND_ON_INSPECTED_PROJECT_PAGE"
+  },
+  {
+    "id": "iashin2024synchformer",
+    "title": "Synchformer: Efficient Synchronization from Sparse Cues",
+    "authors": [
+      "Vladimir Iashin",
+      "Weidi Xie",
+      "Esa Rahtu",
+      "Andrew Zisserman"
+    ],
+    "year": 2024,
+    "venue": "ICASSP 2024",
+    "publication_status": "PUBLISHED_PEER_REVIEWED",
+    "url": "https://www.robots.ox.ac.uk/~vgg/publications/2024/Iashin24a/iashin24a.pdf",
+    "role": "Optional offset-hypothesis plot plus synchronizability/abstention. Cross-check model proposals against source frames and PCM events. Use sparse-cue model, not speech-only SyncNet, for general events.",
+    "limitations": [
+      "Natural-video training does not certify stylized animation or intentionally designed anticipatory sound.",
+      "Global offset is not a per-SFX onset adjudicator or aesthetic score.",
+      "Official example uses positive offset for early audio; MotionStudio audio-minus-visual convention uses positive for late audio. Adapter must convert and test both signs.",
+      "0.64-second segment processing is not a claim of frame-level timing accuracy."
+    ],
+    "runtime_status": "NOT_RUN",
+    "code_license": "MIT"
+  },
+  {
+    "id": "li2021aist",
+    "title": "AI Choreographer: Music Conditioned 3D Dance Generation with AIST++",
+    "authors": [
+      "Ruilong Li",
+      "Shan Yang",
+      "David A. Ross",
+      "Angjoo Kanazawa"
+    ],
+    "year": 2021,
+    "venue": "ICCV 2021",
+    "publication_status": "PUBLISHED_PEER_REVIEWED",
+    "url": "https://openaccess.thecvf.com/content/ICCV2021/papers/Li_AI_Choreographer_Music_Conditioned_3D_Dance_Generation_With_AIST_ICCV_2021_paper.pdf",
+    "role": "Display event-to-beat distances for explicitly selected rhythm-coupled moments, and show whether the reference itself is on-beat or intentionally off-beat.",
+    "limitations": [
+      "Designed for 3D human dance, not every shape motion, camera cut, or sound effect.",
+      "Original sigma=3 frames at 60 fps must not become a universal 3-frame threshold; use seconds and domain-specific tolerances.",
+      "Do not demand a visual event on every music beat; original metric itself is unidirectional.",
+      "Static holds and sparse/offbeat motion must remain valid where intentional."
+    ],
+    "runtime_status": "NOT_RUN",
+    "code_license": "Apache-2.0"
+  },
+  {
+    "id": "sakoe1978dtw",
+    "title": "Dynamic Programming Algorithm Optimization for Spoken Word Recognition",
+    "authors": [
+      "Hiroaki Sakoe",
+      "Seibi Chiba"
+    ],
+    "year": 1978,
+    "venue": "IEEE Transactions on Acoustics, Speech, and Signal Processing",
+    "publication_status": "PUBLISHED_PEER_REVIEWED",
+    "url": "https://ieeexplore.ieee.org/abstract/document/1163055/authors",
+    "role": "Optional inspectable constrained alignment of comparable event/onset or embedding sequences. Preserve raw PTS view and report warp path/local stretch separately.",
+    "limitations": [
+      "Original validation concerns spoken words, not animation fidelity.",
+      "Warping can conceal wrong motion timing or missing events.",
+      "Use a bounded band, monotonic anchors, explicit unmatched events, and raw versus aligned results; never silently optimize away the defect being evaluated."
+    ],
+    "runtime_status": "OPTIONAL_LOCAL_ALGORITHM_NOT_CLAIMED_RUN",
+    "code_license": "NO_ORIGINAL_CODE_RELEASE_ESTABLISHED"
+  },
+  {
+    "id": "kilgour2019fad",
+    "title": "Fréchet Audio Distance: A Reference-Free Metric for Evaluating Music Enhancement Algorithms",
+    "authors": [
+      "Kevin Kilgour",
+      "Mauricio Zuluaga",
+      "Dominik Roblek",
+      "Matthew Sharifi"
+    ],
+    "year": 2019,
+    "venue": "Interspeech 2019",
+    "publication_status": "PUBLISHED_PEER_REVIEWED",
+    "url": "https://www.isca-archive.org/interspeech_2019/kilgour19_interspeech.html",
+    "role": "Reserve for a later, fixed-corpus aggregate study. Do not display FAD as a reference-recreation pair score.",
+    "limitations": [
+      "Reference-free means no paired clean target, not no background reference distribution.",
+      "One reference clip versus one candidate clip is not the paper's evaluation protocol.",
+      "Distribution proximity does not establish matching mood, beat phase, arrangement, SFX identity, or AV synchronization."
+    ],
+    "runtime_status": "NOT_RUN",
+    "code_license": "Apache-2.0"
+  },
+  {
+    "id": "gui2024fad",
+    "title": "Adapting Frechet Audio Distance for Generative Music Evaluation",
+    "authors": [
+      "Azalea Gui",
+      "Hannes Gamper",
+      "Sebastian Braun",
+      "Dimitra Emmanouilidou"
+    ],
+    "year": 2024,
+    "venue": "ICASSP 2024",
+    "publication_status": "PUBLISHED_PEER_REVIEWED",
+    "url": "https://ieeexplore.ieee.org/abstract/document/10446663",
+    "role": "If a future corpus-level dashboard adds FAD, log embedding/checkpoint, reference corpus, excerpt duration, sample count, and uncertainty. Keep soundtrack-fit and synchronization evidence separate.",
+    "limitations": [
+      "Per-song FAD exists, so 'FAD can never score a song' is inaccurate; it is still not a paired reference-fidelity measure.",
+      "The listening study evaluates acoustic/musical quality, not prompt adherence or fit to a specific visual.",
+      "Genre imbalance can shift results; low FAD is not universally better for an intentionally unusual soundtrack."
+    ],
+    "runtime_status": "NOT_RUN",
+    "code_license": "MIT"
+  }
+]

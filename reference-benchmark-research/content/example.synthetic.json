@@ -1,0 +1,198 @@
+{
+  "schema_version": "1.0",
+  "is_synthetic_example": true,
+  "mode": "original",
+  "status": "partial",
+  "assets": [
+    {
+      "id": "v1",
+      "role": "candidate",
+      "path": "SYNTHETIC_NOT_A_REAL_VIDEO",
+      "sha256": "not_applicable_synthetic",
+      "version": "fictional-v1"
+    },
+    {
+      "id": "brief",
+      "role": "brief",
+      "path": "SYNTHETIC_BRIEF",
+      "sha256": "not_applicable_synthetic",
+      "version": "fictional-brief-v1"
+    }
+  ],
+  "targets": [
+    {
+      "id": "t1",
+      "source": "creative_brief",
+      "statement": "示例目标：观众理解蓝方块触碰后使灰圆点亮；短音效强化触发。",
+      "evidence_ids": [
+        "b1"
+      ],
+      "acceptance_rule": "盲测自由复述能指出触发者、结果与依据；实际阈值需预注册，未测试。"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "b1",
+      "asset_id": "brief",
+      "interval": {
+        "start_s": 0,
+        "end_s": 0
+      },
+      "modality": "brief",
+      "provenance": "synthetic",
+      "description": "虚构简报，不是渲染观察。",
+      "locator": "fictional brief §1",
+      "confidence": "unknown",
+      "confidence_reason": "教学示例",
+      "ambiguity": []
+    },
+    {
+      "id": "e1",
+      "asset_id": "v1",
+      "interval": {
+        "start_s": 1.9,
+        "end_s": 2.4
+      },
+      "modality": "visual",
+      "provenance": "synthetic",
+      "description": "虚构观察：圆点先亮，方块后触碰；不代表真实文件。",
+      "locator": "fictional frames only",
+      "confidence": "unknown",
+      "confidence_reason": "未查看或测量真实视频",
+      "ambiguity": [
+        "先亮可能是有意预示"
+      ]
+    },
+    {
+      "id": "e2",
+      "asset_id": "v1",
+      "interval": {
+        "start_s": 2.1,
+        "end_s": 2.2
+      },
+      "modality": "audio",
+      "provenance": "synthetic",
+      "description": "虚构观察：短音发生于方块接触附近。",
+      "locator": "fictional sound only",
+      "confidence": "unknown",
+      "confidence_reason": "未播放真实音轨",
+      "ambiguity": [
+        "声音也可能是配乐重拍"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "light",
+      "asset_id": "v1",
+      "interval": {
+        "start_s": 1.9,
+        "end_s": 2
+      },
+      "epistemic_status": "hypothesized",
+      "actor_ids": [
+        "circle"
+      ],
+      "action": "点亮（纯虚构示例）",
+      "patient_ids": [],
+      "state_before": "灰",
+      "state_after": "亮",
+      "evidence_ids": [
+        "e1"
+      ]
+    },
+    {
+      "id": "touch",
+      "asset_id": "v1",
+      "interval": {
+        "start_s": 2.1,
+        "end_s": 2.2
+      },
+      "epistemic_status": "hypothesized",
+      "actor_ids": [
+        "square"
+      ],
+      "action": "接触（纯虚构示例）",
+      "patient_ids": [
+        "circle"
+      ],
+      "state_before": "分离",
+      "state_after": "接触",
+      "evidence_ids": [
+        "e1"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "from_event": "light",
+      "to_event": "touch",
+      "type": "before",
+      "evidence_ids": [
+        "e1"
+      ],
+      "mechanism_or_rationale": "示例时间先后；不声称因果。",
+      "alternative_explanations": [
+        "有意预示"
+      ],
+      "confidence": "unknown"
+    }
+  ],
+  "issues": [
+    {
+      "id": "i1",
+      "target_id": "t1",
+      "event_ids": [
+        "touch",
+        "light"
+      ],
+      "evidence_ids": [
+        "e1",
+        "e2"
+      ],
+      "difference": "示例中结果先于触发，可能削弱简报期望的因果读法；不是实测结论。",
+      "severity": "uncertain",
+      "cause_hypotheses": [
+        {
+          "claim": "点亮时刻提前可能造成误读",
+          "supporting_evidence_ids": [
+            "e1"
+          ],
+          "alternatives": [
+            "接触线索不清晰",
+            "创作本意为预示"
+          ],
+          "falsification_test": "仅移动点亮时刻，保持美术与声音不变；比较盲测复述。"
+        }
+      ],
+      "suggested_change": "建议另建测试变体使点亮在接触后出现；不自动执行。",
+      "expected_effect": "减少结果先于原因的误读",
+      "regression_risks": [
+        "可能破坏预示性节奏"
+      ],
+      "retest": {
+        "protocol": "冻结基线和新变体；隐藏版本、平衡顺序；先自由复述再问原因；保留不同意见。",
+        "acceptance_rule": "依据预注册规则比较真实观众的触发关系理解，不以像素分判定。",
+        "status": "not_run",
+        "result_evidence_ids": []
+      }
+    }
+  ],
+  "audience_questions": [
+    {
+      "id": "q1",
+      "question": "你认为圆点为什么亮起来？哪一刻支持你的判断？",
+      "target_id": "t1",
+      "type": "explanation",
+      "shown_brief_before_answer": false,
+      "observer_id": "NONE_NOT_TESTED",
+      "answer_verbatim": "",
+      "evidence_ids": [],
+      "interpretation": "not_tested",
+      "confidence": "unknown",
+      "ambiguity_notes": [
+        "无真实参与者回答；不得填入预测性好评"
+      ]
+    }
+  ]
+}

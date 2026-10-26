@@ -1,0 +1,566 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Optional MotionStudio content review v1",
+  "description": "No automatic quality score. Referential integrity and interval ordering require semantic validation.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "is_synthetic_example",
+    "mode",
+    "status",
+    "assets",
+    "targets",
+    "evidence",
+    "events",
+    "relations",
+    "issues",
+    "audience_questions"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "is_synthetic_example": {
+      "type": "boolean"
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "replication",
+        "original"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "not_run",
+        "partial",
+        "reviewed"
+      ]
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "reference",
+              "candidate",
+              "revision",
+              "brief"
+            ]
+          },
+          "path": {
+            "type": "string"
+          },
+          "sha256": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "role",
+          "path",
+          "sha256",
+          "version"
+        ]
+      }
+    },
+    "targets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string",
+            "enum": [
+              "reference_observation",
+              "confirmed_author_intent",
+              "intent_hypothesis",
+              "creative_brief"
+            ]
+          },
+          "statement": {
+            "type": "string"
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "acceptance_rule": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "source",
+          "statement",
+          "evidence_ids",
+          "acceptance_rule"
+        ]
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "asset_id": {
+            "type": "string"
+          },
+          "interval": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "start_s": {
+                "type": "number",
+                "minimum": 0
+              },
+              "end_s": {
+                "type": "number",
+                "minimum": 0
+              }
+            },
+            "required": [
+              "start_s",
+              "end_s"
+            ]
+          },
+          "modality": {
+            "type": "string",
+            "enum": [
+              "visual",
+              "audio",
+              "audiovisual",
+              "brief",
+              "author_statement",
+              "viewer_response"
+            ]
+          },
+          "provenance": {
+            "type": "string",
+            "enum": [
+              "human_observation",
+              "instrument_measurement",
+              "model_inference",
+              "planned",
+              "synthetic"
+            ]
+          },
+          "description": {
+            "type": "string"
+          },
+          "locator": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low",
+              "unknown"
+            ]
+          },
+          "confidence_reason": {
+            "type": "string"
+          },
+          "ambiguity": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "asset_id",
+          "interval",
+          "modality",
+          "provenance",
+          "description",
+          "locator",
+          "confidence",
+          "confidence_reason",
+          "ambiguity"
+        ]
+      }
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "asset_id": {
+            "type": "string"
+          },
+          "interval": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "start_s": {
+                "type": "number",
+                "minimum": 0
+              },
+              "end_s": {
+                "type": "number",
+                "minimum": 0
+              }
+            },
+            "required": [
+              "start_s",
+              "end_s"
+            ]
+          },
+          "epistemic_status": {
+            "type": "string",
+            "enum": [
+              "observed",
+              "planned",
+              "hypothesized",
+              "unknown"
+            ]
+          },
+          "actor_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "action": {
+            "type": "string"
+          },
+          "patient_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "state_before": {
+            "type": "string"
+          },
+          "state_after": {
+            "type": "string"
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "asset_id",
+          "interval",
+          "epistemic_status",
+          "actor_ids",
+          "action",
+          "patient_ids",
+          "state_before",
+          "state_after",
+          "evidence_ids"
+        ]
+      }
+    },
+    "relations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "from_event": {
+            "type": "string"
+          },
+          "to_event": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "before",
+              "after",
+              "overlaps",
+              "same_entity",
+              "hypothesized_causes",
+              "hypothesized_enables",
+              "hypothesized_reaction",
+              "unrelated",
+              "unknown"
+            ]
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "mechanism_or_rationale": {
+            "type": "string"
+          },
+          "alternative_explanations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low",
+              "unknown"
+            ]
+          }
+        },
+        "required": [
+          "from_event",
+          "to_event",
+          "type",
+          "evidence_ids",
+          "mechanism_or_rationale",
+          "alternative_explanations",
+          "confidence"
+        ]
+      }
+    },
+    "issues": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "target_id": {
+            "type": "string"
+          },
+          "event_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "difference": {
+            "type": "string"
+          },
+          "severity": {
+            "type": "string",
+            "enum": [
+              "blocking",
+              "major",
+              "minor",
+              "uncertain"
+            ]
+          },
+          "cause_hypotheses": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "claim": {
+                  "type": "string"
+                },
+                "supporting_evidence_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "alternatives": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "falsification_test": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "claim",
+                "supporting_evidence_ids",
+                "alternatives",
+                "falsification_test"
+              ]
+            }
+          },
+          "suggested_change": {
+            "type": "string"
+          },
+          "expected_effect": {
+            "type": "string"
+          },
+          "regression_risks": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "retest": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "protocol": {
+                "type": "string"
+              },
+              "acceptance_rule": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "not_run",
+                  "improved",
+                  "unchanged",
+                  "regressed",
+                  "inconclusive"
+                ]
+              },
+              "result_evidence_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "protocol",
+              "acceptance_rule",
+              "status",
+              "result_evidence_ids"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "target_id",
+          "event_ids",
+          "evidence_ids",
+          "difference",
+          "severity",
+          "cause_hypotheses",
+          "suggested_change",
+          "expected_effect",
+          "regression_risks",
+          "retest"
+        ]
+      }
+    },
+    "audience_questions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "question": {
+            "type": "string"
+          },
+          "target_id": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "description",
+              "temporal",
+              "explanation",
+              "prediction",
+              "counterfactual",
+              "free_recall"
+            ]
+          },
+          "shown_brief_before_answer": {
+            "type": "boolean"
+          },
+          "observer_id": {
+            "type": "string"
+          },
+          "answer_verbatim": {
+            "type": "string"
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "interpretation": {
+            "type": "string",
+            "enum": [
+              "matches_target",
+              "contradicts_target",
+              "ambiguous",
+              "unknown",
+              "not_tested"
+            ]
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low",
+              "unknown"
+            ]
+          },
+          "ambiguity_notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "question",
+          "target_id",
+          "type",
+          "shown_brief_before_answer",
+          "observer_id",
+          "answer_verbatim",
+          "evidence_ids",
+          "interpretation",
+          "confidence",
+          "ambiguity_notes"
+        ]
+      }
+    }
+  }
+}
