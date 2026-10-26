@@ -9,7 +9,7 @@
   },
   "scripts": {
     "render": "node scripts/render.mjs",
-    "test:native": "node --test test/native.test.mjs"
+    "test:native": "node --test test/native.test.mjs test/stream.test.mjs"
   },
   "dependencies": {
     "@napi-rs/canvas": "0.1.100"
