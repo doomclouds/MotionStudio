@@ -581,6 +581,65 @@
         "originalProductionTransfer": "NOT_RUN"
       },
       "knowledgeLinks": []
+    },
+    {
+      "id": "fragment.fixed-tiles",
+      "version": 1,
+      "kind": "fragment",
+      "status": "experimental",
+      "summary": "固定栅格身份分散与全局时间反射重组",
+      "api": "compileTileScatter",
+      "entry": "lib/index.mjs",
+      "example": {
+        "sourceRect": {
+          "x": 0,
+          "y": 0,
+          "width": 641,
+          "height": 359
+        },
+        "columns": 8,
+        "rows": 5,
+        "seed": "demo",
+        "instanceId": "card",
+        "range": {
+          "start": {
+            "n": "0",
+            "d": "1"
+          },
+          "end": {
+            "n": "3",
+            "d": "1"
+          }
+        },
+        "step": {
+          "n": "1",
+          "d": "50"
+        },
+        "displacement": {
+          "x": 125,
+          "y": 85
+        },
+        "maxRotation": 0.18
+      },
+      "applicability": [
+        "固定图像碎片重组",
+        "完整栅格化文本卡分散"
+      ],
+      "counterexamples": [
+        "不是物理碎裂",
+        "不是字形拆分",
+        "运动期不保证任意父变换下无采样缝",
+        "同对象像素不可变由调用者保证"
+      ],
+      "evidence": {
+        "tests": [
+          "test/tiles.test.mjs"
+        ],
+        "demo": "examples/tiles-scene.mjs",
+        "artisticReview": "NOT_RUN",
+        "originalProductionTransfer": "NOT_RUN"
+      },
+      "knowledgeLinks": []
     }
   ]
 }

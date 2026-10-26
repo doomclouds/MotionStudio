@@ -56,3 +56,14 @@ test('settle and local reveal demo preserves frame timing and seek pixels in bot
   assert.equal(hashes.get(0),hashes.get(120));
  }
 });
+test('tile raster demo seeks identically in clean, debug, reversed and reduced views',async()=>{
+ const {createGalleryScene:createStudy}=await import('../examples/tiles-scene.mjs');
+ for(const reducedMotion of [false,true]){
+  const canvas=api.createCanvas(config.width,config.height),ctx=canvas.getContext('2d'),scene=await createStudy({canvas,ctx,canvasApi:api,config},{reducedMotion});
+  const hashes=new Map(),frames=[0,15,16,43,45,60,100,105,120,135,180,223,224,225,239];
+  const hash=()=>createHash('sha256').update(canvas.toBuffer('image/png')).digest('hex');
+  for(const f of frames){scene.renderFrame(f);hashes.set(f,hash());}
+  for(const f of [...frames].reverse()){scene.renderFrame(f);assert.equal(hash(),hashes.get(f));}
+  scene.renderFrame(239);assert.deepEqual([...ctx.getImageData(225,361,1,1).data],[27,37,49,255]);
+ }
+});

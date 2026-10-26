@@ -7,9 +7,9 @@ import {loadNativeCanvas} from '../../motion-render-core/lib/native.mjs';
 
 const args=process.argv.slice(2);let out,reducedMotion=false,frame,demo='gallery';
 for(let i=0;i<args.length;i++){if(args[i]==='--out')out=args[++i];else if(args[i]==='--reduced-motion')reducedMotion=true;else if(args[i]==='--demo')demo=args[++i];else if(args[i]==='--frame')frame=Number(args[++i]);else throw Error('Unknown argument '+args[i]);}
-if(!['gallery','path','settle-reveal'].includes(demo))throw Error('demo must be gallery, path or settle-reveal');
-const {createGalleryScene,config}=await import(demo==='path'?'../examples/path-scene.mjs':demo==='settle-reveal'?'../examples/settle-reveal-scene.mjs':'../examples/gallery-scene.mjs');
-if(!out)throw Error('Usage: node scripts/render-gallery.mjs --out NEW_DIRECTORY [--frame 0..239] [--reduced-motion] [--demo gallery|path|settle-reveal]');
+if(!['gallery','path','settle-reveal','tiles'].includes(demo))throw Error('demo must be gallery, path, settle-reveal or tiles');
+const {createGalleryScene,config}=await import(demo==='tiles'?'../examples/tiles-scene.mjs':demo==='path'?'../examples/path-scene.mjs':demo==='settle-reveal'?'../examples/settle-reveal-scene.mjs':'../examples/gallery-scene.mjs');
+if(!out)throw Error('Usage: node scripts/render-gallery.mjs --out NEW_DIRECTORY [--frame 0..239] [--reduced-motion] [--demo gallery|path|settle-reveal|tiles]');
 if(frame!==undefined&&(!Number.isSafeInteger(frame)||frame<0||frame>=240))throw Error('frame must be 0..239');
 out=resolve(out);await mkdir(out,{recursive:false});
 const {api,version}=loadNativeCanvas(),canvas=api.createCanvas(config.width,config.height),ctx=canvas.getContext('2d');

@@ -12,7 +12,7 @@
 |构图|多个对象怎样安排空间关系|offset cards、split panels|
 |配方|多个机制怎样服务一个意图|offset reassembly：错位构图→错峰归位|
 
-首批 10 个目录条目之外，第二阶段新增 1 个路径机制（`geometry.polyline-trail`）；路径采样与尾迹是同一机制的配套操作，不拆开凑数。第三阶段再加 1 个对象局部揭示机制，共 12 条；有限收敛残差是基础计算，不额外计作元素。不同幅度、方向和颜色是参数变体，不是新元素；基础数学函数也不凑入动作数量。`stagger` 是编排，不伪装成能单独绘制的画面。
+首批 10 个目录条目之外，第二阶段新增 1 个路径机制（`geometry.polyline-trail`）；路径采样与尾迹是同一机制的配套操作，不拆开凑数。第三阶段再加 1 个对象局部揭示机制，共 12 条；有限收敛残差是基础计算，不额外计作元素。第四阶段增加固定 raster 片块机制，共 13 条；分散与反向重组是同机制的方向，不算两个元素。不同幅度、方向和颜色是参数变体，不是新元素；基础数学函数也不凑入动作数量。`stagger` 是编排，不伪装成能单独绘制的画面。
 
 仓库中的实现唯一维护在 `engine/motion-elements/`。可移植 Skill 将同一源码打包为 `runtime/motion-elements/`，与 `motion-render-core`、`motion-timeline-core` 和 `motion-audio-core` 保持相邻；不要手改生成快照。静态目录为包根 `catalog.json`，公共入口为 `lib/index.mjs`，具体参数以包内 README、目录和实际验证器为准。
 
@@ -55,6 +55,16 @@
 
 示例分别检查卡片位移、足底锚定形变，以及移动图表/带透明洞图标的局部揭示；合成展示不替代真实角色动作或字形阅读审查。残差和 mask API 本身不读取 reduced-motion 偏好。当前示例的 reduced-motion 仅归零残差、将揭示改为中点切换，仍保留卡片基础位移与图表平移/旋转；不能称为全面停止运动或无障碍审查通过。需要更严格静态布局时由项目另外明确策略，保留总时长。
 
+## 固定片块：同源、同身份、全局时间反射
+
+`compileTileScatter` 固定网格、tileId、源裁切 UV、homeRect、中心及带种子的目标；`sampleTileScatter(plan, at, {direction})` 用共享 rational 时间采样；`drawTileScatter` 接受预绘完成的 raster。文字卡先整张栅格化，再切片；这不是 glyph shaping、拆字理解或物理碎裂。
+
+- 调用者在整个机制期间保持 source **同一对象、像素不变**。适配器绑定首次有效 source 对象并检查裁切尺寸，拒绝换对象；但不 clone、不逐帧 hash、不自动检测同一 Canvas 被重绘。冻结 JS 对象不等于冻结像素，不得宣称库自动验证全部内容。
+- 非整除余边用整数边界完整分配；UV、home、tileId 不随帧改变。父矩阵由调用者施加，片围绕各自 home 中心旋转，不重复加原点。不通过扩大裁切/目标宽度或隐藏片块遮盖接缝。
+- `direction:'in'` 反射完整全局时间，再计算 stagger，包含先后顺序；不是逐片局部 `1-q`。所有片精确归零时才用同 source 整图裁切绘制一次；不提前阈值 snap。终态身份、矩阵与覆盖证明仍必需，不能拿整图路径遮掩错片。
+- 精确 home 与整图基线在相同 source、父变换、绘图状态和后端下可做逐像素对照；**运动中的旋转/缩放/透明边缘采样缝不保证消失**。坐标连续不等于屏幕像素差连续，归位邻帧需慢放检查。不承诺跨后端像素一致。
+- 示例两类输入是非整除棋盘/细线/透明孔与整张文本卡；8 秒前半分散、后半反向重组，首 1.5 秒显示身份 debug，之后清洁画面。reduced-motion 使用整图中点出现/消失，保留时段、不执行碎片运动。debug 不替代关闭 overlay 后的图像重建验证。
+
 ## 收录规则：代码和经验各放其位
 
 新机制先作为候选，至少提供以下内容：
@@ -85,6 +95,7 @@ node engine/motion-elements/scripts/render-gallery.mjs --out /tmp/motion-gallery
 node engine/motion-elements/scripts/render-gallery.mjs --out /tmp/motion-gallery-reduced-new --frame 43 --reduced-motion
 node engine/motion-elements/scripts/render-gallery.mjs --out /tmp/motion-path-new --demo path
 node engine/motion-elements/scripts/render-gallery.mjs --out /tmp/motion-settle-reveal-new --demo settle-reveal
+node engine/motion-elements/scripts/render-gallery.mjs --out /tmp/motion-tiles-new --demo tiles
 ```
 
 从已解包 Skill 根目录运行时，把 `engine/` 换成 `runtime/`。父目录须存在、输出目录必须尚不存在；不把生成结果放进源包。首批总览是 8 秒无声合成 Gallery，4 秒演示显式重复一次，不把这个重复展示算成新的动作或作品。路径示例另用 8 秒画面同时展示不等长电路折线与旋转父级下的节点连线两种合成上下文，不是两个新机制。完整参数以包内 README 为准。预览视频、逐帧 PNG、检测报告和临时 HTML 输出到仓库外。Git 仅收代码、静态目录、示例源、测试及许可，不收生成帧或私人作品。

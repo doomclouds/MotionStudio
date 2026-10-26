@@ -10,3 +10,5 @@ export {withMotion,drawTransition} from '../adapters/canvas.mjs';
 export {compilePolyline,samplePath,sampleTrail} from './path.mjs';
 export {sampleFiniteSettle} from './settle.mjs';
 export {withLocalReveal} from '../adapters/local-reveal.mjs';
+export {compileTileScatter,sampleTileScatter} from './tiles.mjs';
+export {drawTileScatter} from '../adapters/tiles.mjs';

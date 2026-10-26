@@ -66,7 +66,7 @@ def main():
         assert (reduced / 'frame.png').read_bytes().startswith(b'\x89PNG\r\n\x1a\n')
         print('Fresh portable gallery: 240 frames, 8 seconds, full decode passed; reduced-motion frame rendered (not an artistic review)')
         # Separate synthetic demos; no production footage or artistic gate claims.
-        for demo in ('path', 'settle-reveal'):
+        for demo in ('path', 'settle-reveal', 'tiles'):
             path_gallery = temp / ('fresh-' + demo)
             run(['node', str(elements / 'scripts/render-gallery.mjs'), '--out', str(path_gallery), '--demo', demo])
             path_movie = path_gallery / 'motion-elements-gallery.mp4'
