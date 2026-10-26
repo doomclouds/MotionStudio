@@ -12,7 +12,7 @@
 |构图|多个对象怎样安排空间关系|offset cards、split panels|
 |配方|多个机制怎样服务一个意图|offset reassembly：错位构图→错峰归位|
 
-首批 10 个目录条目之外，第二阶段新增 1 个路径机制（`geometry.polyline-trail`）；路径采样与尾迹是同一机制的配套操作，不拆开凑数。第三阶段再加 1 个对象局部揭示机制，共 12 条；有限收敛残差是基础计算，不额外计作元素。第四阶段增加固定 raster 片块机制，共 13 条；分散与反向重组是同机制的方向，不算两个元素。不同幅度、方向和颜色是参数变体，不是新元素；基础数学函数也不凑入动作数量。`stagger` 是编排，不伪装成能单独绘制的画面。
+首批 10 个目录条目之外，第二阶段新增 1 个路径机制（`geometry.polyline-trail`）；路径采样与尾迹是同一机制的配套操作，不拆开凑数。第三阶段再加 1 个对象局部揭示机制，共 12 条；有限收敛残差是基础计算，不额外计作元素。第四阶段增加固定 raster 片块机制，共 13 条；分散与反向重组是同机制的方向，不算两个元素。其后新增焦点接力配方，共 14 条；这是组合配方，不是新增 primitive。不同幅度、方向和颜色是参数变体，不是新元素；基础数学函数也不凑入动作数量。`stagger` 是编排，不伪装成能单独绘制的画面。
 
 仓库中的实现唯一维护在 `engine/motion-elements/`。可移植 Skill 将同一源码打包为 `runtime/motion-elements/`，与 `motion-render-core`、`motion-timeline-core` 和 `motion-audio-core` 保持相邻；不要手改生成快照。静态目录为包根 `catalog.json`，公共入口为 `lib/index.mjs`，具体参数以包内 README、目录和实际验证器为准。
 
@@ -33,7 +33,7 @@ node engine/motion-elements/scripts/query-catalog.mjs find --text 重组
 node engine/motion-elements/scripts/query-catalog.mjs show --id fragment.fixed-tiles
 ```
 
-解包 Skill 将 `engine/` 换成 `runtime/`。输出 JSON 包含完整条目与反例；`find` 是字面元数据匹配，反例也可能命中，不是适合度排名、语义推荐、置信度或艺术分数。多个筛选条件取交集，无匹配就返回空结果，不编造推荐。先完整读 `counterexamples`、状态与证据边界，再决定试用。查询不执行示例、不导入目录中的入口、不联网、不写案例；仍为 13 个机制。
+解包 Skill 将 `engine/` 换成 `runtime/`。输出 JSON 包含完整条目与反例；`find` 是字面元数据匹配，反例也可能命中，不是适合度排名、语义推荐、置信度或艺术分数。多个筛选条件取交集，无匹配就返回空结果，不编造推荐。先完整读 `counterexamples`、状态与证据边界，再决定试用。查询不执行示例、不导入目录中的入口、不联网、不写案例；查询不增加机制数量；配方 A 收录后共 14 条（其中 recipe 类 2 条）。
 
 ## 视听事件复查：独立区间 sidecar
 
@@ -90,6 +90,14 @@ python3 -m unittest discover -s runtime/review-tools -p test_event_intervals.py 
 - 精确 home 与整图基线在相同 source、父变换、绘图状态和后端下可做逐像素对照；**运动中的旋转/缩放/透明边缘采样缝不保证消失**。坐标连续不等于屏幕像素差连续，归位邻帧需慢放检查。不承诺跨后端像素一致。
 - 示例两类输入是非整除棋盘/细线/透明孔与整张文本卡；8 秒前半分散、后半反向重组，首 1.5 秒显示身份 debug，之后清洁画面。reduced-motion 使用整图中点出现/消失，保留时段、不执行碎片运动。debug 不替代关闭 overlay 后的图像重建验证。
 
+## 配方 A：信息与焦点接力
+
+`compileFocusHandoff` / `sampleFocusHandoff` 组合已有动作与局部揭示，固定 **1920×1080（16:9）设计空间、7 秒**，不是任意响应式布局或视频 NLE。三张唯一身份卡片，选中卡从入口起最高 z，不中途跳层；每张卡分段继承单一 transform writer，opacity 独立。父矩阵只支持正等比缩放和平移，不可随意拉伸/旋转。
+
+顺序为入口→选择停留→选中卡放大归正→详情阅读→同框下一内容接管→下一内容阅读。内容由 caller 按稳定 ID 绑定；`detailReveal`、`nextReveal`、`drawPrevious` 明确交接状态，不在 callback 暗换图。下一内容必须在相同局部框内先画完整不透明背景，再以 local reveal 覆盖；不要透明文字叠印或双正文交叉淡化。短标题需实测字宽/安全区，示例溢出拒绝，不将自动缩小冒充排版。
+
+reduced-motion 入口三卡可见，相对 start 的 1.925 秒切焦点布局、4 秒切内容，阶段与阅读 hold 保留；不是缩短总时长，也不是艺术/舒适度验收。7 秒双内容合成 demo 无循环、无声音；每个内容独立等比显示，输出 210 帧。此轮只有 A，不包含片块重组署名配方 B。
+
 ## 收录规则：代码和经验各放其位
 
 新机制先作为候选，至少提供以下内容：
@@ -121,6 +129,7 @@ node engine/motion-elements/scripts/render-gallery.mjs --out /tmp/motion-gallery
 node engine/motion-elements/scripts/render-gallery.mjs --out /tmp/motion-path-new --demo path
 node engine/motion-elements/scripts/render-gallery.mjs --out /tmp/motion-settle-reveal-new --demo settle-reveal
 node engine/motion-elements/scripts/render-gallery.mjs --out /tmp/motion-tiles-new --demo tiles
+node engine/motion-elements/scripts/render-gallery.mjs --out /tmp/motion-focus-new --demo focus-handoff
 ```
 
 从已解包 Skill 根目录运行时，把 `engine/` 换成 `runtime/`。父目录须存在、输出目录必须尚不存在；不把生成结果放进源包。首批总览是 8 秒无声合成 Gallery，4 秒演示显式重复一次，不把这个重复展示算成新的动作或作品。路径示例另用 8 秒画面同时展示不等长电路折线与旋转父级下的节点连线两种合成上下文，不是两个新机制。完整参数以包内 README 为准。预览视频、逐帧 PNG、检测报告和临时 HTML 输出到仓库外。Git 仅收代码、静态目录、示例源、测试及许可，不收生成帧或私人作品。

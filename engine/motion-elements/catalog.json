@@ -727,6 +727,65 @@
         "片块",
         "重组"
       ]
+    },
+    {
+      "id": "recipe.focus-handoff",
+      "version": 1,
+      "kind": "recipe",
+      "status": "experimental",
+      "summary": "三卡选择、焦点归正与同框信息接力；组合已有机制",
+      "api": "compileFocusHandoff",
+      "entry": "lib/index.mjs",
+      "example": {
+        "type": "recipe.focus-handoff",
+        "version": 1,
+        "cardIds": [
+          "draft",
+          "structure",
+          "output"
+        ],
+        "selectedId": "structure",
+        "detailId": "detail",
+        "nextId": "next",
+        "start": {
+          "n": "0",
+          "d": "1"
+        },
+        "travel": {
+          "x": 0,
+          "y": 55
+        },
+        "rotationStep": 0.03,
+        "focusScale": 1.6
+      },
+      "applicability": [
+        "短数据摘要焦点接力",
+        "短图文卡同框接管"
+      ],
+      "counterexamples": [
+        "不适用三段长正文",
+        "固定7秒不允许压缩阅读hold",
+        "不是通用NLE或新基础动作"
+      ],
+      "evidence": {
+        "tests": [
+          "test/focus-handoff.test.mjs"
+        ],
+        "demo": "examples/focus-handoff-scene.mjs",
+        "artisticReview": "NOT_RUN",
+        "originalProductionTransfer": "NOT_RUN"
+      },
+      "knowledgeLinks": [],
+      "tags": [
+        "focus",
+        "handoff",
+        "cards",
+        "recipe",
+        "焦点",
+        "接力",
+        "卡片",
+        "配方"
+      ]
     }
   ]
 }

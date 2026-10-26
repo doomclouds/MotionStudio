@@ -59,16 +59,16 @@ test('strict CLI unknown/repeated/missing/extra options and command constraints'
   assert.deepEqual(parseCatalogArgs(['--help']),{help:true});
   assert.equal(parseCatalogArgs(['find','--tag',' 淡入 ']).query.tag,'淡入');
 });
-test('real 13 entries: tags, status, metadata and executable inputs preserved', () => {
+test('real 14 entries: tags, status, metadata and executable inputs preserved', () => {
   const before = JSON.stringify(catalog);
-  const r = queryCatalog(catalog,{limit:100}); assert.equal(r.total,13); assert.equal(r.truncated,false);
+  const r = queryCatalog(catalog,{limit:100}); assert.equal(r.total,14); assert.equal(r.truncated,false);
   for (const e of catalog.elements) {
     assert.equal(e.status,'experimental'); assert.ok(e.tags.length>0);
     const hit = queryCatalog(catalog,{id:e.id}).results[0]; assert.deepEqual(hit.element,e);
     assert.ok(hit.element.example); assert.ok(hit.element.evidence); assert.ok(Array.isArray(hit.element.knowledgeLinks));
   }
   assert.equal(queryCatalog(catalog,{tag:'重组'}).total,2);
-  assert.equal(queryCatalog(catalog,{kind:'recipe'}).total,1);
+  assert.equal(queryCatalog(catalog,{kind:'recipe'}).total,2);
   assert.equal(JSON.stringify(catalog),before);
 });
 test('CLI from unrelated cwd: JSON success/no-match, errors stderr only; never writes output', () => {
@@ -83,5 +83,5 @@ test('runtime permission isolation: only three static files readable, no entry/p
     '--permission', `--allow-fs-read=${cli}`, `--allow-fs-read=${root}lib/catalog-query.mjs`, `--allow-fs-read=${root}catalog.json`,
     cli,'list','--limit','100',
   ], {encoding:'utf8',cwd:'/tmp'});
-  assert.equal(r.status,0,r.stderr); assert.equal(JSON.parse(r.stdout).total,13);
+  assert.equal(r.status,0,r.stderr); assert.equal(JSON.parse(r.stdout).total,14);
 });

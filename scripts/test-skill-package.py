@@ -54,7 +54,9 @@ def main():
         run(['node', '--test', *map(str, tests)])
         query_cli = elements / 'scripts/query-catalog.mjs'
         listed = json.loads(subprocess.check_output(['node', str(query_cli), 'list']))
-        assert listed['total'] == 13 and len(listed['results']) == 13
+        assert listed['total'] == 14 and len(listed['results']) == 14
+        recipes = json.loads(subprocess.check_output(['node', str(query_cli), 'list', '--kind', 'recipe']))
+        assert recipes['total'] == 2 and len(recipes['results']) == 2
         empty = json.loads(subprocess.check_output(['node', str(query_cli), 'find', '--text', 'no-such-mechanism-29461']))
         assert empty['total'] == 0 and empty['results'] == []
         review = skill / 'runtime/review-tools'
@@ -77,7 +79,7 @@ def main():
         stale = subprocess.run([*cli_args, '--out', str(stale_path)], capture_output=True)
         assert stale.returncode == 1 and json.loads(stale_path.read_text())['collection_status'] == 'STALE'
         assert json.loads(stale_path.read_text())['events'] == []
-        print('Catalog 13/no-match and standalone interval CLI synthetic/unsupported/stale gates passed; no decoding or approval')
+        print('Catalog 14/recipe2/no-match and standalone interval CLI synthetic/unsupported/stale gates passed; no decoding or approval')
         gallery = temp / 'fresh-gallery'
         run(['node', str(elements / 'scripts/render-gallery.mjs'), '--out', str(gallery)])
         movie = gallery / 'motion-elements-gallery.mp4'
@@ -93,21 +95,22 @@ def main():
         assert (reduced / 'frame.png').read_bytes().startswith(b'\x89PNG\r\n\x1a\n')
         print('Fresh portable gallery: 240 frames, 8 seconds, full decode passed; reduced-motion frame rendered (not an artistic review)')
         # Separate synthetic demos; no production footage or artistic gate claims.
-        for demo in ('path', 'settle-reveal', 'tiles'):
+        for demo in ('path', 'settle-reveal', 'tiles', 'focus-handoff'):
+            width, height, frames, duration = (1920, 1080, 210, 7) if demo == 'focus-handoff' else (1280, 720, 240, 8)
             path_gallery = temp / ('fresh-' + demo)
             run(['node', str(elements / 'scripts/render-gallery.mjs'), '--out', str(path_gallery), '--demo', demo])
             path_movie = path_gallery / 'motion-elements-gallery.mp4'
             path_probe = json.loads(subprocess.check_output(['ffprobe', '-v', 'error', '-count_frames', '-show_entries', 'stream=codec_type,width,height,r_frame_rate,nb_read_frames:format=duration', '-of', 'json', str(path_movie)]))
             assert len(path_probe['streams']) == 1
             stream = path_probe['streams'][0]
-            assert stream['codec_type'] == 'video' and stream['width'] == 1280 and stream['height'] == 720
-            assert stream['r_frame_rate'] == '30/1' and int(stream['nb_read_frames']) == 240
-            assert abs(float(path_probe['format']['duration']) - 8) < 0.001
+            assert stream['codec_type'] == 'video' and stream['width'] == width and stream['height'] == height
+            assert stream['r_frame_rate'] == '30/1' and int(stream['nb_read_frames']) == frames
+            assert abs(float(path_probe['format']['duration']) - duration) < 0.001
             run(['ffmpeg', '-nostdin', '-v', 'error', '-i', str(path_movie), '-f', 'null', '-'])
             path_reduced = temp / ('fresh-' + demo + '-reduced')
             run(['node', str(elements / 'scripts/render-gallery.mjs'), '--out', str(path_reduced), '--demo', demo, '--frame', '43', '--reduced-motion'])
             assert (path_reduced / 'frame.png').read_bytes().startswith(b'\x89PNG\r\n\x1a\n')
-            print('Fresh portable ' + demo + ': 240 frames, full decode and reduced frame passed; technical only')
+            print('Fresh portable ' + demo + ': ' + str(frames) + ' frames, full decode and reduced frame passed; technical only')
         run(['node', '--test', str(skill / 'scripts/test-audio-timeline.mjs')])
         run(['node', str(skill / 'runtime/motion-audio-core/scripts/audio.mjs'), 'capabilities'], stdout=subprocess.DEVNULL)
     assert hashlib.sha256(actual.read_bytes()).hexdigest() == before, 'Canonical index changed'

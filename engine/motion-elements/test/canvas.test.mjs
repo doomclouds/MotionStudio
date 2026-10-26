@@ -67,3 +67,14 @@ test('tile raster demo seeks identically in clean, debug, reversed and reduced v
   scene.renderFrame(239);assert.deepEqual([...ctx.getImageData(225,361,1,1).data],[27,37,49,255]);
  }
 });
+test('focus handoff two-content 7s demo seeks consistently in both motion modes',async()=>{
+ const {createGalleryScene:createStudy,config:cfg}=await import('../examples/focus-handoff-scene.mjs');
+ assert.equal(cfg.duration*cfg.fps,210);
+ for(const reducedMotion of [false,true]){
+  const canvas=api.createCanvas(cfg.width,cfg.height),ctx=canvas.getContext('2d'),scene=await createStudy({canvas,ctx,canvasApi:api,config:cfg},{reducedMotion});
+  const hashes=new Map(),frames=[0,20,21,36,44,45,70,71,90,109,110,119,120,130,131,209];
+  const hash=()=>createHash('sha256').update(canvas.toBuffer('image/png')).digest('hex');
+  for(const f of frames){scene.renderFrame(f);hashes.set(f,hash());}
+  for(const f of [...frames].reverse()){scene.renderFrame(f);assert.equal(hash(),hashes.get(f));}
+ }
+});

@@ -12,3 +12,4 @@ export {sampleFiniteSettle} from './settle.mjs';
 export {withLocalReveal} from '../adapters/local-reveal.mjs';
 export {compileTileScatter,sampleTileScatter} from './tiles.mjs';
 export {drawTileScatter} from '../adapters/tiles.mjs';
+export {compileFocusHandoff,sampleFocusHandoff} from './recipes/focus-handoff.mjs';
