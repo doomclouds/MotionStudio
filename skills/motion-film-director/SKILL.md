@@ -7,7 +7,7 @@ description: 从一句话委托独立研究、制作和验证中文动效影片�
 
 先分两条轴：工作方式是原创/授权复刻/修复，传播主任务是发布展示/工作流演示/解释教学/角色故事/品牌或情绪表达。混合片写明主任务；用户已定片型和主张优先，不能用惯用人物剧情覆盖。先用一行brief写“给谁看｜要让其知道或相信什么｜必要主张与证据｜时长/画幅｜已定方向与待定事项”，再决定故事是否必要。发布片先解决新品身份、关键能力或成果证据、可用性，不强制单任务、角色或戏剧弧。信息可合理推定就主动推进；只询问真正缺失的事实、权限或重大方向，不把用户当持续质检员。
 
-主栈为 Node.js + @napi-rs/canvas 原生 Canvas 逐帧绘制 → PNG → FFmpeg。生产核心不调用浏览器、CDP、GSAP、上游 Skill 或远端服务；核心源码唯一维护于仓库 `engine/motion-render-core/`，从本 Skill 通过 `runtime-source.json` 定位；可移植包使用构建生成的 `runtime/motion-render-core/` 快照。音频编辑/混音由 sibling `motion-timeline-core` 与 `motion-audio-core` 负责，可移植包同时带三核心；音频时间线入口为 `--audio-timeline`，完整视频 NLE/视频 clip adapter 仍未实现。实际入口见[引擎使用](references/engine-use.md)，接口见[渲染合同](references/render-contract.md)，已验范围见[环境](ENVIRONMENT.md)，来源见[许可](NOTICE.md)。原生小样通过不代表完整影片、跨平台或艺术验收通过。
+主栈为 Node.js + @napi-rs/canvas 原生 Canvas 逐帧绘制 → PNG → FFmpeg。生产核心不调用浏览器、CDP、GSAP、上游 Skill 或远端服务；核心源码唯一维护于仓库 `engine/motion-render-core/`，从本 Skill 通过 `runtime-source.json` 定位；可移植包使用构建生成的 `runtime/motion-render-core/` 快照。音频编辑/混音由 sibling `motion-timeline-core` 与 `motion-audio-core` 负责，可移植包同时带三核心与 `motion-elements` 基础元素包；音频时间线入口为 `--audio-timeline`，完整视频 NLE/视频 clip adapter 仍未实现。实际入口见[引擎使用](references/engine-use.md)，接口见[渲染合同](references/render-contract.md)，已验范围见[环境](ENVIRONMENT.md)，来源见[许可](NOTICE.md)。原生小样通过不代表完整影片、跨平台或艺术验收通过。
 
 **证据与任务锁**：以当前委托的明确要求和可用证据为准；技术夹具不计作品。公开工具集不附私人影片、个案反馈或历史研究数据；适用范围见仓库 SOURCE-SCOPE.md。
 
@@ -20,6 +20,10 @@ description: 从一句话委托独立研究、制作和验证中文动效影片�
 代码美术不足或要把生成场景做成可控动作时，按[混合美术生产](references/hybrid-art-workflow.md)选择代码/imagegen/真3D分工，并用其brief、分层manifest与检查单；不把整图平移当完整动画，也不默认全片生成化。
 
 涉及像素角色、极简块状吉祥物或角色动作时，先阅读[角色表演](references/character-performance.md)；先验证无文字与特效的姿态、接触和节奏，再选择 rig、逐姿态重绘或混合实现。
+
+## 可复用动效入口
+
+编码新的基本动作、转场、错位构图或组合效果前，先读[动效基础库](references/motion-elements.md)，再查 `motion-elements` 的静态目录。优先复用、组合或新增配方；只有独立机制缺失时才扩底层。不把参数变体计成新动作，不从目录动态执行外部代码。新效果先做合成最小例并检跳时、边界、状态恢复与常速观看，再关联私有 Case/Technique；技术通过不自动升级为艺术通过，公开默认知识库仍为空。
 
 ## 最短闭环
 

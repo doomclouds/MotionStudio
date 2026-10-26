@@ -50,6 +50,20 @@ class SourceTreeFixtures(unittest.TestCase):
         self.add('engine/motion-timeline-core/lib/timeline.mjs', b'export const version = 1;\n')
         self.add('engine/motion-audio-core/lib/audio.mjs', b'export {};\n')
         self.audit(True)
+    def test_motion_elements_synthetic_source_allowed(self):
+        self.add('engine/motion-elements/lib/index.mjs', b'export {};\n')
+        self.add('engine/motion-elements/catalog/elements.json', b'{"schemaVersion":1,"elements":[]}')
+        self.add('engine/motion-elements/examples/gallery.html', b'<html><body>Synthetic gallery source</body></html>')
+        self.audit(True)
+    def test_motion_elements_generated_preview_rejected(self):
+        self.add('engine/motion-elements/output/gallery.mp4', MP4)
+        self.audit(False, 'forbidden-path')
+    def test_motion_elements_media_outside_output_rejected(self):
+        self.add('engine/motion-elements/examples/preview.png', PNG)
+        self.audit(False, 'unapproved-media:PNG')
+    def test_motion_elements_private_case_rejected(self):
+        self.add('engine/motion-elements/catalog/case.json', b'{"path":"/workspace/private/example.mp4"}')
+        self.audit(False, 'private-production-metadata')
     def test_audio_core_media_still_rejected(self):
         self.add('engine/motion-audio-core/test/sample.wav', b'RIFF' + b'\0' * 4 + b'WAVE')
         self.audit(False, 'unapproved-media')

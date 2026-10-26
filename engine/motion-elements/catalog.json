@@ -1,0 +1,506 @@
+{
+  "schemaVersion": 1,
+  "validationAuthority": "Exported runtime validators; examples are executable inputs, not a second validator.",
+  "elements": [
+    {
+      "id": "motion.transform",
+      "version": 1,
+      "kind": "motion",
+      "status": "experimental",
+      "summary": "位移、旋转、尺度与显式枢轴的统一仿射动作",
+      "api": "sampleMotion",
+      "entry": "lib/index.mjs",
+      "example": {
+        "type": "motion.transform",
+        "version": 1,
+        "range": {
+          "start": {
+            "n": "0",
+            "d": "1"
+          },
+          "end": {
+            "n": "2",
+            "d": "1"
+          }
+        },
+        "curve": {
+          "type": "smoothstep"
+        },
+        "params": {
+          "from": {
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "rotation": 0
+          },
+          "to": {
+            "x": 120,
+            "y": 0,
+            "scaleX": 1.2,
+            "scaleY": 1.2,
+            "rotation": 0
+          },
+          "origin": {
+            "x": 0,
+            "y": 0
+          }
+        }
+      },
+      "applicability": [
+        "强调位置与尺度关系；旋转单位为弧度"
+      ],
+      "counterexamples": [
+        "不包含透视、skew、任意形变；不要用整体位移冒充角色关节运动"
+      ],
+      "evidence": {
+        "technicalTests": [
+          "test/core.test.mjs",
+          "test/canvas.test.mjs"
+        ],
+        "visualDemo": "examples/gallery-scene.mjs",
+        "artisticReview": "NOT_RUN",
+        "originalProductionTransfer": "NOT_RUN"
+      },
+      "knowledgeLinks": []
+    },
+    {
+      "id": "motion.opacity",
+      "version": 1,
+      "kind": "motion",
+      "status": "experimental",
+      "summary": "单元素透明度插值",
+      "api": "sampleMotion",
+      "entry": "lib/index.mjs",
+      "example": {
+        "type": "motion.opacity",
+        "version": 1,
+        "range": {
+          "start": {
+            "n": "0",
+            "d": "1"
+          },
+          "end": {
+            "n": "2",
+            "d": "1"
+          }
+        },
+        "curve": {
+          "type": "smoothstep"
+        },
+        "params": {
+          "from": 0,
+          "to": 1
+        }
+      },
+      "applicability": [
+        "柔和出现与信息层级"
+      ],
+      "counterexamples": [
+        "不是双场景交叉溶解；重叠透明素材需另行合成设计"
+      ],
+      "evidence": {
+        "technicalTests": [
+          "test/core.test.mjs",
+          "test/canvas.test.mjs"
+        ],
+        "visualDemo": "examples/gallery-scene.mjs",
+        "artisticReview": "NOT_RUN",
+        "originalProductionTransfer": "NOT_RUN"
+      },
+      "knowledgeLinks": []
+    },
+    {
+      "id": "motion.stagger",
+      "version": 1,
+      "kind": "motion",
+      "status": "experimental",
+      "summary": "把错峰启动编译为精确绝对区间",
+      "api": "compileStagger",
+      "entry": "lib/index.mjs",
+      "example": {
+        "itemIds": [
+          "a",
+          "b",
+          "c"
+        ],
+        "start": {
+          "n": "0",
+          "d": "1"
+        },
+        "duration": {
+          "n": "1",
+          "d": "1"
+        },
+        "step": {
+          "n": "1",
+          "d": "4"
+        }
+      },
+      "applicability": [
+        "项目列表、卡片或文字块的依次出现"
+      ],
+      "counterexamples": [
+        "不隐式串行等待；每个item时长相同，不是视频剪辑时间线"
+      ],
+      "evidence": {
+        "technicalTests": [
+          "test/core.test.mjs",
+          "test/canvas.test.mjs"
+        ],
+        "visualDemo": "examples/gallery-scene.mjs",
+        "artisticReview": "NOT_RUN",
+        "originalProductionTransfer": "NOT_RUN"
+      },
+      "knowledgeLinks": []
+    },
+    {
+      "id": "motion.anchored-squash",
+      "version": 1,
+      "kind": "motion",
+      "status": "experimental",
+      "summary": "锚点保持、面积保持的有限挤压回弹",
+      "api": "sampleMotion",
+      "entry": "lib/index.mjs",
+      "example": {
+        "type": "motion.anchored-squash",
+        "version": 1,
+        "range": {
+          "start": {
+            "n": "0",
+            "d": "1"
+          },
+          "end": {
+            "n": "2",
+            "d": "1"
+          }
+        },
+        "curve": {
+          "type": "smoothstep"
+        },
+        "params": {
+          "amount": 0.35,
+          "axis": "y",
+          "origin": {
+            "x": 0,
+            "y": 50
+          }
+        }
+      },
+      "applicability": [
+        "接触地面时保持足底锚点"
+      ],
+      "counterexamples": [
+        "不是软体物理；复杂轮廓局部关节需独立rig"
+      ],
+      "evidence": {
+        "technicalTests": [
+          "test/core.test.mjs",
+          "test/canvas.test.mjs"
+        ],
+        "visualDemo": "examples/gallery-scene.mjs",
+        "artisticReview": "NOT_RUN",
+        "originalProductionTransfer": "NOT_RUN"
+      },
+      "knowledgeLinks": []
+    },
+    {
+      "id": "motion.shake",
+      "version": 1,
+      "kind": "motion",
+      "status": "experimental",
+      "summary": "带种子的有限包络抖动",
+      "api": "sampleMotion",
+      "entry": "lib/index.mjs",
+      "example": {
+        "type": "motion.shake",
+        "version": 1,
+        "range": {
+          "start": {
+            "n": "0",
+            "d": "1"
+          },
+          "end": {
+            "n": "2",
+            "d": "1"
+          }
+        },
+        "curve": {
+          "type": "smoothstep"
+        },
+        "params": {
+          "amplitudeX": 12,
+          "amplitudeY": 6,
+          "rotation": 0.03,
+          "frequencyHz": 10,
+          "seed": "example",
+          "elementId": "card"
+        }
+      },
+      "applicability": [
+        "轻微冲击或紧张感；首尾归零"
+      ],
+      "counterexamples": [
+        "不要长时间摇动可读信息；reducedMotion时静态，不用于模拟真实相机物理"
+      ],
+      "evidence": {
+        "technicalTests": [
+          "test/core.test.mjs",
+          "test/canvas.test.mjs"
+        ],
+        "visualDemo": "examples/gallery-scene.mjs",
+        "artisticReview": "NOT_RUN",
+        "originalProductionTransfer": "NOT_RUN"
+      },
+      "knowledgeLinks": []
+    },
+    {
+      "id": "transition.push",
+      "version": 1,
+      "kind": "transition",
+      "status": "experimental",
+      "summary": "两个同视口画面互相推移",
+      "api": "sampleTransition",
+      "entry": "lib/index.mjs",
+      "example": {
+        "type": "transition.push",
+        "version": 1,
+        "range": {
+          "start": {
+            "n": "0",
+            "d": "1"
+          },
+          "end": {
+            "n": "2",
+            "d": "1"
+          }
+        },
+        "curve": {
+          "type": "smoothstep"
+        },
+        "params": {
+          "width": 640,
+          "height": 360,
+          "direction": "left"
+        }
+      },
+      "applicability": [
+        "明确方向的空间接力"
+      ],
+      "counterexamples": [
+        "整数viewport、nearest-pixel位移；Canvas父变换必须整数轴对齐；不支持旋转/亚像素父变换无缝合成"
+      ],
+      "evidence": {
+        "technicalTests": [
+          "test/core.test.mjs",
+          "test/canvas.test.mjs"
+        ],
+        "visualDemo": "examples/gallery-scene.mjs",
+        "artisticReview": "NOT_RUN",
+        "originalProductionTransfer": "NOT_RUN"
+      },
+      "knowledgeLinks": []
+    },
+    {
+      "id": "transition.rect-wipe",
+      "version": 1,
+      "kind": "transition",
+      "status": "experimental",
+      "summary": "保留A背景、矩形揭示B",
+      "api": "sampleTransition",
+      "entry": "lib/index.mjs",
+      "example": {
+        "type": "transition.rect-wipe",
+        "version": 1,
+        "range": {
+          "start": {
+            "n": "0",
+            "d": "1"
+          },
+          "end": {
+            "n": "2",
+            "d": "1"
+          }
+        },
+        "curve": {
+          "type": "smoothstep"
+        },
+        "params": {
+          "width": 640,
+          "height": 360,
+          "direction": "right"
+        }
+      },
+      "applicability": [
+        "遮罩式层次揭示"
+      ],
+      "counterexamples": [
+        "仅矩形；不做任意path morph，不自动改变两个场景时长或音频"
+      ],
+      "evidence": {
+        "technicalTests": [
+          "test/core.test.mjs",
+          "test/canvas.test.mjs"
+        ],
+        "visualDemo": "examples/gallery-scene.mjs",
+        "artisticReview": "NOT_RUN",
+        "originalProductionTransfer": "NOT_RUN"
+      },
+      "knowledgeLinks": []
+    },
+    {
+      "id": "composition.offset-cards",
+      "version": 1,
+      "kind": "composition",
+      "status": "experimental",
+      "summary": "稳定身份的错位卡片布局",
+      "api": "offsetCards",
+      "entry": "lib/index.mjs",
+      "example": {
+        "itemIds": [
+          "a",
+          "b",
+          "c"
+        ],
+        "origin": {
+          "x": 40,
+          "y": 30
+        },
+        "card": {
+          "width": 160,
+          "height": 100
+        },
+        "offset": {
+          "x": 25,
+          "y": 15
+        },
+        "rotationStep": 0.03,
+        "zOrder": "ascending"
+      },
+      "applicability": [
+        "错位构图与层叠信息"
+      ],
+      "counterexamples": [
+        "静态layout不隐藏时钟；不得声称避碰/文字排版/任意自适应布局"
+      ],
+      "evidence": {
+        "technicalTests": [
+          "test/core.test.mjs",
+          "test/canvas.test.mjs"
+        ],
+        "visualDemo": "examples/gallery-scene.mjs",
+        "artisticReview": "NOT_RUN",
+        "originalProductionTransfer": "NOT_RUN"
+      },
+      "knowledgeLinks": []
+    },
+    {
+      "id": "composition.split-panels",
+      "version": 1,
+      "kind": "composition",
+      "status": "experimental",
+      "summary": "等分面板与明确间距",
+      "api": "splitPanels",
+      "entry": "lib/index.mjs",
+      "example": {
+        "itemIds": [
+          "a",
+          "b",
+          "c"
+        ],
+        "viewport": {
+          "width": 640,
+          "height": 360
+        },
+        "axis": "x",
+        "gap": 12
+      },
+      "applicability": [
+        "并排对照、多个视角"
+      ],
+      "counterexamples": [
+        "2到8个等宽或等高面板；不负责内容裁切适配"
+      ],
+      "evidence": {
+        "technicalTests": [
+          "test/core.test.mjs",
+          "test/canvas.test.mjs"
+        ],
+        "visualDemo": "examples/gallery-scene.mjs",
+        "artisticReview": "NOT_RUN",
+        "originalProductionTransfer": "NOT_RUN"
+      },
+      "knowledgeLinks": []
+    },
+    {
+      "id": "recipe.offset-reassembly",
+      "version": 1,
+      "kind": "recipe",
+      "status": "experimental",
+      "summary": "错位卡片、错峰、位移尺度与淡入的组合",
+      "api": "sampleOffsetReassembly",
+      "entry": "lib/index.mjs",
+      "example": {
+        "type": "recipe.offset-reassembly",
+        "version": 1,
+        "range": {
+          "start": {
+            "n": "0",
+            "d": "1"
+          },
+          "end": {
+            "n": "2",
+            "d": "1"
+          }
+        },
+        "curve": {
+          "type": "smoothstep"
+        },
+        "params": {
+          "itemIds": [
+            "a",
+            "b",
+            "c"
+          ],
+          "origin": {
+            "x": 40,
+            "y": 30
+          },
+          "card": {
+            "width": 160,
+            "height": 100
+          },
+          "offset": {
+            "x": 25,
+            "y": 15
+          },
+          "rotationStep": 0.03,
+          "step": {
+            "n": "1",
+            "d": "4"
+          },
+          "travel": {
+            "x": -100,
+            "y": 80
+          }
+        }
+      },
+      "applicability": [
+        "从分散进入有序卡片组"
+      ],
+      "counterexamples": [
+        "只组合固定矩形卡片；不是文字碎裂或任意拓扑重组"
+      ],
+      "evidence": {
+        "technicalTests": [
+          "test/core.test.mjs",
+          "test/canvas.test.mjs"
+        ],
+        "visualDemo": "examples/gallery-scene.mjs",
+        "artisticReview": "NOT_RUN",
+        "originalProductionTransfer": "NOT_RUN"
+      },
+      "knowledgeLinks": []
+    }
+  ]
+}
