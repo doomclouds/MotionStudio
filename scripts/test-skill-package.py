@@ -20,6 +20,7 @@ def main():
                 if path.is_file() and (path.suffix in {'.mjs', '.md', '.json', '.html'} or path.name == 'LICENSE'):
                     sources.append(str(path.relative_to(ROOT)))
         sources.extend(['tools/reference-benchmark/event_intervals.py', 'tools/reference-benchmark/test_event_intervals.py', 'tools/reference-benchmark/event-intervals.example.synthetic.json', 'tools/reference-benchmark/EVENT_INTERVALS.md', 'tools/reference-benchmark/event_interval_report.py', 'tools/reference-benchmark/test_event_interval_report.py', 'tools/reference-benchmark/EVENT_INTERVAL_REPORT.md'])
+        sources.extend(['tools/reference-benchmark/stem_balance.py', 'tools/reference-benchmark/test_stem_balance.py', 'tools/reference-benchmark/STEM_BALANCE.md'])
         sources.extend(['skills/motion-film-director/references/motion-elements.md', 'skills/motion-film-director/scripts/test-audio-timeline.mjs', 'skills/motion-film-director/references/knowledge-decision-example/index.json', 'skills/motion-film-director/references/knowledge-decision-example/cases/plan.json'])
         sources.extend(['skills/motion-film-director/scripts/static_knowledge.py', 'skills/motion-film-director/scripts/test_static_knowledge.py', 'skills/motion-film-director/research/video-knowledge/STATIC-SCHEMA.md'])
         sources.extend(subprocess.check_output(['git', 'diff', '--name-only'], cwd=ROOT).decode().splitlines())
@@ -72,6 +73,15 @@ def main():
         review = skill / 'runtime/review-tools'
         run(['python3', str(review / 'test_event_intervals.py')])
         run(['python3', str(review / 'test_event_interval_report.py')])
+        # Optional sidecar only: no installer, decoder, listening or default review hook.
+        methods = json.loads((skill / 'references/review-methods.json').read_text())['methods']
+        stem_method = next(m for m in methods if m['id'] == 'stem-balance')
+        assert stem_method['select'] == 'explicit' and stem_method['implementation'] == 'manual-local-sidecar'
+        assert all((review / name).is_file() for name in ('stem_balance.py', 'test_stem_balance.py', 'STEM_BALANCE.md'))
+        if importlib.util.find_spec('numpy') is not None:
+            run(['python3', str(review / 'test_stem_balance.py')])
+        else:
+            print('Optional stem-balance tests NOT_RUN: NumPy unavailable; no automatic installation')
         fixture_spec = importlib.util.spec_from_file_location('portable_interval_fixture', review / 'test_event_intervals.py')
         fixture_module = importlib.util.module_from_spec(fixture_spec); fixture_spec.loader.exec_module(fixture_module)
         fixture_args, fixture_data = fixture_module.make_fixture(temp / 'synthetic-interval-inputs')

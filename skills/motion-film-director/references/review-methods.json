@@ -177,6 +177,17 @@
       "how_to_read": "四lane原始时间不自动对齐；unknown/ambiguous/planned保留；区间不是统计置信度。参见references/motion-elements.md视听事件复查及runtime/review-tools/EVENT_INTERVAL_REPORT.md。",
       "false_positives": "COLLECTED_NOT_APPROVED不是同步通过、实际听审或素材授权。",
       "corrective_action_and_retest": "依review windows回看显式证据并修注释/重新生成receipt；不得改hash掩盖stale。"
+    },
+    {
+      "id": "stem-balance",
+      "select": "explicit",
+      "implementation": "manual-local-sidecar",
+      "title": "可选分轨信号竞争诊断（非听审）",
+      "when": "仅按需手动运行，已有自己的对齐 post-gain/post-pan stems 与 master；混音-only reference 不可用，不做分离。",
+      "outputs": "独立私有 JSON：COLLECTED_NOT_APPROVED / NOT_LISTENED；重建兼容性、事件 RMS、频带功率；final_mix_attribution 始终 NOT_ESTABLISHED。",
+      "how_to_read": "需已有 NumPy，不自动安装；仓库 tools/reference-benchmark/STEM_BALANCE.md，portable runtime/review-tools/STEM_BALANCE.md。不接入默认 review/run 或听审门。",
+      "false_positives": "信号竞争不是心理声学掩蔽、可听性、情感适配或最终混音归因；重建数值兼容不证明导出流程。",
+      "corrective_action_and_retest": "保留来源/时间/声道/增益不确定性；需要正常速实际合听，若授权混音调整后按同条件 A/B 复听；指标不批准修改或升级验收。"
     }
   ]
 }

@@ -149,6 +149,19 @@ OWNER艺术接受: 明确反馈原话+对应版本 / not_requested / pending
 
 原生模型听审独立入口见 [可选媒体听审](optional-media-review.md) 和仓库 `scripts/AUDIO-REVIEW.md`；`python3 scripts/audio_review.py --audio <PCM16 WAV<=20s>` 默认为 dry-run（最多重复三段）。授权、价格日期、预算、凭据条件由适配器和操作者核验；本 CLI **不调用它、不发送媒体、不产生新费用**。片段结果必须另外绑定源电影 hash 和提取时间窗，不可把其他任务结果、离线 mock 或当前 dry-run 填成本片 live。
 
+### 按需分轨信号竞争 sidecar（非听审）
+
+`stem-balance` 只供操作者显式手动运行；默认 `review_film.py` 不调用、不自动安装依赖，也不升级任何听审/艺术门。需要环境中已有 **NumPy**；缺依赖记不可用，不影响其他标准库 review-tools。仅使用自己真实可用、严格对齐的 **post-gain/post-pan stems + master**（相同原点/采样数/声道，48 kHz IEEE float32 WAV）；混音-only reference 记 **unavailable**，不做源分离，不从混音峰值编造 SFX/music 比例。
+
+仓库详细合同：`tools/reference-benchmark/STEM_BALANCE.md`。Portable 包含同一文档、源码与合成测试，位置 `runtime/review-tools/`。从解压 Skill 根目录按需运行（输入输出均为操作者选择的私有位置；输出父目录已存在，文件不得存在）：
+
+```sh
+python3 runtime/review-tools/stem_balance.py /private/config.json --input-root /private/aligned-stems --output /private/new-diagnostic.json
+python3 runtime/review-tools/test_stem_balance.py
+```
+
+独立结果始终是 **COLLECTED_NOT_APPROVED / NOT_LISTENED**，`final_mix_attribution` 为 **NOT_ESTABLISHED**；重建 mismatch 仍是所给分组的诊断而非最终音轨归因。RMS/频带功率只描述信号竞争，不是心理声学掩蔽、清晰度、响度成功或情绪适配。不得直接比较本工具 48 kHz/40–20,000 Hz 频带与旧 benchmark 16 kHz/40–8,000 Hz bins。缺分轨、未知路由或共享非线性总线处理保留不确定性；实际正常速合听与明确声部意图仍需独立证据。已获授权的混音修改以同条件 A/B 复听验证，工具本身不改混音、不替代用户接受。
+
 ## 能力与本片事实的边界
 
 注册表标 `motion-check` 的已可执行；`local-comparison+manual` 是显式配对证据采集加人工语义判断；`manual` 有指导但需要真实行动；`explicit-operator` 是另工具需授权；`historical-outside-git` 仅历史方法（全帧异常/源hash、SSIM/PSNR压缩对照未移植）；`unsupported`（真正光流、显著性/眼动）保留缺口。不为了多一项通过搬旧媒体/私有报告进源码。

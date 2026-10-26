@@ -93,3 +93,7 @@ node tools/reference-benchmark/test_report_js.cjs
 [事件区间sidecar](EVENT_INTERVALS.md)在显式事件对应和同一证据层内传播lag/跨片shift范围，输出缺失/歧义与复查窗；不改变本工具事件schema、默认流程或报告，不解码/听审，也不生成艺术分。
 
 [静态事件区间报告](EVENT_INTERVAL_REPORT.md)可将独立sidecar receipt绘为四泳道HTML/SVG快照：保留原始时间、歧义、未知与计划层，不读取媒体/证据链接，不生成同步通过或艺术分。输出只解释该receipt，不重新核验其来源文件。
+
+## 实验性可选：自有分轨电平竞争诊断
+
+[独立 stem-balance sidecar](STEM_BALANCE.md)读取显式 hash/原点绑定的本地原生 float32 PCM 分轨与母带，显示同窗频带能量竞争及有条件的重构误差界。它不改变默认流程，不分离参考视频混音，不判断掩蔽/听感/情绪适配，也不修改音频。
