@@ -36,3 +36,12 @@ test('push explicitly rejects unsupported fractional or rotated parent frames',(
  ctx.reset();ctx.rotate(.1);assert.throws(()=>drawTransition(ctx,sampleTransition(spec,T(1,3)),callbacks),/integer axis/);
  assert.throws(()=>sampleTransition({...spec,params:{...spec.params,width:31.5}},T(1,3)),/integer viewport/);
 });
+test('path two-content demo seeks pixel-identically with normal and reduced motion',async()=>{
+ const {createGalleryScene:createPathScene}=await import('../examples/path-scene.mjs');
+ for(const reducedMotion of [false,true]){
+ const canvas=api.createCanvas(config.width,config.height),ctx=canvas.getContext('2d'),scene=await createPathScene({canvas,ctx,GlobalFonts:api.GlobalFonts,config},{reducedMotion});
+ const hashes=new Map(),frames=[0,15,16,43,100,160,225,239];
+ for(const f of frames){scene.renderFrame(f);hashes.set(f,createHash('sha256').update(canvas.toBuffer('image/png')).digest('hex'));}
+ for(const f of [...frames].reverse()){scene.renderFrame(f);assert.equal(createHash('sha256').update(canvas.toBuffer('image/png')).digest('hex'),hashes.get(f));}
+ }
+});

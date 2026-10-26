@@ -501,6 +501,48 @@
         "originalProductionTransfer": "NOT_RUN"
       },
       "knowledgeLinks": []
+    },
+    {
+      "id": "geometry.polyline-trail",
+      "version": 1,
+      "kind": "geometry",
+      "status": "experimental",
+      "summary": "局部弧长折线路径与不超前头部的有界空间拖尾",
+      "api": "compilePolyline",
+      "entry": "lib/index.mjs",
+      "example": {
+        "points": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 120,
+            "y": 0
+          },
+          {
+            "x": 120,
+            "y": 80
+          }
+        ]
+      },
+      "applicability": [
+        "合成节点连线、发射路径、有限空间尾迹"
+      ],
+      "counterexamples": [
+        "不是Bezier或平滑切线",
+        "非均匀父scale下不保证屏幕等速",
+        "不是历史时间采样或粒子模拟"
+      ],
+      "evidence": {
+        "tests": [
+          "test/path.test.mjs"
+        ],
+        "demo": "examples/path-scene.mjs",
+        "artisticReview": "NOT_RUN",
+        "originalProductionTransfer": "NOT_RUN"
+      },
+      "knowledgeLinks": []
     }
   ]
 }

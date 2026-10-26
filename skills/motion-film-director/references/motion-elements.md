@@ -12,7 +12,7 @@
 |构图|多个对象怎样安排空间关系|offset cards、split panels|
 |配方|多个机制怎样服务一个意图|offset reassembly：错位构图→错峰归位|
 
-首批共 10 个目录条目。不同幅度、方向和颜色是参数变体，不是新元素；基础数学函数也不凑入动作数量。`stagger` 是编排，不伪装成能单独绘制的画面。
+首批 10 个目录条目之外，第二阶段新增 1 个路径机制（`geometry.polyline-trail`）；路径采样与尾迹是同一机制的配套操作，不拆开凑数。不同幅度、方向和颜色是参数变体，不是新元素；基础数学函数也不凑入动作数量。`stagger` 是编排，不伪装成能单独绘制的画面。
 
 仓库中的实现唯一维护在 `engine/motion-elements/`。可移植 Skill 将同一源码打包为 `runtime/motion-elements/`，与 `motion-render-core`、`motion-timeline-core` 和 `motion-audio-core` 保持相邻；不要手改生成快照。静态目录为包根 `catalog.json`，公共入口为 `lib/index.mjs`，具体参数以包内 README、目录和实际验证器为准。
 
@@ -33,6 +33,17 @@
 - 转场同时涉及 A/B 内容与遮罩/层序，不等于给一个元素做淡出。A/B 回调仍必须确定性；库不能替项目保证其内部状态。回调内自行 clip 时也不能泄漏到下一幅画面。
 - 现有音频 timeline 的 schema 没有因此成为视频 NLE。元素包只复用精确时间计算；场景总时长、重叠模式、scene-local 时间与音频编排仍由项目明确处理。
 - 只使用实际提供的选项。未实现的任意路径 morph、真实透视、布料/碎裂物理、自动审美评分或 reduced-motion 策略不能写进交付能力；本版 reduced-motion 保持区间长度与语义时刻，使用终态布局/静止或中点切换；这不是无障碍体验审查通过的证明。
+
+## 路径与尾迹：先统一几何，再安排时间
+
+`compilePolyline({points})` 编译折线路径；`samplePath(path, progress)` 返回位置、单位切向、局部弧长距离与段号；`sampleTrail(path, {headProgress, length, samples})` 从同一条路径取尾迹。路径点、头部与尾迹共用几何，不再各自插值一套轨迹。
+
+- `progress` / `headProgress` 为 `[0,1]` 的**局部累计弧长比例**，不是秒数，也不是段索引。时间如何映射为进度由时间线/曲线明确给出；只有线性进度配合线性时间，才是局部弧长匀速。
+- `points` 坐标、`length` 与输出 `distance` 使用同一局部长度单位，不自带屏幕像素含义。纯旋转保留长度；父级缩放会改变屏幕距离与速度，非均匀缩放还会随方向改变比例；父变换只施加一次，不能宣称屏幕匀速或恒定像素尾长。
+- 尾部距离为 `max(0, headDistance - length)`，在起步时自然缩短；不得为了保持完整尾长而让尾巴跑到头部前面。`samples` 是几何采样数量，不是帧数。
+- 折点使用出段切向，终点使用入段切向；转角可瞬间变向，不保证旋转连续。等距尾迹采样点连接时可能跨过尖角；需按内容检查采样密度，不能声称精确重建每个折点。
+- 这是折线位置/尾迹采样，不是贝塞尔平滑、SVG 路径解析、路径 morph、物理跟随或自动避障。编译对象只接受本模块实例创建的结果，不把序列化副本当可直接使用的路径。
+- 此机制本身不读取时间或 reduced-motion 偏好；示例由场景选择终态并保留原时长。需用首尾、接近起点、折点、乱序 seek 和父变换测试，再做真实镜头连续观看。
 
 ## 收录规则：代码和经验各放其位
 
@@ -62,9 +73,10 @@
 ```sh
 node engine/motion-elements/scripts/render-gallery.mjs --out /tmp/motion-gallery-new
 node engine/motion-elements/scripts/render-gallery.mjs --out /tmp/motion-gallery-reduced-new --frame 43 --reduced-motion
+node engine/motion-elements/scripts/render-gallery.mjs --out /tmp/motion-path-new --demo path
 ```
 
-从已解包 Skill 根目录运行时，把 `engine/` 换成 `runtime/`。父目录须存在、输出目录必须尚不存在；不把生成结果放进源包。首批总览是 8 秒无声合成 Gallery，4 秒演示显式重复一次，不把这个重复展示算成新的动作或作品。完整参数以包内 README 为准。预览视频、逐帧 PNG、检测报告和临时 HTML 输出到仓库外。Git 仅收代码、静态目录、示例源、测试及许可，不收生成帧或私人作品。
+从已解包 Skill 根目录运行时，把 `engine/` 换成 `runtime/`。父目录须存在、输出目录必须尚不存在；不把生成结果放进源包。首批总览是 8 秒无声合成 Gallery，4 秒演示显式重复一次，不把这个重复展示算成新的动作或作品。路径示例另用 8 秒画面同时展示不等长电路折线与旋转父级下的节点连线两种合成上下文，不是两个新机制。完整参数以包内 README 为准。预览视频、逐帧 PNG、检测报告和临时 HTML 输出到仓库外。Git 仅收代码、静态目录、示例源、测试及许可，不收生成帧或私人作品。
 
 可移植构建须验证四个相邻包、目录与许可齐全，解包到新目录后运行元素测试和 Gallery；不能只检 ZIP 文件存在。旧音频入口和渲染默认保持不变。Gallery 技术成功只证明例子可运行，不证明任意影片的节奏或美学已过审。
 

@@ -81,8 +81,8 @@ test('nonplain params and compose options are rejected',()=>{
  assert.throws(()=>m.sampleMotion({...opacity,params:new P()},T(2)));
  assert.throws(()=>m.composeMotionStates([],{typo:1}));
 });
-test('all catalog examples remain executable and ten stable IDs unique',async()=>{
+test('all catalog examples remain executable and eleven stable IDs unique',async()=>{
  const {readFile}=await import('node:fs/promises');const catalog=JSON.parse(await readFile(new URL('../catalog.json',import.meta.url)));
- assert.equal(catalog.elements.length,10);assert.equal(new Set(catalog.elements.map(e=>e.id)).size,10);
+ assert.equal(catalog.elements.length,11);assert.equal(new Set(catalog.elements.map(e=>e.id)).size,11);
  for(const e of catalog.elements){assert.equal(e.status,'experimental');assert.equal(typeof m[e.api],'function');m[e.api](e.example,...(['sampleMotion','sampleTransition','sampleOffsetReassembly'].includes(e.api)?[T(1)]:[]));}
 });

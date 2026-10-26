@@ -65,6 +65,21 @@ def main():
         run(['node', str(elements / 'scripts/render-gallery.mjs'), '--out', str(reduced), '--frame', '43', '--reduced-motion'])
         assert (reduced / 'frame.png').read_bytes().startswith(b'\x89PNG\r\n\x1a\n')
         print('Fresh portable gallery: 240 frames, 8 seconds, full decode passed; reduced-motion frame rendered (not an artistic review)')
+        # Two synthetic path contexts share one 8s demo; no production footage.
+        path_gallery = temp / 'fresh-path-gallery'
+        run(['node', str(elements / 'scripts/render-gallery.mjs'), '--out', str(path_gallery), '--demo', 'path'])
+        path_movie = path_gallery / 'motion-elements-gallery.mp4'
+        path_probe = json.loads(subprocess.check_output(['ffprobe', '-v', 'error', '-count_frames', '-show_entries', 'stream=codec_type,width,height,r_frame_rate,nb_read_frames:format=duration', '-of', 'json', str(path_movie)]))
+        assert len(path_probe['streams']) == 1
+        stream = path_probe['streams'][0]
+        assert stream['codec_type'] == 'video' and stream['width'] == 1280 and stream['height'] == 720
+        assert stream['r_frame_rate'] == '30/1' and int(stream['nb_read_frames']) == 240
+        assert abs(float(path_probe['format']['duration']) - 8) < 0.001
+        run(['ffmpeg', '-nostdin', '-v', 'error', '-i', str(path_movie), '-f', 'null', '-'])
+        path_reduced = temp / 'fresh-path-reduced'
+        run(['node', str(elements / 'scripts/render-gallery.mjs'), '--out', str(path_reduced), '--demo', 'path', '--frame', '43', '--reduced-motion'])
+        assert (path_reduced / 'frame.png').read_bytes().startswith(b'\x89PNG\r\n\x1a\n')
+        print('Fresh portable path demo: both synthetic contexts, 240 frames, full decode and reduced frame passed; technical only')
         run(['node', '--test', str(skill / 'scripts/test-audio-timeline.mjs')])
         run(['node', str(skill / 'runtime/motion-audio-core/scripts/audio.mjs'), 'capabilities'], stdout=subprocess.DEVNULL)
     assert hashlib.sha256(actual.read_bytes()).hexdigest() == before, 'Canonical index changed'

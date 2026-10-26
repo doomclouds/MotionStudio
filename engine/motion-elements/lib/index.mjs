@@ -7,3 +7,4 @@ export {offsetCards,splitPanels} from './layouts.mjs';
 export {sampleTransition} from './transitions.mjs';
 export {sampleOffsetReassembly} from './recipes.mjs';
 export {withMotion,drawTransition} from '../adapters/canvas.mjs';
+export {compilePolyline,samplePath,sampleTrail} from './path.mjs';

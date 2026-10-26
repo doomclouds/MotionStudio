@@ -4,15 +4,17 @@ import {spawn} from 'node:child_process';
 import {once} from 'node:events';
 import {createHash} from 'node:crypto';
 import {loadNativeCanvas} from '../../motion-render-core/lib/native.mjs';
-import {createGalleryScene,config} from '../examples/gallery-scene.mjs';
-const args=process.argv.slice(2);let out,reducedMotion=false,frame;
-for(let i=0;i<args.length;i++){if(args[i]==='--out')out=args[++i];else if(args[i]==='--reduced-motion')reducedMotion=true;else if(args[i]==='--frame')frame=Number(args[++i]);else throw Error('Unknown argument '+args[i]);}
-if(!out)throw Error('Usage: node scripts/render-gallery.mjs --out NEW_DIRECTORY [--frame 0..239] [--reduced-motion]');
+
+const args=process.argv.slice(2);let out,reducedMotion=false,frame,demo='gallery';
+for(let i=0;i<args.length;i++){if(args[i]==='--out')out=args[++i];else if(args[i]==='--reduced-motion')reducedMotion=true;else if(args[i]==='--demo')demo=args[++i];else if(args[i]==='--frame')frame=Number(args[++i]);else throw Error('Unknown argument '+args[i]);}
+if(!['gallery','path'].includes(demo))throw Error('demo must be gallery or path');
+const {createGalleryScene,config}=await import(demo==='path'?'../examples/path-scene.mjs':'../examples/gallery-scene.mjs');
+if(!out)throw Error('Usage: node scripts/render-gallery.mjs --out NEW_DIRECTORY [--frame 0..239] [--reduced-motion] [--demo gallery|path]');
 if(frame!==undefined&&(!Number.isSafeInteger(frame)||frame<0||frame>=240))throw Error('frame must be 0..239');
 out=resolve(out);await mkdir(out,{recursive:false});
 const {api,version}=loadNativeCanvas(),canvas=api.createCanvas(config.width,config.height),ctx=canvas.getContext('2d');
 const scene=await createGalleryScene({canvas,ctx,GlobalFonts:api.GlobalFonts,config},{reducedMotion});
-if(frame!==undefined){scene.renderFrame(frame);await writeFile(join(out,'frame.png'),canvas.toBuffer('image/png'));console.log(JSON.stringify({out,frame,reducedMotion,font:scene.font}));}
+if(frame!==undefined){scene.renderFrame(frame);await writeFile(join(out,'frame.png'),canvas.toBuffer('image/png'));console.log(JSON.stringify({out,frame,demo,reducedMotion,font:scene.font}));}
 else {
   const output=join(out,'motion-elements-gallery.mp4'),partial=join(out,'gallery.partial.mp4');
   const proc=spawn('ffmpeg',['-nostdin','-v','error','-f','rawvideo','-pix_fmt','rgba','-s',`${config.width}x${config.height}`,'-r','30','-i','pipe:0','-an','-c:v','libx264','-preset','medium','-crf','19','-pix_fmt','yuv420p','-movflags','+faststart','-n',partial],{stdio:['pipe','ignore','pipe']});
@@ -34,6 +36,6 @@ else {
     await done;await unlink(partial).catch(()=>{});throw e;
   }
   const sha256=createHash('sha256').update(await readFile(output)).digest('hex');
-  const verification={frames:240,fps:30,duration:8,width:1280,height:720,reducedMotion,canvas:version,font:scene.font,sha256,audio:'none',artisticReview:'NOT_RUN'};
+  const verification={demo,frames:240,fps:30,duration:8,width:1280,height:720,reducedMotion,canvas:version,font:scene.font,sha256,audio:'none',artisticReview:'NOT_RUN'};
   await writeFile(join(out,'render.json'),JSON.stringify(verification,null,2)+'\n');console.log(JSON.stringify({out,...verification}));
 }
