@@ -9,11 +9,12 @@
 从导演意图、原生 Canvas 场景，到 FFmpeg 成片与视听复核。<br />
 MotionStudio 把可编辑的制作过程，留在每一帧背后。
 
-<img src="docs/assets/badge-dots.svg" alt="Built with Dots" />
-<img src="docs/assets/badge-canvas.svg" alt="Render: Native Canvas" />
-<img src="docs/assets/badge-ffmpeg.svg" alt="Encode: FFmpeg" />
-<a href="https://github.com/doomclouds/MotionStudio/tree/dev"><img src="docs/assets/badge-dev.svg" alt="Development: dev" /></a>
-<a href="#许可与素材"><img src="docs/assets/badge-license.svg" alt="Code: MIT, with third-party exceptions" /></a>
+<img alt="Node.js ≥24" src="https://img.shields.io/badge/Node.js-%E2%89%A524-339933" />
+<img alt="Render: Native Canvas" src="https://img.shields.io/badge/Render-Native%20Canvas-00A3FF" />
+<img alt="Encode: FFmpeg" src="https://img.shields.io/badge/Encode-FFmpeg-19A974" />
+<a href="https://github.com/doomclouds/MotionStudio/tree/dev"><img alt="Development: dev" src="https://img.shields.io/badge/Development-dev-512BD4" /></a>
+<img alt="Built with Dots" src="https://img.shields.io/badge/Built%20with-Dots-111111" />
+<a href="#许可与素材"><img alt="License: MIT; third-party materials retain their own terms" src="https://img.shields.io/badge/License-MIT-blue" /></a>
 
 [快速开始](#快速开始) · [工作方式](#工作方式) · [开发中的审查工具](#开发中的审查工具) · [项目地图](#项目地图)
 
