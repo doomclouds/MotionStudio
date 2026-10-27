@@ -16,6 +16,16 @@ python3 scripts/review_film.py plan path/to/final.mp4 \
 
 plan 只读本地文件并输出 JSON，不创建报告、不跑 FFmpeg、不联网、不听音频。`--source-root` 指仓库内项目目录：绑定其中 Git 非忽略文件（含未跟踪源码）的逐文件 SHA-256 与聚合 hash；成片另算 hash。这个**自审时源码快照不是“已证明该源码生成该影片”**；需要项目渲染 provenance 另证。未跟踪源码也纳入，但依赖、仓库外媒体、引擎等不在项目目录内的依赖必须由项目渲染报告另外绑定。不要拿 HEAD 一样替代内容一致。
 
+## 参考复刻的前置步骤：动作对应，不等技术绿灯
+
+**指定参考复刻，或收到节奏/动作对象/因果不一致的反馈时，先做这一节，再继续生产。** 正常速实际观看参考，在关键转折处查看精确原生 PTS 邻帧，记录媒体 hash、范围、证据和未知；不要依据脚本、缩略图或密集抽帧数量声称已理解。
+
+计划中显式加 `--reference --method event-correspondence`。该标志只登记工作，不执行模型、识别或批准。区分 `point`（事件起点的不确定括号）、`state`（占据区间）和 `sampled_state`（一帧状态）；三张压缩图不是三次触地。同时核首次接触→支撑停留→释放→后果；接触时点对了不代表停留长度正确。state 边界不确定时改用接触/释放两个 point 括号，不伪造精确占据区间；较丰富区间合同参见 EVENT_INTERVALS.md。候选独立观察后，用显式 actor/action/target 对应比较，保留未知、遗漏和歧义。未取得真实源观察或标注，记 **NOT_ASSESSED**，不能用技术 passed 回填。
+
+具体命令、可运行合成坏例→修正例→独立控制例、引擎/设计消融方法见仓库 `tools/reference-benchmark/EVENT_CORRESPONDENCE.md`，便携 Skill 见 `runtime/review-tools/EVENT_CORRESPONDENCE.md`。修复后必须重新绑定新媒体 hash、重新观察并执行；回看邻窗与未用于调参的控制事件。示例仅比较虚构标注，不证明真实修片效果。
+
+默认 review/run 不自动运行 sidecar。其输出 **DIAGNOSTIC_NOT_APPROVAL**，`NO_EVENT_OBSERVATIONS` / `PARTIAL_EVENT_EVIDENCE` 必须原样保留。退出0、编辑数0、相同时间或 hash 都不是艺术通过，也不能替代正常速连续观看、真实合听和用户接受。
+
 ## 2. 跑低成本本地技术层
 
 ```bash

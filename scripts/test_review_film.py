@@ -42,6 +42,12 @@ class ReviewTests(unittest.TestCase):
         self.assertNotIn('native-audio', ids)
         self.assertNotIn('encode-ssim-psnr', ids)
 
+    def test_correspondence_explicit_not_approval(self):
+        self.assertNotIn('event-correspondence', {m['id'] for m in r.select_methods(reference=True)})
+        method = next(m for m in r.select_methods(requested=['event-correspondence']) if m['id'] == 'event-correspondence')
+        self.assertEqual(method['implementation'], 'manual-local-sidecar')
+        self.assertEqual(method['status'], 'not_run')
+
     def test_unknown_method(self):
         with self.assertRaises(ValueError): r.select_methods(requested=['fake'])
 

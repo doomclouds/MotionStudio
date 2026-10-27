@@ -188,6 +188,17 @@
       "how_to_read": "需已有 NumPy，不自动安装；仓库 tools/reference-benchmark/STEM_BALANCE.md，portable runtime/review-tools/STEM_BALANCE.md。不接入默认 review/run 或听审门。",
       "false_positives": "信号竞争不是心理声学掩蔽、可听性、情感适配或最终混音归因；重建数值兼容不证明导出流程。",
       "corrective_action_and_retest": "保留来源/时间/声道/增益不确定性；需要正常速实际合听，若授权混音调整后按同条件 A/B 复听；指标不批准修改或升级验收。"
+    },
+    {
+      "id": "event-correspondence",
+      "select": "explicit",
+      "implementation": "manual-local-sidecar",
+      "title": "源片动作对应诊断（人工观察，不是自动识别）",
+      "when": "指定参考复刻，或反馈指出节奏/动作对象/因果差异时：制作前先真实观察源片精确 PTS，计划中显式选择本方法；缺观察记 NOT_ASSESSED。",
+      "outputs": "独立 JSON：DIAGNOSTIC_NOT_APPROVAL；保留 NO_EVENT_OBSERVATIONS / PARTIAL_EVENT_EVIDENCE；不输出艺术分。",
+      "how_to_read": "区分 point、state、sampled_state；同时间不等于同动作，采样状态不推断接触次数。仓库 tools/reference-benchmark/EVENT_CORRESPONDENCE.md；portable runtime/review-tools/EVENT_CORRESPONDENCE.md。",
+      "false_positives": "退出0、编辑距离0、标注一致或证据hash一致不证明真实含义、连续动效、音乐适配或交付通过。",
+      "corrective_action_and_retest": "先区分设计/作者参数与引擎限制；修复后对新媒体hash重新观察、标注、执行，保留旧坏例与未调参的好例对照。默认run不自动执行。"
     }
   ]
 }

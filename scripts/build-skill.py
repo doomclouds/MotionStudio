@@ -23,7 +23,7 @@ def main():
             rel = name.removeprefix('skills/motion-film-director/')
         elif any(name.startswith('engine/' + core + '/') for core in ('motion-render-core', 'motion-timeline-core', 'motion-audio-core', 'motion-elements')):
             rel = 'runtime/' + name.removeprefix('engine/')
-        elif name in ('tools/reference-benchmark/event_intervals.py', 'tools/reference-benchmark/test_event_intervals.py', 'tools/reference-benchmark/event-intervals.example.synthetic.json', 'tools/reference-benchmark/EVENT_INTERVALS.md', 'tools/reference-benchmark/event_interval_report.py', 'tools/reference-benchmark/test_event_interval_report.py', 'tools/reference-benchmark/EVENT_INTERVAL_REPORT.md', 'tools/reference-benchmark/stem_balance.py', 'tools/reference-benchmark/test_stem_balance.py', 'tools/reference-benchmark/STEM_BALANCE.md'):
+        elif name in ('tools/reference-benchmark/event_intervals.py', 'tools/reference-benchmark/test_event_intervals.py', 'tools/reference-benchmark/event-intervals.example.synthetic.json', 'tools/reference-benchmark/EVENT_INTERVALS.md', 'tools/reference-benchmark/event_interval_report.py', 'tools/reference-benchmark/test_event_interval_report.py', 'tools/reference-benchmark/EVENT_INTERVAL_REPORT.md', 'tools/reference-benchmark/stem_balance.py', 'tools/reference-benchmark/test_stem_balance.py', 'tools/reference-benchmark/STEM_BALANCE.md', 'tools/reference-benchmark/event_correspondence.py', 'tools/reference-benchmark/test_event_correspondence.py', 'tools/reference-benchmark/example_event_correspondence.py', 'tools/reference-benchmark/EVENT_CORRESPONDENCE.md'):
             rel = 'runtime/review-tools/' + name.rsplit('/', 1)[1]
         elif name == 'LICENSE':
             rel = 'LICENSE'
@@ -37,6 +37,8 @@ def main():
     if any(name not in payload for name in required): raise SystemExit('Required source/license missing')
     required_stem = ['runtime/review-tools/' + name for name in ('stem_balance.py', 'test_stem_balance.py', 'STEM_BALANCE.md')]
     if any(name not in payload for name in required_stem): raise SystemExit('Optional stem-balance source/documentation missing')
+    required_correspondence = ['runtime/review-tools/' + name for name in ('event_correspondence.py', 'test_event_correspondence.py', 'example_event_correspondence.py', 'EVENT_CORRESPONDENCE.md')]
+    if any(name not in payload for name in required_correspondence): raise SystemExit('Event-correspondence source/documentation missing')
     payload['runtime-source.json'] = (json.dumps({'schema': 1, 'mode': 'bundled', 'relativePath': 'runtime/motion-render-core', 'policy': 'Generated snapshot; edit canonical MotionStudio source and rebuild.'}, indent=2)+'\n').encode()
     manifest = {'schema': 1, 'files': [{'path': name, 'bytes': len(data), 'sha256': hashlib.sha256(data).hexdigest()} for name, data in sorted(payload.items())]}
     payload['manifest.json'] = (json.dumps(manifest, ensure_ascii=False, indent=2)+'\n').encode()

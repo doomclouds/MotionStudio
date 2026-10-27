@@ -20,6 +20,7 @@ def main():
                 if path.is_file() and (path.suffix in {'.mjs', '.md', '.json', '.html'} or path.name == 'LICENSE'):
                     sources.append(str(path.relative_to(ROOT)))
         sources.extend(['tools/reference-benchmark/event_intervals.py', 'tools/reference-benchmark/test_event_intervals.py', 'tools/reference-benchmark/event-intervals.example.synthetic.json', 'tools/reference-benchmark/EVENT_INTERVALS.md', 'tools/reference-benchmark/event_interval_report.py', 'tools/reference-benchmark/test_event_interval_report.py', 'tools/reference-benchmark/EVENT_INTERVAL_REPORT.md'])
+        sources.extend(['tools/reference-benchmark/' + name for name in ('event_correspondence.py', 'test_event_correspondence.py', 'example_event_correspondence.py', 'EVENT_CORRESPONDENCE.md')])
         sources.extend(['tools/reference-benchmark/stem_balance.py', 'tools/reference-benchmark/test_stem_balance.py', 'tools/reference-benchmark/STEM_BALANCE.md'])
         sources.extend(['skills/motion-film-director/references/motion-elements.md', 'skills/motion-film-director/scripts/test-audio-timeline.mjs', 'skills/motion-film-director/references/knowledge-decision-example/index.json', 'skills/motion-film-director/references/knowledge-decision-example/cases/plan.json'])
         sources.extend(['skills/motion-film-director/scripts/static_knowledge.py', 'skills/motion-film-director/scripts/test_static_knowledge.py', 'skills/motion-film-director/research/video-knowledge/STATIC-SCHEMA.md'])
@@ -82,6 +83,53 @@ def main():
             run(['python3', str(review / 'test_stem_balance.py')])
         else:
             print('Optional stem-balance tests NOT_RUN: NumPy unavailable; no automatic installation')
+        correspondence_method = next(m for m in methods if m['id'] == 'event-correspondence')
+        assert correspondence_method['select'] == 'explicit'
+        assert correspondence_method['implementation'] == 'manual-local-sidecar'
+        for name in ('event_correspondence.py', 'test_event_correspondence.py', 'example_event_correspondence.py', 'EVENT_CORRESPONDENCE.md'):
+            assert (review / name).is_file()
+        run(['python3', str(review / 'test_event_correspondence.py')])
+        synthetic = temp / 'synthetic-correspondence'
+        generator = ['python3', str(review / 'example_event_correspondence.py'), '--out', str(synthetic)]
+        run(generator)
+        before_example = {p.name: p.read_bytes() for p in synthetic.iterdir()}
+        assert subprocess.run(generator, capture_output=True).returncode == 2
+        assert before_example == {p.name: p.read_bytes() for p in synthetic.iterdir()}
+        diagnostics = {}
+        for case in ('bad', 'corrected', 'control'):
+            output = synthetic / (case + '.result.json')
+            command = ['python3', str(review / 'event_correspondence.py'), '--annotations', str(synthetic / (case + '.json')),
+                       '--reference-media', str(synthetic / 'reference.txt'), '--candidate-media', str(synthetic / (case + '.txt')),
+                       '--evidence-root', str(synthetic), '--synthetic', '--out', str(output)]
+            run(command)
+            diagnostics[case] = json.loads(output.read_text())
+            assert diagnostics[case]['status'] == 'DIAGNOSTIC_NOT_APPROVAL'
+            assert diagnostics[case]['dataset_kind'] == 'synthetic'
+            assert diagnostics[case]['bindings']['reference'] == 'SYNTHETIC_BYTES_NOT_MEDIA'
+            assert diagnostics[case]['annotation_truth'] == 'NOT_VERIFIED'
+            assert diagnostics[case]['artistic_quality'] is None
+            before_receipt = output.read_bytes()
+            assert subprocess.run(command, capture_output=True).returncode == 2
+            assert output.read_bytes() == before_receipt
+        assert 'SEMANTIC_MISMATCH' in diagnostics['bad']['events'][0]['findings']
+        assert 'DEFINITELY_LATE' in diagnostics['bad']['events'][0]['findings']
+        for case in ('corrected', 'control'):
+            assert diagnostics[case]['events'][0]['findings'] == ['WITHIN_DECLARED_TOLERANCE_NOT_APPROVAL']
+        # Public examples contain no private media paths; contract rejects traversal and resource overflow.
+        source_example = json.loads((synthetic / 'bad.json').read_text())
+        mutations = []
+        for path in ('../outside.txt', '/absolute/private-evidence.txt'):
+            data = json.loads(json.dumps(source_example)); data['evidence'][0]['path'] = path; mutations.append(data)
+        data = json.loads(json.dumps(source_example)); data['sequences']['reference']['events'] *= 101; mutations.append(data)
+        data = json.loads(json.dumps(source_example)); data['sequences']['reference']['events'][0]['pts_samples'] = ['1'] * 101; mutations.append(data)
+        for number, data in enumerate(mutations):
+            annotation = synthetic / ('invalid-' + str(number) + '.json'); annotation.write_text(json.dumps(data))
+            output = synthetic / ('invalid-' + str(number) + '.result.json')
+            failed = subprocess.run(['python3', str(review / 'event_correspondence.py'), '--annotations', str(annotation),
+                '--reference-media', str(synthetic / 'reference.txt'), '--candidate-media', str(synthetic / 'bad.txt'),
+                '--evidence-root', str(synthetic), '--synthetic', '--out', str(output)], capture_output=True)
+            assert failed.returncode == 2 and not output.exists()
+        print('Portable correspondence synthetic bad/corrected/control and no-overwrite contracts passed; not film evidence')
         fixture_spec = importlib.util.spec_from_file_location('portable_interval_fixture', review / 'test_event_intervals.py')
         fixture_module = importlib.util.module_from_spec(fixture_spec); fixture_spec.loader.exec_module(fixture_module)
         fixture_args, fixture_data = fixture_module.make_fixture(temp / 'synthetic-interval-inputs')
