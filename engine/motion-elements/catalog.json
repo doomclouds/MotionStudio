@@ -988,6 +988,103 @@
         "形变",
         "对应"
       ]
+    },
+    {
+      "id": "field.attractor-orientation",
+      "version": 1,
+      "kind": "field",
+      "status": "experimental",
+      "summary": "独立采样的局部径向/切向解析朝向场，不是速度场",
+      "api": "compileAttractorField",
+      "entry": "lib/index.mjs",
+      "example": {
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 360,
+          "height": 160
+        },
+        "columns": 18,
+        "rows": 8
+      },
+      "applicability": [
+        "指针朝向图",
+        "循环方向标记"
+      ],
+      "counterexamples": [
+        "不是视频光流、流体或粒子积分",
+        "奇点方向显式为零；父变换由调用者施加一次"
+      ],
+      "evidence": {
+        "tests": [
+          "test/field-slices.test.mjs"
+        ],
+        "demo": "examples/field-slices-scene.mjs",
+        "artisticReview": "NOT_RUN",
+        "originalProductionTransfer": "NOT_RUN"
+      },
+      "knowledgeLinks": [],
+      "tags": [
+        "field",
+        "attractor",
+        "orientation",
+        "朝向",
+        "场"
+      ]
+    },
+    {
+      "id": "transition.masked-slice-displacement",
+      "version": 1,
+      "kind": "transition",
+      "status": "experimental",
+      "summary": "固定水平条带双向位移；端点与reduced模式精确原样",
+      "api": "compileSliceDisplacement",
+      "entry": "lib/index.mjs",
+      "example": {
+        "width": 380,
+        "height": 170,
+        "bands": 11,
+        "maxOffset": 55,
+        "seed": "study",
+        "instanceId": "panel",
+        "range": {
+          "start": {
+            "n": "1",
+            "d": "1"
+          },
+          "end": {
+            "n": "5",
+            "d": "1"
+          }
+        },
+        "jitterCycles": 3
+      },
+      "applicability": [
+        "图表信号扰动",
+        "完整文本卡临时分片位移"
+      ],
+      "counterexamples": [
+        "不是字形拆分或双场景剪辑器",
+        "只接受同步绘制函数；不从catalog执行代码",
+        "运动期任意仿射下不保证条带无缝"
+      ],
+      "evidence": {
+        "tests": [
+          "test/field-slices.test.mjs"
+        ],
+        "demo": "examples/field-slices-scene.mjs",
+        "artisticReview": "NOT_RUN",
+        "originalProductionTransfer": "NOT_RUN"
+      },
+      "knowledgeLinks": [],
+      "tags": [
+        "slice",
+        "displacement",
+        "mask",
+        "transition",
+        "条带",
+        "位移"
+      ]
     }
   ]
 }

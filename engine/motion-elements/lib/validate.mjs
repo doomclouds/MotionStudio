@@ -2,8 +2,8 @@ export const fail = message => { throw new Error(message); };
 export function object(value, allowed, required = []) {
   if (!value || typeof value !== 'object' || Array.isArray(value) ||
       ![Object.prototype, null].includes(Object.getPrototypeOf(value))) fail('Expected plain object');
-  for (const key of Object.keys(value)) if (!allowed.includes(key)) fail(`Unknown field: ${key}`);
-  for (const key of required) if (!Object.hasOwn(value, key)) fail(`Missing field: ${key}`);
+  for (const key of Reflect.ownKeys(value)) if (!allowed.includes(key)) fail(`Unknown field: ${String(key)}`);
+  for (const key of required) if (!Object.hasOwn(value, key)) fail(`Missing field: ${String(key)}`);
   return value;
 }
 export function number(value, min = -1e9, max = 1e9) {

@@ -66,7 +66,7 @@ def main():
         run(['node', '--test', *map(str, tests)])
         query_cli = elements / 'scripts/query-catalog.mjs'
         listed = json.loads(subprocess.check_output(['node', str(query_cli), 'list']))
-        assert listed['total'] == 17 and len(listed['results']) == 17
+        assert listed['total'] == 19 and len(listed['results']) == 19
         recipes = json.loads(subprocess.check_output(['node', str(query_cli), 'list', '--kind', 'recipe']))
         assert recipes['total'] == 3 and len(recipes['results']) == 3
         empty = json.loads(subprocess.check_output(['node', str(query_cli), 'find', '--text', 'no-such-mechanism-29461']))
@@ -152,7 +152,7 @@ def main():
         stale = subprocess.run([*cli_args, '--out', str(stale_path)], capture_output=True)
         assert stale.returncode == 1 and json.loads(stale_path.read_text())['collection_status'] == 'STALE'
         assert json.loads(stale_path.read_text())['events'] == []
-        print('Catalog 17/recipe3/no-match and standalone interval CLI synthetic/unsupported/stale gates passed; no decoding or approval')
+        print('Catalog 19/recipe3/no-match and standalone interval CLI synthetic/unsupported/stale gates passed; no decoding or approval')
         gallery = temp / 'fresh-gallery'
         run(['node', str(elements / 'scripts/render-gallery.mjs'), '--out', str(gallery)])
         movie = gallery / 'motion-elements-gallery.mp4'
@@ -168,8 +168,8 @@ def main():
         assert (reduced / 'frame.png').read_bytes().startswith(b'\x89PNG\r\n\x1a\n')
         print('Fresh portable gallery: 240 frames, 8 seconds, full decode passed; reduced-motion frame rendered (not an artistic review)')
         # Separate synthetic demos; no production footage or artistic gate claims.
-        for demo in ('path', 'settle-reveal', 'tiles', 'focus-handoff', 'tile-signature', 'iris', 'registered-polygon-morph'):
-            width, height, frames, duration = (960, 640, 240, 8) if demo == 'registered-polygon-morph' else (1920, 1080, 210, 7) if demo == 'focus-handoff' else (1920, 1080, 240, 8) if demo == 'tile-signature' else (1280, 720, 240, 8)
+        for demo in ('path', 'settle-reveal', 'tiles', 'focus-handoff', 'tile-signature', 'iris', 'registered-polygon-morph', 'field-slices'):
+            width, height, frames, duration = (960, 640, 180, 6) if demo == 'field-slices' else (960, 640, 240, 8) if demo == 'registered-polygon-morph' else (1920, 1080, 210, 7) if demo == 'focus-handoff' else (1920, 1080, 240, 8) if demo == 'tile-signature' else (1280, 720, 240, 8)
             path_gallery = temp / ('fresh-' + demo)
             run(['node', str(elements / 'scripts/render-gallery.mjs'), '--out', str(path_gallery), '--demo', demo])
             path_movie = path_gallery / 'motion-elements-gallery.mp4'

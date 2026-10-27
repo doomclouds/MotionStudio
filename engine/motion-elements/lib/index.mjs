@@ -16,3 +16,6 @@ export {compileFocusHandoff,sampleFocusHandoff} from './recipes/focus-handoff.mj
 export {compileTileSignature,sampleTileSignature} from './recipes/tile-signature.mjs';
 export {compileRegisteredPolygonMorph,sampleRegisteredPolygonMorph} from './registered-polygon-morph.mjs';
 export {drawRegisteredPolygonMorph} from '../adapters/registered-polygon-morph.mjs';
+export {compileAttractorField,sampleAttractorField} from './attractor-field.mjs';
+export {compileSliceDisplacement,sampleSliceDisplacement} from './slice-displacement.mjs';
+export {withSliceDisplacement} from '../adapters/slice-displacement.mjs';
