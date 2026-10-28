@@ -168,3 +168,14 @@ A 始终完整保底，B 在圆内 source-over；**end/after 仍调用 A+B**，B
 适用于 Clawd 等角色连续、B 背景不透明的场景切换，但需项目自己保持角色身份与层序；不是已验证任意真实场景。reduced 在 raw progress=0.5 切 A-only→完整 A+B，保留时段，不按 eased 半径切换。真实复刻、艺术与声音验收仍独立。
 
 合成预览：`node engine/motion-elements/scripts/render-gallery.mjs --out /tmp/iris-new --demo iris`；portable 将 `engine/` 换成 `runtime/`。8 秒240帧720p无声，四panel展示opaque与透明OVER两类语义；不包含私有角色素材。
+
+### 单调采样带形包络（experimental）
+
+`compileSampledBand({samples:[{x,y,halfWidth},…]})` + `drawSampledBand` 生成
+上边正序、下边反序的闭合分段直线填充轮廓，见 Motion Elements README 的
+sampled band 合同与 `examples/sampled-band-study.mjs`。适合二维变宽带、图表
+对称区间；半宽是竖直距离，不是法线恒宽、任意曲线 morph、织带物理或 3D。
+调用方负责采样密度、时间与层序。允许零宽尖端/夹点；全零宽不绘制。
+此 API 从项目方法提炼并独立验证，未回填现有成片，不能把项目成片验证算作
+新 API 的生产迁移或艺术认可。沿用已有路径/拖尾、变换、错峰与 mask API，
+不按颜色、层数、时长计新条目。

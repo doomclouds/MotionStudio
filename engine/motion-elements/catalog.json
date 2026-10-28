@@ -1140,6 +1140,59 @@
         "横带",
         "斜边"
       ]
+    },
+    {
+      "id": "geometry.sampled-band",
+      "version": 1,
+      "kind": "geometry",
+      "status": "experimental",
+      "summary": "单调 x 采样中心线与竖直半宽生成闭合分段线性带形包络",
+      "api": "compileSampledBand",
+      "entry": "lib/index.mjs",
+      "example": {
+        "samples": [
+          {
+            "x": 0,
+            "y": 20,
+            "halfWidth": 0
+          },
+          {
+            "x": 40,
+            "y": 10,
+            "halfWidth": 12
+          },
+          {
+            "x": 100,
+            "y": 30,
+            "halfWidth": 4
+          }
+        ]
+      },
+      "applicability": [
+        "可变宽二维带形轮廓",
+        "图表对称不确定性带；调用方负责采样与层序"
+      ],
+      "counterexamples": [
+        "不是法线恒宽挤出、任意曲线 morph、拓扑求解、物理织带或3D",
+        "直线连接样本；不推断采样密度，不提供时间模型"
+      ],
+      "evidence": {
+        "technicalTests": [
+          "test/sampled-band.test.mjs"
+        ],
+        "visualDemo": "examples/sampled-band-study.mjs",
+        "artisticReview": "NOT_RUN",
+        "originalProductionTransfer": "NOT_RUN"
+      },
+      "knowledgeLinks": [],
+      "tags": [
+        "band",
+        "envelope",
+        "variable-width",
+        "geometry",
+        "带形",
+        "包络"
+      ]
     }
   ]
 }

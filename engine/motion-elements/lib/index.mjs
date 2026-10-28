@@ -19,3 +19,5 @@ export {drawRegisteredPolygonMorph} from '../adapters/registered-polygon-morph.m
 export {compileAttractorField,sampleAttractorField} from './attractor-field.mjs';
 export {compileSliceDisplacement,sampleSliceDisplacement} from './slice-displacement.mjs';
 export {withSliceDisplacement} from '../adapters/slice-displacement.mjs';
+export {compileSampledBand} from './sampled-band.mjs';
+export {drawSampledBand} from '../adapters/sampled-band.mjs';

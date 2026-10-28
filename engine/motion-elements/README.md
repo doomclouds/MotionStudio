@@ -591,3 +591,52 @@ random-order state/native pixels, fresh-process state, independent half-plane
 pixel classification, opaque-edge coverage, transparent end behavior, and callback
 exception/current-path isolation. New generic code has no full-video/art/audio
 review; source-project visual evidence does not automatically transfer to this API.
+
+## Experimental: sampled band envelope
+
+`geometry.sampled-band` is one pure geometry mechanism, not a ribbon simulator:
+
+```js
+const band = compileSampledBand({samples:[
+  {x:0,y:30,halfWidth:0}, {x:60,y:10,halfWidth:12}, {x:140,y:40,halfWidth:4}
+]});
+drawSampledBand(ctx,band,{fill:'#527d91'},{Path2D:canvasApi.Path2D});
+```
+
+The dense array has 2..1024 `{x,y,halfWidth}` samples. x/y are finite numbers in
+[-1e9,1e9], x strictly increases, and halfWidth is finite in [0,1e9]. Unknown
+fields (including hidden/symbol fields), holes, negative widths, repeated or
+reversed x reject. Positive width must yield representably distinct y−width < y
+and y+width > y; otherwise it rejects rather than silently collapsing. These
+coordinate bounds keep derived vertices and bounds finite (up to ±2e9 and 4e9
+extent). Representable subnormal coordinates/widths are allowed; raster visibility
+is not guaranteed for tiny shapes. No area multiplication or normalization occurs.
+
+Output is a detached deeply frozen, module-branded `{samples,vertices,bounds,
+degenerate}`. Vertices are upper edge (y−halfWidth) in sample order, then lower
+edge (y+halfWidth) in reverse; closure is implicit. Segments are **straight**, not
+spline reconstruction. Width means **vertical half-width**, not curve-normal
+thickness. Zero endpoints and interior pinches are allowed; all-zero widths give
+`degenerate:true` and draw nothing (even if center y varies). Zero x span rejects.
+Serialization is inspection only; recompile samples to draw after transport.
+
+The fill-only adapter uses a separate Path2D and nonzero fill, preserving current
+path and restoring context through finally. Caller transform, alpha, compositing,
+clip and explicit layer order remain in effect. Fill must be a nonempty Canvas
+color string; CSS color parsing is delegated to the backend. No strokes, joins,
+caps, automatic sampling, time interpolation, topology repair, morphing, physical
+weaving or 3D are supplied. Caller chooses sufficient sample density.
+
+Deduplication: `compilePolyline`/`sampleTrail` remain the path-distance tools;
+registered-polygon morph has a different correspondence/topology contract and
+rejects the coincident/collinear/zero-width cases this envelope intentionally allows.
+Mask reveals remain viewport clips, not variable-width contour geometry.
+
+The method was extracted from a production scene's upper-forward/lower-reverse
+sampled outline and independently validated. **It was not backfilled into that
+film; the existing film still uses its original project implementation.** No film
+usage, artistic approval or production-transfer validation is claimed for this API.
+`examples/sampled-band-study.mjs` shows neutral wave and chart uncertainty envelopes;
+`test/sampled-band.test.mjs` covers reusable geometry, bounds, numerical degeneracy,
+validation, native raster equivalence and adapter isolation. No generated media or
+commercial assets are included.
