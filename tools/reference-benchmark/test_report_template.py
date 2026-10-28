@@ -27,6 +27,33 @@ class PresentationTests(unittest.TestCase):
         out = render_target or out
         Image.new('RGB', (1800, 2530), report.COLORS['bg']).save(out/'overview.png')
         (out/'benchmark.html').write_text('<html><body><header></header><section><span>AUDIO PROFILE</span></section><footer></footer></body></html>')
+    def test_keyframe_display_derivative_preserves_native_and_escapes_label(self):
+        import copy, hashlib
+        native = self.out/'native.png'; display = self.out/'display.jpg'
+        Image.new('RGB', (40, 20), 'navy').save(native)
+        Image.new('RGB', (40, 20), 'navy').save(display, quality=90)
+        digest = hashlib.sha256(native.read_bytes()).hexdigest()
+        row = {'path': 'native.png', 'sha256': digest}
+        self.assertIn('href="native.png"', report._keyframe_link(self.out, row))
+        self.assertIn('原生 PNG ↗', report._keyframe_link(self.out, row))
+        row.update(display_path='display.jpg', display_label='有损 JPEG <preview>')
+        original = copy.deepcopy(row)
+        link = report._keyframe_link(self.out, row)
+        self.assertIn('href="display.jpg"', link)
+        self.assertIn('有损 JPEG &lt;preview&gt;', link)
+        self.assertNotIn('原生 PNG ↗', link)
+        self.assertEqual(row, original)
+        self.assertEqual(hashlib.sha256(native.read_bytes()).hexdigest(), digest)
+        del row['display_label']
+        self.assertIn('压缩展示（非原生 PNG）', report._keyframe_link(self.out, row))
+
+    def test_keyframe_display_derivative_rejects_private_or_missing_path(self):
+        outside = self.root/'private.png'; Image.new('RGB', (4, 4)).save(outside)
+        (self.out/'escape.png').symlink_to(outside)
+        for target in ['../private.png', str(outside), 'missing.jpg', 'escape.png']:
+            with self.subTest(target=target):
+                self.assertEqual(report._keyframe_link(self.out, {'display_path': target}), '')
+
     def test_frozen_pair_empty_states_status_order_and_size(self):
         with patch.object(report, 'render_report', side_effect=self.baseline):
             result = report.render_delivery_report(self.out, self.dest)

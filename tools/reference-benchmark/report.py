@@ -76,6 +76,16 @@ def _img_uri(out, relative, max_side=640, quality=86):
     return "data:image/jpeg;base64," + base64.b64encode(buf.getvalue()).decode("ascii")
 
 
+def _keyframe_link(out, row):
+    """Optional display derivative; never overwrite the native evidence path."""
+    display = row.get('display_path')
+    target = display or row.get('path', '')
+    label = (row.get('display_label') or '压缩展示（非原生 PNG） ↗') if display else '原生 PNG ↗'
+    if _asset(out, target) is None:
+        return ''
+    return f'<a href="{_s(target)}" target="_blank" rel="noopener">{_s(label)}</a>'
+
+
 def _series(profile, section, field):
     return [(float(row["t_s"]), float(row[field]) if _finite(row.get(field)) else None) for row in profile.get(section, {}).get("samples", []) if _finite(row.get("t_s"))]
 
@@ -401,8 +411,7 @@ def render_report(output: Path, render_target: Path = None):
             if i>=len(rows): pair.append('<div class="missing">未采集</div>'); continue
             row=rows[i]; uri=_img_uri(out,row.get('crop_path') or row.get('path'),780,90)
             full_uri=_img_uri(out,row.get('preview_path') or row.get('path'),640,87)
-            target=row.get('path',''); native=_asset(out,target)
-            link=f'<a href="{_s(target)}" target="_blank" rel="noopener">原生 PNG ↗</a>' if native else ''
+            link=_keyframe_link(out,row)
             pair.append(f'<figure><figcaption><i class="swatch {"ref" if j==0 else "cand"}"></i>{_s(labels[j])} · {_s(row.get("label","关键帧"))} · {_num(row.get("t_s"),3)}s</figcaption><div class="detail-images"><div><span>全帧预览</span><img loading="lazy" src="{full_uri}" alt="{_s(row.get("label","关键帧"))}全帧"></div><div><span>指定 ROI</span><img loading="lazy" src="{uri}" alt="{_s(row.get("label","关键帧"))}局部细节"></div></div><p class="note">PTS {_num(row.get("pts_s"),6)}s · 解码帧 {_s(row.get("frame_index","?"))} · {_s(row.get("crop_box_native","全画面"))} {link}</p></figure>')
         keyframes+='<div class="key-pair">'+''.join(pair)+'</div>'
 
