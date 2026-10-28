@@ -54,7 +54,7 @@ def main():
             assert not any(n.endswith(('.wav', '.mp4', '.mp3')) or '/node_modules/' in n for n in names)
             z.extractall(temp / 'fresh')
         skill = temp / 'fresh/motion-film-director'
-        for test in ('test_video_knowledge.py', 'test_static_knowledge.py'):
+        for test in ('test_video_knowledge.py', 'test_static_knowledge.py', 'test_check_delivery.py'):
             run(['python3', str(skill / 'scripts' / test)])
         kb_cli = skill / 'scripts/video_knowledge.py'
         empty_kb = json.loads(subprocess.check_output(['python3', str(kb_cli), 'validate']))
