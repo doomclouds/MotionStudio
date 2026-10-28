@@ -1,5 +1,5 @@
 """Offline synthetic data and injected transports only; no credentials/network."""
-import io, json, tempfile, unittest
+import base64, io, json, tempfile, unittest
 from pathlib import Path
 from unittest.mock import patch
 import audiovisual_review as av
@@ -100,12 +100,57 @@ class RealMediaBindingTests(unittest.TestCase):
         delayed=self.root/'delayed.mp4'
         av.command(['ffmpeg','-v','error','-i',str(self.movie),'-itsoffset','0.08','-i',str(self.movie),'-map','0:v:0','-map','1:a:0','-c','copy',str(delayed)])
         with self.assertRaises(av.a.ReviewError):av.prepare(delayed,av.sha(delayed),self.root/'delayed-prepared')
+    def test_short_soundtrack_still_rejected(self):
+        short=self.root/'short-audio.mp4'
+        av.command(['ffmpeg','-v','error','-f','lavfi','-i','color=c=blue:s=160x90:r=10:d=2',
+                    '-f','lavfi','-i','sine=frequency=440:sample_rate=48000:duration=1',
+                    '-c:v','libx264','-pix_fmt','yuv420p','-c:a','aac',str(short)])
+        with self.assertRaisesRegex(av.a.ReviewError,'Audio coverage mismatch'):
+            av.prepare(short,av.sha(short),self.root/'short-prepared')
     def test_timestamp_lie_rejected(self):
         self.manifest['frames'][0]['time_s']=.5
         with self.assertRaises(av.a.ReviewError):av.payload(self.manifest)
     def test_coverage_lie_rejected(self):
         self.manifest['audio']['coverage_s']=[0,.1]
         with self.assertRaises(av.a.ReviewError):av.payload(self.manifest)
+
+
+class StreamTimingTests(unittest.TestCase):
+    def test_unknown_nonfinite_or_inconsistent_timing_rejected(self):
+        valid={'duration_ts':1000,'time_base':'1/1000','duration':'1.000000'}
+        for invalid in ({},dict(valid,duration='nan'),dict(valid,duration_ts=0),
+                        dict(valid,time_base='0/0'),dict(valid,duration='1.1'),
+                        dict(valid,duration_ts='1000'),dict(valid,duration='inf')):
+            with self.subTest(invalid=invalid), self.assertRaises(av.a.ReviewError):
+                av.stream_timing(invalid)
+
+class AACTailTests(unittest.TestCase):
+    """Actual encoded AAC tail must never extend the visual sampling schedule."""
+    def test_complete_audio_tail_and_independent_visual_extent(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root=Path(temp);movie=root/'tail.mp4'
+            av.command(['ffmpeg','-v','error','-f','lavfi','-i','color=c=blue:s=160x90:r=10:d=2',
+                        '-f','lavfi','-i','sine=frequency=440:sample_rate=48000:duration=2.01',
+                        '-c:v','libx264','-pix_fmt','yuv420p','-c:a','aac',str(movie)])
+            manifest=av.prepare(movie,av.sha(movie),root/'prepared')
+            timing=manifest['movie']['stream_timing']
+            self.assertEqual(timing['video']['duration_s'],2)
+            self.assertAlmostEqual(timing['audio']['duration_s'],2.01,places=3)
+            self.assertEqual([f['time_s'] for f in manifest['frames']],[0,1])
+            self.assertGreater(manifest['audio']['duration_s'],2)
+            # Independent untrimmed decoding, including the codec's decoded tail.
+            full=root/'full.wav'
+            av.command(['ffmpeg','-v','error','-i',str(movie),'-map','0:a:0','-vn','-c:a','pcm_s16le','-ar','48000',str(full)])
+            self.assertEqual(av.sha(full),manifest['audio']['sha256'])
+            body=av.payload(manifest)
+            content=body['messages'][1]['content']
+            encoded=next(x['input_audio']['data'] for x in content if x['type']=='input_audio')
+            self.assertEqual(base64.b64decode(encoded.split(',',1)[1]),full.read_bytes())
+            self.assertEqual(sum(x['type']=='image_url' for x in content),2)
+            manifest['movie']['stream_timing']['video']['duration_s']=2.01
+            with self.assertRaises(av.a.ReviewError):av.payload(manifest)
+            manifest['schema_version']=1
+            with self.assertRaisesRegex(av.a.ReviewError,'Reprepare legacy'):av.payload(manifest)
 
 
 

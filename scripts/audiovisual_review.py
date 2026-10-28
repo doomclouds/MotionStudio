@@ -3,6 +3,7 @@
 import argparse, base64, hashlib, json, math, os, subprocess, sys, tempfile
 from pathlib import Path
 from datetime import datetime, timezone
+from fractions import Fraction
 import audio_review as a
 
 PROMPT = '''Review the actual full supplied soundtrack and these sparse timed images of the same film.
@@ -33,12 +34,31 @@ def command(args):
     return p.stdout
 
 
+def stream_timing(stream):
+    """Require explicit, consistent stream duration and its integer timebase."""
+    try:
+        ticks = stream['duration_ts']
+        base = Fraction(stream['time_base'])
+        declared = float(stream['duration'])
+        if type(ticks) is not int or ticks <= 0 or base <= 0:
+            raise ValueError('Invalid stream timebase')
+        duration = float(ticks * base)
+        if not math.isfinite(declared) or not 0 < duration <= 25.1 or abs(declared-duration) > .000001:
+            raise ValueError('Ambiguous stream duration')
+    except (KeyError, TypeError, ValueError, ZeroDivisionError, OverflowError):
+        raise a.ReviewError('Explicit consistent stream duration/timebase required; no duration inference') from None
+    return {'duration_s':duration, 'duration_ts':ticks, 'time_base':str(base)}
+
+
 def prepare(movie, expected, output):
     movie = Path(movie).resolve(strict=True)
     if sha(movie) != expected:
         raise a.ReviewError('Movie hash mismatch')
     info = json.loads(command(['ffprobe','-v','error','-protocol_whitelist','file','-show_streams','-show_format','-of','json',str(movie)]))
-    duration = float(info['format']['duration'])
+    try:
+        duration = float(info['format']['duration'])
+    except (KeyError, TypeError, ValueError):
+        raise a.ReviewError('Explicit container duration required') from None
     audio = [s for s in info['streams'] if s.get('codec_type') == 'audio']
     video = [s for s in info['streams'] if s.get('codec_type') == 'video']
     if not 0 < duration <= 25.1 or len(audio) != 1 or len(video) != 1:
@@ -46,6 +66,9 @@ def prepare(movie, expected, output):
     starts = [float(stream.get('start_time', 'nan')) for stream in (audio[0], video[0])]
     if not all(math.isfinite(t) and abs(t) <= 0.000001 for t in starts):
         raise a.ReviewError('Audio/video must share zero origin; nonzero stream offsets require explicit mapping')
+    timing = {name:stream_timing(stream) for name, stream in (('audio',audio[0]),('video',video[0]))}
+    if abs(duration-max(t['duration_s'] for t in timing.values())) > .025:
+        raise a.ReviewError('Container and stream coverage mismatch')
     out = Path(output).resolve()
     out.mkdir(parents=True, exist_ok=False)
     wav = out/'audio.wav'
@@ -53,16 +76,18 @@ def prepare(movie, expected, output):
     audio_cmd = ['ffmpeg','-v','error','-protocol_whitelist','file','-i',str(movie),'-map','0:a:0','-vn','-c:a','pcm_s16le','-ar','48000',str(wav)]
     command(audio_cmd)
     metadata, _ = a.clip(wav, max_duration=25.2)
-    if metadata['channels'] not in (1,2) or abs(metadata['duration_s']-duration) > .025:
+    if (metadata['channels'] not in (1,2)
+            or abs(metadata['duration_s']-timing['audio']['duration_s']) > .025
+            or abs(metadata['duration_s']-duration) > .025):
         raise a.ReviewError('Audio coverage mismatch')
     frames = []
-    for second in range(min(25, math.ceil(duration))):
+    for second in range(min(25, math.ceil(timing['video']['duration_s']))):
         frame = out/f'frame-{second:02d}.jpg'
         command(['ffmpeg','-v','error','-protocol_whitelist','file','-ss',str(second),'-i',str(movie),'-frames:v','1','-vf','scale=640:360:force_original_aspect_ratio=decrease','-q:v','4',str(frame)])
         frames.append({'path':str(frame),'sha256':sha(frame),'time_s':second,'timestamp_kind':'requested_seek_time_not_frame_exact'})
     if sha(movie) != expected:
         raise a.ReviewError('Movie changed during preparation')
-    result={'schema_version':1,'movie':{'path':str(movie),'sha256':expected,'duration_s':duration},
+    result={'schema_version':2,'movie':{'path':str(movie),'sha256':expected,'duration_s':duration,'stream_timing':timing},
         'audio':dict(metadata,path=str(wav),coverage_s=[0,metadata['duration_s']],conversion_command=audio_cmd),
         'frames':frames,'limitations':['Sparse frames do not establish continuous playback or frame-accurate sync.'],
         'model':a.MODEL,'endpoint':a.BASE_URL,'prepared_utc':datetime.now(timezone.utc).isoformat()}
@@ -71,12 +96,16 @@ def prepare(movie, expected, output):
 
 
 def verify_derivation(manifest):
+    if manifest.get('schema_version') != 2:
+        raise a.ReviewError('Reprepare legacy manifest to bind independent audio/video stream timing')
     # An editable manifest is not provenance. Independently regenerate from the
     # actual movie using fixed commands; never execute a manifest-supplied command.
     with tempfile.TemporaryDirectory(prefix='av-verify-') as temp:
         regenerated = prepare(manifest['movie']['path'], manifest['movie']['sha256'], Path(temp)/'derived')
         if manifest['movie']['duration_s'] != regenerated['movie']['duration_s']:
             raise a.ReviewError('Movie duration declaration mismatch')
+        if manifest['movie'].get('stream_timing') != regenerated['movie']['stream_timing']:
+            raise a.ReviewError('Stream timing declaration mismatch')
         for field in ('sha256','duration_s','channels','sample_rate','bytes','coverage_s'):
             if manifest['audio'].get(field) != regenerated['audio'][field]:
                 raise a.ReviewError('Audio is not the complete fixed movie-track derivation')
@@ -96,18 +125,18 @@ def payload(manifest):
         raise a.ReviewError('Movie changed')
     verify_derivation(manifest)
     meta, raw = a.clip(manifest['audio']['path'],max_duration=25.2)
-    if meta['sha256'] != manifest['audio']['sha256'] or abs(meta['duration_s']-manifest['movie']['duration_s']) > .025:
+    if meta['sha256'] != manifest['audio']['sha256'] or abs(meta['duration_s']-manifest['movie']['stream_timing']['audio']['duration_s']) > .025:
         raise a.ReviewError('Audio changed or incomplete')
     frames=manifest['frames']
     if not 1 <= len(frames) <= 25:
         raise a.ReviewError('Frame count outside bounded budget')
-    content=[{'type':'text','text':PROMPT},{'type':'input_audio','input_audio':{'data':'data:;base64,'+base64.b64encode(raw).decode(),'format':'wav'}}]
+    content=[{'type':'text','text':PROMPT + f"\nVideo stream extent: 0 to {manifest['movie']['stream_timing']['video']['duration_s']} s; audio stream extent: 0 to {manifest['movie']['stream_timing']['audio']['duration_s']} s; complete decoded audio extent: 0 to {meta['duration_s']} s. Extents can differ; do not infer visuals beyond the video stream."},{'type':'input_audio','input_audio':{'data':'data:;base64,'+base64.b64encode(raw).decode(),'format':'wav'}}]
     for frame in frames:
         path=Path(frame['path'])
         frame_bytes = path.read_bytes()
         if len(frame_bytes) > 200_000 or hashlib.sha256(frame_bytes).hexdigest() != frame['sha256']:
             raise a.ReviewError('Frame changed or too large')
-        if type(frame['time_s']) not in (int,float) or not 0 <= frame['time_s'] < manifest['movie']['duration_s']:
+        if type(frame['time_s']) not in (int,float) or not 0 <= frame['time_s'] < manifest['movie']['stream_timing']['video']['duration_s']:
             raise a.ReviewError('Frame timestamp outside movie')
         content.extend([{'type':'text','text':f"Sparse frame requested at {frame['time_s']} seconds; not continuous video."},
             {'type':'image_url','image_url':{'url':'data:image/jpeg;base64,'+base64.b64encode(frame_bytes).decode()}}])

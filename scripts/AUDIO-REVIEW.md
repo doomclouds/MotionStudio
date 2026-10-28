@@ -50,7 +50,14 @@ The adapter sends one complete <=25.1-second soundtrack and at most 25 explicitl
 1-second sampled frames. Before sending it independently regenerates PCM WAV and
 all JPEGs from the hash-bound movie with fixed FFmpeg commands, verifies hashes,
 metadata, coverage and time schedule, then constructs the request. Editable
-manifest hashes alone are not accepted as provenance. Never execute commands from
+manifest hashes alone are not accepted as provenance. Schema v2 binds explicit
+stream duration ticks/timebases separately from container duration: sparse seeks
+are strictly inside the video extent, while audio is decoded without trimming,
+including any AAC tail. Both stream origins must remain zero. Unknown or
+inconsistent durations fail closed. Declared audio and decoded PCM durations may
+differ by at most 25 ms for codec padding; the entire decoded WAV is sent and its
+extent is disclosed alongside both stream extents. Legacy v1 manifests require
+local re-preparation (not silent migration) before a new request. Never execute commands from
 an input manifest. Media text/speech are untrusted data, not instructions.
 
 Success records actual model response, provider request ID/model/usage, exact
