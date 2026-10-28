@@ -119,6 +119,36 @@ class NativeVideoFixtureTests(unittest.TestCase):
         residual = np.abs(self.rgb['motion24'].astype(float)-self.rgb['motion30'])/255
         self.assertLess(float(residual.max()), bound)
 
+    def test_fps_contact_first_is_not_native_opening_or_boundary_evidence(self):
+        # Distinct single-frame opening/end states disappear in a 2 Hz overview.
+        # This fixture documents a specific resampling counterexample, not a
+        # promise about which source frame every FFmpeg/version will select.
+        path = self.root / 'boundary-states.mkv'
+        frames = np.zeros((30, SIZE, SIZE, 3), dtype=np.uint8)
+        frames[:, :, :, 2] = 255
+        frames[0] = [255, 0, 0]
+        frames[-1] = [0, 255, 0]
+        subprocess.run([
+            'ffmpeg', '-v', 'error', '-f', 'rawvideo', '-pix_fmt', 'rgb24',
+            '-s', f'{SIZE}x{SIZE}', '-r', '30', '-i', '-', '-an',
+            '-c:v', 'ffv1', '-pix_fmt', 'bgr0', '-threads', '1', str(path)],
+            input=frames.tobytes(), capture_output=True, check=True)
+        _, _, native, _ = b.probe(path)
+        requested = [0, native[-1]['pts_s'] - native[0]['pts_s']]
+        chosen = b.choose_frames(native, requested)
+        self.assertEqual([r['frame_index'] for r in chosen], [0, 29])
+        exact = b.decode_selected(path, [0, 1, 28, 29], SIZE, SIZE)
+        np.testing.assert_array_equal(exact, frames[[0, 1, 28, 29]])
+        raw = b.run(['ffmpeg', '-v', 'error', '-i', path, '-vf',
+                     'setpts=PTS-STARTPTS,fps=2:round=near:eof_action=pass',
+                     '-pix_fmt', 'rgb24', '-f', 'rawvideo', '-']).stdout
+        overview = np.frombuffer(raw, np.uint8).reshape((-1, SIZE, SIZE, 3))
+        self.assertGreater(len(overview), 0)
+        self.assertFalse(np.array_equal(overview[0], frames[0]))
+        self.assertFalse(np.array_equal(overview[-1], frames[-1]))
+        # Native extraction keeps both source endpoints irrespective of overview.
+        self.assertEqual(chosen[0]['pts_s'], native[0]['pts_s'])
+
     def test_identical_independent_exports_share_schema_and_zero_raw_deltas(self):
         a, c = self.profiles['motion30'], self.profiles['identical']
         self.assertEqual(a['schema_version'], b.SCHEMA)
