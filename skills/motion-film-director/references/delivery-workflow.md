@@ -73,3 +73,5 @@ python3 skills/motion-film-director/scripts/check_final_delivery.py /local/compl
 每份审查记录必须有`issues`数组：未关闭问题保持`pending`并阻断ready；只有`resolved`或`accepted`且附具体`rationale`才算处理完毕。方法局限写在`limitations`，不能用它隐藏未修缺陷或覆盖用户否决。
 
 最终交付包同时提供成片、HTML报告及机器可读结果清单。报告hash由清单绑定（不做报告自hash循环）；报告内绑定成片与证据hash。任何成片、审查记录、证据或报告修改均需重新核验，不能沿用旧绿灯。版本身份匹配只证明字节一致；完整内容、权利与真实审查仍需负责的审查者核对。
+
+参考/旧新版任务先按审查SOP G节发现并复用既有benchmark完整比较页/总览及motion-check热力图，不因新报告而遗漏波形、频谱和运动诊断。用户报告固定为项目`output/review/overview.png`和`report.html`；内部JSON不作为附件，PDF和资源包须另有明确要求。

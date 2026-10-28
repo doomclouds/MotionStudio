@@ -190,6 +190,27 @@ class FinalDeliveryTests(unittest.TestCase):
         self.assertEqual(code, 1, result)
         self.assertTrue(any('before/after' in x for x in result['blockers']))
 
+    def test_reference_task_marks_missing_old_pipeline_explicitly(self):
+        self.packet.update(reference_based=True, reference_sha256='c'*64)
+        code, result = self.run_gate()
+        self.assertEqual(code, 1, result)
+        self.assertEqual(result['comparison_diagnostics']['benchmark']['status'], 'NOT_RUN')
+        self.assertIn('2A · Existing full comparison', (self.root / 'report.html').read_text())
+
+    def test_default_user_reports_are_fixed_png_and_html_only(self):
+        packet_path = self.root / 'packet.json'
+        packet_path.write_text(json.dumps(self.packet))
+        args = [str(self.video), '--packet', str(packet_path), '--project-root', str(self.root),
+                '--trusted-review-key', str(self.keys / 'trusted.pem')]
+        out = io.StringIO()
+        with contextlib.redirect_stdout(out), patch.object(gate, 'technical', side_effect=self.technical):
+            self.assertEqual(gate.main(args), 0)
+        result = json.loads(out.getvalue())
+        directory = self.root / 'output/review'
+        self.assertEqual({p.name for p in directory.iterdir()}, {'report.html','overview.png'})
+        self.assertEqual(result['user_report_formats'], ['png','html'])
+        self.assertEqual(gate.digest(directory/'overview.png'), result['overview']['sha256'])
+
     def test_not_listened_blocked_pending_and_boolean_cannot_pass(self):
         for index, status in enumerate(('NOT_LISTENED', 'BLOCKED', 'pending', False, True)):
             with self.subTest(status=status):

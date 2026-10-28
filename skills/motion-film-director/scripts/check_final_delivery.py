@@ -303,6 +303,26 @@ def standardize(result, packet, inputs):
             evidence[(pair[side]['path'], pair[side]['sha256'])] = dict(pair[side], kind='comparison_' + side)
     if result['blockers']:
         result['status'] = 'review_candidate'
+    reference_based = packet.get('reference_based', False)
+    if type(reference_based) is not bool:
+        raise ValueError('reference_based must be boolean applicability, not an approval flag')
+    result['reference_based'] = reference_based
+    if reference_based:
+        diagnostics = packet.get('comparison_diagnostics')
+        if diagnostics is None:
+            diagnostics = {name: {'status': 'NOT_RUN', 'reason': 'Existing diagnostic output was not supplied in packet; discover/reuse it before declaring complete.',
+                'candidate_sha256': result['movie']['sha256'], 'artifacts': [], 'panels': [],
+                'method_limits': ['No measurement or perception is inferred.']} for name in ('benchmark', 'motion_check')}
+            diagnostics['benchmark']['reference_sha256'] = packet.get('reference_sha256', '')
+        result['comparison_diagnostics'] = diagnostics
+        for name, item in diagnostics.items():
+            if item.get('status') != 'COLLECTED_NOT_APPROVED':
+                result['blockers'].append(name + ': existing diagnostic collection not completed')
+            for artifact in item.get('artifacts', []):
+                inputs.artifact(artifact)
+                evidence[(artifact['path'], artifact['sha256'])] = dict(artifact, kind=name + '_diagnostic')
+        if result['blockers']:
+            result['status'] = 'review_candidate'
     result.update(report_standard='motionstudio.delivery-report', report_standard_version=1,
         generated_at=datetime.now(timezone.utc).isoformat(),
         summary=('Review candidate: required evidence or review remains incomplete.' if result['blockers'] else
@@ -312,7 +332,7 @@ def standardize(result, packet, inputs):
     return result
 
 
-def render_report(result, pictures, comparison_pictures=()):
+def render_report(result, pictures, comparison_pictures=(), diagnostic_links=None):
     escape = html.escape
     def section(title, value):
         return '<section><h2>' + escape(title) + '</h2><pre>' + escape(json.dumps(value, ensure_ascii=False, indent=2)) + '</pre></section>'
@@ -325,6 +345,13 @@ def render_report(result, pictures, comparison_pictures=()):
         'movie': result['movie'], 'target_duration_seconds': result['target_duration_seconds'],
         'status': result['status'], 'owner_approval': result['owner_approval'], 'blockers': result['blockers']})
     sections += section('2 · Technical checks (not perception)', result['technical'])
+    if result.get('reference_based'):
+        sections += section('2A · Existing full comparison, waveforms and heatmaps', result['comparison_diagnostics'])
+        for name, item in result['comparison_diagnostics'].items():
+            for artifact in item['artifacts']:
+                # Relative links remain useful only when delivered with the verified diagnostic directory.
+                from urllib.parse import quote
+                sections += '<p>' + escape(name + ' / ' + artifact['role']) + ': <a href="' + escape(quote((diagnostic_links or {}).get(artifact['path'], artifact['path']), safe='/')) + '">' + escape(artifact['path']) + '</a></p>'
     sections += '<section><h2>3 · Visual evidence</h2>' + images + '</section>'
     for index, (kind, review_result) in enumerate(result['reviews'].items(), 4):
         sections += section(str(index) + ' · ' + kind + ' review — method, coverage and findings', review_result)
@@ -347,11 +374,17 @@ def main(argv=None):
     parser.add_argument('video', type=Path)
     parser.add_argument('--packet', type=Path, required=True)
     parser.add_argument('--trusted-review-key', type=Path, action='append', default=[])
-    parser.add_argument('--report', type=Path, required=True)
+    parser.add_argument('--project-root', type=Path, default=Path.cwd(), help='Fixed report location: PROJECT/output/review/')
+    parser.add_argument('--report', type=Path, help='Legacy explicit HTML path; omit for canonical PNG+HTML delivery')
     parser.add_argument('--ffprobe', default='ffprobe')
     parser.add_argument('--ffmpeg', default='ffmpeg')
     args = parser.parse_args(argv)
+    canonical = args.report is None
+    if canonical:
+        args.report = args.project_root.resolve() / 'output/review/report.html'
     try:
+        if canonical:
+            args.report.parent.mkdir(parents=True, exist_ok=True)
         inputs = Inputs(args.packet.parent)
         packet = load_json(inputs.read(args.packet))
         if not isinstance(packet, dict) or type(packet.get('schema')) is not int or packet.get('schema') != 1:
@@ -412,14 +445,27 @@ def main(argv=None):
                     '-protocol_whitelist', 'file,pipe', '-i', str((inputs.root / spec['path']).resolve()),
                     '-f', 'null', '-'], capture_output=True, check=True, timeout=60)
                 comparison_pictures.append((pair['issue_id'] + ' / ' + side, mime, raw, spec['sha256']))
-        report = render_report(result, pictures, comparison_pictures).encode('utf-8')
+        diagnostic_links = {artifact['path']: os.path.relpath(inputs.root / artifact['path'], args.report.parent.resolve())
+            for item in result.get('comparison_diagnostics', {}).values() for artifact in item['artifacts']}
+        report = render_report(result, pictures, comparison_pictures, diagnostic_links).encode('utf-8')
         inputs.recheck()
         result['report'] = {'path': str(args.report.resolve()), 'sha256': hashlib.sha256(report).hexdigest()}
+        overview = None
+        if canonical:
+            overview_spec = next((a for a in result.get('comparison_diagnostics', {}).get('benchmark', {}).get('artifacts', [])
+                                  if a.get('role') == 'full_comparison_overview'), None)
+            overview_raw = inputs.artifact(overview_spec) if overview_spec else next((raw for mime, raw, sha in pictures if mime == 'image/png'), None)
+            if overview_raw is None or not overview_raw.startswith(b'\x89PNG\r\n\x1a\n'):
+                raise ValueError('Canonical delivery requires existing PNG overview; generate with benchmark or motion-check, not a PDF/ZIP substitute')
+            overview = (args.report.parent / 'overview.png', overview_raw)
+            result['overview'] = {'path': str(overview[0]), 'sha256': hashlib.sha256(overview_raw).hexdigest()}
+            result['user_report_formats'] = ['png', 'html']
         errors = validate_report(result)
         if errors:
             raise ValueError('Report standard validation: ' + '; '.join(errors))
         # Atomic no-overwrite publication; incomplete temporary files never become reports.
         published = False
+        overview_published = False
         temporary = None
         try:
             with tempfile.NamedTemporaryFile(dir=args.report.parent, prefix='.delivery-report-', delete=False) as output:
@@ -428,12 +474,25 @@ def main(argv=None):
                 output.flush()
                 os.fsync(output.fileno())
             inputs.recheck()
+            if overview:
+                with tempfile.NamedTemporaryFile(dir=args.report.parent, prefix='.delivery-overview-', delete=False) as image_output:
+                    image_temporary = Path(image_output.name)
+                    image_output.write(overview[1])
+                    image_output.flush()
+                    os.fsync(image_output.fileno())
+                try:
+                    os.link(image_temporary, overview[0])
+                    overview_published = True
+                finally:
+                    image_temporary.unlink(missing_ok=True)
             os.link(temporary, args.report)
             published = True
             inputs.recheck()
         except BaseException:
             if published:
                 args.report.unlink(missing_ok=True)
+            if overview_published:
+                overview[0].unlink(missing_ok=True)
             raise
         finally:
             if temporary is not None:

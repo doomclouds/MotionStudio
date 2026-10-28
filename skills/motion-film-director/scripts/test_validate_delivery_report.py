@@ -41,6 +41,29 @@ class ReportTests(unittest.TestCase):
             return
         jsonschema.Draft202012Validator(json.loads(validator.SCHEMA_PATH.read_text())).validate(data)
 
+    def test_reference_reports_cannot_silently_drop_existing_diagnostics(self):
+        data = fixture(); data['reference_based'] = True
+        self.assertTrue(validator.validate_report(data))
+        data['comparison_diagnostics'] = {name: {'status': 'NOT_RUN', 'reason': 'SYNTHETIC missing installed tool',
+            'candidate_sha256': data['movie']['sha256'], 'reference_sha256': 'c' * 64,
+            'artifacts': [], 'panels': [], 'method_limits': ['Metrics are not perception.']}
+            for name in ('benchmark', 'motion_check')}
+        self.assertTrue(validator.validate_report(data))
+        data['status'] = 'review_candidate'; data['blockers'] = ['Existing tools not run']
+        self.assertEqual(validator.validate_report(data), [])
+        for name, roles, panels in (
+                ('benchmark', ['full_comparison_html','full_comparison_overview'],
+                 ['stereo_waveforms','log_mel','visual_timeline','visual_metrics','block_matching']),
+                ('motion_check', ['motion_heatmap','spatial_change_map','motion_report'],
+                 ['rgb_difference_heatmap','spatial_mean_change','contact_sheet'])):
+            item = data['comparison_diagnostics'][name]
+            item.update(status='COLLECTED_NOT_APPROVED', panels=panels,
+                artifacts=[{'role':role,'path':role,'sha256':'f'*64} for role in roles])
+        data['status'] = 'ready_for_owner_review'; data['blockers'] = []
+        self.assertEqual(validator.validate_report(data), [])
+        data['comparison_diagnostics']['benchmark']['panels'].remove('stereo_waveforms')
+        self.assertTrue(validator.validate_report(data))
+
     def test_required_sections_and_version(self):
         for key in fixture():
             data = fixture(); del data[key]

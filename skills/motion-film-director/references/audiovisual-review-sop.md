@@ -106,3 +106,19 @@ python3 scripts/audiovisual_review.py prepare /local/complete.mp4 \
 - [ ] 运行[完整交付门](delivery-workflow.md#6-完整交付门不能用时长绿灯代替视听审查)，依[证据合同](final-delivery-evidence.md)生成报告。
 - [ ] 打开HTML核图片、阅读顺序、时间窗、未验原因和状态；交付结果清单绑定报告hash。
 - [ ] `ready_for_owner_review`只表示本流程证据门具备，非艺术认可、非OWNER已接受。缺失或阻断则明确交付`review_candidate`，不宣称批准最终版。
+
+## G. 参考任务先复用已有完整诊断，不能因换报告样式而漏项
+
+对参考复刻、旧版/新版比较或用户要求对照的任务，先检查已有**同媒体hash、同配置**的导出；可复用就复用，过期才重跑。不能只拿新接触表取代原有完整视听比较。
+
+1. 仓库完整基准入口：`tools/reference-benchmark/benchmark.py`；已有数据重绘用`report.py`，完整性核对用`audit_export.py`。按该目录README传本次实际参考/候选、窗口和原生时间，不套用无关的默认时间窗。`benchmark.html`和`overview.png`已有双时间轴、左右声道波形、log-mel、视觉指标与块匹配运动图；完整页面应保留并在统一报告里使用/链接。
+2. Skill内入口是`scripts/motion-check/motion_check.py`：复用其`motion-and-change-heatmap.png`、`spatial-mean-change.png`、接触表及`report.json`，提供RGB差分热力图定位。仓库运行需加`skills/motion-film-director/`前缀。
+3. 不重复发明计算器。完整benchmark当前是**仓库工具**，需要已有NumPy、SciPy、Pillow和FFmpeg/ffprobe；便携包只有部分review sidecar，不声称已携带完整benchmark。找不到仓库工具或缺依赖时，记录`NOT_RUN`/`BLOCKED`与具体原因，仍展示缺项，不自动联网安装或静默省略。motion-check随Skill源码打包，其依赖见该目录requirements。
+4. 方法名必须准确：RGB帧差不是光流；benchmark的稀疏块平移匹配不是dense optical flow/RAFT；波形/频谱不是实际听审，跨片包络lag不是声画因果同步。各面板保留采样、时间精度和失效边界。
+5. 内部报告JSON声明`reference_based: true`并填写`comparison_diagnostics.benchmark/motion_check`：成功为`COLLECTED_NOT_APPROVED`，否则保留`NOT_RUN/BLOCKED`、原因和待补路径；具体字段见报告规范。成功只代表采集，不能升级感知或用户接受。
+
+### 唯一用户报告出口
+
+固定为**项目根`output/review/overview.png`与`output/review/report.html`**。完整总览PNG和HTML复用上述既有输出并补审查裁决，不再交付PDF、JSON、源码ZIP或“完整资源包”，除非用户另行明确要求。影片MP4单独交付。JSON、原始测量和证据可以内部保存，不作为用户附件。
+
+已有旧版PDF/ZIP不盲删；复验先明确归档已有报告到项目私有历史目录，再原子发布固定路径，拒绝无检查覆盖。HTML需要的图尽量内嵌；若仅链接本地诊断目录，应明确链接可用范围，不能假装发出单个HTML就携带了整套资源。

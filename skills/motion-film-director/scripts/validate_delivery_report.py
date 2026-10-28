@@ -139,6 +139,30 @@ def validate_report(report, finalized=True):
             for observation in record.get('observations', []):
                 if not 0 <= _time(observation['start_s']) < _time(observation['end_s']) <= duration:
                     errors.append(kind + ': observation outside movie')
+        if report.get('reference_based') is True:
+            diagnostics = report.get('comparison_diagnostics')
+            if not isinstance(diagnostics, dict):
+                errors.append('reference-based report requires existing benchmark and motion-check status')
+            else:
+                requirements = {
+                    'benchmark': ({'full_comparison_html', 'full_comparison_overview'},
+                                  {'stereo_waveforms', 'log_mel', 'visual_timeline', 'visual_metrics', 'block_matching'}),
+                    'motion_check': ({'motion_heatmap', 'spatial_change_map', 'motion_report'},
+                                     {'rgb_difference_heatmap', 'spatial_mean_change', 'contact_sheet'})}
+                for tool, (roles, panels) in requirements.items():
+                    item = diagnostics[tool]
+                    if item['candidate_sha256'] != report['movie']['sha256']:
+                        errors.append(tool + ': diagnostic evidence belongs to different candidate')
+                    if tool == 'benchmark' and not item.get('reference_sha256'):
+                        errors.append('benchmark: reference identity required')
+                    if item['status'] == 'COLLECTED_NOT_APPROVED':
+                        if not roles <= {a['role'] for a in item['artifacts']}:
+                            errors.append(tool + ': missing existing full-comparison/heatmap artifacts')
+                        if not panels <= set(item['panels']):
+                            errors.append(tool + ': required diagnostic panels omitted')
+                    elif ready:
+                        errors.append(tool + ': diagnostic collection incomplete; retain candidate')
+
         identifiers = set()
         for issue in report['issues']:
             if issue['id'] in identifiers:

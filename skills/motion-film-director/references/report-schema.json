@@ -625,6 +625,162 @@
     },
     "report": {
       "$ref": "#/$defs/artifact"
+    },
+    "reference_based": {
+      "type": "boolean"
+    },
+    "comparison_diagnostics": {
+      "type": "object",
+      "required": [
+        "benchmark",
+        "motion_check"
+      ],
+      "properties": {
+        "benchmark": {
+          "type": "object",
+          "required": [
+            "status",
+            "reason",
+            "candidate_sha256",
+            "artifacts",
+            "panels",
+            "method_limits"
+          ],
+          "properties": {
+            "status": {
+              "enum": [
+                "COLLECTED_NOT_APPROVED",
+                "NOT_RUN",
+                "BLOCKED"
+              ]
+            },
+            "reason": {
+              "type": "string",
+              "minLength": 1
+            },
+            "candidate_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "reference_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "artifacts": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "role",
+                  "path",
+                  "sha256"
+                ],
+                "properties": {
+                  "role": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "path": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "sha256": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{64}$"
+                  }
+                }
+              }
+            },
+            "panels": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "method_limits": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "motion_check": {
+          "type": "object",
+          "required": [
+            "status",
+            "reason",
+            "candidate_sha256",
+            "artifacts",
+            "panels",
+            "method_limits"
+          ],
+          "properties": {
+            "status": {
+              "enum": [
+                "COLLECTED_NOT_APPROVED",
+                "NOT_RUN",
+                "BLOCKED"
+              ]
+            },
+            "reason": {
+              "type": "string",
+              "minLength": 1
+            },
+            "candidate_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "reference_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "artifacts": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "role",
+                  "path",
+                  "sha256"
+                ],
+                "properties": {
+                  "role": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "path": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "sha256": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{64}$"
+                  }
+                }
+              }
+            },
+            "panels": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "method_limits": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      }
     }
   },
   "$defs": {
@@ -645,5 +801,24 @@
         }
       }
     }
-  }
+  },
+  "allOf": [
+    {
+      "if": {
+        "required": [
+          "reference_based"
+        ],
+        "properties": {
+          "reference_based": {
+            "const": true
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "comparison_diagnostics"
+        ]
+      }
+    }
+  ]
 }
