@@ -110,4 +110,22 @@ class PresentationTests(unittest.TestCase):
         self.assertIn('NotoSansCJK',report.FONT_PATH)
         self.assertEqual(report.PRESENTATION_STATUSES,('technical','visual','listening','av_sync'))
 
+    def test_gate_identity_omits_private_directories_without_mutating_evidence(self):
+        for path in ['/workspace/private-session/output/film.mp4',
+                     r'C:\Users\private-user\output\film.mp4']:
+            with self.subTest(path=path):
+                result = {'movie': {'path': path, 'sha256': 'b'*64,
+                                   'duration_seconds_exact': '3/2'},
+                          'technical': {'status': 'passed'}, 'reviews': {},
+                          'status': 'review_candidate', 'blockers': ['NOT_LISTENED']}
+                original = json.dumps(result, sort_keys=True)
+                _, page = report.render_gate_report(result, [])
+                page = page.decode()
+                self.assertIn('film.mp4', page)
+                self.assertIn('b'*64, page)
+                self.assertNotIn('private-session', page)
+                self.assertNotIn('private-user', page)
+                self.assertNotIn('/workspace/', page)
+                self.assertEqual(json.dumps(result, sort_keys=True), original)
+
 if __name__ == '__main__': unittest.main()

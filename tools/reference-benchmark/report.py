@@ -529,10 +529,15 @@ def render_gate_report(result, pictures, comparison_pictures=(), benchmark_outpu
         evidence = '<section class="section" id="delivery-assessment"><h2>交付审查结论与证据</h2>'
         evidence += '<p class="note">图表区 UNVERIFIED 是测量工具不执行感知审查；实际记录、方法、覆盖与阻断以下列交付门结果为准。MEASURED_NOT_APPROVED 表示技术已测，不是艺术批准。</p>'
         evidence += '<p>'+_s(result['status'])+' · 用户批准：'+_s(result.get('owner_approval','not_checked'))+'</p>'
+        # Display only the filename. Keep the caller's verified absolute path and
+        # bindings untouched; exported identity is the filename plus media hash.
+        movie_display = dict(result['movie'])
+        if isinstance(movie_display.get('path'), str):
+            movie_display['path'] = movie_display['path'].replace('\\', '/').rsplit('/', 1)[-1]
         for title, value in [('阻断与局限', {'blockers':result.get('blockers',[]), 'known_limits':result.get('known_limits',[])}),
                              ('技术与三类审查记录', {'technical':result.get('technical',{}), 'reviews':result.get('reviews',{})}),
                              ('问题与修复', {'issues':result.get('issues',[]), 'before_after':result.get('before_after',{})}),
-                             ('身份与来源', {'movie':result['movie'], 'packet_sha256':result.get('packet_sha256'), 'evidence_index':result.get('evidence_index',[])})]:
+                             ('身份与来源', {'movie':movie_display, 'packet_sha256':result.get('packet_sha256'), 'evidence_index':result.get('evidence_index',[])})]:
             evidence += '<details><summary>'+_s(title)+'</summary><pre>'+_s(json.dumps(value,ensure_ascii=False,indent=2))+'</pre></details>'
         seen = set()
         for label, mime, raw, sha in [('绑定视觉证据', *p) for p in pictures] + list(comparison_pictures):

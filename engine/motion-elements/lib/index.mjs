@@ -21,3 +21,5 @@ export {compileSliceDisplacement,sampleSliceDisplacement} from './slice-displace
 export {withSliceDisplacement} from '../adapters/slice-displacement.mjs';
 export {compileSampledBand} from './sampled-band.mjs';
 export {drawSampledBand} from '../adapters/sampled-band.mjs';
+export {compileLightEchoField,sampleLightEchoField} from './recipes/light-echo-field.mjs';
+export {drawLightEchoField} from '../adapters/light-echo-field.mjs';

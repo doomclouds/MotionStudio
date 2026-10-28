@@ -1193,6 +1193,166 @@
         "带形",
         "包络"
       ]
+    },
+    {
+      "id": "recipe.light-echo-field",
+      "version": 1,
+      "kind": "recipe",
+      "status": "experimental",
+      "summary": "显式灯点身份关联同色断续竖条映像，统一相机、独立光盘半径",
+      "api": "compileLightEchoField",
+      "entry": "lib/index.mjs",
+      "example": {
+        "type": "recipe.light-echo-field",
+        "version": 1,
+        "range": {
+          "start": {
+            "n": "0",
+            "d": "1"
+          },
+          "end": {
+            "n": "7",
+            "d": "1"
+          }
+        },
+        "seed": "echo-study-v1",
+        "camera": {
+          "from": {
+            "x": 0,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "rotation": 0
+          },
+          "to": {
+            "x": 28,
+            "y": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "rotation": 0
+          },
+          "origin": {
+            "x": 480,
+            "y": 270
+          }
+        },
+        "focus": {
+          "from": 1,
+          "to": 1.6
+        },
+        "drift": {
+          "x": 5,
+          "y": 12,
+          "frequencyHz": 0.12
+        },
+        "lights": [
+          {
+            "id": "amber",
+            "position": {
+              "x": 210,
+              "y": 140
+            },
+            "radius": 23,
+            "color": [
+              255,
+              155,
+              65
+            ],
+            "opacity": 0.8,
+            "echo": {
+              "offset": {
+                "x": -30,
+                "y": 140
+              },
+              "width": 18,
+              "step": 28,
+              "count": 8,
+              "heightMin": 10,
+              "heightMax": 25,
+              "opacity": 0.35
+            }
+          },
+          {
+            "id": "red",
+            "position": {
+              "x": 500,
+              "y": 190
+            },
+            "radius": 29,
+            "color": [
+              235,
+              48,
+              62
+            ],
+            "opacity": 0.85,
+            "echo": {
+              "offset": {
+                "x": -40,
+                "y": 100
+              },
+              "width": 22,
+              "step": 25,
+              "count": 8,
+              "heightMin": 8,
+              "heightMax": 27,
+              "opacity": 0.4
+            }
+          },
+          {
+            "id": "mint",
+            "position": {
+              "x": 730,
+              "y": 110
+            },
+            "radius": 15,
+            "color": [
+              90,
+              215,
+              180
+            ],
+            "opacity": 0.6,
+            "echo": {
+              "offset": {
+                "x": -22,
+                "y": 190
+              },
+              "width": 12,
+              "step": 30,
+              "count": 6,
+              "heightMin": 12,
+              "heightMax": 22,
+              "opacity": 0.3
+            }
+          }
+        ]
+      },
+      "applicability": [
+        "人为设计的二维夜色灯光/竖条映像",
+        "显式灯位与独立echo偏移；稳定ID绑定seed碎条"
+      ],
+      "counterexamples": [
+        "不是镜面倒影、物理雨水、光学景深或3D反射",
+        "不生成随机灯群，不推断地平线、材质、遮挡或透视",
+        "数组顺序是绘制层序；ID稳定不代表重排后重叠像素相同"
+      ],
+      "evidence": {
+        "technicalTests": [
+          "test/light-echo-field.test.mjs"
+        ],
+        "visualDemo": "examples/light-echo-field-scene.mjs",
+        "artisticReview": "NOT_RUN",
+        "originalProductionTransfer": "NOT_RUN"
+      },
+      "knowledgeLinks": [],
+      "tags": [
+        "light",
+        "echo",
+        "reflection",
+        "identity",
+        "灯光",
+        "反射",
+        "recipe"
+      ]
     }
   ]
 }
