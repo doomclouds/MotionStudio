@@ -75,7 +75,7 @@ Canvas 六元矩阵使用列向量；`multiply(A,B)` 表示先应用 B，再应�
 
 ## 转场与 Canvas 适配
 
-`sampleTransition(spec, at, {reducedMotion:false})` 返回 viewport 和固定 outgoing/incoming 两层。`drawTransition(ctx,state,{outgoing, incoming})` 依次调用两个同步绘制回调，局部视口原点为 (0,0)。本版不编译多场景时长、scene-local 时间映射、音频淡入淡出或完整视频剪辑时间线；由项目显式提供各场景内容/时间。不是对现有 audio timeline 的隐式扩展。
+`sampleTransition(spec, at, {reducedMotion:false})` 返回含 viewport 的类型专属状态：push/rect-wipe/iris 使用 layers，linear-mask 使用 polygon/revealProgress；不要假定所有类型都含固定两层数组。`drawTransition(ctx,state,{outgoing, incoming})` 依次调用两个同步绘制回调，局部视口原点为 (0,0)。本版不编译多场景时长、scene-local 时间映射、音频淡入淡出或完整视频剪辑时间线；由项目显式提供各场景内容/时间。不是对现有 audio timeline 的隐式扩展。
 
 - push 为避免 Native Canvas 两个独立抗锯齿边缘露底，位移使用 **nearest integer local pixel**，两层共享同一个整数边界；宽高必须正整数。Canvas 父变换必须非零整数轴向 scale、整数 translation，无 rotation/shear；不符合时拒绝。可见 1 像素步进是声明过的首版取舍，不能宣称任意亚像素仿射下无缝。
 - rect-wipe 始终在 A 上覆盖 B，不让两个半透明边缘相互拼接。方向表示揭示边界的移动方向。
@@ -535,3 +535,59 @@ weights, seek/seed determinism, bounds, native endpoint/reduced raster equality 
 context restoration. Experimental technical evidence only: no artistic approval,
 hearing approval, cross-backend identity, or independently validated production
 transfer is claimed. No reference/media/calibration data is included.
+
+## Experimental: linear-coordinate mask reveal
+
+One mechanism, `transition.linear-mask`, with `band` and `sweep` parameter variants.
+It fills a missing two-scene centered-band/oblique-edge reveal, not a new 3D renderer.
+Existing `rect-wipe` remains appropriate for axis-aligned edge wipes; `iris-reveal`
+uses a radial metric. Existing stagger + transform + finite-settle already covers
+card timing/rotation; route selection can compose path/opacity and caller-owned
+layer order. Those were **not** duplicated as new catalog elements.
+
+```js
+const state = sampleTransition({
+  type:'transition.linear-mask', version:1,
+  range:{start:rational(1),end:rational(3)}, curve:{type:'smoothstep'},
+  params:{width:640,height:360,mode:'band',angle:Math.PI/2}
+}, at, {reducedMotion:false});
+drawTransition(ctx,state,{outgoing:drawOld,incoming:drawNew},{Path2D:canvasApi.Path2D});
+// Oblique left-to-right sweep: mode:'sweep', angle:0.17.
+// Reverse sweep: mode:'sweep', angle:Math.PI.
+```
+
+For local position p, s=p.x*cos(angle)+p.y*sin(angle). Let lo/hi be its extrema
+at the four viewport corners. `sweep` reveals s≤lo+(hi−lo)q; `band` reveals
+|s−(lo+hi)/2|≤(hi−lo)q/2. Angle is the **normal**, in radians in Canvas y-down
+coordinates, not the edge angle. Thus angle π/2 yields a horizontal centered band.
+Negative angles and reversed sweeps are parameter changes, not new mechanisms.
+A bounded convex polygon is clipped from the viewport; no 3D points or source images.
+At q=0 the incoming callback is skipped; at q=1 the exact viewport is used.
+q is the existing curve applied to rational-time progress. Reduced motion uses
+raw time midpoint q=0/1, preserving phase, progress and all authored timings.
+
+Width/height finite 1..8192, area≤16,777,216 (fractional local sizes accepted);
+angle ∈[−π,π], mode band/sweep, version1. Nulls/unknown fields, including symbol
+and nonenumerable fields, invalid ranges and unsupported curves reject. Samples
+are immutable and module-branded: serialization is for inspection, not draw-state
+rehydration; resample the original spec after transport. No retained frame history.
+
+Composition is explicitly **over-reveal**: full A stays underneath B even at end
+and after; transparent B holes show A. This is not transparent replacement. Each
+callback is viewport-clipped, source-over; caller alpha and parent transform remain
+in effect. No second parent transform is applied. Separate Path2D preserves the
+caller's current path, and save/finally/restore isolates state on errors. Callbacks
+must be synchronous, reentrant, balanced, and must not reset/resize the canvas or
+clear through the intended composition; caller path mutations/external async effects
+cannot be undone. AsyncFunction and returned thenables reject. No arbitrary-backend
+or transformed-antialiasing identity is promised; avoid declaring pixel tests an
+artistic or accessibility approval.
+
+`examples/linear-mask-study.mjs` exports `drawLinearMaskStudy(ctx,at,options)` with
+neutral bars→circles, three variants, portrait/landscape and reduced-motion support.
+It does not encode a film or load private assets. `test/linear-mask.test.mjs` covers
+state/geometry, rational endpoints, strict validation, raw-midpoint reduction,
+random-order state/native pixels, fresh-process state, independent half-plane
+pixel classification, opaque-edge coverage, transparent end behavior, and callback
+exception/current-path isolation. New generic code has no full-video/art/audio
+review; source-project visual evidence does not automatically transfer to this API.

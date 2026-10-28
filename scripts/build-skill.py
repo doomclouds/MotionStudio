@@ -35,6 +35,7 @@ def main():
     required += ['scripts/video_knowledge.py', 'scripts/static_knowledge.py', 'scripts/test_video_knowledge.py', 'scripts/test_static_knowledge.py', 'research/video-knowledge/STATIC-SCHEMA.md']
     required += ['runtime/motion-elements/lib/registered-polygon-morph.mjs', 'runtime/motion-elements/adapters/registered-polygon-morph.mjs', 'runtime/motion-elements/examples/registered-polygon-morph-scene.mjs', 'runtime/motion-elements/test/registered-polygon-morph.test.mjs']
     required += ['runtime/motion-elements/' + name for name in ('lib/attractor-field.mjs', 'lib/slice-displacement.mjs', 'adapters/slice-displacement.mjs', 'examples/field-slices-scene.mjs', 'test/field-slices.test.mjs')]
+    required += ['runtime/motion-elements/' + name for name in ('lib/linear-mask.mjs', 'adapters/linear-mask.mjs', 'examples/linear-mask-study.mjs', 'test/linear-mask.test.mjs')]
     if any(name not in payload for name in required): raise SystemExit('Required source/license missing')
     required_stem = ['runtime/review-tools/' + name for name in ('stem_balance.py', 'test_stem_balance.py', 'STEM_BALANCE.md')]
     if any(name not in payload for name in required_stem): raise SystemExit('Optional stem-balance source/documentation missing')

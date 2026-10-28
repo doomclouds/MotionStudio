@@ -1,3 +1,4 @@
+import {drawLinearMask} from './linear-mask.mjs';
 import {drawIris} from './iris.mjs';
 import {object,number} from '../lib/validate.mjs';
 import {matrix} from '../lib/matrix.mjs';
@@ -9,6 +10,7 @@ export function withMotion(ctx,state,draw) {
   ctx.save();try{ctx.transform(...m);ctx.globalAlpha*=opacity;const result=draw(ctx);if(result&&typeof result.then==='function')throw Error('Draw returned a promise; asynchronous drawing is unsupported');}finally{ctx.restore();}
 }
 export function drawTransition(ctx,state,callbacks,backend={}) {
+  if(state?.type==='transition.linear-mask')return drawLinearMask(ctx,state,callbacks,backend);
   if(state?.type==='transition.iris-reveal')return drawIris(ctx,state,callbacks,backend);
   object(backend,['Path2D']);
   if(Object.hasOwn(backend,'Path2D')&&typeof backend.Path2D!=='function')throw Error('Path2D must be a constructor');

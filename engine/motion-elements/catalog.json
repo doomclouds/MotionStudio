@@ -1085,6 +1085,61 @@
         "条带",
         "位移"
       ]
+    },
+    {
+      "id": "transition.linear-mask",
+      "version": 1,
+      "kind": "transition",
+      "status": "experimental",
+      "summary": "线性坐标阈值裁切：中心横带或斜边双场景覆盖揭示，参数变体只计一个机制",
+      "api": "sampleTransition",
+      "entry": "lib/index.mjs",
+      "example": {
+        "type": "transition.linear-mask",
+        "version": 1,
+        "range": {
+          "start": {
+            "n": "1",
+            "d": "1"
+          },
+          "end": {
+            "n": "3",
+            "d": "1"
+          }
+        },
+        "params": {
+          "width": 640,
+          "height": 360,
+          "mode": "band",
+          "angle": 1.5707963267948966
+        }
+      },
+      "applicability": [
+        "中心横带展开",
+        "斜边扫入场景"
+      ],
+      "counterexamples": [
+        "不是透视翻面或3D",
+        "透明incoming保留outgoing，不是透明替换",
+        "不是自动分镜或音频卡点"
+      ],
+      "evidence": {
+        "tests": [
+          "test/linear-mask.test.mjs"
+        ],
+        "demo": "examples/linear-mask-study.mjs",
+        "artisticReview": "NOT_RUN",
+        "originalProductionTransfer": "NOT_RUN"
+      },
+      "knowledgeLinks": [],
+      "tags": [
+        "wipe",
+        "band",
+        "diagonal",
+        "2d",
+        "横带",
+        "斜边"
+      ]
     }
   ]
 }
