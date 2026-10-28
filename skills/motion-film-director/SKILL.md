@@ -21,6 +21,8 @@ description: 从一句话委托独立研究、制作和验证中文动效影片�
 
 代码美术不足或要把生成场景做成可控动作时，按[混合美术生产](references/hybrid-art-workflow.md)选择代码/imagegen/真3D分工，并用其brief、分层manifest与检查单；不把整图平移当完整动画，也不默认全片生成化。
 
+分层光效遮挡、跨镜头尾迹或已认可片段接入全片时，读[分层与接续合同](references/layered-continuity-lessons.md)：分别核 alpha/遮挡、位置/速度/历史、整数帧映射与原生 hash、音视频时间基准；工程回归不替代连续视听或艺术接受。
+
 涉及像素角色、极简块状吉祥物或角色动作时，先阅读[角色表演](references/character-performance.md)；先验证无文字与特效的姿态、接触和节奏，再选择 rig、逐姿态重绘或混合实现。
 
 ## 可复用动效入口
