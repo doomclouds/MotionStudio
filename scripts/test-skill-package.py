@@ -37,12 +37,14 @@ def main():
             for core in ('motion-render-core', 'motion-timeline-core', 'motion-audio-core', 'motion-elements'):
                 assert any('/runtime/' + core + '/lib/' in n for n in names), core
             assert 'motion-film-director/LICENSE' in names
+            assert 'motion-film-director/.env.example' in names
+            assert not any(n.rsplit('/', 1)[-1] == '.env' for n in names)
             for license_path in ('runtime/motion-elements/LICENSE', 'runtime/motion-audio-core/LICENSE', 'runtime/motion-timeline-core/LICENSE', 'runtime/motion-render-core/LICENSES/napi-rs-canvas-MIT.txt', 'LICENSES/huashu-motion-MIT.txt'):
                 assert 'motion-film-director/' + license_path in names
             for name in names:
                 rel = name.removeprefix('motion-film-director/')
                 if rel in {'runtime-source.json', 'manifest.json'}: continue
-                source = ROOT / ('tools/reference-benchmark/' + rel.removeprefix('runtime/review-tools/') if rel.startswith('runtime/review-tools/') else 'engine/' + rel.removeprefix('runtime/') if rel.startswith('runtime/') else 'LICENSE' if rel == 'LICENSE' else 'skills/motion-film-director/' + rel)
+                source = ROOT / (('scripts/' if rel.rsplit('/', 1)[1] in {'audio_review.py', 'audiovisual_review.py', 'test_audio_review.py', 'test_audiovisual_review.py', 'AUDIO-REVIEW.md'} else 'tools/reference-benchmark/') + rel.removeprefix('runtime/review-tools/') if rel.startswith('runtime/review-tools/') else 'engine/' + rel.removeprefix('runtime/') if rel.startswith('runtime/') else rel if rel in {'LICENSE', '.env.example'} else 'skills/motion-film-director/' + rel)
                 assert z.read(name) == source.read_bytes(), 'Stale packaged source: ' + name
             default_kb = json.loads(z.read('motion-film-director/research/video-knowledge/index.json'))
             assert all(default_kb[key] == [] for key in ('cases', 'techniques', 'legacy'))
@@ -54,7 +56,7 @@ def main():
             assert not any(n.endswith(('.wav', '.mp4', '.mp3')) or '/node_modules/' in n for n in names)
             z.extractall(temp / 'fresh')
         skill = temp / 'fresh/motion-film-director'
-        for test in ('test_video_knowledge.py', 'test_static_knowledge.py', 'test_check_delivery.py'):
+        for test in ('test_video_knowledge.py', 'test_static_knowledge.py', 'test_check_delivery.py', 'test_check_final_delivery.py', 'test_validate_delivery_report.py'):
             run(['python3', str(skill / 'scripts' / test)])
         kb_cli = skill / 'scripts/video_knowledge.py'
         empty_kb = json.loads(subprocess.check_output(['python3', str(kb_cli), 'validate']))
@@ -75,6 +77,9 @@ def main():
         empty = json.loads(subprocess.check_output(['node', str(query_cli), 'find', '--text', 'no-such-mechanism-29461']))
         assert empty['total'] == 0 and empty['results'] == []
         review = skill / 'runtime/review-tools'
+        # Offline fixtures only: no provider calls or keys during package validation.
+        run(['python3', str(review / 'test_audio_review.py')])
+        run(['python3', str(review / 'test_audiovisual_review.py')])
         run(['python3', str(review / 'test_event_intervals.py')])
         run(['python3', str(review / 'test_event_interval_report.py')])
         # Optional sidecar only: no installer, decoder, listening or default review hook.

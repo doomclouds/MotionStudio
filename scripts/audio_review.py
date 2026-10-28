@@ -37,6 +37,51 @@ Times are approximate seconds relative to this clip. Do not give a pass, score o
 Include uncertain interpretations in uncertainties. If no audible event is identifiable,
 say so rather than inventing events.''' 
 
+def project_root(script_file=__file__):
+    script = Path(script_file).resolve()
+    # Two supported installation layouts only; never scan cwd, home or ancestors.
+    if script.parent.name == 'scripts':
+        return script.parent.parent
+    if script.parent.name == 'review-tools' and script.parent.parent.name == 'runtime':
+        return script.parent.parent.parent
+    raise ReviewError('Unsupported adapter layout; cannot resolve fixed config path')
+
+
+def load_project_key(script_file=__file__):
+    path = project_root(script_file) / '.env'
+    if not path.exists():
+        return None
+    if path.is_symlink() or not path.is_file():
+        raise ReviewError('Fixed .env must be a regular non-symlink file')
+    if path.stat().st_mode & 0o077:
+        raise ReviewError('Protect fixed .env with chmod 600 before review')
+    if path.stat().st_size > 16384:
+        raise ReviewError('Fixed .env exceeds configuration limit')
+    values=[]
+    for line in path.read_text().splitlines():
+        line=line.strip()
+        if not line or line.startswith('#'): continue
+        name, separator, value=line.partition('=')
+        if name.strip() != 'DASHSCOPE_API_KEY' or not separator: continue
+        value=value.strip()
+        if len(value)>=2 and value[0]==value[-1] and value[0] in ('"', "'"):
+            value=value[1:-1]
+        values.append(value)
+    if len(values)>1:
+        raise ReviewError('Duplicate DASHSCOPE_API_KEY entries refused')
+    if not values or not values[0] or values[0] in {'YOUR_API_KEY','REPLACE_ME'}:
+        return None
+    if any(c.isspace() for c in values[0]):
+        raise ReviewError('Invalid fixed-config credential')
+    return values[0]
+
+
+def skipped_not_configured():
+    return {'status':'SKIPPED_NOT_CONFIGURED','model_review':'optional_not_run',
+        'human_listening':False,'delivery_approved':False,
+        'setup_guidance':'Optional: copy .env.example to project-root .env, set DASHSCOPE_API_KEY privately, chmod 600 .env. Never commit or upload .env. Configuring a key does not authorize paid calls.'}
+
+
 class ReviewError(Exception):
     """Only controlled messages; never include remote body, credentials or media."""
 
@@ -50,7 +95,7 @@ def endpoint(value):
     return value
 
 
-def clip(path):
+def clip(path, max_duration=20):
     p = Path(path)
     if not p.is_file() or p.stat().st_size > MAX_BYTES:
         raise ReviewError('Audio must be an existing local WAV below 7 MB')
@@ -63,8 +108,8 @@ def clip(path):
             duration = frames / rate
             if w.getcomptype() != 'NONE' or width != 2 or channels not in (1, 2):
                 raise ReviewError('Use PCM16 WAV with one or two channels; stereo perception remains unverified')
-            if not 8000 <= rate <= 48000 or not 0 < duration <= 20:
-                raise ReviewError('Each WAV must be >0 and <=20 seconds, 8-48 kHz')
+            if not 8000 <= rate <= 48000 or not 0 < duration <= max_duration:
+                raise ReviewError('WAV duration or sample rate exceeds configured limit')
             if len(w.readframes(frames)) != frames * channels * width:
                 raise ReviewError('Truncated WAV')
     except (wave.Error, EOFError, ZeroDivisionError):
@@ -108,12 +153,15 @@ class NoRedirect(urllib.request.HTTPRedirectHandler):
         raise ReviewError('Redirect refused')
 
 
-def request_review(raw, base, key):
+def request_review(raw, base, key, payload_override=None, include_metadata=False):
     payload = {'model': MODEL, 'messages': [{'role': 'user', 'content': [
         {'type': 'text', 'text': PROMPT},
         {'type': 'input_audio', 'input_audio': {'data': 'data:;base64,' + base64.b64encode(raw).decode('ascii'), 'format': 'wav'}}]}],
         'modalities': ['text'], 'reasoning_effort': 'none', 'max_tokens': MAX_OUTPUT,
         'stream': True, 'stream_options': {'include_usage': True}}
+    if payload_override is not None:
+        payload = payload_override
+    request_id, response_model = None, None
     req = urllib.request.Request(endpoint(base) + '/chat/completions',
         data=json.dumps(payload).encode(), headers={'Authorization': 'Bearer ' + key, 'Content-Type': 'application/json'})
     # Preserve the platform standard outbound proxy route. Never log its values.
@@ -135,6 +183,12 @@ def request_review(raw, base, key):
             event = json.loads(data)
             if not isinstance(event, dict) or 'error' in event:
                 raise ReviewError('Malformed provider response or error')
+            if include_metadata:
+                if not event.get('id') or event.get('model') != MODEL:
+                    raise ReviewError('Missing request ID or unexpected response model')
+                if request_id is not None and event['id'] != request_id:
+                    raise ReviewError('Inconsistent provider request IDs')
+                request_id, response_model = event['id'], event['model']
             choices = event.get('choices')
             if not isinstance(choices, list) or len(choices) > 1:
                 raise ReviewError('Expected exactly one response choice, index zero')
@@ -168,6 +222,8 @@ def request_review(raw, base, key):
     # Even unexpected echo of a key must not reach logs/reports.
     if key in result or 'base64,' in result or re.search(r'\bsk-[A-Za-z0-9_-]{12,}', result):
         raise ReviewError('Unsafe provider response suppressed')
+    if include_metadata:
+        return json.loads(result), usage, {'request_id': request_id, 'model': response_model, 'response_text': result}
     return json.loads(result), usage
 
 
@@ -272,6 +328,13 @@ def main():
     p.add_argument('--pricing-confirmed-on', help='YYYY-MM-DD, after checking official current Beijing prices')
     args = p.parse_args()
     try:
+        configured_key = load_project_key()
+        if args.live and not configured_key:
+            print(json.dumps(skipped_not_configured(), ensure_ascii=False)); return 0
+        if configured_key:
+            os.environ['DASHSCOPE_API_KEY'] = configured_key
+        else:
+            os.environ.pop('DASHSCOPE_API_KEY', None)
         report = execute(args.audio, args.budget_cny, args.output, os.environ.get('DASHSCOPE_BASE_URL', BASE_URL), args.consent_upload, args.live, args.pricing_confirmed_on)
         print(json.dumps(report, ensure_ascii=False, indent=2))
         return 0 if not args.live or report['native_audio_review'] == 'reviewed' else 2

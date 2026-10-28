@@ -166,6 +166,12 @@ python3 tools/reference-benchmark/event_intervals.py evaluate --help
 
 它**不识别视频内容，不核实注释本身的真实性，不给影片自动打分**。通过校验只说明证据结构满足契约；艺术判断与最终认可仍属于观看者和创作者。
 
+### Delivery · 成片与视听报告一起交付
+
+[交付工作流](skills/motion-film-director/references/delivery-workflow.md)要求用户样片至少7秒；样片获准后直接进入完整制作，不反复提交不同长度小样。完整候选必须同时交付可视化报告，分别列明视觉、真实感知听审、声画同步与技术结果。
+
+新增`check_final_delivery.py`完整交付门将媒体、审查证据和报告绑定到SHA-256；缺少听审（包括`NOT_LISTENED`）只能作为明确标注的待审候选。旧`check_delivery.py --role final`为兼容保留，**仅检查时长元数据，不代表最终交付通过**。[证据模板与信任边界](skills/motion-film-director/references/final-delivery-evidence.md)说明完整声明式记录可用于流程门、签名仅是可选来源认证，二者都不能由布尔值证明人或模型实际听过。
+
 <details>
 <summary><strong>审查与测试入口</strong></summary>
 

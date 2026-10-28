@@ -1,0 +1,649 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://motionstudio.invalid/schemas/delivery-report-v1.json",
+  "title": "MotionStudio audiovisual delivery report v1",
+  "description": "Structure validation is not evidence of watching, listening, provenance authenticity or owner approval. No remote schema lookup is required.",
+  "type": "object",
+  "required": [
+    "schema",
+    "report_standard",
+    "report_standard_version",
+    "generated_at",
+    "summary",
+    "status",
+    "owner_approval",
+    "movie",
+    "target_duration_seconds",
+    "technical",
+    "reviews",
+    "blockers",
+    "packet_sha256",
+    "visual_artifacts",
+    "trust_boundary",
+    "issues",
+    "known_limits",
+    "before_after",
+    "report"
+  ],
+  "properties": {
+    "schema": {
+      "const": 1
+    },
+    "report_standard": {
+      "const": "motionstudio.delivery-report"
+    },
+    "report_standard_version": {
+      "const": 1
+    },
+    "generated_at": {
+      "type": "string",
+      "minLength": 1
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "review_candidate",
+        "ready_for_owner_review"
+      ]
+    },
+    "owner_approval": {
+      "const": "not_checked"
+    },
+    "movie": {
+      "type": "object",
+      "required": [
+        "path",
+        "sha256",
+        "duration_seconds_exact"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "duration_seconds_exact": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "target_duration_seconds": {
+      "type": "string",
+      "minLength": 1
+    },
+    "technical": {
+      "type": "object",
+      "required": [
+        "status"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "minLength": 1
+        },
+        "decoded_frames": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "full_av_decode": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "reviews": {
+      "type": "object",
+      "required": [
+        "visual",
+        "audio",
+        "av_sync"
+      ],
+      "properties": {
+        "visual": {
+          "type": "object",
+          "required": [
+            "status",
+            "blockers"
+          ],
+          "properties": {
+            "status": {
+              "type": "string",
+              "minLength": 1
+            },
+            "blockers": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "record": {
+              "type": "object",
+              "properties": {
+                "method": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "reviewer": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "reviewed_at": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "movie_sha256": {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{64}$"
+                },
+                "coverage": {
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "minItems": 2,
+                    "maxItems": 2,
+                    "items": {
+                      "type": [
+                        "number",
+                        "string"
+                      ]
+                    }
+                  }
+                },
+                "observations": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "start_s",
+                      "end_s",
+                      "finding"
+                    ],
+                    "properties": {
+                      "start_s": {
+                        "type": [
+                          "number",
+                          "string"
+                        ]
+                      },
+                      "end_s": {
+                        "type": [
+                          "number",
+                          "string"
+                        ]
+                      },
+                      "finding": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    }
+                  }
+                },
+                "limitations": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/artifact"
+                  }
+                }
+              }
+            },
+            "record_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "authentication": {
+              "enum": [
+                "declared_not_authenticated",
+                "signed_attestation_not_proof_of_perception",
+                "unverified"
+              ]
+            },
+            "signer_key_sha256": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        },
+        "audio": {
+          "type": "object",
+          "required": [
+            "status",
+            "blockers"
+          ],
+          "properties": {
+            "status": {
+              "type": "string",
+              "minLength": 1
+            },
+            "blockers": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "record": {
+              "type": "object",
+              "properties": {
+                "method": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "reviewer": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "reviewed_at": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "movie_sha256": {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{64}$"
+                },
+                "coverage": {
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "minItems": 2,
+                    "maxItems": 2,
+                    "items": {
+                      "type": [
+                        "number",
+                        "string"
+                      ]
+                    }
+                  }
+                },
+                "observations": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "start_s",
+                      "end_s",
+                      "finding"
+                    ],
+                    "properties": {
+                      "start_s": {
+                        "type": [
+                          "number",
+                          "string"
+                        ]
+                      },
+                      "end_s": {
+                        "type": [
+                          "number",
+                          "string"
+                        ]
+                      },
+                      "finding": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    }
+                  }
+                },
+                "limitations": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/artifact"
+                  }
+                }
+              }
+            },
+            "record_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "authentication": {
+              "enum": [
+                "declared_not_authenticated",
+                "signed_attestation_not_proof_of_perception",
+                "unverified"
+              ]
+            },
+            "signer_key_sha256": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        },
+        "av_sync": {
+          "type": "object",
+          "required": [
+            "status",
+            "blockers"
+          ],
+          "properties": {
+            "status": {
+              "type": "string",
+              "minLength": 1
+            },
+            "blockers": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "record": {
+              "type": "object",
+              "properties": {
+                "method": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "reviewer": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "reviewed_at": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "movie_sha256": {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{64}$"
+                },
+                "coverage": {
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "minItems": 2,
+                    "maxItems": 2,
+                    "items": {
+                      "type": [
+                        "number",
+                        "string"
+                      ]
+                    }
+                  }
+                },
+                "observations": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "start_s",
+                      "end_s",
+                      "finding"
+                    ],
+                    "properties": {
+                      "start_s": {
+                        "type": [
+                          "number",
+                          "string"
+                        ]
+                      },
+                      "end_s": {
+                        "type": [
+                          "number",
+                          "string"
+                        ]
+                      },
+                      "finding": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    }
+                  }
+                },
+                "limitations": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/artifact"
+                  }
+                }
+              }
+            },
+            "record_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "authentication": {
+              "enum": [
+                "declared_not_authenticated",
+                "signed_attestation_not_proof_of_perception",
+                "unverified"
+              ]
+            },
+            "signer_key_sha256": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "blockers": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "packet_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "visual_artifacts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/artifact"
+      }
+    },
+    "trust_boundary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "issues": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "kind",
+          "scope",
+          "start_s",
+          "end_s",
+          "severity",
+          "finding",
+          "disposition",
+          "rationale"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Z][A-Z0-9_-]*-[0-9]{3,}$"
+          },
+          "kind": {
+            "enum": [
+              "visual",
+              "audio",
+              "av_sync",
+              "technical"
+            ]
+          },
+          "scope": {
+            "enum": [
+              "whole_film",
+              "window",
+              "unspecified"
+            ]
+          },
+          "start_s": {
+            "type": [
+              "number",
+              "string",
+              "null"
+            ]
+          },
+          "end_s": {
+            "type": [
+              "number",
+              "string",
+              "null"
+            ]
+          },
+          "severity": {
+            "enum": [
+              "blocker",
+              "major",
+              "minor",
+              "info",
+              "unclassified"
+            ]
+          },
+          "finding": {
+            "type": "string",
+            "minLength": 1
+          },
+          "disposition": {
+            "enum": [
+              "pending",
+              "resolved",
+              "accepted"
+            ]
+          },
+          "rationale": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "known_limits": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "before_after": {
+      "type": "object",
+      "required": [
+        "status",
+        "reason",
+        "pairs"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "not_applicable",
+            "included",
+            "pending"
+          ]
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "pairs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "issue_id",
+              "before",
+              "after",
+              "before_movie_sha256",
+              "after_movie_sha256",
+              "start_s",
+              "end_s"
+            ],
+            "properties": {
+              "issue_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "before": {
+                "$ref": "#/$defs/artifact"
+              },
+              "after": {
+                "$ref": "#/$defs/artifact"
+              },
+              "before_movie_sha256": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              "after_movie_sha256": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              "start_s": {
+                "type": [
+                  "number",
+                  "string"
+                ]
+              },
+              "end_s": {
+                "type": [
+                  "number",
+                  "string"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "report": {
+      "$ref": "#/$defs/artifact"
+    }
+  },
+  "$defs": {
+    "artifact": {
+      "type": "object",
+      "required": [
+        "path",
+        "sha256"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    }
+  }
+}

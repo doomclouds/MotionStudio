@@ -11,6 +11,20 @@ GENERATED = {'tmp', 'output', 'node_modules', '__pycache__', '.cache', 'frames',
 PROJECT_DIRS = {'verification', 'validation', 'evidence', 'research', 'review', 'debug'}
 RECEIPTS = {'DIFFERENCES.md', 'NATIVE_PRODUCTION.json', 'FEEDBACK.json', 'MIGRATION.md', 'NATIVE-MIGRATION.md', 'review.html'}
 
+def safe_env_template(content):
+    """Distribution template: comments/blanks plus one empty/obvious placeholder key only."""
+    found = 0
+    for line in bytes(content).splitlines():
+        line = line.strip()
+        if not line or line.startswith(b'#'): continue
+        name, sep, value = line.partition(b'=')
+        if not sep or name.strip() != b'DASHSCOPE_API_KEY': return False
+        value = value.strip().strip(b'"\'')
+        if value not in (b'', b'YOUR_API_KEY', b'REPLACE_ME'): return False
+        found += 1
+    return found == 1
+
+
 def forbidden(name):
     if name == 'projects/favorite52-engine-rebuild/assets/claude-duet-official.svg' or name.startswith('projects/kinetic-type-recreation/'): return True
     if name == 'projects/favorite52-engine-rebuild/assets/fonts/Carousel-NotoSansCJKsc-Bold.otf': return True
@@ -120,8 +134,12 @@ def inspect_repo(repo):
                 if proc.stdout.read(1) != b'\n': raise RuntimeError('Invalid cat-file separator')
                 try: private = private_metadata(json.loads(content))
                 except (ValueError, UnicodeDecodeError): private = False
-                blobs[oid] = (media_kind(head), digest.hexdigest(), private)
-            kind, sha, private = blobs[oid]
+                secret = bool(re.search(rb'\bsk-[A-Za-z0-9_-]{24,}', content))
+                template_unsafe = not safe_env_template(content)
+                blobs[oid] = (media_kind(head), digest.hexdigest(), private, secret, template_unsafe)
+            kind, sha, private, secret, template_unsafe = blobs[oid]
+            if secret: error(ref, name, 'possible-api-secret')
+            if PurePosixPath(name).name == '.env.example' and template_unsafe: error(ref, name, 'non-placeholder-env-template')
             if private: error(ref, name, 'private-production-metadata')
             if name in allow:
                 if sha not in allow[name]: error(ref, name, 'approved-source-asset-hash-mismatch')

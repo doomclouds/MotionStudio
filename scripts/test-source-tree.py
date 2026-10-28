@@ -33,6 +33,24 @@ class SourceTreeFixtures(unittest.TestCase):
         result = subprocess.run([sys.executable, str(self.guard), '--repo', str(self.repo)], capture_output=True, text=True)
         self.assertEqual(result.returncode == 0, good, result.stdout + result.stderr)
         if contains: self.assertIn(contains, result.stdout)
+    def test_env_file_forbidden(self):
+        self.add('.env', b'DASHSCOPE_API_KEY=fixture-value')
+        self.audit(False, 'forbidden-path')
+    def test_env_example_placeholder_allowed(self):
+        self.add('.env.example', b'DASHSCOPE_API_KEY=\n')
+        self.audit(True)
+    def test_env_example_value_rejected(self):
+        self.add('.env.example', b'DASHSCOPE_API_KEY=fixture-value\n')
+        self.audit(False, 'non-placeholder-env-template')
+    def test_env_example_spaced_assignment_rejected(self):
+        self.add('.env.example', b'DASHSCOPE_API_KEY = fixture-value\n')
+        self.audit(False, 'non-placeholder-env-template')
+    def test_env_example_unrecognized_variable_rejected(self):
+        self.add('.env.example', b'OTHER_KEY=fixture-value\nDASHSCOPE_API_KEY=\n')
+        self.audit(False, 'non-placeholder-env-template')
+    def test_api_secret_in_arbitrary_file_rejected_without_echo(self):
+        self.add('innocent.txt', b'sk-' + b'z'*32)
+        self.audit(False, 'possible-api-secret')
     def test_external_large_font_is_forbidden(self):
         self.add('projects/favorite52-engine-rebuild/assets/fonts/Carousel-NotoSansCJKsc-Bold.otf', b'font fixture')
         self.audit(False, 'forbidden-path')
