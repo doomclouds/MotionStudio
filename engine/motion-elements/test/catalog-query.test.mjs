@@ -85,3 +85,15 @@ test('runtime permission isolation: only three static files readable, no entry/p
   ], {encoding:'utf8',cwd:'/tmp'});
   assert.equal(r.status,0,r.stderr); assert.equal(JSON.parse(r.stdout).total,22);
 });
+
+// Metadata guards prevent a technical fixture from becoming a style endorsement.
+test('experimental band and light recipe preserve independent quality gates in query output', () => {
+  for (const id of ['geometry.sampled-band', 'recipe.light-echo-field']) {
+    const e = queryCatalog(catalog, {id}).results[0].element;
+    assert.equal(e.status, 'experimental');
+    assert.equal(e.evidence.artisticReview, 'NOT_RUN');
+    assert.equal(e.evidence.originalProductionTransfer, 'NOT_RUN');
+    assert.ok(e.evidence.technicalTests.length > 0);
+    assert.ok(e.counterexamples.some(value => value.includes('不得默认推荐') && value.includes('风格锚点')));
+  }
+});

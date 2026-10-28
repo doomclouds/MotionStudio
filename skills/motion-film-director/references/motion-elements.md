@@ -35,7 +35,9 @@ node engine/motion-elements/scripts/query-catalog.mjs find --text 重组
 node engine/motion-elements/scripts/query-catalog.mjs show --id fragment.fixed-tiles
 ```
 
-解包 Skill 将 `engine/` 换成 `runtime/`。输出 JSON 包含完整条目与反例；`find` 是字面元数据匹配，反例也可能命中，不是适合度排名、语义推荐、置信度或艺术分数。多个筛选条件取交集，无匹配就返回空结果，不编造推荐。先完整读 `counterexamples`、状态与证据边界，再决定试用。查询不执行示例、不导入目录中的入口、不联网、不写案例；查询不增加机制数量；Iris 收录后共 16 条（其中 recipe 类 3 条）。
+解包 Skill 将 `engine/` 换成 `runtime/`。输出 JSON 包含完整条目与反例；`find` 是字面元数据匹配，反例也可能命中，不是适合度排名、语义推荐、置信度或艺术分数。多个筛选条件取交集，无匹配就返回空结果，不编造推荐。先完整读 `counterexamples`、状态与证据边界，再决定试用。查询不执行示例、不导入目录中的入口、不联网、不写案例；查询不增加机制数量；当前数量与分类以 `catalog.json` 及 `list --limit 100` / `list --kind recipe --limit 100` 的查询结果为准，不沿用历史阶段计数。
+
+实验示例不是风格锚点，目录返回不构成默认推荐。先分开核技术证据、艺术接受和生产迁移：技术 passed 不得提升后两门；完整作品已被否决时记录该版质量不通过并退出成功范例，不能只写未验。独立 API 尚未审美验证则保留 NOT_RUN，不因来源影片失败改判数学错误。当前选材优先明确代码生成的 UI/图形与快节奏编排，细腻光影、材质和运镜主导的参考须先证明能力，不能靠增加实验配方数量补足。
 
 ## 视听事件复查：独立区间 sidecar
 
