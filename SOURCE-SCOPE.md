@@ -10,13 +10,14 @@ This is a deliberately narrow **toolkit source snapshot**, not a publication of 
 - Source packaging and source-boundary checks. Portable review-tools includes only the standalone stdlib event-interval arithmetic and static receipt-report modules, their documentation and synthetic example/tests, under the root MIT LICENSE; the full profile-generating reference benchmark and its numerical dependencies remain repository-only.
 - On `dev`: generic reference-benchmark and content-review tools, schemas, and explicitly synthetic examples. These tools require user-supplied, authorized local media; no private films or observations are bundled.
 - Applicable upstream copyright, license, provenance and rights notices; original documentation illustrations.
+- One explicitly authorized README diagnostic preview: `docs/assets/report-overview.png` (1800 × 5400, SHA-256 `bbf9e87737e3f84dfb9a998ee0c973081418631b76a745b017b012d76b95e7c1`, maximum 2 MiB). This is a candidate illustration, not artistic approval or a published benchmark result. Its reference-image MIT credit is retained in `docs/licenses/cinetic-MIT.txt`. The exception does not authorize any other generated media.
 
 ## Kept outside this repository
 
 - The entire private `projects/` collection: film implementations, project assets/fonts, restoration metadata, source acquisition indexes, product evidence, briefs, private reviews, and feedback.
 - Director Skill research datasets and production cases, including media identity hashes, local evidence locations, acquisition records and individual commissioning feedback.
 - Actual production catalog and case datasets (distinct from the synthetic, static motion-element API catalog). Generic query/validation tools remain, with an empty default library and explicitly synthetic test fixtures; passing those tests is not validation of any private production case.
-- Generated frames, films, review reports, private reference media, and historical Git development commits.
+- Generated frames, films, review reports (except the single approved README preview above), private reference media, and historical Git development commits.
 
 These materials remain in the original private workspace; they were not deleted there. No project is represented as fully published or directly renderable here. Project-specific font restoration is outside this toolkit release because the corresponding projects and all their fonts are outside scope. No fonts, photos or audio are redistributed by this snapshot.
 

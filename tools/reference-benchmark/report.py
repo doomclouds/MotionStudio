@@ -217,6 +217,8 @@ def _pil_chart(draw, box, lines, duration, title, unit, bounds=None):
     for t in np.linspace(0,duration,5):
         xx=lx+t/duration*pw
         draw.text((xx,ty+ph+8),f'{t:g}s',font=_font(16),fill=COLORS['muted'],anchor='ma')
+    if not any(v is not None for line in lines for _, v in line):
+        draw.text((lx+20,ty+45),'未提供 / NOT_RUN（不是零值）',font=_font(20),fill=COLORS['muted'])
     for j,line in enumerate(lines):
         xy=[]
         for t,v in line+[(0,None)]:
@@ -247,7 +249,7 @@ def _overview_thumbnail_samples(profile, duration):
     return [(thumbs[i],168+round(float(thumbs[i].get('t_s',0))/max(duration,.1)*1455)) for i in ids]
 
 
-def _overview(out, ref, cand, comp, labels, mel_bounds):
+def _overview(out, ref, cand, comp, labels, mel_bounds, destination=None):
     """A compact image of actual source/candidate evidence, not a fake UI shot."""
     W,H=1800,2530
     im=Image.new('RGB',(W,H),COLORS['bg']); d=ImageDraw.Draw(im)
@@ -308,11 +310,13 @@ def _overview(out, ref, cand, comp, labels, mel_bounds):
     d.text((70,2367),'听审 UNVERIFIED  ·  材质真实感 UNVERIFIED  ·  相机 / 物体运动未分离',font=_font(24),fill=COLORS['candidate'])
     d.text((70,2411),'波峰不是音效标签；静止不自动算差；低层相似不等于复刻正确。详见可交互报告与 JSON。',font=_font(22),fill=COLORS['muted'])
     d.text((70,2452),'背景占多数可让位移中位数近零 ≠ 对象没动；P90 也可能漏小主体。频谱纵轴为 Mel 频带，非线性 Hz。',font=_font(20),fill=COLORS['muted'])
-    im.save(out/'overview.png',optimize=True)
+    im.save((destination or out)/'overview.png',optimize=True)
 
 
-def render_report(output: Path):
+def render_report(output: Path, render_target: Path = None):
     out=Path(output).resolve()
+    output_target=Path(render_target).resolve() if render_target else out
+    output_target.mkdir(parents=True,exist_ok=True)
     ref=_read(out,'reference.profile.json'); cand=_read(out,'candidate.profile.json'); comp=_read(out,'comparison.json')
     profiles=[ref,cand]
     labels=comp.get('labels',{})
@@ -321,11 +325,11 @@ def render_report(output: Path):
     duration=max(float(p.get('timeline',{}).get('duration_s',0)) for p in profiles)
     duration=max(duration,.1)
     # Contract fixes this reference; differing exporter displays are not normalized independently.
-    minima=[p.get('audio',{}).get('mel',{}).get('display_db_min',-100) for p in profiles]
-    maxima=[p.get('audio',{}).get('mel',{}).get('display_db_max',0) for p in profiles]
+    minima=[-100]
+    maxima=[0]
     mel_bounds=(min(float(x) for x in minima),max(float(x) for x in maxima))
     if mel_bounds[1]<=mel_bounds[0]: mel_bounds=(-100,0)
-    _overview(out,ref,cand,comp,labels,mel_bounds)
+    _overview(out,ref,cand,comp,labels,mel_bounds,output_target)
 
     summary=[]
     for j,p in enumerate(profiles):
@@ -463,8 +467,233 @@ def render_report(output: Path):
     owner_badge='已被否决的候选基线' if owner_rejected else '分析导出 · 非质量结论'
     config=json.dumps({'clips':clips,'labels':labels,'lufs':[_loud(p,'integrated_lufs') for p in profiles]},ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
     body=f'''<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="referrer" content="no-referrer"><title>{_s(title)}</title><style>{CSS}</style></head><body><main><header><div><span class="eyebrow">MOTIONSTUDIO / REFERENCE BENCHMARK</span><h1>{_s(title)}</h1><p class="lead">把参考与候选放进同一套视听坐标，定位差别，而不是制造一个“通过”分数。</p></div><span class="badge warning">{owner_badge}</span></header><div class="status-line"><span>原始时间 RAW_TIME</span><span>自动对齐：未应用</span><span>模型特征：按项列出未运行</span><span>私有研究 · 离线报告</span></div><div class="identities">{''.join(summary)}</div>{playback}<section class="section"><div class="section-title"><div><span class="eyebrow">FULL TIMELINE</span><h2>全片 {duration:g} 秒，在同一时间轴上看</h2></div><span class="badge">缩略图 / 切换候选</span></div><p class="note">横向展开全部索引。切换时间是低层变化候选，尚非人工确认镜头；缩略图不是完整观看证据。</p>{timeline}</section><section class="section"><div class="section-title"><div><span class="eyebrow">VISUAL PROFILE</span><h2>外观与运动包络</h2></div><div class="legend"><span><i class="swatch ref"></i>原片 · 实线</span><span><i class="swatch cand"></i>候选 · 虚线</span></div></div><div class="chart-grid">{visual_charts}</div><div class="palette-grid">{''.join(palettes)}</div><p class="note">固定 RGB 量化色块 · 按全片采样占比展示；灰色余量为其他颜色。不是“主色设计分”或材质真实感判断。</p><details><summary>块匹配位移诊断图（相机与物体未分离）</summary><div class="flow-grid">{''.join(flow) or '<p>未导出局部位移图。</p>'}</div></details></section><section class="section"><div class="section-title"><div><span class="eyebrow">NATIVE DETAIL EVIDENCE</span><h2>指定时刻：回到原生帧细节</h2></div><span class="badge">明确裁切 / 非配准</span></div><p class="note">这里是相同原始时刻的原生帧或 ROI 展示，显示尺寸有缩放。完整原生 PNG 单独保留；仅打开单页或紧凑包时，原生 PNG 链接需另附完整 assets 目录。裁切框见下方与 JSON。纹理数值不能替代材料、形状、层次与动作判断。</p>{keyframes}</section><section class="section"><div class="section-title"><div><span class="eyebrow">AUDIO PROFILE</span><h2>先保留原始电平，再比较声音结构</h2></div><span class="badge warning">未实际合听 · UNVERIFIED</span></div><h3>解码后左右声道波形</h3><p class="note">两片、两个声道均使用 ±1 FS 振幅尺度。细小波形不代表没有声音；峰值包络不是声源分类。</p>{waveform}<div class="chart-grid">{audio_charts}</div><h3>共享色阶 Log-mel 功率图</h3><p class="note">{_s(ref.get('audio',{}).get('mel',{}).get('unit','dB re 1 FS²'))} · 固定 {mel_bounds[0]:g} 至 {mel_bounds[1]:g} dB；没有对每片分别拉满颜色。灰色斜纹 = 无时间覆盖，区别于低能量 / 静音。</p>{''.join(mels)}<div class="colorbar"><span>{mel_bounds[0]:g} dB</span><i></i><span>{mel_bounds[1]:g} dB</span></div><div class="tempo-grid">{tempo}</div><p class="note">{_s(tempo_note)} BPM 不是情绪，起音不是 SFX，音轨存在不等于实际听过。</p></section><section class="section"><div class="section-title"><div><span class="eyebrow">DIFFERENCES & CAUSAL EVENTS</span><h2>差异量与因果时间，不合成总分</h2></div></div><p class="note">所有差值均为 候选 − 原片。相似度高只代表该观测接近，不自动证明复刻成立。静止与低运动不自动判差。</p><div class="table-wrap"><table><thead><tr><th>原始时间特征</th><th>平均有符号差</th><th>平均绝对差</th><th>RMSE</th><th>单位</th></tr></thead><tbody>{deltas}</tbody></table></div><p class="note">{_s(ssim_note)}</p><h3>音频原始测量差值</h3><div class="table-wrap"><table><thead><tr><th>测量（LUFS / dBTP / dBFS / 能量比）</th><th>候选 − 原片</th></tr></thead><tbody>{audio_delta_rows}</tbody></table></div><h3>包络相关的偏移假设（未用于消除相位误差）</h3><div class="table-wrap"><table><thead><tr><th>信号</th><th>状态</th><th>偏移 / 秒</th><th>相关系数</th><th>近峰 lag 范围 / 秒</th></tr></thead><tbody>{offsets}</tbody></table></div><p class="note">正值表示候选事件包络更晚。它不是同步认证；不同音乐、静止与重复节拍可导致偶然相关。近峰范围不是校准置信区间。它不等于音画同步误差；DTW / 自动 registration 未应用。</p><h3>逐事件标注接口</h3><div class="table-wrap"><table><thead><tr><th>事件</th><th>原因 / 职责</th><th>原片确定性</th><th>计划目标 lag/s</th><th>候选计划画面/s</th><th>候选计划音频/s</th><th>原片 lag/s</th><th>候选 lag/s</th><th>lag 误差/s</th><th>画面相位差/s</th><th>声音相位差/s</th><th>状态</th></tr></thead><tbody>{events}</tbody></table></div><p class="note">计划时间不是实际观测，目标 lag=0 不等于同步已验。实际 lag = 音频事件时间 − 视觉事件时间；误差 = 候选实际 lag − 原片实际 lag。画面/声音相位差各自等于候选时间减原片时间，避免音画一起迟到却内部 lag=0 掩盖错误。先行声音可能有意设计，不机械要求每次同帧。</p></section><section class="section"><div class="section-title"><div><span class="eyebrow">METHODS & EVIDENCE</span><h2>哪些已测，哪些没有证据</h2></div></div><div class="table-wrap"><table><thead><tr><th>可选方法</th><th>原片</th><th>候选</th><th>原因</th></tr></thead><tbody>{models}</tbody></table></div><ul class="limits">{notes}</ul><details><summary>论文与方法边界</summary><ol class="references">{refs}</ol></details><details><summary>导出算法 / 配置</summary><pre>{_s(json.dumps(ref.get('algorithm',{}),ensure_ascii=False,indent=2))}</pre></details><p class="note">本页不联网、不上传、不回传播放行为。外部论文链接只有主动点击才打开。源片只嵌入所列短窗和研究帧，没有整片复制。技术、视觉、实际合听与 OWNER 艺术接受是独立证据门。</p></section><footer><span>MotionStudio · 本地优先 / 研究诊断</span><span>同 schema 的 reference.profile.json / candidate.profile.json / comparison.json 与本页共同保留</span></footer></main><script id="report-config" type="application/json">{config}</script><script>{JS}</script></body></html>'''
-    (out/'benchmark.html').write_text(body,encoding='utf-8')
-    return {'html':str(out/'benchmark.html'),'overview':str(out/'overview.png'),'embedded_clip_count':len(clips),'html_bytes':(out/'benchmark.html').stat().st_size}
+    (output_target/'benchmark.html').write_text(body,encoding='utf-8')
+    return {'html':str(output_target/'benchmark.html'),'overview':str(output_target/'overview.png'),'embedded_clip_count':len(clips),'html_bytes':(output_target/'benchmark.html').stat().st_size}
+
+
+def render_gate_report(result, pictures, comparison_pictures=(), benchmark_output=None, motion_panels=None):
+    """Render one canonical pair from a completed gate assessment, before hashing.
+
+    The caller owns evidence validation and publication. No outputs are published here.
+    benchmark_output, when supplied, must be a caller-verified export snapshot.
+    Without measurements, explicit empty profiles preserve slots without inventing data.
+    """
+    import tempfile
+    from fractions import Fraction
+    with tempfile.TemporaryDirectory(prefix='motionstudio-gate-render-') as temporary:
+        root = Path(temporary)
+        source = root/'source'
+        if benchmark_output is not None:
+            import shutil
+            shutil.copytree(benchmark_output, source)
+        if benchmark_output is None:
+            source.mkdir()
+            duration = float(Fraction(result['movie']['duration_seconds_exact']))
+            for name in ('reference', 'candidate'):
+                profile = {'label': '未提供参考 / NOT_RUN' if name == 'reference' else '当前成片',
+                           'timeline': {'duration_s': duration}, 'visual': {}, 'audio': {},
+                           'input': {} if name == 'reference' else {
+                               'sha256': result['movie']['sha256'], 'video': {'duration_s': duration}}}
+                (source/(name+'.profile.json')).write_text(json.dumps(profile), encoding='utf-8')
+            (source/'comparison.json').write_text(json.dumps({'title': '成片视听审查 · 测量未提供',
+                'labels': {'reference': '未提供参考 / NOT_RUN', 'candidate': '当前成片'}}), encoding='utf-8')
+        statuses = {'technical': 'MEASURED_NOT_APPROVED' if result.get('technical', {}).get('status') == 'passed' else 'FAILED'}
+        for display, key in [('visual','visual'), ('listening','audio'), ('av_sync','av_sync')]:
+            review = result.get('reviews', {}).get(key, {})
+            status = review.get('status')
+            statuses[display] = 'BLOCKED' if review.get('blockers') else 'RECORDED_NOT_VERIFIED' if status in ('passed', 'verified') else 'FAILED' if status == 'failed' else 'UNVERIFIED'
+        panels = {}
+        for key, entries in (motion_panels or {}).items():
+            if key not in {p[0] for p in PRESENTATION_PANELS}:
+                raise ValueError('unknown gate motion panel')
+            if not entries:
+                continue
+            pair = Image.new('RGB', (1660, len(entries)*290), COLORS['bg'])
+            drawing = ImageDraw.Draw(pair)
+            for i, (label, mime, raw, sha) in enumerate(entries):
+                with Image.open(io.BytesIO(raw)) as original:
+                    if original.width*original.height > 20_000_000:
+                        raise ValueError('oversized gate diagnostic image')
+                    panel = original.convert('RGB')
+                    panel.thumbnail((1660,250),Image.Resampling.LANCZOS)
+                    pair.paste(panel, ((1660-panel.width)//2,i*290+40))
+                drawing.text((10,i*290),str(label),font=_font(22),fill=COLORS['ink'])
+            name='gate-'+key+'.png'; pair.save(source/name)
+            panels[key] = {'path':name,'method':'复用已绑定 motion-check 图片；原图方法/采样/色阶见交付审查证据，不重新测量。'}
+        destination = root/'pair'
+        render_delivery_report(source, destination, {'statuses': statuses, 'panels':panels,
+            'reference_based': result.get('reference_based', False)})
+        body = (destination/'report.html').read_text(encoding='utf-8')
+        # One assessment section owns actual gate status, records and blockers. Charts
+        # remain measurements only; a declaration is never recast as owner approval.
+        evidence = '<section class="section" id="delivery-assessment"><h2>交付审查结论与证据</h2>'
+        evidence += '<p class="note">图表区 UNVERIFIED 是测量工具不执行感知审查；实际记录、方法、覆盖与阻断以下列交付门结果为准。MEASURED_NOT_APPROVED 表示技术已测，不是艺术批准。</p>'
+        evidence += '<p>'+_s(result['status'])+' · 用户批准：'+_s(result.get('owner_approval','not_checked'))+'</p>'
+        for title, value in [('阻断与局限', {'blockers':result.get('blockers',[]), 'known_limits':result.get('known_limits',[])}),
+                             ('技术与三类审查记录', {'technical':result.get('technical',{}), 'reviews':result.get('reviews',{})}),
+                             ('问题与修复', {'issues':result.get('issues',[]), 'before_after':result.get('before_after',{})}),
+                             ('身份与来源', {'movie':result['movie'], 'packet_sha256':result.get('packet_sha256'), 'evidence_index':result.get('evidence_index',[])})]:
+            evidence += '<details><summary>'+_s(title)+'</summary><pre>'+_s(json.dumps(value,ensure_ascii=False,indent=2))+'</pre></details>'
+        seen = set()
+        for label, mime, raw, sha in [('绑定视觉证据', *p) for p in pictures] + list(comparison_pictures):
+            if sha in seen:
+                continue
+            seen.add(sha)
+            evidence += '<details><summary>'+_s(label)+' · '+_s(sha)+'</summary><img style="max-width:100%;height:auto" alt="绑定审查证据" src="data:'+_s(mime)+';base64,'+base64.b64encode(raw).decode()+'"></details>'
+        evidence += '</section>'
+        body = body.replace('<footer>', evidence+'<footer>',1)
+        return (destination/'overview.png').read_bytes(), body.encode('utf-8')
+
+
+# Presentation contract, independent of measurement/profile schema versions.
+PRESENTATION_VERSION = 'motionstudio-review-v1'
+PRESENTATION_SIZE = (1800, 5400)
+PRESENTATION_PANELS = (
+    ('motion_heatmaps', 3165, 600, '帧变化热力图｜哪里、何时发生 RGB 变化',
+     '共享绝对 RGB 均差 0–1；不是注意力、光流或主体跟踪。'),
+    ('spatial_maps', 3834, 530, '空间平均变化｜哪些区域在全片中反复变化',
+     '与帧变化共用绝对色阶；时间平均丢失事件时序，不是画面质量。'),
+)
+PRESENTATION_STATUSES = ('technical', 'visual', 'listening', 'av_sync')
+
+
+def render_delivery_report(output: Path, destination: Path, presentation=None):
+    """Compose the frozen delivery pair from existing benchmark exports.
+
+    Optional motion panels are *already measured* paired images relative to output,
+    with an explicit method caption; this function does not verify their measurements
+    or upgrade evidence. Missing modules keep their slots, never become a zero chart.
+    """
+    import re
+    out, dest = Path(output).resolve(), Path(destination).resolve()
+    if out == dest:
+        raise ValueError('delivery destination must differ from benchmark output')
+    if (dest/'report.html').exists() or (dest/'overview.png').exists():
+        raise ValueError('refusing to overwrite an existing delivery pair; preserve its bound hashes')
+    spec = presentation or {}
+    if spec.get('version', PRESENTATION_VERSION) != PRESENTATION_VERSION:
+        raise ValueError('unsupported presentation version')
+    statuses = spec.get('statuses', {})
+    allowed = {'UNVERIFIED', 'NOT_RUN', 'BLOCKED', 'FAILED', 'RECORDED_NOT_VERIFIED', 'MEASURED_NOT_APPROVED'}
+    if not isinstance(statuses, dict) or set(statuses) - set(PRESENTATION_STATUSES):
+        raise ValueError('unknown presentation status field')
+    if any(value not in allowed for value in statuses.values()):
+        raise ValueError('presentation does not certify approval; use evidence gate separately')
+    panels = spec.get('panels', {})
+    if not isinstance(panels, dict) or set(panels) - {p[0] for p in PRESENTATION_PANELS}:
+        raise ValueError('unknown presentation panel')
+    loaded = {}
+    for key, row in panels.items():
+        if not isinstance(row, dict) or not isinstance(row.get('method'), str) or not row['method'].strip():
+            raise ValueError('panel requires explicit method caption')
+        path = _asset(out, row.get('path'))
+        if path is None:
+            raise ValueError('panel must be an existing asset inside benchmark output')
+        with Image.open(path) as src:
+            if src.format != 'PNG' or src.width * src.height > 20_000_000:
+                raise ValueError('panel must be a bounded PNG')
+            loaded[key] = src.convert('RGB')
+    # Reuse the existing renderer: no decoder, provider, new measurement or framework.
+    import tempfile
+    with tempfile.TemporaryDirectory(prefix='motionstudio-report-') as temporary:
+        rendered = Path(temporary)
+        render_report(out, render_target=rendered)
+        with Image.open(rendered/'overview.png') as image:
+            baseline = image.convert('RGB')
+        body = (rendered/'benchmark.html').read_text(encoding='utf-8')
+    ref = _read(out, 'reference.profile.json'); cand = _read(out, 'candidate.profile.json')
+    profiles = [ref, cand]
+    duration = max(.1, *(float(p.get('timeline', {}).get('duration_s', 0)) for p in profiles))
+    canvas = Image.new('RGB', PRESENTATION_SIZE, COLORS['bg'])
+    canvas.paste(baseline.crop((0, 0, 1800, 2340)), (0, 0))
+    draw = ImageDraw.Draw(canvas)
+    if spec.get('reference_based') is False:
+        draw.rectangle((60,35,1250,155),fill=COLORS['bg'])
+        draw.text((68,46),'成片视听审查 · 无参考对照',font=_font(51),fill=COLORS['ink'])
+        draw.text((70,117),'缺失测量保留占位 · 不生成替代证据',font=_font(27),fill=COLORS['muted'])
+    def text(x, y, value, size=24, color='ink'):
+        draw.text((x, y), value, font=_font(size), fill=COLORS[color])
+    def wrapped(y, value, size=23, width=1660):
+        line = ''
+        for char in str(value):
+            if draw.textlength(line + char, font=_font(size)) > width:
+                text(70, y, line, size, 'muted'); y += 34; line = char
+            else:
+                line += char
+        text(70, y, line, size, 'muted')
+    status = ' / '.join(f'{key}: {statuses.get(key, "UNVERIFIED")}' for key in PRESENTATION_STATUSES)
+    wrapped(2355, status)
+    text(70, 2450, '诊断候选 ≠ 用户批准；记录声明不等于已验证实际听看。', 25, 'candidate')
+    text(70, 2490, '响度卡片：FFmpeg ebur128；其他方法另列，不混用。原始时间，不自动平移。', 23, 'muted')
+    text(70, 2565, '左右声道波形｜完整混音，不是独立 BGM / SFX 音轨', 32)
+    text(70, 2615, '±1 FS；共用原始时间轴。定位静音、峰值和声道差异，不能证明音色或同步。', 23, 'muted')
+    for i, profile in enumerate(profiles):
+        y = 2670 + i * 205
+        text(70, y, LABELS[i], 22, 'reference' if i == 0 else 'candidate')
+        rows = profile.get('audio', {}).get('samples', [])
+        for ch, cy in [('l', y + 65), ('r', y + 125)]:
+            text(90, cy - 12, ch.upper(), 20, 'muted')
+            draw.line((150, cy, 1720, cy), fill=COLORS['grid'])
+            valid = [r for r in rows if all(_finite(r.get(k)) for k in ['t_s', 'peak_min_'+ch, 'peak_max_'+ch])]
+            if valid:
+                upper = [(150 + float(r['t_s']) / duration * 1570, cy - float(r['peak_max_'+ch]) * 27) for r in valid]
+                lower = [(150 + float(r['t_s']) / duration * 1570, cy - float(r['peak_min_'+ch]) * 27) for r in reversed(valid)]
+                draw.polygon(upper + lower, fill=COLORS['reference' if i == 0 else 'candidate'])
+            else:
+                text(180, cy - 12, '未提供 / NOT_RUN（不是静音）', 20, 'muted')
+        for t in np.linspace(0, duration, 9):
+            text(150 + float(t)/duration*1530, y+155, f'{t:g}s', 18, 'muted')
+    text(70, 3086, '原始解码峰值包络；采样间短促事件可能漏检。完整混音不能拆解声源身份。', 22, 'muted')
+    sections = []
+    for key, y, height, title, limit in PRESENTATION_PANELS:
+        text(70, y, title, 32)
+        text(70, y + 50, limit, 23, 'muted')
+        panel = loaded.get(key)
+        if panel is None:
+            caption = '未提供 / NOT_RUN：未附已有诊断，不生成替代图。'
+            text(70, y + 150, caption, 25, 'candidate')
+            image_html = ''
+        else:
+            panel.thumbnail((1660, height - 170), Image.Resampling.LANCZOS)
+            canvas.paste(panel, (70 + (1660-panel.width)//2, y + 95))
+            caption = panels[key]['method']
+            # Bound the PNG caption; full method remains in HTML without truncation.
+            wrapped(y + height - 65, caption[:120])
+            image_html = f'<img style="width:100%;height:auto" src="{_image_data(loaded[key])}" alt="{_s(title)}">'
+        sections.append(f'<section class="section" data-template-panel="{key}"><h2>{_s(title)}</h2><p class="note">{_s(limit)}</p>{image_html}<p>{_s(caption)}</p></section>')
+    text(70, 4415, '声音突变 / 节奏线索｜频谱通量，不是“已识别音效”', 32)
+    flux = [list(zip(p.get('audio', {}).get('flux', {}).get('times_s', []), p.get('audio', {}).get('flux', {}).get('values', []))) for p in profiles]
+    flux = [[(float(t), float(v)) for t, v in line if _finite(t) and _finite(v)] for line in flux]
+    _pil_chart(draw, (70, 4470, 1660, 255), flux, duration, '正向频谱通量（共同数值轴）', '相对变化', (0, max([v for line in flux for _, v in line] or [1]) * 1.05 or 1))
+    text(70, 4750, '起音是算法候选，不是语义事件；同步仍需连续视听与逐事件复核。', 23, 'muted')
+    text(70, 4830, '这些图能说明什么，不能判断什么', 32)
+    for i, line in enumerate([
+        '缩略图 / 原生帧：定位结构与指定状态；稀疏采样不能证明连续动作质量。',
+        '亮度 / 边缘 / 块位移：定位变化；不是审美分数，不分离相机与物体运动。',
+        'Mel / 波形 / RMS / 声道：比较能量；不能代替音色判断或拆分 BGM / SFX。',
+        'RGB 热图 / 空间均值：定位变化区域；不是注意力或主体跟踪。',
+    ]):
+        text(70, 4895 + i*66, line, 23, 'muted')
+    for i, p in enumerate(profiles):
+        text(70, 5195 + i*45, f'{LABELS[i]} SHA-256  {p.get("input", {}).get("sha256", "未提供")}', 20, 'muted')
+    text(70, 5328, f'MotionStudio · {PRESENTATION_VERSION} · 诊断候选，非批准 · 详情见 report.html', 22, 'muted')
+    dest.mkdir(parents=True, exist_ok=True)
+    canvas.save(dest/'overview.png', optimize=True)
+    body = body.replace('<body>', f'<body data-presentation-version="{PRESENTATION_VERSION}">', 1)
+    status_html = f'<section class="section"><h2>审查状态 · 诊断候选，非批准</h2><p>{_s(status)}</p><p class="note">声明记录不是感知认证；技术、视觉、听觉、声画同步与用户批准分别核验。</p></section>'
+    body = body.replace('</header>', '</header>'+status_html, 1)
+    # The original interactive charts, A/B and evidence sections remain intact.
+    audio_start = body.rfind('<section', 0, body.index('>AUDIO PROFILE</span>'))
+    body = body[:audio_start] + ''.join(sections) + body[audio_start:]
+    # Detailed HTML already contains these measurements. Link the separate overview,
+    # never repeat the entire 5400px overview (and every graph) inside the reading flow.
+    body = body.replace('<footer>', '<footer><span><a href="'+_image_data(canvas)+'" download="overview.png">下载独立总览 PNG</a> · '+PRESENTATION_VERSION+'</span>', 1)
+    def inline_asset(match):
+        path = _asset(out, match.group(1))
+        return f'href="{_uri(path)}"' if path else 'href="#" aria-disabled="true"'
+    body = re.sub(r'href="(assets/[^\"]+)"', inline_asset, body)
+    (dest/'report.html').write_text(body, encoding='utf-8')
+    return {'version': PRESENTATION_VERSION, 'overview': str(dest/'overview.png'), 'html': str(dest/'report.html')}
 
 
 CSS=r'''
@@ -485,5 +714,10 @@ document.querySelectorAll('[data-wave]').forEach(svg=>{const data=JSON.parse(svg
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('output',type=Path)
+    parser.add_argument('--delivery-output',type=Path,help='Compose the fixed v1 user PNG/HTML pair from existing exports')
+    parser.add_argument('--presentation',type=Path,help='Optional existing-panel/method/status declarations')
     args=parser.parse_args()
-    print(json.dumps(render_report(args.output),ensure_ascii=False,indent=2))
+    if args.presentation and not args.delivery_output: parser.error('--presentation requires --delivery-output')
+    spec=json.loads(args.presentation.read_text()) if args.presentation else None
+    result=render_delivery_report(args.output,args.delivery_output,spec) if args.delivery_output else render_report(args.output)
+    print(json.dumps(result,ensure_ascii=False,indent=2))

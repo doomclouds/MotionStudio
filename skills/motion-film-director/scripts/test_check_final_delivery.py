@@ -8,6 +8,7 @@ import json
 from pathlib import Path
 import shutil
 import subprocess
+import struct
 import tempfile
 import unittest
 from unittest.mock import patch
@@ -202,14 +203,86 @@ class FinalDeliveryTests(unittest.TestCase):
         packet_path.write_text(json.dumps(self.packet))
         args = [str(self.video), '--packet', str(packet_path), '--project-root', str(self.root),
                 '--trusted-review-key', str(self.keys / 'trusted.pem')]
-        out = io.StringIO()
-        with contextlib.redirect_stdout(out), patch.object(gate, 'technical', side_effect=self.technical):
-            self.assertEqual(gate.main(args), 0)
-        result = json.loads(out.getvalue())
+        out, err = io.StringIO(), io.StringIO()
+        source_renderer = Path(gate.__file__).resolve().parents[3] / 'tools/reference-benchmark/report.py'
+        with contextlib.redirect_stdout(out), contextlib.redirect_stderr(err), patch.object(gate, 'technical', side_effect=self.technical):
+            code = gate.main(args)
         directory = self.root / 'output/review'
+        if not source_renderer.exists():
+            self.assertEqual(code, 2)
+            self.assertIn('Fixed canonical renderer unavailable', err.getvalue())
+            self.assertEqual(list(directory.iterdir()), [])
+            return  # Portable package deliberately requires explicit repository renderer.
+        self.assertEqual(code, 0, err.getvalue())
+        result = json.loads(out.getvalue())
         self.assertEqual({p.name for p in directory.iterdir()}, {'report.html','overview.png'})
         self.assertEqual(result['user_report_formats'], ['png','html'])
+        self.assertEqual(result['presentation_version'], 'motionstudio-review-v1')
         self.assertEqual(gate.digest(directory/'overview.png'), result['overview']['sha256'])
+        self.assertEqual(gate.digest(directory/'report.html'), result['report']['sha256'])
+        self.assertEqual(struct.unpack('>II',(directory/'overview.png').read_bytes()[16:24]), (1800,5400))
+        self.assertNotEqual((directory/'overview.png').read_bytes(), PNG)
+        self.assertEqual((directory/'report.html').read_text().count('id="delivery-assessment"'), 1)
+
+    def test_explicit_renderer_and_missing_renderer_contract(self):
+        explicit = self.root / 'trusted-fixture-renderer.py'
+        explicit.write_text('def render_gate_report(*args, **kwargs): return b"PNG", b"HTML"\n')
+        self.assertTrue(callable(gate.load_fixed_renderer(explicit).render_gate_report))
+        with self.assertRaisesRegex(ValueError, 'Fixed canonical renderer unavailable'):
+            gate.load_fixed_renderer(self.root / 'absent.py')
+
+    def test_benchmark_snapshot_checks_hashes_and_both_media_identities(self):
+        root = self.root / 'benchmark'; root.mkdir()
+        reference = 'c'*64
+        for name, data in [('reference.profile.json', {'input': {'sha256': reference}}),
+                           ('candidate.profile.json', {'input': {'sha256': self.movie['sha256']}}),
+                           ('comparison.json', {})]:
+            (root/name).write_text(json.dumps(data))
+        (root/'benchmark.html').write_text('SYNTHETIC')
+        rows = [{'path':p.name,'sha256':gate.digest(p),'bytes':p.stat().st_size} for p in root.iterdir()]
+        (root/'manifest.json').write_text(json.dumps({'schema_version':'motionstudio.reference-artifacts/1.0','files':rows}))
+        result = {'movie': self.movie, 'comparison_diagnostics': {'benchmark': {
+            'status':'COLLECTED_NOT_APPROVED','reference_sha256':reference,
+            'artifacts':[{'role':'full_comparison_html','path':'benchmark/benchmark.html','sha256':gate.digest(root/'benchmark.html')}]}}}
+        inputs = gate.Inputs(self.root)
+        snapshot = self.root/'snapshot'; snapshot.mkdir()
+        self.assertEqual(gate.snapshot_benchmark(result, inputs, snapshot), snapshot)
+        self.assertEqual((snapshot/'comparison.json').read_bytes(), (root/'comparison.json').read_bytes())
+        result['comparison_diagnostics']['benchmark']['reference_sha256'] = 'e'*64
+        other = self.root/'other';other.mkdir()
+        with self.assertRaisesRegex(ValueError, 'different reference/candidate'):
+            gate.snapshot_benchmark(result, inputs, other)
+        (root/'comparison.json').write_text('tampered')
+        with self.assertRaisesRegex(ValueError, 'changed'):
+            inputs.recheck()
+
+    def test_canonical_motion_report_cannot_bind_other_candidate(self):
+        artifact = self.artifact('motion.json', json.dumps({'source':{'sha256':'f'*64}}).encode())
+        result = {'movie': self.movie, 'comparison_diagnostics': {'motion_check': {
+            'status':'COLLECTED_NOT_APPROVED', 'artifacts':[dict(artifact, role='motion_report')]}}}
+        with patch.object(gate, 'load_fixed_renderer', return_value=object()):
+            with self.assertRaisesRegex(ValueError, 'different candidate'):
+                gate.render_canonical_pair(result, [], [], gate.Inputs(self.root))
+
+    def test_canonical_accepts_and_labels_dual_motion_reports(self):
+        artifacts = []
+        reference = 'c'*64
+        for name, sha in [('ref',reference),('cand',self.movie['sha256'])]:
+            (self.root/name).mkdir()
+            report = self.artifact(name+'/report.json', json.dumps({'source':{'sha256':sha}}).encode())
+            panel = self.artifact(name+'/heatmap.png', PNG)
+            artifacts.extend([dict(report,role='motion_report'),dict(panel,role='motion_heatmap')])
+        result = {'movie':self.movie,'comparison_diagnostics':{
+            'benchmark':{'status':'NOT_RUN','reference_sha256':reference},
+            'motion_check':{'status':'COLLECTED_NOT_APPROVED','artifacts':artifacts}}}
+        class Renderer:
+            def render_gate_report(self, *args, **kwargs):
+                self.panels = kwargs['motion_panels']
+                return PNG, b'<html>synthetic</html>'
+        renderer = Renderer()
+        with patch.object(gate, 'load_fixed_renderer', return_value=renderer):
+            gate.render_canonical_pair(result, [], [], gate.Inputs(self.root))
+        self.assertEqual([p[0] for p in renderer.panels['motion_heatmaps']], ['Reference','Candidate'])
 
     def test_not_listened_blocked_pending_and_boolean_cannot_pass(self):
         for index, status in enumerate(('NOT_LISTENED', 'BLOCKED', 'pending', False, True)):

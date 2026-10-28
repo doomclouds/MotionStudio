@@ -156,6 +156,14 @@ python3 tools/reference-benchmark/event_intervals.py evaluate --help
 
 **指标帮助定位问题，不等于听过、看懂或喜欢。** 结构相似度不是质量分，节拍候选不是音效识别，对齐假设不是音画同步验收。
 
+### 固定报告模板 · 先看总览，再查证据
+
+报告沿用同一套[版本化呈现规范](tools/reference-benchmark/REPORT_TEMPLATE.md)：暗色背景、青色参考 / 橙色候选、共同时间轴与数值尺度；方法、缺失项与审查状态必须显式保留。用户报告固定为 `output/review/overview.png` 与 `output/review/report.html`，不默认增加 PDF 或资源包。
+
+<a href="docs/assets/report-overview.png"><img src="docs/assets/report-overview.png" width="100%" alt="MotionStudio 统一报告示例：参考与候选的缩略图、视觉曲线、频谱、波形、变化热图及审查边界。当前是待审候选，不是验收通过。" /></a>
+
+> **报告形式示例，不是公开基准成绩或审美认可。** 图中为 Kiln 25 秒参考与 V2 候选的诊断总览；模型辅助审查不等于人工听审，连续视听与精确同步仍待核验。此单张预览经明确授权纳入 README；其余影片、帧、报告与私有记录仍不入库。参考画面源自 [Leonxlnx/cinetic](https://github.com/Leonxlnx/cinetic/tree/media) 的 `kiln-launch-teaser.mp4`，Copyright © 2026 Leonxlnx，保留 [MIT 许可全文](docs/licenses/cinetic-MIT.txt)；不表示原作者背书。
+
 ### Evidence / Review · 让判断找到它的依据
 
 [内容审查校验器](https://github.com/doomclouds/MotionStudio/blob/dev/tools/reference-benchmark/CONTENT_REVIEW.md) 检查人工提交的注释：引用是否完整、媒体 SHA-256 是否一致、时间窗是否有效，以及计划或虚构内容是否被当成真实观察。

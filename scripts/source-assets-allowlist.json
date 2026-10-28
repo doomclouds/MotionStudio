@@ -1,5 +1,7 @@
 {
   "schema": 1,
-  "policy": "This public toolkit snapshot distributes no project media or font files. Any future asset requires explicit path/digest review and a separately authorized scope change.",
-  "assets": {}
+  "policy": "Only the explicitly authorized README diagnostic overview is distributed, at this exact path and SHA-256, capped at 2 MiB. No other project media, films, frames or fonts are authorized.",
+  "assets": {
+    "docs/assets/report-overview.png": "bbf9e87737e3f84dfb9a998ee0c973081418631b76a745b017b012d76b95e7c1"
+  }
 }

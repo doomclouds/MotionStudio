@@ -53,7 +53,7 @@ python3 skills/motion-film-director/scripts/check_delivery.py /local/complete.mp
 ```sh
 python3 skills/motion-film-director/scripts/check_final_delivery.py /local/complete.mp4 \
   --packet /local/review/packet.json \
-  --report /local/review/report.html
+  --project-root /local/project
 ```
 
 工具使用已有本地`ffprobe`/`ffmpeg`核对单一视频流、单一音频流、实际帧数、视频时长和完整声画解码，在显式提供签名时以已有`openssl`校验签名，核验三类审查记录、证据和媒体hash，生成可视化HTML报告，并在stdout清单中输出报告SHA-256。无需联网、上传、安装依赖或付费调用。签名是可选的来源认证增强，不是生产前置条件。无签名但完整真实的审查记录与原始证据可满足声明式审查门，认证状态保留`declared_not_authenticated`；不能据此称已认证听审。若提供签名，则必须验证成功；可重复指定`--trusted-review-key`，只提供独立确认的审查者公钥，不从packet自动信任公钥。运行前准备见[交付证据合同与模板](final-delivery-evidence.md)。
@@ -75,3 +75,10 @@ python3 skills/motion-film-director/scripts/check_final_delivery.py /local/compl
 最终交付包同时提供成片、HTML报告及机器可读结果清单。报告hash由清单绑定（不做报告自hash循环）；报告内绑定成片与证据hash。任何成片、审查记录、证据或报告修改均需重新核验，不能沿用旧绿灯。版本身份匹配只证明字节一致；完整内容、权利与真实审查仍需负责的审查者核对。
 
 参考/旧新版任务先按审查SOP G节发现并复用既有benchmark完整比较页/总览及motion-check热力图，不因新报告而遗漏波形、频谱和运动诊断。用户报告固定为项目`output/review/overview.png`和`report.html`；内部JSON不作为附件，PDF和资源包须另有明确要求。
+
+报告形式固定为 `motionstudio-review-v1`：仓库中的
+[`REPORT_TEMPLATE.md`](../../../tools/reference-benchmark/REPORT_TEMPLATE.md) 定义模块顺序、
+配色/字级、共同坐标、方法/状态与缺失占位；默认完整交付门先调用固定 renderer，
+再对最终 PNG/HTML 计算 hash 并一次发布，禁止后续独立排版覆盖已绑定文件；
+不依赖项目私有拼装脚本。展示版本不替代本节证据门，便携包不含完整 benchmark 时须通过
+`--report-renderer` 指向已安装依赖的仓库 renderer。`--report` 仅为旧版兼容入口，不是规范报告交付。

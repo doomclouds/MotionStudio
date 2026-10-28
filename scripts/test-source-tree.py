@@ -116,9 +116,29 @@ class SourceTreeFixtures(unittest.TestCase):
         self.add('apparently-safe.txt', PNG)
         (self.repo / 'apparently-safe.txt').write_text('safe worktree replacement')
         self.audit(False, 'unapproved-media:PNG')
-    def test_public_policy_has_no_media_assets(self):
+    def test_public_policy_only_allows_exact_readme_preview(self):
         allow = json.loads((ROOT / 'scripts/source-assets-allowlist.json').read_text())['assets']
-        self.assertEqual(allow, {})
+        self.assertEqual(allow, {'docs/assets/report-overview.png': 'bbf9e87737e3f84dfb9a998ee0c973081418631b76a745b017b012d76b95e7c1'})
+    def test_exact_readme_preview_allowed(self):
+        self.add('docs/assets/report-overview.png', (ROOT / 'docs/assets/report-overview.png').read_bytes())
+        self.audit(True)
+    def test_readme_preview_modified_rejected(self):
+        self.add('docs/assets/report-overview.png', (ROOT / 'docs/assets/report-overview.png').read_bytes() + b'changed')
+        self.audit(False, 'approved-source-asset-hash-mismatch')
+    def test_readme_preview_renamed_rejected(self):
+        self.add('docs/assets/another-preview.png', (ROOT / 'docs/assets/report-overview.png').read_bytes())
+        self.audit(False, 'unapproved-media:PNG')
+    def test_readme_preview_size_cap(self):
+        name = 'docs/assets/report-overview.png'
+        data = PNG + b'x' * (2 * 1024 * 1024)
+        self.reviewed_policy({name: hashlib.sha256(data).hexdigest()})
+        self.add(name, data)
+        self.audit(False, 'invalid-readme-preview-format-or-size')
+    def test_readme_preview_must_be_png(self):
+        name = 'docs/assets/report-overview.png'
+        self.reviewed_policy({name: hashlib.sha256(MP4).hexdigest()})
+        self.add(name, MP4)
+        self.audit(False, 'invalid-readme-preview-format-or-size')
     def test_approved_asset_tampered(self):
         name='assets/fixture.jpg'; data=b'\xff\xd8\xffsynthetic fixture'
         self.reviewed_policy({name: hashlib.sha256(data).hexdigest()})

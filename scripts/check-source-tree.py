@@ -9,6 +9,8 @@ import re
 ROOT = Path(__file__).resolve().parents[1]
 GENERATED = {'tmp', 'output', 'node_modules', '__pycache__', '.cache', 'frames', 'renders'}
 PROJECT_DIRS = {'verification', 'validation', 'evidence', 'research', 'review', 'debug'}
+README_PREVIEW = 'docs/assets/report-overview.png'
+README_PREVIEW_MAX_BYTES = 2 * 1024 * 1024
 RECEIPTS = {'DIFFERENCES.md', 'NATIVE_PRODUCTION.json', 'FEEDBACK.json', 'MIGRATION.md', 'NATIVE-MIGRATION.md', 'review.html'}
 
 def safe_env_template(content):
@@ -124,7 +126,7 @@ def inspect_repo(repo):
                 proc.stdin.write((oid + '\n').encode()); proc.stdin.flush()
                 header = proc.stdout.readline().decode().strip().split()
                 if len(header) != 3 or header[1] != 'blob': raise RuntimeError('Expected blob ' + oid)
-                remaining = int(header[2]); digest = hashlib.sha256(); head = b''; content = bytearray()
+                size = remaining = int(header[2]); digest = hashlib.sha256(); head = b''; content = bytearray()
                 while remaining:
                     chunk = proc.stdout.read(min(remaining, 1024 * 1024))
                     if not chunk: raise RuntimeError('Truncated blob ' + oid)
@@ -136,11 +138,13 @@ def inspect_repo(repo):
                 except (ValueError, UnicodeDecodeError): private = False
                 secret = bool(re.search(rb'\bsk-[A-Za-z0-9_-]{24,}', content))
                 template_unsafe = not safe_env_template(content)
-                blobs[oid] = (media_kind(head), digest.hexdigest(), private, secret, template_unsafe)
-            kind, sha, private, secret, template_unsafe = blobs[oid]
+                blobs[oid] = (media_kind(head), digest.hexdigest(), private, secret, template_unsafe, size)
+            kind, sha, private, secret, template_unsafe, size = blobs[oid]
             if secret: error(ref, name, 'possible-api-secret')
             if PurePosixPath(name).name == '.env.example' and template_unsafe: error(ref, name, 'non-placeholder-env-template')
             if private: error(ref, name, 'private-production-metadata')
+            if name == README_PREVIEW and (kind != 'PNG' or size > README_PREVIEW_MAX_BYTES):
+                error(ref, name, 'invalid-readme-preview-format-or-size')
             if name in allow:
                 if sha not in allow[name]: error(ref, name, 'approved-source-asset-hash-mismatch')
             elif kind or PurePosixPath(name).suffix.lower() in MEDIA_EXTENSIONS:

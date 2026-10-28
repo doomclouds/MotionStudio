@@ -6,6 +6,7 @@ from datetime import datetime, timezone
 from fractions import Fraction
 import hashlib
 import html
+import importlib.util
 import json
 import os
 from pathlib import Path
@@ -369,11 +370,112 @@ def render_report(result, pictures, comparison_pictures=(), diagnostic_links=Non
         '<h1>' + escape(result['status']) + '</h1><p>Not owner acceptance. Statements authenticate neither actual hearing nor artistic quality.</p>' + sections + '</html>')
 
 
+def load_fixed_renderer(path=None):
+    """Only the repository renderer or an explicitly selected trusted local source."""
+    source = Path(path).resolve() if path else Path(__file__).resolve().parents[3] / 'tools/reference-benchmark/report.py'
+    if not source.is_file():
+        raise ValueError('Fixed canonical renderer unavailable: use the MotionStudio source checkout or --report-renderer /trusted/repo/tools/reference-benchmark/report.py; NumPy/Pillow must already be installed. No generic fallback.')
+    try:
+        spec = importlib.util.spec_from_file_location('_motionstudio_fixed_report', source)
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+    except ImportError as error:
+        raise ValueError('Fixed canonical renderer dependency unavailable; install required dependencies separately: ' + str(error)) from error
+    if not callable(getattr(module, 'render_gate_report', None)):
+        raise ValueError('Selected renderer lacks the fixed render_gate_report API')
+    return module
+
+
+def snapshot_benchmark(result, inputs, destination):
+    diagnostics = result.get('comparison_diagnostics', {}).get('benchmark', {})
+    if diagnostics.get('status') != 'COLLECTED_NOT_APPROVED':
+        return None
+    overview = next((item for item in diagnostics.get('artifacts', []) if item.get('role') == 'full_comparison_html'), None)
+    if overview is None:
+        raise ValueError('Completed benchmark requires its existing comparison HTML')
+    root = Path(overview['path']).parent
+    manifest_raw = inputs.read(root / 'manifest.json', relative=True)
+    manifest = load_json(manifest_raw)
+    if manifest.get('schema_version') != 'motionstudio.reference-artifacts/1.0' or not isinstance(manifest.get('files'), list):
+        raise ValueError('Fixed template requires existing benchmark artifact manifest')
+    seen = set()
+    for row in manifest['files']:
+        name = Path(row['path'])
+        if name.is_absolute() or '..' in name.parts or str(name) in seen:
+            raise ValueError('Unsafe or duplicate benchmark manifest path')
+        seen.add(str(name))
+        raw = inputs.artifact({'path': str(root / name), 'sha256': row['sha256']})
+        if len(raw) != row['bytes']:
+            raise ValueError('Benchmark manifest byte count mismatch')
+        target = destination / name
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_bytes(raw)
+    for filename, expected in [('reference.profile.json', diagnostics['reference_sha256']),
+                               ('candidate.profile.json', result['movie']['sha256'])]:
+        if filename not in seen:
+            raise ValueError('Benchmark profile not manifest-bound')
+        profile = load_json((destination / filename).read_bytes())
+        if profile.get('input', {}).get('sha256') != expected:
+            raise ValueError('Benchmark profile belongs to different reference/candidate media')
+    if 'comparison.json' not in seen:
+        raise ValueError('Benchmark comparison not manifest-bound')
+    result['template_inputs'] = {'benchmark_manifest_sha256': hashlib.sha256(manifest_raw).hexdigest(),
+                                 'manifest_bound_files': len(seen)}
+    return destination
+
+
+def render_canonical_pair(result, pictures, comparison_pictures, inputs, renderer_path=None):
+    renderer = load_fixed_renderer(renderer_path)
+    panels = {}
+    mapping = {'motion_heatmap': 'motion_heatmaps', 'spatial_change_map': 'spatial_maps'}
+    motion = result.get('comparison_diagnostics', {}).get('motion_check', {})
+    artifacts = motion.get('artifacts', []) if motion.get('status') == 'COLLECTED_NOT_APPROVED' else []
+    candidate_sha = result['movie']['sha256']
+    reference_sha = result.get('comparison_diagnostics', {}).get('benchmark', {}).get('reference_sha256')
+    subjects = {candidate_sha: 'Candidate'}
+    if reference_sha:
+        subjects[reference_sha] = 'Reference / candidate (same media)' if reference_sha == candidate_sha else 'Reference'
+    report_subjects = {}
+    for artifact in artifacts:
+        if artifact.get('role') == 'motion_report':
+            source_report = load_json(inputs.artifact(artifact))
+            source_sha = source_report.get('source', {}).get('sha256')
+            if source_sha not in subjects:
+                raise ValueError('Motion-check report belongs to different candidate/reference media')
+            report_subjects.setdefault(str(Path(artifact['path']).parent), set()).add(source_sha)
+    for artifact in artifacts:
+        if artifact.get('role') not in mapping:
+            continue
+        raw = inputs.artifact(artifact)
+        mime = 'image/png' if raw.startswith(b'\x89PNG\r\n\x1a\n') else 'image/jpeg' if raw.startswith(b'\xff\xd8\xff') else None
+        if mime is None:
+            raise ValueError('Motion panel must be an existing bound image')
+        parent_subjects = report_subjects.get(str(Path(artifact['path']).parent), set())
+        explicit_subject = artifact.get('media_sha256')
+        if explicit_subject is not None and explicit_subject not in parent_subjects:
+            raise ValueError('Motion image subject is not bound by a matching source report')
+        subject = explicit_subject or (next(iter(parent_subjects)) if len(parent_subjects) == 1 else None)
+        label = subjects[subject] if subject else 'Bound diagnostic; source not inferred'
+        if artifact.get('label'):
+            label += ' — ' + str(artifact['label'])
+        panels.setdefault(mapping[artifact['role']], []).append((label, mime, raw, artifact['sha256']))
+    with tempfile.TemporaryDirectory(prefix='motionstudio-bound-benchmark-') as directory:
+        benchmark = snapshot_benchmark(result, inputs, Path(directory))
+        inputs.recheck()
+        png, html_bytes = renderer.render_gate_report(result, pictures, comparison_pictures,
+            benchmark_output=benchmark, motion_panels=panels)
+        if not isinstance(png, bytes) or not png.startswith(b'\x89PNG\r\n\x1a\n') or not isinstance(html_bytes, bytes):
+            raise ValueError('Fixed renderer returned invalid PNG/HTML byte contract')
+        inputs.recheck()
+        return png, html_bytes
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('video', type=Path)
     parser.add_argument('--packet', type=Path, required=True)
     parser.add_argument('--trusted-review-key', type=Path, action='append', default=[])
+    parser.add_argument('--report-renderer', type=Path, help='Explicit trusted repository report.py for portable canonical rendering; imports local code')
     parser.add_argument('--project-root', type=Path, default=Path.cwd(), help='Fixed report location: PROJECT/output/review/')
     parser.add_argument('--report', type=Path, help='Legacy explicit HTML path; omit for canonical PNG+HTML delivery')
     parser.add_argument('--ffprobe', default='ffprobe')
@@ -447,19 +549,17 @@ def main(argv=None):
                 comparison_pictures.append((pair['issue_id'] + ' / ' + side, mime, raw, spec['sha256']))
         diagnostic_links = {artifact['path']: os.path.relpath(inputs.root / artifact['path'], args.report.parent.resolve())
             for item in result.get('comparison_diagnostics', {}).values() for artifact in item['artifacts']}
-        report = render_report(result, pictures, comparison_pictures, diagnostic_links).encode('utf-8')
-        inputs.recheck()
-        result['report'] = {'path': str(args.report.resolve()), 'sha256': hashlib.sha256(report).hexdigest()}
         overview = None
         if canonical:
-            overview_spec = next((a for a in result.get('comparison_diagnostics', {}).get('benchmark', {}).get('artifacts', [])
-                                  if a.get('role') == 'full_comparison_overview'), None)
-            overview_raw = inputs.artifact(overview_spec) if overview_spec else next((raw for mime, raw, sha in pictures if mime == 'image/png'), None)
-            if overview_raw is None or not overview_raw.startswith(b'\x89PNG\r\n\x1a\n'):
-                raise ValueError('Canonical delivery requires existing PNG overview; generate with benchmark or motion-check, not a PDF/ZIP substitute')
+            overview_raw, report = render_canonical_pair(result, pictures, comparison_pictures, inputs, args.report_renderer)
             overview = (args.report.parent / 'overview.png', overview_raw)
             result['overview'] = {'path': str(overview[0]), 'sha256': hashlib.sha256(overview_raw).hexdigest()}
+            result['presentation_version'] = 'motionstudio-review-v1'
             result['user_report_formats'] = ['png', 'html']
+        else:
+            report = render_report(result, pictures, comparison_pictures, diagnostic_links).encode('utf-8')
+        inputs.recheck()
+        result['report'] = {'path': str(args.report.resolve()), 'sha256': hashlib.sha256(report).hexdigest()}
         errors = validate_report(result)
         if errors:
             raise ValueError('Report standard validation: ' + '; '.join(errors))
