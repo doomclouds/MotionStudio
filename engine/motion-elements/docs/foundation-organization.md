@@ -1,6 +1,6 @@
 # 基础机制职责目录与旧路径兼容
 
-目录整理不新增机制。当前仍为 **28基础＋6配方**；目录别名、辅助函数、适配器和重导出入口不计数。实验状态及每件作品原有的技术/用户反馈/视听检查状态不因迁移而升级。
+目录整理不新增机制。当前为 **30基础＋6配方**（新增曲线/字格机制另有真实作品证据；分类迁移本身仍不计数）；目录别名、辅助函数、适配器和重导出入口不计数。实验状态及每件作品原有的技术/用户反馈/视听检查状态不因迁移而升级。
 
 ## 当前已实施：field 单域
 
@@ -25,6 +25,16 @@ const state = sampleAttractorField(plan, {
 
 这仍是无历史、无速度的局部二维方向场，不是粒子积分/流体/光流。原参数、限制、奇点及冻结状态语义不变。旧入口创建的plan可由canonical入口采样，反之亦然。直接用不同query URL导入canonical实现会创建独立模块实例及独立品牌，不能混用其plan；这不是跨实例序列化格式。注意：给旧re-export入口URL添加query只重新加载入口，本身不会给其依赖的canonical URL加query，因此仍共享同一品牌。迁移前给旧实现URL加query曾可创建独立品牌；此刻意cache-busting用法不能继续被当作隔离契约。需要显式独立实例的调用者应使用不同canonical URL，普通旧路径导入无需修改。
 
+## 新机制直接分类
+
+| 职责 | canonical 实现 | 稳定 ID |
+|---|---|---|
+| 控制柄曲线距离寻址 | `lib/foundations/geometry/cubic-path.mjs` | `geometry.cubic-path` |
+| 显式字格沿路径布局 | `lib/foundations/typography/glyph-run-path.mjs` | `composition.glyph-run-path` |
+
+两项均为新机制，没有需要兼容的旧平层路径；总入口显式re-export同一模块实例。
+`typography`是物理职责目录，不另造query kind，也不把辅助采样算成第二条曲线机制。
+
 ## 分类原则与后续边界
 
 - `lib/foundations/<职责>/` 存实际基础机制实现，而非按作品名、参考库名或颜色方向复制代码。已存在的field目录是第一域；尚未迁移的旧实现暂保持原路径，不声称已完成全库迁移。
@@ -36,6 +46,6 @@ const state = sampleAttractorField(plan, {
 
 ## 迁移验证与作品锁
 
-此单域整理不改`lib/index.mjs`、任何其他求值模块、catalog内容或Tessel作品集锁定的13个共享源码文件。原作品冻结runtime/manifest不被覆盖。新公开版本的场实现路径及源码hash确实改变，不能沿用旧manifest声称字节同版。
+此前field单域整理不改`lib/index.mjs`、任何其他求值模块、catalog内容或Tessel作品集锁定的13个共享源码文件。原作品冻结runtime/manifest不被覆盖。新公开版本的场实现路径及源码hash确实改变，不能沿用旧manifest声称字节同版。
 
 技术门包括新旧函数identity、跨入口compile/sample、输入隔离、奇点、乱序求值、独立模块品牌拒绝，以及全库测试与完整portable。原有field/slice工程示例用于新旧状态/Native像素等价检查，不新增作品艺术认可，也不把该技术示例升级为高质量风格参考。对于将来迁移真正被作品锁直接绑定的模块，必须先建立锁与导入的兼容证据；不能直接改已批准作品源码以消除校验失败。

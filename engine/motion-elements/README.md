@@ -1,6 +1,6 @@
 # Motion Elements — 可组合动效基础库
 
-当前目录 **34 项：28 个基础机制＋6 个配方**，全部 experimental。数量不代表艺术通过。以下阶段计数是历史记录；当前分类以 catalog 为准。
+当前目录 **36 项：30 个基础机制＋6 个配方**，全部 experimental。数量不代表艺术通过。以下阶段计数是历史记录；当前分类以 catalog 为准。
 
 第一阶段包含 **10 个机制**，而不是 10 套影片模板。数字不同、方向相反、快慢不同均是参数变体，不重复计算新元素。当前全部标记 `experimental`：数值与 Native 像素测试不等于审美验收，也不等于已经在原创成片中复用通过。
 
@@ -10,7 +10,7 @@
 
 ## 职责目录与兼容入口
 
-基础机制开始按职责放入 `lib/foundations/<职责>/`，首域为 `field/`。旧路径和总入口保留同一实现的 re-export，未迁移域暂保持原位置。此整理不增加条目，也不改作品锁；见[职责目录与迁移边界](docs/foundation-organization.md)。
+基础机制开始按职责放入 `lib/foundations/<职责>/`，首个迁移域为 `field/`，新曲线与排字实现直接进入 `geometry/` 和 `typography/`。旧路径和总入口保留同一实现的 re-export，未迁移域暂保持原位置。此整理不增加条目，也不改作品锁；见[职责目录与迁移边界](docs/foundation-organization.md)。
 
 ## 五层与边界
 
@@ -799,3 +799,21 @@ handoff 只在影片中覆盖 shared 身份的位置/尺寸交接，未覆盖 en
 用户有限认可本UI作品（LIMITED_ACCEPTANCE_NOT_STYLE_ENDORSEMENT），不是被否决，也不是风格范例背书。
 solver及实际导入依赖与影片一致，但存档未使用的旧index不等于当前公共index；只声称对应真实导入范围，不声称全包同版。
 媒体、制作和实际美术参数不进该源包；本机制不是完整CSS、惯性、自动碰撞或真实购票。
+
+
+## 弯曲图文批：2 个基础机制，无新配方
+
+`geometry.cubic-path` 给控制柄路线提供近似距离寻址与解析切线；
+`composition.glyph-run-path` 将显式字格advance排成同一路线上的基线中心/朝向。
+不是折线改色，也不把编译、采样、字体测量、路径绘制缓存或辅助函数另算机制。
+新实现直接放在职责目录`foundations/geometry`及`foundations/typography`，旧路径与作品锁不动。
+见[曲线严格合同](docs/cubic-path.md)、[字格布局与画法](docs/glyph-run-path.md)、
+[Paper.js/Anime.js固定源码与许可取舍](docs/curved-type-reference-decisions.md)。
+
+一支9.5秒有声原创候选实际使用两项：初始化3次编译；公路径采样分别用于绘图缓存、
+直接绘制和相机辅助；570次字格布局/绘制提交不等于全程完整可见。
+旧motion.transform与withMotion继续复用；供带、障碍、切刀/打孔、取景与声音是作品编排，
+不是新机制、自动导航或物理模拟。API/实际依赖与影片冻结字节一致，公共index接入独立测试。
+逐帧状态、独立数值oracle、代表Native重建及限定编码帧检查已有证据；
+常速NOT_DONE、听审NOT_LISTENED、用户艺术PENDING_USER、通用迁移NOT_RUN。
+作品媒体、完整制作、实际艺术参数、字体和私有回执不进Git；这里的可运行输入为合成例子。

@@ -34,3 +34,5 @@ export {drawRasterSnapshot} from '../adapters/raster-effects.mjs';
 export {solveTwoLinkIK} from './two-link-ik.mjs';
 export {planeParallaxLayout} from './plane-parallax.mjs';
 export {stickyIntervalLayout} from './sticky-interval.mjs';
+export {compileCubicPath,sampleCubicPath} from './foundations/geometry/cubic-path.mjs';
+export {layoutGlyphRunOnPath} from './foundations/typography/glyph-run-path.mjs';

@@ -2275,6 +2275,161 @@
         "滚动",
         "分区"
       ]
+    },
+    {
+      "id": "geometry.cubic-path",
+      "version": 1,
+      "kind": "geometry",
+      "status": "experimental",
+      "summary": "以控制柄创作三次路线，按近似距离寻址原曲线位置与解析切线",
+      "api": "compileCubicPath",
+      "entry": "lib/index.mjs",
+      "example": {
+        "segments": [
+          {
+            "p0": {
+              "x": 20,
+              "y": 160
+            },
+            "p1": {
+              "x": 100,
+              "y": 160
+            },
+            "p2": {
+              "x": 180,
+              "y": 40
+            },
+            "p3": {
+              "x": 300,
+              "y": 40
+            }
+          }
+        ],
+        "tolerance": 0.02
+      },
+      "applicability": [
+        "标记点或连续带沿明确控制柄路线推进，需要位置与朝向而非折线尖角"
+      ],
+      "counterexamples": [
+        "不是导航、避障、碰撞、自动路线或完整SVG；与既有polyline分工而非换颜色重复计数。",
+        "弦长表与反查为有限IEEE近似；tolerance及停止诊断不是全域弧长、坐标或角度误差证明。",
+        "C0接缝可转向跳变；内部驻点可无切线，不能用上一帧伪造确定性方向。",
+        "作品只覆盖有限作者路径的正常切线分支；闭环、驻点、资源拒绝与极端数值没有本片艺术验证。"
+      ],
+      "evidence": {
+        "technicalTests": [
+          "test/cubic-path.test.mjs",
+          "test/curved-type-integration.test.mjs"
+        ],
+        "visualDemo": null,
+        "videoValidation": "VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE",
+        "artisticReview": "PENDING_USER",
+        "originalProductionTransfer": "NOT_RUN",
+        "visualReview": "DECODED_FRAME_REVIEW_NO_BLOCKERS",
+        "normalSpeedViewing": "NOT_DONE",
+        "audioListening": "NOT_LISTENED",
+        "ownerArtisticAcceptance": "PENDING_USER",
+        "guidance": "docs/cubic-path.md",
+        "sourceVersionRelation": "Both canonical mechanisms and their actually imported validator bytes match the frozen film. Direct module imports are film-consumed; the later public index export is tested separately. Catalog/test/guidance integration does not rewrite historical production manifests.",
+        "validationCoverage": "Three initialization compiles (direct, four-segment route, approximate prefix address). 5785 public samples:3297 initialize draw caches,1918 feed direct drawing and570 feed camera positioning. Cached polylines are reused without pretending to recompile each frame. Film frames0–569; prefix length is approximate, not an exact seam. Limited encoded-frame review, not continuous viewing.",
+        "callEvidenceScope": "Render-time wrapper inputs/results, cache definitions and draw-consumer records crosschecked against frozen source. Internal glyph path samples are not separately intercepted; call/draw submission counts are not visible-pixel counts."
+      },
+      "knowledgeLinks": [],
+      "tags": [
+        "cubic",
+        "bezier",
+        "distance",
+        "tangent",
+        "曲线",
+        "距离",
+        "切线"
+      ]
+    },
+    {
+      "id": "composition.glyph-run-path",
+      "version": 1,
+      "kind": "composition",
+      "status": "experimental",
+      "summary": "按调用者准备的字格advance，把基线中心与朝向排到同一三次路径上",
+      "api": "layoutGlyphRunOnPath",
+      "entry": "lib/index.mjs",
+      "exampleSetup": {
+        "path": {
+          "segments": [
+            {
+              "p0": {
+                "x": 20,
+                "y": 160
+              },
+              "p1": {
+                "x": 100,
+                "y": 160
+              },
+              "p2": {
+                "x": 180,
+                "y": 40
+              },
+              "p3": {
+                "x": 300,
+                "y": 40
+              }
+            }
+          ],
+          "tolerance": 0.02
+        }
+      },
+      "example": {
+        "glyphs": [
+          {
+            "glyphId": "letter-0",
+            "advance": 32
+          },
+          {
+            "glyphId": "letter-1",
+            "advance": 28
+          }
+        ],
+        "startDistance": 20,
+        "tracking": 4,
+        "normalOffset": -10
+      },
+      "applicability": [
+        "预印文字随弯曲带路行进，保持各字格身份与显式间距"
+      ],
+      "counterexamples": [
+        "先compileCubicPath(exampleSetup.path)，再layoutGlyphRunOnPath(plan,example)；不能把静态JSON当品牌计划。",
+        "不是完整shaping、连字、双向文本、kerning、字形轮廓变形或避碰；advance不等于墨迹边界。",
+        "whole-run fit是明确IEEE浮点比较，无裁切/自动缩小；任一字格中心切线未定义时整次拒绝。",
+        "求值与fillText提交不代表全字可见；画外、外壳、工具遮挡是作品绘制而非此API能力。"
+      ],
+      "evidence": {
+        "technicalTests": [
+          "test/glyph-run-path.test.mjs",
+          "test/curved-type-integration.test.mjs"
+        ],
+        "visualDemo": null,
+        "videoValidation": "VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE",
+        "artisticReview": "PENDING_USER",
+        "originalProductionTransfer": "NOT_RUN",
+        "visualReview": "DECODED_FRAME_REVIEW_NO_BLOCKERS",
+        "normalSpeedViewing": "NOT_DONE",
+        "audioListening": "NOT_LISTENED",
+        "ownerArtisticAcceptance": "PENDING_USER",
+        "guidance": "docs/glyph-run-path.md",
+        "sourceVersionRelation": "Both canonical mechanisms and their actually imported validator bytes match the frozen film. Direct module imports are film-consumed; the later public index export is tested separately. Catalog/test/guidance integration does not rewrite historical production manifests.",
+        "validationCoverage": "570 layout calls and570 run draw submissions, with9 explicit advance cells per run. These are not570 wholly visible words. Conservative whole-word screen-bounds window is frames198–569, with intentional tool occlusion; unobstructed bend/read frames have limited encoded review. Only the supplied measured run and normal tangents are film-covered; no general-language or shaping proof.",
+        "callEvidenceScope": "Render-time wrapper inputs/results, cache definitions and draw-consumer records crosschecked against frozen source. Internal glyph path samples are not separately intercepted; call/draw submission counts are not visible-pixel counts."
+      },
+      "knowledgeLinks": [],
+      "tags": [
+        "glyph",
+        "typography",
+        "advance",
+        "baseline",
+        "文字",
+        "字距",
+        "路径排版"
+      ]
     }
   ]
 }

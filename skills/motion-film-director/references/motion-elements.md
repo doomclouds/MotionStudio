@@ -238,7 +238,7 @@ Pixi官方shader与p5 mask具体源码/许可取舍见`docs/raster-reference-dec
 
 ## 角色：两段固定长度追随明确目标
 
-当前28基础＋6配方（34项），距离100基础目标仍有72项；数量与艺术接受分别报告。
+当前30基础＋6配方（36项），距离100基础目标仍有70项；数量与艺术接受分别报告。
 `geometry.two-link-ik`是1个纯二维几何机制，无新配方，不是全身rig、碰撞、力学或3D。
 root/target来自作品同一绝对帧状态，显式bend/fallback；用返回joint/end画骨段，不能把不可达end偷偷画到target掩盖投影。
 实际手掌轮廓与IK端点不是同一个接触定义：数值误差0后仍要看真实编码邻帧是否早贴、滑动或错位。
@@ -269,3 +269,20 @@ root/target来自作品同一绝对帧状态，显式bend/fallback；用返回jo
 用户对本UI作品有限认可（LIMITED_ACCEPTANCE_NOT_STYLE_ENDORSEMENT），不误记为拒绝或优秀风格范例。
 完整合同见`docs/sticky-interval.md`；官方源码/许可判断见`docs/ui-scroll-reference-decisions.md`。
 真实导入solver/依赖同字节，公共index只由测试验证；旧motion/reveal/shared handoff、海报美术和声音不重复计数。
+
+
+## 弯曲图文：近似距离路线＋显式字格布局（2基础）
+
+`geometry.cubic-path`接收明确三次控制柄并编译有限精度距离表；`sampleCubicPath`返回原曲线位置与解析切线。
+它与既有polyline分工，不能直接把progress当cubic参数伪称等距离，也不提供导航/碰撞。
+`composition.glyph-run-path`把调用者准备的advance cells排到路径，返回基线中心/法线/朝向；
+不是shaping、kerning、轮廓弯曲、自动fit或遮挡检测。先compile品牌plan，再layout，不能从JSON伪造计划。
+指南为`docs/cubic-path.md`、`docs/glyph-run-path.md`；Paper.js与Anime.js固定源码/许可取舍见`docs/curved-type-reference-decisions.md`。
+新代码直接位于`lib/foundations/geometry/`与`typography/`，没有修改既有作品锁或平层实现。
+
+9.5秒有声候选真实消费两项：3次初始化编译；5785次公sample区分3297缓存构建、1918直接绘图与570相机辅助；
+glyph内部采样不加到公wrapper数。570次run提交不等于全程完整可见，外壳/画外/工具遮挡需看实际画面。
+两runtime与实际validator保持影片冻版字节，公共index接入另测；原生产manifest不回写。
+旧motion.transform/withMotion继续复用，切刀/打孔/供带造型/声音是作品编排，无新配方。
+全帧状态与限定编码帧有证据，常速NOT_DONE、听审NOT_LISTENED、用户艺术PENDING_USER、通用迁移NOT_RUN。
+未验分支、字体/语言支持和风格不得由一次作品外推；真实艺术参数、字体、媒体与私有回执不进入公共包。
