@@ -45,3 +45,8 @@ export {intervalLaneLayout} from './foundations/layout/interval-lanes.mjs';
 export {compileStagedLayoutHandoff, sampleStagedLayoutHandoff} from './recipes/staged-layout-handoff.mjs';
 
 export {compileContourGrid, extractIsoContours} from './foundations/geometry/iso-contour.mjs';
+
+export {compileConvolution, convolveRGBA} from './foundations/raster/convolution.mjs';
+export {compileProjectiveRaster, warpProjectiveRGBA, projectRasterPoint, mapProjectivePoint} from './foundations/raster/projective-raster.mjs';
+export {masonryLayout} from './foundations/layout/masonry.mjs';
+export {placeAnchoredLabels} from './foundations/layout/anchored-labels.mjs';

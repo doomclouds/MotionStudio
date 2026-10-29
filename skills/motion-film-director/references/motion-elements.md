@@ -238,7 +238,7 @@ Pixi官方shader与p5 mask具体源码/许可取舍见`docs/raster-reference-dec
 
 ## 角色：两段固定长度追随明确目标
 
-当前35基础＋7配方（42项），距离100基础目标仍有65项；数量与艺术接受分别报告。
+当前39基础＋7配方（46项），距离100基础目标仍有61项；数量与艺术接受分别报告。
 `geometry.two-link-ik`是1个纯二维几何机制，无新配方，不是全身rig、碰撞、力学或3D。
 root/target来自作品同一绝对帧状态，显式bend/fallback；用返回joint/end画骨段，不能把不可达end偷偷画到target掩盖投影。
 实际手掌轮廓与IK端点不是同一个接触定义：数值误差0后仍要看真实编码邻帧是否早贴、滑动或错位。
@@ -325,3 +325,13 @@ glyph内部采样不加到公wrapper数。570次run提交不等于全程完整�
 `geometry.iso-contour` / `compileContourGrid`、`extractIsoContours`，canonical `lib/foundations/geometry/iso-contour.mjs`，见[指南](../../../engine/motion-elements/docs/iso-contour.md)。一个基础，不按场源、level或配色重复计数。固定两三角线性域提取isolines，并非通用filled-domain求解；closed不能替代branch/plateau/open检查。公共65536样本上限与IEEE退化诊断明确，未经证明不得称实时、连续拓扑或解析场精确边界。
 
 实际10.4秒候选有624次提取与全部真实fill/clip/outline证据；公共硬化版另有624帧状态/路径和22代表PNG+22新进程桥接，原片/源码不覆盖。限定帧审不是常速、听审、用户艺术认可或跨作品迁移；遵守目录质量门，不把私有媒体/参数入库。
+
+
+### 图像成为纸卡；照片成为有注释的作品墙
+
+- `raster.neighborhood-convolution`：[指南](../../../engine/motion-elements/docs/convolution.md)。真实归一正核卷积，blur/unsharp不拆数量；sRGB非线性光，alpha与64M总tap预算明确，缓存不冒每帧重算。
+- `raster.projective-quad`：[指南](../../../engine/motion-elements/docs/projective-raster.md)。凸四角单应逆采样，点helper/别名一个机制；无AA/mipmap或真正3D。
+- `composition.masonry`：[指南](../../../engine/motion-elements/docs/masonry.md)。源序最短列，不是globaloptimal/自动测图裁切。
+- `composition.anchored-labels`：[指南](../../../engine/motion-elements/docs/anchored-labels.md)。显式测量框与候选first-fit；unplaced明确，不自动生成候选/leader或识别焦点。
+
+两部实际有声候选分别覆盖2项；纸卡公共输入硬化与原片通过540帧实际buffer/draw桥接和22代表PNG+22新Node，不冒新编码；摄影两项保持原10文件runtime闭包字节，旧staged recipe复用不计新。保留49帧三注释全不透明的读时风险，数量/工程合格不是风格背书。常速、听审、用户与迁移门依catalog，不导入私人素材。

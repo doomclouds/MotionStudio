@@ -12,7 +12,7 @@ test('contour state composes with existing affine coordinates without mutating e
  const mapped=state.contours[0].points.map(p=>api.transformPoint(matrix,p));for(let i=0;i<mapped.length;i++){assert.equal(mapped[i].x,30+2*state.contours[0].points[i].x);assert.equal(mapped[i].y,20+2*state.contours[0].points[i].y);}assert.equal(JSON.stringify(state),saved);
 });
 test('one contour foundation keeps version bridge and unreviewed quality gates explicit',()=>{
- assert.equal(catalog.elements.length,42);assert.equal(catalog.elements.filter(e=>e.kind!=='recipe').length,35);assert.equal(catalog.elements.filter(e=>e.kind==='recipe').length,7);
+ assert.equal(catalog.elements.length,46);assert.equal(catalog.elements.filter(e=>e.kind!=='recipe').length,39);assert.equal(catalog.elements.filter(e=>e.kind==='recipe').length,7);
  const found=queryCatalog(catalog,{id:'geometry.iso-contour'});assert.equal(found.total,1);const entry=found.results[0].element;assert.equal(entry.kind,'geometry');assert.equal(entry.status,'experimental');
  for(const key of ['artisticReview','ownerArtisticAcceptance'])assert.equal(entry.evidence[key],'PENDING_USER');assert.equal(entry.evidence.normalSpeedViewing,'NOT_DONE');assert.equal(entry.evidence.audioListening,'NOT_LISTENED');assert.equal(entry.evidence.originalProductionTransfer,'NOT_RUN');assert.equal(entry.evidence.visualDemo,null);
  assert.match(entry.evidence.sourceVersionRelation,/not a new full encoded movie/i);assert.match(entry.evidence.callEvidenceScope,/actual/i);assert.match(entry.counterexamples.join(' '),/65536/);

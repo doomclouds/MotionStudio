@@ -71,9 +71,9 @@ def main():
         run(['node', '--test', *map(str, tests)])
         query_cli = elements / 'scripts/query-catalog.mjs'
         listed = json.loads(subprocess.check_output(['node', str(query_cli), 'list']))
-        assert listed['total'] == 42 and len(listed['results']) == 20 and listed['truncated'] is True
+        assert listed['total'] == 46 and len(listed['results']) == 20 and listed['truncated'] is True
         rasters = json.loads(subprocess.check_output(['node', str(query_cli), 'list', '--kind', 'raster']))
-        assert rasters['total'] == 2 and {r['element']['id'] for r in rasters['results']} == {'raster.matte', 'raster.displacement-map'}
+        assert rasters['total'] == 4 and {r['element']['id'] for r in rasters['results']} == {'raster.matte', 'raster.displacement-map', 'raster.neighborhood-convolution', 'raster.projective-quad'}
         sticky = json.loads(subprocess.check_output(['node', str(query_cli), 'show', '--id', 'composition.sticky-interval']))
         assert sticky['total'] == 1 and sticky['results'][0]['element']['api'] == 'stickyIntervalLayout'
         parallax = json.loads(subprocess.check_output(['node', str(query_cli), 'show', '--id', 'composition.plane-parallax']))
@@ -101,6 +101,11 @@ def main():
         assert contour['total'] == 1 and contour['results'][0]['element']['api'] == 'compileContourGrid'
         assert contour['results'][0]['element']['evidence']['audioListening'] == 'NOT_LISTENED'
         assert contour['results'][0]['element']['evidence']['ownerArtisticAcceptance'] == 'PENDING_USER'
+        for new_id, new_api in [('raster.neighborhood-convolution','compileConvolution'),('raster.projective-quad','compileProjectiveRaster'),('composition.masonry','masonryLayout'),('composition.anchored-labels','placeAnchoredLabels')]:
+            selected = json.loads(subprocess.check_output(['node', str(query_cli), 'show', '--id', new_id]))
+            assert selected['total'] == 1 and selected['results'][0]['element']['api'] == new_api
+            assert selected['results'][0]['element']['evidence']['audioListening'] == 'NOT_LISTENED'
+            assert selected['results'][0]['element']['evidence']['ownerArtisticAcceptance'] == 'PENDING_USER'
         recipes = json.loads(subprocess.check_output(['node', str(query_cli), 'list', '--kind', 'recipe']))
         assert recipes['total'] == 7 and len(recipes['results']) == 7
         empty = json.loads(subprocess.check_output(['node', str(query_cli), 'find', '--text', 'no-such-mechanism-29461']))
@@ -189,7 +194,7 @@ def main():
         stale = subprocess.run([*cli_args, '--out', str(stale_path)], capture_output=True)
         assert stale.returncode == 1 and json.loads(stale_path.read_text())['collection_status'] == 'STALE'
         assert json.loads(stale_path.read_text())['events'] == []
-        print('Catalog 42/default-limit20/recipe7/raster2/no-match and standalone interval CLI synthetic/unsupported/stale gates passed; no decoding or approval')
+        print('Catalog 46/default-limit20/recipe7/raster4/no-match and standalone interval CLI synthetic/unsupported/stale gates passed; no decoding or approval')
         if args.skip_video:
             print('NOT_RUN: gallery video encoding/full decode and standalone reduced still smoke (--skip-video); other tests continue')
         else:

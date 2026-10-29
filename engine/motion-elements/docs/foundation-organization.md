@@ -1,6 +1,6 @@
 # 基础机制职责目录与旧路径兼容
 
-目录整理不新增机制。当前为 **35基础＋7配方**（新增曲线/字格/尺寸换行机制另有真实作品证据；分类迁移本身仍不计数）；目录别名、辅助函数、适配器和重导出入口不计数。实验状态及每件作品原有的技术/用户反馈/视听检查状态不因迁移而升级。
+目录整理不新增机制。当前为 **39基础＋7配方**（新增曲线/字格/尺寸换行机制另有真实作品证据；分类迁移本身仍不计数）；目录别名、辅助函数、适配器和重导出入口不计数。实验状态及每件作品原有的技术/用户反馈/视听检查状态不因迁移而升级。
 
 ## 当前已实施：field 单域
 
@@ -36,8 +36,12 @@ const state = sampleAttractorField(plan, {
 | 静态悬链线弧长寻址 | `lib/foundations/geometry/catenary.mjs` | `geometry.catenary` |
 | 固定三角网格等值折线 | `lib/foundations/geometry/iso-contour.mjs` | `geometry.iso-contour` |
 | 固定半开区间最少轨道 | `lib/foundations/layout/interval-lanes.mjs` | `composition.interval-lanes` |
+| 同宽不等高最短列布局 | `lib/foundations/layout/masonry.mjs` | `composition.masonry` |
+| 有限候选锚点标签 | `lib/foundations/layout/anchored-labels.mjs` | `composition.anchored-labels` |
+| 非负归一邻域卷积 | `lib/foundations/raster/convolution.mjs` | `raster.neighborhood-convolution` |
+| 四角单应图像映射 | `lib/foundations/raster/projective-raster.mjs` | `raster.projective-quad` |
 
-此处七项均为新机制，没有需要兼容的旧平层路径；总入口显式re-export同一模块实例。
+此处十一项均为新机制，没有需要兼容的旧平层路径；总入口显式re-export同一模块实例。
 `typography`是物理职责目录，不另造query kind，也不把辅助采样算成第二条曲线机制。
 
 ## 分类原则与后续边界
@@ -56,3 +60,5 @@ const state = sampleAttractorField(plan, {
 技术门包括新旧函数identity、跨入口compile/sample、输入隔离、奇点、乱序求值、独立模块品牌拒绝，以及全库测试与完整portable。原有field/slice工程示例用于新旧状态/Native像素等价检查，不新增作品艺术认可，也不把该技术示例升级为高质量风格参考。对于将来迁移真正被作品锁直接绑定的模块，必须先建立锁与导入的兼容证据；不能直接改已批准作品源码以消除校验失败。
 
 显式分阶段交接位于 `lib/recipes/staged-layout-handoff.mjs`，只增加配方数量，不放入foundations职责目录或复算旧handoff为新基础。
+
+`raster/`新域只放本批新模块；既有matte/displacement旧入口与冻结源码不移动、不复制。别名和点映射helper不增加基础数量。

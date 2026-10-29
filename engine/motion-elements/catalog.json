@@ -2937,6 +2937,304 @@
         "等值线",
         "轮廓"
       ]
+    },
+    {
+      "id": "raster.neighborhood-convolution",
+      "version": 1,
+      "kind": "raster",
+      "status": "experimental",
+      "summary": "显式非负归一核聚合邻域RGBA，提供柔化或同核unsharp颜色强调",
+      "api": "compileConvolution",
+      "entry": "lib/index.mjs",
+      "example": {
+        "kernel": [
+          [
+            1,
+            2,
+            1
+          ],
+          [
+            2,
+            4,
+            2
+          ],
+          [
+            1,
+            2,
+            1
+          ]
+        ],
+        "boundary": "clamp",
+        "effect": "blur",
+        "amount": 1,
+        "alphaMode": "preserve"
+      },
+      "applicability": [
+        "同一图像短暂失焦后回到清晰细节，或受控强调局部边缘；由调用者缓存静态输出"
+      ],
+      "counterexamples": [
+        "一个基础；blur/unsharp、核尺寸、amount和边界模式是参数，不另计机制。",
+        "真正卷积使用翻转采样偏移；只接受非负正总和归一核，不支持任意有符号核或逆卷积/细节恢复。",
+        "sRGB编码值计算而非线性光；明确alpha preserve/filter、clamp/transparent，不自动扩展轮廓。",
+        "单图最多4194304像素且area×全部kernelCells<=64000000，amount0/零权不豁免；离线同步非实时承诺。",
+        "输出新mutable RGBA8；调用者不得并发改动/分离/resize共享输入。alpha归零会清RGB，没有全通道1LSB保证。"
+      ],
+      "evidence": {
+        "visualDemo": null,
+        "artisticReview": "PENDING_USER",
+        "originalProductionTransfer": "NOT_RUN",
+        "normalSpeedViewing": "NOT_DONE",
+        "audioListening": "NOT_LISTENED",
+        "ownerArtisticAcceptance": "PENDING_USER",
+        "visualReview": "DECODED_FRAME_REVIEW_NO_BLOCKERS",
+        "technicalTests": [
+          "test/convolution.test.mjs",
+          "test/postcard-raster-fresh.test.mjs",
+          "test/image-layout-integration.test.mjs"
+        ],
+        "guidance": "docs/convolution.md",
+        "videoValidation": "VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE_WITH_VERSION_EQUIVALENCE",
+        "sourceVersionRelation": "Public validation is stricter than the original frozen film: data-only records/arrays and intrinsic byte-view metadata; convolution also caps area times kernel cells at64000000. Pixel loops and arithmetic order are unchanged. Original media/source/manifests remain untouched. Separate540-frame Native replays match full usage and all994 pixel-put/2294 image-draw records exactly;22 original raw PNGs and22 fresh-process frames match. Not a new encoded movie or all-frame pixel comparison.",
+        "validationCoverage": "A9-second/540-frame sound candidate compiles2 kernels and filters2 images at initialization. Cached results are each submitted221 times into front-card textures; no per-frame re-filtering is claimed.",
+        "callEvidenceScope": "Actual two filter input/output buffers are independently checked;442 cached image draws consume the results. Blur can be fully overpainted; sharp is initially submitted at zero or quantized-zero alpha. Draw counts and authored contribution flags are not visible-pixel counts. Public bridge records exact buffers and subsequent Native draw source/alpha/matrices.",
+        "compositionScope": "Existing opacity/Canvas/time reused; projective texture mapping is a separately counted foundation. Generated image, card art, focus timing and sound are project work."
+      },
+      "knowledgeLinks": [],
+      "tags": [
+        "convolution",
+        "neighborhood",
+        "blur",
+        "unsharp",
+        "卷积",
+        "邻域"
+      ]
+    },
+    {
+      "id": "raster.projective-quad",
+      "version": 1,
+      "kind": "raster",
+      "status": "experimental",
+      "summary": "四角对应求单一平面单应映射，逆向采样图像并提供同平面附着点",
+      "api": "compileProjectiveRaster",
+      "entry": "lib/index.mjs",
+      "example": {
+        "sourceWidth": 64,
+        "sourceHeight": 48,
+        "outputWidth": 96,
+        "outputHeight": 80,
+        "quad": [
+          {
+            "x": 8,
+            "y": 4
+          },
+          {
+            "x": 88,
+            "y": 12
+          },
+          {
+            "x": 80,
+            "y": 72
+          },
+          {
+            "x": 4,
+            "y": 64
+          }
+        ]
+      },
+      "applicability": [
+        "图片变成倾斜纸卡，局部图案或绘制附件使用同一个平面映射保持对应"
+      ],
+      "counterexamples": [
+        "一个基础；点映射helper与别名、每个pose、正反面编排不增加数量。",
+        "单一homography，不是两仿射三角、网格变形、真实3D或自动前后面切换/光照/遮挡。",
+        "硬pixel-center coverage和预乘bilinear；sRGB编码计算，无AA/mipmap/各向异性或缩小无闪烁保证。",
+        "有限convex/极小/近奇点拒绝与UV边界容差，不构成全域condition或正确舍入保证。",
+        "返回完整output RGBA且可变；绘制/合成/时钟由调用者负责，SharedArrayBuffer须同步。"
+      ],
+      "evidence": {
+        "visualDemo": null,
+        "artisticReview": "PENDING_USER",
+        "originalProductionTransfer": "NOT_RUN",
+        "normalSpeedViewing": "NOT_DONE",
+        "audioListening": "NOT_LISTENED",
+        "ownerArtisticAcceptance": "PENDING_USER",
+        "visualReview": "DECODED_FRAME_REVIEW_NO_BLOCKERS",
+        "technicalTests": [
+          "test/projective-raster.test.mjs",
+          "test/postcard-raster-fresh.test.mjs",
+          "test/image-layout-integration.test.mjs"
+        ],
+        "guidance": "docs/projective-raster.md",
+        "videoValidation": "VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE_WITH_VERSION_EQUIVALENCE",
+        "sourceVersionRelation": "Public validation is stricter than the original frozen film: data-only records/arrays and intrinsic byte-view metadata; convolution also caps area times kernel cells at64000000. Pixel loops and arithmetic order are unchanged. Original media/source/manifests remain untouched. Separate540-frame Native replays match full usage and all994 pixel-put/2294 image-draw records exactly;22 original raw PNGs and22 fresh-process frames match. Not a new encoded movie or all-frame pixel comparison.",
+        "validationCoverage": "The actual9-second candidate compiles808 projective plans, warps991 outputs and maps1132 attached points. Main card540, postage268 and cancellation ink183 outputs are all drawn to the actual main Canvas.",
+        "callEvidenceScope": "Actual original-film interception verifies all991 warped buffers are consumed, not merely imported or logged;808 actual quads have an independent8x8 geometry oracle. Public validation revision preserves540-frame usage, all pixel-put and draw records,22 representative raw PNGs and22 fresh Node frames.",
+        "compositionScope": "Existing opacity/Canvas/time reused; neighborhood convolution counted separately. Face change, shadow, thickness, stamp art/motion and sound are project composition."
+      },
+      "knowledgeLinks": [],
+      "tags": [
+        "projective",
+        "homography",
+        "texture",
+        "quad",
+        "四角",
+        "投影"
+      ]
+    },
+    {
+      "id": "composition.masonry",
+      "version": 1,
+      "kind": "composition",
+      "status": "experimental",
+      "summary": "显式不等高同宽项目按输入序落入当前最低列，稳定左列tie",
+      "api": "masonryLayout",
+      "entry": "lib/index.mjs",
+      "example": {
+        "items": [
+          {
+            "itemId": "a",
+            "height": 130
+          },
+          {
+            "itemId": "b",
+            "height": 70
+          },
+          {
+            "itemId": "c",
+            "height": 95
+          },
+          {
+            "itemId": "d",
+            "height": 60
+          }
+        ],
+        "columns": 2,
+        "columnWidth": 120,
+        "columnGap": 16,
+        "rowGap": 12
+      },
+      "applicability": [
+        "已加载图像保持实际比例，以不等高同宽列构成摄影墙；结果可作旧交接的同ID端点"
+      ],
+      "counterexamples": [
+        "一个静态布局；列数/间距/图片变体不另计基础，旧staged handoff不重复计新配方。",
+        "源序最短列贪心不是全局最优，不保证换输入顺序仍同列；不自动测图/裁切/加载。",
+        "仅端点布局；交接过程中可有调用者设计的重叠，不承诺连续避碰或自动焦点保护。",
+        "明确IEEE累计高度和相等比较，无epsilon；空输入仍保留请求列，不伪称可见内容。"
+      ],
+      "evidence": {
+        "visualDemo": null,
+        "artisticReview": "PENDING_USER",
+        "originalProductionTransfer": "NOT_RUN",
+        "normalSpeedViewing": "NOT_DONE",
+        "audioListening": "NOT_LISTENED",
+        "ownerArtisticAcceptance": "PENDING_USER",
+        "visualReview": "DECODED_FRAME_REVIEW_NO_BLOCKERS",
+        "technicalTests": [
+          "test/masonry.test.mjs",
+          "test/image-layout-integration.test.mjs"
+        ],
+        "guidance": "docs/masonry.md",
+        "videoValidation": "VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE",
+        "sourceVersionRelation": "Both new runtime modules and the10-file actual frozen runtime import closure byte-match the final public files. Public index exports are later integration, not original-film imports. No post-film numeric runtime change.",
+        "validationCoverage": "An8.4-second/504-frame sound candidate calls masonry once after images load. Its actual six-photo endpoint is consumed by an existing staged handoff;145 static wall frames have all six in view and no photo-box overlap.",
+        "callEvidenceScope": "Actual Native replay verifies2911 photo drawImage submissions,2904 positive-alpha submissions and2617 positive on-canvas submissions; these are cached endpoint/old-recipe consumption, not2911 new layout solves. Image aspect ratios and matrices are checked across504 frames.",
+        "compositionScope": "Existing staged handoff compiles once and samples504 times, not a new recipe. Generated images, timing, loose/cover layouts, labels/leader art and sound are project work."
+      },
+      "knowledgeLinks": [],
+      "tags": [
+        "masonry",
+        "columns",
+        "intrinsic-height",
+        "摄影墙",
+        "砌列"
+      ]
+    },
+    {
+      "id": "composition.anchored-labels",
+      "version": 1,
+      "kind": "composition",
+      "status": "experimental",
+      "summary": "显式测量标签从有限锚偏移候选中按优先级试放，避开保护框与先放标签",
+      "api": "placeAnchoredLabels",
+      "entry": "lib/index.mjs",
+      "example": {
+        "labels": [
+          {
+            "itemId": "note-a",
+            "anchor": {
+              "x": 120,
+              "y": 80
+            },
+            "width": 76,
+            "height": 24,
+            "priority": 10,
+            "offsets": [
+              {
+                "x": 8,
+                "y": -12
+              },
+              {
+                "x": -84,
+                "y": -12
+              }
+            ]
+          }
+        ],
+        "obstacles": [
+          {
+            "x": 120,
+            "y": 50,
+            "width": 100,
+            "height": 60
+          }
+        ],
+        "viewport": {
+          "x": 0,
+          "y": 0,
+          "width": 300,
+          "height": 180
+        },
+        "clearance": 4
+      },
+      "applicability": [
+        "图像或图表短注释留出主体和其他标签空间；候选耗尽明确unplaced，供调用者处理"
+      ],
+      "counterexamples": [
+        "一个有限first-fit机制；priority/tie/candidate variations不另计基础。",
+        "不生成候选/保护框，不测字、不识别焦点、不生成leader线，不是全局最大放置数求解器。",
+        "按priority降序、ASCII ID tie试放，输出回源序；placement失败不静默隐藏或移动已放标签。",
+        "轴对齐clearance不是圆形距离或viewport内边距；框不冲突不保证阴影/文字墨迹/引导线安全。",
+        "静态合法不保证动画途中的避碰；小字读时和可见性必须按作品单独审。"
+      ],
+      "evidence": {
+        "visualDemo": null,
+        "artisticReview": "PENDING_USER",
+        "originalProductionTransfer": "NOT_RUN",
+        "normalSpeedViewing": "NOT_DONE",
+        "audioListening": "NOT_LISTENED",
+        "ownerArtisticAcceptance": "PENDING_USER",
+        "visualReview": "DECODED_FRAME_REVIEW_NO_BLOCKERS",
+        "technicalTests": [
+          "test/anchored-labels.test.mjs",
+          "test/image-layout-integration.test.mjs"
+        ],
+        "guidance": "docs/anchored-labels.md",
+        "videoValidation": "VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE",
+        "sourceVersionRelation": "Both new runtime modules and the10-file actual frozen runtime import closure byte-match the final public files. Public index exports are later integration, not original-film imports. No post-film numeric runtime change.",
+        "validationCoverage": "The actual8.4-second candidate calls placement once from actual wall-derived anchors/protected boxes. Three notes select real alternatives after focus-box and earlier-label conflicts; returned matrices feed263 label text draws,261 with positive Native alpha.",
+        "callEvidenceScope": "Independent actual504-frame replay checks note boxes, measured ink and source matrices. Any note has positive alpha in98 frames; all three are positive together76 frames and fully opaque together49 frames. These windows do not guarantee comfortable reading; static solver calls are not per-frame calls.",
+        "compositionScope": "Existing staged handoff is reused, not new. Caller measures text and authors finite offsets/protected areas; leader lines are project art and not routed or protected by this mechanism."
+      },
+      "knowledgeLinks": [],
+      "tags": [
+        "labels",
+        "anchors",
+        "first-fit",
+        "clearance",
+        "标注",
+        "避让"
+      ]
     }
   ]
 }
