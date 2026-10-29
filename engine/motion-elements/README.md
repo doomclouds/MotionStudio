@@ -1,6 +1,6 @@
 # Motion Elements — 可组合动效基础库
 
-当前目录 **29 项：23 个基础机制＋6 个配方**，全部 experimental。数量不代表艺术通过。以下阶段计数是历史记录；当前分类以 catalog 为准。
+当前目录 **31 项：25 个基础机制＋6 个配方**，全部 experimental。数量不代表艺术通过。以下阶段计数是历史记录；当前分类以 catalog 为准。
 
 第一阶段包含 **10 个机制**，而不是 10 套影片模板。数字不同、方向相反、快慢不同均是参数变体，不重复计算新元素。当前全部标记 `experimental`：数值与 Native 像素测试不等于审美验收，也不等于已经在原创成片中复用通过。
 
@@ -247,7 +247,7 @@ const selection = queryCatalog(catalog, {tag:'重组', limit:10});
 ```
 
 - `list` 可用 kind/status/text/tag/limit；`find` 额外要求 text 或 tag；`show` 只接受精确 `--id`，不存在即 `total:0, results:[]`，不猜 ID、不自动替代。
-- kind 仅 motion/transition/composition/recipe/geometry/reveal/fragment；当前 status 仅 experimental。所有过滤条件 AND。一个 tag 作规范化后的完整标签匹配；多个标签/重复参数拒绝，不偷偷改为 OR。
+- kind 仅 motion/transition/composition/recipe/geometry/reveal/fragment/raster；当前 status 仅 experimental。所有过滤条件 AND。一个 tag 作规范化后的完整标签匹配；多个标签/重复参数拒绝，不偷偷改为 OR。
 - text 为 NFC、首尾去空白、小写化后的 **literal substring**，无分词、正则、向量/AI/置信度。搜索字段限 id/summary/api/tags/applicability/counterexamples；英文与中文均可，但不自动翻译或展开同义词。反例也可能命中，`reasons.fields` 明确指出；证据/knowledgeLinks/示例参数不参与全文匹配。
 - id 不做规范化，必须是小写 canonical ID；kind/status 也要求精确。text 1..256、tag 1..64、id 1..128 UTF-16 units（规范化前），空白或控制字符拒绝。limit 默认20、整数1..100；CLI 仅普通十进制，不接受01/1e1等形式。最多13个命令参数，未知/重复/缺值/非法枚举均退出2且仅stderr报错。
 - 按 ID Unicode code-unit 升序稳定排序（不是相关度排行），`total` 是过滤后的总数、`truncated` 表示受 limit 截断。无匹配是正常退出0。结果保留每条完整 example、applicability、counterexamples、evidence、knowledgeLinks 与匹配原因，深复制且不改输入。
@@ -732,3 +732,21 @@ handoff 只在影片中覆盖 shared 身份的位置/尺寸交接，未覆盖 en
 这不构成优秀作品、默认风格推荐或普遍生产迁移认可；技术状态不因此改判失效。
 影片不覆盖空/非法图、极端数值、恒零链路或 reduced-motion 的视觉接受；这些不能靠一支片泛化。
 媒体、逐帧回执、完整项目与用户反馈仍留私有交付；仓库只包含可运行合成数据示例和测试。
+
+
+## 图文批：2 个像素机制，无新配方
+
+`raster.matte` 以连续像素覆盖将纹理限制在清晰字形中；`raster.displacement-map` 用二维位移图弯曲纹理，
+而非整体移动文字或重数已有条带错位。alpha/luma、滤波、方向、颜色均为参数，不增加数量。
+快照、字节复制和显式Canvas输出是配套helper，不算元素。
+见[接口、资源边界与复现指导](docs/raster-effects.md)和[官方源码/许可对照](docs/raster-reference-decisions.md)。
+
+两项已被12秒有声原创图文候选的实际画面消费：matte覆盖alpha/invert:false；
+位移覆盖正scale、bilinear/clamp和opaque map alpha。新算子、adapter与index源码匹配影片冻结字节；
+目录/查询新增raster分类和指导属于影片后的元数据接入，不冒称全包同字节或全片重渲。
+实际调用回执、原生代表帧和解码检查不替代常速观看、听审或用户认可；
+常速`NOT_DONE`、听审`NOT_LISTENED`分开保留；用户对本交付有限接受，视觉设计不作风格范例
+（`LIMITED_ACCEPTANCE_NOT_STYLE_ENDORSEMENT`），不是优秀设计或通用艺术通过。
+首轮整片中断、仅GC未解决Native资源压力；调用方采用有界独立scratch池和事件循环yield/GC后完成。
+这只是指定Native版本/该场景的资源实测，不是跨后端实时或无限长循环保证。
+媒体、完整制作项目和哈希回执不进公开仓库；目录小输入与单测可离线复现数值/像素合同。

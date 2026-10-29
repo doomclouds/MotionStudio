@@ -1923,6 +1923,159 @@
         "recipe",
         "守恒"
       ]
+    },
+    {
+      "id": "raster.matte",
+      "version": 1,
+      "kind": "raster",
+      "status": "experimental",
+      "summary": "逐像素连续覆盖合成，保持字形轮廓内的纹理",
+      "api": "sampleRasterMatte",
+      "entry": "lib/index.mjs",
+      "example": {
+        "source": {
+          "width": 2,
+          "height": 1,
+          "pixels": [
+            230,
+            40,
+            20,
+            255,
+            20,
+            90,
+            160,
+            128
+          ]
+        },
+        "mask": {
+          "width": 2,
+          "height": 1,
+          "pixels": [
+            255,
+            255,
+            255,
+            128,
+            255,
+            255,
+            255,
+            255
+          ]
+        },
+        "mode": "alpha",
+        "invert": false
+      },
+      "applicability": [
+        "字形或图形连续覆盖中显示纹理、渐变蒙版合成"
+      ],
+      "counterexamples": [
+        "与几何clip不同，要求同尺寸RGBA覆盖图；不做文字排版、遮罩生成或自动密度缩放",
+        "luma为encoded-sRGB字节近似，不是线性光或HDR；影片仅覆盖alpha/invert:false",
+        "工程验证和真实调用不构成艺术认可、风格推荐或通用生产迁移。"
+      ],
+      "evidence": {
+        "technicalTests": [
+          "test/raster-effects.test.mjs"
+        ],
+        "visualDemo": null,
+        "videoValidation": "VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE",
+        "artisticReview": "LIMITED_ACCEPTANCE_NOT_STYLE_ENDORSEMENT",
+        "originalProductionTransfer": "NOT_RUN",
+        "visualReview": "DECODED_FRAME_REVIEW_CONDITIONAL_NO_HARD_BLOCKERS",
+        "normalSpeedViewing": "NOT_DONE",
+        "audioListening": "NOT_LISTENED",
+        "ownerArtisticAcceptance": "LIMITED_ACCEPTANCE_NOT_STYLE_ENDORSEMENT",
+        "guidance": "docs/raster-effects.md",
+        "sourceVersionRelation": "Raster operator, adapter and public index bytes match the frozen film. Catalog/query classification and guidance were added after rendering; no claim that the entire package is byte-identical or that this metadata revision re-rendered the film.",
+        "validationCoverage": "499 actual samples/draws across frames 96–538, including 56 additional carrier-spill masks in frames 370–425. Alpha mode, invert:false only; luma and inversion have engineering tests, not this film coverage.",
+        "callEvidenceScope": "Scene-internal execution/draw counters plus frozen-source parameter crosscheck; no per-call parameter snapshots.",
+        "ownerFeedbackScope": "Limited acceptance of this delivered work; visual design is not endorsed as a style reference. Technical validity and migration evidence remain separate."
+      },
+      "knowledgeLinks": [],
+      "tags": [
+        "raster",
+        "matte",
+        "mask",
+        "覆盖",
+        "图文"
+      ]
+    },
+    {
+      "id": "raster.displacement-map",
+      "version": 1,
+      "kind": "raster",
+      "status": "experimental",
+      "summary": "显式二维位移图的逐像素逆向重采样",
+      "api": "sampleRasterDisplacement",
+      "entry": "lib/index.mjs",
+      "example": {
+        "source": {
+          "width": 2,
+          "height": 1,
+          "pixels": [
+            230,
+            40,
+            20,
+            255,
+            20,
+            90,
+            160,
+            128
+          ]
+        },
+        "map": {
+          "width": 2,
+          "height": 1,
+          "pixels": [
+            160,
+            128,
+            0,
+            255,
+            128,
+            128,
+            0,
+            255
+          ]
+        },
+        "scaleX": 1,
+        "scaleY": 0,
+        "edge": "clamp",
+        "filter": "bilinear"
+      },
+      "applicability": [
+        "局部压力场使字内纹理弯曲、可控二维扭曲取样"
+      ],
+      "counterexamples": [
+        "不是物理折射、流体、3D或逐条带slice-displacement；不生成位移图",
+        "R/G byte128中性，map alpha门控，8bit量化；不承诺跨平台/后端逐字节等价",
+        "影片仅覆盖正scale、bilinear/clamp、opaque map alpha；其他分支不借此升级",
+        "工程验证和真实调用不构成艺术认可、风格推荐或通用生产迁移。"
+      ],
+      "evidence": {
+        "technicalTests": [
+          "test/raster-effects.test.mjs"
+        ],
+        "visualDemo": null,
+        "videoValidation": "VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE",
+        "artisticReview": "LIMITED_ACCEPTANCE_NOT_STYLE_ENDORSEMENT",
+        "originalProductionTransfer": "NOT_RUN",
+        "visualReview": "DECODED_FRAME_REVIEW_CONDITIONAL_NO_HARD_BLOCKERS",
+        "normalSpeedViewing": "NOT_DONE",
+        "audioListening": "NOT_LISTENED",
+        "ownerArtisticAcceptance": "LIMITED_ACCEPTANCE_NOT_STYLE_ENDORSEMENT",
+        "guidance": "docs/raster-effects.md",
+        "sourceVersionRelation": "Raster operator, adapter and public index bytes match the frozen film. Catalog/query classification and guidance were added after rendering; no claim that the entire package is byte-identical or that this metadata revision re-rendered the film.",
+        "validationCoverage": "188 actual samples across frames 324–455: 132 texture draws plus 56 displaced carrier draws in frames 370–425. Positive scales, bilinear/clamp, opaque map alpha only; nearest/transparent/negative scales are not film-validated.",
+        "callEvidenceScope": "Scene-internal execution/draw counters plus frozen-source parameter crosscheck; no per-call parameter snapshots.",
+        "ownerFeedbackScope": "Limited acceptance of this delivered work; visual design is not endorsed as a style reference. Technical validity and migration evidence remain separate."
+      },
+      "knowledgeLinks": [],
+      "tags": [
+        "raster",
+        "displacement",
+        "sampling",
+        "位移",
+        "图文"
+      ]
     }
   ]
 }

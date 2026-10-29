@@ -196,7 +196,7 @@ keyframe 的影片覆盖为 hold，handoff 为 shared 身份交接，不外推 e
 
 ## 数据关系：把关系与数值真正映射为几何
 
-当前目录 23 基础＋6 配方（共 29 项），全部 experimental，未到 100 基础目标。
+该数据批接入时为 23 基础＋6 配方（共 29 项），全部 experimental，未到 100 基础目标。
 新增 `composition.layered-dag` 用拓扑分层表示分支/汇合，
 `composition.weighted-flow` 按统一数值量纲分配两端端口；
 `recipe.flow-handoff` 组合旧 keyframe/smoothstep/lerp 与新加权布局，
@@ -216,3 +216,21 @@ keyframe 的影片覆盖为 hold，handoff 为 shared 身份交接，不外推 e
 `NOT_DONE` / `NOT_LISTENED` 仍保留；用户对本交付有限接受，视觉设计不作风格范例
 （`LIMITED_ACCEPTANCE_NOT_STYLE_ENDORSEMENT`）。不得据此标优秀作品、默认推荐风格或迁移通过；
 技术有效性不因这一视觉评价变为失效，未覆盖分支也不得借作品升级。
+
+
+## 图文：连续覆盖与局部纹理弯曲
+
+当前目录25基础＋6配方（31项），距离100基础目标仍有75项；全部experimental。
+新增`raster.matte`及`raster.displacement-map`，没有新配方；模式/滤波/颜色与snapshot/adapter helper不重复计数。
+在最终尺寸生成字形coverage，先位移纹理再matte，避免把低分辨率字边一起放大或扭曲。
+适合受控二维图文材质，不是光学折射或物理模拟。完整参数、边界、资源与复现见`docs/raster-effects.md`；
+Pixi官方shader与p5 mask具体源码/许可取舍见`docs/raster-reference-decisions.md`，不引入依赖或复制第三方实现。
+
+12秒有声候选有实际调用与绘制回执，范围仅alpha正向覆盖及正scale/bilinear/clamp位移，map alpha为opaque。
+影片没有验证luma、invert、nearest、transparent边缘或其他场景艺术效果；不能把单测外推为作品认可。
+算子/adapter/index保持影片冻结字节，目录查询分类是后续元数据整合；原片清单不改写。
+常速观看NOT_DONE、听审NOT_LISTENED、通用生产迁移NOT_RUN分别记录。
+本交付获有限接受，视觉设计不作风格范例（LIMITED_ACCEPTANCE_NOT_STYLE_ENDORSEMENT），
+不得泛化为优秀作品、风格背书或其他参数的艺术通过；原冻结清单与后续反馈分开绑定。
+首轮Native资源中断与修复实验保留私有；HD循环需量测RSS、有界局部池及后端生命周期管理，
+单帧像素预算或JS heap稳定都不是长片内存证明。不得拿技术成功默认推荐风格。

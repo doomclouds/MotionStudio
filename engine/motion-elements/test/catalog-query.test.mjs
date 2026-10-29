@@ -59,9 +59,9 @@ test('strict CLI unknown/repeated/missing/extra options and command constraints'
   assert.deepEqual(parseCatalogArgs(['--help']),{help:true});
   assert.equal(parseCatalogArgs(['find','--tag',' 淡入 ']).query.tag,'淡入');
 });
-test('real 29 entries: tags, status, metadata and executable inputs preserved', () => {
+test('real 31 entries: tags, status, metadata and executable inputs preserved', () => {
   const before = JSON.stringify(catalog);
-  const r = queryCatalog(catalog,{limit:100}); assert.equal(r.total,29); assert.equal(r.truncated,false);
+  const r = queryCatalog(catalog,{limit:100}); assert.equal(r.total,31); assert.equal(r.truncated,false);
   for (const e of catalog.elements) {
     assert.equal(e.status,'experimental'); assert.ok(e.tags.length>0);
     const hit = queryCatalog(catalog,{id:e.id}).results[0]; assert.deepEqual(hit.element,e);
@@ -83,7 +83,7 @@ test('runtime permission isolation: only three static files readable, no entry/p
     '--permission', `--allow-fs-read=${cli}`, `--allow-fs-read=${root}lib/catalog-query.mjs`, `--allow-fs-read=${root}catalog.json`,
     cli,'list','--limit','100',
   ], {encoding:'utf8',cwd:'/tmp'});
-  assert.equal(r.status,0,r.stderr); assert.equal(JSON.parse(r.stdout).total,29);
+  assert.equal(r.status,0,r.stderr); assert.equal(JSON.parse(r.stdout).total,31);
 });
 
 // Metadata guards prevent a technical fixture from becoming a style endorsement.
@@ -100,7 +100,7 @@ test('experimental band and light recipe preserve independent quality gates in q
 
 
 test('data-flow accounting and film coverage preserve independent quality gates', () => {
-  assert.equal(catalog.elements.filter(e => e.kind !== 'recipe').length,23);
+  assert.equal(catalog.elements.filter(e => e.kind !== 'recipe').length,25);
   assert.equal(catalog.elements.filter(e => e.kind === 'recipe').length,6);
   for (const id of ['composition.layered-dag','composition.weighted-flow','recipe.flow-handoff']) {
     const e=queryCatalog(catalog,{id}).results[0].element;
@@ -115,4 +115,19 @@ test('data-flow accounting and film coverage preserve independent quality gates'
     assert.match(e.evidence.validationCoverage,/frames/);
     assert.equal(e.evidence.guidance,'docs/data-flow.md');
   }
+});
+
+test('raster category exposes only two mechanisms and keeps film branches distinct from tests', () => {
+  const r=queryCatalog(catalog,{kind:'raster'});
+  assert.deepEqual(r.results.map(x=>x.element.id),['raster.displacement-map','raster.matte']);
+  for(const {element:e} of r.results){
+    assert.equal(e.status,'experimental');assert.match(e.evidence.ownerFeedbackScope,/not endorsed as a style reference/);assert.equal(e.evidence.artisticReview,'LIMITED_ACCEPTANCE_NOT_STYLE_ENDORSEMENT');
+    assert.equal(e.evidence.ownerArtisticAcceptance,'LIMITED_ACCEPTANCE_NOT_STYLE_ENDORSEMENT');assert.equal(e.evidence.audioListening,'NOT_LISTENED');
+    assert.equal(e.evidence.normalSpeedViewing,'NOT_DONE');assert.equal(e.evidence.originalProductionTransfer,'NOT_RUN');
+    assert.equal(e.evidence.videoValidation,'VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE');
+    assert.match(e.evidence.validationCoverage,/actual samples/);assert.equal(e.evidence.guidance,'docs/raster-effects.md');
+    assert.match(e.evidence.sourceVersionRelation,/Catalog\/query classification/);
+  }
+  const cliResult=run(['list','--kind','raster']);assert.equal(cliResult.status,0,cliResult.stderr);
+  assert.equal(JSON.parse(cliResult.stdout).total,2);
 });

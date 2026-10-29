@@ -1,5 +1,5 @@
 /** Offline metadata selection only. Never imports entries or dereferences evidence/links. */
-export const KINDS = Object.freeze(['motion', 'transition', 'composition', 'recipe', 'geometry', 'reveal', 'fragment']);
+export const KINDS = Object.freeze(['motion', 'transition', 'composition', 'recipe', 'geometry', 'reveal', 'fragment', 'raster']);
 export const STATUSES = Object.freeze(['experimental']);
 export const QUERY_LIMITS = Object.freeze({defaultLimit: 20, maxLimit: 100, maxText: 256, maxTag: 64, maxId: 128});
 const own = (o, k) => Object.hasOwn(o, k);
