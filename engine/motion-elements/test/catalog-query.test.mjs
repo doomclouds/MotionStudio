@@ -164,6 +164,7 @@ test('sticky interval distinguishes actual draws from visible released geometry'
  assert.equal(e.evidence.originalProductionTransfer,'NOT_RUN');assert.equal(e.evidence.guidance,'docs/sticky-interval.md');
  assert.match(e.evidence.validationCoverage,/990 successful calls/);assert.match(e.evidence.validationCoverage,/visible only276–323/);
  assert.match(e.evidence.callEvidenceScope,/input\/result snapshots/);assert.match(e.evidence.sourceVersionRelation,/not film-consumed/);
+ assert.match(e.evidence.sourceVersionRelation,/same solver body/);assert.match(e.evidence.sourceVersionRelation,/not a byte-identical-film claim/);assert.match(e.evidence.sourceVersionRelation,/22 fresh Node/);
 });
 
 test('three-work owner feedback distinguishes rejection from scoped and limited acceptance without changing technical gates',()=>{

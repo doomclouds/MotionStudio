@@ -1,6 +1,6 @@
 # 容器内固定标题：能停住，也能在分区结束时离开
 
-**Experimental。已有真实候选影片调用，技术与艺术状态分开，详见末节。** 本次只新增一个纵向区间约束：标题随内容滚动、到达指定位置后停住、不能越过其所属内容分区的末端。滚动参数动画、裁切、列表布局、同ID卡片交接仍是既有能力，不另计基础机制或配方。
+**Experimental。已有真实候选影片调用，技术与艺术状态分开，详见末节。** 本项是一个纵向区间约束（此次职责目录整理不新增机制）：标题随内容滚动、到达指定位置后停住、不能越过其所属内容分区的末端。滚动参数动画、裁切、列表布局、同ID卡片交接仍是既有能力，不另计基础机制或配方。
 
 ## 场景与效果
 
@@ -12,7 +12,7 @@
 ## 严格API和坐标合同
 
 ```js
-import {stickyIntervalLayout} from '../lib/sticky-interval.mjs';
+import {stickyIntervalLayout} from '../lib/foundations/layout/sticky-interval.mjs';
 const heading = stickyIntervalLayout({
   itemId:'chapter-a',
   rect:{x:20,y:100,width:180,height:30},
@@ -128,8 +128,9 @@ Native夹具只证明正确的调用方clip/save/restore用法，不代表新增
 旧local-geometry reveal承担视窗clip和票据向右展开。新条目只有本区间约束，不把这些旧能力、美术海报、按钮背景、字体或声音再计数。
 本片没有真实购票、DOM事件或浏览器滚动行为。handoff的enter/exit分支也未因此新增验证。
 
-新solver和实际导入依赖与冻结影片字节一致。影片直接导入模块；制作存档中保留的旧index没有被场景导入，
-不能据此声称公共index或整个包与影片存档同字节。公共导出另有测试，后续目录/指导接入不修改历史manifest。
+原影片冻结solver与依赖保持原字节。此次职责迁移令旧入口变为显式re-export，canonical实现仅调整相对validator导入；
+公开源码路径/hash因此改变，不能沿用历史manifest声称迁移版字节同版。影片直接导入模块；制作存档旧index未被场景消费，
+公共index另有测试但保持原入口路径。新旧等价验证单独绑定版本，不修改历史manifest或原片。
 
 最终版本补做9个真实编码sticky阶段帧审，覆盖进入/固定/释放/后一标题接替；另有4个海报交接与结尾帧审。
 不把旧版本的审查直接改称最终版本通过；旧报告身份澄清及最终新增回执独立保留。
@@ -140,3 +141,21 @@ Native夹具只证明正确的调用方clip/save/restore用法，不代表新增
 公开合成例只复现API合同；完整影片、制作、美术参数、音源和调用/哈希回执留在私有交付，不假称本源包可单独重制原片。
 复用应先核固定源码/素材身份，再重建状态、代表Native帧与声音，完整编码后审查实际遮挡、身份连续性及视听。
 官方参考与许可取舍见[ui-scroll-reference-decisions.md](ui-scroll-reference-decisions.md)。
+
+## 职责目录与旧入口兼容（0新增）
+
+实现位于 `lib/foundations/layout/sticky-interval.mjs`；原 `lib/sticky-interval.mjs`
+显式重导出同一个 `stickyIntervalLayout`，`lib/index.mjs` 保留旧路径导出。
+三入口函数对象严格相同，数学主体仅相对validator导入变化，稳定ID、数量和实验状态不变。
+
+旧wrapper URL加query只重载wrapper，不会将query传给canonical依赖，所以仍共享同一函数对象。
+迁移前对旧实现加query会创建另一函数对象；这种刻意cache-busting身份行为不保持。
+需独立模块实例时请对canonical URL添加query。本API无plan品牌、隐式时钟或历史缓存。
+本次不顺便收紧共用validator：null-prototype记录仍接受、跨realm普通记录仍拒绝，
+已知字段的getter仍可能执行，输入须是调用方信任的数据；分类不变成安全沙箱。
+
+本次另建新旧版本等价桥接：两个独立源码副本各重放750个Native场景状态，
+与原逐帧回执中的990次sticky输入/结果完整一致；22个原Native PNG在两版正序/逆序/重复中相同，迁移版另经22个独立新Node复现。
+仅旧入口和新增canonical文件改变，原108文件冻结源及媒体不变。
+这不是全750帧逐像素比较、新片编码、常速连续观看、实听或新的艺术认可；
+原UI作品有限认可而非风格背书的状态保持。
