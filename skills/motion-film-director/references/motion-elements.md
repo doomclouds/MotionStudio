@@ -246,7 +246,8 @@ root/target来自作品同一绝对帧状态，显式bend/fallback；用返回jo
 
 14秒有声角色候选真实使用两臂正常可达两bend；旧路径、finite-settle和矩阵复用，不把脚步/表情/音效数成新项。
 原冻结求解器及实际导入依赖保持字节一致，真实调用与限段邻帧已核；作品此前视觉早贴版本不作成功证据，最终修版单独绑定。
-内外投影、fallback和奇点有工程测试，不是本片覆盖；常速NOT_DONE、听审NOT_LISTENED、艺术PENDING_USER、迁移NOT_RUN。
+内外投影、fallback和奇点有工程测试，不是本片覆盖；常速NOT_DONE、听审NOT_LISTENED、迁移NOT_RUN。
+该角色作品被否定，REJECTED_NOT_STYLE_REFERENCE：不要当成功风格推荐；不因此否定IK数值合同。
 作品参数/媒体/私有回执不随源包分发，后续重用仍须为实际镜头验证，不默认推荐风格。
 
 ## 校准平面视差：1基础，非真正3D
@@ -255,7 +256,8 @@ root/target来自作品同一绝对帧状态，显式bend/fallback；用返回jo
 `planeParallaxLayout`不绘图、不排序、不clip，不把focalLength当独立光学变焦。
 实际14秒候选840次投影/每帧四层绘制，固定校准、同宽高比与正常near距离；其余数值边界只有工程验证。
 见`docs/plane-parallax.md`和`docs/parallax-reference-decisions.md`。直接模块及依赖字节绑定原片，公共index仅测试。
-技术和四个编码静帧核查不等于常速观看/听审/艺术接受：NOT_DONE、NOT_LISTENED、PENDING_USER分别保留；通用迁移NOT_RUN。
+技术和四个编码静帧核查不等于常速观看/听审：NOT_DONE、NOT_LISTENED保留；通用迁移NOT_RUN。
+用户正面反馈仅对应本海岸作品及逼真水面效果（POSITIVE_FEEDBACK_SCENE_SPECIFIC），不是所有参数或整库风格认可。
 主体身份、旧位移、裁切、生成画稿与声音不拆成更多机制；实际素材/参数/私有回执不含在公共源包。
 
 ## 滚动分区内sticky：1基础，非完整CSS
@@ -263,6 +265,7 @@ root/target来自作品同一绝对帧状态，显式bend/fallback；用返回jo
 `composition.sticky-interval` / `stickyIntervalLayout`接收未滚动内容rect、所属纵向区间、绝对scrollOffset和pinY，输出最终视窗本地rect及phase。
 不要再减一次scrollOffset；外层位置/clip仍由旧机制负责。它不处理DOM、惯性、重叠或自动分区。
 一支12.5秒候选两标题990次调用/绘制；三个phase有可见效果，离屏后的求值不算视觉覆盖。
-最终版9个sticky编码帧与4个交接/结尾帧限定审查通过；常速NOT_DONE、听审NOT_LISTENED、用户PENDING_USER及通用迁移NOT_RUN不改变。
+最终版9个sticky编码帧与4个交接/结尾帧限定审查通过；常速NOT_DONE、听审NOT_LISTENED及通用迁移NOT_RUN不改变。
+用户对本UI作品有限认可（LIMITED_ACCEPTANCE_NOT_STYLE_ENDORSEMENT），不误记为拒绝或优秀风格范例。
 完整合同见`docs/sticky-interval.md`；官方源码/许可判断见`docs/ui-scroll-reference-decisions.md`。
 真实导入solver/依赖同字节，公共index只由测试验证；旧motion/reveal/shared handoff、海报美术和声音不重复计数。

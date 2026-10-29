@@ -2109,7 +2109,8 @@
         "不是碰撞、冲量、抓取、全身rig或3D；不能由数值接触推断实际手部轮廓的视觉接触时刻",
         "极近切点或穿root可放大姿态敏感性，不保证角度连续或精确实数几何",
         "影片只覆盖正常可达两侧bend；投影、fallback、奇点未获影片验证",
-        "技术和实际调用不是艺术认可或通用生产迁移。"
+        "技术和实际调用不是艺术认可或通用生产迁移。",
+        "该角色验证作品的视觉设计被否定，不作为成功风格范例；这不等于IK数值合同或调用证据失效。"
       ],
       "evidence": {
         "technicalTests": [
@@ -2117,16 +2118,17 @@
         ],
         "visualDemo": null,
         "videoValidation": "VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE",
-        "artisticReview": "PENDING_USER",
+        "artisticReview": "REJECTED_NOT_STYLE_REFERENCE",
         "originalProductionTransfer": "NOT_RUN",
         "visualReview": "PASS_LIMITED_NEIGHBOR_FRAME_REVIEW",
         "normalSpeedViewing": "NOT_DONE",
         "audioListening": "NOT_LISTENED",
-        "ownerArtisticAcceptance": "PENDING_USER",
+        "ownerArtisticAcceptance": "REJECTED_NOT_STYLE_REFERENCE",
         "guidance": "docs/two-link-ik.md",
         "sourceVersionRelation": "Solver and actually imported dependency bytes match the frozen film. The scene imports the solver module directly; public index export is tested but not film-consumed. Catalog, tests and guidance are later integration; the historical manifest is unchanged.",
         "validationCoverage": "1680 solver results consumed in frames 0–839, two arms with fixed lengths and opposite bend. Declared contact frames are reachable with zero target error. No projected, fallback or singular-pose film coverage.",
-        "callEvidenceScope": "Render-time state-result counters and reach/error records with frozen-source input/draw crosscheck, not independent per-call argument interception."
+        "callEvidenceScope": "Render-time state-result counters and reach/error records with frozen-source input/draw crosscheck, not independent per-call argument interception.",
+        "ownerFeedbackScope": "The delivered character work was rejected for visual/design quality and must not be recommended as a successful style reference. This does not invalidate the tested numerical IK contract or actual-call evidence."
       },
       "knowledgeLinks": [],
       "tags": [
@@ -2182,7 +2184,8 @@
         "不是任意world XYZ、旋转相机、网格、真正3D、景深或遮挡求解；focalLength不是独立光学变焦。",
         "不排序、不裁切；每层画稿须在零相机状态校准，主物体身份由调用方维护。",
         "影片仅覆盖固定深度、同宽高比viewport及正常near距离；其他分支没有本片效果验收。",
-        "技术及实际调用不是艺术认可或通用生产迁移。"
+        "技术及实际调用不是艺术认可或通用生产迁移。",
+        "正面反馈限于该海岸作品与逼真动态水面效果，不扩大到所有参数、实际听审或通用风格推荐。"
       ],
       "evidence": {
         "technicalTests": [
@@ -2190,16 +2193,17 @@
         ],
         "visualDemo": null,
         "videoValidation": "VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE",
-        "artisticReview": "PENDING_USER",
+        "artisticReview": "POSITIVE_FEEDBACK_SCENE_SPECIFIC",
         "originalProductionTransfer": "NOT_RUN",
         "visualReview": "DECODED_FRAME_REVIEW_NO_BLOCKERS",
         "normalSpeedViewing": "NOT_DONE",
         "audioListening": "NOT_LISTENED",
-        "ownerArtisticAcceptance": "PENDING_USER",
+        "ownerArtisticAcceptance": "POSITIVE_FEEDBACK_SCENE_SPECIFIC",
         "guidance": "docs/plane-parallax.md",
         "sourceVersionRelation": "Projection and actually imported dependency bytes match the frozen film. The scene imports the module directly; public index export is tested but not film-consumed. Catalog/test/guidance are later integration; the historical manifest is unchanged.",
         "validationCoverage": "840 projections in frames 0–839, each with four matrices consumed by layer drawing. Main lateral/depth motion in frames 120–473; fixed calibration, uniform-aspect viewports and normal near distances only. Four encoded static frames reviewed, not continuous viewing.",
-        "callEvidenceScope": "Render-time state-result/layer-draw records plus frozen-source input and consumer crosscheck; not independent per-call argument interception."
+        "callEvidenceScope": "Render-time state-result/layer-draw records plus frozen-source input and consumer crosscheck; not independent per-call argument interception.",
+        "ownerFeedbackScope": "Positive owner feedback is limited to the delivered coastal scene and its convincing animated-water effect. It is not proof of listening review, all-parameter approval, generic style suitability or production transfer."
       },
       "knowledgeLinks": [],
       "tags": [
@@ -2241,7 +2245,8 @@
         "仅纵向显式区间约束，不是完整CSS sticky、DOM监听、惯性、自动分区或重叠求解。",
         "输出已经是viewport本地最终矩形；不要再次减scrollOffset，窗口放置和clip由调用方处理。",
         "本片正常正向滚动覆盖normal/pinned/released；负滚动、负pin、数值极值及单点固定区间没有作品验收。",
-        "离屏后继续求值不算可见效果验证；技术与实际调用不是艺术接受。"
+        "离屏后继续求值不算可见效果验证；技术与实际调用不是艺术接受。",
+        "该UI作品获得有限认可，不是被否决，也不是优秀风格范例或通用迁移背书。"
       ],
       "evidence": {
         "technicalTests": [
@@ -2249,16 +2254,17 @@
         ],
         "visualDemo": null,
         "videoValidation": "VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE",
-        "artisticReview": "PENDING_USER",
+        "artisticReview": "LIMITED_ACCEPTANCE_NOT_STYLE_ENDORSEMENT",
         "originalProductionTransfer": "NOT_RUN",
         "visualReview": "DECODED_FRAME_REVIEW_NO_BLOCKERS",
         "normalSpeedViewing": "NOT_DONE",
         "audioListening": "NOT_LISTENED",
-        "ownerArtisticAcceptance": "PENDING_USER",
+        "ownerArtisticAcceptance": "LIMITED_ACCEPTANCE_NOT_STYLE_ENDORSEMENT",
         "guidance": "docs/sticky-interval.md",
         "sourceVersionRelation": "Sticky solver and actually imported dependency bytes match the frozen film. The scene imports the module directly; the public index is tested but not film-consumed, and its bytes differ from the old unused index retained with the production archive. Catalog/test/guidance integration leaves the historical manifest unchanged.",
         "validationCoverage": "990 successful calls and rectangle draws: two titles over frames 0–494. First title normal0–128, pinned129–275, released276–494; released geometry visible only276–323, later calculations are offscreen. No negative/extreme/single-point interval film coverage. Final-version nine encoded sticky frames plus four poster/handoff/end frames reviewed; old-version review is not reused as final-version evidence.",
-        "callEvidenceScope": "Render-time actual sticky input/result snapshots and draw counters, crosschecked against frozen-source consumers; not independent parameter interception."
+        "callEvidenceScope": "Render-time actual sticky input/result snapshots and draw counters, crosschecked against frozen-source consumers; not independent parameter interception.",
+        "ownerFeedbackScope": "Limited acceptance of this delivered UI work, not rejection and not endorsement as a style reference. Technical validity, listening and generic production transfer remain separate."
       },
       "knowledgeLinks": [],
       "tags": [

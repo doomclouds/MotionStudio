@@ -15,7 +15,7 @@ test('plane parallax preserves calibrated-film coverage and separate viewing gat
  const e=queryCatalog(catalog,{id:'composition.plane-parallax'}).results[0].element;
  assert.equal(e.api,'planeParallaxLayout');assert.equal(e.status,'experimental');
  assert.equal(e.evidence.videoValidation,'VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE');
- assert.equal(e.evidence.artisticReview,'PENDING_USER');assert.equal(e.evidence.ownerArtisticAcceptance,'PENDING_USER');
+ assert.equal(e.evidence.artisticReview,'POSITIVE_FEEDBACK_SCENE_SPECIFIC');assert.equal(e.evidence.ownerArtisticAcceptance,'POSITIVE_FEEDBACK_SCENE_SPECIFIC');
  assert.equal(e.evidence.normalSpeedViewing,'NOT_DONE');assert.equal(e.evidence.audioListening,'NOT_LISTENED');
  assert.equal(e.evidence.originalProductionTransfer,'NOT_RUN');assert.equal(e.evidence.guidance,'docs/plane-parallax.md');
  assert.match(e.evidence.validationCoverage,/840 projections/);assert.match(e.evidence.validationCoverage,/Four encoded static frames/);
@@ -147,7 +147,7 @@ test('two-link IK records actual reachable branch coverage without promoting aut
  const e=queryCatalog(catalog,{id:'geometry.two-link-ik'}).results[0].element;
  assert.equal(e.kind,'geometry');assert.equal(e.status,'experimental');
  assert.equal(e.evidence.videoValidation,'VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE');
- assert.equal(e.evidence.artisticReview,'PENDING_USER');assert.equal(e.evidence.ownerArtisticAcceptance,'PENDING_USER');
+ assert.equal(e.evidence.artisticReview,'REJECTED_NOT_STYLE_REFERENCE');assert.equal(e.evidence.ownerArtisticAcceptance,'REJECTED_NOT_STYLE_REFERENCE');
  assert.equal(e.evidence.audioListening,'NOT_LISTENED');assert.equal(e.evidence.normalSpeedViewing,'NOT_DONE');
  assert.equal(e.evidence.originalProductionTransfer,'NOT_RUN');assert.equal(e.evidence.guidance,'docs/two-link-ik.md');
  assert.match(e.evidence.validationCoverage,/1680.*0–839/);assert.match(e.evidence.validationCoverage,/No projected, fallback/);
@@ -158,9 +158,23 @@ test('sticky interval distinguishes actual draws from visible released geometry'
  const e=queryCatalog(catalog,{id:'composition.sticky-interval'}).results[0].element;
  assert.equal(e.api,'stickyIntervalLayout');assert.equal(e.status,'experimental');
  assert.equal(e.evidence.videoValidation,'VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE');
- assert.equal(e.evidence.artisticReview,'PENDING_USER');assert.equal(e.evidence.ownerArtisticAcceptance,'PENDING_USER');
+ assert.equal(e.evidence.artisticReview,'LIMITED_ACCEPTANCE_NOT_STYLE_ENDORSEMENT');assert.equal(e.evidence.ownerArtisticAcceptance,'LIMITED_ACCEPTANCE_NOT_STYLE_ENDORSEMENT');
  assert.equal(e.evidence.normalSpeedViewing,'NOT_DONE');assert.equal(e.evidence.audioListening,'NOT_LISTENED');
  assert.equal(e.evidence.originalProductionTransfer,'NOT_RUN');assert.equal(e.evidence.guidance,'docs/sticky-interval.md');
  assert.match(e.evidence.validationCoverage,/990 successful calls/);assert.match(e.evidence.validationCoverage,/visible only276–323/);
  assert.match(e.evidence.callEvidenceScope,/input\/result snapshots/);assert.match(e.evidence.sourceVersionRelation,/not film-consumed/);
+});
+
+test('three-work owner feedback distinguishes rejection from scoped and limited acceptance without changing technical gates',()=>{
+ const expected={'geometry.two-link-ik':'REJECTED_NOT_STYLE_REFERENCE','composition.plane-parallax':'POSITIVE_FEEDBACK_SCENE_SPECIFIC','composition.sticky-interval':'LIMITED_ACCEPTANCE_NOT_STYLE_ENDORSEMENT'};
+ assert.equal(catalog.elements.length,34);assert.equal(catalog.elements.filter(e=>e.kind==='recipe').length,6);
+ for(const [id,status]of Object.entries(expected)){const e=queryCatalog(catalog,{id}).results[0].element;
+  assert.equal(e.status,'experimental');assert.equal(e.evidence.artisticReview,status);assert.equal(e.evidence.ownerArtisticAcceptance,status);
+  assert.equal(e.evidence.videoValidation,'VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE');assert.equal(e.evidence.audioListening,'NOT_LISTENED');
+  assert.equal(e.evidence.normalSpeedViewing,'NOT_DONE');assert.equal(e.evidence.originalProductionTransfer,'NOT_RUN');assert.ok(e.evidence.technicalTests.length);
+  assert.ok(e.evidence.ownerFeedbackScope.length);
+ }
+ assert.match(queryCatalog(catalog,{id:'geometry.two-link-ik'}).results[0].element.evidence.ownerFeedbackScope,/does not invalidate/);
+ assert.match(queryCatalog(catalog,{id:'composition.plane-parallax'}).results[0].element.evidence.ownerFeedbackScope,/limited to the delivered/);
+ assert.match(queryCatalog(catalog,{id:'composition.sticky-interval'}).results[0].element.evidence.ownerFeedbackScope,/not rejection/);
 });

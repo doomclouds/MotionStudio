@@ -766,8 +766,8 @@ handoff 只在影片中覆盖 shared 身份的位置/尺寸交接，未覆盖 en
 通过修改项目手型/接近时序并审查最终编码邻帧闭合，未修改冻结IK求解器。
 
 求解器及实际导入依赖字节匹配原冻结影片；目录、测试与指导为后续源包接入，不篡改历史清单。
-工程与限定解码邻帧检查通过，常速NOT_DONE、听审NOT_LISTENED、用户艺术PENDING_USER，
-保持experimental，不写成物理抓取、优秀角色表演或通用迁移通过。媒体、制作源码与实际艺术参数留私有交付。
+工程与限定解码邻帧检查通过，常速NOT_DONE、听审NOT_LISTENED；用户对该角色作品的视觉设计否定，
+记录REJECTED_NOT_STYLE_REFERENCE，不作为成功风格范例。这不等于IK技术失效；保持experimental，不写成物理抓取或通用迁移通过。媒体、制作源码与实际艺术参数留私有交付。
 
 ## 镜头与跨场景批：1 个校准平面视差机制
 
@@ -779,7 +779,8 @@ handoff 只在影片中覆盖 shared 身份的位置/尺寸交接，未覆盖 en
 一支14秒有声原创候选在840帧实际求值，每帧四层matrix均用于绘图，主体与水面共享深度。
 固定校准、同宽高比viewport与正常near距离有本片调用证据；其他分支仅工程测试，不扩大作品覆盖。
 实际导入源字节与影片一致，index导出只作公共API测试；元数据接入不改历史manifest。
-全解码/seek/状态与限定编码静帧核查通过，常速NOT_DONE、听审NOT_LISTENED、用户艺术PENDING_USER、通用迁移NOT_RUN。
+全解码/seek/状态与限定编码静帧核查通过，常速NOT_DONE、听审NOT_LISTENED、通用迁移NOT_RUN。
+用户对本海岸作品及逼真动态水面给出正面反馈（POSITIVE_FEEDBACK_SCENE_SPECIFIC），不扩称听审、全部参数或通用风格认可。
 完整制作、画稿、音源、影片及私有回执不进该源包，不将合成海景说成真实观测或流体模拟。
 
 ## 产品UI滚动批：1 个容器内sticky区间机制
@@ -790,6 +791,7 @@ handoff 只在影片中覆盖 shared 身份的位置/尺寸交接，未覆盖 en
 
 一支12.5秒有声原创候选中，两标题合计990次成功求值/矩形绘制；normal/pinned/released实际出现。
 离开视窗后的持续计算不扩称可见验证。最终版本有9个编码sticky阶段帧和4个交接/结尾帧独评，未套用旧版本结论。
-全帧几何/代表Native/解码技术通过；常速NOT_DONE、听审NOT_LISTENED、用户艺术PENDING_USER、通用迁移NOT_RUN。
+全帧几何/代表Native/解码技术通过；常速NOT_DONE、听审NOT_LISTENED、通用迁移NOT_RUN。
+用户有限认可本UI作品（LIMITED_ACCEPTANCE_NOT_STYLE_ENDORSEMENT），不是被否决，也不是风格范例背书。
 solver及实际导入依赖与影片一致，但存档未使用的旧index不等于当前公共index；只声称对应真实导入范围，不声称全包同版。
 媒体、制作和实际美术参数不进该源包；本机制不是完整CSS、惯性、自动碰撞或真实购票。
