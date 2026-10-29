@@ -1,0 +1,37 @@
+# Defense in depth only. Outputs/caches belong outside the repository.
+**/.cache/
+**/node_modules/
+**/__pycache__/
+**/output/
+**/frames/
+**/renders/
+**/assets/
+*.pyc
+*.log
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+*.mp4
+*.mov
+*.webm
+*.mkv
+*.wav
+*.m4a
+*.mp3
+*.aac
+*.ogg
+*.flac
+*.ttf
+*.otf
+*.woff
+*.woff2
+*.ttc
+*.zip
+*.tar
+*.gz
+.env*
+
+# Sole image exception; still needs the root path + hash allowlist.
+!works/*/cover.jpg
