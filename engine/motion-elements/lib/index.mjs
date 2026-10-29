@@ -43,3 +43,5 @@ export {compileHingedPanel, sampleHingedPanel, transformHingedPoint} from './fou
 export {compileCatenary, sampleCatenary, sampleCatenaryPolyline} from './foundations/geometry/catenary.mjs';
 export {intervalLaneLayout} from './foundations/layout/interval-lanes.mjs';
 export {compileStagedLayoutHandoff, sampleStagedLayoutHandoff} from './recipes/staged-layout-handoff.mjs';
+
+export {compileContourGrid, extractIsoContours} from './foundations/geometry/iso-contour.mjs';

@@ -2880,6 +2880,63 @@
         "分阶段",
         "快照"
       ]
+    },
+    {
+      "id": "geometry.iso-contour",
+      "version": 1,
+      "kind": "geometry",
+      "status": "experimental",
+      "summary": "显式规则网格标量在固定三角域提取等值折线，支持合并、分裂与孔洞边界的画面编排",
+      "api": "compileContourGrid",
+      "entry": "lib/index.mjs",
+      "example": {
+        "columns": 3,
+        "rows": 3,
+        "x": 0,
+        "y": 0,
+        "width": 2,
+        "height": 2
+      },
+      "applicability": [
+        "显式标量场轮廓随输入变化形成合并、分离或封闭孔洞；绘制消费真实提取折线而非预制形状变形"
+      ],
+      "counterexamples": [
+        "一个等值线基础；场源、阈值、色彩、gloss、字号、声音不是独立机制。",
+        "每格固定NW-SE两三角内线性插值；不是双线性marching squares、解析场等值线或流体模拟。",
+        "最多65536样本；离线有界同步CPU工作，不承诺60fps或恒定内存。",
+        "返回isolines，不是完整填充域；all-above可能无等值线。even-odd填充需调用者核边界与open/branch/plateau诊断。",
+        "分支处可同时有closed环和open段；closed不代表无奇异或可独立填充。",
+        "仅丢弃并计数实际IEEE坐标完全重合的三角线段，不epsilon焊接近点；不保证任意近退化拓扑或连续时间平滑。",
+        "不保证轮廓朝向、面积、孔洞分类、跨时间ID、误差界或自动运动；输入数组/网格由调用者提供。"
+      ],
+      "evidence": {
+        "visualDemo": null,
+        "artisticReview": "PENDING_USER",
+        "originalProductionTransfer": "NOT_RUN",
+        "normalSpeedViewing": "NOT_DONE",
+        "audioListening": "NOT_LISTENED",
+        "ownerArtisticAcceptance": "PENDING_USER",
+        "technicalTests": [
+          "test/iso-contour.test.mjs",
+          "test/iso-contour-integration.test.mjs"
+        ],
+        "guidance": "docs/iso-contour.md",
+        "videoValidation": "VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE_WITH_VERSION_EQUIVALENCE",
+        "visualReview": "DECODED_FRAME_REVIEW_NO_BLOCKERS",
+        "sourceVersionRelation": "The actual frozen film uses an earlier prototype. The public revision reduces the resource cap and reports/discards IEEE-coordinate-collapsed triangle segments; original media/source/manifests are unchanged. Separate actual624-frame Native replays match full usage JSON and all fill/clip/outline paths exactly;22 selected original PNGs and22 fresh-process rebuilds match. Not a new full encoded movie or all-frame pixel comparison.",
+        "validationCoverage": "A10.4-second/624-frame sound candidate calls1 grid compile and624 extractions. Each returned contour is actually filled, clipped and outlined once per frame;471572 contour vertices are consumed. Field and source choreography are project work, not extra foundations.",
+        "callEvidenceScope": "Actual producer ledger plus Native path interception verifies624 fill(evenodd),624 clip(evenodd) and624 outlines against all returned vertices and closure commands. Independent original-film review covers48 encoded nodes,22 fresh Native frames and actual fixed-triangle interpolation. This does not clear all generic topology cases, listening or artistic transfer.",
+        "compositionScope": "Existing opacity/Canvas/time support reused. Scalar-field generation, gradients, gloss, typography and sound stay in the private project; none is registered as another mechanism."
+      },
+      "knowledgeLinks": [],
+      "tags": [
+        "contour",
+        "isoline",
+        "scalar-field",
+        "topology",
+        "等值线",
+        "轮廓"
+      ]
     }
   ]
 }

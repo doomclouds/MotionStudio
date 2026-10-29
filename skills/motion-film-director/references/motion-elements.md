@@ -238,7 +238,7 @@ Pixi官方shader与p5 mask具体源码/许可取舍见`docs/raster-reference-dec
 
 ## 角色：两段固定长度追随明确目标
 
-当前34基础＋7配方（41项），距离100基础目标仍有66项；数量与艺术接受分别报告。
+当前35基础＋7配方（42项），距离100基础目标仍有65项；数量与艺术接受分别报告。
 `geometry.two-link-ik`是1个纯二维几何机制，无新配方，不是全身rig、碰撞、力学或3D。
 root/target来自作品同一绝对帧状态，显式bend/fallback；用返回joint/end画骨段，不能把不可达end偷偷画到target掩盖投影。
 实际手掌轮廓与IK端点不是同一个接触定义：数值误差0后仍要看真实编码邻帧是否早贴、滑动或错位。
@@ -318,3 +318,10 @@ glyph内部采样不加到公wrapper数。570次run提交不等于全程完整�
 - `recipe.staged-layout-handoff` / `compileStagedLayoutHandoff`：[指南](../../../engine/motion-elements/docs/staged-layout-handoff.md)，位于recipes，1配方不计基础。明确same-ID snapshots/waypoint及连续ranges；内部边界后段、reduced全局终态。无自动避碰、改时或waypoint生成。历史项目手写分段不是新API调用证明。
 
 两部实际有声候选与源码/逐项调用/提交和可见范围已私有绑定；限定帧审不升级常速、听审、用户艺术或通用迁移。保持catalog的各质量门，不将项目图像/声音/参数写入公开机制。
+
+
+### 显式场提取轮廓
+
+`geometry.iso-contour` / `compileContourGrid`、`extractIsoContours`，canonical `lib/foundations/geometry/iso-contour.mjs`，见[指南](../../../engine/motion-elements/docs/iso-contour.md)。一个基础，不按场源、level或配色重复计数。固定两三角线性域提取isolines，并非通用filled-domain求解；closed不能替代branch/plateau/open检查。公共65536样本上限与IEEE退化诊断明确，未经证明不得称实时、连续拓扑或解析场精确边界。
+
+实际10.4秒候选有624次提取与全部真实fill/clip/outline证据；公共硬化版另有624帧状态/路径和22代表PNG+22新进程桥接，原片/源码不覆盖。限定帧审不是常速、听审、用户艺术认可或跨作品迁移；遵守目录质量门，不把私有媒体/参数入库。
