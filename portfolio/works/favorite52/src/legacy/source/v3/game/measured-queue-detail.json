@@ -1,0 +1,4391 @@
+[
+  {
+    "frame": 1020,
+    "actors": []
+  },
+  {
+    "frame": 1021,
+    "actors": []
+  },
+  {
+    "frame": 1022,
+    "actors": [
+      {
+        "color": 0,
+        "x": -30,
+        "visible_width": 60,
+        "id": 0
+      }
+    ]
+  },
+  {
+    "frame": 1023,
+    "actors": [
+      {
+        "color": 0,
+        "x": 30,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 0
+      }
+    ]
+  },
+  {
+    "frame": 1024,
+    "actors": [
+      {
+        "color": 0,
+        "x": 87,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 0
+      },
+      {
+        "color": 2,
+        "x": -36,
+        "visible_width": 54,
+        "id": 1
+      }
+    ]
+  },
+  {
+    "frame": 1025,
+    "actors": [
+      {
+        "color": 0,
+        "x": 144,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 0
+      },
+      {
+        "color": 2,
+        "x": 24,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 1
+      }
+    ]
+  },
+  {
+    "frame": 1026,
+    "actors": [
+      {
+        "color": 0,
+        "x": 204,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 0
+      },
+      {
+        "color": 2,
+        "x": 84,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 1
+      },
+      {
+        "color": 3,
+        "x": -42,
+        "visible_width": 48,
+        "id": 2
+      }
+    ]
+  },
+  {
+    "frame": 1027,
+    "actors": [
+      {
+        "color": 0,
+        "x": 261,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 0
+      },
+      {
+        "color": 2,
+        "x": 144,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 1
+      },
+      {
+        "color": 3,
+        "x": 21,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 2
+      }
+    ]
+  },
+  {
+    "frame": 1028,
+    "actors": [
+      {
+        "color": 0,
+        "x": 318,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 0
+      },
+      {
+        "color": 2,
+        "x": 204,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 1
+      },
+      {
+        "color": 3,
+        "x": 84,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 2
+      }
+    ]
+  },
+  {
+    "frame": 1029,
+    "actors": [
+      {
+        "color": 0,
+        "x": 375,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 0
+      },
+      {
+        "color": 2,
+        "x": 264,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 1
+      },
+      {
+        "color": 3,
+        "x": 147,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 2
+      }
+    ]
+  },
+  {
+    "frame": 1030,
+    "actors": [
+      {
+        "color": 0,
+        "x": 432,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 0
+      },
+      {
+        "color": 2,
+        "x": 324,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 1
+      },
+      {
+        "color": 3,
+        "x": 210,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 2
+      }
+    ]
+  },
+  {
+    "frame": 1031,
+    "actors": [
+      {
+        "color": 0,
+        "x": 489,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 0
+      },
+      {
+        "color": 2,
+        "x": 384,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 1
+      },
+      {
+        "color": 3,
+        "x": 273,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 2
+      }
+    ]
+  },
+  {
+    "frame": 1032,
+    "actors": [
+      {
+        "color": 0,
+        "x": 546,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 0
+      },
+      {
+        "color": 2,
+        "x": 444,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 1
+      },
+      {
+        "color": 3,
+        "x": 336,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 2
+      }
+    ]
+  },
+  {
+    "frame": 1033,
+    "actors": [
+      {
+        "color": 0,
+        "x": 603,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 0
+      },
+      {
+        "color": 2,
+        "x": 504,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 1
+      },
+      {
+        "color": 3,
+        "x": 402,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 2
+      }
+    ]
+  },
+  {
+    "frame": 1034,
+    "actors": [
+      {
+        "color": 0,
+        "x": 660,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 0
+      },
+      {
+        "color": 2,
+        "x": 564,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 1
+      },
+      {
+        "color": 3,
+        "x": 465,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 2
+      }
+    ]
+  },
+  {
+    "frame": 1035,
+    "actors": [
+      {
+        "color": 0,
+        "x": 717,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 0
+      },
+      {
+        "color": 2,
+        "x": 627,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 1
+      },
+      {
+        "color": 3,
+        "x": 528,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 2
+      }
+    ]
+  },
+  {
+    "frame": 1036,
+    "actors": [
+      {
+        "color": 0,
+        "x": 774,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 0
+      },
+      {
+        "color": 2,
+        "x": 687,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 1
+      },
+      {
+        "color": 3,
+        "x": 591,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 2
+      }
+    ]
+  },
+  {
+    "frame": 1037,
+    "actors": [
+      {
+        "color": 0,
+        "x": 831,
+        "visible_width": 78,
+        "head_matched": true,
+        "id": 0
+      },
+      {
+        "color": 2,
+        "x": 747,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 1
+      },
+      {
+        "color": 3,
+        "x": 654,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 2
+      }
+    ]
+  },
+  {
+    "frame": 1038,
+    "actors": [
+      {
+        "color": 0,
+        "x": 888,
+        "visible_width": 78,
+        "head_matched": true,
+        "id": 0
+      },
+      {
+        "color": 2,
+        "x": 807,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 1
+      },
+      {
+        "color": 3,
+        "x": 717,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 2
+      }
+    ]
+  },
+  {
+    "frame": 1039,
+    "actors": [
+      {
+        "color": 0,
+        "x": 948,
+        "visible_width": 78,
+        "head_matched": true,
+        "id": 0
+      },
+      {
+        "color": 2,
+        "x": 867,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 1
+      },
+      {
+        "color": 3,
+        "x": 780,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 2
+      }
+    ]
+  },
+  {
+    "frame": 1040,
+    "actors": [
+      {
+        "color": 0,
+        "x": 1005,
+        "visible_width": 78,
+        "head_matched": true,
+        "id": 0
+      },
+      {
+        "color": 2,
+        "x": 927,
+        "visible_width": 78,
+        "head_matched": true,
+        "id": 1
+      },
+      {
+        "color": 3,
+        "x": 843,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 2
+      }
+    ]
+  },
+  {
+    "frame": 1041,
+    "actors": [
+      {
+        "color": 0,
+        "x": 1062,
+        "visible_width": 78,
+        "head_matched": true,
+        "id": 0
+      },
+      {
+        "color": 2,
+        "x": 987,
+        "visible_width": 78,
+        "head_matched": true,
+        "id": 1
+      },
+      {
+        "color": 3,
+        "x": 906,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 2
+      }
+    ]
+  },
+  {
+    "frame": 1042,
+    "actors": [
+      {
+        "color": 0,
+        "x": 1128,
+        "visible_width": 78,
+        "id": 0
+      },
+      {
+        "color": 2,
+        "x": 1056,
+        "visible_width": 78,
+        "id": 1
+      },
+      {
+        "color": 3,
+        "x": 969,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 2
+      }
+    ]
+  },
+  {
+    "frame": 1043,
+    "actors": [
+      {
+        "color": 0,
+        "x": 1188,
+        "visible_width": 78,
+        "id": 0
+      },
+      {
+        "color": 2,
+        "x": 1116,
+        "visible_width": 78,
+        "id": 1
+      },
+      {
+        "color": 3,
+        "x": 1032,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 2
+      }
+    ]
+  },
+  {
+    "frame": 1044,
+    "actors": [
+      {
+        "color": 0,
+        "x": 1248,
+        "visible_width": 72,
+        "id": 0
+      },
+      {
+        "color": 2,
+        "x": 1176,
+        "visible_width": 78,
+        "id": 1
+      },
+      {
+        "color": 3,
+        "x": 1098,
+        "visible_width": 84,
+        "id": 2
+      }
+    ]
+  },
+  {
+    "frame": 1045,
+    "actors": [
+      {
+        "color": 2,
+        "x": 1242,
+        "visible_width": 72,
+        "id": 1
+      },
+      {
+        "color": 3,
+        "x": 1164,
+        "visible_width": 84,
+        "id": 2
+      }
+    ]
+  },
+  {
+    "frame": 1046,
+    "actors": [
+      {
+        "color": 3,
+        "x": 1224,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 2
+      }
+    ]
+  },
+  {
+    "frame": 1047,
+    "actors": []
+  },
+  {
+    "frame": 1048,
+    "actors": []
+  },
+  {
+    "frame": 1049,
+    "actors": []
+  },
+  {
+    "frame": 1050,
+    "actors": []
+  },
+  {
+    "frame": 1051,
+    "actors": []
+  },
+  {
+    "frame": 1052,
+    "actors": [
+      {
+        "color": 2,
+        "x": -27,
+        "visible_width": 63,
+        "id": 0
+      }
+    ]
+  },
+  {
+    "frame": 1053,
+    "actors": [
+      {
+        "color": 2,
+        "x": 30,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 0
+      }
+    ]
+  },
+  {
+    "frame": 1054,
+    "actors": [
+      {
+        "color": 2,
+        "x": 87,
+        "visible_width": 87,
+        "head_matched": true,
+        "id": 0
+      },
+      {
+        "color": 3,
+        "x": -36,
+        "visible_width": 54,
+        "id": 1
+      }
+    ]
+  },
+  {
+    "frame": 1055,
+    "actors": [
+      {
+        "color": 2,
+        "x": 144,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 0
+      },
+      {
+        "color": 3,
+        "x": 24,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 1
+      }
+    ]
+  },
+  {
+    "frame": 1056,
+    "actors": [
+      {
+        "color": 2,
+        "x": 204,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 0
+      },
+      {
+        "color": 3,
+        "x": 84,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 1
+      },
+      {
+        "color": 4,
+        "x": -42,
+        "visible_width": 48,
+        "id": 2
+      }
+    ]
+  },
+  {
+    "frame": 1057,
+    "actors": [
+      {
+        "color": 2,
+        "x": 261,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 0
+      },
+      {
+        "color": 3,
+        "x": 144,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 1
+      },
+      {
+        "color": 4,
+        "x": 21,
+        "visible_width": 87,
+        "head_matched": true,
+        "id": 2
+      }
+    ]
+  },
+  {
+    "frame": 1058,
+    "actors": [
+      {
+        "color": 2,
+        "x": 318,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 0
+      },
+      {
+        "color": 3,
+        "x": 204,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 1
+      },
+      {
+        "color": 4,
+        "x": 84,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 2
+      },
+      {
+        "color": 1,
+        "x": -42,
+        "visible_width": 48,
+        "id": 3
+      }
+    ]
+  },
+  {
+    "frame": 1059,
+    "actors": [
+      {
+        "color": 2,
+        "x": 375,
+        "visible_width": 87,
+        "head_matched": true,
+        "id": 0
+      },
+      {
+        "color": 3,
+        "x": 264,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 1
+      },
+      {
+        "color": 4,
+        "x": 147,
+        "visible_width": 87,
+        "head_matched": true,
+        "id": 2
+      },
+      {
+        "color": 1,
+        "x": 24,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 3
+      }
+    ]
+  },
+  {
+    "frame": 1060,
+    "actors": [
+      {
+        "color": 2,
+        "x": 432,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 0
+      },
+      {
+        "color": 3,
+        "x": 324,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 1
+      },
+      {
+        "color": 4,
+        "x": 210,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 2
+      },
+      {
+        "color": 1,
+        "x": 90,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 3
+      },
+      {
+        "color": 6,
+        "x": -36,
+        "visible_width": 54,
+        "id": 4
+      }
+    ]
+  },
+  {
+    "frame": 1061,
+    "actors": [
+      {
+        "color": 2,
+        "x": 489,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 0
+      },
+      {
+        "color": 3,
+        "x": 384,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 1
+      },
+      {
+        "color": 4,
+        "x": 273,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 2
+      },
+      {
+        "color": 1,
+        "x": 156,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 3
+      },
+      {
+        "color": 6,
+        "x": 33,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 4
+      }
+    ]
+  },
+  {
+    "frame": 1062,
+    "actors": [
+      {
+        "color": 2,
+        "x": 546,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 0
+      },
+      {
+        "color": 3,
+        "x": 444,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 1
+      },
+      {
+        "color": 4,
+        "x": 336,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 2
+      },
+      {
+        "color": 1,
+        "x": 222,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 3
+      },
+      {
+        "color": 6,
+        "x": 102,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 4
+      },
+      {
+        "color": 5,
+        "x": -24,
+        "visible_width": 66,
+        "id": 5
+      }
+    ]
+  },
+  {
+    "frame": 1063,
+    "actors": [
+      {
+        "color": 2,
+        "x": 603,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 0
+      },
+      {
+        "color": 3,
+        "x": 504,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 1
+      },
+      {
+        "color": 4,
+        "x": 402,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 2
+      },
+      {
+        "color": 1,
+        "x": 291,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 3
+      },
+      {
+        "color": 6,
+        "x": 171,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 4
+      },
+      {
+        "color": 5,
+        "x": 48,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 5
+      }
+    ]
+  },
+  {
+    "frame": 1064,
+    "actors": [
+      {
+        "color": 2,
+        "x": 660,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 0
+      },
+      {
+        "color": 3,
+        "x": 564,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 1
+      },
+      {
+        "color": 4,
+        "x": 465,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 2
+      },
+      {
+        "color": 1,
+        "x": 357,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 3
+      },
+      {
+        "color": 6,
+        "x": 240,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 4
+      },
+      {
+        "color": 5,
+        "x": 120,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 5
+      }
+    ]
+  },
+  {
+    "frame": 1065,
+    "actors": [
+      {
+        "color": 2,
+        "x": 717,
+        "visible_width": 87,
+        "head_matched": true,
+        "id": 0
+      },
+      {
+        "color": 3,
+        "x": 627,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 1
+      },
+      {
+        "color": 4,
+        "x": 528,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 2
+      },
+      {
+        "color": 1,
+        "x": 423,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 3
+      },
+      {
+        "color": 6,
+        "x": 312,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 4
+      },
+      {
+        "color": 5,
+        "x": 192,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 5
+      }
+    ]
+  },
+  {
+    "frame": 1066,
+    "actors": [
+      {
+        "color": 2,
+        "x": 774,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 0
+      },
+      {
+        "color": 3,
+        "x": 687,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 1
+      },
+      {
+        "color": 4,
+        "x": 591,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 2
+      },
+      {
+        "color": 1,
+        "x": 489,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 3
+      },
+      {
+        "color": 6,
+        "x": 381,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 4
+      },
+      {
+        "color": 5,
+        "x": 264,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 5
+      }
+    ]
+  },
+  {
+    "frame": 1067,
+    "actors": [
+      {
+        "color": 2,
+        "x": 831,
+        "visible_width": 81,
+        "head_matched": true,
+        "id": 0
+      },
+      {
+        "color": 3,
+        "x": 747,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 1
+      },
+      {
+        "color": 4,
+        "x": 654,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 2
+      },
+      {
+        "color": 1,
+        "x": 555,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 3
+      },
+      {
+        "color": 6,
+        "x": 450,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 4
+      },
+      {
+        "color": 5,
+        "x": 336,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 5
+      }
+    ]
+  },
+  {
+    "frame": 1068,
+    "actors": [
+      {
+        "color": 2,
+        "x": 888,
+        "visible_width": 81,
+        "head_matched": true,
+        "id": 0
+      },
+      {
+        "color": 3,
+        "x": 807,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 1
+      },
+      {
+        "color": 4,
+        "x": 717,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 2
+      },
+      {
+        "color": 1,
+        "x": 621,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 3
+      },
+      {
+        "color": 6,
+        "x": 519,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 4
+      },
+      {
+        "color": 5,
+        "x": 408,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 5
+      }
+    ]
+  },
+  {
+    "frame": 1069,
+    "actors": [
+      {
+        "color": 2,
+        "x": 948,
+        "visible_width": 81,
+        "head_matched": true,
+        "id": 0
+      },
+      {
+        "color": 3,
+        "x": 867,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 1
+      },
+      {
+        "color": 4,
+        "x": 780,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 2
+      },
+      {
+        "color": 1,
+        "x": 687,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 3
+      },
+      {
+        "color": 6,
+        "x": 588,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 4
+      },
+      {
+        "color": 5,
+        "x": 483,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 5
+      }
+    ]
+  },
+  {
+    "frame": 1070,
+    "actors": [
+      {
+        "color": 2,
+        "x": 1005,
+        "visible_width": 78,
+        "head_matched": true,
+        "id": 0
+      },
+      {
+        "color": 3,
+        "x": 927,
+        "visible_width": 78,
+        "head_matched": true,
+        "id": 1
+      },
+      {
+        "color": 4,
+        "x": 843,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 2
+      },
+      {
+        "color": 1,
+        "x": 753,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 3
+      },
+      {
+        "color": 6,
+        "x": 657,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 4
+      },
+      {
+        "color": 5,
+        "x": 555,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 5
+      }
+    ]
+  },
+  {
+    "frame": 1071,
+    "actors": [
+      {
+        "color": 2,
+        "x": 1062,
+        "visible_width": 78,
+        "head_matched": true,
+        "id": 0
+      },
+      {
+        "color": 3,
+        "x": 987,
+        "visible_width": 78,
+        "head_matched": true,
+        "id": 1
+      },
+      {
+        "color": 4,
+        "x": 906,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 2
+      },
+      {
+        "color": 1,
+        "x": 819,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 3
+      },
+      {
+        "color": 6,
+        "x": 726,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 4
+      },
+      {
+        "color": 5,
+        "x": 627,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 5
+      }
+    ]
+  },
+  {
+    "frame": 1072,
+    "actors": [
+      {
+        "color": 2,
+        "x": 1128,
+        "visible_width": 81,
+        "id": 0
+      },
+      {
+        "color": 3,
+        "x": 1056,
+        "visible_width": 78,
+        "id": 1
+      },
+      {
+        "color": 4,
+        "x": 969,
+        "visible_width": 78,
+        "head_matched": true,
+        "id": 2
+      },
+      {
+        "color": 1,
+        "x": 885,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 3
+      },
+      {
+        "color": 6,
+        "x": 795,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 4
+      },
+      {
+        "color": 5,
+        "x": 699,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 5
+      }
+    ]
+  },
+  {
+    "frame": 1073,
+    "actors": [
+      {
+        "color": 2,
+        "x": 1188,
+        "visible_width": 78,
+        "id": 0
+      },
+      {
+        "color": 3,
+        "x": 1116,
+        "visible_width": 78,
+        "id": 1
+      },
+      {
+        "color": 4,
+        "x": 1032,
+        "visible_width": 78,
+        "head_matched": true,
+        "id": 2
+      },
+      {
+        "color": 1,
+        "x": 951,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 3
+      },
+      {
+        "color": 6,
+        "x": 864,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 4
+      },
+      {
+        "color": 5,
+        "x": 771,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 5
+      }
+    ]
+  },
+  {
+    "frame": 1074,
+    "actors": [
+      {
+        "color": 2,
+        "x": 1248,
+        "visible_width": 72,
+        "id": 0
+      },
+      {
+        "color": 3,
+        "x": 1176,
+        "visible_width": 78,
+        "id": 1
+      },
+      {
+        "color": 4,
+        "x": 1104,
+        "visible_width": 78,
+        "id": 2
+      },
+      {
+        "color": 1,
+        "x": 1017,
+        "visible_width": 78,
+        "head_matched": true,
+        "id": 3
+      },
+      {
+        "color": 6,
+        "x": 933,
+        "visible_width": 93,
+        "head_matched": true,
+        "id": 4
+      },
+      {
+        "color": 5,
+        "x": 843,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 5
+      }
+    ]
+  },
+  {
+    "frame": 1075,
+    "actors": [
+      {
+        "color": 3,
+        "x": 1242,
+        "visible_width": 72,
+        "id": 1
+      },
+      {
+        "color": 4,
+        "x": 1170,
+        "visible_width": 78,
+        "id": 2
+      },
+      {
+        "color": 1,
+        "x": 1086,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 3
+      },
+      {
+        "color": 6,
+        "x": 1002,
+        "visible_width": 96,
+        "head_matched": true,
+        "id": 4
+      },
+      {
+        "color": 5,
+        "x": 915,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 5
+      }
+    ]
+  },
+  {
+    "frame": 1076,
+    "actors": [
+      {
+        "color": 4,
+        "x": 1236,
+        "visible_width": 78,
+        "id": 2
+      },
+      {
+        "color": 1,
+        "x": 1164,
+        "visible_width": 78,
+        "id": 3
+      },
+      {
+        "color": 6,
+        "x": 1071,
+        "visible_width": 93,
+        "head_matched": true,
+        "id": 4
+      },
+      {
+        "color": 5,
+        "x": 987,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 5
+      }
+    ]
+  },
+  {
+    "frame": 1077,
+    "actors": [
+      {
+        "color": 1,
+        "x": 1218,
+        "visible_width": 78,
+        "head_matched": true,
+        "id": 3
+      },
+      {
+        "color": 6,
+        "x": 1143,
+        "visible_width": 93,
+        "head_matched": true,
+        "id": 4
+      },
+      {
+        "color": 5,
+        "x": 1059,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 5
+      }
+    ]
+  },
+  {
+    "frame": 1078,
+    "actors": [
+      {
+        "color": 6,
+        "x": 1212,
+        "visible_width": 81,
+        "head_matched": true,
+        "id": 4
+      },
+      {
+        "color": 5,
+        "x": 1131,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 5
+      }
+    ]
+  },
+  {
+    "frame": 1079,
+    "actors": [
+      {
+        "color": 5,
+        "x": 1203,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 5
+      }
+    ]
+  },
+  {
+    "frame": 1080,
+    "actors": []
+  },
+  {
+    "frame": 1081,
+    "actors": []
+  },
+  {
+    "frame": 1082,
+    "actors": [
+      {
+        "color": 3,
+        "x": -30,
+        "visible_width": 60,
+        "id": 0
+      }
+    ]
+  },
+  {
+    "frame": 1083,
+    "actors": [
+      {
+        "color": 3,
+        "x": 30,
+        "visible_width": 90,
+        "id": 0
+      }
+    ]
+  },
+  {
+    "frame": 1084,
+    "actors": [
+      {
+        "color": 3,
+        "x": 90,
+        "visible_width": 84,
+        "id": 0
+      },
+      {
+        "color": 4,
+        "x": -36,
+        "visible_width": 54,
+        "id": 1
+      }
+    ]
+  },
+  {
+    "frame": 1085,
+    "actors": [
+      {
+        "color": 3,
+        "x": 144,
+        "visible_width": 90,
+        "id": 0
+      },
+      {
+        "color": 4,
+        "x": 24,
+        "visible_width": 90,
+        "id": 1
+      }
+    ]
+  },
+  {
+    "frame": 1086,
+    "actors": [
+      {
+        "color": 3,
+        "x": 204,
+        "visible_width": 90,
+        "id": 0
+      },
+      {
+        "color": 4,
+        "x": 84,
+        "visible_width": 90,
+        "id": 1
+      },
+      {
+        "color": 1,
+        "x": -42,
+        "visible_width": 48,
+        "id": 2
+      }
+    ]
+  },
+  {
+    "frame": 1087,
+    "actors": [
+      {
+        "color": 3,
+        "x": 264,
+        "visible_width": 84,
+        "id": 0
+      },
+      {
+        "color": 4,
+        "x": 144,
+        "visible_width": 90,
+        "id": 1
+      },
+      {
+        "color": 1,
+        "x": 24,
+        "visible_width": 84,
+        "id": 2
+      }
+    ]
+  },
+  {
+    "frame": 1088,
+    "actors": [
+      {
+        "color": 3,
+        "x": 318,
+        "visible_width": 90,
+        "id": 0
+      },
+      {
+        "color": 4,
+        "x": 204,
+        "visible_width": 90,
+        "id": 1
+      },
+      {
+        "color": 1,
+        "x": 84,
+        "visible_width": 90,
+        "id": 2
+      },
+      {
+        "color": 6,
+        "x": -42,
+        "visible_width": 48,
+        "id": 3
+      }
+    ]
+  },
+  {
+    "frame": 1089,
+    "actors": [
+      {
+        "color": 3,
+        "x": 378,
+        "visible_width": 84,
+        "id": 0
+      },
+      {
+        "color": 4,
+        "x": 264,
+        "visible_width": 90,
+        "id": 1
+      },
+      {
+        "color": 1,
+        "x": 150,
+        "visible_width": 84,
+        "id": 2
+      },
+      {
+        "color": 6,
+        "x": 24,
+        "visible_width": 90,
+        "id": 3
+      }
+    ]
+  },
+  {
+    "frame": 1090,
+    "actors": [
+      {
+        "color": 3,
+        "x": 432,
+        "visible_width": 90,
+        "id": 0
+      },
+      {
+        "color": 4,
+        "x": 324,
+        "visible_width": 90,
+        "id": 1
+      },
+      {
+        "color": 1,
+        "x": 210,
+        "visible_width": 90,
+        "id": 2
+      },
+      {
+        "color": 6,
+        "x": 90,
+        "visible_width": 90,
+        "id": 3
+      },
+      {
+        "color": 5,
+        "x": -36,
+        "visible_width": 54,
+        "id": 4
+      }
+    ]
+  },
+  {
+    "frame": 1091,
+    "actors": [
+      {
+        "color": 3,
+        "x": 492,
+        "visible_width": 84,
+        "id": 0
+      },
+      {
+        "color": 4,
+        "x": 384,
+        "visible_width": 90,
+        "id": 1
+      },
+      {
+        "color": 1,
+        "x": 276,
+        "visible_width": 84,
+        "id": 2
+      },
+      {
+        "color": 6,
+        "x": 156,
+        "visible_width": 90,
+        "id": 3
+      },
+      {
+        "color": 5,
+        "x": 36,
+        "visible_width": 84,
+        "id": 4
+      }
+    ]
+  },
+  {
+    "frame": 1092,
+    "actors": [
+      {
+        "color": 3,
+        "x": 546,
+        "visible_width": 90,
+        "id": 0
+      },
+      {
+        "color": 4,
+        "x": 444,
+        "visible_width": 90,
+        "id": 1
+      },
+      {
+        "color": 1,
+        "x": 336,
+        "visible_width": 90,
+        "id": 2
+      },
+      {
+        "color": 6,
+        "x": 222,
+        "visible_width": 90,
+        "id": 3
+      },
+      {
+        "color": 5,
+        "x": 102,
+        "visible_width": 90,
+        "id": 4
+      },
+      {
+        "color": 7,
+        "x": -24,
+        "visible_width": 66,
+        "id": 5
+      }
+    ]
+  },
+  {
+    "frame": 1093,
+    "actors": [
+      {
+        "color": 3,
+        "x": 606,
+        "visible_width": 84,
+        "id": 0
+      },
+      {
+        "color": 4,
+        "x": 504,
+        "visible_width": 90,
+        "id": 1
+      },
+      {
+        "color": 1,
+        "x": 402,
+        "visible_width": 90,
+        "id": 2
+      },
+      {
+        "color": 6,
+        "x": 291,
+        "visible_width": 90,
+        "id": 3
+      },
+      {
+        "color": 5,
+        "x": 174,
+        "visible_width": 84,
+        "id": 4
+      },
+      {
+        "color": 7,
+        "x": 48,
+        "visible_width": 90,
+        "id": 5
+      }
+    ]
+  },
+  {
+    "frame": 1094,
+    "actors": [
+      {
+        "color": 3,
+        "x": 660,
+        "visible_width": 90,
+        "id": 0
+      },
+      {
+        "color": 4,
+        "x": 564,
+        "visible_width": 90,
+        "id": 1
+      },
+      {
+        "color": 1,
+        "x": 468,
+        "visible_width": 84,
+        "id": 2
+      },
+      {
+        "color": 6,
+        "x": 357,
+        "visible_width": 90,
+        "id": 3
+      },
+      {
+        "color": 5,
+        "x": 240,
+        "visible_width": 90,
+        "id": 4
+      },
+      {
+        "color": 7,
+        "x": 120,
+        "visible_width": 90,
+        "id": 5
+      },
+      {
+        "color": 0,
+        "x": -6,
+        "visible_width": 84,
+        "id": 6
+      }
+    ]
+  },
+  {
+    "frame": 1095,
+    "actors": [
+      {
+        "color": 3,
+        "x": 720,
+        "visible_width": 84,
+        "id": 0
+      },
+      {
+        "color": 4,
+        "x": 627,
+        "visible_width": 87,
+        "id": 1
+      },
+      {
+        "color": 1,
+        "x": 528,
+        "visible_width": 90,
+        "id": 2
+      },
+      {
+        "color": 6,
+        "x": 423,
+        "visible_width": 90,
+        "id": 3
+      },
+      {
+        "color": 5,
+        "x": 312,
+        "visible_width": 90,
+        "id": 4
+      },
+      {
+        "color": 7,
+        "x": 192,
+        "visible_width": 90,
+        "id": 5
+      },
+      {
+        "color": 0,
+        "x": 72,
+        "visible_width": 84,
+        "id": 6
+      },
+      {
+        "color": 2,
+        "x": -66,
+        "visible_width": 24,
+        "id": 7
+      }
+    ]
+  },
+  {
+    "frame": 1096,
+    "actors": [
+      {
+        "color": 3,
+        "x": 780,
+        "visible_width": 84,
+        "id": 0
+      },
+      {
+        "color": 4,
+        "x": 690,
+        "visible_width": 84,
+        "id": 1
+      },
+      {
+        "color": 1,
+        "x": 594,
+        "visible_width": 84,
+        "id": 2
+      },
+      {
+        "color": 6,
+        "x": 489,
+        "visible_width": 90,
+        "id": 3
+      },
+      {
+        "color": 5,
+        "x": 384,
+        "visible_width": 84,
+        "id": 4
+      },
+      {
+        "color": 7,
+        "x": 264,
+        "visible_width": 90,
+        "id": 5
+      },
+      {
+        "color": 0,
+        "x": 144,
+        "visible_width": 90,
+        "id": 6
+      },
+      {
+        "color": 2,
+        "x": 18,
+        "visible_width": 84,
+        "id": 7
+      }
+    ]
+  },
+  {
+    "frame": 1097,
+    "actors": [
+      {
+        "color": 3,
+        "x": 840,
+        "visible_width": 78,
+        "id": 0
+      },
+      {
+        "color": 4,
+        "x": 747,
+        "visible_width": 87,
+        "id": 1
+      },
+      {
+        "color": 1,
+        "x": 654,
+        "visible_width": 90,
+        "id": 2
+      },
+      {
+        "color": 6,
+        "x": 555,
+        "visible_width": 90,
+        "id": 3
+      },
+      {
+        "color": 5,
+        "x": 450,
+        "visible_width": 90,
+        "id": 4
+      },
+      {
+        "color": 7,
+        "x": 336,
+        "visible_width": 90,
+        "id": 5
+      },
+      {
+        "color": 0,
+        "x": 222,
+        "visible_width": 84,
+        "id": 6
+      },
+      {
+        "color": 2,
+        "x": 93,
+        "visible_width": 87,
+        "id": 7
+      },
+      {
+        "color": 3,
+        "x": -42,
+        "visible_width": 48,
+        "id": 8
+      }
+    ]
+  },
+  {
+    "frame": 1098,
+    "actors": [
+      {
+        "color": 3,
+        "x": 900,
+        "visible_width": 78,
+        "id": 0
+      },
+      {
+        "color": 4,
+        "x": 810,
+        "visible_width": 84,
+        "id": 1
+      },
+      {
+        "color": 1,
+        "x": 720,
+        "visible_width": 84,
+        "id": 2
+      },
+      {
+        "color": 6,
+        "x": 621,
+        "visible_width": 90,
+        "id": 3
+      },
+      {
+        "color": 5,
+        "x": 522,
+        "visible_width": 84,
+        "id": 4
+      },
+      {
+        "color": 7,
+        "x": 408,
+        "visible_width": 90,
+        "id": 5
+      },
+      {
+        "color": 0,
+        "x": 294,
+        "visible_width": 90,
+        "id": 6
+      },
+      {
+        "color": 2,
+        "x": 174,
+        "visible_width": 84,
+        "id": 7
+      },
+      {
+        "color": 3,
+        "x": 42,
+        "visible_width": 90,
+        "id": 8
+      }
+    ]
+  },
+  {
+    "frame": 1099,
+    "actors": [
+      {
+        "color": 3,
+        "x": 957,
+        "visible_width": 81,
+        "id": 0
+      },
+      {
+        "color": 4,
+        "x": 870,
+        "visible_width": 84,
+        "id": 1
+      },
+      {
+        "color": 1,
+        "x": 780,
+        "visible_width": 90,
+        "id": 2
+      },
+      {
+        "color": 6,
+        "x": 687,
+        "visible_width": 90,
+        "id": 3
+      },
+      {
+        "color": 5,
+        "x": 588,
+        "visible_width": 90,
+        "id": 4
+      },
+      {
+        "color": 7,
+        "x": 486,
+        "visible_width": 84,
+        "id": 5
+      },
+      {
+        "color": 0,
+        "x": 369,
+        "visible_width": 90,
+        "id": 6
+      },
+      {
+        "color": 2,
+        "x": 252,
+        "visible_width": 84,
+        "id": 7
+      },
+      {
+        "color": 3,
+        "x": 126,
+        "visible_width": 90,
+        "id": 8
+      },
+      {
+        "color": 4,
+        "x": -6,
+        "visible_width": 84,
+        "id": 9
+      }
+    ]
+  },
+  {
+    "frame": 1100,
+    "actors": [
+      {
+        "color": 3,
+        "x": 1014,
+        "visible_width": 78,
+        "id": 0
+      },
+      {
+        "color": 4,
+        "x": 936,
+        "visible_width": 78,
+        "id": 1
+      },
+      {
+        "color": 1,
+        "x": 846,
+        "visible_width": 84,
+        "id": 2
+      },
+      {
+        "color": 6,
+        "x": 753,
+        "visible_width": 90,
+        "id": 3
+      },
+      {
+        "color": 5,
+        "x": 660,
+        "visible_width": 84,
+        "id": 4
+      },
+      {
+        "color": 7,
+        "x": 558,
+        "visible_width": 84,
+        "id": 5
+      },
+      {
+        "color": 0,
+        "x": 444,
+        "visible_width": 90,
+        "id": 6
+      },
+      {
+        "color": 2,
+        "x": 330,
+        "visible_width": 84,
+        "id": 7
+      },
+      {
+        "color": 3,
+        "x": 210,
+        "visible_width": 84,
+        "id": 8
+      },
+      {
+        "color": 4,
+        "x": 78,
+        "visible_width": 90,
+        "id": 9
+      }
+    ]
+  },
+  {
+    "frame": 1101,
+    "actors": [
+      {
+        "color": 3,
+        "x": 1074,
+        "visible_width": 78,
+        "id": 0
+      },
+      {
+        "color": 4,
+        "x": 996,
+        "visible_width": 78,
+        "id": 1
+      },
+      {
+        "color": 1,
+        "x": 912,
+        "visible_width": 84,
+        "id": 2
+      },
+      {
+        "color": 6,
+        "x": 819,
+        "visible_width": 90,
+        "id": 3
+      },
+      {
+        "color": 5,
+        "x": 726,
+        "visible_width": 90,
+        "id": 4
+      },
+      {
+        "color": 7,
+        "x": 630,
+        "visible_width": 84,
+        "id": 5
+      },
+      {
+        "color": 0,
+        "x": 522,
+        "visible_width": 84,
+        "id": 6
+      },
+      {
+        "color": 2,
+        "x": 408,
+        "visible_width": 90,
+        "id": 7
+      },
+      {
+        "color": 3,
+        "x": 288,
+        "visible_width": 90,
+        "id": 8
+      },
+      {
+        "color": 4,
+        "x": 162,
+        "visible_width": 90,
+        "id": 9
+      }
+    ]
+  },
+  {
+    "frame": 1102,
+    "actors": [
+      {
+        "color": 3,
+        "x": 1128,
+        "visible_width": 78,
+        "id": 0
+      },
+      {
+        "color": 4,
+        "x": 1092,
+        "visible_width": 78,
+        "head_matched": true,
+        "id": 1
+      },
+      {
+        "color": 1,
+        "x": 978,
+        "visible_width": 78,
+        "id": 2
+      },
+      {
+        "color": 6,
+        "x": 885,
+        "visible_width": 90,
+        "id": 3
+      },
+      {
+        "color": 5,
+        "x": 798,
+        "visible_width": 84,
+        "id": 4
+      },
+      {
+        "color": 7,
+        "x": 702,
+        "visible_width": 84,
+        "id": 5
+      },
+      {
+        "color": 0,
+        "x": 594,
+        "visible_width": 90,
+        "id": 6
+      },
+      {
+        "color": 2,
+        "x": 486,
+        "visible_width": 90,
+        "id": 7
+      },
+      {
+        "color": 3,
+        "x": 372,
+        "visible_width": 84,
+        "id": 8
+      },
+      {
+        "color": 4,
+        "x": 246,
+        "visible_width": 90,
+        "id": 9
+      }
+    ]
+  },
+  {
+    "frame": 1103,
+    "actors": [
+      {
+        "color": 3,
+        "x": 1188,
+        "visible_width": 78,
+        "id": 0
+      },
+      {
+        "color": 4,
+        "x": 1116,
+        "visible_width": 78,
+        "id": 1
+      },
+      {
+        "color": 1,
+        "x": 1044,
+        "visible_width": 78,
+        "id": 2
+      },
+      {
+        "color": 6,
+        "x": 954,
+        "visible_width": 87,
+        "id": 3
+      },
+      {
+        "color": 5,
+        "x": 864,
+        "visible_width": 90,
+        "id": 4
+      },
+      {
+        "color": 7,
+        "x": 774,
+        "visible_width": 84,
+        "id": 5
+      },
+      {
+        "color": 0,
+        "x": 672,
+        "visible_width": 87,
+        "id": 6
+      },
+      {
+        "color": 2,
+        "x": 564,
+        "visible_width": 90,
+        "id": 7
+      },
+      {
+        "color": 3,
+        "x": 450,
+        "visible_width": 90,
+        "id": 8
+      },
+      {
+        "color": 4,
+        "x": 330,
+        "visible_width": 90,
+        "id": 9
+      }
+    ]
+  },
+  {
+    "frame": 1104,
+    "actors": [
+      {
+        "color": 3,
+        "x": 1248,
+        "visible_width": 72,
+        "id": 0
+      },
+      {
+        "color": 4,
+        "x": 1176,
+        "visible_width": 78,
+        "id": 1
+      },
+      {
+        "color": 1,
+        "x": 1140,
+        "visible_width": 78,
+        "head_matched": true,
+        "id": 2
+      },
+      {
+        "color": 5,
+        "x": 936,
+        "visible_width": 84,
+        "id": 4
+      },
+      {
+        "color": 7,
+        "x": 846,
+        "visible_width": 84,
+        "id": 5
+      },
+      {
+        "color": 0,
+        "x": 744,
+        "visible_width": 90,
+        "id": 6
+      },
+      {
+        "color": 2,
+        "x": 642,
+        "visible_width": 90,
+        "id": 7
+      },
+      {
+        "color": 3,
+        "x": 534,
+        "visible_width": 84,
+        "id": 8
+      },
+      {
+        "color": 4,
+        "x": 414,
+        "visible_width": 90,
+        "id": 9
+      }
+    ]
+  },
+  {
+    "frame": 1105,
+    "actors": [
+      {
+        "color": 4,
+        "x": 1242,
+        "visible_width": 72,
+        "id": 1
+      },
+      {
+        "color": 1,
+        "x": 1170,
+        "visible_width": 78,
+        "id": 2
+      },
+      {
+        "color": 5,
+        "x": 1008,
+        "visible_width": 84,
+        "id": 4
+      },
+      {
+        "color": 7,
+        "x": 918,
+        "visible_width": 84,
+        "id": 5
+      },
+      {
+        "color": 0,
+        "x": 822,
+        "visible_width": 90,
+        "id": 6
+      },
+      {
+        "color": 2,
+        "x": 720,
+        "visible_width": 90,
+        "id": 7
+      },
+      {
+        "color": 3,
+        "x": 612,
+        "visible_width": 90,
+        "id": 8
+      },
+      {
+        "color": 4,
+        "x": 498,
+        "visible_width": 90,
+        "id": 9
+      }
+    ]
+  },
+  {
+    "frame": 1106,
+    "actors": [
+      {
+        "color": 1,
+        "x": 1236,
+        "visible_width": 78,
+        "id": 2
+      },
+      {
+        "color": 6,
+        "x": 1197,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 3
+      },
+      {
+        "color": 5,
+        "x": 1080,
+        "visible_width": 78,
+        "id": 4
+      },
+      {
+        "color": 7,
+        "x": 990,
+        "visible_width": 84,
+        "id": 5
+      },
+      {
+        "color": 0,
+        "x": 900,
+        "visible_width": 87,
+        "id": 6
+      },
+      {
+        "color": 2,
+        "x": 798,
+        "visible_width": 90,
+        "id": 7
+      },
+      {
+        "color": 3,
+        "x": 696,
+        "visible_width": 84,
+        "id": 8
+      },
+      {
+        "color": 4,
+        "x": 582,
+        "visible_width": 90,
+        "id": 9
+      }
+    ]
+  },
+  {
+    "frame": 1107,
+    "actors": [
+      {
+        "color": 5,
+        "x": 1152,
+        "visible_width": 78,
+        "id": 4
+      },
+      {
+        "color": 7,
+        "x": 1062,
+        "visible_width": 84,
+        "id": 5
+      },
+      {
+        "color": 0,
+        "x": 972,
+        "visible_width": 90,
+        "id": 6
+      },
+      {
+        "color": 2,
+        "x": 876,
+        "visible_width": 90,
+        "id": 7
+      },
+      {
+        "color": 3,
+        "x": 774,
+        "visible_width": 90,
+        "id": 8
+      },
+      {
+        "color": 4,
+        "x": 666,
+        "visible_width": 90,
+        "id": 9
+      }
+    ]
+  },
+  {
+    "frame": 1108,
+    "actors": [
+      {
+        "color": 5,
+        "x": 1221,
+        "visible_width": 81,
+        "id": 4
+      },
+      {
+        "color": 7,
+        "x": 1137,
+        "visible_width": 81,
+        "id": 5
+      },
+      {
+        "color": 0,
+        "x": 1050,
+        "visible_width": 84,
+        "id": 6
+      },
+      {
+        "color": 2,
+        "x": 954,
+        "visible_width": 90,
+        "id": 7
+      },
+      {
+        "color": 3,
+        "x": 858,
+        "visible_width": 84,
+        "id": 8
+      },
+      {
+        "color": 4,
+        "x": 750,
+        "visible_width": 90,
+        "id": 9
+      }
+    ]
+  },
+  {
+    "frame": 1109,
+    "actors": [
+      {
+        "color": 7,
+        "x": 1212,
+        "visible_width": 78,
+        "id": 5
+      },
+      {
+        "color": 0,
+        "x": 1122,
+        "visible_width": 90,
+        "id": 6
+      },
+      {
+        "color": 2,
+        "x": 1032,
+        "visible_width": 90,
+        "id": 7
+      },
+      {
+        "color": 3,
+        "x": 936,
+        "visible_width": 90,
+        "id": 8
+      },
+      {
+        "color": 4,
+        "x": 834,
+        "visible_width": 90,
+        "id": 9
+      }
+    ]
+  },
+  {
+    "frame": 1110,
+    "actors": []
+  },
+  {
+    "frame": 1111,
+    "actors": []
+  },
+  {
+    "frame": 1112,
+    "actors": [
+      {
+        "color": 4,
+        "x": -30,
+        "visible_width": 60,
+        "id": 0
+      }
+    ]
+  },
+  {
+    "frame": 1113,
+    "actors": [
+      {
+        "color": 4,
+        "x": 30,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 0
+      }
+    ]
+  },
+  {
+    "frame": 1114,
+    "actors": [
+      {
+        "color": 4,
+        "x": 87,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 0
+      },
+      {
+        "color": 1,
+        "x": -36,
+        "visible_width": 54,
+        "id": 1
+      }
+    ]
+  },
+  {
+    "frame": 1115,
+    "actors": [
+      {
+        "color": 4,
+        "x": 144,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 0
+      },
+      {
+        "color": 1,
+        "x": 24,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 1
+      }
+    ]
+  },
+  {
+    "frame": 1116,
+    "actors": [
+      {
+        "color": 4,
+        "x": 204,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 0
+      },
+      {
+        "color": 1,
+        "x": 84,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 1
+      },
+      {
+        "color": 6,
+        "x": -42,
+        "visible_width": 48,
+        "id": 2
+      }
+    ]
+  },
+  {
+    "frame": 1117,
+    "actors": [
+      {
+        "color": 4,
+        "x": 261,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 0
+      },
+      {
+        "color": 1,
+        "x": 144,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 1
+      },
+      {
+        "color": 6,
+        "x": 21,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 2
+      }
+    ]
+  },
+  {
+    "frame": 1118,
+    "actors": [
+      {
+        "color": 4,
+        "x": 318,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 0
+      },
+      {
+        "color": 1,
+        "x": 204,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 1
+      },
+      {
+        "color": 6,
+        "x": 84,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 2
+      },
+      {
+        "color": 5,
+        "x": -42,
+        "visible_width": 48,
+        "id": 3
+      }
+    ]
+  },
+  {
+    "frame": 1119,
+    "actors": [
+      {
+        "color": 4,
+        "x": 375,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 0
+      },
+      {
+        "color": 1,
+        "x": 264,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 1
+      },
+      {
+        "color": 6,
+        "x": 147,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 2
+      },
+      {
+        "color": 5,
+        "x": 24,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 3
+      }
+    ]
+  },
+  {
+    "frame": 1120,
+    "actors": [
+      {
+        "color": 4,
+        "x": 432,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 0
+      },
+      {
+        "color": 1,
+        "x": 324,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 1
+      },
+      {
+        "color": 6,
+        "x": 210,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 2
+      },
+      {
+        "color": 5,
+        "x": 90,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 3
+      },
+      {
+        "color": 7,
+        "x": -36,
+        "visible_width": 54,
+        "id": 4
+      }
+    ]
+  },
+  {
+    "frame": 1121,
+    "actors": [
+      {
+        "color": 4,
+        "x": 489,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 0
+      },
+      {
+        "color": 1,
+        "x": 384,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 1
+      },
+      {
+        "color": 6,
+        "x": 273,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 2
+      },
+      {
+        "color": 5,
+        "x": 156,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 3
+      },
+      {
+        "color": 7,
+        "x": 33,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 4
+      }
+    ]
+  },
+  {
+    "frame": 1122,
+    "actors": [
+      {
+        "color": 4,
+        "x": 546,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 0
+      },
+      {
+        "color": 1,
+        "x": 444,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 1
+      },
+      {
+        "color": 6,
+        "x": 336,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 2
+      },
+      {
+        "color": 5,
+        "x": 222,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 3
+      },
+      {
+        "color": 7,
+        "x": 102,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 4
+      },
+      {
+        "color": 0,
+        "x": -24,
+        "visible_width": 66,
+        "id": 5
+      }
+    ]
+  },
+  {
+    "frame": 1123,
+    "actors": [
+      {
+        "color": 4,
+        "x": 603,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 0
+      },
+      {
+        "color": 1,
+        "x": 504,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 1
+      },
+      {
+        "color": 6,
+        "x": 402,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 2
+      },
+      {
+        "color": 5,
+        "x": 291,
+        "visible_width": 87,
+        "head_matched": true,
+        "id": 3
+      },
+      {
+        "color": 7,
+        "x": 171,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 4
+      },
+      {
+        "color": 0,
+        "x": 48,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 5
+      }
+    ]
+  },
+  {
+    "frame": 1124,
+    "actors": [
+      {
+        "color": 4,
+        "x": 660,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 0
+      },
+      {
+        "color": 1,
+        "x": 564,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 1
+      },
+      {
+        "color": 6,
+        "x": 465,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 2
+      },
+      {
+        "color": 5,
+        "x": 357,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 3
+      },
+      {
+        "color": 7,
+        "x": 240,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 4
+      },
+      {
+        "color": 0,
+        "x": 120,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 5
+      },
+      {
+        "color": 2,
+        "x": -6,
+        "visible_width": 84,
+        "id": 6
+      }
+    ]
+  },
+  {
+    "frame": 1125,
+    "actors": [
+      {
+        "color": 4,
+        "x": 717,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 0
+      },
+      {
+        "color": 1,
+        "x": 627,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 1
+      },
+      {
+        "color": 6,
+        "x": 528,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 2
+      },
+      {
+        "color": 5,
+        "x": 423,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 3
+      },
+      {
+        "color": 7,
+        "x": 312,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 4
+      },
+      {
+        "color": 0,
+        "x": 192,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 5
+      },
+      {
+        "color": 2,
+        "x": 69,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 6
+      },
+      {
+        "color": 3,
+        "x": -66,
+        "visible_width": 24,
+        "id": 7
+      }
+    ]
+  },
+  {
+    "frame": 1126,
+    "actors": [
+      {
+        "color": 4,
+        "x": 774,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 0
+      },
+      {
+        "color": 1,
+        "x": 687,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 1
+      },
+      {
+        "color": 6,
+        "x": 591,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 2
+      },
+      {
+        "color": 5,
+        "x": 489,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 3
+      },
+      {
+        "color": 7,
+        "x": 381,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 4
+      },
+      {
+        "color": 0,
+        "x": 264,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 5
+      },
+      {
+        "color": 2,
+        "x": 144,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 6
+      },
+      {
+        "color": 3,
+        "x": 15,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 7
+      }
+    ]
+  },
+  {
+    "frame": 1127,
+    "actors": [
+      {
+        "color": 4,
+        "x": 831,
+        "visible_width": 78,
+        "head_matched": true,
+        "id": 0
+      },
+      {
+        "color": 1,
+        "x": 747,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 1
+      },
+      {
+        "color": 6,
+        "x": 654,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 2
+      },
+      {
+        "color": 5,
+        "x": 555,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 3
+      },
+      {
+        "color": 7,
+        "x": 450,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 4
+      },
+      {
+        "color": 0,
+        "x": 336,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 5
+      },
+      {
+        "color": 2,
+        "x": 219,
+        "visible_width": 87,
+        "head_matched": true,
+        "id": 6
+      },
+      {
+        "color": 3,
+        "x": 93,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 7
+      },
+      {
+        "color": 4,
+        "x": -42,
+        "visible_width": 48,
+        "id": 8
+      }
+    ]
+  },
+  {
+    "frame": 1128,
+    "actors": [
+      {
+        "color": 4,
+        "x": 888,
+        "visible_width": 78,
+        "head_matched": true,
+        "id": 0
+      },
+      {
+        "color": 1,
+        "x": 807,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 1
+      },
+      {
+        "color": 6,
+        "x": 717,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 2
+      },
+      {
+        "color": 5,
+        "x": 621,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 3
+      },
+      {
+        "color": 7,
+        "x": 519,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 4
+      },
+      {
+        "color": 0,
+        "x": 408,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 5
+      },
+      {
+        "color": 2,
+        "x": 294,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 6
+      },
+      {
+        "color": 3,
+        "x": 171,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 7
+      },
+      {
+        "color": 4,
+        "x": 42,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 8
+      }
+    ]
+  },
+  {
+    "frame": 1129,
+    "actors": [
+      {
+        "color": 4,
+        "x": 948,
+        "visible_width": 78,
+        "head_matched": true,
+        "id": 0
+      },
+      {
+        "color": 1,
+        "x": 867,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 1
+      },
+      {
+        "color": 6,
+        "x": 780,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 2
+      },
+      {
+        "color": 5,
+        "x": 687,
+        "visible_width": 87,
+        "head_matched": true,
+        "id": 3
+      },
+      {
+        "color": 7,
+        "x": 588,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 4
+      },
+      {
+        "color": 0,
+        "x": 483,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 5
+      },
+      {
+        "color": 2,
+        "x": 369,
+        "visible_width": 87,
+        "head_matched": true,
+        "id": 6
+      },
+      {
+        "color": 3,
+        "x": 249,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 7
+      },
+      {
+        "color": 4,
+        "x": 126,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 8
+      },
+      {
+        "color": 1,
+        "x": -6,
+        "visible_width": 84,
+        "id": 9
+      }
+    ]
+  },
+  {
+    "frame": 1130,
+    "actors": [
+      {
+        "color": 4,
+        "x": 1005,
+        "visible_width": 78,
+        "head_matched": true,
+        "id": 0
+      },
+      {
+        "color": 1,
+        "x": 927,
+        "visible_width": 78,
+        "head_matched": true,
+        "id": 1
+      },
+      {
+        "color": 6,
+        "x": 843,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 2
+      },
+      {
+        "color": 5,
+        "x": 753,
+        "visible_width": 87,
+        "head_matched": true,
+        "id": 3
+      },
+      {
+        "color": 7,
+        "x": 657,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 4
+      },
+      {
+        "color": 0,
+        "x": 555,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 5
+      },
+      {
+        "color": 2,
+        "x": 444,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 6
+      },
+      {
+        "color": 3,
+        "x": 327,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 7
+      },
+      {
+        "color": 4,
+        "x": 207,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 8
+      },
+      {
+        "color": 1,
+        "x": 78,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 9
+      },
+      {
+        "color": 6,
+        "x": -57,
+        "visible_width": 33,
+        "id": 10
+      }
+    ]
+  },
+  {
+    "frame": 1131,
+    "actors": [
+      {
+        "color": 4,
+        "x": 1062,
+        "visible_width": 78,
+        "head_matched": true,
+        "id": 0
+      },
+      {
+        "color": 1,
+        "x": 987,
+        "visible_width": 78,
+        "head_matched": true,
+        "id": 1
+      },
+      {
+        "color": 6,
+        "x": 906,
+        "visible_width": 87,
+        "head_matched": true,
+        "id": 2
+      },
+      {
+        "color": 5,
+        "x": 819,
+        "visible_width": 87,
+        "head_matched": true,
+        "id": 3
+      },
+      {
+        "color": 7,
+        "x": 726,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 4
+      },
+      {
+        "color": 0,
+        "x": 627,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 5
+      },
+      {
+        "color": 2,
+        "x": 519,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 6
+      },
+      {
+        "color": 3,
+        "x": 408,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 7
+      },
+      {
+        "color": 4,
+        "x": 288,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 8
+      },
+      {
+        "color": 1,
+        "x": 162,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 9
+      },
+      {
+        "color": 6,
+        "x": 30,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 10
+      }
+    ]
+  },
+  {
+    "frame": 1132,
+    "actors": [
+      {
+        "color": 4,
+        "x": 1128,
+        "visible_width": 78,
+        "id": 0
+      },
+      {
+        "color": 1,
+        "x": 1056,
+        "visible_width": 78,
+        "id": 1
+      },
+      {
+        "color": 6,
+        "x": 969,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 2
+      },
+      {
+        "color": 5,
+        "x": 885,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 3
+      },
+      {
+        "color": 7,
+        "x": 795,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 4
+      },
+      {
+        "color": 0,
+        "x": 699,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 5
+      },
+      {
+        "color": 2,
+        "x": 594,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 6
+      },
+      {
+        "color": 3,
+        "x": 486,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 7
+      },
+      {
+        "color": 4,
+        "x": 369,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 8
+      },
+      {
+        "color": 1,
+        "x": 246,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 9
+      },
+      {
+        "color": 6,
+        "x": 117,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 10
+      },
+      {
+        "color": 5,
+        "x": -21,
+        "visible_width": 69,
+        "id": 11
+      }
+    ]
+  },
+  {
+    "frame": 1133,
+    "actors": [
+      {
+        "color": 4,
+        "x": 1188,
+        "visible_width": 78,
+        "id": 0
+      },
+      {
+        "color": 1,
+        "x": 1116,
+        "visible_width": 78,
+        "id": 1
+      },
+      {
+        "color": 6,
+        "x": 1032,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 2
+      },
+      {
+        "color": 5,
+        "x": 951,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 3
+      },
+      {
+        "color": 7,
+        "x": 864,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 4
+      },
+      {
+        "color": 0,
+        "x": 771,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 5
+      },
+      {
+        "color": 2,
+        "x": 669,
+        "visible_width": 87,
+        "head_matched": true,
+        "id": 6
+      },
+      {
+        "color": 3,
+        "x": 564,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 7
+      },
+      {
+        "color": 4,
+        "x": 450,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 8
+      },
+      {
+        "color": 1,
+        "x": 330,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 9
+      },
+      {
+        "color": 6,
+        "x": 204,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 10
+      },
+      {
+        "color": 5,
+        "x": 72,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 11
+      },
+      {
+        "color": 7,
+        "x": -72,
+        "visible_width": 18,
+        "id": 12
+      }
+    ]
+  },
+  {
+    "frame": 1134,
+    "actors": [
+      {
+        "color": 4,
+        "x": 1248,
+        "visible_width": 72,
+        "id": 0
+      },
+      {
+        "color": 1,
+        "x": 1176,
+        "visible_width": 78,
+        "id": 1
+      },
+      {
+        "color": 5,
+        "x": 1017,
+        "visible_width": 78,
+        "head_matched": true,
+        "id": 3
+      },
+      {
+        "color": 7,
+        "x": 933,
+        "visible_width": 87,
+        "head_matched": true,
+        "id": 4
+      },
+      {
+        "color": 0,
+        "x": 843,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 5
+      },
+      {
+        "color": 2,
+        "x": 744,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 6
+      },
+      {
+        "color": 3,
+        "x": 642,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 7
+      },
+      {
+        "color": 4,
+        "x": 531,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 8
+      },
+      {
+        "color": 1,
+        "x": 414,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 9
+      },
+      {
+        "color": 6,
+        "x": 291,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 10
+      },
+      {
+        "color": 5,
+        "x": 162,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 11
+      },
+      {
+        "color": 7,
+        "x": 24,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 12
+      }
+    ]
+  },
+  {
+    "frame": 1135,
+    "actors": [
+      {
+        "color": 1,
+        "x": 1242,
+        "visible_width": 72,
+        "id": 1
+      },
+      {
+        "color": 5,
+        "x": 1086,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 3
+      },
+      {
+        "color": 7,
+        "x": 1002,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 4
+      },
+      {
+        "color": 0,
+        "x": 915,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 5
+      },
+      {
+        "color": 2,
+        "x": 822,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 6
+      },
+      {
+        "color": 3,
+        "x": 720,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 7
+      },
+      {
+        "color": 4,
+        "x": 612,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 8
+      },
+      {
+        "color": 1,
+        "x": 498,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 9
+      },
+      {
+        "color": 6,
+        "x": 378,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 10
+      },
+      {
+        "color": 5,
+        "x": 252,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 11
+      },
+      {
+        "color": 7,
+        "x": 117,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 12
+      },
+      {
+        "color": 0,
+        "x": -24,
+        "visible_width": 66,
+        "id": 13
+      }
+    ]
+  },
+  {
+    "frame": 1136,
+    "actors": [
+      {
+        "color": 5,
+        "x": 1161,
+        "visible_width": 81,
+        "id": 3
+      },
+      {
+        "color": 7,
+        "x": 1071,
+        "visible_width": 78,
+        "head_matched": true,
+        "id": 4
+      },
+      {
+        "color": 0,
+        "x": 987,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 5
+      },
+      {
+        "color": 2,
+        "x": 897,
+        "visible_width": 87,
+        "head_matched": true,
+        "id": 6
+      },
+      {
+        "color": 3,
+        "x": 798,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 7
+      },
+      {
+        "color": 4,
+        "x": 693,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 8
+      },
+      {
+        "color": 1,
+        "x": 582,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 9
+      },
+      {
+        "color": 6,
+        "x": 465,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 10
+      },
+      {
+        "color": 5,
+        "x": 342,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 11
+      },
+      {
+        "color": 7,
+        "x": 210,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 12
+      },
+      {
+        "color": 0,
+        "x": 75,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 13
+      },
+      {
+        "color": 2,
+        "x": -72,
+        "visible_width": 18,
+        "id": 14
+      }
+    ]
+  },
+  {
+    "frame": 1137,
+    "actors": [
+      {
+        "color": 5,
+        "x": 1218,
+        "visible_width": 78,
+        "head_matched": true,
+        "id": 3
+      },
+      {
+        "color": 7,
+        "x": 1143,
+        "visible_width": 81,
+        "head_matched": true,
+        "id": 4
+      },
+      {
+        "color": 0,
+        "x": 1059,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 5
+      },
+      {
+        "color": 2,
+        "x": 972,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 6
+      },
+      {
+        "color": 3,
+        "x": 876,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 7
+      },
+      {
+        "color": 4,
+        "x": 774,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 8
+      },
+      {
+        "color": 1,
+        "x": 666,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 9
+      },
+      {
+        "color": 6,
+        "x": 552,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 10
+      },
+      {
+        "color": 5,
+        "x": 432,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 11
+      },
+      {
+        "color": 7,
+        "x": 303,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 12
+      },
+      {
+        "color": 0,
+        "x": 171,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 13
+      },
+      {
+        "color": 2,
+        "x": 30,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 14
+      }
+    ]
+  },
+  {
+    "frame": 1138,
+    "actors": [
+      {
+        "color": 7,
+        "x": 1212,
+        "visible_width": 81,
+        "head_matched": true,
+        "id": 4
+      },
+      {
+        "color": 0,
+        "x": 1131,
+        "visible_width": 78,
+        "head_matched": true,
+        "id": 5
+      },
+      {
+        "color": 2,
+        "x": 1047,
+        "visible_width": 87,
+        "head_matched": true,
+        "id": 6
+      },
+      {
+        "color": 3,
+        "x": 954,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 7
+      },
+      {
+        "color": 4,
+        "x": 855,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 8
+      },
+      {
+        "color": 1,
+        "x": 750,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 9
+      },
+      {
+        "color": 6,
+        "x": 639,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 10
+      },
+      {
+        "color": 5,
+        "x": 522,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 11
+      },
+      {
+        "color": 7,
+        "x": 396,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 12
+      },
+      {
+        "color": 0,
+        "x": 267,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 13
+      },
+      {
+        "color": 2,
+        "x": 129,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 14
+      },
+      {
+        "color": 3,
+        "x": -18,
+        "visible_width": 72,
+        "id": 15
+      }
+    ]
+  },
+  {
+    "frame": 1139,
+    "actors": [
+      {
+        "color": 0,
+        "x": 1203,
+        "visible_width": 78,
+        "head_matched": true,
+        "id": 5
+      },
+      {
+        "color": 2,
+        "x": 1122,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 6
+      },
+      {
+        "color": 3,
+        "x": 1032,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 7
+      },
+      {
+        "color": 4,
+        "x": 936,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 8
+      },
+      {
+        "color": 1,
+        "x": 834,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 9
+      },
+      {
+        "color": 6,
+        "x": 726,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 10
+      },
+      {
+        "color": 5,
+        "x": 612,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 11
+      },
+      {
+        "color": 7,
+        "x": 492,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 12
+      },
+      {
+        "color": 0,
+        "x": 363,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 13
+      },
+      {
+        "color": 2,
+        "x": 228,
+        "visible_width": 90,
+        "head_matched": true,
+        "id": 14
+      },
+      {
+        "color": 3,
+        "x": 87,
+        "visible_width": 84,
+        "head_matched": true,
+        "id": 15
+      }
+    ]
+  }
+]

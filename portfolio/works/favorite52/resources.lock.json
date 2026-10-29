@@ -1,0 +1,282 @@
+{
+  "schema": 1,
+  "assets": [
+    {
+      "id": "opening-liberationserif-regular",
+      "path": "fonts/Opening-LiberationSerif-Regular.ttf",
+      "bytes": 393692,
+      "sha256": "9caef765d2e891c10dd73658894f01e660fe0c1c83e0bda7d6edf561d8f623d4",
+      "mode": "provide",
+      "source_url": "https://github.com/liberationfonts/liberation-fonts",
+      "license": "Font-specific OFL/DejaVu terms, not project-wide MIT. Preserve notice and actual font copyright.",
+      "notice": "LICENSES/Opening-Liberation-COPYRIGHT.txt",
+      "automatic_download": false,
+      "instructions": "Supply the exact authorized file from your original private recovery assets directory. The link identifies provenance, not permission or an exact-byte download guarantee.",
+      "copyrights": [
+        "Digitized data copyright (c) 2010 Google Corporation.\nCopyright (c) 2012 Red Hat, Inc."
+      ],
+      "embedded_versions": [
+        "Version 2.1.5"
+      ]
+    },
+    {
+      "id": "opening-dejavusansmono",
+      "path": "fonts/Opening-DejaVuSansMono.ttf",
+      "bytes": 343140,
+      "sha256": "54bf827eb99404e8f430c330ad30f063334f637eba0109b6a18d4f566a8e9dd8",
+      "mode": "provide",
+      "source_url": "https://dejavu-fonts.github.io/License.html",
+      "license": "Font-specific OFL/DejaVu terms, not project-wide MIT. Preserve notice and actual font copyright.",
+      "notice": "LICENSES/Opening-DejaVu-COPYRIGHT.txt",
+      "automatic_download": false,
+      "instructions": "Supply the exact authorized file from your original private recovery assets directory. The link identifies provenance, not permission or an exact-byte download guarantee.",
+      "copyrights": [
+        "Copyright (c) 2003 by Bitstream, Inc. All Rights Reserved.\nDejaVu changes are in public domain\n"
+      ],
+      "embedded_versions": [
+        "Version 2.37"
+      ]
+    },
+    {
+      "id": "inter-var",
+      "path": "fonts/Inter-var.ttf",
+      "bytes": 254236,
+      "sha256": "c8d76e1cb2a0a7cfbbae1e390be4e4b942b27f99ec07e1024b1fc916045eed09",
+      "mode": "provide",
+      "source_url": "https://github.com/rsms/inter",
+      "license": "Font-specific OFL/DejaVu terms, not project-wide MIT. Preserve notice and actual font copyright.",
+      "notice": "LICENSES/OFL.txt",
+      "automatic_download": false,
+      "instructions": "Supply the exact authorized file from your original private recovery assets directory. The link identifies provenance, not permission or an exact-byte download guarantee.",
+      "copyrights": [
+        "Copyright 2016 The Inter Project Authors (https://github.com/rsms/inter)"
+      ],
+      "embedded_versions": [
+        "Version 4.001;git-66647c0bb"
+      ]
+    },
+    {
+      "id": "gelasio-variable",
+      "path": "fonts/Gelasio-variable.ttf",
+      "bytes": 168556,
+      "sha256": "4daecea457258c9ebeb8bc99ed3fd24353618bfad3ea4b93fa0b5d0468fc04e4",
+      "mode": "provide",
+      "source_url": "https://github.com/SorkinType/Gelasio",
+      "license": "Font-specific OFL/DejaVu terms, not project-wide MIT. Preserve notice and actual font copyright.",
+      "notice": "LICENSES/Gelasio-OFL.txt",
+      "automatic_download": false,
+      "instructions": "Supply the exact authorized file from your original private recovery assets directory. The link identifies provenance, not permission or an exact-byte download guarantee.",
+      "copyrights": [
+        "Copyright 2022 The Gelasio Project Authors (https://github.com/SorkinType/Gelasio)"
+      ],
+      "embedded_versions": [
+        "Version 1.008"
+      ]
+    },
+    {
+      "id": "carousel-notosanscjksc-bold",
+      "path": "fonts/Carousel-NotoSansCJKsc-Bold.otf",
+      "bytes": 17002224,
+      "sha256": "4757792006b2598daa342799433a3b0f4a79e5dd1a65962ff394d176f27dc509",
+      "mode": "provide",
+      "source_url": "https://github.com/notofonts/noto-cjk",
+      "license": "Font-specific OFL/DejaVu terms, not project-wide MIT. Preserve notice and actual font copyright.",
+      "notice": "LICENSES/Carousel-fonts-noto-cjk-COPYRIGHT.txt",
+      "automatic_download": false,
+      "instructions": "Supply the exact authorized file from your original private recovery assets directory. The link identifies provenance, not permission or an exact-byte download guarantee.",
+      "copyrights": [
+        "© 2014-2021 Adobe (http://www.adobe.com/)."
+      ],
+      "embedded_versions": [
+        "Version 2.004;hotconv 1.0.118;makeotfexe 2.5.65603"
+      ]
+    },
+    {
+      "id": "carousel-notosansdevanagari-bold",
+      "path": "fonts/Carousel-NotoSansDevanagari-Bold.ttf",
+      "bytes": 237660,
+      "sha256": "77ad688cfe1dc55185bf4edb4db3c614202c65dd23a1463ad0e23fc52bcc9a5c",
+      "mode": "provide",
+      "source_url": "https://github.com/notofonts/noto-fonts",
+      "license": "Font-specific OFL/DejaVu terms, not project-wide MIT. Preserve notice and actual font copyright.",
+      "notice": "LICENSES/Carousel-fonts-noto-core-COPYRIGHT.txt",
+      "automatic_download": false,
+      "instructions": "Supply the exact authorized file from your original private recovery assets directory. The link identifies provenance, not permission or an exact-byte download guarantee.",
+      "copyrights": [
+        "Copyright 2015 Google Inc. All Rights Reserved."
+      ],
+      "embedded_versions": [
+        "Version 2.001; ttfautohint (v1.8.3) -l 8 -r 50 -G 200 -x 14 -D deva -f none -a qsq -X \"\""
+      ]
+    },
+    {
+      "id": "carousel-notocoloremoji",
+      "path": "fonts/Carousel-NotoColorEmoji.ttf",
+      "bytes": 11260748,
+      "sha256": "dac5c27651082d6c53dab5081f50d2022ddf6877d730fa919cf6a4fc2af22de0",
+      "mode": "provide",
+      "source_url": "https://github.com/googlefonts/noto-emoji",
+      "license": "Font-specific OFL/DejaVu terms, not project-wide MIT. Preserve notice and actual font copyright.",
+      "notice": "LICENSES/Carousel-fonts-noto-color-emoji-COPYRIGHT.txt",
+      "automatic_download": false,
+      "instructions": "Supply the exact authorized file from your original private recovery assets directory. The link identifies provenance, not permission or an exact-byte download guarantee.",
+      "copyrights": [
+        "Copyright 2022 Google Inc."
+      ],
+      "embedded_versions": [
+        "Version 2.051;GOOG;noto-emoji:20250818:e92753bfa55fd449e427d4d325f9c8c40408c74e"
+      ]
+    },
+    {
+      "id": "carousel-dejavusans",
+      "path": "fonts/Carousel-DejaVuSans.ttf",
+      "bytes": 759720,
+      "sha256": "57f73e11f51999432bf7ab22ce55b6f945d5eca1bf824404cfa9ec2e3718c84e",
+      "mode": "provide",
+      "source_url": "https://dejavu-fonts.github.io/License.html",
+      "license": "Font-specific OFL/DejaVu terms, not project-wide MIT. Preserve notice and actual font copyright.",
+      "notice": "LICENSES/Carousel-fonts-dejavu-core-COPYRIGHT.txt",
+      "automatic_download": false,
+      "instructions": "Supply the exact authorized file from your original private recovery assets directory. The link identifies provenance, not permission or an exact-byte download guarantee.",
+      "copyrights": [
+        "Copyright (c) 2003 by Bitstream, Inc. All Rights Reserved.\nCopyright (c) 2006 by Tavmjong Bah. All Rights Reserved.\nDejaVu changes are in public domain\n"
+      ],
+      "embedded_versions": [
+        "Version 2.37"
+      ]
+    },
+    {
+      "id": "carousel-notosansarabic-regular",
+      "path": "fonts/Carousel-NotoSansArabic-Regular.ttf",
+      "bytes": 244072,
+      "sha256": "504d7407d86875acf7d04dfaa0fd7524d0b8797723bc4aa18022f29db25b0b6e",
+      "mode": "provide",
+      "source_url": "https://github.com/notofonts/noto-fonts",
+      "license": "Font-specific OFL/DejaVu terms, not project-wide MIT. Preserve notice and actual font copyright.",
+      "notice": "LICENSES/Carousel-fonts-noto-core-COPYRIGHT.txt",
+      "automatic_download": false,
+      "instructions": "Supply the exact authorized file from your original private recovery assets directory. The link identifies provenance, not permission or an exact-byte download guarantee.",
+      "copyrights": [
+        "Copyright 2015-2020 Google LLC. All Rights Reserved."
+      ],
+      "embedded_versions": [
+        "Version 2.005; ttfautohint (v1.8.3) -l 8 -r 50 -G 200 -x 14 -D arab -f none -a qsq -X \"\""
+      ]
+    },
+    {
+      "id": "carousel-notosanshebrew-regular",
+      "path": "fonts/Carousel-NotoSansHebrew-Regular.ttf",
+      "bytes": 26892,
+      "sha256": "436900d5ad77d33e4234247f3076eaecd25b92b9bea0519514f684140e3566a7",
+      "mode": "provide",
+      "source_url": "https://github.com/notofonts/noto-fonts",
+      "license": "Font-specific OFL/DejaVu terms, not project-wide MIT. Preserve notice and actual font copyright.",
+      "notice": "LICENSES/Carousel-fonts-noto-core-COPYRIGHT.txt",
+      "automatic_download": false,
+      "instructions": "Supply the exact authorized file from your original private recovery assets directory. The link identifies provenance, not permission or an exact-byte download guarantee.",
+      "copyrights": [
+        "Copyright 2019 Google Inc. All Rights Reserved."
+      ],
+      "embedded_versions": [
+        "Version 3.000; ttfautohint (v1.8.3) -l 8 -r 50 -G 200 -x 14 -D hebr -f none -a qsq -X \"\""
+      ]
+    },
+    {
+      "id": "carousel-notosansthai-regular",
+      "path": "fonts/Carousel-NotoSansThai-Regular.ttf",
+      "bytes": 37744,
+      "sha256": "dfbd5ed0f1e68c3cbc51aa08f646d1ab0e68e7c4ceab70a69e465225ff701f93",
+      "mode": "provide",
+      "source_url": "https://github.com/notofonts/noto-fonts",
+      "license": "Font-specific OFL/DejaVu terms, not project-wide MIT. Preserve notice and actual font copyright.",
+      "notice": "LICENSES/Carousel-fonts-noto-core-COPYRIGHT.txt",
+      "automatic_download": false,
+      "instructions": "Supply the exact authorized file from your original private recovery assets directory. The link identifies provenance, not permission or an exact-byte download guarantee.",
+      "copyrights": [
+        "Copyright 2016 Google Inc. All Rights Reserved."
+      ],
+      "embedded_versions": [
+        "Version 2.000; ttfautohint (v1.8.3) -l 8 -r 50 -G 200 -x 14 -D thai -f none -a qsq -X \"\""
+      ]
+    },
+    {
+      "id": "notosanssc-500",
+      "path": "fonts/NotoSansSC-500.ttf",
+      "bytes": 2232368,
+      "sha256": "f2269539bbb42a89f02fe459c4ff6c46e328c97f512f14e1081e68c1070681f6",
+      "mode": "provide",
+      "source_url": "https://github.com/notofonts/noto-cjk",
+      "license": "Font-specific OFL/DejaVu terms, not project-wide MIT. Preserve notice and actual font copyright.",
+      "notice": "LICENSES/OFL.txt",
+      "automatic_download": false,
+      "instructions": "Supply the exact authorized file from your original private recovery assets directory. The link identifies provenance, not permission or an exact-byte download guarantee.",
+      "copyrights": [
+        "(c) 2014-2021 Adobe (http://www.adobe.com/), with Reserved Font Name 'Source'."
+      ],
+      "embedded_versions": [
+        "Version 2.004-H2;hotconv 1.0.118;makeotfexe 2.5.65603"
+      ]
+    },
+    {
+      "id": "pressstart2p-400",
+      "path": "fonts/PressStart2P-400.ttf",
+      "bytes": 115280,
+      "sha256": "6d4ed8667f7d528659908e13c65d2ab42f7df8c5295fe35190ec0307a0edf0a1",
+      "mode": "provide",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/pressstart2p",
+      "license": "Font-specific OFL/DejaVu terms, not project-wide MIT. Preserve notice and actual font copyright.",
+      "notice": "LICENSES/OFL.txt",
+      "automatic_download": false,
+      "instructions": "Supply the exact authorized file from your original private recovery assets directory. The link identifies provenance, not permission or an exact-byte download guarantee.",
+      "copyrights": [
+        "Copyright 2012 The Press Start 2P Project Authors (cody@zone38.net), with Reserved Font Name \"Press Start 2P\""
+      ],
+      "embedded_versions": [
+        "Version 3.000"
+      ]
+    },
+    {
+      "id": "claude-duet-official",
+      "path": "claude-duet-official.svg",
+      "bytes": 8339,
+      "sha256": "dd02a73dacd5a377df522b133fd16fe4691f8d11524147cb0f8967abb2323c35",
+      "mode": "provide",
+      "source_url": "https://claude.com/resources/articles/claude-duet",
+      "license": "No open license asserted by recovery CREDITS. Original brand/copyright rights retained.",
+      "notice": "LICENSES/external-resources.txt",
+      "automatic_download": false,
+      "instructions": "Supply the exact authorized file from your original private recovery assets directory. The link identifies provenance, not permission or an exact-byte download guarantee.",
+      "official_asset_link": "https://assets.claude.com/9273e22b909074c1c2d42ca3514a239623f8af40.svg"
+    },
+    {
+      "id": "dario-techcrunch-2023",
+      "path": "dario-techcrunch-2023.jpg",
+      "bytes": 1545886,
+      "sha256": "7491726ca688e37f803008cf0010ec126c8fb4da39ee4a54f13b0cd1c749d822",
+      "mode": "provide",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Dario_Amodei_at_TechCrunch_Disrupt_2023_01.jpg",
+      "license": "CC BY 2.0; Kimberly White/Getty Images for TechCrunch. Preserve attribution, license and modifications.",
+      "notice": "LICENSES/external-resources.txt",
+      "automatic_download": false,
+      "instructions": "Supply the exact authorized file from your original private recovery assets directory. The link identifies provenance, not permission or an exact-byte download guarantee.",
+      "exact_source_link": "https://upload.wikimedia.org/wikipedia/commons/d/da/Dario_Amodei_at_TechCrunch_Disrupt_2023_01.jpg"
+    },
+    {
+      "id": "original-v4-audio",
+      "path": "original-v4-audio.m4a",
+      "bytes": 1737917,
+      "sha256": "dba58a585f70bfede295b89b438d12ef534dc5742e9bd8859899d9ab89fc04fd",
+      "mode": "provide",
+      "source_url": "https://incompetech.com/music/royalty-free/index.html?Search=Search&isrc=USUAN1600045",
+      "license": "Existing mix of Bit Shift (Kevin MacLeod, CC BY 4.0) and declared generated SFX. No separate reconstruction recipe in this archive.",
+      "notice": "LICENSES/external-resources.txt",
+      "automatic_download": false,
+      "instructions": "Supply the exact authorized file from your original private recovery assets directory. The link identifies provenance, not permission or an exact-byte download guarantee."
+    }
+  ],
+  "recovery_archive": {
+    "filename": "Claude-Crab-Favorite52-NativeV2-Recovery-20261027.zip",
+    "sha256": "c291e0dfbd2d6284431514b483405de946977c4f29ec33b101f45e78ec76c49f",
+    "prefix": "Claude-Crab-Favorite52-Project-Backup-20261027/MotionStudio/projects/favorite52-engine-rebuild/assets/"
+  }
+}

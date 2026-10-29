@@ -1,0 +1,233 @@
+{
+  "schema": 1,
+  "scope": "Exact tested Linux x86_64 runtime constraints and source hashes; not an OS installer lock. npm lock is genuine. No browser/GSAP/FontTools required.",
+  "versions": {
+    "node": "24.22.1",
+    "canvas": "0.1.100",
+    "python": "3.12.14",
+    "ffmpeg": "7.1.5-0+deb13u1",
+    "ffprobe": "7.1.5-0+deb13u1"
+  },
+  "sources": [
+    {
+      "path": "engine/motion-render-core/lib/native.mjs",
+      "sha256": "2e925930bf7c519071fe5aba753eee708f4681c96a52cfa02f357424bf21434b"
+    },
+    {
+      "path": "engine/motion-render-core/package.json",
+      "sha256": "3a250b172494c4b3007e799c1fcc1395d613587584aecad822595d2d43eb8f87"
+    },
+    {
+      "path": "engine/motion-render-core/package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c"
+    },
+    {
+      "path": "portfolio/works/favorite52/locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c"
+    },
+    {
+      "path": "portfolio/works/favorite52/resources.lock.json",
+      "sha256": "bebf5ac638202f93e3bc70a9c57b360d596dee6aa1420bd227d5bcb8998d20e9"
+    },
+    {
+      "path": "portfolio/works/favorite52/prepare.py",
+      "sha256": "a21f31875929f3ef9cea526825f478889adefe49d50e0c0f644819a78b2d8376"
+    },
+    {
+      "path": "portfolio/works/favorite52/render.py",
+      "sha256": "4072f7a9face6a139dca174b98fd4627cdadddb47cf961a1a4ea1fe73add5939"
+    },
+    {
+      "path": "portfolio/works/favorite52/src/export-native.py",
+      "sha256": "ea1bf7200896fda151e9d02c0d2450d40c408ad4efef04adc532942e38a46c1a"
+    },
+    {
+      "path": "portfolio/works/favorite52/src/font-registry.json",
+      "sha256": "1c8046738aaa940a2f9030df1c4b27a6639827b48229467941bf946e2bb33e27"
+    },
+    {
+      "path": "portfolio/works/favorite52/src/legacy/generators/boss-calibration-v4/render-browser.cjs",
+      "sha256": "d4ff3d7651f2f2b9c883b4212828cef4246d9850b741371be6252ddb46a508e4"
+    },
+    {
+      "path": "portfolio/works/favorite52/src/legacy/scene-gates-26.5-30.5.json",
+      "sha256": "e953aa0a8238b4e8a6f4b9a330c62d4ecfb9fdf67db2f1ebd209c8936106390f"
+    },
+    {
+      "path": "portfolio/works/favorite52/src/legacy/source/baseline.cjs",
+      "sha256": "4416bf15b773a365016cbf4d2ab7a137821ae31b1d04a576302a3b891888ae11"
+    },
+    {
+      "path": "portfolio/works/favorite52/src/legacy/source/boss-v3/render-boss.cjs",
+      "sha256": "544d74616f054211edfd6de0fa1502a6774f38ad30f0d4c7afab3ec505a6ccff"
+    },
+    {
+      "path": "portfolio/works/favorite52/src/legacy/source/boss-v4/measured-shake.json",
+      "sha256": "661e5659ba4c1fa776e3de28c0c185456578c9fda871b6e0fbb6915bfe5cf22d"
+    },
+    {
+      "path": "portfolio/works/favorite52/src/legacy/source/boss-v4/render-boss.cjs",
+      "sha256": "be9255d808de15d2656f4e276361bb576d2cee4fec54b0fdbab630e2ddbad4c9"
+    },
+    {
+      "path": "portfolio/works/favorite52/src/legacy/source/carousel/render-carousel.cjs",
+      "sha256": "870974b7faf2c0f563bbe4d9ce2ffb5db81e0941b87a93bf2d66f82e2ac7be34"
+    },
+    {
+      "path": "portfolio/works/favorite52/src/legacy/source/carousel-v3/flags.cjs",
+      "sha256": "99b05453fc0665cb2254a03e6542f5d4ffbd3b0ea3612043319434cff6895a40"
+    },
+    {
+      "path": "portfolio/works/favorite52/src/legacy/source/carousel-v3/motion-anchors.json",
+      "sha256": "d48bfdc547b1d3b6bee6d9028ab1b5e86e99a512b5a52a91fb91126302db6aa6"
+    },
+    {
+      "path": "portfolio/works/favorite52/src/legacy/source/carousel-v3/render-carousel.cjs",
+      "sha256": "08becd3cc3c3682a7650cc112afa6ae995611fc798e7c260eb6be76f1ff4851e"
+    },
+    {
+      "path": "portfolio/works/favorite52/src/legacy/source/crowd-v4/render-crowd.cjs",
+      "sha256": "d92b6f0252ac3813a2a14bc3d9c3e7479a03ae2928e6374b432f39397790422d"
+    },
+    {
+      "path": "portfolio/works/favorite52/src/legacy/source/crowd-v4/warning-camera.json",
+      "sha256": "7a6545efe82b2f09501f6ca86605658cbc696c48bbb0e450c703a5c5b0401759"
+    },
+    {
+      "path": "portfolio/works/favorite52/src/legacy/source/dispatcher-v4.cjs",
+      "sha256": "86c7f06333e7a627dc6d1ccfbf32970aaee3d935450b209c2805bf53f02f875e"
+    },
+    {
+      "path": "portfolio/works/favorite52/src/legacy/source/entrance/render-anchors.cjs",
+      "sha256": "3615bec656d7c537cc195f4b800eb6b72c45c1d948a7464e2bc6f35ce69472cb"
+    },
+    {
+      "path": "portfolio/works/favorite52/src/legacy/source/entrance/render-entrance.cjs",
+      "sha256": "b506e2bbecb77910ffe49969b6c7511340671bfb258f4a8670de7d0cd10e4042"
+    },
+    {
+      "path": "portfolio/works/favorite52/src/legacy/source/label-bitmaps.json",
+      "sha256": "12efeccb6098948a0e0c973f467e0b22ae4a4fbd699a85903eed7e0e6a7aacdd"
+    },
+    {
+      "path": "portfolio/works/favorite52/src/legacy/source/measured-camera.json",
+      "sha256": "f5d880d5cc71987ab9056f3aefa21bd5a51afb71c89718b4567cd173eb4fc650"
+    },
+    {
+      "path": "portfolio/works/favorite52/src/legacy/source/measured-failure-flash.json",
+      "sha256": "f1619338fa97dad0c35201ed0a13602cfde2d7b1627ded3dbaf7be6bbf18e46f"
+    },
+    {
+      "path": "portfolio/works/favorite52/src/legacy/source/measured-pixel-elements.json",
+      "sha256": "259722ae378ab4148f93fc2aa492814d62d23520f74d54340bd9ca27111d922c"
+    },
+    {
+      "path": "portfolio/works/favorite52/src/legacy/source/measured-player-motion.json",
+      "sha256": "6b3ae1aef38660d6796d8aa596fdb4ad1e1aee7c941514e5be8df5b1bc855bb0"
+    },
+    {
+      "path": "portfolio/works/favorite52/src/legacy/source/measured-scan-lines.json",
+      "sha256": "389a8a725014cc9d7317c82acc646189069ef21bb864199ff842f20f384d4220"
+    },
+    {
+      "path": "portfolio/works/favorite52/src/legacy/source/measured-status-labels.json",
+      "sha256": "4dd1896db36f681e4368a33fee8c3742326645c8a7eb7dd0da2cba192cea6b69"
+    },
+    {
+      "path": "portfolio/works/favorite52/src/legacy/source/opening/render-anchors.cjs",
+      "sha256": "da995f43cc67a94d0fdfd3e6dae7b22c8f1d5a46ecaf3666cce700b93932346c"
+    },
+    {
+      "path": "portfolio/works/favorite52/src/legacy/source/opening/render-opening.cjs",
+      "sha256": "36038709f5fb1f5dab37cc9412373c1076d9f4adb0c8fc826c16b38046bb2be5"
+    },
+    {
+      "path": "portfolio/works/favorite52/src/legacy/source/probe.cjs",
+      "sha256": "f421fa3acbd360952dc62f4143ffb6c6a87b237a9bb02769f889d761379e2513"
+    },
+    {
+      "path": "portfolio/works/favorite52/src/legacy/source/v3/brand-ui/render-brand-ui.cjs",
+      "sha256": "90ccb86b81da6f4e701f94e24658451ae7d8fccb03f394b9e2853efe14a9eedd"
+    },
+    {
+      "path": "portfolio/works/favorite52/src/legacy/source/v3/game/baseline.cjs",
+      "sha256": "e2cc895dbcd019fc905c5467302c2c9666b1c82c0b4da9f287accd1e70f8913e"
+    },
+    {
+      "path": "portfolio/works/favorite52/src/legacy/source/v3/game/crowd.cjs",
+      "sha256": "98d0baf882f8d00429beacadf56623b3db64883528107d8a69c4e07e710a3f62"
+    },
+    {
+      "path": "portfolio/works/favorite52/src/legacy/source/v3/game/fall.cjs",
+      "sha256": "f0ba0225fb4ecdaad4f06494f13e048274860fd0f3bf814b162c4abe1240a12a"
+    },
+    {
+      "path": "portfolio/works/favorite52/src/legacy/source/v3/game/gates-next.cjs",
+      "sha256": "c0dc5c4081b0bdf013f6a5747b3b7a0843931e6bb665b8a4c08dd95f1a7cbabc"
+    },
+    {
+      "path": "portfolio/works/favorite52/src/legacy/source/v3/game/label-bitmaps.json",
+      "sha256": "12efeccb6098948a0e0c973f467e0b22ae4a4fbd699a85903eed7e0e6a7aacdd"
+    },
+    {
+      "path": "portfolio/works/favorite52/src/legacy/source/v3/game/measured-camera.json",
+      "sha256": "f5d880d5cc71987ab9056f3aefa21bd5a51afb71c89718b4567cd173eb4fc650"
+    },
+    {
+      "path": "portfolio/works/favorite52/src/legacy/source/v3/game/measured-failure-flash.json",
+      "sha256": "f1619338fa97dad0c35201ed0a13602cfde2d7b1627ded3dbaf7be6bbf18e46f"
+    },
+    {
+      "path": "portfolio/works/favorite52/src/legacy/source/v3/game/measured-fall.json",
+      "sha256": "000a4b4c2c65e08be4c4cb1358765e6a4351fa341eef3cddfcdeaaef3b1a210d"
+    },
+    {
+      "path": "portfolio/works/favorite52/src/legacy/source/v3/game/measured-next-detail.json",
+      "sha256": "515a89feed1105e9448c164172c52b6b87487a085f55c216b4c0bf9fb1c311de"
+    },
+    {
+      "path": "portfolio/works/favorite52/src/legacy/source/v3/game/measured-next-headers.json",
+      "sha256": "2b52453afd90725f73b15d64a3bc4a22b62fb077958d6894ba81c215733d2e4c"
+    },
+    {
+      "path": "portfolio/works/favorite52/src/legacy/source/v3/game/measured-pixel-elements.json",
+      "sha256": "259722ae378ab4148f93fc2aa492814d62d23520f74d54340bd9ca27111d922c"
+    },
+    {
+      "path": "portfolio/works/favorite52/src/legacy/source/v3/game/measured-player-motion.json",
+      "sha256": "6b3ae1aef38660d6796d8aa596fdb4ad1e1aee7c941514e5be8df5b1bc855bb0"
+    },
+    {
+      "path": "portfolio/works/favorite52/src/legacy/source/v3/game/measured-queue-detail.json",
+      "sha256": "c4c2679357bc2cd21d60a8073373039d47735901590f32e674c0c78f5d692e77"
+    },
+    {
+      "path": "portfolio/works/favorite52/src/legacy/source/v3/game/measured-scan-lines.json",
+      "sha256": "389a8a725014cc9d7317c82acc646189069ef21bb864199ff842f20f384d4220"
+    },
+    {
+      "path": "portfolio/works/favorite52/src/legacy/source/v3/game/measured-status-labels.json",
+      "sha256": "4dd1896db36f681e4368a33fee8c3742326645c8a7eb7dd0da2cba192cea6b69"
+    },
+    {
+      "path": "portfolio/works/favorite52/src/legacy/source/v3/game/measured-warning-flash.json",
+      "sha256": "061d5271aba7e2209b1e1b345054f3f18765830fdbb9985646644a75bc62be11"
+    },
+    {
+      "path": "portfolio/works/favorite52/src/legacy/source/v3/game/probe.cjs",
+      "sha256": "7de903dd68e7553ed66770fd47e8d9fd5b38312b72807dcceb7dd01ef7359284"
+    },
+    {
+      "path": "portfolio/works/favorite52/src/legacy/source/v3/outro/render-outro.cjs",
+      "sha256": "2325877b0471444e791d5fa129f7928a3d19ddf337d7e23f4e0475baedd6ba7d"
+    },
+    {
+      "path": "portfolio/works/favorite52/src/render-native.mjs",
+      "sha256": "02881c544588477f591d30f6f1195fcfa5a3e360c944022d3364d10d346da18e"
+    },
+    {
+      "path": "portfolio/works/favorite52/src/scene-native.mjs",
+      "sha256": "13863b6a4ab7b78c9327faf379b63e32d936e6ff5480706c0fdcd381fa6d3138"
+    }
+  ]
+}

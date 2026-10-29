@@ -145,12 +145,12 @@ def validate_work(root):
     except ValueError as e:
         raise Invalid("entry.json: invalid JSON") from e
     fields(data, TOP_KEYS, "entry")
-    require(type(data["schema"]) is int and data["schema"] in {1, 2}, "schema must be 1 or 2")
+    require(type(data["schema"]) is int and data["schema"] in {1, 2, 3}, "schema must be 1, 2 or 3")
     require(isinstance(data["id"], str) and ID.fullmatch(data["id"]) and data["id"] == root.name,
             "id must match the work directory")
     require(isinstance(data["version"], str) and VERSION.fullmatch(data["version"]), "version must be exact x.y.z")
     nonempty(data["title"], "title")
-    require(data["status"] == "released", "candidates do not belong in works/")
+    require(data["status"] == ("source-release" if data["schema"] == 3 else "released"), "schema 3 requires source-release; candidates do not belong in works/")
     require(data["unofficial_recreation"] is True, "unofficial_recreation must explicitly be true")
     fields(data["original"], {"author", "title", "url"}, "original")
     for key in ("author", "title"):
@@ -199,7 +199,7 @@ def validate_work(root):
     listed("README.md", "documentation")
     rights = data["rights"]
     fields(rights, {"status", "credits", "notices", "evidence_urls"}, "rights")
-    require(rights["status"] == "reviewed", "rights must have been reviewed before release")
+    require(rights["status"] == ("reviewed-publication-scope" if data["schema"] == 3 else "reviewed"), "rights must state the correct publication review scope")
     listed(rights["credits"], "documentation")
     for key in ("notices", "evidence_urls"):
         require(isinstance(rights[key], list) and rights[key], f"rights.{key}: expected nonempty list")
@@ -244,15 +244,31 @@ def validate_work(root):
     resources = data["resources"]
     require(isinstance(resources, list), "resources: expected list (empty for code-only work)")
     names = set()
+    provided_paths = set()
     common = {"id", "mode", "license", "notice", "source_url", "sha256", "permission"}
     for row in resources:
-        require(isinstance(row, dict) and row.get("mode") in {"fetch", "generate"}, "resource.mode: fetch or generate only")
-        fields(row, common | ({"fetch_url", "max_bytes"} if row["mode"] == "fetch" else {"generator"}), "resource")
+        modes = {"fetch", "generate", "provide"} if data["schema"] == 3 else {"fetch", "generate"}
+        require(isinstance(row, dict) and row.get("mode") in modes, "resource.mode: unsupported acquisition mode")
+        extra = {"fetch_url", "max_bytes"} if row["mode"] == "fetch" else {"generator"} if row["mode"] == "generate" else {"local_path", "bytes", "instructions"}
+        fields(row, common | extra, "resource")
         require(isinstance(row["id"], str) and ID.fullmatch(row["id"]) and row["id"] not in names, "resource id invalid/duplicate")
         names.add(row["id"])
         nonempty(row["license"], "resource.license")
-        require(not re.search(r"unknown|pending|unclear|tbd", row["license"], re.I), "resource license is unresolved")
-        require(row["permission"] == "explicit-license", "resource acquisition needs explicit license")
+        if row["mode"] == "provide":
+            require(row["permission"] == "user-supplied-not-distributed", "provided resources must not imply a license grant")
+            # Resource paths describe the external cache, not files allowed in Git.
+            nonempty(row["local_path"], "resource.local_path")
+            require(row["local_path"] not in provided_paths, "duplicate external resource path")
+            provided_paths.add(row["local_path"])
+            p = PurePosixPath(row["local_path"])
+            require(isinstance(row["local_path"], str) and str(p) == row["local_path"] and not p.is_absolute()
+                    and ".." not in p.parts and not any(x.startswith(".") for x in p.parts)
+                    and "\\" not in row["local_path"] and ":" not in row["local_path"], "invalid external resource path")
+            positive_int(row["bytes"], "resource.bytes")
+            nonempty(row["instructions"], "resource.instructions")
+        else:
+            require(not re.search(r"unknown|pending|unclear|tbd", row["license"], re.I), "resource license is unresolved")
+            require(row["permission"] == "explicit-license", "resource acquisition needs explicit license")
         listed(row["notice"], "license")
         require(row["notice"] in rights["notices"], "resource notice missing from rights")
         public_url(row["source_url"], "resource.source_url")
@@ -260,8 +276,10 @@ def validate_work(root):
         if row["mode"] == "fetch":
             public_url(row["fetch_url"], "resource.fetch_url")
             positive_int(row["max_bytes"], "resource.max_bytes")
-        else:
+        elif row["mode"] == "generate":
             listed(row["generator"], "source")
+    if data["schema"] == 3:
+        require(any(row["mode"] == "provide" for row in resources), "source-release requires explicit externally provided resources")
 
     fields(data["acceptance"], ACCEPTANCE, "acceptance")
     acceptance = data["acceptance"]
@@ -297,7 +315,7 @@ def main():
         result = validate_portfolio(args.root)
     except (Invalid, OSError, TypeError, KeyError) as e:
         parser.exit(1, f"FAIL: {e}\n")
-    print(f"Static source checks passed: {len(result)} released works. Not a render, rights or artistic approval.")
+    print(f"Static source checks passed: {len(result)} collected works/source releases. Not a render, rights or artistic approval.")
 
 
 if __name__ == "__main__":

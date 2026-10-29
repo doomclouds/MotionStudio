@@ -1,0 +1,653 @@
+{
+  "schema": 3,
+  "id": "favorite52",
+  "version": "1.0.0",
+  "title": "Favorite52 · 52秒非官方复刻源码（外置资源）",
+  "status": "source-release",
+  "unofficial_recreation": true,
+  "original": {
+    "author": "AlchainHust / huashu",
+    "title": "52-second visual reference; unofficial MotionStudio recreation",
+    "url": "https://x.com/AlchainHust/status/2113208707668729984"
+  },
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "LICENSES/CC-BY-2.0-legalcode.txt",
+      "LICENSES/CC-BY-4.0-legalcode.txt",
+      "LICENSES/Carousel-fonts-dejavu-core-COPYRIGHT.txt",
+      "LICENSES/Carousel-fonts-noto-cjk-COPYRIGHT.txt",
+      "LICENSES/Carousel-fonts-noto-color-emoji-COPYRIGHT.txt",
+      "LICENSES/Carousel-fonts-noto-core-COPYRIGHT.txt",
+      "LICENSES/Gelasio-OFL.txt",
+      "LICENSES/Huashu-MIT.txt",
+      "LICENSES/OFL.txt",
+      "LICENSES/Opening-DejaVu-COPYRIGHT.txt",
+      "LICENSES/Opening-FONT-SHA256-HISTORICAL.txt",
+      "LICENSES/Opening-FONT-SHA256.txt",
+      "LICENSES/Opening-Liberation-COPYRIGHT.txt",
+      "LICENSES/external-resources.txt"
+    ],
+    "evidence_urls": [
+      "https://claude.com/resources/articles/claude-duet",
+      "https://incompetech.com/music/royalty-free/index.html?Search=Search&isrc=USUAN1600045",
+      "https://commons.wikimedia.org/wiki/File:Dario_Amodei_at_TechCrunch_Disrupt_2023_01.jpg",
+      "https://github.com/alchaincyf/huashu-motion/blob/52467f99c602b76ba86d511d37acdfe93fa1e16e/LICENSE"
+    ]
+  },
+  "files": [
+    {
+      "path": "CREDITS.md",
+      "sha256": "5cf858d85085cca772be1e8570885e19f58ce358de6faed56cf52055d02f9a33",
+      "role": "documentation"
+    },
+    {
+      "path": "LICENSES/CC-BY-2.0-legalcode.txt",
+      "sha256": "2f5ec51a58b37bad49c3f9d490ee4151e2fc4a1dfc29509c0fc0bec39f5c4afc",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/CC-BY-4.0-legalcode.txt",
+      "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/Carousel-fonts-dejavu-core-COPYRIGHT.txt",
+      "sha256": "63d3ba759d12804c5b31a9d5940d855c1820d1f5999e6b0872eb1c7ff045fbc9",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/Carousel-fonts-noto-cjk-COPYRIGHT.txt",
+      "sha256": "849f4ea9c214fa4ac3593b770c699f387534b11ce671264c1b10d85bdcb5997b",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/Carousel-fonts-noto-color-emoji-COPYRIGHT.txt",
+      "sha256": "3720722d2046accb40e1696f096b57c658b0b47d74031b3d114cf7545b840b3c",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/Carousel-fonts-noto-core-COPYRIGHT.txt",
+      "sha256": "075f91382875da1c4b491f1facf2586f55448705133264d98ce15cab6211b125",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/Gelasio-OFL.txt",
+      "sha256": "b393cb01867c919b44381512120dc3e4c954c7b47e2035c405f3a324799a4d29",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/Huashu-MIT.txt",
+      "sha256": "b8fa8ecfc57cf8339ecdab05e62e811a5d00d1e1f9373ff1de64cc9f261e2d3e",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/OFL.txt",
+      "sha256": "67c5d5206b96f8340b95fabd02ae60701e0b20ce2594d976216f1065e5aa3822",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/Opening-DejaVu-COPYRIGHT.txt",
+      "sha256": "63d3ba759d12804c5b31a9d5940d855c1820d1f5999e6b0872eb1c7ff045fbc9",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/Opening-FONT-SHA256-HISTORICAL.txt",
+      "sha256": "ee44ae7d1a21b8cb289c37860a2cc80dbac6cf391a74b995634e1c450c844068",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/Opening-FONT-SHA256.txt",
+      "sha256": "aeb84066ff24b378afcbeb49b1ecfcf8d5f16b70c5f805ed838410101da48d45",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/Opening-Liberation-COPYRIGHT.txt",
+      "sha256": "f32df582a2aab128c07b2f7e36e7b928dc5f6bd82657b905c04f91459f9e5cf9",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/external-resources.txt",
+      "sha256": "50853b8a1f24842c70183623debb4e57bcb92af9e78aebd4e6029df072dac819",
+      "role": "license"
+    },
+    {
+      "path": "README.md",
+      "sha256": "91051dbd0dc681ab9446301c7c63a88ea198143ea9c6faeb7ff83246d92f1269",
+      "role": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "86a8a0c0a08c06ddab3dac47da45078dce055746c5dfd0c15ddb99079f6cab5d",
+      "role": "cover"
+    },
+    {
+      "path": "locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "role": "lock"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "7d0c8da6449f62aa62f44a5396060626ce3d1eb0322386c8ef14926fba004160",
+      "role": "lock"
+    },
+    {
+      "path": "prepare.py",
+      "sha256": "a21f31875929f3ef9cea526825f478889adefe49d50e0c0f644819a78b2d8376",
+      "role": "source"
+    },
+    {
+      "path": "render.py",
+      "sha256": "4072f7a9face6a139dca174b98fd4627cdadddb47cf961a1a4ea1fe73add5939",
+      "role": "source"
+    },
+    {
+      "path": "resources.lock.json",
+      "sha256": "bebf5ac638202f93e3bc70a9c57b360d596dee6aa1420bd227d5bcb8998d20e9",
+      "role": "lock"
+    },
+    {
+      "path": "src/export-native.py",
+      "sha256": "ea1bf7200896fda151e9d02c0d2450d40c408ad4efef04adc532942e38a46c1a",
+      "role": "source"
+    },
+    {
+      "path": "src/font-registry.json",
+      "sha256": "1c8046738aaa940a2f9030df1c4b27a6639827b48229467941bf946e2bb33e27",
+      "role": "config"
+    },
+    {
+      "path": "src/legacy/generators/boss-calibration-v4/render-browser.cjs",
+      "sha256": "d4ff3d7651f2f2b9c883b4212828cef4246d9850b741371be6252ddb46a508e4",
+      "role": "source"
+    },
+    {
+      "path": "src/legacy/scene-gates-26.5-30.5.json",
+      "sha256": "e953aa0a8238b4e8a6f4b9a330c62d4ecfb9fdf67db2f1ebd209c8936106390f",
+      "role": "config"
+    },
+    {
+      "path": "src/legacy/source/baseline.cjs",
+      "sha256": "4416bf15b773a365016cbf4d2ab7a137821ae31b1d04a576302a3b891888ae11",
+      "role": "source"
+    },
+    {
+      "path": "src/legacy/source/boss-v3/render-boss.cjs",
+      "sha256": "544d74616f054211edfd6de0fa1502a6774f38ad30f0d4c7afab3ec505a6ccff",
+      "role": "source"
+    },
+    {
+      "path": "src/legacy/source/boss-v4/measured-shake.json",
+      "sha256": "661e5659ba4c1fa776e3de28c0c185456578c9fda871b6e0fbb6915bfe5cf22d",
+      "role": "config"
+    },
+    {
+      "path": "src/legacy/source/boss-v4/render-boss.cjs",
+      "sha256": "be9255d808de15d2656f4e276361bb576d2cee4fec54b0fdbab630e2ddbad4c9",
+      "role": "source"
+    },
+    {
+      "path": "src/legacy/source/carousel/render-carousel.cjs",
+      "sha256": "870974b7faf2c0f563bbe4d9ce2ffb5db81e0941b87a93bf2d66f82e2ac7be34",
+      "role": "source"
+    },
+    {
+      "path": "src/legacy/source/carousel-v3/flags.cjs",
+      "sha256": "99b05453fc0665cb2254a03e6542f5d4ffbd3b0ea3612043319434cff6895a40",
+      "role": "source"
+    },
+    {
+      "path": "src/legacy/source/carousel-v3/motion-anchors.json",
+      "sha256": "d48bfdc547b1d3b6bee6d9028ab1b5e86e99a512b5a52a91fb91126302db6aa6",
+      "role": "config"
+    },
+    {
+      "path": "src/legacy/source/carousel-v3/render-carousel.cjs",
+      "sha256": "08becd3cc3c3682a7650cc112afa6ae995611fc798e7c260eb6be76f1ff4851e",
+      "role": "source"
+    },
+    {
+      "path": "src/legacy/source/crowd-v4/render-crowd.cjs",
+      "sha256": "d92b6f0252ac3813a2a14bc3d9c3e7479a03ae2928e6374b432f39397790422d",
+      "role": "source"
+    },
+    {
+      "path": "src/legacy/source/crowd-v4/warning-camera.json",
+      "sha256": "7a6545efe82b2f09501f6ca86605658cbc696c48bbb0e450c703a5c5b0401759",
+      "role": "config"
+    },
+    {
+      "path": "src/legacy/source/dispatcher-v4.cjs",
+      "sha256": "86c7f06333e7a627dc6d1ccfbf32970aaee3d935450b209c2805bf53f02f875e",
+      "role": "source"
+    },
+    {
+      "path": "src/legacy/source/entrance/render-anchors.cjs",
+      "sha256": "3615bec656d7c537cc195f4b800eb6b72c45c1d948a7464e2bc6f35ce69472cb",
+      "role": "source"
+    },
+    {
+      "path": "src/legacy/source/entrance/render-entrance.cjs",
+      "sha256": "b506e2bbecb77910ffe49969b6c7511340671bfb258f4a8670de7d0cd10e4042",
+      "role": "source"
+    },
+    {
+      "path": "src/legacy/source/label-bitmaps.json",
+      "sha256": "12efeccb6098948a0e0c973f467e0b22ae4a4fbd699a85903eed7e0e6a7aacdd",
+      "role": "config"
+    },
+    {
+      "path": "src/legacy/source/measured-camera.json",
+      "sha256": "f5d880d5cc71987ab9056f3aefa21bd5a51afb71c89718b4567cd173eb4fc650",
+      "role": "config"
+    },
+    {
+      "path": "src/legacy/source/measured-failure-flash.json",
+      "sha256": "f1619338fa97dad0c35201ed0a13602cfde2d7b1627ded3dbaf7be6bbf18e46f",
+      "role": "config"
+    },
+    {
+      "path": "src/legacy/source/measured-pixel-elements.json",
+      "sha256": "259722ae378ab4148f93fc2aa492814d62d23520f74d54340bd9ca27111d922c",
+      "role": "config"
+    },
+    {
+      "path": "src/legacy/source/measured-player-motion.json",
+      "sha256": "6b3ae1aef38660d6796d8aa596fdb4ad1e1aee7c941514e5be8df5b1bc855bb0",
+      "role": "config"
+    },
+    {
+      "path": "src/legacy/source/measured-scan-lines.json",
+      "sha256": "389a8a725014cc9d7317c82acc646189069ef21bb864199ff842f20f384d4220",
+      "role": "config"
+    },
+    {
+      "path": "src/legacy/source/measured-status-labels.json",
+      "sha256": "4dd1896db36f681e4368a33fee8c3742326645c8a7eb7dd0da2cba192cea6b69",
+      "role": "config"
+    },
+    {
+      "path": "src/legacy/source/opening/render-anchors.cjs",
+      "sha256": "da995f43cc67a94d0fdfd3e6dae7b22c8f1d5a46ecaf3666cce700b93932346c",
+      "role": "source"
+    },
+    {
+      "path": "src/legacy/source/opening/render-opening.cjs",
+      "sha256": "36038709f5fb1f5dab37cc9412373c1076d9f4adb0c8fc826c16b38046bb2be5",
+      "role": "source"
+    },
+    {
+      "path": "src/legacy/source/probe.cjs",
+      "sha256": "f421fa3acbd360952dc62f4143ffb6c6a87b237a9bb02769f889d761379e2513",
+      "role": "source"
+    },
+    {
+      "path": "src/legacy/source/v3/brand-ui/render-brand-ui.cjs",
+      "sha256": "90ccb86b81da6f4e701f94e24658451ae7d8fccb03f394b9e2853efe14a9eedd",
+      "role": "source"
+    },
+    {
+      "path": "src/legacy/source/v3/game/baseline.cjs",
+      "sha256": "e2cc895dbcd019fc905c5467302c2c9666b1c82c0b4da9f287accd1e70f8913e",
+      "role": "source"
+    },
+    {
+      "path": "src/legacy/source/v3/game/crowd.cjs",
+      "sha256": "98d0baf882f8d00429beacadf56623b3db64883528107d8a69c4e07e710a3f62",
+      "role": "source"
+    },
+    {
+      "path": "src/legacy/source/v3/game/fall.cjs",
+      "sha256": "f0ba0225fb4ecdaad4f06494f13e048274860fd0f3bf814b162c4abe1240a12a",
+      "role": "source"
+    },
+    {
+      "path": "src/legacy/source/v3/game/gates-next.cjs",
+      "sha256": "c0dc5c4081b0bdf013f6a5747b3b7a0843931e6bb665b8a4c08dd95f1a7cbabc",
+      "role": "source"
+    },
+    {
+      "path": "src/legacy/source/v3/game/label-bitmaps.json",
+      "sha256": "12efeccb6098948a0e0c973f467e0b22ae4a4fbd699a85903eed7e0e6a7aacdd",
+      "role": "config"
+    },
+    {
+      "path": "src/legacy/source/v3/game/measured-camera.json",
+      "sha256": "f5d880d5cc71987ab9056f3aefa21bd5a51afb71c89718b4567cd173eb4fc650",
+      "role": "config"
+    },
+    {
+      "path": "src/legacy/source/v3/game/measured-failure-flash.json",
+      "sha256": "f1619338fa97dad0c35201ed0a13602cfde2d7b1627ded3dbaf7be6bbf18e46f",
+      "role": "config"
+    },
+    {
+      "path": "src/legacy/source/v3/game/measured-fall.json",
+      "sha256": "000a4b4c2c65e08be4c4cb1358765e6a4351fa341eef3cddfcdeaaef3b1a210d",
+      "role": "config"
+    },
+    {
+      "path": "src/legacy/source/v3/game/measured-next-detail.json",
+      "sha256": "515a89feed1105e9448c164172c52b6b87487a085f55c216b4c0bf9fb1c311de",
+      "role": "config"
+    },
+    {
+      "path": "src/legacy/source/v3/game/measured-next-headers.json",
+      "sha256": "2b52453afd90725f73b15d64a3bc4a22b62fb077958d6894ba81c215733d2e4c",
+      "role": "config"
+    },
+    {
+      "path": "src/legacy/source/v3/game/measured-pixel-elements.json",
+      "sha256": "259722ae378ab4148f93fc2aa492814d62d23520f74d54340bd9ca27111d922c",
+      "role": "config"
+    },
+    {
+      "path": "src/legacy/source/v3/game/measured-player-motion.json",
+      "sha256": "6b3ae1aef38660d6796d8aa596fdb4ad1e1aee7c941514e5be8df5b1bc855bb0",
+      "role": "config"
+    },
+    {
+      "path": "src/legacy/source/v3/game/measured-queue-detail.json",
+      "sha256": "c4c2679357bc2cd21d60a8073373039d47735901590f32e674c0c78f5d692e77",
+      "role": "config"
+    },
+    {
+      "path": "src/legacy/source/v3/game/measured-scan-lines.json",
+      "sha256": "389a8a725014cc9d7317c82acc646189069ef21bb864199ff842f20f384d4220",
+      "role": "config"
+    },
+    {
+      "path": "src/legacy/source/v3/game/measured-status-labels.json",
+      "sha256": "4dd1896db36f681e4368a33fee8c3742326645c8a7eb7dd0da2cba192cea6b69",
+      "role": "config"
+    },
+    {
+      "path": "src/legacy/source/v3/game/measured-warning-flash.json",
+      "sha256": "061d5271aba7e2209b1e1b345054f3f18765830fdbb9985646644a75bc62be11",
+      "role": "config"
+    },
+    {
+      "path": "src/legacy/source/v3/game/probe.cjs",
+      "sha256": "7de903dd68e7553ed66770fd47e8d9fd5b38312b72807dcceb7dd01ef7359284",
+      "role": "source"
+    },
+    {
+      "path": "src/legacy/source/v3/outro/render-outro.cjs",
+      "sha256": "2325877b0471444e791d5fa129f7928a3d19ddf337d7e23f4e0475baedd6ba7d",
+      "role": "source"
+    },
+    {
+      "path": "src/render-native.mjs",
+      "sha256": "02881c544588477f591d30f6f1195fcfa5a3e360c944022d3364d10d346da18e",
+      "role": "source"
+    },
+    {
+      "path": "src/scene-native.mjs",
+      "sha256": "13863b6a4ab7b78c9327faf379b63e32d936e6ff5480706c0fdcd381fa6d3138",
+      "role": "source"
+    },
+    {
+      "path": "test_prepare.py",
+      "sha256": "0a82a306f533c749b5dbb0b287133a4f47c0cd06996be63131344f521ed4e1cf",
+      "role": "source"
+    }
+  ],
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "locks/npm-package-lock.json"
+    },
+    {
+      "name": "python",
+      "version": "3.12.14",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "ffmpeg",
+      "version": "7.1.5-0+deb13u1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "ffprobe",
+      "version": "7.1.5-0+deb13u1",
+      "lock": "locks/runtime.json"
+    }
+  ],
+  "render": {
+    "entrypoint": "render.py",
+    "frames": 1560,
+    "width": 1920,
+    "height": 1080,
+    "fps_num": 30,
+    "fps_den": 1,
+    "audio_sample_rate": 48000,
+    "audio_channels": 2
+  },
+  "resources": [
+    {
+      "id": "opening-liberationserif-regular",
+      "mode": "provide",
+      "license": "Font-specific OFL/DejaVu terms, not project-wide MIT. Preserve notice and actual font copyright.",
+      "notice": "LICENSES/Opening-Liberation-COPYRIGHT.txt",
+      "source_url": "https://github.com/liberationfonts/liberation-fonts",
+      "sha256": "9caef765d2e891c10dd73658894f01e660fe0c1c83e0bda7d6edf561d8f623d4",
+      "bytes": 393692,
+      "instructions": "Supply the exact authorized file from your original private recovery assets directory. The link identifies provenance, not permission or an exact-byte download guarantee.",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "fonts/Opening-LiberationSerif-Regular.ttf"
+    },
+    {
+      "id": "opening-dejavusansmono",
+      "mode": "provide",
+      "license": "Font-specific OFL/DejaVu terms, not project-wide MIT. Preserve notice and actual font copyright.",
+      "notice": "LICENSES/Opening-DejaVu-COPYRIGHT.txt",
+      "source_url": "https://dejavu-fonts.github.io/License.html",
+      "sha256": "54bf827eb99404e8f430c330ad30f063334f637eba0109b6a18d4f566a8e9dd8",
+      "bytes": 343140,
+      "instructions": "Supply the exact authorized file from your original private recovery assets directory. The link identifies provenance, not permission or an exact-byte download guarantee.",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "fonts/Opening-DejaVuSansMono.ttf"
+    },
+    {
+      "id": "inter-var",
+      "mode": "provide",
+      "license": "Font-specific OFL/DejaVu terms, not project-wide MIT. Preserve notice and actual font copyright.",
+      "notice": "LICENSES/OFL.txt",
+      "source_url": "https://github.com/rsms/inter",
+      "sha256": "c8d76e1cb2a0a7cfbbae1e390be4e4b942b27f99ec07e1024b1fc916045eed09",
+      "bytes": 254236,
+      "instructions": "Supply the exact authorized file from your original private recovery assets directory. The link identifies provenance, not permission or an exact-byte download guarantee.",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "fonts/Inter-var.ttf"
+    },
+    {
+      "id": "gelasio-variable",
+      "mode": "provide",
+      "license": "Font-specific OFL/DejaVu terms, not project-wide MIT. Preserve notice and actual font copyright.",
+      "notice": "LICENSES/Gelasio-OFL.txt",
+      "source_url": "https://github.com/SorkinType/Gelasio",
+      "sha256": "4daecea457258c9ebeb8bc99ed3fd24353618bfad3ea4b93fa0b5d0468fc04e4",
+      "bytes": 168556,
+      "instructions": "Supply the exact authorized file from your original private recovery assets directory. The link identifies provenance, not permission or an exact-byte download guarantee.",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "fonts/Gelasio-variable.ttf"
+    },
+    {
+      "id": "carousel-notosanscjksc-bold",
+      "mode": "provide",
+      "license": "Font-specific OFL/DejaVu terms, not project-wide MIT. Preserve notice and actual font copyright.",
+      "notice": "LICENSES/Carousel-fonts-noto-cjk-COPYRIGHT.txt",
+      "source_url": "https://github.com/notofonts/noto-cjk",
+      "sha256": "4757792006b2598daa342799433a3b0f4a79e5dd1a65962ff394d176f27dc509",
+      "bytes": 17002224,
+      "instructions": "Supply the exact authorized file from your original private recovery assets directory. The link identifies provenance, not permission or an exact-byte download guarantee.",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "fonts/Carousel-NotoSansCJKsc-Bold.otf"
+    },
+    {
+      "id": "carousel-notosansdevanagari-bold",
+      "mode": "provide",
+      "license": "Font-specific OFL/DejaVu terms, not project-wide MIT. Preserve notice and actual font copyright.",
+      "notice": "LICENSES/Carousel-fonts-noto-core-COPYRIGHT.txt",
+      "source_url": "https://github.com/notofonts/noto-fonts",
+      "sha256": "77ad688cfe1dc55185bf4edb4db3c614202c65dd23a1463ad0e23fc52bcc9a5c",
+      "bytes": 237660,
+      "instructions": "Supply the exact authorized file from your original private recovery assets directory. The link identifies provenance, not permission or an exact-byte download guarantee.",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "fonts/Carousel-NotoSansDevanagari-Bold.ttf"
+    },
+    {
+      "id": "carousel-notocoloremoji",
+      "mode": "provide",
+      "license": "Font-specific OFL/DejaVu terms, not project-wide MIT. Preserve notice and actual font copyright.",
+      "notice": "LICENSES/Carousel-fonts-noto-color-emoji-COPYRIGHT.txt",
+      "source_url": "https://github.com/googlefonts/noto-emoji",
+      "sha256": "dac5c27651082d6c53dab5081f50d2022ddf6877d730fa919cf6a4fc2af22de0",
+      "bytes": 11260748,
+      "instructions": "Supply the exact authorized file from your original private recovery assets directory. The link identifies provenance, not permission or an exact-byte download guarantee.",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "fonts/Carousel-NotoColorEmoji.ttf"
+    },
+    {
+      "id": "carousel-dejavusans",
+      "mode": "provide",
+      "license": "Font-specific OFL/DejaVu terms, not project-wide MIT. Preserve notice and actual font copyright.",
+      "notice": "LICENSES/Carousel-fonts-dejavu-core-COPYRIGHT.txt",
+      "source_url": "https://dejavu-fonts.github.io/License.html",
+      "sha256": "57f73e11f51999432bf7ab22ce55b6f945d5eca1bf824404cfa9ec2e3718c84e",
+      "bytes": 759720,
+      "instructions": "Supply the exact authorized file from your original private recovery assets directory. The link identifies provenance, not permission or an exact-byte download guarantee.",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "fonts/Carousel-DejaVuSans.ttf"
+    },
+    {
+      "id": "carousel-notosansarabic-regular",
+      "mode": "provide",
+      "license": "Font-specific OFL/DejaVu terms, not project-wide MIT. Preserve notice and actual font copyright.",
+      "notice": "LICENSES/Carousel-fonts-noto-core-COPYRIGHT.txt",
+      "source_url": "https://github.com/notofonts/noto-fonts",
+      "sha256": "504d7407d86875acf7d04dfaa0fd7524d0b8797723bc4aa18022f29db25b0b6e",
+      "bytes": 244072,
+      "instructions": "Supply the exact authorized file from your original private recovery assets directory. The link identifies provenance, not permission or an exact-byte download guarantee.",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "fonts/Carousel-NotoSansArabic-Regular.ttf"
+    },
+    {
+      "id": "carousel-notosanshebrew-regular",
+      "mode": "provide",
+      "license": "Font-specific OFL/DejaVu terms, not project-wide MIT. Preserve notice and actual font copyright.",
+      "notice": "LICENSES/Carousel-fonts-noto-core-COPYRIGHT.txt",
+      "source_url": "https://github.com/notofonts/noto-fonts",
+      "sha256": "436900d5ad77d33e4234247f3076eaecd25b92b9bea0519514f684140e3566a7",
+      "bytes": 26892,
+      "instructions": "Supply the exact authorized file from your original private recovery assets directory. The link identifies provenance, not permission or an exact-byte download guarantee.",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "fonts/Carousel-NotoSansHebrew-Regular.ttf"
+    },
+    {
+      "id": "carousel-notosansthai-regular",
+      "mode": "provide",
+      "license": "Font-specific OFL/DejaVu terms, not project-wide MIT. Preserve notice and actual font copyright.",
+      "notice": "LICENSES/Carousel-fonts-noto-core-COPYRIGHT.txt",
+      "source_url": "https://github.com/notofonts/noto-fonts",
+      "sha256": "dfbd5ed0f1e68c3cbc51aa08f646d1ab0e68e7c4ceab70a69e465225ff701f93",
+      "bytes": 37744,
+      "instructions": "Supply the exact authorized file from your original private recovery assets directory. The link identifies provenance, not permission or an exact-byte download guarantee.",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "fonts/Carousel-NotoSansThai-Regular.ttf"
+    },
+    {
+      "id": "notosanssc-500",
+      "mode": "provide",
+      "license": "Font-specific OFL/DejaVu terms, not project-wide MIT. Preserve notice and actual font copyright.",
+      "notice": "LICENSES/OFL.txt",
+      "source_url": "https://github.com/notofonts/noto-cjk",
+      "sha256": "f2269539bbb42a89f02fe459c4ff6c46e328c97f512f14e1081e68c1070681f6",
+      "bytes": 2232368,
+      "instructions": "Supply the exact authorized file from your original private recovery assets directory. The link identifies provenance, not permission or an exact-byte download guarantee.",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "fonts/NotoSansSC-500.ttf"
+    },
+    {
+      "id": "pressstart2p-400",
+      "mode": "provide",
+      "license": "Font-specific OFL/DejaVu terms, not project-wide MIT. Preserve notice and actual font copyright.",
+      "notice": "LICENSES/OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/pressstart2p",
+      "sha256": "6d4ed8667f7d528659908e13c65d2ab42f7df8c5295fe35190ec0307a0edf0a1",
+      "bytes": 115280,
+      "instructions": "Supply the exact authorized file from your original private recovery assets directory. The link identifies provenance, not permission or an exact-byte download guarantee.",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "fonts/PressStart2P-400.ttf"
+    },
+    {
+      "id": "claude-duet-official",
+      "mode": "provide",
+      "license": "No open license asserted by recovery CREDITS. Original brand/copyright rights retained.",
+      "notice": "LICENSES/external-resources.txt",
+      "source_url": "https://claude.com/resources/articles/claude-duet",
+      "sha256": "dd02a73dacd5a377df522b133fd16fe4691f8d11524147cb0f8967abb2323c35",
+      "bytes": 8339,
+      "instructions": "Supply the exact authorized file from your original private recovery assets directory. The link identifies provenance, not permission or an exact-byte download guarantee.",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "claude-duet-official.svg"
+    },
+    {
+      "id": "dario-techcrunch-2023",
+      "mode": "provide",
+      "license": "CC BY 2.0; Kimberly White/Getty Images for TechCrunch. Preserve attribution, license and modifications.",
+      "notice": "LICENSES/external-resources.txt",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Dario_Amodei_at_TechCrunch_Disrupt_2023_01.jpg",
+      "sha256": "7491726ca688e37f803008cf0010ec126c8fb4da39ee4a54f13b0cd1c749d822",
+      "bytes": 1545886,
+      "instructions": "Supply the exact authorized file from your original private recovery assets directory. The link identifies provenance, not permission or an exact-byte download guarantee.",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "dario-techcrunch-2023.jpg"
+    },
+    {
+      "id": "original-v4-audio",
+      "mode": "provide",
+      "license": "Existing mix of Bit Shift (Kevin MacLeod, CC BY 4.0) and declared generated SFX. No separate reconstruction recipe in this archive.",
+      "notice": "LICENSES/external-resources.txt",
+      "source_url": "https://incompetech.com/music/royalty-free/index.html?Search=Search&isrc=USUAN1600045",
+      "sha256": "dba58a585f70bfede295b89b438d12ef534dc5742e9bd8859899d9ab89fc04fd",
+      "bytes": 1737917,
+      "instructions": "Supply the exact authorized file from your original private recovery assets directory. The link identifies provenance, not permission or an exact-byte download guarantee.",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "original-v4-audio.m4a"
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-frame",
+    "source_sha256": "5f1b3e4307d8ca2d75dbdc97e75570ef198285c8fb9b61730167da1e15be9b95",
+    "frame": 450,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "Selected stills plus full 1560-frame source/hash identity to the retained favorite; not full normal-speed watching. Owner retention does not imply every artistic review."
+    },
+    "listened": {
+      "status": "NOT_LISTENED",
+      "coverage": "No actual complete listening performed. AAC packet and decoded PCM equality are technical checks only."
+    },
+    "av_sync": {
+      "status": "NUMERIC_ONLY",
+      "coverage": "52-second stream contract, original AAC packets and decoded PCM identical; no perceptual synchronization review."
+    }
+  }
+}

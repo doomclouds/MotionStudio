@@ -1,0 +1,3 @@
+c8d76e1cb2a0a7cfbbae1e390be4e4b942b27f99ec07e1024b1fc916045eed09  Inter-var.ttf
+54bf827eb99404e8f430c330ad30f063334f637eba0109b6a18d4f566a8e9dd8  Opening-DejaVuSansMono.ttf
+9caef765d2e891c10dd73658894f01e660fe0c1c83e0bda7d6edf561d8f623d4  Opening-LiberationSerif-Regular.ttf

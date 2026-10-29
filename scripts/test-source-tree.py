@@ -120,11 +120,12 @@ class SourceTreeFixtures(unittest.TestCase):
         self.add('apparently-safe.txt', PNG)
         (self.repo / 'apparently-safe.txt').write_text('safe worktree replacement')
         self.audit(False, 'unapproved-media:PNG')
-    def test_public_policy_only_allows_two_exact_reviewed_images(self):
+    def test_public_policy_only_allows_three_exact_reviewed_images(self):
         allow = json.loads((ROOT / 'scripts/source-assets-allowlist.json').read_text())['assets']
         self.assertEqual(allow, {
             'docs/assets/report-overview.png': 'bbf9e87737e3f84dfb9a998ee0c973081418631b76a745b017b012d76b95e7c1',
             'portfolio/works/tessel/cover.jpg': 'ebfaf532643c1ac096ac44a05da0c81dede735e1703e2c3230ab3073857133f8',
+            'portfolio/works/favorite52/cover.jpg': '86a8a0c0a08c06ddab3dac47da45078dce055746c5dfd0c15ddb99079f6cab5d',
         })
     def test_exact_tessel_cover_allowed(self):
         name = 'portfolio/works/tessel/cover.jpg'
@@ -150,6 +151,36 @@ class SourceTreeFixtures(unittest.TestCase):
         self.reviewed_policy({name: hashlib.sha256(PNG).hexdigest()})
         self.add(name, PNG)
         self.audit(False, 'invalid-portfolio-cover-format-or-size')
+    def test_exact_favorite52_cover_allowed(self):
+        name = 'portfolio/works/favorite52/cover.jpg'
+        self.add(name, (ROOT / name).read_bytes())
+        self.audit(True)
+    def test_favorite52_cover_modified_rejected(self):
+        name = 'portfolio/works/favorite52/cover.jpg'
+        self.add(name, (ROOT / name).read_bytes() + b'changed')
+        self.audit(False, 'approved-source-asset-hash-mismatch')
+    def test_favorite52_cover_copied_to_another_work_rejected(self):
+        self.add('portfolio/works/another/cover.jpg', (ROOT / 'portfolio/works/favorite52/cover.jpg').read_bytes())
+        self.audit(False, 'unapproved-media:JPEG')
+    def test_extra_favorite52_image_rejected(self):
+        self.add('portfolio/works/favorite52/another.jpg', (ROOT / 'portfolio/works/favorite52/cover.jpg').read_bytes())
+        self.audit(False, 'unapproved-media:JPEG')
+    def test_favorite52_cover_size_cap(self):
+        name = 'portfolio/works/favorite52/cover.jpg'; data = b'\xff\xd8\xff' + b'x' * (1024 * 1024)
+        self.reviewed_policy({name: hashlib.sha256(data).hexdigest()})
+        self.add(name, data)
+        self.audit(False, 'invalid-portfolio-cover-format-or-size')
+    def test_favorite52_cover_must_be_jpeg(self):
+        name = 'portfolio/works/favorite52/cover.jpg'
+        self.reviewed_policy({name: hashlib.sha256(PNG).hexdigest()})
+        self.add(name, PNG)
+        self.audit(False, 'invalid-portfolio-cover-format-or-size')
+    def test_favorite52_external_icon_not_bundled(self):
+        self.add('portfolio/works/favorite52/claude-duet-official.svg', b'<svg/>')
+        self.audit(False, 'forbidden-path')
+    def test_favorite52_mixed_audio_not_bundled(self):
+        self.add('portfolio/works/favorite52/original-v4-audio.m4a', MP4)
+        self.audit(False, 'unapproved-media')
     def test_portfolio_movie_still_rejected(self):
         self.add('portfolio/works/tessel/film.mp4', MP4)
         self.audit(False, 'unapproved-media')

@@ -1,0 +1,20 @@
+const {createCanvas,GlobalFonts}=require('@napi-rs/canvas'),fs=require('fs'),path=require('path');
+GlobalFonts.registerFromPath(path.resolve(__dirname,'../assets/fonts/NotoSansSC-500.ttf'),'CJK');GlobalFonts.registerFromPath(path.resolve(__dirname,'../assets/fonts/PressStart2P-400.ttf'),'Pixel');
+const measured=require('./measured-pixel-elements.json');const W=1920,H=1080;const labels=require('./label-bitmaps.json');function bitmap(c,a,x,y,k){a.forEach((r,yy)=>[...r].forEach((v,xx)=>{if(v==='1')rect(c,x+xx*k,y+yy*k,k,k,'#f8f8f3')}));}
+function rect(c,x,y,w,h,col){c.fillStyle=col;c.fillRect(x,y,w,h)}
+const glyph={R:['11110','10001','10001','11110','10100','10010','10001'],E:['11111','10000','10000','11110','10000','10000','11111'],G:['01110','10001','10000','10111','10001','10001','01110'],I:['11111','00100','00100','00100','00100','00100','11111'],O:['01110','10001','10001','10001','10001','10001','01110'],N:['10001','11001','11001','10101','10011','10011','10001'],C:['01111','10000','10000','10000','10000','10000','01111'],H:['10001','10001','10001','11111','10001','10001','10001'],K:['10001','10010','10100','11000','10100','10010','10001']};
+function pixelText(c,s,x,y,k,col){for(let i=0;i<s.length;i++){let a=glyph[s[i]];if(!a)continue;a.forEach((r,yy)=>[...r].forEach((p,xx)=>{if(p==='1')rect(c,x+i*6*k+xx*k,y+yy*k,k,k,col)}));}}
+function player(c,x,y,shirt){const pal={h:'#291b16',s:'#f1c6a7',e:'#111416',m:'#c38f6f',b:'#4a89f3',d:'#2b5eb4',p:'#2c3954',k:'#111316'};if(shirt){pal.b=shirt;pal.d='#a65334';}const a=['   hhhh   ','  hhhhhh  ',' hhhhhhhh ',' hssssssh ',' ssessess ',' ssssssss ','  ssmmss  ',' bbbbbbbb ','bbbbbbbbbb','bbdbbbbdbb','sbdbbbbdbs',' bbbbbbbb ',' ppp  ppp ',' ppp  ppp ',' pp    pp ','kkk    kkk'];a.forEach((r,yy)=>[...r].forEach((p,xx)=>{if(pal[p])rect(c,x+xx*9,y+yy*9,9,9,pal[p])}));}
+function drawGate(c,dx=0){c.save();c.translate(dx,0);rect(c,1158,564,408,330,'#5e5b77');for(let row=0;row<9;row++){let y=row===0?582:579+row*36;for(let j=0;j<6;j++){let x=1158+j*72+(row%2?36:0);rect(c,x,y,66,row===0?27:30,'#8f8ca8');}}
+rect(c,1290,666,144,228,'#2d2220');for(let i=0;i<6;i++)rect(c,1299+i*24,666,9,222,'#aba5b5');rect(c,1290,732,144,9,'#aba5b5');rect(c,1290,816,144,9,'#aba5b5');rect(c,1290,888,144,9,'#aba5b5');
+rect(c,1182,550,6,32,'#77718a');rect(c,1536,550,6,32,'#77718a');rect(c,1092,420,540,138,'#0d0f0c');rect(c,1098,426,528,126,'#f5f5ef');rect(c,1104,432,516,114,'#10120e');c.fillStyle='#fafaf7';c.font='24px Pixel';c.fillText('REGION CHECK',1214,471);bitmap(c,labels.chinese,1286,486,3);c.restore();}
+function drawQuestion(c,dx=0){c.save();c.translate(dx,0);measured.question_grid_3px.forEach((r,yy)=>[...r].forEach((v,xx)=>rect(c,780+xx*3,534+yy*3,3,3,measured.question_palette[+v])));c.restore();}
+function render(options={}){const ca=createCanvas(W,H),c=ca.getContext('2d');['#131310','#19181f','#24222e','#282638','#2d2b40'].forEach((s,i)=>rect(c,0,i*180,1920,180,s));
+// Fixed sparse stars reconstruct the layer, not compression/noise.
+for(const q of measured.stars)rect(c,q.x,q.y,q.size,q.size,q.color);
+for(let x=-390+((options.backgroundOffset||0)%360);x<2100;x+=360){rect(c,x,750,240,140,'#343149');rect(c,x+60,714,150,180,'#343149');rect(c,x+96,684,78,210,'#343149');}
+rect(c,0,888,1920,6,'#151713');for(let row=0;row<4;row++){let y=row===0?894:891+row*48;for(let x=(row%2?-48:0)+((options.backgroundOffset||0)%96)-96;x<1920;x+=96){rect(c,x,y,96,48,'#a74e35');rect(c,x+3,y+(row===0?3:6),90,36,'#d97656');rect(c,x+3,y,90,row===0?3:6,'#f49476');}}
+// Masonry: doorway blocks and iron bars independently editable.
+if(!options.hideGate)drawGate(c);
+if(!options.hideQuestion)drawQuestion(c);if(!options.hidePlayer)player(c,951,744);return ca;}
+if(require.main===module)fs.writeFileSync(path.resolve(__dirname,'../qa/rebuilt-24.png'),render().toBuffer('image/png'));module.exports={render,player,rect,drawGate,drawQuestion};

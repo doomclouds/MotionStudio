@@ -1,0 +1,102 @@
+{
+  "families": {
+    "Opening-LiberationSerif-Regular.ttf": [
+      "OpeningSerif"
+    ],
+    "Opening-DejaVuSansMono.ttf": [
+      "OpeningMono"
+    ],
+    "Inter-var.ttf": [
+      "OpeningSans",
+      "ReplicaUI",
+      "CarouselSans",
+      "UI",
+      "OutroUI"
+    ],
+    "Gelasio-variable.ttf": [
+      "ReplicaGelasio",
+      "CarouselSerif",
+      "OutroSerif"
+    ],
+    "Carousel-NotoSansCJKsc-Bold.otf": [
+      "CarouselCJK"
+    ],
+    "Carousel-NotoSansDevanagari-Bold.ttf": [
+      "CarouselHindi"
+    ],
+    "Carousel-NotoColorEmoji.ttf": [
+      "CarouselEmoji",
+      "V3PartyEmoji"
+    ],
+    "Carousel-DejaVuSans.ttf": [
+      "CarouselGreek"
+    ],
+    "Carousel-NotoSansArabic-Regular.ttf": [
+      "CarouselArabic"
+    ],
+    "Carousel-NotoSansHebrew-Regular.ttf": [
+      "CarouselHebrew"
+    ],
+    "Carousel-NotoSansThai-Regular.ttf": [
+      "CarouselThai"
+    ],
+    "NotoSansSC-500.ttf": [
+      "CJK",
+      "BossCJK",
+      "OutroCN"
+    ],
+    "PressStart2P-400.ttf": [
+      "Pixel",
+      "OutroPixel"
+    ]
+  },
+  "collectionExtraction": {
+    "original": "Carousel-NotoSansCJK-Bold.ttc",
+    "face": 2,
+    "faces": [
+      {
+        "face": 0,
+        "name": "NotoSansCJKjp-Bold"
+      },
+      {
+        "face": 1,
+        "name": "NotoSansCJKkr-Bold"
+      },
+      {
+        "face": 2,
+        "name": "NotoSansCJKsc-Bold"
+      },
+      {
+        "face": 3,
+        "name": "NotoSansCJKtc-Bold"
+      },
+      {
+        "face": 4,
+        "name": "NotoSansCJKhk-Bold"
+      },
+      {
+        "face": 5,
+        "name": "NotoSansMonoCJKjp-Bold"
+      },
+      {
+        "face": 6,
+        "name": "NotoSansMonoCJKkr-Bold"
+      },
+      {
+        "face": 7,
+        "name": "NotoSansMonoCJKsc-Bold"
+      },
+      {
+        "face": 8,
+        "name": "NotoSansMonoCJKtc-Bold"
+      },
+      {
+        "face": 9,
+        "name": "NotoSansMonoCJKhk-Bold"
+      }
+    ],
+    "output": "Carousel-NotoSansCJKsc-Bold.otf",
+    "originalSHA256": "faa5f3656a78b2e2d450d27fe8382c778bc2b6bb5ea29c986664a6a435056ceb",
+    "outputSHA256": "4757792006b2598daa342799433a3b0f4a79e5dd1a65962ff394d176f27dc509"
+  }
+}

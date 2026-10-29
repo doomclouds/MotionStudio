@@ -1,0 +1,40 @@
+EXTERNAL RESOURCE / PUBLICATION BOUNDARY NOTICE
+
+The Git entry includes source code, notices and one reviewed cover, not the SVG,
+photograph, font binaries, mixed audio, reference film or rendered movie.
+
+Original visual reference: AlchainHust / huashu
+https://x.com/AlchainHust/status/2113208707668729984
+Some shapes, coordinates and timing were measured/redrawn from that reference.
+This is an unofficial study, not the author's recovered source project or endorsement.
+No blanket license for the original film's expression is asserted.
+
+Claude Duet icon, brand names and marks: rights retained by Anthropic and applicable
+rights holders. Official source: https://claude.com/resources/articles/claude-duet
+No open redistribution license has been established. Not bundled or auto-fetched.
+A public URL and a matching hash are not permission. Supply only when authorized.
+
+Bit Shift — Kevin MacLeod (incompetech.com), CC BY 4.0.
+https://incompetech.com/music/royalty-free/index.html?Search=Search&isrc=USUAN1600045
+https://creativecommons.org/licenses/by/4.0/
+The old project credits describe excerpts, filtering, fades, gain automation and
+newly synthesized effects. The exact mixed AAC has no established public URL or
+complete reconstruction recipe here. Source-music permission is not asserted as
+an independent clearance of every part of the mix. This is not the X film's audio.
+Not bundled or auto-fetched. User must have the right to supply/use their copy.
+
+Photograph: Kimberly White/Getty Images for TechCrunch. Published by TechCrunch.
+https://commons.wikimedia.org/wiki/File:Dario_Amodei_at_TechCrunch_Disrupt_2023_01.jpg
+https://www.flickr.com/photos/techcrunch/53202070940/
+Creative Commons Attribution 2.0 Generic: https://creativecommons.org/licenses/by/2.0/
+Changes: polygonal crop, translation, downsampling, palette pixelation, black outline,
+hand-coded eye and glasses accents. No endorsement by photographer or subject.
+Not bundled; preserve attribution and changes when rendering/distributing results.
+
+Game-like pixel characters, objects, brands and narrative remain a reference study;
+software licensing does not automatically license third-party visual expression.
+No claim of permission from all original-film/character/brand rights holders.
+
+Noncommercial learning/research describes this collection's use, not a replacement
+license or additional restriction on upstream MIT/OFL/CC rights.
+Rights-holder contact/removal requests: https://github.com/doomclouds/MotionStudio/issues

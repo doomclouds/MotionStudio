@@ -1,0 +1,5070 @@
+{
+  "samples_every_frame": [
+    {
+      "frame": 795,
+      "time_seconds": 26.5,
+      "player": {
+        "blue_torso_bbox": [
+          888,
+          806,
+          978,
+          854
+        ],
+        "x_torso_center": 933.0,
+        "y_torso_top": 806,
+        "sprite_top_left_estimate": [
+          879,
+          744
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        294,
+        540,
+        365,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        663,
+        550,
+        1125,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": -492,
+      "camera_basis": "outgoing REGION question; stable reference x786",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": null,
+      "pass_visible": false
+    },
+    {
+      "frame": 796,
+      "time_seconds": 26.533333,
+      "player": {
+        "blue_torso_bbox": [
+          654,
+          806,
+          744,
+          854
+        ],
+        "x_torso_center": 699.0,
+        "y_torso_top": 806,
+        "sprite_top_left_estimate": [
+          645,
+          744
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        15,
+        540,
+        87,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        387,
+        550,
+        849,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": -771,
+      "camera_basis": "outgoing REGION question; stable reference x786",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": null,
+      "pass_visible": false
+    },
+    {
+      "frame": 797,
+      "time_seconds": 26.566667,
+      "player": {
+        "blue_torso_bbox": [
+          452,
+          806,
+          544,
+          854
+        ],
+        "x_torso_center": 498.0,
+        "y_torso_top": 806,
+        "sprite_top_left_estimate": [
+          443,
+          744
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        1698,
+        540,
+        1770,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        150,
+        550,
+        609,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 912,
+      "camera_basis": "incoming PHONE question; reference x786",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": null,
+      "pass_visible": false
+    },
+    {
+      "frame": 798,
+      "time_seconds": 26.6,
+      "player": {
+        "blue_torso_bbox": [
+          290,
+          804,
+          382,
+          854
+        ],
+        "x_torso_center": 336.0,
+        "y_torso_top": 804,
+        "sprite_top_left_estimate": [
+          281,
+          742
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        1494,
+        540,
+        1566,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        0,
+        550,
+        1920,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 708,
+      "camera_basis": "incoming PHONE question; reference x786",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": null,
+      "pass_visible": false
+    },
+    {
+      "frame": 799,
+      "time_seconds": 26.633333,
+      "player": {
+        "blue_torso_bbox": [
+          160,
+          806,
+          252,
+          854
+        ],
+        "x_torso_center": 206.0,
+        "y_torso_top": 806,
+        "sprite_top_left_estimate": [
+          151,
+          744
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        1323,
+        540,
+        1395,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        0,
+        550,
+        1920,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 537,
+      "camera_basis": "incoming PHONE question; reference x786",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": null,
+      "pass_visible": false
+    },
+    {
+      "frame": 800,
+      "time_seconds": 26.666667,
+      "player": {
+        "blue_torso_bbox": [
+          60,
+          806,
+          153,
+          854
+        ],
+        "x_torso_center": 106.5,
+        "y_torso_top": 806,
+        "sprite_top_left_estimate": [
+          51,
+          744
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        1182,
+        540,
+        1254,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        0,
+        550,
+        1920,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 396,
+      "camera_basis": "incoming PHONE question; reference x786",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": null,
+      "pass_visible": false
+    },
+    {
+      "frame": 801,
+      "time_seconds": 26.7,
+      "player": {
+        "blue_torso_bbox": [
+          0,
+          806,
+          78,
+          852
+        ],
+        "x_torso_center": 39.0,
+        "y_torso_top": 806,
+        "sprite_top_left_estimate": [
+          -9,
+          744
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        1068,
+        540,
+        1140,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1440,
+        550,
+        1902,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 282,
+      "camera_basis": "incoming PHONE question; reference x786",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": null,
+      "pass_visible": false
+    },
+    {
+      "frame": 802,
+      "time_seconds": 26.733333,
+      "player": {
+        "blue_torso_bbox": [
+          0,
+          806,
+          30,
+          852
+        ],
+        "x_torso_center": 15.0,
+        "y_torso_top": 806,
+        "sprite_top_left_estimate": [
+          -9,
+          744
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        980,
+        540,
+        1052,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1350,
+        550,
+        1812,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 194,
+      "camera_basis": "incoming PHONE question; reference x786",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": null,
+      "pass_visible": false
+    },
+    {
+      "frame": 803,
+      "time_seconds": 26.766667,
+      "player": {
+        "blue_torso_bbox": null,
+        "sprite_top_left_estimate": null,
+        "confidence": "not measurable",
+        "state": "not_visible_or_offscreen; yellow question falsely matched skin and was removed"
+      },
+      "question_visible_yellow_bbox": [
+        912,
+        540,
+        984,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1284,
+        550,
+        1746,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 126,
+      "camera_basis": "incoming PHONE question; reference x786",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": null,
+      "pass_visible": false
+    },
+    {
+      "frame": 804,
+      "time_seconds": 26.8,
+      "player": {
+        "blue_torso_bbox": null,
+        "sprite_top_left_estimate": null,
+        "confidence": "not measurable",
+        "state": "not_visible_or_offscreen; yellow question falsely matched skin and was removed"
+      },
+      "question_visible_yellow_bbox": [
+        861,
+        540,
+        933,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1233,
+        550,
+        1695,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 75,
+      "camera_basis": "incoming PHONE question; reference x786",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": null,
+      "pass_visible": false
+    },
+    {
+      "frame": 805,
+      "time_seconds": 26.833333,
+      "player": {
+        "blue_torso_bbox": null,
+        "sprite_top_left_estimate": null,
+        "confidence": "not measurable",
+        "state": "not_visible_or_offscreen; yellow question falsely matched skin and was removed"
+      },
+      "question_visible_yellow_bbox": [
+        828,
+        540,
+        900,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1200,
+        550,
+        1659,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 42,
+      "camera_basis": "incoming PHONE question; reference x786",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": null,
+      "pass_visible": false
+    },
+    {
+      "frame": 806,
+      "time_seconds": 26.866667,
+      "player": {
+        "blue_torso_bbox": [
+          0,
+          807,
+          15,
+          852
+        ],
+        "x_torso_center": 7.5,
+        "y_torso_top": 807,
+        "sprite_top_left_estimate": [
+          -9,
+          745
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        804,
+        540,
+        876,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1176,
+        550,
+        1638,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 18,
+      "camera_basis": "incoming PHONE question; reference x786",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": null,
+      "pass_visible": false
+    },
+    {
+      "frame": 807,
+      "time_seconds": 26.9,
+      "player": {
+        "blue_torso_bbox": [
+          0,
+          806,
+          45,
+          852
+        ],
+        "x_torso_center": 22.5,
+        "y_torso_top": 806,
+        "sprite_top_left_estimate": [
+          -9,
+          744
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        792,
+        540,
+        864,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1164,
+        550,
+        1626,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 6,
+      "camera_basis": "incoming PHONE question; reference x786",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": null,
+      "pass_visible": false
+    },
+    {
+      "frame": 808,
+      "time_seconds": 26.933333,
+      "player": {
+        "blue_torso_bbox": [
+          0,
+          806,
+          81,
+          852
+        ],
+        "x_torso_center": 40.5,
+        "y_torso_top": 806,
+        "sprite_top_left_estimate": [
+          -9,
+          744
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        787,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 1,
+      "camera_basis": "incoming PHONE question; reference x786",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": null,
+      "pass_visible": false
+    },
+    {
+      "frame": 809,
+      "time_seconds": 26.966667,
+      "player": {
+        "blue_torso_bbox": [
+          30,
+          806,
+          120,
+          852
+        ],
+        "x_torso_center": 75.0,
+        "y_torso_top": 806,
+        "sprite_top_left_estimate": [
+          21,
+          744
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "PHONE building gray edge; includes impact screen shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 810,
+      "time_seconds": 27.0,
+      "player": {
+        "blue_torso_bbox": null,
+        "sprite_top_left_estimate": null,
+        "confidence": "not measurable",
+        "state": "not_visible_or_offscreen; yellow question falsely matched skin and was removed"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "PHONE building gray edge; includes impact screen shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 811,
+      "time_seconds": 27.033333,
+      "player": {
+        "blue_torso_bbox": null,
+        "sprite_top_left_estimate": null,
+        "confidence": "not measurable",
+        "state": "not_visible_or_offscreen; yellow question falsely matched skin and was removed"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "PHONE building gray edge; includes impact screen shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 812,
+      "time_seconds": 27.066667,
+      "player": {
+        "blue_torso_bbox": null,
+        "sprite_top_left_estimate": null,
+        "confidence": "not measurable",
+        "state": "not_visible_or_offscreen; yellow question falsely matched skin and was removed"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "PHONE building gray edge; includes impact screen shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 813,
+      "time_seconds": 27.1,
+      "player": {
+        "blue_torso_bbox": [
+          0,
+          806,
+          84,
+          852
+        ],
+        "x_torso_center": 42.0,
+        "y_torso_top": 806,
+        "sprite_top_left_estimate": [
+          -9,
+          744
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "PHONE building gray edge; includes impact screen shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 814,
+      "time_seconds": 27.133333,
+      "player": {
+        "blue_torso_bbox": [
+          108,
+          806,
+          198,
+          852
+        ],
+        "x_torso_center": 153.0,
+        "y_torso_top": 806,
+        "sprite_top_left_estimate": [
+          99,
+          744
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "PHONE building gray edge; includes impact screen shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 815,
+      "time_seconds": 27.166667,
+      "player": {
+        "blue_torso_bbox": [
+          222,
+          806,
+          312,
+          852
+        ],
+        "x_torso_center": 267.0,
+        "y_torso_top": 806,
+        "sprite_top_left_estimate": [
+          213,
+          744
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "PHONE building gray edge; includes impact screen shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 816,
+      "time_seconds": 27.2,
+      "player": {
+        "blue_torso_bbox": [
+          336,
+          806,
+          426,
+          852
+        ],
+        "x_torso_center": 381.0,
+        "y_torso_top": 806,
+        "sprite_top_left_estimate": [
+          327,
+          744
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "PHONE building gray edge; includes impact screen shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 817,
+      "time_seconds": 27.233333,
+      "player": {
+        "blue_torso_bbox": [
+          453,
+          806,
+          543,
+          852
+        ],
+        "x_torso_center": 498.0,
+        "y_torso_top": 806,
+        "sprite_top_left_estimate": [
+          444,
+          744
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "PHONE building gray edge; includes impact screen shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 818,
+      "time_seconds": 27.266667,
+      "player": {
+        "blue_torso_bbox": [
+          567,
+          806,
+          657,
+          852
+        ],
+        "x_torso_center": 612.0,
+        "y_torso_top": 806,
+        "sprite_top_left_estimate": [
+          558,
+          744
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "PHONE building gray edge; includes impact screen shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 819,
+      "time_seconds": 27.3,
+      "player": {
+        "blue_torso_bbox": [
+          681,
+          806,
+          771,
+          852
+        ],
+        "x_torso_center": 726.0,
+        "y_torso_top": 806,
+        "sprite_top_left_estimate": [
+          672,
+          744
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "PHONE building gray edge; includes impact screen shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 820,
+      "time_seconds": 27.333333,
+      "player": {
+        "blue_torso_bbox": [
+          795,
+          806,
+          885,
+          852
+        ],
+        "x_torso_center": 840.0,
+        "y_torso_top": 806,
+        "sprite_top_left_estimate": [
+          786,
+          744
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "PHONE building gray edge; includes impact screen shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 821,
+      "time_seconds": 27.366667,
+      "player": {
+        "blue_torso_bbox": [
+          909,
+          806,
+          999,
+          852
+        ],
+        "x_torso_center": 954.0,
+        "y_torso_top": 806,
+        "sprite_top_left_estimate": [
+          900,
+          744
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "PHONE building gray edge; includes impact screen shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 822,
+      "time_seconds": 27.4,
+      "player": {
+        "blue_torso_bbox": [
+          1026,
+          806,
+          1116,
+          852
+        ],
+        "x_torso_center": 1071.0,
+        "y_torso_top": 806,
+        "sprite_top_left_estimate": [
+          1017,
+          744
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "PHONE building gray edge; includes impact screen shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 823,
+      "time_seconds": 27.433333,
+      "player": {
+        "blue_torso_bbox": [
+          1140,
+          807,
+          1230,
+          854
+        ],
+        "x_torso_center": 1185.0,
+        "y_torso_top": 807,
+        "sprite_top_left_estimate": [
+          1131,
+          745
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "PHONE building gray edge; includes impact screen shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 824,
+      "time_seconds": 27.466667,
+      "player": {
+        "blue_torso_bbox": [
+          1088,
+          764,
+          1180,
+          810
+        ],
+        "x_torso_center": 1134.0,
+        "y_torso_top": 764,
+        "sprite_top_left_estimate": [
+          1079,
+          702
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        774,
+        552,
+        906,
+        650
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1146,
+        550,
+        1608,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": -12,
+      "camera_basis": "PHONE building gray edge; includes impact screen shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": [
+        969,
+        162,
+        1749,
+        255
+      ],
+      "red_x_visible": true,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 825,
+      "time_seconds": 27.5,
+      "player": {
+        "blue_torso_bbox": [
+          942,
+          654,
+          1032,
+          699
+        ],
+        "x_torso_center": 987.0,
+        "y_torso_top": 654,
+        "sprite_top_left_estimate": [
+          933,
+          592
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        774,
+        534,
+        906,
+        650
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1146,
+        550,
+        1608,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": -12,
+      "camera_basis": "PHONE building gray edge; includes impact screen shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": [
+        969,
+        144,
+        1749,
+        351
+      ],
+      "red_x_visible": true,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 826,
+      "time_seconds": 27.533333,
+      "player": {
+        "blue_torso_bbox": [
+          852,
+          600,
+          942,
+          645
+        ],
+        "x_torso_center": 897.0,
+        "y_torso_top": 600,
+        "sprite_top_left_estimate": [
+          843,
+          538
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        777,
+        537,
+        849,
+        609
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1149,
+        550,
+        1611,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": -9,
+      "camera_basis": "PHONE building gray edge; includes impact screen shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": [
+        972,
+        147,
+        1752,
+        399
+      ],
+      "red_x_visible": true,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 827,
+      "time_seconds": 27.566667,
+      "player": {
+        "blue_torso_bbox": [
+          800,
+          606,
+          892,
+          652
+        ],
+        "x_torso_center": 846.0,
+        "y_torso_top": 606,
+        "sprite_top_left_estimate": [
+          791,
+          544
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        780,
+        544,
+        810,
+        615
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1152,
+        550,
+        1614,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": -6,
+      "camera_basis": "PHONE building gray edge; includes impact screen shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": [
+        975,
+        153,
+        1755,
+        411
+      ],
+      "red_x_visible": true,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 828,
+      "time_seconds": 27.6,
+      "player": {
+        "blue_torso_bbox": [
+          780,
+          662,
+          870,
+          708
+        ],
+        "x_torso_center": 825.0,
+        "y_torso_top": 662,
+        "sprite_top_left_estimate": [
+          771,
+          600
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        783,
+        543,
+        855,
+        615
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1155,
+        550,
+        1617,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": -3,
+      "camera_basis": "PHONE building gray edge; includes impact screen shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": [
+        978,
+        153,
+        1758,
+        411
+      ],
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 829,
+      "time_seconds": 27.633333,
+      "player": {
+        "blue_torso_bbox": [
+          776,
+          752,
+          868,
+          798
+        ],
+        "x_torso_center": 822.0,
+        "y_torso_top": 752,
+        "sprite_top_left_estimate": [
+          767,
+          690
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "PHONE building gray edge; includes impact screen shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": [
+        981,
+        150,
+        1761,
+        408
+      ],
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 830,
+      "time_seconds": 27.666667,
+      "player": {
+        "blue_torso_bbox": [
+          777,
+          806,
+          867,
+          852
+        ],
+        "x_torso_center": 822.0,
+        "y_torso_top": 806,
+        "sprite_top_left_estimate": [
+          768,
+          744
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "PHONE building gray edge; includes impact screen shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": [
+        981,
+        150,
+        1761,
+        408
+      ],
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 831,
+      "time_seconds": 27.7,
+      "player": {
+        "blue_torso_bbox": [
+          777,
+          806,
+          867,
+          852
+        ],
+        "x_torso_center": 822.0,
+        "y_torso_top": 806,
+        "sprite_top_left_estimate": [
+          768,
+          744
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "PHONE building gray edge; includes impact screen shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": [
+        981,
+        150,
+        1761,
+        408
+      ],
+      "red_x_visible": true,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 832,
+      "time_seconds": 27.733333,
+      "player": {
+        "blue_torso_bbox": [
+          777,
+          806,
+          867,
+          852
+        ],
+        "x_torso_center": 822.0,
+        "y_torso_top": 806,
+        "sprite_top_left_estimate": [
+          768,
+          744
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "PHONE building gray edge; includes impact screen shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": [
+        981,
+        150,
+        1761,
+        408
+      ],
+      "red_x_visible": true,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 833,
+      "time_seconds": 27.766667,
+      "player": {
+        "blue_torso_bbox": [
+          776,
+          774,
+          868,
+          819
+        ],
+        "x_torso_center": 822.0,
+        "y_torso_top": 774,
+        "sprite_top_left_estimate": [
+          767,
+          712
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "PHONE building gray edge; includes impact screen shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": [
+        981,
+        150,
+        1761,
+        408
+      ],
+      "red_x_visible": true,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 834,
+      "time_seconds": 27.8,
+      "player": {
+        "blue_torso_bbox": [
+          776,
+          726,
+          868,
+          771
+        ],
+        "x_torso_center": 822.0,
+        "y_torso_top": 726,
+        "sprite_top_left_estimate": [
+          767,
+          664
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "PHONE building gray edge; includes impact screen shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": [
+        981,
+        150,
+        1761,
+        408
+      ],
+      "red_x_visible": true,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 835,
+      "time_seconds": 27.833333,
+      "player": {
+        "blue_torso_bbox": [
+          776,
+          696,
+          868,
+          741
+        ],
+        "x_torso_center": 822.0,
+        "y_torso_top": 696,
+        "sprite_top_left_estimate": [
+          767,
+          634
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "PHONE building gray edge; includes impact screen shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": [
+        981,
+        150,
+        1761,
+        408
+      ],
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 836,
+      "time_seconds": 27.866667,
+      "player": {
+        "blue_torso_bbox": [
+          776,
+          678,
+          868,
+          723
+        ],
+        "x_torso_center": 822.0,
+        "y_torso_top": 678,
+        "sprite_top_left_estimate": [
+          767,
+          616
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "PHONE building gray edge; includes impact screen shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": [
+        981,
+        150,
+        1761,
+        408
+      ],
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 837,
+      "time_seconds": 27.9,
+      "player": {
+        "blue_torso_bbox": [
+          776,
+          672,
+          868,
+          717
+        ],
+        "x_torso_center": 822.0,
+        "y_torso_top": 672,
+        "sprite_top_left_estimate": [
+          767,
+          610
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        609
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "PHONE building gray edge; includes impact screen shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": [
+        981,
+        150,
+        1761,
+        408
+      ],
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 838,
+      "time_seconds": 27.933333,
+      "player": {
+        "blue_torso_bbox": [
+          776,
+          668,
+          868,
+          714
+        ],
+        "x_torso_center": 822.0,
+        "y_torso_top": 668,
+        "sprite_top_left_estimate": [
+          767,
+          606
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        606
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "PHONE building gray edge; includes impact screen shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": [
+        981,
+        150,
+        1761,
+        408
+      ],
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 839,
+      "time_seconds": 27.966667,
+      "player": {
+        "blue_torso_bbox": [
+          776,
+          668,
+          868,
+          714
+        ],
+        "x_torso_center": 822.0,
+        "y_torso_top": 668,
+        "sprite_top_left_estimate": [
+          767,
+          606
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        606
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "PHONE building gray edge; includes impact screen shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": [
+        981,
+        150,
+        1761,
+        408
+      ],
+      "red_x_visible": true,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 840,
+      "time_seconds": 28.0,
+      "player": {
+        "blue_torso_bbox": [
+          776,
+          672,
+          868,
+          717
+        ],
+        "x_torso_center": 822.0,
+        "y_torso_top": 672,
+        "sprite_top_left_estimate": [
+          767,
+          610
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        609
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "PHONE building gray edge; includes impact screen shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": [
+        981,
+        150,
+        1761,
+        408
+      ],
+      "red_x_visible": true,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 841,
+      "time_seconds": 28.033333,
+      "player": {
+        "blue_torso_bbox": [
+          776,
+          678,
+          868,
+          723
+        ],
+        "x_torso_center": 822.0,
+        "y_torso_top": 678,
+        "sprite_top_left_estimate": [
+          767,
+          616
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "PHONE building gray edge; includes impact screen shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": [
+        981,
+        150,
+        1761,
+        408
+      ],
+      "red_x_visible": true,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 842,
+      "time_seconds": 28.066667,
+      "player": {
+        "blue_torso_bbox": [
+          776,
+          696,
+          868,
+          741
+        ],
+        "x_torso_center": 822.0,
+        "y_torso_top": 696,
+        "sprite_top_left_estimate": [
+          767,
+          634
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "PHONE building gray edge; includes impact screen shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": [
+        981,
+        150,
+        1761,
+        408
+      ],
+      "red_x_visible": true,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 843,
+      "time_seconds": 28.1,
+      "player": {
+        "blue_torso_bbox": [
+          776,
+          726,
+          868,
+          771
+        ],
+        "x_torso_center": 822.0,
+        "y_torso_top": 726,
+        "sprite_top_left_estimate": [
+          767,
+          664
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "PHONE building gray edge; includes impact screen shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": [
+        981,
+        150,
+        1761,
+        408
+      ],
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 844,
+      "time_seconds": 28.133333,
+      "player": {
+        "blue_torso_bbox": [
+          776,
+          774,
+          868,
+          819
+        ],
+        "x_torso_center": 822.0,
+        "y_torso_top": 774,
+        "sprite_top_left_estimate": [
+          767,
+          712
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "PHONE building gray edge; includes impact screen shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": [
+        981,
+        150,
+        1761,
+        408
+      ],
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 845,
+      "time_seconds": 28.166667,
+      "player": {
+        "blue_torso_bbox": [
+          777,
+          806,
+          867,
+          852
+        ],
+        "x_torso_center": 822.0,
+        "y_torso_top": 806,
+        "sprite_top_left_estimate": [
+          768,
+          744
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "PHONE building gray edge; includes impact screen shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 846,
+      "time_seconds": 28.2,
+      "player": {
+        "blue_torso_bbox": null,
+        "skin_or_orange_bbox": [
+          777,
+          771,
+          866,
+          852
+        ],
+        "x_visible_center": 821.5,
+        "y_visible_top": 771,
+        "sprite_top_left_estimate": null,
+        "confidence": "medium; short orange/skin state, not compatible with blue-torso origin",
+        "state": "orange_skin_flash"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "PHONE building gray edge; includes impact screen shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 847,
+      "time_seconds": 28.233333,
+      "player": {
+        "blue_torso_bbox": null,
+        "skin_or_orange_bbox": [
+          777,
+          771,
+          866,
+          852
+        ],
+        "x_visible_center": 821.5,
+        "y_visible_top": 771,
+        "sprite_top_left_estimate": null,
+        "confidence": "medium; short orange/skin state, not compatible with blue-torso origin",
+        "state": "orange_skin_flash"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "PHONE building gray edge; includes impact screen shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 848,
+      "time_seconds": 28.266667,
+      "player": {
+        "blue_torso_bbox": [
+          777,
+          806,
+          867,
+          852
+        ],
+        "x_torso_center": 822.0,
+        "y_torso_top": 806,
+        "sprite_top_left_estimate": [
+          768,
+          744
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "PHONE building gray edge; includes impact screen shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 849,
+      "time_seconds": 28.3,
+      "player": {
+        "blue_torso_bbox": null,
+        "skin_or_orange_bbox": [
+          777,
+          771,
+          866,
+          852
+        ],
+        "x_visible_center": 821.5,
+        "y_visible_top": 771,
+        "sprite_top_left_estimate": null,
+        "confidence": "medium; short orange/skin state, not compatible with blue-torso origin",
+        "state": "orange_skin_flash"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "PHONE building gray edge; includes impact screen shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 850,
+      "time_seconds": 28.333333,
+      "player": {
+        "blue_torso_bbox": null,
+        "skin_or_orange_bbox": [
+          777,
+          772,
+          866,
+          852
+        ],
+        "x_visible_center": 821.5,
+        "y_visible_top": 772,
+        "sprite_top_left_estimate": null,
+        "confidence": "medium; short orange/skin state, not compatible with blue-torso origin",
+        "state": "orange_skin_flash"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "PHONE building gray edge; includes impact screen shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 851,
+      "time_seconds": 28.366667,
+      "player": {
+        "blue_torso_bbox": [
+          777,
+          806,
+          874,
+          852
+        ],
+        "x_torso_center": 825.5,
+        "y_torso_top": 806,
+        "sprite_top_left_estimate": [
+          768,
+          744
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "PHONE building gray edge; includes impact screen shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 15921,
+        "bbox": [
+          1296,
+          672,
+          1428,
+          888
+        ]
+      },
+      "pass_visible": true
+    },
+    {
+      "frame": 852,
+      "time_seconds": 28.4,
+      "player": {
+        "blue_torso_bbox": null,
+        "skin_or_orange_bbox": [
+          777,
+          771,
+          866,
+          852
+        ],
+        "x_visible_center": 821.5,
+        "y_visible_top": 771,
+        "sprite_top_left_estimate": null,
+        "confidence": "medium; short orange/skin state, not compatible with blue-torso origin",
+        "state": "orange_skin_flash"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "PHONE building gray edge; includes impact screen shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 19971,
+        "bbox": [
+          1296,
+          672,
+          1428,
+          888
+        ]
+      },
+      "pass_visible": true
+    },
+    {
+      "frame": 853,
+      "time_seconds": 28.433333,
+      "player": {
+        "blue_torso_bbox": null,
+        "skin_or_orange_bbox": [
+          777,
+          771,
+          866,
+          852
+        ],
+        "x_visible_center": 821.5,
+        "y_visible_top": 771,
+        "sprite_top_left_estimate": null,
+        "confidence": "medium; short orange/skin state, not compatible with blue-torso origin",
+        "state": "orange_skin_flash"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "PHONE building gray edge; includes impact screen shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 22220,
+        "bbox": [
+          1296,
+          672,
+          1428,
+          888
+        ]
+      },
+      "pass_visible": true
+    },
+    {
+      "frame": 854,
+      "time_seconds": 28.466667,
+      "player": {
+        "blue_torso_bbox": [
+          813,
+          806,
+          910,
+          852
+        ],
+        "x_torso_center": 861.5,
+        "y_torso_top": 806,
+        "sprite_top_left_estimate": [
+          804,
+          744
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "PHONE building gray edge; includes impact screen shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 24772,
+        "bbox": [
+          1296,
+          672,
+          1428,
+          888
+        ]
+      },
+      "pass_visible": true
+    },
+    {
+      "frame": 855,
+      "time_seconds": 28.5,
+      "player": {
+        "blue_torso_bbox": [
+          888,
+          806,
+          987,
+          852
+        ],
+        "x_torso_center": 937.5,
+        "y_torso_top": 806,
+        "sprite_top_left_estimate": [
+          879,
+          744
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "PHONE building gray edge; includes impact screen shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 26056,
+        "bbox": [
+          1296,
+          672,
+          1428,
+          888
+        ]
+      },
+      "pass_visible": true
+    },
+    {
+      "frame": 856,
+      "time_seconds": 28.533333,
+      "player": {
+        "blue_torso_bbox": [
+          960,
+          806,
+          1059,
+          852
+        ],
+        "x_torso_center": 1009.5,
+        "y_torso_top": 806,
+        "sprite_top_left_estimate": [
+          951,
+          744
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "PHONE building gray edge; includes impact screen shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 26952,
+        "bbox": [
+          1296,
+          672,
+          1428,
+          888
+        ]
+      },
+      "pass_visible": true
+    },
+    {
+      "frame": 857,
+      "time_seconds": 28.566667,
+      "player": {
+        "blue_torso_bbox": [
+          1035,
+          806,
+          1128,
+          852
+        ],
+        "x_torso_center": 1081.5,
+        "y_torso_top": 806,
+        "sprite_top_left_estimate": [
+          1026,
+          744
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "PHONE building gray edge; includes impact screen shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 27524,
+        "bbox": [
+          1296,
+          672,
+          1428,
+          888
+        ]
+      },
+      "pass_visible": true
+    },
+    {
+      "frame": 858,
+      "time_seconds": 28.6,
+      "player": {
+        "blue_torso_bbox": [
+          1107,
+          806,
+          1206,
+          852
+        ],
+        "x_torso_center": 1156.5,
+        "y_torso_top": 806,
+        "sprite_top_left_estimate": [
+          1098,
+          744
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "PHONE building gray edge; includes impact screen shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 27688,
+        "bbox": [
+          1296,
+          672,
+          1428,
+          888
+        ]
+      },
+      "pass_visible": true
+    },
+    {
+      "frame": 859,
+      "time_seconds": 28.633333,
+      "player": {
+        "blue_torso_bbox": [
+          720,
+          806,
+          814,
+          854
+        ],
+        "x_torso_center": 767.0,
+        "y_torso_top": 806,
+        "sprite_top_left_estimate": [
+          711,
+          744
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        324,
+        540,
+        396,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        696,
+        550,
+        1158,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": -462,
+      "camera_basis": "outgoing PHONE building edge",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": null,
+      "pass_visible": true
+    },
+    {
+      "frame": 860,
+      "time_seconds": 28.666667,
+      "player": {
+        "blue_torso_bbox": [
+          410,
+          806,
+          506,
+          854
+        ],
+        "x_torso_center": 458.0,
+        "y_torso_top": 806,
+        "sprite_top_left_estimate": [
+          401,
+          744
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        1863,
+        540,
+        1920,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        315,
+        550,
+        777,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": -843,
+      "camera_basis": "outgoing PHONE building edge",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": null,
+      "pass_visible": true
+    },
+    {
+      "frame": 861,
+      "time_seconds": 28.7,
+      "player": {
+        "blue_torso_bbox": [
+          177,
+          806,
+          274,
+          852
+        ],
+        "x_torso_center": 225.5,
+        "y_torso_top": 806,
+        "sprite_top_left_estimate": [
+          168,
+          744
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        1554,
+        540,
+        1626,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        6,
+        550,
+        468,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": -1152,
+      "camera_basis": "outgoing PHONE building edge",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": null,
+      "pass_visible": true
+    },
+    {
+      "frame": 862,
+      "time_seconds": 28.733333,
+      "player": {
+        "blue_torso_bbox": [
+          6,
+          806,
+          104,
+          854
+        ],
+        "x_torso_center": 55.0,
+        "y_torso_top": 806,
+        "sprite_top_left_estimate": [
+          -3,
+          744
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        1311,
+        540,
+        1383,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        0,
+        550,
+        1920,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 525,
+      "camera_basis": "incoming BILLING question",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": null,
+      "pass_visible": true
+    },
+    {
+      "frame": 863,
+      "time_seconds": 28.766667,
+      "player": {
+        "blue_torso_bbox": null,
+        "sprite_top_left_estimate": null,
+        "confidence": "not measurable",
+        "state": "not_visible_or_offscreen; yellow question falsely matched skin and was removed"
+      },
+      "question_visible_yellow_bbox": [
+        1125,
+        540,
+        1197,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        0,
+        550,
+        1920,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 339,
+      "camera_basis": "incoming BILLING question",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": null,
+      "pass_visible": true
+    },
+    {
+      "frame": 864,
+      "time_seconds": 28.8,
+      "player": {
+        "blue_torso_bbox": null,
+        "sprite_top_left_estimate": null,
+        "confidence": "not measurable",
+        "state": "not_visible_or_offscreen; yellow question falsely matched skin and was removed"
+      },
+      "question_visible_yellow_bbox": [
+        990,
+        540,
+        1062,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1362,
+        550,
+        1824,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 204,
+      "camera_basis": "incoming BILLING question",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": null,
+      "pass_visible": false
+    },
+    {
+      "frame": 865,
+      "time_seconds": 28.833333,
+      "player": {
+        "blue_torso_bbox": null,
+        "sprite_top_left_estimate": null,
+        "confidence": "not measurable",
+        "state": "not_visible_or_offscreen; yellow question falsely matched skin and was removed"
+      },
+      "question_visible_yellow_bbox": [
+        897,
+        540,
+        969,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1269,
+        550,
+        1731,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 111,
+      "camera_basis": "incoming BILLING question",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": null,
+      "pass_visible": false
+    },
+    {
+      "frame": 866,
+      "time_seconds": 28.866667,
+      "player": {
+        "blue_torso_bbox": null,
+        "sprite_top_left_estimate": null,
+        "confidence": "not measurable",
+        "state": "not_visible_or_offscreen; yellow question falsely matched skin and was removed"
+      },
+      "question_visible_yellow_bbox": [
+        837,
+        540,
+        909,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1209,
+        550,
+        1671,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 51,
+      "camera_basis": "incoming BILLING question",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": null,
+      "pass_visible": false
+    },
+    {
+      "frame": 867,
+      "time_seconds": 28.9,
+      "player": {
+        "blue_torso_bbox": null,
+        "sprite_top_left_estimate": null,
+        "confidence": "not measurable",
+        "state": "not_visible_or_offscreen; yellow question falsely matched skin and was removed"
+      },
+      "question_visible_yellow_bbox": [
+        804,
+        540,
+        876,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1176,
+        550,
+        1638,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 18,
+      "camera_basis": "incoming BILLING question",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": null,
+      "pass_visible": false
+    },
+    {
+      "frame": 868,
+      "time_seconds": 28.933333,
+      "player": {
+        "blue_torso_bbox": [
+          0,
+          807,
+          24,
+          852
+        ],
+        "x_torso_center": 12.0,
+        "y_torso_top": 807,
+        "sprite_top_left_estimate": [
+          -9,
+          745
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        789,
+        540,
+        861,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1161,
+        550,
+        1623,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 3,
+      "camera_basis": "incoming BILLING question",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": null,
+      "pass_visible": false
+    },
+    {
+      "frame": 869,
+      "time_seconds": 28.966667,
+      "player": {
+        "blue_torso_bbox": [
+          0,
+          806,
+          96,
+          852
+        ],
+        "x_torso_center": 48.0,
+        "y_torso_top": 806,
+        "sprite_top_left_estimate": [
+          -9,
+          744
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "BILLING building gray edge; includes impact shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 870,
+      "time_seconds": 29.0,
+      "player": {
+        "blue_torso_bbox": null,
+        "sprite_top_left_estimate": null,
+        "confidence": "not measurable",
+        "state": "not_visible_or_offscreen; yellow question falsely matched skin and was removed"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "BILLING building gray edge; includes impact shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 871,
+      "time_seconds": 29.033333,
+      "player": {
+        "blue_torso_bbox": null,
+        "sprite_top_left_estimate": null,
+        "confidence": "not measurable",
+        "state": "not_visible_or_offscreen; yellow question falsely matched skin and was removed"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "BILLING building gray edge; includes impact shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 872,
+      "time_seconds": 29.066667,
+      "player": {
+        "blue_torso_bbox": [
+          0,
+          806,
+          92,
+          852
+        ],
+        "x_torso_center": 46.0,
+        "y_torso_top": 806,
+        "sprite_top_left_estimate": [
+          -9,
+          744
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "BILLING building gray edge; includes impact shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 873,
+      "time_seconds": 29.1,
+      "player": {
+        "blue_torso_bbox": [
+          165,
+          806,
+          264,
+          852
+        ],
+        "x_torso_center": 214.5,
+        "y_torso_top": 806,
+        "sprite_top_left_estimate": [
+          156,
+          744
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "BILLING building gray edge; includes impact shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 874,
+      "time_seconds": 29.133333,
+      "player": {
+        "blue_torso_bbox": [
+          336,
+          806,
+          428,
+          852
+        ],
+        "x_torso_center": 382.0,
+        "y_torso_top": 806,
+        "sprite_top_left_estimate": [
+          327,
+          744
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "BILLING building gray edge; includes impact shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 875,
+      "time_seconds": 29.166667,
+      "player": {
+        "blue_torso_bbox": [
+          510,
+          806,
+          608,
+          852
+        ],
+        "x_torso_center": 559.0,
+        "y_torso_top": 806,
+        "sprite_top_left_estimate": [
+          501,
+          744
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "BILLING building gray edge; includes impact shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 876,
+      "time_seconds": 29.2,
+      "player": {
+        "blue_torso_bbox": [
+          681,
+          806,
+          778,
+          852
+        ],
+        "x_torso_center": 729.5,
+        "y_torso_top": 806,
+        "sprite_top_left_estimate": [
+          672,
+          744
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "BILLING building gray edge; includes impact shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 877,
+      "time_seconds": 29.233333,
+      "player": {
+        "blue_torso_bbox": [
+          852,
+          806,
+          948,
+          852
+        ],
+        "x_torso_center": 900.0,
+        "y_torso_top": 806,
+        "sprite_top_left_estimate": [
+          843,
+          744
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "BILLING building gray edge; includes impact shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 878,
+      "time_seconds": 29.266667,
+      "player": {
+        "blue_torso_bbox": [
+          1026,
+          806,
+          1124,
+          852
+        ],
+        "x_torso_center": 1075.0,
+        "y_torso_top": 806,
+        "sprite_top_left_estimate": [
+          1017,
+          744
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "BILLING building gray edge; includes impact shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 879,
+      "time_seconds": 29.3,
+      "player": {
+        "blue_torso_bbox": [
+          1196,
+          806,
+          1296,
+          854
+        ],
+        "x_torso_center": 1246.0,
+        "y_torso_top": 806,
+        "sprite_top_left_estimate": [
+          1187,
+          744
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "BILLING building gray edge; includes impact shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 880,
+      "time_seconds": 29.333333,
+      "player": {
+        "blue_torso_bbox": [
+          920,
+          644,
+          1020,
+          690
+        ],
+        "x_torso_center": 970.0,
+        "y_torso_top": 644,
+        "sprite_top_left_estimate": [
+          911,
+          582
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        771,
+        540,
+        903,
+        650
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1143,
+        550,
+        1605,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": -15,
+      "camera_basis": "BILLING building gray edge; includes impact shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": [
+        1014,
+        150,
+        1698,
+        312
+      ],
+      "red_x_visible": true,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 881,
+      "time_seconds": 29.366667,
+      "player": {
+        "blue_torso_bbox": [
+          800,
+          608,
+          900,
+          654
+        ],
+        "x_torso_center": 850.0,
+        "y_torso_top": 608,
+        "sprite_top_left_estimate": [
+          791,
+          546
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        774,
+        550,
+        819,
+        621
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1146,
+        550,
+        1608,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": -12,
+      "camera_basis": "BILLING building gray edge; includes impact shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": [
+        1017,
+        159,
+        1701,
+        393
+      ],
+      "red_x_visible": true,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 882,
+      "time_seconds": 29.4,
+      "player": {
+        "blue_torso_bbox": [
+          770,
+          696,
+          870,
+          741
+        ],
+        "x_torso_center": 820.0,
+        "y_torso_top": 696,
+        "sprite_top_left_estimate": [
+          761,
+          634
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        777,
+        534,
+        909,
+        650
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1149,
+        550,
+        1611,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": -9,
+      "camera_basis": "BILLING building gray edge; includes impact shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": [
+        1020,
+        144,
+        1704,
+        402
+      ],
+      "red_x_visible": true,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 883,
+      "time_seconds": 29.433333,
+      "player": {
+        "blue_torso_bbox": [
+          771,
+          804,
+          868,
+          849
+        ],
+        "x_torso_center": 819.5,
+        "y_torso_top": 804,
+        "sprite_top_left_estimate": [
+          762,
+          742
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        780,
+        537,
+        912,
+        650
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1152,
+        550,
+        1614,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": -6,
+      "camera_basis": "BILLING building gray edge; includes impact shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": [
+        1023,
+        147,
+        1707,
+        405
+      ],
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 884,
+      "time_seconds": 29.466667,
+      "player": {
+        "blue_torso_bbox": [
+          774,
+          806,
+          866,
+          852
+        ],
+        "x_torso_center": 820.0,
+        "y_torso_top": 806,
+        "sprite_top_left_estimate": [
+          765,
+          744
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        783,
+        540,
+        915,
+        650
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1155,
+        550,
+        1617,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": -3,
+      "camera_basis": "BILLING building gray edge; includes impact shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": [
+        1026,
+        150,
+        1710,
+        408
+      ],
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 885,
+      "time_seconds": 29.5,
+      "player": {
+        "blue_torso_bbox": [
+          776,
+          750,
+          876,
+          795
+        ],
+        "x_torso_center": 826.0,
+        "y_torso_top": 750,
+        "sprite_top_left_estimate": [
+          767,
+          688
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "BILLING building gray edge; includes impact shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": [
+        1030,
+        150,
+        1713,
+        408
+      ],
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 886,
+      "time_seconds": 29.533333,
+      "player": {
+        "blue_torso_bbox": [
+          776,
+          692,
+          876,
+          738
+        ],
+        "x_torso_center": 826.0,
+        "y_torso_top": 692,
+        "sprite_top_left_estimate": [
+          767,
+          630
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "BILLING building gray edge; includes impact shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": [
+        1030,
+        150,
+        1713,
+        408
+      ],
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 887,
+      "time_seconds": 29.566667,
+      "player": {
+        "blue_torso_bbox": [
+          776,
+          672,
+          876,
+          717
+        ],
+        "x_torso_center": 826.0,
+        "y_torso_top": 672,
+        "sprite_top_left_estimate": [
+          767,
+          610
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        609
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "BILLING building gray edge; includes impact shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": [
+        1030,
+        150,
+        1713,
+        408
+      ],
+      "red_x_visible": true,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 888,
+      "time_seconds": 29.6,
+      "player": {
+        "blue_torso_bbox": [
+          776,
+          668,
+          876,
+          714
+        ],
+        "x_torso_center": 826.0,
+        "y_torso_top": 668,
+        "sprite_top_left_estimate": [
+          767,
+          606
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        606
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "BILLING building gray edge; includes impact shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": [
+        1030,
+        150,
+        1713,
+        408
+      ],
+      "red_x_visible": true,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 889,
+      "time_seconds": 29.633333,
+      "player": {
+        "blue_torso_bbox": [
+          776,
+          672,
+          876,
+          717
+        ],
+        "x_torso_center": 826.0,
+        "y_torso_top": 672,
+        "sprite_top_left_estimate": [
+          767,
+          610
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        609
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "BILLING building gray edge; includes impact shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": [
+        1030,
+        150,
+        1713,
+        408
+      ],
+      "red_x_visible": true,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 890,
+      "time_seconds": 29.666667,
+      "player": {
+        "blue_torso_bbox": [
+          776,
+          692,
+          876,
+          738
+        ],
+        "x_torso_center": 826.0,
+        "y_torso_top": 692,
+        "sprite_top_left_estimate": [
+          767,
+          630
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "BILLING building gray edge; includes impact shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": [
+        1030,
+        150,
+        1713,
+        408
+      ],
+      "red_x_visible": true,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 891,
+      "time_seconds": 29.7,
+      "player": {
+        "blue_torso_bbox": [
+          776,
+          748,
+          876,
+          795
+        ],
+        "x_torso_center": 826.0,
+        "y_torso_top": 748,
+        "sprite_top_left_estimate": [
+          767,
+          686
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "BILLING building gray edge; includes impact shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": [
+        1030,
+        150,
+        1713,
+        408
+      ],
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 892,
+      "time_seconds": 29.733333,
+      "player": {
+        "blue_torso_bbox": null,
+        "skin_or_orange_bbox": [
+          777,
+          772,
+          867,
+          852
+        ],
+        "x_visible_center": 822.0,
+        "y_visible_top": 772,
+        "sprite_top_left_estimate": null,
+        "confidence": "medium; short orange/skin state, not compatible with blue-torso origin",
+        "state": "orange_skin_flash"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "BILLING building gray edge; includes impact shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 893,
+      "time_seconds": 29.766667,
+      "player": {
+        "blue_torso_bbox": [
+          777,
+          806,
+          876,
+          852
+        ],
+        "x_torso_center": 826.5,
+        "y_torso_top": 806,
+        "sprite_top_left_estimate": [
+          768,
+          744
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "BILLING building gray edge; includes impact shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 894,
+      "time_seconds": 29.8,
+      "player": {
+        "blue_torso_bbox": null,
+        "skin_or_orange_bbox": [
+          777,
+          772,
+          866,
+          852
+        ],
+        "x_visible_center": 821.5,
+        "y_visible_top": 772,
+        "sprite_top_left_estimate": null,
+        "confidence": "medium; short orange/skin state, not compatible with blue-torso origin",
+        "state": "orange_skin_flash"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "BILLING building gray edge; includes impact shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 895,
+      "time_seconds": 29.833333,
+      "player": {
+        "blue_torso_bbox": null,
+        "skin_or_orange_bbox": [
+          777,
+          772,
+          867,
+          852
+        ],
+        "x_visible_center": 822.0,
+        "y_visible_top": 772,
+        "sprite_top_left_estimate": null,
+        "confidence": "medium; short orange/skin state, not compatible with blue-torso origin",
+        "state": "orange_skin_flash"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "BILLING building gray edge; includes impact shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "pass_visible": false
+    },
+    {
+      "frame": 896,
+      "time_seconds": 29.866667,
+      "player": {
+        "blue_torso_bbox": [
+          777,
+          806,
+          874,
+          852
+        ],
+        "x_torso_center": 825.5,
+        "y_torso_top": 806,
+        "sprite_top_left_estimate": [
+          768,
+          744
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "BILLING building gray edge; includes impact shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 15601,
+        "bbox": [
+          1296,
+          672,
+          1428,
+          888
+        ]
+      },
+      "pass_visible": true
+    },
+    {
+      "frame": 897,
+      "time_seconds": 29.9,
+      "player": {
+        "blue_torso_bbox": null,
+        "skin_or_orange_bbox": [
+          777,
+          771,
+          867,
+          852
+        ],
+        "x_visible_center": 822.0,
+        "y_visible_top": 771,
+        "sprite_top_left_estimate": null,
+        "confidence": "medium; short orange/skin state, not compatible with blue-torso origin",
+        "state": "orange_skin_flash"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "BILLING building gray edge; includes impact shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 19673,
+        "bbox": [
+          1296,
+          672,
+          1428,
+          888
+        ]
+      },
+      "pass_visible": true
+    },
+    {
+      "frame": 898,
+      "time_seconds": 29.933333,
+      "player": {
+        "blue_torso_bbox": null,
+        "skin_or_orange_bbox": [
+          843,
+          772,
+          933,
+          852
+        ],
+        "x_visible_center": 888.0,
+        "y_visible_top": 772,
+        "sprite_top_left_estimate": null,
+        "confidence": "medium; short orange/skin state, not compatible with blue-torso origin",
+        "state": "orange_skin_flash"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "BILLING building gray edge; includes impact shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 22053,
+        "bbox": [
+          1296,
+          672,
+          1428,
+          888
+        ]
+      },
+      "pass_visible": true
+    },
+    {
+      "frame": 899,
+      "time_seconds": 29.966667,
+      "player": {
+        "blue_torso_bbox": [
+          912,
+          806,
+          1010,
+          852
+        ],
+        "x_torso_center": 961.0,
+        "y_torso_top": 806,
+        "sprite_top_left_estimate": [
+          903,
+          744
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "BILLING building gray edge; includes impact shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 24806,
+        "bbox": [
+          1296,
+          672,
+          1428,
+          888
+        ]
+      },
+      "pass_visible": true
+    },
+    {
+      "frame": 900,
+      "time_seconds": 30.0,
+      "player": {
+        "blue_torso_bbox": null,
+        "skin_or_orange_bbox": [
+          978,
+          772,
+          1068,
+          852
+        ],
+        "x_visible_center": 1023.0,
+        "y_visible_top": 772,
+        "sprite_top_left_estimate": null,
+        "confidence": "medium; short orange/skin state, not compatible with blue-torso origin",
+        "state": "orange_skin_flash"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "BILLING building gray edge; includes impact shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 26090,
+        "bbox": [
+          1296,
+          672,
+          1428,
+          888
+        ]
+      },
+      "pass_visible": true
+    },
+    {
+      "frame": 901,
+      "time_seconds": 30.033333,
+      "player": {
+        "blue_torso_bbox": [
+          1046,
+          806,
+          1140,
+          852
+        ],
+        "x_torso_center": 1093.0,
+        "y_torso_top": 806,
+        "sprite_top_left_estimate": [
+          1037,
+          744
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "BILLING building gray edge; includes impact shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 26964,
+        "bbox": [
+          1296,
+          672,
+          1428,
+          888
+        ]
+      },
+      "pass_visible": true
+    },
+    {
+      "frame": 902,
+      "time_seconds": 30.066667,
+      "player": {
+        "blue_torso_bbox": [
+          1112,
+          806,
+          1210,
+          852
+        ],
+        "x_torso_center": 1161.0,
+        "y_torso_top": 806,
+        "sprite_top_left_estimate": [
+          1103,
+          744
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "BILLING building gray edge; includes impact shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 27512,
+        "bbox": [
+          1296,
+          672,
+          1428,
+          888
+        ]
+      },
+      "pass_visible": true
+    },
+    {
+      "frame": 903,
+      "time_seconds": 30.1,
+      "player": {
+        "blue_torso_bbox": [
+          1182,
+          806,
+          1280,
+          852
+        ],
+        "x_torso_center": 1231.0,
+        "y_torso_top": 806,
+        "sprite_top_left_estimate": [
+          1173,
+          744
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        786,
+        540,
+        858,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        1158,
+        550,
+        1620,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": 0,
+      "camera_basis": "BILLING building gray edge; includes impact shake",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": {
+        "pixels": 27680,
+        "bbox": [
+          1296,
+          672,
+          1428,
+          888
+        ]
+      },
+      "pass_visible": true
+    },
+    {
+      "frame": 904,
+      "time_seconds": 30.133333,
+      "player": {
+        "blue_torso_bbox": [
+          786,
+          806,
+          884,
+          854
+        ],
+        "x_torso_center": 835.0,
+        "y_torso_top": 806,
+        "sprite_top_left_estimate": [
+          777,
+          744
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        324,
+        540,
+        396,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        696,
+        550,
+        1158,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": -462,
+      "camera_basis": "outgoing BILLING building; clipped edges underestimate after906",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": null,
+      "pass_visible": true
+    },
+    {
+      "frame": 905,
+      "time_seconds": 30.166667,
+      "player": {
+        "blue_torso_bbox": [
+          471,
+          806,
+          568,
+          852
+        ],
+        "x_torso_center": 519.5,
+        "y_torso_top": 806,
+        "sprite_top_left_estimate": [
+          462,
+          744
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": [
+        0,
+        540,
+        15,
+        612
+      ],
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        315,
+        550,
+        777,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": -843,
+      "camera_basis": "outgoing BILLING building; clipped edges underestimate after906",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": null,
+      "pass_visible": true
+    },
+    {
+      "frame": 906,
+      "time_seconds": 30.2,
+      "player": {
+        "blue_torso_bbox": [
+          231,
+          806,
+          328,
+          854
+        ],
+        "x_torso_center": 279.5,
+        "y_torso_top": 806,
+        "sprite_top_left_estimate": [
+          222,
+          744
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": null,
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        6,
+        550,
+        468,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": -1152,
+      "camera_basis": "outgoing BILLING building; clipped edges underestimate after906",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": null,
+      "pass_visible": true
+    },
+    {
+      "frame": 907,
+      "time_seconds": 30.233333,
+      "player": {
+        "blue_torso_bbox": [
+          52,
+          806,
+          152,
+          854
+        ],
+        "x_torso_center": 102.0,
+        "y_torso_top": 806,
+        "sprite_top_left_estimate": [
+          43,
+          744
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": null,
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        0,
+        550,
+        225,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": -1158,
+      "camera_basis": "outgoing BILLING building; clipped edges underestimate after906",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": null,
+      "pass_visible": true
+    },
+    {
+      "frame": 908,
+      "time_seconds": 30.266667,
+      "player": {
+        "blue_torso_bbox": [
+          0,
+          807,
+          30,
+          852
+        ],
+        "x_torso_center": 15.0,
+        "y_torso_top": 807,
+        "sprite_top_left_estimate": [
+          -9,
+          745
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": null,
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": [
+        0,
+        550,
+        39,
+        895
+      ],
+      "camera_screen_dx_relative_to_local_gate": -1158,
+      "camera_basis": "outgoing BILLING building; clipped edges underestimate after906",
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": null,
+      "pass_visible": true
+    },
+    {
+      "frame": 909,
+      "time_seconds": 30.3,
+      "player": {
+        "blue_torso_bbox": null,
+        "sprite_top_left_estimate": null,
+        "confidence": "not measurable",
+        "state": "not_visible_or_offscreen; yellow question falsely matched skin and was removed"
+      },
+      "question_visible_yellow_bbox": null,
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": null,
+      "camera_screen_dx_relative_to_local_gate": null,
+      "camera_basis": null,
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": null,
+      "pass_visible": false
+    },
+    {
+      "frame": 910,
+      "time_seconds": 30.333333,
+      "player": {
+        "blue_torso_bbox": null,
+        "sprite_top_left_estimate": null,
+        "confidence": "not measurable",
+        "state": "not_visible_or_offscreen; yellow question falsely matched skin and was removed"
+      },
+      "question_visible_yellow_bbox": null,
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": null,
+      "camera_screen_dx_relative_to_local_gate": null,
+      "camera_basis": null,
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": null,
+      "pass_visible": false
+    },
+    {
+      "frame": 911,
+      "time_seconds": 30.366667,
+      "player": {
+        "blue_torso_bbox": null,
+        "sprite_top_left_estimate": null,
+        "confidence": "not measurable",
+        "state": "not_visible_or_offscreen; yellow question falsely matched skin and was removed"
+      },
+      "question_visible_yellow_bbox": null,
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": null,
+      "camera_screen_dx_relative_to_local_gate": null,
+      "camera_basis": null,
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": null,
+      "pass_visible": false
+    },
+    {
+      "frame": 912,
+      "time_seconds": 30.4,
+      "player": {
+        "blue_torso_bbox": null,
+        "sprite_top_left_estimate": null,
+        "confidence": "not measurable",
+        "state": "not_visible_or_offscreen; yellow question falsely matched skin and was removed"
+      },
+      "question_visible_yellow_bbox": null,
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": null,
+      "camera_screen_dx_relative_to_local_gate": null,
+      "camera_basis": null,
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": null,
+      "pass_visible": false
+    },
+    {
+      "frame": 913,
+      "time_seconds": 30.433333,
+      "player": {
+        "blue_torso_bbox": [
+          0,
+          806,
+          30,
+          852
+        ],
+        "x_torso_center": 15.0,
+        "y_torso_top": 806,
+        "sprite_top_left_estimate": [
+          -9,
+          744
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": null,
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": null,
+      "camera_screen_dx_relative_to_local_gate": null,
+      "camera_basis": null,
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": null,
+      "pass_visible": false
+    },
+    {
+      "frame": 914,
+      "time_seconds": 30.466667,
+      "player": {
+        "blue_torso_bbox": [
+          2,
+          806,
+          96,
+          852
+        ],
+        "x_torso_center": 49.0,
+        "y_torso_top": 806,
+        "sprite_top_left_estimate": [
+          -7,
+          744
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": null,
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": null,
+      "camera_screen_dx_relative_to_local_gate": null,
+      "camera_basis": null,
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": null,
+      "red_x_visible": false,
+      "door_green": null,
+      "pass_visible": false
+    },
+    {
+      "frame": 915,
+      "time_seconds": 30.5,
+      "player": {
+        "blue_torso_bbox": [
+          188,
+          806,
+          288,
+          854
+        ],
+        "x_torso_center": 238.0,
+        "y_torso_top": 806,
+        "sprite_top_left_estimate": [
+          179,
+          744
+        ],
+        "confidence": "high for color bbox; medium/approx ±12px for sprite origin; pose changes and clipping affect bbox",
+        "state": "red_hat_blue_body"
+      },
+      "question_visible_yellow_bbox": null,
+      "question_note": "yellow interior only; full block stable [780,534,864,618]; POW/occlusion contaminates automatic bbox during impact",
+      "building_gray_extent": null,
+      "camera_screen_dx_relative_to_local_gate": null,
+      "camera_basis": null,
+      "camera_confidence": "medium; this is measured image shift, not absolute world camera; do not interpolate across anchor-id switch",
+      "warning_white_interior_bbox": [
+        1380,
+        120,
+        1497,
+        237
+      ],
+      "red_x_visible": false,
+      "door_green": null,
+      "pass_visible": false
+    }
+  ]
+}

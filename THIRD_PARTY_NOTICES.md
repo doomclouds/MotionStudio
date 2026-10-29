@@ -11,3 +11,11 @@ The root MIT license covers original MotionStudio code, not automatically third-
 - All other project-specific media, legal records, private research and production cases remain in the private workspace. The narrow portfolio source/cover exception does not authorize publishing private directories or other material; exclusion does not remove original obligations or grant reuse permission.
 
 Brand names and referenced creators do not endorse this repository. Source publication is not finished-film publication permission, artistic approval, a claim that private media was cleared, or a waiver of third-party rights. Read [SOURCE-SCOPE.md](SOURCE-SCOPE.md) and the Skill's `RIGHTS.md` before use.
+
+## Favorite52 — conditional source release
+
+[Favorite52](portfolio/works/favorite52/README.md) is an unofficial study of [AlchainHust / huashu](https://x.com/AlchainHust/status/2113208707668729984), not recovered original-author source or endorsement. Measured/redrawn composition and timing are disclosed; root MIT does not imply clearance of the original film's visual expression, game-like characters, brands, SVG or mixed audio. Full [credits and limits](portfolio/works/favorite52/CREDITS.md) are integral to the source release.
+
+All 16 runtime assets remain external and individually hash-locked. The Claude Duet SVG and existing mixed AAC have no asserted redistribution clearance and are not automatically obtained. Bit Shift by Kevin MacLeod is CC BY 4.0, but the source MP3 is not the exact 52-second mix. Dario photograph by Kimberly White/Getty Images for TechCrunch is CC BY 2.0 with crop/pixelation/outline modifications. Actual font licenses and copyrights, including OFL and distinct DejaVu terms, are retained; the historical Press Start 2P reserved-name/conversion uncertainty is explicitly disclosed. No binary font/photo/audio is redistributed.
+
+Its only media is the exact reviewed own-film frame-450 cover; it contains language cards, not the external icon or photo. Noncommercial learning/research is the maintainer's purpose, not a new restriction on upstream MIT/OFL/CC permissions. Rights-holder contact: [GitHub Issues](https://github.com/doomclouds/MotionStudio/issues).

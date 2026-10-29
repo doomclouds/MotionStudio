@@ -148,7 +148,49 @@ class PortfolioTests(unittest.TestCase):
         self.use_v2();self.data["schema"]=1;self.reject()
 
     def test_unknown_schema_rejected(self):
-        self.data["schema"]=3;self.reject()
+        self.data["schema"]=4;self.reject()
+
+    def use_v3(self):
+        self.use_v2();self.data["schema"]=3;self.data["status"]="source-release";self.data["rights"]["status"]="reviewed-publication-scope"
+        self.data["resources"]=[{"id":"manual-resource","mode":"provide","license":"No redistribution license established; not distributed",
+            "notice":"LICENSES/test.txt","source_url":"https://example.invalid/provenance","sha256":"a"*64,
+            "permission":"user-supplied-not-distributed","local_path":"fonts/example.ttf","bytes":100,
+            "instructions":"Supply authorized exact bytes; URL is not an acquisition permission."}]
+
+    def test_v3_external_source_release_truthful(self):
+        self.use_v3();self.save();self.assertEqual(validate_work(self.work),"synthetic-test")
+
+    def test_v3_cannot_claim_complete_resource_release(self):
+        self.use_v3();self.data["status"]="released";self.reject()
+
+    def test_v3_no_fake_automatic_permission(self):
+        self.use_v3();self.data["resources"][0]["permission"]="explicit-license";self.reject()
+
+    def test_v3_requires_external_gap(self):
+        self.use_v3();self.data["resources"]=[];self.reject()
+
+    def test_v3_no_unverified_auto_download(self):
+        self.use_v3();r=self.data["resources"][0];r["fetch_url"]="https://example.invalid/download";self.reject()
+
+    def test_v3_manual_mode_cannot_enter_v2(self):
+        self.use_v3();self.data["schema"]=2;self.data["status"]="released";self.reject()
+
+    def test_v3_external_path_escape_rejected(self):
+        self.use_v3()
+        for name in ["../file", "/file", ".file", "fonts/../file", "fonts\\file", "file:bad"]:
+            with self.subTest(name=name):self.data["resources"][0]["local_path"]=name;self.reject()
+
+    def test_v3_rights_scope_cannot_imply_blanket_clearance(self):
+        self.use_v3();self.data["rights"]["status"]="reviewed";self.reject()
+
+    def test_v3_external_path_cannot_be_duplicated(self):
+        self.use_v3();row=copy.deepcopy(self.data["resources"][0]);row["id"]="other-resource";self.data["resources"].append(row);self.reject()
+
+    def test_v3_external_path_requires_text(self):
+        self.use_v3();self.data["resources"][0]["local_path"]=42;self.reject()
+
+    def test_v3_no_fake_review_or_recovery(self):
+        self.use_v3();self.data["acceptance"]["clean_restore"]=False;self.reject()
 
     def test_missing_or_changed_sources_rejected(self):
         (self.work / "src/scene.mjs").write_text("// changed\n")

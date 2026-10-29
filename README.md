@@ -68,6 +68,8 @@ Node.js + Native Canvas 默认输出 PNG 帧，再由 FFmpeg 编码；可选顺�
 
 [Tessel · 33秒非官方Canvas2D复刻](portfolio/works/tessel/README.md)：保留必要源码、真实依赖锁、外置资源恢复方法、完整署名/许可及**唯一封面**，不带成片、帧序列、字体或音频。全1980帧源码恢复已核验；用户确认收录，视觉复核 `PARTIAL`、实际听审 `NOT_LISTENED`、声画同步 `NUMERIC_ONLY` 分开披露。维护用途为学习、研究与非商业展示，不改写MIT/OFL授权。
 
+[Favorite52 · 52秒非官方复刻源码](portfolio/works/favorite52/README.md)：全部关键代码与16项必需资源清单/来源/hash已收录，唯一封面；图标、实际混音和精确字体需合法自备，不随Git公开。用原私人备份资源的公开入口已全长重渲，1560帧及最终MP4与喜欢的版本一致。标记为 `source-release`，不是无需自备素材的自动完整下载包。
+
 保留与权利联系规范：[portfolio/README.md](portfolio/README.md)；实际作品清单：[portfolio/works/](portfolio/works/)。
 
 ## 快速开始

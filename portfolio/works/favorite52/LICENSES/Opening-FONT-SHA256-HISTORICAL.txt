@@ -1,0 +1,2 @@
+54bf827eb99404e8f430c330ad30f063334f637eba0109b6a18d4f566a8e9dd8  replication/2113208707668729984/assets/fonts/Opening-DejaVuSansMono.ttf
+9caef765d2e891c10dd73658894f01e660fe0c1c83e0bda7d6edf561d8f623d4  replication/2113208707668729984/assets/fonts/Opening-LiberationSerif-Regular.ttf
