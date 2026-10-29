@@ -16,6 +16,12 @@ ROLES = {"source", "config", "documentation", "license", "lock", "cover"}
 TEXT_SUFFIXES = {".md", ".txt", ".json", ".mjs", ".cjs", ".js", ".py", ".sh", ".toml", ".lock"}
 FORBIDDEN_PARTS = {"assets", "frames", "renders", "output", "node_modules", "__pycache__", ".cache", "tmp"}
 ACCEPTANCE = {"complete_work", "owner_keep", "clean_restore", "technical", "visual", "listened", "av_sync"}
+REQUIRED_GATES = {"complete_work", "owner_keep", "clean_restore", "technical"}
+REVIEW_STATUSES = {
+    "visual": {"PASSED", "PARTIAL", "NOT_REVIEWED"},
+    "listened": {"PASSED", "NOT_LISTENED"},
+    "av_sync": {"PASSED", "NUMERIC_ONLY", "NOT_REVIEWED"},
+}
 TOP_KEYS = {"schema", "id", "version", "title", "status", "unofficial_recreation", "original", "rights", "files", "runtime", "render", "resources", "cover", "acceptance"}
 PRIVATE = re.compile(r"/workspace/|/home/agent/|/Users/|libfile_[a-zA-Z0-9]+|\bsk-[A-Za-z0-9_-]{24,}")
 MAX_TEXT_BYTES = 2 * 1024 * 1024
@@ -139,7 +145,7 @@ def validate_work(root):
     except ValueError as e:
         raise Invalid("entry.json: invalid JSON") from e
     fields(data, TOP_KEYS, "entry")
-    require(type(data["schema"]) is int and data["schema"] == 1, "schema must be 1")
+    require(type(data["schema"]) is int and data["schema"] in {1, 2}, "schema must be 1 or 2")
     require(isinstance(data["id"], str) and ID.fullmatch(data["id"]) and data["id"] == root.name,
             "id must match the work directory")
     require(isinstance(data["version"], str) and VERSION.fullmatch(data["version"]), "version must be exact x.y.z")
@@ -258,7 +264,17 @@ def validate_work(root):
             listed(row["generator"], "source")
 
     fields(data["acceptance"], ACCEPTANCE, "acceptance")
-    require(all(v is True for v in data["acceptance"].values()), "all full-work acceptance declarations are required")
+    acceptance = data["acceptance"]
+    if data["schema"] == 1:
+        # Compatibility never silently reinterprets legacy boolean declarations.
+        require(all(v is True for v in acceptance.values()), "v1 requires all acceptance booleans true; use v2 for partial review states")
+    else:
+        require(all(acceptance[k] is True for k in REQUIRED_GATES), "complete work, owner retention, clean restore and technical gates must be true")
+        for key, allowed in REVIEW_STATUSES.items():
+            row = acceptance[key]
+            fields(row, {"status", "coverage"}, f"acceptance.{key}")
+            require(isinstance(row["status"], str) and row["status"] in allowed, f"acceptance.{key}: unsupported review status")
+            nonempty(row["coverage"], f"acceptance.{key}.coverage")
     return data["id"]
 
 

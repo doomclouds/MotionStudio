@@ -11,6 +11,8 @@ GENERATED = {'tmp', 'output', 'node_modules', '__pycache__', '.cache', 'frames',
 PROJECT_DIRS = {'verification', 'validation', 'evidence', 'research', 'review', 'debug'}
 README_PREVIEW = 'docs/assets/report-overview.png'
 README_PREVIEW_MAX_BYTES = 2 * 1024 * 1024
+TESSEL_COVER = 'portfolio/works/tessel/cover.jpg'
+PORTFOLIO_COVER_MAX_BYTES = 1024 * 1024
 RECEIPTS = {'DIFFERENCES.md', 'NATIVE_PRODUCTION.json', 'FEEDBACK.json', 'MIGRATION.md', 'NATIVE-MIGRATION.md', 'review.html'}
 
 def safe_env_template(content):
@@ -145,6 +147,8 @@ def inspect_repo(repo):
             if private: error(ref, name, 'private-production-metadata')
             if name == README_PREVIEW and (kind != 'PNG' or size > README_PREVIEW_MAX_BYTES):
                 error(ref, name, 'invalid-readme-preview-format-or-size')
+            if name == TESSEL_COVER and (kind != 'JPEG' or size > PORTFOLIO_COVER_MAX_BYTES):
+                error(ref, name, 'invalid-portfolio-cover-format-or-size')
             if name in allow:
                 if sha not in allow[name]: error(ref, name, 'approved-source-asset-hash-mismatch')
             elif kind or PurePosixPath(name).suffix.lower() in MEDIA_EXTENSIONS:

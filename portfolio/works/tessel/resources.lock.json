@@ -1,0 +1,118 @@
+{
+  "schema": 1,
+  "upstream_commit": "f0906e8629fa524c7cedc1ac959bf987005ee846",
+  "assets": [
+    {
+      "id": "glow-ink",
+      "role": "background",
+      "url": "https://raw.githubusercontent.com/Leonxlnx/claude-launchvideo/f0906e8629fa524c7cedc1ac959bf987005ee846/public/fx/glow-ink.png",
+      "bytes": 539543,
+      "sha256": "3c034365aaff834ee5f55182ce7eb4e5f28932c21fccbf6375e98e946258da8a",
+      "license": "MIT",
+      "permission": "explicit-license",
+      "notice": "LICENSES/Leonxlnx-Tessel-MIT.txt"
+    },
+    {
+      "id": "table",
+      "role": "background",
+      "url": "https://raw.githubusercontent.com/Leonxlnx/claude-launchvideo/f0906e8629fa524c7cedc1ac959bf987005ee846/public/fx/table.png",
+      "bytes": 888135,
+      "sha256": "157cd98313c45f26666ea1264312251415d302e2ee4d5a847d259a16eb90b049",
+      "license": "MIT",
+      "permission": "explicit-license",
+      "notice": "LICENSES/Leonxlnx-Tessel-MIT.txt"
+    },
+    {
+      "id": "geist",
+      "role": "font-package",
+      "url": "https://registry.npmjs.org/@fontsource-variable/geist/-/geist-5.3.0.tgz",
+      "bytes": 165491,
+      "sha256": "533dd66117795ac12316fb05fce27736c4bc63c31613b302d0a5285ca3a291d7",
+      "license": "OFL-1.1",
+      "permission": "explicit-license",
+      "notice": "LICENSES/geist-OFL.txt"
+    },
+    {
+      "id": "geist-mono",
+      "role": "font-package",
+      "url": "https://registry.npmjs.org/@fontsource-variable/geist-mono/-/geist-mono-5.3.0.tgz",
+      "bytes": 155287,
+      "sha256": "af7a9f156602b859efa95cd1acb824a5322c51a1eca53afb38ed033885736a70",
+      "license": "OFL-1.1",
+      "permission": "explicit-license",
+      "notice": "LICENSES/geist-mono-OFL.txt"
+    },
+    {
+      "id": "soundtrack",
+      "role": "audio",
+      "url": "https://raw.githubusercontent.com/Leonxlnx/claude-launchvideo/f0906e8629fa524c7cedc1ac959bf987005ee846/public/audio/soundtrack.wav",
+      "bytes": 9504044,
+      "sha256": "ba6b67a9be1f2fe44d8c7d4d139dcd763214bc721b846991563ecb6a7ca0a451",
+      "license": "MIT",
+      "permission": "explicit-license",
+      "notice": "LICENSES/Leonxlnx-Tessel-MIT.txt"
+    }
+  ],
+  "fonts": [
+    {
+      "id": "geist",
+      "member": "package/files/geist-latin-wght-normal.woff2",
+      "sha256": "19f9c92546aa300c312235e3125af1b81394d8db9a4bc4a425cd5b641d2d54e1",
+      "license_member": "package/LICENSE",
+      "license_sha256": "71609cbb5c78b5870d712eab73a31d76622635c6ed034ab5cee3b9ecbda8685f"
+    },
+    {
+      "id": "geist-mono",
+      "member": "package/files/geist-mono-latin-wght-normal.woff2",
+      "sha256": "684ad5b531f81d43c1e8c7038262d5db7cdc1f68006e04d6c7769efa8d33c8cc",
+      "license_member": "package/LICENSE",
+      "license_sha256": "cc815ed4fc045f0e991abb10395b7932bd028c6a067deb13316d6002105074e6"
+    }
+  ],
+  "derived_fonts": [
+    {
+      "file": "TesselGeist-400.ttf",
+      "sha256": "52839b0c4c8411783620625e635aee5515f2a839f42e3e56fabd4f09fe8451e5"
+    },
+    {
+      "file": "TesselGeist-450.ttf",
+      "sha256": "681b218306859df393a9e67717da27eee3128f44874193134a8e3a081b80fa61"
+    },
+    {
+      "file": "TesselGeist-460.ttf",
+      "sha256": "0f2b7584cd99e0c1124e4fdcad3fb325e94324c45a66c3722ea7399bd3ebde51"
+    },
+    {
+      "file": "TesselGeist-480.ttf",
+      "sha256": "8e3ef986a16dbb62dc7d5b1e9a3cacdc36d132d0da8da25f0ca0a8945ebc7ff4"
+    },
+    {
+      "file": "TesselGeist-500.ttf",
+      "sha256": "6160d64f538e354a76c0ae06623b88d2f7dec77468d90feeee27194812ae4746"
+    },
+    {
+      "file": "TesselGeist-540.ttf",
+      "sha256": "7387a1a09c1a64e538470b15387c42493bec9f92ae938c6396233a2235b29068"
+    },
+    {
+      "file": "TesselGeist-560.ttf",
+      "sha256": "1555d4f20e181a465845c70f0fbff168325cc0609fd6dd9be17248be0c5d716b"
+    },
+    {
+      "file": "TesselGeist-580.ttf",
+      "sha256": "cb6d0453f382e400547556c53fea675e45a9939a5457c56f0977641721467b9f"
+    },
+    {
+      "file": "TesselGeist-600.ttf",
+      "sha256": "11077615a42e6dbc3c3cba185d05ffbd1da8be1e2e0d5403d7eca79b5d32db57"
+    },
+    {
+      "file": "TesselGeist-620.ttf",
+      "sha256": "ce56f84866827626a83601d27d4a21a62341f705fb04792c0aa9973ccaa26c04"
+    },
+    {
+      "file": "TesselGeist-650.ttf",
+      "sha256": "08a65b5283f1665df8edddfae9fb7a44006e803a0a391fc2058cb2e683cc4d2f"
+    }
+  ]
+}

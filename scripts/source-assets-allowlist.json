@@ -1,7 +1,8 @@
 {
   "schema": 1,
-  "policy": "Only the explicitly authorized README diagnostic overview is distributed, at this exact path and SHA-256, capped at 2 MiB. No other project media, films, frames or fonts are authorized.",
+  "policy": "Only the README diagnostic overview (PNG, at most 2 MiB) and the single approved Tessel portfolio cover (JPEG, at most 1 MiB) are distributed at these exact paths and SHA-256. No wildcard media approval; no films, audio, fonts, other images or private production assets.",
   "assets": {
-    "docs/assets/report-overview.png": "bbf9e87737e3f84dfb9a998ee0c973081418631b76a745b017b012d76b95e7c1"
+    "docs/assets/report-overview.png": "bbf9e87737e3f84dfb9a998ee0c973081418631b76a745b017b012d76b95e7c1",
+    "portfolio/works/tessel/cover.jpg": "ebfaf532643c1ac096ac44a05da0c81dede735e1703e2c3230ab3073857133f8"
   }
 }

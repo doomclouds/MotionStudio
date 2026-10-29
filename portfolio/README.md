@@ -3,7 +3,13 @@
 本文件是作品集保留规范的唯一规范性 Markdown 入口。
 
 这里只收录**已完成、明确获准保留、权利可核验、能够从源码重渲染**的作品。
-当前是作品集的源码入口与准入工具，**尚无已发布作品**；占位目录、局部样片、失败实验和技术夹具不算优秀作品。私人恢复包与生产目录原地保留，不因整理作品集而覆盖或删除。
+本目录提供作品源码入口与准入工具，收录清单以 `works/` 中的条目为准；占位目录、局部样片、失败实验和技术夹具不算优秀作品。私人恢复包与生产目录原地保留，不因整理作品集而覆盖或删除。
+
+## 已收录作品
+
+[![Tessel · 非官方 Canvas2D 复刻封面](works/tessel/cover.jpg)](works/tessel/README.md)
+
+**[Tessel · 33秒非官方复刻](works/tessel/README.md)** — 原作 Leonxlnx，保留MIT/OFL条款；完整源码恢复已验证、用户已决定收录。视觉 `PARTIAL`、实际听审 `NOT_LISTENED`、声画同步 `NUMERIC_ONLY` 分列，详见作品说明。此处复用该作品唯一封面，不另存缩略图。
 
 ## 最小结构
 
@@ -26,7 +32,7 @@ portfolio/
 
 ## 准入与权利
 
-1. 全长作品已经完成并获得保留决定；技术测试、连续视觉、真实听审、声画同步和艺术接受分列。检查工具不会替人完成这些判断。
+1. 全长作品已经完成、获得明确保留决定，且完整技术恢复通过。用户收录决定与逐项评审分开：技术测试、连续视觉、真实听审、感知声画同步各有真实状态和覆盖范围。明确披露 `NOT_LISTENED` 等未执行项目可以收录；不得为了通过校验填成已听审、扩大用户肯定的范围或泛称所有评审通过。检查工具不会替人完成这些判断。
 2. 原作者姓名、原作链接、版权和**非官方复刻版，不代表原作者/品牌背书**必须出现在作品 README/CREDITS 中。原作不是自己原创；仓库 MIT 不自动覆盖原作、品牌、照片、字体或音乐。
 3. 每项来源必须有适用的明确许可，保留完整 MIT/OFL 等条款、版权、CC 署名及改动说明。仅公开可见、能下载、用户喜欢或有 hash 都不是授权。
 4. 字体衍生遵循各自许可（包括适用的保留名称要求）；不得将所有字体笼统标成 OFL。没有许可的品牌图标或临摹素材不能通过“改成代码”解除权利问题。
@@ -65,7 +71,7 @@ portfolio/
 - 固定名称 `works/<id>/cover.jpg`，**至多且发布时恰好一张**，不超过 1 MiB，默认保持成片画幅。去除 EXIF/IPTC/XMP/位置等元数据；实际打开检查清晰度、裁切、颜色和可读性。
 - 封面本身要有可公开权利，继承并保留作品和相关第三方的声明。用户授权选择封面，不等于授权使用未清权的原作、人物、品牌或音乐。
 - 源码树检查仍生效。每张封面在根 `scripts/source-assets-allowlist.json` 中以**精确路径 + SHA-256**单独批准，同时更新其边界说明；不能用通配符一次允许所有 JPG/PNG。本目录的忽略例外不等于白名单审批。
-- 当前没有可发布全片，因此**不生成占位封面、不纳入任何原作帧**。首部作品的全片完成、验收且权利/恢复检查通过后再选封面；未入库的原版本与恢复包继续原地保留。
+- **不生成占位封面、不纳入任何原作帧**。只有全片完成、明确获准收录且权利/恢复检查通过后再选封面；未入库的原版本与恢复包继续原地保留。
 
 ## 检查与复现分层
 
@@ -74,17 +80,17 @@ python3 portfolio/validate.py
 python3 -m unittest discover -s portfolio -p 'test_*.py'
 ```
 
-静态检查检查格式、源码hash、路径/媒体边界和声明是否完整；通过不证明法律结论、成功渲染或审美通过。当前空作品集会显式显示 `0 released works`。
+静态检查检查格式、源码hash、路径/媒体边界和声明是否完整；通过不证明法律结论、成功渲染或审美通过。空作品集会显式显示 `0 released works`，不把规范或测试夹具计为作品。
 
-入库前另需：全新外置目录离线恢复、代表帧顺序/乱序/重开一致性、完整渲染、FFprobe 帧率/帧数/采样合同、全量解码、最终封装音轨检查、正常速度视觉与真实听审。所有结果绑定同一版源码与成片 hash。依赖锁、系统运行时版本/平台、字体转换版本都记录；没有新平台复验就不宣称跨平台像素或 MP4 字节相同。
+入库前必须完成：全新外置目录离线恢复、代表帧顺序/乱序/重开一致性、完整渲染、FFprobe 帧率/帧数/采样合同、全量解码和最终封装音轨检查。正常速度视觉、真实听审及感知声画同步按实际执行情况单独记录；缺项须在作品README与manifest明确披露，联系表/数值同步不能变成完整观看/听审。所有结果绑定同一版源码与成片 hash。依赖锁、系统运行时版本/平台、字体转换版本都记录；没有新平台复验就不宣称跨平台像素或 MP4 字节相同。
 
-## 附录：entry.json v1
+## 附录：entry.json v2（兼容v1）
 
 一个 manifest 对应一个**完整已发布**作品。候选/受阻作品留在外部工作区，不能用 manifest 的布尔值代替真实审查。字段不能包含私有路径、下载令牌、Library ID 或私人评语。`validate.py` 是本版本的可执行静态合同；不执行任意渲染命令、不联网、不验证法律效力。
 
 必填结构：
 
-- `schema`: `1`；`id`: 与作品目录同名的小写连字符标识；`version`: 精确 `major.minor.patch`；`title`: 非空文字；`status`: `released`。
+- `schema`: 新条目使用 `2`；`id`: 与作品目录同名的小写连字符标识；`version`: 精确 `major.minor.patch`；`title`: 非空文字；`status`: `released`。
 - `unofficial_recreation`: `true`；`original`: `{author, title, url}`。`url` 是不含认证信息的公开 HTTPS 原作页面。此合同专用于非官方复刻作品，不把原创强行伪装成复刻。
 - `rights`: `{status: "reviewed", credits: "CREDITS.md", notices: ["LICENSES/…"], evidence_urls: ["https://…"]}`。人工已经核对适用范围才可写 reviewed，证据须公开可核；未核/不明确不可发布。完整条款和版权必须在对应 notice 中。
 - `files`: `[{path, sha256, role}]`。列出目录内除 `entry.json` 外的**全部**文件，路径相对作品根；role 为 `source` / `config` / `documentation` / `license` / `lock` / `cover`。固定 SHA-256 来自实际字节，不填占位符。不准 symlink、绝对路径、`..`、隐藏运行数据或除唯一封面外的媒体。
@@ -94,6 +100,12 @@ python3 -m unittest discover -s portfolio -p 'test_*.py'
   - `mode: "fetch"` 另需 `fetch_url`（无凭证的公开 HTTPS 资源 URL）、`permission: "explicit-license"`、`max_bytes`（正整数）。这只是经核实授权声明，校验器不会下载。
   - `mode: "generate"` 另需 `generator`（已列出的 source）、`permission: "explicit-license"`。生成代码与输入仍需许可；生成字节 hash 不意味着声音听审通过。
 - `cover`: `{path: "cover.jpg", kind: "rendered-frame" | "original-artwork", source_sha256, frame, rights_status: "reviewed", credit: "CREDITS.md"}`。path 在 files 中唯一 role=cover。成片帧绑定最终影片 SHA-256，frame 为 `[0,frames)` 的整数；原创封面 frame 为 null，source_sha256 绑定原始原创输入/制作结果，CREDITS 交代作者和来源。封面自身 SHA-256 在 files 中。静态检查只查 JPEG 结构头/尺寸/显式元数据和字节身份，不替代完整解码/实际查看/权利核实。
-- `acceptance`: `{complete_work: true, owner_keep: true, clean_restore: true, technical: true, visual: true, listened: true, av_sync: true}`。这些是人工维护的声明，不是静态检查结论。实际证据保留于外置验收记录，发布评审核实它们。不得以 8 秒片段的认可代替 33 秒全片。
+- `acceptance`: `complete_work`、`owner_keep`、`clean_restore`、`technical` 必须各为 `true`，对应全片完成、用户保留决定、真实完整恢复、技术合同通过。`visual`、`listened`、`av_sync` 各为 `{status, coverage}`，`coverage` 为非空的实际检查范围与未做项目说明：
+  - `visual.status`: `PASSED` / `PARTIAL` / `NOT_REVIEWED`；只查看联系表、抽帧或比较像素不能伪装成正常速度完整观看。
+  - `listened.status`: `PASSED` / `NOT_LISTENED`；没有实际听审就必须明确后者，不以波形、相关性或用户笼统肯定替代。
+  - `av_sync.status`: `PASSED` / `NUMERIC_ONLY` / `NOT_REVIEWED`；仅PTS、样本数量或相关性检查使用 `NUMERIC_ONLY`，不声称感知同步通过。
+  - 这些仍是人工维护的声明，不是静态检查结论；实际证据保留外置，发布评审核实。用户全片保留/上传决定可以支持收录，但不扩大成逐项观看/听审。不得以8秒片段认可代替33秒全片。
+
+兼容旧 `schema: 1` 的七个布尔字段仍要求全部为 `true`，不会自动把布尔值解释成v2状态；没有真实逐项审查的新作品必须使用v2，禁止用假 `true` 通过旧合同。
 
 最小依赖不是零依赖承诺。准备脚本不得以 `curl | bash`、安装时任意脚本或默认在线下载规避锁。需要上游源码时固定 commit/blob 与 SHA-256，并保留 upstream notice；只用分支名不构成固定版本。下载的压缩包须检查路径穿越、symlink 和解压大小上限。

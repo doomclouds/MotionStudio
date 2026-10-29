@@ -1,0 +1,445 @@
+{
+  "schema": 2,
+  "id": "tessel",
+  "version": "1.0.0",
+  "title": "Tessel · 33秒非官方Canvas2D复刻",
+  "status": "released",
+  "unofficial_recreation": true,
+  "original": {
+    "author": "Leonxlnx",
+    "title": "Tessel — launch film",
+    "url": "https://github.com/Leonxlnx/claude-launchvideo"
+  },
+  "rights": {
+    "status": "reviewed",
+    "credits": "CREDITS.md",
+    "notices": [
+      "LICENSES/Leonxlnx-Tessel-MIT.txt",
+      "LICENSES/geist-OFL.txt",
+      "LICENSES/geist-mono-OFL.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/Leonxlnx/claude-launchvideo/blob/f0906e8629fa524c7cedc1ac959bf987005ee846/LICENSE",
+      "https://github.com/Leonxlnx/claude-launchvideo/blob/f0906e8629fa524c7cedc1ac959bf987005ee846/README.md",
+      "https://registry.npmjs.org/@fontsource-variable/geist/-/geist-5.3.0.tgz",
+      "https://registry.npmjs.org/@fontsource-variable/geist-mono/-/geist-mono-5.3.0.tgz"
+    ]
+  },
+  "files": [
+    {
+      "path": "CREDITS.md",
+      "sha256": "ea8aa55779e139e2dfe652ff1698533f2650da1759e676828b013fc6b6f33fdf",
+      "role": "documentation"
+    },
+    {
+      "path": "LICENSES/Leonxlnx-Tessel-MIT.txt",
+      "sha256": "c11bfa260fc98be1cf88db5910bbdcdea80cd4fb8790791e2b1a08b3a8d48bee",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/geist-OFL.txt",
+      "sha256": "71609cbb5c78b5870d712eab73a31d76622635c6ed034ab5cee3b9ecbda8685f",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/geist-mono-OFL.txt",
+      "sha256": "cc815ed4fc045f0e991abb10395b7932bd028c6a067deb13316d6002105074e6",
+      "role": "license"
+    },
+    {
+      "path": "README.md",
+      "sha256": "cc6b953c752acb04663fe995f4e07dce888ed8f3e5e2359efdae12cb7b128768",
+      "role": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "ebfaf532643c1ac096ac44a05da0c81dede735e1703e2c3230ab3073857133f8",
+      "role": "cover"
+    },
+    {
+      "path": "locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "role": "lock"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "35fd9f89e36a440ff1e575ba84c2eba1c7dc79370d8e9c738051c46ca3dcd67e",
+      "role": "lock"
+    },
+    {
+      "path": "prepare.py",
+      "sha256": "a8336995322ddd9cd8e99fc2605238ce524e5919e2b0386d79a86c20cf200141",
+      "role": "source"
+    },
+    {
+      "path": "render.py",
+      "sha256": "28308f3875143e377781486a13c3c6c0f33f75e98862addf0a3cbd4eeaedf012",
+      "role": "source"
+    },
+    {
+      "path": "requirements-linux-cp312.lock",
+      "sha256": "776f71d950e677005a93693b4c105c60a8183d2eea498e3f2226bb3c02470e31",
+      "role": "lock"
+    },
+    {
+      "path": "resources.lock.json",
+      "sha256": "60e7ebf97ff2676f0649d3a4772ff73948be645f004ca3304c957a807d4162ae",
+      "role": "lock"
+    },
+    {
+      "path": "src/api-trace.mjs",
+      "sha256": "59bce3695be90233bd68186ca9ae9acc97bee0d83596d4f62f5ec63a29f0d537",
+      "role": "source"
+    },
+    {
+      "path": "src/choreography.mjs",
+      "sha256": "f313bd2958f10117675f46d94dc488be079e80242d66b3abeb7bc3f39d58921e",
+      "role": "source"
+    },
+    {
+      "path": "src/full-api-trace.mjs",
+      "sha256": "7251a2d92be2492bde034892f54447be8089149675d1e31114b79fdfa6e95360",
+      "role": "source"
+    },
+    {
+      "path": "src/full-base-ui.mjs",
+      "sha256": "43af7cc74e3c599a79852407bd7496cebedaf900786a43268bbb18db4196f0b3",
+      "role": "source"
+    },
+    {
+      "path": "src/full-common.mjs",
+      "sha256": "449a4d312cf5b96ea3703c4f66cdc7fdc7a3dc8243ee2c73783bc1c6596efc27",
+      "role": "source"
+    },
+    {
+      "path": "src/full-ending-state.mjs",
+      "sha256": "6ec2b50314147e228d7de2ba7a3a0fb952f1c6dc447ee38d4c02e2f8d83f1353",
+      "role": "source"
+    },
+    {
+      "path": "src/full-ending-v2.mjs",
+      "sha256": "714c2439141441455d751892426efdb6b60aa63d239d9690b059d9973f88f8d4",
+      "role": "source"
+    },
+    {
+      "path": "src/full-features-state.mjs",
+      "sha256": "f2828409d43a66609823c283f32ddb5affda604921ac5cce197acffb663a64a0",
+      "role": "source"
+    },
+    {
+      "path": "src/full-features.mjs",
+      "sha256": "a11ccaf2b1de244324fb15c83a82d668c1467d15fa3bc04c8993184392af61df",
+      "role": "source"
+    },
+    {
+      "path": "src/full-opening-model.mjs",
+      "sha256": "141c9588f38b0099200a43031b0d25f98aae6bb1dd5c9412f767e47421261621",
+      "role": "source"
+    },
+    {
+      "path": "src/full-opening-v2.mjs",
+      "sha256": "12480d55d60e454ae83a294c5e745c1f809ab1a3076b319c19acfd5774677634",
+      "role": "source"
+    },
+    {
+      "path": "src/full-prepare-fonts.py",
+      "sha256": "fed581bbb102e6aca669795fcbcce112a41712100ea84685b68b775308a14125",
+      "role": "source"
+    },
+    {
+      "path": "src/full-projector.mjs",
+      "sha256": "a7142c253a68e2a03b8b7b85ea543b3167d344abc01f87b95bce37fc63a3360e",
+      "role": "source"
+    },
+    {
+      "path": "src/full-render-segment.mjs",
+      "sha256": "28222b073b944aabcf11efe5bd4193b861976f60bbb33eb79d9e35e54a64ede8",
+      "role": "source"
+    },
+    {
+      "path": "src/full-scene-factory-v3.mjs",
+      "sha256": "2296cdc03c96635ddfeea977ae0905fdca74ad02d4ce3e5efbdc702d53445123",
+      "role": "source"
+    },
+    {
+      "path": "src/full-scene-rerender-v3.mjs",
+      "sha256": "82d0190ba871dbd467c813246b629a079cc8de992c1c04f2149de9d2d66bbb25",
+      "role": "source"
+    },
+    {
+      "path": "src/full-ui.mjs",
+      "sha256": "2f766b0f2b4b6e63d811e3d36740128cf0e720ae0fd759674db21feb1fcf184d",
+      "role": "source"
+    },
+    {
+      "path": "src/math.mjs",
+      "sha256": "633c0ced069fc35e08d65ab24d654654bf1bcb155c8660ac67729052e391532d",
+      "role": "source"
+    },
+    {
+      "path": "src/projection.mjs",
+      "sha256": "bdea608f8638b58a1085c6711e8e1a91d729e1cec8b53235bd7fba512c5e0d3d",
+      "role": "source"
+    },
+    {
+      "path": "src/reference-data.mjs",
+      "sha256": "297a05ce57f4e3a0c49348f6c79e00fae3b6bcfb80a5e2ad1d03a3f7ffbfd3b7",
+      "role": "source"
+    },
+    {
+      "path": "src/scene-v02.mjs",
+      "sha256": "d3b1de7c32422b93958ddf47d741fff7d5593950f32f3f40c1a43f8fd91f9087",
+      "role": "source"
+    },
+    {
+      "path": "src/ui.mjs",
+      "sha256": "7d90ba07ebc0a5b51b7d369ad61f90c51d3065b2bf0d45ccc4c027f686a2de1a",
+      "role": "source"
+    },
+    {
+      "path": "test_prepare.py",
+      "sha256": "c57d65af291b4ce82bf976e42260b42620310927ca4663e560eb9ab4d646d194",
+      "role": "source"
+    }
+  ],
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "python",
+      "version": "3.12.14",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "ffmpeg",
+      "version": "7.1.5",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "ffprobe",
+      "version": "7.1.5",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "@napi-rs/canvas",
+      "version": "0.1.100",
+      "lock": "locks/npm-package-lock.json"
+    },
+    {
+      "name": "fonttools",
+      "version": "4.57.0",
+      "lock": "requirements-linux-cp312.lock"
+    },
+    {
+      "name": "Brotli",
+      "version": "1.1.0",
+      "lock": "requirements-linux-cp312.lock"
+    }
+  ],
+  "render": {
+    "entrypoint": "render.py",
+    "frames": 1980,
+    "width": 1920,
+    "height": 1080,
+    "fps_num": 60,
+    "fps_den": 1,
+    "audio_sample_rate": 48000,
+    "audio_channels": 2
+  },
+  "resources": [
+    {
+      "id": "glow-ink",
+      "mode": "fetch",
+      "license": "MIT",
+      "notice": "LICENSES/Leonxlnx-Tessel-MIT.txt",
+      "source_url": "https://github.com/Leonxlnx/claude-launchvideo/tree/f0906e8629fa524c7cedc1ac959bf987005ee846",
+      "sha256": "3c034365aaff834ee5f55182ce7eb4e5f28932c21fccbf6375e98e946258da8a",
+      "permission": "explicit-license",
+      "fetch_url": "https://raw.githubusercontent.com/Leonxlnx/claude-launchvideo/f0906e8629fa524c7cedc1ac959bf987005ee846/public/fx/glow-ink.png",
+      "max_bytes": 539543
+    },
+    {
+      "id": "table",
+      "mode": "fetch",
+      "license": "MIT",
+      "notice": "LICENSES/Leonxlnx-Tessel-MIT.txt",
+      "source_url": "https://github.com/Leonxlnx/claude-launchvideo/tree/f0906e8629fa524c7cedc1ac959bf987005ee846",
+      "sha256": "157cd98313c45f26666ea1264312251415d302e2ee4d5a847d259a16eb90b049",
+      "permission": "explicit-license",
+      "fetch_url": "https://raw.githubusercontent.com/Leonxlnx/claude-launchvideo/f0906e8629fa524c7cedc1ac959bf987005ee846/public/fx/table.png",
+      "max_bytes": 888135
+    },
+    {
+      "id": "geist",
+      "mode": "fetch",
+      "license": "OFL-1.1",
+      "notice": "LICENSES/geist-OFL.txt",
+      "source_url": "https://www.npmjs.com/package/@fontsource-variable/geist/v/5.3.0",
+      "sha256": "533dd66117795ac12316fb05fce27736c4bc63c31613b302d0a5285ca3a291d7",
+      "permission": "explicit-license",
+      "fetch_url": "https://registry.npmjs.org/@fontsource-variable/geist/-/geist-5.3.0.tgz",
+      "max_bytes": 165491
+    },
+    {
+      "id": "geist-mono",
+      "mode": "fetch",
+      "license": "OFL-1.1",
+      "notice": "LICENSES/geist-mono-OFL.txt",
+      "source_url": "https://www.npmjs.com/package/@fontsource-variable/geist-mono/v/5.3.0",
+      "sha256": "af7a9f156602b859efa95cd1acb824a5322c51a1eca53afb38ed033885736a70",
+      "permission": "explicit-license",
+      "fetch_url": "https://registry.npmjs.org/@fontsource-variable/geist-mono/-/geist-mono-5.3.0.tgz",
+      "max_bytes": 155287
+    },
+    {
+      "id": "soundtrack",
+      "mode": "fetch",
+      "license": "MIT",
+      "notice": "LICENSES/Leonxlnx-Tessel-MIT.txt",
+      "source_url": "https://github.com/Leonxlnx/claude-launchvideo/tree/f0906e8629fa524c7cedc1ac959bf987005ee846",
+      "sha256": "ba6b67a9be1f2fe44d8c7d4d139dcd763214bc721b846991563ecb6a7ca0a451",
+      "permission": "explicit-license",
+      "fetch_url": "https://raw.githubusercontent.com/Leonxlnx/claude-launchvideo/f0906e8629fa524c7cedc1ac959bf987005ee846/public/audio/soundtrack.wav",
+      "max_bytes": 9504044
+    },
+    {
+      "id": "geist-static-400",
+      "mode": "generate",
+      "license": "OFL-1.1",
+      "notice": "LICENSES/geist-OFL.txt",
+      "source_url": "https://www.npmjs.com/package/@fontsource-variable/geist/v/5.3.0",
+      "sha256": "52839b0c4c8411783620625e635aee5515f2a839f42e3e56fabd4f09fe8451e5",
+      "permission": "explicit-license",
+      "generator": "src/full-prepare-fonts.py"
+    },
+    {
+      "id": "geist-static-450",
+      "mode": "generate",
+      "license": "OFL-1.1",
+      "notice": "LICENSES/geist-OFL.txt",
+      "source_url": "https://www.npmjs.com/package/@fontsource-variable/geist/v/5.3.0",
+      "sha256": "681b218306859df393a9e67717da27eee3128f44874193134a8e3a081b80fa61",
+      "permission": "explicit-license",
+      "generator": "src/full-prepare-fonts.py"
+    },
+    {
+      "id": "geist-static-460",
+      "mode": "generate",
+      "license": "OFL-1.1",
+      "notice": "LICENSES/geist-OFL.txt",
+      "source_url": "https://www.npmjs.com/package/@fontsource-variable/geist/v/5.3.0",
+      "sha256": "0f2b7584cd99e0c1124e4fdcad3fb325e94324c45a66c3722ea7399bd3ebde51",
+      "permission": "explicit-license",
+      "generator": "src/full-prepare-fonts.py"
+    },
+    {
+      "id": "geist-static-480",
+      "mode": "generate",
+      "license": "OFL-1.1",
+      "notice": "LICENSES/geist-OFL.txt",
+      "source_url": "https://www.npmjs.com/package/@fontsource-variable/geist/v/5.3.0",
+      "sha256": "8e3ef986a16dbb62dc7d5b1e9a3cacdc36d132d0da8da25f0ca0a8945ebc7ff4",
+      "permission": "explicit-license",
+      "generator": "src/full-prepare-fonts.py"
+    },
+    {
+      "id": "geist-static-500",
+      "mode": "generate",
+      "license": "OFL-1.1",
+      "notice": "LICENSES/geist-OFL.txt",
+      "source_url": "https://www.npmjs.com/package/@fontsource-variable/geist/v/5.3.0",
+      "sha256": "6160d64f538e354a76c0ae06623b88d2f7dec77468d90feeee27194812ae4746",
+      "permission": "explicit-license",
+      "generator": "src/full-prepare-fonts.py"
+    },
+    {
+      "id": "geist-static-540",
+      "mode": "generate",
+      "license": "OFL-1.1",
+      "notice": "LICENSES/geist-OFL.txt",
+      "source_url": "https://www.npmjs.com/package/@fontsource-variable/geist/v/5.3.0",
+      "sha256": "7387a1a09c1a64e538470b15387c42493bec9f92ae938c6396233a2235b29068",
+      "permission": "explicit-license",
+      "generator": "src/full-prepare-fonts.py"
+    },
+    {
+      "id": "geist-static-560",
+      "mode": "generate",
+      "license": "OFL-1.1",
+      "notice": "LICENSES/geist-OFL.txt",
+      "source_url": "https://www.npmjs.com/package/@fontsource-variable/geist/v/5.3.0",
+      "sha256": "1555d4f20e181a465845c70f0fbff168325cc0609fd6dd9be17248be0c5d716b",
+      "permission": "explicit-license",
+      "generator": "src/full-prepare-fonts.py"
+    },
+    {
+      "id": "geist-static-580",
+      "mode": "generate",
+      "license": "OFL-1.1",
+      "notice": "LICENSES/geist-OFL.txt",
+      "source_url": "https://www.npmjs.com/package/@fontsource-variable/geist/v/5.3.0",
+      "sha256": "cb6d0453f382e400547556c53fea675e45a9939a5457c56f0977641721467b9f",
+      "permission": "explicit-license",
+      "generator": "src/full-prepare-fonts.py"
+    },
+    {
+      "id": "geist-static-600",
+      "mode": "generate",
+      "license": "OFL-1.1",
+      "notice": "LICENSES/geist-OFL.txt",
+      "source_url": "https://www.npmjs.com/package/@fontsource-variable/geist/v/5.3.0",
+      "sha256": "11077615a42e6dbc3c3cba185d05ffbd1da8be1e2e0d5403d7eca79b5d32db57",
+      "permission": "explicit-license",
+      "generator": "src/full-prepare-fonts.py"
+    },
+    {
+      "id": "geist-static-620",
+      "mode": "generate",
+      "license": "OFL-1.1",
+      "notice": "LICENSES/geist-OFL.txt",
+      "source_url": "https://www.npmjs.com/package/@fontsource-variable/geist/v/5.3.0",
+      "sha256": "ce56f84866827626a83601d27d4a21a62341f705fb04792c0aa9973ccaa26c04",
+      "permission": "explicit-license",
+      "generator": "src/full-prepare-fonts.py"
+    },
+    {
+      "id": "geist-static-650",
+      "mode": "generate",
+      "license": "OFL-1.1",
+      "notice": "LICENSES/geist-OFL.txt",
+      "source_url": "https://www.npmjs.com/package/@fontsource-variable/geist/v/5.3.0",
+      "sha256": "08a65b5283f1665df8edddfae9fb7a44006e803a0a391fc2058cb2e683cc4d2f",
+      "permission": "explicit-license",
+      "generator": "src/full-prepare-fonts.py"
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-frame",
+    "source_sha256": "b94edeaf23831dbacff4c20da42e8d852d974fa6d5bc7907ecc0962cb13f980f",
+    "frame": 480,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "自动核验全部1980帧Native PNG身份与完整编码对比；实际查看联系表和若干关键帧，未完成正常速度连续观看。用户已明确全片保留/上传，这不是逐项评审均通过。"
+    },
+    "listened": {
+      "status": "NOT_LISTENED",
+      "coverage": "未执行实际听审；音轨全量解码、样本/时长与数值相关已核验，不能替代听审。"
+    },
+    "av_sync": {
+      "status": "NUMERIC_ONLY",
+      "coverage": "33秒PTS/采样合同与音频稀疏±32采样相关最佳lag0已核；未执行感知声画同步评审。"
+    }
+  }
+}

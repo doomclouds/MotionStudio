@@ -64,6 +64,12 @@ Node.js + Native Canvas 默认输出 PNG 帧，再由 FFmpeg 编码；可选顺�
 - **输出可追溯：** 渲染指纹记录声明的源码、配置与运行环境；不承诺跨平台像素完全一致。
 - **判断有边界：** 技术检查、实际观看／听审、用户认可分别记录，不把“运行成功”写成“作品通过”。
 
+## 可重渲染作品集
+
+[Tessel · 33秒非官方Canvas2D复刻](portfolio/works/tessel/README.md)：保留必要源码、真实依赖锁、外置资源恢复方法、完整署名/许可及**唯一封面**，不带成片、帧序列、字体或音频。全1980帧源码恢复已核验；用户确认收录，视觉复核 `PARTIAL`、实际听审 `NOT_LISTENED`、声画同步 `NUMERIC_ONLY` 分开披露。维护用途为学习、研究与非商业展示，不改写MIT/OFL授权。
+
+保留与权利联系规范：[portfolio/README.md](portfolio/README.md)；实际作品清单：[portfolio/works/](portfolio/works/)。
+
 ## 快速开始
 
 ### 1. 获取源码与运行环境

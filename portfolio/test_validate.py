@@ -90,6 +90,66 @@ class PortfolioTests(unittest.TestCase):
                 self.reject()
                 self.data["acceptance"][key] = True
 
+    def use_v2(self):
+        self.data["schema"] = 2
+        self.data["acceptance"].update(
+            visual={"status":"PARTIAL","coverage":"Synthetic contact-sheet check only; not normal-speed watching."},
+            listened={"status":"NOT_LISTENED","coverage":"Actual listening has not been performed."},
+            av_sync={"status":"NUMERIC_ONLY","coverage":"Synthetic timestamps and correlation only; not perceptual sync review."})
+
+    def test_v2_truthful_not_listened_can_be_retained(self):
+        self.use_v2();self.save()
+        self.assertEqual(validate_work(self.work), "synthetic-test")
+
+    def test_v2_required_gates_cannot_be_relaxed(self):
+        self.use_v2()
+        for key in ["complete_work","owner_keep","clean_restore","technical"]:
+            with self.subTest(key=key):
+                self.data["acceptance"][key]=False;self.reject()
+                self.data["acceptance"][key]=True
+
+    def test_v2_boolean_does_not_imply_review(self):
+        self.use_v2()
+        for key in ["visual","listened","av_sync"]:
+            with self.subTest(key=key):
+                old=self.data["acceptance"][key];self.data["acceptance"][key]=True;self.reject()
+                self.data["acceptance"][key]=old
+
+    def test_v2_review_coverage_required(self):
+        self.use_v2()
+        for key in ["visual","listened","av_sync"]:
+            with self.subTest(key=key):
+                old=self.data["acceptance"][key]["coverage"]
+                self.data["acceptance"][key]["coverage"]=" ";self.reject()
+                self.data["acceptance"][key]["coverage"]=old
+
+    def test_v2_review_status_not_interchangeable(self):
+        self.use_v2();self.data["acceptance"]["listened"]["status"]="NUMERIC_ONLY";self.reject()
+
+    def test_v2_failed_or_unknown_review_not_published(self):
+        self.use_v2()
+        for state in ["FAILED","unknown",True,{}]:
+            with self.subTest(state=state):
+                self.data["acceptance"]["visual"]["status"]=state;self.reject()
+
+    def test_v2_full_review_with_explicit_scope(self):
+        self.use_v2()
+        for key in ["visual","listened","av_sync"]:
+            self.data["acceptance"][key]={"status":"PASSED","coverage":"Synthetic complete-review assertion; not real evidence."}
+        self.save();self.assertEqual(validate_work(self.work),"synthetic-test")
+
+    def test_v2_not_reviewed_disclosure_is_valid(self):
+        self.use_v2()
+        for key in ["visual","av_sync"]:
+            self.data["acceptance"][key]={"status":"NOT_REVIEWED","coverage":"No human review performed."}
+        self.save();self.assertEqual(validate_work(self.work),"synthetic-test")
+
+    def test_v2_states_do_not_silently_migrate_into_v1(self):
+        self.use_v2();self.data["schema"]=1;self.reject()
+
+    def test_unknown_schema_rejected(self):
+        self.data["schema"]=3;self.reject()
+
     def test_missing_or_changed_sources_rejected(self):
         (self.work / "src/scene.mjs").write_text("// changed\n")
         with self.assertRaisesRegex(Invalid, "hash mismatch"):

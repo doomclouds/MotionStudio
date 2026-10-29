@@ -1,0 +1,77 @@
+{
+  "schema": 1,
+  "kind": "verified-platform-constraints-and-shared-source-identity-not-an-install-lock",
+  "platform": {
+    "os": "linux",
+    "arch": "x86_64",
+    "node": "24.22.1",
+    "python": "3.12.14",
+    "ffmpeg": "7.1.5",
+    "ffprobe": "7.1.5"
+  },
+  "scope": "Version constraints describe the verified existing OS; they do not install or hash-lock operating-system binaries or promise cross-platform encoding identity. Actual npm/pip install locks are separate.",
+  "npm_install_lock": {
+    "repository_path": "engine/motion-render-core/package-lock.json",
+    "work_copy": "locks/npm-package-lock.json",
+    "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c"
+  },
+  "python_install_lock": {
+    "work_path": "requirements-linux-cp312.lock",
+    "sha256": "776f71d950e677005a93693b4c105c60a8183d2eea498e3f2226bb3c02470e31"
+  },
+  "shared_source_commit": "e968d4243adf97af09d37d5f4d710562c6959689",
+  "shared_source_files": [
+    {
+      "path": "engine/motion-elements/lib/keyframe-track.mjs",
+      "sha256": "053bd08c0b0325fab794e2a0c41051d34bdca9d4a9c8fad03970c16821bc395a"
+    },
+    {
+      "path": "engine/motion-elements/lib/layouts.mjs",
+      "sha256": "5312913abfb3ee7f28cdc67e6a9e5a64d1a02dcb2d310ec78493dc3764a81c97"
+    },
+    {
+      "path": "engine/motion-elements/lib/math.mjs",
+      "sha256": "46f4533aa1a608293d6105be9f093cf0c0dc97d6d1b3e4b2156eee3cf60b6914"
+    },
+    {
+      "path": "engine/motion-elements/lib/matrix.mjs",
+      "sha256": "ba7fcc4f91a265a9a8f044da2dec9014c8b09db5c9b58b280a3cb6d69892cbd6"
+    },
+    {
+      "path": "engine/motion-elements/lib/motions.mjs",
+      "sha256": "1352cf0c964e21a9ec5d762b879138e8b61ba2cf8b65b3a87c8f63ab38ab51e4"
+    },
+    {
+      "path": "engine/motion-elements/lib/recipes/layout-handoff.mjs",
+      "sha256": "48936113fd751bb79d5a06b9e486a5f51c4d4b0c5a6dcc66233684bf67018869"
+    },
+    {
+      "path": "engine/motion-elements/lib/structured-layouts.mjs",
+      "sha256": "c898f2a018f910849053db6167804df53109b9f58f10789b02bfb89a575b4ada"
+    },
+    {
+      "path": "engine/motion-elements/lib/time.mjs",
+      "sha256": "9a5daf2097351c9729fa7e90d90c510ad3f26af54fca843bac27e0d95689cad9"
+    },
+    {
+      "path": "engine/motion-elements/lib/validate.mjs",
+      "sha256": "717402d760ee95c73a6a8679b8dc2acd49c5410bafdded6b48257dfc9d914c56"
+    },
+    {
+      "path": "engine/motion-render-core/lib/native.mjs",
+      "sha256": "2e925930bf7c519071fe5aba753eee708f4681c96a52cfa02f357424bf21434b"
+    },
+    {
+      "path": "engine/motion-render-core/lib/stream.mjs",
+      "sha256": "cec3a118678fa7bc3b0bcdace8d6ef89fe28c194a56a32b8cbe6431afbd99a84"
+    },
+    {
+      "path": "engine/motion-render-core/scripts/render-stream-worker.mjs",
+      "sha256": "6c5e87a10facdbb35c5e66fea992a35546ae4cfd1301d7603e49b3aa6ce7309e"
+    },
+    {
+      "path": "engine/motion-timeline-core/lib/timeline.mjs",
+      "sha256": "57e7ad73865c5fb0d24c6f2bca7ed797ea9ce0716c25ca066a076a10d4d8ae31"
+    }
+  ]
+}
