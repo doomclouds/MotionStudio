@@ -238,7 +238,7 @@ Pixi官方shader与p5 mask具体源码/许可取舍见`docs/raster-reference-dec
 
 ## 角色：两段固定长度追随明确目标
 
-当前26基础＋6配方（32项），距离100基础目标仍有74项；数量与艺术接受分别报告。
+当前28基础＋6配方（34项），距离100基础目标仍有72项；数量与艺术接受分别报告。
 `geometry.two-link-ik`是1个纯二维几何机制，无新配方，不是全身rig、碰撞、力学或3D。
 root/target来自作品同一绝对帧状态，显式bend/fallback；用返回joint/end画骨段，不能把不可达end偷偷画到target掩盖投影。
 实际手掌轮廓与IK端点不是同一个接触定义：数值误差0后仍要看真实编码邻帧是否早贴、滑动或错位。
@@ -248,3 +248,21 @@ root/target来自作品同一绝对帧状态，显式bend/fallback；用返回jo
 原冻结求解器及实际导入依赖保持字节一致，真实调用与限段邻帧已核；作品此前视觉早贴版本不作成功证据，最终修版单独绑定。
 内外投影、fallback和奇点有工程测试，不是本片覆盖；常速NOT_DONE、听审NOT_LISTENED、艺术PENDING_USER、迁移NOT_RUN。
 作品参数/媒体/私有回执不随源包分发，后续重用仍须为实际镜头验证，不默认推荐风格。
+
+## 校准平面视差：1基础，非真正3D
+
+`composition.plane-parallax`将零相机对齐的平行画稿映到明确viewport，近远层横移/推进遵守同一关系。
+`planeParallaxLayout`不绘图、不排序、不clip，不把focalLength当独立光学变焦。
+实际14秒候选840次投影/每帧四层绘制，固定校准、同宽高比与正常near距离；其余数值边界只有工程验证。
+见`docs/plane-parallax.md`和`docs/parallax-reference-decisions.md`。直接模块及依赖字节绑定原片，公共index仅测试。
+技术和四个编码静帧核查不等于常速观看/听审/艺术接受：NOT_DONE、NOT_LISTENED、PENDING_USER分别保留；通用迁移NOT_RUN。
+主体身份、旧位移、裁切、生成画稿与声音不拆成更多机制；实际素材/参数/私有回执不含在公共源包。
+
+## 滚动分区内sticky：1基础，非完整CSS
+
+`composition.sticky-interval` / `stickyIntervalLayout`接收未滚动内容rect、所属纵向区间、绝对scrollOffset和pinY，输出最终视窗本地rect及phase。
+不要再减一次scrollOffset；外层位置/clip仍由旧机制负责。它不处理DOM、惯性、重叠或自动分区。
+一支12.5秒候选两标题990次调用/绘制；三个phase有可见效果，离屏后的求值不算视觉覆盖。
+最终版9个sticky编码帧与4个交接/结尾帧限定审查通过；常速NOT_DONE、听审NOT_LISTENED、用户PENDING_USER及通用迁移NOT_RUN不改变。
+完整合同见`docs/sticky-interval.md`；官方源码/许可判断见`docs/ui-scroll-reference-decisions.md`。
+真实导入solver/依赖同字节，公共index只由测试验证；旧motion/reveal/shared handoff、海报美术和声音不重复计数。

@@ -2137,6 +2137,138 @@
         "角色",
         "关节"
       ]
+    },
+    {
+      "id": "composition.plane-parallax",
+      "version": 1,
+      "kind": "composition",
+      "status": "experimental",
+      "summary": "校准平行画稿图层的连续深度差速与推进缩放",
+      "api": "planeParallaxLayout",
+      "entry": "lib/index.mjs",
+      "example": {
+        "planes": [
+          {
+            "itemId": "back",
+            "depth": 800
+          },
+          {
+            "itemId": "hero",
+            "depth": 300
+          }
+        ],
+        "reference": {
+          "width": 400,
+          "height": 240
+        },
+        "camera": {
+          "x": 20,
+          "y": 0,
+          "z": 40,
+          "focalLength": 300
+        },
+        "viewport": {
+          "x": 12,
+          "y": 18,
+          "width": 200,
+          "height": 120
+        },
+        "near": 10
+      },
+      "applicability": [
+        "卡片视窗进入分层场景时，近景与远景按同一显式相机关系差速移动"
+      ],
+      "counterexamples": [
+        "不是任意world XYZ、旋转相机、网格、真正3D、景深或遮挡求解；focalLength不是独立光学变焦。",
+        "不排序、不裁切；每层画稿须在零相机状态校准，主物体身份由调用方维护。",
+        "影片仅覆盖固定深度、同宽高比viewport及正常near距离；其他分支没有本片效果验收。",
+        "技术及实际调用不是艺术认可或通用生产迁移。"
+      ],
+      "evidence": {
+        "technicalTests": [
+          "test/plane-parallax.test.mjs"
+        ],
+        "visualDemo": null,
+        "videoValidation": "VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE",
+        "artisticReview": "PENDING_USER",
+        "originalProductionTransfer": "NOT_RUN",
+        "visualReview": "DECODED_FRAME_REVIEW_NO_BLOCKERS",
+        "normalSpeedViewing": "NOT_DONE",
+        "audioListening": "NOT_LISTENED",
+        "ownerArtisticAcceptance": "PENDING_USER",
+        "guidance": "docs/plane-parallax.md",
+        "sourceVersionRelation": "Projection and actually imported dependency bytes match the frozen film. The scene imports the module directly; public index export is tested but not film-consumed. Catalog/test/guidance are later integration; the historical manifest is unchanged.",
+        "validationCoverage": "840 projections in frames 0–839, each with four matrices consumed by layer drawing. Main lateral/depth motion in frames 120–473; fixed calibration, uniform-aspect viewports and normal near distances only. Four encoded static frames reviewed, not continuous viewing.",
+        "callEvidenceScope": "Render-time state-result/layer-draw records plus frozen-source input and consumer crosscheck; not independent per-call argument interception."
+      },
+      "knowledgeLinks": [],
+      "tags": [
+        "parallax",
+        "camera",
+        "viewport",
+        "layer",
+        "视差",
+        "图层"
+      ]
+    },
+    {
+      "id": "composition.sticky-interval",
+      "version": 1,
+      "kind": "composition",
+      "status": "experimental",
+      "summary": "标题在所属滚动分区内自由进入、贴顶保留并随末端退出",
+      "api": "stickyIntervalLayout",
+      "entry": "lib/index.mjs",
+      "example": {
+        "itemId": "chapter-a",
+        "rect": {
+          "x": 20,
+          "y": 100,
+          "width": 180,
+          "height": 30
+        },
+        "container": {
+          "start": 80,
+          "end": 400
+        },
+        "scrollOffset": 200,
+        "pinY": 10
+      },
+      "applicability": [
+        "长列表分区标题随内容滚动，保持当前分区线索并在分区结束时交棒"
+      ],
+      "counterexamples": [
+        "仅纵向显式区间约束，不是完整CSS sticky、DOM监听、惯性、自动分区或重叠求解。",
+        "输出已经是viewport本地最终矩形；不要再次减scrollOffset，窗口放置和clip由调用方处理。",
+        "本片正常正向滚动覆盖normal/pinned/released；负滚动、负pin、数值极值及单点固定区间没有作品验收。",
+        "离屏后继续求值不算可见效果验证；技术与实际调用不是艺术接受。"
+      ],
+      "evidence": {
+        "technicalTests": [
+          "test/sticky-interval.test.mjs"
+        ],
+        "visualDemo": null,
+        "videoValidation": "VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE",
+        "artisticReview": "PENDING_USER",
+        "originalProductionTransfer": "NOT_RUN",
+        "visualReview": "DECODED_FRAME_REVIEW_NO_BLOCKERS",
+        "normalSpeedViewing": "NOT_DONE",
+        "audioListening": "NOT_LISTENED",
+        "ownerArtisticAcceptance": "PENDING_USER",
+        "guidance": "docs/sticky-interval.md",
+        "sourceVersionRelation": "Sticky solver and actually imported dependency bytes match the frozen film. The scene imports the module directly; the public index is tested but not film-consumed, and its bytes differ from the old unused index retained with the production archive. Catalog/test/guidance integration leaves the historical manifest unchanged.",
+        "validationCoverage": "990 successful calls and rectangle draws: two titles over frames 0–494. First title normal0–128, pinned129–275, released276–494; released geometry visible only276–323, later calculations are offscreen. No negative/extreme/single-point interval film coverage. Final-version nine encoded sticky frames plus four poster/handoff/end frames reviewed; old-version review is not reused as final-version evidence.",
+        "callEvidenceScope": "Render-time actual sticky input/result snapshots and draw counters, crosschecked against frozen-source consumers; not independent parameter interception."
+      },
+      "knowledgeLinks": [],
+      "tags": [
+        "sticky",
+        "scroll",
+        "section",
+        "pin",
+        "滚动",
+        "分区"
+      ]
     }
   ]
 }

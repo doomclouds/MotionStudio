@@ -11,6 +11,17 @@ const item = (id, extra = {}) => ({id, kind:'motion', status:'experimental', sum
 const fixture = {schemaVersion:1, elements:[item('motion.z'), item('motion.a')]};
 const run = args => spawnSync(process.execPath, [cli, ...args], {encoding:'utf8', cwd:'/tmp'});
 
+test('plane parallax preserves calibrated-film coverage and separate viewing gates',()=>{
+ const e=queryCatalog(catalog,{id:'composition.plane-parallax'}).results[0].element;
+ assert.equal(e.api,'planeParallaxLayout');assert.equal(e.status,'experimental');
+ assert.equal(e.evidence.videoValidation,'VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE');
+ assert.equal(e.evidence.artisticReview,'PENDING_USER');assert.equal(e.evidence.ownerArtisticAcceptance,'PENDING_USER');
+ assert.equal(e.evidence.normalSpeedViewing,'NOT_DONE');assert.equal(e.evidence.audioListening,'NOT_LISTENED');
+ assert.equal(e.evidence.originalProductionTransfer,'NOT_RUN');assert.equal(e.evidence.guidance,'docs/plane-parallax.md');
+ assert.match(e.evidence.validationCoverage,/840 projections/);assert.match(e.evidence.validationCoverage,/Four encoded static frames/);
+ assert.match(e.evidence.callEvidenceScope,/not independent/);assert.match(e.evidence.sourceVersionRelation,/not film-consumed/);
+});
+
 test('stable ID ordering, total, bounded limit and detached complete metadata', () => {
   const before = JSON.stringify(fixture);
   const r = queryCatalog(fixture, {limit:1});
@@ -59,9 +70,9 @@ test('strict CLI unknown/repeated/missing/extra options and command constraints'
   assert.deepEqual(parseCatalogArgs(['--help']),{help:true});
   assert.equal(parseCatalogArgs(['find','--tag',' 淡入 ']).query.tag,'淡入');
 });
-test('real 32 entries: tags, status, metadata and executable inputs preserved', () => {
+test('real 34 entries: tags, status, metadata and executable inputs preserved', () => {
   const before = JSON.stringify(catalog);
-  const r = queryCatalog(catalog,{limit:100}); assert.equal(r.total,32); assert.equal(r.truncated,false);
+  const r = queryCatalog(catalog,{limit:100}); assert.equal(r.total,34); assert.equal(r.truncated,false);
   for (const e of catalog.elements) {
     assert.equal(e.status,'experimental'); assert.ok(e.tags.length>0);
     const hit = queryCatalog(catalog,{id:e.id}).results[0]; assert.deepEqual(hit.element,e);
@@ -83,7 +94,7 @@ test('runtime permission isolation: only three static files readable, no entry/p
     '--permission', `--allow-fs-read=${cli}`, `--allow-fs-read=${root}lib/catalog-query.mjs`, `--allow-fs-read=${root}catalog.json`,
     cli,'list','--limit','100',
   ], {encoding:'utf8',cwd:'/tmp'});
-  assert.equal(r.status,0,r.stderr); assert.equal(JSON.parse(r.stdout).total,32);
+  assert.equal(r.status,0,r.stderr); assert.equal(JSON.parse(r.stdout).total,34);
 });
 
 // Metadata guards prevent a technical fixture from becoming a style endorsement.
@@ -100,7 +111,7 @@ test('experimental band and light recipe preserve independent quality gates in q
 
 
 test('data-flow accounting and film coverage preserve independent quality gates', () => {
-  assert.equal(catalog.elements.filter(e => e.kind !== 'recipe').length,26);
+  assert.equal(catalog.elements.filter(e => e.kind !== 'recipe').length,28);
   assert.equal(catalog.elements.filter(e => e.kind === 'recipe').length,6);
   for (const id of ['composition.layered-dag','composition.weighted-flow','recipe.flow-handoff']) {
     const e=queryCatalog(catalog,{id}).results[0].element;
@@ -141,4 +152,15 @@ test('two-link IK records actual reachable branch coverage without promoting aut
  assert.equal(e.evidence.originalProductionTransfer,'NOT_RUN');assert.equal(e.evidence.guidance,'docs/two-link-ik.md');
  assert.match(e.evidence.validationCoverage,/1680.*0–839/);assert.match(e.evidence.validationCoverage,/No projected, fallback/);
  assert.equal(queryCatalog(catalog,{kind:'recipe'}).total,6);
+});
+
+test('sticky interval distinguishes actual draws from visible released geometry',()=>{
+ const e=queryCatalog(catalog,{id:'composition.sticky-interval'}).results[0].element;
+ assert.equal(e.api,'stickyIntervalLayout');assert.equal(e.status,'experimental');
+ assert.equal(e.evidence.videoValidation,'VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE');
+ assert.equal(e.evidence.artisticReview,'PENDING_USER');assert.equal(e.evidence.ownerArtisticAcceptance,'PENDING_USER');
+ assert.equal(e.evidence.normalSpeedViewing,'NOT_DONE');assert.equal(e.evidence.audioListening,'NOT_LISTENED');
+ assert.equal(e.evidence.originalProductionTransfer,'NOT_RUN');assert.equal(e.evidence.guidance,'docs/sticky-interval.md');
+ assert.match(e.evidence.validationCoverage,/990 successful calls/);assert.match(e.evidence.validationCoverage,/visible only276–323/);
+ assert.match(e.evidence.callEvidenceScope,/input\/result snapshots/);assert.match(e.evidence.sourceVersionRelation,/not film-consumed/);
 });

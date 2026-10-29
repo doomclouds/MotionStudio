@@ -32,3 +32,5 @@ export {compileFlowHandoff,sampleFlowHandoff} from './recipes/flow-handoff.mjs';
 export {createRasterSnapshot,copyRasterPixels,RASTER_LIMITS,sampleRasterMatte,sampleRasterDisplacement} from './raster-effects.mjs';
 export {drawRasterSnapshot} from '../adapters/raster-effects.mjs';
 export {solveTwoLinkIK} from './two-link-ik.mjs';
+export {planeParallaxLayout} from './plane-parallax.mjs';
+export {stickyIntervalLayout} from './sticky-interval.mjs';

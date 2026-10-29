@@ -1,6 +1,6 @@
 # Motion Elements — 可组合动效基础库
 
-当前目录 **32 项：26 个基础机制＋6 个配方**，全部 experimental。数量不代表艺术通过。以下阶段计数是历史记录；当前分类以 catalog 为准。
+当前目录 **34 项：28 个基础机制＋6 个配方**，全部 experimental。数量不代表艺术通过。以下阶段计数是历史记录；当前分类以 catalog 为准。
 
 第一阶段包含 **10 个机制**，而不是 10 套影片模板。数字不同、方向相反、快慢不同均是参数变体，不重复计算新元素。当前全部标记 `experimental`：数值与 Native 像素测试不等于审美验收，也不等于已经在原创成片中复用通过。
 
@@ -768,3 +768,28 @@ handoff 只在影片中覆盖 shared 身份的位置/尺寸交接，未覆盖 en
 求解器及实际导入依赖字节匹配原冻结影片；目录、测试与指导为后续源包接入，不篡改历史清单。
 工程与限定解码邻帧检查通过，常速NOT_DONE、听审NOT_LISTENED、用户艺术PENDING_USER，
 保持experimental，不写成物理抓取、优秀角色表演或通用迁移通过。媒体、制作源码与实际艺术参数留私有交付。
+
+## 镜头与跨场景批：1 个校准平面视差机制
+
+`composition.plane-parallax` / `planeParallaxLayout` 用明确深度、相机和viewport连接已对齐画稿的近远差速及推进缩放。
+零相机时各层保持同一构图；它不是把独立平移换名，也不是任意XYZ或真正3D相机。
+只新增1基础，无新配方；图层数量、父矩阵、clip、原图生成与位移纹理均不重复计数。
+见[使用合同/实际覆盖](docs/plane-parallax.md)、[Three.js/OGL源码及许可取舍](docs/parallax-reference-decisions.md)。
+
+一支14秒有声原创候选在840帧实际求值，每帧四层matrix均用于绘图，主体与水面共享深度。
+固定校准、同宽高比viewport与正常near距离有本片调用证据；其他分支仅工程测试，不扩大作品覆盖。
+实际导入源字节与影片一致，index导出只作公共API测试；元数据接入不改历史manifest。
+全解码/seek/状态与限定编码静帧核查通过，常速NOT_DONE、听审NOT_LISTENED、用户艺术PENDING_USER、通用迁移NOT_RUN。
+完整制作、画稿、音源、影片及私有回执不进该源包，不将合成海景说成真实观测或流体模拟。
+
+## 产品UI滚动批：1 个容器内sticky区间机制
+
+`composition.sticky-interval` / `stickyIntervalLayout`让分区标题自由滚入、到指定位置保留、随所属分区末端退出。
+只新增1基础，无新配方；旧滚动motion、clip与同ID海报到票据的handoff继续复用，不换名称重复计数。
+见[坐标/数值/实际覆盖指南](docs/sticky-interval.md)、[Anime.js源码与MIT、CSS工作草案取舍](docs/ui-scroll-reference-decisions.md)。
+
+一支12.5秒有声原创候选中，两标题合计990次成功求值/矩形绘制；normal/pinned/released实际出现。
+离开视窗后的持续计算不扩称可见验证。最终版本有9个编码sticky阶段帧和4个交接/结尾帧独评，未套用旧版本结论。
+全帧几何/代表Native/解码技术通过；常速NOT_DONE、听审NOT_LISTENED、用户艺术PENDING_USER、通用迁移NOT_RUN。
+solver及实际导入依赖与影片一致，但存档未使用的旧index不等于当前公共index；只声称对应真实导入范围，不声称全包同版。
+媒体、制作和实际美术参数不进该源包；本机制不是完整CSS、惯性、自动碰撞或真实购票。
