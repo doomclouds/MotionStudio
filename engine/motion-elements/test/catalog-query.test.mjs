@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {fileURLToPath} from 'node:url';
 import {spawnSync} from 'node:child_process';
-import {queryCatalog, parseCatalogArgs} from '../lib/catalog-query.mjs';
+import {queryCatalog, parseCatalogArgs, KINDS} from '../lib/catalog-query.mjs';
 const root = fileURLToPath(new URL('../', import.meta.url));
 const cli = `${root}scripts/query-catalog.mjs`;
 const catalog = JSON.parse(readFileSync(`${root}catalog.json`, 'utf8'));
@@ -177,4 +177,57 @@ test('three-work owner feedback distinguishes rejection from scoped and limited 
  assert.match(queryCatalog(catalog,{id:'geometry.two-link-ik'}).results[0].element.evidence.ownerFeedbackScope,/does not invalidate/);
  assert.match(queryCatalog(catalog,{id:'composition.plane-parallax'}).results[0].element.evidence.ownerFeedbackScope,/limited to the delivered/);
  assert.match(queryCatalog(catalog,{id:'composition.sticky-interval'}).results[0].element.evidence.ownerFeedbackScope,/not rejection/);
+});
+
+
+test('every catalog kind is a supported metadata filter with exact matching results', () => {
+  const kinds = [...new Set(catalog.elements.map(e => e.kind))];
+  assert.equal(new Set(KINDS).size, KINDS.length);
+  assert.ok(Object.isFrozen(KINDS));
+  for (const kind of kinds) {
+    assert.ok(KINDS.includes(kind), `catalog kind ${kind} must be queryable`);
+    const expected = catalog.elements.filter(e => e.kind === kind).map(e => e.id).sort();
+    const parsed = parseCatalogArgs(['list', '--kind', kind, '--limit', '100']);
+    assert.equal(parsed.query.kind, kind);
+    assert.deepEqual(queryCatalog(catalog, parsed.query).results.map(r => r.element.id), expected);
+  }
+});
+
+test('field metadata filtering preserves detached evidence without executing entries', () => {
+  const before = JSON.stringify(catalog);
+  const parsed = parseCatalogArgs(['find', '--kind', 'field', '--text', 'attractor']);
+  const result = queryCatalog(catalog, parsed.query);
+  assert.equal(result.total, 1);
+  const entry = result.results[0].element;
+  assert.equal(entry.id, 'field.attractor-orientation');
+  assert.equal(entry.api, 'compileAttractorField');
+  assert.equal(entry.status, 'experimental');
+  assert.deepEqual(entry, catalog.elements.find(e => e.id === entry.id));
+  entry.example.columns = -1;
+  entry.evidence = {changed: true};
+  assert.equal(JSON.stringify(catalog), before);
+  for (const kind of ['fields', 'Field', ' field ', 'unknown']) {
+    assert.throws(() => queryCatalog(catalog, {kind}), /invalid kind/);
+    assert.throws(() => parseCatalogArgs(['list', '--kind', kind]), /invalid kind/);
+  }
+});
+
+test('field CLI list/find succeeds from unrelated cwd under static-file-only permissions', () => {
+  for (const args of [['list', '--kind', 'field'], ['find', '--kind', 'field', '--text', 'attractor']]) {
+    const ordinary = run(args);
+    assert.equal(ordinary.status, 0, ordinary.stderr);
+    assert.equal(ordinary.stderr, '');
+    assert.deepEqual(JSON.parse(ordinary.stdout).results.map(r => r.element.id), ['field.attractor-orientation']);
+    const restricted = spawnSync(process.execPath, [
+      '--permission', `--allow-fs-read=${cli}`, `--allow-fs-read=${root}lib/catalog-query.mjs`, `--allow-fs-read=${root}catalog.json`,
+      cli, ...args,
+    ], {encoding: 'utf8', cwd: '/tmp'});
+    assert.equal(restricted.status, 0, restricted.stderr);
+    assert.equal(restricted.stderr, '');
+    assert.equal(restricted.stdout, ordinary.stdout);
+  }
+  const invalid = run(['list', '--kind', 'fields']);
+  assert.equal(invalid.status, 2);
+  assert.equal(invalid.stdout, '');
+  assert.match(invalid.stderr, /invalid kind/);
 });
