@@ -1,5 +1,7 @@
 # Motion Elements — 可组合动效基础库
 
+当前目录 **26 项：21 个基础机制＋5 个配方**，全部 experimental。数量不代表艺术通过。以下阶段计数是历史记录；当前分类以 catalog 为准。
+
 第一阶段包含 **10 个机制**，而不是 10 套影片模板。数字不同、方向相反、快慢不同均是参数变体，不重复计算新元素。当前全部标记 `experimental`：数值与 Native 像素测试不等于审美验收，也不等于已经在原创成片中复用通过。
 
 ## 选择与质量边界
@@ -693,3 +695,22 @@ drawLightEchoField(ctx, state);
 不含项目灯位、原片媒体、音乐或生成图。当前目录保持 experimental，艺术及
 生产迁移为 NOT_RUN。合成例源码可由 Native 渲染器输出；测试覆盖乱序/重复采样、
 30000/1001时间、首尾、重复ID、重排、seed、focus解耦及Canvas像素状态恢复。
+
+## UI 首批：3 个基础机制＋1 个配方
+
+新增 `composition.grid`、`composition.constraint-stack`、`motion.keyframe-track`，
+以及组合配方 `recipe.layout-handoff`；配方不算基础机制。
+完整中文用法、参数边界、反例与可执行示例见 [UI 使用指导](docs/ui-foundations.md)
+和 [布局交接配方](docs/layout-handoff.md)。公共入口仍为 `lib/index.mjs`，旧 API 不变。
+
+本批已在一支私有有声验证候选中实际调用，代码身份与调用回执经独立复核。
+验证视频、参考资源、实际参数/帧段、媒体 hash 和用户反馈留在私有交付，不进 Git。
+影片制作后边界修复保留原冻结源码身份，另以逐调用状态和代表帧等价回执绑定修复版；
+不将原片冒称为修复版全长重渲。
+覆盖范围必须分别看：grid/stack 使用了布局坐标，keyframe 使用 hold 分支；
+handoff 只在影片中覆盖 shared 身份的位置/尺寸交接，未覆盖 enter/exit fade。
+原时间曲线由调用方显式重映射，不代表库新增任意 Bézier 支持。
+
+已完成工程与解码帧检查；常速连续观看 `NOT_DONE`，听审 `NOT_LISTENED`，
+用户艺术接受 `PENDING_USER`。实际调用证据不是风格推荐或原创生产迁移通过，
+更不等于 100 项目标已经完成。静态布局重算不自动动画，不用整体平移冒充角色表演。

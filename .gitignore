@@ -60,3 +60,6 @@
 /skills/motion-film-director/production-cases/
 **/source-index.json
 **/evidence-bindings.json
+
+# Private validation film sources and receipts, never part of the public toolkit.
+/production/

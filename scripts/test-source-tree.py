@@ -60,6 +60,10 @@ class SourceTreeFixtures(unittest.TestCase):
     def test_private_study_is_forbidden(self):
         self.add('projects/kinetic-type-recreation/scene.mjs', b'export {};')
         self.audit(False, 'forbidden-path')
+    def test_private_production_source_and_receipt_are_forbidden(self):
+        self.add('production/validation-example/scene.mjs', b'export {};')
+        self.add('production/validation-example/manifest.json', b'{"status":"candidate"}')
+        self.audit(False, 'forbidden-path')
     def test_normal_source_and_typescript(self):
         self.add('src/main.ts', b'export const answer = 42;\n')
         self.git('commit', '-qm', 'source')

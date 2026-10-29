@@ -14,6 +14,7 @@ This is a deliberately narrow **toolkit source snapshot**, not a publication of 
 
 ## Kept outside this repository
 
+- The entire private `production/` collection, including validation-film implementations, call receipts, hashes, comparison reports and media.
 - The entire private `projects/` collection: film implementations, project assets/fonts, restoration metadata, source acquisition indexes, product evidence, briefs, private reviews, and feedback.
 - Director Skill research datasets and production cases, including media identity hashes, local evidence locations, acquisition records and individual commissioning feedback.
 - Actual production catalog and case datasets (distinct from the synthetic, static motion-element API catalog). Generic query/validation tools remain, with an empty default library and explicitly synthetic test fixtures; passing those tests is not validation of any private production case.

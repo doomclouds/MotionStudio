@@ -23,3 +23,6 @@ export {compileSampledBand} from './sampled-band.mjs';
 export {drawSampledBand} from '../adapters/sampled-band.mjs';
 export {compileLightEchoField,sampleLightEchoField} from './recipes/light-echo-field.mjs';
 export {drawLightEchoField} from '../adapters/light-echo-field.mjs';
+export {gridLayout,constraintStackLayout} from './structured-layouts.mjs';
+export {sampleKeyframeTrack} from './keyframe-track.mjs';
+export {compileLayoutHandoff,sampleLayoutHandoff} from './recipes/layout-handoff.mjs';

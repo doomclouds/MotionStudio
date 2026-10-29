@@ -181,3 +181,14 @@ sampled band 合同与 `examples/sampled-band-study.mjs`。适合二维变宽带
 此 API 从项目方法提炼并独立验证，未回填现有成片，不能把项目成片验证算作
 新 API 的生产迁移或艺术认可。沿用已有路径/拖尾、变换、错峰与 mask API，
 不按颜色、层数、时长计新条目。
+
+## UI 布局、关键帧与同身份交接
+
+新增 grid / intrinsic-size stack / explicit scalar keyframe 三个基础机制，
+以及 layout-handoff 配方。当前目录 21 基础＋5 配方，不能把配方或 helper 混为基础数。
+调用参数与边界见包内 `docs/ui-foundations.md` 和 `docs/layout-handoff.md`。
+验证候选的实际调用回执在私有交付，不随源码包公开；只证明明确覆盖的API分支。
+原冻结影片与后续边界修复版本分别绑定：新旧等价回执不能冒充修复版全长重渲。
+keyframe 的影片覆盖为 hold，handoff 为 shared 身份交接，不外推 enter/exit、
+任意曲线、2.5D、失焦或自动排期。工程/解码帧检查、常速观看、听审和用户艺术接受
+分别记录；当前 NOT_DONE / NOT_LISTENED / PENDING_USER 不得自动升级为 passed。

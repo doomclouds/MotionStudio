@@ -1355,6 +1355,283 @@
         "反射",
         "recipe"
       ]
+    },
+    {
+      "id": "composition.grid",
+      "version": 1,
+      "kind": "composition",
+      "status": "experimental",
+      "summary": "固定尺寸二维格子，稳定身份且按行优先排列",
+      "api": "gridLayout",
+      "entry": "lib/index.mjs",
+      "example": {
+        "itemIds": [
+          "mon",
+          "tue",
+          "wed"
+        ],
+        "width": 120,
+        "height": 58,
+        "columns": 3,
+        "gap": 0
+      },
+      "applicability": [
+        "固定尺寸二维格子，稳定身份且按行优先排列"
+      ],
+      "counterexamples": [
+        "不计算日期、事件起止时长、碰撞或排期",
+        "工程验证不构成艺术认可或风格推荐。"
+      ],
+      "evidence": {
+        "technicalTests": [
+          "test/structured-layouts.test.mjs"
+        ],
+        "visualDemo": null,
+        "videoValidation": "VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE",
+        "artisticReview": "PENDING_USER",
+        "originalProductionTransfer": "NOT_RUN",
+        "visualReview": "DECODED_FRAME_REVIEW_NO_BLOCKERS",
+        "normalSpeedViewing": "NOT_DONE",
+        "audioListening": "NOT_LISTENED",
+        "ownerArtisticAcceptance": "PENDING_USER",
+        "validationCoverage": "Grid coordinates consumed by weekday columns and mini-calendar; does not calculate dates or event times.",
+        "guidance": "docs/ui-foundations.md",
+        "sourceVersionRelation": "Frozen film version; post-fix state and representative-frame equality are separate receipts, not a full new-version film render."
+      },
+      "knowledgeLinks": [],
+      "tags": [
+        "grid",
+        "ui",
+        "calendar",
+        "网格"
+      ]
+    },
+    {
+      "id": "composition.constraint-stack",
+      "version": 1,
+      "kind": "composition",
+      "status": "experimental",
+      "summary": "按每项实际尺寸和明确间距保持输入顺序堆叠",
+      "api": "constraintStackLayout",
+      "entry": "lib/index.mjs",
+      "example": {
+        "items": [
+          {
+            "itemId": "work",
+            "width": 224,
+            "height": 16
+          },
+          {
+            "itemId": "focus",
+            "width": 224,
+            "height": 28
+          }
+        ],
+        "axis": "y",
+        "gap": 12
+      },
+      "applicability": [
+        "按每项实际尺寸和明确间距保持输入顺序堆叠"
+      ],
+      "counterexamples": [
+        "不换行、排序、测字或避障；没有隐藏时钟",
+        "工程验证不构成艺术认可或风格推荐。"
+      ],
+      "evidence": {
+        "technicalTests": [
+          "test/structured-layouts.test.mjs"
+        ],
+        "visualDemo": null,
+        "videoValidation": "VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE",
+        "artisticReview": "PENDING_USER",
+        "originalProductionTransfer": "NOT_RUN",
+        "visualReview": "DECODED_FRAME_REVIEW_NO_BLOCKERS",
+        "normalSpeedViewing": "NOT_DONE",
+        "audioListening": "NOT_LISTENED",
+        "ownerArtisticAcceptance": "PENDING_USER",
+        "validationCoverage": "Stack coordinates consumed by calendar rows and result priorities; variable intrinsic-size cases remain covered by synthetic tests, not the film.",
+        "guidance": "docs/ui-foundations.md",
+        "sourceVersionRelation": "Frozen film version; post-fix state and representative-frame equality are separate receipts, not a full new-version film render."
+      },
+      "knowledgeLinks": [],
+      "tags": [
+        "stack",
+        "ui",
+        "layout",
+        "堆叠"
+      ]
+    },
+    {
+      "id": "motion.keyframe-track",
+      "version": 1,
+      "kind": "motion",
+      "status": "experimental",
+      "summary": "显式标量关键帧的linear/hold轨道，可绝对时间seek",
+      "api": "sampleKeyframeTrack",
+      "entry": "lib/index.mjs",
+      "example": {
+        "range": {
+          "start": {
+            "n": "0",
+            "d": "1"
+          },
+          "end": {
+            "n": "2",
+            "d": "1"
+          }
+        },
+        "params": {
+          "knots": [
+            {
+              "at": 0,
+              "value": 0,
+              "interpolation": "hold"
+            },
+            {
+              "at": 0.25,
+              "value": 20,
+              "interpolation": "linear"
+            },
+            {
+              "at": 1,
+              "value": 100,
+              "interpolation": "hold"
+            }
+          ]
+        }
+      },
+      "applicability": [
+        "显式标量关键帧的linear/hold轨道，可绝对时间seek"
+      ],
+      "counterexamples": [
+        "不是弹簧、任意curve或自动节奏；reduced终值策略需调用者选择",
+        "工程验证不构成艺术认可或风格推荐。"
+      ],
+      "evidence": {
+        "technicalTests": [
+          "test/keyframe-track.test.mjs"
+        ],
+        "visualDemo": null,
+        "videoValidation": "VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE",
+        "artisticReview": "PENDING_USER",
+        "originalProductionTransfer": "NOT_RUN",
+        "visualReview": "DECODED_FRAME_REVIEW_NO_BLOCKERS",
+        "normalSpeedViewing": "NOT_DONE",
+        "audioListening": "NOT_LISTENED",
+        "ownerArtisticAcceptance": "PENDING_USER",
+        "validationCoverage": "Hold keyframes used for the character count. Linear intervals are covered by synthetic tests, not this film.",
+        "guidance": "docs/ui-foundations.md",
+        "sourceVersionRelation": "Frozen film version; post-fix state and representative-frame equality are separate receipts, not a full new-version film render."
+      },
+      "knowledgeLinks": [],
+      "tags": [
+        "keyframe",
+        "hold",
+        "timing",
+        "关键帧"
+      ]
+    },
+    {
+      "id": "recipe.layout-handoff",
+      "version": 1,
+      "kind": "recipe",
+      "status": "experimental",
+      "summary": "Identity-preserving translation-layout handoff with entering/exiting opacity",
+      "api": "compileLayoutHandoff",
+      "entry": "lib/index.mjs",
+      "example": {
+        "from": [
+          {
+            "itemId": "card",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 10,
+              "height": 10
+            },
+            "matrix": [
+              1,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            "zIndex": 0,
+            "geometryBounds": {
+              "x": 0,
+              "y": 0,
+              "width": 10,
+              "height": 10
+            }
+          }
+        ],
+        "to": [
+          {
+            "itemId": "card",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 10,
+              "height": 10
+            },
+            "matrix": [
+              1,
+              0,
+              0,
+              1,
+              40,
+              0
+            ],
+            "zIndex": 0,
+            "geometryBounds": {
+              "x": 40,
+              "y": 0,
+              "width": 10,
+              "height": 10
+            }
+          }
+        ],
+        "range": {
+          "start": {
+            "n": "0",
+            "d": "1"
+          },
+          "end": {
+            "n": "2",
+            "d": "1"
+          }
+        }
+      },
+      "applicability": [
+        "Inbox/list insertion and removal with stable item identities"
+      ],
+      "counterexamples": [
+        "Not collision avoidance, rotation interpolation or automatic sorting; fixed target-first layer order"
+      ],
+      "evidence": {
+        "technicalTests": [
+          "test/layout-handoff.test.mjs"
+        ],
+        "visualDemo": null,
+        "videoValidation": "VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE",
+        "artisticReview": "PENDING_USER",
+        "originalProductionTransfer": "NOT_RUN",
+        "visualReview": "DECODED_FRAME_REVIEW_NO_BLOCKERS",
+        "normalSpeedViewing": "NOT_DONE",
+        "audioListening": "NOT_LISTENED",
+        "ownerArtisticAcceptance": "PENDING_USER",
+        "validationCoverage": "Shared-ID translation and rectangle resizing only. Enter/exit fades are not covered by the film. Caller explicitly time-remaps the source curve; not native arbitrary curve support.",
+        "guidance": "docs/ui-foundations.md",
+        "sourceVersionRelation": "Frozen film version; post-fix state and representative-frame equality are separate receipts, not a full new-version film render."
+      },
+      "knowledgeLinks": [],
+      "tags": [
+        "layout",
+        "identity",
+        "handoff",
+        "recipe"
+      ]
     }
   ]
 }

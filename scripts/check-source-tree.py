@@ -30,7 +30,7 @@ def safe_env_template(content):
 def forbidden(name):
     if name == 'projects/favorite52-engine-rebuild/assets/claude-duet-official.svg' or name.startswith('projects/kinetic-type-recreation/'): return True
     if name == 'projects/favorite52-engine-rebuild/assets/fonts/Carousel-NotoSansCJKsc-Bold.otf': return True
-    if name.startswith(('projects/', 'skills/motion-film-director/research/records/', 'skills/motion-film-director/research/script-to-screen/', 'skills/motion-film-director/research/video-knowledge/cases/', 'skills/motion-film-director/research/video-knowledge/techniques/', 'skills/motion-film-director/production-cases/')): return True
+    if name.startswith(('projects/', 'production/', 'skills/motion-film-director/research/records/', 'skills/motion-film-director/research/script-to-screen/', 'skills/motion-film-director/research/video-knowledge/cases/', 'skills/motion-film-director/research/video-knowledge/techniques/', 'skills/motion-film-director/production-cases/')): return True
     if PurePosixPath(name).name in {'source-index.json', 'evidence-bindings.json'}: return True
     p = PurePosixPath(name)
     if p.is_absolute() or '..' in p.parts or GENERATED.intersection(p.parts): return True
