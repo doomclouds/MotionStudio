@@ -1,6 +1,6 @@
 # 基础机制职责目录与旧路径兼容
 
-目录整理不新增机制。当前为 **30基础＋6配方**（新增曲线/字格机制另有真实作品证据；分类迁移本身仍不计数）；目录别名、辅助函数、适配器和重导出入口不计数。实验状态及每件作品原有的技术/用户反馈/视听检查状态不因迁移而升级。
+目录整理不新增机制。当前为 **31基础＋6配方**（新增曲线/字格/尺寸换行机制另有真实作品证据；分类迁移本身仍不计数）；目录别名、辅助函数、适配器和重导出入口不计数。实验状态及每件作品原有的技术/用户反馈/视听检查状态不因迁移而升级。
 
 ## 当前已实施：field 单域
 
@@ -31,8 +31,9 @@ const state = sampleAttractorField(plan, {
 |---|---|---|
 | 控制柄曲线距离寻址 | `lib/foundations/geometry/cubic-path.mjs` | `geometry.cubic-path` |
 | 显式字格沿路径布局 | `lib/foundations/typography/glyph-run-path.mjs` | `composition.glyph-run-path` |
+| 显式尺寸逐行换行 | `lib/foundations/layout/flow-wrap.mjs` | `composition.flow-wrap` |
 
-两项均为新机制，没有需要兼容的旧平层路径；总入口显式re-export同一模块实例。
+此处三项均为新机制，没有需要兼容的旧平层路径；总入口显式re-export同一模块实例。
 `typography`是物理职责目录，不另造query kind，也不把辅助采样算成第二条曲线机制。
 
 ## 分类原则与后续边界

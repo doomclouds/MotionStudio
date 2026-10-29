@@ -2430,6 +2430,77 @@
         "字距",
         "路径排版"
       ]
+    },
+    {
+      "id": "composition.flow-wrap",
+      "version": 1,
+      "kind": "composition",
+      "status": "experimental",
+      "summary": "按项目显式宽高和容器宽度保持顺序逐行换行",
+      "api": "flowWrapLayout",
+      "entry": "lib/index.mjs",
+      "example": {
+        "items": [
+          {
+            "itemId": "label-a",
+            "width": 96,
+            "height": 32
+          },
+          {
+            "itemId": "label-b",
+            "width": 72,
+            "height": 48
+          },
+          {
+            "itemId": "label-c",
+            "width": 120,
+            "height": 32
+          }
+        ],
+        "width": 180,
+        "columnGap": 8,
+        "rowGap": 12
+      },
+      "applicability": [
+        "侧栏打开缩小标签区时，非等宽非等高项目按实际尺寸形成新行，交给旧identity-handoff移动"
+      ],
+      "counterexamples": [
+        "不是固定grid、单轴stack的方向变体，也不是masonry、最优装箱、CSS flexbox或字体测量。",
+        "显式IEEE逐行fit，无epsilon、自动缩小或溢出；任一项宽于容器整次拒绝。",
+        "rows只描述端点静态布局；旧handoff插值不保证中途有效wrap或无碰撞，项目中间快照不计新机制。",
+        "空flow合法但旧handoff拒绝空到空；其他enter/exit按旧配方合同。",
+        "本片只覆盖6项正常尺寸2到3行；空/极值/非法/reduced-motion效果没有本片艺术验收。"
+      ],
+      "evidence": {
+        "technicalTests": [
+          "test/flow-wrap.test.mjs",
+          "test/flow-wrap-integration.test.mjs"
+        ],
+        "visualDemo": null,
+        "videoValidation": "VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE",
+        "artisticReview": "PENDING_USER",
+        "originalProductionTransfer": "NOT_RUN",
+        "visualReview": "DECODED_FRAME_REVIEW_NO_BLOCKERS",
+        "normalSpeedViewing": "NOT_DONE",
+        "audioListening": "NOT_LISTENED",
+        "ownerArtisticAcceptance": "PENDING_USER",
+        "guidance": "docs/flow-wrap.md",
+        "sourceVersionRelation": "Canonical flow and its actually imported matrix/validator dependencies match the frozen film byte-for-byte. The scene imports modules directly; the later public index export is tested separately. Catalog/test/guidance integration leaves historical manifests unchanged.",
+        "validationCoverage": "Final7.6-second/60fps candidate. Two initialization flow calls produce wide/narrow snapshots with six fixed-size items,2-to3 rows. Existing handoff compiles twice and samples456 frames, each feeding6 tag draw submissions. UI is fully opaque from frame117; reflow198–264 and final state264–455. Cached layout consumption is not456 fresh flow calls. Final-version32 decoded frames have scoped review; old longer-film evidence is not reused.",
+        "callEvidenceScope": "Render-time input/output snapshots and draw-consumer records crosschecked with frozen source and complete456-frame JSON-semantics replay; not independent per-call interception. Geometry overlap checks do not prove pixel/ink/shadow visibility.",
+        "compositionScope": "Two-leg waypoint choreography is project-owned and not a third flow output or a general collision solver. No new recipe."
+      },
+      "knowledgeLinks": [],
+      "tags": [
+        "flow",
+        "wrap",
+        "intrinsic",
+        "row",
+        "layout",
+        "换行",
+        "标签",
+        "布局"
+      ]
     }
   ]
 }

@@ -1,6 +1,6 @@
 # Motion Elements — 可组合动效基础库
 
-当前目录 **36 项：30 个基础机制＋6 个配方**，全部 experimental。数量不代表艺术通过。以下阶段计数是历史记录；当前分类以 catalog 为准。
+当前目录 **37 项：31 个基础机制＋6 个配方**，全部 experimental。数量不代表艺术通过。以下阶段计数是历史记录；当前分类以 catalog 为准。
 
 第一阶段包含 **10 个机制**，而不是 10 套影片模板。数字不同、方向相反、快慢不同均是参数变体，不重复计算新元素。当前全部标记 `experimental`：数值与 Native 像素测试不等于审美验收，也不等于已经在原创成片中复用通过。
 
@@ -10,7 +10,7 @@
 
 ## 职责目录与兼容入口
 
-基础机制开始按职责放入 `lib/foundations/<职责>/`，首个迁移域为 `field/`，新曲线与排字实现直接进入 `geometry/` 和 `typography/`。旧路径和总入口保留同一实现的 re-export，未迁移域暂保持原位置。此整理不增加条目，也不改作品锁；见[职责目录与迁移边界](docs/foundation-organization.md)。
+基础机制开始按职责放入 `lib/foundations/<职责>/`，首个迁移域为 `field/`，新曲线、排字与尺寸换行实现直接进入 `geometry/`、`typography/` 和 `layout/`。旧路径和总入口保留同一实现的 re-export，未迁移域暂保持原位置。此整理不增加条目，也不改作品锁；见[职责目录与迁移边界](docs/foundation-organization.md)。
 
 ## 五层与边界
 
@@ -817,3 +817,18 @@ solver及实际导入依赖与影片一致，但存档未使用的旧index不等
 逐帧状态、独立数值oracle、代表Native重建及限定编码帧检查已有证据；
 常速NOT_DONE、听审NOT_LISTENED、用户艺术PENDING_USER、通用迁移NOT_RUN。
 作品媒体、完整制作、实际艺术参数、字体和私有回执不进Git；这里的可运行输入为合成例子。
+
+
+## UI尺寸换行批：1 个基础机制，无新配方
+
+`composition.flow-wrap` / `flowWrapLayout`保持项目顺序，依据各自width/height在明确容器宽度里换行。
+它补充等尺寸grid和单轴stack，不按颜色、间距、方向或快照个数增加条目。
+新实现直接位于`lib/foundations/layout/flow-wrap.mjs`；见[尺寸、IEEE边界、组合与官方参考指南](docs/flow-wrap.md)。
+
+7.6秒、60fps有声候选真实执行2次初始化布局，六项从2行变3行；旧layout-handoff两段编排消费端点，
+456帧绘制提交不等于每帧重新排版或全程可见。项目中间腾行快照与UI抽屉时序不另算机制/配方，
+静态算法不提供连续避碰保证。实际求值模块/依赖与影片冻版一致，公共index为后续接入。
+全帧状态/代表Native重建已有工程证据；最终版本32个编码帧限定独评无阻断，不由几何断言替代，
+也不复用旧长版本的帧数或媒体回执。
+常速NOT_DONE、听审NOT_LISTENED、用户艺术PENDING_USER、通用迁移NOT_RUN；保持experimental。
+媒体、真实美术/字体参数、生成图层及私有回执不随公共源包发布。

@@ -238,7 +238,7 @@ Pixi官方shader与p5 mask具体源码/许可取舍见`docs/raster-reference-dec
 
 ## 角色：两段固定长度追随明确目标
 
-当前30基础＋6配方（36项），距离100基础目标仍有70项；数量与艺术接受分别报告。
+当前31基础＋6配方（37项），距离100基础目标仍有69项；数量与艺术接受分别报告。
 `geometry.two-link-ik`是1个纯二维几何机制，无新配方，不是全身rig、碰撞、力学或3D。
 root/target来自作品同一绝对帧状态，显式bend/fallback；用返回joint/end画骨段，不能把不可达end偷偷画到target掩盖投影。
 实际手掌轮廓与IK端点不是同一个接触定义：数值误差0后仍要看真实编码邻帧是否早贴、滑动或错位。
@@ -286,3 +286,16 @@ glyph内部采样不加到公wrapper数。570次run提交不等于全程完整�
 旧motion.transform/withMotion继续复用，切刀/打孔/供带造型/声音是作品编排，无新配方。
 全帧状态与限定编码帧有证据，常速NOT_DONE、听审NOT_LISTENED、用户艺术PENDING_USER、通用迁移NOT_RUN。
 未验分支、字体/语言支持和风格不得由一次作品外推；真实艺术参数、字体、媒体与私有回执不进入公共包。
+
+
+## 尺寸驱动换行：1基础，复用旧handoff
+
+`composition.flow-wrap`把caller准备的项目宽高按输入顺序装入逐行布局；不测字体、不重排、不stretch，
+不是CSS或最优装箱。`lib/foundations/layout/flow-wrap.mjs`返回旧handoff可消费的items，rows另存静态行成员。
+用caller自己的中间快照做分段交接仍是项目编排，不计配方或连续避碰；两端合法不意味着所有插值合法。
+完整边界/空组合/用法及ReactSpring固定masonry参考与MIT见`docs/flow-wrap.md`，不把最短列算法误称row-wrap。
+
+7.6秒、60fps候选用2个真实flow初始化端点，六项从2行到3行；旧recipe456次样本用于绘图，
+开场透明提交不等于可见。flow与实际matrix/validator字节同冻版，后续总入口另测，历史manifest不改。
+常速NOT_DONE、听审NOT_LISTENED、用户艺术PENDING_USER、通用迁移NOT_RUN；最终版本32个编码帧独评仅为限定范围，不沿用旧长版本。
+本批1基础/0配方，媒体/生成图层/字体/艺术参数与私有回执不进入公共源包。

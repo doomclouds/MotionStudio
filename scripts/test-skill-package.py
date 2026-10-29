@@ -71,13 +71,16 @@ def main():
         run(['node', '--test', *map(str, tests)])
         query_cli = elements / 'scripts/query-catalog.mjs'
         listed = json.loads(subprocess.check_output(['node', str(query_cli), 'list']))
-        assert listed['total'] == 36 and len(listed['results']) == 20 and listed['truncated'] is True
+        assert listed['total'] == 37 and len(listed['results']) == 20 and listed['truncated'] is True
         rasters = json.loads(subprocess.check_output(['node', str(query_cli), 'list', '--kind', 'raster']))
         assert rasters['total'] == 2 and {r['element']['id'] for r in rasters['results']} == {'raster.matte', 'raster.displacement-map'}
         sticky = json.loads(subprocess.check_output(['node', str(query_cli), 'show', '--id', 'composition.sticky-interval']))
         assert sticky['total'] == 1 and sticky['results'][0]['element']['api'] == 'stickyIntervalLayout'
         parallax = json.loads(subprocess.check_output(['node', str(query_cli), 'show', '--id', 'composition.plane-parallax']))
         assert parallax['total'] == 1 and parallax['results'][0]['element']['api'] == 'planeParallaxLayout'
+        flow = json.loads(subprocess.check_output(['node', str(query_cli), 'show', '--id', 'composition.flow-wrap']))
+        assert flow['total'] == 1 and flow['results'][0]['element']['api'] == 'flowWrapLayout'
+        assert flow['results'][0]['element']['evidence']['ownerArtisticAcceptance'] == 'PENDING_USER'
         cubic = json.loads(subprocess.check_output(['node', str(query_cli), 'show', '--id', 'geometry.cubic-path']))
         glyph = json.loads(subprocess.check_output(['node', str(query_cli), 'show', '--id', 'composition.glyph-run-path']))
         assert cubic['total'] == 1 and cubic['results'][0]['element']['api'] == 'compileCubicPath'
@@ -174,7 +177,7 @@ def main():
         stale = subprocess.run([*cli_args, '--out', str(stale_path)], capture_output=True)
         assert stale.returncode == 1 and json.loads(stale_path.read_text())['collection_status'] == 'STALE'
         assert json.loads(stale_path.read_text())['events'] == []
-        print('Catalog 36/default-limit20/recipe6/raster2/no-match and standalone interval CLI synthetic/unsupported/stale gates passed; no decoding or approval')
+        print('Catalog 37/default-limit20/recipe6/raster2/no-match and standalone interval CLI synthetic/unsupported/stale gates passed; no decoding or approval')
         if args.skip_video:
             print('NOT_RUN: gallery video encoding/full decode and standalone reduced still smoke (--skip-video); other tests continue')
         else:
