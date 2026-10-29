@@ -59,16 +59,16 @@ test('strict CLI unknown/repeated/missing/extra options and command constraints'
   assert.deepEqual(parseCatalogArgs(['--help']),{help:true});
   assert.equal(parseCatalogArgs(['find','--tag',' 淡入 ']).query.tag,'淡入');
 });
-test('real 26 entries: tags, status, metadata and executable inputs preserved', () => {
+test('real 29 entries: tags, status, metadata and executable inputs preserved', () => {
   const before = JSON.stringify(catalog);
-  const r = queryCatalog(catalog,{limit:100}); assert.equal(r.total,26); assert.equal(r.truncated,false);
+  const r = queryCatalog(catalog,{limit:100}); assert.equal(r.total,29); assert.equal(r.truncated,false);
   for (const e of catalog.elements) {
     assert.equal(e.status,'experimental'); assert.ok(e.tags.length>0);
     const hit = queryCatalog(catalog,{id:e.id}).results[0]; assert.deepEqual(hit.element,e);
     assert.ok(hit.element.example); assert.ok(hit.element.evidence); assert.ok(Array.isArray(hit.element.knowledgeLinks));
   }
   assert.equal(queryCatalog(catalog,{tag:'重组'}).total,2);
-  assert.equal(queryCatalog(catalog,{kind:'recipe'}).total,5);
+  assert.equal(queryCatalog(catalog,{kind:'recipe'}).total,6);
   assert.equal(JSON.stringify(catalog),before);
 });
 test('CLI from unrelated cwd: JSON success/no-match, errors stderr only; never writes output', () => {
@@ -83,7 +83,7 @@ test('runtime permission isolation: only three static files readable, no entry/p
     '--permission', `--allow-fs-read=${cli}`, `--allow-fs-read=${root}lib/catalog-query.mjs`, `--allow-fs-read=${root}catalog.json`,
     cli,'list','--limit','100',
   ], {encoding:'utf8',cwd:'/tmp'});
-  assert.equal(r.status,0,r.stderr); assert.equal(JSON.parse(r.stdout).total,26);
+  assert.equal(r.status,0,r.stderr); assert.equal(JSON.parse(r.stdout).total,29);
 });
 
 // Metadata guards prevent a technical fixture from becoming a style endorsement.
@@ -95,5 +95,21 @@ test('experimental band and light recipe preserve independent quality gates in q
     assert.equal(e.evidence.originalProductionTransfer, 'NOT_RUN');
     assert.ok(e.evidence.technicalTests.length > 0);
     assert.ok(e.counterexamples.some(value => value.includes('不得默认推荐') && value.includes('风格锚点')));
+  }
+});
+
+
+test('data-flow accounting and film coverage preserve independent quality gates', () => {
+  assert.equal(catalog.elements.filter(e => e.kind !== 'recipe').length,23);
+  assert.equal(catalog.elements.filter(e => e.kind === 'recipe').length,6);
+  for (const id of ['composition.layered-dag','composition.weighted-flow','recipe.flow-handoff']) {
+    const e=queryCatalog(catalog,{id}).results[0].element;
+    assert.equal(e.evidence.videoValidation,'VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE');
+    assert.equal(e.evidence.artisticReview,'PENDING_USER');
+    assert.equal(e.evidence.audioListening,'NOT_LISTENED');
+    assert.equal(e.evidence.normalSpeedViewing,'NOT_DONE');
+    assert.equal(e.evidence.originalProductionTransfer,'NOT_RUN');
+    assert.match(e.evidence.validationCoverage,/frames/);
+    assert.equal(e.evidence.guidance,'docs/data-flow.md');
   }
 });

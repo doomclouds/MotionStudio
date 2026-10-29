@@ -26,3 +26,6 @@ export {drawLightEchoField} from '../adapters/light-echo-field.mjs';
 export {gridLayout,constraintStackLayout} from './structured-layouts.mjs';
 export {sampleKeyframeTrack} from './keyframe-track.mjs';
 export {compileLayoutHandoff,sampleLayoutHandoff} from './recipes/layout-handoff.mjs';
+export {layeredDagLayout} from './layered-dag.mjs';
+export {weightedFlowLayout} from './weighted-flow.mjs';
+export {compileFlowHandoff,sampleFlowHandoff} from './recipes/flow-handoff.mjs';

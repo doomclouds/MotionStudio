@@ -71,9 +71,9 @@ def main():
         run(['node', '--test', *map(str, tests)])
         query_cli = elements / 'scripts/query-catalog.mjs'
         listed = json.loads(subprocess.check_output(['node', str(query_cli), 'list']))
-        assert listed['total'] == 26 and len(listed['results']) == 20 and listed['truncated'] is True
+        assert listed['total'] == 29 and len(listed['results']) == 20 and listed['truncated'] is True
         recipes = json.loads(subprocess.check_output(['node', str(query_cli), 'list', '--kind', 'recipe']))
-        assert recipes['total'] == 5 and len(recipes['results']) == 5
+        assert recipes['total'] == 6 and len(recipes['results']) == 6
         empty = json.loads(subprocess.check_output(['node', str(query_cli), 'find', '--text', 'no-such-mechanism-29461']))
         assert empty['total'] == 0 and empty['results'] == []
         review = skill / 'runtime/review-tools'
@@ -160,7 +160,7 @@ def main():
         stale = subprocess.run([*cli_args, '--out', str(stale_path)], capture_output=True)
         assert stale.returncode == 1 and json.loads(stale_path.read_text())['collection_status'] == 'STALE'
         assert json.loads(stale_path.read_text())['events'] == []
-        print('Catalog 26/default-limit20/recipe5/no-match and standalone interval CLI synthetic/unsupported/stale gates passed; no decoding or approval')
+        print('Catalog 29/default-limit20/recipe6/no-match and standalone interval CLI synthetic/unsupported/stale gates passed; no decoding or approval')
         if args.skip_video:
             print('NOT_RUN: gallery video encoding/full decode and standalone reduced still smoke (--skip-video); other tests continue')
         else:

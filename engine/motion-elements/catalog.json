@@ -1632,6 +1632,294 @@
         "handoff",
         "recipe"
       ]
+    },
+    {
+      "id": "composition.layered-dag",
+      "version": 1,
+      "kind": "composition",
+      "status": "experimental",
+      "summary": "有向无环关系的确定性分层与有限交叉排序",
+      "api": "layeredDagLayout",
+      "entry": "lib/index.mjs",
+      "example": {
+        "nodes": [
+          {
+            "itemId": "source",
+            "width": 20,
+            "height": 80
+          },
+          {
+            "itemId": "sink",
+            "width": 20,
+            "height": 80
+          }
+        ],
+        "links": [
+          {
+            "linkId": "flow",
+            "fromId": "source",
+            "toId": "sink"
+          }
+        ],
+        "layerGap": 80,
+        "nodeGap": 20
+      },
+      "applicability": [
+        "订单/任务关系的分支与汇合，不局限于树"
+      ],
+      "counterexamples": [
+        "不支持环，不保证最少交叉或全局避障；静态重算不自动动画",
+        "工程验证不构成艺术认可或风格推荐。"
+      ],
+      "evidence": {
+        "technicalTests": [
+          "test/layered-dag.test.mjs"
+        ],
+        "visualDemo": null,
+        "videoValidation": "VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE",
+        "artisticReview": "PENDING_USER",
+        "originalProductionTransfer": "NOT_RUN",
+        "visualReview": "DECODED_FRAME_REVIEW_NO_BLOCKERS",
+        "normalSpeedViewing": "NOT_DONE",
+        "audioListening": "NOT_LISTENED",
+        "ownerArtisticAcceptance": "PENDING_USER",
+        "guidance": "docs/data-flow.md",
+        "sourceVersionRelation": "Frozen film runtime retained; the post-film tiny-flow conservation fix is bound by separate all-frame state and representative Native-frame equality receipts, not a full fixed-version film re-render.",
+        "validationCoverage": "One compilation; six fixed node positions consumed in frames 157–839. No arbitrary graph or obstacle-routing visual coverage."
+      },
+      "knowledgeLinks": [],
+      "tags": [
+        "dag",
+        "topology",
+        "layout",
+        "关系",
+        "分层"
+      ]
+    },
+    {
+      "id": "composition.weighted-flow",
+      "version": 1,
+      "kind": "composition",
+      "status": "experimental",
+      "summary": "按统一量纲分配两端加权流带端口",
+      "api": "weightedFlowLayout",
+      "entry": "lib/index.mjs",
+      "example": {
+        "nodes": [
+          {
+            "itemId": "source",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 20,
+              "height": 80
+            },
+            "matrix": [
+              1,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            "zIndex": 0,
+            "geometryBounds": {
+              "x": 0,
+              "y": 0,
+              "width": 20,
+              "height": 80
+            }
+          },
+          {
+            "itemId": "sink",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 20,
+              "height": 80
+            },
+            "matrix": [
+              1,
+              0,
+              0,
+              1,
+              100,
+              0
+            ],
+            "zIndex": 1,
+            "geometryBounds": {
+              "x": 100,
+              "y": 0,
+              "width": 20,
+              "height": 80
+            }
+          }
+        ],
+        "links": [
+          {
+            "linkId": "flow",
+            "fromId": "source",
+            "toId": "sink",
+            "value": 40
+          }
+        ],
+        "unitsToPixels": 1,
+        "portGap": 4,
+        "samples": 32
+      },
+      "applicability": [
+        "数值厚度一致的数据流、汇合与瓶颈展示"
+      ],
+      "counterexamples": [
+        "仅支持分离的左到右节点；无反馈、业务自动守恒或等法线描边；旧sampled-band不重复计数",
+        "工程验证不构成艺术认可或风格推荐。"
+      ],
+      "evidence": {
+        "technicalTests": [
+          "test/weighted-flow.test.mjs"
+        ],
+        "visualDemo": null,
+        "videoValidation": "VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE",
+        "artisticReview": "PENDING_USER",
+        "originalProductionTransfer": "NOT_RUN",
+        "visualReview": "DECODED_FRAME_REVIEW_NO_BLOCKERS",
+        "normalSpeedViewing": "NOT_DONE",
+        "audioListening": "NOT_LISTENED",
+        "ownerArtisticAcceptance": "PENDING_USER",
+        "guidance": "docs/data-flow.md",
+        "sourceVersionRelation": "Frozen film runtime retained; the post-film tiny-flow conservation fix is bound by separate all-frame state and representative Native-frame equality receipts, not a full fixed-version film re-render.",
+        "validationCoverage": "One direct initialization consumed in frames 161–407; recipe outputs consumed in frames 408–839. Six positive links, fixed scale; no zero/extreme/invalid-graph visual coverage."
+      },
+      "knowledgeLinks": [],
+      "tags": [
+        "flow",
+        "weighted",
+        "ports",
+        "data",
+        "流量"
+      ]
+    },
+    {
+      "id": "recipe.flow-handoff",
+      "version": 1,
+      "kind": "recipe",
+      "status": "experimental",
+      "summary": "固定图身份上内部守恒权重快照的绝对时间交接",
+      "api": "compileFlowHandoff",
+      "entry": "lib/index.mjs",
+      "example": {
+        "nodes": [
+          {
+            "itemId": "source",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 20,
+              "height": 80
+            },
+            "matrix": [
+              1,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            "zIndex": 0,
+            "geometryBounds": {
+              "x": 0,
+              "y": 0,
+              "width": 20,
+              "height": 80
+            }
+          },
+          {
+            "itemId": "sink",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 20,
+              "height": 80
+            },
+            "matrix": [
+              1,
+              0,
+              0,
+              1,
+              100,
+              0
+            ],
+            "zIndex": 1,
+            "geometryBounds": {
+              "x": 100,
+              "y": 0,
+              "width": 20,
+              "height": 80
+            }
+          }
+        ],
+        "from": [
+          {
+            "linkId": "flow",
+            "fromId": "source",
+            "toId": "sink",
+            "value": 40
+          }
+        ],
+        "to": [
+          {
+            "linkId": "flow",
+            "fromId": "source",
+            "toId": "sink",
+            "value": 60
+          }
+        ],
+        "range": {
+          "start": {
+            "n": "0",
+            "d": "1"
+          },
+          "end": {
+            "n": "2",
+            "d": "1"
+          }
+        },
+        "unitsToPixels": 1,
+        "portGap": 4,
+        "samples": 32
+      },
+      "applicability": [
+        "在保持拓扑与节点位置时强调流量从等待到履约的变化"
+      ],
+      "counterexamples": [
+        "不支持0与正值间激活/停用，不做拓扑形变、流体或订单调度求解",
+        "工程验证不构成艺术认可或风格推荐。",
+        "共享时钟中间rational差分仍受30位上限，极端异分母合法Time组合可能显式拒绝；不保证任意合法seek。"
+      ],
+      "evidence": {
+        "technicalTests": [
+          "test/flow-handoff.test.mjs"
+        ],
+        "visualDemo": null,
+        "videoValidation": "VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE",
+        "artisticReview": "PENDING_USER",
+        "originalProductionTransfer": "NOT_RUN",
+        "visualReview": "DECODED_FRAME_REVIEW_NO_BLOCKERS",
+        "normalSpeedViewing": "NOT_DONE",
+        "audioListening": "NOT_LISTENED",
+        "ownerArtisticAcceptance": "PENDING_USER",
+        "guidance": "docs/data-flow.md",
+        "sourceVersionRelation": "Frozen film runtime retained; the post-film tiny-flow conservation fix is bound by separate all-frame state and representative Native-frame equality receipts, not a full fixed-version film re-render.",
+        "validationCoverage": "One compilation and 432 direct samples consumed in frames 408–839; interpolating frames 409–506 and settled frames 507–839. Positive-to-positive fixed topology only; no reduced-motion visual acceptance."
+      },
+      "knowledgeLinks": [],
+      "tags": [
+        "flow",
+        "identity",
+        "handoff",
+        "recipe",
+        "守恒"
+      ]
     }
   ]
 }

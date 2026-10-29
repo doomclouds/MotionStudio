@@ -185,10 +185,32 @@ sampled band 合同与 `examples/sampled-band-study.mjs`。适合二维变宽带
 ## UI 布局、关键帧与同身份交接
 
 新增 grid / intrinsic-size stack / explicit scalar keyframe 三个基础机制，
-以及 layout-handoff 配方。当前目录 21 基础＋5 配方，不能把配方或 helper 混为基础数。
+以及 layout-handoff 配方。该 UI 批完成时为 21 基础＋5 配方；当前计数以目录为准，不能把配方或 helper 混为基础数。
 调用参数与边界见包内 `docs/ui-foundations.md` 和 `docs/layout-handoff.md`。
 验证候选的实际调用回执在私有交付，不随源码包公开；只证明明确覆盖的API分支。
 原冻结影片与后续边界修复版本分别绑定：新旧等价回执不能冒充修复版全长重渲。
 keyframe 的影片覆盖为 hold，handoff 为 shared 身份交接，不外推 enter/exit、
 任意曲线、2.5D、失焦或自动排期。工程/解码帧检查、常速观看、听审和用户艺术接受
 分别记录；当前 NOT_DONE / NOT_LISTENED / PENDING_USER 不得自动升级为 passed。
+
+
+## 数据关系：把关系与数值真正映射为几何
+
+当前目录 23 基础＋6 配方（共 29 项），全部 experimental，未到 100 基础目标。
+新增 `composition.layered-dag` 用拓扑分层表示分支/汇合，
+`composition.weighted-flow` 按统一数值量纲分配两端端口；
+`recipe.flow-handoff` 组合旧 keyframe/smoothstep/lerp 与新加权布局，
+在同一拓扑上交接内部守恒快照。曲线填充仍为旧 sampled-band，不重复计数。
+
+适用于订单、审核、汇总等数据关系的说明；不是业务优化、流体、全局避障、
+反馈环或任意拓扑形变。配方 v1 不支持 0↔正值激活/停用，需满足明确的正宽度数值裕量。
+新库 API/限制/工程复现见包内 `docs/data-flow.md`；
+与用户所列 20 库的需求选择、官方具体源码和许可对照见 `docs/data-flow-reference-decisions.md`。
+不新增运行时依赖，不把参考阅读、方向/颜色或辅助函数变成条目。
+
+这批有 14 秒原创有声作品的冻结源码/实际调用证据：一份 DAG 初始化结果、
+加权端口的直接初始化与配方输出被实际画面消费；配方采样为 f408–839。
+不要把缓存结果绘制写成每帧重新编译。微量守恒校验修复后的版本另附实际逐帧状态与 Native 代表帧等价回执，不是全长重渲。
+具体参数/帧区间、SHA-256 与完整重建链留私有交付；
+本源码包只含合成数据示例。静态解码/数值/像素确定性检查通过不替代常速观看或听审：
+`NOT_DONE` / `NOT_LISTENED` / 用户艺术 `PENDING_USER`；未覆盖分支不得借作品升级。
