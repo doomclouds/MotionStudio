@@ -2076,6 +2076,67 @@
         "位移",
         "图文"
       ]
+    },
+    {
+      "id": "geometry.two-link-ik",
+      "version": 1,
+      "kind": "geometry",
+      "status": "experimental",
+      "summary": "固定两段长度的二维目标可达求解与显式投影",
+      "api": "solveTwoLinkIK",
+      "entry": "lib/index.mjs",
+      "example": {
+        "root": {
+          "x": 0,
+          "y": 0
+        },
+        "target": {
+          "x": 50,
+          "y": 0
+        },
+        "upperLength": 30,
+        "lowerLength": 40,
+        "bend": "positive",
+        "fallbackAxis": {
+          "x": 1,
+          "y": 0
+        }
+      },
+      "applicability": [
+        "身体根部移动时，让两段肢体末端跟随同一个明确目标"
+      ],
+      "counterexamples": [
+        "不是碰撞、冲量、抓取、全身rig或3D；不能由数值接触推断实际手部轮廓的视觉接触时刻",
+        "极近切点或穿root可放大姿态敏感性，不保证角度连续或精确实数几何",
+        "影片只覆盖正常可达两侧bend；投影、fallback、奇点未获影片验证",
+        "技术和实际调用不是艺术认可或通用生产迁移。"
+      ],
+      "evidence": {
+        "technicalTests": [
+          "test/two-link-ik.test.mjs"
+        ],
+        "visualDemo": null,
+        "videoValidation": "VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE",
+        "artisticReview": "PENDING_USER",
+        "originalProductionTransfer": "NOT_RUN",
+        "visualReview": "PASS_LIMITED_NEIGHBOR_FRAME_REVIEW",
+        "normalSpeedViewing": "NOT_DONE",
+        "audioListening": "NOT_LISTENED",
+        "ownerArtisticAcceptance": "PENDING_USER",
+        "guidance": "docs/two-link-ik.md",
+        "sourceVersionRelation": "Solver and actually imported dependency bytes match the frozen film. The scene imports the solver module directly; public index export is tested but not film-consumed. Catalog, tests and guidance are later integration; the historical manifest is unchanged.",
+        "validationCoverage": "1680 solver results consumed in frames 0–839, two arms with fixed lengths and opposite bend. Declared contact frames are reachable with zero target error. No projected, fallback or singular-pose film coverage.",
+        "callEvidenceScope": "Render-time state-result counters and reach/error records with frozen-source input/draw crosscheck, not independent per-call argument interception."
+      },
+      "knowledgeLinks": [],
+      "tags": [
+        "ik",
+        "reach",
+        "character",
+        "joint",
+        "角色",
+        "关节"
+      ]
     }
   ]
 }

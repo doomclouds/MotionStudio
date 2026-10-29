@@ -220,7 +220,7 @@ keyframe 的影片覆盖为 hold，handoff 为 shared 身份交接，不外推 e
 
 ## 图文：连续覆盖与局部纹理弯曲
 
-当前目录25基础＋6配方（31项），距离100基础目标仍有75项；全部experimental。
+该图文批接入时25基础＋6配方（31项），距100基础目标75项；全部experimental。
 新增`raster.matte`及`raster.displacement-map`，没有新配方；模式/滤波/颜色与snapshot/adapter helper不重复计数。
 在最终尺寸生成字形coverage，先位移纹理再matte，避免把低分辨率字边一起放大或扭曲。
 适合受控二维图文材质，不是光学折射或物理模拟。完整参数、边界、资源与复现见`docs/raster-effects.md`；
@@ -234,3 +234,17 @@ Pixi官方shader与p5 mask具体源码/许可取舍见`docs/raster-reference-dec
 不得泛化为优秀作品、风格背书或其他参数的艺术通过；原冻结清单与后续反馈分开绑定。
 首轮Native资源中断与修复实验保留私有；HD循环需量测RSS、有界局部池及后端生命周期管理，
 单帧像素预算或JS heap稳定都不是长片内存证明。不得拿技术成功默认推荐风格。
+
+
+## 角色：两段固定长度追随明确目标
+
+当前26基础＋6配方（32项），距离100基础目标仍有74项；数量与艺术接受分别报告。
+`geometry.two-link-ik`是1个纯二维几何机制，无新配方，不是全身rig、碰撞、力学或3D。
+root/target来自作品同一绝对帧状态，显式bend/fallback；用返回joint/end画骨段，不能把不可达end偷偷画到target掩盖投影。
+实际手掌轮廓与IK端点不是同一个接触定义：数值误差0后仍要看真实编码邻帧是否早贴、滑动或错位。
+完整参数/奇点/精度与复现见`docs/two-link-ik.md`；官方取舍见`docs/character-reference-decisions.md`。
+
+14秒有声角色候选真实使用两臂正常可达两bend；旧路径、finite-settle和矩阵复用，不把脚步/表情/音效数成新项。
+原冻结求解器及实际导入依赖保持字节一致，真实调用与限段邻帧已核；作品此前视觉早贴版本不作成功证据，最终修版单独绑定。
+内外投影、fallback和奇点有工程测试，不是本片覆盖；常速NOT_DONE、听审NOT_LISTENED、艺术PENDING_USER、迁移NOT_RUN。
+作品参数/媒体/私有回执不随源包分发，后续重用仍须为实际镜头验证，不默认推荐风格。

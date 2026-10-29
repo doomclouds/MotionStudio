@@ -83,6 +83,6 @@ test('nonplain params and compose options are rejected',()=>{
 });
 test('all catalog examples remain executable and stable IDs unique',async()=>{
  const {readFile}=await import('node:fs/promises');const catalog=JSON.parse(await readFile(new URL('../catalog.json',import.meta.url)));
- assert.equal(catalog.elements.length,31);assert.equal(new Set(catalog.elements.map(e=>e.id)).size,31);
+ assert.equal(catalog.elements.length,32);assert.equal(new Set(catalog.elements.map(e=>e.id)).size,32);
  for(const e of catalog.elements){assert.equal(e.status,'experimental');assert.equal(typeof m[e.api],'function');if(e.api==='withLocalReveal'){const {loadNativeCanvas}=await import('../../motion-render-core/lib/native.mjs');const {api}=loadNativeCanvas();m.withLocalReveal(api.createCanvas(320,180).getContext('2d'),e.example,()=>{},{Path2D:api.Path2D});continue;}m[e.api](e.example,...(['sampleMotion','sampleTransition','sampleOffsetReassembly','sampleKeyframeTrack'].includes(e.api)?[T(1)]:[]));}
 });
