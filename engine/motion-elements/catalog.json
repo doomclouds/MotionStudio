@@ -2589,6 +2589,297 @@
         "折叠",
         "纸面"
       ]
+    },
+    {
+      "id": "geometry.catenary",
+      "version": 1,
+      "kind": "geometry",
+      "status": "experimental",
+      "summary": "由两端、总长度与重力方向求静态悬链线，并按归一化弧长地址取点/切线",
+      "api": "compileCatenary",
+      "entry": "lib/index.mjs",
+      "example": {
+        "from": {
+          "x": 40,
+          "y": 80
+        },
+        "to": {
+          "x": 480,
+          "y": 150
+        },
+        "length": 560,
+        "gravity": {
+          "x": 0,
+          "y": 1
+        }
+      },
+      "applicability": [
+        "一条吊线在端点移动时保持同一长度输入；沿其曲线描线、附着端头或推动标记"
+      ],
+      "counterexamples": [
+        "静态均匀柔索几何，不是绳索动力学、碰撞、弹性、电传播或任意运动的物理真实性。",
+        "正slack近竖直span拒绝；长度/重力/坐标及资源限制见指南，不静默改成抛物线。",
+        "只有IEEE length===chord为taut；极近taut实数几何仍病态，浮点投影/系数与输入地址长度不完全一致。",
+        "端点切换可能有小舍入接缝；不保证全域精确连续、正确舍入或统一误差界。",
+        "弧长地址/analyticLength是输入长度计量，不是测量折线长度的证明；离散polyline会低估曲线长度。",
+        "一个机制；polyline helper、线宽、光点、灯光和输入动画编排不再计数。"
+      ],
+      "evidence": {
+        "visualDemo": null,
+        "artisticReview": "PENDING_USER",
+        "originalProductionTransfer": "NOT_RUN",
+        "normalSpeedViewing": "NOT_DONE",
+        "audioListening": "NOT_LISTENED",
+        "ownerArtisticAcceptance": "PENDING_USER",
+        "technicalTests": [
+          "test/catenary.test.mjs",
+          "test/cable-schedule-integration.test.mjs"
+        ],
+        "guidance": "docs/catenary.md",
+        "videoValidation": "VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE_WITH_VERSION_EQUIVALENCE",
+        "visualReview": "DECODED_FRAME_REVIEW_NO_BLOCKERS",
+        "sourceVersionRelation": "Public revision removes a prototype taut threshold and changes stable excess/arc formulas. Original frozen film runtime and historical manifests remain untouched. Final revised8.5-second candidate has a separate510-frame actual-state/cable-path numeric bridge and13 representative Native PNG plus13 fresh-process comparisons; state is not bit-identical and this is not a new encoded film. Public index export is later integration.",
+        "validationCoverage": "Final revised510-frame/60fps candidate:511 compile calls including1 initialization;2330 public point samples, of which510 are ledger-only midpoints and1820 feed geometry;510 polyline evaluations provide181 points each to the cable strokes. Internal polyline sampling is not a second mechanism.",
+        "callEvidenceScope": "Actual producer ledger and Native drawing interception, with all510 primary cable paths numerically compared across runtime versions. Measured largest point delta8.66e-13;13 selected Native PNGs and13 fresh-process rebuilds match. Independent original-film review confirms2040 cord strokes,1020 root/plug matrices and47 pulse frames. This fixture does not prove the entire numerical domain, all-frame pixel equality, listening or artistic transfer.",
+        "compositionScope": "Existing opacity/Canvas/time support reused; endpoint choreography, electrical pulse, plug/lamp art and sound remain project composition."
+      },
+      "knowledgeLinks": [],
+      "tags": [
+        "catenary",
+        "cable",
+        "arc-distance",
+        "tangent",
+        "hanging",
+        "悬链",
+        "吊线"
+      ]
+    },
+    {
+      "id": "composition.interval-lanes",
+      "version": 1,
+      "kind": "composition",
+      "status": "experimental",
+      "summary": "固定半开时间区间以最少互换轨道排布，调用者改时后生成新静态快照",
+      "api": "intervalLaneLayout",
+      "entry": "lib/index.mjs",
+      "example": {
+        "items": [
+          {
+            "itemId": "segment-a",
+            "start": 0,
+            "end": 4
+          },
+          {
+            "itemId": "segment-b",
+            "start": 2,
+            "end": 6
+          },
+          {
+            "itemId": "segment-c",
+            "start": 6,
+            "end": 10
+          }
+        ],
+        "domain": {
+          "start": 0,
+          "end": 12
+        },
+        "width": 480,
+        "laneHeight": 36,
+        "laneGap": 12
+      },
+      "applicability": [
+        "排期/片段条的时间重叠变得可见；显式修改一个时间范围后，轨道数量或成员重新分配"
+      ],
+      "counterexamples": [
+        "不改时间、不丢项目、不选不重叠子集，不是带真实资源资格/优先级的自动排程。",
+        "半开number端点比较，无epsilon；最少轨数仅针对同质可互换轨道。",
+        "修改输入后不保证原轨号稳定；输入排列不改变分配，但输出items/zIndex保留源顺序。",
+        "投影宽小于.001整次拒绝，不膨胀窄区间；空布局允许，旧空→空handoff仍拒绝。",
+        "只给静态快照，不保证插值中无碰撞或每帧合法排轨；clip/标签/时间单位由调用者负责。"
+      ],
+      "evidence": {
+        "visualDemo": null,
+        "artisticReview": "PENDING_USER",
+        "originalProductionTransfer": "NOT_RUN",
+        "normalSpeedViewing": "NOT_DONE",
+        "audioListening": "NOT_LISTENED",
+        "ownerArtisticAcceptance": "PENDING_USER",
+        "technicalTests": [
+          "test/interval-lanes.test.mjs",
+          "test/cable-schedule-integration.test.mjs"
+        ],
+        "guidance": "docs/interval-lanes.md",
+        "videoValidation": "VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE",
+        "visualReview": "DECODED_FRAME_REVIEW_NO_BLOCKERS",
+        "sourceVersionRelation": "Runtime and all10 frozen runtime files byte-match the actual private film. Public index export is later integration, not an original-film import.",
+        "validationCoverage": "An8-second/480-frame candidate actually initializes2 fixed-interval layouts, with minimal lane counts3 then2, and consumes these endpoints through1 explicit staged handoff plan. Only caller-authored input changes the time range; no per-frame partition call is claimed.",
+        "callEvidenceScope": "Actual two input/output snapshots and downstream480 recipe samples;313 frames submit1252 card draws,312 frames have positive Native alpha. The first submitted frame quantizes tozero alpha. Static initialization and cached consumption are not mislabeled repeated API calls or continuously visible pixels.",
+        "compositionScope": "Existing layout-handoff, transformBounds and rational time reused; the new explicit staged recipe is separately counted as a recipe. Caller edit/waypoint/pointer, generated image and sound are project work."
+      },
+      "knowledgeLinks": [],
+      "tags": [
+        "interval",
+        "lanes",
+        "partition",
+        "schedule",
+        "layout",
+        "半开区间",
+        "分轨"
+      ]
+    },
+    {
+      "id": "recipe.staged-layout-handoff",
+      "version": 1,
+      "kind": "recipe",
+      "status": "experimental",
+      "summary": "同ID快照经明确中间布局分阶段交接，绝对时间直接选段并保持全局reduced终态",
+      "api": "compileStagedLayoutHandoff",
+      "entry": "lib/index.mjs",
+      "example": {
+        "snapshots": [
+          [
+            {
+              "itemId": "card",
+              "rect": {
+                "x": 0,
+                "y": 0,
+                "width": 50,
+                "height": 20
+              },
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "zIndex": 0,
+              "geometryBounds": {
+                "x": 0,
+                "y": 0,
+                "width": 50,
+                "height": 20
+              }
+            }
+          ],
+          [
+            {
+              "itemId": "card",
+              "rect": {
+                "x": 0,
+                "y": 0,
+                "width": 50,
+                "height": 20
+              },
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                100,
+                0
+              ],
+              "zIndex": 0,
+              "geometryBounds": {
+                "x": 100,
+                "y": 0,
+                "width": 50,
+                "height": 20
+              }
+            }
+          ],
+          [
+            {
+              "itemId": "card",
+              "rect": {
+                "x": 0,
+                "y": 0,
+                "width": 50,
+                "height": 20
+              },
+              "matrix": [
+                1,
+                0,
+                0,
+                1,
+                100,
+                40
+              ],
+              "zIndex": 0,
+              "geometryBounds": {
+                "x": 100,
+                "y": 40,
+                "width": 50,
+                "height": 20
+              }
+            }
+          ]
+        ],
+        "ranges": [
+          {
+            "start": {
+              "n": "1",
+              "d": "1"
+            },
+            "end": {
+              "n": "2",
+              "d": "1"
+            }
+          },
+          {
+            "start": {
+              "n": "2",
+              "d": "1"
+            },
+            "end": {
+              "n": "4",
+              "d": "1"
+            }
+          }
+        ]
+      },
+      "applicability": [
+        "卡片先横移再收轨，或先腾行再横移；调用者提供真正有意图的waypoint而不是项目维护可变播放状态"
+      ],
+      "counterexamples": [
+        "这是组合既有layout-handoff的1配方，不计新增基础或另造插值机制。",
+        "不自动生成waypoint/避碰/重排时间；所有快照必须同ID集合，无新增/退出项。",
+        "内部精确边界归后段；每段旧smoothstep会停顿，不保证速度连续。",
+        "reducedMotion在所有时刻包括before使用全局最终快照，不是每段各自终态；时钟/阶段仍保持。",
+        "最多16阶段×128项；共享rational的30位中间算术限制仍可拒绝分别合法的输入。",
+        "历史作品的项目私有分段代码不倒填为新API的调用证据。"
+      ],
+      "evidence": {
+        "visualDemo": null,
+        "artisticReview": "PENDING_USER",
+        "originalProductionTransfer": "NOT_RUN",
+        "normalSpeedViewing": "NOT_DONE",
+        "audioListening": "NOT_LISTENED",
+        "ownerArtisticAcceptance": "PENDING_USER",
+        "technicalTests": [
+          "test/staged-layout-handoff.test.mjs",
+          "test/cable-schedule-integration.test.mjs"
+        ],
+        "guidance": "docs/staged-layout-handoff.md",
+        "videoValidation": "VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE",
+        "visualReview": "DECODED_FRAME_REVIEW_NO_BLOCKERS",
+        "sourceVersionRelation": "Runtime and all10 frozen runtime files byte-match the actual private film. Public index export is later integration. No historical film is relabeled as using this new API.",
+        "validationCoverage": "An8-second/480-frame candidate compiles1 plan from2 actual interval layouts and1 caller-authored waypoint;480 public samples feed the interaction. Internal old handoff/motion calls are reused, not separately counted as new mechanisms.",
+        "callEvidenceScope": "Actual public calls and Native drawing ledger:313 submitted frames/1252 card draws,312 positive-alpha frames. Horizontal edit then vertical reassignment is the authored route, not an automatic collision guarantee. Independent decoded-frame and fresh-process evidence is scoped to this film.",
+        "compositionScope": "Reuses old layout-handoff/transform/opacity and rational time; before/after static endpoints come from interval-lanes. Waypoint, pointer, edited time and graphic/audio design remain caller-owned."
+      },
+      "knowledgeLinks": [],
+      "tags": [
+        "staged",
+        "handoff",
+        "waypoint",
+        "recipe",
+        "layout",
+        "分阶段",
+        "快照"
+      ]
     }
   ]
 }

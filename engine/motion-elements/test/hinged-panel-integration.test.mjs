@@ -13,7 +13,7 @@ test('hinged panel exports share canonical function identities and branded state
  assert.deepEqual(api.sampleHingedPanel(p,{angle:0,parent:s}).vertices,s.vertices);
 });
 test('one candidate with actual version bridge and group feedback does not imply individual acceptance',()=>{
- assert.equal(catalog.elements.length,38);assert.equal(catalog.elements.filter(e=>e.kind==='recipe').length,6);
+ assert.equal(catalog.elements.length,41);assert.equal(catalog.elements.filter(e=>e.kind==='recipe').length,7);
  assert.equal(entry.api,'compileHingedPanel');assert.equal(entry.kind,'geometry');assert.equal(entry.status,'experimental');
  assert.equal(entry.evidence.artisticReview,'PENDING_USER');assert.equal(entry.evidence.ownerArtisticAcceptance,'PENDING_USER');
  assert.equal(entry.evidence.audioListening,'NOT_LISTENED');assert.equal(entry.evidence.normalSpeedViewing,'NOT_DONE');assert.equal(entry.evidence.originalProductionTransfer,'NOT_RUN');

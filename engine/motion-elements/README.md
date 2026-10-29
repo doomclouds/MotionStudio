@@ -1,6 +1,6 @@
 # Motion Elements — 可组合动效基础库
 
-当前目录 **38 项：32 个基础机制＋6 个配方**，全部 experimental。数量不代表艺术通过。以下阶段计数是历史记录；当前分类以 catalog 为准。
+当前目录 **41 项：34 个基础机制＋7 个配方**，全部 experimental。数量不代表艺术通过。以下阶段计数是历史记录；当前分类以 catalog 为准。
 
 第一阶段包含 **10 个机制**，而不是 10 套影片模板。数字不同、方向相反、快慢不同均是参数变体，不重复计算新元素。当前全部标记 `experimental`：数值与 Native 像素测试不等于审美验收，也不等于已经在原创成片中复用通过。
 
@@ -847,3 +847,15 @@ solver及实际导入依赖与影片一致，但存档未使用的旧index不等
 用户对整组三片给出正面反馈，不推断单片或音频细节独立验收；
 常速NOT_DONE、听审NOT_LISTENED、单项艺术PENDING_USER、通用迁移NOT_RUN。
 影片媒体、字体、私有实际参数及回执不进公共源包；保持experimental。
+
+
+## 悬线与排期批：2 基础＋1 配方
+
+- `geometry.catenary`：由支持端点、固定输入长度和重力方向求静态悬链线，按弧长地址取点/切线。[使用/数值范围/原影片桥接](docs/catenary.md)。不是动态绳索或电传播模拟。
+- `composition.interval-lanes`：固定半开区间按重叠分配最少互换轨道；显式改时后重算端点快照。[使用/最少性/投影限制](docs/interval-lanes.md)。不自动改时间。
+- `recipe.staged-layout-handoff`：明确中间布局和连续时段，组合旧handoff为先横移再收轨等交互。[调用/阶段/reduced规则](docs/staged-layout-handoff.md)。这是配方，不计基础，也不自动避碰或生成waypoint。
+
+分别有8.5秒和8秒有声候选、实际调用/绘图回执与限定独立解码帧审。
+悬链线修复了原型人为taut阈值；原视频/原冻结源码不改，510帧数值＋13代表Native/新进程桥接不冒称新片重编码或状态逐位相等。
+排期片两次初始化端点、480次配方采样；313帧提交1252卡片绘图、312帧正Native alpha，不把采样次数当持续可见次数。
+运行时experimental；常速NOT_DONE、听审NOT_LISTENED、用户艺术PENDING_USER、跨场景迁移NOT_RUN。媒体/字体/图像/私有实际参数与回执不进入公开库。

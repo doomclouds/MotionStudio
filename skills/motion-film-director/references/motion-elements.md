@@ -238,7 +238,7 @@ Pixi官方shader与p5 mask具体源码/许可取舍见`docs/raster-reference-dec
 
 ## 角色：两段固定长度追随明确目标
 
-当前32基础＋6配方（38项），距离100基础目标仍有68项；数量与艺术接受分别报告。
+当前34基础＋7配方（41项），距离100基础目标仍有66项；数量与艺术接受分别报告。
 `geometry.two-link-ik`是1个纯二维几何机制，无新配方，不是全身rig、碰撞、力学或3D。
 root/target来自作品同一绝对帧状态，显式bend/fallback；用返回joint/end画骨段，不能把不可达end偷偷画到target掩盖投影。
 实际手掌轮廓与IK端点不是同一个接触定义：数值误差0后仍要看真实编码邻帧是否早贴、滑动或错位。
@@ -309,3 +309,12 @@ glyph内部采样不加到公wrapper数。570次run提交不等于全程完整�
 3..64顶点、输入点±10000、角±2π、128层上限，严格own字段/普通稠密数组。
 私有作品实际调用并有修复版全帧状态/代表Native桥接；原片字节及原manifest未改。
 组级正面反馈不升级单项艺术、常速/听审或通用迁移；详细质量门见catalog。
+
+
+### 悬线、时间重叠与显式分阶段交接
+
+- `geometry.catenary` / `compileCatenary`：[指南](../../../engine/motion-elements/docs/catenary.md)，canonical `lib/foundations/geometry/catenary.mjs`。支持端点＋长度＋重力确定静态弧线；不是动态绳索、碰撞或任意近竖直求解。浮点near-taut与半程接缝、弧长地址非实测长度限制须保留。原片冻结runtime与公共修正版用独立数值/Native桥接，不冒同字节或全片重制。
+- `composition.interval-lanes` / `intervalLaneLayout`：[指南](../../../engine/motion-elements/docs/interval-lanes.md)，canonical `lib/foundations/layout/interval-lanes.mjs`。固定半开区间最少分轨；调用者改时间，不由API自动排程。初始化快照经交接消费不冒每帧重新求解。
+- `recipe.staged-layout-handoff` / `compileStagedLayoutHandoff`：[指南](../../../engine/motion-elements/docs/staged-layout-handoff.md)，位于recipes，1配方不计基础。明确same-ID snapshots/waypoint及连续ranges；内部边界后段、reduced全局终态。无自动避碰、改时或waypoint生成。历史项目手写分段不是新API调用证明。
+
+两部实际有声候选与源码/逐项调用/提交和可见范围已私有绑定；限定帧审不升级常速、听审、用户艺术或通用迁移。保持catalog的各质量门，不将项目图像/声音/参数写入公开机制。

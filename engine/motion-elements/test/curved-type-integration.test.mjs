@@ -27,7 +27,7 @@ test('catalog glyph example is an explicit two-step setup, not a JSON-branded pl
  assert.equal(JSON.stringify(catalog),before);
 });
 test('curved type metadata preserves count, actual consumption limits and separate review gates',()=>{
- assert.equal(catalog.elements.length,38);assert.equal(catalog.elements.filter(e=>e.kind==='recipe').length,6);
+ assert.equal(catalog.elements.length,41);assert.equal(catalog.elements.filter(e=>e.kind==='recipe').length,7);
  assert.equal(curve.kind,'geometry');assert.equal(glyph.kind,'composition');
  for(const e of [curve,glyph]){
   assert.equal(e.status,'experimental');assert.equal(e.evidence.videoValidation,'VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE');

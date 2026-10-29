@@ -39,3 +39,7 @@ export {layoutGlyphRunOnPath} from './foundations/typography/glyph-run-path.mjs'
 export {flowWrapLayout} from './foundations/layout/flow-wrap.mjs';
 
 export {compileHingedPanel, sampleHingedPanel, transformHingedPoint} from './foundations/geometry/hinged-panel.mjs';
+
+export {compileCatenary, sampleCatenary, sampleCatenaryPolyline} from './foundations/geometry/catenary.mjs';
+export {intervalLaneLayout} from './foundations/layout/interval-lanes.mjs';
+export {compileStagedLayoutHandoff, sampleStagedLayoutHandoff} from './recipes/staged-layout-handoff.mjs';

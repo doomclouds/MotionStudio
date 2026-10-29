@@ -1,6 +1,6 @@
 # 基础机制职责目录与旧路径兼容
 
-目录整理不新增机制。当前为 **32基础＋6配方**（新增曲线/字格/尺寸换行机制另有真实作品证据；分类迁移本身仍不计数）；目录别名、辅助函数、适配器和重导出入口不计数。实验状态及每件作品原有的技术/用户反馈/视听检查状态不因迁移而升级。
+目录整理不新增机制。当前为 **34基础＋7配方**（新增曲线/字格/尺寸换行机制另有真实作品证据；分类迁移本身仍不计数）；目录别名、辅助函数、适配器和重导出入口不计数。实验状态及每件作品原有的技术/用户反馈/视听检查状态不因迁移而升级。
 
 ## 当前已实施：field 单域
 
@@ -33,8 +33,10 @@ const state = sampleAttractorField(plan, {
 | 显式字格沿路径布局 | `lib/foundations/typography/glyph-run-path.mjs` | `composition.glyph-run-path` |
 | 显式尺寸逐行换行 | `lib/foundations/layout/flow-wrap.mjs` | `composition.flow-wrap` |
 | 凸平面刚性铰链 | `lib/foundations/geometry/hinged-panel.mjs` | `geometry.hinged-panel` |
+| 静态悬链线弧长寻址 | `lib/foundations/geometry/catenary.mjs` | `geometry.catenary` |
+| 固定半开区间最少轨道 | `lib/foundations/layout/interval-lanes.mjs` | `composition.interval-lanes` |
 
-此处四项均为新机制，没有需要兼容的旧平层路径；总入口显式re-export同一模块实例。
+此处六项均为新机制，没有需要兼容的旧平层路径；总入口显式re-export同一模块实例。
 `typography`是物理职责目录，不另造query kind，也不把辅助采样算成第二条曲线机制。
 
 ## 分类原则与后续边界
@@ -51,3 +53,5 @@ const state = sampleAttractorField(plan, {
 此前field单域整理不改`lib/index.mjs`、任何其他求值模块、catalog内容或Tessel作品集锁定的13个共享源码文件。原作品冻结runtime/manifest不被覆盖。新公开版本的场实现路径及源码hash确实改变，不能沿用旧manifest声称字节同版。
 
 技术门包括新旧函数identity、跨入口compile/sample、输入隔离、奇点、乱序求值、独立模块品牌拒绝，以及全库测试与完整portable。原有field/slice工程示例用于新旧状态/Native像素等价检查，不新增作品艺术认可，也不把该技术示例升级为高质量风格参考。对于将来迁移真正被作品锁直接绑定的模块，必须先建立锁与导入的兼容证据；不能直接改已批准作品源码以消除校验失败。
+
+显式分阶段交接位于 `lib/recipes/staged-layout-handoff.mjs`，只增加配方数量，不放入foundations职责目录或复算旧handoff为新基础。
