@@ -15,7 +15,7 @@ test('flow responsibility path and public export are one function and compose wi
  assert.deepEqual(end.items.map(i=>i.matrix),narrow.items.map(i=>i.matrix));assert.ok(end.items.every(i=>i.role==='shared'));
 });
 test('flow catalog records actual initialization, cached consumption and independent quality limits',()=>{
- assert.equal(catalog.elements.length,37);assert.equal(catalog.elements.filter(e=>e.kind==='recipe').length,6);
+ assert.equal(catalog.elements.length,38);assert.equal(catalog.elements.filter(e=>e.kind==='recipe').length,6);
  assert.equal(entry.api,'flowWrapLayout');assert.equal(entry.status,'experimental');assert.equal(entry.kind,'composition');
  assert.equal(entry.evidence.visualReview,'DECODED_FRAME_REVIEW_NO_BLOCKERS');assert.match(entry.evidence.validationCoverage,/Final-version32 decoded frames/);
  assert.equal(entry.evidence.artisticReview,'PENDING_USER');assert.equal(entry.evidence.ownerArtisticAcceptance,'PENDING_USER');

@@ -2501,6 +2501,94 @@
         "标签",
         "布局"
       ]
+    },
+    {
+      "id": "geometry.hinged-panel",
+      "version": 1,
+      "kind": "geometry",
+      "status": "experimental",
+      "summary": "凸平面绕明确铰轴刚性折起，并以父×子变换保持附着点",
+      "api": "compileHingedPanel",
+      "entry": "lib/index.mjs",
+      "example": {
+        "vertices": [
+          {
+            "x": -40,
+            "y": 0,
+            "z": 0
+          },
+          {
+            "x": 40,
+            "y": 0,
+            "z": 0
+          },
+          {
+            "x": 40,
+            "y": 0,
+            "z": 60
+          },
+          {
+            "x": -40,
+            "y": 0,
+            "z": 60
+          }
+        ],
+        "hinge": {
+          "from": {
+            "x": -40,
+            "y": 0,
+            "z": 0
+          },
+          "to": {
+            "x": 40,
+            "y": 0,
+            "z": 0
+          }
+        }
+      },
+      "applicability": [
+        "纸面从展开画稿沿折线抬起，印刷窗格/线条随同面片变换，子面跟随父面再折起"
+      ],
+      "counterexamples": [
+        "XYZ刚性平面几何，不是纯二维旋转，也不是通用三维渲染器或纸张力学。",
+        "不做投影、裁切、遮挡排序、光照、实体闭合或碰撞；父子接缝位置由调用者编排。",
+        "共面/凸性按IEEE容差判定，不flatten，不保证所有微小/狭长面都接受。",
+        "12元素row-major矩阵不能直接送入Canvas六元素transform；输出坐标可能超过输入域。",
+        "最多128层是资源范围，不是全域误差证明；点变换helper和投影不另计机制。",
+        "组级正面反馈不等于本单片、非法/极端分支、音频细节或迁移质量单独验收。"
+      ],
+      "evidence": {
+        "technicalTests": [
+          "test/hinged-panel.test.mjs",
+          "test/hinged-panel-integration.test.mjs"
+        ],
+        "visualDemo": null,
+        "videoValidation": "VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE_WITH_VERSION_EQUIVALENCE",
+        "artisticReview": "PENDING_USER",
+        "originalProductionTransfer": "NOT_RUN",
+        "visualReview": "DECODED_FRAME_REVIEW_NO_BLOCKERS",
+        "normalSpeedViewing": "NOT_DONE",
+        "audioListening": "NOT_LISTENED",
+        "ownerArtisticAcceptance": "PENDING_USER",
+        "ownerFeedbackScope": "Positive feedback about the three-film group only; no individual work, parameter, listening or audio-detail acceptance inferred.",
+        "guidance": "docs/hinged-panel.md",
+        "sourceVersionRelation": "Public candidate tightens own-field, required-own, dense-array and128-level hierarchy validation. Geometry arithmetic is preserved; original frozen film runtime and historical manifests remain untouched. Separate648-frame actual-state/draw-path replay plus24 representative Native PNG and fresh-process comparisons bridge old/new versions; not identical source bytes or a new encoded film. Public index export is later integration.",
+        "validationCoverage": "Final10.8-second/60fps candidate:8 compile plans;5184 sampled panel states over648 frames feed actual polygon paths;136752 helper-point evaluations feed printed geometry. Draw submissions may be occluded or back-facing; not all are continuously visible.",
+        "callEvidenceScope": "Complete actual usage JSON replay and independent Native path interception of panel fills and mapped decorations. Private frozen media/source/hash identities retained separately.",
+        "compositionScope": "Existing stagger/opacity and time/finite-settle/Canvas support are reused. Camera, water, light and boat remain project choreography, not extra foundations or a new recipe."
+      },
+      "knowledgeLinks": [],
+      "tags": [
+        "hinge",
+        "panel",
+        "fold",
+        "rigid",
+        "geometry",
+        "paper",
+        "铰链",
+        "折叠",
+        "纸面"
+      ]
     }
   ]
 }

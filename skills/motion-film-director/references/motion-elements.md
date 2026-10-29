@@ -238,7 +238,7 @@ Pixi官方shader与p5 mask具体源码/许可取舍见`docs/raster-reference-dec
 
 ## 角色：两段固定长度追随明确目标
 
-当前31基础＋6配方（37项），距离100基础目标仍有69项；数量与艺术接受分别报告。
+当前32基础＋6配方（38项），距离100基础目标仍有68项；数量与艺术接受分别报告。
 `geometry.two-link-ik`是1个纯二维几何机制，无新配方，不是全身rig、碰撞、力学或3D。
 root/target来自作品同一绝对帧状态，显式bend/fallback；用返回joint/end画骨段，不能把不可达end偷偷画到target掩盖投影。
 实际手掌轮廓与IK端点不是同一个接触定义：数值误差0后仍要看真实编码邻帧是否早贴、滑动或错位。
@@ -299,3 +299,13 @@ glyph内部采样不加到公wrapper数。570次run提交不等于全程完整�
 开场透明提交不等于可见。flow与实际matrix/validator字节同冻版，后续总入口另测，历史manifest不改。
 常速NOT_DONE、听审NOT_LISTENED、用户艺术PENDING_USER、通用迁移NOT_RUN；最终版本32个编码帧独评仅为限定范围，不沿用旧长版本。
 本批1基础/0配方，媒体/生成图层/字体/艺术参数与私有回执不进入公共源包。
+
+
+### 折叠纸面与印刷附着
+
+`geometry.hinged-panel`：`compileHingedPanel` + `sampleHingedPanel`，canonical `lib/foundations/geometry/hinged-panel.mjs`；使用[指南](../../../engine/motion-elements/docs/hinged-panel.md)。
+这是XYZ凸平面铰链几何，单项机制；`transformHingedPoint`只映射同一matrix下装饰点，不另计。
+父/子在共同展开画稿坐标定义，parent×local；12值row-major不是Canvas六值矩阵。投影/绘图/排序由作品负责，不能假称真实纸张物理或通用3D。
+3..64顶点、输入点±10000、角±2π、128层上限，严格own字段/普通稠密数组。
+私有作品实际调用并有修复版全帧状态/代表Native桥接；原片字节及原manifest未改。
+组级正面反馈不升级单项艺术、常速/听审或通用迁移；详细质量门见catalog。

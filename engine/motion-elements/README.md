@@ -1,6 +1,6 @@
 # Motion Elements — 可组合动效基础库
 
-当前目录 **37 项：31 个基础机制＋6 个配方**，全部 experimental。数量不代表艺术通过。以下阶段计数是历史记录；当前分类以 catalog 为准。
+当前目录 **38 项：32 个基础机制＋6 个配方**，全部 experimental。数量不代表艺术通过。以下阶段计数是历史记录；当前分类以 catalog 为准。
 
 第一阶段包含 **10 个机制**，而不是 10 套影片模板。数字不同、方向相反、快慢不同均是参数变体，不重复计算新元素。当前全部标记 `experimental`：数值与 Native 像素测试不等于审美验收，也不等于已经在原创成片中复用通过。
 
@@ -832,3 +832,18 @@ solver及实际导入依赖与影片一致，但存档未使用的旧index不等
 也不复用旧长版本的帧数或媒体回执。
 常速NOT_DONE、听审NOT_LISTENED、用户艺术PENDING_USER、通用迁移NOT_RUN；保持experimental。
 媒体、真实美术/字体参数、生成图层及私有回执不随公共源包发布。
+
+
+## 纸面折叠批：1 个刚性凸平面铰链机制，无新配方
+
+`geometry.hinged-panel` 在 authored XYZ 中绕明确折线旋转平面，允许父×子组合；
+印刷点使用同一 sampled matrix。它是可被Canvas投影绘制的几何，不是纯二维旋转或通用三维引擎。
+新实现位于 `lib/foundations/geometry/hinged-panel.mjs`；见[严格输入、画法、父子坐标与入库前官方核验](docs/hinged-panel.md)。
+
+10.8秒有声候选中8计划、648帧/5184次面片求值、136752辅助点变换均真实供绘制。
+背面/遮挡提交不等同于可见；摄影机、海水、灯光、船及旧stagger/opacity不再计数。
+入库前修复未知own字段/必填继承/异常数组，新增128层范围；原视频/原冻结runtime/manifest未改。
+648帧实际状态/绘图路径与24代表Native及新进程比较建立修复版等价，不称源码同字节或重新编码全片。
+用户对整组三片给出正面反馈，不推断单片或音频细节独立验收；
+常速NOT_DONE、听审NOT_LISTENED、单项艺术PENDING_USER、通用迁移NOT_RUN。
+影片媒体、字体、私有实际参数及回执不进公共源包；保持experimental。

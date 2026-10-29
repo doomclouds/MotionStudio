@@ -70,9 +70,9 @@ test('strict CLI unknown/repeated/missing/extra options and command constraints'
   assert.deepEqual(parseCatalogArgs(['--help']),{help:true});
   assert.equal(parseCatalogArgs(['find','--tag',' 淡入 ']).query.tag,'淡入');
 });
-test('real 37 entries: tags, status, metadata and executable inputs preserved', () => {
+test('real 38 entries: tags, status, metadata and executable inputs preserved', () => {
   const before = JSON.stringify(catalog);
-  const r = queryCatalog(catalog,{limit:100}); assert.equal(r.total,37); assert.equal(r.truncated,false);
+  const r = queryCatalog(catalog,{limit:100}); assert.equal(r.total,38); assert.equal(r.truncated,false);
   for (const e of catalog.elements) {
     assert.equal(e.status,'experimental'); assert.ok(e.tags.length>0);
     const hit = queryCatalog(catalog,{id:e.id}).results[0]; assert.deepEqual(hit.element,e);
@@ -94,7 +94,7 @@ test('runtime permission isolation: only three static files readable, no entry/p
     '--permission', `--allow-fs-read=${cli}`, `--allow-fs-read=${root}lib/catalog-query.mjs`, `--allow-fs-read=${root}catalog.json`,
     cli,'list','--limit','100',
   ], {encoding:'utf8',cwd:'/tmp'});
-  assert.equal(r.status,0,r.stderr); assert.equal(JSON.parse(r.stdout).total,37);
+  assert.equal(r.status,0,r.stderr); assert.equal(JSON.parse(r.stdout).total,38);
 });
 
 // Metadata guards prevent a technical fixture from becoming a style endorsement.
@@ -111,7 +111,7 @@ test('experimental band and light recipe preserve independent quality gates in q
 
 
 test('data-flow accounting and film coverage preserve independent quality gates', () => {
-  assert.equal(catalog.elements.filter(e => e.kind !== 'recipe').length,31);
+  assert.equal(catalog.elements.filter(e => e.kind !== 'recipe').length,32);
   assert.equal(catalog.elements.filter(e => e.kind === 'recipe').length,6);
   for (const id of ['composition.layered-dag','composition.weighted-flow','recipe.flow-handoff']) {
     const e=queryCatalog(catalog,{id}).results[0].element;
@@ -167,7 +167,7 @@ test('sticky interval distinguishes actual draws from visible released geometry'
 
 test('three-work owner feedback distinguishes rejection from scoped and limited acceptance without changing technical gates',()=>{
  const expected={'geometry.two-link-ik':'REJECTED_NOT_STYLE_REFERENCE','composition.plane-parallax':'POSITIVE_FEEDBACK_SCENE_SPECIFIC','composition.sticky-interval':'LIMITED_ACCEPTANCE_NOT_STYLE_ENDORSEMENT'};
- assert.equal(catalog.elements.length,37);assert.equal(catalog.elements.filter(e=>e.kind==='recipe').length,6);
+ assert.equal(catalog.elements.length,38);assert.equal(catalog.elements.filter(e=>e.kind==='recipe').length,6);
  for(const [id,status]of Object.entries(expected)){const e=queryCatalog(catalog,{id}).results[0].element;
   assert.equal(e.status,'experimental');assert.equal(e.evidence.artisticReview,status);assert.equal(e.evidence.ownerArtisticAcceptance,status);
   assert.equal(e.evidence.videoValidation,'VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE');assert.equal(e.evidence.audioListening,'NOT_LISTENED');
