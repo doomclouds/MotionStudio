@@ -105,7 +105,10 @@ test('data-flow accounting and film coverage preserve independent quality gates'
   for (const id of ['composition.layered-dag','composition.weighted-flow','recipe.flow-handoff']) {
     const e=queryCatalog(catalog,{id}).results[0].element;
     assert.equal(e.evidence.videoValidation,'VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE');
-    assert.equal(e.evidence.artisticReview,'PENDING_USER');
+    assert.equal(e.evidence.artisticReview,'LIMITED_ACCEPTANCE_NOT_STYLE_ENDORSEMENT');
+    assert.equal(e.evidence.ownerArtisticAcceptance,'LIMITED_ACCEPTANCE_NOT_STYLE_ENDORSEMENT');
+    assert.match(e.evidence.ownerFeedbackScope,/not endorsed as a style reference/);
+    assert.equal(e.status,'experimental');
     assert.equal(e.evidence.audioListening,'NOT_LISTENED');
     assert.equal(e.evidence.normalSpeedViewing,'NOT_DONE');
     assert.equal(e.evidence.originalProductionTransfer,'NOT_RUN');

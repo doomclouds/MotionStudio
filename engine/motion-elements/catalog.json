@@ -1677,15 +1677,16 @@
         ],
         "visualDemo": null,
         "videoValidation": "VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE",
-        "artisticReview": "PENDING_USER",
+        "artisticReview": "LIMITED_ACCEPTANCE_NOT_STYLE_ENDORSEMENT",
         "originalProductionTransfer": "NOT_RUN",
         "visualReview": "DECODED_FRAME_REVIEW_NO_BLOCKERS",
         "normalSpeedViewing": "NOT_DONE",
         "audioListening": "NOT_LISTENED",
-        "ownerArtisticAcceptance": "PENDING_USER",
+        "ownerArtisticAcceptance": "LIMITED_ACCEPTANCE_NOT_STYLE_ENDORSEMENT",
         "guidance": "docs/data-flow.md",
         "sourceVersionRelation": "Frozen film runtime retained; the post-film tiny-flow conservation fix is bound by separate all-frame state and representative Native-frame equality receipts, not a full fixed-version film re-render.",
-        "validationCoverage": "One compilation; six fixed node positions consumed in frames 157–839. No arbitrary graph or obstacle-routing visual coverage."
+        "validationCoverage": "One compilation; six fixed node positions consumed in frames 157–839. No arbitrary graph or obstacle-routing visual coverage.",
+        "ownerFeedbackScope": "Limited acceptance of this delivered work; visual design is not endorsed as a style reference. Technical validity and migration evidence remain separate."
       },
       "knowledgeLinks": [],
       "tags": [
@@ -1780,15 +1781,16 @@
         ],
         "visualDemo": null,
         "videoValidation": "VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE",
-        "artisticReview": "PENDING_USER",
+        "artisticReview": "LIMITED_ACCEPTANCE_NOT_STYLE_ENDORSEMENT",
         "originalProductionTransfer": "NOT_RUN",
         "visualReview": "DECODED_FRAME_REVIEW_NO_BLOCKERS",
         "normalSpeedViewing": "NOT_DONE",
         "audioListening": "NOT_LISTENED",
-        "ownerArtisticAcceptance": "PENDING_USER",
+        "ownerArtisticAcceptance": "LIMITED_ACCEPTANCE_NOT_STYLE_ENDORSEMENT",
         "guidance": "docs/data-flow.md",
         "sourceVersionRelation": "Frozen film runtime retained; the post-film tiny-flow conservation fix is bound by separate all-frame state and representative Native-frame equality receipts, not a full fixed-version film re-render.",
-        "validationCoverage": "One direct initialization consumed in frames 161–407; recipe outputs consumed in frames 408–839. Six positive links, fixed scale; no zero/extreme/invalid-graph visual coverage."
+        "validationCoverage": "One direct initialization consumed in frames 161–407; recipe outputs consumed in frames 408–839. Six positive links, fixed scale; no zero/extreme/invalid-graph visual coverage.",
+        "ownerFeedbackScope": "Limited acceptance of this delivered work; visual design is not endorsed as a style reference. Technical validity and migration evidence remain separate."
       },
       "knowledgeLinks": [],
       "tags": [
@@ -1902,15 +1904,16 @@
         ],
         "visualDemo": null,
         "videoValidation": "VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE",
-        "artisticReview": "PENDING_USER",
+        "artisticReview": "LIMITED_ACCEPTANCE_NOT_STYLE_ENDORSEMENT",
         "originalProductionTransfer": "NOT_RUN",
         "visualReview": "DECODED_FRAME_REVIEW_NO_BLOCKERS",
         "normalSpeedViewing": "NOT_DONE",
         "audioListening": "NOT_LISTENED",
-        "ownerArtisticAcceptance": "PENDING_USER",
+        "ownerArtisticAcceptance": "LIMITED_ACCEPTANCE_NOT_STYLE_ENDORSEMENT",
         "guidance": "docs/data-flow.md",
         "sourceVersionRelation": "Frozen film runtime retained; the post-film tiny-flow conservation fix is bound by separate all-frame state and representative Native-frame equality receipts, not a full fixed-version film re-render.",
-        "validationCoverage": "One compilation and 432 direct samples consumed in frames 408–839; interpolating frames 409–506 and settled frames 507–839. Positive-to-positive fixed topology only; no reduced-motion visual acceptance."
+        "validationCoverage": "One compilation and 432 direct samples consumed in frames 408–839; interpolating frames 409–506 and settled frames 507–839. Positive-to-positive fixed topology only; no reduced-motion visual acceptance.",
+        "ownerFeedbackScope": "Limited acceptance of this delivered work; visual design is not endorsed as a style reference. Technical validity and migration evidence remain separate."
       },
       "knowledgeLinks": [],
       "tags": [
