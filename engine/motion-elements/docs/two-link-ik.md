@@ -11,7 +11,7 @@
 ## 严格接口
 
 ```js
-import {solveTwoLinkIK} from '../lib/two-link-ik.mjs';
+import {solveTwoLinkIK} from '../lib/foundations/geometry/two-link-ik.mjs';
 const state=solveTwoLinkIK({
   root:{x:100,y:100}, target:{x:150,y:100},
   upperLength:30, lowerLength:40,
@@ -103,7 +103,9 @@ node --test engine/motion-elements/test/*.test.mjs
 不把未绘制结果计作消费。父矩阵、脚步支撑、手朝向、相机、灯光响应、声音均为项目编排，不是本批新机制。
 片中没有内/外投影、零目标fallback或奇点的可见演示；工程测试不能替代这些分支的作品验收。
 
-原冻结solver及实际导入依赖与本批源字节一致；目录/测试/指导接入在影片之后，历史manifest保持不变。
+原作品冻结solver仍保持原字节；本次职责目录迁移后旧路径变为显式re-export，canonical源码仅调整相对validate导入。
+因此公开源码路径/hash已改变，不能再称迁移版与原作品manifest字节同版。历史manifest与冻结runtime不变；
+状态/像素兼容证据应另行绑定具体新旧版本，不能覆盖原回执。
 完整影片、源码/媒体hash、参数、逐帧调用与绘制回执、复现命令和失败版本保留私有。
 公开合成例仅复现API合同，不含该片艺术参数，不表示可独立重制私有作品。
 工程、全解码与限定邻帧技术检查通过；常速连续观看NOT_DONE、实际听审NOT_LISTENED、
@@ -112,3 +114,19 @@ node --test engine/motion-elements/test/*.test.mjs
 
 私有复现应先核所有冻结源与音频身份，重建原创声音及代表Native帧，再完整编码/full-decode与比对调用范围。
 数值与像素的同机复现不等于跨平台后端一致；新作品仍需实际听看与用户验收。
+
+## 职责目录与旧入口兼容（0新增）
+
+实际实现位于 `lib/foundations/geometry/two-link-ik.mjs`。
+`lib/two-link-ik.mjs` 只显式重导出同一个 `solveTwoLinkIK`；
+`lib/index.mjs` 保留既有旧路径导出。三入口函数对象严格相等，没有复制solver或改变validator。
+稳定ID、experimental状态、总数量和该角色作品REJECTED_NOT_STYLE_REFERENCE均不变。
+
+给旧wrapper URL添加query只重新加载wrapper，不会给canonical依赖添加query，
+所以仍得到同一函数对象。迁移前给旧实现URL添加query会创建不同函数对象；
+该刻意cache-busting身份行为不作兼容承诺。要创建独立模块实例，请给canonical URL添加query。
+本solver没有plan品牌、隐藏状态或跨入口compile/sample协议；不同实例的纯求值结果应相同，
+不能把field的计划品牌限制机械套用在此API。原有null-prototype点可用、外国realm普通点拒绝等
+共用validator边界保留；这次仅组织文件，不趁机收紧参数或改变数学。
+
+本次目录迁移另有私有等价桥接：原/新840个完整场景状态、1680次真实IK输入输出严格一致；9个原Native帧在正序/逆序/重复渲染及9个独立新Node中PNG相同。这不是修订影片重编码、全840帧像素比较、实听或新的艺术认可。原角色片被否的风格评价不变；分类整理不把它重新推荐为成功作品。

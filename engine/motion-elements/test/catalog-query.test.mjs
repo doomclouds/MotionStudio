@@ -151,6 +151,7 @@ test('two-link IK records actual reachable branch coverage without promoting aut
  assert.equal(e.evidence.audioListening,'NOT_LISTENED');assert.equal(e.evidence.normalSpeedViewing,'NOT_DONE');
  assert.equal(e.evidence.originalProductionTransfer,'NOT_RUN');assert.equal(e.evidence.guidance,'docs/two-link-ik.md');
  assert.match(e.evidence.validationCoverage,/1680.*0–839/);assert.match(e.evidence.validationCoverage,/No projected, fallback/);
+ assert.match(e.evidence.sourceVersionRelation,/same solver body/);assert.match(e.evidence.sourceVersionRelation,/not a byte-identical-film claim/);assert.match(e.evidence.sourceVersionRelation,/9 fresh Node/);
  assert.equal(queryCatalog(catalog,{kind:'recipe'}).total,7);
 });
 

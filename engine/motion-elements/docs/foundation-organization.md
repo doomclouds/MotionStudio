@@ -2,13 +2,14 @@
 
 目录整理不新增机制。当前为 **39基础＋7配方**（新增曲线/字格/尺寸换行机制另有真实作品证据；分类迁移本身仍不计数）；目录别名、辅助函数、适配器和重导出入口不计数。实验状态及每件作品原有的技术/用户反馈/视听检查状态不因迁移而升级。
 
-## 当前已实施：field 单域
+## 当前已实施：field 与两连杆几何小域
 
 | 职责 | canonical 实现 | 保留的旧入口 |
 |---|---|---|
 | 解析方向场 `field.attractor-orientation` | `lib/foundations/field/attractor-field.mjs` | `lib/attractor-field.mjs` |
+| 解析两连杆 IK（原ID不变） | `lib/foundations/geometry/two-link-ik.mjs` | `lib/two-link-ik.mjs` |
 
-推荐新调用使用职责路径；原总入口 `lib/index.mjs` 与旧直接路径均继续可用。三个入口导出的函数是同一对象，内部只存在一份实现及一套计划品牌，不是复制三份代码。
+推荐新调用使用职责路径；原总入口 `lib/index.mjs` 与旧直接路径均继续可用。三个入口导出的函数是同一对象，每项内部只存在一份实现，不是复制三份代码。field保留同一计划品牌；IK是无plan品牌的纯函数。
 
 ```js
 import {compileAttractorField, sampleAttractorField}
@@ -62,3 +63,14 @@ const state = sampleAttractorField(plan, {
 显式分阶段交接位于 `lib/recipes/staged-layout-handoff.mjs`，只增加配方数量，不放入foundations职责目录或复算旧handoff为新基础。
 
 `raster/`新域只放本批新模块；既有matte/displacement旧入口与冻结源码不移动、不复制。别名和点映射helper不增加基础数量。
+
+## 两连杆几何迁移范围
+
+这次仅将两连杆solver归入已有geometry职责目录；旧入口显式re-export，index保持原路径，
+源码主体仅相对validate导入路径变化。0新增机制/作品，计数仍39基础＋7配方。
+三入口函数===，同输入输出/异常合同不变。旧wrapper加query不再创建独立solver函数，
+需独立函数对象时使用canonical query URL；详见[two-link-ik.md](two-link-ik.md)。
+
+Tessel锁13文件与Favorite52锁55文件均与本次迁移文件零交集，锁定字节未改。
+角色影片自己的冻结runtime/manifest不被改写；迁移版hash不同，不沿用历史同字节说法。
+用户否定角色作品的视觉设计，REJECTED_NOT_STYLE_REFERENCE不变；纯状态迁移验证不升级其艺术状态。
