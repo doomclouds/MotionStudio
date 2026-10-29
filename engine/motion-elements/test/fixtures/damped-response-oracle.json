@@ -1,0 +1,1603 @@
+{
+  "method": "Independent 100-decimal matrix exponential of [[0,1],[-omega^2,-2*zeta*omega]] applied to [position-target,velocity]; expected values rounded to binary64. omega is the actual binary64 2*PI*frequency used by the declared model.",
+  "generatorDependency": "mpmath 1.3.0, validation-only; not required by the public Node test runner",
+  "generatorSHA256": "82420d65bb1b1b206bacb5e92a89919ae3af971e1927602326df68b028f36899",
+  "cases": [
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1e-9,
+        "dampingRatio": 0,
+        "events": []
+      },
+      "time": 1e-9,
+      "omega": 6.283185307179586e-9,
+      "expected": {
+        "position": 2.999999998,
+        "velocity": -2
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1e-9,
+        "dampingRatio": 0,
+        "events": []
+      },
+      "time": 0.01,
+      "omega": 6.283185307179586e-9,
+      "expected": {
+        "position": 2.98,
+        "velocity": -2
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1e-9,
+        "dampingRatio": 0,
+        "events": []
+      },
+      "time": 1,
+      "omega": 6.283185307179586e-9,
+      "expected": {
+        "position": 1.0000000000000002,
+        "velocity": -1.9999999999999993
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1e-9,
+        "dampingRatio": 0,
+        "events": []
+      },
+      "time": 86400,
+      "omega": 6.283185307179586e-9,
+      "expected": {
+        "position": -172796.991510144,
+        "velocity": -1.999999705240624
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1,
+        "dampingRatio": 0,
+        "events": []
+      },
+      "time": 1e-9,
+      "omega": 6.283185307179586,
+      "expected": {
+        "position": 2.9999999980000003,
+        "velocity": -1.9999993683453183
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1,
+        "dampingRatio": 0,
+        "events": []
+      },
+      "time": 0.01,
+      "omega": 6.283185307179586,
+      "expected": {
+        "position": 3.011585502022858,
+        "velocity": 4.316338058931532
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1,
+        "dampingRatio": 0,
+        "events": []
+      },
+      "time": 1,
+      "omega": 6.283185307179586,
+      "expected": {
+        "position": 3,
+        "velocity": -2.0000000000000244
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1,
+        "dampingRatio": 0,
+        "events": []
+      },
+      "time": 86400,
+      "omega": 6.283185307179586,
+      "expected": {
+        "position": 3.000000000006736,
+        "velocity": -2.000000002127426
+      },
+      "toleranceMultiplier": 2e-7
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1000,
+        "dampingRatio": 0,
+        "events": []
+      },
+      "time": 1e-9,
+      "omega": 6283.185307179586,
+      "expected": {
+        "position": 2.999999998315827,
+        "velocity": -1.3683453182949588
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1000,
+        "dampingRatio": 0,
+        "events": []
+      },
+      "time": 0.01,
+      "omega": 6283.185307179586,
+      "expected": {
+        "position": 3,
+        "velocity": -2.000000000514757
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1000,
+        "dampingRatio": 0,
+        "events": []
+      },
+      "time": 1,
+      "omega": 6283.185307179586,
+      "expected": {
+        "position": 3,
+        "velocity": -2.000000064624651
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1000,
+        "dampingRatio": 0,
+        "events": []
+      },
+      "time": 86400,
+      "omega": 6283.185307179586,
+      "expected": {
+        "position": 3.000000000017704,
+        "velocity": -2.005583569855866
+      },
+      "toleranceMultiplier": 2e-7
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1e-9,
+        "dampingRatio": 0.2,
+        "events": []
+      },
+      "time": 1e-9,
+      "omega": 6.283185307179586e-9,
+      "expected": {
+        "position": 2.999999998,
+        "velocity": -2
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1e-9,
+        "dampingRatio": 0.2,
+        "events": []
+      },
+      "time": 0.01,
+      "omega": 6.283185307179586e-9,
+      "expected": {
+        "position": 2.9800000000002513,
+        "velocity": -1.9999999999497344
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1e-9,
+        "dampingRatio": 0.2,
+        "events": []
+      },
+      "time": 1,
+      "omega": 6.283185307179586e-9,
+      "expected": {
+        "position": 1.0000000025132745,
+        "velocity": -1.999999994973451
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1e-9,
+        "dampingRatio": 0.2,
+        "events": []
+      },
+      "time": 86400,
+      "omega": 6.283185307179586e-9,
+      "expected": {
+        "position": -172778.2313781954,
+        "velocity": -1.9995654586642135
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1,
+        "dampingRatio": 0.2,
+        "events": []
+      },
+      "time": 1e-9,
+      "omega": 6.283185307179586,
+      "expected": {
+        "position": 2.9999999980000003,
+        "velocity": -1.999999363318771
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1,
+        "dampingRatio": 0.2,
+        "events": []
+      },
+      "time": 0.01,
+      "omega": 6.283185307179586,
+      "expected": {
+        "position": 3.0115717440077194,
+        "velocity": 4.287248216668571
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1,
+        "dampingRatio": 0.2,
+        "events": []
+      },
+      "time": 1,
+      "omega": 6.283185307179586,
+      "expected": {
+        "position": 14.612280513687395,
+        "velocity": -4.276490349003158
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1,
+        "dampingRatio": 0.2,
+        "events": []
+      },
+      "time": 86400,
+      "omega": 6.283185307179586,
+      "expected": {
+        "position": 19,
+        "velocity": 0
+      },
+      "toleranceMultiplier": 2e-7
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1000,
+        "dampingRatio": 0.2,
+        "events": []
+      },
+      "time": 1e-9,
+      "omega": 6283.185307179586,
+      "expected": {
+        "position": 2.9999999983158294,
+        "velocity": -1.3683410855130478
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1000,
+        "dampingRatio": 0.2,
+        "events": []
+      },
+      "time": 0.01,
+      "omega": 6283.185307179586,
+      "expected": {
+        "position": 18.999994317055226,
+        "velocity": -0.34169589246398185
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1000,
+        "dampingRatio": 0.2,
+        "events": []
+      },
+      "time": 1,
+      "omega": 6283.185307179586,
+      "expected": {
+        "position": 19,
+        "velocity": 0
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1000,
+        "dampingRatio": 0.2,
+        "events": []
+      },
+      "time": 86400,
+      "omega": 6283.185307179586,
+      "expected": {
+        "position": 19,
+        "velocity": 0
+      },
+      "toleranceMultiplier": 2e-7
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1e-9,
+        "dampingRatio": 0.999999999999,
+        "events": []
+      },
+      "time": 1e-9,
+      "omega": 6.283185307179586e-9,
+      "expected": {
+        "position": 2.999999998,
+        "velocity": -2
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1e-9,
+        "dampingRatio": 0.999999999999,
+        "events": []
+      },
+      "time": 0.01,
+      "omega": 6.283185307179586e-9,
+      "expected": {
+        "position": 2.9800000000012568,
+        "velocity": -1.9999999997486726
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1e-9,
+        "dampingRatio": 0.999999999999,
+        "events": []
+      },
+      "time": 1,
+      "omega": 6.283185307179586e-9,
+      "expected": {
+        "position": 1.0000000125663708,
+        "velocity": -1.9999999748672583
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1e-9,
+        "dampingRatio": 0.999999999999,
+        "events": []
+      },
+      "time": 86400,
+      "omega": 6.283185307179586e-9,
+      "expected": {
+        "position": -172703.2180015504,
+        "velocity": -1.9978294150044424
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1,
+        "dampingRatio": 0.999999999999,
+        "events": []
+      },
+      "time": 1e-9,
+      "omega": 6.283185307179586,
+      "expected": {
+        "position": 2.9999999980000003,
+        "velocity": -1.999999343212581
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1,
+        "dampingRatio": 0.999999999999,
+        "events": []
+      },
+      "time": 0.01,
+      "omega": 6.283185307179586,
+      "expected": {
+        "position": 3.01150842766242,
+        "velocity": 4.171685976386503
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1,
+        "dampingRatio": 0.999999999999,
+        "events": []
+      },
+      "time": 1,
+      "omega": 6.283185307179586,
+      "expected": {
+        "position": 18.778650211089882,
+        "velocity": 1.1993110362295865
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1,
+        "dampingRatio": 0.999999999999,
+        "events": []
+      },
+      "time": 86400,
+      "omega": 6.283185307179586,
+      "expected": {
+        "position": 19,
+        "velocity": 0
+      },
+      "toleranceMultiplier": 2e-7
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1000,
+        "dampingRatio": 0.999999999999,
+        "events": []
+      },
+      "time": 1e-9,
+      "omega": 6283.185307179586,
+      "expected": {
+        "position": 2.9999999983158387,
+        "velocity": -1.3683241544984341
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1000,
+        "dampingRatio": 0.999999999999,
+        "events": []
+      },
+      "time": 0.01,
+      "omega": 6283.185307179586,
+      "expected": {
+        "position": 19,
+        "velocity": 3.258075502510851e-21
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1000,
+        "dampingRatio": 0.999999999999,
+        "events": []
+      },
+      "time": 1,
+      "omega": 6283.185307179586,
+      "expected": {
+        "position": 19,
+        "velocity": 0
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1000,
+        "dampingRatio": 0.999999999999,
+        "events": []
+      },
+      "time": 86400,
+      "omega": 6283.185307179586,
+      "expected": {
+        "position": 19,
+        "velocity": 0
+      },
+      "toleranceMultiplier": 2e-7
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1e-9,
+        "dampingRatio": 1,
+        "events": []
+      },
+      "time": 1e-9,
+      "omega": 6.283185307179586e-9,
+      "expected": {
+        "position": 2.999999998,
+        "velocity": -2
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1e-9,
+        "dampingRatio": 1,
+        "events": []
+      },
+      "time": 0.01,
+      "omega": 6.283185307179586e-9,
+      "expected": {
+        "position": 2.9800000000012568,
+        "velocity": -1.9999999997486726
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1e-9,
+        "dampingRatio": 1,
+        "events": []
+      },
+      "time": 1,
+      "omega": 6.283185307179586e-9,
+      "expected": {
+        "position": 1.0000000125663708,
+        "velocity": -1.9999999748672583
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1e-9,
+        "dampingRatio": 1,
+        "events": []
+      },
+      "time": 86400,
+      "omega": 6.283185307179586e-9,
+      "expected": {
+        "position": -172703.21800155033,
+        "velocity": -1.9978294150044402
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1,
+        "dampingRatio": 1,
+        "events": []
+      },
+      "time": 1e-9,
+      "omega": 6.283185307179586,
+      "expected": {
+        "position": 2.9999999980000003,
+        "velocity": -1.999999343212581
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1,
+        "dampingRatio": 1,
+        "events": []
+      },
+      "time": 0.01,
+      "omega": 6.283185307179586,
+      "expected": {
+        "position": 3.0115084276624198,
+        "velocity": 4.171685976386359
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1,
+        "dampingRatio": 1,
+        "events": []
+      },
+      "time": 1,
+      "omega": 6.283185307179586,
+      "expected": {
+        "position": 18.778650211087385,
+        "velocity": 1.1993110362377581
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1,
+        "dampingRatio": 1,
+        "events": []
+      },
+      "time": 86400,
+      "omega": 6.283185307179586,
+      "expected": {
+        "position": 19,
+        "velocity": 0
+      },
+      "toleranceMultiplier": 2e-7
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1000,
+        "dampingRatio": 1,
+        "events": []
+      },
+      "time": 1e-9,
+      "omega": 6283.185307179586,
+      "expected": {
+        "position": 2.9999999983158387,
+        "velocity": -1.3683241544984341
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1000,
+        "dampingRatio": 1,
+        "events": []
+      },
+      "time": 0.01,
+      "omega": 6283.185307179586,
+      "expected": {
+        "position": 19,
+        "velocity": 3.2580755065935027e-21
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1000,
+        "dampingRatio": 1,
+        "events": []
+      },
+      "time": 1,
+      "omega": 6283.185307179586,
+      "expected": {
+        "position": 19,
+        "velocity": 0
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1000,
+        "dampingRatio": 1,
+        "events": []
+      },
+      "time": 86400,
+      "omega": 6283.185307179586,
+      "expected": {
+        "position": 19,
+        "velocity": 0
+      },
+      "toleranceMultiplier": 2e-7
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1e-9,
+        "dampingRatio": 1.000000000001,
+        "events": []
+      },
+      "time": 1e-9,
+      "omega": 6.283185307179586e-9,
+      "expected": {
+        "position": 2.999999998,
+        "velocity": -2
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1e-9,
+        "dampingRatio": 1.000000000001,
+        "events": []
+      },
+      "time": 0.01,
+      "omega": 6.283185307179586e-9,
+      "expected": {
+        "position": 2.9800000000012568,
+        "velocity": -1.9999999997486726
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1e-9,
+        "dampingRatio": 1.000000000001,
+        "events": []
+      },
+      "time": 1,
+      "omega": 6.283185307179586e-9,
+      "expected": {
+        "position": 1.0000000125663708,
+        "velocity": -1.9999999748672583
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1e-9,
+        "dampingRatio": 1.000000000001,
+        "events": []
+      },
+      "time": 86400,
+      "omega": 6.283185307179586e-9,
+      "expected": {
+        "position": -172703.21800155024,
+        "velocity": -1.9978294150044382
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1,
+        "dampingRatio": 1.000000000001,
+        "events": []
+      },
+      "time": 1e-9,
+      "omega": 6.283185307179586,
+      "expected": {
+        "position": 2.9999999980000003,
+        "velocity": -1.999999343212581
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1,
+        "dampingRatio": 1.000000000001,
+        "events": []
+      },
+      "time": 0.01,
+      "omega": 6.283185307179586,
+      "expected": {
+        "position": 3.0115084276624198,
+        "velocity": 4.1716859763862155
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1,
+        "dampingRatio": 1.000000000001,
+        "events": []
+      },
+      "time": 1,
+      "omega": 6.283185307179586,
+      "expected": {
+        "position": 18.778650211084887,
+        "velocity": 1.199311036245931
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1,
+        "dampingRatio": 1.000000000001,
+        "events": []
+      },
+      "time": 86400,
+      "omega": 6.283185307179586,
+      "expected": {
+        "position": 19,
+        "velocity": 0
+      },
+      "toleranceMultiplier": 2e-7
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1000,
+        "dampingRatio": 1.000000000001,
+        "events": []
+      },
+      "time": 1e-9,
+      "omega": 6283.185307179586,
+      "expected": {
+        "position": 2.9999999983158387,
+        "velocity": -1.3683241544984341
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1000,
+        "dampingRatio": 1.000000000001,
+        "events": []
+      },
+      "time": 0.01,
+      "omega": 6283.185307179586,
+      "expected": {
+        "position": 19,
+        "velocity": 3.2580755106766077e-21
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1000,
+        "dampingRatio": 1.000000000001,
+        "events": []
+      },
+      "time": 1,
+      "omega": 6283.185307179586,
+      "expected": {
+        "position": 19,
+        "velocity": 0
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1000,
+        "dampingRatio": 1.000000000001,
+        "events": []
+      },
+      "time": 86400,
+      "omega": 6283.185307179586,
+      "expected": {
+        "position": 19,
+        "velocity": 0
+      },
+      "toleranceMultiplier": 2e-7
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1e-9,
+        "dampingRatio": 3,
+        "events": []
+      },
+      "time": 1e-9,
+      "omega": 6.283185307179586e-9,
+      "expected": {
+        "position": 2.999999998,
+        "velocity": -2
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1e-9,
+        "dampingRatio": 3,
+        "events": []
+      },
+      "time": 0.01,
+      "omega": 6.283185307179586e-9,
+      "expected": {
+        "position": 2.98000000000377,
+        "velocity": -1.9999999992460178
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1e-9,
+        "dampingRatio": 3,
+        "events": []
+      },
+      "time": 1,
+      "omega": 6.283185307179586e-9,
+      "expected": {
+        "position": 1.0000000376991116,
+        "velocity": -1.999999924601777
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1e-9,
+        "dampingRatio": 3,
+        "events": []
+      },
+      "time": 86400,
+      "omega": 6.283185307179586e-9,
+      "expected": {
+        "position": -172515.8744633094,
+        "velocity": -1.9934958972169006
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1,
+        "dampingRatio": 3,
+        "events": []
+      },
+      "time": 1e-9,
+      "omega": 6.283185307179586,
+      "expected": {
+        "position": 2.9999999980000003,
+        "velocity": -1.999999292947108
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1,
+        "dampingRatio": 3,
+        "events": []
+      },
+      "time": 0.01,
+      "omega": 6.283185307179586,
+      "expected": {
+        "position": 3.0113010884853306,
+        "velocity": 3.8902084158166805
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1,
+        "dampingRatio": 3,
+        "events": []
+      },
+      "time": 1,
+      "omega": 6.283185307179586,
+      "expected": {
+        "position": 13.371453165851902,
+        "velocity": 6.067709523027026
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1,
+        "dampingRatio": 3,
+        "events": []
+      },
+      "time": 86400,
+      "omega": 6.283185307179586,
+      "expected": {
+        "position": 19,
+        "velocity": 0
+      },
+      "toleranceMultiplier": 2e-7
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1000,
+        "dampingRatio": 3,
+        "events": []
+      },
+      "time": 1e-9,
+      "omega": 6283.185307179586,
+      "expected": {
+        "position": 2.999999998315861,
+        "velocity": -1.368281827753105
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1000,
+        "dampingRatio": 3,
+        "events": []
+      },
+      "time": 0.01,
+      "omega": 6283.185307179586,
+      "expected": {
+        "position": 18.99965699664546,
+        "velocity": 0.36976590620981975
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1000,
+        "dampingRatio": 3,
+        "events": []
+      },
+      "time": 1,
+      "omega": 6283.185307179586,
+      "expected": {
+        "position": 19,
+        "velocity": 0
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1000,
+        "dampingRatio": 3,
+        "events": []
+      },
+      "time": 86400,
+      "omega": 6283.185307179586,
+      "expected": {
+        "position": 19,
+        "velocity": 0
+      },
+      "toleranceMultiplier": 2e-7
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1e-9,
+        "dampingRatio": 10000,
+        "events": []
+      },
+      "time": 1e-9,
+      "omega": 6.283185307179586e-9,
+      "expected": {
+        "position": 2.999999998,
+        "velocity": -1.9999999999997486
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1e-9,
+        "dampingRatio": 10000,
+        "events": []
+      },
+      "time": 0.01,
+      "omega": 6.283185307179586e-9,
+      "expected": {
+        "position": 2.9800000125663653,
+        "velocity": -1.9999974867274564
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1e-9,
+        "dampingRatio": 10000,
+        "events": []
+      },
+      "time": 1,
+      "omega": 6.283185307179586e-9,
+      "expected": {
+        "position": 1.0001256584425202,
+        "velocity": -1.9997486883784177
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1e-9,
+        "dampingRatio": 10000,
+        "events": []
+      },
+      "time": 86400,
+      "omega": 6.283185307179586e-9,
+      "expected": {
+        "position": -15912.187382269374,
+        "velocity": -0.00003852023291075595
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1,
+        "dampingRatio": 10000,
+        "events": []
+      },
+      "time": 1e-9,
+      "omega": 6.283185307179586,
+      "expected": {
+        "position": 2.999999998000126,
+        "velocity": -1.9997480567634232
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1,
+        "dampingRatio": 10000,
+        "events": []
+      },
+      "time": 0.01,
+      "omega": 6.283185307179586,
+      "expected": {
+        "position": 3.000034309959363,
+        "velocity": 0.005026537479518384
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1,
+        "dampingRatio": 10000,
+        "events": []
+      },
+      "time": 1,
+      "omega": 6.283185307179586,
+      "expected": {
+        "position": 3.005009808290021,
+        "velocity": 0.0050249743806141224
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1,
+        "dampingRatio": 10000,
+        "events": []
+      },
+      "time": 86400,
+      "omega": 6.283185307179586,
+      "expected": {
+        "position": 18.999999999973944,
+        "velocity": 8.185751622495736e-15
+      },
+      "toleranceMultiplier": 2e-7
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1000,
+        "dampingRatio": 10000,
+        "events": []
+      },
+      "time": 1e-9,
+      "omega": 6283.185307179586,
+      "expected": {
+        "position": 2.9999999984235646,
+        "velocity": -1.1702446023063457
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1000,
+        "dampingRatio": 10000,
+        "events": []
+      },
+      "time": 0.01,
+      "omega": 6283.185307179586,
+      "expected": {
+        "position": 3.0501865526258967,
+        "velocity": 5.010781687766771
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1000,
+        "dampingRatio": 10000,
+        "events": []
+      },
+      "time": 1,
+      "omega": 6283.185307179586,
+      "expected": {
+        "position": 7.313556911559353,
+        "velocity": 3.6714043845025457
+      },
+      "toleranceMultiplier": 2e-10
+    },
+    {
+      "spec": {
+        "initial": {
+          "position": 3,
+          "velocity": -2,
+          "target": 19
+        },
+        "frequencyHz": 1000,
+        "dampingRatio": 10000,
+        "events": []
+      },
+      "time": 86400,
+      "omega": 6283.185307179586,
+      "expected": {
+        "position": 19,
+        "velocity": 0
+      },
+      "toleranceMultiplier": 2e-7
+    }
+  ]
+}

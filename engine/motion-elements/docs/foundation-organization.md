@@ -1,6 +1,6 @@
 # 基础机制职责目录与旧路径兼容
 
-目录整理不新增机制。当前为 **39基础＋7配方**（新增曲线/字格/尺寸换行机制另有真实作品证据；分类迁移本身仍不计数）；目录别名、辅助函数、适配器和重导出入口不计数。实验状态及每件作品原有的技术/用户反馈/视听检查状态不因迁移而升级。
+目录整理不新增机制。当前为 **43基础＋7配方**（新增曲线/字格/尺寸换行机制另有真实作品证据；分类迁移本身仍不计数）；目录别名、辅助函数、适配器和重导出入口不计数。实验状态及每件作品原有的技术/用户反馈/视听检查状态不因迁移而升级。
 
 ## 当前已实施：field、两连杆几何与sticky布局小域
 
@@ -83,3 +83,7 @@ Tessel锁13文件与Favorite52锁55文件均与本次迁移文件零交集，锁
 wrapper query与canonical query的身份差异见[sticky-interval.md](sticky-interval.md)。
 Tessel13及Favorite52的55锁定文件零交集；原演出列表影片源码、runtime、manifest和媒体不变。
 迁移不是原片重制；用户有限认可、NOT_DONE常速、NOT_LISTENED听审、NOT_RUN通用迁移状态均不升级。
+
+## 印刷与柔性响应新增（非旧域迁移）
+
+新增实现直接位于geometry/halftone-screen、raster/morphology-coverage、geometry/affine-skin和motion/damped-response；两个internal严格数据helper不计数。新增4基础，总43基础＋7配方，原field/IK/sticky迁移仍为0新增。旧路径与作品冻结源码不变。证据及局限见[公共集成](print-rig-integration.md)。

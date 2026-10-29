@@ -238,7 +238,7 @@ Pixi官方shader与p5 mask具体源码/许可取舍见`docs/raster-reference-dec
 
 ## 角色：两段固定长度追随明确目标
 
-当前39基础＋7配方（46项），距离100基础目标仍有61项；数量与艺术接受分别报告。
+当前43基础＋7配方（50项），距离100基础目标仍有57项；数量与艺术接受分别报告。
 `geometry.two-link-ik`是1个纯二维几何机制，无新配方，不是全身rig、碰撞、力学或3D。
 root/target来自作品同一绝对帧状态，显式bend/fallback；用返回joint/end画骨段，不能把不可达end偷偷画到target掩盖投影。
 实际手掌轮廓与IK端点不是同一个接触定义：数值误差0后仍要看真实编码邻帧是否早贴、滑动或错位。
@@ -335,3 +335,5 @@ glyph内部采样不加到公wrapper数。570次run提交不等于全程完整�
 - `composition.anchored-labels`：[指南](../../../engine/motion-elements/docs/anchored-labels.md)。显式测量框与候选first-fit；unplaced明确，不自动生成候选/leader或识别焦点。
 
 两部实际有声候选分别覆盖2项；纸卡公共输入硬化与原片通过540帧实际buffer/draw桥接和22代表PNG+22新Node，不冒新编码；摄影两项保持原10文件runtime闭包字节，旧staged recipe复用不计新。保留49帧三注释全不透明的读时风险，数量/工程合格不是风格背书。常速、听审、用户与迁移门依catalog，不导入私人素材。
+
+印刷/柔性新增：halftone-screen、coverage-morphology、affine-skin、damped-response共4基础，不计helpers/参数变体为新项；AFTER RAIN与ROOM FOR TWO的技术证据不等于艺术认可，实际听审仍NOT_LISTENED。详见engine/motion-elements/docs/print-rig-integration.md。

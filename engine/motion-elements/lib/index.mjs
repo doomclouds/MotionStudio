@@ -50,3 +50,8 @@ export {compileConvolution, convolveRGBA} from './foundations/raster/convolution
 export {compileProjectiveRaster, warpProjectiveRGBA, projectRasterPoint, mapProjectivePoint} from './foundations/raster/projective-raster.mjs';
 export {masonryLayout} from './foundations/layout/masonry.mjs';
 export {placeAnchoredLabels} from './foundations/layout/anchored-labels.mjs';
+
+export {halftoneScreen} from './foundations/geometry/halftone-screen.mjs';
+export {morphologyCoverage} from './foundations/raster/morphology-coverage.mjs';
+export {compileAffineSkin,sampleAffineSkin} from './foundations/geometry/affine-skin.mjs';
+export {compileDampedResponse,sampleDampedResponse} from './foundations/motion/damped-response.mjs';

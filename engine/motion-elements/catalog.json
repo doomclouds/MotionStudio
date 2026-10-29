@@ -3235,6 +3235,289 @@
         "标注",
         "避让"
       ]
+    },
+    {
+      "id": "geometry.halftone-screen",
+      "version": 1,
+      "kind": "geometry",
+      "status": "experimental",
+      "summary": "显式覆盖率格转换为方格裁切圆点几何",
+      "api": "halftoneScreen",
+      "entry": "lib/index.mjs",
+      "example": {
+        "columns": 3,
+        "rows": 1,
+        "values": [
+          0.15,
+          0.6,
+          0.96
+        ],
+        "cellSize": 16,
+        "origin": {
+          "x": 24,
+          "y": 32
+        },
+        "angle": 0
+      },
+      "applicability": [
+        "显式覆盖率格转换为方格裁切圆点几何"
+      ],
+      "counterexamples": [
+        "单个机制；网角、颜色、尺寸不另计数。必须共同绘制clip和圆，面积不是抗锯齿像素均值。",
+        "不读取图片、不自动分色、无ICC或真实印刷物理。最多65536格，数值反解无全域相对误差保证。"
+      ],
+      "evidence": {
+        "visualDemo": null,
+        "artisticReview": "PENDING_USER",
+        "originalProductionTransfer": "NOT_RUN",
+        "normalSpeedViewing": "NOT_DONE",
+        "audioListening": "NOT_LISTENED",
+        "ownerArtisticAcceptance": "PENDING_USER",
+        "visualReview": "DECODED_FRAME_REVIEW_WITH_DISCLOSED_LIMITS",
+        "technicalTests": [
+          "test/coverage-print.test.mjs",
+          "test/print-rig-integration.test.mjs"
+        ],
+        "guidance": "docs/halftone-screen.md",
+        "videoValidation": "VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE_WITH_VERSION_EQUIVALENCE",
+        "sourceVersionRelation": "AFTER RAIN: original8.6-second/516-frame film. Public modules change only relative helper import paths, helper bytes unchanged. Complete516-frame scene state and usage match;36 representative raw PNGs match. Not all-frame pixel equivalence, a new encoded movie or new visual/listening approval.",
+        "validationCoverage": "Two actual screens compiled once, rasterized and cached; the actual film draws those cached ink layers. Geometry area is not raster coverage calibration.",
+        "callEvidenceScope": "Actual film source/runtime and returned-data consumption reviewed independently. Draw/state receipts are not proof every submitted shape is visible. No normal-speed viewing, actual listening or user artistic acceptance is inferred.",
+        "compositionScope": "One independent foundation. Helpers, parameters, caller art, audio and existing mechanisms do not increase the count."
+      },
+      "knowledgeLinks": [],
+      "tags": [
+        "halftone",
+        "coverage",
+        "网屏",
+        "覆盖率"
+      ]
+    },
+    {
+      "id": "raster.coverage-morphology",
+      "version": 1,
+      "kind": "raster",
+      "status": "experimental",
+      "summary": "显式单通道覆盖率矩形邻域最大或最小扩边收边",
+      "api": "morphologyCoverage",
+      "entry": "lib/index.mjs",
+      "example": {
+        "width": 3,
+        "height": 2,
+        "data": [
+          0,
+          0,
+          0,
+          0,
+          255,
+          0
+        ],
+        "operation": "dilate",
+        "radiusX": 1,
+        "radiusY": 1,
+        "boundary": "transparent"
+      },
+      "applicability": [
+        "显式单通道覆盖率矩形邻域最大或最小扩边收边"
+      ],
+      "counterexamples": [
+        "dilate/erode、半径和边界方式是一个机制参数，不分别计数。",
+        "仅Uint8Array/Uint8ClampedArray单通道；JSON示例data必须显式转换，不放宽runtime验证。",
+        "最多4194304像素/半径64；严格own-key元数据有显著内存成本，不是低内存或实时保证。",
+        "不是自动trap选择、颜色校准或亚像素结构元素。"
+      ],
+      "evidence": {
+        "visualDemo": null,
+        "artisticReview": "PENDING_USER",
+        "originalProductionTransfer": "NOT_RUN",
+        "normalSpeedViewing": "NOT_DONE",
+        "audioListening": "NOT_LISTENED",
+        "ownerArtisticAcceptance": "PENDING_USER",
+        "visualReview": "DECODED_FRAME_REVIEW_WITH_DISCLOSED_LIMITS",
+        "technicalTests": [
+          "test/coverage-print.test.mjs",
+          "test/print-rig-integration.test.mjs"
+        ],
+        "guidance": "docs/coverage-morphology.md",
+        "videoValidation": "VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE_WITH_VERSION_EQUIVALENCE",
+        "sourceVersionRelation": "AFTER RAIN: original8.6-second/516-frame film. Public modules change only relative helper import paths, helper bytes unchanged. Complete516-frame scene state and usage match;36 representative raw PNGs match. Not all-frame pixel equivalence, a new encoded movie or new visual/listening approval.",
+        "validationCoverage": "Actual1920x1080 mask dilated once with radius3 in each axis; expanded mask feeds the cached amber ink. Defined source-mask gap test closes the selected gap, not a theorem about every antialiased pixel.",
+        "callEvidenceScope": "Actual film source/runtime and returned-data consumption reviewed independently. Draw/state receipts are not proof every submitted shape is visible. No normal-speed viewing, actual listening or user artistic acceptance is inferred.",
+        "compositionScope": "One independent foundation. Helpers, parameters, caller art, audio and existing mechanisms do not increase the count."
+      },
+      "knowledgeLinks": [],
+      "tags": [
+        "morphology",
+        "coverage",
+        "dilate",
+        "erode",
+        "形态学"
+      ],
+      "exampleSetup": {
+        "dataEncoding": "Uint8Array.from(example.data)",
+        "note": "Catalog stays JSON; caller explicitly converts data before invoking the strict byte-view API."
+      }
+    },
+    {
+      "id": "geometry.affine-skin",
+      "version": 1,
+      "kind": "geometry",
+      "status": "experimental",
+      "summary": "显式逆绑定和归一权重将同组骨变换传递给二维点",
+      "api": "compileAffineSkin",
+      "entry": "lib/index.mjs",
+      "example": {
+        "bones": [
+          {
+            "id": "base",
+            "rest": [
+              1,
+              0,
+              0,
+              1,
+              0,
+              0
+            ]
+          },
+          {
+            "id": "tip",
+            "rest": [
+              1,
+              0,
+              0,
+              1,
+              80,
+              0
+            ]
+          }
+        ],
+        "vertices": [
+          {
+            "id": "v00",
+            "position": {
+              "x": 40,
+              "y": 6
+            },
+            "weights": [
+              {
+                "boneId": "base",
+                "weight": 1
+              },
+              {
+                "boneId": "tip",
+                "weight": 1
+              }
+            ]
+          }
+        ]
+      },
+      "applicability": [
+        "显式逆绑定和归一权重将同组骨变换传递给二维点"
+      ],
+      "counterexamples": [
+        "一个基础，骨数、权重、图形或采样helper不另计数。",
+        "不求骨层级/IK，不保证刚性、面积、拓扑或无折叠。",
+        "显式世界矩阵；合法极端消减仍有数值误差，exact-rest不等于任意pose精确。"
+      ],
+      "evidence": {
+        "visualDemo": null,
+        "artisticReview": "PENDING_USER",
+        "originalProductionTransfer": "NOT_RUN",
+        "normalSpeedViewing": "NOT_DONE",
+        "audioListening": "NOT_LISTENED",
+        "ownerArtisticAcceptance": "PENDING_USER",
+        "visualReview": "DECODED_FRAME_REVIEW_WITH_DISCLOSED_LIMITS",
+        "technicalTests": [
+          "test/affine-skin.test.mjs",
+          "test/rig-response-data.test.mjs",
+          "test/rig-response-fresh.test.mjs",
+          "test/print-rig-integration.test.mjs"
+        ],
+        "guidance": "docs/affine-skin.md",
+        "videoValidation": "VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE_WITH_VERSION_EQUIVALENCE",
+        "sourceVersionRelation": "ROOM FOR TWO: original9.4-second/564-frame film. Public path bridge preserves original scene/art and192 original closure files except two bridge wrappers; three canonical implementation/helper files added. Nine fresh-process representative PNGs match. This explicitly expanded closure is not a claim the original Native dependency fingerprint includes the added modules.",
+        "validationCoverage": "One3-bone plan with56 leaf outline/vein vertices; returned vertices feed the actual drawn splines across564 frames.",
+        "callEvidenceScope": "Actual film source/runtime and returned-data consumption reviewed independently. Draw/state receipts are not proof every submitted shape is visible. No normal-speed viewing, actual listening or user artistic acceptance is inferred.",
+        "compositionScope": "One independent foundation. Helpers, parameters, caller art, audio and existing mechanisms do not increase the count."
+      },
+      "knowledgeLinks": [],
+      "tags": [
+        "skin",
+        "bones",
+        "affine",
+        "蒙皮"
+      ]
+    },
+    {
+      "id": "motion.damped-response",
+      "version": 1,
+      "kind": "motion",
+      "status": "experimental",
+      "summary": "绝对时间解析标量阻尼响应，支持目标变化与显式速度冲量",
+      "api": "compileDampedResponse",
+      "entry": "lib/index.mjs",
+      "example": {
+        "initial": {
+          "position": 0,
+          "velocity": 0,
+          "target": 0
+        },
+        "frequencyHz": 1.8,
+        "dampingRatio": 0.7,
+        "events": [
+          {
+            "id": "lift",
+            "time": 0.5,
+            "target": 12,
+            "velocityImpulse": 0
+          },
+          {
+            "id": "tap",
+            "time": 1.1,
+            "target": 12,
+            "velocityImpulse": -4
+          }
+        ]
+      },
+      "applicability": [
+        "绝对时间解析标量阻尼响应，支持目标变化与显式速度冲量"
+      ],
+      "counterexamples": [
+        "一个基础；三阻尼区间、目标或冲量变化不分别计数。",
+        "标量理想线性二阶模型，不是叶片/布料/碰撞或真实风雨模拟。",
+        "目标阶跃保持位置速度，显式冲量跳速度；不自动归零或限制输出域。",
+        "极长无阻尼相位有约5e-5绝对误差观察；独立高精度oracle不是全域精度保证。"
+      ],
+      "evidence": {
+        "visualDemo": null,
+        "artisticReview": "PENDING_USER",
+        "originalProductionTransfer": "NOT_RUN",
+        "normalSpeedViewing": "NOT_DONE",
+        "audioListening": "NOT_LISTENED",
+        "ownerArtisticAcceptance": "PENDING_USER",
+        "visualReview": "DECODED_FRAME_REVIEW_WITH_DISCLOSED_LIMITS",
+        "technicalTests": [
+          "test/damped-response.test.mjs",
+          "test/damped-response-oracle.test.mjs",
+          "test/rig-response-data.test.mjs",
+          "test/rig-response-fresh.test.mjs",
+          "test/print-rig-integration.test.mjs"
+        ],
+        "guidance": "docs/damped-response.md",
+        "videoValidation": "VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE_WITH_VERSION_EQUIVALENCE",
+        "sourceVersionRelation": "ROOM FOR TWO: original9.4-second/564-frame film. Public path bridge preserves original scene/art and192 original closure files except two bridge wrappers; three canonical implementation/helper files added. Nine fresh-process representative PNGs match. This explicitly expanded closure is not a claim the original Native dependency fingerprint includes the added modules.",
+        "validationCoverage": "Absolute-time response sampled to drive the actual leaf bone pose throughout564 frames; random seek needs no sequential simulation.",
+        "callEvidenceScope": "Actual film source/runtime and returned-data consumption reviewed independently. Draw/state receipts are not proof every submitted shape is visible. No normal-speed viewing, actual listening or user artistic acceptance is inferred.",
+        "compositionScope": "One independent foundation. Helpers, parameters, caller art, audio and existing mechanisms do not increase the count."
+      },
+      "knowledgeLinks": [],
+      "tags": [
+        "response",
+        "damping",
+        "impulse",
+        "阻尼",
+        "冲量"
+      ]
     }
   ]
 }

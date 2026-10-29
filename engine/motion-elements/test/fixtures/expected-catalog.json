@@ -1,0 +1,256 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Explicit reviewed expected ID/kind/API roster. Tests never regenerate this from the runtime catalog; edits are a separate review obligation. Helpers, aliases and variants do not count.",
+  "entries": [
+    {
+      "id": "composition.anchored-labels",
+      "kind": "composition",
+      "api": "placeAnchoredLabels"
+    },
+    {
+      "id": "composition.constraint-stack",
+      "kind": "composition",
+      "api": "constraintStackLayout"
+    },
+    {
+      "id": "composition.flow-wrap",
+      "kind": "composition",
+      "api": "flowWrapLayout"
+    },
+    {
+      "id": "composition.glyph-run-path",
+      "kind": "composition",
+      "api": "layoutGlyphRunOnPath"
+    },
+    {
+      "id": "composition.grid",
+      "kind": "composition",
+      "api": "gridLayout"
+    },
+    {
+      "id": "composition.interval-lanes",
+      "kind": "composition",
+      "api": "intervalLaneLayout"
+    },
+    {
+      "id": "composition.layered-dag",
+      "kind": "composition",
+      "api": "layeredDagLayout"
+    },
+    {
+      "id": "composition.masonry",
+      "kind": "composition",
+      "api": "masonryLayout"
+    },
+    {
+      "id": "composition.offset-cards",
+      "kind": "composition",
+      "api": "offsetCards"
+    },
+    {
+      "id": "composition.plane-parallax",
+      "kind": "composition",
+      "api": "planeParallaxLayout"
+    },
+    {
+      "id": "composition.split-panels",
+      "kind": "composition",
+      "api": "splitPanels"
+    },
+    {
+      "id": "composition.sticky-interval",
+      "kind": "composition",
+      "api": "stickyIntervalLayout"
+    },
+    {
+      "id": "composition.weighted-flow",
+      "kind": "composition",
+      "api": "weightedFlowLayout"
+    },
+    {
+      "id": "field.attractor-orientation",
+      "kind": "field",
+      "api": "compileAttractorField"
+    },
+    {
+      "id": "fragment.fixed-tiles",
+      "kind": "fragment",
+      "api": "compileTileScatter"
+    },
+    {
+      "id": "geometry.affine-skin",
+      "kind": "geometry",
+      "api": "compileAffineSkin"
+    },
+    {
+      "id": "geometry.catenary",
+      "kind": "geometry",
+      "api": "compileCatenary"
+    },
+    {
+      "id": "geometry.cubic-path",
+      "kind": "geometry",
+      "api": "compileCubicPath"
+    },
+    {
+      "id": "geometry.halftone-screen",
+      "kind": "geometry",
+      "api": "halftoneScreen"
+    },
+    {
+      "id": "geometry.hinged-panel",
+      "kind": "geometry",
+      "api": "compileHingedPanel"
+    },
+    {
+      "id": "geometry.iso-contour",
+      "kind": "geometry",
+      "api": "compileContourGrid"
+    },
+    {
+      "id": "geometry.polyline-trail",
+      "kind": "geometry",
+      "api": "compilePolyline"
+    },
+    {
+      "id": "geometry.registered-polygon-morph",
+      "kind": "geometry",
+      "api": "compileRegisteredPolygonMorph"
+    },
+    {
+      "id": "geometry.sampled-band",
+      "kind": "geometry",
+      "api": "compileSampledBand"
+    },
+    {
+      "id": "geometry.two-link-ik",
+      "kind": "geometry",
+      "api": "solveTwoLinkIK"
+    },
+    {
+      "id": "motion.anchored-squash",
+      "kind": "motion",
+      "api": "sampleMotion"
+    },
+    {
+      "id": "motion.damped-response",
+      "kind": "motion",
+      "api": "compileDampedResponse"
+    },
+    {
+      "id": "motion.keyframe-track",
+      "kind": "motion",
+      "api": "sampleKeyframeTrack"
+    },
+    {
+      "id": "motion.opacity",
+      "kind": "motion",
+      "api": "sampleMotion"
+    },
+    {
+      "id": "motion.shake",
+      "kind": "motion",
+      "api": "sampleMotion"
+    },
+    {
+      "id": "motion.stagger",
+      "kind": "motion",
+      "api": "compileStagger"
+    },
+    {
+      "id": "motion.transform",
+      "kind": "motion",
+      "api": "sampleMotion"
+    },
+    {
+      "id": "raster.coverage-morphology",
+      "kind": "raster",
+      "api": "morphologyCoverage"
+    },
+    {
+      "id": "raster.displacement-map",
+      "kind": "raster",
+      "api": "sampleRasterDisplacement"
+    },
+    {
+      "id": "raster.matte",
+      "kind": "raster",
+      "api": "sampleRasterMatte"
+    },
+    {
+      "id": "raster.neighborhood-convolution",
+      "kind": "raster",
+      "api": "compileConvolution"
+    },
+    {
+      "id": "raster.projective-quad",
+      "kind": "raster",
+      "api": "compileProjectiveRaster"
+    },
+    {
+      "id": "recipe.flow-handoff",
+      "kind": "recipe",
+      "api": "compileFlowHandoff"
+    },
+    {
+      "id": "recipe.focus-handoff",
+      "kind": "recipe",
+      "api": "compileFocusHandoff"
+    },
+    {
+      "id": "recipe.layout-handoff",
+      "kind": "recipe",
+      "api": "compileLayoutHandoff"
+    },
+    {
+      "id": "recipe.light-echo-field",
+      "kind": "recipe",
+      "api": "compileLightEchoField"
+    },
+    {
+      "id": "recipe.offset-reassembly",
+      "kind": "recipe",
+      "api": "sampleOffsetReassembly"
+    },
+    {
+      "id": "recipe.staged-layout-handoff",
+      "kind": "recipe",
+      "api": "compileStagedLayoutHandoff"
+    },
+    {
+      "id": "recipe.tile-signature",
+      "kind": "recipe",
+      "api": "compileTileSignature"
+    },
+    {
+      "id": "reveal.local-geometry",
+      "kind": "reveal",
+      "api": "withLocalReveal"
+    },
+    {
+      "id": "transition.iris-reveal",
+      "kind": "transition",
+      "api": "sampleTransition"
+    },
+    {
+      "id": "transition.linear-mask",
+      "kind": "transition",
+      "api": "sampleTransition"
+    },
+    {
+      "id": "transition.masked-slice-displacement",
+      "kind": "transition",
+      "api": "compileSliceDisplacement"
+    },
+    {
+      "id": "transition.push",
+      "kind": "transition",
+      "api": "sampleTransition"
+    },
+    {
+      "id": "transition.rect-wipe",
+      "kind": "transition",
+      "api": "sampleTransition"
+    }
+  ]
+}

@@ -26,7 +26,7 @@ test('independent interval snapshots and explicit waypoint feed one staged recip
  const reduced=api.sampleStagedLayoutHandoff(plan,T(0),{reducedMotion:true});assert.equal(reduced.phase,'before');assert.deepEqual(reduced.items.map(x=>x.matrix),after.items.map(x=>x.matrix));
 });
 test('two foundations plus one recipe keep trace, revision and unreviewed quality gates separate',()=>{
- assert.equal(catalog.elements.length,46);assert.equal(catalog.elements.filter(x=>x.kind==='recipe').length,7);
+ assert.equal(catalog.elements.length,50);assert.equal(catalog.elements.filter(x=>x.kind==='recipe').length,7);
  for(const id of ['geometry.catenary','composition.interval-lanes','recipe.staged-layout-handoff']){
   const result=queryCatalog(catalog,{id});assert.equal(result.total,1);const entry=result.results[0].element;assert.equal(entry.status,'experimental');
   assert.equal(entry.evidence.ownerArtisticAcceptance,'PENDING_USER');assert.equal(entry.evidence.artisticReview,'PENDING_USER');assert.equal(entry.evidence.normalSpeedViewing,'NOT_DONE');assert.equal(entry.evidence.audioListening,'NOT_LISTENED');assert.equal(entry.evidence.originalProductionTransfer,'NOT_RUN');
