@@ -1,0 +1,3 @@
+# Source and rights chronology
+
+The original candidate author recorded reading Duke’s fixed-end wave teaching module before implementation: https://sites.math.duke.edu/education/ccp/materials/engin/wave/wave1.html . The original author’s detailed chronology, copyright limitation and tests are preserved in ORIGIN-CONTRACT.md. This packaging pass reads that local evidence; it does not claim to have independently browsed the source. Only independently implemented mathematical concepts are included, not article text, figures, source code or assets. No textbook/course permissive license is inferred. The module is unchanged and has no imports/runtime dependencies.

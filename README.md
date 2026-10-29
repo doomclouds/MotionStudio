@@ -246,3 +246,7 @@ node tools/reference-benchmark/test_report_js.cjs
 <sub>MotionStudio · 把想法变成镜头，把修改落在证据上。</sub>
 
 </div>
+
+## Isolated seventeen-mechanism registration preparation
+
+The catalog contains 60 foundations + 7 separate recipes: seventeen registrations added to the prior 43-foundation baseline. Two support extensions are uncounted. Foundation expansion pauses at 60. See `engine/motion-elements/docs/registered-foundations.md` for entrypoints, Node boundary and verification scope.

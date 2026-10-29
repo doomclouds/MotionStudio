@@ -1,0 +1,30 @@
+{
+  "baselineFoundations": 43,
+  "foundationIncrement": 17,
+  "preparedFoundations": 60,
+  "recipes": 7,
+  "supportsExcluded": [
+    "sprite-atlas",
+    "polyline-sections"
+  ],
+  "ids": [
+    "motion.finite-particles",
+    "composition.weighted-hierarchy",
+    "raster.temporal-exposure",
+    "composition.poisson-disc",
+    "motion.fixed-string-wave",
+    "geometry.visibility-fan",
+    "field.grid-transport",
+    "field.arrival-field",
+    "motion.hard-disc-isolated-events",
+    "geometry.ray-chain",
+    "geometry.voronoi-cells",
+    "composition.minimum-cost-assignment",
+    "geometry.rectangle-obstacle-route",
+    "geometry.radial-landmark-warp",
+    "raster.euclidean-distance-transform",
+    "raster.palette-error-diffusion",
+    "field.projected-reaction-diffusion"
+  ],
+  "scope": "REGISTERED_FOUNDATIONS"
+}

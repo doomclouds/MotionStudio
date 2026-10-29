@@ -70,9 +70,9 @@ test('strict CLI unknown/repeated/missing/extra options and command constraints'
   assert.deepEqual(parseCatalogArgs(['--help']),{help:true});
   assert.equal(parseCatalogArgs(['find','--tag',' 淡入 ']).query.tag,'淡入');
 });
-test('real 50 entries: tags, status, metadata and executable inputs preserved', () => {
+test('real 67 entries: tags, status, metadata and executable inputs preserved', () => {
   const before = JSON.stringify(catalog);
-  const r = queryCatalog(catalog,{limit:100}); assert.equal(r.total,50); assert.equal(r.truncated,false);
+  const r = queryCatalog(catalog,{limit:100}); assert.equal(r.total,67); assert.equal(r.truncated,false);
   for (const e of catalog.elements) {
     assert.equal(e.status,'experimental'); assert.ok(e.tags.length>0);
     const hit = queryCatalog(catalog,{id:e.id}).results[0]; assert.deepEqual(hit.element,e);
@@ -94,7 +94,7 @@ test('runtime permission isolation: only three static files readable, no entry/p
     '--permission', `--allow-fs-read=${cli}`, `--allow-fs-read=${root}lib/catalog-query.mjs`, `--allow-fs-read=${root}catalog.json`,
     cli,'list','--limit','100',
   ], {encoding:'utf8',cwd:'/tmp'});
-  assert.equal(r.status,0,r.stderr); assert.equal(JSON.parse(r.stdout).total,50);
+  assert.equal(r.status,0,r.stderr); assert.equal(JSON.parse(r.stdout).total,67);
 });
 
 // Metadata guards prevent a technical fixture from becoming a style endorsement.
@@ -111,7 +111,7 @@ test('experimental band and light recipe preserve independent quality gates in q
 
 
 test('data-flow accounting and film coverage preserve independent quality gates', () => {
-  assert.equal(catalog.elements.filter(e => e.kind !== 'recipe').length,43);
+  assert.equal(catalog.elements.filter(e => e.kind !== 'recipe').length,60);
   assert.equal(catalog.elements.filter(e => e.kind === 'recipe').length,7);
   for (const id of ['composition.layered-dag','composition.weighted-flow','recipe.flow-handoff']) {
     const e=queryCatalog(catalog,{id}).results[0].element;
@@ -128,9 +128,9 @@ test('data-flow accounting and film coverage preserve independent quality gates'
   }
 });
 
-test('raster category preserves two legacy feedback records while exposing five distinct mechanisms', () => {
+test('raster category preserves two legacy feedback records while exposing eight distinct mechanisms', () => {
   const r=queryCatalog(catalog,{kind:'raster'});
-  assert.deepEqual(r.results.map(x=>x.element.id),['raster.coverage-morphology','raster.displacement-map','raster.matte','raster.neighborhood-convolution','raster.projective-quad']);
+  assert.deepEqual(r.results.map(x=>x.element.id),['raster.coverage-morphology','raster.displacement-map','raster.euclidean-distance-transform','raster.matte','raster.neighborhood-convolution','raster.palette-error-diffusion','raster.projective-quad','raster.temporal-exposure']);
   for(const {element:e} of r.results.filter(x=>['raster.displacement-map','raster.matte'].includes(x.element.id))){
     assert.equal(e.status,'experimental');assert.match(e.evidence.ownerFeedbackScope,/not endorsed as a style reference/);assert.equal(e.evidence.artisticReview,'LIMITED_ACCEPTANCE_NOT_STYLE_ENDORSEMENT');
     assert.equal(e.evidence.ownerArtisticAcceptance,'LIMITED_ACCEPTANCE_NOT_STYLE_ENDORSEMENT');assert.equal(e.evidence.audioListening,'NOT_LISTENED');
@@ -140,7 +140,7 @@ test('raster category preserves two legacy feedback records while exposing five 
     assert.match(e.evidence.sourceVersionRelation,/Catalog\/query classification/);
   }
   const cliResult=run(['list','--kind','raster']);assert.equal(cliResult.status,0,cliResult.stderr);
-  assert.equal(JSON.parse(cliResult.stdout).total,5);
+  assert.equal(JSON.parse(cliResult.stdout).total,8);
 });
 
 test('two-link IK records actual reachable branch coverage without promoting authored contact to physics',()=>{
@@ -169,7 +169,7 @@ test('sticky interval distinguishes actual draws from visible released geometry'
 
 test('three-work owner feedback distinguishes rejection from scoped and limited acceptance without changing technical gates',()=>{
  const expected={'geometry.two-link-ik':'REJECTED_NOT_STYLE_REFERENCE','composition.plane-parallax':'POSITIVE_FEEDBACK_SCENE_SPECIFIC','composition.sticky-interval':'LIMITED_ACCEPTANCE_NOT_STYLE_ENDORSEMENT'};
- assert.equal(catalog.elements.length,50);assert.equal(catalog.elements.filter(e=>e.kind==='recipe').length,7);
+ assert.equal(catalog.elements.length,67);assert.equal(catalog.elements.filter(e=>e.kind==='recipe').length,7);
  for(const [id,status]of Object.entries(expected)){const e=queryCatalog(catalog,{id}).results[0].element;
   assert.equal(e.status,'experimental');assert.equal(e.evidence.artisticReview,status);assert.equal(e.evidence.ownerArtisticAcceptance,status);
   assert.equal(e.evidence.videoValidation,'VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE');assert.equal(e.evidence.audioListening,'NOT_LISTENED');
@@ -219,7 +219,7 @@ test('field CLI list/find succeeds from unrelated cwd under static-file-only per
     const ordinary = run(args);
     assert.equal(ordinary.status, 0, ordinary.stderr);
     assert.equal(ordinary.stderr, '');
-    assert.deepEqual(JSON.parse(ordinary.stdout).results.map(r => r.element.id), ['field.attractor-orientation']);
+    assert.deepEqual(JSON.parse(ordinary.stdout).results.map(r => r.element.id), args[0]==='find' ? ['field.attractor-orientation'] : ['field.arrival-field','field.attractor-orientation','field.grid-transport','field.projected-reaction-diffusion']);
     const restricted = spawnSync(process.execPath, [
       '--permission', `--allow-fs-read=${cli}`, `--allow-fs-read=${root}lib/catalog-query.mjs`, `--allow-fs-read=${root}catalog.json`,
       cli, ...args,

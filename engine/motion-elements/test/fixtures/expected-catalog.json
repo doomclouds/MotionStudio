@@ -43,6 +43,11 @@
       "api": "masonryLayout"
     },
     {
+      "id": "composition.minimum-cost-assignment",
+      "kind": "composition",
+      "api": "minimumCostAssignment"
+    },
+    {
       "id": "composition.offset-cards",
       "kind": "composition",
       "api": "offsetCards"
@@ -51,6 +56,11 @@
       "id": "composition.plane-parallax",
       "kind": "composition",
       "api": "planeParallaxLayout"
+    },
+    {
+      "id": "composition.poisson-disc",
+      "kind": "composition",
+      "api": "samplePoissonDisc"
     },
     {
       "id": "composition.split-panels",
@@ -68,9 +78,29 @@
       "api": "weightedFlowLayout"
     },
     {
+      "id": "composition.weighted-hierarchy",
+      "kind": "composition",
+      "api": "layoutWeightedHierarchy"
+    },
+    {
+      "id": "field.arrival-field",
+      "kind": "field",
+      "api": "compileArrivalField"
+    },
+    {
       "id": "field.attractor-orientation",
       "kind": "field",
       "api": "compileAttractorField"
+    },
+    {
+      "id": "field.grid-transport",
+      "kind": "field",
+      "api": "compileGridTransport"
+    },
+    {
+      "id": "field.projected-reaction-diffusion",
+      "kind": "field",
+      "api": "reactionDiffusion"
     },
     {
       "id": "fragment.fixed-tiles",
@@ -113,6 +143,21 @@
       "api": "compilePolyline"
     },
     {
+      "id": "geometry.radial-landmark-warp",
+      "kind": "geometry",
+      "api": "compileRadialWarp"
+    },
+    {
+      "id": "geometry.ray-chain",
+      "kind": "geometry",
+      "api": "compileOpticalMedium"
+    },
+    {
+      "id": "geometry.rectangle-obstacle-route",
+      "kind": "geometry",
+      "api": "routeRectangles"
+    },
+    {
       "id": "geometry.registered-polygon-morph",
       "kind": "geometry",
       "api": "compileRegisteredPolygonMorph"
@@ -128,6 +173,16 @@
       "api": "solveTwoLinkIK"
     },
     {
+      "id": "geometry.visibility-fan",
+      "kind": "geometry",
+      "api": "visibilityFan"
+    },
+    {
+      "id": "geometry.voronoi-cells",
+      "kind": "geometry",
+      "api": "voronoiCells"
+    },
+    {
       "id": "motion.anchored-squash",
       "kind": "motion",
       "api": "sampleMotion"
@@ -136,6 +191,21 @@
       "id": "motion.damped-response",
       "kind": "motion",
       "api": "compileDampedResponse"
+    },
+    {
+      "id": "motion.finite-particles",
+      "kind": "motion",
+      "api": "compileFiniteParticles"
+    },
+    {
+      "id": "motion.fixed-string-wave",
+      "kind": "motion",
+      "api": "compileFixedStringWave"
+    },
+    {
+      "id": "motion.hard-disc-isolated-events",
+      "kind": "motion",
+      "api": "compileHardDiscs"
     },
     {
       "id": "motion.keyframe-track",
@@ -173,6 +243,11 @@
       "api": "sampleRasterDisplacement"
     },
     {
+      "id": "raster.euclidean-distance-transform",
+      "kind": "raster",
+      "api": "distanceTransform"
+    },
+    {
       "id": "raster.matte",
       "kind": "raster",
       "api": "sampleRasterMatte"
@@ -183,9 +258,19 @@
       "api": "compileConvolution"
     },
     {
+      "id": "raster.palette-error-diffusion",
+      "kind": "raster",
+      "api": "paletteDiffuse"
+    },
+    {
       "id": "raster.projective-quad",
       "kind": "raster",
       "api": "compileProjectiveRaster"
+    },
+    {
+      "id": "raster.temporal-exposure",
+      "kind": "raster",
+      "api": "compileTemporalExposure"
     },
     {
       "id": "recipe.flow-handoff",

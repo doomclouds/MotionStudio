@@ -1,6 +1,8 @@
 # Motion Elements — 可组合动效基础库
 
-当前目录 **50 项：43 个基础机制＋7 个配方**，全部 experimental。数量不代表艺术通过。以下阶段计数是历史记录；当前分类以 catalog 为准。
+当前目录 **67 项：60 个基础机制＋7 个配方**，全部 experimental。数量不代表艺术通过。以下阶段计数是历史记录；当前分类以 catalog 为准。
+
+本批在43基础上注册17项，达到60基础后暂停增加；7配方不变。两项支持扩展不计数。入口、Node边界、API和可运行用例见 [注册适配说明](docs/registered-foundations.md)。
 
 第一阶段包含 **10 个机制**，而不是 10 套影片模板。数字不同、方向相反、快慢不同均是参数变体，不重复计算新元素。当前全部标记 `experimental`：数值与 Native 像素测试不等于审美验收，也不等于已经在原创成片中复用通过。
 
@@ -22,7 +24,7 @@
 - `adapters/canvas.mjs`：把纯状态应用到同步 Canvas 回调。核心不加载浏览器、DOM、GSAP 或 Motion Canvas。
 - `catalog.json`：稳定 ID、版本、可执行输入、适用条件、反例、验证状态与知识链接。参数校验以运行时代码为唯一权威，不存在另一个放宽校验的 JSON 执行入口。
 
-需要已有 Node 24+。纯状态核心仅依赖同级 `motion-timeline-core` 的有理数函数，无新 npm 依赖；原生预览/像素测试使用已安装的 `@napi-rs/canvas`，完整示例导出需要 FFmpeg。不会自动下载或安装。
+需要已有 Node 24+。默认入口通过同级 `motion-timeline-core` 间接依赖 `node:crypto`，不声明原生浏览器兼容；arrival仅通过显式 `motion-elements/node` 入口导出，无新 npm 依赖；原生预览/像素测试使用已安装的 `@napi-rs/canvas`，完整示例导出需要 FFmpeg。不会自动下载或安装。
 
 ## 最小调用
 

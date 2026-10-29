@@ -22,7 +22,7 @@ test('new rasters feed caller Canvas and layout transforms while source bytes an
  assert.equal(render(),render());assert.deepEqual([...pixels],before);assert.notEqual(blurred.data,pixels);assert.notEqual(warped.data,blurred.data);
 });
 test('four foundations do not increase recipes or collapse two films and quality gates',()=>{
- assert.equal(catalog.elements.length,50);assert.equal(catalog.elements.filter(e=>e.kind!=='recipe').length,43);assert.equal(catalog.elements.filter(e=>e.kind==='recipe').length,7);assert.equal(queryCatalog(catalog,{kind:'raster'}).total,5);
+ assert.equal(catalog.elements.length,67);assert.equal(catalog.elements.filter(e=>e.kind!=='recipe').length,60);assert.equal(catalog.elements.filter(e=>e.kind==='recipe').length,7);assert.equal(queryCatalog(catalog,{kind:'raster'}).total,8);
  for(const id of ids){const result=queryCatalog(catalog,{id});assert.equal(result.total,1);const entry=result.results[0].element;assert.equal(entry.status,'experimental');for(const k of ['artisticReview','ownerArtisticAcceptance'])assert.equal(entry.evidence[k],'PENDING_USER');assert.equal(entry.evidence.normalSpeedViewing,'NOT_DONE');assert.equal(entry.evidence.audioListening,'NOT_LISTENED');assert.equal(entry.evidence.originalProductionTransfer,'NOT_RUN');assert.equal(entry.evidence.visualDemo,null);assert.match(entry.evidence.callEvidenceScope,/actual/i);entry.example.__test=1;assert.equal(catalog.elements.find(e=>e.id===id).example.__test,undefined);}
  assert.match(queryCatalog(catalog,{id:ids[0]}).results[0].element.evidence.sourceVersionRelation,/stricter/);assert.match(queryCatalog(catalog,{id:ids[2]}).results[0].element.evidence.sourceVersionRelation,/byte-match/);
 });

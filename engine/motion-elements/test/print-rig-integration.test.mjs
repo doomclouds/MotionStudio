@@ -26,12 +26,12 @@ test('all four JSON catalog examples execute with explicit morphology byte-view 
  assert.ok(api.compileAffineSkin(entries[2].example));assert.ok(api.compileDampedResponse(entries[3].example));assert.equal(JSON.stringify(entries),before);
 });
 test('exact known roster and separate film-quality gates remain honest',()=>{
- assert.equal(catalog.elements.length,50);assert.equal(catalog.elements.filter(e=>e.kind!=='recipe').length,43);assert.equal(catalog.elements.filter(e=>e.kind==='recipe').length,7);
+ assert.equal(catalog.elements.length,67);assert.equal(catalog.elements.filter(e=>e.kind!=='recipe').length,60);assert.equal(catalog.elements.filter(e=>e.kind==='recipe').length,7);
  for(const e of entries){assert.ok(e);assert.equal(queryCatalog(catalog,{id:e.id}).total,1);assert.equal(e.status,'experimental');assert.equal(e.evidence.ownerArtisticAcceptance,'PENDING_USER');assert.equal(e.evidence.artisticReview,'PENDING_USER');assert.equal(e.evidence.normalSpeedViewing,'NOT_DONE');assert.equal(e.evidence.audioListening,'NOT_LISTENED');assert.equal(e.evidence.visualDemo,null);assert.equal(e.evidence.originalProductionTransfer,'NOT_RUN');}
  assert.match(entries[0].evidence.sourceVersionRelation,/516.*36/);assert.match(entries[2].evidence.sourceVersionRelation,/Nine fresh-process/);
 });
 
-test('explicit reviewed50-ID-kind-API roster prevents replacement-by-count',()=>{
+test('explicit reviewed67-ID-kind-API roster prevents replacement-by-count',()=>{
  const expected=JSON.parse(readFileSync(new URL('./fixtures/expected-catalog.json',import.meta.url)));
  const actual=catalog.elements.map(({id,kind,api})=>({id,kind,api})).sort((a,b)=>a.id<b.id?-1:a.id>b.id?1:0);
  assert.deepEqual(actual,expected.entries);

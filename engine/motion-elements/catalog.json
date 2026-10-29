@@ -3518,6 +3518,924 @@
         "阻尼",
         "冲量"
       ]
+    },
+    {
+      "id": "motion.finite-particles",
+      "version": 1,
+      "kind": "motion",
+      "status": "experimental",
+      "summary": "Seeded finite emissions with analytic constant-acceleration absolute-time sampling.",
+      "api": "compileFiniteParticles",
+      "entry": "lib/index.mjs",
+      "example": {
+        "seed": 1,
+        "emissions": [
+          {
+            "id": "a",
+            "birth": 0,
+            "position": {
+              "x": [
+                0,
+                0
+              ],
+              "y": [
+                0,
+                0
+              ]
+            },
+            "velocity": {
+              "x": [
+                1,
+                1
+              ],
+              "y": [
+                2,
+                2
+              ]
+            },
+            "acceleration": {
+              "x": 0,
+              "y": 0
+            },
+            "lifetime": [
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      "applicability": [
+        "Seeded finite emissions with analytic constant-acceleration absolute-time sampling."
+      ],
+      "counterexamples": [
+        "Not an incremental particle simulation, collision solver, fluid, or unbounded emitter. Lifetimes and emissions are bounded; compiled plans are module-instance branded.",
+        "Experimental technical mechanism, not an artistic endorsement, realtime guarantee, or automatic style recommendation."
+      ],
+      "evidence": {
+        "technicalTests": [
+          "test/candidate-finite-particles.test.mjs"
+        ],
+        "guidance": "docs/candidates/finite-particles.md",
+        "visualDemo": null,
+        "artisticReview": "NOT_RUN",
+        "originalProductionTransfer": "NOT_RUN",
+        "normalSpeedViewing": "NOT_DONE",
+        "audioListening": "NOT_LISTENED",
+        "registrationScope": "Local registration preparation only; published baseline remains 39 foundations + 7 recipes.",
+        "executableExample": "examples/registered-foundations.mjs"
+      },
+      "knowledgeLinks": [],
+      "tags": [
+        "finite-particles",
+        "motion"
+      ]
+    },
+    {
+      "id": "composition.weighted-hierarchy",
+      "version": 1,
+      "kind": "composition",
+      "status": "experimental",
+      "summary": "Recursive weighted slice-and-dice hierarchy partition.",
+      "api": "layoutWeightedHierarchy",
+      "entry": "lib/index.mjs",
+      "example": {
+        "tree": {
+          "id": "r",
+          "children": [
+            {
+              "id": "a",
+              "weight": 1
+            },
+            {
+              "id": "b",
+              "weight": 3
+            }
+          ]
+        },
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 100,
+          "height": 80
+        }
+      },
+      "applicability": [
+        "Recursive weighted slice-and-dice hierarchy partition."
+      ],
+      "counterexamples": [
+        "Not squarified treemap or constraint layout; internal weights are derived. Max 256 nodes and depth 16; tiny cells are not legibility guarantees.",
+        "Experimental technical mechanism, not an artistic endorsement, realtime guarantee, or automatic style recommendation."
+      ],
+      "evidence": {
+        "technicalTests": [
+          "test/candidate-weighted-hierarchy.test.mjs"
+        ],
+        "guidance": "docs/candidates/weighted-hierarchy.md",
+        "visualDemo": null,
+        "artisticReview": "NOT_RUN",
+        "originalProductionTransfer": "NOT_RUN",
+        "normalSpeedViewing": "NOT_DONE",
+        "audioListening": "NOT_LISTENED",
+        "registrationScope": "Local registration preparation only; published baseline remains 39 foundations + 7 recipes.",
+        "executableExample": "examples/registered-foundations.mjs"
+      },
+      "knowledgeLinks": [],
+      "tags": [
+        "weighted-hierarchy",
+        "composition"
+      ]
+    },
+    {
+      "id": "raster.temporal-exposure",
+      "version": 1,
+      "kind": "raster",
+      "status": "experimental",
+      "summary": "Finite temporal tap integration with premultiplied alpha.",
+      "api": "compileTemporalExposure",
+      "entry": "lib/index.mjs",
+      "example": {
+        "offsets": [
+          0,
+          1
+        ],
+        "weights": [
+          1,
+          3
+        ]
+      },
+      "applicability": [
+        "Finite temporal tap integration with premultiplied alpha."
+      ],
+      "counterexamples": [
+        "Integer frame offsets, not continuous shutter integration. Caller supplies same-size RGBA frames; bounded pixels × taps cannot bound callback work or retained memory.",
+        "Experimental technical mechanism, not an artistic endorsement, realtime guarantee, or automatic style recommendation."
+      ],
+      "evidence": {
+        "technicalTests": [
+          "test/candidate-temporal.test.mjs"
+        ],
+        "guidance": "docs/candidates/temporal-exposure.md",
+        "visualDemo": null,
+        "artisticReview": "NOT_RUN",
+        "originalProductionTransfer": "NOT_RUN",
+        "normalSpeedViewing": "NOT_DONE",
+        "audioListening": "NOT_LISTENED",
+        "registrationScope": "Local registration preparation only; published baseline remains 39 foundations + 7 recipes.",
+        "executableExample": "examples/registered-foundations.mjs"
+      },
+      "knowledgeLinks": [],
+      "tags": [
+        "temporal-exposure",
+        "raster"
+      ]
+    },
+    {
+      "id": "composition.poisson-disc",
+      "version": 1,
+      "kind": "composition",
+      "status": "experimental",
+      "summary": "Seeded bounded Bridson sampling in a circular domain.",
+      "api": "samplePoissonDisc",
+      "entry": "lib/index.mjs",
+      "example": {
+        "domain": {
+          "x": 0,
+          "y": 0,
+          "radius": 100
+        },
+        "minDistance": 20,
+        "seed": 0,
+        "maxPoints": 12
+      },
+      "applicability": [
+        "Seeded bounded Bridson sampling in a circular domain."
+      ],
+      "counterexamples": [
+        "Minimum center distance is not maximal packing, exact point count, rectangle clearance, or collision-free animation; exhaustion returns the actual result.",
+        "Experimental technical mechanism, not an artistic endorsement, realtime guarantee, or automatic style recommendation."
+      ],
+      "evidence": {
+        "technicalTests": [
+          "test/candidate-poisson-disc.test.mjs"
+        ],
+        "guidance": "docs/candidates/poisson-disc.md",
+        "visualDemo": null,
+        "artisticReview": "NOT_RUN",
+        "originalProductionTransfer": "NOT_RUN",
+        "normalSpeedViewing": "NOT_DONE",
+        "audioListening": "NOT_LISTENED",
+        "registrationScope": "Local registration preparation only; published baseline remains 39 foundations + 7 recipes.",
+        "executableExample": "examples/registered-foundations.mjs"
+      },
+      "knowledgeLinks": [],
+      "tags": [
+        "poisson-disc",
+        "composition"
+      ]
+    },
+    {
+      "id": "motion.fixed-string-wave",
+      "version": 1,
+      "kind": "motion",
+      "status": "experimental",
+      "summary": "Fixed-end one-dimensional wave via odd periodic extension.",
+      "api": "compileFixedStringWave",
+      "entry": "lib/index.mjs",
+      "example": {
+        "profile": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 0.5,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 0
+          }
+        ],
+        "speed": 1
+      },
+      "applicability": [
+        "Fixed-end one-dimensional wave via odd periodic extension."
+      ],
+      "counterexamples": [
+        "Zero initial velocity; unit spatial interval and bounded time/speed. Not arbitrary boundary conditions, damping, elastic cloth, or a modal approximation.",
+        "Experimental technical mechanism, not an artistic endorsement, realtime guarantee, or automatic style recommendation."
+      ],
+      "evidence": {
+        "technicalTests": [
+          "test/candidate-fixed-string-wave.test.mjs"
+        ],
+        "guidance": "docs/private-candidates/fixed-string-wave/ORIGIN-CONTRACT.md",
+        "visualDemo": null,
+        "artisticReview": "NOT_RUN",
+        "originalProductionTransfer": "NOT_RUN",
+        "normalSpeedViewing": "NOT_DONE",
+        "audioListening": "NOT_LISTENED",
+        "registrationScope": "Local registration preparation only; published baseline remains 39 foundations + 7 recipes.",
+        "executableExample": "examples/registered-foundations.mjs"
+      },
+      "knowledgeLinks": [],
+      "tags": [
+        "fixed-string-wave",
+        "motion"
+      ]
+    },
+    {
+      "id": "geometry.visibility-fan",
+      "version": 1,
+      "kind": "geometry",
+      "status": "experimental",
+      "summary": "Nearest-blocker visibility fan inside a rectangle.",
+      "api": "visibilityFan",
+      "entry": "lib/index.mjs",
+      "example": {
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1000,
+          "height": 800
+        },
+        "source": {
+          "x": 121,
+          "y": 333
+        },
+        "segments": []
+      },
+      "applicability": [
+        "Nearest-blocker visibility fan inside a rectangle."
+      ],
+      "counterexamples": [
+        "Integer lattice inputs and at most 64 noncrossing segments; overlaps, T-junctions and a source on a blocker reject. Not soft shadows or general polygon booleans.",
+        "Experimental technical mechanism, not an artistic endorsement, realtime guarantee, or automatic style recommendation."
+      ],
+      "evidence": {
+        "technicalTests": [
+          "test/candidate-visibility-fan.test.mjs"
+        ],
+        "guidance": "docs/private-candidates/visibility-fan/ORIGIN-CONTRACT.md",
+        "visualDemo": null,
+        "artisticReview": "NOT_RUN",
+        "originalProductionTransfer": "NOT_RUN",
+        "normalSpeedViewing": "NOT_DONE",
+        "audioListening": "NOT_LISTENED",
+        "registrationScope": "Local registration preparation only; published baseline remains 39 foundations + 7 recipes.",
+        "executableExample": "examples/registered-foundations.mjs"
+      },
+      "knowledgeLinks": [],
+      "tags": [
+        "visibility-fan",
+        "geometry"
+      ]
+    },
+    {
+      "id": "field.grid-transport",
+      "version": 1,
+      "kind": "field",
+      "status": "experimental",
+      "summary": "Midpoint integration and cached absolute-time transport through a bilinear velocity grid.",
+      "api": "compileGridTransport",
+      "entry": "lib/index.mjs",
+      "example": {
+        "seeds": [
+          {
+            "x": 0.2,
+            "y": 0.6
+          }
+        ],
+        "duration": 3,
+        "steps": 79
+      },
+      "applicability": [
+        "Midpoint integration and cached absolute-time transport through a bilinear velocity grid."
+      ],
+      "counterexamples": [
+        "Normalized domain; any out-of-domain integration stage rejects rather than wraps/clamps. Finite cache and fixed discretization are not exact flow or realtime guarantees.",
+        "Experimental technical mechanism, not an artistic endorsement, realtime guarantee, or automatic style recommendation."
+      ],
+      "evidence": {
+        "technicalTests": [
+          "test/candidate-grid-transport.test.mjs"
+        ],
+        "guidance": "docs/private-candidates/grid-transport/ORIGIN-CONTRACT.md",
+        "visualDemo": null,
+        "artisticReview": "NOT_RUN",
+        "originalProductionTransfer": "NOT_RUN",
+        "normalSpeedViewing": "NOT_DONE",
+        "audioListening": "NOT_LISTENED",
+        "registrationScope": "Local registration preparation only; published baseline remains 39 foundations + 7 recipes.",
+        "executableExample": "examples/registered-foundations.mjs"
+      },
+      "knowledgeLinks": [],
+      "tags": [
+        "grid-transport",
+        "field"
+      ],
+      "exampleSetup": {
+        "velocityGrid": {
+          "columns": 2,
+          "rows": 2,
+          "vectors": [
+            {
+              "x": 0.1,
+              "y": -0.05
+            },
+            {
+              "x": 0.1,
+              "y": -0.05
+            },
+            {
+              "x": 0.1,
+              "y": -0.05
+            },
+            {
+              "x": 0.1,
+              "y": -0.05
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "field.arrival-field",
+      "version": 1,
+      "kind": "field",
+      "status": "experimental",
+      "summary": "Quantized Euclidean arrival times with exact rational source starts and deterministic ties.",
+      "api": "compileArrivalField",
+      "entry": "lib/node.mjs",
+      "example": {
+        "sources": [
+          {
+            "id": "a",
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "at": {
+              "n": "0",
+              "d": "1"
+            }
+          }
+        ],
+        "speed": 1,
+        "tickRate": 1000
+      },
+      "applicability": [
+        "Quantized Euclidean arrival times with exact rational source starts and deterministic ties."
+      ],
+      "counterexamples": [
+        "Node-only entry imports node:crypto transitively. No obstacle travel, diffraction or browser support; tick ceiling can merge distinct continuous arrivals. Event binding helpers are support, not another foundation.",
+        "Experimental technical mechanism, not an artistic endorsement, realtime guarantee, or automatic style recommendation."
+      ],
+      "evidence": {
+        "technicalTests": [
+          "test/candidate-arrival-field-support.test.mjs"
+        ],
+        "guidance": "docs/private-candidates/arrival-field-origin-contracts.md",
+        "visualDemo": null,
+        "artisticReview": "NOT_RUN",
+        "originalProductionTransfer": "NOT_RUN",
+        "normalSpeedViewing": "NOT_DONE",
+        "audioListening": "NOT_LISTENED",
+        "registrationScope": "Local registration preparation only; published baseline remains 39 foundations + 7 recipes.",
+        "executableExample": "examples/registered-foundations.mjs"
+      },
+      "knowledgeLinks": [],
+      "tags": [
+        "arrival-field",
+        "field"
+      ],
+      "runtime": "node"
+    },
+    {
+      "id": "motion.hard-disc-isolated-events",
+      "version": 1,
+      "kind": "motion",
+      "status": "experimental",
+      "summary": "Bounded isolated elastic hard-disc events and absolute-time replay.",
+      "api": "compileHardDiscs",
+      "entry": "lib/index.mjs",
+      "example": {
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1000,
+          "height": 600
+        },
+        "discs": [
+          {
+            "id": "a",
+            "x": 100,
+            "y": 300,
+            "vx": 100,
+            "vy": 0,
+            "mass": 1,
+            "radius": 20
+          },
+          {
+            "id": "b",
+            "x": 400,
+            "y": 300,
+            "vx": 0,
+            "vy": 0,
+            "mass": 1,
+            "radius": 20
+          }
+        ],
+        "duration": 3,
+        "maxEvents": 64
+      },
+      "applicability": [
+        "Bounded isolated elastic hard-disc events and absolute-time replay."
+      ],
+      "counterexamples": [
+        "Simultaneous contacts, grazing, near ties, overlap and exhausted event budgets reject. Not a general many-body physics engine, friction model, or timestep simulator.",
+        "Experimental technical mechanism, not an artistic endorsement, realtime guarantee, or automatic style recommendation."
+      ],
+      "evidence": {
+        "technicalTests": [
+          "test/hard-disc-private.test.mjs"
+        ],
+        "guidance": "docs/private-candidates/hard-disc-isolated-events/README.md",
+        "visualDemo": null,
+        "artisticReview": "NOT_RUN",
+        "originalProductionTransfer": "NOT_RUN",
+        "normalSpeedViewing": "NOT_DONE",
+        "audioListening": "NOT_LISTENED",
+        "registrationScope": "Local registration preparation only; published baseline remains 39 foundations + 7 recipes.",
+        "executableExample": "examples/registered-foundations.mjs"
+      },
+      "knowledgeLinks": [],
+      "tags": [
+        "hard-disc-isolated-events",
+        "motion"
+      ]
+    },
+    {
+      "id": "geometry.ray-chain",
+      "version": 1,
+      "kind": "geometry",
+      "status": "experimental",
+      "summary": "Geometric Snell refraction and total-internal-reflection ray chains through one convex medium.",
+      "api": "compileOpticalMedium",
+      "entry": "lib/index.mjs",
+      "example": {
+        "width": 1000,
+        "height": 1000,
+        "polygon": [
+          {
+            "x": 200,
+            "y": 200
+          },
+          {
+            "x": 800,
+            "y": 200
+          },
+          {
+            "x": 800,
+            "y": 800
+          },
+          {
+            "x": 200,
+            "y": 800
+          }
+        ],
+        "ior": 1.5
+      },
+      "applicability": [
+        "Geometric Snell refraction and total-internal-reflection ray chains through one convex medium."
+      ],
+      "counterexamples": [
+        "Strict convex CCW medium; corner/grazing/critical-angle ambiguity and exhausted interactions reject. No multi-medium scene, wave interference, Fresnel intensity or physical renderer.",
+        "Experimental technical mechanism, not an artistic endorsement, realtime guarantee, or automatic style recommendation."
+      ],
+      "evidence": {
+        "technicalTests": [
+          "test/candidate-ray-chain.test.mjs"
+        ],
+        "guidance": "docs/private-candidates/ray-chain/ORIGIN-CONTRACT.md",
+        "visualDemo": null,
+        "artisticReview": "NOT_RUN",
+        "originalProductionTransfer": "NOT_RUN",
+        "normalSpeedViewing": "NOT_DONE",
+        "audioListening": "NOT_LISTENED",
+        "registrationScope": "Local registration preparation only; published baseline remains 39 foundations + 7 recipes.",
+        "executableExample": "examples/registered-foundations.mjs"
+      },
+      "knowledgeLinks": [],
+      "tags": [
+        "ray-chain",
+        "geometry"
+      ]
+    },
+    {
+      "id": "geometry.voronoi-cells",
+      "version": 1,
+      "kind": "geometry",
+      "status": "experimental",
+      "summary": "Bounded Euclidean Voronoi cells clipped to a rectangle.",
+      "api": "voronoiCells",
+      "entry": "lib/index.mjs",
+      "example": {
+        "sites": [
+          {
+            "x": 25,
+            "y": 50
+          },
+          {
+            "x": 75,
+            "y": 50
+          }
+        ],
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 100,
+          "height": 100
+        }
+      },
+      "applicability": [
+        "Bounded Euclidean Voronoi cells clipped to a rectangle."
+      ],
+      "counterexamples": [
+        "Unweighted sites, at most 64; duplicates reject and outside sites may have empty cells. Not power diagrams or animated topology correspondence.",
+        "Experimental technical mechanism, not an artistic endorsement, realtime guarantee, or automatic style recommendation."
+      ],
+      "evidence": {
+        "technicalTests": [
+          "test/seven-foundations-geometry.test.mjs"
+        ],
+        "guidance": "docs/private-candidates/seven-foundations/geometry-GUIDE.zh-CN.md",
+        "visualDemo": null,
+        "artisticReview": "NOT_RUN",
+        "originalProductionTransfer": "NOT_RUN",
+        "normalSpeedViewing": "NOT_DONE",
+        "audioListening": "NOT_LISTENED",
+        "registrationScope": "Local registration preparation only; published baseline remains 39 foundations + 7 recipes.",
+        "executableExample": "examples/registered-foundations.mjs"
+      },
+      "knowledgeLinks": [],
+      "tags": [
+        "voronoi-cells",
+        "geometry"
+      ]
+    },
+    {
+      "id": "composition.minimum-cost-assignment",
+      "version": 1,
+      "kind": "composition",
+      "status": "experimental",
+      "summary": "Deterministic minimum-cost one-to-one assignment for a square cost matrix.",
+      "api": "minimumCostAssignment",
+      "entry": "lib/index.mjs",
+      "example": [
+        [
+          10,
+          1
+        ],
+        [
+          2,
+          9
+        ]
+      ],
+      "applicability": [
+        "Deterministic minimum-cost one-to-one assignment for a square cost matrix."
+      ],
+      "counterexamples": [
+        "Nonnegative finite costs; square matrix up to 128. Caller authors costs; this does not route motion, prevent crossing, or solve unequal-cardinality matching.",
+        "Experimental technical mechanism, not an artistic endorsement, realtime guarantee, or automatic style recommendation."
+      ],
+      "evidence": {
+        "technicalTests": [
+          "test/seven-foundations-geometry.test.mjs"
+        ],
+        "guidance": "docs/private-candidates/seven-foundations/geometry-GUIDE.zh-CN.md",
+        "visualDemo": null,
+        "artisticReview": "NOT_RUN",
+        "originalProductionTransfer": "NOT_RUN",
+        "normalSpeedViewing": "NOT_DONE",
+        "audioListening": "NOT_LISTENED",
+        "registrationScope": "Local registration preparation only; published baseline remains 39 foundations + 7 recipes.",
+        "executableExample": "examples/registered-foundations.mjs"
+      },
+      "knowledgeLinks": [],
+      "tags": [
+        "minimum-cost-assignment",
+        "composition"
+      ]
+    },
+    {
+      "id": "geometry.rectangle-obstacle-route",
+      "version": 1,
+      "kind": "geometry",
+      "status": "experimental",
+      "summary": "Shortest visibility-graph path around separated axis-aligned rectangular obstacles.",
+      "api": "routeRectangles",
+      "entry": "lib/index.mjs",
+      "example": {
+        "start": {
+          "x": 0,
+          "y": 0
+        },
+        "end": {
+          "x": 10,
+          "y": 0
+        },
+        "obstacles": [
+          {
+            "x": 4,
+            "y": -1,
+            "width": 2,
+            "height": 2
+          }
+        ],
+        "clearance": 1
+      },
+      "applicability": [
+        "Shortest visibility-graph path around separated axis-aligned rectangular obstacles."
+      ],
+      "counterexamples": [
+        "At most 24 rectangles; expanded overlap rejects and boundary travel is allowed. Not arbitrary polygon routing, curved clearance, dynamic collision avoidance or multi-agent routing.",
+        "Experimental technical mechanism, not an artistic endorsement, realtime guarantee, or automatic style recommendation."
+      ],
+      "evidence": {
+        "technicalTests": [
+          "test/seven-foundations-geometry.test.mjs"
+        ],
+        "guidance": "docs/private-candidates/seven-foundations/geometry-GUIDE.zh-CN.md",
+        "visualDemo": null,
+        "artisticReview": "NOT_RUN",
+        "originalProductionTransfer": "NOT_RUN",
+        "normalSpeedViewing": "NOT_DONE",
+        "audioListening": "NOT_LISTENED",
+        "registrationScope": "Local registration preparation only; published baseline remains 39 foundations + 7 recipes.",
+        "executableExample": "examples/registered-foundations.mjs"
+      },
+      "knowledgeLinks": [],
+      "tags": [
+        "rectangle-obstacle-route",
+        "geometry"
+      ]
+    },
+    {
+      "id": "geometry.radial-landmark-warp",
+      "version": 1,
+      "kind": "geometry",
+      "status": "experimental",
+      "summary": "Gaussian radial basis landmark displacement with residual-checked solve.",
+      "api": "compileRadialWarp",
+      "entry": "lib/index.mjs",
+      "example": {
+        "source": [
+          {
+            "x": 0,
+            "y": 0
+          }
+        ],
+        "target": [
+          {
+            "x": 1,
+            "y": 2
+          }
+        ],
+        "radius": 3
+      },
+      "applicability": [
+        "Gaussian radial basis landmark displacement with residual-checked solve."
+      ],
+      "counterexamples": [
+        "Up to 32 landmarks; ill-conditioned or inaccurate reconstruction rejects. No injectivity, topology or nonfolding guarantee; not perspective mapping.",
+        "Experimental technical mechanism, not an artistic endorsement, realtime guarantee, or automatic style recommendation."
+      ],
+      "evidence": {
+        "technicalTests": [
+          "test/seven-foundations-geometry.test.mjs"
+        ],
+        "guidance": "docs/private-candidates/seven-foundations/geometry-GUIDE.zh-CN.md",
+        "visualDemo": null,
+        "artisticReview": "NOT_RUN",
+        "originalProductionTransfer": "NOT_RUN",
+        "normalSpeedViewing": "NOT_DONE",
+        "audioListening": "NOT_LISTENED",
+        "registrationScope": "Local registration preparation only; published baseline remains 39 foundations + 7 recipes.",
+        "executableExample": "examples/registered-foundations.mjs"
+      },
+      "knowledgeLinks": [],
+      "tags": [
+        "radial-landmark-warp",
+        "geometry"
+      ]
+    },
+    {
+      "id": "raster.euclidean-distance-transform",
+      "version": 1,
+      "kind": "raster",
+      "status": "experimental",
+      "summary": "Exact squared Euclidean distance to the nearest foreground pixel.",
+      "api": "distanceTransform",
+      "entry": "lib/index.mjs",
+      "example": {
+        "width": 3,
+        "height": 1,
+        "mask": [
+          1,
+          0,
+          1
+        ]
+      },
+      "applicability": [
+        "Exact squared Euclidean distance to the nearest foreground pixel."
+      ],
+      "counterexamples": [
+        "Binary mask with bounded raster dimensions; empty foreground yields Infinity. Not signed distances or subpixel contour distance; typed outputs are caller-owned.",
+        "Experimental technical mechanism, not an artistic endorsement, realtime guarantee, or automatic style recommendation."
+      ],
+      "evidence": {
+        "technicalTests": [
+          "test/seven-foundations-raster.test.mjs"
+        ],
+        "guidance": "docs/private-candidates/seven-foundations/raster-GUIDE.zh-CN.md",
+        "visualDemo": null,
+        "artisticReview": "NOT_RUN",
+        "originalProductionTransfer": "NOT_RUN",
+        "normalSpeedViewing": "NOT_DONE",
+        "audioListening": "NOT_LISTENED",
+        "registrationScope": "Local registration preparation only; published baseline remains 39 foundations + 7 recipes.",
+        "executableExample": "examples/registered-foundations.mjs"
+      },
+      "knowledgeLinks": [],
+      "tags": [
+        "euclidean-distance-transform",
+        "raster"
+      ]
+    },
+    {
+      "id": "raster.palette-error-diffusion",
+      "version": 1,
+      "kind": "raster",
+      "status": "experimental",
+      "summary": "Serpentine Floyd–Steinberg error diffusion onto an explicit RGB palette.",
+      "api": "paletteDiffuse",
+      "entry": "lib/index.mjs",
+      "example": {
+        "width": 2,
+        "height": 1,
+        "rgb": [
+          0.4,
+          0.2,
+          0.6,
+          0.9,
+          0.5,
+          0.7
+        ],
+        "palette": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      },
+      "applicability": [
+        "Serpentine Floyd–Steinberg error diffusion onto an explicit RGB palette."
+      ],
+      "counterexamples": [
+        "Normalized RGB, no alpha or color-space conversion. Palette ties use the first entry; boundary error is discarded. Not nearest-color-only quantization or temporal dithering.",
+        "Experimental technical mechanism, not an artistic endorsement, realtime guarantee, or automatic style recommendation."
+      ],
+      "evidence": {
+        "technicalTests": [
+          "test/seven-foundations-raster.test.mjs"
+        ],
+        "guidance": "docs/private-candidates/seven-foundations/raster-GUIDE.zh-CN.md",
+        "visualDemo": null,
+        "artisticReview": "NOT_RUN",
+        "originalProductionTransfer": "NOT_RUN",
+        "normalSpeedViewing": "NOT_DONE",
+        "audioListening": "NOT_LISTENED",
+        "registrationScope": "Local registration preparation only; published baseline remains 39 foundations + 7 recipes.",
+        "executableExample": "examples/registered-foundations.mjs"
+      },
+      "knowledgeLinks": [],
+      "tags": [
+        "palette-error-diffusion",
+        "raster"
+      ]
+    },
+    {
+      "id": "field.projected-reaction-diffusion",
+      "version": 1,
+      "kind": "field",
+      "status": "experimental",
+      "summary": "Bounded explicit Gray–Scott-style reaction diffusion with projection onto [0,1].",
+      "api": "reactionDiffusion",
+      "entry": "lib/index.mjs",
+      "example": {
+        "width": 3,
+        "height": 3,
+        "u": [
+          0.8,
+          0.8,
+          0.8,
+          0.8,
+          0.8,
+          0.8,
+          0.8,
+          0.8,
+          0.8
+        ],
+        "v": [
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15
+        ],
+        "steps": 1,
+        "dt": 0.1,
+        "diffusionU": 0.8,
+        "diffusionV": 0.4,
+        "feed": 0.035,
+        "kill": 0.06
+      },
+      "applicability": [
+        "Bounded explicit Gray–Scott-style reaction diffusion with projection onto [0,1]."
+      ],
+      "counterexamples": [
+        "Four-neighbor clamped boundaries and fixed step count; projected discrete model, not an exact continuous PDE or general fluid solver. Parameter and cell × step budgets reject excess work.",
+        "Experimental technical mechanism, not an artistic endorsement, realtime guarantee, or automatic style recommendation."
+      ],
+      "evidence": {
+        "technicalTests": [
+          "test/seven-foundations-raster.test.mjs"
+        ],
+        "guidance": "docs/private-candidates/seven-foundations/raster-GUIDE.zh-CN.md",
+        "visualDemo": null,
+        "artisticReview": "NOT_RUN",
+        "originalProductionTransfer": "NOT_RUN",
+        "normalSpeedViewing": "NOT_DONE",
+        "audioListening": "NOT_LISTENED",
+        "registrationScope": "Local registration preparation only; published baseline remains 39 foundations + 7 recipes.",
+        "executableExample": "examples/registered-foundations.mjs"
+      },
+      "knowledgeLinks": [],
+      "tags": [
+        "projected-reaction-diffusion",
+        "field"
+      ]
     }
   ]
 }

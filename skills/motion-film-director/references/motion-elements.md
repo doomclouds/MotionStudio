@@ -2,6 +2,10 @@
 
 基础库保存“可以执行的动作机制”，知识库保存“在哪种情况下这样做可能有效”。不要把每一部影片写成一个新特效，也不要把某次成功的参数变成所有影片的默认风格。
 
+## 本地注册适配边界
+
+当前目录为60基础＋7配方，在43基础上新增17机制后暂停增加；sprite-atlas/polyline-sections是支持扩展，不计数。`lib/index.mjs` 保留既有入口，arrival使用 `lib/node.mjs` / `motion-elements/node`。默认入口既有 timeline `node:crypto` 依赖，不可声称浏览器兼容；纯模块直导路径不变。参见包内 `docs/registered-foundations.md`、`docs/public-api.json` 和 `examples/registered-foundations.mjs`。历史私有记录不可作为本次公开发布证明。
+
 ## 五层结构
 
 |层|要解决的问题|首批入口|
@@ -238,7 +242,7 @@ Pixi官方shader与p5 mask具体源码/许可取舍见`docs/raster-reference-dec
 
 ## 角色：两段固定长度追随明确目标
 
-当前43基础＋7配方（50项），距离100基础目标仍有57项；数量与艺术接受分别报告。
+当前60基础＋7配方（67项），按当前目标暂停增加；数量与艺术接受分别报告。
 `geometry.two-link-ik`是1个纯二维几何机制，无新配方，不是全身rig、碰撞、力学或3D。
 root/target来自作品同一绝对帧状态，显式bend/fallback；用返回joint/end画骨段，不能把不可达end偷偷画到target掩盖投影。
 实际手掌轮廓与IK端点不是同一个接触定义：数值误差0后仍要看真实编码邻帧是否早贴、滑动或错位。

@@ -1,0 +1,475 @@
+{
+  "scope": "REGISTERED_FOUNDATIONS",
+  "defaultEntry": "lib/index.mjs",
+  "nodeOnlyEntry": "lib/node.mjs",
+  "defaultExports": [
+    "RASTER_LIMITS",
+    "compileAffineSkin",
+    "compileAttractorField",
+    "compileCatenary",
+    "compileContourGrid",
+    "compileConvolution",
+    "compileCubicPath",
+    "compileDampedResponse",
+    "compileFiniteParticles",
+    "compileFixedStringWave",
+    "compileFlowHandoff",
+    "compileFocusHandoff",
+    "compileGridTransport",
+    "compileHardDiscs",
+    "compileHingedPanel",
+    "compileLayoutHandoff",
+    "compileLightEchoField",
+    "compileOpticalMedium",
+    "compilePolyline",
+    "compilePolylineSections",
+    "compileProjectiveRaster",
+    "compileRadialWarp",
+    "compileRegisteredPolygonMorph",
+    "compileSampledBand",
+    "compileSliceDisplacement",
+    "compileSpriteAtlas",
+    "compileStagedLayoutHandoff",
+    "compileStagger",
+    "compileTemporalExposure",
+    "compileTileScatter",
+    "compileTileSignature",
+    "compileVelocityGrid",
+    "composeMotionStates",
+    "composeTransform",
+    "constraintStackLayout",
+    "convolveRGBA",
+    "copyRasterPixels",
+    "createRasterSnapshot",
+    "curve",
+    "distanceTransform",
+    "drawLightEchoField",
+    "drawRasterSnapshot",
+    "drawRegisteredPolygonMorph",
+    "drawSampledBand",
+    "drawTileScatter",
+    "drawTransition",
+    "ease",
+    "extractIsoContours",
+    "extractPolylineSection",
+    "flowWrapLayout",
+    "framesToTime",
+    "gridLayout",
+    "halftoneScreen",
+    "identity",
+    "intervalLaneLayout",
+    "layeredDagLayout",
+    "layoutGlyphRunOnPath",
+    "layoutWeightedHierarchy",
+    "lerp",
+    "mapProjectivePoint",
+    "masonryLayout",
+    "minimumCostAssignment",
+    "morphologyCoverage",
+    "multiply",
+    "offsetCards",
+    "paletteDiffuse",
+    "placeAnchoredLabels",
+    "planeParallaxLayout",
+    "projectRasterPoint",
+    "rational",
+    "reactionDiffusion",
+    "routeRectangles",
+    "sampleAffineSkin",
+    "sampleAttractorField",
+    "sampleCatenary",
+    "sampleCatenaryPolyline",
+    "sampleCubicPath",
+    "sampleDampedResponse",
+    "sampleFiniteParticles",
+    "sampleFiniteSettle",
+    "sampleFixedStringWave",
+    "sampleFlowHandoff",
+    "sampleFocusHandoff",
+    "sampleGridTransport",
+    "sampleHardDiscs",
+    "sampleHingedPanel",
+    "sampleKeyframeTrack",
+    "sampleLayoutHandoff",
+    "sampleLightEchoField",
+    "sampleMotion",
+    "sampleOffsetReassembly",
+    "samplePath",
+    "samplePoissonDisc",
+    "sampleRasterDisplacement",
+    "sampleRasterMatte",
+    "sampleRegisteredPolygonMorph",
+    "sampleSliceDisplacement",
+    "sampleSpriteAtlas",
+    "sampleStagedLayoutHandoff",
+    "sampleTemporalExposure",
+    "sampleTileScatter",
+    "sampleTileSignature",
+    "sampleTrail",
+    "sampleTransition",
+    "sampleVelocityGrid",
+    "seededUnit",
+    "solveTwoLinkIK",
+    "splitPanels",
+    "stickyIntervalLayout",
+    "traceOpticalRay",
+    "transformBounds",
+    "transformHingedPoint",
+    "transformPoint",
+    "validateMotion",
+    "visibilityFan",
+    "voronoiCells",
+    "warpProjectiveRGBA",
+    "weightedFlowLayout",
+    "withLocalReveal",
+    "withMotion",
+    "withSliceDisplacement"
+  ],
+  "nodeOnlyAdditionalExports": [
+    "compileArrivalField",
+    "sampleArrivalField"
+  ],
+  "uncountedSupportExports": [
+    "compileSpriteAtlas",
+    "sampleSpriteAtlas",
+    "compilePolylineSections",
+    "extractPolylineSection"
+  ],
+  "catalog": [
+    {
+      "id": "motion.transform",
+      "api": "sampleMotion",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "motion.opacity",
+      "api": "sampleMotion",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "motion.stagger",
+      "api": "compileStagger",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "motion.anchored-squash",
+      "api": "sampleMotion",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "motion.shake",
+      "api": "sampleMotion",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "transition.push",
+      "api": "sampleTransition",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "transition.rect-wipe",
+      "api": "sampleTransition",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "composition.offset-cards",
+      "api": "offsetCards",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "composition.split-panels",
+      "api": "splitPanels",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "recipe.offset-reassembly",
+      "api": "sampleOffsetReassembly",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "geometry.polyline-trail",
+      "api": "compilePolyline",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "reveal.local-geometry",
+      "api": "withLocalReveal",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "fragment.fixed-tiles",
+      "api": "compileTileScatter",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "recipe.focus-handoff",
+      "api": "compileFocusHandoff",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "recipe.tile-signature",
+      "api": "compileTileSignature",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "transition.iris-reveal",
+      "api": "sampleTransition",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "geometry.registered-polygon-morph",
+      "api": "compileRegisteredPolygonMorph",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "field.attractor-orientation",
+      "api": "compileAttractorField",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "transition.masked-slice-displacement",
+      "api": "compileSliceDisplacement",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "transition.linear-mask",
+      "api": "sampleTransition",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "geometry.sampled-band",
+      "api": "compileSampledBand",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "recipe.light-echo-field",
+      "api": "compileLightEchoField",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "composition.grid",
+      "api": "gridLayout",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "composition.constraint-stack",
+      "api": "constraintStackLayout",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "motion.keyframe-track",
+      "api": "sampleKeyframeTrack",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "recipe.layout-handoff",
+      "api": "compileLayoutHandoff",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "composition.layered-dag",
+      "api": "layeredDagLayout",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "composition.weighted-flow",
+      "api": "weightedFlowLayout",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "recipe.flow-handoff",
+      "api": "compileFlowHandoff",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "raster.matte",
+      "api": "sampleRasterMatte",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "raster.displacement-map",
+      "api": "sampleRasterDisplacement",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "geometry.two-link-ik",
+      "api": "solveTwoLinkIK",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "composition.plane-parallax",
+      "api": "planeParallaxLayout",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "composition.sticky-interval",
+      "api": "stickyIntervalLayout",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "geometry.cubic-path",
+      "api": "compileCubicPath",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "composition.glyph-run-path",
+      "api": "layoutGlyphRunOnPath",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "composition.flow-wrap",
+      "api": "flowWrapLayout",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "geometry.hinged-panel",
+      "api": "compileHingedPanel",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "geometry.catenary",
+      "api": "compileCatenary",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "composition.interval-lanes",
+      "api": "intervalLaneLayout",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "recipe.staged-layout-handoff",
+      "api": "compileStagedLayoutHandoff",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "geometry.iso-contour",
+      "api": "compileContourGrid",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "raster.neighborhood-convolution",
+      "api": "compileConvolution",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "raster.projective-quad",
+      "api": "compileProjectiveRaster",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "composition.masonry",
+      "api": "masonryLayout",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "composition.anchored-labels",
+      "api": "placeAnchoredLabels",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "geometry.halftone-screen",
+      "api": "halftoneScreen",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "raster.coverage-morphology",
+      "api": "morphologyCoverage",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "geometry.affine-skin",
+      "api": "compileAffineSkin",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "motion.damped-response",
+      "api": "compileDampedResponse",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "motion.finite-particles",
+      "api": "compileFiniteParticles",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "composition.weighted-hierarchy",
+      "api": "layoutWeightedHierarchy",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "raster.temporal-exposure",
+      "api": "compileTemporalExposure",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "composition.poisson-disc",
+      "api": "samplePoissonDisc",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "motion.fixed-string-wave",
+      "api": "compileFixedStringWave",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "geometry.visibility-fan",
+      "api": "visibilityFan",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "field.grid-transport",
+      "api": "compileGridTransport",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "field.arrival-field",
+      "api": "compileArrivalField",
+      "entry": "lib/node.mjs"
+    },
+    {
+      "id": "motion.hard-disc-isolated-events",
+      "api": "compileHardDiscs",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "geometry.ray-chain",
+      "api": "compileOpticalMedium",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "geometry.voronoi-cells",
+      "api": "voronoiCells",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "composition.minimum-cost-assignment",
+      "api": "minimumCostAssignment",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "geometry.rectangle-obstacle-route",
+      "api": "routeRectangles",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "geometry.radial-landmark-warp",
+      "api": "compileRadialWarp",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "raster.euclidean-distance-transform",
+      "api": "distanceTransform",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "raster.palette-error-diffusion",
+      "api": "paletteDiffuse",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "field.projected-reaction-diffusion",
+      "api": "reactionDiffusion",
+      "entry": "lib/index.mjs"
+    }
+  ]
+}

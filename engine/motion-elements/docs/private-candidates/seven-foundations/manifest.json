@@ -1,0 +1,72 @@
+{
+  "status": "PRIVATE_CANDIDATES_NOT_REGISTERED",
+  "formalCountIncrement": 0,
+  "entry": "candidate-index.mjs",
+  "entries": [
+    {
+      "proposedId": "geometry.voronoi-cells",
+      "api": "voronoiCells",
+      "source": "geometry/foundations.mjs",
+      "guide": "geometry/GUIDE.zh-CN.md",
+      "film": "films/01-shorter-way-av.mp4",
+      "artisticApproval": "NOT_ESTABLISHED",
+      "subjectiveListening": "NOT_RUN"
+    },
+    {
+      "proposedId": "composition.minimum-cost-assignment",
+      "api": "minimumCostAssignment",
+      "source": "geometry/foundations.mjs",
+      "guide": "geometry/GUIDE.zh-CN.md",
+      "film": "films/01-shorter-way-av.mp4",
+      "artisticApproval": "NOT_ESTABLISHED",
+      "subjectiveListening": "NOT_RUN"
+    },
+    {
+      "proposedId": "geometry.rectangle-obstacle-route",
+      "api": "routeRectangles",
+      "source": "geometry/foundations.mjs",
+      "guide": "geometry/GUIDE.zh-CN.md",
+      "film": "films/01-shorter-way-av.mp4",
+      "artisticApproval": "NOT_ESTABLISHED",
+      "subjectiveListening": "NOT_RUN"
+    },
+    {
+      "proposedId": "geometry.radial-landmark-warp",
+      "api": "compileRadialWarp",
+      "source": "geometry/foundations.mjs",
+      "guide": "geometry/GUIDE.zh-CN.md",
+      "film": "films/02-room-to-breathe-av.mp4",
+      "artisticApproval": "NOT_ESTABLISHED",
+      "subjectiveListening": "NOT_RUN"
+    },
+    {
+      "proposedId": "raster.euclidean-distance-transform",
+      "api": "distanceTransform",
+      "source": "raster/distance-transform.mjs",
+      "guide": "raster/GUIDE.zh-CN.md",
+      "film": "films/02-room-to-breathe-av.mp4",
+      "artisticApproval": "NOT_ESTABLISHED",
+      "subjectiveListening": "NOT_RUN"
+    },
+    {
+      "proposedId": "raster.palette-error-diffusion",
+      "api": "paletteDiffuse",
+      "source": "raster/palette-diffusion.mjs",
+      "guide": "raster/GUIDE.zh-CN.md",
+      "film": "films/03-living-impression-av.mp4",
+      "artisticApproval": "NOT_ESTABLISHED",
+      "subjectiveListening": "NOT_RUN"
+    },
+    {
+      "proposedId": "field.projected-reaction-diffusion",
+      "api": "reactionDiffusion",
+      "source": "raster/reaction-diffusion.mjs",
+      "guide": "raster/GUIDE.zh-CN.md",
+      "film": "films/03-living-impression-av.mp4",
+      "artisticApproval": "NOT_ESTABLISHED",
+      "subjectiveListening": "NOT_RUN"
+    }
+  ],
+  "protection": "New directory only. No existing repository, denied 36-file payload, 12-candidate union, favorite52 or Tessel edits/pushes.",
+  "historicalScope": "Pre-registration snapshot. Old private counts/protection describe that stage only; current catalog has 60 foundations + 7 recipes, expansion paused. See ../../registered-foundations.md."
+}

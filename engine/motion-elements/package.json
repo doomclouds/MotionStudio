@@ -4,7 +4,17 @@
   "private": true,
   "type": "module",
   "description": "Seek-safe motion elements and Native Canvas adapters for MotionStudio",
-  "engines": {"node": ">=24"},
-  "exports": "./lib/index.mjs",
-  "scripts": {"test": "node --test test/*.test.mjs"}
+  "engines": {
+    "node": ">=24"
+  },
+  "exports": {
+    ".": "./lib/index.mjs",
+    "./node": {
+      "node": "./lib/node.mjs"
+    },
+    "./catalog.json": "./catalog.json"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.mjs"
+  }
 }
