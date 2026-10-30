@@ -1,0 +1,32 @@
+{
+  "inputs": [
+    {
+      "file": "NotoSansSC-variable.ttf",
+      "sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+      "bytes": 17772300,
+      "weights": [
+        400,
+        500,
+        700,
+        900
+      ],
+      "prefix": "MarketSans",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "notice": "LICENSES/NotoSansSC-OFL.txt"
+    },
+    {
+      "file": "Jost-variable.ttf",
+      "sha256": "6343b70971000b04c5d401c96ae08ce371086135e999d5e1e1413039c0213076",
+      "bytes": 134996,
+      "weights": [
+        400,
+        500,
+        600,
+        700
+      ],
+      "prefix": "MarketJost",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/jost",
+      "notice": "LICENSES/Jost-OFL.txt"
+    }
+  ]
+}

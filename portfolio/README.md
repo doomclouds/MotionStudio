@@ -88,6 +88,29 @@
 
 [Meridian · 黑白对分品牌与产品首屏](works/meridian-study/README.md) — 1440×900。黑白对分的SaaS品牌首屏；非Pentagram官方作品，样例客户/数据不构成背书，原图低对比问题保留。 完整工程独立重渲染匹配已审帧，视觉残差仍按PARTIAL披露；未验证浏览器、交互或视频。
 
+
+## Huashu B04 · 街招、像素路线与信息结构
+
+[![新旺唱片 · 港式街招](works/hk-street-signs-study/cover.jpg)](works/hk-street-signs-study/README.md)
+
+[新旺唱片 · 港式街招](works/hk-street-signs-study/README.md) — 1200×750。香港街招品牌视觉；店名、营业时间与价目为源样例，无真实经营背书。 完整工程独立重渲染匹配已审帧，视觉残差仍按PARTIAL披露；未验证浏览器、交互或视频。
+
+[![鹿鸣山 · 像素徒步三关](works/pixel-hiking-study/cover.jpg)](works/pixel-hiking-study/README.md)
+
+[鹿鸣山 · 像素徒步三关](works/pixel-hiking-study/README.md) — 1200×750。三段像素徒步首屏；地形不按地理比例，里程、爬升、水量均为样例，非登山指南或可玩游戏。 完整工程独立重渲染匹配已审帧，视觉残差仍按PARTIAL披露；未验证浏览器、交互或视频。
+
+[![菜市场剖面 · 完整静态复刻](works/market-section-study/cover.jpg)](works/market-section-study/README.md)
+
+[菜市场剖面 · 完整静态复刻](works/market-section-study/README.md) — 1200×750。建筑剖面信息图；只复刻原作结构线和引线层，不补造商品人流，面积/工程数据未经核实。 完整工程独立重渲染匹配已审帧，视觉残差仍按PARTIAL披露；未验证浏览器、交互或视频。
+
+[![烘焙计时 · 完整静态复刻](works/playful-roast-timer-study/cover.jpg)](works/playful-roast-timer-study/README.md)
+
+[烘焙计时 · 完整静态复刻](works/playful-roast-timer-study/README.md) — 1200×750。玩味材质烘焙三屏；时间、温度、豆种和重量仅为例文，不构成工艺建议；已调用材质表面积木。 完整工程独立重渲染匹配已审帧，视觉残差仍按PARTIAL披露；未验证浏览器、交互或视频。
+
+[![菜市场方法论 · 从圆心向外](works/market-method-study/cover.jpg)](works/market-method-study/README.md)
+
+[菜市场方法论 · 从圆心向外](works/market-method-study/README.md) — 1200×750。方法论单页演示；偏心嵌套圆表达目的与机制，不作统计面积，市场数据与因果主张未经核实。 完整工程独立重渲染匹配已审帧，视觉残差仍按PARTIAL披露；未验证浏览器、交互或视频。
+
 ## 最小结构
 
 ```text

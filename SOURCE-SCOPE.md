@@ -81,3 +81,15 @@ Five complete fixed-frame studies retain editable code, design reasoning, runtim
 - `portfolio/works/meridian-study/cover.jpg`: 1440 × 900, 142,391 bytes; SHA-256 `4ba747751f084e0f9420bc09435b4b218b4aded8f3844c8a455460a350b422ce`.
 
 No wildcard media permission is granted. Covers derive from the accepted Native recreations; schema4 does not imply browser, interaction, audio or animation validation. Meridian is retained at its original 1440 × 900 frame, not rescaled to the other works.
+
+## Huashu B04 retained static works
+
+Five complete fixed-frame studies retain editable code, design reasoning, runtime locks, attribution and externally supplied fonts. No upstream images/HTML, review reports, font binaries or render sequences are included. Exact additional JPEG exceptions (each maximum 1 MiB; dimensions preserve each accepted work):
+
+- `portfolio/works/hk-street-signs-study/cover.jpg`: 1200 × 750, 237,422 bytes; SHA-256 `6d83409c6444e4ea6bd903075b7652300f6be7a066c15aa4bb0f06131aae4223`.
+- `portfolio/works/pixel-hiking-study/cover.jpg`: 1200 × 750, 117,790 bytes; SHA-256 `3e520725c9ca504d5b1e6cf45880f29bec31ce8bd3f1b03ffbd77af4d79eb82b`.
+- `portfolio/works/market-section-study/cover.jpg`: 1200 × 750, 358,874 bytes; SHA-256 `8c2aee6ce836fac4610270451202731430a2fd897b035366b4e73c0018c21a5b`.
+- `portfolio/works/playful-roast-timer-study/cover.jpg`: 1200 × 750, 208,684 bytes; SHA-256 `9eacecbbdad38c57c037c3b2bbd2ace1d1f24566218598e4a04cfd4ec59379c4`.
+- `portfolio/works/market-method-study/cover.jpg`: 1200 × 750, 123,298 bytes; SHA-256 `cba9bdf156b79022d86c51dcc6371b537ca2de95bb29e86c61724f24d63255b9`.
+
+No wildcard media permission is granted. Covers derive from the accepted Native recreations; schema4 does not imply browser, interaction, audio or animation validation.

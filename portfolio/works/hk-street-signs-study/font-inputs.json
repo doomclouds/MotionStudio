@@ -1,0 +1,64 @@
+{
+  "originalInputs": [
+    {
+      "filename": "NotoSansTC-variable.ttf",
+      "sha256": "864727d210d54f2537bbe23b3a839436c3992af72de9322af5270897246bd44f",
+      "bytes": 11941968
+    },
+    {
+      "filename": "NotoSerifTC-variable.ttf",
+      "sha256": "0077e18f57c6908f4a000969880940bdb0dad057c0e8d98b49dc364c3d1b09c6",
+      "bytes": 16851596
+    },
+    {
+      "filename": "ArchivoBlack-Regular.ttf",
+      "sha256": "dd9a89a019b4849f66ab75455fe7bdf931311042cbb0f0f97acc061539703180",
+      "bytes": 90988
+    }
+  ],
+  "derived": [
+    {
+      "source": "NotoSansTC-variable.ttf",
+      "name": "HKTC500",
+      "weight": 500
+    },
+    {
+      "source": "NotoSansTC-variable.ttf",
+      "name": "HKTC900",
+      "weight": 900
+    },
+    {
+      "source": "NotoSerifTC-variable.ttf",
+      "name": "HKSerif900",
+      "weight": 900
+    }
+  ],
+  "outputNames": [
+    "HKTC500.ttf",
+    "HKTC900.ttf",
+    "HKSerif900.ttf",
+    "ArchivoBlack-Regular.ttf"
+  ],
+  "expectedOutputs": [
+    {
+      "filename": "HKTC500.ttf",
+      "sha256": "896a5aedce38e1a0ccd5e87bc68c6683890e02c1c5bda205e629153afa660399",
+      "bytes": 77020
+    },
+    {
+      "filename": "HKTC900.ttf",
+      "sha256": "d7316ae54731c6afed8253a36d0940190f5c242088224e5b882db0a7da185a2f",
+      "bytes": 77612
+    },
+    {
+      "filename": "HKSerif900.ttf",
+      "sha256": "445dfcf21c0dfe0ae8093978ca24e5d6ecbc47e50a4eade50130e5cd167c5800",
+      "bytes": 107012
+    },
+    {
+      "filename": "ArchivoBlack-Regular.ttf",
+      "sha256": "dd9a89a019b4849f66ab75455fe7bdf931311042cbb0f0f97acc061539703180",
+      "bytes": 90988
+    }
+  ]
+}

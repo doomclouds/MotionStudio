@@ -1,0 +1,196 @@
+{
+  "schema": 4,
+  "id": "hk-street-signs-study",
+  "version": "1.0.0",
+  "title": "新旺唱片 · 港式街招",
+  "status": "source-release",
+  "unofficial_recreation": true,
+  "original": {
+    "author": "alchaincyf (花叔 · 花生)",
+    "title": "Huashu design specimen",
+    "url": "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/east/06-hk-street-signs.html"
+  },
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "LICENSES/huashu-MIT-LICENSE.txt",
+      "LICENSES/ArchivoBlack-OFL.txt",
+      "LICENSES/NotoSerifTC-OFL.txt",
+      "LICENSES/NotoSansTC-OFL.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/LICENSE",
+      "https://github.com/google/fonts/tree/main/ofl/notosanstc",
+      "https://github.com/google/fonts/tree/main/ofl/notoseriftc",
+      "https://github.com/google/fonts/tree/main/ofl/archivoblack"
+    ]
+  },
+  "files": [
+    {
+      "path": "ASSET-USAGE.md",
+      "sha256": "efc26af1a1cf1a6b96c3c6cba12b5957bb0702c4cd1fcf0815a1f0f00ebefd39",
+      "role": "documentation"
+    },
+    {
+      "path": "CREDITS.md",
+      "sha256": "8d379a4b48aee01692a3568c177f53cbd8d765d2428d370486a7898aa7582e29",
+      "role": "documentation"
+    },
+    {
+      "path": "DESIGN-REASONING.md",
+      "sha256": "7185594783c15494a9e64995cb404084f05136f3c8cd94d6d3d74273784b3b55",
+      "role": "documentation"
+    },
+    {
+      "path": "LICENSES/ArchivoBlack-OFL.txt",
+      "sha256": "3173acd82f8c6159b5b1037b539fcbd4edff68e65c2ea8b9412b5a5ca97b08ff",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/NotoSansTC-OFL.txt",
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/NotoSerifTC-OFL.txt",
+      "sha256": "5e0da210fb04058a8c0087985d2d456b931c2579811a49655721d3cf0c36b6d6",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/huashu-MIT-LICENSE.txt",
+      "sha256": "6d6a2a9caf2e6d2b76974050427053b2892d8aa4c33fd168ce63a537fcee9d96",
+      "role": "license"
+    },
+    {
+      "path": "README.md",
+      "sha256": "1fee94012c6f26247961eb831d4dabb6872c3a5449c52ec55cf11cfafd4e13e6",
+      "role": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "6d83409c6444e4ea6bd903075b7652300f6be7a066c15aa4bb0f06131aae4223",
+      "role": "cover"
+    },
+    {
+      "path": "design/scene.mjs",
+      "sha256": "3e3005531d7795fb6df5e5cb18687bc62c9e3c71edb314ec35fb56f7a9018af2",
+      "role": "source"
+    },
+    {
+      "path": "font-charset.txt",
+      "sha256": "8ebd3a1cadf0ca22ac13088195ce7692a1e274d68a06482e63452447bb55a84b",
+      "role": "documentation"
+    },
+    {
+      "path": "font-inputs.json",
+      "sha256": "3c28959473c4685862c460018dc22023accd30bad0f33bbfdf5bc112dd45c3f3",
+      "role": "config"
+    },
+    {
+      "path": "locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "role": "lock"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "3376138df78fb0b3f62bc57d80dc440204cbe0a0709a07396e39636873862e6f",
+      "role": "lock"
+    },
+    {
+      "path": "prepare-fonts.py",
+      "sha256": "85222080e9a2b944f447dc2c1db9fed773155dc10c99b9185afc9128450bc163",
+      "role": "source"
+    },
+    {
+      "path": "ui-dependencies.json",
+      "sha256": "c2b475d38dbca84e01e592d8d8eb68c2af0d991a2f4f39fa2c0cfdddee8cf311",
+      "role": "config"
+    }
+  ],
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "locks/npm-package-lock.json"
+    }
+  ],
+  "render": {
+    "entrypoint": "design/scene.mjs",
+    "width": 1200,
+    "height": 750
+  },
+  "resources": [
+    {
+      "id": "hktc500",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansTC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanstc",
+      "sha256": "896a5aedce38e1a0ccd5e87bc68c6683890e02c1c5bda205e629153afa660399",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "HKTC500.ttf",
+      "bytes": 77020,
+      "instructions": "Obtain originalInputs and run prepare-fonts.py. Original and derived hashes fail closed."
+    },
+    {
+      "id": "hktc900",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansTC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanstc",
+      "sha256": "d7316ae54731c6afed8253a36d0940190f5c242088224e5b882db0a7da185a2f",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "HKTC900.ttf",
+      "bytes": 77612,
+      "instructions": "Obtain originalInputs and run prepare-fonts.py. Original and derived hashes fail closed."
+    },
+    {
+      "id": "hkserif900",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSerifTC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notoseriftc",
+      "sha256": "445dfcf21c0dfe0ae8093978ca24e5d6ecbc47e50a4eade50130e5cd167c5800",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "HKSerif900.ttf",
+      "bytes": 107012,
+      "instructions": "Obtain originalInputs and run prepare-fonts.py. Original and derived hashes fail closed."
+    },
+    {
+      "id": "archivoblack-regular",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/ArchivoBlack-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/archivoblack",
+      "sha256": "dd9a89a019b4849f66ab75455fe7bdf931311042cbb0f0f97acc061539703180",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "ArchivoBlack-Regular.ttf",
+      "bytes": 90988,
+      "instructions": "Obtain originalInputs and run prepare-fonts.py. Original and derived hashes fail closed."
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "3712bde73026df5c60119786779e54ccabb488f864a09a9a4de36d711ef4036f",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "Complete still and critical details independently reviewed; user requested retention. Font, glow and JPEG raster residuals remain. No responsive, browser, interaction or video validation."
+    }
+  }
+}

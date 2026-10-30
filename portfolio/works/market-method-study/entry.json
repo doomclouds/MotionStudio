@@ -1,0 +1,247 @@
+{
+  "schema": 4,
+  "id": "market-method-study",
+  "version": "1.0.0",
+  "title": "菜市场方法论 · 从圆心向外",
+  "status": "source-release",
+  "unofficial_recreation": true,
+  "original": {
+    "author": "alchaincyf (花叔 · 花生)",
+    "title": "Huashu diagrammatic minimalism design specimen",
+    "url": "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/ppt/13-diagrammatic-minimalism.html"
+  },
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "LICENSES/huashu-MIT-LICENSE.txt",
+      "LICENSES/NotoSansSC-OFL.txt",
+      "LICENSES/Jost-OFL.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/LICENSE",
+      "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "https://github.com/google/fonts/tree/main/ofl/jost"
+    ]
+  },
+  "files": [
+    {
+      "path": "CREDITS.md",
+      "sha256": "2dcccccd459d42d2e647650d269314a2e4579d3ed246fbeba2f0d714e3b3b52e",
+      "role": "documentation"
+    },
+    {
+      "path": "LICENSES/Jost-OFL.txt",
+      "sha256": "1af3438a4d5f0ed2bdbc5751a5a67ebf6d537334161184b7fbb68503ef0ea0c5",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/NotoSansSC-OFL.txt",
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/huashu-MIT-LICENSE.txt",
+      "sha256": "6d6a2a9caf2e6d2b76974050427053b2892d8aa4c33fd168ce63a537fcee9d96",
+      "role": "license"
+    },
+    {
+      "path": "README.md",
+      "sha256": "eb61585bf861b3dcee509694800fd1b9637340f241794317fd5c064a9faff669",
+      "role": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "cba9bdf156b79022d86c51dcc6371b537ca2de95bb29e86c61724f24d63255b9",
+      "role": "cover"
+    },
+    {
+      "path": "design/DESIGN-ANALYSIS.md",
+      "sha256": "165b3af3d73abbdff3b0ff7aeb881f7baae391f3fcce81f1c07a250a01eea3ab",
+      "role": "documentation"
+    },
+    {
+      "path": "design/content.json",
+      "sha256": "ed0f82948fd1d6359af635b2efb7a46af2f57d4e9285cfbabd77c6bf47780b74",
+      "role": "config"
+    },
+    {
+      "path": "design/scene.mjs",
+      "sha256": "79e52e7f6b535c56f83a866bd09730c79390c4dfad904bbf2d046d76c2ee200a",
+      "role": "source"
+    },
+    {
+      "path": "design/shared.mjs",
+      "sha256": "e36af17f96bd06eb250f27d5be53d678da7a72cb326df0ecb66155c0383d1122",
+      "role": "source"
+    },
+    {
+      "path": "font-charset.txt",
+      "sha256": "c2bac5532f1652d95e27e0c9636000c64c1ff402dc931f964d23ad94682de89e",
+      "role": "config"
+    },
+    {
+      "path": "font-inputs.json",
+      "sha256": "0d5be31ca7f786de76259d4f2671ede0f0a35c96593732cf1933e9e9ed52f09c",
+      "role": "config"
+    },
+    {
+      "path": "fonts.lock.json",
+      "sha256": "d3b265065a0624c4756ae1c5ac2ce811ab37e4652ba3b9e5560f3f26f57f39f5",
+      "role": "config"
+    },
+    {
+      "path": "locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "role": "lock"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "c97986608711fff48e780026471834a114f117d30fd4f1b15c3e76b21a760a46",
+      "role": "lock"
+    },
+    {
+      "path": "prepare-fonts.py",
+      "sha256": "5dda5a5a243e71895a05bdb48035376d917d5ce27d829b74c535a8fcf8fe1f92",
+      "role": "source"
+    },
+    {
+      "path": "verify.mjs",
+      "sha256": "267e246698937ecf74362faba8c1f122fa4ee4d1357fc2ed82b5170cc7c9e7c2",
+      "role": "source"
+    }
+  ],
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "locks/npm-package-lock.json"
+    }
+  ],
+  "render": {
+    "entrypoint": "design/scene.mjs",
+    "width": 1200,
+    "height": 750
+  },
+  "resources": [
+    {
+      "id": "marketsans400",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "80d1c1bf57f88f75405d31f82b9b56da9b776076a06172845be558993f69382c",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "MarketSans400.ttf",
+      "bytes": 43984,
+      "instructions": "Supply originals per font-inputs.json, run prepare-fonts.py; set MARKET_FONT_DIR to prepared directory. Missing or mismatched fonts fail closed."
+    },
+    {
+      "id": "marketsans500",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "5c07a1d36748b3683228f98b899e1dbab0ab7502d68c66821e756a432ac9262f",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "MarketSans500.ttf",
+      "bytes": 44012,
+      "instructions": "Supply originals per font-inputs.json, run prepare-fonts.py; set MARKET_FONT_DIR to prepared directory. Missing or mismatched fonts fail closed."
+    },
+    {
+      "id": "marketsans700",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "f4e9f4fd2331a19076c65b18c3736acc6a220793f3eef2081cf3556ffa0f1f24",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "MarketSans700.ttf",
+      "bytes": 43964,
+      "instructions": "Supply originals per font-inputs.json, run prepare-fonts.py; set MARKET_FONT_DIR to prepared directory. Missing or mismatched fonts fail closed."
+    },
+    {
+      "id": "marketsans900",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "c5ef9923b37c8f753f96d84445f1181ab316ad525b875b2ef6666115a7359dfc",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "MarketSans900.ttf",
+      "bytes": 43956,
+      "instructions": "Supply originals per font-inputs.json, run prepare-fonts.py; set MARKET_FONT_DIR to prepared directory. Missing or mismatched fonts fail closed."
+    },
+    {
+      "id": "marketjost400",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/Jost-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/jost",
+      "sha256": "3274b56e6ba9d968ee22bbab389bcc4bd893d37c244ecf234e1e8660200291c4",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "MarketJost400.ttf",
+      "bytes": 9052,
+      "instructions": "Supply originals per font-inputs.json, run prepare-fonts.py; set MARKET_FONT_DIR to prepared directory. Missing or mismatched fonts fail closed."
+    },
+    {
+      "id": "marketjost500",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/Jost-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/jost",
+      "sha256": "1bb157c988c0bbfcfc82b657a59847f0d46122e225cf60a305a98b8a56ed9a03",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "MarketJost500.ttf",
+      "bytes": 9080,
+      "instructions": "Supply originals per font-inputs.json, run prepare-fonts.py; set MARKET_FONT_DIR to prepared directory. Missing or mismatched fonts fail closed."
+    },
+    {
+      "id": "marketjost600",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/Jost-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/jost",
+      "sha256": "e5a9da8677a429ab105d4206df55642f29ba5c1cfadc82f12f1e754b4b570183",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "MarketJost600.ttf",
+      "bytes": 9076,
+      "instructions": "Supply originals per font-inputs.json, run prepare-fonts.py; set MARKET_FONT_DIR to prepared directory. Missing or mismatched fonts fail closed."
+    },
+    {
+      "id": "marketjost700",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/Jost-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/jost",
+      "sha256": "4d4a0bfba56e883cf9509fed257acd86f04811997359b7810148e8f600eadcf9",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "MarketJost700.ttf",
+      "bytes": 9080,
+      "instructions": "Supply originals per font-inputs.json, run prepare-fonts.py; set MARKET_FONT_DIR to prepared directory. Missing or mismatched fonts fail closed."
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "c13ca4e992fa022b3eb6f21a1ed9330736db7a0cdf2440ef5bfaba9e1a7367d4",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "Complete static composition and critical details independently reviewed and accepted for collection. Font rasterization and JPEG edge differences remain. Eccentric nested circles express conceptual dependency, not area statistics. Source market names and 31%/4% claims unverified. Shared state tool reuse only, not a design-family invocation. No browser, interaction, responsive, motion or audio validation."
+    }
+  }
+}

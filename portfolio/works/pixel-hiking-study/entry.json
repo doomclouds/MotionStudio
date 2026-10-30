@@ -1,0 +1,182 @@
+{
+  "schema": 4,
+  "id": "pixel-hiking-study",
+  "version": "1.0.0",
+  "title": "鹿鸣山 · 像素徒步三关",
+  "status": "source-release",
+  "unofficial_recreation": true,
+  "original": {
+    "author": "alchaincyf (花叔 · 花生)",
+    "title": "Huashu design specimen",
+    "url": "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/web/09-pixel-side-scroller.html"
+  },
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "LICENSES/huashu-MIT-LICENSE.txt",
+      "LICENSES/PressStart2P-OFL.txt",
+      "LICENSES/NotoSansSC-OFL.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/LICENSE",
+      "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "https://github.com/google/fonts/tree/main/ofl/pressstart2p"
+    ]
+  },
+  "files": [
+    {
+      "path": "ASSET-USAGE.md",
+      "sha256": "efc26af1a1cf1a6b96c3c6cba12b5957bb0702c4cd1fcf0815a1f0f00ebefd39",
+      "role": "documentation"
+    },
+    {
+      "path": "CREDITS.md",
+      "sha256": "bdf0a3a75eeeb89b25c63e5edd0aa235feb361b2fbfdc3f2dd9edcdd1a6643b3",
+      "role": "documentation"
+    },
+    {
+      "path": "DESIGN-REASONING.md",
+      "sha256": "47de953ad073796a8c0396e9b11b8ba0e0ecf28ace798f04b30f9c31cea19666",
+      "role": "documentation"
+    },
+    {
+      "path": "LICENSES/NotoSansSC-OFL.txt",
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/PressStart2P-OFL.txt",
+      "sha256": "705960c3281a5765ecc0b59bd4ed7ca59eed165748076bc2fc3e8fdbfeb944b0",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/huashu-MIT-LICENSE.txt",
+      "sha256": "6d6a2a9caf2e6d2b76974050427053b2892d8aa4c33fd168ce63a537fcee9d96",
+      "role": "license"
+    },
+    {
+      "path": "README.md",
+      "sha256": "08210d40679504b090e8fa9bbf14dcbd48a7508af0153a196b2b25516f54687b",
+      "role": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "3e520725c9ca504d5b1e6cf45880f29bec31ce8bd3f1b03ffbd77af4d79eb82b",
+      "role": "cover"
+    },
+    {
+      "path": "design/scene.mjs",
+      "sha256": "d6d2bc44efb8f259ab4448d1294a84015e73e346fc992db7ccfa3c6716f478a5",
+      "role": "source"
+    },
+    {
+      "path": "design/terrain.json",
+      "sha256": "904fad96d908b0938275cd7a1b5aeae961d952eb86befe49564c06e5e2ed1256",
+      "role": "config"
+    },
+    {
+      "path": "font-charset.txt",
+      "sha256": "1ab5a70b444d58a639dc401234c85a45043a6a09577d2e4f2188352a72f7385d",
+      "role": "documentation"
+    },
+    {
+      "path": "font-inputs.json",
+      "sha256": "c6b8f7d5c0a113119e74097701c22d4eaf652689528268d18a1fb00e322c5bf8",
+      "role": "config"
+    },
+    {
+      "path": "locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "role": "lock"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "3376138df78fb0b3f62bc57d80dc440204cbe0a0709a07396e39636873862e6f",
+      "role": "lock"
+    },
+    {
+      "path": "prepare-fonts.py",
+      "sha256": "85222080e9a2b944f447dc2c1db9fed773155dc10c99b9185afc9128450bc163",
+      "role": "source"
+    },
+    {
+      "path": "ui-dependencies.json",
+      "sha256": "5fb91a644a1a991a561a65097f654436ffbcf3c00b5247972838e14930d01cec",
+      "role": "config"
+    }
+  ],
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "locks/npm-package-lock.json"
+    }
+  ],
+  "render": {
+    "entrypoint": "design/scene.mjs",
+    "width": 1200,
+    "height": 750
+  },
+  "resources": [
+    {
+      "id": "pairsans500",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "834c13770abff875f3a13aac626a1b389f61c94706d5e488fffaf44c2aabb836",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "PairSans500.ttf",
+      "bytes": 496276,
+      "instructions": "Obtain originalInputs and run prepare-fonts.py. Original and derived hashes fail closed."
+    },
+    {
+      "id": "pairsans900",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "518765b2fd6215305b3ccbd26e900aa67e0ae3bb4f1081ba5afd321c51f549d4",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "PairSans900.ttf",
+      "bytes": 496372,
+      "instructions": "Obtain originalInputs and run prepare-fonts.py. Original and derived hashes fail closed."
+    },
+    {
+      "id": "pressstart2p-regular",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/PressStart2P-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/pressstart2p",
+      "sha256": "034c77f1f05ec89421e4a63f0e3a4ca1ecf852cc6d2bf611f126f275728e017d",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "PressStart2P-Regular.ttf",
+      "bytes": 118204,
+      "instructions": "Obtain originalInputs and run prepare-fonts.py. Original and derived hashes fail closed."
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "207ad3d9c972d96eef1abc3e77cc62d9efb9a21e8672130a050a7630790b83f5",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "Complete still and critical details independently reviewed; user requested retention. Font, glow and JPEG raster residuals remain. No responsive, browser, interaction or video validation."
+    }
+  }
+}

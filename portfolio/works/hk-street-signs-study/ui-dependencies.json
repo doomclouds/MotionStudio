@@ -1,0 +1,11 @@
+{
+  "repository": "MotionStudio",
+  "tested_commit": "0947507961eb5624ddd5c1240758baefa3246fd8",
+  "root": "engine/design-elements",
+  "files": [
+    {
+      "path": "print-poster.mjs",
+      "sha256": "56203ff52eef7375bf1c8efe20b926dc0197572353f44c82f1243930a7e26fcf"
+    }
+  ]
+}

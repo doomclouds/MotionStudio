@@ -57,3 +57,13 @@ These are unofficial studies, not operating brands, official Apple interfaces, v
 - [Meridian · 黑白对分品牌与产品首屏](portfolio/works/meridian-study/README.md): adapts [Huashu specimen](https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/showcases/website-saas/saas-pentagram.html); full upstream and font notices plus modifications are retained in [credits](portfolio/works/meridian-study/CREDITS.md).
 
 Unofficial educational reproductions, not operating products, verified scientific/transport/weather data, genuine customer endorsements or official agency/Apple work. Only self-rendered covers are distributed; fonts remain external.
+
+## Huashu B04 static studies
+
+- [新旺唱片 · 港式街招](portfolio/works/hk-street-signs-study/README.md): adapts [Huashu specimen](https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/east/06-hk-street-signs.html); full upstream and font notices plus modifications are retained in [credits](portfolio/works/hk-street-signs-study/CREDITS.md).
+- [鹿鸣山 · 像素徒步三关](portfolio/works/pixel-hiking-study/README.md): adapts [Huashu specimen](https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/web/09-pixel-side-scroller.html); full upstream and font notices plus modifications are retained in [credits](portfolio/works/pixel-hiking-study/CREDITS.md).
+- [菜市场剖面 · 完整静态复刻](portfolio/works/market-section-study/README.md): adapts [Huashu specimen](https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/info/03-cross-section-epic.html); full upstream and font notices plus modifications are retained in [credits](portfolio/works/market-section-study/CREDITS.md).
+- [烘焙计时 · 完整静态复刻](portfolio/works/playful-roast-timer-study/README.md): adapts [Huashu specimen](https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/app/03-playful-3d.html); full upstream and font notices plus modifications are retained in [credits](portfolio/works/playful-roast-timer-study/CREDITS.md).
+- [菜市场方法论 · 从圆心向外](portfolio/works/market-method-study/README.md): adapts [Huashu specimen](https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/ppt/13-diagrammatic-minimalism.html); full upstream and font notices plus modifications are retained in [credits](portfolio/works/market-method-study/CREDITS.md).
+
+Unofficial educational reproductions, not operating products, verified scientific/transport/weather data, genuine customer endorsements or official agency/Apple work. Only self-rendered covers are distributed; fonts remain external.

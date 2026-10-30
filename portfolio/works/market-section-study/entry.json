@@ -1,0 +1,227 @@
+{
+  "schema": 4,
+  "id": "market-section-study",
+  "version": "1.0.0",
+  "title": "菜市场剖面 · 完整静态复刻",
+  "status": "source-release",
+  "unofficial_recreation": true,
+  "original": {
+    "author": "alchaincyf (花叔 · 花生)",
+    "title": "Huashu info/03-cross-section-epic design specimen",
+    "url": "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/info/03-cross-section-epic.html"
+  },
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "LICENSES/Inter-OFL.txt",
+      "LICENSES/NotoSans-OFL.txt",
+      "LICENSES/NotoSerif-OFL.txt",
+      "LICENSES/huashu-MIT-LICENSE.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/LICENSE",
+      "https://github.com/google/fonts"
+    ]
+  },
+  "files": [
+    {
+      "path": "CREDITS.md",
+      "sha256": "2a8c00b03d6619c365fab19b75ae7b541355cf2f9f5536775f1f33421bc8d86f",
+      "role": "documentation"
+    },
+    {
+      "path": "DESIGN-REASONING.md",
+      "sha256": "96b01d3cf80846888d3b8bafee686eb85b417012ad288f51e46a412f2c950e51",
+      "role": "documentation"
+    },
+    {
+      "path": "LICENSES/Inter-OFL.txt",
+      "sha256": "67c5d5206b96f8340b95fabd02ae60701e0b20ce2594d976216f1065e5aa3822",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/NotoSans-OFL.txt",
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/NotoSerif-OFL.txt",
+      "sha256": "5e0da210fb04058a8c0087985d2d456b931c2579811a49655721d3cf0c36b6d6",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/huashu-MIT-LICENSE.txt",
+      "sha256": "6d6a2a9caf2e6d2b76974050427053b2892d8aa4c33fd168ce63a537fcee9d96",
+      "role": "license"
+    },
+    {
+      "path": "README.md",
+      "sha256": "32f60a3329812472f52f8970277cb94dffffe3cdb49d601733c467e76c861674",
+      "role": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "8c2aee6ce836fac4610270451202731430a2fd897b035366b4e73c0018c21a5b",
+      "role": "cover"
+    },
+    {
+      "path": "design/scene.mjs",
+      "sha256": "766543afe8ef93467c1f8f0600cb65948721e5bb7a8fa862bca05db0e3b24a92",
+      "role": "source"
+    },
+    {
+      "path": "font-inputs.json",
+      "sha256": "c6ff5459805028b83dd3122846626556376bbc7fa4310e95e3dacbcf740e5a42",
+      "role": "config"
+    },
+    {
+      "path": "locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "role": "lock"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "c97986608711fff48e780026471834a114f117d30fd4f1b15c3e76b21a760a46",
+      "role": "lock"
+    },
+    {
+      "path": "prepare-fonts.py",
+      "sha256": "f5b42df61d337bbfa4dc1ae39ce76056b33a64312779f9b1fbbdb234bb3fd5f1",
+      "role": "source"
+    }
+  ],
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "locks/npm-package-lock.json"
+    }
+  ],
+  "render": {
+    "entrypoint": "design/scene.mjs",
+    "width": 1200,
+    "height": 750
+  },
+  "resources": [
+    {
+      "id": "notosanssc-variable",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSans-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "NotoSansSC-variable.ttf",
+      "bytes": 17772300,
+      "instructions": "Provide in MARKET_SECTION_FONT_DIR; prepare-fonts.py validates originals and derived outputs fail-closed."
+    },
+    {
+      "id": "notoserifsc-variable",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSerif-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notoserifsc",
+      "sha256": "050080d9255a86808f2945bffac582b31ef32bc36411ce29563b4961670c66f9",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "NotoSerifSC-variable.ttf",
+      "bytes": 25125512,
+      "instructions": "Provide in MARKET_SECTION_FONT_DIR; prepare-fonts.py validates originals and derived outputs fail-closed."
+    },
+    {
+      "id": "inter-var",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/Inter-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/inter",
+      "sha256": "c8d76e1cb2a0a7cfbbae1e390be4e4b942b27f99ec07e1024b1fc916045eed09",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Inter-var.ttf",
+      "bytes": 254236,
+      "instructions": "Provide in MARKET_SECTION_FONT_DIR; prepare-fonts.py validates originals and derived outputs fail-closed."
+    },
+    {
+      "id": "sans400",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSans-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "87bb3212b0bb4f6e14cbfe85393874d1bff3f84530d98725127f3f153281f0be",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Sans400.ttf",
+      "bytes": 56484,
+      "instructions": "Provide in MARKET_SECTION_FONT_DIR; prepare-fonts.py validates originals and derived outputs fail-closed."
+    },
+    {
+      "id": "sans500",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSans-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "b04e31465c0fc54e4a74da6436e89cfc349a790291898bd7427cf34ba78153f7",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Sans500.ttf",
+      "bytes": 56472,
+      "instructions": "Provide in MARKET_SECTION_FONT_DIR; prepare-fonts.py validates originals and derived outputs fail-closed."
+    },
+    {
+      "id": "serif700",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSerif-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notoserifsc",
+      "sha256": "5c4edc3e7bfc9007fd57980e3811c9e1d4781345a73e65d561d19012e10cd2d7",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Serif700.ttf",
+      "bytes": 75728,
+      "instructions": "Provide in MARKET_SECTION_FONT_DIR; prepare-fonts.py validates originals and derived outputs fail-closed."
+    },
+    {
+      "id": "serif900",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSerif-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notoserifsc",
+      "sha256": "892314fae055e74f97c97140575c322a169d34a26e87d57382f551b562f5d7f2",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Serif900.ttf",
+      "bytes": 75740,
+      "instructions": "Provide in MARKET_SECTION_FONT_DIR; prepare-fonts.py validates originals and derived outputs fail-closed."
+    },
+    {
+      "id": "sectioninter600",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/Inter-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/inter",
+      "sha256": "ea3238384882c3c0bac014edf2ef4383d44deb807e51ddbeb5477691bc99e56b",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "SectionInter600.ttf",
+      "bytes": 49704,
+      "instructions": "Provide in MARKET_SECTION_FONT_DIR; prepare-fonts.py validates originals and derived outputs fail-closed."
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "468666bd0a22eb99663830d6a77b6ae905ffac818b9fa0ba927d833166b2930c",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "Independent full still/detail review passed; paper, font rasterization and 2D highlights retain disclosed differences. No browser/interaction/video tests."
+    }
+  }
+}

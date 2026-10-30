@@ -29,6 +29,11 @@ PRO_CAMERA_STUDY_COVER = 'portfolio/works/pro-camera-study/cover.jpg'
 BUS_MORNING_STUDY_COVER = 'portfolio/works/bus-morning-study/cover.jpg'
 WAVE_WEATHER_STUDY_COVER = 'portfolio/works/wave-weather-study/cover.jpg'
 MERIDIAN_STUDY_COVER = 'portfolio/works/meridian-study/cover.jpg'
+HK_STREET_SIGNS_STUDY_COVER = 'portfolio/works/hk-street-signs-study/cover.jpg'
+PIXEL_HIKING_STUDY_COVER = 'portfolio/works/pixel-hiking-study/cover.jpg'
+MARKET_SECTION_STUDY_COVER = 'portfolio/works/market-section-study/cover.jpg'
+PLAYFUL_ROAST_TIMER_STUDY_COVER = 'portfolio/works/playful-roast-timer-study/cover.jpg'
+MARKET_METHOD_STUDY_COVER = 'portfolio/works/market-method-study/cover.jpg'
 PORTFOLIO_COVER_MAX_BYTES = 1024 * 1024
 RECEIPTS = {'DIFFERENCES.md', 'NATIVE_PRODUCTION.json', 'FEEDBACK.json', 'MIGRATION.md', 'NATIVE-MIGRATION.md', 'review.html'}
 
@@ -165,7 +170,7 @@ def inspect_repo(repo):
             if private: error(ref, name, 'private-production-metadata')
             if name == README_PREVIEW and (kind != 'PNG' or size > README_PREVIEW_MAX_BYTES):
                 error(ref, name, 'invalid-readme-preview-format-or-size')
-            if name in {TESSEL_COVER, FAVORITE52_COVER, VINYL_COVER, TEA_VOICE_COVER, MUQI_STUDY_COVER, CYCLING_YEAR_REPORT_COVER, HARDWARE_SAMPLER_STUDY_COVER, SHANGHAI_DECO_STUDY_COVER, HANZI_POSTER_STUDY_COVER, SLOW_ROAST_STUDY_COVER, TEA_CONVERSATION_MAP_COVER, THEATRE_NARRATIVE_WAVE_COVER, LIQUID_GLASS_STUDY_COVER, COSMIC_OBSERVATORY_STUDY_COVER, PRO_CAMERA_STUDY_COVER, BUS_MORNING_STUDY_COVER, WAVE_WEATHER_STUDY_COVER, MERIDIAN_STUDY_COVER} and (kind != 'JPEG' or size > PORTFOLIO_COVER_MAX_BYTES):
+            if name in {TESSEL_COVER, FAVORITE52_COVER, VINYL_COVER, TEA_VOICE_COVER, MUQI_STUDY_COVER, CYCLING_YEAR_REPORT_COVER, HARDWARE_SAMPLER_STUDY_COVER, SHANGHAI_DECO_STUDY_COVER, HANZI_POSTER_STUDY_COVER, SLOW_ROAST_STUDY_COVER, TEA_CONVERSATION_MAP_COVER, THEATRE_NARRATIVE_WAVE_COVER, LIQUID_GLASS_STUDY_COVER, COSMIC_OBSERVATORY_STUDY_COVER, PRO_CAMERA_STUDY_COVER, BUS_MORNING_STUDY_COVER, WAVE_WEATHER_STUDY_COVER, MERIDIAN_STUDY_COVER, HK_STREET_SIGNS_STUDY_COVER, PIXEL_HIKING_STUDY_COVER, MARKET_SECTION_STUDY_COVER, PLAYFUL_ROAST_TIMER_STUDY_COVER, MARKET_METHOD_STUDY_COVER} and (kind != 'JPEG' or size > PORTFOLIO_COVER_MAX_BYTES):
                 error(ref, name, 'invalid-portfolio-cover-format-or-size')
             if name in allow:
                 if sha not in allow[name]: error(ref, name, 'approved-source-asset-hash-mismatch')

@@ -1,0 +1,19 @@
+{
+  "repository": "MotionStudio",
+  "tested_commit": "0947507961eb5624ddd5c1240758baefa3246fd8",
+  "root": "engine/design-elements",
+  "files": [
+    {
+      "path": "print-poster.mjs",
+      "sha256": "56203ff52eef7375bf1c8efe20b926dc0197572353f44c82f1243930a7e26fcf"
+    },
+    {
+      "path": "color-sections.mjs",
+      "sha256": "cf2cf8ebf1b1bf8bd65dbbaef11f9546db9fe096d3eba7a0b18936e616ec2dd8"
+    },
+    {
+      "path": "shared.mjs",
+      "sha256": "e36af17f96bd06eb250f27d5be53d678da7a72cb326df0ecb66155c0383d1122"
+    }
+  ]
+}

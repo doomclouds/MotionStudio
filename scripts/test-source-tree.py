@@ -120,9 +120,14 @@ class SourceTreeFixtures(unittest.TestCase):
         self.add('apparently-safe.txt', PNG)
         (self.repo / 'apparently-safe.txt').write_text('safe worktree replacement')
         self.audit(False, 'unapproved-media:PNG')
-    def test_public_policy_only_allows_nineteen_exact_reviewed_images(self):
+    def test_public_policy_only_allows_twentyfour_exact_reviewed_images(self):
         allow = json.loads((ROOT / 'scripts/source-assets-allowlist.json').read_text())['assets']
         self.assertEqual(allow, {
+            'portfolio/works/hk-street-signs-study/cover.jpg': '6d83409c6444e4ea6bd903075b7652300f6be7a066c15aa4bb0f06131aae4223',
+            'portfolio/works/pixel-hiking-study/cover.jpg': '3e520725c9ca504d5b1e6cf45880f29bec31ce8bd3f1b03ffbd77af4d79eb82b',
+            'portfolio/works/market-section-study/cover.jpg': '8c2aee6ce836fac4610270451202731430a2fd897b035366b4e73c0018c21a5b',
+            'portfolio/works/playful-roast-timer-study/cover.jpg': '9eacecbbdad38c57c037c3b2bbd2ace1d1f24566218598e4a04cfd4ec59379c4',
+            'portfolio/works/market-method-study/cover.jpg': 'cba9bdf156b79022d86c51dcc6371b537ca2de95bb29e86c61724f24d63255b9',
             'portfolio/works/cosmic-observatory-study/cover.jpg': 'e4ff31cfb20c7fe3c815ce867e91ab3c556152a09816265613135faeddd3e03b',
             'portfolio/works/pro-camera-study/cover.jpg': '486a229cd763d088a6724a3d047c0f5dba0a37f8aa5fa6b77848daea23f86433',
             'portfolio/works/bus-morning-study/cover.jpg': '568e310c946778081e8e402f3f1dc57899a9570829acdd082737d79c8665436c',
@@ -247,6 +252,46 @@ class SourceTreeFixtures(unittest.TestCase):
         self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
     def test_meridian_study_cover_wrong_path_rejected(self):
         self.add('portfolio/works/meridian-study/other.jpg',(ROOT/'portfolio/works/meridian-study/cover.jpg').read_bytes());self.audit(False)
+    def test_exact_hk_street_signs_study_cover_allowed(self):
+        name='portfolio/works/hk-street-signs-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes());self.audit(True)
+    def test_hk_street_signs_study_cover_tamper_rejected(self):
+        name='portfolio/works/hk-street-signs-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
+    def test_hk_street_signs_study_cover_wrong_path_rejected(self):
+        self.add('portfolio/works/hk-street-signs-study/other.jpg',(ROOT/'portfolio/works/hk-street-signs-study/cover.jpg').read_bytes());self.audit(False)
+    def test_exact_pixel_hiking_study_cover_allowed(self):
+        name='portfolio/works/pixel-hiking-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes());self.audit(True)
+    def test_pixel_hiking_study_cover_tamper_rejected(self):
+        name='portfolio/works/pixel-hiking-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
+    def test_pixel_hiking_study_cover_wrong_path_rejected(self):
+        self.add('portfolio/works/pixel-hiking-study/other.jpg',(ROOT/'portfolio/works/pixel-hiking-study/cover.jpg').read_bytes());self.audit(False)
+    def test_exact_market_section_study_cover_allowed(self):
+        name='portfolio/works/market-section-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes());self.audit(True)
+    def test_market_section_study_cover_tamper_rejected(self):
+        name='portfolio/works/market-section-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
+    def test_market_section_study_cover_wrong_path_rejected(self):
+        self.add('portfolio/works/market-section-study/other.jpg',(ROOT/'portfolio/works/market-section-study/cover.jpg').read_bytes());self.audit(False)
+    def test_exact_playful_roast_timer_study_cover_allowed(self):
+        name='portfolio/works/playful-roast-timer-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes());self.audit(True)
+    def test_playful_roast_timer_study_cover_tamper_rejected(self):
+        name='portfolio/works/playful-roast-timer-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
+    def test_playful_roast_timer_study_cover_wrong_path_rejected(self):
+        self.add('portfolio/works/playful-roast-timer-study/other.jpg',(ROOT/'portfolio/works/playful-roast-timer-study/cover.jpg').read_bytes());self.audit(False)
+    def test_exact_market_method_study_cover_allowed(self):
+        name='portfolio/works/market-method-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes());self.audit(True)
+    def test_market_method_study_cover_tamper_rejected(self):
+        name='portfolio/works/market-method-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
+    def test_market_method_study_cover_wrong_path_rejected(self):
+        self.add('portfolio/works/market-method-study/other.jpg',(ROOT/'portfolio/works/market-method-study/cover.jpg').read_bytes());self.audit(False)
     def test_exact_liquid_glass_study_cover_allowed(self):
         name='portfolio/works/liquid-glass-study/cover.jpg'
         self.add(name,(ROOT/name).read_bytes());self.audit(True)

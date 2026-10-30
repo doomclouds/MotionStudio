@@ -1,0 +1,238 @@
+{
+  "schema": 4,
+  "id": "playful-roast-timer-study",
+  "version": "1.0.0",
+  "title": "烘焙计时 · 完整静态复刻",
+  "status": "source-release",
+  "unofficial_recreation": true,
+  "original": {
+    "author": "alchaincyf (花叔 · 花生)",
+    "title": "Huashu app/03-playful-3d design specimen",
+    "url": "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/app/03-playful-3d.html"
+  },
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "LICENSES/Bricolage-OFL.txt",
+      "LICENSES/NotoSans-OFL.txt",
+      "LICENSES/huashu-MIT-LICENSE.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/LICENSE",
+      "https://github.com/google/fonts"
+    ]
+  },
+  "files": [
+    {
+      "path": "CREDITS.md",
+      "sha256": "999f213032f5cb347db323f466575d4f9d1d047626d571913b9b61488b5e2ad0",
+      "role": "documentation"
+    },
+    {
+      "path": "DESIGN-REASONING.md",
+      "sha256": "0b440eac6dc8a8c52c71708fef2315599bef345945a47d75f0640422360bb4b5",
+      "role": "documentation"
+    },
+    {
+      "path": "LICENSES/Bricolage-OFL.txt",
+      "sha256": "4b5a7d8f37f5602621c8a8d7358a6a2e71317e6c231c661e15aef0275d3e07ba",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/NotoSans-OFL.txt",
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/huashu-MIT-LICENSE.txt",
+      "sha256": "6d6a2a9caf2e6d2b76974050427053b2892d8aa4c33fd168ce63a537fcee9d96",
+      "role": "license"
+    },
+    {
+      "path": "README.md",
+      "sha256": "fe29b1b3a07852c3d3b04f3975f274b53449db902c1e42051e26a17c25726f59",
+      "role": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "9eacecbbdad38c57c037c3b2bbd2ace1d1f24566218598e4a04cfd4ec59379c4",
+      "role": "cover"
+    },
+    {
+      "path": "design/scene.mjs",
+      "sha256": "c8b6d4afb4efd58023ba236d52b50e782c99a21c0ef64358e897095e32157a73",
+      "role": "source"
+    },
+    {
+      "path": "design/soft-mask.mjs",
+      "sha256": "207643ac29ca3e919e0281baa7314957690be02586137caffbbd72387b4ddb5c",
+      "role": "source"
+    },
+    {
+      "path": "font-inputs.json",
+      "sha256": "bd0db31b0175b12e82215546c45f09126b6993319497b01fd6a9d47e34dc3ccf",
+      "role": "config"
+    },
+    {
+      "path": "locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "role": "lock"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "c97986608711fff48e780026471834a114f117d30fd4f1b15c3e76b21a760a46",
+      "role": "lock"
+    },
+    {
+      "path": "prepare-fonts.py",
+      "sha256": "f5b42df61d337bbfa4dc1ae39ce76056b33a64312779f9b1fbbdb234bb3fd5f1",
+      "role": "source"
+    }
+  ],
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "locks/npm-package-lock.json"
+    }
+  ],
+  "render": {
+    "entrypoint": "design/scene.mjs",
+    "width": 1200,
+    "height": 750
+  },
+  "resources": [
+    {
+      "id": "notosanssc-variable",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSans-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "NotoSansSC-variable.ttf",
+      "bytes": 17772300,
+      "instructions": "Provide in PLAYFUL_ROAST_FONT_DIR; prepare-fonts.py validates originals and derived outputs fail-closed."
+    },
+    {
+      "id": "bricolage-variable",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/Bricolage-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/bricolagegrotesque",
+      "sha256": "413e7357809ddd12fd80a96a8a396de0e401638d4acd3cb3e37532f0472ac682",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Bricolage-variable.ttf",
+      "bytes": 408496,
+      "instructions": "Provide in PLAYFUL_ROAST_FONT_DIR; prepare-fonts.py validates originals and derived outputs fail-closed."
+    },
+    {
+      "id": "sans500",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSans-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "9764ab3532591a3ea48db21794be0d689bc81d7a34a54fb18d73d38cecdf116b",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Sans500.ttf",
+      "bytes": 26556,
+      "instructions": "Provide in PLAYFUL_ROAST_FONT_DIR; prepare-fonts.py validates originals and derived outputs fail-closed."
+    },
+    {
+      "id": "sans700",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSans-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "0edf3963365f2fe624c7b23d8011f01700fd9cb837aa624fd6abfda71bf46e5c",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Sans700.ttf",
+      "bytes": 26536,
+      "instructions": "Provide in PLAYFUL_ROAST_FONT_DIR; prepare-fonts.py validates originals and derived outputs fail-closed."
+    },
+    {
+      "id": "sans900",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSans-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "b85b0d3fa3a270ad92931451817ac2e85bf18bde4517127c40680d30b5fe9e41",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Sans900.ttf",
+      "bytes": 26516,
+      "instructions": "Provide in PLAYFUL_ROAST_FONT_DIR; prepare-fonts.py validates originals and derived outputs fail-closed."
+    },
+    {
+      "id": "bricolage15",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/Bricolage-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/bricolagegrotesque",
+      "sha256": "9cee9729369ee305ac3cee7c8ae62cfa1e550b41cc0e9c3f675f6b1d2da3c33c",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Bricolage15.ttf",
+      "bytes": 90640,
+      "instructions": "Provide in PLAYFUL_ROAST_FONT_DIR; prepare-fonts.py validates originals and derived outputs fail-closed."
+    },
+    {
+      "id": "bricolage40",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/Bricolage-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/bricolagegrotesque",
+      "sha256": "91b9bf8c27c776d8236bdaba21a6d2732d8a015fce8f3994fb1997525e2aa573",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Bricolage40.ttf",
+      "bytes": 90620,
+      "instructions": "Provide in PLAYFUL_ROAST_FONT_DIR; prepare-fonts.py validates originals and derived outputs fail-closed."
+    },
+    {
+      "id": "bricolage66",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/Bricolage-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/bricolagegrotesque",
+      "sha256": "572386d5ce15c2a16cbba8a2ec8d1c79f5f0f61f19976714cb8d3bc3598002b6",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Bricolage66.ttf",
+      "bytes": 90584,
+      "instructions": "Provide in PLAYFUL_ROAST_FONT_DIR; prepare-fonts.py validates originals and derived outputs fail-closed."
+    },
+    {
+      "id": "bricolage92",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/Bricolage-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/bricolagegrotesque",
+      "sha256": "68fff89e268e03b00511f157efe862c830266b2bff40cfb0e00417ab482e7530",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Bricolage92.ttf",
+      "bytes": 90460,
+      "instructions": "Provide in PLAYFUL_ROAST_FONT_DIR; prepare-fonts.py validates originals and derived outputs fail-closed."
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "7f72a28d0f8f17e263a02bb6bf9af728d77c1cf1c957e66d650a9f62f7ccc60a",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "Independent full still/detail review passed; paper, font rasterization and 2D highlights retain disclosed differences. No browser/interaction/video tests."
+    }
+  }
+}

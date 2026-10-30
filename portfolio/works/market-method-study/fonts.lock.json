@@ -1,0 +1,60 @@
+{
+  "fonts": [
+    {
+      "output": "MarketSans400.ttf",
+      "sha256": "80d1c1bf57f88f75405d31f82b9b56da9b776076a06172845be558993f69382c",
+      "weight": 400,
+      "source": "NotoSansSC-variable.ttf",
+      "source_sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da"
+    },
+    {
+      "output": "MarketSans500.ttf",
+      "sha256": "5c07a1d36748b3683228f98b899e1dbab0ab7502d68c66821e756a432ac9262f",
+      "weight": 500,
+      "source": "NotoSansSC-variable.ttf",
+      "source_sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da"
+    },
+    {
+      "output": "MarketSans700.ttf",
+      "sha256": "f4e9f4fd2331a19076c65b18c3736acc6a220793f3eef2081cf3556ffa0f1f24",
+      "weight": 700,
+      "source": "NotoSansSC-variable.ttf",
+      "source_sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da"
+    },
+    {
+      "output": "MarketSans900.ttf",
+      "sha256": "c5ef9923b37c8f753f96d84445f1181ab316ad525b875b2ef6666115a7359dfc",
+      "weight": 900,
+      "source": "NotoSansSC-variable.ttf",
+      "source_sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da"
+    },
+    {
+      "output": "MarketJost400.ttf",
+      "sha256": "3274b56e6ba9d968ee22bbab389bcc4bd893d37c244ecf234e1e8660200291c4",
+      "weight": 400,
+      "source": "Jost-variable.ttf",
+      "source_sha256": "6343b70971000b04c5d401c96ae08ce371086135e999d5e1e1413039c0213076"
+    },
+    {
+      "output": "MarketJost500.ttf",
+      "sha256": "1bb157c988c0bbfcfc82b657a59847f0d46122e225cf60a305a98b8a56ed9a03",
+      "weight": 500,
+      "source": "Jost-variable.ttf",
+      "source_sha256": "6343b70971000b04c5d401c96ae08ce371086135e999d5e1e1413039c0213076"
+    },
+    {
+      "output": "MarketJost600.ttf",
+      "sha256": "e5a9da8677a429ab105d4206df55642f29ba5c1cfadc82f12f1e754b4b570183",
+      "weight": 600,
+      "source": "Jost-variable.ttf",
+      "source_sha256": "6343b70971000b04c5d401c96ae08ce371086135e999d5e1e1413039c0213076"
+    },
+    {
+      "output": "MarketJost700.ttf",
+      "sha256": "4d4a0bfba56e883cf9509fed257acd86f04811997359b7810148e8f600eadcf9",
+      "weight": 700,
+      "source": "Jost-variable.ttf",
+      "source_sha256": "6343b70971000b04c5d401c96ae08ce371086135e999d5e1e1413039c0213076"
+    }
+  ]
+}
