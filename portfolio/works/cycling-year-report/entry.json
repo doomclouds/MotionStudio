@@ -93,6 +93,16 @@
       "path": "prepare-fonts.py",
       "sha256": "2f67c430a1b242d41e6bb0edea8e43e4287a271336031a335f9465069eee7bf2",
       "role": "source"
+    },
+    {
+      "path": "DESIGN-RETENTION.md",
+      "sha256": "394111c9d4f9dd63fc398ad9f88304922a2d55618245734150c4dac8391f2817",
+      "role": "documentation"
+    },
+    {
+      "path": "retention.json",
+      "sha256": "1e488261a443e7ef218b93b5b697602afa87561dc3680683b2ca4731b7ff3df4",
+      "role": "config"
     }
   ],
   "runtime": [

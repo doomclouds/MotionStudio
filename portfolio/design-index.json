@@ -1,0 +1,654 @@
+{
+  "schemaVersion": 1,
+  "countingUnit": "stable callable family; no function, case or snapshot duplication",
+  "staticWorks": 26,
+  "families": [
+    {
+      "id": "design.print-poster.v1",
+      "entry": "print-poster.mjs",
+      "guidance": "https://github.com/doomclouds/MotionStudio/blob/cae18d21f2fbef9702c8ce94ce68abd9eda826a4/skills/motion-film-director/research/design-knowledge/cases/ui-003-print-poster.md",
+      "sourceCases": [],
+      "actualUsers": [
+        "hk-street-signs-study",
+        "pixel-hiking-study"
+      ]
+    },
+    {
+      "id": "design.typographic-focus.v1",
+      "entry": "typographic-focus.mjs",
+      "guidance": "docs/typographic-focus.md",
+      "sourceCases": [
+        "slow-roast-study",
+        "hanzi-poster-study",
+        "cycling-year-report"
+      ],
+      "actualUsers": []
+    },
+    {
+      "id": "design.color-sections.v1",
+      "entry": "color-sections.mjs",
+      "guidance": "docs/color-sections.md",
+      "sourceCases": [
+        "muqi-study",
+        "slow-roast-study",
+        "shanghai-deco-study"
+      ],
+      "actualUsers": [
+        "bauhaus-theatre-study",
+        "pixel-hiking-study"
+      ]
+    },
+    {
+      "id": "design.material-surfaces.v1",
+      "entry": "material-surfaces.mjs",
+      "guidance": "docs/material-surfaces.md",
+      "sourceCases": [
+        "liquid-glass-study",
+        "vinyl-study"
+      ],
+      "actualUsers": [
+        "health-color-code-study",
+        "irreverent-pop-study",
+        "playful-roast-timer-study",
+        "song-block-print-study"
+      ]
+    },
+    {
+      "id": "design.semantic-data.v1",
+      "entry": "semantic-data.mjs",
+      "guidance": "docs/semantic-data.md",
+      "sourceCases": [
+        "tea-conversation-map",
+        "theatre-narrative-wave"
+      ],
+      "actualUsers": []
+    },
+    {
+      "id": "design.parameter-controls.v1",
+      "entry": "parameter-controls.mjs",
+      "guidance": "docs/parameter-controls.md",
+      "sourceCases": [
+        "hardware-sampler-study",
+        "liquid-glass-study"
+      ],
+      "actualUsers": []
+    },
+    {
+      "id": "design.expressive-type.v1",
+      "entry": "expressive-type.mjs",
+      "guidance": "docs/expressive-type.md",
+      "sourceCases": [
+        "cycling-year-report",
+        "wave-weather-study"
+      ],
+      "actualUsers": []
+    },
+    {
+      "id": "design.radial-scale.v1",
+      "entry": "radial-scale.mjs",
+      "guidance": "docs/radial-scale.md",
+      "sourceCases": [
+        "hardware-sampler-study"
+      ],
+      "actualUsers": []
+    },
+    {
+      "id": "design.diagonal-field.v1",
+      "entry": "diagonal-field.mjs",
+      "guidance": "docs/diagonal-field.md",
+      "sourceCases": [
+        "muqi-study"
+      ],
+      "actualUsers": []
+    },
+    {
+      "id": "design.authored-paths.v1",
+      "entry": "authored-paths.mjs",
+      "guidance": "docs/authored-paths.md",
+      "sourceCases": [
+        "theatre-narrative-wave",
+        "bus-morning-study"
+      ],
+      "actualUsers": []
+    }
+  ],
+  "works": [
+    {
+      "id": "bauhaus-theatre-study",
+      "decisionCard": "works/bauhaus-theatre-study/DESIGN-RETENTION.md",
+      "sourceAnalysis": [
+        "DESIGN-REASONING.md"
+      ],
+      "assetUsage": [
+        {
+          "familyId": "design.color-sections.v1",
+          "mode": "runtime-import",
+          "modulePath": "engine/design-elements/color-sections.mjs",
+          "moduleSha256": "cf2cf8ebf1b1bf8bd65dbbaef11f9546db9fe096d3eba7a0b18936e616ec2dd8",
+          "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
+          "callsite": "design/scene.mjs",
+          "importToken": "color-sections.mjs",
+          "callToken": "sections",
+          "visibleRole": "黄色/米白两区，非几何插画",
+          "snapshotPath": null,
+          "executionEvidence": {
+            "status": "MATCHED_ACCEPTED_FRAME",
+            "recordId": "ui-call-audit-20261030-bauhaus-theatre-study",
+            "sha256": "754c4e2d936968d7474a0434cb4196e7b2ac312f9456f5aa033ca6d05c382955",
+            "frameSha256": "a2708f2b6d374d58dc902640b8461b5e27e00c0910ec6236169e6fbcbb16a9fc",
+            "storage": "SCRATCH_LOCAL_ONLY",
+            "durableStorage": "NOT_LOCATED",
+            "note": "Independent instrumented runtime confirmed visible calls and exact accepted-frame identity. Technical evidence, not new aesthetic approval."
+          }
+        }
+      ],
+      "visualStatus": "PARTIAL",
+      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
+      "comparisonBundle": "NOT_PUBLISHED",
+      "reportStorage": "PRIVATE_LIBRARY",
+      "acceptedFrameBinding": "EXACT_PIXELS",
+      "motionTransfer": "NOT_TESTED"
+    },
+    {
+      "id": "bus-morning-study",
+      "decisionCard": "works/bus-morning-study/DESIGN-RETENTION.md",
+      "sourceAnalysis": [
+        "design/DESIGN-ANALYSIS.md"
+      ],
+      "assetUsage": [],
+      "visualStatus": "PARTIAL",
+      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
+      "comparisonBundle": "NOT_PUBLISHED",
+      "reportStorage": "PRIVATE_LIBRARY",
+      "acceptedFrameBinding": "NOT_ESTABLISHED",
+      "motionTransfer": "NOT_TESTED"
+    },
+    {
+      "id": "cosmic-observatory-study",
+      "decisionCard": "works/cosmic-observatory-study/DESIGN-RETENTION.md",
+      "sourceAnalysis": [
+        "design/DESIGN-REASONING.md"
+      ],
+      "assetUsage": [],
+      "visualStatus": "PARTIAL",
+      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
+      "comparisonBundle": "NOT_PUBLISHED",
+      "reportStorage": "PRIVATE_LIBRARY",
+      "acceptedFrameBinding": "EXACT_PIXELS",
+      "motionTransfer": "NOT_TESTED"
+    },
+    {
+      "id": "cycling-year-report",
+      "decisionCard": "works/cycling-year-report/DESIGN-RETENTION.md",
+      "sourceAnalysis": [
+        "design/DESIGN-ANALYSIS.md"
+      ],
+      "assetUsage": [],
+      "visualStatus": "PARTIAL",
+      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
+      "comparisonBundle": "NOT_PUBLISHED",
+      "reportStorage": "PRIVATE_LIBRARY",
+      "acceptedFrameBinding": "EXACT_PIXELS",
+      "motionTransfer": "NOT_TESTED"
+    },
+    {
+      "id": "hanzi-poster-study",
+      "decisionCard": "works/hanzi-poster-study/DESIGN-RETENTION.md",
+      "sourceAnalysis": [
+        "DESIGN-REASONING.md"
+      ],
+      "assetUsage": [],
+      "visualStatus": "PARTIAL",
+      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
+      "comparisonBundle": "NOT_PUBLISHED",
+      "reportStorage": "PRIVATE_LIBRARY",
+      "acceptedFrameBinding": "NOT_ESTABLISHED",
+      "motionTransfer": "NOT_TESTED"
+    },
+    {
+      "id": "hardware-sampler-study",
+      "decisionCard": "works/hardware-sampler-study/DESIGN-RETENTION.md",
+      "sourceAnalysis": [
+        "DESIGN-REASONING.md"
+      ],
+      "assetUsage": [],
+      "visualStatus": "PARTIAL",
+      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
+      "comparisonBundle": "NOT_PUBLISHED",
+      "reportStorage": "PRIVATE_LIBRARY",
+      "acceptedFrameBinding": "EXACT_PIXELS",
+      "motionTransfer": "NOT_TESTED"
+    },
+    {
+      "id": "health-color-code-study",
+      "decisionCard": "works/health-color-code-study/DESIGN-RETENTION.md",
+      "sourceAnalysis": [
+        "DESIGN-REASONING.md"
+      ],
+      "assetUsage": [
+        {
+          "familyId": "design.material-surfaces.v1",
+          "mode": "runtime-import",
+          "modulePath": "engine/design-elements/material-surfaces.mjs",
+          "moduleSha256": "70bf1fcfa89bfbf911f5cf735b1b08e8ae7f360e43bd43a8c831efef579696eb",
+          "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
+          "callsite": "design/scene.mjs",
+          "importToken": "material-surfaces.mjs",
+          "callToken": "surface",
+          "visibleRole": "两个设备壳与大浮卡",
+          "snapshotPath": null,
+          "executionEvidence": {
+            "status": "MATCHED_ACCEPTED_FRAME",
+            "recordId": "ui-call-audit-20261030-health-color-code-study",
+            "sha256": "f402445461fc632e2b8b4528b72fa973b5c0c59220b742ed2edbfefb5db7907a",
+            "frameSha256": "80f9ea0a51bea21f3d3ca4a6b2e5a6185735fddf8dc866e6a718756f1fbf3e0a",
+            "storage": "SCRATCH_LOCAL_ONLY",
+            "durableStorage": "NOT_LOCATED",
+            "note": "Independent instrumented runtime confirmed visible calls and exact accepted-frame identity. Technical evidence, not new aesthetic approval."
+          }
+        }
+      ],
+      "visualStatus": "PARTIAL",
+      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
+      "comparisonBundle": "NOT_PUBLISHED",
+      "reportStorage": "PRIVATE_LIBRARY",
+      "acceptedFrameBinding": "EXACT_PIXELS",
+      "motionTransfer": "NOT_TESTED"
+    },
+    {
+      "id": "hk-street-signs-study",
+      "decisionCard": "works/hk-street-signs-study/DESIGN-RETENTION.md",
+      "sourceAnalysis": [
+        "DESIGN-REASONING.md"
+      ],
+      "assetUsage": [
+        {
+          "familyId": "design.print-poster.v1",
+          "mode": "runtime-import",
+          "modulePath": "engine/design-elements/print-poster.mjs",
+          "moduleSha256": "56203ff52eef7375bf1c8efe20b926dc0197572353f44c82f1243930a7e26fcf",
+          "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
+          "callsite": "design/scene.mjs",
+          "importToken": "print-poster.mjs",
+          "callToken": "drawOverprint",
+          "visibleRole": "硬偏移招牌文字",
+          "snapshotPath": null,
+          "executionEvidence": {
+            "status": "MATCHED_ACCEPTED_FRAME",
+            "recordId": "ui-call-audit-20261030-hk-street-signs-study",
+            "sha256": "f0c7b749f400a62bf23e9b16c42d36c12d2daab081f9ca7c967472320273a373",
+            "frameSha256": "3712bde73026df5c60119786779e54ccabb488f864a09a9a4de36d711ef4036f",
+            "storage": "SCRATCH_LOCAL_ONLY",
+            "durableStorage": "NOT_LOCATED",
+            "note": "Independent instrumented runtime confirmed visible calls and exact accepted-frame identity. Technical evidence, not new aesthetic approval."
+          }
+        }
+      ],
+      "visualStatus": "PARTIAL",
+      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
+      "comparisonBundle": "NOT_PUBLISHED",
+      "reportStorage": "PRIVATE_LIBRARY",
+      "acceptedFrameBinding": "NOT_ESTABLISHED",
+      "motionTransfer": "NOT_TESTED"
+    },
+    {
+      "id": "irreverent-pop-study",
+      "decisionCard": "works/irreverent-pop-study/DESIGN-RETENTION.md",
+      "sourceAnalysis": [
+        "design/DESIGN-ANALYSIS.md"
+      ],
+      "assetUsage": [
+        {
+          "familyId": "design.material-surfaces.v1",
+          "mode": "vendored-snapshot",
+          "modulePath": "engine/design-elements/material-surfaces.mjs",
+          "moduleSha256": "70bf1fcfa89bfbf911f5cf735b1b08e8ae7f360e43bd43a8c831efef579696eb",
+          "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
+          "callsite": "design/scene.mjs",
+          "importToken": "material-surfaces.mjs",
+          "callToken": "drawSurface",
+          "visibleRole": "两个系统窗纸面",
+          "snapshotPath": "design/material-surfaces.mjs",
+          "executionEvidence": {
+            "status": "MATCHED_ACCEPTED_FRAME",
+            "recordId": "ui-call-audit-20261030-irreverent-pop-study",
+            "sha256": "46f363787a0e8e81a1d45c39d30df28efbab91b11897bc267d023e9ab46bba3d",
+            "frameSha256": "8e82b77a44b217f999f97fcef75050167fba7c82c87739d898314680d5d585a3",
+            "storage": "SCRATCH_LOCAL_ONLY",
+            "durableStorage": "NOT_LOCATED",
+            "note": "Independent instrumented runtime confirmed visible calls and exact accepted-frame identity. Technical evidence, not new aesthetic approval."
+          }
+        }
+      ],
+      "visualStatus": "PARTIAL",
+      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
+      "comparisonBundle": "NOT_PUBLISHED",
+      "reportStorage": "PRIVATE_LIBRARY",
+      "acceptedFrameBinding": "NOT_ESTABLISHED",
+      "motionTransfer": "NOT_TESTED"
+    },
+    {
+      "id": "liquid-glass-study",
+      "decisionCard": "works/liquid-glass-study/DESIGN-RETENTION.md",
+      "sourceAnalysis": [
+        "design/DESIGN-ANALYSIS.md"
+      ],
+      "assetUsage": [],
+      "visualStatus": "PARTIAL",
+      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
+      "comparisonBundle": "NOT_PUBLISHED",
+      "reportStorage": "PRIVATE_LIBRARY",
+      "acceptedFrameBinding": "EXACT_PIXELS",
+      "motionTransfer": "NOT_TESTED"
+    },
+    {
+      "id": "market-method-study",
+      "decisionCard": "works/market-method-study/DESIGN-RETENTION.md",
+      "sourceAnalysis": [
+        "design/DESIGN-ANALYSIS.md"
+      ],
+      "assetUsage": [],
+      "visualStatus": "PARTIAL",
+      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
+      "comparisonBundle": "NOT_PUBLISHED",
+      "reportStorage": "PRIVATE_LIBRARY",
+      "acceptedFrameBinding": "NOT_ESTABLISHED",
+      "motionTransfer": "NOT_TESTED"
+    },
+    {
+      "id": "market-section-study",
+      "decisionCard": "works/market-section-study/DESIGN-RETENTION.md",
+      "sourceAnalysis": [
+        "DESIGN-REASONING.md"
+      ],
+      "assetUsage": [],
+      "visualStatus": "PARTIAL",
+      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
+      "comparisonBundle": "NOT_PUBLISHED",
+      "reportStorage": "PRIVATE_LIBRARY",
+      "acceptedFrameBinding": "EXACT_PIXELS",
+      "motionTransfer": "NOT_TESTED"
+    },
+    {
+      "id": "meridian-study",
+      "decisionCard": "works/meridian-study/DESIGN-RETENTION.md",
+      "sourceAnalysis": [
+        "DESIGN-REASONING.md"
+      ],
+      "assetUsage": [],
+      "visualStatus": "PARTIAL",
+      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
+      "comparisonBundle": "NOT_PUBLISHED",
+      "reportStorage": "PRIVATE_LIBRARY",
+      "acceptedFrameBinding": "NOT_ESTABLISHED",
+      "motionTransfer": "NOT_TESTED"
+    },
+    {
+      "id": "muqi-study",
+      "decisionCard": "works/muqi-study/DESIGN-RETENTION.md",
+      "sourceAnalysis": [
+        "design/DESIGN-ANALYSIS.md"
+      ],
+      "assetUsage": [],
+      "visualStatus": "PARTIAL",
+      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
+      "comparisonBundle": "NOT_PUBLISHED",
+      "reportStorage": "PRIVATE_LIBRARY",
+      "acceptedFrameBinding": "EXACT_PIXELS",
+      "motionTransfer": "NOT_TESTED"
+    },
+    {
+      "id": "ocean-plastic-treemap-study",
+      "decisionCard": "works/ocean-plastic-treemap-study/DESIGN-RETENTION.md",
+      "sourceAnalysis": [
+        "DESIGN-REASONING.md"
+      ],
+      "assetUsage": [],
+      "visualStatus": "PARTIAL",
+      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
+      "comparisonBundle": "NOT_PUBLISHED",
+      "reportStorage": "PRIVATE_LIBRARY",
+      "acceptedFrameBinding": "EXACT_PIXELS",
+      "motionTransfer": "NOT_TESTED"
+    },
+    {
+      "id": "pixel-hiking-study",
+      "decisionCard": "works/pixel-hiking-study/DESIGN-RETENTION.md",
+      "sourceAnalysis": [
+        "DESIGN-REASONING.md"
+      ],
+      "assetUsage": [
+        {
+          "familyId": "design.print-poster.v1",
+          "mode": "runtime-import",
+          "modulePath": "engine/design-elements/print-poster.mjs",
+          "moduleSha256": "56203ff52eef7375bf1c8efe20b926dc0197572353f44c82f1243930a7e26fcf",
+          "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
+          "callsite": "design/scene.mjs",
+          "importToken": "print-poster.mjs",
+          "callToken": "drawOverprint",
+          "visibleRole": "HUD硬偏移文字",
+          "snapshotPath": null,
+          "executionEvidence": {
+            "status": "MATCHED_ACCEPTED_FRAME",
+            "recordId": "ui-call-audit-20261030-pixel-hiking-study",
+            "sha256": "907575da9cc790ff4961ac5ca9de47767c813938d167b4bf3ce3cfdd2b1165f6",
+            "frameSha256": "207ad3d9c972d96eef1abc3e77cc62d9efb9a21e8672130a050a7630790b83f5",
+            "storage": "SCRATCH_LOCAL_ONLY",
+            "durableStorage": "NOT_LOCATED",
+            "note": "Independent instrumented runtime confirmed visible calls and exact accepted-frame identity. Technical evidence, not new aesthetic approval."
+          }
+        },
+        {
+          "familyId": "design.color-sections.v1",
+          "mode": "runtime-import",
+          "modulePath": "engine/design-elements/color-sections.mjs",
+          "moduleSha256": "cf2cf8ebf1b1bf8bd65dbbaef11f9546db9fe096d3eba7a0b18936e616ec2dd8",
+          "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
+          "callsite": "design/scene.mjs",
+          "importToken": "color-sections.mjs",
+          "callToken": "drawSections",
+          "visibleRole": "森林/山脊/湖泊底层分区",
+          "snapshotPath": null,
+          "executionEvidence": {
+            "status": "MATCHED_ACCEPTED_FRAME",
+            "recordId": "ui-call-audit-20261030-pixel-hiking-study",
+            "sha256": "907575da9cc790ff4961ac5ca9de47767c813938d167b4bf3ce3cfdd2b1165f6",
+            "frameSha256": "207ad3d9c972d96eef1abc3e77cc62d9efb9a21e8672130a050a7630790b83f5",
+            "storage": "SCRATCH_LOCAL_ONLY",
+            "durableStorage": "NOT_LOCATED",
+            "note": "Independent instrumented runtime confirmed visible calls and exact accepted-frame identity. Technical evidence, not new aesthetic approval."
+          }
+        }
+      ],
+      "visualStatus": "PARTIAL",
+      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
+      "comparisonBundle": "NOT_PUBLISHED",
+      "reportStorage": "PRIVATE_LIBRARY",
+      "acceptedFrameBinding": "NOT_ESTABLISHED",
+      "motionTransfer": "NOT_TESTED"
+    },
+    {
+      "id": "playful-roast-timer-study",
+      "decisionCard": "works/playful-roast-timer-study/DESIGN-RETENTION.md",
+      "sourceAnalysis": [
+        "DESIGN-REASONING.md"
+      ],
+      "assetUsage": [
+        {
+          "familyId": "design.material-surfaces.v1",
+          "mode": "runtime-import",
+          "modulePath": "engine/design-elements/material-surfaces.mjs",
+          "moduleSha256": "70bf1fcfa89bfbf911f5cf735b1b08e8ae7f360e43bd43a8c831efef579696eb",
+          "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
+          "callsite": "design/scene.mjs",
+          "importToken": "material-surfaces.mjs",
+          "callToken": "surface",
+          "visibleRole": "设备表面",
+          "snapshotPath": null,
+          "executionEvidence": {
+            "status": "MATCHED_ACCEPTED_FRAME",
+            "recordId": "ui-call-audit-20261030-playful-roast-timer-study",
+            "sha256": "c4fe50c92905c079f7daf1de4d3bc6ee0faa9e0db3925ac393f21d8abea87ae0",
+            "frameSha256": "7f72a28d0f8f17e263a02bb6bf9af728d77c1cf1c957e66d650a9f62f7ccc60a",
+            "storage": "SCRATCH_LOCAL_ONLY",
+            "durableStorage": "NOT_LOCATED",
+            "note": "Independent instrumented runtime confirmed visible calls and exact accepted-frame identity. Technical evidence, not new aesthetic approval."
+          }
+        }
+      ],
+      "visualStatus": "PARTIAL",
+      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
+      "comparisonBundle": "NOT_PUBLISHED",
+      "reportStorage": "PRIVATE_LIBRARY",
+      "acceptedFrameBinding": "EXACT_PIXELS",
+      "motionTransfer": "NOT_TESTED"
+    },
+    {
+      "id": "pro-camera-study",
+      "decisionCard": "works/pro-camera-study/DESIGN-RETENTION.md",
+      "sourceAnalysis": [
+        "design/DESIGN-REASONING.md"
+      ],
+      "assetUsage": [],
+      "visualStatus": "PARTIAL",
+      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
+      "comparisonBundle": "NOT_PUBLISHED",
+      "reportStorage": "PRIVATE_LIBRARY",
+      "acceptedFrameBinding": "EXACT_PIXELS",
+      "motionTransfer": "NOT_TESTED"
+    },
+    {
+      "id": "shanghai-deco-study",
+      "decisionCard": "works/shanghai-deco-study/DESIGN-RETENTION.md",
+      "sourceAnalysis": [
+        "DESIGN-REASONING.md"
+      ],
+      "assetUsage": [],
+      "visualStatus": "PARTIAL",
+      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
+      "comparisonBundle": "NOT_PUBLISHED",
+      "reportStorage": "PRIVATE_LIBRARY",
+      "acceptedFrameBinding": "EXACT_PIXELS",
+      "motionTransfer": "NOT_TESTED"
+    },
+    {
+      "id": "slow-roast-study",
+      "decisionCard": "works/slow-roast-study/DESIGN-RETENTION.md",
+      "sourceAnalysis": [
+        "DESIGN-REASONING.md"
+      ],
+      "assetUsage": [],
+      "visualStatus": "PARTIAL",
+      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
+      "comparisonBundle": "NOT_PUBLISHED",
+      "reportStorage": "PRIVATE_LIBRARY",
+      "acceptedFrameBinding": "NOT_ESTABLISHED",
+      "motionTransfer": "NOT_TESTED"
+    },
+    {
+      "id": "song-block-print-study",
+      "decisionCard": "works/song-block-print-study/DESIGN-RETENTION.md",
+      "sourceAnalysis": [
+        "DESIGN-REASONING.md"
+      ],
+      "assetUsage": [
+        {
+          "familyId": "design.material-surfaces.v1",
+          "mode": "runtime-import",
+          "modulePath": "engine/design-elements/material-surfaces.mjs",
+          "moduleSha256": "70bf1fcfa89bfbf911f5cf735b1b08e8ae7f360e43bd43a8c831efef579696eb",
+          "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
+          "callsite": "design/scene.mjs",
+          "importToken": "material-surfaces.mjs",
+          "callToken": "surface",
+          "visibleRole": "纸叶基础，非完整版式",
+          "snapshotPath": null,
+          "executionEvidence": {
+            "status": "MATCHED_ACCEPTED_FRAME",
+            "recordId": "ui-call-audit-20261030-song-block-print-study",
+            "sha256": "e17cd6a93ba04fb903a4596e10b8ff95c08e53aec3ca1a60a1b6472358e959d4",
+            "frameSha256": "8ce0165678c02ae64ce907437281ccad705bf4d221ac0423ffde6927013e5165",
+            "storage": "SCRATCH_LOCAL_ONLY",
+            "durableStorage": "NOT_LOCATED",
+            "note": "Independent instrumented runtime confirmed visible calls and exact accepted-frame identity. Technical evidence, not new aesthetic approval."
+          }
+        }
+      ],
+      "visualStatus": "PARTIAL",
+      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
+      "comparisonBundle": "NOT_PUBLISHED",
+      "reportStorage": "PRIVATE_LIBRARY",
+      "acceptedFrameBinding": "EXACT_PIXELS",
+      "motionTransfer": "NOT_TESTED"
+    },
+    {
+      "id": "tea-conversation-map",
+      "decisionCard": "works/tea-conversation-map/DESIGN-RETENTION.md",
+      "sourceAnalysis": [
+        "design/DESIGN-ANALYSIS.md"
+      ],
+      "assetUsage": [],
+      "visualStatus": "PARTIAL",
+      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
+      "comparisonBundle": "NOT_PUBLISHED",
+      "reportStorage": "PRIVATE_LIBRARY",
+      "acceptedFrameBinding": "NOT_ESTABLISHED",
+      "motionTransfer": "NOT_TESTED"
+    },
+    {
+      "id": "tea-voice-study",
+      "decisionCard": "works/tea-voice-study/DESIGN-RETENTION.md",
+      "sourceAnalysis": [
+        "design/VISUAL-REASONING.md"
+      ],
+      "assetUsage": [],
+      "visualStatus": "PARTIAL",
+      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
+      "comparisonBundle": "NOT_PUBLISHED",
+      "reportStorage": "PRIVATE_LIBRARY",
+      "acceptedFrameBinding": "EXACT_PIXELS",
+      "motionTransfer": "NOT_TESTED"
+    },
+    {
+      "id": "theatre-narrative-wave",
+      "decisionCard": "works/theatre-narrative-wave/DESIGN-RETENTION.md",
+      "sourceAnalysis": [
+        "design/DESIGN-ANALYSIS.md"
+      ],
+      "assetUsage": [],
+      "visualStatus": "PARTIAL",
+      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
+      "comparisonBundle": "NOT_PUBLISHED",
+      "reportStorage": "PRIVATE_LIBRARY",
+      "acceptedFrameBinding": "NOT_ESTABLISHED",
+      "motionTransfer": "NOT_TESTED"
+    },
+    {
+      "id": "vinyl-study",
+      "decisionCard": "works/vinyl-study/DESIGN-RETENTION.md",
+      "sourceAnalysis": [],
+      "assetUsage": [],
+      "visualStatus": "PARTIAL",
+      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
+      "comparisonBundle": "NOT_PUBLISHED",
+      "reportStorage": "PRIVATE_LIBRARY",
+      "acceptedFrameBinding": "NOT_ESTABLISHED",
+      "motionTransfer": "NOT_TESTED"
+    },
+    {
+      "id": "wave-weather-study",
+      "decisionCard": "works/wave-weather-study/DESIGN-RETENTION.md",
+      "sourceAnalysis": [
+        "DESIGN-REASONING.md"
+      ],
+      "assetUsage": [],
+      "visualStatus": "PARTIAL",
+      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
+      "comparisonBundle": "NOT_PUBLISHED",
+      "reportStorage": "PRIVATE_LIBRARY",
+      "acceptedFrameBinding": "NOT_ESTABLISHED",
+      "motionTransfer": "NOT_TESTED"
+    }
+  ]
+}

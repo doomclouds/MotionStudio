@@ -1,6 +1,6 @@
 # UI 设计知识 · 总索引
 
-这是**公开、去素材化的方法导航**，不是素材库、完整私有案例库或自动风格推荐器。只收已获发布授权的方法卡与明确标注的原创合成运行例；原图、品牌资产、字体、生产源码、评审报告与个案反馈保持仓库外。前两例的方法已存在于[固定画幅研究合同](../../references/static-ui-reference-study.md)，本目录分类导航，不复制正文，也不新增运动积木。
+这是**公开、去素材化的方法导航**，不是素材库、完整私有案例库或自动风格推荐器。只收已获发布授权的方法卡与明确标注的原创合成运行例；本目录不承载原图、品牌资产、字体二进制或私有评审材料。已获保留与发布授权、通过权利范围审查的作品源码现收录于[作品集](https://github.com/doomclouds/MotionStudio/blob/dev/portfolio/README.md)，公共设计代码见[UI 积木索引](https://github.com/doomclouds/MotionStudio/blob/dev/engine/design-elements/Index.md)；外置资源与私有评审证据仍按各自权限保留，不能因公开源码推定素材或评审报告可公开。前两例的方法已存在于[固定画幅研究合同](../../references/static-ui-reference-study.md)，本目录分类导航，不复制正文，也不新增运动积木。
 
 ## 先决定内容怎样表达
 
@@ -35,3 +35,20 @@ python3 scripts/design_knowledge.py validate
 - [新增模板](templates/CASE.md) → 私有证据复核 → **作品接受与方法公开授权分别核实** → 去素材化审查 → 卡片、分类 INDEX、总 INDEX 与 `index.json` 一起更新 → validate/测试/portable 检查 → 最小源码提交。
 - 未确认案例留私有工作区，不预填公开目录。撤回时移除活动索引/分类链接，并记录非敏感方法修订；需要消除历史泄露须另行处理 Git 历史，删除现行文件不等于删除历史。
 - [外置知识工作流](../video-knowledge/WORKFLOW.md)继续保存可绑定证据的 Case/Technique；其默认公开库仍为空。这里的摘要不能喂给 `video_knowledge.py` 当视频实证或通过记录。
+
+## 已保留作品与实际代码调用
+
+完整静态设计（含海报、演示页、信息图及UI）的统一入口是[作品设计索引](https://github.com/doomclouds/MotionStudio/blob/dev/portfolio/DESIGN-INDEX.md)，每例的 `DESIGN-RETENTION.md` 记录内容/品牌/配色/构图决策，`retention.json` 关联原分析、实际代码依赖和证据状态。公共族的来源作品与实际调用分列，不把方法适配说成已重构原作品。
+
+这里现有三张独立方法卡不等于作品总量；`scripts/design_knowledge.py`只检索本目录index.json，不自动检索作品。查看全部作品使用上述索引，校验运行 `python portfolio/retention.py --check`。将来新增方法卡仍需独立归纳与审阅，不按作品数量机械复制。
+
+上述作品集链接是远端仓库入口（dev会随版本更新），不是Skill包内文件；作品集及portfolio/retention.py不随Skill打包。维护命令仅在完整MotionStudio仓库运行，Skill环境不能把缺少作品目录当作零作品。
+
+完整仓库提供作品级只读检索，与本目录三张方法卡的检索分开：
+
+```sh
+python portfolio/retention.py --query --text 品牌
+python portfolio/retention.py --query --text 像素 --family design.color-sections.v1
+```
+
+这是标题/统一卡/原分析的字面检索；族过滤只匹配真实调用，条件取交集，零结果如实返回，不排名或推定适用。命令不随Skill包提供；仅有Skill时使用上面的远端作品索引，不假装已检索全部作品。

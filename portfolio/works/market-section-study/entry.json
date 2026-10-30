@@ -57,7 +57,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "32f60a3329812472f52f8970277cb94dffffe3cdb49d601733c467e76c861674",
+      "sha256": "e516c5e18768f926b06a9e199284e7b97fab92d96cfcf43d2159024b65fe1cb8",
       "role": "documentation"
     },
     {
@@ -89,6 +89,16 @@
       "path": "prepare-fonts.py",
       "sha256": "f5b42df61d337bbfa4dc1ae39ce76056b33a64312779f9b1fbbdb234bb3fd5f1",
       "role": "source"
+    },
+    {
+      "path": "DESIGN-RETENTION.md",
+      "sha256": "8595d8b84c681fdc433222b0ab94647afbf5c53cb77612822b713c0a544a6035",
+      "role": "documentation"
+    },
+    {
+      "path": "retention.json",
+      "sha256": "e84207381b9f1f878a4ccac117d3ebf53302b0f2cb7318fea9d33c7976833895",
+      "role": "config"
     }
   ],
   "runtime": [

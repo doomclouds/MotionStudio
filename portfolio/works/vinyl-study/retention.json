@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "workId": "vinyl-study",
+  "kind": "fixed-static-design",
+  "canvas": {
+    "width": 1200,
+    "height": 750
+  },
+  "entrypoint": "design/scene.mjs",
+  "decisionCard": "DESIGN-RETENTION.md",
+  "sourceAnalysis": [],
+  "ruleRefs": [],
+  "ruleStatus": "No separate formal rule card claimed; use decisionCard and sourceAnalysis.",
+  "assetUsage": [],
+  "nonAssetNote": "Shared drawing helpers and case-local scene code are not public design families; no runtime reuse is inferred from visual similarity.",
+  "evidence": {
+    "acceptanceSource": "entry.json#/acceptance",
+    "renderHashSource": "entry.json#/cover/source_sha256",
+    "publicCover": "cover.jpg",
+    "comparisonBundle": {
+      "status": "NOT_PUBLISHED",
+      "recordId": "full-v03-png",
+      "sha256": "5cdce4b46e94e721a1d5f95bd506cd01a947489f363e5501cc8be9f29b8d5295",
+      "storage": "SCRATCH_LOCAL_ONLY",
+      "durableStorage": "NOT_LOCATED",
+      "note": "Located private visual artifact (reviewed frame or comparison material), not proof of a complete durable reference/rebuild/detail bundle. Public cover is only navigation."
+    },
+    "independentReview": {
+      "status": "PRIVATE_RECORD_LOCATED",
+      "recordId": "ui-independent-review-archive-20261030-vinyl-study",
+      "sha256": "7ea4a34187a96c2a7db8213fcc72dbfed893f67eefbf088509d925bd3424d9dd",
+      "storage": "PRIVATE_OWNER_PAGE",
+      "durableStorage": "ACCESS_VERIFIED",
+      "note": "原独审文件已归档至仅所有者可访问的私有 Page，读回原字节 SHA 核验；不公开私有引用，不构成新的独审或用户验收。"
+    },
+    "visualReport": {
+      "status": "NOT_PUBLISHED",
+      "recordId": "ui-report-archive-20261030-vinyl-study",
+      "sha256": "0461e878fda5bd3bc4ba7bad0171785e292574d93ff69f2cf5e9afab7e782d43",
+      "storage": "PRIVATE_LIBRARY",
+      "durableStorage": "ACCESS_VERIFIED",
+      "note": "已取回既有私有 Library HTML 并核对终审本地报告容器字节；不公开私人链接，不代表浏览器预览或新的审美验收。此哈希不替代单独 PNG 的身份。",
+      "artifactKind": "html-report",
+      "acceptedFrameBinding": "NOT_ESTABLISHED"
+    }
+  },
+  "motionTransfer": {
+    "status": "NOT_TESTED",
+    "note": "Fixed-size static only. No interaction, responsive layout, animation, audio or AV-sync approval implied."
+  }
+}

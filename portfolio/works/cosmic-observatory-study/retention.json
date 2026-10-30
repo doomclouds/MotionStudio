@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "workId": "cosmic-observatory-study",
+  "kind": "fixed-static-design",
+  "canvas": {
+    "width": 1200,
+    "height": 750
+  },
+  "entrypoint": "design/scene.mjs",
+  "decisionCard": "DESIGN-RETENTION.md",
+  "sourceAnalysis": [
+    "design/DESIGN-REASONING.md"
+  ],
+  "ruleRefs": [],
+  "ruleStatus": "No separate formal rule card claimed; use decisionCard and sourceAnalysis.",
+  "assetUsage": [],
+  "nonAssetNote": "Shared drawing helpers and case-local scene code are not public design families; no runtime reuse is inferred from visual similarity.",
+  "evidence": {
+    "acceptanceSource": "entry.json#/acceptance",
+    "renderHashSource": "entry.json#/cover/source_sha256",
+    "publicCover": "cover.jpg",
+    "comparisonBundle": {
+      "status": "NOT_PUBLISHED",
+      "recordId": "cosmic-final-png",
+      "sha256": "e2858e81a4e973a14767341318457332df83e71724fc8007b6f37d24f5d4ee22",
+      "storage": "SCRATCH_LOCAL_ONLY",
+      "durableStorage": "NOT_LOCATED",
+      "note": "Located private visual artifact (reviewed frame or comparison material), not proof of a complete durable reference/rebuild/detail bundle. Public cover is only navigation."
+    },
+    "independentReview": {
+      "status": "PRIVATE_RECORD_LOCATED",
+      "recordId": "ui-independent-review-archive-20261030-cosmic-observatory-study",
+      "sha256": "9924d54a5fcc865bc7fd63cc91d019020935d0465701aa18ee1ba18c80465d74",
+      "storage": "PRIVATE_OWNER_PAGE",
+      "durableStorage": "ACCESS_VERIFIED",
+      "note": "原独审文件已归档至仅所有者可访问的私有 Page，读回原字节 SHA 核验；不公开私有引用，不构成新的独审或用户验收。"
+    },
+    "visualReport": {
+      "status": "NOT_PUBLISHED",
+      "recordId": "ui-report-archive-20261030-cosmic-observatory-study",
+      "sha256": "046f25734e69e3cb0952d216e81e1a74a086f161819e6a7c635f632c17d964ef",
+      "storage": "PRIVATE_LIBRARY",
+      "durableStorage": "ACCESS_VERIFIED",
+      "note": "已取回既有私有 Library HTML 并核对终审本地报告容器字节；不公开私人链接，不代表浏览器预览或新的审美验收。此哈希不替代单独 PNG 的身份。",
+      "artifactKind": "html-report",
+      "acceptedFrameBinding": "EXACT_PIXELS"
+    }
+  },
+  "motionTransfer": {
+    "status": "NOT_TESTED",
+    "note": "Fixed-size static only. No interaction, responsive layout, animation, audio or AV-sync approval implied."
+  }
+}

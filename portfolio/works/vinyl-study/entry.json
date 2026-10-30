@@ -101,6 +101,16 @@
       "path": "design/content.json",
       "sha256": "964ac912eab3345b581795053a5b6405b7471db7f5bc5a5dc1517ab6eacaa4cb",
       "role": "config"
+    },
+    {
+      "path": "DESIGN-RETENTION.md",
+      "sha256": "670ffb540be91964c2b2e8527b76900d22a81d5e7cf928565fe844599703cbae",
+      "role": "documentation"
+    },
+    {
+      "path": "retention.json",
+      "sha256": "a0838d8d4dbf9dfb05fe685adb14d6a1ff9240bd06dcd99ffedbe6dffa1be8c3",
+      "role": "config"
     }
   ],
   "runtime": [

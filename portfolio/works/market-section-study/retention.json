@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "workId": "market-section-study",
+  "kind": "fixed-static-design",
+  "canvas": {
+    "width": 1200,
+    "height": 750
+  },
+  "entrypoint": "design/scene.mjs",
+  "decisionCard": "DESIGN-RETENTION.md",
+  "sourceAnalysis": [
+    "DESIGN-REASONING.md"
+  ],
+  "ruleRefs": [],
+  "ruleStatus": "No separate formal rule card claimed; use decisionCard and sourceAnalysis.",
+  "assetUsage": [],
+  "nonAssetNote": "Shared drawing helpers and case-local scene code are not public design families; no runtime reuse is inferred from visual similarity.",
+  "evidence": {
+    "acceptanceSource": "entry.json#/acceptance",
+    "renderHashSource": "entry.json#/cover/source_sha256",
+    "publicCover": "cover.jpg",
+    "comparisonBundle": {
+      "status": "NOT_PUBLISHED",
+      "recordId": "section-reviewed-png",
+      "sha256": "468666bd0a22eb99663830d6a77b6ae905ffac818b9fa0ba927d833166b2930c",
+      "storage": "SCRATCH_LOCAL_ONLY",
+      "durableStorage": "NOT_LOCATED",
+      "note": "Located private visual artifact (reviewed frame or comparison material), not proof of a complete durable reference/rebuild/detail bundle. Public cover is only navigation."
+    },
+    "independentReview": {
+      "status": "PRIVATE_RECORD_LOCATED",
+      "recordId": "ui-independent-review-archive-20261030-market-section-study",
+      "sha256": "a4172233d6cdb0f7aee7cb522b26cab1fa3d80b960085035dc5786538fcf4183",
+      "storage": "PRIVATE_OWNER_PAGE",
+      "durableStorage": "ACCESS_VERIFIED",
+      "note": "原独审文件已归档至仅所有者可访问的私有 Page，读回原字节 SHA 核验；不公开私有引用，不构成新的独审或用户验收。"
+    },
+    "visualReport": {
+      "status": "NOT_PUBLISHED",
+      "recordId": "ui-report-archive-20261030-market-section-study",
+      "sha256": "2f745d1f4b4bafe9ba9b1a5897ac8459af0df234b3c5ef7d774b04f1ad2f18b0",
+      "storage": "PRIVATE_LIBRARY",
+      "durableStorage": "ACCESS_VERIFIED",
+      "note": "已取回既有私有 Library HTML 并核对终审本地报告容器字节；不公开私人链接，不代表浏览器预览或新的审美验收。此哈希不替代单独 PNG 的身份。",
+      "artifactKind": "html-report",
+      "acceptedFrameBinding": "EXACT_PIXELS"
+    }
+  },
+  "motionTransfer": {
+    "status": "NOT_TESTED",
+    "note": "Fixed-size static only. No interaction, responsive layout, animation, audio or AV-sync approval implied."
+  }
+}

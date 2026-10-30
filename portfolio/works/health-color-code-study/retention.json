@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "workId": "health-color-code-study",
+  "kind": "fixed-static-design",
+  "canvas": {
+    "width": 1200,
+    "height": 750
+  },
+  "entrypoint": "design/scene.mjs",
+  "decisionCard": "DESIGN-RETENTION.md",
+  "sourceAnalysis": [
+    "DESIGN-REASONING.md"
+  ],
+  "ruleRefs": [],
+  "ruleStatus": "No separate formal rule card claimed; use decisionCard and sourceAnalysis.",
+  "assetUsage": [
+    {
+      "familyId": "design.material-surfaces.v1",
+      "mode": "runtime-import",
+      "modulePath": "engine/design-elements/material-surfaces.mjs",
+      "moduleSha256": "70bf1fcfa89bfbf911f5cf735b1b08e8ae7f360e43bd43a8c831efef579696eb",
+      "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
+      "callsite": "design/scene.mjs",
+      "importToken": "material-surfaces.mjs",
+      "callToken": "surface",
+      "visibleRole": "两个设备壳与大浮卡",
+      "snapshotPath": null,
+      "executionEvidence": {
+        "status": "MATCHED_ACCEPTED_FRAME",
+        "recordId": "ui-call-audit-20261030-health-color-code-study",
+        "sha256": "f402445461fc632e2b8b4528b72fa973b5c0c59220b742ed2edbfefb5db7907a",
+        "frameSha256": "80f9ea0a51bea21f3d3ca4a6b2e5a6185735fddf8dc866e6a718756f1fbf3e0a",
+        "storage": "SCRATCH_LOCAL_ONLY",
+        "durableStorage": "NOT_LOCATED",
+        "note": "Independent instrumented runtime confirmed visible calls and exact accepted-frame identity. Technical evidence, not new aesthetic approval."
+      }
+    }
+  ],
+  "nonAssetNote": "Shared drawing helpers and case-local scene code are not public design families; no runtime reuse is inferred from visual similarity.",
+  "evidence": {
+    "acceptanceSource": "entry.json#/acceptance",
+    "renderHashSource": "entry.json#/cover/source_sha256",
+    "publicCover": "cover.jpg",
+    "comparisonBundle": {
+      "status": "NOT_PUBLISHED",
+      "recordId": "health-reviewed-png",
+      "sha256": "80f9ea0a51bea21f3d3ca4a6b2e5a6185735fddf8dc866e6a718756f1fbf3e0a",
+      "storage": "SCRATCH_LOCAL_ONLY",
+      "durableStorage": "NOT_LOCATED",
+      "note": "Located private visual artifact (reviewed frame or comparison material), not proof of a complete durable reference/rebuild/detail bundle. Public cover is only navigation."
+    },
+    "independentReview": {
+      "status": "PRIVATE_RECORD_LOCATED",
+      "recordId": "ui-independent-review-archive-20261030-health-color-code-study",
+      "sha256": "2a7d4a182a844be8f86bf84ea195f4418c54a10f30d7f329cfcf1ef23416da94",
+      "storage": "PRIVATE_OWNER_PAGE",
+      "durableStorage": "ACCESS_VERIFIED",
+      "note": "原独审文件已归档至仅所有者可访问的私有 Page，读回原字节 SHA 核验；不公开私有引用，不构成新的独审或用户验收。"
+    },
+    "visualReport": {
+      "status": "NOT_PUBLISHED",
+      "recordId": "ui-report-archive-20261030-health-color-code-study",
+      "sha256": "b5a86521e8179f5e8ae6d85db44983292a3007cd15e3768309c9f22314f0bb8f",
+      "storage": "PRIVATE_LIBRARY",
+      "durableStorage": "ACCESS_VERIFIED",
+      "note": "已取回既有私有 Library HTML 并核对终审本地报告容器字节；不公开私人链接，不代表浏览器预览或新的审美验收。此哈希不替代单独 PNG 的身份。",
+      "artifactKind": "html-report",
+      "acceptedFrameBinding": "EXACT_PIXELS"
+    }
+  },
+  "motionTransfer": {
+    "status": "NOT_TESTED",
+    "note": "Fixed-size static only. No interaction, responsive layout, animation, audio or AV-sync approval implied."
+  }
+}

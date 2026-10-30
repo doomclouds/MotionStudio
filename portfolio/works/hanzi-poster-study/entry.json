@@ -94,6 +94,16 @@
       "path": "design/helpers.mjs",
       "sha256": "a4ac40be222c74b272a2f8ecfccddc8d4872ac72b3e2abc8ca18b16fbd5625fd",
       "role": "source"
+    },
+    {
+      "path": "DESIGN-RETENTION.md",
+      "sha256": "7ef5dd86c1de0488d979ec5dba19c6e5440e3cbb8d68180042ffd8c5adcfdd4c",
+      "role": "documentation"
+    },
+    {
+      "path": "retention.json",
+      "sha256": "bc1ae3ed523900a02a7ccba3b93d0a4f48d9fdf4bfdf1dc4a939268e8299ab6c",
+      "role": "config"
     }
   ],
   "runtime": [

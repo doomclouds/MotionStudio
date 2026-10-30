@@ -234,3 +234,46 @@ python3 -m unittest discover -s portfolio -p 'test_*.py'
 兼容旧 `schema: 1` 的七个布尔字段仍要求全部为 `true`，不会自动把布尔值解释成v2状态；没有真实逐项审查的新作品必须使用v2，禁止用假 `true` 通过旧合同。
 
 最小依赖不是零依赖承诺。准备脚本不得以 `curl | bash`、安装时任意脚本或默认在线下载规避锁。需要上游源码时固定 commit/blob 与 SHA-256，并保留 upstream notice；只用分支名不构成固定版本。下载的压缩包须检查路径穿越、symlink 和解压大小上限。
+
+## 静态设计的沉淀结构与使用（2026-10修订）
+
+[统一作品与积木关系索引](DESIGN-INDEX.md) / [机器索引](design-index.json)。这里的静态作品包括品牌首屏、海报、信息图、演示页及设备UI，不把它们统称为完整产品界面。完整作品、公共积木与方法卡分开计数。
+
+**每个静态作品必须有 `DESIGN-RETENTION.md` 与 `retention.json`。** 不搬迁旧分析、场景或外置资源：统一卡连接旧分析和真实代码；`entry.json` 继续是文件完整性、固定画幅、运行入口、资源与验收的唯一权威。静态schema4和既有Motion schema2/3兼容，视频工程的src/、prepare/render入口、听审和声画验收不受此修订改变。
+
+- 统一设计卡回答：内容与受众、品牌定位/语气（没有完整品牌系统就明说）、颜色职责/面积与对比、构图/字体/材料、可迁移规则与反例、代码调用和案例专用部分、审阅范围与后续视频边界。复刻来源、例文事实与残差须明确；不能只列颜色数值或赞美风格。
+- `retention.json` schemaVersion=1：workId/kind/canvas/entrypoint映射作品；decisionCard/sourceAnalysis映射分析；ruleRefs只引用真实独立方法卡（空数组不等于没有设计思考）；assetUsage记录稳定familyId、runtime-import或vendored-snapshot、模块与来源commit/hash、调用点和可见职责；evidence指向entry验收和证据身份；motionTransfer保留NOT_TESTED，直到独立视频实验获得证据后另行扩展协议。
+- 公共设计族的契约/文字/代码/配方在 `engine/design-elements/`；`catalog.json` 为公共族数量来源。源案例启发与真正调用严格区分。共享绘图工具、完整案例、函数、配方或模块快照都不新增族数。无合适模块就保留案例代码，不硬套。
+- 运行时导入保留传递依赖锁；快照保留来源及SHA，不冒称自动跟随公共模块更新。先按作品README准备合法外置字体，再独立进程以固定尺寸运行，不能宣称克隆后无资源即可复现。
+- 参考/复刻/局部对照、问题与修改、实际帧hash组成可视证据；公开目录的cover仅导航，不替代完整报告。当前比较包状态NOT_PUBLISHED如实保留。私人记录仅可发布经审查的非敏感记录ID/hash，绝不放本地绝对路径、私有链接或授权原文。PRIVATE_RECORD_LOCATED只表示定位记录，不代表公开可访问、审核全通过或本次重新渲染。
+- 收藏、可再现、技术检查、视觉残差和公开许可分别管理。技术测试与像素差异不是审美评分；静态通过不是动效、交互、响应式或听审通过。源素材与完整报告公开仍需逐项权利范围审查。
+
+维护命令（从仓库根运行）：
+
+```sh
+python portfolio/retention.py --write  # 仅重生成三份跨索引
+python portfolio/retention.py --check  # 拒绝缺卡、假ID、调用/依赖错配与索引漂移
+python portfolio/test_retention.py
+python portfolio/validate.py          # 仍核对每作entry里的全部文件hash
+python portfolio/test_validate.py
+```
+
+新增/改动每作文字或语义清单后，必须同步entry文件库存及SHA；保留旧作品帧与代码，不以整理之名重新设计。由catalog和全部静态作品sidecar生成的覆盖表不再手工维护。代码扫描验证只能确认显式模块/调用证据，不能证明像素贡献或审美：这些仍依赖独立可视审查。
+
+使用顺序：先读内容任务与统一设计卡→比较适用/反例→从公共族契约选可用模块→按固定画幅构图→用实际参考与成品复核→用户决定收藏。新内容所需设计若未被现有模块表达，先保留专项并验证第二真实场景，再提取。未来视频迁移另验图层、注意力顺序、读时、运动及声音，不把复刻数量当审美提升。
+
+### 只读检索全部静态作品
+
+```sh
+python portfolio/retention.py --query
+python portfolio/retention.py --query --text 品牌
+python portfolio/retention.py --query --text 像素 --family design.color-sections.v1
+```
+
+搜索作品ID、标题、统一设计卡与原分析全文，按字面子串匹配（不区分英文大小写），不搜索私人报告。`--family`必须是完整稳定ID，筛选真实调用而不是来源启发；与`--text`取交集。输出作品/卡路径、实际族、视觉和证据状态；不评分、排名或推定审美适用性。零匹配返回count=0，未知族或空白查询报错。无过滤条件列全部静态作品。只能在完整仓库使用，缺少仓库不能当成零结果；查询不写文件。
+
+### 私有持久证据身份
+
+归档核验后，可在evidence中新增 `visualReport`，而不覆盖原 `comparisonBundle` 的PNG/局部材料身份：状态仍NOT_PUBLISHED，记录非敏感opaque ID、HTML容器SHA、artifactKind=html-report、storage=PRIVATE_LIBRARY、durableStorage=ACCESS_VERIFIED，以及acceptedFrameBinding=EXACT_PIXELS或NOT_ESTABLISHED。独审原字节经私有Page回读验证后可将原独审记录升级为PRIVATE_OWNER_PAGE/ACCESS_VERIFIED；运行调用回执不能随之自动升级。
+
+EXACT_PIXELS只表示报告嵌图与已审帧像素匹配，不代表新审美验收或浏览器预览通过。NOT_ESTABLISHED必须保留，尤其不能把有持久HTML报告说成已审原帧对照的完整闭环。公开库只保存受控记录ID/hash与状态，不公开Library/Page私有ID或URL。自动校验只检查记录契约与索引一致性，远端字节取回/解码与权限复核需另有实际执行证据。

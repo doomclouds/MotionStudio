@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "workId": "pixel-hiking-study",
+  "kind": "fixed-static-design",
+  "canvas": {
+    "width": 1200,
+    "height": 750
+  },
+  "entrypoint": "design/scene.mjs",
+  "decisionCard": "DESIGN-RETENTION.md",
+  "sourceAnalysis": [
+    "DESIGN-REASONING.md"
+  ],
+  "ruleRefs": [],
+  "ruleStatus": "No separate formal rule card claimed; use decisionCard and sourceAnalysis.",
+  "assetUsage": [
+    {
+      "familyId": "design.print-poster.v1",
+      "mode": "runtime-import",
+      "modulePath": "engine/design-elements/print-poster.mjs",
+      "moduleSha256": "56203ff52eef7375bf1c8efe20b926dc0197572353f44c82f1243930a7e26fcf",
+      "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
+      "callsite": "design/scene.mjs",
+      "importToken": "print-poster.mjs",
+      "callToken": "drawOverprint",
+      "visibleRole": "HUD硬偏移文字",
+      "snapshotPath": null,
+      "executionEvidence": {
+        "status": "MATCHED_ACCEPTED_FRAME",
+        "recordId": "ui-call-audit-20261030-pixel-hiking-study",
+        "sha256": "907575da9cc790ff4961ac5ca9de47767c813938d167b4bf3ce3cfdd2b1165f6",
+        "frameSha256": "207ad3d9c972d96eef1abc3e77cc62d9efb9a21e8672130a050a7630790b83f5",
+        "storage": "SCRATCH_LOCAL_ONLY",
+        "durableStorage": "NOT_LOCATED",
+        "note": "Independent instrumented runtime confirmed visible calls and exact accepted-frame identity. Technical evidence, not new aesthetic approval."
+      }
+    },
+    {
+      "familyId": "design.color-sections.v1",
+      "mode": "runtime-import",
+      "modulePath": "engine/design-elements/color-sections.mjs",
+      "moduleSha256": "cf2cf8ebf1b1bf8bd65dbbaef11f9546db9fe096d3eba7a0b18936e616ec2dd8",
+      "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
+      "callsite": "design/scene.mjs",
+      "importToken": "color-sections.mjs",
+      "callToken": "drawSections",
+      "visibleRole": "森林/山脊/湖泊底层分区",
+      "snapshotPath": null,
+      "executionEvidence": {
+        "status": "MATCHED_ACCEPTED_FRAME",
+        "recordId": "ui-call-audit-20261030-pixel-hiking-study",
+        "sha256": "907575da9cc790ff4961ac5ca9de47767c813938d167b4bf3ce3cfdd2b1165f6",
+        "frameSha256": "207ad3d9c972d96eef1abc3e77cc62d9efb9a21e8672130a050a7630790b83f5",
+        "storage": "SCRATCH_LOCAL_ONLY",
+        "durableStorage": "NOT_LOCATED",
+        "note": "Independent instrumented runtime confirmed visible calls and exact accepted-frame identity. Technical evidence, not new aesthetic approval."
+      }
+    }
+  ],
+  "nonAssetNote": "Shared drawing helpers and case-local scene code are not public design families; no runtime reuse is inferred from visual similarity.",
+  "evidence": {
+    "acceptanceSource": "entry.json#/acceptance",
+    "renderHashSource": "entry.json#/cover/source_sha256",
+    "publicCover": "cover.jpg",
+    "comparisonBundle": {
+      "status": "NOT_PUBLISHED",
+      "recordId": "pixel-reviewed-png",
+      "sha256": "207ad3d9c972d96eef1abc3e77cc62d9efb9a21e8672130a050a7630790b83f5",
+      "storage": "SCRATCH_LOCAL_ONLY",
+      "durableStorage": "NOT_LOCATED",
+      "note": "Located private visual artifact (reviewed frame or comparison material), not proof of a complete durable reference/rebuild/detail bundle. Public cover is only navigation."
+    },
+    "independentReview": {
+      "status": "PRIVATE_RECORD_LOCATED",
+      "recordId": "ui-independent-review-archive-20261030-pixel-hiking-study",
+      "sha256": "a4172233d6cdb0f7aee7cb522b26cab1fa3d80b960085035dc5786538fcf4183",
+      "storage": "PRIVATE_OWNER_PAGE",
+      "durableStorage": "ACCESS_VERIFIED",
+      "note": "原独审文件已归档至仅所有者可访问的私有 Page，读回原字节 SHA 核验；不公开私有引用，不构成新的独审或用户验收。"
+    },
+    "visualReport": {
+      "status": "NOT_PUBLISHED",
+      "recordId": "ui-report-archive-20261030-pixel-hiking-study",
+      "sha256": "166cb88aa349da5e8c5cb0e0c5694821c3849f2f4519116134d5c202e13d6255",
+      "storage": "PRIVATE_LIBRARY",
+      "durableStorage": "ACCESS_VERIFIED",
+      "note": "已取回既有私有 Library HTML 并核对终审本地报告容器字节；不公开私人链接，不代表浏览器预览或新的审美验收。此哈希不替代单独 PNG 的身份。",
+      "artifactKind": "html-report",
+      "acceptedFrameBinding": "NOT_ESTABLISHED"
+    }
+  },
+  "motionTransfer": {
+    "status": "NOT_TESTED",
+    "note": "Fixed-size static only. No interaction, responsive layout, animation, audio or AV-sync approval implied."
+  }
+}

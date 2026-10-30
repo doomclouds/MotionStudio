@@ -89,6 +89,16 @@
       "path": "design/scene.mjs",
       "sha256": "2f6697d163a216a2d1f407ef74cc1827df0190334d541379b4c3f1ea54bdb6ab",
       "role": "source"
+    },
+    {
+      "path": "DESIGN-RETENTION.md",
+      "sha256": "327d8e577f69a69968ac9804c375a299f13f0dbdcf8943c691133fb589065a69",
+      "role": "documentation"
+    },
+    {
+      "path": "retention.json",
+      "sha256": "d1d619a58cae5bd857ba1a88ba74eb98a0f44c9e62ef9f6ff276f158f9c32fea",
+      "role": "config"
     }
   ],
   "runtime": [

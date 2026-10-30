@@ -99,6 +99,16 @@
       "path": "ui-dependencies.json",
       "sha256": "193c1c8e1d29b09714e426b42a648454e0f68951abd711f4d08641bf8cd9703f",
       "role": "config"
+    },
+    {
+      "path": "DESIGN-RETENTION.md",
+      "sha256": "9af55fa120ad9f6e477c4f0ab77c87c847c1d1c8a09a78230b87e481347fcead",
+      "role": "documentation"
+    },
+    {
+      "path": "retention.json",
+      "sha256": "74820d447dcc16613da1f35e33d2ec7787b5d4a8ef1afe49572f6c567266fcda",
+      "role": "config"
     }
   ],
   "runtime": [
