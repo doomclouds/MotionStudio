@@ -25,15 +25,25 @@
       "sha256": "9f6d4e62242d28ea60c4f761d4fd13d93f7c394d82aaca06a9a13f72f711a2f0",
       "storage": "SCRATCH_LOCAL_ONLY",
       "durableStorage": "NOT_LOCATED",
-      "note": "Local HTML report container; this SHA identifies HTML not the accepted PNG. Embedded image bytes checked previously, not browser preview or evidence of durable owner access."
+      "note": "本地HTML报告副本；哈希标识容器而非单张PNG。同容器的私有远端读回核验见visualReport，原生运行回执仍按各自存储状态登记。"
     },
     "independentReview": {
       "status": "PRIVATE_RECORD_LOCATED",
       "recordId": "b06-independent-visual-review",
       "sha256": "b28e448eea20642f8a0fbc4a18b01e6c6f070dff2ccb716c716bce69c3695416",
-      "storage": "SCRATCH_LOCAL_ONLY",
-      "durableStorage": "NOT_LOCATED",
-      "note": "Shared report explicitly covers this case; source/candidate visually inspected, not a fresh author self-check."
+      "storage": "PRIVATE_OWNER_PAGE",
+      "durableStorage": "ACCESS_VERIFIED",
+      "note": "原独审记录保存至仅所有者私有Page，实际读回原字节SHA核验。不公开私人引用，不构成新增审美验收。"
+    },
+    "visualReport": {
+      "recordId": "b06-verified-private-report-nanyuan-cartographic-study",
+      "sha256": "9f6d4e62242d28ea60c4f761d4fd13d93f7c394d82aaca06a9a13f72f711a2f0",
+      "storage": "PRIVATE_LIBRARY",
+      "durableStorage": "ACCESS_VERIFIED",
+      "acceptedFrameBinding": "EXACT_PIXELS",
+      "status": "NOT_PUBLISHED",
+      "artifactKind": "html-report",
+      "note": "已实际取回私有Library HTML报告，与终审本地报告容器字节相同。原尺寸嵌图或无边并排半图像素比对独立记录；未匹配不推定版本错误。未验证浏览器预览，不构成新的审美验收。"
     }
   },
   "motionTransfer": {

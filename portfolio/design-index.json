@@ -262,8 +262,8 @@
       "visualStatus": "PARTIAL",
       "reviewEvidence": "PRIVATE_RECORD_LOCATED",
       "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "SCRATCH_LOCAL_ONLY",
-      "acceptedFrameBinding": "NOT_CHECKED",
+      "reportStorage": "PRIVATE_LIBRARY",
+      "acceptedFrameBinding": "EXACT_PIXELS",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -482,8 +482,8 @@
       "visualStatus": "PARTIAL",
       "reviewEvidence": "PRIVATE_RECORD_LOCATED",
       "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "SCRATCH_LOCAL_ONLY",
-      "acceptedFrameBinding": "NOT_CHECKED",
+      "reportStorage": "PRIVATE_LIBRARY",
+      "acceptedFrameBinding": "EXACT_PIXELS",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -519,8 +519,8 @@
       "visualStatus": "PARTIAL",
       "reviewEvidence": "PRIVATE_RECORD_LOCATED",
       "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "SCRATCH_LOCAL_ONLY",
-      "acceptedFrameBinding": "NOT_CHECKED",
+      "reportStorage": "PRIVATE_LIBRARY",
+      "acceptedFrameBinding": "NOT_ESTABLISHED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -704,8 +704,8 @@
       "visualStatus": "PARTIAL",
       "reviewEvidence": "PRIVATE_RECORD_LOCATED",
       "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "SCRATCH_LOCAL_ONLY",
-      "acceptedFrameBinding": "NOT_CHECKED",
+      "reportStorage": "PRIVATE_LIBRARY",
+      "acceptedFrameBinding": "EXACT_PIXELS",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -796,8 +796,8 @@
       "visualStatus": "PARTIAL",
       "reviewEvidence": "PRIVATE_RECORD_LOCATED",
       "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "SCRATCH_LOCAL_ONLY",
-      "acceptedFrameBinding": "NOT_CHECKED",
+      "reportStorage": "PRIVATE_LIBRARY",
+      "acceptedFrameBinding": "EXACT_PIXELS",
       "motionTransfer": "NOT_TESTED"
     },
     {

@@ -38,7 +38,7 @@
     },
     {
       "path": "DESIGN-RETENTION.md",
-      "sha256": "9a9db2ef0ae625dc21d8e0a654c214d42641c69d50e8ad5b73a7e07edd5f8600",
+      "sha256": "c820643154dbb54e554e54dc6d1652274639d2bfa026697537a534ca743e47b1",
       "role": "documentation"
     },
     {
@@ -68,7 +68,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "959349d96a15515e872f3e8a70dcc585c47a3af07cbca7a106331ce219166ed3",
+      "sha256": "d812dc6e6a554edde4357617923ca40c3a66b130d8f3a38f870680718e9f5f4a",
       "role": "documentation"
     },
     {
@@ -148,7 +148,7 @@
     },
     {
       "path": "retention.json",
-      "sha256": "65379a1914a9516bd06d4b5a97e73c6644cbcb78c85536b7329e19f391ba6f85",
+      "sha256": "d989ad0f76269d54482670edbf8c5903cedf299c42000dfb098d4486a0943df2",
       "role": "config"
     },
     {

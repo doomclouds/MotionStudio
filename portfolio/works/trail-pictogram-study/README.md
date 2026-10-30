@@ -8,7 +8,7 @@
 3. `TRAIL_PICTOGRAM_FONT_DIR=/external/fonts node engine/motion-render-core/scripts/render.mjs --scene ABS/portfolio/works/trail-pictogram-study/design/scene.mjs --work /tmp/trail-pictogram-study-render --frames 0`
 
 运行时再次检查全部原源及派生hash，缺失/错版不回退。依赖版本见locks。
-已审帧SHA：`ddff1dbb45e4d004aabead34a40bb9d85d69c7cfa3589095f952b63756efecc1`。唯一公开图为自渲染cover.jpg，其余对照与独审证据目前只有本地记录，不假称持久归档。
+已审帧SHA：`ddff1dbb45e4d004aabead34a40bb9d85d69c7cfa3589095f952b63756efecc1`。唯一公开图为自渲染cover.jpg，报告容器已从私有Library取回核对，独审原文已在仅所有者私有Page读回核验；私有引用不公开，准确状态见retention.json。
 
 ## 沉淀与使用
 阅读DESIGN-RETENTION.md及retention.json，再使用完整入口。现有14个公共UI族无实际runtime import；案例配方被真实调用，不等于新增通用族，不虚构依赖或源码快照。配方源码随完整项目保留并列入entry文件SHA。

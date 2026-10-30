@@ -10,7 +10,7 @@
 | [公交早晨 · 计算式数据肖像](works/bus-morning-study/DESIGN-RETENTION.md) | 0（案例代码保留） | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / NOT_ESTABLISHED；未公开 |
 | [今夜观木星 · 复古未来观象台](works/cosmic-observatory-study/DESIGN-RETENTION.md) | 0（案例代码保留） | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / EXACT_PIXELS；未公开 |
 | [骑行年报 · Y2K数字主视觉](works/cycling-year-report/DESIGN-RETENTION.md) | 0（案例代码保留） | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / EXACT_PIXELS；未公开 |
-| [影展志 · 十天五十二部](works/film-festival-study/DESIGN-RETENTION.md) | print-poster | PARTIAL | PRIVATE_RECORD_LOCATED | SCRATCH_LOCAL_ONLY / NOT_CHECKED；未公开 |
+| [影展志 · 十天五十二部](works/film-festival-study/DESIGN-RETENTION.md) | print-poster | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / EXACT_PIXELS；未公开 |
 | [市 · 汉字实验海报](works/hanzi-poster-study/DESIGN-RETENTION.md) | 0（案例代码保留） | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / NOT_ESTABLISHED；未公开 |
 | [采样台 · 硬件面板三屏静态复刻](works/hardware-sampler-study/DESIGN-RETENTION.md) | 0（案例代码保留） | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / EXACT_PIXELS；未公开 |
 | [健康数据颜色编码 · 完整静态复刻](works/health-color-code-study/DESIGN-RETENTION.md) | material-surfaces | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / EXACT_PIXELS；未公开 |
@@ -21,20 +21,20 @@
 | [菜市场剖面 · 完整静态复刻](works/market-section-study/DESIGN-RETENTION.md) | 0（案例代码保留） | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / EXACT_PIXELS；未公开 |
 | [Meridian · 黑白对分品牌与产品首屏](works/meridian-study/DESIGN-RETENTION.md) | 0（案例代码保留） | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / NOT_ESTABLISHED；未公开 |
 | [幕启 · 地方剧场票务品牌首屏](works/muqi-study/DESIGN-RETENTION.md) | 0（案例代码保留） | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / EXACT_PIXELS；未公开 |
-| [南鸢过境 · 完整静态复刻](works/nanyuan-cartographic-study/DESIGN-RETENTION.md) | 0（案例代码保留） | PARTIAL | PRIVATE_RECORD_LOCATED | SCRATCH_LOCAL_ONLY / NOT_CHECKED；未公开 |
-| [海洋基金年度信 · 编辑式长文](works/ocean-letter-study/DESIGN-RETENTION.md) | material-surfaces（快照） | PARTIAL | PRIVATE_RECORD_LOCATED | SCRATCH_LOCAL_ONLY / NOT_CHECKED；未公开 |
+| [南鸢过境 · 完整静态复刻](works/nanyuan-cartographic-study/DESIGN-RETENTION.md) | 0（案例代码保留） | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / EXACT_PIXELS；未公开 |
+| [海洋基金年度信 · 编辑式长文](works/ocean-letter-study/DESIGN-RETENTION.md) | material-surfaces（快照） | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / NOT_ESTABLISHED；未公开 |
 | [海里的塑料 · 完整静态复刻](works/ocean-plastic-treemap-study/DESIGN-RETENTION.md) | 0（案例代码保留） | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / EXACT_PIXELS；未公开 |
 | [鹿鸣山 · 像素徒步三关](works/pixel-hiking-study/DESIGN-RETENTION.md) | print-poster, color-sections | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / NOT_ESTABLISHED；未公开 |
 | [烘焙计时 · 完整静态复刻](works/playful-roast-timer-study/DESIGN-RETENTION.md) | material-surfaces | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / EXACT_PIXELS；未公开 |
 | [专业相机 · 参数控制三屏](works/pro-camera-study/DESIGN-RETENTION.md) | 0（案例代码保留） | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / EXACT_PIXELS；未公开 |
 | [摩登焙香 · 装饰艺术月历静态复刻](works/shanghai-deco-study/DESIGN-RETENTION.md) | 0（案例代码保留） | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / EXACT_PIXELS；未公开 |
 | [慢火 · 巨型字品牌首屏](works/slow-roast-study/DESIGN-RETENTION.md) | 0（案例代码保留） | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / NOT_ESTABLISHED；未公开 |
-| [节气行 · 山里的朱砂](works/solar-terms-study/DESIGN-RETENTION.md) | material-surfaces | PARTIAL | PRIVATE_RECORD_LOCATED | SCRATCH_LOCAL_ONLY / NOT_CHECKED；未公开 |
+| [节气行 · 山里的朱砂](works/solar-terms-study/DESIGN-RETENTION.md) | material-surfaces | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / EXACT_PIXELS；未公开 |
 | [候風錄 · 宋刻版式](works/song-block-print-study/DESIGN-RETENTION.md) | material-surfaces | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / EXACT_PIXELS；未公开 |
 | [茶馆里的七个夜晚 · 数据人文主义信息图](works/tea-conversation-map/DESIGN-RETENTION.md) | 0（案例代码保留） | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / NOT_ESTABLISHED；未公开 |
 | [茶话声 · 声音品牌完整首屏静态复刻](works/tea-voice-study/DESIGN-RETENTION.md) | 0（案例代码保留） | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / EXACT_PIXELS；未公开 |
 | [现在与可能 · 小剧场叙事波形](works/theatre-narrative-wave/DESIGN-RETENTION.md) | 0（案例代码保留） | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / NOT_ESTABLISHED；未公开 |
-| [沿线设施图例 · 完整静态复刻](works/trail-pictogram-study/DESIGN-RETENTION.md) | 0（案例代码保留） | PARTIAL | PRIVATE_RECORD_LOCATED | SCRATCH_LOCAL_ONLY / NOT_CHECKED；未公开 |
+| [沿线设施图例 · 完整静态复刻](works/trail-pictogram-study/DESIGN-RETENTION.md) | 0（案例代码保留） | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / EXACT_PIXELS；未公开 |
 | [黑胶商店 · 完整固定画幅静态复刻](works/vinyl-study/DESIGN-RETENTION.md) | 0（案例代码保留） | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / NOT_ESTABLISHED；未公开 |
 | [今天的浪 · 玩味错位天气海报](works/wave-weather-study/DESIGN-RETENTION.md) | 0（案例代码保留） | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / NOT_ESTABLISHED；未公开 |
 

@@ -18,4 +18,4 @@ ENGINE是MotionStudio的engine/motion-render-core。源和派生字体分别验S
 
 实际调用本地material-surfaces快照opaque一次作小卡；shared只是状态工具。快照源commit与SHA在module-snapshots.json，不是实时从引擎导入。新增drawAuthoredColumns是本例真实调用的候选配方，不列入14个公共设计族，不自动避碰/分页；验证与边界见design/SETTLEMENT.md。
 
-仅自渲染cover随工程留存。参考、报告与独审证据在本次可定位本地记录，未核实其持久存储；retention.json如实记录。正文450经独审校准，仍有字体栅格/标点/齐行差异；没有浏览器、响应式、交互、音视频验证。
+仅自渲染cover随工程留存。报告容器已从私有Library取回、独审原文已在仅所有者私有Page读回核验，retention.json逐项记录；年度信尚未建立报告嵌图与原尺寸帧的精确像素绑定，不推定版本错误。正文450经独审校准，仍有字体栅格/标点/齐行差异；没有浏览器、响应式、交互、音视频验证。
