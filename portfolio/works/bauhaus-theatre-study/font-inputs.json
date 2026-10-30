@@ -1,0 +1,70 @@
+{
+  "originalInputs": [
+    {
+      "filename": "NotoSansSC-variable.ttf",
+      "sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+      "bytes": 17772300
+    },
+    {
+      "filename": "Poppins-SemiBold.ttf",
+      "sha256": "d3bf1bdaf0550e83da9ac0b1d1d9fe6db086835a83aa28578e609a394b9a0286",
+      "bytes": 157312
+    },
+    {
+      "filename": "Poppins-ExtraBold.ttf",
+      "sha256": "f2ab17c1a63a0ecc12c2461848fc8a469395e3cd2d641803e889c643d9f958e1",
+      "bytes": 154836
+    }
+  ],
+  "derived": [
+    {
+      "source": "NotoSansSC-variable.ttf",
+      "name": "Sans500",
+      "weight": 550
+    },
+    {
+      "source": "NotoSansSC-variable.ttf",
+      "name": "Sans700",
+      "weight": 700
+    },
+    {
+      "source": "NotoSansSC-variable.ttf",
+      "name": "Sans900",
+      "weight": 900
+    }
+  ],
+  "outputNames": [
+    "Sans500.ttf",
+    "Sans700.ttf",
+    "Sans900.ttf",
+    "Poppins-SemiBold.ttf",
+    "Poppins-ExtraBold.ttf"
+  ],
+  "expectedOutputs": [
+    {
+      "filename": "Sans500.ttf",
+      "sha256": "ac1ddb9a8935868c82a84d950b0c7803654cad0dd58c051d9ddde7ab909285ea",
+      "bytes": 117560
+    },
+    {
+      "filename": "Sans700.ttf",
+      "sha256": "46151670c812ed549557feec473c2ee3ac9019b3c546cd90a885d77e8b80198c",
+      "bytes": 118308
+    },
+    {
+      "filename": "Sans900.ttf",
+      "sha256": "af550f62a7152bece448e07a3d8e8d37088604dacec2789a5c3f8d548ab02b20",
+      "bytes": 118104
+    },
+    {
+      "filename": "Poppins-SemiBold.ttf",
+      "sha256": "d3bf1bdaf0550e83da9ac0b1d1d9fe6db086835a83aa28578e609a394b9a0286",
+      "bytes": 157312
+    },
+    {
+      "filename": "Poppins-ExtraBold.ttf",
+      "sha256": "f2ab17c1a63a0ecc12c2461848fc8a469395e3cd2d641803e889c643d9f958e1",
+      "bytes": 154836
+    }
+  ]
+}

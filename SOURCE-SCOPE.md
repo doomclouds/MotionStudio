@@ -93,3 +93,15 @@ Five complete fixed-frame studies retain editable code, design reasoning, runtim
 - `portfolio/works/market-method-study/cover.jpg`: 1200 × 750, 123,298 bytes; SHA-256 `cba9bdf156b79022d86c51dcc6371b537ca2de95bb29e86c61724f24d63255b9`.
 
 No wildcard media permission is granted. Covers derive from the accepted Native recreations; schema4 does not imply browser, interaction, audio or animation validation.
+
+## Huashu B05 retained static works
+
+Five complete fixed-frame studies retain editable code, design reasoning, runtime locks, attribution and externally supplied fonts. No upstream images/HTML, review reports, font binaries or render sequences are included. Exact additional JPEG exceptions (each maximum 1 MiB; dimensions preserve each accepted work):
+
+- `portfolio/works/song-block-print-study/cover.jpg`: 1200 × 750, 261,982 bytes; SHA-256 `6223f4018b87f59c3cd4613450e216250a5687f96973640d01302d59da5151a3`.
+- `portfolio/works/bauhaus-theatre-study/cover.jpg`: 1200 × 750, 136,036 bytes; SHA-256 `131a46b5fb87e7012c7c66343812a1715cc39ecb43b943c03d433a145539a28a`.
+- `portfolio/works/ocean-plastic-treemap-study/cover.jpg`: 1200 × 750, 196,990 bytes; SHA-256 `a29e8e88bbf480f08814ca2a6359ced3eb03244afdcc287b6208887b0b575488`.
+- `portfolio/works/health-color-code-study/cover.jpg`: 1200 × 750, 155,611 bytes; SHA-256 `224b2740ccb52dab46f5ef7fd8c67fd7c6d650f4d03a927d4c7057c2c557d982`.
+- `portfolio/works/irreverent-pop-study/cover.jpg`: 1200 × 750, 160,993 bytes; SHA-256 `df8f621e07865727a8d2a99fe66d9ce23e7b5747861732a14a503152dff72f35`.
+
+No wildcard media permission is granted. Covers derive from the accepted Native recreations; schema4 does not imply browser, interaction, audio or animation validation.

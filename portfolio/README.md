@@ -111,6 +111,29 @@
 
 [菜市场方法论 · 从圆心向外](works/market-method-study/README.md) — 1200×750。方法论单页演示；偏心嵌套圆表达目的与机制，不作统计面积，市场数据与因果主张未经核实。 完整工程独立重渲染匹配已审帧，视觉残差仍按PARTIAL披露；未验证浏览器、交互或视频。
 
+
+## Huashu B05 · 宋刻、几何剧场与数据语义
+
+[![候風錄 · 宋刻版式](works/song-block-print-study/cover.jpg)](works/song-block-print-study/README.md)
+
+[候風錄 · 宋刻版式](works/song-block-print-study/README.md) — 1200×750。宋刻版式完整画面；竖排阅读与朱批为设计样例，不冒充历史真本或真实气象记录。 完整工程独立重渲染匹配已审帧，视觉残差仍按PARTIAL披露；未验证浏览器、交互或视频。
+
+[![河湾小剧场 · 三出戏一个舞台](works/bauhaus-theatre-study/cover.jpg)](works/bauhaus-theatre-study/README.md)
+
+[河湾小剧场 · 三出戏一个舞台](works/bauhaus-theatre-study/README.md) — 1200×750。几何剧场品牌首屏；图形与节目身份对应，价格/日期仅样例，非真实售票或官方包豪斯作品。 完整工程独立重渲染匹配已审帧，视觉残差仍按PARTIAL披露；未验证浏览器、交互或视频。
+
+[![海里的塑料 · 完整静态复刻](works/ocean-plastic-treemap-study/cover.jpg)](works/ocean-plastic-treemap-study/README.md)
+
+[海里的塑料 · 完整静态复刻](works/ocean-plastic-treemap-study/README.md) — 1200×750。海洋塑料信息图；源块面积非严格同一比例，吨数与机构仅原作例文，无统计证据背书。 完整工程独立重渲染匹配已审帧，视觉残差仍按PARTIAL披露；未验证浏览器、交互或视频。
+
+[![健康数据颜色编码 · 完整静态复刻](works/health-color-code-study/cover.jpg)](works/health-color-code-study/README.md)
+
+[健康数据颜色编码 · 完整静态复刻](works/health-color-code-study/README.md) — 1200×750。健康颜色编码三屏；弧长与标签比例存在源差异，健康数据仅UI示意，非医学结论。 完整工程独立重渲染匹配已审帧，视觉残差仍按PARTIAL披露；未验证浏览器、交互或视频。
+
+[![反叛流行 · AI写的，别像AI](works/irreverent-pop-study/cover.jpg)](works/irreverent-pop-study/README.md)
+
+[反叛流行 · AI写的，别像AI](works/irreverent-pop-study/README.md) — 1200×750。反叛流行写作工具首屏；营销统计及模型断言未经核实，不代表GPT或OpenAI性能宣传。 完整工程独立重渲染匹配已审帧，视觉残差仍按PARTIAL披露；未验证浏览器、交互或视频。
+
 ## 最小结构
 
 ```text

@@ -1,0 +1,53 @@
+{
+  "originalInputs": [
+    {
+      "filename": "NotoSerifTC-variable.ttf",
+      "sha256": "0077e18f57c6908f4a000969880940bdb0dad057c0e8d98b49dc364c3d1b09c6",
+      "bytes": 16851596
+    },
+    {
+      "filename": "NotoSansSC-variable.ttf",
+      "sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+      "bytes": 17772300
+    }
+  ],
+  "derived": [
+    {
+      "source": "NotoSerifTC-variable.ttf",
+      "name": "Song400",
+      "weight": 550
+    },
+    {
+      "source": "NotoSerifTC-variable.ttf",
+      "name": "Song600",
+      "weight": 600
+    },
+    {
+      "source": "NotoSansSC-variable.ttf",
+      "name": "Sans500",
+      "weight": 550
+    }
+  ],
+  "outputNames": [
+    "Song400.ttf",
+    "Song600.ttf",
+    "Sans500.ttf"
+  ],
+  "expectedOutputs": [
+    {
+      "filename": "Song400.ttf",
+      "sha256": "57d73aa70943d53541183208c5e5875ccce6ce2ef55862bf47fe93d502854f4a",
+      "bytes": 159604
+    },
+    {
+      "filename": "Song600.ttf",
+      "sha256": "6a84d0f9c2a95d1b61f37dfd9091f46fc59d92b5133ac8909858007cfc53e1a0",
+      "bytes": 159632
+    },
+    {
+      "filename": "Sans500.ttf",
+      "sha256": "ac1ddb9a8935868c82a84d950b0c7803654cad0dd58c051d9ddde7ab909285ea",
+      "bytes": 117560
+    }
+  ]
+}

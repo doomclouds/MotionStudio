@@ -1,0 +1,201 @@
+{
+  "schema": 4,
+  "id": "bauhaus-theatre-study",
+  "version": "1.0.0",
+  "title": "河湾小剧场 · 三出戏一个舞台",
+  "status": "source-release",
+  "unofficial_recreation": true,
+  "original": {
+    "author": "alchaincyf (花叔 · 花生)",
+    "title": "Huashu design specimen",
+    "url": "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/web/10-bauhaus-geometric.html"
+  },
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "LICENSES/huashu-MIT-LICENSE.txt",
+      "LICENSES/NotoSansSC-OFL.txt",
+      "LICENSES/Poppins-OFL.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/LICENSE",
+      "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "https://github.com/google/fonts/tree/main/ofl/poppins"
+    ]
+  },
+  "files": [
+    {
+      "path": "ASSET-USAGE.md",
+      "sha256": "781b2c2944d267344ca633571150dd70674f930eb36634d8362fc758219c3ad3",
+      "role": "documentation"
+    },
+    {
+      "path": "CREDITS.md",
+      "sha256": "037d36edd26f7d092767884d9c8b55051637d3cfdf2305b9f0e5cf56d765ea7e",
+      "role": "documentation"
+    },
+    {
+      "path": "DESIGN-REASONING.md",
+      "sha256": "6ddb9f1a6c7058715ddcf555af5f45cb63f9580988d08d75aed108f587cb2ac6",
+      "role": "documentation"
+    },
+    {
+      "path": "LICENSES/NotoSansSC-OFL.txt",
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/Poppins-OFL.txt",
+      "sha256": "6be04893d770899a015649c7aa3b582f871b272f8747a92b78b17c3e5c8b2573",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/huashu-MIT-LICENSE.txt",
+      "sha256": "6d6a2a9caf2e6d2b76974050427053b2892d8aa4c33fd168ce63a537fcee9d96",
+      "role": "license"
+    },
+    {
+      "path": "README.md",
+      "sha256": "d82e2bb0a0692e26c3601b289a991d147fd444e4571867a0c6f2b05e53f60dbe",
+      "role": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "131a46b5fb87e7012c7c66343812a1715cc39ecb43b943c03d433a145539a28a",
+      "role": "cover"
+    },
+    {
+      "path": "design/scene.mjs",
+      "sha256": "6d958c060811371ff64f24de53a05d380079b50a5461b540c06a529f970257ba",
+      "role": "source"
+    },
+    {
+      "path": "font-charset.txt",
+      "sha256": "43cb4042f4ee0a94414235a2b3cca03e7266f719693f1ca4b533a9fe6610132f",
+      "role": "documentation"
+    },
+    {
+      "path": "font-inputs.json",
+      "sha256": "8c65b4b36f1f9090616a1591114068341d93c94ef1d8c1591233f887d42730f3",
+      "role": "config"
+    },
+    {
+      "path": "locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "role": "lock"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "3376138df78fb0b3f62bc57d80dc440204cbe0a0709a07396e39636873862e6f",
+      "role": "lock"
+    },
+    {
+      "path": "prepare-fonts.py",
+      "sha256": "85222080e9a2b944f447dc2c1db9fed773155dc10c99b9185afc9128450bc163",
+      "role": "source"
+    },
+    {
+      "path": "ui-dependencies.json",
+      "sha256": "193c1c8e1d29b09714e426b42a648454e0f68951abd711f4d08641bf8cd9703f",
+      "role": "config"
+    }
+  ],
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "locks/npm-package-lock.json"
+    }
+  ],
+  "render": {
+    "entrypoint": "design/scene.mjs",
+    "width": 1200,
+    "height": 750
+  },
+  "resources": [
+    {
+      "id": "sans500",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "ac1ddb9a8935868c82a84d950b0c7803654cad0dd58c051d9ddde7ab909285ea",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Sans500.ttf",
+      "bytes": 117560,
+      "instructions": "Obtain originalInputs and run prepare-fonts.py. Original and derived hashes fail closed."
+    },
+    {
+      "id": "sans700",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "46151670c812ed549557feec473c2ee3ac9019b3c546cd90a885d77e8b80198c",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Sans700.ttf",
+      "bytes": 118308,
+      "instructions": "Obtain originalInputs and run prepare-fonts.py. Original and derived hashes fail closed."
+    },
+    {
+      "id": "sans900",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "af550f62a7152bece448e07a3d8e8d37088604dacec2789a5c3f8d548ab02b20",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Sans900.ttf",
+      "bytes": 118104,
+      "instructions": "Obtain originalInputs and run prepare-fonts.py. Original and derived hashes fail closed."
+    },
+    {
+      "id": "poppins-semibold",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/Poppins-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/poppins",
+      "sha256": "d3bf1bdaf0550e83da9ac0b1d1d9fe6db086835a83aa28578e609a394b9a0286",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Poppins-SemiBold.ttf",
+      "bytes": 157312,
+      "instructions": "Obtain originalInputs and run prepare-fonts.py. Original and derived hashes fail closed."
+    },
+    {
+      "id": "poppins-extrabold",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/Poppins-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/poppins",
+      "sha256": "f2ab17c1a63a0ecc12c2461848fc8a469395e3cd2d641803e889c643d9f958e1",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Poppins-ExtraBold.ttf",
+      "bytes": 154836,
+      "instructions": "Obtain originalInputs and run prepare-fonts.py. Original and derived hashes fail closed."
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "a2708f2b6d374d58dc902640b8461b5e27e00c0910ec6236169e6fbcbb16a9fc",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "Complete still and critical details independently reviewed; user requested retention. Font, paper shading and JPEG raster residuals remain. No responsive, browser, interaction or video validation."
+    }
+  }
+}

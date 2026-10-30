@@ -1,0 +1,38 @@
+{
+  "inputs": [
+    {
+      "file": "NotoSansSC-variable.ttf",
+      "sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+      "bytes": 17772300,
+      "weights": [
+        500,
+        900
+      ],
+      "prefix": "PopSans",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "notice": "LICENSES/NotoSansSC-OFL.txt"
+    },
+    {
+      "file": "Archivo-variable.ttf",
+      "sha256": "0e094a7d3c7c4c25cf1310c4b30014f1dae9332220b1c2c88f4fa996f0b05053",
+      "bytes": 658596,
+      "weights": [
+        900
+      ],
+      "prefix": "PopArchivo",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/archivo",
+      "notice": "LICENSES/Archivo-OFL.txt"
+    },
+    {
+      "file": "SpaceGrotesk-variable.ttf",
+      "sha256": "acad6de1fc93436f5c0f1f4137751ef04f1aea3063e7036535970ffcfbd79f72",
+      "bytes": 136676,
+      "weights": [
+        700
+      ],
+      "prefix": "PopSpace",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/spacegrotesk",
+      "notice": "LICENSES/SpaceGrotesk-OFL.txt"
+    }
+  ]
+}

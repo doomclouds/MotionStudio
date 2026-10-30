@@ -1,0 +1,218 @@
+{
+  "schema": 4,
+  "id": "irreverent-pop-study",
+  "version": "1.0.0",
+  "title": "反叛流行 · AI写的，别像AI",
+  "status": "source-release",
+  "unofficial_recreation": true,
+  "original": {
+    "author": "alchaincyf (花叔 · 花生)",
+    "title": "Huashu irreverent pop design specimen",
+    "url": "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/ppt/07-irreverent-pop.html"
+  },
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "LICENSES/huashu-MIT-LICENSE.txt",
+      "LICENSES/NotoSansSC-OFL.txt",
+      "LICENSES/Archivo-OFL.txt",
+      "LICENSES/SpaceGrotesk-OFL.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/LICENSE",
+      "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "https://github.com/google/fonts/tree/main/ofl/archivo",
+      "https://github.com/google/fonts/tree/main/ofl/spacegrotesk",
+      "https://github.com/doomclouds/MotionStudio/blob/0947507961eb5624ddd5c1240758baefa3246fd8/engine/design-elements/material-surfaces.mjs",
+      "https://github.com/doomclouds/MotionStudio/blob/0947507961eb5624ddd5c1240758baefa3246fd8/engine/design-elements/shared.mjs"
+    ]
+  },
+  "files": [
+    {
+      "path": "CREDITS.md",
+      "sha256": "627ae791ff6fbd67b9720b6e781fdf6476ae3fa2c3d4ba02182e7dafa1956f78",
+      "role": "documentation"
+    },
+    {
+      "path": "LICENSES/Archivo-OFL.txt",
+      "sha256": "108b4e57c9c796d3d38d0428ca7ee39de47ad93187302718d9b2d8864b9b716b",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/NotoSansSC-OFL.txt",
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/SpaceGrotesk-OFL.txt",
+      "sha256": "564ce565c371c5e5bbf286006565a7c9aa55a9f56e7ca58d56e05d649dd61a72",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/huashu-MIT-LICENSE.txt",
+      "sha256": "6d6a2a9caf2e6d2b76974050427053b2892d8aa4c33fd168ce63a537fcee9d96",
+      "role": "license"
+    },
+    {
+      "path": "README.md",
+      "sha256": "65a5e2fe6696ff31b4abf7fd9f6009ec76380f396fde935ec422a76a7d32e53d",
+      "role": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "df8f621e07865727a8d2a99fe66d9ce23e7b5747861732a14a503152dff72f35",
+      "role": "cover"
+    },
+    {
+      "path": "design/DESIGN-ANALYSIS.md",
+      "sha256": "3493be34abfa34664acc0cba8ed3726e75e0d8c7a38831abce9b2b1f44e41404",
+      "role": "documentation"
+    },
+    {
+      "path": "design/content.json",
+      "sha256": "07cf544f4a5b9a8ceb4ab405e6def192f65fe6683256c20308ae3270aa81c2cf",
+      "role": "config"
+    },
+    {
+      "path": "design/material-surfaces.mjs",
+      "sha256": "70bf1fcfa89bfbf911f5cf735b1b08e8ae7f360e43bd43a8c831efef579696eb",
+      "role": "source"
+    },
+    {
+      "path": "design/scene.mjs",
+      "sha256": "ff45ad6fb10e67a8ea36fc496ae1c6529f3a12b1dff0f3bb70210d572069d3b9",
+      "role": "source"
+    },
+    {
+      "path": "design/shared.mjs",
+      "sha256": "e36af17f96bd06eb250f27d5be53d678da7a72cb326df0ecb66155c0383d1122",
+      "role": "source"
+    },
+    {
+      "path": "font-charset.txt",
+      "sha256": "15772cf2a22ea4c47ef70266e83338e5c5b006c273fed99c655ccc5fa072ccf6",
+      "role": "config"
+    },
+    {
+      "path": "font-inputs.json",
+      "sha256": "a0061ea92931d043e97eb157997609ab1cc002e4bf87514d8caa0dabb1a045f8",
+      "role": "config"
+    },
+    {
+      "path": "fonts.lock.json",
+      "sha256": "6a1cb08ba932a3b3bde1ea6ffaf2e653d9fef598286c5505be31de0de3c4838a",
+      "role": "config"
+    },
+    {
+      "path": "locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "role": "lock"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "c97986608711fff48e780026471834a114f117d30fd4f1b15c3e76b21a760a46",
+      "role": "lock"
+    },
+    {
+      "path": "module-snapshots.json",
+      "sha256": "08eb999fde0524efd3f2831f1aa40821d498b8f7ae157c91d432948d9baf4c34",
+      "role": "config"
+    },
+    {
+      "path": "prepare-fonts.py",
+      "sha256": "ffa58194972892e23cdf10cb95841c26f6d72c2845be368002226f9687993d6e",
+      "role": "source"
+    },
+    {
+      "path": "verify.mjs",
+      "sha256": "04a018236214452ca4cef00d257b1f28f8de29b46744c4eb579656fdc6ed6956",
+      "role": "source"
+    }
+  ],
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "locks/npm-package-lock.json"
+    }
+  ],
+  "render": {
+    "entrypoint": "design/scene.mjs",
+    "width": 1200,
+    "height": 750
+  },
+  "resources": [
+    {
+      "id": "popsans500",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "aedceedbac0de3b186d9b6b187f6a8e2f5fdfd44f056a4969b53f560379435fe",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "PopSans500.ttf",
+      "bytes": 28800,
+      "instructions": "Supply originals per font-inputs.json, run prepare-fonts.py; set POP_FONT_DIR to prepared directory. Missing or mismatched fonts fail closed."
+    },
+    {
+      "id": "popsans900",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "4517e75cc4a0cce82006e65fc1853f669da32ac64b3c9fadf46f47e971bd1b92",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "PopSans900.ttf",
+      "bytes": 28788,
+      "instructions": "Supply originals per font-inputs.json, run prepare-fonts.py; set POP_FONT_DIR to prepared directory. Missing or mismatched fonts fail closed."
+    },
+    {
+      "id": "poparchivo900",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/Archivo-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/archivo",
+      "sha256": "c3d694bfbb4306c339da96e6ebc91f3257a6c3bae8d17ca9b4396e3508b5852a",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "PopArchivo900.ttf",
+      "bytes": 15460,
+      "instructions": "Supply originals per font-inputs.json, run prepare-fonts.py; set POP_FONT_DIR to prepared directory. Missing or mismatched fonts fail closed."
+    },
+    {
+      "id": "popspace700",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/SpaceGrotesk-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/spacegrotesk",
+      "sha256": "2b0b84577983b83a388819763cf51eb148837ca4d4a83e3a98aa10c854fd6004",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "PopSpace700.ttf",
+      "bytes": 15244,
+      "instructions": "Supply originals per font-inputs.json, run prepare-fonts.py; set POP_FONT_DIR to prepared directory. Missing or mismatched fonts fail closed."
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "8e82b77a44b217f999f97fcef75050167fba7c82c87739d898314680d5d585a3",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "Complete static composition and key details independently reviewed and accepted for collection. Font rasterization and punctuation spacing remain approximate. Statistical and model-performance claims are unverified source specimen copy, not GPT/OpenAI claims. Two actual paper material calls via local snapshots; no live engine import. No browser, interaction, responsive, motion or audio validation."
+    }
+  }
+}

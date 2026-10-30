@@ -120,9 +120,14 @@ class SourceTreeFixtures(unittest.TestCase):
         self.add('apparently-safe.txt', PNG)
         (self.repo / 'apparently-safe.txt').write_text('safe worktree replacement')
         self.audit(False, 'unapproved-media:PNG')
-    def test_public_policy_only_allows_twentyfour_exact_reviewed_images(self):
+    def test_public_policy_only_allows_twentynine_exact_reviewed_images(self):
         allow = json.loads((ROOT / 'scripts/source-assets-allowlist.json').read_text())['assets']
         self.assertEqual(allow, {
+            'portfolio/works/song-block-print-study/cover.jpg': '6223f4018b87f59c3cd4613450e216250a5687f96973640d01302d59da5151a3',
+            'portfolio/works/bauhaus-theatre-study/cover.jpg': '131a46b5fb87e7012c7c66343812a1715cc39ecb43b943c03d433a145539a28a',
+            'portfolio/works/ocean-plastic-treemap-study/cover.jpg': 'a29e8e88bbf480f08814ca2a6359ced3eb03244afdcc287b6208887b0b575488',
+            'portfolio/works/health-color-code-study/cover.jpg': '224b2740ccb52dab46f5ef7fd8c67fd7c6d650f4d03a927d4c7057c2c557d982',
+            'portfolio/works/irreverent-pop-study/cover.jpg': 'df8f621e07865727a8d2a99fe66d9ce23e7b5747861732a14a503152dff72f35',
             'portfolio/works/hk-street-signs-study/cover.jpg': '6d83409c6444e4ea6bd903075b7652300f6be7a066c15aa4bb0f06131aae4223',
             'portfolio/works/pixel-hiking-study/cover.jpg': '3e520725c9ca504d5b1e6cf45880f29bec31ce8bd3f1b03ffbd77af4d79eb82b',
             'portfolio/works/market-section-study/cover.jpg': '8c2aee6ce836fac4610270451202731430a2fd897b035366b4e73c0018c21a5b',
@@ -292,6 +297,46 @@ class SourceTreeFixtures(unittest.TestCase):
         self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
     def test_market_method_study_cover_wrong_path_rejected(self):
         self.add('portfolio/works/market-method-study/other.jpg',(ROOT/'portfolio/works/market-method-study/cover.jpg').read_bytes());self.audit(False)
+    def test_exact_song_block_print_study_cover_allowed(self):
+        name='portfolio/works/song-block-print-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes());self.audit(True)
+    def test_song_block_print_study_cover_tamper_rejected(self):
+        name='portfolio/works/song-block-print-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
+    def test_song_block_print_study_cover_wrong_path_rejected(self):
+        self.add('portfolio/works/song-block-print-study/other.jpg',(ROOT/'portfolio/works/song-block-print-study/cover.jpg').read_bytes());self.audit(False)
+    def test_exact_bauhaus_theatre_study_cover_allowed(self):
+        name='portfolio/works/bauhaus-theatre-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes());self.audit(True)
+    def test_bauhaus_theatre_study_cover_tamper_rejected(self):
+        name='portfolio/works/bauhaus-theatre-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
+    def test_bauhaus_theatre_study_cover_wrong_path_rejected(self):
+        self.add('portfolio/works/bauhaus-theatre-study/other.jpg',(ROOT/'portfolio/works/bauhaus-theatre-study/cover.jpg').read_bytes());self.audit(False)
+    def test_exact_ocean_plastic_treemap_study_cover_allowed(self):
+        name='portfolio/works/ocean-plastic-treemap-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes());self.audit(True)
+    def test_ocean_plastic_treemap_study_cover_tamper_rejected(self):
+        name='portfolio/works/ocean-plastic-treemap-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
+    def test_ocean_plastic_treemap_study_cover_wrong_path_rejected(self):
+        self.add('portfolio/works/ocean-plastic-treemap-study/other.jpg',(ROOT/'portfolio/works/ocean-plastic-treemap-study/cover.jpg').read_bytes());self.audit(False)
+    def test_exact_health_color_code_study_cover_allowed(self):
+        name='portfolio/works/health-color-code-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes());self.audit(True)
+    def test_health_color_code_study_cover_tamper_rejected(self):
+        name='portfolio/works/health-color-code-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
+    def test_health_color_code_study_cover_wrong_path_rejected(self):
+        self.add('portfolio/works/health-color-code-study/other.jpg',(ROOT/'portfolio/works/health-color-code-study/cover.jpg').read_bytes());self.audit(False)
+    def test_exact_irreverent_pop_study_cover_allowed(self):
+        name='portfolio/works/irreverent-pop-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes());self.audit(True)
+    def test_irreverent_pop_study_cover_tamper_rejected(self):
+        name='portfolio/works/irreverent-pop-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
+    def test_irreverent_pop_study_cover_wrong_path_rejected(self):
+        self.add('portfolio/works/irreverent-pop-study/other.jpg',(ROOT/'portfolio/works/irreverent-pop-study/cover.jpg').read_bytes());self.audit(False)
     def test_exact_liquid_glass_study_cover_allowed(self):
         name='portfolio/works/liquid-glass-study/cover.jpg'
         self.add(name,(ROOT/name).read_bytes());self.audit(True)

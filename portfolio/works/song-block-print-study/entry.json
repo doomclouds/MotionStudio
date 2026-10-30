@@ -1,0 +1,177 @@
+{
+  "schema": 4,
+  "id": "song-block-print-study",
+  "version": "1.0.0",
+  "title": "候風錄 · 宋刻版式",
+  "status": "source-release",
+  "unofficial_recreation": true,
+  "original": {
+    "author": "alchaincyf (花叔 · 花生)",
+    "title": "Huashu design specimen",
+    "url": "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/east/02-song-block-print.html"
+  },
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "LICENSES/huashu-MIT-LICENSE.txt",
+      "LICENSES/NotoSansSC-OFL.txt",
+      "LICENSES/NotoSerifTC-OFL.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/LICENSE",
+      "https://github.com/google/fonts/tree/main/ofl/notoseriftc",
+      "https://github.com/google/fonts/tree/main/ofl/notosanssc"
+    ]
+  },
+  "files": [
+    {
+      "path": "ASSET-USAGE.md",
+      "sha256": "781b2c2944d267344ca633571150dd70674f930eb36634d8362fc758219c3ad3",
+      "role": "documentation"
+    },
+    {
+      "path": "CREDITS.md",
+      "sha256": "c6e2b26d979b9f896905a317d0d4ecfbef31193ff16cfc2028a3fe0a5dda7d35",
+      "role": "documentation"
+    },
+    {
+      "path": "DESIGN-REASONING.md",
+      "sha256": "75e53fc4dbd960ef29505624b865ef6ccb84a9c80aa0c1deceed9e798cc7daae",
+      "role": "documentation"
+    },
+    {
+      "path": "LICENSES/NotoSansSC-OFL.txt",
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/NotoSerifTC-OFL.txt",
+      "sha256": "5e0da210fb04058a8c0087985d2d456b931c2579811a49655721d3cf0c36b6d6",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/huashu-MIT-LICENSE.txt",
+      "sha256": "6d6a2a9caf2e6d2b76974050427053b2892d8aa4c33fd168ce63a537fcee9d96",
+      "role": "license"
+    },
+    {
+      "path": "README.md",
+      "sha256": "e4ca62e8ad1c38a51c737ccdd4954eb75291a2bb34d7f1d54fa064fe67b2988d",
+      "role": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "6223f4018b87f59c3cd4613450e216250a5687f96973640d01302d59da5151a3",
+      "role": "cover"
+    },
+    {
+      "path": "design/scene.mjs",
+      "sha256": "d269abe4dce9588481125bd19b74c686a943580f7ec353320a8f941c049b80fb",
+      "role": "source"
+    },
+    {
+      "path": "font-charset.txt",
+      "sha256": "43cb4042f4ee0a94414235a2b3cca03e7266f719693f1ca4b533a9fe6610132f",
+      "role": "documentation"
+    },
+    {
+      "path": "font-inputs.json",
+      "sha256": "6c5f64858f85d6c04daf399094de22d52bdd421c88150144ca74fcb8507cd003",
+      "role": "config"
+    },
+    {
+      "path": "locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "role": "lock"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "3376138df78fb0b3f62bc57d80dc440204cbe0a0709a07396e39636873862e6f",
+      "role": "lock"
+    },
+    {
+      "path": "prepare-fonts.py",
+      "sha256": "85222080e9a2b944f447dc2c1db9fed773155dc10c99b9185afc9128450bc163",
+      "role": "source"
+    },
+    {
+      "path": "ui-dependencies.json",
+      "sha256": "58eb9bb5018fb837166f7e0b2ef25238acf100983987a65fb99636f38bb4b120",
+      "role": "config"
+    }
+  ],
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "locks/npm-package-lock.json"
+    }
+  ],
+  "render": {
+    "entrypoint": "design/scene.mjs",
+    "width": 1200,
+    "height": 750
+  },
+  "resources": [
+    {
+      "id": "song400",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSerifTC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notoseriftc",
+      "sha256": "57d73aa70943d53541183208c5e5875ccce6ce2ef55862bf47fe93d502854f4a",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Song400.ttf",
+      "bytes": 159604,
+      "instructions": "Obtain originalInputs and run prepare-fonts.py. Original and derived hashes fail closed."
+    },
+    {
+      "id": "song600",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSerifTC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notoseriftc",
+      "sha256": "6a84d0f9c2a95d1b61f37dfd9091f46fc59d92b5133ac8909858007cfc53e1a0",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Song600.ttf",
+      "bytes": 159632,
+      "instructions": "Obtain originalInputs and run prepare-fonts.py. Original and derived hashes fail closed."
+    },
+    {
+      "id": "sans500",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "ac1ddb9a8935868c82a84d950b0c7803654cad0dd58c051d9ddde7ab909285ea",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Sans500.ttf",
+      "bytes": 117560,
+      "instructions": "Obtain originalInputs and run prepare-fonts.py. Original and derived hashes fail closed."
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "8ce0165678c02ae64ce907437281ccad705bf4d221ac0423ffde6927013e5165",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "Complete still and critical details independently reviewed; user requested retention. Font, paper shading and JPEG raster residuals remain. No responsive, browser, interaction or video validation."
+    }
+  }
+}

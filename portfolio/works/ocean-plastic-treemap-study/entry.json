@@ -1,0 +1,226 @@
+{
+  "schema": 4,
+  "id": "ocean-plastic-treemap-study",
+  "version": "1.0.0",
+  "title": "海里的塑料 · 完整静态复刻",
+  "status": "source-release",
+  "unofficial_recreation": true,
+  "original": {
+    "author": "alchaincyf (花叔 · 花生)",
+    "title": "Huashu info/11-beautiful-information design specimen",
+    "url": "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/info/11-beautiful-information.html"
+  },
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "LICENSES/NotoSans-OFL.txt",
+      "LICENSES/NunitoSans-OFL.txt",
+      "LICENSES/huashu-MIT-LICENSE.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/LICENSE",
+      "https://github.com/google/fonts"
+    ]
+  },
+  "files": [
+    {
+      "path": "CREDITS.md",
+      "sha256": "f80ae2a908abd477d4c7ec2ec50c869397700739b55b147d36d6ee8b6250b692",
+      "role": "documentation"
+    },
+    {
+      "path": "DESIGN-REASONING.md",
+      "sha256": "afdca4fdd4da9c1b93056e3b034270617cec165840a2691e6340922d76bbe249",
+      "role": "documentation"
+    },
+    {
+      "path": "LICENSES/NotoSans-OFL.txt",
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/NunitoSans-OFL.txt",
+      "sha256": "efbb0c9e864cef973982d9a17567e6be5c3d1759695574586f3f18c7ecca064b",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/huashu-MIT-LICENSE.txt",
+      "sha256": "6d6a2a9caf2e6d2b76974050427053b2892d8aa4c33fd168ce63a537fcee9d96",
+      "role": "license"
+    },
+    {
+      "path": "README.md",
+      "sha256": "5aca381069b97c1ca54fb689052c73422be1bb302fdab22af3f0fe86d1dde7e2",
+      "role": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "a29e8e88bbf480f08814ca2a6359ced3eb03244afdcc287b6208887b0b575488",
+      "role": "cover"
+    },
+    {
+      "path": "design/data.mjs",
+      "sha256": "8b00a7b3694ba488628fd3c1efeae6673676a61bb5b99f6d555c4aff502fadf3",
+      "role": "source"
+    },
+    {
+      "path": "design/scene.mjs",
+      "sha256": "bb5148589512a99100bed1516b4601596e60b0f78cdf8d0bef51f3a9deca6274",
+      "role": "source"
+    },
+    {
+      "path": "font-inputs.json",
+      "sha256": "149b53f15e17969d593fb23c577979ba81635172ceadcba1c9def45df27f1d6e",
+      "role": "config"
+    },
+    {
+      "path": "locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "role": "lock"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "c97986608711fff48e780026471834a114f117d30fd4f1b15c3e76b21a760a46",
+      "role": "lock"
+    },
+    {
+      "path": "prepare-fonts.py",
+      "sha256": "f5b42df61d337bbfa4dc1ae39ce76056b33a64312779f9b1fbbdb234bb3fd5f1",
+      "role": "source"
+    }
+  ],
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "locks/npm-package-lock.json"
+    }
+  ],
+  "render": {
+    "entrypoint": "design/scene.mjs",
+    "width": 1200,
+    "height": 750
+  },
+  "resources": [
+    {
+      "id": "notosanssc-variable",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSans-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "NotoSansSC-variable.ttf",
+      "bytes": 17772300,
+      "instructions": "Provide in OCEAN_PLASTIC_FONT_DIR; prepare-fonts.py validates originals and derived outputs fail-closed."
+    },
+    {
+      "id": "nunitosans",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NunitoSans-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/nunitosans",
+      "sha256": "f934d7142fb4784bf828da485b7dcbd90c0c80d514e9d49a5da0ed3a1ae2491d",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "NunitoSans.ttf",
+      "bytes": 571240,
+      "instructions": "Provide in OCEAN_PLASTIC_FONT_DIR; prepare-fonts.py validates originals and derived outputs fail-closed."
+    },
+    {
+      "id": "sans400",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSans-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "dba27c0bf4b3a89fa92122f3eb31f7d9919a60d705229d2bfee7253a87b54260",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Sans400.ttf",
+      "bytes": 57272,
+      "instructions": "Provide in OCEAN_PLASTIC_FONT_DIR; prepare-fonts.py validates originals and derived outputs fail-closed."
+    },
+    {
+      "id": "sans700",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSans-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "890f7a43cf9d15bd6716aef1ec21ab4ff3364e94e6687066657440edc18faa08",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Sans700.ttf",
+      "bytes": 57280,
+      "instructions": "Provide in OCEAN_PLASTIC_FONT_DIR; prepare-fonts.py validates originals and derived outputs fail-closed."
+    },
+    {
+      "id": "sans900",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSans-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "a660603bbf3478d4a39be6b4d4caceeca21971feba3778b53834ab975408687a",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Sans900.ttf",
+      "bytes": 57240,
+      "instructions": "Provide in OCEAN_PLASTIC_FONT_DIR; prepare-fonts.py validates originals and derived outputs fail-closed."
+    },
+    {
+      "id": "nuni400",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NunitoSans-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/nunitosans",
+      "sha256": "f89583a68cf3f9808a977baa2e3061cfd0197c05b1334e47280182b8416f706d",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Nuni400.ttf",
+      "bytes": 37032,
+      "instructions": "Provide in OCEAN_PLASTIC_FONT_DIR; prepare-fonts.py validates originals and derived outputs fail-closed."
+    },
+    {
+      "id": "nuni700",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NunitoSans-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/nunitosans",
+      "sha256": "820b1f8c18e0b54a835da92c33c803994ab96c3906edc2ea629a5bb73720da33",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Nuni700.ttf",
+      "bytes": 37268,
+      "instructions": "Provide in OCEAN_PLASTIC_FONT_DIR; prepare-fonts.py validates originals and derived outputs fail-closed."
+    },
+    {
+      "id": "nuni900",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NunitoSans-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/nunitosans",
+      "sha256": "ea9a8fffd7d2a331259910b7fe99b066f2ed34c1c0521407ebbf4fe220584c0c",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Nuni900.ttf",
+      "bytes": 37316,
+      "instructions": "Provide in OCEAN_PLASTIC_FONT_DIR; prepare-fonts.py validates originals and derived outputs fail-closed."
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "a614d478589c76d363945fc3ae6c33817d49bd3fb1942f20b919d2e4524ae886",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "Independent full still/detail review passed; JPEG, font rasterization and soft shadows retain disclosed differences; source encoding inconsistencies are disclosed. No browser/interaction/video tests."
+    }
+  }
+}

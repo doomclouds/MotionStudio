@@ -1,0 +1,32 @@
+{
+  "fonts": [
+    {
+      "output": "PopSans500.ttf",
+      "sha256": "aedceedbac0de3b186d9b6b187f6a8e2f5fdfd44f056a4969b53f560379435fe",
+      "weight": 500,
+      "source": "NotoSansSC-variable.ttf",
+      "source_sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da"
+    },
+    {
+      "output": "PopSans900.ttf",
+      "sha256": "4517e75cc4a0cce82006e65fc1853f669da32ac64b3c9fadf46f47e971bd1b92",
+      "weight": 900,
+      "source": "NotoSansSC-variable.ttf",
+      "source_sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da"
+    },
+    {
+      "output": "PopArchivo900.ttf",
+      "sha256": "c3d694bfbb4306c339da96e6ebc91f3257a6c3bae8d17ca9b4396e3508b5852a",
+      "weight": 900,
+      "source": "Archivo-variable.ttf",
+      "source_sha256": "0e094a7d3c7c4c25cf1310c4b30014f1dae9332220b1c2c88f4fa996f0b05053"
+    },
+    {
+      "output": "PopSpace700.ttf",
+      "sha256": "2b0b84577983b83a388819763cf51eb148837ca4d4a83e3a98aa10c854fd6004",
+      "weight": 700,
+      "source": "SpaceGrotesk-variable.ttf",
+      "source_sha256": "acad6de1fc93436f5c0f1f4137751ef04f1aea3063e7036535970ffcfbd79f72"
+    }
+  ]
+}

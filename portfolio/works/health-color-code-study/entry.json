@@ -1,0 +1,274 @@
+{
+  "schema": 4,
+  "id": "health-color-code-study",
+  "version": "1.0.0",
+  "title": "健康数据颜色编码 · 完整静态复刻",
+  "status": "source-release",
+  "unofficial_recreation": true,
+  "original": {
+    "author": "alchaincyf (花叔 · 花生)",
+    "title": "Huashu app/09-health-color-code design specimen",
+    "url": "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/app/09-health-color-code.html"
+  },
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "LICENSES/Inter-OFL.txt",
+      "LICENSES/NotoSans-OFL.txt",
+      "LICENSES/huashu-MIT-LICENSE.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/LICENSE",
+      "https://github.com/google/fonts"
+    ]
+  },
+  "files": [
+    {
+      "path": "CREDITS.md",
+      "sha256": "de5ac595d9f7327b1b2832265591daa55cc897a51e4d11cc891f534ba62610ec",
+      "role": "documentation"
+    },
+    {
+      "path": "DESIGN-REASONING.md",
+      "sha256": "b7d82fadab1f21102820dd3e7760f466c8d5d025a875c2702224a90d3951fe74",
+      "role": "documentation"
+    },
+    {
+      "path": "LICENSES/Inter-OFL.txt",
+      "sha256": "67c5d5206b96f8340b95fabd02ae60701e0b20ce2594d976216f1065e5aa3822",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/NotoSans-OFL.txt",
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/huashu-MIT-LICENSE.txt",
+      "sha256": "6d6a2a9caf2e6d2b76974050427053b2892d8aa4c33fd168ce63a537fcee9d96",
+      "role": "license"
+    },
+    {
+      "path": "README.md",
+      "sha256": "7a0c14454fb73fa1bde7b4490f2a61b631cdd7338c49cf5636ee9299ee8192e4",
+      "role": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "224b2740ccb52dab46f5ef7fd8c67fd7c6d650f4d03a927d4c7057c2c557d982",
+      "role": "cover"
+    },
+    {
+      "path": "design/scene.mjs",
+      "sha256": "321e79e83bad2fd4082a1ce52b6802da1e8e1669a3e2ad1e594477c2f3cec28f",
+      "role": "source"
+    },
+    {
+      "path": "design/soft-mask.mjs",
+      "sha256": "207643ac29ca3e919e0281baa7314957690be02586137caffbbd72387b4ddb5c",
+      "role": "source"
+    },
+    {
+      "path": "font-inputs.json",
+      "sha256": "dc48a944c85902e4ac197b23dad62b909d18e9cb98f847231319224bcc6c4dcb",
+      "role": "config"
+    },
+    {
+      "path": "locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "role": "lock"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "c97986608711fff48e780026471834a114f117d30fd4f1b15c3e76b21a760a46",
+      "role": "lock"
+    },
+    {
+      "path": "prepare-fonts.py",
+      "sha256": "f5b42df61d337bbfa4dc1ae39ce76056b33a64312779f9b1fbbdb234bb3fd5f1",
+      "role": "source"
+    }
+  ],
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "locks/npm-package-lock.json"
+    }
+  ],
+  "render": {
+    "entrypoint": "design/scene.mjs",
+    "width": 1200,
+    "height": 750
+  },
+  "resources": [
+    {
+      "id": "notosanssc-variable",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSans-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "NotoSansSC-variable.ttf",
+      "bytes": 17772300,
+      "instructions": "Provide in HEALTH_COLOR_FONT_DIR; prepare-fonts.py validates originals and derived outputs fail-closed."
+    },
+    {
+      "id": "inter-var",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/Inter-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/inter",
+      "sha256": "c8d76e1cb2a0a7cfbbae1e390be4e4b942b27f99ec07e1024b1fc916045eed09",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Inter-var.ttf",
+      "bytes": 254236,
+      "instructions": "Provide in HEALTH_COLOR_FONT_DIR; prepare-fonts.py validates originals and derived outputs fail-closed."
+    },
+    {
+      "id": "sans400",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSans-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "a4b84efc5ec1d8882542a0d894529de431f541b616fa6f57d310cd26a4ac7004",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Sans400.ttf",
+      "bytes": 35436,
+      "instructions": "Provide in HEALTH_COLOR_FONT_DIR; prepare-fonts.py validates originals and derived outputs fail-closed."
+    },
+    {
+      "id": "sans500",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSans-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "99a8b317fa202cb6118284ac0252b418642c2a9e5690abe84dfaac18469c3f71",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Sans500.ttf",
+      "bytes": 35440,
+      "instructions": "Provide in HEALTH_COLOR_FONT_DIR; prepare-fonts.py validates originals and derived outputs fail-closed."
+    },
+    {
+      "id": "sans600",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSans-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "cb27b683222a050434e6804eafc16fc4cfc8788e52000984b0681f848b53154d",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Sans600.ttf",
+      "bytes": 35440,
+      "instructions": "Provide in HEALTH_COLOR_FONT_DIR; prepare-fonts.py validates originals and derived outputs fail-closed."
+    },
+    {
+      "id": "sans700",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSans-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "291ad1ea43fc38220b87480662bfc2640192f7c6dc6956d3e3e385b1b4c82cce",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Sans700.ttf",
+      "bytes": 35380,
+      "instructions": "Provide in HEALTH_COLOR_FONT_DIR; prepare-fonts.py validates originals and derived outputs fail-closed."
+    },
+    {
+      "id": "sans800",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSans-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "d351d4e6cbc196d21c2d4ea5a3515ee000092ff4913c243c68734d41d391832b",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Sans800.ttf",
+      "bytes": 35392,
+      "instructions": "Provide in HEALTH_COLOR_FONT_DIR; prepare-fonts.py validates originals and derived outputs fail-closed."
+    },
+    {
+      "id": "inter400",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/Inter-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/inter",
+      "sha256": "419964c1cf3f3cb4910b887e1369c95ef652801a5c0c4aa9958a9ad6a59d8833",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Inter400.ttf",
+      "bytes": 37200,
+      "instructions": "Provide in HEALTH_COLOR_FONT_DIR; prepare-fonts.py validates originals and derived outputs fail-closed."
+    },
+    {
+      "id": "inter500",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/Inter-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/inter",
+      "sha256": "782491a73fc38eeb3e61331d3c6d543d53ceb1dc461966cebd751c10b68058b5",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Inter500.ttf",
+      "bytes": 37452,
+      "instructions": "Provide in HEALTH_COLOR_FONT_DIR; prepare-fonts.py validates originals and derived outputs fail-closed."
+    },
+    {
+      "id": "inter600",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/Inter-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/inter",
+      "sha256": "60031715ad0006957749b6473f9fdfc123468a4a56f100f67b6be8c9cbf940e0",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Inter600.ttf",
+      "bytes": 37524,
+      "instructions": "Provide in HEALTH_COLOR_FONT_DIR; prepare-fonts.py validates originals and derived outputs fail-closed."
+    },
+    {
+      "id": "inter700",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/Inter-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/inter",
+      "sha256": "3408bc33fa62eacfacd1e8961f1462464a9075346100c84ce57ec3655dbd9bcc",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Inter700.ttf",
+      "bytes": 37500,
+      "instructions": "Provide in HEALTH_COLOR_FONT_DIR; prepare-fonts.py validates originals and derived outputs fail-closed."
+    },
+    {
+      "id": "inter800",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/Inter-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/inter",
+      "sha256": "4731950c11f00e7b1db6038aea324b2da0b24fef6359eb95ea7e3ca1c73f068b",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Inter800.ttf",
+      "bytes": 37456,
+      "instructions": "Provide in HEALTH_COLOR_FONT_DIR; prepare-fonts.py validates originals and derived outputs fail-closed."
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "80f9ea0a51bea21f3d3ca4a6b2e5a6185735fddf8dc866e6a718756f1fbf3e0a",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "Independent full still/detail review passed; JPEG, font rasterization and soft shadows retain disclosed differences; source encoding inconsistencies are disclosed. No browser/interaction/video tests."
+    }
+  }
+}
