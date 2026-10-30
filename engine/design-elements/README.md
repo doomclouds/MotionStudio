@@ -56,3 +56,17 @@ The source-only Skill builder includes this layer at `runtime/design-elements/` 
 ## Specialist backfill
 
 Four further families — expressive-type, radial-scale, diagonal-field and authored-paths — link design cards, bounded APIs, examples and tests through [Index.md](Index.md). `examples/specialist-compositions.mjs` consumes diagonal-field safe geometry and combines these modules with typography in two synthetic briefs. Paths explicitly represent illustration, radial controls a clockwise static linear scale, and sliced titles require readable repetition. The compositions retain a fixed 1440×900 structure, not arbitrary automatic layout. [CASE-COVERAGE.md](CASE-COVERAGE.md) distinguishes extracted relationships from intentionally case-specific details.
+
+## 新增四族与外置字体验证
+
+新增vertical-imprint、geometric-marks、proportional-partition、ratio-rings四族；公共族合计14。它们是技术和独立视觉复核后的源码资产，未迁移原B05场景，也没有用户对新合成作品的审美验收。原作品调用不随族提取自动增加。
+
+在现有MOTION_ENGINE_ROOT与UI_TEST_FONT_DIR之外，测试须设置`UI_B05_FONT_FILE=/absolute/path/to/NotoSerifTC-variable.ttf`，提供覆盖实际样例汉字的合法外置完整TC字体；不能误用原作品子集字体。已验证字体SHA256：`0077e18f57c6908f4a000969880940bdb0dad057c0e8d98b49dc364c3d1b09c6`。字体不打包；从官方Google Fonts Noto Serif TC来源按OFL合法准备，其他输入先过覆盖检查。Python检查需要fontTools。
+
+```sh
+python engine/design-elements/test/verify-cjk-font.py
+node engine/design-elements/test/verify.mjs /absolute/test-results.json
+node engine/design-elements/examples/render.mjs /absolute/render-output
+```
+
+Skill包中同样使用runtime/design-elements路径；打包测试只有三个外置环境参数齐备才运行完整绘制检查，缺少会明确NOT_RUN而非假装通过。12幅新增样例/组合图和私有报告不随源码发布；4个组合见examples/b05-compositions.mjs。验证范围不是Motion、历史真本、临床指标、自动品牌生成或普适信息图引擎。

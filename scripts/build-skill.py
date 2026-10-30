@@ -49,8 +49,8 @@ def main():
     required += ['runtime/motion-elements/' + name for name in ('lib/attractor-field.mjs', 'lib/slice-displacement.mjs', 'adapters/slice-displacement.mjs', 'examples/field-slices-scene.mjs', 'test/field-slices.test.mjs')]
     required += ['runtime/motion-elements/' + name for name in ('lib/linear-mask.mjs', 'adapters/linear-mask.mjs', 'examples/linear-mask-study.mjs', 'test/linear-mask.test.mjs')]
     required += ['runtime/motion-elements/' + name for name in ('lib/sampled-band.mjs', 'adapters/sampled-band.mjs', 'examples/sampled-band-study.mjs', 'test/sampled-band.test.mjs')]
-    required += ['runtime/design-elements/' + name for name in ('index.mjs', 'catalog.json', 'Index.md', 'README.md', 'CASE-COVERAGE.md', 'print-poster.mjs', 'test-print-poster.mjs', 'shared.mjs', 'test/verify.mjs', 'examples/compositions.mjs', 'examples/specialist-compositions.mjs', 'examples/render.mjs')]
-    for family in ('typographic-focus', 'color-sections', 'material-surfaces', 'semantic-data', 'parameter-controls', 'expressive-type', 'radial-scale', 'diagonal-field', 'authored-paths'):
+    required += ['runtime/design-elements/' + name for name in ('index.mjs', 'catalog.json', 'Index.md', 'README.md', 'CASE-COVERAGE.md', 'print-poster.mjs', 'test-print-poster.mjs', 'shared.mjs', 'test/verify.mjs', 'examples/compositions.mjs', 'examples/specialist-compositions.mjs', 'examples/render.mjs', 'test/verify-cjk-font.py', 'examples/b05-compositions.mjs')]
+    for family in ('typographic-focus', 'color-sections', 'material-surfaces', 'semantic-data', 'parameter-controls', 'expressive-type', 'radial-scale', 'diagonal-field', 'authored-paths', 'vertical-imprint', 'geometric-marks', 'proportional-partition', 'ratio-rings'):
         required += ['runtime/design-elements/' + family + '.mjs', 'runtime/design-elements/docs/' + family + '.md', 'runtime/design-elements/examples/' + family + '.mjs']
     if any(name not in payload for name in required): raise SystemExit('Required source/license missing')
     required_stem = ['runtime/review-tools/' + name for name in ('stem_balance.py', 'test_stem_balance.py', 'STEM_BALANCE.md')]

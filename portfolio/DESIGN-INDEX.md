@@ -2,7 +2,7 @@
 
 运行 `python portfolio/retention.py --write` 生成；`--check` 拒绝漂移。不是新的审美验收。
 
-完整静态作品 26；公共族 10；在已发布作品源码中实际调用的不同族 3。作品收藏、模块测试、可视复核、素材公开权限分别判断。
+完整静态作品 26；公共族 14；在已发布作品源码中实际调用的不同族 3。作品收藏、模块测试、可视复核、素材公开权限分别判断。
 
 | 作品/统一设计卡 | 实际公共族 | 视觉状态（来自entry） | 独审证据身份 | 对照报告 |
 |---|---|---|---|---|
@@ -50,3 +50,7 @@
 | [design.radial-scale.v1](../engine/design-elements/radial-scale.mjs) | hardware-sampler-study | 尚无已发布作品调用；看独立配方 |
 | [design.diagonal-field.v1](../engine/design-elements/diagonal-field.mjs) | muqi-study | 尚无已发布作品调用；看独立配方 |
 | [design.authored-paths.v1](../engine/design-elements/authored-paths.mjs) | theatre-narrative-wave, bus-morning-study | 尚无已发布作品调用；看独立配方 |
+| [design.vertical-imprint.v1](../engine/design-elements/vertical-imprint.mjs) | song-block-print-study | 尚无已发布作品调用；看独立配方 |
+| [design.geometric-marks.v1](../engine/design-elements/geometric-marks.mjs) | bauhaus-theatre-study | 尚无已发布作品调用；看独立配方 |
+| [design.proportional-partition.v1](../engine/design-elements/proportional-partition.mjs) | ocean-plastic-treemap-study | 尚无已发布作品调用；看独立配方 |
+| [design.ratio-rings.v1](../engine/design-elements/ratio-rings.mjs) | health-color-code-study | 尚无已发布作品调用；看独立配方 |

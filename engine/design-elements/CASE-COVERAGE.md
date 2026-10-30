@@ -16,3 +16,7 @@
 | [design.radial-scale.v1](radial-scale.mjs) | hardware-sampler-study | 尚无已发布作品调用；看独立配方 |
 | [design.diagonal-field.v1](diagonal-field.mjs) | muqi-study | 尚无已发布作品调用；看独立配方 |
 | [design.authored-paths.v1](authored-paths.mjs) | theatre-narrative-wave, bus-morning-study | 尚无已发布作品调用；看独立配方 |
+| [design.vertical-imprint.v1](vertical-imprint.mjs) | song-block-print-study | 尚无已发布作品调用；看独立配方 |
+| [design.geometric-marks.v1](geometric-marks.mjs) | bauhaus-theatre-study | 尚无已发布作品调用；看独立配方 |
+| [design.proportional-partition.v1](proportional-partition.mjs) | ocean-plastic-treemap-study | 尚无已发布作品调用；看独立配方 |
+| [design.ratio-rings.v1](ratio-rings.mjs) | health-color-code-study | 尚无已发布作品调用；看独立配方 |

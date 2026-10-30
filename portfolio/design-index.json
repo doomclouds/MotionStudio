@@ -110,6 +110,42 @@
         "bus-morning-study"
       ],
       "actualUsers": []
+    },
+    {
+      "id": "design.vertical-imprint.v1",
+      "entry": "vertical-imprint.mjs",
+      "guidance": "docs/vertical-imprint.md",
+      "sourceCases": [
+        "song-block-print-study"
+      ],
+      "actualUsers": []
+    },
+    {
+      "id": "design.geometric-marks.v1",
+      "entry": "geometric-marks.mjs",
+      "guidance": "docs/geometric-marks.md",
+      "sourceCases": [
+        "bauhaus-theatre-study"
+      ],
+      "actualUsers": []
+    },
+    {
+      "id": "design.proportional-partition.v1",
+      "entry": "proportional-partition.mjs",
+      "guidance": "docs/proportional-partition.md",
+      "sourceCases": [
+        "ocean-plastic-treemap-study"
+      ],
+      "actualUsers": []
+    },
+    {
+      "id": "design.ratio-rings.v1",
+      "entry": "ratio-rings.mjs",
+      "guidance": "docs/ratio-rings.md",
+      "sourceCases": [
+        "health-color-code-study"
+      ],
+      "actualUsers": []
     }
   ],
   "works": [

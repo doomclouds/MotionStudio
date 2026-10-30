@@ -221,6 +221,126 @@
       ],
       "verification": "test/verify.mjs; examples/specialist-compositions.mjs",
       "limits": "illustrative ordered anchors only; not traffic/audio/geography or quantitative data"
+    },
+    {
+      "id": "design.vertical-imprint.v1",
+      "version": 1,
+      "status": "published-source-technical-reviewed",
+      "entry": "vertical-imprint.mjs",
+      "exports": [
+        "validate",
+        "draw"
+      ],
+      "guidance": "docs/vertical-imprint.md",
+      "example": "examples/vertical-imprint.mjs",
+      "sourceRelationship": "右起字列、格距与正文批注层级",
+      "sourceSceneMigrated": false,
+      "verification": "test/verify.mjs; test/verify-cjk-font.py; examples/b05-compositions.mjs",
+      "userAestheticApproval": false,
+      "sourceCases": [
+        "https://github.com/doomclouds/MotionStudio/blob/186996cf248459eb6dc7c01252fc6b6b2825995d/portfolio/works/song-block-print-study/README.md"
+      ],
+      "actualCallSites": [
+        "examples/b05-compositions.mjs"
+      ],
+      "syntheticCallOnly": true,
+      "verificationLimits": [
+        "native-static",
+        "synthetic-compositions-only",
+        "no-source-scene-migration",
+        "no-user-aesthetic-approval",
+        "not-motion"
+      ]
+    },
+    {
+      "id": "design.geometric-marks.v1",
+      "version": 1,
+      "status": "published-source-technical-reviewed",
+      "entry": "geometric-marks.mjs",
+      "exports": [
+        "validate",
+        "draw"
+      ],
+      "guidance": "docs/geometric-marks.md",
+      "example": "examples/geometric-marks.mjs",
+      "sourceRelationship": "共享网格/原语/颜色角色的标识家族",
+      "sourceSceneMigrated": false,
+      "verification": "test/verify.mjs; test/verify-cjk-font.py; examples/b05-compositions.mjs",
+      "userAestheticApproval": false,
+      "sourceCases": [
+        "https://github.com/doomclouds/MotionStudio/blob/186996cf248459eb6dc7c01252fc6b6b2825995d/portfolio/works/bauhaus-theatre-study/README.md"
+      ],
+      "actualCallSites": [
+        "examples/b05-compositions.mjs"
+      ],
+      "syntheticCallOnly": true,
+      "verificationLimits": [
+        "native-static",
+        "synthetic-compositions-only",
+        "no-source-scene-migration",
+        "no-user-aesthetic-approval",
+        "not-motion"
+      ]
+    },
+    {
+      "id": "design.proportional-partition.v1",
+      "version": 1,
+      "status": "published-source-technical-reviewed",
+      "entry": "proportional-partition.mjs",
+      "exports": [
+        "validate",
+        "draw"
+      ],
+      "guidance": "docs/proportional-partition.md",
+      "example": "examples/proportional-partition.mjs",
+      "sourceRelationship": "分类面积表达，独立修正源叶面积比例",
+      "sourceSceneMigrated": false,
+      "verification": "test/verify.mjs; test/verify-cjk-font.py; examples/b05-compositions.mjs",
+      "userAestheticApproval": false,
+      "sourceCases": [
+        "https://github.com/doomclouds/MotionStudio/blob/186996cf248459eb6dc7c01252fc6b6b2825995d/portfolio/works/ocean-plastic-treemap-study/README.md"
+      ],
+      "actualCallSites": [
+        "examples/b05-compositions.mjs"
+      ],
+      "syntheticCallOnly": true,
+      "verificationLimits": [
+        "native-static",
+        "synthetic-compositions-only",
+        "no-source-scene-migration",
+        "no-user-aesthetic-approval",
+        "not-motion"
+      ]
+    },
+    {
+      "id": "design.ratio-rings.v1",
+      "version": 1,
+      "status": "published-source-technical-reviewed",
+      "entry": "ratio-rings.mjs",
+      "exports": [
+        "validate",
+        "draw"
+      ],
+      "guidance": "docs/ratio-rings.md",
+      "example": "examples/ratio-rings.mjs",
+      "sourceRelationship": "目标比表达，同源value/max推导弧与文字",
+      "sourceSceneMigrated": false,
+      "verification": "test/verify.mjs; test/verify-cjk-font.py; examples/b05-compositions.mjs",
+      "userAestheticApproval": false,
+      "sourceCases": [
+        "https://github.com/doomclouds/MotionStudio/blob/186996cf248459eb6dc7c01252fc6b6b2825995d/portfolio/works/health-color-code-study/README.md"
+      ],
+      "actualCallSites": [
+        "examples/b05-compositions.mjs"
+      ],
+      "syntheticCallOnly": true,
+      "verificationLimits": [
+        "native-static",
+        "synthetic-compositions-only",
+        "no-source-scene-migration",
+        "no-user-aesthetic-approval",
+        "not-motion"
+      ]
     }
   ]
 }

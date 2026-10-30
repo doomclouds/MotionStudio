@@ -15,6 +15,17 @@
 | design.diagonal-field.v1 | [斜切色域](docs/diagonal-field.md) | [代码](diagonal-field.mjs) | 带安全内容矩形的方向分区 |
 | design.authored-paths.v1 | [叙事路径](docs/authored-paths.md) | [代码](authored-paths.mjs) | 有声明的故事弧与序列示意 |
 
+## 新增专项：技术复核，不等于用户审美验收
+
+| 稳定 ID | 文字指导 | 代码 | 边界 |
+|---|---|---|---|
+| design.vertical-imprint.v1 | [纵列印记](docs/vertical-imprint.md) | [代码](vertical-imprint.mjs) | 右起字列/批注；非混排竖排引擎 |
+| design.geometric-marks.v1 | [几何标识](docs/geometric-marks.md) | [代码](geometric-marks.mjs) | 共享网格图形家族；不自动设计品牌 |
+| design.proportional-partition.v1 | [比例分区](docs/proportional-partition.md) | [代码](proportional-partition.mjs) | 声明明确的面积编码；非任意层级treemap |
+| design.ratio-rings.v1 | [比率圆环](docs/ratio-rings.md) | [代码](ratio-rings.mjs) | 数值比率与弧长一致；非医学判断 |
+
+公共族合计14（既有10+新增4）；新增族通过独立合成组合与技术/视觉复核，没有改写原B05作品，sourceSceneMigrated=false，userAestheticApproval=false。原作品真实调用仍以自动覆盖表为准。新组合入口[examples/b05-compositions.mjs](examples/b05-compositions.mjs)。
+
 - [机器索引 catalog.json](catalog.json)：版本、状态、来源、样例与验证。
 - [组合配方](examples/compositions.mjs)：固定 1440×900 二栏演示；标题/材料/数据/参数由 recipe 输入。
 - [全部静态作品覆盖账单](CASE-COVERAGE.md)：来源启发与实际调用分列；由作品sidecar自动生成，不以适配关系冒充已重构。
