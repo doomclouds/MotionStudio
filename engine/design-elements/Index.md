@@ -39,3 +39,14 @@
 每族需有文字契约、稳定 ID、可调用代码、不同内容的例子、输入边界测试、实际渲染与独立视觉复核。合成测试通过不替代用户审美确认。原作品保留与通用资产状态分别管理。
 
 二阶段组合入口：[specialist-compositions.mjs](examples/specialist-compositions.mjs)。上区使用安全矩形容纳效果标题与可读支持，下区使用路径与圆弧读数，所有数据由recipe输入。
+
+## 已验证组合配方
+
+以下是组合配方，不是新增通用族，不计入14族。原作品调用自己的局部helper，未迁移到新组合。
+
+| 配方 | 内容目的 | 设计与运行入口 |
+|---|---|---|
+| recipe.ordered-focus.v1 | 24项读序与当前任务焦点 | [说明](recipes/b06/docs/ordered-focus.md) · [运行](recipes/b06/README.md) |
+| recipe.editorial-evidence.v1 | 编辑式长文与同源面积证据 | [说明](recipes/b06/docs/editorial-evidence.md) · [运行](recipes/b06/README.md) |
+
+每种配方以两份不同内容验证；字体和生成图/报告全部外置，实际依赖与边界见配方manifest及锁。

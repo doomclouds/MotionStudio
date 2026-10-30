@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "sharedFamilyCountDelta": 0,
+  "recipes": [
+    {
+      "id": "recipe.ordered-focus.v1",
+      "status": "technical-reviewed-static-recipe",
+      "entry": "recipes/ordered-focus.mjs",
+      "guide": "docs/ordered-focus.md",
+      "sourceWorks": [
+        "portfolio/works/film-festival-study",
+        "portfolio/works/solar-terms-study"
+      ],
+      "originalHelperActualCall": "portfolio/works/solar-terms-study/design/scene.mjs -> drawSeasonalStrip",
+      "originalSceneCallsComposite": false,
+      "sharedFamilyCalls": [
+        "design.typographic-focus.v1",
+        "design.material-surfaces.v1"
+      ],
+      "validationFrames": [
+        "seasonal-observation",
+        "creative-curriculum"
+      ]
+    },
+    {
+      "id": "recipe.editorial-evidence.v1",
+      "status": "technical-reviewed-static-recipe",
+      "entry": "recipes/editorial-evidence.mjs",
+      "guide": "docs/editorial-evidence.md",
+      "sourceWorks": [
+        "portfolio/works/ocean-letter-study"
+      ],
+      "originalHelperActualCall": "portfolio/works/ocean-letter-study/design/scene.mjs -> drawAuthoredColumns",
+      "originalSceneCallsComposite": false,
+      "sharedFamilyCalls": [
+        "design.typographic-focus.v1",
+        "design.material-surfaces.v1",
+        "design.proportional-partition.v1"
+      ],
+      "validationFrames": [
+        "library-letter",
+        "studio-letter"
+      ]
+    }
+  ],
+  "otherExistingB06Candidates": [
+    {
+      "path": "portfolio/works/nanyuan-cartographic-study/design/area-symbol-recipe.mjs",
+      "newFamily": false,
+      "reason": "area-radius math already represented in semantic-data; keep case recipe"
+    },
+    {
+      "path": "portfolio/works/trail-pictogram-study/design/pictogram-draw-recipe.mjs",
+      "newFamily": false,
+      "reason": "caller-path style recipe without general safe-box or comprehension guarantee"
+    }
+  ],
+  "userAestheticApproval": false,
+  "verificationEvidence": [
+    {
+      "kind": "html-report",
+      "recordId": "b06-composite-recipes-visual-report",
+      "sha256": "da9fdf099b204bf6d880db0bb486fd5b2c1cc3a0bc9f44879d1f7b1fefcbb479",
+      "storage": "PRIVATE_OWNER_PAGE",
+      "durableStorage": "ACCESS_VERIFIED",
+      "public": false,
+      "scope": "Bounded synthetic static recipe evidence; original bytes read back from owner-only private Page; no user aesthetic approval or source-scene migration."
+    },
+    {
+      "kind": "independent-review",
+      "recordId": "b06-composite-recipes-independent-review",
+      "sha256": "a24bf7182803706255ecb78029c85ecc875b80b5179e5ada8e36247969990b5a",
+      "storage": "PRIVATE_OWNER_PAGE",
+      "durableStorage": "ACCESS_VERIFIED",
+      "public": false,
+      "scope": "Bounded synthetic static recipe evidence; original bytes read back from owner-only private Page; no user aesthetic approval or source-scene migration."
+    }
+  ]
+}

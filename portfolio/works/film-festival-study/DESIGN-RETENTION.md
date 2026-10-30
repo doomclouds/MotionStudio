@@ -19,3 +19,7 @@
 
 ## 验证与入口
 用户已收藏，完整入口 design/scene.mjs，运行见 README。独立视觉审查与精确 Native 恢复范围分开记录在 retention.json。换内容必须重新检查信息顺序、事实边界和字形溢出；不能据静态通过声称 Motion 迁移完成。
+
+## 后续组合研究
+
+[recipe.ordered-focus.v1](../../../engine/design-elements/recipes/b06/docs/ordered-focus.md)：设计目的参考，不是代码来源或原作实际调用。组合以两份合成内容通过有限静态技术/视觉复核，不计新族，也不是用户对新作品的审美验收。

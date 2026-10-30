@@ -1,0 +1,10 @@
+import{drawAuthoredColumns}from'../source-recipes/editorial-columns.mjs';
+import{transaction,callWithTrace,requireBrief}from'./common.mjs';
+export const id='recipe.editorial-evidence.v1';
+export function draw(ctx,d,env){requireBrief(d);return transaction(ctx,env,c=>{const calls=[],call=(id,p)=>callWithTrace(c,env,calls,id,p);if(!Array.isArray(d.columns)||d.columns.length!==2)throw new RangeError('exactly two authored columns required');const font=`600 19px ${d.theme.fontFamily}`;c.font=font;for(const col of d.columns)for(const line of col){if(line.y<280||line.y>630)throw new RangeError('authored baseline outside article band');const m=c.measureText(line.text);if(m.actualBoundingBoxLeft+m.actualBoundingBoxRight>330||line.y-m.actualBoundingBoxAscent<260||line.y+m.actualBoundingBoxDescent>650)throw new RangeError('authored glyph bounds overflow article')}
+ c.fillStyle=d.theme.surface;c.fillRect(0,0,1200,750);call('design.typographic-focus.v1',{bounds:{x:40,y:25,width:1120,height:215},theme:d.theme,data:{kicker:d.kicker,lines:d.headline,body:[d.byline],titleSize:42,bodySize:16,padding:0}});
+ const columns=drawAuthoredColumns(c,{x:40,gap:44,width:330,font,ink:d.theme.ink,columns:d.columns});
+ const panel=call('design.material-surfaces.v1',{bounds:{x:810,y:260,width:350,height:430},theme:{...d.theme,edge:d.theme.muted,fontSize:20},data:{variant:'paper',title:d.panelTitle,subtitle:'同一列表推導總量與面積',padding:16,radius:0,elevation:0}});
+ const b=panel.contentBounds,total=d.inventory.items.reduce((sum,k)=>sum+k.value,0);call('design.typographic-focus.v1',{bounds:{x:b.x,y:b.y,width:b.width,height:150},theme:d.theme,data:{kicker:'SYNTHETIC / INVENTORY',lines:[String(total)+' '+d.inventory.unit],body:['這不是績效分數或進度條'],titleSize:38,bodySize:13,padding:0}});
+ const partition=call('design.proportional-partition.v1',{bounds:{x:b.x,y:b.y+154,width:b.width,height:190},theme:d.theme,data:d.inventory});
+ return{id,calls,caseRecipeCalls:['drawAuthoredColumns'],columns,inventoryTotal:total,partition};})}

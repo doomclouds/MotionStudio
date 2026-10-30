@@ -70,3 +70,7 @@ node engine/design-elements/examples/render.mjs /absolute/render-output
 ```
 
 Skill包中同样使用runtime/design-elements路径；打包测试只有三个外置环境参数齐备才运行完整绘制检查，缺少会明确NOT_RUN而非假装通过。12幅新增样例/组合图和私有报告不随源码发布；4个组合见examples/b05-compositions.mjs。验证范围不是Motion、历史真本、临床指标、自动品牌生成或普适信息图引擎。
+
+## B06 composition recipes
+
+Two bounded [composition recipes](recipes/b06/README.md) reuse existing families and source-case helpers; each has two different-content fixtures. They add zero families, do not migrate original scenes, and do not confer user aesthetic approval. Runtime imports/fonts are pinned; generated evidence is written only to caller-owned external directories.

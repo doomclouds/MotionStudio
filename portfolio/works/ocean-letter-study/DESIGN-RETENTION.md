@@ -18,3 +18,7 @@
 原作固定链接及归属见entry.json/CREDITS.md；源码design/scene.mjs、content.json、既有分析和SETTLEMENT提供逐项依据。Native确定性、原帧重渲染、配方可编辑/状态恢复/超宽拒绝与独审均有本次本地记录；retention.json区分本地运行记录、已核验的私有报告容器与独审原文；HTML持久身份不等于已建立所有原尺寸嵌图绑定。唯一公共图片cover只是导航，不替代原/候选/局部完整证据链。
 
 正文仅400→450局部加重，经独审确认层级；保留栅格、标点与CSS/Native齐行差异。未验证浏览器、交互、响应式、Motion或声音。字体或尺寸改变必须再渲染、再审。
+
+## 后续组合研究
+
+[recipe.editorial-evidence.v1](../../../engine/design-elements/recipes/b06/docs/editorial-evidence.md)：原场景内editorial-columns原样快照被新组合复用；原场景未调用此新组合。组合以两份合成内容通过有限静态技术/视觉复核，不计新族，也不是用户对新作品的审美验收。

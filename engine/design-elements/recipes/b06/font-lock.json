@@ -1,0 +1,11 @@
+{
+  "sourceFile": "NotoSerifTC-variable.ttf",
+  "sourceSha256": "0077e18f57c6908f4a000969880940bdb0dad057c0e8d98b49dc364c3d1b09c6",
+  "derivedFile": "B06Text600.ttf",
+  "derivedSha256": "5045f5f62d4d4da86f971a01afba598451832336c122e1cc8f8b20c361194223",
+  "weight": 600,
+  "purpose": "readable body text and supporting labels",
+  "license": "licenses/OFL.txt",
+  "sourceRepo": "https://github.com/notofonts/noto-cjk",
+  "fontToolsVersion": "4.61.1"
+}

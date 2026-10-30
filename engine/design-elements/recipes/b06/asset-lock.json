@@ -1,0 +1,22 @@
+{
+  "commit": "9cdf152115bf0b3e59108c219c5119ab668a1e85",
+  "repository": "https://github.com/doomclouds/MotionStudio",
+  "files": {
+    "authored-paths.mjs": "e1dcc46fc4dd9c5db8e7de33e81b459f4fab7dcd154fd0502ca659820a014ba3",
+    "color-sections.mjs": "cf2cf8ebf1b1bf8bd65dbbaef11f9546db9fe096d3eba7a0b18936e616ec2dd8",
+    "diagonal-field.mjs": "d645b6a41745434cea2db15053867344e275b4f0664689c6dd9d402289674262",
+    "expressive-type.mjs": "ff7d6c8e6cacc6361711fa787bfd983d54998e5f55e5e5a30343d8333fdf541c",
+    "geometric-marks.mjs": "87137640f36eb7fcccec5e0b8c0294ae767ea418e05155b1635c8d785af18fd2",
+    "index.mjs": "c8996cdfd54df360b48cdbaf1074d4d7490fff58f6140f2dd3e1d18ec415962c",
+    "material-surfaces.mjs": "70bf1fcfa89bfbf911f5cf735b1b08e8ae7f360e43bd43a8c831efef579696eb",
+    "parameter-controls.mjs": "ccc63196e5e17dfb6813b0f7f800a542e50c9ce10f7e077c14384224c04f0716",
+    "proportional-partition.mjs": "d280b983f408682e0d0909dcc034bd1000f387edd0b2ba0be006d2672dfac67a",
+    "radial-scale.mjs": "d89498380693781904f0f3b700a8c283923c6c06255539e4b8d562b61619daff",
+    "ratio-rings.mjs": "d4bcfbbc9338db1d771627294f04abf7943af047dd6756dd19da53eafe075550",
+    "semantic-data.mjs": "2a3734e73fb06130e5ecb36817fc78ba4d5a245f7db66fd13068db659ee17f2c",
+    "shared.mjs": "e36af17f96bd06eb250f27d5be53d678da7a72cb326df0ecb66155c0383d1122",
+    "typographic-focus.mjs": "0da2ba0f402e1a3cfde92e8587a3ddb478bd146e2af0a5bf7796f5124e5199cb",
+    "vertical-imprint.mjs": "08db5d8e506d4f86780b9c10dac5a774891f7755c61f4ec38e0c76f371caae3d"
+  },
+  "scope": "complete static local import closure of index.mjs; actual calls listed separately in recipe-manifest.json"
+}

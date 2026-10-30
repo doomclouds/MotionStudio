@@ -1,0 +1,26 @@
+[
+  {
+    "copy": "source-recipes/seasonal-strip.mjs",
+    "source": "portfolio/works/solar-terms-study/design/seasonal-strip.mjs",
+    "sha256": "b1992845e4731d607b926c12ae12ab697480eed475198a67993a0019f40dd350",
+    "initialSourceByteEquality": true,
+    "sourceCommit": "0506160a7f34640b7f13bf9d6e82dcd38c237c90",
+    "sourceUrl": "https://github.com/doomclouds/MotionStudio/blob/0506160a7f34640b7f13bf9d6e82dcd38c237c90/portfolio/works/solar-terms-study/design/seasonal-strip.mjs"
+  },
+  {
+    "copy": "source-recipes/editorial-columns.mjs",
+    "source": "portfolio/works/ocean-letter-study/design/editorial-columns.mjs",
+    "sha256": "6e37ef8afb4f11d7fa320a908805ca51feb4190b425c2db12da68410effcbf75",
+    "initialSourceByteEquality": true,
+    "sourceCommit": "0506160a7f34640b7f13bf9d6e82dcd38c237c90",
+    "sourceUrl": "https://github.com/doomclouds/MotionStudio/blob/0506160a7f34640b7f13bf9d6e82dcd38c237c90/portfolio/works/ocean-letter-study/design/editorial-columns.mjs"
+  },
+  {
+    "copy": "source-recipes/shared.mjs",
+    "source": "portfolio/works/ocean-letter-study/design/shared.mjs",
+    "sha256": "e36af17f96bd06eb250f27d5be53d678da7a72cb326df0ecb66155c0383d1122",
+    "initialSourceByteEquality": true,
+    "sourceCommit": "0506160a7f34640b7f13bf9d6e82dcd38c237c90",
+    "sourceUrl": "https://github.com/doomclouds/MotionStudio/blob/0506160a7f34640b7f13bf9d6e82dcd38c237c90/portfolio/works/ocean-letter-study/design/shared.mjs"
+  }
+]

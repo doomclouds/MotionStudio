@@ -67,6 +67,18 @@ def main():
             run(['node', str(design / 'test-print-poster.mjs')])
         else:
             print('NOT_RUN: design Canvas rendering tests require MOTION_ENGINE_ROOT, UI_TEST_FONT_DIR and UI_B05_FONT_FILE; extracted imports and source bytes checked')
+        recipes = design / 'recipes/b06'
+        manifest = json.loads((recipes / 'recipe-manifest.json').read_text())
+        assert manifest['sharedFamilyCountDelta'] == 0 and len(manifest['recipes']) == 2
+        assert all(not item['originalSceneCallsComposite'] for item in manifest['recipes'])
+        if os.environ.get('MOTION_ENGINE_ROOT') and os.environ.get('B06_FONT_FILE'):
+            recipe_env = {**os.environ, 'MOTION_UI_ASSETS_ROOT': str(design), 'B06_TEXT_FONT_FILE': str(temp / 'b06-external-font.ttf'), 'B06_EVIDENCE_DIR': str(temp / 'b06-recipe-evidence')}
+            run(['python3', str(recipes / 'prepare-font.py')], env=recipe_env)
+            run(['node', str(recipes / 'verify.mjs')], env=recipe_env)
+            run(['python3', str(recipes / 'verify-font.py')], env=recipe_env)
+            run(['node', str(recipes / 'test-runtime.mjs')], env=recipe_env)
+        else:
+            print('NOT_RUN: B06 composite recipe renders require MOTION_ENGINE_ROOT and pinned B06_FONT_FILE; no family or aesthetic approval inferred')
         for test in ('test_design_knowledge.py', 'test_video_knowledge.py', 'test_static_knowledge.py', 'test_check_delivery.py', 'test_check_final_delivery.py', 'test_validate_delivery_report.py'):
             run(['python3', str(skill / 'scripts' / test)])
         kb_cli = skill / 'scripts/video_knowledge.py'
