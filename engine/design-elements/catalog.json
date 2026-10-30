@@ -151,6 +151,76 @@
         "not-motion",
         "not-user-approved-new-artwork"
       ]
+    },
+    {
+      "id": "design.expressive-type.v1",
+      "version": 1,
+      "status": "published-source-technical-reviewed",
+      "entry": "expressive-type.mjs",
+      "exports": [
+        "validate",
+        "draw"
+      ],
+      "guidance": "docs/expressive-type.md",
+      "example": "examples/expressive-type.mjs",
+      "sourceCases": [
+        "https://github.com/doomclouds/MotionStudio/blob/cae18d21f2fbef9702c8ce94ce68abd9eda826a4/portfolio/works/cycling-year-report/README.md",
+        "https://github.com/doomclouds/MotionStudio/blob/cae18d21f2fbef9702c8ce94ce68abd9eda826a4/portfolio/works/wave-weather-study/README.md"
+      ],
+      "verification": "test/verify.mjs; examples/specialist-compositions.mjs",
+      "limits": "2D text ink offsets/strip masks; no 3D, font outline decomposition or semantic glyph parts"
+    },
+    {
+      "id": "design.radial-scale.v1",
+      "version": 1,
+      "status": "published-source-technical-reviewed",
+      "entry": "radial-scale.mjs",
+      "exports": [
+        "validate",
+        "draw"
+      ],
+      "guidance": "docs/radial-scale.md",
+      "example": "examples/radial-scale.mjs",
+      "sourceCases": [
+        "https://github.com/doomclouds/MotionStudio/blob/cae18d21f2fbef9702c8ce94ce68abd9eda826a4/portfolio/works/hardware-sampler-study/README.md"
+      ],
+      "verification": "test/verify.mjs; examples/specialist-compositions.mjs",
+      "limits": "static linear radial value; no interactive or physical control"
+    },
+    {
+      "id": "design.diagonal-field.v1",
+      "version": 1,
+      "status": "published-source-technical-reviewed",
+      "entry": "diagonal-field.mjs",
+      "exports": [
+        "validate",
+        "draw"
+      ],
+      "guidance": "docs/diagonal-field.md",
+      "example": "examples/diagonal-field.mjs",
+      "sourceCases": [
+        "https://github.com/doomclouds/MotionStudio/blob/cae18d21f2fbef9702c8ce94ce68abd9eda826a4/portfolio/works/muqi-study/README.md"
+      ],
+      "verification": "test/verify.mjs; examples/specialist-compositions.mjs",
+      "limits": "authored color boundary, not perspective or metric encoding"
+    },
+    {
+      "id": "design.authored-paths.v1",
+      "version": 1,
+      "status": "published-source-technical-reviewed",
+      "entry": "authored-paths.mjs",
+      "exports": [
+        "validate",
+        "draw"
+      ],
+      "guidance": "docs/authored-paths.md",
+      "example": "examples/authored-paths.mjs",
+      "sourceCases": [
+        "https://github.com/doomclouds/MotionStudio/blob/cae18d21f2fbef9702c8ce94ce68abd9eda826a4/portfolio/works/theatre-narrative-wave/README.md",
+        "https://github.com/doomclouds/MotionStudio/blob/cae18d21f2fbef9702c8ce94ce68abd9eda826a4/portfolio/works/bus-morning-study/README.md"
+      ],
+      "verification": "test/verify.mjs; examples/specialist-compositions.mjs",
+      "limits": "illustrative ordered anchors only; not traffic/audio/geography or quantitative data"
     }
   ]
 }

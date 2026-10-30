@@ -4,7 +4,7 @@ This is a deliberately narrow **toolkit source snapshot with explicitly reviewed
 
 ## Included
 
-- Original bounded static design primitives (existing print-poster plus typography, color sections, material surfaces, semantic node sequences and parameter controls), design guidance, synthetic composition recipes and tests in `engine/design-elements/`, linked to public design guidance. No source artwork, production recreation, bundled fonts, generated previews or private review evidence are included.
+- Original bounded static design primitives (existing print-poster plus typography, color sections, material surfaces, semantic node sequences, parameter controls, expressive typography, radial scales, diagonal fields and illustrative authored paths), design guidance, synthetic composition recipes and tests in `engine/design-elements/`, linked to public design guidance. No source artwork, production recreation, bundled fonts, generated previews or private review evidence are included.
 
 - Native Canvas rendering core, bounded local audio edit/mix core, shared rational audio-timeline contract, small original technical fixtures, and synthetic tests. Video clip editing remains deferred.
 - A reusable motion-elements package: pure time-sampled actions, transitions, layouts and recipes, static metadata, synthetic example source and regression tests. Generated previews remain outside Git. These elements do not turn the audio timeline into a video NLE or establish artistic approval.

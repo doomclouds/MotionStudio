@@ -4,7 +4,7 @@ This layer stores **design intent linked to callable implementation and composit
 
 ## Inventory and truth boundary
 
-`catalog.json` is the single index. There is **1 existing published asset family**, `design.print-poster.v1`, and **5 added source-published, technically reviewed families**. Publication does not mean the synthetic compositions are user-approved brand designs. The two full compositions and ten per-family sample renders are synthetic transfer tests, not 12 new accepted designs. Existing portfolio scenes remain unchanged; this layer does not claim they already import these APIs.
+`catalog.json` is the single index. There is **1 existing published asset family**, `design.print-poster.v1`, and **9 added source-published, technically reviewed families** (5 base + 4 specialist). Publication does not mean the synthetic compositions are user-approved brand designs. The four full compositions and eighteen per-family sample renders are synthetic transfer tests, not 22 new accepted designs. Existing portfolio scenes remain unchanged; this layer does not claim they already import these APIs.
 
 | Stable ID | Intent / code | Explicit input responsibility |
 |---|---|---|
@@ -14,6 +14,10 @@ This layer stores **design intent linked to callable implementation and composit
 | design.material-surfaces.v1 | [design card](docs/material-surfaces.md), [code](material-surfaces.mjs) | paper / opaque / caller-supplied glass backdrop, content slot |
 | design.semantic-data.v1 | [design card](docs/semantic-data.md), [code](semantic-data.mjs) | categories, values, legends and illustrative/quantitative distinction |
 | design.parameter-controls.v1 | [design card](docs/parameter-controls.md), [code](parameter-controls.mjs) | value, range, units, orientation, selected/disabled states |
+| design.expressive-type.v1 | [design card](docs/expressive-type.md), [code](expressive-type.mjs) | bounded layered/striped glyph effects, readable repeated label |
+| design.radial-scale.v1 | [design card](docs/radial-scale.md), [code](radial-scale.mjs) | clockwise linear value, range, unit, knob/gauge |
+| design.diagonal-field.v1 | [design card](docs/diagonal-field.md), [code](diagonal-field.mjs) | authored color boundary and safe content rectangles |
+| design.authored-paths.v1 | [design card](docs/authored-paths.md), [code](authored-paths.mjs) | explicit illustrative anchors, not measured data |
 
 ## Common contract
 
@@ -48,3 +52,7 @@ Tests cover same-source different-content rendering, context/input isolation, de
 ## Portable Skill
 
 The source-only Skill builder includes this layer at `runtime/design-elements/` alongside the four Motion cores. Code imports remain local; catalogue case links point to the pinned repository, not bundled portfolio copies. In an extracted Skill use `runtime/design-elements/` in the commands above and provide the installed Native core and external test fonts explicitly. This adds no font, screenshot, report or dependency binary to the package.
+
+## Specialist backfill
+
+Four further families — expressive-type, radial-scale, diagonal-field and authored-paths — link design cards, bounded APIs, examples and tests through [Index.md](Index.md). `examples/specialist-compositions.mjs` consumes diagonal-field safe geometry and combines these modules with typography in two synthetic briefs. Paths explicitly represent illustration, radial controls a clockwise static linear scale, and sliced titles require readable repetition. The compositions retain a fixed 1440×900 structure, not arbitrary automatic layout. [CASE-COVERAGE.md](CASE-COVERAGE.md) distinguishes extracted relationships from intentionally case-specific details.

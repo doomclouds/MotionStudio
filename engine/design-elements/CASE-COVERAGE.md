@@ -6,21 +6,30 @@
 |---|---|---|
 | 黑胶商店 | print-poster、material-surfaces：纸签/硬影；typographic-focus：焦点字阶 | 唱片同心纹、原创标题字形和固定构图 |
 | 茶话声 | typographic-focus：强标题弱支持；color-sections：信息与主视觉职责 | 源150柱SVG参数是该案素材，不冒称真实音频通用分析 |
-| 幕启 | color-sections：主张/证据；material-surfaces：结算浮层 | 斜切背景与特定票务账单内容 |
-| 骑行年报 | typographic-focus：数字焦点；color-sections：成就/注释 | 多层挤出大字与CSS透视近似尚未抽成通用3D能力 |
-| 采样台 | parameter-controls：值/范围/单位；material-surfaces：工具层级 | 点阵字体、打击垫、旋钮皮肤及音频行为仍为案例专项 |
+| 幕启 | color-sections：主张/证据；material-surfaces：结算浮层 | 斜切背景已提取diagonal-field；票务账单内容仍案例专项 |
+| 骑行年报 | typographic-focus：数字焦点；color-sections：成就/注释 | 2D多层挤出已提取expressive-type；不宣称通用3D或CSS透视 |
+| 采样台 | parameter-controls：值/范围/单位；material-surfaces：工具层级 | 旋钮/圆弧读数已提取radial-scale；点阵字体、打击垫皮肤及音频行为仍为案例专项 |
 | 摩登焙香 | color-sections：主视觉/月历；typographic-focus：语气与层级 | Art Deco扇形/阶梯纹样、历史月历；不宣称日期核实 |
 | 汉字解构 | typographic-focus：文字变焦点、次级解释 | 特定“市”笔画不是通用字体拆解引擎 |
 | 慢火 | typographic-focus + color-sections：字阶/黑白主张关系 | 特定宋体字形、摄影占位；工艺数字只为样例 |
 | 茶馆七晚 | semantic-data：类别与面积编码、图例/阅读顺序 | 原作刺/尾巴编码未全复制；原统计矛盾不自动修复 |
-| 剧场曲线 | semantic-data：阶段叙事与示意声明 | 原贝塞尔起伏是构图隐喻；不能替代真实数轴/趋势统计 |
+| 剧场曲线 | semantic-data：阶段叙事与示意声明 | 作者锚点与贝塞尔路径已提取authored-paths；仅示意，不能替代真实数轴/趋势统计 |
 | 液态玻璃 | material-surfaces：显式背景/边缘/软影；parameter-controls：数值状态 | 设备壳、全页布局，真实物理折射/CSS背景模糊均不宣称 |
 | 今夜观木星 | typographic-focus + color-sections：出版字阶/日程关系 | 天文轨道示意为专项；非准确天文计算模型 |
-| 今天的浪 | typographic-focus + print-poster：玩味标题与错位语气 | 字形条带切片保留案例；气象数据不是已验证事实 |
+| 今天的浪 | typographic-focus + print-poster：玩味标题与错位语气 | 字形条带切片已提取expressive-type；不等于字形笔画拆解；气象数据未核实 |
 | 专业相机 | parameter-controls：选值/单位/范围；material-surfaces：工具面板 | 曝光斜纹、照片占位、真实相机交互尚未通用化 |
 | 公交早晨 | color-sections/typographic-focus：主数据与解释层级 | 密集轨迹生成有专门数据模型，不硬塞进semantic-data点序列；保留案例原模型和计数差异 |
 | Meridian | color-sections：主张/产品证据；typographic-focus：关键词强调 | 示意业务仪表盘、客户名不是背书；柱图可视化专项待实际复用再提取 |
 
 ## 数量口径
 
-当前新提取5族，已有print-poster 1族。内部draw函数、颜色token、两套示例或16个作品不累加为积木数量。未完成专项明确保留，不用“覆盖全部”掩盖缺口。
+当前新提取9族（基础5族+专项4族），已有print-poster 1族。内部draw函数、颜色token、两套示例或16个作品不累加为积木数量。未完成专项明确保留，不用“覆盖全部”掩盖缺口。
+
+## 二阶段后的明确未泛化项
+- 唱片同心纹、Art Deco扇形/阶梯、相机斜纹：仍是可复制的案例实现；现阶段没有两种实质不同内容需求，不将几条画线函数充数。
+- 点阵字/打击垫：目前是音频设备特定皮肤；缺少字体字符覆盖与有意义第二内容，不包装成通用文字/交互系统。
+- 汉字笔画拆解：必须有合法字形结构数据或明确切片定义；简单矩形裁剪不能冒充真正笔画。
+- 密集公交轨迹与柱图：authored-paths只证明少量有序示意路径复用，不覆盖公交原模型；真实时间/地理、统计轴和密度需另一数据契约。Meridian业务柱图仍未泛化。
+- 原SVG音频、天文轨道、玻璃物理：不具备对应分析/物理模型，不以视觉相似宣称功能。
+
+本阶段补齐的是这些确有复用价值的代码与设计关系，不应报告为“16案每个细节全部积木化”。后续只在真实内容需求证明必要时补相应数据/图形专项；完整作品代码仍保留，可作查阅与局部改造基础。
