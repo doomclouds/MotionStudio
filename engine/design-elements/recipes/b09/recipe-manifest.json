@@ -1,0 +1,27 @@
+{
+  "status": "technical-reviewed-static-recipe",
+  "newFamilies": 0,
+  "sharedFamilyCount": 14,
+  "sourceSceneMigrated": false,
+  "userAestheticApproval": false,
+  "recipes": [
+    {
+      "id": "recipe.emphasis-tile.v1",
+      "code": "recipes/emphasis-tile.mjs",
+      "guidance": "docs/emphasis-tile.md",
+      "sourceWorkId": "market-livingroom-study"
+    },
+    {
+      "id": "recipe.unit-pictogram.v1",
+      "code": "recipes/unit-pictogram.mjs",
+      "guidance": "docs/unit-pictogram.md",
+      "sourceWorkId": "vinyl-isotype-study"
+    }
+  ],
+  "verification": [
+    "verify.mjs",
+    "test-runtime.mjs"
+  ],
+  "compositions": "examples/briefs.mjs",
+  "independentReview": "completed; external b09-recipes-independent-review record delivered"
+}

@@ -89,6 +89,16 @@ def main():
                 run(['node', str(b08 / test)], env=b08_env)
         else:
             print('NOT_RUN: B08 recipe renders require MOTION_ENGINE_ROOT/B08_DISPLAY_FONT/B08_BODY_FONT; no family or aesthetic approval inferred')
+        b09 = design / 'recipes/b09'
+        b09_manifest = json.loads((b09 / 'recipe-manifest.json').read_text())
+        assert b09_manifest['newFamilies'] == 0 and len(b09_manifest['recipes']) == 2
+        assert not b09_manifest['sourceSceneMigrated'] and not b09_manifest['userAestheticApproval']
+        if all(os.environ.get(k) for k in ('MOTION_ENGINE_ROOT', 'B09_DISPLAY_FONT', 'B09_BODY_FONT')):
+            b09_env = {**os.environ, 'B09_EVIDENCE_DIR': str(temp / 'b09-recipe-evidence')}
+            for test in ('verify.mjs', 'test-runtime.mjs'):
+                run(['node', str(b09 / test)], env=b09_env)
+        else:
+            print('NOT_RUN: B09 recipe renders require MOTION_ENGINE_ROOT/B09_DISPLAY_FONT/B09_BODY_FONT; no family or aesthetic approval inferred')
         for test in ('test_design_knowledge.py', 'test_video_knowledge.py', 'test_static_knowledge.py', 'test_check_delivery.py', 'test_check_final_delivery.py', 'test_validate_delivery_report.py'):
             run(['python3', str(skill / 'scripts' / test)])
         kb_cli = skill / 'scripts/video_knowledge.py'

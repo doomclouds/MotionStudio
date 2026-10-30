@@ -260,3 +260,7 @@ The catalog contains 60 foundations + 7 separate recipes: seventeen registration
 ### 句法与份额的静态组合
 
 [B08两种组合配方](engine/design-elements/recipes/b08/README.md)把显式句法行与完整份额图例组合验证，保持14族计数；并非原案例已反向迁移或新作品审美认可。五来源设计的保留/不升族决定、外置字体和可运行测试见配方文档。
+
+### 强调词与单位图符的静态组合
+
+[B09两种组合配方](engine/design-elements/recipes/b09/README.md)把受限旋转强调词与同尺寸单位图符组合验证，保持14族计数；并非原案例已反向迁移或新作品审美认可。五来源设计的保留/不升族决定、外置字体和可运行测试见配方文档。

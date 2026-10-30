@@ -78,3 +78,7 @@ Two bounded [composition recipes](recipes/b06/README.md) reuse existing families
 ## B08 bounded recipes
 
 [Explicit manifesto + full-legend partition](recipes/b08/README.md) adds two source-only composition recipes, not public families. Fixed two-column contracts, no automatic typography/financial/scientific inference, no source-scene migration or new user aesthetic approval.
+
+## B09 bounded recipes
+
+[Bounded rotated emphasis + equal-size unit pictograms](recipes/b09/README.md) adds two source-only composition recipes, not public families. Fixed two-column contracts, finite rotated bounds and whole/half units; no automatic typography or real-world inference, no source-scene migration or new user aesthetic approval.

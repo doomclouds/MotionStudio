@@ -1,0 +1,57 @@
+[
+  {
+    "sourceWorkId": "xie-symbol-study",
+    "candidateSha256": "9ce3486a72cdb897b669313f411da4a06a8c391b0eb64b5814833f90f9d5f4de",
+    "formalPath": "portfolio/works/xie-symbol-study/design/scene.mjs",
+    "formalSourceCommit": "af1c9a419afc7a392e33f8f0dea4c99ba589c293",
+    "formalSourceStatus": "Official published commit identity and integrated source hash verified; candidate and published source distinguished.",
+    "relation": "design logic / case helper reference; original scene not migrated to these recipes",
+    "formalSourceSha256": "b1ff2964ccb4ca3a38f87685c081d787966fd33f176e27abebfa7c5dc13f20d2",
+    "formalSourceUrl": "https://github.com/doomclouds/MotionStudio/blob/af1c9a419afc7a392e33f8f0dea4c99ba589c293/portfolio/works/xie-symbol-study/design/scene.mjs",
+    "matchesCandidate": false
+  },
+  {
+    "sourceWorkId": "command-palette-study",
+    "candidateSha256": "758ea61ff2b91aa669031e0eeb3b56ba01a71129c3e7482e00ec392677c70998",
+    "formalPath": "portfolio/works/command-palette-study/design/command-row.mjs",
+    "formalSourceCommit": "af1c9a419afc7a392e33f8f0dea4c99ba589c293",
+    "formalSourceStatus": "Official published commit identity and integrated source hash verified; candidate and published source distinguished.",
+    "relation": "design logic / case helper reference; original scene not migrated to these recipes",
+    "formalSourceSha256": "758ea61ff2b91aa669031e0eeb3b56ba01a71129c3e7482e00ec392677c70998",
+    "formalSourceUrl": "https://github.com/doomclouds/MotionStudio/blob/af1c9a419afc7a392e33f8f0dea4c99ba589c293/portfolio/works/command-palette-study/design/command-row.mjs",
+    "matchesCandidate": true
+  },
+  {
+    "sourceWorkId": "bookcraft-vinyl-annual-study",
+    "candidateSha256": "396f24a0637a354f1be6c41052df73551daed53b0f3f0a26dd519b6cea629e94",
+    "formalPath": "portfolio/works/bookcraft-vinyl-annual-study/design/narrative-metrics.mjs",
+    "formalSourceCommit": "af1c9a419afc7a392e33f8f0dea4c99ba589c293",
+    "formalSourceStatus": "Official published commit identity and integrated source hash verified; candidate and published source distinguished.",
+    "relation": "design logic / case helper reference; original scene not migrated to these recipes",
+    "formalSourceSha256": "396f24a0637a354f1be6c41052df73551daed53b0f3f0a26dd519b6cea629e94",
+    "formalSourceUrl": "https://github.com/doomclouds/MotionStudio/blob/af1c9a419afc7a392e33f8f0dea4c99ba589c293/portfolio/works/bookcraft-vinyl-annual-study/design/narrative-metrics.mjs",
+    "matchesCandidate": true
+  },
+  {
+    "sourceWorkId": "vinyl-isotype-study",
+    "candidateSha256": "0e089489f091a3493df91ad458e6f8c50e2a011abf6fd3dfc5671603eccfdc2d",
+    "formalPath": "portfolio/works/vinyl-isotype-study/design/unit-audit.mjs",
+    "formalSourceCommit": "af1c9a419afc7a392e33f8f0dea4c99ba589c293",
+    "formalSourceStatus": "Official published commit identity and integrated source hash verified; candidate and published source distinguished.",
+    "relation": "design logic / case helper reference; original scene not migrated to these recipes",
+    "formalSourceSha256": "0e089489f091a3493df91ad458e6f8c50e2a011abf6fd3dfc5671603eccfdc2d",
+    "formalSourceUrl": "https://github.com/doomclouds/MotionStudio/blob/af1c9a419afc7a392e33f8f0dea4c99ba589c293/portfolio/works/vinyl-isotype-study/design/unit-audit.mjs",
+    "matchesCandidate": true
+  },
+  {
+    "sourceWorkId": "market-livingroom-study",
+    "candidateSha256": "4b9f8e6d601becf295776ede000d58b44f00c44e0edd5afd0b54c0aa0c94e222",
+    "formalPath": "portfolio/works/market-livingroom-study/design/emphasis-tile.mjs",
+    "formalSourceCommit": "af1c9a419afc7a392e33f8f0dea4c99ba589c293",
+    "formalSourceStatus": "Official published commit identity and integrated source hash verified; candidate and published source distinguished.",
+    "relation": "design logic / case helper reference; original scene not migrated to these recipes",
+    "formalSourceSha256": "4b9f8e6d601becf295776ede000d58b44f00c44e0edd5afd0b54c0aa0c94e222",
+    "formalSourceUrl": "https://github.com/doomclouds/MotionStudio/blob/af1c9a419afc7a392e33f8f0dea4c99ba589c293/portfolio/works/market-livingroom-study/design/emphasis-tile.mjs",
+    "matchesCandidate": true
+  }
+]

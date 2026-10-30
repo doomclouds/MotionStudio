@@ -1,0 +1,6 @@
+import fs from 'node:fs';import path from 'node:path';import{createHash}from'node:crypto';import{fileURLToPath}from'node:url';
+export const packageRoot=path.dirname(fileURLToPath(import.meta.url));
+export const hash=b=>createHash('sha256').update(b).digest('hex');
+export function externalPath(p){if(typeof p!=='string'||!path.isAbsolute(p))throw Error('absolute external path required');let q=path.resolve(p),base=q,tail=[];while(!fs.existsSync(base)){tail.unshift(path.basename(base));base=path.dirname(base)}q=path.resolve(fs.realpathSync(base),...tail);const root=fs.realpathSync(packageRoot);if(q===root||q.startsWith(root+path.sep))throw Error('path must be outside source package');return q}
+export function outputDirectory(p){const q=externalPath(p);if(fs.existsSync(q)&&fs.readdirSync(q).length)throw Error('output directory must be fresh/empty');fs.mkdirSync(q,{recursive:true});return q}
+export function loadFonts(api,paths){const lock=JSON.parse(fs.readFileSync(packageRoot+'/font-lock.json'));const r={};for(const key of['display','body']){const p=externalPath(paths[key]);if(hash(fs.readFileSync(p))!==lock[key].sha256)throw Error(key+' font SHA mismatch');r[key]=p}for(const key of['display','body'])if(!api.GlobalFonts.registerFromPath(r[key],key==='display'?'B09Display':'B09Body'))throw Error('font registration failed');return lock}
