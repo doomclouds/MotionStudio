@@ -56,6 +56,7 @@ def main():
     required += ['runtime/design-elements/' + name for name in ('index.mjs', 'catalog.json', 'Index.md', 'README.md', 'CASE-COVERAGE.md', 'print-poster.mjs', 'test-print-poster.mjs', 'shared.mjs', 'test/verify.mjs', 'examples/compositions.mjs', 'examples/specialist-compositions.mjs', 'examples/render.mjs', 'test/verify-cjk-font.py', 'examples/b05-compositions.mjs')]
     for family in ('typographic-focus', 'color-sections', 'material-surfaces', 'semantic-data', 'parameter-controls', 'expressive-type', 'radial-scale', 'diagonal-field', 'authored-paths', 'vertical-imprint', 'geometric-marks', 'proportional-partition', 'ratio-rings'):
         required += ['runtime/design-elements/' + family + '.mjs', 'runtime/design-elements/docs/' + family + '.md', 'runtime/design-elements/examples/' + family + '.mjs']
+    required += ['runtime/design-elements/recipes/xhs08/' + name for name in ['CREDITS.md', 'DESIGN-RETENTION.md', 'LICENSE', 'README.md', 'design/area-plan.mjs', 'entry.json', 'font-lock.json', 'licenses/Figtree-OFL.txt', 'package-lock.json', 'package.json', 'prepare-fonts.py', 'recipe-manifest.json', 'render.mjs', 'retention.json', 'runtime.mjs', 'test-runtime.mjs', 'test.mjs']]
     if any(name not in payload for name in required): raise SystemExit('Required source/license missing')
     required_stem = ['runtime/review-tools/' + name for name in ('stem_balance.py', 'test_stem_balance.py', 'STEM_BALANCE.md')]
     if any(name not in payload for name in required_stem): raise SystemExit('Optional stem-balance source/documentation missing')

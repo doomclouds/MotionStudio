@@ -1,0 +1,323 @@
+{
+  "schema": 4,
+  "id": "xhs-blank-vertical-study",
+  "version": "1.0.0",
+  "title": "留白 · 竖排与印章（原创鸟替代）",
+  "status": "source-release",
+  "unofficial_recreation": true,
+  "original": {
+    "author": "alchaincyf / Huashu Design",
+    "title": "07 留白：竖排与印章",
+    "url": "https://github.com/alchaincyf/huashu-design/blob/9b01ee8751679724dd43d855a532944aaa2c2b59/assets/style-specimens/xhs/07-blank-vertical.html"
+  },
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "LICENSES/Huashu-MIT-LICENSE.txt",
+      "LICENSES/Serif-OFL.txt",
+      "LICENSES/Figtree-OFL.txt",
+      "LICENSES/Bodoni-OFL.txt",
+      "LICENSES/GENERATED-REPLACEMENTS.md"
+    ],
+    "evidence_urls": [
+      "https://github.com/alchaincyf/huashu-design/blob/9b01ee8751679724dd43d855a532944aaa2c2b59/assets/style-specimens/xhs/07-blank-vertical.html",
+      "https://github.com/google/fonts",
+      "https://github.com/alchaincyf/huashu-design/blob/9b01ee8751679724dd43d855a532944aaa2c2b59/assets/style-specimens/xhs/_kit/stickers/LICENSE.md"
+    ]
+  },
+  "files": [
+    {
+      "path": "ASSET-USAGE.md",
+      "sha256": "88e97618400af61797d26db00c307b0865a688aefea432edbc9892ba74d9dbe5",
+      "role": "documentation"
+    },
+    {
+      "path": "CREDITS.md",
+      "sha256": "9eca58131a517e65e497aefadcb301d09e9ae32c1033cafe2f633884903841a7",
+      "role": "documentation"
+    },
+    {
+      "path": "DESIGN-RETENTION.md",
+      "sha256": "0704d9db093ddbbac36c96461bb398ee480b34762ff3ea2edfbfed8171fcc848",
+      "role": "documentation"
+    },
+    {
+      "path": "LICENSES/Bodoni-OFL.txt",
+      "sha256": "931dfe2e0cd3c9443295f5c1d754b8a8403bf060df50c1d5900267ade83d0046",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/Figtree-OFL.txt",
+      "sha256": "140d37233e7f3ce7313798befa9600893bcceaf41a55fa0fa5ad52f7f657a268",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/GENERATED-REPLACEMENTS.md",
+      "sha256": "b82278aea9d2685465ed76e146924ec1e5b86476689efe5af457b6671ed1dbef",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/Huashu-MIT-LICENSE.txt",
+      "sha256": "6d6a2a9caf2e6d2b76974050427053b2892d8aa4c33fd168ce63a537fcee9d96",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/Serif-OFL.txt",
+      "sha256": "5e0da210fb04058a8c0087985d2d456b931c2579811a49655721d3cf0c36b6d6",
+      "role": "license"
+    },
+    {
+      "path": "README.md",
+      "sha256": "57c7da0d3c4ed682b6a6e6149a492c91f4d2de23b9286a6a67f496c07d514a2c",
+      "role": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "b7d12d1c72398b805cadc1519fb6a184f673803f64f5cacc7b0c59cd85c52d49",
+      "role": "cover"
+    },
+    {
+      "path": "design/DESIGN-REASONING.md",
+      "sha256": "16002c61c283d02453342d4cf246001bb8e8b55e83e544f0a098de125723de7f",
+      "role": "documentation"
+    },
+    {
+      "path": "design/REUSABLE-BRICKS.md",
+      "sha256": "11c0b784048d2dfb9f045634e3158edb66f4a33485695f70a49ab6f8726fb3f9",
+      "role": "documentation"
+    },
+    {
+      "path": "design/common.mjs",
+      "sha256": "b6c268b3c97cda5e609f0f4aa1ba4991443d1c955beaa88a76526ac6fdf1268d",
+      "role": "source"
+    },
+    {
+      "path": "design/page-1.mjs",
+      "sha256": "00c76c4ae69ab36880c2bcd6849e78fd65cd09de91782b29ab49254eafa983da",
+      "role": "source"
+    },
+    {
+      "path": "design/page-2.mjs",
+      "sha256": "561e830334216d3c6eae04219b5da5f094c4df808318e48986ddf65f380b2194",
+      "role": "source"
+    },
+    {
+      "path": "design/scene.mjs",
+      "sha256": "f5e201327f964d6f72111c756b358c203bb764ae7bfc4410b8e691f91dcb9f88",
+      "role": "source"
+    },
+    {
+      "path": "design/test-vertical-editorial.mjs",
+      "sha256": "02c287e425f6ae8ce08cc879150c743f54c2bd34d0e91ea7c75fc2fcd99be902",
+      "role": "source"
+    },
+    {
+      "path": "design/vertical-editorial.mjs",
+      "sha256": "4e7b74a7d0faee2acc34d145581d8aa12e9a562590eb39439d4d5b6c061d4ed6",
+      "role": "source"
+    },
+    {
+      "path": "font-inputs.json",
+      "sha256": "fb77393a16f0707ce9c108733b7e07b773d28ef3cf575e8dc11185e09215ad1a",
+      "role": "config"
+    },
+    {
+      "path": "locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "role": "lock"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "59c468f1139824327c67869b6e516926505edfbe1104dcaf1e6d1f651ee7acbb",
+      "role": "lock"
+    },
+    {
+      "path": "prepare-fonts.py",
+      "sha256": "279e6e586b8d3c9c2b5b4c0d04395ecc9373241eb7fb8ec1177fc6377e46743b",
+      "role": "source"
+    },
+    {
+      "path": "render.mjs",
+      "sha256": "4f740db60f38d4a91fb5f464d2e56c25448ddea8ebd0a4da5d6fd7f14cf9741c",
+      "role": "source"
+    },
+    {
+      "path": "replacement-provenance.json",
+      "sha256": "d4561ea6890e7d277d9382c0d9010b5dd2dfc11c58e1d8b2c6ad670d5bb4ccdb",
+      "role": "config"
+    },
+    {
+      "path": "resource-lock.json",
+      "sha256": "ca6a517244a0be8a0e8eced8d7cc200a0b48e1207ea4a3a88c085ce7607dfc34",
+      "role": "config"
+    },
+    {
+      "path": "retention.json",
+      "sha256": "b292b3b650c24dd592f973a2d9c7836882458c5d76b6c898ef322cac47d7ee97",
+      "role": "config"
+    }
+  ],
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "locks/npm-package-lock.json"
+    },
+    {
+      "name": "fonttools",
+      "version": "4.61.1",
+      "lock": "locks/runtime.json"
+    }
+  ],
+  "render": {
+    "entrypoint": "design/scene.mjs",
+    "width": 1200,
+    "height": 750
+  },
+  "resources": [
+    {
+      "id": "bodoniitalic500",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font",
+      "notice": "LICENSES/Bodoni-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/bodonimoda",
+      "sha256": "e3de39c2e8cfa2f860e36d196eb21e0ffe78751cd4211763f27a7523097b75ff",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "BodoniItalic500.ttf",
+      "bytes": 62068,
+      "instructions": "User supplies exact original font input hashes; run prepare-fonts.py into a NEW external directory with an existing parent. No overwrite or package-local output. Verify derived hash before render."
+    },
+    {
+      "id": "figtree500",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font",
+      "notice": "LICENSES/Figtree-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/figtree",
+      "sha256": "91eb83913b007b1a3995ad14654cad281b76aa3f9750d1e129821ad8c248ce69",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Figtree500.ttf",
+      "bytes": 20580,
+      "instructions": "User supplies exact original font input hashes; run prepare-fonts.py into a NEW external directory with an existing parent. No overwrite or package-local output. Verify derived hash before render."
+    },
+    {
+      "id": "figtree700",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font",
+      "notice": "LICENSES/Figtree-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/figtree",
+      "sha256": "5b3251b23e2ae1a6713cb3ab78a5aa41c0db722e48357b1cc65cdc9038582268",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Figtree700.ttf",
+      "bytes": 20608,
+      "instructions": "User supplies exact original font input hashes; run prepare-fonts.py into a NEW external directory with an existing parent. No overwrite or package-local output. Verify derived hash before render."
+    },
+    {
+      "id": "figtree800",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font",
+      "notice": "LICENSES/Figtree-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/figtree",
+      "sha256": "7188eacd7e37799cb1f8dc5c87c1845768adc3d1a16ff1e386ed591ad3d4c9e3",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Figtree800.ttf",
+      "bytes": 20604,
+      "instructions": "User supplies exact original font input hashes; run prepare-fonts.py into a NEW external directory with an existing parent. No overwrite or package-local output. Verify derived hash before render."
+    },
+    {
+      "id": "figtree900",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font",
+      "notice": "LICENSES/Figtree-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/figtree",
+      "sha256": "065ef95526b5d7fb911e92be57e0ff5b45ea8b59429b3837feb12f2c456091b2",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Figtree900.ttf",
+      "bytes": 20592,
+      "instructions": "User supplies exact original font input hashes; run prepare-fonts.py into a NEW external directory with an existing parent. No overwrite or package-local output. Verify derived hash before render."
+    },
+    {
+      "id": "serif500",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font",
+      "notice": "LICENSES/Serif-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notoserifsc",
+      "sha256": "cdd56ff73e10cd78cb95dd166702ab6eaa0b6290a3d3452bdabfb2f04fb1065b",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Serif500.ttf",
+      "bytes": 80036,
+      "instructions": "User supplies exact original font input hashes; run prepare-fonts.py into a NEW external directory with an existing parent. No overwrite or package-local output. Verify derived hash before render."
+    },
+    {
+      "id": "serif700",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font",
+      "notice": "LICENSES/Serif-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notoserifsc",
+      "sha256": "c1997004acd107f7a56ae34cce57921e24bcc0a2132d0de52f0f14a1db7a41bc",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Serif700.ttf",
+      "bytes": 80048,
+      "instructions": "User supplies exact original font input hashes; run prepare-fonts.py into a NEW external directory with an existing parent. No overwrite or package-local output. Verify derived hash before render."
+    },
+    {
+      "id": "serif900",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font",
+      "notice": "LICENSES/Serif-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notoserifsc",
+      "sha256": "8bc18afd413ca5b8d05d2bc713bf8dc2d3d818f0b221253edc96ba700cfbf808",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Serif900.ttf",
+      "bytes": 80108,
+      "instructions": "User supplies exact original font input hashes; run prepare-fonts.py into a NEW external directory with an existing parent. No overwrite or package-local output. Verify derived hash before render."
+    },
+    {
+      "id": "cockatoo-original",
+      "mode": "provide",
+      "license": "Independently generated replacement; no new license grant asserted",
+      "notice": "LICENSES/GENERATED-REPLACEMENTS.md",
+      "source_url": "https://openai.com/policies/terms-of-use/",
+      "sha256": "7609dd16add568aec711fa5a4deae5e4a5a62a3dd12d582a802ab1c89f53abb6",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "cockatoo-original.png",
+      "bytes": 2128956,
+      "instructions": "User must supply the exact retained generated PNG. source_url is terms/context only, NOT a download URL. File is not publicly distributed or automatically obtainable; fresh generation cannot restore exact bytes. Match SHA256, place in external XHS07_RESOURCE_DIR. Not turnkey."
+    },
+    {
+      "id": "kingfisher-original",
+      "mode": "provide",
+      "license": "Independently generated replacement; no new license grant asserted",
+      "notice": "LICENSES/GENERATED-REPLACEMENTS.md",
+      "source_url": "https://openai.com/policies/terms-of-use/",
+      "sha256": "4bc891ff169b8a3a94ab442ba93a4154a9a35b2c23cac4f745fd0ba43ba5660d",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "kingfisher-original.png",
+      "bytes": 2122404,
+      "instructions": "User must supply the exact retained generated PNG. source_url is terms/context only, NOT a download URL. File is not publicly distributed or automatically obtainable; fresh generation cannot restore exact bytes. Match SHA256, place in external XHS07_RESOURCE_DIR. Not turnkey."
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "3892497f7300270efa1aa16e218e5ea31f836bd2ab37e5b2aa73f9352a504188",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "Independent reviewer inspected full v02: bird/seal separated, helper column improved, no new clipping or missing text. Original generated replacement birds differ from source. No factual specimen-data, motion, responsive or interactive validation."
+    }
+  }
+}

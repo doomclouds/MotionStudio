@@ -1,0 +1,5 @@
+# Generated replacement birds
+The two bird PNGs are independently generated replacement illustrations, not Huashu bird-sticker files. Their exact generated-output names and SHA256 are bound in replacement-provenance.json. They are externally supplied and not included in this source tree. No new license or exclusivity warranty is assigned by this note. Huashu MIT does not automatically cover these images. A derived self-rendered cover is included only under the user-authorized retention scope.
+Upstream sticker license source: https://github.com/alchaincyf/huashu-design/blob/9b01ee8751679724dd43d855a532944aaa2c2b59/assets/style-specimens/xhs/_kit/stickers/LICENSE.md
+Upstream stickers remain PolyForm Shield 1.0.0, https://polyformproject.org/licenses/shield/1.0.0 . No upstream sticker PNG/WebP, screenshot or comparison container is distributed here.
+Upstream Required Notice, applicable only to upstream works: Copyright (c) 2026 Huashu (alchaincyf), https://github.com/alchaincyf/huashu-bird-sticker

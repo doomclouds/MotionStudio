@@ -120,9 +120,10 @@ class SourceTreeFixtures(unittest.TestCase):
         self.add('apparently-safe.txt', PNG)
         (self.repo / 'apparently-safe.txt').write_text('safe worktree replacement')
         self.audit(False, 'unapproved-media:PNG')
-    def test_public_policy_only_allows_twentynine_exact_reviewed_images(self):
+    def test_public_policy_only_allows_exact_reviewed_images(self):
         allow = json.loads((ROOT / 'scripts/source-assets-allowlist.json').read_text())['assets']
         self.assertEqual(allow, {
+            'portfolio/works/xhs-blank-vertical-study/cover.jpg': 'b7d12d1c72398b805cadc1519fb6a184f673803f64f5cacc7b0c59cd85c52d49',
             'portfolio/works/song-block-print-study/cover.jpg': '6223f4018b87f59c3cd4613450e216250a5687f96973640d01302d59da5151a3',
             'portfolio/works/bauhaus-theatre-study/cover.jpg': '131a46b5fb87e7012c7c66343812a1715cc39ecb43b943c03d433a145539a28a',
             'portfolio/works/ocean-plastic-treemap-study/cover.jpg': 'a29e8e88bbf480f08814ca2a6359ced3eb03244afdcc287b6208887b0b575488',
@@ -179,6 +180,14 @@ class SourceTreeFixtures(unittest.TestCase):
             'portfolio/works/hardware-sampler-study/cover.jpg': '98f00db4ebf08339a2e55975ce0133cf65ce5a029460db108deaef557852b766',
             'portfolio/works/shanghai-deco-study/cover.jpg': 'ec6f76cea9a55360a5c7cc0c82543735335e5dc194fbc8b23d9ed5561431d251',
         })
+    def test_exact_xhs_blank_vertical_cover_allowed(self):
+        name='portfolio/works/xhs-blank-vertical-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes());self.audit(True)
+    def test_xhs_blank_vertical_cover_tamper_rejected(self):
+        name='portfolio/works/xhs-blank-vertical-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
+    def test_xhs_blank_vertical_cover_wrong_path_rejected(self):
+        self.add('portfolio/works/xhs-blank-vertical-study/other.jpg',(ROOT/'portfolio/works/xhs-blank-vertical-study/cover.jpg').read_bytes());self.audit(False)
     def test_exact_muqi_study_cover_allowed(self):
         name='portfolio/works/muqi-study/cover.jpg'
         self.add(name,(ROOT/name).read_bytes());self.audit(True)

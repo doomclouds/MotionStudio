@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "kind": "bounded-static-recipe",
+  "id": "recipe.xhs08-semantic-area.v1",
+  "designGuidance": "DESIGN-RETENTION.md",
+  "code": "design/area-plan.mjs",
+  "newFamilies": 0,
+  "sourceSceneMigrated": false,
+  "userAestheticApproval": false,
+  "evidence": {
+    "status": "LOCAL_ONLY",
+    "publicReports": false,
+    "numericChecks": 28,
+    "reviewScope": "Independent reviewer ran 28 checks before final text-only visual revision; final two boards visually reviewed. Public integration engineering reviewed separately."
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "kind": "recipe-source-entry",
+  "id": "recipe.xhs08-semantic-area.v1",
+  "baseCommit": "619e2bab1f4295857943812375b6f784f9ff6d8b",
+  "status": "local-integration-candidate",
+  "notPortfolioWork": true,
+  "newFamilies": 0,
+  "manifest": "recipe-manifest.json",
+  "retention": "retention.json",
+  "files": [
+    {
+      "path": "CREDITS.md",
+      "sha256": "0c9d41a4d4ab3cfcbb0acd78dde8083532d4357b6a2e513d90a97d3e0a1e513f"
+    },
+    {
+      "path": "DESIGN-RETENTION.md",
+      "sha256": "7495e2fbdee1e0b265778abc29151f2f027f3524d8a954ed6546d1dfc92a9d48"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "6d6a2a9caf2e6d2b76974050427053b2892d8aa4c33fd168ce63a537fcee9d96"
+    },
+    {
+      "path": "README.md",
+      "sha256": "7c6549c237f0c9c29a06917d6d0b1bb86005786f63830199e1a89cef70656ab9"
+    },
+    {
+      "path": "design/area-plan.mjs",
+      "sha256": "f429bd4dce0442cacbdaad5135c527a325de6eab83ad449f251d043f79060459"
+    },
+    {
+      "path": "font-lock.json",
+      "sha256": "63a5e58b35fd0db3e4fbf2e8a59c5f03fd83e8f6ef2af1bfa7f17fb08065964e"
+    },
+    {
+      "path": "licenses/Figtree-OFL.txt",
+      "sha256": "140d37233e7f3ce7313798befa9600893bcceaf41a55fa0fa5ad52f7f657a268"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "c0074de252fc91f471f884dc625b2a7bba3cb9cc7ead935134cca38cfa178dec"
+    },
+    {
+      "path": "package.json",
+      "sha256": "9b420860027f3147830e28f68333e2df0f40ed759c688a674d7d10bfdf893dd8"
+    },
+    {
+      "path": "prepare-fonts.py",
+      "sha256": "fc27f276f0a86a4cd94e46ada8b5f7134be4ac43232d0a985b29194482a3c742"
+    },
+    {
+      "path": "recipe-manifest.json",
+      "sha256": "e13083d2cfd5385d2b7494e9e15adb8d61f716f4dfae597312b7a83050f80e74"
+    },
+    {
+      "path": "render.mjs",
+      "sha256": "27a3eede021b40bbf8d3633f4f2582fdfacd4c3c67adac21bde87b10f9a59156"
+    },
+    {
+      "path": "retention.json",
+      "sha256": "8445fa3b282ff02492dedcb25c7c2db01afbfdfac6ce0674e8536666be4e8b83"
+    },
+    {
+      "path": "runtime.mjs",
+      "sha256": "428cd72498faec9f07fa5f42cc3311cb30325c6f1cd4f3315d2634c3add2a391"
+    },
+    {
+      "path": "test-runtime.mjs",
+      "sha256": "b4a8a9ba155b86b7bb9f50de4fd3bca1e827af5dafc1bec55d2d28f77de07f73"
+    },
+    {
+      "path": "test.mjs",
+      "sha256": "f321d3b4db762b79adab08e6bad5cd153a37969c63dd9e0c47e0c0db918ff3ca"
+    }
+  ]
+}

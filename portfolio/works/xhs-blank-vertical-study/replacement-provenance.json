@@ -1,0 +1,24 @@
+{
+  "scope": "XHS07 blank only",
+  "upstream_sticker_binaries_in_render_assets": false,
+  "upstream_license_applies_to": "upstream Huashu bird-sticker works, not automatically to independently generated replacements",
+  "replacement_assets": [
+    {
+      "asset": "kingfisher-original.png",
+      "role": "original_generated_replacement_not_upstream_sticker",
+      "generated_source_path": "exec-98fe05eb-b55b-4a56-9f35-cbe7ad173bf0.png",
+      "sha256": "4bc891ff169b8a3a94ab442ba93a4154a9a35b2c23cac4f745fd0ba43ba5660d",
+      "byte_identical_to_generated_source": true,
+      "generation_record": "Prior author handoff describes text-only independent image generation with no upstream reference image input; this revision verifies byte identity, not a new generation."
+    },
+    {
+      "asset": "cockatoo-original.png",
+      "role": "original_generated_replacement_not_upstream_sticker",
+      "generated_source_path": "exec-2b33377e-e1bc-4793-8ace-4f58c43788b0.png",
+      "sha256": "7609dd16add568aec711fa5a4deae5e4a5a62a3dd12d582a802ab1c89f53abb6",
+      "byte_identical_to_generated_source": true,
+      "generation_record": "Prior author handoff describes text-only independent image generation with no upstream reference image input; this revision verifies byte identity, not a new generation."
+    }
+  ],
+  "license_boundary": "No new license or rights warranty assigned to generated output here. Huashu MIT covers its code, not all images. Noto/Figtree/Bodoni font files retain their OFL notices. Reference screenshots and reports containing them remain private comparison material."
+}

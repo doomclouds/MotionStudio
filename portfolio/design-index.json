@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "countingUnit": "stable callable family; no function, case or snapshot duplication",
-  "staticWorks": 52,
+  "staticWorks": 53,
   "families": [
     {
       "id": "design.print-poster.v1",
@@ -1290,6 +1290,21 @@
       "comparisonBundle": "NOT_PUBLISHED",
       "reportStorage": "PRIVATE_LIBRARY",
       "acceptedFrameBinding": "EXACT_PIXELS",
+      "motionTransfer": "NOT_TESTED"
+    },
+    {
+      "id": "xhs-blank-vertical-study",
+      "decisionCard": "works/xhs-blank-vertical-study/DESIGN-RETENTION.md",
+      "sourceAnalysis": [
+        "design/DESIGN-REASONING.md",
+        "design/REUSABLE-BRICKS.md"
+      ],
+      "assetUsage": [],
+      "visualStatus": "PARTIAL",
+      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
+      "comparisonBundle": "NOT_PUBLISHED",
+      "reportStorage": "SCRATCH_LOCAL_ONLY",
+      "acceptedFrameBinding": "NOT_CHECKED",
       "motionTransfer": "NOT_TESTED"
     },
     {

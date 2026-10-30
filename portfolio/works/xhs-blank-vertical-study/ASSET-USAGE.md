@@ -1,0 +1,1 @@
+External media/font list and exact bytes are in resource-lock.json. No image other than own-rendered cover.jpg is distributed. Replacement provenance identifies original generation output hashes. Case-local vertical helper supplies reusable design and code rules; no shared public asset family is claimed.

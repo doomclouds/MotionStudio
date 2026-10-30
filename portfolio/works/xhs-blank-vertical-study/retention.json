@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "workId": "xhs-blank-vertical-study",
+  "kind": "fixed-static-design",
+  "canvas": {
+    "width": 1200,
+    "height": 750
+  },
+  "entrypoint": "design/scene.mjs",
+  "decisionCard": "DESIGN-RETENTION.md",
+  "sourceAnalysis": [
+    "design/DESIGN-REASONING.md",
+    "design/REUSABLE-BRICKS.md"
+  ],
+  "ruleRefs": [],
+  "ruleStatus": "No separate formal rule card claimed; use decisionCard and sourceAnalysis.",
+  "assetUsage": [],
+  "nonAssetNote": "Case-local vertical-editorial.mjs is reusable helper code but not yet a registered public family. External fonts and original generated bird replacements are precisely declared in resource-lock.json.",
+  "evidence": {
+    "acceptanceSource": "entry.json#/acceptance",
+    "renderHashSource": "entry.json#/cover/source_sha256",
+    "publicCover": "cover.jpg",
+    "comparisonBundle": {
+      "status": "NOT_PUBLISHED",
+      "recordId": "xhs07-v02-private-comparison",
+      "sha256": "fb3dcb82225577f3e0103b1e075def809406f6ac73e445151e854ca199c287d1",
+      "storage": "SCRATCH_LOCAL_ONLY",
+      "durableStorage": "NOT_LOCATED",
+      "note": "Contains restricted upstream reference screenshot; excluded from public source; local-only evidence."
+    },
+    "independentReview": {
+      "status": "PRIVATE_RECORD_LOCATED",
+      "recordId": "xhs07-v02-repair-evidence",
+      "sha256": "34e36ea1e73e1e23beb45502d1daad5b705e1f9ad65f2bd609861553e1d0b97c",
+      "storage": "SCRATCH_LOCAL_ONLY",
+      "durableStorage": "NOT_LOCATED",
+      "note": "Self-check evidence records independent reviewer outcome; original independent response is conversation-only, not a standalone signed review."
+    }
+  },
+  "motionTransfer": {
+    "status": "NOT_TESTED",
+    "note": "Fixed-size static only. No interaction, responsive layout, animation, audio or AV-sync approval implied."
+  }
+}

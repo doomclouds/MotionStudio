@@ -2,7 +2,7 @@
 
 运行 `python portfolio/retention.py --write` 生成；`--check` 拒绝漂移。不是新的审美验收。
 
-完整静态作品 52；公共族 14；在已发布作品源码中实际调用的不同族 3。作品收藏、模块测试、可视复核、素材公开权限分别判断。
+完整静态作品 53；公共族 14；在已发布作品源码中实际调用的不同族 3。作品收藏、模块测试、可视复核、素材公开权限分别判断。
 
 | 作品/统一设计卡 | 实际公共族 | 视觉状态（来自entry） | 独审证据身份 | 对照报告 |
 |---|---|---|---|---|
@@ -57,6 +57,7 @@
 | [黑胶商店 · 完整固定画幅静态复刻](works/vinyl-study/DESIGN-RETENTION.md) | 0（案例代码保留） | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / NOT_ESTABLISHED；未公开 |
 | [今天的浪 · 玩味错位天气海报](works/wave-weather-study/DESIGN-RETENTION.md) | 0（案例代码保留） | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / NOT_ESTABLISHED；未公开 |
 | [天气本身就是一张图](works/weather-art-study/DESIGN-RETENTION.md) | 0（案例代码保留） | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / EXACT_PIXELS；未公开 |
+| [留白 · 竖排与印章（原创鸟替代）](works/xhs-blank-vertical-study/DESIGN-RETENTION.md) | 0（案例代码保留） | PARTIAL | PRIVATE_RECORD_LOCATED | SCRATCH_LOCAL_ONLY / NOT_CHECKED；未公开 |
 | [XIE · 红白超级符号](works/xie-symbol-study/DESIGN-RETENTION.md) | color-sections | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / EXACT_PIXELS；未公开 |
 
 完整可运行入口、画幅、文件hash及验收以各作品entry.json为准。retention.json只补语义关联，不重写验收。旧分析路径原位保留，由统一设计卡和sidecar导航。

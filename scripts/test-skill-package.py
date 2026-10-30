@@ -109,6 +109,16 @@ def main():
                 run(['node', str(b10 / test)], env=b10_env)
         else:
             print('NOT_RUN: B10 requires engine and pinned external display/body/code fonts; no aesthetic approval inferred')
+        xhs08 = design / 'recipes/xhs08'
+        xhs_entry = json.loads((xhs08 / 'entry.json').read_text())
+        for item in xhs_entry['files']:
+            assert hashlib.sha256((xhs08 / item['path']).read_bytes()).hexdigest() == item['sha256']
+        run(['node', str(xhs08 / 'test.mjs')])
+        if os.environ.get('XHS08_FONT_FILE'):
+            run(['node', str(xhs08 / 'test-runtime.mjs')])
+            run(['node', str(xhs08 / 'render.mjs')], env={**os.environ, 'XHS08_OUTPUT_DIR': str(temp / 'xhs08-output')})
+        else:
+            print('NOT_RUN: XHS08 render/runtime gates require pinned external XHS08_FONT_FILE; numeric/pixel tests executed')
         for test in ('test_design_knowledge.py', 'test_video_knowledge.py', 'test_static_knowledge.py', 'test_check_delivery.py', 'test_check_final_delivery.py', 'test_validate_delivery_report.py'):
             run(['python3', str(skill / 'scripts' / test)])
         kb_cli = skill / 'scripts/video_knowledge.py'

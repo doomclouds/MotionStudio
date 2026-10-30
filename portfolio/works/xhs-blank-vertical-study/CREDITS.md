@@ -1,0 +1,3 @@
+# Credits and scope
+Design reference: alchaincyf (Huashu), xhs/07-blank-vertical, fixed 9b01ee8751679724dd43d855a532944aaa2c2b59. https://github.com/alchaincyf/huashu-design/blob/9b01ee8751679724dd43d855a532944aaa2c2b59/assets/style-specimens/xhs/07-blank-vertical.html
+Code reference MIT notice retained. Fonts retain their individual OFL notices. All original sticker binaries and reference screenshots are excluded. Bird illustrations are independently generated replacements, not upstream licensed stickers; see replacement-provenance.json and LICENSES/GENERATED-REPLACEMENTS.md. They are not granted MIT by this repository. The source example's 86 score and open-source claim are historical sample copy, not a score of generated birds and not a blanket license.

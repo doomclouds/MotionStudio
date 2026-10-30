@@ -1,0 +1,1 @@
+import{createScene as base,dependencies as deps}from'./scene.mjs';export const config={width:1242,height:1660,fps:1,duration:1};export const dependencies=['./scene.mjs',...deps];export const usedAssetIds=[];export const createScene=opts=>base({...opts,page:1});

@@ -1,0 +1,17 @@
+{
+  "name": "motionstudio-xhs08-area-recipe",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": "24.x"
+  },
+  "dependencies": {
+    "@napi-rs/canvas": "0.1.100"
+  },
+  "scripts": {
+    "test": "node test.mjs",
+    "render": "node render.mjs"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "status": "technical-reviewed-static-recipe-candidate",
+  "newFamilies": 0,
+  "sharedFamilyCount": 14,
+  "sourceSceneMigrated": false,
+  "userAestheticApproval": false,
+  "recipes": [
+    {
+      "id": "recipe.xhs08-semantic-area.v1",
+      "code": "design/area-plan.mjs",
+      "guidance": "DESIGN-RETENTION.md"
+    }
+  ],
+  "verification": [
+    "test.mjs",
+    "test-runtime.mjs"
+  ],
+  "publication": "not-submitted"
+}
