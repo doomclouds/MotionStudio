@@ -1,0 +1,199 @@
+{
+  "schema": 4,
+  "id": "theatre-narrative-wave",
+  "version": "1.0.0",
+  "title": "现在与可能 · 小剧场叙事波形",
+  "status": "source-release",
+  "unofficial_recreation": true,
+  "original": {
+    "author": "alchaincyf (花叔 · 花生)",
+    "title": "Huashu ppt/14-narrative-sparkline design specimen",
+    "url": "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/ppt/14-narrative-sparkline.html"
+  },
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "LICENSES/huashu-MIT-LICENSE.txt",
+      "LICENSES/NotoSansSC-OFL.txt",
+      "LICENSES/GeistMono-OFL.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/LICENSE",
+      "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "https://github.com/google/fonts/tree/main/ofl/geistmono"
+    ]
+  },
+  "files": [
+    {
+      "path": "CREDITS.md",
+      "sha256": "525e7b76ef8fcd5c7b2b3baa9a66fb3d856f6dfc8677d72aeb9150cedb1f2053",
+      "role": "documentation"
+    },
+    {
+      "path": "LICENSES/GeistMono-OFL.txt",
+      "sha256": "1781d2806a07d91c4edf4740b88449fab7d0eadad53f7c351b94cd4d4eb8c00f",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/NotoSansSC-OFL.txt",
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/huashu-MIT-LICENSE.txt",
+      "sha256": "6d6a2a9caf2e6d2b76974050427053b2892d8aa4c33fd168ce63a537fcee9d96",
+      "role": "license"
+    },
+    {
+      "path": "README.md",
+      "sha256": "7dc95866e7d8e384bfe0a097cb7260a87bb37bfe33263849dc867396b838c179",
+      "role": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "8c5e96fba95b2e572387ebcc5ff7c7a8131f1df85a4b307af87fb4d9ee63e5b1",
+      "role": "cover"
+    },
+    {
+      "path": "design/DESIGN-ANALYSIS.md",
+      "sha256": "c758cd3c92b91728a79f04800279d1ba2e1dd7f38665b0aed63899a1c6f5215d",
+      "role": "documentation"
+    },
+    {
+      "path": "design/common.mjs",
+      "sha256": "85b430f33d30fbdc690b8bce30ef21d1c1cbc4ab5e0e6168d1c6ed5a88f25036",
+      "role": "source"
+    },
+    {
+      "path": "design/content.json",
+      "sha256": "7ecac0f9056e2e6e7e800bf099e4fe70b9cc6d4414e75fec6ba8284c69c14516",
+      "role": "config"
+    },
+    {
+      "path": "design/scene.mjs",
+      "sha256": "5889b597ef8dbeef81f2d877416a7b2e4777356448d0f2d3d91283769be5a3ae",
+      "role": "source"
+    },
+    {
+      "path": "font-charset.txt",
+      "sha256": "28b58e46a9d936e28808d518f72dd28b938843b6168b63b7f53465c52e263c73",
+      "role": "config"
+    },
+    {
+      "path": "font-inputs.json",
+      "sha256": "cc1a659aa234328ba01a25275fbc21aeb17e2b196ee7a18887c4facd6a31f8e2",
+      "role": "config"
+    },
+    {
+      "path": "fonts.lock.json",
+      "sha256": "70150f79e03c4207675b42a713a2fe5b00a59816d6429258ec9da60b62a2d8c4",
+      "role": "config"
+    },
+    {
+      "path": "locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "role": "lock"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "c97986608711fff48e780026471834a114f117d30fd4f1b15c3e76b21a760a46",
+      "role": "lock"
+    },
+    {
+      "path": "prepare-fonts.py",
+      "sha256": "ba2c850897c7c23f6d1787a6be5d1526935713a7056d8eb6cffe956fab4243d3",
+      "role": "source"
+    },
+    {
+      "path": "verify.mjs",
+      "sha256": "6fae3166f1bcc11a91943d0409496393b8ba0c07efcce20160fca11c9971d8a7",
+      "role": "source"
+    }
+  ],
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "locks/npm-package-lock.json"
+    }
+  ],
+  "render": {
+    "entrypoint": "design/scene.mjs",
+    "width": 1200,
+    "height": 750
+  },
+  "resources": [
+    {
+      "id": "studysans500",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "46211c8093a7c3faeacada4725e953a5751cc92ace2eaca7fddc94a9b46b475e",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "StudySans500.ttf",
+      "bytes": 119644,
+      "instructions": "Supply licensed originals externally per font-inputs.json, run prepare-fonts.py and point THEATRE_FONT_DIR to prepared output. Wrong or absent font hashes fail closed."
+    },
+    {
+      "id": "studysans600",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "dd05c24ec3d4a6b37cb0255bf7518fb63e4c534c1b2f718481b78597274eded3",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "StudySans600.ttf",
+      "bytes": 119672,
+      "instructions": "Supply licensed originals externally per font-inputs.json, run prepare-fonts.py and point THEATRE_FONT_DIR to prepared output. Wrong or absent font hashes fail closed."
+    },
+    {
+      "id": "studysans900",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "a7703d9b16ea8e091fac536794ff2a7743d4e0cc5f7dfd91462e89ade86d7acd",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "StudySans900.ttf",
+      "bytes": 120244,
+      "instructions": "Supply licensed originals externally per font-inputs.json, run prepare-fonts.py and point THEATRE_FONT_DIR to prepared output. Wrong or absent font hashes fail closed."
+    },
+    {
+      "id": "studymono600",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/GeistMono-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/geistmono",
+      "sha256": "f43c70945d2d384664329e272dd4b7e3144fe1e9c1829c80cc6f813680b177ed",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "StudyMono600.ttf",
+      "bytes": 27500,
+      "instructions": "Supply licensed originals externally per font-inputs.json, run prepare-fonts.py and point THEATRE_FONT_DIR to prepared output. Wrong or absent font hashes fail closed."
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "cba41444255ae5a5090b6c3e4111e9569bfa2c44ecdb874887a50b4250874f42",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "Complete static frame and details independently reviewed and accepted for collection. Font rasterization and material approximations remain. No browser, interaction, responsiveness, video or audio validation. Narrative metaphor only, not a quantitative trend or forecast."
+    }
+  }
+}

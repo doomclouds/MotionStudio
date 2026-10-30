@@ -1,0 +1,28 @@
+{
+  "tool": "fonttools==4.61.1",
+  "inputs": [
+    {
+      "file": "NotoSansSC-variable.ttf",
+      "sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+      "source": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "prefix": "StudySans",
+      "weights": [
+        500,
+        600,
+        900
+      ],
+      "notice": "LICENSES/NotoSansSC-OFL.txt"
+    },
+    {
+      "file": "GeistMono-variable.ttf",
+      "sha256": "d00e590b8eb3a59acc329b2d044fd143ae935090b7da33199ebee27cc7de8196",
+      "source": "https://github.com/google/fonts/tree/main/ofl/geistmono",
+      "prefix": "StudyMono",
+      "weights": [
+        600
+      ],
+      "notice": "LICENSES/GeistMono-OFL.txt"
+    }
+  ],
+  "scope": "Externally supplied licensed font binaries; no download, fallback or font distribution."
+}

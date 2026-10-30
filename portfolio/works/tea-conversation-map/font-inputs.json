@@ -1,0 +1,38 @@
+{
+  "tool": "fonttools==4.61.1",
+  "inputs": [
+    {
+      "file": "NotoSansSC-variable.ttf",
+      "sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+      "source": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "prefix": "StudySans",
+      "weights": [
+        400,
+        600
+      ],
+      "notice": "LICENSES/NotoSansSC-OFL.txt"
+    },
+    {
+      "file": "NotoSerifSC-variable.ttf",
+      "sha256": "050080d9255a86808f2945bffac582b31ef32bc36411ce29563b4961670c66f9",
+      "source": "https://github.com/google/fonts/tree/main/ofl/notoserifsc",
+      "prefix": "StudySerif",
+      "weights": [
+        700,
+        900
+      ],
+      "notice": "LICENSES/NotoSerifSC-OFL.txt"
+    },
+    {
+      "file": "LongCang-Regular.ttf",
+      "sha256": "e5bf2c3f24ef2327c6f136d8f73e2f9dfdf44896fdbeb35a9515f44777bb91bc",
+      "source": "https://github.com/google/fonts/tree/main/ofl/longcang",
+      "prefix": "StudyHand",
+      "weights": [
+        400
+      ],
+      "notice": "LICENSES/LongCang-OFL.txt"
+    }
+  ],
+  "scope": "Externally supplied licensed font binaries; no download, fallback or font distribution."
+}

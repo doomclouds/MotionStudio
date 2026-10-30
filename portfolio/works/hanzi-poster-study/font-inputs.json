@@ -1,0 +1,27 @@
+{
+  "scope": "External fonts only. Original inputs identify tested versions; derived fonts renamed Pair. No automatic acquisition.",
+  "outputs": [
+    "PairSans500.ttf",
+    "PairSans550.ttf",
+    "PairSans900.ttf",
+    "PairSerif450.ttf"
+  ],
+  "sourceFamilies": {
+    "PairSans500.ttf": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+    "PairSans550.ttf": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+    "PairSans900.ttf": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+    "PairSerif450.ttf": "https://github.com/google/fonts/tree/main/ofl/notoserifsc"
+  },
+  "originalInputs": [
+    {
+      "filename": "NotoSansSC-variable.ttf",
+      "sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+      "bytes": 17772300
+    },
+    {
+      "filename": "NotoSerifSC-variable.ttf",
+      "sha256": "050080d9255a86808f2945bffac582b31ef32bc36411ce29563b4961670c66f9",
+      "bytes": 25125512
+    }
+  ]
+}

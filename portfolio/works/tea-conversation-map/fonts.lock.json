@@ -1,0 +1,39 @@
+{
+  "fonts": [
+    {
+      "output": "StudySans400.ttf",
+      "sha256": "42485dea47d0cee831a2c68118c98156f19f5c33f2184a985bac6ed5013c6dd7",
+      "weight": 400,
+      "source": "NotoSansSC-variable.ttf",
+      "source_sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da"
+    },
+    {
+      "output": "StudySans600.ttf",
+      "sha256": "dd05c24ec3d4a6b37cb0255bf7518fb63e4c534c1b2f718481b78597274eded3",
+      "weight": 600,
+      "source": "NotoSansSC-variable.ttf",
+      "source_sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da"
+    },
+    {
+      "output": "StudySerif700.ttf",
+      "sha256": "c08953ca10dbc6ae1f59c004976f23de60d0d90b2f57b50c22669fb47777d58f",
+      "weight": 700,
+      "source": "NotoSerifSC-variable.ttf",
+      "source_sha256": "050080d9255a86808f2945bffac582b31ef32bc36411ce29563b4961670c66f9"
+    },
+    {
+      "output": "StudySerif900.ttf",
+      "sha256": "fa6a5f704a3a7cb0ef2c7303c89c4ac4b9ff42357084b5154be845f036a9c0f5",
+      "weight": 900,
+      "source": "NotoSerifSC-variable.ttf",
+      "source_sha256": "050080d9255a86808f2945bffac582b31ef32bc36411ce29563b4961670c66f9"
+    },
+    {
+      "output": "StudyHand400.ttf",
+      "sha256": "9e8724b0e7d297670183fb2cc2ded698419d9695b51b9070c105d87a627decf8",
+      "weight": 400,
+      "source": "LongCang-Regular.ttf",
+      "source_sha256": "e5bf2c3f24ef2327c6f136d8f73e2f9dfdf44896fdbeb35a9515f44777bb91bc"
+    }
+  ]
+}

@@ -15,6 +15,11 @@ TESSEL_COVER = 'portfolio/works/tessel/cover.jpg'
 FAVORITE52_COVER = 'portfolio/works/favorite52/cover.jpg'
 VINYL_COVER = 'portfolio/works/vinyl-study/cover.jpg'
 TEA_VOICE_COVER = 'portfolio/works/tea-voice-study/cover.jpg'
+HANZI_POSTER_STUDY_COVER = 'portfolio/works/hanzi-poster-study/cover.jpg'
+SLOW_ROAST_STUDY_COVER = 'portfolio/works/slow-roast-study/cover.jpg'
+TEA_CONVERSATION_MAP_COVER = 'portfolio/works/tea-conversation-map/cover.jpg'
+THEATRE_NARRATIVE_WAVE_COVER = 'portfolio/works/theatre-narrative-wave/cover.jpg'
+LIQUID_GLASS_STUDY_COVER = 'portfolio/works/liquid-glass-study/cover.jpg'
 MUQI_STUDY_COVER = 'portfolio/works/muqi-study/cover.jpg'
 CYCLING_YEAR_REPORT_COVER = 'portfolio/works/cycling-year-report/cover.jpg'
 HARDWARE_SAMPLER_STUDY_COVER = 'portfolio/works/hardware-sampler-study/cover.jpg'
@@ -155,7 +160,7 @@ def inspect_repo(repo):
             if private: error(ref, name, 'private-production-metadata')
             if name == README_PREVIEW and (kind != 'PNG' or size > README_PREVIEW_MAX_BYTES):
                 error(ref, name, 'invalid-readme-preview-format-or-size')
-            if name in {TESSEL_COVER, FAVORITE52_COVER, VINYL_COVER, TEA_VOICE_COVER, MUQI_STUDY_COVER, CYCLING_YEAR_REPORT_COVER, HARDWARE_SAMPLER_STUDY_COVER, SHANGHAI_DECO_STUDY_COVER} and (kind != 'JPEG' or size > PORTFOLIO_COVER_MAX_BYTES):
+            if name in {TESSEL_COVER, FAVORITE52_COVER, VINYL_COVER, TEA_VOICE_COVER, MUQI_STUDY_COVER, CYCLING_YEAR_REPORT_COVER, HARDWARE_SAMPLER_STUDY_COVER, SHANGHAI_DECO_STUDY_COVER, HANZI_POSTER_STUDY_COVER, SLOW_ROAST_STUDY_COVER, TEA_CONVERSATION_MAP_COVER, THEATRE_NARRATIVE_WAVE_COVER, LIQUID_GLASS_STUDY_COVER} and (kind != 'JPEG' or size > PORTFOLIO_COVER_MAX_BYTES):
                 error(ref, name, 'invalid-portfolio-cover-format-or-size')
             if name in allow:
                 if sha not in allow[name]: error(ref, name, 'approved-source-asset-hash-mismatch')

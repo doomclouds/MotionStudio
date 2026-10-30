@@ -43,6 +43,28 @@
 
 静态作品按各自README在独立Node进程中渲染；不要把多个作品的字体注册与场景合并到同一全局渲染器。这些是完整作品工程，不是已验证任意混用的通用组件。
 
+## Huashu B02 · 字体、信息叙事与透明材质
+
+[![市 · 汉字实验海报](works/hanzi-poster-study/cover.jpg)](works/hanzi-poster-study/README.md)
+
+[市 · 汉字实验海报](works/hanzi-poster-study/README.md) — 汉字海报，以字形与笔画关系叙事，不算完整产品UI。 完整可编辑静态工程与设计逻辑、许可、字体准备保留；重渲染匹配已审画面，残差仍按PARTIAL披露，未验证交互或视频。
+
+[![慢火 · 咖啡品牌编辑式首屏](works/slow-roast-study/cover.jpg)](works/slow-roast-study/README.md)
+
+[慢火 · 咖啡品牌编辑式首屏](works/slow-roast-study/README.md) — 咖啡品牌首屏；摄影区是原样例占位，工艺数值仅为样例，不冒充真实产品依据。 完整可编辑静态工程与设计逻辑、许可、字体准备保留；重渲染匹配已审画面，残差仍按PARTIAL披露，未验证交互或视频。
+
+[![数据人文 · 茶馆一周对话地图](works/tea-conversation-map/cover.jpg)](works/tea-conversation-map/README.md)
+
+[数据人文 · 茶馆一周对话地图](works/tea-conversation-map/README.md) — 数据人文演示画面，原作周日旁注与符号数量矛盾已披露，不算完整产品UI。 完整可编辑静态工程与设计逻辑、许可、字体准备保留；重渲染匹配已审画面，残差仍按PARTIAL披露，未验证交互或视频。
+
+[![叙事曲线 · 剧场现实与可能](works/theatre-narrative-wave/cover.jpg)](works/theatre-narrative-wave/README.md)
+
+[叙事曲线 · 剧场现实与可能](works/theatre-narrative-wave/README.md) — 曲线用作现实与可能的叙事隐喻，不是量化趋势或真实统计。 完整可编辑静态工程与设计逻辑、许可、字体准备保留；重渲染匹配已审画面，残差仍按PARTIAL披露，未验证交互或视频。
+
+[![液态玻璃 · 冲浪预报三屏展示](works/liquid-glass-study/cover.jpg)](works/liquid-glass-study/README.md)
+
+[液态玻璃 · 冲浪预报三屏展示](works/liquid-glass-study/README.md) — 完整三屏展示；自产画布透色与alpha柔影为2D近似，不宣称物理折射或苹果官方设计。 完整可编辑静态工程与设计逻辑、许可、字体准备保留；重渲染匹配已审画面，残差仍按PARTIAL披露，未验证交互或视频。
+
 ## 最小结构
 
 ```text

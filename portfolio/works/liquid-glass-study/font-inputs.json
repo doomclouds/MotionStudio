@@ -1,0 +1,35 @@
+{
+  "environment": "LIQUID_GLASS_FONT_DIR",
+  "font_binaries_bundled": false,
+  "fonttools": "4.61.1",
+  "source_fonts": [
+    {
+      "file": "NotoSansSC-variable.ttf",
+      "prefix": "GlassSans",
+      "weights": [
+        400,
+        500,
+        600,
+        700,
+        800
+      ],
+      "sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+      "official_family_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "notice": "LICENSES/NotoSansSC-OFL.txt"
+    },
+    {
+      "file": "Inter-var.ttf",
+      "prefix": "GlassInter",
+      "weights": [
+        400,
+        500,
+        600,
+        700,
+        800
+      ],
+      "sha256": "c8d76e1cb2a0a7cfbbae1e390be4e4b942b27f99ec07e1024b1fc916045eed09",
+      "official_family_url": "https://github.com/google/fonts/tree/main/ofl/inter",
+      "notice": "LICENSES/Inter-OFL.txt"
+    }
+  ]
+}

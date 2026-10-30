@@ -1,0 +1,37 @@
+{
+  "scope": "External fonts only. Original inputs identify tested versions; derived fonts renamed Pair. No automatic acquisition.",
+  "outputs": [
+    "PairSans500.ttf",
+    "PairSerif900.ttf",
+    "PairPlayfair700.ttf",
+    "Anton-Regular.ttf"
+  ],
+  "sourceFamilies": {
+    "PairSans500.ttf": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+    "PairSerif900.ttf": "https://github.com/google/fonts/tree/main/ofl/notoserifsc",
+    "PairPlayfair700.ttf": "https://github.com/google/fonts/tree/main/ofl/playfairdisplay",
+    "Anton-Regular.ttf": "https://github.com/google/fonts/tree/main/ofl/anton"
+  },
+  "originalInputs": [
+    {
+      "filename": "NotoSansSC-variable.ttf",
+      "sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+      "bytes": 17772300
+    },
+    {
+      "filename": "NotoSerifSC-variable.ttf",
+      "sha256": "050080d9255a86808f2945bffac582b31ef32bc36411ce29563b4961670c66f9",
+      "bytes": 25125512
+    },
+    {
+      "filename": "PlayfairDisplay-Italic-variable.ttf",
+      "sha256": "a5e26dc5e2e77fb2803a0bf02fd4f81ee136ec8dea863ccdb0c59a263b21378b",
+      "bytes": 278688
+    },
+    {
+      "filename": "Anton-Regular.ttf",
+      "sha256": "a4ba3a92350ebb031da0cb47630ac49eb265082ca1bc0450442f4a83ab947cab",
+      "bytes": 170812
+    }
+  ]
+}

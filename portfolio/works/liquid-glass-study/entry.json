@@ -1,0 +1,255 @@
+{
+  "schema": 4,
+  "id": "liquid-glass-study",
+  "version": "1.0.0",
+  "title": "液态玻璃 · 冲浪预报三屏展示",
+  "status": "source-release",
+  "unofficial_recreation": true,
+  "original": {
+    "author": "alchaincyf (花叔 · 花生)",
+    "title": "液态玻璃 · 冲浪预报三屏展示",
+    "url": "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/app/02-liquid-glass.html"
+  },
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "LICENSES/huashu-MIT-LICENSE.txt",
+      "LICENSES/Inter-OFL.txt",
+      "LICENSES/NotoSansSC-OFL.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/LICENSE",
+      "https://github.com/google/fonts"
+    ]
+  },
+  "files": [
+    {
+      "path": "CREDITS.md",
+      "sha256": "8343cb80edbb0c2a1d404a6419f4e751a11e29a2e3bee3094354c5ad7be8e55d",
+      "role": "documentation"
+    },
+    {
+      "path": "LICENSES/Inter-OFL.txt",
+      "sha256": "67c5d5206b96f8340b95fabd02ae60701e0b20ce2594d976216f1065e5aa3822",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/NotoSansSC-OFL.txt",
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/huashu-MIT-LICENSE.txt",
+      "sha256": "6d6a2a9caf2e6d2b76974050427053b2892d8aa4c33fd168ce63a537fcee9d96",
+      "role": "license"
+    },
+    {
+      "path": "README.md",
+      "sha256": "f4e211c2617fbf36611757bb2bbebfc1c4dc338a760fa7326b6fa114ade4cfe6",
+      "role": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "dafc85a12ef859aadc0de540cba83c7fd2b8bdcf68e64a6211bd15f346ec7026",
+      "role": "cover"
+    },
+    {
+      "path": "design/DESIGN-ANALYSIS.md",
+      "sha256": "79e0b893bf074a61a8cb8b073f40e290ac14516eb60341e91ebec399b6d813a7",
+      "role": "documentation"
+    },
+    {
+      "path": "design/content.json",
+      "sha256": "05879b9dc3b1c0b85314cdb2293b08d9195fc915227e9a9fb926ac5f0a0b4f3e",
+      "role": "config"
+    },
+    {
+      "path": "design/scene.mjs",
+      "sha256": "e7cdd315e74b8b55b93501bfe468750683576bab3a28ecbe872de63875792c16",
+      "role": "source"
+    },
+    {
+      "path": "font-inputs.json",
+      "sha256": "49435e8704ea0ef46b1f6664419c4c453185a795dacc9ec09e1741e15a0ed3c8",
+      "role": "config"
+    },
+    {
+      "path": "font-subset.json",
+      "sha256": "42c7a2f6d5a93f6ab298ddc9204f05a4d458fa444c4450e4096fef3ede6e18fd",
+      "role": "config"
+    },
+    {
+      "path": "locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "role": "lock"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "c97986608711fff48e780026471834a114f117d30fd4f1b15c3e76b21a760a46",
+      "role": "lock"
+    },
+    {
+      "path": "prepare-fonts.py",
+      "sha256": "c9a1369bcc9d6c8373a4a3ae4b28d48949e46b69e7d89dc0f9aa1e13f25ccfa3",
+      "role": "source"
+    }
+  ],
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "locks/npm-package-lock.json"
+    }
+  ],
+  "render": {
+    "entrypoint": "design/scene.mjs",
+    "width": 1200,
+    "height": 750
+  },
+  "resources": [
+    {
+      "id": "glassinter400",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/Inter-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/inter",
+      "sha256": "34576150cb21f2969d1efa475a54f2ac890b7cbd8697092ba4f74eed7f5ab7b9",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "GlassInter400.ttf",
+      "bytes": 29136,
+      "instructions": "Provide licensed fonts via LIQUID_GLASS_FONT_DIR; prepare-fonts.py validates original hashes and generates renamed subsets outside the work directory."
+    },
+    {
+      "id": "glassinter500",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/Inter-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/inter",
+      "sha256": "b7fa063bdd6e44313e84e02aeaadfc61b226b10637665d13c8cc41a535399377",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "GlassInter500.ttf",
+      "bytes": 29168,
+      "instructions": "Provide licensed fonts via LIQUID_GLASS_FONT_DIR; prepare-fonts.py validates original hashes and generates renamed subsets outside the work directory."
+    },
+    {
+      "id": "glassinter600",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/Inter-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/inter",
+      "sha256": "efb209cc701076e4a6acc456e97ddc82428ff3fcf9fd7e4c98072ca6478fc5b9",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "GlassInter600.ttf",
+      "bytes": 29256,
+      "instructions": "Provide licensed fonts via LIQUID_GLASS_FONT_DIR; prepare-fonts.py validates original hashes and generates renamed subsets outside the work directory."
+    },
+    {
+      "id": "glassinter700",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/Inter-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/inter",
+      "sha256": "194c31aae89bbe36bbfc097275a12c69216748702371b92d206e15725bb0b5de",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "GlassInter700.ttf",
+      "bytes": 29288,
+      "instructions": "Provide licensed fonts via LIQUID_GLASS_FONT_DIR; prepare-fonts.py validates original hashes and generates renamed subsets outside the work directory."
+    },
+    {
+      "id": "glassinter800",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/Inter-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/inter",
+      "sha256": "ade1721630e3d43dc65673ed8592dad58daae559ec43e6ded56fb875d9e44afd",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "GlassInter800.ttf",
+      "bytes": 29388,
+      "instructions": "Provide licensed fonts via LIQUID_GLASS_FONT_DIR; prepare-fonts.py validates original hashes and generates renamed subsets outside the work directory."
+    },
+    {
+      "id": "glasssans400",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "394e9560f29fe44b2cace1c716391f1ddb67d3a3316b110a231ed46fda446df6",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "GlassSans400.ttf",
+      "bytes": 34532,
+      "instructions": "Provide licensed fonts via LIQUID_GLASS_FONT_DIR; prepare-fonts.py validates original hashes and generates renamed subsets outside the work directory."
+    },
+    {
+      "id": "glasssans500",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "8206b3351f646775e8ae0e86a9512f2107ba098ac85a54cf4aef4d49645ff11f",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "GlassSans500.ttf",
+      "bytes": 34548,
+      "instructions": "Provide licensed fonts via LIQUID_GLASS_FONT_DIR; prepare-fonts.py validates original hashes and generates renamed subsets outside the work directory."
+    },
+    {
+      "id": "glasssans600",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "d16798c517820b37b6007cc3e772b6e763fa0f28f3d637ac341362e987a412ec",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "GlassSans600.ttf",
+      "bytes": 34564,
+      "instructions": "Provide licensed fonts via LIQUID_GLASS_FONT_DIR; prepare-fonts.py validates original hashes and generates renamed subsets outside the work directory."
+    },
+    {
+      "id": "glasssans700",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "0c039b73ee35a160e9d3936cf42e87209f1af6b1992823c5e7ed46cfc7cccdb6",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "GlassSans700.ttf",
+      "bytes": 34516,
+      "instructions": "Provide licensed fonts via LIQUID_GLASS_FONT_DIR; prepare-fonts.py validates original hashes and generates renamed subsets outside the work directory."
+    },
+    {
+      "id": "glasssans800",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "1a80d60959fdfaaf597cdaab433b852b50866bd283cff22344e66c428c31056d",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "GlassSans800.ttf",
+      "bytes": 34504,
+      "instructions": "Provide licensed fonts via LIQUID_GLASS_FONT_DIR; prepare-fonts.py validates original hashes and generates renamed subsets outside the work directory."
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "ae7920169722dd305077f47a5ef5483be8bf93c2b8639e66779218c7bb1bdea8",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "Full static canvas and material details independently reviewed; source geometry, typography, blur and glass surface approximations remain. No browser, interaction, responsive, motion or audio verification."
+    }
+  }
+}

@@ -57,3 +57,15 @@ Four further complete fixed-frame studies retain editable code, content, design 
 - `portfolio/works/shanghai-deco-study/cover.jpg`: 95,401 bytes; SHA-256 `ec6f76cea9a55360a5c7cc0c82543735335e5dc194fbc8b23d9ed5561431d251`.
 
 No wildcard media permission is granted. Their entry.json schema4 records static source releases and explicit visual residuals, without implying audio, animation or interaction review.
+
+## Huashu B02 retained static works
+
+Five further fixed-frame studies retain full editable source, design reasoning, runtime locks, attribution and external-font preparation. Upstream screenshots/HTML, review reports, font binaries, audio and render sequences are excluded. These are case works, not new motion mechanisms. Posters and presentation narratives are explicitly distinguished from full product UI. Exact additional JPEG exceptions (1200 × 750, each maximum 1 MiB):
+
+- `portfolio/works/hanzi-poster-study/cover.jpg`: 87,105 bytes; SHA-256 `cfdea6b1874b3b88bb363044cf556ca06f4ce665aa7e07e47adb2da669441ee4`.
+- `portfolio/works/slow-roast-study/cover.jpg`: 108,347 bytes; SHA-256 `35f604bb0dd4e83bfeae7c4e8c72a539d0d6ca35c8acd5d68b6e837ab01c2707`.
+- `portfolio/works/tea-conversation-map/cover.jpg`: 110,907 bytes; SHA-256 `25836584db11ca8ec85dd0266fb5a9eec7afb050da6809d1950c5596b14dff2b`.
+- `portfolio/works/theatre-narrative-wave/cover.jpg`: 89,026 bytes; SHA-256 `8c5e96fba95b2e572387ebcc5ff7c7a8131f1df85a4b307af87fb4d9ee63e5b1`.
+- `portfolio/works/liquid-glass-study/cover.jpg`: 239,267 bytes; SHA-256 `dafc85a12ef859aadc0de540cba83c7fd2b8bdcf68e64a6211bd15f346ec7026`.
+
+No wildcard media permission is granted. Covers derive only from the accepted Native recreations; schema4 does not imply browser, interaction, audio or animation validation.

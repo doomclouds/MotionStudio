@@ -1,0 +1,218 @@
+{
+  "schema": 4,
+  "id": "tea-conversation-map",
+  "version": "1.0.0",
+  "title": "茶馆里的七个夜晚 · 数据人文主义信息图",
+  "status": "source-release",
+  "unofficial_recreation": true,
+  "original": {
+    "author": "alchaincyf (花叔 · 花生)",
+    "title": "Huashu info/06-data-humanism design specimen",
+    "url": "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/info/06-data-humanism.html"
+  },
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "LICENSES/huashu-MIT-LICENSE.txt",
+      "LICENSES/NotoSansSC-OFL.txt",
+      "LICENSES/NotoSerifSC-OFL.txt",
+      "LICENSES/LongCang-OFL.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/LICENSE",
+      "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "https://github.com/google/fonts/tree/main/ofl/notoserifsc",
+      "https://github.com/google/fonts/tree/main/ofl/longcang"
+    ]
+  },
+  "files": [
+    {
+      "path": "CREDITS.md",
+      "sha256": "2b01b7910640cb543ebe68e28c0278fc03bad9238be9190e417d20f16d7fcb9e",
+      "role": "documentation"
+    },
+    {
+      "path": "LICENSES/LongCang-OFL.txt",
+      "sha256": "603546b7219a94bb59bf8294458194a5010119486354092b66a09a3fd61aeacc",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/NotoSansSC-OFL.txt",
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/NotoSerifSC-OFL.txt",
+      "sha256": "5e0da210fb04058a8c0087985d2d456b931c2579811a49655721d3cf0c36b6d6",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/huashu-MIT-LICENSE.txt",
+      "sha256": "6d6a2a9caf2e6d2b76974050427053b2892d8aa4c33fd168ce63a537fcee9d96",
+      "role": "license"
+    },
+    {
+      "path": "README.md",
+      "sha256": "f876fa1a7188c4bf856a0382d94259a7584ffdcf052babd4843179d0e9a51921",
+      "role": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "25836584db11ca8ec85dd0266fb5a9eec7afb050da6809d1950c5596b14dff2b",
+      "role": "cover"
+    },
+    {
+      "path": "design/DESIGN-ANALYSIS.md",
+      "sha256": "dac894cab589224089486885aac184ab89d2f5113ece9243b8db20a8e349351e",
+      "role": "documentation"
+    },
+    {
+      "path": "design/common.mjs",
+      "sha256": "f98f0daecf94c6ac3d41bdc795affe83dfb88eb3940e3a01faac37b119969d77",
+      "role": "source"
+    },
+    {
+      "path": "design/content.json",
+      "sha256": "83879c26459a974b8ec42f301778a1eb4ab795766d58c36a2b4a69c10eb5c890",
+      "role": "config"
+    },
+    {
+      "path": "design/scene.mjs",
+      "sha256": "beb4ef5195797dfb30cb41ce07cb7cd26edfb3a6515da49550a367b130dfe9d2",
+      "role": "source"
+    },
+    {
+      "path": "font-charset.txt",
+      "sha256": "28b58e46a9d936e28808d518f72dd28b938843b6168b63b7f53465c52e263c73",
+      "role": "config"
+    },
+    {
+      "path": "font-inputs.json",
+      "sha256": "8ea7b60203d5a820f595a61301b4f5caf89e52963aa1822613ced50222753410",
+      "role": "config"
+    },
+    {
+      "path": "fonts.lock.json",
+      "sha256": "02d76e2c0567063e88835a67c6291358ff6c3bbf5a2df3d4c2c665a4e040108c",
+      "role": "config"
+    },
+    {
+      "path": "locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "role": "lock"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "c97986608711fff48e780026471834a114f117d30fd4f1b15c3e76b21a760a46",
+      "role": "lock"
+    },
+    {
+      "path": "prepare-fonts.py",
+      "sha256": "ba2c850897c7c23f6d1787a6be5d1526935713a7056d8eb6cffe956fab4243d3",
+      "role": "source"
+    },
+    {
+      "path": "verify.mjs",
+      "sha256": "e295dfa77b19146b4bd4525c35a44b40d286140e8ce278e13259a43db1fd212f",
+      "role": "source"
+    }
+  ],
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "locks/npm-package-lock.json"
+    }
+  ],
+  "render": {
+    "entrypoint": "design/scene.mjs",
+    "width": 1200,
+    "height": 750
+  },
+  "resources": [
+    {
+      "id": "studysans400",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "42485dea47d0cee831a2c68118c98156f19f5c33f2184a985bac6ed5013c6dd7",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "StudySans400.ttf",
+      "bytes": 119704,
+      "instructions": "Supply licensed originals externally per font-inputs.json, run prepare-fonts.py and point TEA_MAP_FONT_DIR to prepared output. Wrong or absent font hashes fail closed."
+    },
+    {
+      "id": "studysans600",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "dd05c24ec3d4a6b37cb0255bf7518fb63e4c534c1b2f718481b78597274eded3",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "StudySans600.ttf",
+      "bytes": 119672,
+      "instructions": "Supply licensed originals externally per font-inputs.json, run prepare-fonts.py and point TEA_MAP_FONT_DIR to prepared output. Wrong or absent font hashes fail closed."
+    },
+    {
+      "id": "studyserif700",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSerifSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notoserifsc",
+      "sha256": "c08953ca10dbc6ae1f59c004976f23de60d0d90b2f57b50c22669fb47777d58f",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "StudySerif700.ttf",
+      "bytes": 166496,
+      "instructions": "Supply licensed originals externally per font-inputs.json, run prepare-fonts.py and point TEA_MAP_FONT_DIR to prepared output. Wrong or absent font hashes fail closed."
+    },
+    {
+      "id": "studyserif900",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSerifSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notoserifsc",
+      "sha256": "fa6a5f704a3a7cb0ef2c7303c89c4ac4b9ff42357084b5154be845f036a9c0f5",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "StudySerif900.ttf",
+      "bytes": 166500,
+      "instructions": "Supply licensed originals externally per font-inputs.json, run prepare-fonts.py and point TEA_MAP_FONT_DIR to prepared output. Wrong or absent font hashes fail closed."
+    },
+    {
+      "id": "studyhand400",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/LongCang-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/longcang",
+      "sha256": "9e8724b0e7d297670183fb2cc2ded698419d9695b51b9070c105d87a627decf8",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "StudyHand400.ttf",
+      "bytes": 119424,
+      "instructions": "Supply licensed originals externally per font-inputs.json, run prepare-fonts.py and point TEA_MAP_FONT_DIR to prepared output. Wrong or absent font hashes fail closed."
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "fd5c1fcdadfb1ffad45f36a4b92fd3ac1243a53779dc39035cbd4abf881c64fb",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "Complete static frame and details independently reviewed and accepted for collection. Font rasterization and material approximations remain. No browser, interaction, responsiveness, video or audio validation. Source Sunday note says one conversation but depicts two; fictional illustrative data only."
+    }
+  }
+}

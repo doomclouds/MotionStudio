@@ -1,0 +1,32 @@
+{
+  "fonts": [
+    {
+      "output": "StudySans500.ttf",
+      "sha256": "46211c8093a7c3faeacada4725e953a5751cc92ace2eaca7fddc94a9b46b475e",
+      "weight": 500,
+      "source": "NotoSansSC-variable.ttf",
+      "source_sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da"
+    },
+    {
+      "output": "StudySans600.ttf",
+      "sha256": "dd05c24ec3d4a6b37cb0255bf7518fb63e4c534c1b2f718481b78597274eded3",
+      "weight": 600,
+      "source": "NotoSansSC-variable.ttf",
+      "source_sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da"
+    },
+    {
+      "output": "StudySans900.ttf",
+      "sha256": "a7703d9b16ea8e091fac536794ff2a7743d4e0cc5f7dfd91462e89ade86d7acd",
+      "weight": 900,
+      "source": "NotoSansSC-variable.ttf",
+      "source_sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da"
+    },
+    {
+      "output": "StudyMono600.ttf",
+      "sha256": "f43c70945d2d384664329e272dd4b7e3144fe1e9c1829c80cc6f813680b177ed",
+      "weight": 600,
+      "source": "GeistMono-variable.ttf",
+      "source_sha256": "d00e590b8eb3a59acc329b2d044fd143ae935090b7da33199ebee27cc7de8196"
+    }
+  ]
+}

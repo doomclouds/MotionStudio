@@ -120,7 +120,7 @@ class SourceTreeFixtures(unittest.TestCase):
         self.add('apparently-safe.txt', PNG)
         (self.repo / 'apparently-safe.txt').write_text('safe worktree replacement')
         self.audit(False, 'unapproved-media:PNG')
-    def test_public_policy_only_allows_nine_exact_reviewed_images(self):
+    def test_public_policy_only_allows_fourteen_exact_reviewed_images(self):
         allow = json.loads((ROOT / 'scripts/source-assets-allowlist.json').read_text())['assets']
         self.assertEqual(allow, {
             'docs/assets/report-overview.png': 'bbf9e87737e3f84dfb9a998ee0c973081418631b76a745b017b012d76b95e7c1',
@@ -128,6 +128,11 @@ class SourceTreeFixtures(unittest.TestCase):
             'portfolio/works/favorite52/cover.jpg': '86a8a0c0a08c06ddab3dac47da45078dce055746c5dfd0c15ddb99079f6cab5d',
             'portfolio/works/vinyl-study/cover.jpg': 'e18140fe112408b2b8bc254f1a76e007989eefd31617b7935fd11d476cb178b0',
             'portfolio/works/tea-voice-study/cover.jpg': '73c6d71dd8f6463641672cefae8077f26ac769892dda22027fd59648723aa343',
+            'portfolio/works/hanzi-poster-study/cover.jpg': 'cfdea6b1874b3b88bb363044cf556ca06f4ce665aa7e07e47adb2da669441ee4',
+            'portfolio/works/slow-roast-study/cover.jpg': '35f604bb0dd4e83bfeae7c4e8c72a539d0d6ca35c8acd5d68b6e837ab01c2707',
+            'portfolio/works/tea-conversation-map/cover.jpg': '25836584db11ca8ec85dd0266fb5a9eec7afb050da6809d1950c5596b14dff2b',
+            'portfolio/works/theatre-narrative-wave/cover.jpg': '8c5e96fba95b2e572387ebcc5ff7c7a8131f1df85a4b307af87fb4d9ee63e5b1',
+            'portfolio/works/liquid-glass-study/cover.jpg': 'dafc85a12ef859aadc0de540cba83c7fd2b8bdcf68e64a6211bd15f346ec7026',
             'portfolio/works/muqi-study/cover.jpg': '59b793b814eb157d24e16dc585500f47c1d3175c77a31470fda5c2b7853d0d3a',
             'portfolio/works/cycling-year-report/cover.jpg': 'cfe7778644708495e5937cd1bec1323fd80c3072ac82d56a6ead396976c88044',
             'portfolio/works/hardware-sampler-study/cover.jpg': '98f00db4ebf08339a2e55975ce0133cf65ce5a029460db108deaef557852b766',
@@ -165,6 +170,46 @@ class SourceTreeFixtures(unittest.TestCase):
         self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
     def test_shanghai_deco_study_cover_wrong_path_rejected(self):
         self.add('portfolio/works/shanghai-deco-study/other.jpg',(ROOT/'portfolio/works/shanghai-deco-study/cover.jpg').read_bytes());self.audit(False)
+    def test_exact_hanzi_poster_study_cover_allowed(self):
+        name='portfolio/works/hanzi-poster-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes());self.audit(True)
+    def test_hanzi_poster_study_cover_tamper_rejected(self):
+        name='portfolio/works/hanzi-poster-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
+    def test_hanzi_poster_study_cover_wrong_path_rejected(self):
+        self.add('portfolio/works/hanzi-poster-study/other.jpg',(ROOT/'portfolio/works/hanzi-poster-study/cover.jpg').read_bytes());self.audit(False)
+    def test_exact_slow_roast_study_cover_allowed(self):
+        name='portfolio/works/slow-roast-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes());self.audit(True)
+    def test_slow_roast_study_cover_tamper_rejected(self):
+        name='portfolio/works/slow-roast-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
+    def test_slow_roast_study_cover_wrong_path_rejected(self):
+        self.add('portfolio/works/slow-roast-study/other.jpg',(ROOT/'portfolio/works/slow-roast-study/cover.jpg').read_bytes());self.audit(False)
+    def test_exact_tea_conversation_map_cover_allowed(self):
+        name='portfolio/works/tea-conversation-map/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes());self.audit(True)
+    def test_tea_conversation_map_cover_tamper_rejected(self):
+        name='portfolio/works/tea-conversation-map/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
+    def test_tea_conversation_map_cover_wrong_path_rejected(self):
+        self.add('portfolio/works/tea-conversation-map/other.jpg',(ROOT/'portfolio/works/tea-conversation-map/cover.jpg').read_bytes());self.audit(False)
+    def test_exact_theatre_narrative_wave_cover_allowed(self):
+        name='portfolio/works/theatre-narrative-wave/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes());self.audit(True)
+    def test_theatre_narrative_wave_cover_tamper_rejected(self):
+        name='portfolio/works/theatre-narrative-wave/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
+    def test_theatre_narrative_wave_cover_wrong_path_rejected(self):
+        self.add('portfolio/works/theatre-narrative-wave/other.jpg',(ROOT/'portfolio/works/theatre-narrative-wave/cover.jpg').read_bytes());self.audit(False)
+    def test_exact_liquid_glass_study_cover_allowed(self):
+        name='portfolio/works/liquid-glass-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes());self.audit(True)
+    def test_liquid_glass_study_cover_tamper_rejected(self):
+        name='portfolio/works/liquid-glass-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
+    def test_liquid_glass_study_cover_wrong_path_rejected(self):
+        self.add('portfolio/works/liquid-glass-study/other.jpg',(ROOT/'portfolio/works/liquid-glass-study/cover.jpg').read_bytes());self.audit(False)
     def test_exact_tea_voice_cover_allowed(self):
         name='portfolio/works/tea-voice-study/cover.jpg'
         self.add(name,(ROOT/name).read_bytes());self.audit(True)
