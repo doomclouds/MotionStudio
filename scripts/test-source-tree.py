@@ -132,6 +132,11 @@ class SourceTreeFixtures(unittest.TestCase):
             'portfolio/works/ocean-letter-study/cover.jpg': '7cfa0901c6fed9bef76975cd73817dfd9ac9d3292e58d4024d168af4d7bf8d20',
             'portfolio/works/solar-terms-study/cover.jpg': '42b5e88e2e60a87c2406b01a2d5323e4578421155cf2efbd094a479f132cd81d',
             'portfolio/works/trail-pictogram-study/cover.jpg': '9d536ff3f96812e4dcb473883be09cbeaf9f159c24f4f912de5d3e43265d8461',
+            'portfolio/works/mandala-observatory-study/cover.jpg': '940e922906ba722bdba20e62062e0b634cb05326a7842cd7d28dfa55f34c2e1f',
+            'portfolio/works/recursion-lecture-study/cover.jpg': 'abae41e0704b87e56c88bf9e5da552ec149ef13a1805fd128c5a0e9af751bf4c',
+            'portfolio/works/salary-unit-stack-study/cover.jpg': '348c4bcc4ad087a3d568e8fb5d4d5cf665aa6acf8a26aa95f1e59e38c181ecb0',
+            'portfolio/works/topo-outdoor-study/cover.jpg': '829b73f016c879ca4f5735f73a2a7fff07fb66abe695f583642431548aa9bec9',
+            'portfolio/works/weather-art-study/cover.jpg': '6d9f45c310d3bbbb37a819afebc983ac52a4e2177f0badedddac760eea5a1099',
             'portfolio/works/irreverent-pop-study/cover.jpg': 'df8f621e07865727a8d2a99fe66d9ce23e7b5747861732a14a503152dff72f35',
             'portfolio/works/hk-street-signs-study/cover.jpg': '6d83409c6444e4ea6bd903075b7652300f6be7a066c15aa4bb0f06131aae4223',
             'portfolio/works/pixel-hiking-study/cover.jpg': '3e520725c9ca504d5b1e6cf45880f29bec31ce8bd3f1b03ffbd77af4d79eb82b',
@@ -374,6 +379,46 @@ class SourceTreeFixtures(unittest.TestCase):
         self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
     def test_trail_pictogram_study_cover_wrong_path_rejected(self):
         self.add('portfolio/works/trail-pictogram-study/other.jpg',(ROOT/'portfolio/works/trail-pictogram-study/cover.jpg').read_bytes());self.audit(False)
+    def test_exact_mandala_observatory_study_cover_allowed(self):
+        name='portfolio/works/mandala-observatory-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes());self.audit(True)
+    def test_mandala_observatory_study_cover_tamper_rejected(self):
+        name='portfolio/works/mandala-observatory-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
+    def test_mandala_observatory_study_cover_wrong_path_rejected(self):
+        self.add('portfolio/works/mandala-observatory-study/other.jpg',(ROOT/'portfolio/works/mandala-observatory-study/cover.jpg').read_bytes());self.audit(False)
+    def test_exact_recursion_lecture_study_cover_allowed(self):
+        name='portfolio/works/recursion-lecture-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes());self.audit(True)
+    def test_recursion_lecture_study_cover_tamper_rejected(self):
+        name='portfolio/works/recursion-lecture-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
+    def test_recursion_lecture_study_cover_wrong_path_rejected(self):
+        self.add('portfolio/works/recursion-lecture-study/other.jpg',(ROOT/'portfolio/works/recursion-lecture-study/cover.jpg').read_bytes());self.audit(False)
+    def test_exact_salary_unit_stack_study_cover_allowed(self):
+        name='portfolio/works/salary-unit-stack-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes());self.audit(True)
+    def test_salary_unit_stack_study_cover_tamper_rejected(self):
+        name='portfolio/works/salary-unit-stack-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
+    def test_salary_unit_stack_study_cover_wrong_path_rejected(self):
+        self.add('portfolio/works/salary-unit-stack-study/other.jpg',(ROOT/'portfolio/works/salary-unit-stack-study/cover.jpg').read_bytes());self.audit(False)
+    def test_exact_topo_outdoor_study_cover_allowed(self):
+        name='portfolio/works/topo-outdoor-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes());self.audit(True)
+    def test_topo_outdoor_study_cover_tamper_rejected(self):
+        name='portfolio/works/topo-outdoor-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
+    def test_topo_outdoor_study_cover_wrong_path_rejected(self):
+        self.add('portfolio/works/topo-outdoor-study/other.jpg',(ROOT/'portfolio/works/topo-outdoor-study/cover.jpg').read_bytes());self.audit(False)
+    def test_exact_weather_art_study_cover_allowed(self):
+        name='portfolio/works/weather-art-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes());self.audit(True)
+    def test_weather_art_study_cover_tamper_rejected(self):
+        name='portfolio/works/weather-art-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
+    def test_weather_art_study_cover_wrong_path_rejected(self):
+        self.add('portfolio/works/weather-art-study/other.jpg',(ROOT/'portfolio/works/weather-art-study/cover.jpg').read_bytes());self.audit(False)
     def test_exact_irreverent_pop_study_cover_allowed(self):
         name='portfolio/works/irreverent-pop-study/cover.jpg'
         self.add(name,(ROOT/name).read_bytes());self.audit(True)

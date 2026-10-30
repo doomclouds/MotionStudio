@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "countingUnit": "stable callable family; no function, case or snapshot duplication",
-  "staticWorks": 31,
+  "staticWorks": 36,
   "families": [
     {
       "id": "design.print-poster.v1",
@@ -52,8 +52,11 @@
         "irreverent-pop-study",
         "ocean-letter-study",
         "playful-roast-timer-study",
+        "recursion-lecture-study",
+        "salary-unit-stack-study",
         "solar-terms-study",
-        "song-block-print-study"
+        "song-block-print-study",
+        "topo-outdoor-study"
       ]
     },
     {
@@ -417,6 +420,21 @@
       "motionTransfer": "NOT_TESTED"
     },
     {
+      "id": "mandala-observatory-study",
+      "decisionCard": "works/mandala-observatory-study/DESIGN-RETENTION.md",
+      "sourceAnalysis": [
+        "design/DESIGN-ANALYSIS.md",
+        "design/SETTLEMENT.md"
+      ],
+      "assetUsage": [],
+      "visualStatus": "PARTIAL",
+      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
+      "comparisonBundle": "NOT_PUBLISHED",
+      "reportStorage": "PRIVATE_LIBRARY",
+      "acceptedFrameBinding": "NOT_ESTABLISHED",
+      "motionTransfer": "NOT_TESTED"
+    },
+    {
       "id": "market-method-study",
       "decisionCard": "works/market-method-study/DESIGN-RETENTION.md",
       "sourceAnalysis": [
@@ -645,6 +663,78 @@
       "motionTransfer": "NOT_TESTED"
     },
     {
+      "id": "recursion-lecture-study",
+      "decisionCard": "works/recursion-lecture-study/DESIGN-RETENTION.md",
+      "sourceAnalysis": [
+        "DESIGN-REASONING.md"
+      ],
+      "assetUsage": [
+        {
+          "familyId": "design.material-surfaces.v1",
+          "mode": "runtime-import",
+          "modulePath": "engine/design-elements/material-surfaces.mjs",
+          "moduleSha256": "70bf1fcfa89bfbf911f5cf735b1b08e8ae7f360e43bd43a8c831efef579696eb",
+          "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
+          "callsite": "design/scene.mjs",
+          "importToken": "material-surfaces.mjs",
+          "callToken": "surface",
+          "visibleRole": "暗色圆角代码卡基础",
+          "snapshotPath": null,
+          "executionEvidence": {
+            "status": "MATCHED_ACCEPTED_FRAME",
+            "recordId": "b07-native-restore-recursion-lecture-study",
+            "sha256": "750577180f67c3c5ec48213ab5398a11c6b2e4b88f6c0c2441a216d0682b04cc",
+            "frameSha256": "a70562f618426db28c9543a43218abdb7b19cd845dfc9c2091a3dbea55da4591",
+            "storage": "SCRATCH_LOCAL_ONLY",
+            "durableStorage": "NOT_LOCATED",
+            "note": "Author clean external-font restore reproduced original frame; scene call receipt, not independent execution attribution or new aesthetic review."
+          }
+        }
+      ],
+      "visualStatus": "PARTIAL",
+      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
+      "comparisonBundle": "NOT_PUBLISHED",
+      "reportStorage": "PRIVATE_LIBRARY",
+      "acceptedFrameBinding": "EXACT_PIXELS",
+      "motionTransfer": "NOT_TESTED"
+    },
+    {
+      "id": "salary-unit-stack-study",
+      "decisionCard": "works/salary-unit-stack-study/DESIGN-RETENTION.md",
+      "sourceAnalysis": [
+        "DESIGN-REASONING.md"
+      ],
+      "assetUsage": [
+        {
+          "familyId": "design.material-surfaces.v1",
+          "mode": "runtime-import",
+          "modulePath": "engine/design-elements/material-surfaces.mjs",
+          "moduleSha256": "70bf1fcfa89bfbf911f5cf735b1b08e8ae7f360e43bd43a8c831efef579696eb",
+          "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
+          "callsite": "design/scene.mjs",
+          "importToken": "material-surfaces.mjs",
+          "callToken": "surface",
+          "visibleRole": "右上说明纸的纸面和边缘，圆角硬影为案例代码",
+          "snapshotPath": null,
+          "executionEvidence": {
+            "status": "MATCHED_ACCEPTED_FRAME",
+            "recordId": "b07-ui-call-salary-unit-stack-study",
+            "sha256": "dabaaccfce50eb4dfd18dd9ce4baf80d40edaafdf6985764cdddab1ea6bcd042",
+            "frameSha256": "8ba295c4f648c9f9380e3e7af9adf7ec4dcbb9c445b1a4d2f2f97ee3b5f6efd6",
+            "storage": "SCRATCH_LOCAL_ONLY",
+            "durableStorage": "NOT_LOCATED",
+            "note": "Temporary import-seam wrapper recorded actual shared draw calls and delegated unchanged module; accepted source untouched, frame byte-identical. Author technical execution audit, not new independent aesthetic approval."
+          }
+        }
+      ],
+      "visualStatus": "PARTIAL",
+      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
+      "comparisonBundle": "NOT_PUBLISHED",
+      "reportStorage": "PRIVATE_LIBRARY",
+      "acceptedFrameBinding": "EXACT_PIXELS",
+      "motionTransfer": "NOT_TESTED"
+    },
+    {
       "id": "shanghai-deco-study",
       "decisionCard": "works/shanghai-deco-study/DESIGN-RETENTION.md",
       "sourceAnalysis": [
@@ -787,6 +877,42 @@
       "motionTransfer": "NOT_TESTED"
     },
     {
+      "id": "topo-outdoor-study",
+      "decisionCard": "works/topo-outdoor-study/DESIGN-RETENTION.md",
+      "sourceAnalysis": [
+        "DESIGN-REASONING.md"
+      ],
+      "assetUsage": [
+        {
+          "familyId": "design.material-surfaces.v1",
+          "mode": "runtime-import",
+          "modulePath": "engine/design-elements/material-surfaces.mjs",
+          "moduleSha256": "70bf1fcfa89bfbf911f5cf735b1b08e8ae7f360e43bd43a8c831efef579696eb",
+          "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
+          "callsite": "design/scene.mjs",
+          "importToken": "material-surfaces.mjs",
+          "callToken": "surface",
+          "visibleRole": "三台设备的底层壳面与柔影",
+          "snapshotPath": null,
+          "executionEvidence": {
+            "status": "MATCHED_ACCEPTED_FRAME",
+            "recordId": "b07-ui-call-topo-outdoor-study",
+            "sha256": "853a308aefd3fa89fa05b8507b20c45b05c2a1c189b2571d2dee6864fdd4d978",
+            "frameSha256": "7a32c3c584023ee0526ee19da2c1bf1125681f340ef69f050f937294d667822d",
+            "storage": "SCRATCH_LOCAL_ONLY",
+            "durableStorage": "NOT_LOCATED",
+            "note": "Temporary import-seam wrapper recorded actual shared draw calls and delegated unchanged module; accepted source untouched, frame byte-identical. Author technical execution audit, not new independent aesthetic approval."
+          }
+        }
+      ],
+      "visualStatus": "PARTIAL",
+      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
+      "comparisonBundle": "NOT_PUBLISHED",
+      "reportStorage": "PRIVATE_LIBRARY",
+      "acceptedFrameBinding": "EXACT_PIXELS",
+      "motionTransfer": "NOT_TESTED"
+    },
+    {
       "id": "trail-pictogram-study",
       "decisionCard": "works/trail-pictogram-study/DESIGN-RETENTION.md",
       "sourceAnalysis": [
@@ -824,6 +950,20 @@
       "comparisonBundle": "NOT_PUBLISHED",
       "reportStorage": "PRIVATE_LIBRARY",
       "acceptedFrameBinding": "NOT_ESTABLISHED",
+      "motionTransfer": "NOT_TESTED"
+    },
+    {
+      "id": "weather-art-study",
+      "decisionCard": "works/weather-art-study/DESIGN-RETENTION.md",
+      "sourceAnalysis": [
+        "DESIGN-REASONING.md"
+      ],
+      "assetUsage": [],
+      "visualStatus": "PARTIAL",
+      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
+      "comparisonBundle": "NOT_PUBLISHED",
+      "reportStorage": "PRIVATE_LIBRARY",
+      "acceptedFrameBinding": "EXACT_PIXELS",
       "motionTransfer": "NOT_TESTED"
     }
   ]

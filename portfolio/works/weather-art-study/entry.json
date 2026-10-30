@@ -1,0 +1,192 @@
+{
+  "schema": 4,
+  "id": "weather-art-study",
+  "version": "1.0.0",
+  "title": "天气本身就是一张图",
+  "status": "source-release",
+  "unofficial_recreation": true,
+  "original": {
+    "author": "alchaincyf (花叔 · 花生)",
+    "title": "Huashu design specimen",
+    "url": "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/web/05-pure-css-art.html"
+  },
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "LICENSES/huashu-MIT-LICENSE.txt",
+      "LICENSES/Archivo-OFL.txt",
+      "LICENSES/NotoSansSC-OFL.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/LICENSE",
+      "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "https://github.com/google/fonts/tree/main/ofl/archivo"
+    ]
+  },
+  "files": [
+    {
+      "path": "ASSET-USAGE.md",
+      "sha256": "008a6f37e3f62f922ec7e7f3625bc18ac905ed1cec9da38882468a02d7cb1258",
+      "role": "documentation"
+    },
+    {
+      "path": "CREDITS.md",
+      "sha256": "206cecc8b076352daba57f97f37995f7f09030abefc561ab4607a553c4475c45",
+      "role": "documentation"
+    },
+    {
+      "path": "DESIGN-REASONING.md",
+      "sha256": "05cc0447a83b5b4a78c3a2c33f346f7a832277dfc89b756c33a7949e7d0d328c",
+      "role": "documentation"
+    },
+    {
+      "path": "DESIGN-RETENTION.md",
+      "sha256": "8597b7b01540d32928bf1cae606a050886e42c85fc3edb79e8bd2292c89ce0f5",
+      "role": "documentation"
+    },
+    {
+      "path": "LICENSES/Archivo-OFL.txt",
+      "sha256": "108b4e57c9c796d3d38d0428ca7ee39de47ad93187302718d9b2d8864b9b716b",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/NotoSansSC-OFL.txt",
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/huashu-MIT-LICENSE.txt",
+      "sha256": "6d6a2a9caf2e6d2b76974050427053b2892d8aa4c33fd168ce63a537fcee9d96",
+      "role": "license"
+    },
+    {
+      "path": "README.md",
+      "sha256": "8a2217c687d953fae7131e9dbc01c2ea67cd3d2154f24aaa8961ae17ba522d19",
+      "role": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "6d9f45c310d3bbbb37a819afebc983ac52a4e2177f0badedddac760eea5a1099",
+      "role": "cover"
+    },
+    {
+      "path": "design/scene.mjs",
+      "sha256": "a9e34161545326fdaa29ad13a57d19d7d4d05c4639febb4f51cc4302c9e41c08",
+      "role": "source"
+    },
+    {
+      "path": "design/weather-art.mjs",
+      "sha256": "4d6b8fe9457b4d6f7eceb54f16d209864cbc4fb4f8bd7f3e31d1925c0bd0b020",
+      "role": "source"
+    },
+    {
+      "path": "font-charset.txt",
+      "sha256": "de57cf760fe0a0be33bec079ba19a07952760ecb8c74d96d5520e7be01ef1b91",
+      "role": "documentation"
+    },
+    {
+      "path": "font-inputs.json",
+      "sha256": "4f099551c70367f7b83f698e2c9641f4b370ef19f626d817290b5df9152f1228",
+      "role": "config"
+    },
+    {
+      "path": "locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "role": "lock"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "3376138df78fb0b3f62bc57d80dc440204cbe0a0709a07396e39636873862e6f",
+      "role": "lock"
+    },
+    {
+      "path": "prepare-fonts.py",
+      "sha256": "5d24b684b243726213647a22ff3a3f884d572ca8375febf22f8c401c2f770dcc",
+      "role": "source"
+    },
+    {
+      "path": "retention.json",
+      "sha256": "838da1b0a7c6449fc7fe8f2cd417b453cc60f679e26da69cf8277f8a5fb72e4e",
+      "role": "config"
+    },
+    {
+      "path": "test-weather-recipe.mjs",
+      "sha256": "014b2285e2f9bb8a9b6ac631870aa3321615a4e8a1871a3b3ea32c9d63a78f8b",
+      "role": "source"
+    }
+  ],
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "locks/npm-package-lock.json"
+    }
+  ],
+  "render": {
+    "entrypoint": "design/scene.mjs",
+    "width": 1200,
+    "height": 750
+  },
+  "resources": [
+    {
+      "id": "wlweather650",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "917065ff751f0fff85ffe81ccc6f3e2a1ad69827c231c811f6c66b4b6a673a5c",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "WLWeather650.ttf",
+      "bytes": 94600,
+      "instructions": "Obtain originalInputs; run prepare-fonts.py. Original and derived hashes fail closed."
+    },
+    {
+      "id": "wlsans900",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "89d60c72cc766e6341081a6fb445fb8d5081ff2626eebe99e136076666c36ea8",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "WLSans900.ttf",
+      "bytes": 95352,
+      "instructions": "Obtain originalInputs; run prepare-fonts.py. Original and derived hashes fail closed."
+    },
+    {
+      "id": "wlarchivo700",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/Archivo-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/archivo",
+      "sha256": "e718ed54de4206a5c7eb34ed246d7712ac5f2b96eb1a5dc4d9cbfbbbece0cfc0",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "WLArchivo700.ttf",
+      "bytes": 27900,
+      "instructions": "Obtain originalInputs; run prepare-fonts.py. Original and derived hashes fail closed."
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "1dbea0af0f9db231891f5fa72c5e6b018c272928f5e353539642d5447a26c4e3",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "Complete still and detail independently reviewed, user retained. Static only; font/JPEG residuals; no responsive, browser, classroom effectiveness, code execution or motion validation."
+    }
+  }
+}

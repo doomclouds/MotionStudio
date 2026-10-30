@@ -1,0 +1,53 @@
+{
+  "originalInputs": [
+    {
+      "filename": "Archivo-variable.ttf",
+      "sha256": "0e094a7d3c7c4c25cf1310c4b30014f1dae9332220b1c2c88f4fa996f0b05053",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/archivo"
+    },
+    {
+      "filename": "NotoSansSC-variable.ttf",
+      "sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc"
+    }
+  ],
+  "derived": [
+    {
+      "source": "NotoSansSC-variable.ttf",
+      "name": "WLWeather650",
+      "weight": 650
+    },
+    {
+      "source": "NotoSansSC-variable.ttf",
+      "name": "WLSans900",
+      "weight": 900
+    },
+    {
+      "source": "Archivo-variable.ttf",
+      "name": "WLArchivo700",
+      "weight": 700
+    }
+  ],
+  "outputNames": [
+    "WLWeather650.ttf",
+    "WLSans900.ttf",
+    "WLArchivo700.ttf"
+  ],
+  "expectedOutputs": [
+    {
+      "filename": "WLWeather650.ttf",
+      "sha256": "917065ff751f0fff85ffe81ccc6f3e2a1ad69827c231c811f6c66b4b6a673a5c",
+      "bytes": 94600
+    },
+    {
+      "filename": "WLSans900.ttf",
+      "sha256": "89d60c72cc766e6341081a6fb445fb8d5081ff2626eebe99e136076666c36ea8",
+      "bytes": 95352
+    },
+    {
+      "filename": "WLArchivo700.ttf",
+      "sha256": "e718ed54de4206a5c7eb34ed246d7712ac5f2b96eb1a5dc4d9cbfbbbece0cfc0",
+      "bytes": 27900
+    }
+  ]
+}

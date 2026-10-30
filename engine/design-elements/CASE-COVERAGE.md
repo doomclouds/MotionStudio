@@ -9,7 +9,7 @@
 | [design.print-poster.v1](print-poster.mjs) | 见模块指导 | film-festival-study, hk-street-signs-study, pixel-hiking-study |
 | [design.typographic-focus.v1](typographic-focus.mjs) | slow-roast-study, hanzi-poster-study, cycling-year-report | 尚无已发布作品调用；看独立配方 |
 | [design.color-sections.v1](color-sections.mjs) | muqi-study, slow-roast-study, shanghai-deco-study | bauhaus-theatre-study, pixel-hiking-study |
-| [design.material-surfaces.v1](material-surfaces.mjs) | liquid-glass-study, vinyl-study | health-color-code-study, irreverent-pop-study, ocean-letter-study, playful-roast-timer-study, solar-terms-study, song-block-print-study |
+| [design.material-surfaces.v1](material-surfaces.mjs) | liquid-glass-study, vinyl-study | health-color-code-study, irreverent-pop-study, ocean-letter-study, playful-roast-timer-study, recursion-lecture-study, salary-unit-stack-study, solar-terms-study, song-block-print-study, topo-outdoor-study |
 | [design.semantic-data.v1](semantic-data.mjs) | tea-conversation-map, theatre-narrative-wave | 尚无已发布作品调用；看独立配方 |
 | [design.parameter-controls.v1](parameter-controls.mjs) | hardware-sampler-study, liquid-glass-study | 尚无已发布作品调用；看独立配方 |
 | [design.expressive-type.v1](expressive-type.mjs) | cycling-year-report, wave-weather-study | 尚无已发布作品调用；看独立配方 |

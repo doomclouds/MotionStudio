@@ -156,6 +156,28 @@
 
 [沿线设施图例 · 完整静态复刻](works/trail-pictogram-study/README.md) — 1200×750固定静态设计标本，完整可编辑源码、外置字体双重校验、独立重渲染与统一设计卡保留；实际公共族调用及案例内配方见retention.json，未升级配方为新通用族。原样例内容与残差按PARTIAL披露，不代表真实业务数据或浏览器/动效验收。
 
+## Huashu B07 · 天气叙事、环形信息与量化解释
+
+[![天文台夜观 · 环形信息图](works/mandala-observatory-study/cover.jpg)](works/mandala-observatory-study/README.md)
+
+[天文台夜观 · 环形信息图](works/mandala-observatory-study/README.md) — 1200×750固定静态设计标本，完整可编辑源码、外置字体双重校验、独立重渲染与统一设计卡保留；实际公共族调用及案例内配方见retention.json，未升级配方为新通用族。原样例内容与残差按PARTIAL披露，不代表真实业务数据或浏览器/动效验收。
+
+[![递归 · 单概念糖果舞台](works/recursion-lecture-study/cover.jpg)](works/recursion-lecture-study/README.md)
+
+[递归 · 单概念糖果舞台](works/recursion-lecture-study/README.md) — 1200×750固定静态设计标本，完整可编辑源码、外置字体双重校验、独立重渲染与统一设计卡保留；实际公共族调用及案例内配方见retention.json，未升级配方为新通用族。原样例内容与残差按PARTIAL披露，不代表真实业务数据或浏览器/动效验收。
+
+[![钱是怎么飞走的 · 完整静态复刻](works/salary-unit-stack-study/cover.jpg)](works/salary-unit-stack-study/README.md)
+
+[钱是怎么飞走的 · 完整静态复刻](works/salary-unit-stack-study/README.md) — 1200×750固定静态设计标本，完整可编辑源码、外置字体双重校验、独立重渲染与统一设计卡保留；实际公共族调用及案例内配方见retention.json，未升级配方为新通用族。原样例内容与残差按PARTIAL披露，不代表真实业务数据或浏览器/动效验收。
+
+[![户外地形工具 · 完整静态复刻](works/topo-outdoor-study/cover.jpg)](works/topo-outdoor-study/README.md)
+
+[户外地形工具 · 完整静态复刻](works/topo-outdoor-study/README.md) — 1200×750固定静态设计标本，完整可编辑源码、外置字体双重校验、独立重渲染与统一设计卡保留；实际公共族调用及案例内配方见retention.json，未升级配方为新通用族。原样例内容与残差按PARTIAL披露，不代表真实业务数据或浏览器/动效验收。
+
+[![天气本身就是一张图](works/weather-art-study/cover.jpg)](works/weather-art-study/README.md)
+
+[天气本身就是一张图](works/weather-art-study/README.md) — 1200×750固定静态设计标本，完整可编辑源码、外置字体双重校验、独立重渲染与统一设计卡保留；实际公共族调用及案例内配方见retention.json，未升级配方为新通用族。原样例内容与残差按PARTIAL披露，不代表真实业务数据或浏览器/动效验收。
+
 ## 最小结构
 
 ```text

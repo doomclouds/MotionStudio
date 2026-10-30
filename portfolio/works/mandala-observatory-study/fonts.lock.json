@@ -1,0 +1,60 @@
+{
+  "fonts": [
+    {
+      "output": "MandalaSans400.ttf",
+      "sha256": "17ef87dcfedbd77328967a480bf9a3a420a151c084c50d9f401711f27c5dcdc6",
+      "weight": 400,
+      "source": "NotoSansSC-variable.ttf",
+      "source_sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da"
+    },
+    {
+      "output": "MandalaSans500.ttf",
+      "sha256": "555b2eb9962b7e818cf522a789cb3ea3e299f01ce8b0427ea36e5ee5059e53b8",
+      "weight": 500,
+      "source": "NotoSansSC-variable.ttf",
+      "source_sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da"
+    },
+    {
+      "output": "MandalaSans700.ttf",
+      "sha256": "4ffa9cc2bc529bbec6a2f8f0770330079a0f4a24efae84fc43f6b23f9681dfd1",
+      "weight": 700,
+      "source": "NotoSansSC-variable.ttf",
+      "source_sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da"
+    },
+    {
+      "output": "MandalaSerif400.ttf",
+      "sha256": "ca00886930d84549e1623a947c1eb1877b71ba76a48d51b56c70cd269dcef6a9",
+      "weight": 400,
+      "source": "NotoSerifSC-variable.ttf",
+      "source_sha256": "050080d9255a86808f2945bffac582b31ef32bc36411ce29563b4961670c66f9"
+    },
+    {
+      "output": "MandalaSerif500.ttf",
+      "sha256": "650dca31b9fe20efdaf3729c2e06e51fb53876c0cdf59c053deaf48fe34b5307",
+      "weight": 500,
+      "source": "NotoSerifSC-variable.ttf",
+      "source_sha256": "050080d9255a86808f2945bffac582b31ef32bc36411ce29563b4961670c66f9"
+    },
+    {
+      "output": "MandalaSerif600.ttf",
+      "sha256": "671b786c134e01b92d290b2485eb28aec250f42c9e1f0a506586aff04c54b0ab",
+      "weight": 600,
+      "source": "NotoSerifSC-variable.ttf",
+      "source_sha256": "050080d9255a86808f2945bffac582b31ef32bc36411ce29563b4961670c66f9"
+    },
+    {
+      "output": "MandalaSerif700.ttf",
+      "sha256": "c0f5907076a05a750093ccfaee0bae7f7c666f1f6d509b3fe35bd030018d6427",
+      "weight": 700,
+      "source": "NotoSerifSC-variable.ttf",
+      "source_sha256": "050080d9255a86808f2945bffac582b31ef32bc36411ce29563b4961670c66f9"
+    },
+    {
+      "output": "MandalaSerif900.ttf",
+      "sha256": "0cd2d89f4badcf107e53f78d103c7c89db6dd66e2f221cc94eeaee384a9d93b4",
+      "weight": 900,
+      "source": "NotoSerifSC-variable.ttf",
+      "source_sha256": "050080d9255a86808f2945bffac582b31ef32bc36411ce29563b4961670c66f9"
+    }
+  ]
+}

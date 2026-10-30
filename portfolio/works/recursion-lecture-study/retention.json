@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "workId": "recursion-lecture-study",
+  "kind": "fixed-static-design",
+  "canvas": {
+    "width": 1200,
+    "height": 750
+  },
+  "entrypoint": "design/scene.mjs",
+  "decisionCard": "DESIGN-RETENTION.md",
+  "sourceAnalysis": [
+    "DESIGN-REASONING.md"
+  ],
+  "ruleRefs": [],
+  "ruleStatus": "Case decision card; no separate registered rule or new public family.",
+  "assetUsage": [
+    {
+      "familyId": "design.material-surfaces.v1",
+      "mode": "runtime-import",
+      "modulePath": "engine/design-elements/material-surfaces.mjs",
+      "moduleSha256": "70bf1fcfa89bfbf911f5cf735b1b08e8ae7f360e43bd43a8c831efef579696eb",
+      "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
+      "callsite": "design/scene.mjs",
+      "importToken": "material-surfaces.mjs",
+      "callToken": "surface",
+      "visibleRole": "暗色圆角代码卡基础",
+      "snapshotPath": null,
+      "executionEvidence": {
+        "status": "MATCHED_ACCEPTED_FRAME",
+        "recordId": "b07-native-restore-recursion-lecture-study",
+        "sha256": "750577180f67c3c5ec48213ab5398a11c6b2e4b88f6c0c2441a216d0682b04cc",
+        "frameSha256": "a70562f618426db28c9543a43218abdb7b19cd845dfc9c2091a3dbea55da4591",
+        "storage": "SCRATCH_LOCAL_ONLY",
+        "durableStorage": "NOT_LOCATED",
+        "note": "Author clean external-font restore reproduced original frame; scene call receipt, not independent execution attribution or new aesthetic review."
+      }
+    }
+  ],
+  "nonAssetNote": "Weather four-preset code is a case-local recipe, not a public family. No reuse inferred from visual similarity.",
+  "evidence": {
+    "acceptanceSource": "entry.json#/acceptance",
+    "renderHashSource": "entry.json#/cover/source_sha256",
+    "publicCover": "cover.jpg",
+    "comparisonBundle": {
+      "status": "NOT_PUBLISHED",
+      "recordId": "b07-lecture-visual-report",
+      "sha256": "5ab9874a19fd167b7c64ce9f42a6738b8115b53d43e0084e66e1ba3755fcfef7",
+      "storage": "SCRATCH_LOCAL_ONLY",
+      "durableStorage": "NOT_LOCATED",
+      "note": "本地HTML报告副本；容器SHA不是单张PNG。同容器持久私有核验另见visualReport，原生运行回执按各自存储状态独立登记。"
+    },
+    "independentReview": {
+      "status": "PRIVATE_RECORD_LOCATED",
+      "recordId": "b07-independent-visual-review",
+      "sha256": "639fc4c4af8b38362ee931442aab717572c749aa810907944aa8238ef79d3297",
+      "storage": "PRIVATE_OWNER_PAGE",
+      "durableStorage": "ACCESS_VERIFIED",
+      "note": "原独审记录已保存到仅所有者私有Page，读回原字节SHA核验；无公开私人引用，不构成新增审美验收。"
+    },
+    "visualReport": {
+      "recordId": "b07-verified-private-report-recursion-lecture-study",
+      "sha256": "5ab9874a19fd167b7c64ce9f42a6738b8115b53d43e0084e66e1ba3755fcfef7",
+      "storage": "PRIVATE_LIBRARY",
+      "durableStorage": "ACCESS_VERIFIED",
+      "acceptedFrameBinding": "EXACT_PIXELS",
+      "status": "NOT_PUBLISHED",
+      "artifactKind": "html-report",
+      "note": "实际取回私有Library HTML并核对终审报告容器字节；嵌图已解码。精确绑定检测仅原尺寸图/无边并排半图，不匹配不推错版。未验证浏览器预览，不构成新审美验收。"
+    }
+  },
+  "motionTransfer": {
+    "status": "NOT_TESTED",
+    "note": "Fixed static only, not browser/responsive/teaching execution or motion validation."
+  }
+}

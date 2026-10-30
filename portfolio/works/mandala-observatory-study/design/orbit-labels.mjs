@@ -1,0 +1,3 @@
+// Authored ring-label candidate. Explicit rotations; not astronomical coordinates.
+import{state}from'./shared.mjs';
+export function drawOrbitLabels(c,labels,paint){if(!Array.isArray(labels)||!labels.length||typeof paint!=='function')throw Error('Explicit labels and painter required');for(const l of labels)if(![l.x,l.y,l.angle].every(Number.isFinite)||typeof l.text!=='string'||!l.text)throw Error('Invalid authored ring label');return state(c,()=>{for(const l of labels)state(c,()=>{c.translate(l.x,l.y);c.rotate(l.angle*Math.PI/180);paint(l.text,l.attrs)});return{count:labels.length,semantics:'authored circular reading; no quantitative or astronomical mapping',automaticCollisionAvoidance:false}})}

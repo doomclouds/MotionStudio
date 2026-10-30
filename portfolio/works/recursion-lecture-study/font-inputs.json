@@ -1,0 +1,53 @@
+{
+  "originalInputs": [
+    {
+      "filename": "JetBrains-variable.ttf",
+      "sha256": "48715a42ec242c21e9f02692891e147d022299a52e48d5e413e1a942193ffeda",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/jetbrainsmono"
+    },
+    {
+      "filename": "NotoSansSC-variable.ttf",
+      "sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc"
+    }
+  ],
+  "derived": [
+    {
+      "source": "NotoSansSC-variable.ttf",
+      "name": "WLSans500",
+      "weight": 500
+    },
+    {
+      "source": "NotoSansSC-variable.ttf",
+      "name": "WLSans900",
+      "weight": 900
+    },
+    {
+      "source": "JetBrains-variable.ttf",
+      "name": "WLMono400",
+      "weight": 400
+    }
+  ],
+  "outputNames": [
+    "WLSans500.ttf",
+    "WLSans900.ttf",
+    "WLMono400.ttf"
+  ],
+  "expectedOutputs": [
+    {
+      "filename": "WLSans500.ttf",
+      "sha256": "d227520e495249448b52a847674349d16e2f3516e4cea7b5ebd73d8bea2c84d9",
+      "bytes": 94620
+    },
+    {
+      "filename": "WLSans900.ttf",
+      "sha256": "89d60c72cc766e6341081a6fb445fb8d5081ff2626eebe99e136076666c36ea8",
+      "bytes": 95352
+    },
+    {
+      "filename": "WLMono400.ttf",
+      "sha256": "71ca40c6a34e59a92c4107844cdf2dac2cee60e49a53828377d7730097bf4cda",
+      "bytes": 45824
+    }
+  ]
+}

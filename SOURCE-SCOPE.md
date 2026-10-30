@@ -116,3 +116,14 @@ Five retained fixed-size studies; only these self-rendered cover identities are 
 - `portfolio/works/ocean-letter-study/cover.jpg`: 1200 × 750, 160,669 bytes; SHA-256 `7cfa0901c6fed9bef76975cd73817dfd9ac9d3292e58d4024d168af4d7bf8d20`.
 - `portfolio/works/solar-terms-study/cover.jpg`: 1200 × 750, 145,341 bytes; SHA-256 `42b5e88e2e60a87c2406b01a2d5323e4578421155cf2efbd094a479f132cd81d`.
 - `portfolio/works/trail-pictogram-study/cover.jpg`: 1200 × 750, 168,331 bytes; SHA-256 `9d536ff3f96812e4dcb473883be09cbeaf9f159c24f4f912de5d3e43265d8461`.
+
+
+## B07 approved static covers
+
+Five retained fixed-size studies; only these self-rendered cover identities are permitted. External fonts and private source comparison reports are not redistributed.
+
+- `portfolio/works/mandala-observatory-study/cover.jpg`: 1200 × 750, 220,560 bytes; SHA-256 `940e922906ba722bdba20e62062e0b634cb05326a7842cd7d28dfa55f34c2e1f`.
+- `portfolio/works/recursion-lecture-study/cover.jpg`: 1200 × 750, 78,910 bytes; SHA-256 `abae41e0704b87e56c88bf9e5da552ec149ef13a1805fd128c5a0e9af751bf4c`.
+- `portfolio/works/salary-unit-stack-study/cover.jpg`: 1200 × 750, 238,964 bytes; SHA-256 `348c4bcc4ad087a3d568e8fb5d4d5cf665aa6acf8a26aa95f1e59e38c181ecb0`.
+- `portfolio/works/topo-outdoor-study/cover.jpg`: 1200 × 750, 187,937 bytes; SHA-256 `829b73f016c879ca4f5735f73a2a7fff07fb66abe695f583642431548aa9bec9`.
+- `portfolio/works/weather-art-study/cover.jpg`: 1200 × 750, 150,795 bytes; SHA-256 `6d9f45c310d3bbbb37a819afebc983ac52a4e2177f0badedddac760eea5a1099`.

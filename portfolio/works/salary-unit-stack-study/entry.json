@@ -1,0 +1,295 @@
+{
+  "schema": 4,
+  "id": "salary-unit-stack-study",
+  "version": "1.0.0",
+  "title": "钱是怎么飞走的 · 完整静态复刻",
+  "status": "source-release",
+  "unofficial_recreation": true,
+  "original": {
+    "author": "alchaincyf (花叔 · 花生)",
+    "title": "Huashu info/02-explanation-graphics design specimen",
+    "url": "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/info/02-explanation-graphics.html"
+  },
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "LICENSES/LongCang-OFL.txt",
+      "LICENSES/NotoSans-OFL.txt",
+      "LICENSES/ZCOOLKuaiLe-OFL.txt",
+      "LICENSES/baloo2-OFL.txt",
+      "LICENSES/huashu-MIT-LICENSE.txt",
+      "LICENSES/nunito-OFL.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/LICENSE",
+      "https://github.com/google/fonts"
+    ]
+  },
+  "files": [
+    {
+      "path": "CREDITS.md",
+      "sha256": "6194fff644fce5433aa18eb53df7479ccb20506e6b9dfee89780c24dbd7eea4a",
+      "role": "documentation"
+    },
+    {
+      "path": "DESIGN-REASONING.md",
+      "sha256": "94d2e28cd8b4ddc2e666c858e7c605e73c220357fafbca75809078419e350fab",
+      "role": "documentation"
+    },
+    {
+      "path": "DESIGN-RETENTION.md",
+      "sha256": "5de4619861ce8f5d052e191b59f97435f7603c9827e6b472c986e765d9b8e387",
+      "role": "documentation"
+    },
+    {
+      "path": "LICENSES/LongCang-OFL.txt",
+      "sha256": "603546b7219a94bb59bf8294458194a5010119486354092b66a09a3fd61aeacc",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/NotoSans-OFL.txt",
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/ZCOOLKuaiLe-OFL.txt",
+      "sha256": "538078469839b4a2e7ad22bef4ebe41681a4e53749bb2a072144024f1d6d703d",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/baloo2-OFL.txt",
+      "sha256": "ad09b05dc8bc678c9daf7c4c5f7ef1f55e5726127f4330b2e98e40b9dffcb860",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/huashu-MIT-LICENSE.txt",
+      "sha256": "6d6a2a9caf2e6d2b76974050427053b2892d8aa4c33fd168ce63a537fcee9d96",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/nunito-OFL.txt",
+      "sha256": "580df76c95a1ec5ab878ceb25bb3d85c6a076804e9c970c8c6972aea775fdf65",
+      "role": "license"
+    },
+    {
+      "path": "README.md",
+      "sha256": "94ec08009718702dd8bfe666ff2f507408082a1421b6e0a2cf4454da25a87367",
+      "role": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "348c4bcc4ad087a3d568e8fb5d4d5cf665aa6acf8a26aa95f1e59e38c181ecb0",
+      "role": "cover"
+    },
+    {
+      "path": "design/scene.mjs",
+      "sha256": "f0b27272d9e6e36cec76ac49846d6683de7bd6cd3d7d724307c12918c03e5c19",
+      "role": "source"
+    },
+    {
+      "path": "design/unit-stack-recipe.mjs",
+      "sha256": "3a917bc6e4b9d8551be3cc9ae85ef305c35b86648215ee3b6ae580cf1abad73e",
+      "role": "source"
+    },
+    {
+      "path": "font-inputs.json",
+      "sha256": "2e0a8db3ede3170f15b8f3b6874268c2b3d6237ff2fc2a2a2f5db0fdf47f42fb",
+      "role": "config"
+    },
+    {
+      "path": "locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "role": "lock"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "c97986608711fff48e780026471834a114f117d30fd4f1b15c3e76b21a760a46",
+      "role": "lock"
+    },
+    {
+      "path": "prepare-fonts.py",
+      "sha256": "f5b42df61d337bbfa4dc1ae39ce76056b33a64312779f9b1fbbdb234bb3fd5f1",
+      "role": "source"
+    },
+    {
+      "path": "retention.json",
+      "sha256": "f53ffd715d605fdf240ddaca75f765bd5dd6219e7aec229427e748dd244dac25",
+      "role": "config"
+    },
+    {
+      "path": "tests/recipe.test.mjs",
+      "sha256": "442503d651748266bdd90a6c9d9c0e065be3aa6909ca718a94878dd1ab273298",
+      "role": "source"
+    }
+  ],
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "locks/npm-package-lock.json"
+    }
+  ],
+  "render": {
+    "entrypoint": "design/scene.mjs",
+    "width": 1200,
+    "height": 750
+  },
+  "resources": [
+    {
+      "id": "notosanssc-variable",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSans-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "NotoSansSC-variable.ttf",
+      "bytes": 17772300,
+      "instructions": "Provide in SALARY_STACK_FONT_DIR; prepare-fonts.py verifies original and derived hashes."
+    },
+    {
+      "id": "zcoolkuaile-regular",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/ZCOOLKuaiLe-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/zcoolkuaile",
+      "sha256": "812a6fc1fe54b6d73a419245c32dfeba8aa33104d5be90d1cf6af082007cb71d",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "ZCOOLKuaiLe-Regular.ttf",
+      "bytes": 1514968,
+      "instructions": "Provide in SALARY_STACK_FONT_DIR; prepare-fonts.py verifies original and derived hashes."
+    },
+    {
+      "id": "longcang-regular",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/LongCang-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/longcang",
+      "sha256": "e5bf2c3f24ef2327c6f136d8f73e2f9dfdf44896fdbeb35a9515f44777bb91bc",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "LongCang-Regular.ttf",
+      "bytes": 5162508,
+      "instructions": "Provide in SALARY_STACK_FONT_DIR; prepare-fonts.py verifies original and derived hashes."
+    },
+    {
+      "id": "baloo2-variable",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/baloo2-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/baloo2",
+      "sha256": "d47a6852548059b1db49a1319d06d499d546c3fa2237cf9eee9c43c8abb025c2",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Baloo2[wght].ttf",
+      "bytes": 683200,
+      "instructions": "Provide in SALARY_STACK_FONT_DIR; prepare-fonts.py verifies original and derived hashes."
+    },
+    {
+      "id": "nunito-variable",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/nunito-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/nunito",
+      "sha256": "bb55a5ca5c2042335b3991af27c4d0705d0ef41cac6164ac737fd8f2a1e85207",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Nunito[wght].ttf",
+      "bytes": 276932,
+      "instructions": "Provide in SALARY_STACK_FONT_DIR; prepare-fonts.py verifies original and derived hashes."
+    },
+    {
+      "id": "sans500",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSans-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "003a310d0012feb809e825bba755909b6c9615afde2fffdde9c72acc838a6609",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Sans500.ttf",
+      "bytes": 39508,
+      "instructions": "Provide in SALARY_STACK_FONT_DIR; prepare-fonts.py verifies original and derived hashes."
+    },
+    {
+      "id": "sans700",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSans-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "65c22828d4966bc414b7f94385294254dc382a9896346bd646fde918b132d900",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Sans700.ttf",
+      "bytes": 39476,
+      "instructions": "Provide in SALARY_STACK_FONT_DIR; prepare-fonts.py verifies original and derived hashes."
+    },
+    {
+      "id": "sans800",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSans-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "6b288feb01a792157e43edf65d28954950448ada1489996e78419fd66bc45cf8",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Sans800.ttf",
+      "bytes": 39484,
+      "instructions": "Provide in SALARY_STACK_FONT_DIR; prepare-fonts.py verifies original and derived hashes."
+    },
+    {
+      "id": "sans900",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSans-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "93aa27c7a08c3e5b02589830439e2708474192ceda5ecb982bdd34f9a3a89a60",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Sans900.ttf",
+      "bytes": 39464,
+      "instructions": "Provide in SALARY_STACK_FONT_DIR; prepare-fonts.py verifies original and derived hashes."
+    },
+    {
+      "id": "baloo2800",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/baloo2-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/baloo2",
+      "sha256": "9fd17de1794772b5c88868b78be47abe82ba9a63fb0c4f45097ba22879d10250",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Baloo2800.ttf",
+      "bytes": 421720,
+      "instructions": "Provide in SALARY_STACK_FONT_DIR; prepare-fonts.py verifies original and derived hashes."
+    },
+    {
+      "id": "nunito800",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/nunito-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/nunito",
+      "sha256": "69899390d8330e87fca350fc1eb15fbcd5833451128e6ab7459dfa8dfafafe90",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Nunito800.ttf",
+      "bytes": 132148,
+      "instructions": "Provide in SALARY_STACK_FONT_DIR; prepare-fonts.py verifies original and derived hashes."
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "8ba295c4f648c9f9380e3e7af9adf7ec4dcbb9c445b1a4d2f2f97ee3b5f6efd6",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "Independent full still/detail comparison passed. Disclosed font/JPEG/material differences and source-data limitations remain. No browser/interaction/Motion validation."
+    }
+  }
+}

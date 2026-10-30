@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "workId": "salary-unit-stack-study",
+  "kind": "fixed-static-design",
+  "canvas": {
+    "width": 1200,
+    "height": 750
+  },
+  "entrypoint": "design/scene.mjs",
+  "decisionCard": "DESIGN-RETENTION.md",
+  "sourceAnalysis": [
+    "DESIGN-REASONING.md"
+  ],
+  "ruleRefs": [],
+  "ruleStatus": "Case preflight candidate, not shared formal rule or drawing composition.",
+  "assetUsage": [
+    {
+      "familyId": "design.material-surfaces.v1",
+      "mode": "runtime-import",
+      "modulePath": "engine/design-elements/material-surfaces.mjs",
+      "moduleSha256": "70bf1fcfa89bfbf911f5cf735b1b08e8ae7f360e43bd43a8c831efef579696eb",
+      "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
+      "callsite": "design/scene.mjs",
+      "importToken": "material-surfaces.mjs",
+      "callToken": "surface",
+      "visibleRole": "右上说明纸的纸面和边缘，圆角硬影为案例代码",
+      "snapshotPath": null,
+      "executionEvidence": {
+        "status": "MATCHED_ACCEPTED_FRAME",
+        "recordId": "b07-ui-call-salary-unit-stack-study",
+        "sha256": "dabaaccfce50eb4dfd18dd9ce4baf80d40edaafdf6985764cdddab1ea6bcd042",
+        "frameSha256": "8ba295c4f648c9f9380e3e7af9adf7ec4dcbb9c445b1a4d2f2f97ee3b5f6efd6",
+        "storage": "SCRATCH_LOCAL_ONLY",
+        "durableStorage": "NOT_LOCATED",
+        "note": "Temporary import-seam wrapper recorded actual shared draw calls and delegated unchanged module; accepted source untouched, frame byte-identical. Author technical execution audit, not new independent aesthetic approval."
+      }
+    }
+  ],
+  "nonAssetNote": "Local vector/data/helper/preflight code is not a public UI family; no family promotion implied.",
+  "evidence": {
+    "acceptanceSource": "entry.json#/acceptance",
+    "renderHashSource": "entry.json#/cover/source_sha256",
+    "publicCover": "cover.jpg",
+    "comparisonBundle": {
+      "status": "NOT_PUBLISHED",
+      "recordId": "b07-money-visual-report",
+      "sha256": "a64104ca3d1a3156b0b65bd516177e8aac225dfe24c6db80034f2a117c0d8168",
+      "storage": "SCRATCH_LOCAL_ONLY",
+      "durableStorage": "NOT_LOCATED",
+      "note": "本地HTML报告副本；容器SHA不是单张PNG。同容器持久私有核验另见visualReport，原生运行回执按各自存储状态独立登记。"
+    },
+    "independentReview": {
+      "status": "PRIVATE_RECORD_LOCATED",
+      "recordId": "b07-independent-visual-review",
+      "sha256": "639fc4c4af8b38362ee931442aab717572c749aa810907944aa8238ef79d3297",
+      "storage": "PRIVATE_OWNER_PAGE",
+      "durableStorage": "ACCESS_VERIFIED",
+      "note": "原独审记录已保存到仅所有者私有Page，读回原字节SHA核验；无公开私人引用，不构成新增审美验收。"
+    },
+    "visualReport": {
+      "recordId": "b07-verified-private-report-salary-unit-stack-study",
+      "sha256": "a64104ca3d1a3156b0b65bd516177e8aac225dfe24c6db80034f2a117c0d8168",
+      "storage": "PRIVATE_LIBRARY",
+      "durableStorage": "ACCESS_VERIFIED",
+      "acceptedFrameBinding": "EXACT_PIXELS",
+      "status": "NOT_PUBLISHED",
+      "artifactKind": "html-report",
+      "note": "实际取回私有Library HTML并核对终审报告容器字节；嵌图已解码。精确绑定检测仅原尺寸图/无边并排半图，不匹配不推错版。未验证浏览器预览，不构成新审美验收。"
+    }
+  },
+  "motionTransfer": {
+    "status": "NOT_TESTED",
+    "note": "Fixed Native static only; no interaction, responsive, motion, audio or real-world validation."
+  }
+}

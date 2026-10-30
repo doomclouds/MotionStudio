@@ -1,0 +1,283 @@
+{
+  "schema": 4,
+  "id": "mandala-observatory-study",
+  "version": "1.0.0",
+  "title": "天文台夜观 · 环形信息图",
+  "status": "source-release",
+  "unofficial_recreation": true,
+  "original": {
+    "author": "alchaincyf (花叔 · 花生)",
+    "title": "Huashu authored information mandala design specimen",
+    "url": "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/east/08-sugiura-info-mandala.html"
+  },
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "LICENSES/NotoSansSC-OFL.txt",
+      "LICENSES/NotoSerifSC-OFL.txt",
+      "LICENSES/huashu-MIT-LICENSE.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/LICENSE",
+      "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "https://github.com/google/fonts/tree/main/ofl/notoserifsc",
+      "https://github.com/doomclouds/MotionStudio/blob/0947507961eb5624ddd5c1240758baefa3246fd8/engine/design-elements/shared.mjs"
+    ]
+  },
+  "files": [
+    {
+      "path": "CREDITS.md",
+      "sha256": "13123968db36991c0ec79959d92d20129c0b965cf67668467ba194fe073a49c5",
+      "role": "documentation"
+    },
+    {
+      "path": "DESIGN-RETENTION.md",
+      "sha256": "dce6a5d749a4de0c773b98fc6401adb2a96c2e95869d8305872871e96f192827",
+      "role": "documentation"
+    },
+    {
+      "path": "LICENSES/NotoSansSC-OFL.txt",
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/NotoSerifSC-OFL.txt",
+      "sha256": "5e0da210fb04058a8c0087985d2d456b931c2579811a49655721d3cf0c36b6d6",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/huashu-MIT-LICENSE.txt",
+      "sha256": "6d6a2a9caf2e6d2b76974050427053b2892d8aa4c33fd168ce63a537fcee9d96",
+      "role": "license"
+    },
+    {
+      "path": "README.md",
+      "sha256": "e5d8448d6aead29d6fc76fc1d0794173dd059da25bfa63eb8ed9b5178d03b540",
+      "role": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "940e922906ba722bdba20e62062e0b634cb05326a7842cd7d28dfa55f34c2e1f",
+      "role": "cover"
+    },
+    {
+      "path": "design/DESIGN-ANALYSIS.md",
+      "sha256": "6f504ee3159a04eb45b2431040d644b77608f7ec5d42492fdeb0ca2b43bd0030",
+      "role": "documentation"
+    },
+    {
+      "path": "design/SETTLEMENT.md",
+      "sha256": "a0f551f92e901430f016961fa1c919cdca2ca01e5b83a20c029b344cd41ece15",
+      "role": "documentation"
+    },
+    {
+      "path": "design/content.json",
+      "sha256": "d139fd02c17e6bdc73c9ff8e69c105f1c885fb62ed60f8967abe892c6f35cf16",
+      "role": "config"
+    },
+    {
+      "path": "design/diagram.json",
+      "sha256": "73b0b300df25f51be2fdb3f4e2cdfc55ff96829d2ce578f624c09977a3943199",
+      "role": "config"
+    },
+    {
+      "path": "design/orbit-labels.mjs",
+      "sha256": "4cb71ce0fcc81b80e23371df5b706518729910ebe4d91b5c8c8b60ecad2a97cf",
+      "role": "source"
+    },
+    {
+      "path": "design/scene.mjs",
+      "sha256": "ce48589af09c2d8e6fd345c54b865f867e060cafc8422e9a32a25b8e5e7193fd",
+      "role": "source"
+    },
+    {
+      "path": "design/shared.mjs",
+      "sha256": "e36af17f96bd06eb250f27d5be53d678da7a72cb326df0ecb66155c0383d1122",
+      "role": "source"
+    },
+    {
+      "path": "font-charset.txt",
+      "sha256": "61ed54f5458b43c75df11791f23def50c74bbcbdac30a49bfea10bbfb5440313",
+      "role": "config"
+    },
+    {
+      "path": "font-inputs.json",
+      "sha256": "5a4d5f4f18e98552b56e33c7641b1b2a656cc3a406c62922f6544d7354b32688",
+      "role": "config"
+    },
+    {
+      "path": "fonts.lock.json",
+      "sha256": "c139d0662aead983a8e8ed59b90b9cb2768cac3a2eb02eeaef182ee613addce5",
+      "role": "config"
+    },
+    {
+      "path": "locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "role": "lock"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "c97986608711fff48e780026471834a114f117d30fd4f1b15c3e76b21a760a46",
+      "role": "lock"
+    },
+    {
+      "path": "module-snapshots.json",
+      "sha256": "ed336c096376d2260c6d6de2e39c9752ef1518e20f316c72667fe0da1a77071c",
+      "role": "config"
+    },
+    {
+      "path": "prepare-fonts.py",
+      "sha256": "7ef4659af30b4d210776af3f1e8deb452401aba5de0e2fb2eff0dcd7efe6feb9",
+      "role": "source"
+    },
+    {
+      "path": "retention.json",
+      "sha256": "39379ccdefa0dd4376921fb8ad5057950cfcab4368999015681d93801ca24c69",
+      "role": "config"
+    },
+    {
+      "path": "tests/orbit-labels.test.mjs",
+      "sha256": "f95b915d174a8e581f3718523f04ad0c3607795e71d48a848fea0b09a1f21e60",
+      "role": "source"
+    },
+    {
+      "path": "verify.mjs",
+      "sha256": "e146458d8b5664b364e60614d1cae520009f23c79947da5d536b38c31cc97728",
+      "role": "source"
+    }
+  ],
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "locks/npm-package-lock.json"
+    }
+  ],
+  "render": {
+    "entrypoint": "design/scene.mjs",
+    "width": 1200,
+    "height": 750
+  },
+  "resources": [
+    {
+      "id": "mandalasans400",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "17ef87dcfedbd77328967a480bf9a3a420a151c084c50d9f401711f27c5dcdc6",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "MandalaSans400.ttf",
+      "bytes": 42448,
+      "instructions": "Supply originals per font-inputs.json, run prepare-fonts.py; set MANDALA_FONT_DIR to prepared directory. Missing or mismatched fonts fail closed."
+    },
+    {
+      "id": "mandalasans500",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "555b2eb9962b7e818cf522a789cb3ea3e299f01ce8b0427ea36e5ee5059e53b8",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "MandalaSans500.ttf",
+      "bytes": 42444,
+      "instructions": "Supply originals per font-inputs.json, run prepare-fonts.py; set MANDALA_FONT_DIR to prepared directory. Missing or mismatched fonts fail closed."
+    },
+    {
+      "id": "mandalasans700",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "4ffa9cc2bc529bbec6a2f8f0770330079a0f4a24efae84fc43f6b23f9681dfd1",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "MandalaSans700.ttf",
+      "bytes": 42412,
+      "instructions": "Supply originals per font-inputs.json, run prepare-fonts.py; set MANDALA_FONT_DIR to prepared directory. Missing or mismatched fonts fail closed."
+    },
+    {
+      "id": "mandalaserif400",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSerifSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notoserifsc",
+      "sha256": "ca00886930d84549e1623a947c1eb1877b71ba76a48d51b56c70cd269dcef6a9",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "MandalaSerif400.ttf",
+      "bytes": 57016,
+      "instructions": "Supply originals per font-inputs.json, run prepare-fonts.py; set MANDALA_FONT_DIR to prepared directory. Missing or mismatched fonts fail closed."
+    },
+    {
+      "id": "mandalaserif500",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSerifSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notoserifsc",
+      "sha256": "650dca31b9fe20efdaf3729c2e06e51fb53876c0cdf59c053deaf48fe34b5307",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "MandalaSerif500.ttf",
+      "bytes": 57044,
+      "instructions": "Supply originals per font-inputs.json, run prepare-fonts.py; set MANDALA_FONT_DIR to prepared directory. Missing or mismatched fonts fail closed."
+    },
+    {
+      "id": "mandalaserif600",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSerifSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notoserifsc",
+      "sha256": "671b786c134e01b92d290b2485eb28aec250f42c9e1f0a506586aff04c54b0ab",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "MandalaSerif600.ttf",
+      "bytes": 57044,
+      "instructions": "Supply originals per font-inputs.json, run prepare-fonts.py; set MANDALA_FONT_DIR to prepared directory. Missing or mismatched fonts fail closed."
+    },
+    {
+      "id": "mandalaserif700",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSerifSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notoserifsc",
+      "sha256": "c0f5907076a05a750093ccfaee0bae7f7c666f1f6d509b3fe35bd030018d6427",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "MandalaSerif700.ttf",
+      "bytes": 57028,
+      "instructions": "Supply originals per font-inputs.json, run prepare-fonts.py; set MANDALA_FONT_DIR to prepared directory. Missing or mismatched fonts fail closed."
+    },
+    {
+      "id": "mandalaserif900",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSerifSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notoserifsc",
+      "sha256": "0cd2d89f4badcf107e53f78d103c7c89db6dd66e2f221cc94eeaee384a9d93b4",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "MandalaSerif900.ttf",
+      "bytes": 57072,
+      "instructions": "Supply originals per font-inputs.json, run prepare-fonts.py; set MANDALA_FONT_DIR to prepared directory. Missing or mismatched fonts fail closed."
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "daaf7ef86616f78ebea7439eff7f0b6f23dc93eb71c4f1807f4fa30bb883a25b",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "Full composition and ring/label details independently reviewed and accepted for collection. Native title 0.8px ink compensation and baseline shift approximate source weight; small rotated text rasterization differs. Astronomical claims unverified; event timeline is not proportional. Case-local orbit recipe is not a public family. Static only; no browser, interaction, responsive, motion or audio validation."
+    }
+  }
+}
