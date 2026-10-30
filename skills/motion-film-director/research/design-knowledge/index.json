@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "scope": "Public method navigation only; no private evidence or media.",
+  "entries": [
+    {
+      "id": "ui-001-dashboard",
+      "version": 1,
+      "category": "data-interfaces",
+      "title": "固定画幅 dashboard",
+      "tags": [
+        "数据",
+        "图表",
+        "层级",
+        "状态色",
+        "基线"
+      ],
+      "path": "cases/ui-001-dashboard.md",
+      "type": "public-method-summary"
+    },
+    {
+      "id": "ui-002-instrument",
+      "version": 1,
+      "category": "instrument-interfaces",
+      "title": "模块化仪器界面",
+      "tags": [
+        "功能色",
+        "轨道",
+        "波形",
+        "模块",
+        "显示值"
+      ],
+      "path": "cases/ui-002-instrument.md",
+      "type": "public-method-summary"
+    }
+  ],
+  "guides": [
+    {
+      "id": "content-decisions",
+      "version": 1,
+      "category": "workflow",
+      "title": "内容到UI表达决策",
+      "tags": [
+        "内容",
+        "受众",
+        "目的",
+        "信息任务",
+        "结构",
+        "风格",
+        "密度",
+        "流程",
+        "情绪",
+        "因果",
+        "冲突",
+        "视频"
+      ],
+      "path": "CONTENT-DECISIONS.md",
+      "type": "decision-guide"
+    },
+    {
+      "id": "motionstudio-production",
+      "version": 1,
+      "category": "workflow",
+      "title": "设计到MotionStudio制作导航",
+      "tags": [
+        "导演",
+        "积木",
+        "motion",
+        "视频",
+        "读时"
+      ],
+      "path": "MOTIONSTUDIO.md",
+      "type": "decision-guide"
+    }
+  ]
+}

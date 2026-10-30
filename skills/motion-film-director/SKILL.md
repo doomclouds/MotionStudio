@@ -13,6 +13,8 @@ description: 从一句话委托独立研究、制作和验证中文动效影片�
 
 ## 参考研究边界
 
+UI 设计先从[分类总索引](research/design-knowledge/INDEX.md)检索方法与边界，再按[MotionStudio 制作路径](research/design-knowledge/MOTIONSTUDIO.md)连接美术、导演与现有积木；静态案例不自动成为运动/视频能力。
+
 固定画幅 UI 研究先读[静态 UI 复刻合同](references/static-ui-reference-study.md)：锁定来源/画幅/状态，分离 token 来源与测量，保留实际输出与修订证据；静态、交互、响应式、视频/音频、作品接受与发布授权各门独立。
 
 研究参考时记录观察方法、授权范围、可迁移关系、反例与未验项；实际媒体和研究记录保存在用户自己的私有工作目录。公开版不含历史案例库或素材目录，也不声称那些案例已获公开许可。通用[知识工作流](research/video-knowledge/WORKFLOW.md)、[卡片契约](research/video-knowledge/SCHEMA.md)与检索/校验 CLI 仍可读取用户自备的外置私有库；默认库为空。

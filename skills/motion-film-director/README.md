@@ -15,3 +15,5 @@ node scripts/render-shot.mjs --work "/absolute/path/outside-repository/shot-one"
 可移植包解压后的只读清单检查：`python3 scripts/verify_package.py .`（源码目录不保存生成清单）。这检查文件字节与路径，不评价艺术、声音或平台。
 
 `runtime-source.json` 指向唯一维护引擎。可移植 `runtime/` 由仓库 `scripts/build-skill.py` 生成，正式 Skill 源目录不维护引擎副本。
+
+UI 方法分类与检索：[设计知识 INDEX](research/design-knowledge/INDEX.md)；[从设计到成片](research/design-knowledge/MOTIONSTUDIO.md)。仅公开方法摘要，不携带私有证据。
