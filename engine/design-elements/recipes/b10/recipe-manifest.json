@@ -1,0 +1,26 @@
+{
+  "status": "technical-reviewed-static-recipe",
+  "newFamilies": 0,
+  "sharedFamilyCount": 14,
+  "sourceSceneMigrated": false,
+  "userAestheticApproval": false,
+  "recipes": [
+    {
+      "id": "recipe.code-spans.v1",
+      "code": "recipes/code-spans.mjs",
+      "guidance": "docs/code-spans.md",
+      "sourceWorkId": "rollcall-docs-study"
+    },
+    {
+      "id": "recipe.value-grid.v1",
+      "code": "recipes/value-grid.mjs",
+      "guidance": "docs/value-grid.md",
+      "sourceWorkId": "cycling-magazine-study"
+    }
+  ],
+  "verification": [
+    "verify.mjs",
+    "test-runtime.mjs"
+  ],
+  "independentReview": "completed; external b10-recipes-independent-review record delivered"
+}

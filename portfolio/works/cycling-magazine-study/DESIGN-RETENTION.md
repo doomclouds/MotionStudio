@@ -23,3 +23,7 @@
 
 ## 验收与代码关联
 用户已同意收藏，静态候选已独审；不推定数据事实、响应式或视频提升。完整入口design/scene.mjs，原帧身份见entry.cover，恢复回执见retention引用。案例内source-opacity-grid.mjs真实调用一次，二维格子不等于恢复真实骑行次数；heatmap.json明确编码透明度。
+
+## 后续受限组合研究
+
+[文本片段与数值格网](../../../engine/design-elements/recipes/b10/README.md)参考本例设计逻辑但补充了复用的字形边界、量程和空值契约。原scene未迁移新接口，技术组合未用户审美认可，0新增公共族。

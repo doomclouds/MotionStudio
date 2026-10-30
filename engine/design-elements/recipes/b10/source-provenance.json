@@ -1,0 +1,57 @@
+[
+  {
+    "sourceWorkId": "cycling-magazine-study",
+    "candidateSha256": "a3519f1cd3284deee2e8508f76c440982ddab6b525046310ae428fd839c7d3ab",
+    "formalPath": "portfolio/works/cycling-magazine-study/design/source-opacity-grid.mjs",
+    "formalSourceCommit": "6284a94bf74cc18c832ae907bb9175b78b7b79bd",
+    "formalSourceStatus": "publication confirmed by integration owner; local final tree SHA independently checked",
+    "relation": "case logic and visual design reference; original scene not migrated to new recipes",
+    "formalSourceSha256": "a3519f1cd3284deee2e8508f76c440982ddab6b525046310ae428fd839c7d3ab",
+    "matchesCandidate": true,
+    "formalSourceUrl": "https://github.com/doomclouds/MotionStudio/blob/6284a94bf74cc18c832ae907bb9175b78b7b79bd/portfolio/works/cycling-magazine-study/design/source-opacity-grid.mjs"
+  },
+  {
+    "sourceWorkId": "gentle-activity-study",
+    "candidateSha256": "d38ac0b1f08e07fc66af1934fed74bed913a9eb4523923d6870496ad4b4da243",
+    "formalPath": "portfolio/works/gentle-activity-study/design/scene.mjs",
+    "formalSourceCommit": "6284a94bf74cc18c832ae907bb9175b78b7b79bd",
+    "formalSourceStatus": "publication confirmed by integration owner; local final tree SHA independently checked",
+    "relation": "case logic and visual design reference; original scene not migrated to new recipes",
+    "formalSourceSha256": "6fddb3dfd6a3bbbcc698a807820ed6c4c6a393876c1cedf0e8d07dd358ae466c",
+    "matchesCandidate": false,
+    "formalSourceUrl": "https://github.com/doomclouds/MotionStudio/blob/6284a94bf74cc18c832ae907bb9175b78b7b79bd/portfolio/works/gentle-activity-study/design/scene.mjs"
+  },
+  {
+    "sourceWorkId": "night-observatory-study",
+    "candidateSha256": "a8a467da067ac05d851668092e76113d6f13b1babbf51e1d1b2200a27655690e",
+    "formalPath": "portfolio/works/night-observatory-study/design/window-audit.mjs",
+    "formalSourceCommit": "6284a94bf74cc18c832ae907bb9175b78b7b79bd",
+    "formalSourceStatus": "publication confirmed by integration owner; local final tree SHA independently checked",
+    "relation": "case logic and visual design reference; original scene not migrated to new recipes",
+    "formalSourceSha256": "a8a467da067ac05d851668092e76113d6f13b1babbf51e1d1b2200a27655690e",
+    "matchesCandidate": true,
+    "formalSourceUrl": "https://github.com/doomclouds/MotionStudio/blob/6284a94bf74cc18c832ae907bb9175b78b7b79bd/portfolio/works/night-observatory-study/design/window-audit.mjs"
+  },
+  {
+    "sourceWorkId": "rollcall-docs-study",
+    "candidateSha256": "fbcff247f6b06ca1f9351448a62a30c67af382bdfe2fe56ba246b157aa27a36b",
+    "formalPath": "portfolio/works/rollcall-docs-study/design/code-runs.mjs",
+    "formalSourceCommit": "6284a94bf74cc18c832ae907bb9175b78b7b79bd",
+    "formalSourceStatus": "publication confirmed by integration owner; local final tree SHA independently checked",
+    "relation": "case logic and visual design reference; original scene not migrated to new recipes",
+    "formalSourceSha256": "fbcff247f6b06ca1f9351448a62a30c67af382bdfe2fe56ba246b157aa27a36b",
+    "matchesCandidate": true,
+    "formalSourceUrl": "https://github.com/doomclouds/MotionStudio/blob/6284a94bf74cc18c832ae907bb9175b78b7b79bd/portfolio/works/rollcall-docs-study/design/code-runs.mjs"
+  },
+  {
+    "sourceWorkId": "memory-case-study",
+    "candidateSha256": "ed66e9b0a210b46c1230864311c9490ccf064638e7e3700bba7d2d1feb9fd59e",
+    "formalPath": "portfolio/works/memory-case-study/design/ratio-audit.mjs",
+    "formalSourceCommit": "6284a94bf74cc18c832ae907bb9175b78b7b79bd",
+    "formalSourceStatus": "publication confirmed by integration owner; local final tree SHA independently checked",
+    "relation": "case logic and visual design reference; original scene not migrated to new recipes",
+    "formalSourceSha256": "ed66e9b0a210b46c1230864311c9490ccf064638e7e3700bba7d2d1feb9fd59e",
+    "matchesCandidate": true,
+    "formalSourceUrl": "https://github.com/doomclouds/MotionStudio/blob/6284a94bf74cc18c832ae907bb9175b78b7b79bd/portfolio/works/memory-case-study/design/ratio-audit.mjs"
+  }
+]

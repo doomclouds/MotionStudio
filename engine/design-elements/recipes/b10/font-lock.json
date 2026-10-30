@@ -1,0 +1,20 @@
+{
+  "display": {
+    "sha256": "a4ba3a92350ebb031da0cb47630ac49eb265082ca1bc0450442f4a83ab947cab",
+    "file": "Anton-Regular.ttf",
+    "source": "https://github.com/google/fonts/tree/main/ofl/anton",
+    "license": "licenses/Anton-OFL.txt"
+  },
+  "body": {
+    "sha256": "57f73e11f51999432bf7ab22ce55b6f945d5eca1bf824404cfa9ec2e3718c84e",
+    "file": "DejaVuSans.ttf",
+    "source": "https://dejavu-fonts.github.io/",
+    "license": "licenses/DejaVu-copyright.txt"
+  },
+  "code": {
+    "file": "DejaVuSansMono.ttf",
+    "sha256": "54bf827eb99404e8f430c330ad30f063334f637eba0109b6a18d4f566a8e9dd8",
+    "source": "https://dejavu-fonts.github.io/",
+    "license": "licenses/DejaVu-copyright.txt"
+  }
+}

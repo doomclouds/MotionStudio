@@ -82,3 +82,7 @@ Two bounded [composition recipes](recipes/b06/README.md) reuse existing families
 ## B09 bounded recipes
 
 [Bounded rotated emphasis + equal-size unit pictograms](recipes/b09/README.md) adds two source-only composition recipes, not public families. Fixed two-column contracts, finite rotated bounds and whole/half units; no automatic typography or real-world inference, no source-scene migration or new user aesthetic approval.
+
+## B10 bounded recipes
+
+[Explicit code spans and semantic value grid](recipes/b10/README.md): two bounded source-only recipes; zero new families, no migrated source scenes, no user aesthetic approval of synthetic combinations. Explicit ranges/nulls/units, LTR authored spans; not a parser or factual log.

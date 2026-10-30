@@ -264,3 +264,7 @@ The catalog contains 60 foundations + 7 separate recipes: seventeen registration
 ### 强调词与单位图符的静态组合
 
 [B09两种组合配方](engine/design-elements/recipes/b09/README.md)把受限旋转强调词与同尺寸单位图符组合验证，保持14族计数；并非原案例已反向迁移或新作品审美认可。五来源设计的保留/不升族决定、外置字体和可运行测试见配方文档。
+
+### 文本片段与格网的静态组合
+
+[B10两种受限配方](engine/design-elements/recipes/b10/README.md)验证同一输入驱动配置片段与格网量程/单位，保持14族计数；不执行代码、不把原作CSS热度当真实测量，也不声称任意字体系自动适配。
