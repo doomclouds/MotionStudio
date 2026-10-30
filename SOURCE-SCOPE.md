@@ -4,6 +4,8 @@ This is a deliberately narrow **toolkit source snapshot with explicitly reviewed
 
 ## Included
 
+- Original bounded static design primitives and synthetic print-poster recipes in `engine/design-elements/`, linked to public design guidance. No source artwork, production recreation, bundled fonts, generated previews or private review evidence are included.
+
 - Native Canvas rendering core, bounded local audio edit/mix core, shared rational audio-timeline contract, small original technical fixtures, and synthetic tests. Video clip editing remains deferred.
 - A reusable motion-elements package: pure time-sampled actions, transitions, layouts and recipes, static metadata, synthetic example source and regression tests. Generated previews remain outside Git. These elements do not turn the audio timeline into a video NLE or establish artistic approval.
 - General director guidance and reusable authoring/review helpers.
@@ -35,3 +37,7 @@ Rights restrictions were not waived: source availability does not grant media re
 The public relocated source has been rendered through all 1560 frames using those supplied resources: all RGBA frame hashes and the final MP4 bytes equal the retained favorite film. This conditional restoration result is not permission to redistribute the external files, or a clean-OS/cross-platform guarantee. `visual: PARTIAL`, `listened: NOT_LISTENED`, `av_sync: NUMERIC_ONLY` remain explicit.
 
 The sole additional approved image is `portfolio/works/favorite52/cover.jpg`: 1280 × 720, 71,600 bytes, SHA-256 `86a8a0c0a08c06ddab3dac47da45078dce055746c5dfd0c15ddb99079f6cab5d`, maximum 1 MiB. It is frame 450 from the completed self-rendered favorite film, not the original reference; multilingual cards avoid the external SVG, photograph and game characters. Original composition/font/emoji credits are retained. This precise exception does not allow other covers or media.
+
+## Vinyl static UI exception
+
+The explicitly retained `portfolio/works/vinyl-study/` includes complete editable Native case code, content, restoration instructions, MIT/OFL notices and one rebuilt JPEG cover (exact path/hash allowlist). No upstream screenshot or font binary is distributed. Fonts remain external. This narrow exception does not admit other production cases or review archives. Schema 4 distinguishes static UI from films.

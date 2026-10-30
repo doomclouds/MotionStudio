@@ -1,0 +1,251 @@
+{
+  "schema": 4,
+  "id": "vinyl-study",
+  "version": "1.0.0",
+  "title": "黑胶商店 · 完整固定画幅静态复刻",
+  "status": "source-release",
+  "unofficial_recreation": true,
+  "original": {
+    "author": "alchaincyf (花叔 · 花生)",
+    "title": "Huashu Memphis maximalism design specimen",
+    "url": "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/web/03-memphis-maximalism.html"
+  },
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "LICENSES/Bungee-OFL.txt",
+      "LICENSES/DMSerifDisplay-OFL.txt",
+      "LICENSES/NotoSansSC-OFL.txt",
+      "LICENSES/NotoSerifSC-OFL.txt",
+      "LICENSES/SpaceMono-OFL.txt",
+      "LICENSES/huashu-MIT-LICENSE.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/LICENSE",
+      "https://github.com/google/fonts"
+    ]
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "121d9fef26031f05fef153a71b20a7da9a5260863ad9eb07590697b6a5bbcf50",
+      "role": "documentation"
+    },
+    {
+      "path": "CREDITS.md",
+      "sha256": "f4b38fcff5f1df8543315b7ffa930fbaeadcf7f704d3aa716e1335a323a9f43c",
+      "role": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "e18140fe112408b2b8bc254f1a76e007989eefd31617b7935fd11d476cb178b0",
+      "role": "cover"
+    },
+    {
+      "path": "prepare-fonts.py",
+      "sha256": "c501771566b52a2f0d1dd3c278dd2094fcfdad1321a3ff5aa9c9566b64246623",
+      "role": "source"
+    },
+    {
+      "path": "font-inputs.json",
+      "sha256": "fdd7e75d07284e97b635e574519611d0e39b5fb1d7bc9c875a344b0576811971",
+      "role": "config"
+    },
+    {
+      "path": "locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "role": "lock"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "c97986608711fff48e780026471834a114f117d30fd4f1b15c3e76b21a760a46",
+      "role": "lock"
+    },
+    {
+      "path": "LICENSES/huashu-MIT-LICENSE.txt",
+      "sha256": "6d6a2a9caf2e6d2b76974050427053b2892d8aa4c33fd168ce63a537fcee9d96",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/SpaceMono-OFL.txt",
+      "sha256": "6758f6915b482dd45950b2a974c75d95692464fd0e5441418e87b2f92f2eea27",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/NotoSansSC-OFL.txt",
+      "sha256": "babcfe66c8a098b2fa279bc724a3a342f8124f77ce18941fbcc1bbb39823cded",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/NotoSerifSC-OFL.txt",
+      "sha256": "5e0da210fb04058a8c0087985d2d456b931c2579811a49655721d3cf0c36b6d6",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/DMSerifDisplay-OFL.txt",
+      "sha256": "aa49c876a28d8c0b0a3027d6c25b9c607eee8c0fb96165011d42a6ace1408fe1",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/Bungee-OFL.txt",
+      "sha256": "3222aa4c0c12b78dcfd5e52879d7983a3b37e72c9cab4f95e4bbfbab9e3d91da",
+      "role": "license"
+    },
+    {
+      "path": "design/scene.mjs",
+      "sha256": "3c66153ee386c36deaf8cdd1a6d968dca5b90ca290c5fc32e7c0021b311ea68d",
+      "role": "source"
+    },
+    {
+      "path": "design/content.json",
+      "sha256": "964ac912eab3345b581795053a5b6405b7471db7f5bc5a5dc1517ab6eacaa4cb",
+      "role": "config"
+    }
+  ],
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "locks/npm-package-lock.json"
+    }
+  ],
+  "render": {
+    "entrypoint": "design/scene.mjs",
+    "width": 1200,
+    "height": 750
+  },
+  "resources": [
+    {
+      "id": "vinylserif900",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSerifSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notoserifsc",
+      "sha256": "f27cd24c630846572dd0ff5cf3e2f79bfe455087f9a435001b849a0b05263bac",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "VinylSerif900.ttf",
+      "bytes": 117104,
+      "instructions": "Supply licensed font in VINYL_FONT_DIR; use prepare-fonts.py for renamed Noto subsets."
+    },
+    {
+      "id": "vinylserif700",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSerifSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notoserifsc",
+      "sha256": "e7ee79fad89292e0967ca0edf70f8416057e2391962a74d3e489c348582d383b",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "VinylSerif700.ttf",
+      "bytes": 117076,
+      "instructions": "Supply licensed font in VINYL_FONT_DIR; use prepare-fonts.py for renamed Noto subsets."
+    },
+    {
+      "id": "vinylsans500",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "77c1c1844ac5a1289c9708c1c4d55dd362b7b74a6138050bfa7ce5d678cfe933",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "VinylSans500.ttf",
+      "bytes": 82540,
+      "instructions": "Supply licensed font in VINYL_FONT_DIR; use prepare-fonts.py for renamed Noto subsets."
+    },
+    {
+      "id": "vinylsans600",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "99d9f7970349bf89858be6af60e024cd7b3bdd6c83bac383d140047b1bcaee5d",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "VinylSans600.ttf",
+      "bytes": 82544,
+      "instructions": "Supply licensed font in VINYL_FONT_DIR; use prepare-fonts.py for renamed Noto subsets."
+    },
+    {
+      "id": "vinylsans700",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "26951be24e81800259ab4690404f14fe592619cc56a102d385a63594e4908156",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "VinylSans700.ttf",
+      "bytes": 83408,
+      "instructions": "Supply licensed font in VINYL_FONT_DIR; use prepare-fonts.py for renamed Noto subsets."
+    },
+    {
+      "id": "vinylsans900",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "db03b80138d2034b0b5ea5c51aad07f98940fd93e5fa802972245c1d0a3415a3",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "VinylSans900.ttf",
+      "bytes": 83244,
+      "instructions": "Supply licensed font in VINYL_FONT_DIR; use prepare-fonts.py for renamed Noto subsets."
+    },
+    {
+      "id": "bungee-regular",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/Bungee-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/bungee",
+      "sha256": "c4f5361ce120af3e6b9156d0bf379fa19cda2ea0cd18ac01fd99596c6bf66e3f",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Bungee-Regular.ttf",
+      "bytes": 118996,
+      "instructions": "Supply licensed font in VINYL_FONT_DIR; use prepare-fonts.py for renamed Noto subsets."
+    },
+    {
+      "id": "spacemono-bold",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/SpaceMono-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/spacemono",
+      "sha256": "405e73d41afb7e5906efce206a326af5c956f38e255f35421c260e861e599c59",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "SpaceMono-Bold.ttf",
+      "bytes": 98232,
+      "instructions": "Supply licensed font in VINYL_FONT_DIR; use prepare-fonts.py for renamed Noto subsets."
+    },
+    {
+      "id": "dmserifdisplay-regular",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/DMSerifDisplay-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/dmserifdisplay",
+      "sha256": "8cc3643535edf039aa5d95440a8542735e9197e4f4b8d9303e980fefbf5ab616",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "DMSerifDisplay-Regular.ttf",
+      "bytes": 76580,
+      "instructions": "Supply licensed font in VINYL_FONT_DIR; use prepare-fonts.py for renamed Noto subsets."
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "586d4ec1111daf5faa3a161686973373ce7994208f0e6b593f98a860ab8e03fe",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "Full still and critical detail comparisons reviewed; cleaner paper, local text rasterization and approximate groove/shadow edges remain. Static only."
+    }
+  }
+}

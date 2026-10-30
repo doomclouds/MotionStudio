@@ -145,12 +145,12 @@ def validate_work(root):
     except ValueError as e:
         raise Invalid("entry.json: invalid JSON") from e
     fields(data, TOP_KEYS, "entry")
-    require(type(data["schema"]) is int and data["schema"] in {1, 2, 3}, "schema must be 1, 2 or 3")
+    require(type(data["schema"]) is int and data["schema"] in {1, 2, 3, 4}, "schema must be 1, 2, 3 or 4")
     require(isinstance(data["id"], str) and ID.fullmatch(data["id"]) and data["id"] == root.name,
             "id must match the work directory")
     require(isinstance(data["version"], str) and VERSION.fullmatch(data["version"]), "version must be exact x.y.z")
     nonempty(data["title"], "title")
-    require(data["status"] == ("source-release" if data["schema"] == 3 else "released"), "schema 3 requires source-release; candidates do not belong in works/")
+    require(data["status"] == ("source-release" if data["schema"] in {3, 4} else "released"), "schema 3 requires source-release; candidates do not belong in works/")
     require(data["unofficial_recreation"] is True, "unofficial_recreation must explicitly be true")
     fields(data["original"], {"author", "title", "url"}, "original")
     for key in ("author", "title"):
@@ -199,7 +199,7 @@ def validate_work(root):
     listed("README.md", "documentation")
     rights = data["rights"]
     fields(rights, {"status", "credits", "notices", "evidence_urls"}, "rights")
-    require(rights["status"] == ("reviewed-publication-scope" if data["schema"] == 3 else "reviewed"), "rights must state the correct publication review scope")
+    require(rights["status"] == ("reviewed-publication-scope" if data["schema"] in {3, 4} else "reviewed"), "rights must state the correct publication review scope")
     listed(rights["credits"], "documentation")
     for key in ("notices", "evidence_urls"):
         require(isinstance(rights[key], list) and rights[key], f"rights.{key}: expected nonempty list")
@@ -221,7 +221,7 @@ def validate_work(root):
         listed(row["lock"], "lock")
 
     render = data["render"]
-    fields(render, {"entrypoint", "frames", "width", "height", "fps_num", "fps_den", "audio_sample_rate", "audio_channels"}, "render")
+    fields(render, {"entrypoint", "width", "height"} if data["schema"] == 4 else {"entrypoint", "frames", "width", "height", "fps_num", "fps_den", "audio_sample_rate", "audio_channels"}, "render")
     listed(render["entrypoint"], "source")
     for key in set(render) - {"entrypoint"}:
         positive_int(render[key], f"render.{key}")
@@ -234,7 +234,7 @@ def validate_work(root):
     require(cover["rights_status"] == "reviewed", "cover rights must be reviewed")
     require(cover["credit"] == rights["credits"], "cover credit must be in the work credits")
     digest(cover["source_sha256"], "cover.source_sha256")
-    require(cover["kind"] in {"rendered-frame", "original-artwork"}, "cover must derive from own rendered film or original artwork")
+    require(cover["kind"] in ({"rendered-static"} if data["schema"] == 4 else {"rendered-frame", "original-artwork"}), "cover must derive from own rendered film or original artwork")
     if cover["kind"] == "rendered-frame":
         require(type(cover["frame"]) is int and 0 <= cover["frame"] < render["frames"], "cover frame outside final film")
     else:
@@ -247,7 +247,7 @@ def validate_work(root):
     provided_paths = set()
     common = {"id", "mode", "license", "notice", "source_url", "sha256", "permission"}
     for row in resources:
-        modes = {"fetch", "generate", "provide"} if data["schema"] == 3 else {"fetch", "generate"}
+        modes = {"fetch", "generate", "provide"} if data["schema"] in {3, 4} else {"fetch", "generate"}
         require(isinstance(row, dict) and row.get("mode") in modes, "resource.mode: unsupported acquisition mode")
         extra = {"fetch_url", "max_bytes"} if row["mode"] == "fetch" else {"generator"} if row["mode"] == "generate" else {"local_path", "bytes", "instructions"}
         fields(row, common | extra, "resource")
@@ -278,10 +278,10 @@ def validate_work(root):
             positive_int(row["max_bytes"], "resource.max_bytes")
         elif row["mode"] == "generate":
             listed(row["generator"], "source")
-    if data["schema"] == 3:
+    if data["schema"] in {3, 4}:
         require(any(row["mode"] == "provide" for row in resources), "source-release requires explicit externally provided resources")
 
-    fields(data["acceptance"], ACCEPTANCE, "acceptance")
+    fields(data["acceptance"], REQUIRED_GATES | {"visual"} if data["schema"] == 4 else ACCEPTANCE, "acceptance")
     acceptance = data["acceptance"]
     if data["schema"] == 1:
         # Compatibility never silently reinterprets legacy boolean declarations.
@@ -289,6 +289,7 @@ def validate_work(root):
     else:
         require(all(acceptance[k] is True for k in REQUIRED_GATES), "complete work, owner retention, clean restore and technical gates must be true")
         for key, allowed in REVIEW_STATUSES.items():
+            if data["schema"] == 4 and key != "visual": continue
             row = acceptance[key]
             fields(row, {"status", "coverage"}, f"acceptance.{key}")
             require(isinstance(row["status"], str) and row["status"] in allowed, f"acceptance.{key}: unsupported review status")

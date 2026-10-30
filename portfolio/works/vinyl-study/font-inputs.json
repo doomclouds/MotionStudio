@@ -1,0 +1,21 @@
+{
+  "externalFonts": [
+    "VinylSerif900.ttf",
+    "VinylSerif700.ttf",
+    "VinylSans500.ttf",
+    "VinylSans600.ttf",
+    "VinylSans700.ttf",
+    "VinylSans900.ttf",
+    "Bungee-Regular.ttf",
+    "SpaceMono-Bold.ttf",
+    "DMSerifDisplay-Regular.ttf"
+  ],
+  "sourceFamilies": {
+    "Noto Serif SC": "https://github.com/google/fonts/tree/main/ofl/notoserifsc",
+    "Noto Sans SC": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+    "Bungee": "https://github.com/google/fonts/tree/main/ofl/bungee",
+    "Space Mono": "https://github.com/google/fonts/tree/main/ofl/spacemono",
+    "DM Serif Display": "https://github.com/google/fonts/tree/main/ofl/dmserifdisplay"
+  },
+  "scope": "Font binaries are not bundled. Noto static derived families renamed Vinyl; OFL notices retained."
+}

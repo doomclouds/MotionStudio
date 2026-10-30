@@ -19,3 +19,7 @@ Brand names and referenced creators do not endorse this repository. Source publi
 All 16 runtime assets remain external and individually hash-locked. The Claude Duet SVG and existing mixed AAC have no asserted redistribution clearance and are not automatically obtained. Bit Shift by Kevin MacLeod is CC BY 4.0, but the source MP3 is not the exact 52-second mix. Dario photograph by Kimberly White/Getty Images for TechCrunch is CC BY 2.0 with crop/pixelation/outline modifications. Actual font licenses and copyrights, including OFL and distinct DejaVu terms, are retained; the historical Press Start 2P reserved-name/conversion uncertainty is explicitly disclosed. No binary font/photo/audio is redistributed.
 
 Its only media is the exact reviewed own-film frame-450 cover; it contains language cards, not the external icon or photo. Noncommercial learning/research is the maintainer's purpose, not a new restriction on upstream MIT/OFL/CC permissions. Rights-holder contact: [GitHub Issues](https://github.com/doomclouds/MotionStudio/issues).
+
+## Huashu vinyl design specimen
+
+[Complete static study](portfolio/works/vinyl-study/README.md) adapts alchaincyf’s MIT-licensed specimen at commit 4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1. It is not an official shop site or author endorsement. Full upstream MIT and external font OFL notices accompany the code; no screenshot/font binary is bundled. The sole cover is the Native reconstruction. Typography/paper/groove differences and external font requirements are stated in [credits](portfolio/works/vinyl-study/CREDITS.md).

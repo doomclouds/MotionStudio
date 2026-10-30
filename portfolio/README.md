@@ -15,6 +15,12 @@
 
 [Favorite52 · 52 秒原样复刻源码](works/favorite52/README.md) — `source-release`：16 项资源逐项列出；图标/混音及精确字体由用户合法自备。公开入口在自备资源下完成全长验证，与喜欢的影片逐字节相同；不含这些外置素材的再分发授权。
 
+[![黑胶商店 · 静态UI复刻](works/vinyl-study/cover.jpg)](works/vinyl-study/README.md)
+
+[黑胶商店 · 完整静态UI工程](works/vinyl-study/README.md) — `source-release`，1200×750固定画幅，完整Native绘制代码；9项字体外置自备并保留OFL条款，单帧重渲染已验证。非官方Huashu设计样例复刻；局部字形/纸纹残差披露，不冒充视频或响应式验证。
+
+静态UI使用schema 4：render仅入口/宽高、cover为rendered-static且frame=null，验收不含听审/声画字段；仍要求完成、收录、恢复、技术和视觉状态。
+
 ## 最小结构
 
 ```text

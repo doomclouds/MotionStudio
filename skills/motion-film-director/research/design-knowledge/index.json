@@ -31,6 +31,22 @@
       ],
       "path": "cases/ui-002-instrument.md",
       "type": "public-method-summary"
+    },
+    {
+      "id": "ui-003-print-poster",
+      "version": 1,
+      "category": "brand-posters",
+      "title": "内容驱动的印刷招贴",
+      "tags": [
+        "品牌",
+        "招贴",
+        "叠印",
+        "主物",
+        "配色",
+        "构图"
+      ],
+      "path": "cases/ui-003-print-poster.md",
+      "type": "public-method-summary"
     }
   ],
   "guides": [

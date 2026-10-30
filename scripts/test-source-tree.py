@@ -120,13 +120,22 @@ class SourceTreeFixtures(unittest.TestCase):
         self.add('apparently-safe.txt', PNG)
         (self.repo / 'apparently-safe.txt').write_text('safe worktree replacement')
         self.audit(False, 'unapproved-media:PNG')
-    def test_public_policy_only_allows_three_exact_reviewed_images(self):
+    def test_public_policy_only_allows_four_exact_reviewed_images(self):
         allow = json.loads((ROOT / 'scripts/source-assets-allowlist.json').read_text())['assets']
         self.assertEqual(allow, {
             'docs/assets/report-overview.png': 'bbf9e87737e3f84dfb9a998ee0c973081418631b76a745b017b012d76b95e7c1',
             'portfolio/works/tessel/cover.jpg': 'ebfaf532643c1ac096ac44a05da0c81dede735e1703e2c3230ab3073857133f8',
             'portfolio/works/favorite52/cover.jpg': '86a8a0c0a08c06ddab3dac47da45078dce055746c5dfd0c15ddb99079f6cab5d',
+            'portfolio/works/vinyl-study/cover.jpg': 'e18140fe112408b2b8bc254f1a76e007989eefd31617b7935fd11d476cb178b0',
         })
+    def test_exact_vinyl_cover_allowed(self):
+        name='portfolio/works/vinyl-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes());self.audit(True)
+    def test_vinyl_cover_tamper_rejected(self):
+        name='portfolio/works/vinyl-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
+    def test_vinyl_cover_wrong_path_rejected(self):
+        self.add('portfolio/works/vinyl-study/other.jpg',(ROOT/'portfolio/works/vinyl-study/cover.jpg').read_bytes());self.audit(False)
     def test_exact_tessel_cover_allowed(self):
         name = 'portfolio/works/tessel/cover.jpg'
         self.add(name, (ROOT / name).read_bytes())

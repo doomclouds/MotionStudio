@@ -64,6 +64,33 @@ class PortfolioTests(unittest.TestCase):
                 "source_url": "https://example.invalid/source", "sha256": "a" * 64,
                 "permission": "explicit-license", "fetch_url": "https://example.invalid/resource", "max_bytes": 100}
 
+    def static_ui(self):
+        self.data['schema']=4
+        self.data['status']='source-release'
+        self.data['rights']['status']='reviewed-publication-scope'
+        self.data['render']={k:v for k,v in self.data['render'].items() if k in {'entrypoint','width','height'}}
+        self.data['cover'].update(kind='rendered-static',frame=None)
+        self.data['acceptance']={k:True for k in ['complete_work','owner_keep','clean_restore','technical']}
+        self.data['acceptance']['visual']={'status':'PARTIAL','coverage':'Synthetic static coverage only'}
+        r=self.resource();r.pop('fetch_url');r.pop('max_bytes');r.update(mode='provide',permission='user-supplied-not-distributed',local_path='font.ttf',bytes=100,instructions='Supply licensed input externally')
+        self.data['resources']=[r]
+
+    def test_static_ui_schema4_valid(self):
+        self.static_ui();self.save();self.assertEqual(validate_work(self.work),'synthetic-test')
+
+    def test_static_ui_rejects_fake_audio_contract(self):
+        self.static_ui();self.data['render']['audio_channels']=2;self.reject()
+
+    def test_static_ui_rejects_fake_listening(self):
+        self.static_ui();self.data['acceptance']['listened']={'status':'PASSED','coverage':'None'};self.reject()
+
+    def test_static_ui_rejects_video_cover(self):
+        self.static_ui();self.data['cover'].update(kind='rendered-frame',frame=0);self.reject()
+
+    def test_static_ui_requires_external_resources_and_retention(self):
+        self.static_ui();self.data['resources']=[];self.reject()
+        self.static_ui();self.data['acceptance']['owner_keep']=False;self.reject()
+
     def test_valid_static_fixture(self):
         self.assertEqual(validate_portfolio(self.root), ["synthetic-test"])
 
