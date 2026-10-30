@@ -51,7 +51,7 @@
     },
     {
       "path": "recipe-manifest.json",
-      "sha256": "e13083d2cfd5385d2b7494e9e15adb8d61f716f4dfae597312b7a83050f80e74"
+      "sha256": "3ed5de4573c2993d780d45ddcaeb13d31f1413f7e831e1cbcd5366a3d975dd6a"
     },
     {
       "path": "render.mjs",

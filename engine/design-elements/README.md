@@ -4,7 +4,7 @@ This layer stores **design intent linked to callable implementation and composit
 
 ## Inventory and truth boundary
 
-`catalog.json` is the single index. There is **1 existing published asset family**, `design.print-poster.v1`, and **9 added source-published, technically reviewed families** (5 base + 4 specialist). Publication does not mean the synthetic compositions are user-approved brand designs. The four full compositions and eighteen per-family sample renders are synthetic transfer tests, not 22 new accepted designs. Existing portfolio scenes remain unchanged; this layer does not claim they already import these APIs.
+`catalog.json` is the single index. There is **1 existing published asset family**, `design.print-poster.v1`, and **13 added source-published, technically reviewed families** (5 base + 4 specialist + 4 B05), for **14 families total**. Publication does not mean the synthetic compositions are user-approved brand designs. The four full compositions and eighteen per-family sample renders are synthetic transfer tests, not 22 new accepted designs. Existing portfolio scenes remain unchanged; this layer does not claim they already import these APIs.
 
 | Stable ID | Intent / code | Explicit input responsibility |
 |---|---|---|
