@@ -1,0 +1,32 @@
+{
+  "scope": "Font binaries remain external. Input hashes record the tested versions; prepare-fonts.py writes static/subset outputs and preserves applicable OFL naming requirements.",
+  "outputs": [
+    "XiaoWei-subset.ttf",
+    "Sans500.ttf",
+    "Sans700.ttf",
+    "Serif600.ttf"
+  ],
+  "sourceFamilies": {
+    "XiaoWei-subset.ttf": "https://github.com/google/fonts/tree/main/ofl/zcoolxiaowei",
+    "Sans500.ttf": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+    "Sans700.ttf": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+    "Serif600.ttf": "https://github.com/google/fonts/tree/main/ofl/notoserifsc"
+  },
+  "originalInputs": [
+    {
+      "filename": "NotoSansSC-variable.ttf",
+      "sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+      "bytes": 17772300
+    },
+    {
+      "filename": "NotoSerifSC-variable.ttf",
+      "sha256": "050080d9255a86808f2945bffac582b31ef32bc36411ce29563b4961670c66f9",
+      "bytes": 25125512
+    },
+    {
+      "filename": "ZCOOLXiaoWei-Regular.ttf",
+      "sha256": "a42b620140f493db42f741351dfbf343c0936d58588ee8004b8b2a218d997ff1",
+      "bytes": 6313808
+    }
+  ]
+}

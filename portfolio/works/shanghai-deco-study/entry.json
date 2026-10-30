@@ -1,0 +1,184 @@
+{
+  "schema": 4,
+  "id": "shanghai-deco-study",
+  "version": "1.0.0",
+  "title": "摩登焙香 · 装饰艺术月历静态复刻",
+  "status": "source-release",
+  "unofficial_recreation": true,
+  "original": {
+    "author": "alchaincyf (花叔 · 花生)",
+    "title": "Huashu east/04-shanghai-deco-calendar design specimen",
+    "url": "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/east/04-shanghai-deco-calendar.html"
+  },
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "LICENSES/NotoSans-OFL.txt",
+      "LICENSES/NotoSerif-OFL.txt",
+      "LICENSES/huashu-MIT-LICENSE.txt",
+      "LICENSES/zcoolxiaowei-OFL.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/LICENSE",
+      "https://github.com/google/fonts"
+    ]
+  },
+  "files": [
+    {
+      "path": "CREDITS.md",
+      "sha256": "ddee5520e793f48ba099612b6c6c773bf29a48fddde772443c59abc0330216b4",
+      "role": "documentation"
+    },
+    {
+      "path": "DESIGN-REASONING.md",
+      "sha256": "1468852bf93389cc2c73add438978e5560bd0d691ed65e250736aaab5af69d1c",
+      "role": "documentation"
+    },
+    {
+      "path": "LICENSES/NotoSans-OFL.txt",
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/NotoSerif-OFL.txt",
+      "sha256": "5e0da210fb04058a8c0087985d2d456b931c2579811a49655721d3cf0c36b6d6",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/huashu-MIT-LICENSE.txt",
+      "sha256": "6d6a2a9caf2e6d2b76974050427053b2892d8aa4c33fd168ce63a537fcee9d96",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/zcoolxiaowei-OFL.txt",
+      "sha256": "a094514ca57cf8f9c5e8d8d1adab5d8cd3a377297ff016f9df2c05b3ecd77f0a",
+      "role": "license"
+    },
+    {
+      "path": "README.md",
+      "sha256": "a3186a93958c9ee3612e7167c2448bb1db5fe1073868ccef7459ed0c77beecaf",
+      "role": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "ec6f76cea9a55360a5c7cc0c82543735335e5dc194fbc8b23d9ed5561431d251",
+      "role": "cover"
+    },
+    {
+      "path": "design/scene.mjs",
+      "sha256": "d3bddacf1dd11a6a7d518b9b2cfa044150d7fbcd1c77bc468c63de830989adf3",
+      "role": "source"
+    },
+    {
+      "path": "font-charset.txt",
+      "sha256": "72a9c1cccf41ab4eeb9f0960ecd8f383a3f77e4d0b8e052c8c6f7f979af1b42c",
+      "role": "documentation"
+    },
+    {
+      "path": "font-inputs.json",
+      "sha256": "64b761144bca384a48cb719639035dd014e7eebd263e539a9a18ae642c26ef68",
+      "role": "config"
+    },
+    {
+      "path": "locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "role": "lock"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "c97986608711fff48e780026471834a114f117d30fd4f1b15c3e76b21a760a46",
+      "role": "lock"
+    },
+    {
+      "path": "prepare-fonts.py",
+      "sha256": "9e49cbfdfd2d89d3f2b69739274f12d4e01135360ef625bae37a526d4dd59b2c",
+      "role": "source"
+    }
+  ],
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "locks/npm-package-lock.json"
+    }
+  ],
+  "render": {
+    "entrypoint": "design/scene.mjs",
+    "width": 1200,
+    "height": 750
+  },
+  "resources": [
+    {
+      "id": "xiaowei-subset",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/zcoolxiaowei-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/zcoolxiaowei",
+      "sha256": "ab69ba18aa68eff95e5ef54841b054e19e64d6940f3a1e8688f8fe30d6a8a676",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "XiaoWei-subset.ttf",
+      "bytes": 9500,
+      "instructions": "Provide licensed font in DECO_FONT_DIR; see prepare-fonts.py. Different input font versions may change rasterization."
+    },
+    {
+      "id": "sans500",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSans-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "1d21597e0ce4151ed15dbe41de9f02a7f2a7c4651dee2a9defe04ccf8bdaa8a6",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Sans500.ttf",
+      "bytes": 31244,
+      "instructions": "Provide licensed font in DECO_FONT_DIR; see prepare-fonts.py. Different input font versions may change rasterization."
+    },
+    {
+      "id": "sans700",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSans-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "718422223bfe9a578b9d6492608a87a72c9600581b06d64c374eaa0c6035bb1a",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Sans700.ttf",
+      "bytes": 31220,
+      "instructions": "Provide licensed font in DECO_FONT_DIR; see prepare-fonts.py. Different input font versions may change rasterization."
+    },
+    {
+      "id": "serif600",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSerif-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notoserifsc",
+      "sha256": "c29c6e2bdbbe236bfeb1a961b162c11021247283cde030f9277863b2ca625640",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Serif600.ttf",
+      "bytes": 41836,
+      "instructions": "Provide licensed font in DECO_FONT_DIR; see prepare-fonts.py. Different input font versions may change rasterization."
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "2d49a40f7ee65e28570ca7b688a2109d3f3494722685e446750111bbe92e8324",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "Full still and details compared independently; font rasterization, fine material and original JPEG differences remain. Static only, no browser/interaction/video validation."
+    }
+  }
+}

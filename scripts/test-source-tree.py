@@ -120,14 +120,59 @@ class SourceTreeFixtures(unittest.TestCase):
         self.add('apparently-safe.txt', PNG)
         (self.repo / 'apparently-safe.txt').write_text('safe worktree replacement')
         self.audit(False, 'unapproved-media:PNG')
-    def test_public_policy_only_allows_four_exact_reviewed_images(self):
+    def test_public_policy_only_allows_nine_exact_reviewed_images(self):
         allow = json.loads((ROOT / 'scripts/source-assets-allowlist.json').read_text())['assets']
         self.assertEqual(allow, {
             'docs/assets/report-overview.png': 'bbf9e87737e3f84dfb9a998ee0c973081418631b76a745b017b012d76b95e7c1',
             'portfolio/works/tessel/cover.jpg': 'ebfaf532643c1ac096ac44a05da0c81dede735e1703e2c3230ab3073857133f8',
             'portfolio/works/favorite52/cover.jpg': '86a8a0c0a08c06ddab3dac47da45078dce055746c5dfd0c15ddb99079f6cab5d',
             'portfolio/works/vinyl-study/cover.jpg': 'e18140fe112408b2b8bc254f1a76e007989eefd31617b7935fd11d476cb178b0',
+            'portfolio/works/tea-voice-study/cover.jpg': '73c6d71dd8f6463641672cefae8077f26ac769892dda22027fd59648723aa343',
+            'portfolio/works/muqi-study/cover.jpg': '59b793b814eb157d24e16dc585500f47c1d3175c77a31470fda5c2b7853d0d3a',
+            'portfolio/works/cycling-year-report/cover.jpg': 'cfe7778644708495e5937cd1bec1323fd80c3072ac82d56a6ead396976c88044',
+            'portfolio/works/hardware-sampler-study/cover.jpg': '98f00db4ebf08339a2e55975ce0133cf65ce5a029460db108deaef557852b766',
+            'portfolio/works/shanghai-deco-study/cover.jpg': 'ec6f76cea9a55360a5c7cc0c82543735335e5dc194fbc8b23d9ed5561431d251',
         })
+    def test_exact_muqi_study_cover_allowed(self):
+        name='portfolio/works/muqi-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes());self.audit(True)
+    def test_muqi_study_cover_tamper_rejected(self):
+        name='portfolio/works/muqi-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
+    def test_muqi_study_cover_wrong_path_rejected(self):
+        self.add('portfolio/works/muqi-study/other.jpg',(ROOT/'portfolio/works/muqi-study/cover.jpg').read_bytes());self.audit(False)
+    def test_exact_cycling_year_report_cover_allowed(self):
+        name='portfolio/works/cycling-year-report/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes());self.audit(True)
+    def test_cycling_year_report_cover_tamper_rejected(self):
+        name='portfolio/works/cycling-year-report/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
+    def test_cycling_year_report_cover_wrong_path_rejected(self):
+        self.add('portfolio/works/cycling-year-report/other.jpg',(ROOT/'portfolio/works/cycling-year-report/cover.jpg').read_bytes());self.audit(False)
+    def test_exact_hardware_sampler_study_cover_allowed(self):
+        name='portfolio/works/hardware-sampler-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes());self.audit(True)
+    def test_hardware_sampler_study_cover_tamper_rejected(self):
+        name='portfolio/works/hardware-sampler-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
+    def test_hardware_sampler_study_cover_wrong_path_rejected(self):
+        self.add('portfolio/works/hardware-sampler-study/other.jpg',(ROOT/'portfolio/works/hardware-sampler-study/cover.jpg').read_bytes());self.audit(False)
+    def test_exact_shanghai_deco_study_cover_allowed(self):
+        name='portfolio/works/shanghai-deco-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes());self.audit(True)
+    def test_shanghai_deco_study_cover_tamper_rejected(self):
+        name='portfolio/works/shanghai-deco-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
+    def test_shanghai_deco_study_cover_wrong_path_rejected(self):
+        self.add('portfolio/works/shanghai-deco-study/other.jpg',(ROOT/'portfolio/works/shanghai-deco-study/cover.jpg').read_bytes());self.audit(False)
+    def test_exact_tea_voice_cover_allowed(self):
+        name='portfolio/works/tea-voice-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes());self.audit(True)
+    def test_tea_voice_cover_tamper_rejected(self):
+        name='portfolio/works/tea-voice-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
+    def test_tea_voice_cover_wrong_path_rejected(self):
+        self.add('portfolio/works/tea-voice-study/other.jpg',(ROOT/'portfolio/works/tea-voice-study/cover.jpg').read_bytes());self.audit(False)
     def test_exact_vinyl_cover_allowed(self):
         name='portfolio/works/vinyl-study/cover.jpg'
         self.add(name,(ROOT/name).read_bytes());self.audit(True)

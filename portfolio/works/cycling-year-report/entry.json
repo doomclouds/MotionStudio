@@ -1,0 +1,183 @@
+{
+  "schema": 4,
+  "id": "cycling-year-report",
+  "version": "1.0.0",
+  "title": "骑行年报 · Y2K数字主视觉",
+  "status": "source-release",
+  "unofficial_recreation": true,
+  "original": {
+    "author": "alchaincyf (花叔 · 花生)",
+    "title": "骑行年报 · Y2K数字主视觉",
+    "url": "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/ppt/08-y2k-inflated-wrapped.html"
+  },
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "LICENSES/ArchivoBlack-OFL.txt",
+      "LICENSES/NotoSansSC-OFL.txt",
+      "LICENSES/huashu-MIT-LICENSE.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/LICENSE",
+      "https://github.com/google/fonts"
+    ]
+  },
+  "files": [
+    {
+      "path": "CREDITS.md",
+      "sha256": "e3e69cce3ecaed1d343cf9e697b5d7df7f8c3e7f8d509139c01c9e1bd3fee4d8",
+      "role": "documentation"
+    },
+    {
+      "path": "LICENSES/ArchivoBlack-OFL.txt",
+      "sha256": "3173acd82f8c6159b5b1037b539fcbd4edff68e65c2ea8b9412b5a5ca97b08ff",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/NotoSansSC-OFL.txt",
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/huashu-MIT-LICENSE.txt",
+      "sha256": "6d6a2a9caf2e6d2b76974050427053b2892d8aa4c33fd168ce63a537fcee9d96",
+      "role": "license"
+    },
+    {
+      "path": "README.md",
+      "sha256": "469a21ec6f52321ab0c9d5559085f143de11d2f9fa7790bba026b72c5518b5e9",
+      "role": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "cfe7778644708495e5937cd1bec1323fd80c3072ac82d56a6ead396976c88044",
+      "role": "cover"
+    },
+    {
+      "path": "design/DESIGN-ANALYSIS.md",
+      "sha256": "96620dba7ee646dfed4dbc6927b627a5a7d2d34fe7f3f14d60c1dec4d01a57f8",
+      "role": "documentation"
+    },
+    {
+      "path": "design/content.json",
+      "sha256": "50ef6b08d8be3be031bc5508d5d76f69bd9553ed3c82255e85673658637f7dd7",
+      "role": "config"
+    },
+    {
+      "path": "design/scene.mjs",
+      "sha256": "4e3acc5a371428e9aca63ebab50f454d0ad648f03a6fb0ac7b136be608f17c88",
+      "role": "source"
+    },
+    {
+      "path": "font-inputs.json",
+      "sha256": "eeb7ea904b788fb8598cf5e887a5d29a1cb0111cf0673c44fd0bd73532efed52",
+      "role": "config"
+    },
+    {
+      "path": "font-subset.json",
+      "sha256": "8f189bb047e3d271c85b8ee3a09a176114ee881c0749f1d74e94cbccfff0d302",
+      "role": "config"
+    },
+    {
+      "path": "locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "role": "lock"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "c97986608711fff48e780026471834a114f117d30fd4f1b15c3e76b21a760a46",
+      "role": "lock"
+    },
+    {
+      "path": "prepare-fonts.py",
+      "sha256": "2f67c430a1b242d41e6bb0edea8e43e4287a271336031a335f9465069eee7bf2",
+      "role": "source"
+    }
+  ],
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "locks/npm-package-lock.json"
+    }
+  ],
+  "render": {
+    "entrypoint": "design/scene.mjs",
+    "width": 1200,
+    "height": 750
+  },
+  "resources": [
+    {
+      "id": "cyclingsans500",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "e3e32f5dda7e0a39b2132c44d54308989d9dfabc03549195cd2205c8f9e07639",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "CyclingSans500.ttf",
+      "bytes": 27248,
+      "instructions": "Supply licensed font in CYCLING_FONT_DIR; prepare-fonts.py validates original fonts and generates deterministic renamed subsets."
+    },
+    {
+      "id": "cyclingsans700",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "6f9c559321193dd4ce53ce3beef3fc61d71d90ca32956044e0b27fa7fc48cebe",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "CyclingSans700.ttf",
+      "bytes": 27224,
+      "instructions": "Supply licensed font in CYCLING_FONT_DIR; prepare-fonts.py validates original fonts and generates deterministic renamed subsets."
+    },
+    {
+      "id": "cyclingsans900",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "6b8390453b51e5e47bcd6b07e62ca46a808f39440f36a6db5c7498e7fb58c3a7",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "CyclingSans900.ttf",
+      "bytes": 27192,
+      "instructions": "Supply licensed font in CYCLING_FONT_DIR; prepare-fonts.py validates original fonts and generates deterministic renamed subsets."
+    },
+    {
+      "id": "archivoblack-regular",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/ArchivoBlack-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/archivoblack",
+      "sha256": "dd9a89a019b4849f66ab75455fe7bdf931311042cbb0f0f97acc061539703180",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "ArchivoBlack-Regular.ttf",
+      "bytes": 90988,
+      "instructions": "Supply licensed font in CYCLING_FONT_DIR; prepare-fonts.py validates original fonts and generates deterministic renamed subsets."
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "548ecc1a5c2d69f68308b8f62f75fc6f35d1070fcd6d539bcf504dc7526ae69e",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "Full fixed-frame and critical details reviewed. Type rasterization, gradient/shadow and affine-perspective approximations remain. Static only; no browser, interaction, motion or audio validation."
+    }
+  }
+}

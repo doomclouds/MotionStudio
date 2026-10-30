@@ -23,3 +23,17 @@ Its only media is the exact reviewed own-film frame-450 cover; it contains langu
 ## Huashu vinyl design specimen
 
 [Complete static study](portfolio/works/vinyl-study/README.md) adapts alchaincyf’s MIT-licensed specimen at commit 4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1. It is not an official shop site or author endorsement. Full upstream MIT and external font OFL notices accompany the code; no screenshot/font binary is bundled. The sole cover is the Native reconstruction. Typography/paper/groove differences and external font requirements are stated in [credits](portfolio/works/vinyl-study/CREDITS.md).
+
+
+## Huashu tea voice static study
+
+[Complete sound-brand static work](portfolio/works/tea-voice-study/README.md) adapts alchaincyf's MIT-licensed cinematic sound visualization specimen at commit 4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1. Full MIT/OFL notices and modifications are retained in the work. The 150 waveform bars port source SVG geometry, not real audio data; the specimen is not a verified operating service. No upstream screenshot, audio or font binary is distributed. The only image is a self-rendered cover. See [credits and rights boundary](portfolio/works/tea-voice-study/CREDITS.md).
+
+## Huashu B01 additional static studies
+
+- [幕启 · 地方剧场品牌首屏](portfolio/works/muqi-study/README.md): adapts [幕启 · 地方剧场票务品牌首屏](https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/web/14-angled-fluid-gradient.html); complete upstream MIT/OFL notices and modifications are in [credits](portfolio/works/muqi-study/CREDITS.md).
+- [骑行年报 · Y2K演示页](portfolio/works/cycling-year-report/README.md): adapts [骑行年报 · Y2K数字主视觉](https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/ppt/08-y2k-inflated-wrapped.html); complete upstream MIT/OFL notices and modifications are in [credits](portfolio/works/cycling-year-report/CREDITS.md).
+- [采样台 · 硬件面板三屏展示](portfolio/works/hardware-sampler-study/README.md): adapts [Huashu app/01-hardware-panel design specimen](https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/app/01-hardware-panel.html); complete upstream MIT/OFL notices and modifications are in [credits](portfolio/works/hardware-sampler-study/CREDITS.md).
+- [摩登焙香 · 装饰艺术月历](portfolio/works/shanghai-deco-study/README.md): adapts [Huashu east/04-shanghai-deco-calendar design specimen](https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/east/04-shanghai-deco-calendar.html); complete upstream MIT/OFL notices and modifications are in [credits](portfolio/works/shanghai-deco-study/CREDITS.md).
+
+These are unofficial educational reproductions of design specimens, not claims of operating brands, historically verified sample data, or creator endorsement. Only self-rendered covers are redistributed; fonts remain externally supplied.

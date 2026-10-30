@@ -21,6 +21,28 @@
 
 静态UI使用schema 4：render仅入口/宽高、cover为rendered-static且frame=null，验收不含听审/声画字段；仍要求完成、收录、恢复、技术和视觉状态。
 
+[![茶话声 · 声音品牌静态复刻](works/tea-voice-study/cover.jpg)](works/tea-voice-study/README.md)
+
+[茶话声 · 完整声音品牌首屏](works/tea-voice-study/README.md) — 1200×750完整Native静态工程，以巨型中文标题、贯穿声波及近黑信息层级表达城市声音。非官方Huashu标本复刻；字体外置且双重SHA校验，源码恢复已验证。150柱移植源SVG，非真实录音频谱；保留局部字体与正文叠波残差，不冒称视频、声音或交互已验收。
+
+[![幕启 · 地方剧场品牌首屏](works/muqi-study/cover.jpg)](works/muqi-study/README.md)
+
+[幕启 · 地方剧场品牌首屏](works/muqi-study/README.md) — 1200×750完整静态学习复刻，完整可编辑源码、设计逻辑、许可与外置字体准备随项目保留。单帧重渲染匹配已审画面；非官方Huashu标本复刻，视觉仍保留PARTIAL残差，未验证浏览器/交互/动效。
+
+[![骑行年报 · Y2K演示页](works/cycling-year-report/cover.jpg)](works/cycling-year-report/README.md)
+
+[骑行年报 · Y2K演示页](works/cycling-year-report/README.md) — 1200×750完整静态学习复刻，完整可编辑源码、设计逻辑、许可与外置字体准备随项目保留。单帧重渲染匹配已审画面；非官方Huashu标本复刻，视觉仍保留PARTIAL残差，未验证浏览器/交互/动效。这是演示画面，不计为完整产品UI。
+
+[![采样台 · 硬件面板三屏展示](works/hardware-sampler-study/cover.jpg)](works/hardware-sampler-study/README.md)
+
+[采样台 · 硬件面板三屏展示](works/hardware-sampler-study/README.md) — 1200×750完整静态学习复刻，完整可编辑源码、设计逻辑、许可与外置字体准备随项目保留。单帧重渲染匹配已审画面；非官方Huashu标本复刻，视觉仍保留PARTIAL残差，未验证浏览器/交互/动效。
+
+[![摩登焙香 · 装饰艺术月历](works/shanghai-deco-study/cover.jpg)](works/shanghai-deco-study/README.md)
+
+[摩登焙香 · 装饰艺术月历](works/shanghai-deco-study/README.md) — 1200×750完整静态学习复刻，完整可编辑源码、设计逻辑、许可与外置字体准备随项目保留。单帧重渲染匹配已审画面；非官方Huashu标本复刻，视觉仍保留PARTIAL残差，未验证浏览器/交互/动效。
+
+静态作品按各自README在独立Node进程中渲染；不要把多个作品的字体注册与场景合并到同一全局渲染器。这些是完整作品工程，不是已验证任意混用的通用组件。
+
 ## 最小结构
 
 ```text

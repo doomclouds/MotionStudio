@@ -1,0 +1,243 @@
+{
+  "schema": 4,
+  "id": "muqi-study",
+  "version": "1.0.0",
+  "title": "幕启 · 地方剧场票务品牌首屏",
+  "status": "source-release",
+  "unofficial_recreation": true,
+  "original": {
+    "author": "alchaincyf (花叔 · 花生)",
+    "title": "幕启 · 地方剧场票务品牌首屏",
+    "url": "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/web/14-angled-fluid-gradient.html"
+  },
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "LICENSES/HankenGrotesk-OFL.txt",
+      "LICENSES/NotoSansSC-OFL.txt",
+      "LICENSES/huashu-MIT-LICENSE.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/LICENSE",
+      "https://github.com/google/fonts"
+    ]
+  },
+  "files": [
+    {
+      "path": "CREDITS.md",
+      "sha256": "8328b2022823928d0180ac100be98fde3624a7c7bf14476c57e15b6be30051cb",
+      "role": "documentation"
+    },
+    {
+      "path": "LICENSES/HankenGrotesk-OFL.txt",
+      "sha256": "e02ccb89a86839b22feff7872ff5cc355cc0f58318d29eee20e2cf83a612f16d",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/NotoSansSC-OFL.txt",
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/huashu-MIT-LICENSE.txt",
+      "sha256": "6d6a2a9caf2e6d2b76974050427053b2892d8aa4c33fd168ce63a537fcee9d96",
+      "role": "license"
+    },
+    {
+      "path": "README.md",
+      "sha256": "72a69f158953a51da1b5a26f3cd8b1eceb27740e49867b4e6183e6e2ca73066e",
+      "role": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "59b793b814eb157d24e16dc585500f47c1d3175c77a31470fda5c2b7853d0d3a",
+      "role": "cover"
+    },
+    {
+      "path": "design/DESIGN-ANALYSIS.md",
+      "sha256": "ed6d45e98badf37643ed67e616cd68888d0e750b446e96072d7fb8d9bd6a86c6",
+      "role": "documentation"
+    },
+    {
+      "path": "design/content.json",
+      "sha256": "e13b8e6afc99755c81eff894c8f6463accb00d0da5f634aa86f772eb7cbe9d48",
+      "role": "config"
+    },
+    {
+      "path": "design/scene.mjs",
+      "sha256": "71bd0c6c18a508ae09fdc1233a63f310c2e10bad476451b04110c8bc70977326",
+      "role": "source"
+    },
+    {
+      "path": "font-inputs.json",
+      "sha256": "9cc34181ace6515c396a677e3fde37f44c7e3f874d94d36e6f2a9bed770a31a2",
+      "role": "config"
+    },
+    {
+      "path": "font-subset.json",
+      "sha256": "fdcdf692a0651644551ced5e77d656a118d4319c6425429bfaca560c80a91b4b",
+      "role": "config"
+    },
+    {
+      "path": "locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "role": "lock"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "c97986608711fff48e780026471834a114f117d30fd4f1b15c3e76b21a760a46",
+      "role": "lock"
+    },
+    {
+      "path": "prepare-fonts.py",
+      "sha256": "2f67c430a1b242d41e6bb0edea8e43e4287a271336031a335f9465069eee7bf2",
+      "role": "source"
+    }
+  ],
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "locks/npm-package-lock.json"
+    }
+  ],
+  "render": {
+    "entrypoint": "design/scene.mjs",
+    "width": 1200,
+    "height": 750
+  },
+  "resources": [
+    {
+      "id": "muqisans400",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "a4abc6873d6f4a487a71636dc201701ccb0deb0e246273c1197ee8fffe2f2fb0",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "MuqiSans400.ttf",
+      "bytes": 49100,
+      "instructions": "Supply licensed font in MUQI_FONT_DIR; prepare-fonts.py validates original fonts and generates deterministic renamed subsets."
+    },
+    {
+      "id": "muqisans500",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "6d8b32f80c31ba1b75243fecf61175f513464e268ca430507fb0c89a78bb16e3",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "MuqiSans500.ttf",
+      "bytes": 49096,
+      "instructions": "Supply licensed font in MUQI_FONT_DIR; prepare-fonts.py validates original fonts and generates deterministic renamed subsets."
+    },
+    {
+      "id": "muqisans600",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "9dd4a58bc01ad5ad17b7c95ce459366d4cfb013486948c78abcb8a52be6b7e75",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "MuqiSans600.ttf",
+      "bytes": 49096,
+      "instructions": "Supply licensed font in MUQI_FONT_DIR; prepare-fonts.py validates original fonts and generates deterministic renamed subsets."
+    },
+    {
+      "id": "muqisans700",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "cc58f8fa8b5d0d70a9fe88114ff062f00006f2271754aca26a7fef1a488dacbb",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "MuqiSans700.ttf",
+      "bytes": 49088,
+      "instructions": "Supply licensed font in MUQI_FONT_DIR; prepare-fonts.py validates original fonts and generates deterministic renamed subsets."
+    },
+    {
+      "id": "muqisans900",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "36c98f18ec2e6c29461eee97fe634ac966f56101e52294708a1bcca36eb0cda1",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "MuqiSans900.ttf",
+      "bytes": 49052,
+      "instructions": "Supply licensed font in MUQI_FONT_DIR; prepare-fonts.py validates original fonts and generates deterministic renamed subsets."
+    },
+    {
+      "id": "muqilatin400",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/HankenGrotesk-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/hankengrotesk",
+      "sha256": "c70119b84fa3819606aa3d0556d1d9f1537e8949e2805397dd88206d1bffe51e",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "MuqiLatin400.ttf",
+      "bytes": 19852,
+      "instructions": "Supply licensed font in MUQI_FONT_DIR; prepare-fonts.py validates original fonts and generates deterministic renamed subsets."
+    },
+    {
+      "id": "muqilatin500",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/HankenGrotesk-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/hankengrotesk",
+      "sha256": "61546d25772c0617665b9fb7a87988221690172275f90fb9d5d36476bd0baba9",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "MuqiLatin500.ttf",
+      "bytes": 19848,
+      "instructions": "Supply licensed font in MUQI_FONT_DIR; prepare-fonts.py validates original fonts and generates deterministic renamed subsets."
+    },
+    {
+      "id": "muqilatin600",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/HankenGrotesk-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/hankengrotesk",
+      "sha256": "4a977884ee9e18977433e67693bd80cc7b677dd754ca435174dd736ab8f2fee6",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "MuqiLatin600.ttf",
+      "bytes": 19860,
+      "instructions": "Supply licensed font in MUQI_FONT_DIR; prepare-fonts.py validates original fonts and generates deterministic renamed subsets."
+    },
+    {
+      "id": "muqilatin700",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/HankenGrotesk-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/hankengrotesk",
+      "sha256": "f82c4043b184bc0dc1bd3c96f8ec5d2bcd5ae42c2477a02a7f00f105f0334708",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "MuqiLatin700.ttf",
+      "bytes": 19848,
+      "instructions": "Supply licensed font in MUQI_FONT_DIR; prepare-fonts.py validates original fonts and generates deterministic renamed subsets."
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "c5b34e68d651d889e3bb518a781c70c08d0e128d8bdf8f2dc6c3890be0524e21",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "Full fixed-frame and critical details reviewed. Type rasterization, gradient/shadow and affine-perspective approximations remain. Static only; no browser, interaction, motion or audio validation."
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "environment": "CYCLING_FONT_DIR",
+  "source_fonts": [
+    {
+      "file": "NotoSansSC-variable.ttf",
+      "sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+      "official_family_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "prefix": "CyclingSans",
+      "weights": [
+        500,
+        700,
+        900
+      ],
+      "notice": "LICENSES/NotoSansSC-OFL.txt"
+    },
+    {
+      "file": "ArchivoBlack-Regular.ttf",
+      "sha256": "dd9a89a019b4849f66ab75455fe7bdf931311042cbb0f0f97acc061539703180",
+      "official_family_url": "https://github.com/google/fonts/tree/main/ofl/archivoblack",
+      "prefix": "ArchivoBlack",
+      "weights": [],
+      "notice": "LICENSES/ArchivoBlack-OFL.txt"
+    }
+  ],
+  "font_binaries_bundled": false,
+  "fonttools": "4.61.1"
+}

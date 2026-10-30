@@ -1,0 +1,60 @@
+{
+  "fonts": [
+    {
+      "output": "TeaSans300.ttf",
+      "sha256": "c3b09e83d97f8ef5aa3fe3d9dfc33efbd7440aa8ecb7eb5ea48cd4f45fd9ed12",
+      "weight": 300,
+      "source": "NotoSansSC-variable.ttf",
+      "source_sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da"
+    },
+    {
+      "output": "TeaSans400.ttf",
+      "sha256": "8e63ab18b4ddc1a4a31b1ac8b2201808008a05be92b6c75ab7642cdd2009a5e9",
+      "weight": 400,
+      "source": "NotoSansSC-variable.ttf",
+      "source_sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da"
+    },
+    {
+      "output": "TeaSans500.ttf",
+      "sha256": "998c3a16daa82968cb099ccfe3d7b23bb86fa851cc14488610a6bc44215078dd",
+      "weight": 500,
+      "source": "NotoSansSC-variable.ttf",
+      "source_sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da"
+    },
+    {
+      "output": "TeaSans700.ttf",
+      "sha256": "e90cf46abe8899373c230785e19360da18511eb6ec7e224dce1c4e76527260e2",
+      "weight": 700,
+      "source": "NotoSansSC-variable.ttf",
+      "source_sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da"
+    },
+    {
+      "output": "TeaSans900.ttf",
+      "sha256": "ea24fb827fd8e56b60974c28f467ad9b536cf0f6ab8b6d632f09fd71921ead6b",
+      "weight": 900,
+      "source": "NotoSansSC-variable.ttf",
+      "source_sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da"
+    },
+    {
+      "output": "TeaSora300.ttf",
+      "sha256": "70e8ccc9dc87f7cd480b2109466ca7a5f044a5eaadc95f69ad913d585a848849",
+      "weight": 300,
+      "source": "Sora-variable.ttf",
+      "source_sha256": "84ff7096ae3ec6c8be47d906d1a0ba4de7f2ce78c615275c77301964a316e16c"
+    },
+    {
+      "output": "TeaSora500.ttf",
+      "sha256": "8db3b0c5965ad9367356900df22c3f3618415f722e95e7989a6ccd8de2c24b02",
+      "weight": 500,
+      "source": "Sora-variable.ttf",
+      "source_sha256": "84ff7096ae3ec6c8be47d906d1a0ba4de7f2ce78c615275c77301964a316e16c"
+    },
+    {
+      "output": "TeaSora800.ttf",
+      "sha256": "1f8ff09b601a0c0918b2746bfc8ac524e5a79bdd1f806b6e84fe2382f6881379",
+      "weight": 800,
+      "source": "Sora-variable.ttf",
+      "source_sha256": "84ff7096ae3ec6c8be47d906d1a0ba4de7f2ce78c615275c77301964a316e16c"
+    }
+  ]
+}

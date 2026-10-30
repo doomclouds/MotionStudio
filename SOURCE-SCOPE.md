@@ -41,3 +41,19 @@ The sole additional approved image is `portfolio/works/favorite52/cover.jpg`: 12
 ## Vinyl static UI exception
 
 The explicitly retained `portfolio/works/vinyl-study/` includes complete editable Native case code, content, restoration instructions, MIT/OFL notices and one rebuilt JPEG cover (exact path/hash allowlist). No upstream screenshot or font binary is distributed. Fonts remain external. This narrow exception does not admit other production cases or review archives. Schema 4 distinguishes static UI from films.
+
+
+## Tea voice complete static work
+
+The retained `portfolio/works/tea-voice-study/` contains full editable Native code, the MIT source specimen's static SVG bar geometry as JSON, content, design reasoning, runtime locks and attribution. Font binaries, upstream JPG/HTML, private reports and rendered frame sequences are excluded; original and derived fonts are hash-checked external inputs. The sole additional cover is `portfolio/works/tea-voice-study/cover.jpg`: 1200 × 750, 164,520 bytes, SHA-256 `73c6d71dd8f6463641672cefae8077f26ac769892dda22027fd59648723aa343`, maximum 1 MiB, derived from this work's own complete Native reconstruction. This exact exception authorizes no other media. Schema 4 records a static work, not a video or audio review.
+
+## Huashu B01 additional retained static works
+
+Four further complete fixed-frame studies retain editable code, content, design reasoning, external-font preparation, licenses and one self-rendered cover each. No upstream screenshots, font binaries, reports, audio or frame sequences are included. These are case works, not new motion mechanisms; cycling-year-report is a presentation visual rather than a full product UI. Exact additional JPEG exceptions (1200 × 750, each maximum 1 MiB):
+
+- `portfolio/works/muqi-study/cover.jpg`: 120,327 bytes; SHA-256 `59b793b814eb157d24e16dc585500f47c1d3175c77a31470fda5c2b7853d0d3a`.
+- `portfolio/works/cycling-year-report/cover.jpg`: 107,346 bytes; SHA-256 `cfe7778644708495e5937cd1bec1323fd80c3072ac82d56a6ead396976c88044`.
+- `portfolio/works/hardware-sampler-study/cover.jpg`: 93,138 bytes; SHA-256 `98f00db4ebf08339a2e55975ce0133cf65ce5a029460db108deaef557852b766`.
+- `portfolio/works/shanghai-deco-study/cover.jpg`: 95,401 bytes; SHA-256 `ec6f76cea9a55360a5c7cc0c82543735335e5dc194fbc8b23d9ed5561431d251`.
+
+No wildcard media permission is granted. Their entry.json schema4 records static source releases and explicit visual residuals, without implying audio, animation or interaction review.

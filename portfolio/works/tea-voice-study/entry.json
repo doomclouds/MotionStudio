@@ -1,0 +1,241 @@
+{
+  "schema": 4,
+  "id": "tea-voice-study",
+  "version": "1.0.0",
+  "title": "茶话声 · 声音品牌完整首屏静态复刻",
+  "status": "source-release",
+  "unofficial_recreation": true,
+  "original": {
+    "author": "alchaincyf (花叔 · 花生)",
+    "title": "Huashu cinematic sound visualization design specimen",
+    "url": "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/web/08-cinematic-sound-viz.html"
+  },
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "LICENSES/NotoSansSC-OFL.txt",
+      "LICENSES/Sora-OFL.txt",
+      "LICENSES/huashu-MIT-LICENSE.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/LICENSE",
+      "https://github.com/google/fonts"
+    ]
+  },
+  "files": [
+    {
+      "path": "CREDITS.md",
+      "sha256": "30c6464d91e750c5e97e7060fc7e7db14f28d16b151f76f4805953c872183247",
+      "role": "documentation"
+    },
+    {
+      "path": "LICENSES/NotoSansSC-OFL.txt",
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/Sora-OFL.txt",
+      "sha256": "f2b40fdea617aa6492246a6a1e57a729dc7a1136daa6af11edab343ee7f6fe85",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/huashu-MIT-LICENSE.txt",
+      "sha256": "6d6a2a9caf2e6d2b76974050427053b2892d8aa4c33fd168ce63a537fcee9d96",
+      "role": "license"
+    },
+    {
+      "path": "README.md",
+      "sha256": "7c3da6cc2830af050064c0918b9103cf9695b5bb1ec873e3d0e5060d60a1d039",
+      "role": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "73c6d71dd8f6463641672cefae8077f26ac769892dda22027fd59648723aa343",
+      "role": "cover"
+    },
+    {
+      "path": "design/VISUAL-REASONING.md",
+      "sha256": "e80b7d4b29b9a841bba9e56908cf63540f36a705170acea22b2e30f2d46da445",
+      "role": "documentation"
+    },
+    {
+      "path": "design/content.json",
+      "sha256": "5f39f66fdef38098a054069a5219f425bc2925cd0611a4d4deb5dfa965e6725b",
+      "role": "config"
+    },
+    {
+      "path": "design/scene.mjs",
+      "sha256": "efc8a02f115cf911ff4cdc96858903271fb74161f042cf9c5ba09dc871582755",
+      "role": "source"
+    },
+    {
+      "path": "design/waveform.json",
+      "sha256": "f65a95a5fe5d92e144f883dd11099e675754d15064614b061d82970697ca61ad",
+      "role": "config"
+    },
+    {
+      "path": "font-inputs.json",
+      "sha256": "c45d1ff2ee76cb2948fe30fc3da34b12fd4135b09e79bbec02595dd134bc2835",
+      "role": "config"
+    },
+    {
+      "path": "fonts.lock.json",
+      "sha256": "6cf863df5de5c7295aeddadac45edfdac328ace1a80d7de7cf23fe31011828cf",
+      "role": "config"
+    },
+    {
+      "path": "locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "role": "lock"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "c97986608711fff48e780026471834a114f117d30fd4f1b15c3e76b21a760a46",
+      "role": "lock"
+    },
+    {
+      "path": "prepare-fonts.py",
+      "sha256": "10625f0855659bd2e037bbbfc033df848f3783d8eb7063cd8be1beecff3308e2",
+      "role": "source"
+    },
+    {
+      "path": "verify.mjs",
+      "sha256": "6db12e8112da3f55299c99831b528f90365000f593cde65765d836a13df9db00",
+      "role": "source"
+    }
+  ],
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "locks/npm-package-lock.json"
+    }
+  ],
+  "render": {
+    "entrypoint": "design/scene.mjs",
+    "width": 1200,
+    "height": 750
+  },
+  "resources": [
+    {
+      "id": "teasans300",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "c3b09e83d97f8ef5aa3fe3d9dfc33efbd7440aa8ecb7eb5ea48cd4f45fd9ed12",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "TeaSans300.ttf",
+      "bytes": 85372,
+      "instructions": "Supply licensed original fonts externally, run prepare-fonts.py; point TEA_FONT_DIR at the verified derived font directory."
+    },
+    {
+      "id": "teasans400",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "8e63ab18b4ddc1a4a31b1ac8b2201808008a05be92b6c75ab7642cdd2009a5e9",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "TeaSans400.ttf",
+      "bytes": 85312,
+      "instructions": "Supply licensed original fonts externally, run prepare-fonts.py; point TEA_FONT_DIR at the verified derived font directory."
+    },
+    {
+      "id": "teasans500",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "998c3a16daa82968cb099ccfe3d7b23bb86fa851cc14488610a6bc44215078dd",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "TeaSans500.ttf",
+      "bytes": 85272,
+      "instructions": "Supply licensed original fonts externally, run prepare-fonts.py; point TEA_FONT_DIR at the verified derived font directory."
+    },
+    {
+      "id": "teasans700",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "e90cf46abe8899373c230785e19360da18511eb6ec7e224dce1c4e76527260e2",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "TeaSans700.ttf",
+      "bytes": 86144,
+      "instructions": "Supply licensed original fonts externally, run prepare-fonts.py; point TEA_FONT_DIR at the verified derived font directory."
+    },
+    {
+      "id": "teasans900",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "ea24fb827fd8e56b60974c28f467ad9b536cf0f6ab8b6d632f09fd71921ead6b",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "TeaSans900.ttf",
+      "bytes": 85956,
+      "instructions": "Supply licensed original fonts externally, run prepare-fonts.py; point TEA_FONT_DIR at the verified derived font directory."
+    },
+    {
+      "id": "teasora300",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/Sora-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/sora",
+      "sha256": "70e8ccc9dc87f7cd480b2109466ca7a5f044a5eaadc95f69ad913d585a848849",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "TeaSora300.ttf",
+      "bytes": 23028,
+      "instructions": "Supply licensed original fonts externally, run prepare-fonts.py; point TEA_FONT_DIR at the verified derived font directory."
+    },
+    {
+      "id": "teasora500",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/Sora-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/sora",
+      "sha256": "8db3b0c5965ad9367356900df22c3f3618415f722e95e7989a6ccd8de2c24b02",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "TeaSora500.ttf",
+      "bytes": 22988,
+      "instructions": "Supply licensed original fonts externally, run prepare-fonts.py; point TEA_FONT_DIR at the verified derived font directory."
+    },
+    {
+      "id": "teasora800",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/Sora-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/sora",
+      "sha256": "1f8ff09b601a0c0918b2746bfc8ac524e5a79bdd1f806b6e84fe2382f6881379",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "TeaSora800.ttf",
+      "bytes": 23044,
+      "instructions": "Supply licensed original fonts externally, run prepare-fonts.py; point TEA_FONT_DIR at the verified derived font directory."
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "8bbaf578598d21997385be45c59385c92331fa339e5ff7276d2e22127ef422a2",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "Full static frame and critical details independently reviewed; labels slightly thin, local font rasterization and cleaner waveform edges remain. Original text/wave overlap readability risk retained. No browser, interaction, audio or animation validation."
+    }
+  }
+}

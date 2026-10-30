@@ -1,0 +1,34 @@
+{
+  "environment": "MUQI_FONT_DIR",
+  "source_fonts": [
+    {
+      "file": "NotoSansSC-variable.ttf",
+      "sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+      "official_family_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "prefix": "MuqiSans",
+      "weights": [
+        400,
+        500,
+        600,
+        700,
+        900
+      ],
+      "notice": "LICENSES/NotoSansSC-OFL.txt"
+    },
+    {
+      "file": "HankenGrotesk-variable.ttf",
+      "sha256": "813b3f8fa0965405669a89b38e51bbefd95eef6b8e20d1cb2d8c10cce062662f",
+      "official_family_url": "https://github.com/google/fonts/tree/main/ofl/hankengrotesk",
+      "prefix": "MuqiLatin",
+      "weights": [
+        400,
+        500,
+        600,
+        700
+      ],
+      "notice": "LICENSES/HankenGrotesk-OFL.txt"
+    }
+  ],
+  "font_binaries_bundled": false,
+  "fonttools": "4.61.1"
+}

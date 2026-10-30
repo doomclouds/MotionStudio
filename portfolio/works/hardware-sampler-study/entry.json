@@ -1,0 +1,184 @@
+{
+  "schema": 4,
+  "id": "hardware-sampler-study",
+  "version": "1.0.0",
+  "title": "采样台 · 硬件面板三屏静态复刻",
+  "status": "source-release",
+  "unofficial_recreation": true,
+  "original": {
+    "author": "alchaincyf (花叔 · 花生)",
+    "title": "Huashu app/01-hardware-panel design specimen",
+    "url": "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/app/01-hardware-panel.html"
+  },
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "LICENSES/NotoSans-OFL.txt",
+      "LICENSES/SpaceMono-OFL.txt",
+      "LICENSES/doto-OFL.txt",
+      "LICENSES/huashu-MIT-LICENSE.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/LICENSE",
+      "https://github.com/google/fonts"
+    ]
+  },
+  "files": [
+    {
+      "path": "CREDITS.md",
+      "sha256": "62cb2513c7344df2152a6637cad3d0c1ac1f3479c22004fcfa88813bfe0de012",
+      "role": "documentation"
+    },
+    {
+      "path": "DESIGN-REASONING.md",
+      "sha256": "b97b030a914f9ba9e9b84e0e52c8bfd058df8c228613fcfc3fa0964490281a8e",
+      "role": "documentation"
+    },
+    {
+      "path": "LICENSES/NotoSans-OFL.txt",
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/SpaceMono-OFL.txt",
+      "sha256": "8e4ee42b2553e1e01504e61cb0d46d148cd8c9e5eacaa3622a7df2d4f2955b9f",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/doto-OFL.txt",
+      "sha256": "26a7b58bdba6cda8a78ca6e8b3791d8013b8abc6d5e6519f84193893aee02020",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/huashu-MIT-LICENSE.txt",
+      "sha256": "6d6a2a9caf2e6d2b76974050427053b2892d8aa4c33fd168ce63a537fcee9d96",
+      "role": "license"
+    },
+    {
+      "path": "README.md",
+      "sha256": "017de27f1ca24ee5b93802a9c414a75a8767396925cf7ca72278db7b5ef6db05",
+      "role": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "98f00db4ebf08339a2e55975ce0133cf65ce5a029460db108deaef557852b766",
+      "role": "cover"
+    },
+    {
+      "path": "design/scene.mjs",
+      "sha256": "67b691370c82567452a1acd4395a9719050d0e835b721c201d89da037b6fe759",
+      "role": "source"
+    },
+    {
+      "path": "font-charset.txt",
+      "sha256": "ab6b67b6203dcf4064767fc7cea1b9e1e1b24e7f679e31ba6782c4d0ddbded7a",
+      "role": "documentation"
+    },
+    {
+      "path": "font-inputs.json",
+      "sha256": "dc328c90cd991a76be79e1855303285d1d68a6e543b14bf2e1bff9494b7b4f39",
+      "role": "config"
+    },
+    {
+      "path": "locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "role": "lock"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "c97986608711fff48e780026471834a114f117d30fd4f1b15c3e76b21a760a46",
+      "role": "lock"
+    },
+    {
+      "path": "prepare-fonts.py",
+      "sha256": "ebd97e644049dc7cc7488f7e694f43c38e04f28b014b4054e0b9802eef828587",
+      "role": "source"
+    }
+  ],
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "locks/npm-package-lock.json"
+    }
+  ],
+  "render": {
+    "entrypoint": "design/scene.mjs",
+    "width": 1200,
+    "height": 750
+  },
+  "resources": [
+    {
+      "id": "doto900",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/doto-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/doto",
+      "sha256": "81ef736e51878dba1c564c0f66202bda1a854d9b70199af13aa4a89a1600a41b",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Doto900.ttf",
+      "bytes": 140832,
+      "instructions": "Provide licensed font in HARDWARE_FONT_DIR; see prepare-fonts.py. Different input font versions may change rasterization."
+    },
+    {
+      "id": "sans500",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSans-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "2be2403329387dd5f6ae80a34ce0bd5e0e8451e27937d702fd9bcded7bb9baf2",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Sans500.ttf",
+      "bytes": 27064,
+      "instructions": "Provide licensed font in HARDWARE_FONT_DIR; see prepare-fonts.py. Different input font versions may change rasterization."
+    },
+    {
+      "id": "sans700",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSans-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "9edd3b619c844cc7151a7285e6b26843fdd137dbc57ea5028d288730603eefbd",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Sans700.ttf",
+      "bytes": 27044,
+      "instructions": "Provide licensed font in HARDWARE_FONT_DIR; see prepare-fonts.py. Different input font versions may change rasterization."
+    },
+    {
+      "id": "spacemono-bold",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/SpaceMono-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/spacemono",
+      "sha256": "405e73d41afb7e5906efce206a326af5c956f38e255f35421c260e861e599c59",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "SpaceMono-Bold.ttf",
+      "bytes": 98232,
+      "instructions": "Provide licensed font in HARDWARE_FONT_DIR; see prepare-fonts.py. Different input font versions may change rasterization."
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "23dfb38b717efb1bfb089100b12fff7be06343919e77db6cd81b25edadd37b10",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "Full still and details compared independently; font rasterization, fine material and original JPEG differences remain. Static only, no browser/interaction/video validation."
+    }
+  }
+}
