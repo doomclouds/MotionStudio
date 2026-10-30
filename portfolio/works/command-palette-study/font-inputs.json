@@ -1,0 +1,152 @@
+{
+  "originalInputs": [
+    {
+      "filename": "DejaVuSans.ttf",
+      "sha256": "57f73e11f51999432bf7ab22ce55b6f945d5eca1bf824404cfa9ec2e3718c84e",
+      "source_url": "https://github.com/dejavu-fonts/dejavu-fonts",
+      "provenance": "system DejaVu Sans 2.37, exact input SHA locked; DejaVu/Bitstream Vera copyright, not OFL"
+    },
+    {
+      "filename": "Inter-var.ttf",
+      "sha256": "c8d76e1cb2a0a7cfbbae1e390be4e4b942b27f99ec07e1024b1fc916045eed09",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/inter"
+    },
+    {
+      "filename": "JetBrains-variable.ttf",
+      "sha256": "48715a42ec242c21e9f02692891e147d022299a52e48d5e413e1a942193ffeda",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/jetbrainsmono"
+    },
+    {
+      "filename": "NotoSansSC-variable.ttf",
+      "sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc"
+    }
+  ],
+  "derived": [
+    {
+      "source": "NotoSansSC-variable.ttf",
+      "name": "SCSans400",
+      "weight": 400
+    },
+    {
+      "source": "NotoSansSC-variable.ttf",
+      "name": "SCSans500",
+      "weight": 500
+    },
+    {
+      "source": "NotoSansSC-variable.ttf",
+      "name": "SCSans600",
+      "weight": 600
+    },
+    {
+      "source": "NotoSansSC-variable.ttf",
+      "name": "SCSans700",
+      "weight": 700
+    },
+    {
+      "source": "Inter-var.ttf",
+      "name": "SCInter400",
+      "weight": 400
+    },
+    {
+      "source": "Inter-var.ttf",
+      "name": "SCInter500",
+      "weight": 500
+    },
+    {
+      "source": "Inter-var.ttf",
+      "name": "SCInter600",
+      "weight": 600
+    },
+    {
+      "source": "JetBrains-variable.ttf",
+      "name": "SCMono400",
+      "weight": 400
+    },
+    {
+      "source": "JetBrains-variable.ttf",
+      "name": "SCMono500",
+      "weight": 500
+    },
+    {
+      "source": "JetBrains-variable.ttf",
+      "name": "SCMono700",
+      "weight": 700
+    },
+    {
+      "source": "DejaVuSans.ttf",
+      "name": "SCSymbols",
+      "weight": null
+    }
+  ],
+  "outputNames": [
+    "SCSans400.ttf",
+    "SCSans500.ttf",
+    "SCSans600.ttf",
+    "SCSans700.ttf",
+    "SCInter400.ttf",
+    "SCInter500.ttf",
+    "SCInter600.ttf",
+    "SCMono400.ttf",
+    "SCMono500.ttf",
+    "SCMono700.ttf",
+    "SCSymbols.ttf"
+  ],
+  "expectedOutputs": [
+    {
+      "filename": "SCSans400.ttf",
+      "sha256": "1bc22f274f98ba93d7b2f537ab51bffa49275ce26861d4a710ff87fa37fb0aea",
+      "bytes": 104468
+    },
+    {
+      "filename": "SCSans500.ttf",
+      "sha256": "c46036972a20278f7b326f177d5ffed3b6f24937d8df12fc81abd37e7a7af267",
+      "bytes": 104404
+    },
+    {
+      "filename": "SCSans600.ttf",
+      "sha256": "1a0fe92f8300572c845bc5566047dda8a77bfae35048d6b17cf818a118744650",
+      "bytes": 104388
+    },
+    {
+      "filename": "SCSans700.ttf",
+      "sha256": "00b12404c2a3e6ed5d30b8951c51db0bf849074f5ad13fb3e4233022539e88b7",
+      "bytes": 105252
+    },
+    {
+      "filename": "SCInter400.ttf",
+      "sha256": "fe1d8d9ecd869b351cb00c32019aec5ac366c5cc5547294b762e9fd3ad6f14c2",
+      "bytes": 60616
+    },
+    {
+      "filename": "SCInter500.ttf",
+      "sha256": "f087f9b725da52544e7be1f92b63fca864e5ca1e670b6cb7540ffd229d902645",
+      "bytes": 60632
+    },
+    {
+      "filename": "SCInter600.ttf",
+      "sha256": "53139454069010856ffefd0034b02e2c2513579acb3b7c14a61618bd69b432e2",
+      "bytes": 60740
+    },
+    {
+      "filename": "SCMono400.ttf",
+      "sha256": "d4ca9cf0b973b50df7fc67898cf4d4235a86f0c79dd47d1389332565ddfc98eb",
+      "bytes": 46696
+    },
+    {
+      "filename": "SCMono500.ttf",
+      "sha256": "aba91c5ef580144120ed6c4d49131b033ae991db5ba74b70482d6aa7080d0882",
+      "bytes": 46676
+    },
+    {
+      "filename": "SCMono700.ttf",
+      "sha256": "b3e959fd9ed5f3a0a34fd1650587a0601b007f3be760219eddf0cf697fd0acb5",
+      "bytes": 46640
+    },
+    {
+      "filename": "SCSymbols.ttf",
+      "sha256": "614abbd29542ac50122512be54ade7c98b98b9ed8966bce9cd72a57377f6ef8b",
+      "bytes": 29956
+    }
+  ]
+}

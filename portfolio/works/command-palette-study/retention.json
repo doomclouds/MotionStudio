@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "workId": "command-palette-study",
+  "kind": "fixed-static-design",
+  "canvas": {
+    "width": 1200,
+    "height": 750
+  },
+  "entrypoint": "design/scene.mjs",
+  "decisionCard": "DESIGN-RETENTION.md",
+  "sourceAnalysis": [
+    "DESIGN-REASONING.md"
+  ],
+  "ruleRefs": [],
+  "ruleStatus": "Case decision card and local recipe, no new registered public family.",
+  "assetUsage": [
+    {
+      "familyId": "design.material-surfaces.v1",
+      "mode": "runtime-import",
+      "modulePath": "engine/design-elements/material-surfaces.mjs",
+      "moduleSha256": "70bf1fcfa89bfbf911f5cf735b1b08e8ae7f360e43bd43a8c831efef579696eb",
+      "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
+      "callsite": "design/scene.mjs",
+      "importToken": "material-surfaces.mjs",
+      "callToken": "surface",
+      "visibleRole": "暗色桌面面板底层",
+      "snapshotPath": null,
+      "executionEvidence": {
+        "status": "MATCHED_ACCEPTED_FRAME",
+        "recordId": "b09-native-restore-command-palette-study",
+        "sha256": "a7731b5ce63a065eb34aad3c488ca89f5dd4a49b3538119a1ffa80908dbf345a",
+        "frameSha256": "0d43c3b37b0fd575e1a6ea22ced93667a0aaefd49c0630c43571d60ea0f6d828",
+        "storage": "SCRATCH_LOCAL_ONLY",
+        "durableStorage": "NOT_LOCATED",
+        "note": "Author clean external-font restore matched full accepted Native frame; scene call receipt, not independent instrumentation or new aesthetic review."
+      }
+    }
+  ],
+  "nonAssetNote": "Command rows are case-local same-code composition; brand-role JSON is a design decision record, not an automatic compositor or public family.",
+  "evidence": {
+    "acceptanceSource": "entry.json#/acceptance",
+    "renderHashSource": "entry.json#/cover/source_sha256",
+    "publicCover": "cover.jpg",
+    "comparisonBundle": {
+      "status": "NOT_PUBLISHED",
+      "recordId": "b09-command-visual-report",
+      "sha256": "e0999d921bbface1f6d708ee79f273e7b1c0cb29ff9bb6371c0d5a89b2c08177",
+      "storage": "SCRATCH_LOCAL_ONLY",
+      "durableStorage": "NOT_LOCATED",
+      "note": "HTML report container, not PNG. Embedded image bytes verified; persistent storage not checked."
+    },
+    "independentReview": {
+      "status": "PRIVATE_RECORD_LOCATED",
+      "recordId": "b09-independent-visual-review",
+      "sha256": "794bdf5dc51d52618d8b25c0105f3c30d399ccc065283fccc1acec9594dfa3c5",
+      "storage": "PRIVATE_OWNER_PAGE",
+      "durableStorage": "ACCESS_VERIFIED",
+      "note": "最终全批独审原文已存仅所有者Page并读回原字节SHA；不是新增审美验收。"
+    },
+    "visualReport": {
+      "recordId": "b09-verified-private-report-command",
+      "sha256": "e0999d921bbface1f6d708ee79f273e7b1c0cb29ff9bb6371c0d5a89b2c08177",
+      "storage": "PRIVATE_LIBRARY",
+      "durableStorage": "ACCESS_VERIFIED",
+      "acceptedFrameBinding": "EXACT_PIXELS",
+      "status": "NOT_PUBLISHED",
+      "artifactKind": "html-report",
+      "note": "实际取回私有Library HTML核终审容器SHA，全部嵌图可解码；原尺寸/无边并排半图像素匹配未建立不推错版。不是浏览器或新增审美验证。"
+    }
+  },
+  "motionTransfer": {
+    "status": "NOT_TESTED",
+    "note": "Fixed static only; no keyboard, responsive, performance or motion verification."
+  }
+}

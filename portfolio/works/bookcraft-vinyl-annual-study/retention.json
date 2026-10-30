@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "workId": "bookcraft-vinyl-annual-study",
+  "kind": "fixed-static-design",
+  "canvas": {
+    "width": 1200,
+    "height": 750
+  },
+  "entrypoint": "design/scene.mjs",
+  "decisionCard": "DESIGN-RETENTION.md",
+  "sourceAnalysis": [
+    "design/DESIGN-REASONING.md"
+  ],
+  "ruleRefs": [],
+  "ruleStatus": "Case arithmetic/semantic preflight, not registered shared family.",
+  "assetUsage": [],
+  "nonAssetNote": "No public family fits without altering source; case-local metric and half-unit validations are not drawing families.",
+  "evidence": {
+    "acceptanceSource": "entry.json#/acceptance",
+    "renderHashSource": "entry.json#/cover/source_sha256",
+    "publicCover": "cover.jpg",
+    "comparisonBundle": {
+      "status": "NOT_PUBLISHED",
+      "recordId": "b09-book-visual-report",
+      "sha256": "4b81e097a61afd19c62b63a84cfa12e1607751ad1a46f9e184dbaf26fbd63333",
+      "storage": "SCRATCH_LOCAL_ONLY",
+      "durableStorage": "NOT_LOCATED",
+      "note": "HTML report container, not PNG. Embedded image bytes verified; persistent storage not checked."
+    },
+    "independentReview": {
+      "status": "PRIVATE_RECORD_LOCATED",
+      "recordId": "b09-independent-visual-review",
+      "sha256": "794bdf5dc51d52618d8b25c0105f3c30d399ccc065283fccc1acec9594dfa3c5",
+      "storage": "PRIVATE_OWNER_PAGE",
+      "durableStorage": "ACCESS_VERIFIED",
+      "note": "最终全批独审原文已存仅所有者Page并读回原字节SHA；不是新增审美验收。"
+    },
+    "visualReport": {
+      "recordId": "b09-verified-private-report-book",
+      "sha256": "4b81e097a61afd19c62b63a84cfa12e1607751ad1a46f9e184dbaf26fbd63333",
+      "storage": "PRIVATE_LIBRARY",
+      "durableStorage": "ACCESS_VERIFIED",
+      "acceptedFrameBinding": "EXACT_PIXELS",
+      "status": "NOT_PUBLISHED",
+      "artifactKind": "html-report",
+      "note": "实际取回私有Library HTML核终审容器SHA，全部嵌图可解码；原尺寸/无边并排半图像素匹配未建立不推错版。不是浏览器或新增审美验证。"
+    }
+  },
+  "motionTransfer": {
+    "status": "NOT_TESTED",
+    "note": "Fixed Native static only; no factual ledger/interaction/motion verification."
+  }
+}

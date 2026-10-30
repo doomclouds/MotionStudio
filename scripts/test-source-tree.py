@@ -142,6 +142,11 @@ class SourceTreeFixtures(unittest.TestCase):
             'portfolio/works/mountain-book-jacket-study/cover.jpg': 'f90472b7510634a7a855e3bfab20c0e4f91c16bf6a0b49b1377ee4c780bd2144',
             'portfolio/works/scientific-figure-study/cover.jpg': 'cf0f57eef7b5a588912f92b7b9a5fa1f7d46d4aec494c9ce42414842c14b07ca',
             'portfolio/works/theatre-manifesto-study/cover.jpg': '186ebadd944bbdbef3eb1dfc86034029d11c7b6652ab363cc13a4102a7a0ddd0',
+            'portfolio/works/bookcraft-vinyl-annual-study/cover.jpg': 'e75311525d8cf18afce8c89872dd8677e72ca198e0bbfc90d0894cb9921e3dac',
+            'portfolio/works/command-palette-study/cover.jpg': '2a4b676ad49db5bdd097e10ab7ae35c2f4f5a1d0962989c76f5341b169bdb3d8',
+            'portfolio/works/market-livingroom-study/cover.jpg': '38c4cdf514c1150df39da015cae5d135290e918dc40cb3c75f39a286e170726a',
+            'portfolio/works/vinyl-isotype-study/cover.jpg': '17b9b7282aafd6d089050b8dd1c303968579b28075bcb34aa11af65a18e40412',
+            'portfolio/works/xie-symbol-study/cover.jpg': '3857723b400db96dadb7fec8e274751eaa671364cfd8fce9d990e476ae094834',
             'portfolio/works/irreverent-pop-study/cover.jpg': 'df8f621e07865727a8d2a99fe66d9ce23e7b5747861732a14a503152dff72f35',
             'portfolio/works/hk-street-signs-study/cover.jpg': '6d83409c6444e4ea6bd903075b7652300f6be7a066c15aa4bb0f06131aae4223',
             'portfolio/works/pixel-hiking-study/cover.jpg': '3e520725c9ca504d5b1e6cf45880f29bec31ce8bd3f1b03ffbd77af4d79eb82b',
@@ -464,6 +469,46 @@ class SourceTreeFixtures(unittest.TestCase):
         self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
     def test_theatre_manifesto_study_cover_wrong_path_rejected(self):
         self.add('portfolio/works/theatre-manifesto-study/other.jpg',(ROOT/'portfolio/works/theatre-manifesto-study/cover.jpg').read_bytes());self.audit(False)
+    def test_exact_bookcraft_vinyl_annual_study_cover_allowed(self):
+        name='portfolio/works/bookcraft-vinyl-annual-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes());self.audit(True)
+    def test_bookcraft_vinyl_annual_study_cover_tamper_rejected(self):
+        name='portfolio/works/bookcraft-vinyl-annual-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
+    def test_bookcraft_vinyl_annual_study_cover_wrong_path_rejected(self):
+        self.add('portfolio/works/bookcraft-vinyl-annual-study/other.jpg',(ROOT/'portfolio/works/bookcraft-vinyl-annual-study/cover.jpg').read_bytes());self.audit(False)
+    def test_exact_command_palette_study_cover_allowed(self):
+        name='portfolio/works/command-palette-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes());self.audit(True)
+    def test_command_palette_study_cover_tamper_rejected(self):
+        name='portfolio/works/command-palette-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
+    def test_command_palette_study_cover_wrong_path_rejected(self):
+        self.add('portfolio/works/command-palette-study/other.jpg',(ROOT/'portfolio/works/command-palette-study/cover.jpg').read_bytes());self.audit(False)
+    def test_exact_market_livingroom_study_cover_allowed(self):
+        name='portfolio/works/market-livingroom-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes());self.audit(True)
+    def test_market_livingroom_study_cover_tamper_rejected(self):
+        name='portfolio/works/market-livingroom-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
+    def test_market_livingroom_study_cover_wrong_path_rejected(self):
+        self.add('portfolio/works/market-livingroom-study/other.jpg',(ROOT/'portfolio/works/market-livingroom-study/cover.jpg').read_bytes());self.audit(False)
+    def test_exact_vinyl_isotype_study_cover_allowed(self):
+        name='portfolio/works/vinyl-isotype-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes());self.audit(True)
+    def test_vinyl_isotype_study_cover_tamper_rejected(self):
+        name='portfolio/works/vinyl-isotype-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
+    def test_vinyl_isotype_study_cover_wrong_path_rejected(self):
+        self.add('portfolio/works/vinyl-isotype-study/other.jpg',(ROOT/'portfolio/works/vinyl-isotype-study/cover.jpg').read_bytes());self.audit(False)
+    def test_exact_xie_symbol_study_cover_allowed(self):
+        name='portfolio/works/xie-symbol-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes());self.audit(True)
+    def test_xie_symbol_study_cover_tamper_rejected(self):
+        name='portfolio/works/xie-symbol-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
+    def test_xie_symbol_study_cover_wrong_path_rejected(self):
+        self.add('portfolio/works/xie-symbol-study/other.jpg',(ROOT/'portfolio/works/xie-symbol-study/cover.jpg').read_bytes());self.audit(False)
     def test_exact_irreverent_pop_study_cover_allowed(self):
         name='portfolio/works/irreverent-pop-study/cover.jpg'
         self.add(name,(ROOT/name).read_bytes());self.audit(True)

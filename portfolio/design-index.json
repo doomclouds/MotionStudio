@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "countingUnit": "stable callable family; no function, case or snapshot duplication",
-  "staticWorks": 41,
+  "staticWorks": 46,
   "families": [
     {
       "id": "design.print-poster.v1",
@@ -36,7 +36,8 @@
       ],
       "actualUsers": [
         "bauhaus-theatre-study",
-        "pixel-hiking-study"
+        "pixel-hiking-study",
+        "xie-symbol-study"
       ]
     },
     {
@@ -48,6 +49,7 @@
         "vinyl-study"
       ],
       "actualUsers": [
+        "command-palette-study",
         "friendly-fintech-study",
         "health-color-code-study",
         "irreverent-pop-study",
@@ -194,6 +196,20 @@
       "motionTransfer": "NOT_TESTED"
     },
     {
+      "id": "bookcraft-vinyl-annual-study",
+      "decisionCard": "works/bookcraft-vinyl-annual-study/DESIGN-RETENTION.md",
+      "sourceAnalysis": [
+        "design/DESIGN-REASONING.md"
+      ],
+      "assetUsage": [],
+      "visualStatus": "PARTIAL",
+      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
+      "comparisonBundle": "NOT_PUBLISHED",
+      "reportStorage": "PRIVATE_LIBRARY",
+      "acceptedFrameBinding": "EXACT_PIXELS",
+      "motionTransfer": "NOT_TESTED"
+    },
+    {
       "id": "bus-morning-study",
       "decisionCard": "works/bus-morning-study/DESIGN-RETENTION.md",
       "sourceAnalysis": [
@@ -205,6 +221,42 @@
       "comparisonBundle": "NOT_PUBLISHED",
       "reportStorage": "PRIVATE_LIBRARY",
       "acceptedFrameBinding": "NOT_ESTABLISHED",
+      "motionTransfer": "NOT_TESTED"
+    },
+    {
+      "id": "command-palette-study",
+      "decisionCard": "works/command-palette-study/DESIGN-RETENTION.md",
+      "sourceAnalysis": [
+        "DESIGN-REASONING.md"
+      ],
+      "assetUsage": [
+        {
+          "familyId": "design.material-surfaces.v1",
+          "mode": "runtime-import",
+          "modulePath": "engine/design-elements/material-surfaces.mjs",
+          "moduleSha256": "70bf1fcfa89bfbf911f5cf735b1b08e8ae7f360e43bd43a8c831efef579696eb",
+          "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
+          "callsite": "design/scene.mjs",
+          "importToken": "material-surfaces.mjs",
+          "callToken": "surface",
+          "visibleRole": "暗色桌面面板底层",
+          "snapshotPath": null,
+          "executionEvidence": {
+            "status": "MATCHED_ACCEPTED_FRAME",
+            "recordId": "b09-native-restore-command-palette-study",
+            "sha256": "a7731b5ce63a065eb34aad3c488ca89f5dd4a49b3538119a1ffa80908dbf345a",
+            "frameSha256": "0d43c3b37b0fd575e1a6ea22ced93667a0aaefd49c0630c43571d60ea0f6d828",
+            "storage": "SCRATCH_LOCAL_ONLY",
+            "durableStorage": "NOT_LOCATED",
+            "note": "Author clean external-font restore matched full accepted Native frame; scene call receipt, not independent instrumentation or new aesthetic review."
+          }
+        }
+      ],
+      "visualStatus": "PARTIAL",
+      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
+      "comparisonBundle": "NOT_PUBLISHED",
+      "reportStorage": "PRIVATE_LIBRARY",
+      "acceptedFrameBinding": "EXACT_PIXELS",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -474,6 +526,21 @@
     {
       "id": "mandala-observatory-study",
       "decisionCard": "works/mandala-observatory-study/DESIGN-RETENTION.md",
+      "sourceAnalysis": [
+        "design/DESIGN-ANALYSIS.md",
+        "design/SETTLEMENT.md"
+      ],
+      "assetUsage": [],
+      "visualStatus": "PARTIAL",
+      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
+      "comparisonBundle": "NOT_PUBLISHED",
+      "reportStorage": "PRIVATE_LIBRARY",
+      "acceptedFrameBinding": "NOT_ESTABLISHED",
+      "motionTransfer": "NOT_TESTED"
+    },
+    {
+      "id": "market-livingroom-study",
+      "decisionCard": "works/market-livingroom-study/DESIGN-RETENTION.md",
       "sourceAnalysis": [
         "design/DESIGN-ANALYSIS.md",
         "design/SETTLEMENT.md"
@@ -1043,6 +1110,20 @@
       "motionTransfer": "NOT_TESTED"
     },
     {
+      "id": "vinyl-isotype-study",
+      "decisionCard": "works/vinyl-isotype-study/DESIGN-RETENTION.md",
+      "sourceAnalysis": [
+        "design/DESIGN-REASONING.md"
+      ],
+      "assetUsage": [],
+      "visualStatus": "PARTIAL",
+      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
+      "comparisonBundle": "NOT_PUBLISHED",
+      "reportStorage": "PRIVATE_LIBRARY",
+      "acceptedFrameBinding": "EXACT_PIXELS",
+      "motionTransfer": "NOT_TESTED"
+    },
+    {
       "id": "vinyl-study",
       "decisionCard": "works/vinyl-study/DESIGN-RETENTION.md",
       "sourceAnalysis": [],
@@ -1075,6 +1156,42 @@
         "DESIGN-REASONING.md"
       ],
       "assetUsage": [],
+      "visualStatus": "PARTIAL",
+      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
+      "comparisonBundle": "NOT_PUBLISHED",
+      "reportStorage": "PRIVATE_LIBRARY",
+      "acceptedFrameBinding": "EXACT_PIXELS",
+      "motionTransfer": "NOT_TESTED"
+    },
+    {
+      "id": "xie-symbol-study",
+      "decisionCard": "works/xie-symbol-study/DESIGN-RETENTION.md",
+      "sourceAnalysis": [
+        "DESIGN-REASONING.md"
+      ],
+      "assetUsage": [
+        {
+          "familyId": "design.color-sections.v1",
+          "mode": "runtime-import",
+          "modulePath": "engine/design-elements/color-sections.mjs",
+          "moduleSha256": "cf2cf8ebf1b1bf8bd65dbbaef11f9546db9fe096d3eba7a0b18936e616ec2dd8",
+          "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
+          "callsite": "design/scene.mjs",
+          "importToken": "color-sections.mjs",
+          "callToken": "sections",
+          "visibleRole": "640/560红白品牌分区",
+          "snapshotPath": null,
+          "executionEvidence": {
+            "status": "MATCHED_ACCEPTED_FRAME",
+            "recordId": "b09-native-restore-xie-symbol-study",
+            "sha256": "8464e1b7a2e9ddbe47c0f087f7a3e2541b426eca5e7ca835d15d5fcd3d3c2377",
+            "frameSha256": "d71f1a93ec17de044feb20dc4bb821405dac6e4fa46449744a6119e4bd78fe56",
+            "storage": "SCRATCH_LOCAL_ONLY",
+            "durableStorage": "NOT_LOCATED",
+            "note": "Author clean external-font restore matched full accepted Native frame; scene call receipt, not independent instrumentation or new aesthetic review."
+          }
+        }
+      ],
       "visualStatus": "PARTIAL",
       "reviewEvidence": "PRIVATE_RECORD_LOCATED",
       "comparisonBundle": "NOT_PUBLISHED",

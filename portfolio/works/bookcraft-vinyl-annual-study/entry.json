@@ -1,0 +1,360 @@
+{
+  "schema": 4,
+  "id": "bookcraft-vinyl-annual-study",
+  "version": "1.0.0",
+  "title": "一千二百四十八张 · 完整静态复刻",
+  "status": "source-release",
+  "unofficial_recreation": true,
+  "original": {
+    "author": "alchaincyf (花叔 · 花生)",
+    "title": "Huashu info/18-bookcraft-data",
+    "url": "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/info/18-bookcraft-data.html"
+  },
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "LICENSES/Archivo-OFL.txt",
+      "LICENSES/EBGaramond-OFL.txt",
+      "LICENSES/Fraunces-OFL.txt",
+      "LICENSES/NotoSansSC-OFL.txt",
+      "LICENSES/NotoSerifSC-OFL.txt",
+      "LICENSES/huashu-MIT-LICENSE.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/LICENSE",
+      "https://github.com/google/fonts"
+    ]
+  },
+  "files": [
+    {
+      "path": "CREDITS.md",
+      "sha256": "f79a5cf3e5bd076951fcfe97d5a42931f616c87cbe93d94d58c0ca6b71de3cc0",
+      "role": "documentation"
+    },
+    {
+      "path": "DESIGN-RETENTION.md",
+      "sha256": "3eec024cd109b59f3f32c565553596eba7aec346566f87f5a70116991c954a9f",
+      "role": "documentation"
+    },
+    {
+      "path": "LICENSES/Archivo-OFL.txt",
+      "sha256": "108b4e57c9c796d3d38d0428ca7ee39de47ad93187302718d9b2d8864b9b716b",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/EBGaramond-OFL.txt",
+      "sha256": "0985066662eb755ed3683ae5482a81a9195b49ce3f7e165cc2388b3dbece7dd7",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/Fraunces-OFL.txt",
+      "sha256": "bdf4c22802eaf804f998195871c6b8938aac2ac14b2d78a8bd66a6f1eced833b",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/NotoSansSC-OFL.txt",
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/NotoSerifSC-OFL.txt",
+      "sha256": "5e0da210fb04058a8c0087985d2d456b931c2579811a49655721d3cf0c36b6d6",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/huashu-MIT-LICENSE.txt",
+      "sha256": "6d6a2a9caf2e6d2b76974050427053b2892d8aa4c33fd168ce63a537fcee9d96",
+      "role": "license"
+    },
+    {
+      "path": "README.md",
+      "sha256": "7dcb7333e7f270c5ddde5adc6c6c597ed7cdc84abad0fffb12f40d4e5154842e",
+      "role": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "e75311525d8cf18afce8c89872dd8677e72ca198e0bbfc90d0894cb9921e3dac",
+      "role": "cover"
+    },
+    {
+      "path": "design/DESIGN-REASONING.md",
+      "sha256": "252b95472605e54e9b486e1a3ab3fbfea95d66eebfd7d635bea32b1970051fc0",
+      "role": "documentation"
+    },
+    {
+      "path": "design/narrative-metrics.mjs",
+      "sha256": "396f24a0637a354f1be6c41052df73551daed53b0f3f0a26dd519b6cea629e94",
+      "role": "source"
+    },
+    {
+      "path": "design/scene.mjs",
+      "sha256": "14691c2d412783d9f8c5a535a00b67944007ef86a6ac5875772805609e437ec6",
+      "role": "source"
+    },
+    {
+      "path": "font-inputs.json",
+      "sha256": "b4de31b8b59b40ba4e7d7e111f8e166f3dc8c4e43ebaa5fd1e3c605e559d351e",
+      "role": "config"
+    },
+    {
+      "path": "locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "role": "lock"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "c97986608711fff48e780026471834a114f117d30fd4f1b15c3e76b21a760a46",
+      "role": "lock"
+    },
+    {
+      "path": "prepare-fonts.py",
+      "sha256": "f5b42df61d337bbfa4dc1ae39ce76056b33a64312779f9b1fbbdb234bb3fd5f1",
+      "role": "source"
+    },
+    {
+      "path": "retention.json",
+      "sha256": "b56bad9a45a8012e613e4bd98e6f2372bb7f7ae2c4b0d80473cbfeb30fbda42f",
+      "role": "config"
+    },
+    {
+      "path": "tests/font-coverage.py",
+      "sha256": "20ed931f36e64745339f85f0c4e73b732a5bf5ee9067e66763b619b402cfaf41",
+      "role": "source"
+    },
+    {
+      "path": "tests/recipe.test.mjs",
+      "sha256": "86d9ef4ebb9cc0b3cc3324b6425f42b1e1cc35b721e99a615700af9c5b5996dc",
+      "role": "source"
+    }
+  ],
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "locks/npm-package-lock.json"
+    }
+  ],
+  "render": {
+    "entrypoint": "design/scene.mjs",
+    "width": 1200,
+    "height": 750
+  },
+  "resources": [
+    {
+      "id": "notoserifsc-variable",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSerifSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notoserifsc",
+      "sha256": "050080d9255a86808f2945bffac582b31ef32bc36411ce29563b4961670c66f9",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "NotoSerifSC-variable.ttf",
+      "bytes": 25125512,
+      "instructions": "Provide via BOOKCRAFT_VINYL_FONT_DIR; prepare-fonts.py verifies original and derived identity."
+    },
+    {
+      "id": "fraunces-variable",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/Fraunces-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/fraunces",
+      "sha256": "177ff6c0f14e5550a3c624247cd1189611d4eb65d000b14944c63d967958abbb",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Fraunces-variable.ttf",
+      "bytes": 360440,
+      "instructions": "Provide via BOOKCRAFT_VINYL_FONT_DIR; prepare-fonts.py verifies original and derived identity."
+    },
+    {
+      "id": "archivo-variable",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/Archivo-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/archivo",
+      "sha256": "0e094a7d3c7c4c25cf1310c4b30014f1dae9332220b1c2c88f4fa996f0b05053",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Archivo-variable.ttf",
+      "bytes": 658596,
+      "instructions": "Provide via BOOKCRAFT_VINYL_FONT_DIR; prepare-fonts.py verifies original and derived identity."
+    },
+    {
+      "id": "ebgaramond-variable",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/EBGaramond-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/ebgaramond",
+      "sha256": "ef9512f92f6d579e5dc75af59a5a4b1b8b47d2eda89e00b954d44520e5369027",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "EBGaramond-variable.ttf",
+      "bytes": 851176,
+      "instructions": "Provide via BOOKCRAFT_VINYL_FONT_DIR; prepare-fonts.py verifies original and derived identity."
+    },
+    {
+      "id": "notosanssc-variable",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "NotoSansSC-variable.ttf",
+      "bytes": 17772300,
+      "instructions": "Provide via BOOKCRAFT_VINYL_FONT_DIR; prepare-fonts.py verifies original and derived identity."
+    },
+    {
+      "id": "serif400",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSerifSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notoserifsc",
+      "sha256": "c1db74881b11a682b02bba1015a76ac1df5377c9dae57c88b0f82c7158dfd72e",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Serif400.ttf",
+      "bytes": 74716,
+      "instructions": "Provide via BOOKCRAFT_VINYL_FONT_DIR; prepare-fonts.py verifies original and derived identity."
+    },
+    {
+      "id": "serif500",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSerifSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notoserifsc",
+      "sha256": "98c628f364d90a254b5f49170c2c4b915292cf66369be2f685a1735ed3ffb03b",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Serif500.ttf",
+      "bytes": 74756,
+      "instructions": "Provide via BOOKCRAFT_VINYL_FONT_DIR; prepare-fonts.py verifies original and derived identity."
+    },
+    {
+      "id": "serif700",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSerifSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notoserifsc",
+      "sha256": "9093290df4e5e5de02c1cd605ad5ec109f49dd8793b296ad15e9f4dc4a753205",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Serif700.ttf",
+      "bytes": 74716,
+      "instructions": "Provide via BOOKCRAFT_VINYL_FONT_DIR; prepare-fonts.py verifies original and derived identity."
+    },
+    {
+      "id": "serif900",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSerifSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notoserifsc",
+      "sha256": "9d8ebac7f0eed69e0512f6ec42c85a1b289b58970f00ee774ae0706da20dfe35",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Serif900.ttf",
+      "bytes": 74760,
+      "instructions": "Provide via BOOKCRAFT_VINYL_FONT_DIR; prepare-fonts.py verifies original and derived identity."
+    },
+    {
+      "id": "fraunces900",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/Fraunces-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/fraunces",
+      "sha256": "9bff295dbf669eb42b73345adf567e14c04a96fcad0446e57843ccae106bd6c8",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Fraunces900.ttf",
+      "bytes": 22848,
+      "instructions": "Provide via BOOKCRAFT_VINYL_FONT_DIR; prepare-fonts.py verifies original and derived identity."
+    },
+    {
+      "id": "frauncestext900",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/Fraunces-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/fraunces",
+      "sha256": "a810a1acf296cfa6876f64dec1b2c7155cdf626ea9c3cd340ceab49a1f893193",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "FrauncesText900.ttf",
+      "bytes": 22896,
+      "instructions": "Provide via BOOKCRAFT_VINYL_FONT_DIR; prepare-fonts.py verifies original and derived identity."
+    },
+    {
+      "id": "archivo400",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/Archivo-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/archivo",
+      "sha256": "4ba27f67c2bdff3fc5ac00a443b1a66c7987bd0dfe12b7932314241f2edac94b",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Archivo400.ttf",
+      "bytes": 43424,
+      "instructions": "Provide via BOOKCRAFT_VINYL_FONT_DIR; prepare-fonts.py verifies original and derived identity."
+    },
+    {
+      "id": "archivo700",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/Archivo-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/archivo",
+      "sha256": "bb72deb5d063aedc0b17d5760e67221fd472a93a650fa976c941809ea3fad27d",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Archivo700.ttf",
+      "bytes": 43524,
+      "instructions": "Provide via BOOKCRAFT_VINYL_FONT_DIR; prepare-fonts.py verifies original and derived identity."
+    },
+    {
+      "id": "eb400",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/EBGaramond-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/ebgaramond",
+      "sha256": "7c03de9ceb6d28b81398c504a8579a2625d4d744effc6790a46bfa2652aef61d",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "EB400.ttf",
+      "bytes": 35160,
+      "instructions": "Provide via BOOKCRAFT_VINYL_FONT_DIR; prepare-fonts.py verifies original and derived identity."
+    },
+    {
+      "id": "eb500",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/EBGaramond-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/ebgaramond",
+      "sha256": "60623fe68c0776cb9e62ef85bd1627780384d6a81ce2df2e902a71b1ee41c5d3",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "EB500.ttf",
+      "bytes": 35276,
+      "instructions": "Provide via BOOKCRAFT_VINYL_FONT_DIR; prepare-fonts.py verifies original and derived identity."
+    },
+    {
+      "id": "sans700",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "d4848ab327ee447a4677968fa8267ebd7b5f672432811a3cb471cdc72a881583",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Sans700.ttf",
+      "bytes": 51668,
+      "instructions": "Provide via BOOKCRAFT_VINYL_FONT_DIR; prepare-fonts.py verifies original and derived identity."
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "f69eaecab5e18b2312562b6981a77e038d0975f0336e2b100b2d39536fb2011e",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "Full static independent comparison passed; disclosed glyph/JPEG differences remain. No motion/factual validation."
+    }
+  }
+}

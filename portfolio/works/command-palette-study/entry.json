@@ -1,0 +1,307 @@
+{
+  "schema": 4,
+  "id": "command-palette-study",
+  "version": "1.0.0",
+  "title": "tide · 深色命令面板",
+  "status": "source-release",
+  "unofficial_recreation": true,
+  "original": {
+    "author": "alchaincyf (花叔 · 花生)",
+    "title": "Huashu design specimen",
+    "url": "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/app/08-command-palette.html"
+  },
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "LICENSES/Inter-OFL.txt",
+      "LICENSES/huashu-MIT-LICENSE.txt",
+      "LICENSES/jetbrainsmono-OFL.txt",
+      "LICENSES/NotoSansSC-OFL.txt",
+      "LICENSES/DejaVu-COPYRIGHT.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/LICENSE",
+      "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "https://github.com/google/fonts/tree/main/ofl/inter",
+      "https://github.com/google/fonts/tree/main/ofl/jetbrainsmono",
+      "https://github.com/dejavu-fonts/dejavu-fonts"
+    ]
+  },
+  "files": [
+    {
+      "path": "ASSET-USAGE.md",
+      "sha256": "5070cbd977c9c6001baa9c5699dc5a9640c9a5c6d627928b8256fed206c41714",
+      "role": "documentation"
+    },
+    {
+      "path": "CREDITS.md",
+      "sha256": "61466ff78378190414478fd307969aee0fb45453c239d3d1918a73ac37144db6",
+      "role": "documentation"
+    },
+    {
+      "path": "DESIGN-REASONING.md",
+      "sha256": "ac85c0fecfd6fc06477256b8270904f5120aa3f8109a17f4467b4d142f14184f",
+      "role": "documentation"
+    },
+    {
+      "path": "DESIGN-RETENTION.md",
+      "sha256": "c39f63e54307705817ac9e14672f30a80efac2a3195087bb35af52b839221d96",
+      "role": "documentation"
+    },
+    {
+      "path": "LICENSES/DejaVu-COPYRIGHT.txt",
+      "sha256": "63d3ba759d12804c5b31a9d5940d855c1820d1f5999e6b0872eb1c7ff045fbc9",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/Inter-OFL.txt",
+      "sha256": "67c5d5206b96f8340b95fabd02ae60701e0b20ce2594d976216f1065e5aa3822",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/NotoSansSC-OFL.txt",
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/huashu-MIT-LICENSE.txt",
+      "sha256": "6d6a2a9caf2e6d2b76974050427053b2892d8aa4c33fd168ce63a537fcee9d96",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/jetbrainsmono-OFL.txt",
+      "sha256": "b2fe5e8987594e9ffd1d2ca52a2f5d73eb8335243893c5d6254b5ad69269591d",
+      "role": "license"
+    },
+    {
+      "path": "README.md",
+      "sha256": "35a415ccdeac9c6d0a24e4cb00ea9e43d2f446a39c30b35f874e85f9d5e76f85",
+      "role": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "2a4b676ad49db5bdd097e10ab7ae35c2f4f5a1d0962989c76f5341b169bdb3d8",
+      "role": "cover"
+    },
+    {
+      "path": "design/command-row.mjs",
+      "sha256": "758ea61ff2b91aa669031e0eeb3b56ba01a71129c3e7482e00ec392677c70998",
+      "role": "source"
+    },
+    {
+      "path": "design/scene.mjs",
+      "sha256": "7ad958f27d9cb648e0cb8df213260278eaaf8690c671e1887172ab1c269a5a93",
+      "role": "source"
+    },
+    {
+      "path": "font-charset.txt",
+      "sha256": "e801883ead41a161472be2c96726971670ef68eff6adeeaa5c67260cfa24af73",
+      "role": "documentation"
+    },
+    {
+      "path": "font-inputs.json",
+      "sha256": "031e09693ab0c8b98fc2644ab4ea320eff3cebd17bf40351cc52ca99d4beabf2",
+      "role": "config"
+    },
+    {
+      "path": "locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "role": "lock"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "3376138df78fb0b3f62bc57d80dc440204cbe0a0709a07396e39636873862e6f",
+      "role": "lock"
+    },
+    {
+      "path": "prepare-fonts.py",
+      "sha256": "1382c96afe436f967173a55420718182d057ddee2eeee3c1e7c6d9352035fb71",
+      "role": "source"
+    },
+    {
+      "path": "retention.json",
+      "sha256": "9c39e3ea8f66804024206f0f944f138fcec1dfe13f3eea6dfec19fe4ee109c71",
+      "role": "config"
+    },
+    {
+      "path": "test-command-rows.mjs",
+      "sha256": "87574357c1584a741e237884d739e43de9124482848f9867298be78c47e1de7b",
+      "role": "source"
+    },
+    {
+      "path": "ui-dependencies.json",
+      "sha256": "64674fa4f13ab875ee1a967ebb95447da5762464cbd7396fbc59db84ed9aafd5",
+      "role": "config"
+    }
+  ],
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "locks/npm-package-lock.json"
+    }
+  ],
+  "render": {
+    "entrypoint": "design/scene.mjs",
+    "width": 1200,
+    "height": 750
+  },
+  "resources": [
+    {
+      "id": "scsans400",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "1bc22f274f98ba93d7b2f537ab51bffa49275ce26861d4a710ff87fa37fb0aea",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "SCSans400.ttf",
+      "bytes": 104468,
+      "instructions": "Obtain originalInputs; run prepare-fonts.py. Original and derived hashes fail closed."
+    },
+    {
+      "id": "scsans500",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "c46036972a20278f7b326f177d5ffed3b6f24937d8df12fc81abd37e7a7af267",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "SCSans500.ttf",
+      "bytes": 104404,
+      "instructions": "Obtain originalInputs; run prepare-fonts.py. Original and derived hashes fail closed."
+    },
+    {
+      "id": "scsans600",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "1a0fe92f8300572c845bc5566047dda8a77bfae35048d6b17cf818a118744650",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "SCSans600.ttf",
+      "bytes": 104388,
+      "instructions": "Obtain originalInputs; run prepare-fonts.py. Original and derived hashes fail closed."
+    },
+    {
+      "id": "scsans700",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "00b12404c2a3e6ed5d30b8951c51db0bf849074f5ad13fb3e4233022539e88b7",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "SCSans700.ttf",
+      "bytes": 105252,
+      "instructions": "Obtain originalInputs; run prepare-fonts.py. Original and derived hashes fail closed."
+    },
+    {
+      "id": "scinter400",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/Inter-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/inter",
+      "sha256": "fe1d8d9ecd869b351cb00c32019aec5ac366c5cc5547294b762e9fd3ad6f14c2",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "SCInter400.ttf",
+      "bytes": 60616,
+      "instructions": "Obtain originalInputs; run prepare-fonts.py. Original and derived hashes fail closed."
+    },
+    {
+      "id": "scinter500",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/Inter-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/inter",
+      "sha256": "f087f9b725da52544e7be1f92b63fca864e5ca1e670b6cb7540ffd229d902645",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "SCInter500.ttf",
+      "bytes": 60632,
+      "instructions": "Obtain originalInputs; run prepare-fonts.py. Original and derived hashes fail closed."
+    },
+    {
+      "id": "scinter600",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/Inter-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/inter",
+      "sha256": "53139454069010856ffefd0034b02e2c2513579acb3b7c14a61618bd69b432e2",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "SCInter600.ttf",
+      "bytes": 60740,
+      "instructions": "Obtain originalInputs; run prepare-fonts.py. Original and derived hashes fail closed."
+    },
+    {
+      "id": "scmono400",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/jetbrainsmono-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/jetbrainsmono",
+      "sha256": "d4ca9cf0b973b50df7fc67898cf4d4235a86f0c79dd47d1389332565ddfc98eb",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "SCMono400.ttf",
+      "bytes": 46696,
+      "instructions": "Obtain originalInputs; run prepare-fonts.py. Original and derived hashes fail closed."
+    },
+    {
+      "id": "scmono500",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/jetbrainsmono-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/jetbrainsmono",
+      "sha256": "aba91c5ef580144120ed6c4d49131b033ae991db5ba74b70482d6aa7080d0882",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "SCMono500.ttf",
+      "bytes": 46676,
+      "instructions": "Obtain originalInputs; run prepare-fonts.py. Original and derived hashes fail closed."
+    },
+    {
+      "id": "scmono700",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/jetbrainsmono-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/jetbrainsmono",
+      "sha256": "b3e959fd9ed5f3a0a34fd1650587a0601b007f3be760219eddf0cf697fd0acb5",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "SCMono700.ttf",
+      "bytes": 46640,
+      "instructions": "Obtain originalInputs; run prepare-fonts.py. Original and derived hashes fail closed."
+    },
+    {
+      "id": "scsymbols",
+      "mode": "provide",
+      "license": "DejaVu/Bitstream Vera font terms; external derived font, not distributed",
+      "notice": "LICENSES/DejaVu-COPYRIGHT.txt",
+      "source_url": "https://github.com/dejavu-fonts/dejavu-fonts",
+      "sha256": "614abbd29542ac50122512be54ade7c98b98b9ed8966bce9cd72a57377f6ef8b",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "SCSymbols.ttf",
+      "bytes": 29956,
+      "instructions": "Obtain originalInputs; run prepare-fonts.py. Original and derived hashes fail closed."
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "0d43c3b37b0fd575e1a6ea22ced93667a0aaefd49c0630c43571d60ea0f6d828",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "Full still and details independently reviewed; user retained. Font/icon/JPEG residuals; no interactive keyboard, responsive, factual metrics, performance or motion validation."
+    }
+  }
+}

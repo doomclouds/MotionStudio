@@ -1,0 +1,253 @@
+{
+  "schema": 4,
+  "id": "vinyl-isotype-study",
+  "version": "1.0.0",
+  "title": "唱片销量图形统计 · 完整静态复刻",
+  "status": "source-release",
+  "unofficial_recreation": true,
+  "original": {
+    "author": "alchaincyf (花叔 · 花生)",
+    "title": "Huashu info/05-isotype",
+    "url": "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/info/05-isotype.html"
+  },
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "LICENSES/Jost-OFL.txt",
+      "LICENSES/NotoSansSC-OFL.txt",
+      "LICENSES/huashu-MIT-LICENSE.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/LICENSE",
+      "https://github.com/google/fonts"
+    ]
+  },
+  "files": [
+    {
+      "path": "CREDITS.md",
+      "sha256": "ff47fb4ae31c030c1aa0a2051a5bae1e835da415d5fe1c578bc8c791da88c38f",
+      "role": "documentation"
+    },
+    {
+      "path": "DESIGN-RETENTION.md",
+      "sha256": "64d5cf31f832fdec31f9028a025ff8f303930cd8571dea97ab48acb1930d7249",
+      "role": "documentation"
+    },
+    {
+      "path": "LICENSES/Jost-OFL.txt",
+      "sha256": "1af3438a4d5f0ed2bdbc5751a5a67ebf6d537334161184b7fbb68503ef0ea0c5",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/NotoSansSC-OFL.txt",
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/huashu-MIT-LICENSE.txt",
+      "sha256": "6d6a2a9caf2e6d2b76974050427053b2892d8aa4c33fd168ce63a537fcee9d96",
+      "role": "license"
+    },
+    {
+      "path": "README.md",
+      "sha256": "be21a8b042416edca5547895c8d547f509a2ff06124eb4c95f1826d4bc245f2a",
+      "role": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "17b9b7282aafd6d089050b8dd1c303968579b28075bcb34aa11af65a18e40412",
+      "role": "cover"
+    },
+    {
+      "path": "design/DESIGN-REASONING.md",
+      "sha256": "d6a9d668f723c8435310bcd44564c9192275d0b5443b499fac84dcfc368637f7",
+      "role": "documentation"
+    },
+    {
+      "path": "design/scene.mjs",
+      "sha256": "605923987f8c69d940d6c208dff4758e0778a32057c7537685f521689a73599a",
+      "role": "source"
+    },
+    {
+      "path": "design/unit-audit.mjs",
+      "sha256": "0e089489f091a3493df91ad458e6f8c50e2a011abf6fd3dfc5671603eccfdc2d",
+      "role": "source"
+    },
+    {
+      "path": "font-inputs.json",
+      "sha256": "f28e0f7a2ee9b5d10ae8b0476cb7a0d09f728a3ee116d5bba3a54e4de9f46818",
+      "role": "config"
+    },
+    {
+      "path": "locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "role": "lock"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "c97986608711fff48e780026471834a114f117d30fd4f1b15c3e76b21a760a46",
+      "role": "lock"
+    },
+    {
+      "path": "prepare-fonts.py",
+      "sha256": "f5b42df61d337bbfa4dc1ae39ce76056b33a64312779f9b1fbbdb234bb3fd5f1",
+      "role": "source"
+    },
+    {
+      "path": "retention.json",
+      "sha256": "e9c0a61c72e74d83f3805b7d47d2ff60f3e64b8c30be0250f3fd75acd78d60e2",
+      "role": "config"
+    },
+    {
+      "path": "tests/recipe.test.mjs",
+      "sha256": "232b2f32aba640ddfb4a02b6fbc606a06b0b248ba332b153e3097b83db6b1f5f",
+      "role": "source"
+    }
+  ],
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "locks/npm-package-lock.json"
+    }
+  ],
+  "render": {
+    "entrypoint": "design/scene.mjs",
+    "width": 1200,
+    "height": 750
+  },
+  "resources": [
+    {
+      "id": "notosanssc-variable",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "NotoSansSC-variable.ttf",
+      "bytes": 17772300,
+      "instructions": "Provide via VINYL_ISOTYPE_FONT_DIR; prepare-fonts.py verifies original and derived identity."
+    },
+    {
+      "id": "jost-variable",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/Jost-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/jost",
+      "sha256": "6343b70971000b04c5d401c96ae08ce371086135e999d5e1e1413039c0213076",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Jost-variable.ttf",
+      "bytes": 134996,
+      "instructions": "Provide via VINYL_ISOTYPE_FONT_DIR; prepare-fonts.py verifies original and derived identity."
+    },
+    {
+      "id": "sans400",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "fc926c76779a0f5eb641c43bbedc63ddf9419bdc370a589a33709a8186c4037b",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Sans400.ttf",
+      "bytes": 33788,
+      "instructions": "Provide via VINYL_ISOTYPE_FONT_DIR; prepare-fonts.py verifies original and derived identity."
+    },
+    {
+      "id": "sans500",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "3e1c9bc2bb9f465574248ced9fc664c2d5d8ca3fdf30f4e500ef04dfbc8ce0c2",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Sans500.ttf",
+      "bytes": 33800,
+      "instructions": "Provide via VINYL_ISOTYPE_FONT_DIR; prepare-fonts.py verifies original and derived identity."
+    },
+    {
+      "id": "sans700",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "48b29f2853370d82a03511b357766bbcc3354a58f9fa989c86a3c9ce1efc0dfb",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Sans700.ttf",
+      "bytes": 33788,
+      "instructions": "Provide via VINYL_ISOTYPE_FONT_DIR; prepare-fonts.py verifies original and derived identity."
+    },
+    {
+      "id": "sans900",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "08c2bb84935bcdb041dddac344928a6bee29154d0f956ede88b3105364c9a1f6",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Sans900.ttf",
+      "bytes": 33764,
+      "instructions": "Provide via VINYL_ISOTYPE_FONT_DIR; prepare-fonts.py verifies original and derived identity."
+    },
+    {
+      "id": "jost400",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/Jost-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/jost",
+      "sha256": "a6bc785683c25e3065605330376375ed88b47e4d73c8f4d1c7f27c8a3a6bb92a",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Jost400.ttf",
+      "bytes": 10600,
+      "instructions": "Provide via VINYL_ISOTYPE_FONT_DIR; prepare-fonts.py verifies original and derived identity."
+    },
+    {
+      "id": "jost500",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/Jost-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/jost",
+      "sha256": "7799a14929f91f55494f13dc3952fbb04e4202a89acc10f44b6b20bb1cfb52d9",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Jost500.ttf",
+      "bytes": 10632,
+      "instructions": "Provide via VINYL_ISOTYPE_FONT_DIR; prepare-fonts.py verifies original and derived identity."
+    },
+    {
+      "id": "jost700",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/Jost-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/jost",
+      "sha256": "e8a01151f7b95ffcee875e55dbc5403ec3868221c7ff45d5fda20ce9292f3992",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Jost700.ttf",
+      "bytes": 10632,
+      "instructions": "Provide via VINYL_ISOTYPE_FONT_DIR; prepare-fonts.py verifies original and derived identity."
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "b3c693eb6448da6175d8d4dd82e5b996ef7306995e6cbd0b3644a1ad338e533b",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "Full static independent comparison passed; disclosed glyph/JPEG differences remain. No motion/factual validation."
+    }
+  }
+}

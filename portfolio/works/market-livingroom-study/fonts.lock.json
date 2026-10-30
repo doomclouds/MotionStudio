@@ -1,0 +1,53 @@
+{
+  "fonts": [
+    {
+      "output": "MarketLivingSans700.ttf",
+      "sha256": "3ec68c4cef6f0209a7e6db84b7a1eeec4c7e8bd5dca1e843e85a0e4cca63a6d7",
+      "weight": 700,
+      "source": "NotoSansSC-variable.ttf",
+      "source_sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da"
+    },
+    {
+      "output": "MarketLivingSerif500.ttf",
+      "sha256": "eac9c8a999e587ce3ce9cb33c128543984576c2238e677d79cc577045193ce62",
+      "weight": 500,
+      "source": "NotoSerifSC-variable.ttf",
+      "source_sha256": "050080d9255a86808f2945bffac582b31ef32bc36411ce29563b4961670c66f9"
+    },
+    {
+      "output": "MarketLivingSerif550.ttf",
+      "sha256": "18394e97e61e5b9aac390a54da52b694af532550e38fbc8aca8f9032b4d6ca94",
+      "weight": 550,
+      "source": "NotoSerifSC-variable.ttf",
+      "source_sha256": "050080d9255a86808f2945bffac582b31ef32bc36411ce29563b4961670c66f9"
+    },
+    {
+      "output": "MarketLivingSerif700.ttf",
+      "sha256": "ada231e355a7d5830789375ab8b188d81f7c4d390cb57ce601f35e83b6c33103",
+      "weight": 700,
+      "source": "NotoSerifSC-variable.ttf",
+      "source_sha256": "050080d9255a86808f2945bffac582b31ef32bc36411ce29563b4961670c66f9"
+    },
+    {
+      "output": "MarketLivingSerif900.ttf",
+      "sha256": "90d86d1262d89cd5afabfc689b8c7b15506f927d66c494a48ff10698aa6ebcb6",
+      "weight": 900,
+      "source": "NotoSerifSC-variable.ttf",
+      "source_sha256": "050080d9255a86808f2945bffac582b31ef32bc36411ce29563b4961670c66f9"
+    },
+    {
+      "output": "MarketLivingInter700.ttf",
+      "sha256": "f73bc0081106dbd9c53d45ddf04dc280994e6ee951ad46fd10194809271b55d7",
+      "weight": 700,
+      "source": "Inter-var.ttf",
+      "source_sha256": "c8d76e1cb2a0a7cfbbae1e390be4e4b942b27f99ec07e1024b1fc916045eed09"
+    },
+    {
+      "output": "MarketLivingFraunces900.ttf",
+      "sha256": "b9e8df0ea55dac0a566a2b5f9d608e1a890ebcc15c116b08682a8211d661ff38",
+      "weight": 900,
+      "source": "Fraunces-variable.ttf",
+      "source_sha256": "177ff6c0f14e5550a3c624247cd1189611d4eb65d000b14944c63d967958abbb"
+    }
+  ]
+}

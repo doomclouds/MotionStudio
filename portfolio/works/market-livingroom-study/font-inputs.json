@@ -1,0 +1,58 @@
+{
+  "inputs": [
+    {
+      "file": "NotoSansSC-variable.ttf",
+      "sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+      "bytes": 17772300,
+      "weights": [
+        700
+      ],
+      "prefix": "MarketLivingSans",
+      "axes": {},
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "notice": "LICENSES/NotoSansSC-OFL.txt"
+    },
+    {
+      "file": "NotoSerifSC-variable.ttf",
+      "sha256": "050080d9255a86808f2945bffac582b31ef32bc36411ce29563b4961670c66f9",
+      "bytes": 25125512,
+      "weights": [
+        500,
+        550,
+        700,
+        900
+      ],
+      "prefix": "MarketLivingSerif",
+      "axes": {},
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notoserifsc",
+      "notice": "LICENSES/NotoSerifSC-OFL.txt"
+    },
+    {
+      "file": "Inter-var.ttf",
+      "sha256": "c8d76e1cb2a0a7cfbbae1e390be4e4b942b27f99ec07e1024b1fc916045eed09",
+      "bytes": 254236,
+      "weights": [
+        700
+      ],
+      "prefix": "MarketLivingInter",
+      "axes": {},
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/inter",
+      "notice": "LICENSES/Inter-OFL.txt"
+    },
+    {
+      "file": "Fraunces-variable.ttf",
+      "sha256": "177ff6c0f14e5550a3c624247cd1189611d4eb65d000b14944c63d967958abbb",
+      "bytes": 360440,
+      "weights": [
+        900
+      ],
+      "prefix": "MarketLivingFraunces",
+      "axes": {
+        "opsz": 50,
+        "SOFT": 100
+      },
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/fraunces",
+      "notice": "LICENSES/Fraunces-OFL.txt"
+    }
+  ]
+}

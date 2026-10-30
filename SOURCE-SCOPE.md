@@ -138,3 +138,14 @@ Five retained fixed-size studies; only these self-rendered cover identities are 
 - `portfolio/works/mountain-book-jacket-study/cover.jpg`: 1200 × 750, 108,357 bytes; SHA-256 `f90472b7510634a7a855e3bfab20c0e4f91c16bf6a0b49b1377ee4c780bd2144`.
 - `portfolio/works/scientific-figure-study/cover.jpg`: 1200 × 750, 147,644 bytes; SHA-256 `cf0f57eef7b5a588912f92b7b9a5fa1f7d46d4aec494c9ce42414842c14b07ca`.
 - `portfolio/works/theatre-manifesto-study/cover.jpg`: 1200 × 750, 201,964 bytes; SHA-256 `186ebadd944bbdbef3eb1dfc86034029d11c7b6652ab363cc13a4102a7a0ddd0`.
+
+
+## B09 approved static covers
+
+Five retained fixed-size studies; only these self-rendered cover identities are permitted. External fonts and private source comparison reports are not redistributed.
+
+- `portfolio/works/bookcraft-vinyl-annual-study/cover.jpg`: 1200 × 750, 193,405 bytes; SHA-256 `e75311525d8cf18afce8c89872dd8677e72ca198e0bbfc90d0894cb9921e3dac`.
+- `portfolio/works/command-palette-study/cover.jpg`: 1200 × 750, 97,805 bytes; SHA-256 `2a4b676ad49db5bdd097e10ab7ae35c2f4f5a1d0962989c76f5341b169bdb3d8`.
+- `portfolio/works/market-livingroom-study/cover.jpg`: 1200 × 750, 166,485 bytes; SHA-256 `38c4cdf514c1150df39da015cae5d135290e918dc40cb3c75f39a286e170726a`.
+- `portfolio/works/vinyl-isotype-study/cover.jpg`: 1200 × 750, 265,080 bytes; SHA-256 `17b9b7282aafd6d089050b8dd1c303968579b28075bcb34aa11af65a18e40412`.
+- `portfolio/works/xie-symbol-study/cover.jpg`: 1200 × 750, 83,091 bytes; SHA-256 `3857723b400db96dadb7fec8e274751eaa671364cfd8fce9d990e476ae094834`.

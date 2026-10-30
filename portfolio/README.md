@@ -200,6 +200,28 @@
 
 [剧场渐变宣言 · 完整静态复刻](works/theatre-manifesto-study/README.md) — 1200×750固定静态设计标本，完整可编辑源码、外置字体双重校验、独立重渲染与统一设计卡保留；实际公共族调用及案例内配方见retention.json，未升级配方为新通用族。原样例内容与残差按PARTIAL披露，不代表真实业务数据或浏览器/动效验收。
 
+## Huashu B09 · 符号、命令面板、书籍与单位图符
+
+[![一千二百四十八张 · 完整静态复刻](works/bookcraft-vinyl-annual-study/cover.jpg)](works/bookcraft-vinyl-annual-study/README.md)
+
+[一千二百四十八张 · 完整静态复刻](works/bookcraft-vinyl-annual-study/README.md) — 1200×750固定静态设计标本，完整可编辑源码、外置字体双重校验、独立重渲染与统一设计卡保留；实际公共族调用及案例内配方见retention.json，未升级配方为新通用族。原样例内容与残差按PARTIAL披露，不代表真实业务数据或浏览器/动效验收。
+
+[![tide · 深色命令面板](works/command-palette-study/cover.jpg)](works/command-palette-study/README.md)
+
+[tide · 深色命令面板](works/command-palette-study/README.md) — 1200×750固定静态设计标本，完整可编辑源码、外置字体双重校验、独立重渲染与统一设计卡保留；实际公共族调用及案例内配方见retention.json，未升级配方为新通用族。原样例内容与残差按PARTIAL披露，不代表真实业务数据或浏览器/动效验收。
+
+[![菜市场是客厅 · 玩味编辑](works/market-livingroom-study/cover.jpg)](works/market-livingroom-study/README.md)
+
+[菜市场是客厅 · 玩味编辑](works/market-livingroom-study/README.md) — 1200×750固定静态设计标本，完整可编辑源码、外置字体双重校验、独立重渲染与统一设计卡保留；实际公共族调用及案例内配方见retention.json，未升级配方为新通用族。原样例内容与残差按PARTIAL披露，不代表真实业务数据或浏览器/动效验收。
+
+[![唱片销量图形统计 · 完整静态复刻](works/vinyl-isotype-study/cover.jpg)](works/vinyl-isotype-study/README.md)
+
+[唱片销量图形统计 · 完整静态复刻](works/vinyl-isotype-study/README.md) — 1200×750固定静态设计标本，完整可编辑源码、外置字体双重校验、独立重渲染与统一设计卡保留；实际公共族调用及案例内配方见retention.json，未升级配方为新通用族。原样例内容与残差按PARTIAL披露，不代表真实业务数据或浏览器/动效验收。
+
+[![XIE · 红白超级符号](works/xie-symbol-study/cover.jpg)](works/xie-symbol-study/README.md)
+
+[XIE · 红白超级符号](works/xie-symbol-study/README.md) — 1200×750固定静态设计标本，完整可编辑源码、外置字体双重校验、独立重渲染与统一设计卡保留；实际公共族调用及案例内配方见retention.json，未升级配方为新通用族。原样例内容与残差按PARTIAL披露，不代表真实业务数据或浏览器/动效验收。
+
 ## 最小结构
 
 ```text

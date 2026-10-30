@@ -1,0 +1,75 @@
+{
+  "originalInputs": [
+    {
+      "filename": "Archivo-variable.ttf",
+      "sha256": "0e094a7d3c7c4c25cf1310c4b30014f1dae9332220b1c2c88f4fa996f0b05053",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/archivo"
+    },
+    {
+      "filename": "NotoSansSC-variable.ttf",
+      "sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc"
+    }
+  ],
+  "derived": [
+    {
+      "source": "NotoSansSC-variable.ttf",
+      "name": "SCSans400",
+      "weight": 400
+    },
+    {
+      "source": "NotoSansSC-variable.ttf",
+      "name": "SCSans500",
+      "weight": 500
+    },
+    {
+      "source": "NotoSansSC-variable.ttf",
+      "name": "SCSans900",
+      "weight": 900
+    },
+    {
+      "source": "Archivo-variable.ttf",
+      "name": "SCArchivo800",
+      "weight": 800
+    },
+    {
+      "source": "Archivo-variable.ttf",
+      "name": "SCArchivo900",
+      "weight": 900
+    }
+  ],
+  "outputNames": [
+    "SCSans400.ttf",
+    "SCSans500.ttf",
+    "SCSans900.ttf",
+    "SCArchivo800.ttf",
+    "SCArchivo900.ttf"
+  ],
+  "expectedOutputs": [
+    {
+      "filename": "SCSans400.ttf",
+      "sha256": "1bc22f274f98ba93d7b2f537ab51bffa49275ce26861d4a710ff87fa37fb0aea",
+      "bytes": 104468
+    },
+    {
+      "filename": "SCSans500.ttf",
+      "sha256": "c46036972a20278f7b326f177d5ffed3b6f24937d8df12fc81abd37e7a7af267",
+      "bytes": 104404
+    },
+    {
+      "filename": "SCSans900.ttf",
+      "sha256": "bc8d108f9e446a4b8f20381b1a2aa154d66c8d01c320ddaaf3ca0f6dd9f0a69d",
+      "bytes": 105068
+    },
+    {
+      "filename": "SCArchivo800.ttf",
+      "sha256": "2fa278de97e1a130bee558e767118e0e3f4ed8a31a4ac7770063b1166ea415ac",
+      "bytes": 28448
+    },
+    {
+      "filename": "SCArchivo900.ttf",
+      "sha256": "cdaf26adb7666ddded75ed5c95027c34b3ac2c44826ed16fc31844461d7a31e0",
+      "bytes": 28408
+    }
+  ]
+}

@@ -1,0 +1,216 @@
+{
+  "schema": 4,
+  "id": "xie-symbol-study",
+  "version": "1.0.0",
+  "title": "XIE · 红白超级符号",
+  "status": "source-release",
+  "unofficial_recreation": true,
+  "original": {
+    "author": "alchaincyf (花叔 · 花生)",
+    "title": "Huashu design specimen",
+    "url": "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/east/11-sato-minimal-symbol.html"
+  },
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "LICENSES/huashu-MIT-LICENSE.txt",
+      "LICENSES/Archivo-OFL.txt",
+      "LICENSES/NotoSansSC-OFL.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/LICENSE",
+      "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "https://github.com/google/fonts/tree/main/ofl/archivo"
+    ]
+  },
+  "files": [
+    {
+      "path": "ASSET-USAGE.md",
+      "sha256": "3dd1ae7dff99f46517d6da6a079d6db54aea6be67d4e780b5b1e3d4ad3c4f707",
+      "role": "documentation"
+    },
+    {
+      "path": "CREDITS.md",
+      "sha256": "90f0825a95dd3eb73eab085e1c16ae676c4519900e849225f93888813ab288f0",
+      "role": "documentation"
+    },
+    {
+      "path": "DESIGN-REASONING.md",
+      "sha256": "93c780a6853ea2763c52164468fd4690ca10651e9d62db930f77bf947671cb5a",
+      "role": "documentation"
+    },
+    {
+      "path": "DESIGN-RETENTION.md",
+      "sha256": "625a7a99a274a8c839eb1257389c411591b268d083d04902ece0cec8f2be7ec4",
+      "role": "documentation"
+    },
+    {
+      "path": "LICENSES/Archivo-OFL.txt",
+      "sha256": "108b4e57c9c796d3d38d0428ca7ee39de47ad93187302718d9b2d8864b9b716b",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/NotoSansSC-OFL.txt",
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/huashu-MIT-LICENSE.txt",
+      "sha256": "6d6a2a9caf2e6d2b76974050427053b2892d8aa4c33fd168ce63a537fcee9d96",
+      "role": "license"
+    },
+    {
+      "path": "README.md",
+      "sha256": "6a06d3751ab868a3570d1d125e528a5443dda9c5c05cbca5a1fc62a4e1f07833",
+      "role": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "3857723b400db96dadb7fec8e274751eaa671364cfd8fce9d990e476ae094834",
+      "role": "cover"
+    },
+    {
+      "path": "design/brand-role-recipe.json",
+      "sha256": "8a60436336ec659f6c0e4ab5ce7004c7c28dba36842a3561c64961de9485f27d",
+      "role": "config"
+    },
+    {
+      "path": "design/scene.mjs",
+      "sha256": "b1ff2964ccb4ca3a38f87685c081d787966fd33f176e27abebfa7c5dc13f20d2",
+      "role": "source"
+    },
+    {
+      "path": "font-charset.txt",
+      "sha256": "e801883ead41a161472be2c96726971670ef68eff6adeeaa5c67260cfa24af73",
+      "role": "documentation"
+    },
+    {
+      "path": "font-inputs.json",
+      "sha256": "efc601382b6701f4a6e1cf7d968382d38d3b2fea20562d907f8a8508399580cd",
+      "role": "config"
+    },
+    {
+      "path": "locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "role": "lock"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "3376138df78fb0b3f62bc57d80dc440204cbe0a0709a07396e39636873862e6f",
+      "role": "lock"
+    },
+    {
+      "path": "prepare-fonts.py",
+      "sha256": "1382c96afe436f967173a55420718182d057ddee2eeee3c1e7c6d9352035fb71",
+      "role": "source"
+    },
+    {
+      "path": "retention.json",
+      "sha256": "39b307621fda909073c8aa88f28b5471bff776b41a5003210d501fac4dc677f9",
+      "role": "config"
+    },
+    {
+      "path": "ui-dependencies.json",
+      "sha256": "193c1c8e1d29b09714e426b42a648454e0f68951abd711f4d08641bf8cd9703f",
+      "role": "config"
+    }
+  ],
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "locks/npm-package-lock.json"
+    }
+  ],
+  "render": {
+    "entrypoint": "design/scene.mjs",
+    "width": 1200,
+    "height": 750
+  },
+  "resources": [
+    {
+      "id": "scsans400",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "1bc22f274f98ba93d7b2f537ab51bffa49275ce26861d4a710ff87fa37fb0aea",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "SCSans400.ttf",
+      "bytes": 104468,
+      "instructions": "Obtain originalInputs; run prepare-fonts.py. Original and derived hashes fail closed."
+    },
+    {
+      "id": "scsans500",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "c46036972a20278f7b326f177d5ffed3b6f24937d8df12fc81abd37e7a7af267",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "SCSans500.ttf",
+      "bytes": 104404,
+      "instructions": "Obtain originalInputs; run prepare-fonts.py. Original and derived hashes fail closed."
+    },
+    {
+      "id": "scsans900",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "bc8d108f9e446a4b8f20381b1a2aa154d66c8d01c320ddaaf3ca0f6dd9f0a69d",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "SCSans900.ttf",
+      "bytes": 105068,
+      "instructions": "Obtain originalInputs; run prepare-fonts.py. Original and derived hashes fail closed."
+    },
+    {
+      "id": "scarchivo800",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/Archivo-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/archivo",
+      "sha256": "2fa278de97e1a130bee558e767118e0e3f4ed8a31a4ac7770063b1166ea415ac",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "SCArchivo800.ttf",
+      "bytes": 28448,
+      "instructions": "Obtain originalInputs; run prepare-fonts.py. Original and derived hashes fail closed."
+    },
+    {
+      "id": "scarchivo900",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/Archivo-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/archivo",
+      "sha256": "cdaf26adb7666ddded75ed5c95027c34b3ac2c44826ed16fc31844461d7a31e0",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "SCArchivo900.ttf",
+      "bytes": 28408,
+      "instructions": "Obtain originalInputs; run prepare-fonts.py. Original and derived hashes fail closed."
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "d71f1a93ec17de044feb20dc4bb821405dac6e4fa46449744a6119e4bd78fe56",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "Full still and details independently reviewed; user retained. Font/icon/JPEG residuals; no interactive keyboard, responsive, factual metrics, performance or motion validation."
+    }
+  }
+}
