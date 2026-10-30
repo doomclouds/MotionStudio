@@ -1,0 +1,7 @@
+{
+  "node": "24.22.1",
+  "canvas": "0.1.100",
+  "fonttools": "4.61.1",
+  "platform": "linux-x64",
+  "note": "Observed runtime constraints, npm lock records installation integrity. No cross-platform pixel guarantee."
+}

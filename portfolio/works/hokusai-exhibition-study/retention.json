@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "workId": "hokusai-exhibition-study",
+  "kind": "fixed-static-design",
+  "canvas": {
+    "width": 1440,
+    "height": 900
+  },
+  "entrypoint": "scene.cjs",
+  "decisionCard": "DESIGN-RETENTION.md",
+  "sourceAnalysis": [],
+  "ruleRefs": [],
+  "ruleStatus": "No separate formal rule card claimed; use decisionCard and sourceAnalysis.",
+  "assetUsage": [],
+  "nonAssetNote": "Shared drawing helpers and case-local scene code are not public design families; no runtime reuse is inferred from visual similarity.",
+  "evidence": {
+    "acceptanceSource": "entry.json#/acceptance",
+    "renderHashSource": "entry.json#/cover/source_sha256",
+    "publicCover": "cover.jpg",
+    "comparisonBundle": {
+      "status": "NOT_PUBLISHED",
+      "recordId": "hokusai-v02-private-comparison",
+      "sha256": "dcb5c89f0110bdece0d4c9413e7a6ddf18fe5f10f212c6548fb4c687ecebccc0",
+      "storage": "SCRATCH_LOCAL_ONLY",
+      "durableStorage": "NOT_LOCATED",
+      "note": "HTML container includes reference/rebuild; not publicly distributed or durable storage verified."
+    },
+    "independentReview": {
+      "status": "PRIVATE_RECORD_LOCATED",
+      "recordId": "hokusai-independent-identities",
+      "sha256": "da12015a7a6c9eec319b93f5964b7ecdd4f744bbae056d256913b22ced2a23c5",
+      "storage": "SCRATCH_LOCAL_ONLY",
+      "durableStorage": "NOT_LOCATED",
+      "note": "Independent report/frame identity record only; does not claim publication review or new aesthetic approval."
+    }
+  },
+  "motionTransfer": {
+    "status": "NOT_TESTED",
+    "note": "Fixed-size static only. No interaction, responsive layout, animation, audio or AV-sync approval implied."
+  }
+}

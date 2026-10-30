@@ -1,0 +1,18 @@
+[
+  {
+    "input": "NotoSerifSC.ttf",
+    "inputSha256": "050080d9255a86808f2945bffac582b31ef32bc36411ce29563b4961670c66f9",
+    "output": "HokusaiSerif900.ttf",
+    "outputSha256": "57e8393458f5f77d113d407c882c8dc56391c6fe625b9f99aac345916b8cd719",
+    "weight": 900,
+    "modified": 3876239808
+  },
+  {
+    "input": "NotoSansSC.ttf",
+    "inputSha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+    "output": "HokusaiSans500.ttf",
+    "outputSha256": "63239c202c6071924b421dee84444be6e8be99cb34d66d78979e6c14cfb7dcf6",
+    "weight": 500,
+    "modified": 3876239820
+  }
+]

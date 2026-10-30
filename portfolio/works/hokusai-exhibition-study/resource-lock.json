@@ -1,0 +1,38 @@
+[
+  {
+    "id": "hokusaiserif900-ttf",
+    "mode": "provide",
+    "license": "SIL OFL 1.1",
+    "notice": "LICENSES/NotoSerifSC-OFL.txt",
+    "source_url": "https://github.com/google/fonts/tree/main/ofl/notoserifsc",
+    "sha256": "57e8393458f5f77d113d407c882c8dc56391c6fe625b9f99aac345916b8cd719",
+    "permission": "user-supplied-not-distributed",
+    "local_path": "HokusaiSerif900.ttf",
+    "bytes": 19716,
+    "instructions": "Supply the exact licensed input in external HOKUSAI_RESOURCE_DIR. Fonts may be reconstructed using prepare-fonts.py; artwork must be obtained from the identified Met object, never the reference screenshot."
+  },
+  {
+    "id": "hokusaisans500-ttf",
+    "mode": "provide",
+    "license": "SIL OFL 1.1",
+    "notice": "LICENSES/NotoSansSC-OFL.txt",
+    "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+    "sha256": "63239c202c6071924b421dee84444be6e8be99cb34d66d78979e6c14cfb7dcf6",
+    "permission": "user-supplied-not-distributed",
+    "local_path": "HokusaiSans500.ttf",
+    "bytes": 15376,
+    "instructions": "Supply the exact licensed input in external HOKUSAI_RESOURCE_DIR. Fonts may be reconstructed using prepare-fonts.py; artwork must be obtained from the identified Met object, never the reference screenshot."
+  },
+  {
+    "id": "met-jp11-jpg",
+    "mode": "provide",
+    "license": "Public Domain",
+    "notice": "LICENSES/Met-public-domain.txt",
+    "source_url": "https://www.metmuseum.org/art/collection/search/36492",
+    "sha256": "dbe4e1b2db586f51c5a8f08aff8ac9412406afe4b76226b28e80c652d3a5a4a2",
+    "permission": "user-supplied-not-distributed",
+    "local_path": "met-jp11.jpg",
+    "bytes": 177417,
+    "instructions": "Supply the exact licensed input in external HOKUSAI_RESOURCE_DIR. Fonts may be reconstructed using prepare-fonts.py; artwork must be obtained from the identified Met object, never the reference screenshot."
+  }
+]

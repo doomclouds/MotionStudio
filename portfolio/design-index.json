@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "countingUnit": "stable callable family; no function, case or snapshot duplication",
-  "staticWorks": 51,
+  "staticWorks": 52,
   "families": [
     {
       "id": "design.print-poster.v1",
@@ -523,6 +523,18 @@
       "comparisonBundle": "NOT_PUBLISHED",
       "reportStorage": "PRIVATE_LIBRARY",
       "acceptedFrameBinding": "NOT_ESTABLISHED",
+      "motionTransfer": "NOT_TESTED"
+    },
+    {
+      "id": "hokusai-exhibition-study",
+      "decisionCard": "works/hokusai-exhibition-study/DESIGN-RETENTION.md",
+      "sourceAnalysis": [],
+      "assetUsage": [],
+      "visualStatus": "PARTIAL",
+      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
+      "comparisonBundle": "NOT_PUBLISHED",
+      "reportStorage": "SCRATCH_LOCAL_ONLY",
+      "acceptedFrameBinding": "NOT_CHECKED",
       "motionTransfer": "NOT_TESTED"
     },
     {

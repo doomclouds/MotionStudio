@@ -160,3 +160,6 @@ Five retained fixed-size studies; only these self-rendered cover identities are 
 - `portfolio/works/memory-case-study/cover.jpg`: 1080 × 1920, 263,373 bytes; SHA-256 `1507cc6721c7bcaed6cff2d08b48f8bd62cba3913670961fed11425af80cb8e9`.
 - `portfolio/works/night-observatory-study/cover.jpg`: 1200 × 750, 93,415 bytes; SHA-256 `4a2a59fbaae1d081fa9ab6e3cae3e4c305c07658215c0528e50229ac731f14bc`.
 - `portfolio/works/rollcall-docs-study/cover.jpg`: 1200 × 750, 137,973 bytes; SHA-256 `5ba73d7726a1ecb90b36ca33e5132888abdd5f888b3e24f5ddd64e16da5b7c86`.
+
+## Hokusai exhibition study
+`portfolio/works/hokusai-exhibition-study` adds only source, resource/font locks, MIT/OFL/public-domain attribution and one exact allowlisted self-rendered cover. Met JP11 input artwork and font binaries remain external; no upstream reference screenshot, private report or bird image is distributed. This new case does not restore or publish the missing former workspace batches.

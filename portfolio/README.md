@@ -387,3 +387,6 @@ python portfolio/retention.py --query --text 像素 --family design.color-sectio
 归档核验后，可在evidence中新增 `visualReport`，而不覆盖原 `comparisonBundle` 的PNG/局部材料身份：状态仍NOT_PUBLISHED，记录非敏感opaque ID、HTML容器SHA、artifactKind=html-report、storage=PRIVATE_LIBRARY、durableStorage=ACCESS_VERIFIED，以及acceptedFrameBinding=EXACT_PIXELS或NOT_ESTABLISHED。独审原字节经私有Page回读验证后可将原独审记录升级为PRIVATE_OWNER_PAGE/ACCESS_VERIFIED；运行调用回执不能随之自动升级。
 
 EXACT_PIXELS只表示报告嵌图与已审帧像素匹配，不代表新审美验收或浏览器预览通过。NOT_ESTABLISHED必须保留，尤其不能把有持久HTML报告说成已审原帧对照的完整闭环。公开库只保存受控记录ID/hash与状态，不公开Library/Page私有ID或URL。自动校验只检查记录契约与索引一致性，远端字节取回/解码与权限复核需另有实际执行证据。
+
+### 新增富岳展览首屏
+[工程与恢复说明](works/hokusai-exhibition-study/README.md) · [设计决策](works/hokusai-exhibition-study/DESIGN-RETENTION.md)。1440×900固定静态，Met公版画作替换原设计印本；外置SHA资源，0新增公共族。

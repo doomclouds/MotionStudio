@@ -151,6 +151,7 @@ class SourceTreeFixtures(unittest.TestCase):
             'portfolio/works/gentle-activity-study/cover.jpg': '5eac8a263b2c9769c12c06c37a5b2a77a113b44084e83f23336ca7c4dbf8e6ab',
             'portfolio/works/memory-case-study/cover.jpg': '1507cc6721c7bcaed6cff2d08b48f8bd62cba3913670961fed11425af80cb8e9',
             'portfolio/works/night-observatory-study/cover.jpg': '4a2a59fbaae1d081fa9ab6e3cae3e4c305c07658215c0528e50229ac731f14bc',
+            'portfolio/works/hokusai-exhibition-study/cover.jpg': 'f57840315f3e23b38b0a07db14bc5c2d595d3f00167b38281ee3fcece10e550d',
             'portfolio/works/rollcall-docs-study/cover.jpg': '5ba73d7726a1ecb90b36ca33e5132888abdd5f888b3e24f5ddd64e16da5b7c86',
             'portfolio/works/irreverent-pop-study/cover.jpg': 'df8f621e07865727a8d2a99fe66d9ce23e7b5747861732a14a503152dff72f35',
             'portfolio/works/hk-street-signs-study/cover.jpg': '6d83409c6444e4ea6bd903075b7652300f6be7a066c15aa4bb0f06131aae4223',

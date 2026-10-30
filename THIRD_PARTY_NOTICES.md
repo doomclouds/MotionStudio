@@ -77,3 +77,6 @@ Unofficial educational reproductions, not operating products, verified scientifi
 - [反叛流行 · AI写的，别像AI](portfolio/works/irreverent-pop-study/README.md): adapts [Huashu specimen](https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/ppt/07-irreverent-pop.html); full upstream and font notices plus modifications are retained in [credits](portfolio/works/irreverent-pop-study/CREDITS.md).
 
 Unofficial educational reproductions, not operating products, verified scientific/transport/weather data, genuine customer endorsements or official agency/Apple work. Only self-rendered covers are distributed; fonts remain external.
+
+## Hokusai exhibition study
+`portfolio/works/hokusai-exhibition-study` adds only source, resource/font locks, MIT/OFL/public-domain attribution and one exact allowlisted self-rendered cover. Met JP11 input artwork and font binaries remain external; no upstream reference screenshot, private report or bird image is distributed. This new case does not restore or publish the missing former workspace batches.

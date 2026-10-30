@@ -2,7 +2,7 @@
 
 运行 `python portfolio/retention.py --write` 生成；`--check` 拒绝漂移。不是新的审美验收。
 
-完整静态作品 51；公共族 14；在已发布作品源码中实际调用的不同族 3。作品收藏、模块测试、可视复核、素材公开权限分别判断。
+完整静态作品 52；公共族 14；在已发布作品源码中实际调用的不同族 3。作品收藏、模块测试、可视复核、素材公开权限分别判断。
 
 | 作品/统一设计卡 | 实际公共族 | 视觉状态（来自entry） | 独审证据身份 | 对照报告 |
 |---|---|---|---|---|
@@ -21,6 +21,7 @@
 | [采样台 · 硬件面板三屏静态复刻](works/hardware-sampler-study/DESIGN-RETENTION.md) | 0（案例代码保留） | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / EXACT_PIXELS；未公开 |
 | [健康数据颜色编码 · 完整静态复刻](works/health-color-code-study/DESIGN-RETENTION.md) | material-surfaces | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / EXACT_PIXELS；未公开 |
 | [新旺唱片 · 港式街招](works/hk-street-signs-study/DESIGN-RETENTION.md) | print-poster | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / NOT_ESTABLISHED；未公开 |
+| [富岳三十六景 · 展览首屏](works/hokusai-exhibition-study/DESIGN-RETENTION.md) | 0（案例代码保留） | PARTIAL | PRIVATE_RECORD_LOCATED | SCRATCH_LOCAL_ONLY / NOT_CHECKED；未公开 |
 | [反叛流行 · AI写的，别像AI](works/irreverent-pop-study/DESIGN-RETENTION.md) | material-surfaces（快照） | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / NOT_ESTABLISHED；未公开 |
 | [液态玻璃 · 冲浪预报三屏展示](works/liquid-glass-study/DESIGN-RETENTION.md) | 0（案例代码保留） | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / EXACT_PIXELS；未公开 |
 | [天文台夜观 · 环形信息图](works/mandala-observatory-study/DESIGN-RETENTION.md) | 0（案例代码保留） | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / NOT_ESTABLISHED；未公开 |
