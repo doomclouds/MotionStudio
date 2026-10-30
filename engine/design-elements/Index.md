@@ -50,3 +50,7 @@
 | recipe.editorial-evidence.v1 | 编辑式长文与同源面积证据 | [说明](recipes/b06/docs/editorial-evidence.md) · [运行](recipes/b06/README.md) |
 
 每种配方以两份不同内容验证；字体和生成图/报告全部外置，实际依赖与边界见配方manifest及锁。
+
+## B08 句法与份额配方
+
+[两种1200×750受限配方](recipes/b08/README.md)：显式句法宣言与完整外图例单环份额。新公共族0；五来源作品未迁移，新合成组合未获用户审美认可。两种内容变体、绘前边界/输入拒绝及源码出处均有独立审查。

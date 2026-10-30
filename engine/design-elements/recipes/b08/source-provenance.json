@@ -1,0 +1,57 @@
+[
+  {
+    "sourceWorkId": "theatre-manifesto-study",
+    "candidateSha256": "5fe2c64e705527b803c05fc27012e7b14c5002084d404bf3158baf1dce0b98ea",
+    "formalPath": "portfolio/works/theatre-manifesto-study/design/manifesto-stack.mjs",
+    "formalSourceCommit": "c9a57ca0228ab21dd84b700fbd505c6d24f7c4d1",
+    "formalSourceStatus": "Official published commit identity and integrated source hash verified; candidate and published source distinguished.",
+    "sourceRelation": "design logic and case audit reference; not migrated scene call",
+    "formalSourceSha256": "5fe2c64e705527b803c05fc27012e7b14c5002084d404bf3158baf1dce0b98ea",
+    "formalSourceUrl": "https://github.com/doomclouds/MotionStudio/blob/c9a57ca0228ab21dd84b700fbd505c6d24f7c4d1/portfolio/works/theatre-manifesto-study/design/manifesto-stack.mjs",
+    "matchesCandidate": true
+  },
+  {
+    "sourceWorkId": "friendly-fintech-study",
+    "candidateSha256": "9c1e07c1a6881bd7b0313e75cd78637149e8715a5a48ad4086d05c70cea1fd0a",
+    "formalPath": "portfolio/works/friendly-fintech-study/design/partition-audit-recipe.mjs",
+    "formalSourceCommit": "c9a57ca0228ab21dd84b700fbd505c6d24f7c4d1",
+    "formalSourceStatus": "Official published commit identity and integrated source hash verified; candidate and published source distinguished.",
+    "sourceRelation": "design logic and case audit reference; not migrated scene call",
+    "formalSourceSha256": "9c1e07c1a6881bd7b0313e75cd78637149e8715a5a48ad4086d05c70cea1fd0a",
+    "formalSourceUrl": "https://github.com/doomclouds/MotionStudio/blob/c9a57ca0228ab21dd84b700fbd505c6d24f7c4d1/portfolio/works/friendly-fintech-study/design/partition-audit-recipe.mjs",
+    "matchesCandidate": true
+  },
+  {
+    "sourceWorkId": "scientific-figure-study",
+    "candidateSha256": "ec8513d07aab1a0bb4320d687494b8a0bd68d5f61ef3a863f9939e1e40f5a0ce",
+    "formalPath": "portfolio/works/scientific-figure-study/design/plot-audit-recipe.mjs",
+    "formalSourceCommit": "c9a57ca0228ab21dd84b700fbd505c6d24f7c4d1",
+    "formalSourceStatus": "Official published commit identity and integrated source hash verified; candidate and published source distinguished.",
+    "sourceRelation": "design logic and case audit reference; not migrated scene call",
+    "formalSourceSha256": "ec8513d07aab1a0bb4320d687494b8a0bd68d5f61ef3a863f9939e1e40f5a0ce",
+    "formalSourceUrl": "https://github.com/doomclouds/MotionStudio/blob/c9a57ca0228ab21dd84b700fbd505c6d24f7c4d1/portfolio/works/scientific-figure-study/design/plot-audit-recipe.mjs",
+    "matchesCandidate": true
+  },
+  {
+    "sourceWorkId": "editorial-weekly-study",
+    "candidateSha256": "7087da40081c1c1b4ef45991bda46ad601f91c1e3810acc47ab7c32141d7d54d",
+    "formalPath": "portfolio/works/editorial-weekly-study/design/editorial-role-recipe.json",
+    "formalSourceCommit": "c9a57ca0228ab21dd84b700fbd505c6d24f7c4d1",
+    "formalSourceStatus": "Official published commit identity and integrated source hash verified; candidate and published source distinguished.",
+    "sourceRelation": "design logic and case audit reference; not migrated scene call",
+    "formalSourceSha256": "7087da40081c1c1b4ef45991bda46ad601f91c1e3810acc47ab7c32141d7d54d",
+    "formalSourceUrl": "https://github.com/doomclouds/MotionStudio/blob/c9a57ca0228ab21dd84b700fbd505c6d24f7c4d1/portfolio/works/editorial-weekly-study/design/editorial-role-recipe.json",
+    "matchesCandidate": true
+  },
+  {
+    "sourceWorkId": "mountain-book-jacket-study",
+    "candidateSha256": "a4995e108eac33954cc130bc41e3010171b6376cd8ddb5c6c7de6e3131b9a99d",
+    "formalPath": "portfolio/works/mountain-book-jacket-study/design/scene.mjs",
+    "formalSourceCommit": "c9a57ca0228ab21dd84b700fbd505c6d24f7c4d1",
+    "formalSourceStatus": "Official published commit identity and integrated source hash verified; candidate and published source distinguished.",
+    "sourceRelation": "design logic and case audit reference; not migrated scene call",
+    "formalSourceSha256": "2808f95102311da9b801ef915d2412aa8f047088ba3dd7230d0f35a3550e2bea",
+    "formalSourceUrl": "https://github.com/doomclouds/MotionStudio/blob/c9a57ca0228ab21dd84b700fbd505c6d24f7c4d1/portfolio/works/mountain-book-jacket-study/design/scene.mjs",
+    "matchesCandidate": false
+  }
+]

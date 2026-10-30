@@ -1,0 +1,7 @@
+{
+  "status": "suggested synthetic compositions, not approved artworks",
+  "recipes": [
+    {"name":"community-stage","meaning":"An open stage invites new voices; two authored imperative lines, followed by venue information.","props":{"bounds":{"x":70,"y":110,"width":1060,"height":530},"x":74,"baseline":235,"step":145,"tracking":-1,"font":{"family":"sans-serif","size":106,"weight":900},"ink":"#FFF3D6","lines":["MAKE ROOM FOR","NEW VOICES."],"minLineGap":18,"afterGap":42,"reserveAfter":100},"downstreamContent":{"title":"Community stage / open programme","body":"Invented programme, not a real event listing."}},
+    {"name":"craft-lab","meaning":"Three-part parallel syntax separates a creative experiment from a finished commercial product.","props":{"bounds":{"x":70,"y":90,"width":1060,"height":580},"x":74,"baseline":205,"step":126,"tracking":0.5,"font":{"family":"sans-serif","size":94,"weight":800},"ink":"#281C3C","lines":["NOT A PRODUCT.","NOT A PROMISE.","A PLACE TO TRY."],"minLineGap":18,"afterGap":28,"reserveAfter":100},"downstreamContent":{"title":"An unfinished ideas workshop","body":"Complete readable context remains outside the expressive stack."}}
+  ]
+}

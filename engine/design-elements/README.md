@@ -74,3 +74,7 @@ Skill包中同样使用runtime/design-elements路径；打包测试只有三个�
 ## B06 composition recipes
 
 Two bounded [composition recipes](recipes/b06/README.md) reuse existing families and source-case helpers; each has two different-content fixtures. They add zero families, do not migrate original scenes, and do not confer user aesthetic approval. Runtime imports/fonts are pinned; generated evidence is written only to caller-owned external directories.
+
+## B08 bounded recipes
+
+[Explicit manifesto + full-legend partition](recipes/b08/README.md) adds two source-only composition recipes, not public families. Fixed two-column contracts, no automatic typography/financial/scientific inference, no source-scene migration or new user aesthetic approval.

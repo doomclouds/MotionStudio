@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "status": "technical-reviewed-static-recipe",
+  "newFamilies": 0,
+  "sharedFamilyCount": 14,
+  "sourceSceneMigrated": false,
+  "userAestheticApproval": false,
+  "recipes": [
+    {
+      "id": "recipe.manifesto-stack.v1",
+      "code": "recipes/manifesto-stack.mjs",
+      "guidance": "docs/manifesto-stack.md",
+      "sourceWorkId": "theatre-manifesto-study"
+    },
+    {
+      "id": "recipe.partition-donut.v1",
+      "code": "recipes/partition-donut.mjs",
+      "guidance": "docs/partition-donut.md",
+      "sourceWorkId": "friendly-fintech-study"
+    }
+  ],
+  "compositions": "examples/briefs.mjs",
+  "verification": [
+    "verify.mjs",
+    "test-manifesto.mjs",
+    "test-partition.mjs",
+    "test-runtime.mjs"
+  ],
+  "independentReview": "completed; external review record supplied with handoff"
+}

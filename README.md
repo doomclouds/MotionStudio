@@ -256,3 +256,7 @@ node tools/reference-benchmark/test_report_js.cjs
 ## Isolated seventeen-mechanism registration preparation
 
 The catalog contains 60 foundations + 7 separate recipes: seventeen registrations added to the prior 43-foundation baseline. Two support extensions are uncounted. Foundation expansion pauses at 60. See `engine/motion-elements/docs/registered-foundations.md` for entrypoints, Node boundary and verification scope.
+
+### 句法与份额的静态组合
+
+[B08两种组合配方](engine/design-elements/recipes/b08/README.md)把显式句法行与完整份额图例组合验证，保持14族计数；并非原案例已反向迁移或新作品审美认可。五来源设计的保留/不升族决定、外置字体和可运行测试见配方文档。

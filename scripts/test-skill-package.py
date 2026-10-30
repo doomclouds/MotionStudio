@@ -79,6 +79,16 @@ def main():
             run(['node', str(recipes / 'test-runtime.mjs')], env=recipe_env)
         else:
             print('NOT_RUN: B06 composite recipe renders require MOTION_ENGINE_ROOT and pinned B06_FONT_FILE; no family or aesthetic approval inferred')
+        b08 = design / 'recipes/b08'
+        b08_manifest = json.loads((b08 / 'recipe-manifest.json').read_text())
+        assert b08_manifest['newFamilies'] == 0 and len(b08_manifest['recipes']) == 2
+        assert not b08_manifest['sourceSceneMigrated'] and not b08_manifest['userAestheticApproval']
+        if all(os.environ.get(k) for k in ('MOTION_ENGINE_ROOT', 'B08_DISPLAY_FONT', 'B08_BODY_FONT')):
+            b08_env = {**os.environ, 'B08_EVIDENCE_DIR': str(temp / 'b08-recipe-evidence'), 'B08_PARTITION_EVIDENCE_DIR': str(temp / 'b08-partition-evidence')}
+            for test in ('verify.mjs', 'test-manifesto.mjs', 'test-partition.mjs', 'test-runtime.mjs'):
+                run(['node', str(b08 / test)], env=b08_env)
+        else:
+            print('NOT_RUN: B08 recipe renders require MOTION_ENGINE_ROOT/B08_DISPLAY_FONT/B08_BODY_FONT; no family or aesthetic approval inferred')
         for test in ('test_design_knowledge.py', 'test_video_knowledge.py', 'test_static_knowledge.py', 'test_check_delivery.py', 'test_check_final_delivery.py', 'test_validate_delivery_report.py'):
             run(['python3', str(skill / 'scripts' / test)])
         kb_cli = skill / 'scripts/video_knowledge.py'
