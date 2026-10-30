@@ -70,6 +70,27 @@
       ],
       "path": "MOTIONSTUDIO.md",
       "type": "decision-guide"
+    },
+    {
+      "id": "visual-design-guidance",
+      "version": 1,
+      "category": "workflow",
+      "title": "视觉设计规范与实践指导",
+      "tags": [
+        "品牌",
+        "受众",
+        "创意",
+        "隐喻",
+        "构图",
+        "配色",
+        "字体",
+        "暗色",
+        "参考分析",
+        "可视化验证",
+        "迭代"
+      ],
+      "path": "DESIGN-GUIDE.md",
+      "type": "decision-guide"
     }
   ]
 }
