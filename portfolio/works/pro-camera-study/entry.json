@@ -1,0 +1,202 @@
+{
+  "schema": 4,
+  "id": "pro-camera-study",
+  "version": "1.0.0",
+  "title": "专业相机 · 参数控制三屏",
+  "status": "source-release",
+  "unofficial_recreation": true,
+  "original": {
+    "author": "alchaincyf (花叔 · 花生)",
+    "title": "专业相机 · 参数控制三屏",
+    "url": "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/app/05-pro-camera.html"
+  },
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "LICENSES/huashu-MIT-LICENSE.txt",
+      "LICENSES/jetbrainsmono-OFL.txt",
+      "LICENSES/NotoSans-OFL.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/LICENSE",
+      "https://github.com/google/fonts"
+    ]
+  },
+  "files": [
+    {
+      "path": "CREDITS.md",
+      "sha256": "87c426e0975220851d32980f673dd96d8d7c28010ba8afd3263327b399469496",
+      "role": "documentation"
+    },
+    {
+      "path": "LICENSES/NotoSans-OFL.txt",
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/huashu-MIT-LICENSE.txt",
+      "sha256": "6d6a2a9caf2e6d2b76974050427053b2892d8aa4c33fd168ce63a537fcee9d96",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/jetbrainsmono-OFL.txt",
+      "sha256": "b2fe5e8987594e9ffd1d2ca52a2f5d73eb8335243893c5d6254b5ad69269591d",
+      "role": "license"
+    },
+    {
+      "path": "README.md",
+      "sha256": "a36a78078eb5351698d5c3493f3113cf86244a23c417029d507517137bdcb405",
+      "role": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "486a229cd763d088a6724a3d047c0f5dba0a37f8aa5fa6b77848daea23f86433",
+      "role": "cover"
+    },
+    {
+      "path": "design/DESIGN-REASONING.md",
+      "sha256": "d2ab91869606f8e4e705f6541898a335e7ed1c3d597a78718f7294a7bb59bae8",
+      "role": "documentation"
+    },
+    {
+      "path": "design/scene.mjs",
+      "sha256": "37932bf69da0e38fc0327bd360935fed84ce99cbc3196f9a6005cfdd38af425d",
+      "role": "source"
+    },
+    {
+      "path": "font-charset.txt",
+      "sha256": "de3fe795f33ce8cb98fd6eeca509b728f54c607c87756ec4ea95781d23ca9272",
+      "role": "config"
+    },
+    {
+      "path": "font-inputs.json",
+      "sha256": "b8e53be66c2d0b6ed20f0b89203d3d86089bcb567c25cef90539710bc69b371c",
+      "role": "config"
+    },
+    {
+      "path": "locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "role": "lock"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "c97986608711fff48e780026471834a114f117d30fd4f1b15c3e76b21a760a46",
+      "role": "lock"
+    },
+    {
+      "path": "prepare-fonts.py",
+      "sha256": "665f033cedcbbad8d18624c916b76cb5f4ca3b3eafbf4fcb8dda680240ce8773",
+      "role": "source"
+    }
+  ],
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "locks/npm-package-lock.json"
+    }
+  ],
+  "render": {
+    "entrypoint": "design/scene.mjs",
+    "width": 1200,
+    "height": 750
+  },
+  "resources": [
+    {
+      "id": "sans400",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSans-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "3367fd2a889d6c83a476a02c1f272cba0d7f5924f006cfeef6f929fa286f2dce",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Sans400.ttf",
+      "bytes": 29660,
+      "instructions": "Legally supply original font inputs, then run prepare-fonts.py outside the repository and set PRO_CAMERA_FONT_DIR. Original and derived hashes are verified."
+    },
+    {
+      "id": "sans500",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSans-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "385b0271c7de8af869e92c462486c98b0d36d557cae3dcdbac6643bac5d1340c",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Sans500.ttf",
+      "bytes": 29664,
+      "instructions": "Legally supply original font inputs, then run prepare-fonts.py outside the repository and set PRO_CAMERA_FONT_DIR. Original and derived hashes are verified."
+    },
+    {
+      "id": "sans700",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSans-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "177ca4a4ca9049a41ebf0104ccb631d952a0833c2e8f72d7773f4ad136b3c900",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Sans700.ttf",
+      "bytes": 29640,
+      "instructions": "Legally supply original font inputs, then run prepare-fonts.py outside the repository and set PRO_CAMERA_FONT_DIR. Original and derived hashes are verified."
+    },
+    {
+      "id": "jetbrains400",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/jetbrainsmono-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/jetbrainsmono",
+      "sha256": "508690537ad731e5a6b6b08dfca9c7573972e24aa58ff69088bf6937cc1a5470",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "JetBrains400.ttf",
+      "bytes": 115024,
+      "instructions": "Legally supply original font inputs, then run prepare-fonts.py outside the repository and set PRO_CAMERA_FONT_DIR. Original and derived hashes are verified."
+    },
+    {
+      "id": "jetbrains500",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/jetbrainsmono-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/jetbrainsmono",
+      "sha256": "8472dfd7b6fb861cd47832bbae37ac7f3ca3c18d683219f1ab7062def10117fc",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "JetBrains500.ttf",
+      "bytes": 115044,
+      "instructions": "Legally supply original font inputs, then run prepare-fonts.py outside the repository and set PRO_CAMERA_FONT_DIR. Original and derived hashes are verified."
+    },
+    {
+      "id": "jetbrains700",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/jetbrainsmono-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/jetbrainsmono",
+      "sha256": "d3647befec21d639c85b5e922108cb5be5c583d013b1cbbd23f482917e64b64b",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "JetBrains700.ttf",
+      "bytes": 114980,
+      "instructions": "Legally supply original font inputs, then run prepare-fonts.py outside the repository and set PRO_CAMERA_FONT_DIR. Original and derived hashes are verified."
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "f51057a88f0c170ded0e0b639b7fc1bcda6797168a76bd466ead16ee2cb3d292",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "完整固定画面已独立视觉复核且用户允许收藏。取景区忠实保留渐变占位，非真实照片；高频斜纹JPEG晕彩和手机阴影近似，非可拍照App。未验证浏览器、交互、响应式、视频或音频。"
+    }
+  }
+}

@@ -120,9 +120,14 @@ class SourceTreeFixtures(unittest.TestCase):
         self.add('apparently-safe.txt', PNG)
         (self.repo / 'apparently-safe.txt').write_text('safe worktree replacement')
         self.audit(False, 'unapproved-media:PNG')
-    def test_public_policy_only_allows_fourteen_exact_reviewed_images(self):
+    def test_public_policy_only_allows_nineteen_exact_reviewed_images(self):
         allow = json.loads((ROOT / 'scripts/source-assets-allowlist.json').read_text())['assets']
         self.assertEqual(allow, {
+            'portfolio/works/cosmic-observatory-study/cover.jpg': 'e4ff31cfb20c7fe3c815ce867e91ab3c556152a09816265613135faeddd3e03b',
+            'portfolio/works/pro-camera-study/cover.jpg': '486a229cd763d088a6724a3d047c0f5dba0a37f8aa5fa6b77848daea23f86433',
+            'portfolio/works/bus-morning-study/cover.jpg': '568e310c946778081e8e402f3f1dc57899a9570829acdd082737d79c8665436c',
+            'portfolio/works/wave-weather-study/cover.jpg': '40be54ada883fd596aaabf9072ef5489fcc13375323fbe51b320296000b60c48',
+            'portfolio/works/meridian-study/cover.jpg': '4ba747751f084e0f9420bc09435b4b218b4aded8f3844c8a455460a350b422ce',
             'docs/assets/report-overview.png': 'bbf9e87737e3f84dfb9a998ee0c973081418631b76a745b017b012d76b95e7c1',
             'portfolio/works/tessel/cover.jpg': 'ebfaf532643c1ac096ac44a05da0c81dede735e1703e2c3230ab3073857133f8',
             'portfolio/works/favorite52/cover.jpg': '86a8a0c0a08c06ddab3dac47da45078dce055746c5dfd0c15ddb99079f6cab5d',
@@ -202,6 +207,46 @@ class SourceTreeFixtures(unittest.TestCase):
         self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
     def test_theatre_narrative_wave_cover_wrong_path_rejected(self):
         self.add('portfolio/works/theatre-narrative-wave/other.jpg',(ROOT/'portfolio/works/theatre-narrative-wave/cover.jpg').read_bytes());self.audit(False)
+    def test_exact_cosmic_observatory_study_cover_allowed(self):
+        name='portfolio/works/cosmic-observatory-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes());self.audit(True)
+    def test_cosmic_observatory_study_cover_tamper_rejected(self):
+        name='portfolio/works/cosmic-observatory-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
+    def test_cosmic_observatory_study_cover_wrong_path_rejected(self):
+        self.add('portfolio/works/cosmic-observatory-study/other.jpg',(ROOT/'portfolio/works/cosmic-observatory-study/cover.jpg').read_bytes());self.audit(False)
+    def test_exact_pro_camera_study_cover_allowed(self):
+        name='portfolio/works/pro-camera-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes());self.audit(True)
+    def test_pro_camera_study_cover_tamper_rejected(self):
+        name='portfolio/works/pro-camera-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
+    def test_pro_camera_study_cover_wrong_path_rejected(self):
+        self.add('portfolio/works/pro-camera-study/other.jpg',(ROOT/'portfolio/works/pro-camera-study/cover.jpg').read_bytes());self.audit(False)
+    def test_exact_bus_morning_study_cover_allowed(self):
+        name='portfolio/works/bus-morning-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes());self.audit(True)
+    def test_bus_morning_study_cover_tamper_rejected(self):
+        name='portfolio/works/bus-morning-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
+    def test_bus_morning_study_cover_wrong_path_rejected(self):
+        self.add('portfolio/works/bus-morning-study/other.jpg',(ROOT/'portfolio/works/bus-morning-study/cover.jpg').read_bytes());self.audit(False)
+    def test_exact_wave_weather_study_cover_allowed(self):
+        name='portfolio/works/wave-weather-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes());self.audit(True)
+    def test_wave_weather_study_cover_tamper_rejected(self):
+        name='portfolio/works/wave-weather-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
+    def test_wave_weather_study_cover_wrong_path_rejected(self):
+        self.add('portfolio/works/wave-weather-study/other.jpg',(ROOT/'portfolio/works/wave-weather-study/cover.jpg').read_bytes());self.audit(False)
+    def test_exact_meridian_study_cover_allowed(self):
+        name='portfolio/works/meridian-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes());self.audit(True)
+    def test_meridian_study_cover_tamper_rejected(self):
+        name='portfolio/works/meridian-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
+    def test_meridian_study_cover_wrong_path_rejected(self):
+        self.add('portfolio/works/meridian-study/other.jpg',(ROOT/'portfolio/works/meridian-study/cover.jpg').read_bytes());self.audit(False)
     def test_exact_liquid_glass_study_cover_allowed(self):
         name='portfolio/works/liquid-glass-study/cover.jpg'
         self.add(name,(ROOT/name).read_bytes());self.audit(True)

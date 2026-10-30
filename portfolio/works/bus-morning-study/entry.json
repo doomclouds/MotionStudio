@@ -1,0 +1,242 @@
+{
+  "schema": 4,
+  "id": "bus-morning-study",
+  "version": "1.0.0",
+  "title": "公交早晨 · 计算式数据肖像",
+  "status": "source-release",
+  "unofficial_recreation": true,
+  "original": {
+    "author": "alchaincyf (花叔 · 花生)",
+    "title": "Huashu computational portrait design specimen",
+    "url": "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/info/10-computational-portrait.html"
+  },
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "LICENSES/huashu-MIT-LICENSE.txt",
+      "LICENSES/NotoSansSC-OFL.txt",
+      "LICENSES/Inter-OFL.txt",
+      "LICENSES/RobotoMono-OFL.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/LICENSE",
+      "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "https://github.com/rsms/inter",
+      "https://github.com/google/fonts/tree/main/ofl/robotomono"
+    ]
+  },
+  "files": [
+    {
+      "path": "CREDITS.md",
+      "sha256": "c51792294288be88b4b1eff0713c9e3f0aef503182c9b5bc8b6a9bde84cc6ca1",
+      "role": "documentation"
+    },
+    {
+      "path": "LICENSES/Inter-OFL.txt",
+      "sha256": "67c5d5206b96f8340b95fabd02ae60701e0b20ce2594d976216f1065e5aa3822",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/NotoSansSC-OFL.txt",
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/RobotoMono-OFL.txt",
+      "sha256": "50ab8dd54680d3473f649c9db86fece88434d097c7834475c1c72d2f8c429215",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/huashu-MIT-LICENSE.txt",
+      "sha256": "6d6a2a9caf2e6d2b76974050427053b2892d8aa4c33fd168ce63a537fcee9d96",
+      "role": "license"
+    },
+    {
+      "path": "README.md",
+      "sha256": "b785d7a2b909a9a89264df7ce1ef7ccf18c54382f71c135e38f0933bb0c0d962",
+      "role": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "568e310c946778081e8e402f3f1dc57899a9570829acdd082737d79c8665436c",
+      "role": "cover"
+    },
+    {
+      "path": "design/DESIGN-ANALYSIS.md",
+      "sha256": "9b5a9ae756beb90bb494ab89a1524e03fc85c935823017913dd6a9cd412d36e7",
+      "role": "documentation"
+    },
+    {
+      "path": "design/content.json",
+      "sha256": "fb2bf68824f07653a56f51de38dadb5f7dc78f05de32aa0f8a1320f2963e2fea",
+      "role": "config"
+    },
+    {
+      "path": "design/model.mjs",
+      "sha256": "f10697420457485eba9e5db6644447167fd1362e5e49dbcb243fa8ad54543cc8",
+      "role": "source"
+    },
+    {
+      "path": "design/scene.mjs",
+      "sha256": "f3b6f4c133a30203c23a2ad586f600f5e5a2dffbd86842e7b497fae3aba5a7f4",
+      "role": "source"
+    },
+    {
+      "path": "font-charset.txt",
+      "sha256": "1218a282371fa59d0bd22fe5c089fde2be212c357966c126c3a12aa91823b757",
+      "role": "config"
+    },
+    {
+      "path": "font-inputs.json",
+      "sha256": "d25a8b681ed8154614639fc5869141bd4a7d3c118fdd797052345bc3372c4a24",
+      "role": "config"
+    },
+    {
+      "path": "fonts.lock.json",
+      "sha256": "c07233e720c245faee93d6e43ed2853b23fe9be83f1be15013405886821348a6",
+      "role": "config"
+    },
+    {
+      "path": "locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "role": "lock"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "c97986608711fff48e780026471834a114f117d30fd4f1b15c3e76b21a760a46",
+      "role": "lock"
+    },
+    {
+      "path": "prepare-fonts.py",
+      "sha256": "ba2c850897c7c23f6d1787a6be5d1526935713a7056d8eb6cffe956fab4243d3",
+      "role": "source"
+    },
+    {
+      "path": "verify.mjs",
+      "sha256": "559fec21948fec1c1a7e655a24582ac3f0b9eacba8a6ba422c069355b83eef43",
+      "role": "source"
+    }
+  ],
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "locks/npm-package-lock.json"
+    }
+  ],
+  "render": {
+    "entrypoint": "design/scene.mjs",
+    "width": 1200,
+    "height": 750
+  },
+  "resources": [
+    {
+      "id": "bussans300",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "0df7174d9bd28e1e74bdf204b0078b79d6bb795fb3d26136aae8fc4cfb7c3059",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "BusSans300.ttf",
+      "bytes": 86852,
+      "instructions": "Supply originals per font-inputs.json, run prepare-fonts.py; point BUS_MORNING_FONT_DIR at derived directory. Missing or mismatched fonts fail closed."
+    },
+    {
+      "id": "bussans400",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "aab39adb3a56e8089add9e0b059047af9be14cc0ab4adf01f0367b299c732254",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "BusSans400.ttf",
+      "bytes": 86816,
+      "instructions": "Supply originals per font-inputs.json, run prepare-fonts.py; point BUS_MORNING_FONT_DIR at derived directory. Missing or mismatched fonts fail closed."
+    },
+    {
+      "id": "bussans500",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "08e4edc5c64526a11b0a8222c80aae4f38c9356b97f988e79b3e5b5316ccaee3",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "BusSans500.ttf",
+      "bytes": 86768,
+      "instructions": "Supply originals per font-inputs.json, run prepare-fonts.py; point BUS_MORNING_FONT_DIR at derived directory. Missing or mismatched fonts fail closed."
+    },
+    {
+      "id": "businter300",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/Inter-OFL.txt",
+      "source_url": "https://github.com/rsms/inter",
+      "sha256": "ead9c82287fa23a0b071c92f214d6283090651b54b2460c6a7cfa701a911f83f",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "BusInter300.ttf",
+      "bytes": 57236,
+      "instructions": "Supply originals per font-inputs.json, run prepare-fonts.py; point BUS_MORNING_FONT_DIR at derived directory. Missing or mismatched fonts fail closed."
+    },
+    {
+      "id": "businter500",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/Inter-OFL.txt",
+      "source_url": "https://github.com/rsms/inter",
+      "sha256": "71ffbe20a184b9d948f9740b5282fa323e5274522552b7ccdf54cd2e3fd11520",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "BusInter500.ttf",
+      "bytes": 57156,
+      "instructions": "Supply originals per font-inputs.json, run prepare-fonts.py; point BUS_MORNING_FONT_DIR at derived directory. Missing or mismatched fonts fail closed."
+    },
+    {
+      "id": "busmono400",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/RobotoMono-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/robotomono",
+      "sha256": "b7c92b52fde3aafec45d1e6159409b725588396fac7d1b262a903e9a14f48685",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "BusMono400.ttf",
+      "bytes": 13424,
+      "instructions": "Supply originals per font-inputs.json, run prepare-fonts.py; point BUS_MORNING_FONT_DIR at derived directory. Missing or mismatched fonts fail closed."
+    },
+    {
+      "id": "busmono500",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/RobotoMono-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/robotomono",
+      "sha256": "c4e742f3467299551174057b999fe4d39a6c95a8e63dd1d2d0bae60f86b74750",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "BusMono500.ttf",
+      "bytes": 13400,
+      "instructions": "Supply originals per font-inputs.json, run prepare-fonts.py; point BUS_MORNING_FONT_DIR at derived directory. Missing or mismatched fonts fail closed."
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "9ff6a7d75b7b859a01b5c07d8a614d547723957993067c5e2ef1ee7c5d7c0245",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "Complete static composition and critical details independently reviewed and accepted for collection. Trajectory blending and font rasterization remain approximate. Fictional illustrative model only: source 543/1641 counters differ from drawn-path 538/1640 intersections; no modeled 37-route network or real station-distance data. No browser, interaction, responsive, motion or audio validation."
+    }
+  }
+}

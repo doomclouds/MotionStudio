@@ -1,0 +1,40 @@
+{
+  "tool": "fonttools==4.61.1",
+  "inputs": [
+    {
+      "file": "NotoSansSC-variable.ttf",
+      "sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+      "source": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "prefix": "BusSans",
+      "weights": [
+        300,
+        400,
+        500
+      ],
+      "notice": "LICENSES/NotoSansSC-OFL.txt"
+    },
+    {
+      "file": "Inter-var.ttf",
+      "sha256": "c8d76e1cb2a0a7cfbbae1e390be4e4b942b27f99ec07e1024b1fc916045eed09",
+      "source": "https://github.com/rsms/inter",
+      "prefix": "BusInter",
+      "weights": [
+        300,
+        500
+      ],
+      "notice": "LICENSES/Inter-OFL.txt"
+    },
+    {
+      "file": "RobotoMono-variable.ttf",
+      "sha256": "66a80e79d17e4c7cabd162e2916578a4cc08fd19eef6e2a643305eae9c567b2b",
+      "source": "https://github.com/google/fonts/tree/main/ofl/robotomono",
+      "prefix": "BusMono",
+      "weights": [
+        400,
+        500
+      ],
+      "notice": "LICENSES/RobotoMono-OFL.txt"
+    }
+  ],
+  "scope": "Externally supplied licensed font binaries; no download or silent fallback."
+}

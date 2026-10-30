@@ -1,0 +1,143 @@
+{
+  "schema": 4,
+  "id": "meridian-study",
+  "version": "1.0.0",
+  "title": "Meridian · 黑白对分品牌与产品首屏",
+  "status": "source-release",
+  "unofficial_recreation": true,
+  "original": {
+    "author": "alchaincyf (花叔 · 花生)",
+    "title": "Huashu design specimen",
+    "url": "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/showcases/website-saas/saas-pentagram.html"
+  },
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "LICENSES/Liberation-OFL.txt",
+      "LICENSES/huashu-MIT-LICENSE.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/LICENSE",
+      "https://github.com/liberationfonts/liberation-fonts"
+    ]
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "03c4b60365974775a25f9fdbfb07e3830c9320930653262bbf78cfce095e7254",
+      "role": "documentation"
+    },
+    {
+      "path": "CREDITS.md",
+      "sha256": "1f91af829013455ee67e424267337d7d85d0a7fe4a358d63114a04ea68427ba3",
+      "role": "documentation"
+    },
+    {
+      "path": "DESIGN-REASONING.md",
+      "sha256": "ecd323e84db873b0beeb26dcec63845c47fe601193b1ffc596936412dd4b26a1",
+      "role": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "4ba747751f084e0f9420bc09435b4b218b4aded8f3844c8a455460a350b422ce",
+      "role": "cover"
+    },
+    {
+      "path": "prepare-fonts.py",
+      "sha256": "2611df2f1e8919bb7c40fcbec5447b85670ef4031774a270df38ce7faab79946",
+      "role": "source"
+    },
+    {
+      "path": "font-inputs.json",
+      "sha256": "db1795e5aac76c268d8b8609d75db73bac61d902acb9637b0543242664cf1a10",
+      "role": "config"
+    },
+    {
+      "path": "locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "role": "lock"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "3376138df78fb0b3f62bc57d80dc440204cbe0a0709a07396e39636873862e6f",
+      "role": "lock"
+    },
+    {
+      "path": "LICENSES/huashu-MIT-LICENSE.txt",
+      "sha256": "6d6a2a9caf2e6d2b76974050427053b2892d8aa4c33fd168ce63a537fcee9d96",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/Liberation-OFL.txt",
+      "sha256": "f32df582a2aab128c07b2f7e36e7b928dc5f6bd82657b905c04f91459f9e5cf9",
+      "role": "license"
+    },
+    {
+      "path": "design/scene.mjs",
+      "sha256": "e6e975295f11f60d49a6ee9d8ac91e0a090e6bf37db0b643f24667d3e85526a0",
+      "role": "source"
+    }
+  ],
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "locks/npm-package-lock.json"
+    }
+  ],
+  "render": {
+    "entrypoint": "design/scene.mjs",
+    "width": 1440,
+    "height": 900
+  },
+  "resources": [
+    {
+      "id": "liberationsans-regular",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font file, not distributed",
+      "notice": "LICENSES/Liberation-OFL.txt",
+      "source_url": "https://github.com/liberationfonts/liberation-fonts",
+      "sha256": "bade59d822652f76e6941aa87b40a87c13d1cc70db98ededb5011127efafd1d3",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "LiberationSans-Regular.ttf",
+      "bytes": 410820,
+      "instructions": "Obtain hash-matched originalInputs from font-inputs.json, then run prepare-fonts.py; original and output identities are both fail-closed, and render checks output SHA."
+    },
+    {
+      "id": "liberationsans-bold",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font file, not distributed",
+      "notice": "LICENSES/Liberation-OFL.txt",
+      "source_url": "https://github.com/liberationfonts/liberation-fonts",
+      "sha256": "1b5f2da6f4cadce4c05b9ecebe3a6fcd374eb95ae443605e799f4c3287978939",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "LiberationSans-Bold.ttf",
+      "bytes": 414568,
+      "instructions": "Obtain hash-matched originalInputs from font-inputs.json, then run prepare-fonts.py; original and output identities are both fail-closed, and render checks output SHA."
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "b76a920d3ac2613cd3f59a1d62e94a23fca51d4671d9f32da584133f5e3c3afa",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "Complete still and critical details reviewed. Font/JPEG/antialiasing residuals remain, and Meridian font substitution is explicit. Fixed static only, no browser, responsive, interaction or video validation."
+    }
+  }
+}

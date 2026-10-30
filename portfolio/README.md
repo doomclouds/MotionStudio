@@ -65,6 +65,29 @@
 
 [液态玻璃 · 冲浪预报三屏展示](works/liquid-glass-study/README.md) — 完整三屏展示；自产画布透色与alpha柔影为2D近似，不宣称物理折射或苹果官方设计。 完整可编辑静态工程与设计逻辑、许可、字体准备保留；重渲染匹配已审画面，残差仍按PARTIAL披露，未验证交互或视频。
 
+
+## Huashu B03 · 天文编辑、专业控制与视觉叙事
+
+[![今夜观木星 · 复古未来观象台](works/cosmic-observatory-study/cover.jpg)](works/cosmic-observatory-study/README.md)
+
+[今夜观木星 · 复古未来观象台](works/cosmic-observatory-study/README.md) — 1200×750。复古编辑式天文品牌首屏；轨道非比例，观测日期和科学说法未经事实核查。 完整工程独立重渲染匹配已审帧，视觉残差仍按PARTIAL披露；未验证浏览器、交互或视频。
+
+[![专业相机 · 参数控制三屏](works/pro-camera-study/cover.jpg)](works/pro-camera-study/README.md)
+
+[专业相机 · 参数控制三屏](works/pro-camera-study/README.md) — 1200×750。专业相机三屏静态展示；渐变是原样例照片占位，非真实摄影或可操作相机。 完整工程独立重渲染匹配已审帧，视觉残差仍按PARTIAL披露；未验证浏览器、交互或视频。
+
+[![公交早晨 · 计算式数据肖像](works/bus-morning-study/cover.jpg)](works/bus-morning-study/README.md)
+
+[公交早晨 · 计算式数据肖像](works/bus-morning-study/README.md) — 1200×750。信息设计的密线数据肖像，不是完整产品UI；虚构模型保留37路线未建模及543/538、1641/1640计数差异。 完整工程独立重渲染匹配已审帧，视觉残差仍按PARTIAL披露；未验证浏览器、交互或视频。
+
+[![今天的浪 · 玩味错位天气海报](works/wave-weather-study/cover.jpg)](works/wave-weather-study/README.md)
+
+[今天的浪 · 玩味错位天气海报](works/wave-weather-study/README.md) — 1200×750。错印波浪与天气读数的完整静态画面，数据只是样例，不用于冲浪安全决策。 完整工程独立重渲染匹配已审帧，视觉残差仍按PARTIAL披露；未验证浏览器、交互或视频。
+
+[![Meridian · 黑白对分品牌与产品首屏](works/meridian-study/cover.jpg)](works/meridian-study/README.md)
+
+[Meridian · 黑白对分品牌与产品首屏](works/meridian-study/README.md) — 1440×900。黑白对分的SaaS品牌首屏；非Pentagram官方作品，样例客户/数据不构成背书，原图低对比问题保留。 完整工程独立重渲染匹配已审帧，视觉残差仍按PARTIAL披露；未验证浏览器、交互或视频。
+
 ## 最小结构
 
 ```text

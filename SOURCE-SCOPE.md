@@ -69,3 +69,15 @@ Five further fixed-frame studies retain full editable source, design reasoning, 
 - `portfolio/works/liquid-glass-study/cover.jpg`: 239,267 bytes; SHA-256 `dafc85a12ef859aadc0de540cba83c7fd2b8bdcf68e64a6211bd15f346ec7026`.
 
 No wildcard media permission is granted. Covers derive only from the accepted Native recreations; schema4 does not imply browser, interaction, audio or animation validation.
+
+## Huashu B03 retained static works
+
+Five complete fixed-frame studies retain editable code, design reasoning, runtime locks, attribution and externally supplied fonts. No upstream images/HTML, review reports, font binaries or render sequences are included. Exact additional JPEG exceptions (each maximum 1 MiB; dimensions preserve each accepted work):
+
+- `portfolio/works/cosmic-observatory-study/cover.jpg`: 1200 × 750, 119,111 bytes; SHA-256 `e4ff31cfb20c7fe3c815ce867e91ab3c556152a09816265613135faeddd3e03b`.
+- `portfolio/works/pro-camera-study/cover.jpg`: 1200 × 750, 110,683 bytes; SHA-256 `486a229cd763d088a6724a3d047c0f5dba0a37f8aa5fa6b77848daea23f86433`.
+- `portfolio/works/bus-morning-study/cover.jpg`: 1200 × 750, 222,287 bytes; SHA-256 `568e310c946778081e8e402f3f1dc57899a9570829acdd082737d79c8665436c`.
+- `portfolio/works/wave-weather-study/cover.jpg`: 1200 × 750, 157,870 bytes; SHA-256 `40be54ada883fd596aaabf9072ef5489fcc13375323fbe51b320296000b60c48`.
+- `portfolio/works/meridian-study/cover.jpg`: 1440 × 900, 142,391 bytes; SHA-256 `4ba747751f084e0f9420bc09435b4b218b4aded8f3844c8a455460a350b422ce`.
+
+No wildcard media permission is granted. Covers derive from the accepted Native recreations; schema4 does not imply browser, interaction, audio or animation validation. Meridian is retained at its original 1440 × 900 frame, not rescaled to the other works.

@@ -1,0 +1,53 @@
+{
+  "fonts": [
+    {
+      "output": "BusSans300.ttf",
+      "sha256": "0df7174d9bd28e1e74bdf204b0078b79d6bb795fb3d26136aae8fc4cfb7c3059",
+      "weight": 300,
+      "source": "NotoSansSC-variable.ttf",
+      "source_sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da"
+    },
+    {
+      "output": "BusSans400.ttf",
+      "sha256": "aab39adb3a56e8089add9e0b059047af9be14cc0ab4adf01f0367b299c732254",
+      "weight": 400,
+      "source": "NotoSansSC-variable.ttf",
+      "source_sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da"
+    },
+    {
+      "output": "BusSans500.ttf",
+      "sha256": "08e4edc5c64526a11b0a8222c80aae4f38c9356b97f988e79b3e5b5316ccaee3",
+      "weight": 500,
+      "source": "NotoSansSC-variable.ttf",
+      "source_sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da"
+    },
+    {
+      "output": "BusInter300.ttf",
+      "sha256": "ead9c82287fa23a0b071c92f214d6283090651b54b2460c6a7cfa701a911f83f",
+      "weight": 300,
+      "source": "Inter-var.ttf",
+      "source_sha256": "c8d76e1cb2a0a7cfbbae1e390be4e4b942b27f99ec07e1024b1fc916045eed09"
+    },
+    {
+      "output": "BusInter500.ttf",
+      "sha256": "71ffbe20a184b9d948f9740b5282fa323e5274522552b7ccdf54cd2e3fd11520",
+      "weight": 500,
+      "source": "Inter-var.ttf",
+      "source_sha256": "c8d76e1cb2a0a7cfbbae1e390be4e4b942b27f99ec07e1024b1fc916045eed09"
+    },
+    {
+      "output": "BusMono400.ttf",
+      "sha256": "b7c92b52fde3aafec45d1e6159409b725588396fac7d1b262a903e9a14f48685",
+      "weight": 400,
+      "source": "RobotoMono-variable.ttf",
+      "source_sha256": "66a80e79d17e4c7cabd162e2916578a4cc08fd19eef6e2a643305eae9c567b2b"
+    },
+    {
+      "output": "BusMono500.ttf",
+      "sha256": "c4e742f3467299551174057b999fe4d39a6c95a8e63dd1d2d0bae60f86b74750",
+      "weight": 500,
+      "source": "RobotoMono-variable.ttf",
+      "source_sha256": "66a80e79d17e4c7cabd162e2916578a4cc08fd19eef6e2a643305eae9c567b2b"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "originalInputs": [
+    {
+      "filename": "NotoSansSC-variable.ttf",
+      "sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+      "bytes": 17772300
+    },
+    {
+      "filename": "ZCOOLKuaiLe-Regular.ttf",
+      "sha256": "812a6fc1fe54b6d73a419245c32dfeba8aa33104d5be90d1cf6af082007cb71d",
+      "bytes": 1514968
+    }
+  ],
+  "expectedOutputs": [
+    {
+      "filename": "PairSans500.ttf",
+      "sha256": "834c13770abff875f3a13aac626a1b389f61c94706d5e488fffaf44c2aabb836",
+      "bytes": 496276
+    },
+    {
+      "filename": "PairSans900.ttf",
+      "sha256": "518765b2fd6215305b3ccbd26e900aa67e0ae3bb4f1081ba5afd321c51f549d4",
+      "bytes": 496372
+    },
+    {
+      "filename": "ZCOOLKuaiLe-Regular.ttf",
+      "sha256": "812a6fc1fe54b6d73a419245c32dfeba8aa33104d5be90d1cf6af082007cb71d",
+      "bytes": 1514968
+    }
+  ],
+  "outputNames": [
+    "PairSans500.ttf",
+    "PairSans900.ttf",
+    "ZCOOLKuaiLe-Regular.ttf"
+  ],
+  "scope": "Fail-closed source and derived hashes. External font files only; fixed Noto modification timestamp for reproducibility."
+}

@@ -1,0 +1,115 @@
+{
+  "originalInputs": [
+    {
+      "filename": "NotoSansSC-variable.ttf",
+      "sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+      "bytes": 17772300,
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc"
+    },
+    {
+      "filename": "NotoSerifSC-variable.ttf",
+      "sha256": "050080d9255a86808f2945bffac582b31ef32bc36411ce29563b4961670c66f9",
+      "bytes": 25125512,
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notoserifsc"
+    },
+    {
+      "filename": "CormorantItalic-variable.ttf",
+      "sha256": "0f48ea6abb2084537854f7174c470991a463b13036309e3b50a81511611c530d",
+      "bytes": 715644,
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/cormorantgaramond"
+    },
+    {
+      "filename": "SpaceMono-Regular.ttf",
+      "sha256": "95837e182baeeada83368f7748db28357f0a1b75c6b84ff7065b5edf933c8e18",
+      "bytes": 99356,
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/spacemono"
+    },
+    {
+      "filename": "SpaceMono-Bold.ttf",
+      "sha256": "405e73d41afb7e5906efce206a326af5c956f38e255f35421c260e861e599c59",
+      "bytes": 98232,
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/spacemono"
+    }
+  ],
+  "recipes": [
+    [
+      "NotoSansSC-variable.ttf",
+      "MonoSans400.ttf",
+      400,
+      true
+    ],
+    [
+      "NotoSansSC-variable.ttf",
+      "HeadingSans700.ttf",
+      700,
+      true
+    ],
+    [
+      "NotoSerifSC-variable.ttf",
+      "Serif500.ttf",
+      500,
+      true
+    ],
+    [
+      "NotoSerifSC-variable.ttf",
+      "Serif700.ttf",
+      700,
+      true
+    ],
+    [
+      "CormorantItalic-variable.ttf",
+      "CormorantItalic500.ttf",
+      500,
+      false
+    ],
+    [
+      "SpaceMono-Regular.ttf",
+      "SpaceMono-Regular.ttf",
+      null,
+      false
+    ],
+    [
+      "SpaceMono-Bold.ttf",
+      "SpaceMono-Bold.ttf",
+      null,
+      false
+    ]
+  ],
+  "outputs": [
+    {
+      "filename": "MonoSans400.ttf",
+      "sha256": "40addb03b6e09916683ef873dd4ceee6114b0121c9bd6f45fa470d8e4f6750ac",
+      "bytes": 36628
+    },
+    {
+      "filename": "HeadingSans700.ttf",
+      "sha256": "b25442360b5b336d04d53a7558ddc5c0a2e297d359014606b0d5a52038108a27",
+      "bytes": 36612
+    },
+    {
+      "filename": "Serif500.ttf",
+      "sha256": "f870b05601a358b0437d770224ef1205230953fc2d1269dd16be590a7885b9de",
+      "bytes": 48052
+    },
+    {
+      "filename": "Serif700.ttf",
+      "sha256": "ea15070b70807e544e6691a3cee1f953c0f44a2b1f5526f54c273d87649162f7",
+      "bytes": 48052
+    },
+    {
+      "filename": "CormorantItalic500.ttf",
+      "sha256": "ac20baf2e9e8b68668399ea494a8d52e577938c39622688c71a4170e973ef145",
+      "bytes": 454392
+    },
+    {
+      "filename": "SpaceMono-Regular.ttf",
+      "sha256": "95837e182baeeada83368f7748db28357f0a1b75c6b84ff7065b5edf933c8e18",
+      "bytes": 99356
+    },
+    {
+      "filename": "SpaceMono-Bold.ttf",
+      "sha256": "405e73d41afb7e5906efce206a326af5c956f38e255f35421c260e861e599c59",
+      "bytes": 98232
+    }
+  ]
+}

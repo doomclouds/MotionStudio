@@ -1,0 +1,86 @@
+{
+  "originalInputs": [
+    {
+      "filename": "NotoSansSC-variable.ttf",
+      "sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+      "bytes": 17772300,
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc"
+    },
+    {
+      "filename": "JetBrains-variable.ttf",
+      "sha256": "48715a42ec242c21e9f02692891e147d022299a52e48d5e413e1a942193ffeda",
+      "bytes": 187208,
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/jetbrainsmono"
+    }
+  ],
+  "recipes": [
+    [
+      "NotoSansSC-variable.ttf",
+      "Sans400.ttf",
+      400,
+      true
+    ],
+    [
+      "NotoSansSC-variable.ttf",
+      "Sans500.ttf",
+      500,
+      true
+    ],
+    [
+      "NotoSansSC-variable.ttf",
+      "Sans700.ttf",
+      700,
+      true
+    ],
+    [
+      "JetBrains-variable.ttf",
+      "JetBrains400.ttf",
+      400,
+      false
+    ],
+    [
+      "JetBrains-variable.ttf",
+      "JetBrains500.ttf",
+      500,
+      false
+    ],
+    [
+      "JetBrains-variable.ttf",
+      "JetBrains700.ttf",
+      700,
+      false
+    ]
+  ],
+  "outputs": [
+    {
+      "filename": "Sans400.ttf",
+      "sha256": "3367fd2a889d6c83a476a02c1f272cba0d7f5924f006cfeef6f929fa286f2dce",
+      "bytes": 29660
+    },
+    {
+      "filename": "Sans500.ttf",
+      "sha256": "385b0271c7de8af869e92c462486c98b0d36d557cae3dcdbac6643bac5d1340c",
+      "bytes": 29664
+    },
+    {
+      "filename": "Sans700.ttf",
+      "sha256": "177ca4a4ca9049a41ebf0104ccb631d952a0833c2e8f72d7773f4ad136b3c900",
+      "bytes": 29640
+    },
+    {
+      "filename": "JetBrains400.ttf",
+      "sha256": "508690537ad731e5a6b6b08dfca9c7573972e24aa58ff69088bf6937cc1a5470",
+      "bytes": 115024
+    },
+    {
+      "filename": "JetBrains500.ttf",
+      "sha256": "8472dfd7b6fb861cd47832bbae37ac7f3ca3c18d683219f1ab7062def10117fc",
+      "bytes": 115044
+    },
+    {
+      "filename": "JetBrains700.ttf",
+      "sha256": "d3647befec21d639c85b5e922108cb5be5c583d013b1cbbd23f482917e64b64b",
+      "bytes": 114980
+    }
+  ]
+}
