@@ -1,0 +1,97 @@
+{
+  "originalInputs": [
+    {
+      "filename": "NotoSansSC-variable.ttf",
+      "sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc"
+    },
+    {
+      "filename": "Nunito-variable.ttf",
+      "sha256": "bb55a5ca5c2042335b3991af27c4d0705d0ef41cac6164ac737fd8f2a1e85207",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/nunito"
+    }
+  ],
+  "derived": [
+    {
+      "source": "NotoSansSC-variable.ttf",
+      "name": "MGSans400",
+      "weight": 400
+    },
+    {
+      "source": "NotoSansSC-variable.ttf",
+      "name": "MGSans500",
+      "weight": 500
+    },
+    {
+      "source": "NotoSansSC-variable.ttf",
+      "name": "MGSans700",
+      "weight": 700
+    },
+    {
+      "source": "Nunito-variable.ttf",
+      "name": "MGNunito400",
+      "weight": 400
+    },
+    {
+      "source": "Nunito-variable.ttf",
+      "name": "MGNunito600",
+      "weight": 600
+    },
+    {
+      "source": "Nunito-variable.ttf",
+      "name": "MGNunito700",
+      "weight": 700
+    },
+    {
+      "source": "Nunito-variable.ttf",
+      "name": "MGNunito800",
+      "weight": 800
+    }
+  ],
+  "outputNames": [
+    "MGSans400.ttf",
+    "MGSans500.ttf",
+    "MGSans700.ttf",
+    "MGNunito400.ttf",
+    "MGNunito600.ttf",
+    "MGNunito700.ttf",
+    "MGNunito800.ttf"
+  ],
+  "expectedOutputs": [
+    {
+      "filename": "MGSans400.ttf",
+      "sha256": "30cac1e85d7ed8b0a00575c2f3dbe138ce9754c6fc22b802814bdd1b5bea0cf9",
+      "bytes": 139648
+    },
+    {
+      "filename": "MGSans500.ttf",
+      "sha256": "3baa276f626388d7d65a7520cc6413e1c639c15aaa979a47f1fa98a948e38498",
+      "bytes": 139636
+    },
+    {
+      "filename": "MGSans700.ttf",
+      "sha256": "2a77419fc66a00cc8b439826493c3438bbc3306ff77f15ef11ade2d5786d5a9d",
+      "bytes": 140468
+    },
+    {
+      "filename": "MGNunito400.ttf",
+      "sha256": "237027fbd6dacc89e26a5be53b186ec1afff186f3ab737d63d3c596b8452e4d1",
+      "bytes": 23368
+    },
+    {
+      "filename": "MGNunito600.ttf",
+      "sha256": "234e944905ce55df8b68a91e30a1bb1dee2bd92b270404fe9a8286dc76df1787",
+      "bytes": 23376
+    },
+    {
+      "filename": "MGNunito700.ttf",
+      "sha256": "ef8638e717e1e97adf4dcd6d597817efe1b9e93bc0dee5c367b3ea42fa7bdcb5",
+      "bytes": 23340
+    },
+    {
+      "filename": "MGNunito800.ttf",
+      "sha256": "98bd4b3b2d1f7524364170a65aaa02778dc232e2399fec323849a35e74309721",
+      "bytes": 23344
+    }
+  ]
+}

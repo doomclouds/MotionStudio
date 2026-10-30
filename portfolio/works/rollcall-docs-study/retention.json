@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "workId": "rollcall-docs-study",
+  "kind": "fixed-static-design",
+  "canvas": {
+    "width": 1200,
+    "height": 750
+  },
+  "entrypoint": "design/scene.mjs",
+  "decisionCard": "DESIGN-RETENTION.md",
+  "sourceAnalysis": [
+    "design/DESIGN-REASONING.md"
+  ],
+  "ruleRefs": [],
+  "ruleStatus": "Case time-domain audit / explicit code-line drawing recipe, not registered shared family.",
+  "assetUsage": [
+    {
+      "familyId": "design.material-surfaces.v1",
+      "mode": "runtime-import",
+      "modulePath": "engine/design-elements/material-surfaces.mjs",
+      "moduleSha256": "70bf1fcfa89bfbf911f5cf735b1b08e8ae7f360e43bd43a8c831efef579696eb",
+      "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
+      "callsite": "design/scene.mjs",
+      "importToken": "material-surfaces.mjs",
+      "callToken": "surface",
+      "visibleRole": "Code panel opaque base once, radius12/elevation0; not complete docs layout",
+      "snapshotPath": null,
+      "executionEvidence": {
+        "status": "MATCHED_ACCEPTED_FRAME",
+        "recordId": "b10-ui-call-rollcall-docs-study",
+        "sha256": "c772d83360e6678c35a969b8d51544b6c789d06b044460076d80cc05466489f5",
+        "frameSha256": "5c1cbe6f6a54a9a5cf1e4e9122600313df9a92cf8da9fe3f96011eeb0afc45eb",
+        "storage": "SCRATCH_LOCAL_ONLY",
+        "durableStorage": "NOT_LOCATED",
+        "note": "Temporary import seam logged one real module draw and delegated original; frame byte-identical. Technical author audit, not independent new aesthetic review."
+      }
+    }
+  ],
+  "nonAssetNote": "Night uses no public family. Docs uses material only for base surface; code runs and window audits are case-local recipes, not new families.",
+  "evidence": {
+    "acceptanceSource": "entry.json#/acceptance",
+    "renderHashSource": "entry.json#/cover/source_sha256",
+    "publicCover": "cover.jpg",
+    "comparisonBundle": {
+      "status": "NOT_PUBLISHED",
+      "recordId": "b10-docs-visual-report",
+      "sha256": "bacf526307f924fc384aae8a817466728685ea1c6f3792d0acde5a2413a6c2e5",
+      "storage": "SCRATCH_LOCAL_ONLY",
+      "durableStorage": "NOT_LOCATED",
+      "note": "HTML report container, not PNG. Embedded image bytes checked; persistent storage unverified."
+    },
+    "independentReview": {
+      "status": "PRIVATE_RECORD_LOCATED",
+      "recordId": "b10-independent-visual-review",
+      "sha256": "27790c4a57c24aae893ef4846c71b95b8a2f03e8295cba598f4773e36acabdaf",
+      "storage": "PRIVATE_OWNER_PAGE",
+      "durableStorage": "ACCESS_VERIFIED",
+      "note": "最终全批独审原文已存仅所有者Page并读回原字节SHA；不是新增审美验收。"
+    },
+    "visualReport": {
+      "recordId": "b10-verified-private-report-docs",
+      "sha256": "bacf526307f924fc384aae8a817466728685ea1c6f3792d0acde5a2413a6c2e5",
+      "storage": "PRIVATE_LIBRARY",
+      "durableStorage": "ACCESS_VERIFIED",
+      "acceptedFrameBinding": "EXACT_PIXELS",
+      "status": "NOT_PUBLISHED",
+      "artifactKind": "html-report",
+      "note": "实际取回私有Library HTML核终审容器SHA，全部嵌图可解码；原尺寸/无边并排半图像素绑定未建立不推错版。不是浏览器或新增审美验证。"
+    }
+  },
+  "motionTransfer": {
+    "status": "NOT_TESTED",
+    "note": "Fixed Native static only; no factual ledger/interaction/motion verification."
+  }
+}

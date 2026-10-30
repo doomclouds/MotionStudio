@@ -1,0 +1,325 @@
+{
+  "schema": 4,
+  "id": "rollcall-docs-study",
+  "version": "1.0.0",
+  "title": "rollcall分类文档 · 完整静态复刻",
+  "status": "source-release",
+  "unofficial_recreation": true,
+  "original": {
+    "author": "alchaincyf (花叔 · 花生)",
+    "title": "Huashu web/15-utility-colorful-docs",
+    "url": "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/info/web/15-utility-colorful-docs.html"
+  },
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "LICENSES/Inter-OFL.txt",
+      "LICENSES/Newsreader-OFL.txt",
+      "LICENSES/NotoSans-OFL.txt",
+      "LICENSES/NotoSansSC-OFL.txt",
+      "LICENSES/NotoSerifSC-OFL.txt",
+      "LICENSES/huashu-MIT-LICENSE.txt",
+      "LICENSES/jetbrainsmono-OFL.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/LICENSE",
+      "https://github.com/google/fonts"
+    ]
+  },
+  "files": [
+    {
+      "path": "CREDITS.md",
+      "sha256": "bd8922448c0730f89303e7068604d018fe4d307c7a9824be93c6e536d7efd8c5",
+      "role": "documentation"
+    },
+    {
+      "path": "DESIGN-RETENTION.md",
+      "sha256": "519c4b6ecce3c2ad6bb4169781b68edc4397b6469593f748fc20933660e72414",
+      "role": "documentation"
+    },
+    {
+      "path": "LICENSES/Inter-OFL.txt",
+      "sha256": "67c5d5206b96f8340b95fabd02ae60701e0b20ce2594d976216f1065e5aa3822",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/Newsreader-OFL.txt",
+      "sha256": "fdfad38143ec470553cae82a1e45320bdd1b9ec70415d37bd0171051d8a4ded8",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/NotoSans-OFL.txt",
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/NotoSansSC-OFL.txt",
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/NotoSerifSC-OFL.txt",
+      "sha256": "5e0da210fb04058a8c0087985d2d456b931c2579811a49655721d3cf0c36b6d6",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/huashu-MIT-LICENSE.txt",
+      "sha256": "6d6a2a9caf2e6d2b76974050427053b2892d8aa4c33fd168ce63a537fcee9d96",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/jetbrainsmono-OFL.txt",
+      "sha256": "b2fe5e8987594e9ffd1d2ca52a2f5d73eb8335243893c5d6254b5ad69269591d",
+      "role": "license"
+    },
+    {
+      "path": "README.md",
+      "sha256": "74e51efe0dfc9d4e0bdde388933dec673b760123ce0faf337a25d9b63c0dec73",
+      "role": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "5ba73d7726a1ecb90b36ca33e5132888abdd5f888b3e24f5ddd64e16da5b7c86",
+      "role": "cover"
+    },
+    {
+      "path": "design/DESIGN-REASONING.md",
+      "sha256": "8b9157b19cde27813607b217b56ab782effa515f901aa3e6501392243bd0ca72",
+      "role": "documentation"
+    },
+    {
+      "path": "design/code-runs.mjs",
+      "sha256": "fbcff247f6b06ca1f9351448a62a30c67af382bdfe2fe56ba246b157aa27a36b",
+      "role": "source"
+    },
+    {
+      "path": "design/scene.mjs",
+      "sha256": "c1616fae5b052768ac7f377cde34af977cd105439b06ac3b90119e04b65f9810",
+      "role": "source"
+    },
+    {
+      "path": "font-inputs.json",
+      "sha256": "be78dd43763586ed0b18494782fd7b0c6f1af6d4c2315b0ea7ef89739895f4ac",
+      "role": "config"
+    },
+    {
+      "path": "locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "role": "lock"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "c97986608711fff48e780026471834a114f117d30fd4f1b15c3e76b21a760a46",
+      "role": "lock"
+    },
+    {
+      "path": "prepare-fonts.py",
+      "sha256": "f5b42df61d337bbfa4dc1ae39ce76056b33a64312779f9b1fbbdb234bb3fd5f1",
+      "role": "source"
+    },
+    {
+      "path": "retention.json",
+      "sha256": "6ce05e543175b22d233127bd13abff5e899f7e9162e360eed7e373d882db8ea7",
+      "role": "config"
+    },
+    {
+      "path": "tests/recipe.test.mjs",
+      "sha256": "21be69198c62ceadfaf57eb6986b05b2c8fad6756efdf8b7e5bb86d05c196039",
+      "role": "source"
+    }
+  ],
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "locks/npm-package-lock.json"
+    }
+  ],
+  "render": {
+    "entrypoint": "design/scene.mjs",
+    "width": 1200,
+    "height": 750
+  },
+  "resources": [
+    {
+      "id": "notosanssc-variable",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "NotoSansSC-variable.ttf",
+      "bytes": 17772300,
+      "instructions": "Provide via ROLLCALL_DOCS_FONT_DIR; prepare-fonts.py verifies original and derived identity."
+    },
+    {
+      "id": "inter-var",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/Inter-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/inter",
+      "sha256": "c8d76e1cb2a0a7cfbbae1e390be4e4b942b27f99ec07e1024b1fc916045eed09",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Inter-var.ttf",
+      "bytes": 254236,
+      "instructions": "Provide via ROLLCALL_DOCS_FONT_DIR; prepare-fonts.py verifies original and derived identity."
+    },
+    {
+      "id": "jetbrains-variable",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/jetbrainsmono-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/jetbrainsmono",
+      "sha256": "48715a42ec242c21e9f02692891e147d022299a52e48d5e413e1a942193ffeda",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "JetBrains-variable.ttf",
+      "bytes": 187208,
+      "instructions": "Provide via ROLLCALL_DOCS_FONT_DIR; prepare-fonts.py verifies original and derived identity."
+    },
+    {
+      "id": "sans400",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "6e8da1d5e5f9a4b1e556e9e100318b5e39caa8a9b908396f998aaaf31d0f65aa",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Sans400.ttf",
+      "bytes": 47620,
+      "instructions": "Provide via ROLLCALL_DOCS_FONT_DIR; prepare-fonts.py verifies original and derived identity."
+    },
+    {
+      "id": "sans500",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "8277c44a7beece1d4fe10eaf4627190fd8a781401c44512143fe34d294b8f3e1",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Sans500.ttf",
+      "bytes": 47632,
+      "instructions": "Provide via ROLLCALL_DOCS_FONT_DIR; prepare-fonts.py verifies original and derived identity."
+    },
+    {
+      "id": "sans600",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "c314883723bb58871b1cd3e3358f4f88bb327ae1d363b0971b7ad37514ca53de",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Sans600.ttf",
+      "bytes": 47632,
+      "instructions": "Provide via ROLLCALL_DOCS_FONT_DIR; prepare-fonts.py verifies original and derived identity."
+    },
+    {
+      "id": "sans700",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "9e424fb90612dad339a03310871812b570ff603001990562c671e1854abba1f5",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Sans700.ttf",
+      "bytes": 47600,
+      "instructions": "Provide via ROLLCALL_DOCS_FONT_DIR; prepare-fonts.py verifies original and derived identity."
+    },
+    {
+      "id": "inter400",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/Inter-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/inter",
+      "sha256": "4958c8f2ec1ba6418eb3a39010f1802d1063857d557f9c4df195eba3e3ba5121",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Inter400.ttf",
+      "bytes": 47184,
+      "instructions": "Provide via ROLLCALL_DOCS_FONT_DIR; prepare-fonts.py verifies original and derived identity."
+    },
+    {
+      "id": "inter500",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/Inter-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/inter",
+      "sha256": "e7072adf086c8ac60423d9a143a0a95ed69d085b054721c5553e4a05fb461d2e",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Inter500.ttf",
+      "bytes": 47496,
+      "instructions": "Provide via ROLLCALL_DOCS_FONT_DIR; prepare-fonts.py verifies original and derived identity."
+    },
+    {
+      "id": "inter600",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/Inter-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/inter",
+      "sha256": "34592966dd8ac084084400b9c4ca3ec5d0084d7b2b2b006fc67b5b7bc8ab4d2e",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Inter600.ttf",
+      "bytes": 47572,
+      "instructions": "Provide via ROLLCALL_DOCS_FONT_DIR; prepare-fonts.py verifies original and derived identity."
+    },
+    {
+      "id": "inter700",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/Inter-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/inter",
+      "sha256": "bd6aa1bf2644646dd577c27bfac7e03392bd94250fa3f5f6f01a2bc28fddd1a9",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Inter700.ttf",
+      "bytes": 47548,
+      "instructions": "Provide via ROLLCALL_DOCS_FONT_DIR; prepare-fonts.py verifies original and derived identity."
+    },
+    {
+      "id": "mono400",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/jetbrainsmono-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/jetbrainsmono",
+      "sha256": "d34b0695294d7e4b5316d200c64269e7f15b31d66ddc44c7f5c372448cde1245",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Mono400.ttf",
+      "bytes": 44124,
+      "instructions": "Provide via ROLLCALL_DOCS_FONT_DIR; prepare-fonts.py verifies original and derived identity."
+    },
+    {
+      "id": "mono500",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/jetbrainsmono-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/jetbrainsmono",
+      "sha256": "8a72f71c4b9cad9298db4827b6b3bc212802982deece7c66ec3b870dfc48d0a6",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Mono500.ttf",
+      "bytes": 44108,
+      "instructions": "Provide via ROLLCALL_DOCS_FONT_DIR; prepare-fonts.py verifies original and derived identity."
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "5c1cbe6f6a54a9a5cf1e4e9122600313df9a92cf8da9fe3f96011eeb0afc45eb",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "Full static independent comparison passed; disclosed glyph/JPEG differences remain. No motion/factual validation."
+    }
+  }
+}

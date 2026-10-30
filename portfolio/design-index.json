@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "countingUnit": "stable callable family; no function, case or snapshot duplication",
-  "staticWorks": 46,
+  "staticWorks": 51,
   "families": [
     {
       "id": "design.print-poster.v1",
@@ -51,12 +51,14 @@
       "actualUsers": [
         "command-palette-study",
         "friendly-fintech-study",
+        "gentle-activity-study",
         "health-color-code-study",
         "irreverent-pop-study",
         "mountain-book-jacket-study",
         "ocean-letter-study",
         "playful-roast-timer-study",
         "recursion-lecture-study",
+        "rollcall-docs-study",
         "salary-unit-stack-study",
         "solar-terms-study",
         "song-block-print-study",
@@ -274,6 +276,20 @@
       "motionTransfer": "NOT_TESTED"
     },
     {
+      "id": "cycling-magazine-study",
+      "decisionCard": "works/cycling-magazine-study/DESIGN-RETENTION.md",
+      "sourceAnalysis": [
+        "DESIGN-REASONING.md"
+      ],
+      "assetUsage": [],
+      "visualStatus": "PARTIAL",
+      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
+      "comparisonBundle": "NOT_PUBLISHED",
+      "reportStorage": "PRIVATE_LIBRARY",
+      "acceptedFrameBinding": "EXACT_PIXELS",
+      "motionTransfer": "NOT_TESTED"
+    },
+    {
       "id": "cycling-year-report",
       "decisionCard": "works/cycling-year-report/DESIGN-RETENTION.md",
       "sourceAnalysis": [
@@ -363,6 +379,42 @@
             "storage": "SCRATCH_LOCAL_ONLY",
             "durableStorage": "NOT_LOCATED",
             "note": "Integrator import-seam instrumentation delegated unchanged material module, observed 3 device calls and accepted-frame identical pixels. Not reviewer rerender or new aesthetic approval."
+          }
+        }
+      ],
+      "visualStatus": "PARTIAL",
+      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
+      "comparisonBundle": "NOT_PUBLISHED",
+      "reportStorage": "PRIVATE_LIBRARY",
+      "acceptedFrameBinding": "EXACT_PIXELS",
+      "motionTransfer": "NOT_TESTED"
+    },
+    {
+      "id": "gentle-activity-study",
+      "decisionCard": "works/gentle-activity-study/DESIGN-RETENTION.md",
+      "sourceAnalysis": [
+        "DESIGN-REASONING.md"
+      ],
+      "assetUsage": [
+        {
+          "familyId": "design.material-surfaces.v1",
+          "mode": "runtime-import",
+          "modulePath": "engine/design-elements/material-surfaces.mjs",
+          "moduleSha256": "70bf1fcfa89bfbf911f5cf735b1b08e8ae7f360e43bd43a8c831efef579696eb",
+          "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
+          "callsite": "design/scene.mjs",
+          "importToken": "material-surfaces.mjs",
+          "callToken": "surface",
+          "visibleRole": "6 opaque rounded card surfaces across 3 authored phone compositions",
+          "snapshotPath": null,
+          "executionEvidence": {
+            "status": "MATCHED_ACCEPTED_FRAME",
+            "recordId": "b10-native-restore-gentle-activity-study",
+            "sha256": "00fafae320a7aa0d7a8cb4be54c2b47bb3c4491891b23482436d124c84241ce6",
+            "frameSha256": "fa2a538a60133861d8a0c612e4752ec09d946531437af8d6800b762224b4ba01",
+            "storage": "SCRATCH_LOCAL_ONLY",
+            "durableStorage": "NOT_LOCATED",
+            "note": "Author independent external-font restore; 6 actual calls, exact accepted static frame. Not independent instrumentation or medical validation."
           }
         }
       ],
@@ -582,6 +634,21 @@
       "motionTransfer": "NOT_TESTED"
     },
     {
+      "id": "memory-case-study",
+      "decisionCard": "works/memory-case-study/DESIGN-RETENTION.md",
+      "sourceAnalysis": [
+        "design/DESIGN-ANALYSIS.md",
+        "design/SETTLEMENT.md"
+      ],
+      "assetUsage": [],
+      "visualStatus": "PARTIAL",
+      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
+      "comparisonBundle": "NOT_PUBLISHED",
+      "reportStorage": "PRIVATE_LIBRARY",
+      "acceptedFrameBinding": "NOT_ESTABLISHED",
+      "motionTransfer": "NOT_TESTED"
+    },
+    {
       "id": "meridian-study",
       "decisionCard": "works/meridian-study/DESIGN-RETENTION.md",
       "sourceAnalysis": [
@@ -650,6 +717,20 @@
       "decisionCard": "works/nanyuan-cartographic-study/DESIGN-RETENTION.md",
       "sourceAnalysis": [
         "DESIGN-REASONING.md"
+      ],
+      "assetUsage": [],
+      "visualStatus": "PARTIAL",
+      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
+      "comparisonBundle": "NOT_PUBLISHED",
+      "reportStorage": "PRIVATE_LIBRARY",
+      "acceptedFrameBinding": "EXACT_PIXELS",
+      "motionTransfer": "NOT_TESTED"
+    },
+    {
+      "id": "night-observatory-study",
+      "decisionCard": "works/night-observatory-study/DESIGN-RETENTION.md",
+      "sourceAnalysis": [
+        "design/DESIGN-REASONING.md"
       ],
       "assetUsage": [],
       "visualStatus": "PARTIAL",
@@ -843,6 +924,42 @@
             "storage": "SCRATCH_LOCAL_ONLY",
             "durableStorage": "NOT_LOCATED",
             "note": "Author clean external-font restore reproduced original frame; scene call receipt, not independent execution attribution or new aesthetic review."
+          }
+        }
+      ],
+      "visualStatus": "PARTIAL",
+      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
+      "comparisonBundle": "NOT_PUBLISHED",
+      "reportStorage": "PRIVATE_LIBRARY",
+      "acceptedFrameBinding": "EXACT_PIXELS",
+      "motionTransfer": "NOT_TESTED"
+    },
+    {
+      "id": "rollcall-docs-study",
+      "decisionCard": "works/rollcall-docs-study/DESIGN-RETENTION.md",
+      "sourceAnalysis": [
+        "design/DESIGN-REASONING.md"
+      ],
+      "assetUsage": [
+        {
+          "familyId": "design.material-surfaces.v1",
+          "mode": "runtime-import",
+          "modulePath": "engine/design-elements/material-surfaces.mjs",
+          "moduleSha256": "70bf1fcfa89bfbf911f5cf735b1b08e8ae7f360e43bd43a8c831efef579696eb",
+          "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
+          "callsite": "design/scene.mjs",
+          "importToken": "material-surfaces.mjs",
+          "callToken": "surface",
+          "visibleRole": "Code panel opaque base once, radius12/elevation0; not complete docs layout",
+          "snapshotPath": null,
+          "executionEvidence": {
+            "status": "MATCHED_ACCEPTED_FRAME",
+            "recordId": "b10-ui-call-rollcall-docs-study",
+            "sha256": "c772d83360e6678c35a969b8d51544b6c789d06b044460076d80cc05466489f5",
+            "frameSha256": "5c1cbe6f6a54a9a5cf1e4e9122600313df9a92cf8da9fe3f96011eeb0afc45eb",
+            "storage": "SCRATCH_LOCAL_ONLY",
+            "durableStorage": "NOT_LOCATED",
+            "note": "Temporary import seam logged one real module draw and delegated original; frame byte-identical. Technical author audit, not independent new aesthetic review."
           }
         }
       ],

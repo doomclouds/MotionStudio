@@ -1,0 +1,306 @@
+{
+  "schema": 4,
+  "id": "night-observatory-study",
+  "version": "1.0.0",
+  "title": "夜的厚度 · 完整静态复刻",
+  "status": "source-release",
+  "unofficial_recreation": true,
+  "original": {
+    "author": "alchaincyf (花叔 · 花生)",
+    "title": "Huashu info/13-speculative-tech-diagram",
+    "url": "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/info/info/13-speculative-tech-diagram.html"
+  },
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "LICENSES/Inter-OFL.txt",
+      "LICENSES/Newsreader-OFL.txt",
+      "LICENSES/NotoSans-OFL.txt",
+      "LICENSES/NotoSansSC-OFL.txt",
+      "LICENSES/NotoSerif-OFL.txt",
+      "LICENSES/NotoSerifSC-OFL.txt",
+      "LICENSES/cormorantgaramond-OFL.txt",
+      "LICENSES/huashu-MIT-LICENSE.txt",
+      "LICENSES/spacemono-OFL.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/LICENSE",
+      "https://github.com/google/fonts"
+    ]
+  },
+  "files": [
+    {
+      "path": "CREDITS.md",
+      "sha256": "4589a083e563cda1d47965120ebba19a286bdbfc567724dc125b1a08f378843a",
+      "role": "documentation"
+    },
+    {
+      "path": "DESIGN-RETENTION.md",
+      "sha256": "32d7eb1bb2ee4fbdc4040d10942a133bc793a2490fa093744ffb02315dfca908",
+      "role": "documentation"
+    },
+    {
+      "path": "LICENSES/Inter-OFL.txt",
+      "sha256": "67c5d5206b96f8340b95fabd02ae60701e0b20ce2594d976216f1065e5aa3822",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/Newsreader-OFL.txt",
+      "sha256": "fdfad38143ec470553cae82a1e45320bdd1b9ec70415d37bd0171051d8a4ded8",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/NotoSans-OFL.txt",
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/NotoSansSC-OFL.txt",
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/NotoSerif-OFL.txt",
+      "sha256": "5e0da210fb04058a8c0087985d2d456b931c2579811a49655721d3cf0c36b6d6",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/NotoSerifSC-OFL.txt",
+      "sha256": "5e0da210fb04058a8c0087985d2d456b931c2579811a49655721d3cf0c36b6d6",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/cormorantgaramond-OFL.txt",
+      "sha256": "60700d351cac4650c51f3f9db318d2a420f8b45052dba2715eb5fec41f0f6956",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/huashu-MIT-LICENSE.txt",
+      "sha256": "6d6a2a9caf2e6d2b76974050427053b2892d8aa4c33fd168ce63a537fcee9d96",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/spacemono-OFL.txt",
+      "sha256": "8e4ee42b2553e1e01504e61cb0d46d148cd8c9e5eacaa3622a7df2d4f2955b9f",
+      "role": "license"
+    },
+    {
+      "path": "README.md",
+      "sha256": "6decc2d8037b37a9bf84ad454d09e7bb027d11903c4be6ad35343077d4468bb6",
+      "role": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "4a2a59fbaae1d081fa9ab6e3cae3e4c305c07658215c0528e50229ac731f14bc",
+      "role": "cover"
+    },
+    {
+      "path": "design/DESIGN-REASONING.md",
+      "sha256": "87b7ca071430361583f5100f1a4f21d59522a6383994bdc7e6a87ac2b2ea803f",
+      "role": "documentation"
+    },
+    {
+      "path": "design/scene.mjs",
+      "sha256": "1faf927a9ac2bcd633a9185faaa0e373a2b0bd1c56915cdb03f7a40583a5c7ab",
+      "role": "source"
+    },
+    {
+      "path": "design/source-diagram.mjs",
+      "sha256": "690eabc99f9c7af0805a5d901c70de94136e50761b7fee1fa9f0303a74465c1a",
+      "role": "source"
+    },
+    {
+      "path": "design/window-audit.mjs",
+      "sha256": "a8a467da067ac05d851668092e76113d6f13b1babbf51e1d1b2200a27655690e",
+      "role": "source"
+    },
+    {
+      "path": "font-inputs.json",
+      "sha256": "0df3f64f06db4d915db12995ec0a7f541616ecb93f8eaea709c8f40ce550d9fc",
+      "role": "config"
+    },
+    {
+      "path": "locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "role": "lock"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "c97986608711fff48e780026471834a114f117d30fd4f1b15c3e76b21a760a46",
+      "role": "lock"
+    },
+    {
+      "path": "prepare-fonts.py",
+      "sha256": "f5b42df61d337bbfa4dc1ae39ce76056b33a64312779f9b1fbbdb234bb3fd5f1",
+      "role": "source"
+    },
+    {
+      "path": "retention.json",
+      "sha256": "91f5619435e4443a8e00b1ea67a96ac2689a279063936cd213f2a44a27a078e6",
+      "role": "config"
+    },
+    {
+      "path": "tests/recipe.test.mjs",
+      "sha256": "3ba0d8ed89a49242453793fc95453f1863270339567bd94dd074df4ee2a7af5f",
+      "role": "source"
+    }
+  ],
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "locks/npm-package-lock.json"
+    }
+  ],
+  "render": {
+    "entrypoint": "design/scene.mjs",
+    "width": 1200,
+    "height": 750
+  },
+  "resources": [
+    {
+      "id": "notosanssc-variable",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "NotoSansSC-variable.ttf",
+      "bytes": 17772300,
+      "instructions": "Provide via NIGHT_OBSERVATORY_FONT_DIR; prepare-fonts.py verifies original and derived identity."
+    },
+    {
+      "id": "inter-var",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/Inter-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/inter",
+      "sha256": "c8d76e1cb2a0a7cfbbae1e390be4e4b942b27f99ec07e1024b1fc916045eed09",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Inter-var.ttf",
+      "bytes": 254236,
+      "instructions": "Provide via NIGHT_OBSERVATORY_FONT_DIR; prepare-fonts.py verifies original and derived identity."
+    },
+    {
+      "id": "notoserifsc-variable",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSerifSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notoserifsc",
+      "sha256": "050080d9255a86808f2945bffac582b31ef32bc36411ce29563b4961670c66f9",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "NotoSerifSC-variable.ttf",
+      "bytes": 25125512,
+      "instructions": "Provide via NIGHT_OBSERVATORY_FONT_DIR; prepare-fonts.py verifies original and derived identity."
+    },
+    {
+      "id": "cormorantitalic-variable",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/cormorantgaramond-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/cormorantgaramond",
+      "sha256": "0f48ea6abb2084537854f7174c470991a463b13036309e3b50a81511611c530d",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "CormorantItalic-variable.ttf",
+      "bytes": 715644,
+      "instructions": "Provide via NIGHT_OBSERVATORY_FONT_DIR; prepare-fonts.py verifies original and derived identity."
+    },
+    {
+      "id": "sans300",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "98c6d7fcdda816133f225b8d8afd7113a42e79c7a16e0c8f8cf6fd692f5675c8",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Sans300.ttf",
+      "bytes": 31360,
+      "instructions": "Provide via NIGHT_OBSERVATORY_FONT_DIR; prepare-fonts.py verifies original and derived identity."
+    },
+    {
+      "id": "sans400",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "89eae3594a1fa3d3178110344614021b263a7e7af5a854bc867a81b6f8fb6267",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Sans400.ttf",
+      "bytes": 31312,
+      "instructions": "Provide via NIGHT_OBSERVATORY_FONT_DIR; prepare-fonts.py verifies original and derived identity."
+    },
+    {
+      "id": "inter300",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/Inter-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/inter",
+      "sha256": "12a2217f58df5671d195b37caace8603800bce698f60aeb852073e4805ebffe1",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Inter300.ttf",
+      "bytes": 52288,
+      "instructions": "Provide via NIGHT_OBSERVATORY_FONT_DIR; prepare-fonts.py verifies original and derived identity."
+    },
+    {
+      "id": "inter400",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/Inter-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/inter",
+      "sha256": "36c2484b38421b94eea3bef0bc8747d75d0853f07e91dde9e0502d7188b06384",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Inter400.ttf",
+      "bytes": 52140,
+      "instructions": "Provide via NIGHT_OBSERVATORY_FONT_DIR; prepare-fonts.py verifies original and derived identity."
+    },
+    {
+      "id": "serif300",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSerifSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notoserifsc",
+      "sha256": "074e8c2981835cdd5f143336e44258a484ad016a0e15114f3efa1c01d258f3c5",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Serif300.ttf",
+      "bytes": 42148,
+      "instructions": "Provide via NIGHT_OBSERVATORY_FONT_DIR; prepare-fonts.py verifies original and derived identity."
+    },
+    {
+      "id": "italic300",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/cormorantgaramond-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/cormorantgaramond",
+      "sha256": "e0bd8fb0a6825c432e88cab64365e26b03072d3da7a18bab05bfd9880ea78b8f",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Italic300.ttf",
+      "bytes": 34044,
+      "instructions": "Provide via NIGHT_OBSERVATORY_FONT_DIR; prepare-fonts.py verifies original and derived identity."
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "3f124c49cc2fd05436f1ce96bc199d56356613f37b421a9bcac82f2e808ef005",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "Full static independent comparison passed; disclosed glyph/JPEG differences remain. No motion/factual validation."
+    }
+  }
+}

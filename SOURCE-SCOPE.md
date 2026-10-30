@@ -149,3 +149,14 @@ Five retained fixed-size studies; only these self-rendered cover identities are 
 - `portfolio/works/market-livingroom-study/cover.jpg`: 1200 × 750, 166,485 bytes; SHA-256 `38c4cdf514c1150df39da015cae5d135290e918dc40cb3c75f39a286e170726a`.
 - `portfolio/works/vinyl-isotype-study/cover.jpg`: 1200 × 750, 265,080 bytes; SHA-256 `17b9b7282aafd6d089050b8dd1c303968579b28075bcb34aa11af65a18e40412`.
 - `portfolio/works/xie-symbol-study/cover.jpg`: 1200 × 750, 83,091 bytes; SHA-256 `3857723b400db96dadb7fec8e274751eaa671364cfd8fce9d990e476ae094834`.
+
+
+## B10 approved static covers
+
+Five retained fixed-size studies; only these self-rendered cover identities are permitted. External fonts and private source comparison reports are not redistributed.
+
+- `portfolio/works/cycling-magazine-study/cover.jpg`: 1200 × 750, 209,180 bytes; SHA-256 `82efe5b537943425775a49dc5f227528b04356a4149ac7caafb1cab644afe16c`.
+- `portfolio/works/gentle-activity-study/cover.jpg`: 1200 × 750, 149,010 bytes; SHA-256 `5eac8a263b2c9769c12c06c37a5b2a77a113b44084e83f23336ca7c4dbf8e6ab`.
+- `portfolio/works/memory-case-study/cover.jpg`: 1080 × 1920, 263,373 bytes; SHA-256 `1507cc6721c7bcaed6cff2d08b48f8bd62cba3913670961fed11425af80cb8e9`.
+- `portfolio/works/night-observatory-study/cover.jpg`: 1200 × 750, 93,415 bytes; SHA-256 `4a2a59fbaae1d081fa9ab6e3cae3e4c305c07658215c0528e50229ac731f14bc`.
+- `portfolio/works/rollcall-docs-study/cover.jpg`: 1200 × 750, 137,973 bytes; SHA-256 `5ba73d7726a1ecb90b36ca33e5132888abdd5f888b3e24f5ddd64e16da5b7c86`.

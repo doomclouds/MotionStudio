@@ -222,6 +222,28 @@
 
 [XIE · 红白超级符号](works/xie-symbol-study/README.md) — 1200×750固定静态设计标本，完整可编辑源码、外置字体双重校验、独立重渲染与统一设计卡保留；实际公共族调用及案例内配方见retention.json，未升级配方为新通用族。原样例内容与残差按PARTIAL披露，不代表真实业务数据或浏览器/动效验收。
 
+## Huashu B10 · 杂志双页、温和运动、观测图、技术文档与长图
+
+[![骑行年报 · 杂志双页](works/cycling-magazine-study/cover.jpg)](works/cycling-magazine-study/README.md)
+
+[骑行年报 · 杂志双页](works/cycling-magazine-study/README.md) — 1200×750固定静态设计标本，完整可编辑源码、外置字体双重校验、独立重渲染与统一设计卡保留；实际公共族调用及案例内配方见retention.json，未升级配方为新通用族。原样例内容与残差按PARTIAL披露，不代表真实业务数据或浏览器/动效验收。
+
+[![温和运动 · 暗色三屏](works/gentle-activity-study/cover.jpg)](works/gentle-activity-study/README.md)
+
+[温和运动 · 暗色三屏](works/gentle-activity-study/README.md) — 1200×750固定静态设计标本，完整可编辑源码、外置字体双重校验、独立重渲染与统一设计卡保留；实际公共族调用及案例内配方见retention.json，未升级配方为新通用族。原样例内容与残差按PARTIAL披露，不代表真实业务数据或浏览器/动效验收。
+
+[![AI记忆系统 · 纵向案例](works/memory-case-study/cover.jpg)](works/memory-case-study/README.md)
+
+[AI记忆系统 · 纵向案例](works/memory-case-study/README.md) — 1080×1920固定静态设计标本，完整可编辑源码、外置字体双重校验、独立重渲染与统一设计卡保留；实际公共族调用及案例内配方见retention.json，未升级配方为新通用族。原样例内容与残差按PARTIAL披露，不代表真实业务数据或浏览器/动效验收。
+
+[![夜的厚度 · 完整静态复刻](works/night-observatory-study/cover.jpg)](works/night-observatory-study/README.md)
+
+[夜的厚度 · 完整静态复刻](works/night-observatory-study/README.md) — 1200×750固定静态设计标本，完整可编辑源码、外置字体双重校验、独立重渲染与统一设计卡保留；实际公共族调用及案例内配方见retention.json，未升级配方为新通用族。原样例内容与残差按PARTIAL披露，不代表真实业务数据或浏览器/动效验收。
+
+[![rollcall分类文档 · 完整静态复刻](works/rollcall-docs-study/cover.jpg)](works/rollcall-docs-study/README.md)
+
+[rollcall分类文档 · 完整静态复刻](works/rollcall-docs-study/README.md) — 1200×750固定静态设计标本，完整可编辑源码、外置字体双重校验、独立重渲染与统一设计卡保留；实际公共族调用及案例内配方见retention.json，未升级配方为新通用族。原样例内容与残差按PARTIAL披露，不代表真实业务数据或浏览器/动效验收。
+
 ## 最小结构
 
 ```text

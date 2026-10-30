@@ -1,0 +1,43 @@
+{
+  "inputs": [
+    {
+      "file": "NotoSansSC-variable.ttf",
+      "sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+      "bytes": 17772300,
+      "weights": [
+        700,
+        900
+      ],
+      "prefix": "MemoryCaseSans",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "notice": "LICENSES/NotoSansSC-OFL.txt"
+    },
+    {
+      "file": "NimbusSans-Regular.otf",
+      "sha256": "7c25be4d78155523080ab85b10277150657ff7dabbcad7037bdd536c9b6d0d08",
+      "bytes": 82264,
+      "weights": [],
+      "prefix": "MemoryRegular",
+      "source_url": "https://github.com/ArtifexSoftware/urw-base35-fonts",
+      "notice": "LICENSES/Nimbus-license.txt"
+    },
+    {
+      "file": "NimbusSans-Bold.otf",
+      "sha256": "7f33328e6b4d4cd21b45fa625791928c9407dc702db6780e56b09ca9a3ecaa67",
+      "bytes": 83264,
+      "weights": [],
+      "prefix": "MemoryBold",
+      "source_url": "https://github.com/ArtifexSoftware/urw-base35-fonts",
+      "notice": "LICENSES/Nimbus-license.txt"
+    },
+    {
+      "file": "NimbusSans-BoldItalic.otf",
+      "sha256": "3f47fb34fcb7de09f8cbc9f305191340ddebf7a068419f4bb5f49287dea59b87",
+      "bytes": 95396,
+      "weights": [],
+      "prefix": "MemoryItalic",
+      "source_url": "https://github.com/ArtifexSoftware/urw-base35-fonts",
+      "notice": "LICENSES/Nimbus-license.txt"
+    }
+  ]
+}

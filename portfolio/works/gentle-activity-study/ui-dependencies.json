@@ -1,0 +1,11 @@
+{
+  "repository": "MotionStudio",
+  "tested_commit": "0947507961eb5624ddd5c1240758baefa3246fd8",
+  "root": "engine/design-elements",
+  "files": [
+    {
+      "path": "material-surfaces.mjs",
+      "sha256": "70bf1fcfa89bfbf911f5cf735b1b08e8ae7f360e43bd43a8c831efef579696eb"
+    }
+  ]
+}

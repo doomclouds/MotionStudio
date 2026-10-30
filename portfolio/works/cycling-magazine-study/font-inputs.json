@@ -1,0 +1,107 @@
+{
+  "originalInputs": [
+    {
+      "filename": "ArchivoNarrow-variable.ttf",
+      "sha256": "adbe027f625c8393ae0f6e174e32e233dda485bc3eda5153ce428275394ef97f",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/archivonarrow"
+    },
+    {
+      "filename": "LongCang-Regular.ttf",
+      "sha256": "e5bf2c3f24ef2327c6f136d8f73e2f9dfdf44896fdbeb35a9515f44777bb91bc",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/longcang"
+    },
+    {
+      "filename": "NotoSansSC-variable.ttf",
+      "sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc"
+    },
+    {
+      "filename": "NotoSerifSC-variable.ttf",
+      "sha256": "050080d9255a86808f2945bffac582b31ef32bc36411ce29563b4961670c66f9",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notoserifsc"
+    }
+  ],
+  "derived": [
+    {
+      "source": "NotoSansSC-variable.ttf",
+      "name": "MGSans400",
+      "weight": 400
+    },
+    {
+      "source": "NotoSansSC-variable.ttf",
+      "name": "MGSans500",
+      "weight": 500
+    },
+    {
+      "source": "NotoSansSC-variable.ttf",
+      "name": "MGSans700",
+      "weight": 700
+    },
+    {
+      "source": "NotoSansSC-variable.ttf",
+      "name": "MGSans900",
+      "weight": 900
+    },
+    {
+      "source": "NotoSerifSC-variable.ttf",
+      "name": "MGSerif900",
+      "weight": 900
+    },
+    {
+      "source": "ArchivoNarrow-variable.ttf",
+      "name": "MGNarrow700",
+      "weight": 700
+    },
+    {
+      "source": "LongCang-Regular.ttf",
+      "name": "MGHand",
+      "weight": null
+    }
+  ],
+  "outputNames": [
+    "MGSans400.ttf",
+    "MGSans500.ttf",
+    "MGSans700.ttf",
+    "MGSans900.ttf",
+    "MGSerif900.ttf",
+    "MGNarrow700.ttf",
+    "MGHand.ttf"
+  ],
+  "expectedOutputs": [
+    {
+      "filename": "MGSans400.ttf",
+      "sha256": "30cac1e85d7ed8b0a00575c2f3dbe138ce9754c6fc22b802814bdd1b5bea0cf9",
+      "bytes": 139648
+    },
+    {
+      "filename": "MGSans500.ttf",
+      "sha256": "3baa276f626388d7d65a7520cc6413e1c639c15aaa979a47f1fa98a948e38498",
+      "bytes": 139636
+    },
+    {
+      "filename": "MGSans700.ttf",
+      "sha256": "2a77419fc66a00cc8b439826493c3438bbc3306ff77f15ef11ade2d5786d5a9d",
+      "bytes": 140468
+    },
+    {
+      "filename": "MGSans900.ttf",
+      "sha256": "3f88a1c08d026b49c2cf199f6cf2d194c11025f95d7f429c4393c878077210cd",
+      "bytes": 140232
+    },
+    {
+      "filename": "MGSerif900.ttf",
+      "sha256": "4705abae2750d7d9d6531fc2e9b1f11ae605ab7c5de86265df58a2e081399b78",
+      "bytes": 194528
+    },
+    {
+      "filename": "MGNarrow700.ttf",
+      "sha256": "6a6e219e389fb67f97114548187dc53fe598d2e2a5a5f646e63598253678d24a",
+      "bytes": 18672
+    },
+    {
+      "filename": "MGHand.ttf",
+      "sha256": "5755f8dede16f985f5b399887e4890f37c703b4ce830f8e1dfff88f5b3a9f828",
+      "bytes": 150212
+    }
+  ]
+}

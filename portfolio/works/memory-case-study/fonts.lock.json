@@ -1,0 +1,39 @@
+{
+  "fonts": [
+    {
+      "output": "MemoryCaseSans700.ttf",
+      "sha256": "bc3c0cd7898265750d691ded90878e5828850815292cc0551575a63d20a01eaf",
+      "source": "NotoSansSC-variable.ttf",
+      "source_sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+      "alias": "MemoryCaseSans700"
+    },
+    {
+      "output": "MemoryCaseSans900.ttf",
+      "sha256": "63863c007fdb1b80e707ab60392478242245d2ad3aaaeabf57ac97a9fabd6f5f",
+      "source": "NotoSansSC-variable.ttf",
+      "source_sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+      "alias": "MemoryCaseSans900"
+    },
+    {
+      "output": "NimbusSans-Regular.otf",
+      "sha256": "7c25be4d78155523080ab85b10277150657ff7dabbcad7037bdd536c9b6d0d08",
+      "source": "NimbusSans-Regular.otf",
+      "source_sha256": "7c25be4d78155523080ab85b10277150657ff7dabbcad7037bdd536c9b6d0d08",
+      "alias": "MemoryRegular"
+    },
+    {
+      "output": "NimbusSans-Bold.otf",
+      "sha256": "7f33328e6b4d4cd21b45fa625791928c9407dc702db6780e56b09ca9a3ecaa67",
+      "source": "NimbusSans-Bold.otf",
+      "source_sha256": "7f33328e6b4d4cd21b45fa625791928c9407dc702db6780e56b09ca9a3ecaa67",
+      "alias": "MemoryBold"
+    },
+    {
+      "output": "NimbusSans-BoldItalic.otf",
+      "sha256": "3f47fb34fcb7de09f8cbc9f305191340ddebf7a068419f4bb5f49287dea59b87",
+      "source": "NimbusSans-BoldItalic.otf",
+      "source_sha256": "3f47fb34fcb7de09f8cbc9f305191340ddebf7a068419f4bb5f49287dea59b87",
+      "alias": "MemoryItalic"
+    }
+  ]
+}

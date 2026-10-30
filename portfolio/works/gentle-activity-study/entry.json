@@ -1,0 +1,235 @@
+{
+  "schema": 4,
+  "id": "gentle-activity-study",
+  "version": "1.0.0",
+  "title": "温和运动 · 暗色三屏",
+  "status": "source-release",
+  "unofficial_recreation": true,
+  "original": {
+    "author": "alchaincyf (花叔 · 花生)",
+    "title": "Huashu design specimen",
+    "url": "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/app/11-gentle-encouraging.html"
+  },
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "LICENSES/Huashu-MIT.txt",
+      "LICENSES/NotoSansSC-OFL.txt",
+      "LICENSES/Nunito-OFL.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/LICENSE",
+      "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "https://github.com/google/fonts/tree/main/ofl/nunito"
+    ]
+  },
+  "files": [
+    {
+      "path": "ASSET-USAGE.md",
+      "sha256": "6f855b0380bd84ab45eee8bf3a8e5e804ed14863ca5147d33788d884e6580280",
+      "role": "documentation"
+    },
+    {
+      "path": "CREDITS.md",
+      "sha256": "4d725967dd1ba8ae5a91ac6158da0e6bffff754456aac04354d4bfdc5285dd64",
+      "role": "documentation"
+    },
+    {
+      "path": "DESIGN-REASONING.md",
+      "sha256": "61faabef4abd12e68e1dab062fd93e00837c3a7010614c22c26aedfa7286f666",
+      "role": "documentation"
+    },
+    {
+      "path": "DESIGN-RETENTION.md",
+      "sha256": "11d70f6f2c98d16e03cb7ed4f25b001f0c9a21dfa13fe4560966e4a00c9db783",
+      "role": "documentation"
+    },
+    {
+      "path": "LICENSES/Huashu-MIT.txt",
+      "sha256": "6d6a2a9caf2e6d2b76974050427053b2892d8aa4c33fd168ce63a537fcee9d96",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/NotoSansSC-OFL.txt",
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/Nunito-OFL.txt",
+      "sha256": "580df76c95a1ec5ab878ceb25bb3d85c6a076804e9c970c8c6972aea775fdf65",
+      "role": "license"
+    },
+    {
+      "path": "README.md",
+      "sha256": "9a80710424ae4b272415d7b8e065e5cc73661efa8f37e181c573f2d4bac88336",
+      "role": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "5eac8a263b2c9769c12c06c37a5b2a77a113b44084e83f23336ca7c4dbf8e6ab",
+      "role": "cover"
+    },
+    {
+      "path": "design/scene.mjs",
+      "sha256": "6fddb3dfd6a3bbbcc698a807820ed6c4c6a393876c1cedf0e8d07dd358ae466c",
+      "role": "source"
+    },
+    {
+      "path": "font-charset.txt",
+      "sha256": "2a6e8b492814923723ec290feb75663ef943374ce2d05678b289a33f787811c7",
+      "role": "documentation"
+    },
+    {
+      "path": "font-inputs.json",
+      "sha256": "5d58f36916e8e24472f63b5307036e359c26f6884b7926de12603b6bdd1575cf",
+      "role": "config"
+    },
+    {
+      "path": "locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "role": "lock"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "3376138df78fb0b3f62bc57d80dc440204cbe0a0709a07396e39636873862e6f",
+      "role": "lock"
+    },
+    {
+      "path": "prepare-fonts.py",
+      "sha256": "1382c96afe436f967173a55420718182d057ddee2eeee3c1e7c6d9352035fb71",
+      "role": "source"
+    },
+    {
+      "path": "retention.json",
+      "sha256": "64410ea14458a5f1ac3c97e56aaa5fd02a56135c5be316fe09b36d8e4555aea7",
+      "role": "config"
+    },
+    {
+      "path": "ui-dependencies.json",
+      "sha256": "64674fa4f13ab875ee1a967ebb95447da5762464cbd7396fbc59db84ed9aafd5",
+      "role": "config"
+    }
+  ],
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "locks/npm-package-lock.json"
+    }
+  ],
+  "render": {
+    "entrypoint": "design/scene.mjs",
+    "width": 1200,
+    "height": 750
+  },
+  "resources": [
+    {
+      "id": "mgsans400",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external derived font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "30cac1e85d7ed8b0a00575c2f3dbe138ce9754c6fc22b802814bdd1b5bea0cf9",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "MGSans400.ttf",
+      "bytes": 139648,
+      "instructions": "Obtain originalInputs then run prepare-fonts.py. Source and derived SHA fail closed."
+    },
+    {
+      "id": "mgsans500",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external derived font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "3baa276f626388d7d65a7520cc6413e1c639c15aaa979a47f1fa98a948e38498",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "MGSans500.ttf",
+      "bytes": 139636,
+      "instructions": "Obtain originalInputs then run prepare-fonts.py. Source and derived SHA fail closed."
+    },
+    {
+      "id": "mgsans700",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external derived font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "2a77419fc66a00cc8b439826493c3438bbc3306ff77f15ef11ade2d5786d5a9d",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "MGSans700.ttf",
+      "bytes": 140468,
+      "instructions": "Obtain originalInputs then run prepare-fonts.py. Source and derived SHA fail closed."
+    },
+    {
+      "id": "mgnunito400",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external derived font, not distributed",
+      "notice": "LICENSES/Nunito-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/nunito",
+      "sha256": "237027fbd6dacc89e26a5be53b186ec1afff186f3ab737d63d3c596b8452e4d1",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "MGNunito400.ttf",
+      "bytes": 23368,
+      "instructions": "Obtain originalInputs then run prepare-fonts.py. Source and derived SHA fail closed."
+    },
+    {
+      "id": "mgnunito600",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external derived font, not distributed",
+      "notice": "LICENSES/Nunito-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/nunito",
+      "sha256": "234e944905ce55df8b68a91e30a1bb1dee2bd92b270404fe9a8286dc76df1787",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "MGNunito600.ttf",
+      "bytes": 23376,
+      "instructions": "Obtain originalInputs then run prepare-fonts.py. Source and derived SHA fail closed."
+    },
+    {
+      "id": "mgnunito700",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external derived font, not distributed",
+      "notice": "LICENSES/Nunito-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/nunito",
+      "sha256": "ef8638e717e1e97adf4dcd6d597817efe1b9e93bc0dee5c367b3ea42fa7bdcb5",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "MGNunito700.ttf",
+      "bytes": 23340,
+      "instructions": "Obtain originalInputs then run prepare-fonts.py. Source and derived SHA fail closed."
+    },
+    {
+      "id": "mgnunito800",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external derived font, not distributed",
+      "notice": "LICENSES/Nunito-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/nunito",
+      "sha256": "98bd4b3b2d1f7524364170a65aaa02778dc232e2399fec323849a35e74309721",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "MGNunito800.ttf",
+      "bytes": 23344,
+      "instructions": "Obtain originalInputs then run prepare-fonts.py. Source and derived SHA fail closed."
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "fa2a538a60133861d8a0c612e4752ec09d946531437af8d6800b762224b4ba01",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "Full still independently reviewed and user retained; font/handwriting/soft-light raster differences disclosed. No interaction, factual metrics, medical or motion validation."
+    }
+  }
+}

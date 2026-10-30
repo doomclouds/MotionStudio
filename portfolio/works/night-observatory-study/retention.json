@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "workId": "night-observatory-study",
+  "kind": "fixed-static-design",
+  "canvas": {
+    "width": 1200,
+    "height": 750
+  },
+  "entrypoint": "design/scene.mjs",
+  "decisionCard": "DESIGN-RETENTION.md",
+  "sourceAnalysis": [
+    "design/DESIGN-REASONING.md"
+  ],
+  "ruleRefs": [],
+  "ruleStatus": "Case time-domain audit / explicit code-line drawing recipe, not registered shared family.",
+  "assetUsage": [],
+  "nonAssetNote": "Night uses no public family. Docs uses material only for base surface; code runs and window audits are case-local recipes, not new families.",
+  "evidence": {
+    "acceptanceSource": "entry.json#/acceptance",
+    "renderHashSource": "entry.json#/cover/source_sha256",
+    "publicCover": "cover.jpg",
+    "comparisonBundle": {
+      "status": "NOT_PUBLISHED",
+      "recordId": "b10-night-visual-report",
+      "sha256": "7a3834093bbba8fe0866fbb64f964461eec56764770e5623466d054b0719958f",
+      "storage": "SCRATCH_LOCAL_ONLY",
+      "durableStorage": "NOT_LOCATED",
+      "note": "HTML report container, not PNG. Embedded image bytes checked; persistent storage unverified."
+    },
+    "independentReview": {
+      "status": "PRIVATE_RECORD_LOCATED",
+      "recordId": "b10-independent-visual-review",
+      "sha256": "27790c4a57c24aae893ef4846c71b95b8a2f03e8295cba598f4773e36acabdaf",
+      "storage": "PRIVATE_OWNER_PAGE",
+      "durableStorage": "ACCESS_VERIFIED",
+      "note": "最终全批独审原文已存仅所有者Page并读回原字节SHA；不是新增审美验收。"
+    },
+    "visualReport": {
+      "recordId": "b10-verified-private-report-night",
+      "sha256": "7a3834093bbba8fe0866fbb64f964461eec56764770e5623466d054b0719958f",
+      "storage": "PRIVATE_LIBRARY",
+      "durableStorage": "ACCESS_VERIFIED",
+      "acceptedFrameBinding": "EXACT_PIXELS",
+      "status": "NOT_PUBLISHED",
+      "artifactKind": "html-report",
+      "note": "实际取回私有Library HTML核终审容器SHA，全部嵌图可解码；原尺寸/无边并排半图像素绑定未建立不推错版。不是浏览器或新增审美验证。"
+    }
+  },
+  "motionTransfer": {
+    "status": "NOT_TESTED",
+    "note": "Fixed Native static only; no factual ledger/interaction/motion verification."
+  }
+}

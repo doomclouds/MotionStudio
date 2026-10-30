@@ -1,0 +1,86 @@
+{
+  "title": [
+    "AI记忆系统：CLAUDE.md",
+    "从臃肿到优雅的重构之路"
+  ],
+  "subtitle": "A systematic approach to AI memory architecture optimization",
+  "before": 93,
+  "after": 22,
+  "sourceBarPercent": 23.7,
+  "sourceReduction": 76,
+  "categories": [
+    [
+      "I",
+      "核心身份",
+      "CORE IDENTITY",
+      "Who you are, fundamental traits, immutable facts"
+    ],
+    [
+      "II",
+      "偏好设置",
+      "PREFERENCES",
+      "Style, tools, workflow habits, accumulated over time"
+    ],
+    [
+      "III",
+      "项目状态",
+      "PROJECT STATE",
+      "Current tasks, deadlines, priorities, progress tracking"
+    ],
+    [
+      "IV",
+      "日志流水",
+      "DAILY LOGS",
+      "Session-level records, searchable history, never auto-loaded"
+    ]
+  ],
+  "principles": [
+    [
+      "A",
+      "Route, Don't Dump",
+      "Router file dispatches to workspace-specific rules. Never load everything at once."
+    ],
+    [
+      "B",
+      "Structured Hierarchy",
+      "Identity > Preferences > Projects > Logs. Each layer loads on demand."
+    ],
+    [
+      "C",
+      "Write Rules, Not Records",
+      "Store reusable patterns, not one-time instructions. Keep memory under 100 lines."
+    ],
+    [
+      "D",
+      "Silent Operations",
+      "Memory read/write happens silently. Never interrupt the user's task flow."
+    ]
+  ],
+  "results": [
+    [
+      "76%",
+      "SIZE REDUCTION"
+    ],
+    [
+      "2.3x",
+      "FASTER LOADING"
+    ],
+    [
+      "0",
+      "DATA LOSS"
+    ]
+  ],
+  "outsideSourceViewport": {
+    "insightBenefits": [
+      "Faster context loading",
+      "More relevant responses",
+      "Zero information loss"
+    ],
+    "footer": [
+      "Pentagram Style",
+      "CLAUDE.md Optimization",
+      "2026"
+    ],
+    "reason": "Source HTML continues below 1920px clipped viewport; retained as content metadata, not invented into visible frame."
+  }
+}

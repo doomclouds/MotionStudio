@@ -1,0 +1,259 @@
+{
+  "schema": 4,
+  "id": "cycling-magazine-study",
+  "version": "1.0.0",
+  "title": "骑行年报 · 杂志双页",
+  "status": "source-release",
+  "unofficial_recreation": true,
+  "original": {
+    "author": "alchaincyf (花叔 · 花生)",
+    "title": "Huashu design specimen",
+    "url": "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/east/12-japan-magazine-dense.html"
+  },
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "LICENSES/ArchivoNarrow-OFL.txt",
+      "LICENSES/Huashu-MIT.txt",
+      "LICENSES/LongCang-OFL.txt",
+      "LICENSES/NotoSansSC-OFL.txt",
+      "LICENSES/NotoSerifSC-OFL.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/LICENSE",
+      "https://github.com/google/fonts/tree/main/ofl/archivonarrow",
+      "https://github.com/google/fonts/tree/main/ofl/longcang",
+      "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "https://github.com/google/fonts/tree/main/ofl/notoserifsc"
+    ]
+  },
+  "files": [
+    {
+      "path": "ASSET-USAGE.md",
+      "sha256": "a3726c44e9672976032bb8f9ac14f8d67155b965286f6e652d6f6c77b351626c",
+      "role": "documentation"
+    },
+    {
+      "path": "CREDITS.md",
+      "sha256": "52b057fe423391466c25b6484109090d6cb31b99af53aa38addb2947afbf53f3",
+      "role": "documentation"
+    },
+    {
+      "path": "DESIGN-REASONING.md",
+      "sha256": "a8c7ef1f2109de17e40147cba1240100bf256950f6d652c583b5a361a7080457",
+      "role": "documentation"
+    },
+    {
+      "path": "DESIGN-RETENTION.md",
+      "sha256": "431684be2f9945d4d1bf08539c637fb4242de0a182870088bd8356f765f83f96",
+      "role": "documentation"
+    },
+    {
+      "path": "LICENSES/ArchivoNarrow-OFL.txt",
+      "sha256": "52dabc37e1a989d1339b800143251d2ea22ea676633b2ec0e2a45f30a559bd09",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/Huashu-MIT.txt",
+      "sha256": "6d6a2a9caf2e6d2b76974050427053b2892d8aa4c33fd168ce63a537fcee9d96",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/LongCang-OFL.txt",
+      "sha256": "603546b7219a94bb59bf8294458194a5010119486354092b66a09a3fd61aeacc",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/NotoSansSC-OFL.txt",
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/NotoSerifSC-OFL.txt",
+      "sha256": "5e0da210fb04058a8c0087985d2d456b931c2579811a49655721d3cf0c36b6d6",
+      "role": "license"
+    },
+    {
+      "path": "README.md",
+      "sha256": "44b6098e39581c702942c00944f03311174c667191c7d6e444216bdb54d711c3",
+      "role": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "82efe5b537943425775a49dc5f227528b04356a4149ac7caafb1cab644afe16c",
+      "role": "cover"
+    },
+    {
+      "path": "design/heatmap.json",
+      "sha256": "952ffe5aff1777c700284381fae1d3495ae8320b37bca8bc3dd4d4f6126447a6",
+      "role": "config"
+    },
+    {
+      "path": "design/scene.mjs",
+      "sha256": "d105bc5638bc0cb3d07af0597a08805449bc9bdcf714133170673a1ce5d59928",
+      "role": "source"
+    },
+    {
+      "path": "design/source-opacity-grid.mjs",
+      "sha256": "a3519f1cd3284deee2e8508f76c440982ddab6b525046310ae428fd839c7d3ab",
+      "role": "source"
+    },
+    {
+      "path": "font-charset.txt",
+      "sha256": "2a6e8b492814923723ec290feb75663ef943374ce2d05678b289a33f787811c7",
+      "role": "documentation"
+    },
+    {
+      "path": "font-inputs.json",
+      "sha256": "750c6e05f2e2f80cb193b16ec29a3324d6290ad9123bc0259ad3001ff0805ae4",
+      "role": "config"
+    },
+    {
+      "path": "locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "role": "lock"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "3376138df78fb0b3f62bc57d80dc440204cbe0a0709a07396e39636873862e6f",
+      "role": "lock"
+    },
+    {
+      "path": "prepare-fonts.py",
+      "sha256": "1382c96afe436f967173a55420718182d057ddee2eeee3c1e7c6d9352035fb71",
+      "role": "source"
+    },
+    {
+      "path": "retention.json",
+      "sha256": "1f9504eff95bf7eb44a2eadecdc548bdb7d0636c4d870ebb99fff940dbbb84ce",
+      "role": "config"
+    },
+    {
+      "path": "test-opacity-grid.mjs",
+      "sha256": "5408f5510a7591eae1301c43b7456afd127c3a4baca1be7b42c6cb0f3a1e217f",
+      "role": "source"
+    }
+  ],
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "locks/npm-package-lock.json"
+    }
+  ],
+  "render": {
+    "entrypoint": "design/scene.mjs",
+    "width": 1200,
+    "height": 750
+  },
+  "resources": [
+    {
+      "id": "mgsans400",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external derived font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "30cac1e85d7ed8b0a00575c2f3dbe138ce9754c6fc22b802814bdd1b5bea0cf9",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "MGSans400.ttf",
+      "bytes": 139648,
+      "instructions": "Obtain originalInputs then run prepare-fonts.py. Source and derived SHA fail closed."
+    },
+    {
+      "id": "mgsans500",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external derived font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "3baa276f626388d7d65a7520cc6413e1c639c15aaa979a47f1fa98a948e38498",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "MGSans500.ttf",
+      "bytes": 139636,
+      "instructions": "Obtain originalInputs then run prepare-fonts.py. Source and derived SHA fail closed."
+    },
+    {
+      "id": "mgsans700",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external derived font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "2a77419fc66a00cc8b439826493c3438bbc3306ff77f15ef11ade2d5786d5a9d",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "MGSans700.ttf",
+      "bytes": 140468,
+      "instructions": "Obtain originalInputs then run prepare-fonts.py. Source and derived SHA fail closed."
+    },
+    {
+      "id": "mgsans900",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external derived font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "3f88a1c08d026b49c2cf199f6cf2d194c11025f95d7f429c4393c878077210cd",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "MGSans900.ttf",
+      "bytes": 140232,
+      "instructions": "Obtain originalInputs then run prepare-fonts.py. Source and derived SHA fail closed."
+    },
+    {
+      "id": "mgserif900",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external derived font, not distributed",
+      "notice": "LICENSES/NotoSerifSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notoserifsc",
+      "sha256": "4705abae2750d7d9d6531fc2e9b1f11ae605ab7c5de86265df58a2e081399b78",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "MGSerif900.ttf",
+      "bytes": 194528,
+      "instructions": "Obtain originalInputs then run prepare-fonts.py. Source and derived SHA fail closed."
+    },
+    {
+      "id": "mgnarrow700",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external derived font, not distributed",
+      "notice": "LICENSES/ArchivoNarrow-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/archivonarrow",
+      "sha256": "6a6e219e389fb67f97114548187dc53fe598d2e2a5a5f646e63598253678d24a",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "MGNarrow700.ttf",
+      "bytes": 18672,
+      "instructions": "Obtain originalInputs then run prepare-fonts.py. Source and derived SHA fail closed."
+    },
+    {
+      "id": "mghand",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external derived font, not distributed",
+      "notice": "LICENSES/LongCang-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/longcang",
+      "sha256": "5755f8dede16f985f5b399887e4890f37c703b4ce830f8e1dfff88f5b3a9f828",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "MGHand.ttf",
+      "bytes": 150212,
+      "instructions": "Obtain originalInputs then run prepare-fonts.py. Source and derived SHA fail closed."
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "d7098757303a4d5d92ee08cb769d76921405b6865e7c81f760b891d6a419f5f5",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "Full still independently reviewed and user retained; font/handwriting/soft-light raster differences disclosed. No interaction, factual metrics, medical or motion validation."
+    }
+  }
+}

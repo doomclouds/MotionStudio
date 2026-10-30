@@ -2,7 +2,7 @@
 
 运行 `python portfolio/retention.py --write` 生成；`--check` 拒绝漂移。不是新的审美验收。
 
-完整静态作品 46；公共族 14；在已发布作品源码中实际调用的不同族 3。作品收藏、模块测试、可视复核、素材公开权限分别判断。
+完整静态作品 51；公共族 14；在已发布作品源码中实际调用的不同族 3。作品收藏、模块测试、可视复核、素材公开权限分别判断。
 
 | 作品/统一设计卡 | 实际公共族 | 视觉状态（来自entry） | 独审证据身份 | 对照报告 |
 |---|---|---|---|---|
@@ -11,10 +11,12 @@
 | [公交早晨 · 计算式数据肖像](works/bus-morning-study/DESIGN-RETENTION.md) | 0（案例代码保留） | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / NOT_ESTABLISHED；未公开 |
 | [tide · 深色命令面板](works/command-palette-study/DESIGN-RETENTION.md) | material-surfaces | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / EXACT_PIXELS；未公开 |
 | [今夜观木星 · 复古未来观象台](works/cosmic-observatory-study/DESIGN-RETENTION.md) | 0（案例代码保留） | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / EXACT_PIXELS；未公开 |
+| [骑行年报 · 杂志双页](works/cycling-magazine-study/DESIGN-RETENTION.md) | 0（案例代码保留） | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / EXACT_PIXELS；未公开 |
 | [骑行年报 · Y2K数字主视觉](works/cycling-year-report/DESIGN-RETENTION.md) | 0（案例代码保留） | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / EXACT_PIXELS；未公开 |
 | [城市周报 · 编辑式粗野主义](works/editorial-weekly-study/DESIGN-RETENTION.md) | 0（案例代码保留） | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / EXACT_PIXELS；未公开 |
 | [影展志 · 十天五十二部](works/film-festival-study/DESIGN-RETENTION.md) | print-poster | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / EXACT_PIXELS；未公开 |
 | [友好金融三屏 · 完整静态复刻](works/friendly-fintech-study/DESIGN-RETENTION.md) | material-surfaces | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / EXACT_PIXELS；未公开 |
+| [温和运动 · 暗色三屏](works/gentle-activity-study/DESIGN-RETENTION.md) | material-surfaces | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / EXACT_PIXELS；未公开 |
 | [市 · 汉字实验海报](works/hanzi-poster-study/DESIGN-RETENTION.md) | 0（案例代码保留） | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / NOT_ESTABLISHED；未公开 |
 | [采样台 · 硬件面板三屏静态复刻](works/hardware-sampler-study/DESIGN-RETENTION.md) | 0（案例代码保留） | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / EXACT_PIXELS；未公开 |
 | [健康数据颜色编码 · 完整静态复刻](works/health-color-code-study/DESIGN-RETENTION.md) | material-surfaces | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / EXACT_PIXELS；未公开 |
@@ -25,16 +27,19 @@
 | [菜市场是客厅 · 玩味编辑](works/market-livingroom-study/DESIGN-RETENTION.md) | 0（案例代码保留） | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / NOT_ESTABLISHED；未公开 |
 | [菜市场方法论 · 从圆心向外](works/market-method-study/DESIGN-RETENTION.md) | 0（案例代码保留） | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / NOT_ESTABLISHED；未公开 |
 | [菜市场剖面 · 完整静态复刻](works/market-section-study/DESIGN-RETENTION.md) | 0（案例代码保留） | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / EXACT_PIXELS；未公开 |
+| [AI记忆系统 · 纵向案例](works/memory-case-study/DESIGN-RETENTION.md) | 0（案例代码保留） | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / NOT_ESTABLISHED；未公开 |
 | [Meridian · 黑白对分品牌与产品首屏](works/meridian-study/DESIGN-RETENTION.md) | 0（案例代码保留） | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / NOT_ESTABLISHED；未公开 |
 | [山行 · 展开书衣](works/mountain-book-jacket-study/DESIGN-RETENTION.md) | material-surfaces | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / EXACT_PIXELS；未公开 |
 | [幕启 · 地方剧场票务品牌首屏](works/muqi-study/DESIGN-RETENTION.md) | 0（案例代码保留） | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / EXACT_PIXELS；未公开 |
 | [南鸢过境 · 完整静态复刻](works/nanyuan-cartographic-study/DESIGN-RETENTION.md) | 0（案例代码保留） | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / EXACT_PIXELS；未公开 |
+| [夜的厚度 · 完整静态复刻](works/night-observatory-study/DESIGN-RETENTION.md) | 0（案例代码保留） | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / EXACT_PIXELS；未公开 |
 | [海洋基金年度信 · 编辑式长文](works/ocean-letter-study/DESIGN-RETENTION.md) | material-surfaces（快照） | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / NOT_ESTABLISHED；未公开 |
 | [海里的塑料 · 完整静态复刻](works/ocean-plastic-treemap-study/DESIGN-RETENTION.md) | 0（案例代码保留） | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / EXACT_PIXELS；未公开 |
 | [鹿鸣山 · 像素徒步三关](works/pixel-hiking-study/DESIGN-RETENTION.md) | print-poster, color-sections | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / NOT_ESTABLISHED；未公开 |
 | [烘焙计时 · 完整静态复刻](works/playful-roast-timer-study/DESIGN-RETENTION.md) | material-surfaces | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / EXACT_PIXELS；未公开 |
 | [专业相机 · 参数控制三屏](works/pro-camera-study/DESIGN-RETENTION.md) | 0（案例代码保留） | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / EXACT_PIXELS；未公开 |
 | [递归 · 单概念糖果舞台](works/recursion-lecture-study/DESIGN-RETENTION.md) | material-surfaces | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / EXACT_PIXELS；未公开 |
+| [rollcall分类文档 · 完整静态复刻](works/rollcall-docs-study/DESIGN-RETENTION.md) | material-surfaces | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / EXACT_PIXELS；未公开 |
 | [钱是怎么飞走的 · 完整静态复刻](works/salary-unit-stack-study/DESIGN-RETENTION.md) | material-surfaces | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / EXACT_PIXELS；未公开 |
 | [科研图版 · 完整静态复刻](works/scientific-figure-study/DESIGN-RETENTION.md) | 0（案例代码保留） | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / EXACT_PIXELS；未公开 |
 | [摩登焙香 · 装饰艺术月历静态复刻](works/shanghai-deco-study/DESIGN-RETENTION.md) | 0（案例代码保留） | PARTIAL | PRIVATE_RECORD_LOCATED | PRIVATE_LIBRARY / EXACT_PIXELS；未公开 |
@@ -63,7 +68,7 @@
 | [design.print-poster.v1](../engine/design-elements/print-poster.mjs) | 见模块指导 | film-festival-study, hk-street-signs-study, pixel-hiking-study |
 | [design.typographic-focus.v1](../engine/design-elements/typographic-focus.mjs) | slow-roast-study, hanzi-poster-study, cycling-year-report | 尚无已发布作品调用；看独立配方 |
 | [design.color-sections.v1](../engine/design-elements/color-sections.mjs) | muqi-study, slow-roast-study, shanghai-deco-study | bauhaus-theatre-study, pixel-hiking-study, xie-symbol-study |
-| [design.material-surfaces.v1](../engine/design-elements/material-surfaces.mjs) | liquid-glass-study, vinyl-study | command-palette-study, friendly-fintech-study, health-color-code-study, irreverent-pop-study, mountain-book-jacket-study, ocean-letter-study, playful-roast-timer-study, recursion-lecture-study, salary-unit-stack-study, solar-terms-study, song-block-print-study, topo-outdoor-study |
+| [design.material-surfaces.v1](../engine/design-elements/material-surfaces.mjs) | liquid-glass-study, vinyl-study | command-palette-study, friendly-fintech-study, gentle-activity-study, health-color-code-study, irreverent-pop-study, mountain-book-jacket-study, ocean-letter-study, playful-roast-timer-study, recursion-lecture-study, rollcall-docs-study, salary-unit-stack-study, solar-terms-study, song-block-print-study, topo-outdoor-study |
 | [design.semantic-data.v1](../engine/design-elements/semantic-data.mjs) | tea-conversation-map, theatre-narrative-wave | 尚无已发布作品调用；看独立配方 |
 | [design.parameter-controls.v1](../engine/design-elements/parameter-controls.mjs) | hardware-sampler-study, liquid-glass-study | 尚无已发布作品调用；看独立配方 |
 | [design.expressive-type.v1](../engine/design-elements/expressive-type.mjs) | cycling-year-report, wave-weather-study | 尚无已发布作品调用；看独立配方 |

@@ -147,6 +147,11 @@ class SourceTreeFixtures(unittest.TestCase):
             'portfolio/works/market-livingroom-study/cover.jpg': '38c4cdf514c1150df39da015cae5d135290e918dc40cb3c75f39a286e170726a',
             'portfolio/works/vinyl-isotype-study/cover.jpg': '17b9b7282aafd6d089050b8dd1c303968579b28075bcb34aa11af65a18e40412',
             'portfolio/works/xie-symbol-study/cover.jpg': '3857723b400db96dadb7fec8e274751eaa671364cfd8fce9d990e476ae094834',
+            'portfolio/works/cycling-magazine-study/cover.jpg': '82efe5b537943425775a49dc5f227528b04356a4149ac7caafb1cab644afe16c',
+            'portfolio/works/gentle-activity-study/cover.jpg': '5eac8a263b2c9769c12c06c37a5b2a77a113b44084e83f23336ca7c4dbf8e6ab',
+            'portfolio/works/memory-case-study/cover.jpg': '1507cc6721c7bcaed6cff2d08b48f8bd62cba3913670961fed11425af80cb8e9',
+            'portfolio/works/night-observatory-study/cover.jpg': '4a2a59fbaae1d081fa9ab6e3cae3e4c305c07658215c0528e50229ac731f14bc',
+            'portfolio/works/rollcall-docs-study/cover.jpg': '5ba73d7726a1ecb90b36ca33e5132888abdd5f888b3e24f5ddd64e16da5b7c86',
             'portfolio/works/irreverent-pop-study/cover.jpg': 'df8f621e07865727a8d2a99fe66d9ce23e7b5747861732a14a503152dff72f35',
             'portfolio/works/hk-street-signs-study/cover.jpg': '6d83409c6444e4ea6bd903075b7652300f6be7a066c15aa4bb0f06131aae4223',
             'portfolio/works/pixel-hiking-study/cover.jpg': '3e520725c9ca504d5b1e6cf45880f29bec31ce8bd3f1b03ffbd77af4d79eb82b',
@@ -509,6 +514,46 @@ class SourceTreeFixtures(unittest.TestCase):
         self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
     def test_xie_symbol_study_cover_wrong_path_rejected(self):
         self.add('portfolio/works/xie-symbol-study/other.jpg',(ROOT/'portfolio/works/xie-symbol-study/cover.jpg').read_bytes());self.audit(False)
+    def test_exact_cycling_magazine_study_cover_allowed(self):
+        name='portfolio/works/cycling-magazine-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes());self.audit(True)
+    def test_cycling_magazine_study_cover_tamper_rejected(self):
+        name='portfolio/works/cycling-magazine-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
+    def test_cycling_magazine_study_cover_wrong_path_rejected(self):
+        self.add('portfolio/works/cycling-magazine-study/other.jpg',(ROOT/'portfolio/works/cycling-magazine-study/cover.jpg').read_bytes());self.audit(False)
+    def test_exact_gentle_activity_study_cover_allowed(self):
+        name='portfolio/works/gentle-activity-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes());self.audit(True)
+    def test_gentle_activity_study_cover_tamper_rejected(self):
+        name='portfolio/works/gentle-activity-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
+    def test_gentle_activity_study_cover_wrong_path_rejected(self):
+        self.add('portfolio/works/gentle-activity-study/other.jpg',(ROOT/'portfolio/works/gentle-activity-study/cover.jpg').read_bytes());self.audit(False)
+    def test_exact_memory_case_study_cover_allowed(self):
+        name='portfolio/works/memory-case-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes());self.audit(True)
+    def test_memory_case_study_cover_tamper_rejected(self):
+        name='portfolio/works/memory-case-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
+    def test_memory_case_study_cover_wrong_path_rejected(self):
+        self.add('portfolio/works/memory-case-study/other.jpg',(ROOT/'portfolio/works/memory-case-study/cover.jpg').read_bytes());self.audit(False)
+    def test_exact_night_observatory_study_cover_allowed(self):
+        name='portfolio/works/night-observatory-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes());self.audit(True)
+    def test_night_observatory_study_cover_tamper_rejected(self):
+        name='portfolio/works/night-observatory-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
+    def test_night_observatory_study_cover_wrong_path_rejected(self):
+        self.add('portfolio/works/night-observatory-study/other.jpg',(ROOT/'portfolio/works/night-observatory-study/cover.jpg').read_bytes());self.audit(False)
+    def test_exact_rollcall_docs_study_cover_allowed(self):
+        name='portfolio/works/rollcall-docs-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes());self.audit(True)
+    def test_rollcall_docs_study_cover_tamper_rejected(self):
+        name='portfolio/works/rollcall-docs-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
+    def test_rollcall_docs_study_cover_wrong_path_rejected(self):
+        self.add('portfolio/works/rollcall-docs-study/other.jpg',(ROOT/'portfolio/works/rollcall-docs-study/cover.jpg').read_bytes());self.audit(False)
     def test_exact_irreverent_pop_study_cover_allowed(self):
         name='portfolio/works/irreverent-pop-study/cover.jpg'
         self.add(name,(ROOT/name).read_bytes());self.audit(True)

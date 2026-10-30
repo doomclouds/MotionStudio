@@ -1,0 +1,233 @@
+{
+  "schema": 4,
+  "id": "memory-case-study",
+  "version": "1.0.0",
+  "title": "AI记忆系统 · 纵向案例",
+  "status": "source-release",
+  "unofficial_recreation": true,
+  "original": {
+    "author": "alchaincyf (花叔 · 花生)",
+    "title": "Huashu AI memory system infographic specimen",
+    "url": "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/showcases/infographic/infographic-pentagram.html"
+  },
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "LICENSES/Nimbus-license.txt",
+      "LICENSES/NotoSansSC-OFL.txt",
+      "LICENSES/huashu-MIT-LICENSE.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/LICENSE",
+      "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "https://github.com/ArtifexSoftware/urw-base35-fonts",
+      "https://github.com/ArtifexSoftware/urw-base35-fonts",
+      "https://github.com/ArtifexSoftware/urw-base35-fonts"
+    ]
+  },
+  "files": [
+    {
+      "path": "CREDITS.md",
+      "sha256": "4db45f0642c1f69826987e66bc82d4b0cea979ee93a8fb1ed9a14d63de400b81",
+      "role": "documentation"
+    },
+    {
+      "path": "DESIGN-RETENTION.md",
+      "sha256": "51604093ccf02f988775fd6c3902b63609434ae95ff637a7f8285a7337042f69",
+      "role": "documentation"
+    },
+    {
+      "path": "LICENSES/Nimbus-license.txt",
+      "sha256": "1315a62758a603a3e6e87a79b8389563789c59c1740b9db8bc2b20e2e2145458",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/NotoSansSC-OFL.txt",
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/huashu-MIT-LICENSE.txt",
+      "sha256": "6d6a2a9caf2e6d2b76974050427053b2892d8aa4c33fd168ce63a537fcee9d96",
+      "role": "license"
+    },
+    {
+      "path": "README.md",
+      "sha256": "cd0c85d7f2a123c67c2608b493cc417acfff06410c1820d2dfa1212df578b3be",
+      "role": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "1507cc6721c7bcaed6cff2d08b48f8bd62cba3913670961fed11425af80cb8e9",
+      "role": "cover"
+    },
+    {
+      "path": "design/DESIGN-ANALYSIS.md",
+      "sha256": "9e9b9c4571f233219f28eb5e53b43d7ae8088e836588c0a76ce15e42e4640bb1",
+      "role": "documentation"
+    },
+    {
+      "path": "design/SETTLEMENT.md",
+      "sha256": "f511281a323449de82c512af9d4fd6ba28d5647d7cb7d46498f961dd9ad96525",
+      "role": "documentation"
+    },
+    {
+      "path": "design/content.json",
+      "sha256": "8aa4ad7c8d442d25c73a8ed944ae735596fc90ef651888d28c8e70784721359c",
+      "role": "config"
+    },
+    {
+      "path": "design/ratio-audit.mjs",
+      "sha256": "ed66e9b0a210b46c1230864311c9490ccf064638e7e3700bba7d2d1feb9fd59e",
+      "role": "source"
+    },
+    {
+      "path": "design/scene.mjs",
+      "sha256": "4aab451a180e43341e1458e67ba339914bc6adb10af350a8a329f2a46167041b",
+      "role": "source"
+    },
+    {
+      "path": "font-charset.txt",
+      "sha256": "21cf69fb59c19274d846883e5cb2e9b553a71b9b53c3394d1964bdf161ffb601",
+      "role": "config"
+    },
+    {
+      "path": "font-inputs.json",
+      "sha256": "fa81edeea735200950c19b730ddf45f535158b1fa7a78f8fbc7d91cdf556b243",
+      "role": "config"
+    },
+    {
+      "path": "fonts.lock.json",
+      "sha256": "c8d51a589d61dea208635f84b97e4c427bf7befdfa6499549ebcef6a05a22227",
+      "role": "config"
+    },
+    {
+      "path": "locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "role": "lock"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "c97986608711fff48e780026471834a114f117d30fd4f1b15c3e76b21a760a46",
+      "role": "lock"
+    },
+    {
+      "path": "prepare-fonts.py",
+      "sha256": "bf422db118abd2d3959a4a860023a64e840eebcdcffb8414f5fd34ca2d786629",
+      "role": "source"
+    },
+    {
+      "path": "retention.json",
+      "sha256": "604bb3ccebe2e22a539f7d386ba645d6fec048d6e5be4817eb5a944e8d3f3eb7",
+      "role": "config"
+    },
+    {
+      "path": "tests/ratio.test.mjs",
+      "sha256": "acbb46ca75321621df6a393dcb9a2fceff4cc38402beb291d633a2d0f1141e72",
+      "role": "source"
+    },
+    {
+      "path": "verify.mjs",
+      "sha256": "eb74cedf6ee0a6e3d9e690fad7888aa8b448f5b88bb27ee0f8c001fcec366b89",
+      "role": "source"
+    }
+  ],
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "locks/npm-package-lock.json"
+    }
+  ],
+  "render": {
+    "entrypoint": "design/scene.mjs",
+    "width": 1080,
+    "height": 1920
+  },
+  "resources": [
+    {
+      "id": "memorycasesans700",
+      "mode": "provide",
+      "license": "SIL OFL 1.1",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "bc3c0cd7898265750d691ded90878e5828850815292cc0551575a63d20a01eaf",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "MemoryCaseSans700.ttf",
+      "bytes": 25396,
+      "instructions": "Provide locked originals; prepare-fonts.py; set MEMORY_CASE_FONT_DIR. Missing/mismatched fails closed."
+    },
+    {
+      "id": "memorycasesans900",
+      "mode": "provide",
+      "license": "SIL OFL 1.1",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "63863c007fdb1b80e707ab60392478242245d2ad3aaaeabf57ac97a9fabd6f5f",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "MemoryCaseSans900.ttf",
+      "bytes": 25384,
+      "instructions": "Provide locked originals; prepare-fonts.py; set MEMORY_CASE_FONT_DIR. Missing/mismatched fails closed."
+    },
+    {
+      "id": "memoryregular",
+      "mode": "provide",
+      "license": "URW Base35 AGPL with font embedding exception; see notice",
+      "notice": "LICENSES/Nimbus-license.txt",
+      "source_url": "https://github.com/ArtifexSoftware/urw-base35-fonts",
+      "sha256": "7c25be4d78155523080ab85b10277150657ff7dabbcad7037bdd536c9b6d0d08",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "NimbusSans-Regular.otf",
+      "bytes": 82264,
+      "instructions": "Provide locked originals; prepare-fonts.py; set MEMORY_CASE_FONT_DIR. Missing/mismatched fails closed."
+    },
+    {
+      "id": "memorybold",
+      "mode": "provide",
+      "license": "URW Base35 AGPL with font embedding exception; see notice",
+      "notice": "LICENSES/Nimbus-license.txt",
+      "source_url": "https://github.com/ArtifexSoftware/urw-base35-fonts",
+      "sha256": "7f33328e6b4d4cd21b45fa625791928c9407dc702db6780e56b09ca9a3ecaa67",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "NimbusSans-Bold.otf",
+      "bytes": 83264,
+      "instructions": "Provide locked originals; prepare-fonts.py; set MEMORY_CASE_FONT_DIR. Missing/mismatched fails closed."
+    },
+    {
+      "id": "memoryitalic",
+      "mode": "provide",
+      "license": "URW Base35 AGPL with font embedding exception; see notice",
+      "notice": "LICENSES/Nimbus-license.txt",
+      "source_url": "https://github.com/ArtifexSoftware/urw-base35-fonts",
+      "sha256": "3f47fb34fcb7de09f8cbc9f305191340ddebf7a068419f4bb5f49287dea59b87",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "NimbusSans-BoldItalic.otf",
+      "bytes": 95396,
+      "instructions": "Provide locked originals; prepare-fonts.py; set MEMORY_CASE_FONT_DIR. Missing/mismatched fails closed."
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "1663b84601d6d98cf235d594467ba402abb3c5c2a20b8075a249461e7c63bb41",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "1080x1920 full viewport visually reviewed and accepted. NimbusSans/Noto substitutes differ from reference glyph shapes/spacing. Source viewport clipping retained. Claims 2.3x/zero loss unverified; arithmetic only checked. No browser, responsive, interactive or motion validation."
+    }
+  }
+}

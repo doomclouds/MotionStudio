@@ -1,0 +1,4 @@
+import assert from'node:assert/strict';import{readFileSync}from'node:fs';import{drawSourceOpacityGrid}from'./design/source-opacity-grid.mjs';
+const alpha=JSON.parse(readFileSync(new URL('./design/heatmap.json',import.meta.url))).alpha,rects=[],ctx={save(){},restore(){},fillRect(...r){rects.push(r)}};
+for(const a of[alpha,alpha.map(x=>1-x)])assert.equal(drawSourceOpacityGrid(ctx,{alpha:a}).cells,168);assert.equal(rects.length,336);
+for(const p of[{}, {alpha:[]},{alpha:alpha.slice(1)},{alpha:alpha.map((a,i)=>i===0?NaN:a)},{alpha:alpha.map((a,i)=>i===0?1.1:a)},{alpha:alpha.map((a,i)=>i===0?-.1:a)},{alpha,width:479},{alpha,width:601},{alpha,x:Infinity},{alpha,y:NaN}])assert.throws(()=>drawSourceOpacityGrid(ctx,p));console.log('2 valid inputs / 10 rejected inputs; call contract only, not a fresh visual test');
