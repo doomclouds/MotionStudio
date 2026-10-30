@@ -1,0 +1,155 @@
+{
+  "originalInputs": [
+    {
+      "filename": "NotoSansSC-variable.ttf",
+      "sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+      "bytes": 17772300,
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "notice": "LICENSES/NotoSans-OFL.txt"
+    },
+    {
+      "filename": "SourceSans3[wght].ttf",
+      "sha256": "042fe2cc0b933e328410d7acbd0aa6a1873dca5aef81875f4bc214b08825c7b9",
+      "bytes": 646340,
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/sourcesans3",
+      "notice": "LICENSES/sourcesans3-OFL.txt"
+    },
+    {
+      "filename": "RobotoMono-variable.ttf",
+      "sha256": "66a80e79d17e4c7cabd162e2916578a4cc08fd19eef6e2a643305eae9c567b2b",
+      "bytes": 183700,
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/robotomono",
+      "notice": "LICENSES/RobotoMono-OFL.txt"
+    }
+  ],
+  "recipes": [
+    {
+      "source": "NotoSansSC-variable.ttf",
+      "filename": "Sans400.ttf",
+      "weight": 400,
+      "instantiateFirst": false,
+      "legacyWeight400": false
+    },
+    {
+      "source": "NotoSansSC-variable.ttf",
+      "filename": "Sans500.ttf",
+      "weight": 500,
+      "instantiateFirst": false,
+      "legacyWeight400": false
+    },
+    {
+      "source": "NotoSansSC-variable.ttf",
+      "filename": "Sans600.ttf",
+      "weight": 600,
+      "instantiateFirst": false,
+      "legacyWeight400": false
+    },
+    {
+      "source": "NotoSansSC-variable.ttf",
+      "filename": "Sans700.ttf",
+      "weight": 700,
+      "instantiateFirst": false,
+      "legacyWeight400": false
+    },
+    {
+      "source": "SourceSans3[wght].ttf",
+      "filename": "Source400.ttf",
+      "weight": 400,
+      "instantiateFirst": false,
+      "legacyWeight400": false
+    },
+    {
+      "source": "SourceSans3[wght].ttf",
+      "filename": "Source600.ttf",
+      "weight": 600,
+      "instantiateFirst": false,
+      "legacyWeight400": false
+    },
+    {
+      "source": "SourceSans3[wght].ttf",
+      "filename": "Source700.ttf",
+      "weight": 700,
+      "instantiateFirst": false,
+      "legacyWeight400": false
+    },
+    {
+      "source": "RobotoMono-variable.ttf",
+      "filename": "Mono400.ttf",
+      "weight": 400,
+      "instantiateFirst": false,
+      "legacyWeight400": false
+    },
+    {
+      "source": "RobotoMono-variable.ttf",
+      "filename": "Mono500.ttf",
+      "weight": 500,
+      "instantiateFirst": false,
+      "legacyWeight400": false
+    }
+  ],
+  "outputs": [
+    {
+      "filename": "Sans400.ttf",
+      "sha256": "b8e6fc433c5e8b4267b6f6e568c2ea3b757cddb70f815844c4dce8d0a97b33a4",
+      "bytes": 42804,
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "notice": "LICENSES/NotoSans-OFL.txt"
+    },
+    {
+      "filename": "Sans500.ttf",
+      "sha256": "f2d21c2dd9060f8038e6dd995724980872436c988d64c83169670665a13d6ec4",
+      "bytes": 42804,
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "notice": "LICENSES/NotoSans-OFL.txt"
+    },
+    {
+      "filename": "Sans600.ttf",
+      "sha256": "1f3c48928adf5408192c8422b73b0c46484a7aca9860bb06f17b9e98717794e6",
+      "bytes": 42804,
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "notice": "LICENSES/NotoSans-OFL.txt"
+    },
+    {
+      "filename": "Sans700.ttf",
+      "sha256": "8d3b6ae3e166e341d2097eb15a9f5ce50d4e2401aac809225551986ba3c6e419",
+      "bytes": 42804,
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "notice": "LICENSES/NotoSans-OFL.txt"
+    },
+    {
+      "filename": "Source400.ttf",
+      "sha256": "7340d09ed56ac2c66c2e0c121fbf6b1ab4ab736a6affb5a8a8e3b09a8f138b8b",
+      "bytes": 17728,
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/sourcesans3",
+      "notice": "LICENSES/sourcesans3-OFL.txt"
+    },
+    {
+      "filename": "Source600.ttf",
+      "sha256": "f4eb8d59cffa4e75711024362c135a2265fc6c0f733f8f6ab25e198d15bb5d45",
+      "bytes": 17732,
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/sourcesans3",
+      "notice": "LICENSES/sourcesans3-OFL.txt"
+    },
+    {
+      "filename": "Source700.ttf",
+      "sha256": "c0d3f485eadf692e0b335bf146be766f2fcb6acbcaf794b3a5b7d41b74f5086c",
+      "bytes": 17724,
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/sourcesans3",
+      "notice": "LICENSES/sourcesans3-OFL.txt"
+    },
+    {
+      "filename": "Mono400.ttf",
+      "sha256": "0e38559e5088d1790212ea76ee4a18a83aa3a7082b8fe6938b5c9e03af51d253",
+      "bytes": 12744,
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/robotomono",
+      "notice": "LICENSES/RobotoMono-OFL.txt"
+    },
+    {
+      "filename": "Mono500.ttf",
+      "sha256": "a9d76ca3ac37dd5666d052bf649fb6c1189138565234592c6135e0a26a2f0a4d",
+      "bytes": 12744,
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/robotomono",
+      "notice": "LICENSES/RobotoMono-OFL.txt"
+    }
+  ]
+}

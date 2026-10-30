@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "workId": "mountain-book-jacket-study",
+  "kind": "fixed-static-design",
+  "canvas": {
+    "width": 1200,
+    "height": 750
+  },
+  "entrypoint": "design/scene.mjs",
+  "decisionCard": "DESIGN-RETENTION.md",
+  "sourceAnalysis": [
+    "DESIGN-REASONING.md"
+  ],
+  "ruleRefs": [],
+  "ruleStatus": "Case design decision card; no separate registered rule or new public family.",
+  "assetUsage": [
+    {
+      "familyId": "design.material-surfaces.v1",
+      "mode": "runtime-import",
+      "modulePath": "engine/design-elements/material-surfaces.mjs",
+      "moduleSha256": "70bf1fcfa89bfbf911f5cf735b1b08e8ae7f360e43bd43a8c831efef579696eb",
+      "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
+      "callsite": "design/scene.mjs",
+      "importToken": "material-surfaces.mjs",
+      "callToken": "surface",
+      "visibleRole": "书衣的同色纸面基础，非完整封套生成器",
+      "snapshotPath": null,
+      "executionEvidence": {
+        "status": "MATCHED_ACCEPTED_FRAME",
+        "recordId": "b08-native-restore-mountain-book-jacket-study",
+        "sha256": "bef745f7e853b45d695b75db89429efdd92feb65d3f2c38cd0215d597832c00d",
+        "frameSha256": "2a6e9ef70770e365869bf92836175945a7acda7746b0268dd765a854ac67e974",
+        "storage": "SCRATCH_LOCAL_ONLY",
+        "durableStorage": "NOT_LOCATED",
+        "note": "Author clean font restore reproduced original Native frame. Scene call receipt, not independent instrumentation or new aesthetic review."
+      }
+    }
+  ],
+  "nonAssetNote": "Editorial role JSON is a content-design record, not an automatic compositor or public family. Geometry and typography stay case-local.",
+  "evidence": {
+    "acceptanceSource": "entry.json#/acceptance",
+    "renderHashSource": "entry.json#/cover/source_sha256",
+    "publicCover": "cover.jpg",
+    "comparisonBundle": {
+      "status": "NOT_PUBLISHED",
+      "recordId": "b08-jacket-visual-report",
+      "sha256": "7d5d859146f4161389300ab252c56390bf3c6eea3988d527322283df0075d2ca",
+      "storage": "SCRATCH_LOCAL_ONLY",
+      "durableStorage": "NOT_LOCATED",
+      "note": "Local HTML report container not Native PNG hash; embedded images independently checked, durable access not verified."
+    },
+    "independentReview": {
+      "status": "PRIVATE_RECORD_LOCATED",
+      "recordId": "b08-independent-visual-review",
+      "sha256": "819412009e3df2f1e6f712c6c7898118ce065f53c369492767e819cb69e720b8",
+      "storage": "PRIVATE_OWNER_PAGE",
+      "durableStorage": "ACCESS_VERIFIED",
+      "note": "既有独审原文已存仅owner私有Page并读回原字节SHA；无新增审美验收。"
+    },
+    "visualReport": {
+      "recordId": "b08-verified-private-report-jacket",
+      "sha256": "7d5d859146f4161389300ab252c56390bf3c6eea3988d527322283df0075d2ca",
+      "storage": "PRIVATE_LIBRARY",
+      "durableStorage": "ACCESS_VERIFIED",
+      "acceptedFrameBinding": "EXACT_PIXELS",
+      "status": "NOT_PUBLISHED",
+      "artifactKind": "html-report",
+      "note": "实际取回私有Library HTML并核对终审容器SHA，全部嵌图可解码；精确绑定仅检测原尺寸图和无边并排半图，未建立不推错版。未验证浏览器预览，不构成新审美验收。"
+    }
+  },
+  "motionTransfer": {
+    "status": "NOT_TESTED",
+    "note": "Fixed static only; no browser/responsive/printing/factual-data or motion verification."
+  }
+}

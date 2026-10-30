@@ -1,0 +1,103 @@
+{
+  "originalInputs": [
+    {
+      "filename": "NotoSerifSC-variable.ttf",
+      "sha256": "050080d9255a86808f2945bffac582b31ef32bc36411ce29563b4961670c66f9",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notoserifsc"
+    },
+    {
+      "filename": "lxgwwenkai-regular-subset-115.woff2",
+      "sha256": "2e38294e4175b4847a69724ffa09cdc851e4cd81725e3c4675a1d35826ec14de",
+      "source_url": "https://github.com/mistyu/next-blog/blob/c8a0ea75b0ef4a2016325c0353ce0d29e287809e/public/fonts/lxgw/woff2/lxgwwenkai-regular-subset-115.woff2"
+    },
+    {
+      "filename": "lxgwwenkai-regular-subset-116.woff2",
+      "sha256": "a48d699b33c5c94dda699ddda56800a5d96a7acce49f6b9586b0373e29a8b5a8",
+      "source_url": "https://github.com/mistyu/next-blog/blob/c8a0ea75b0ef4a2016325c0353ce0d29e287809e/public/fonts/lxgw/woff2/lxgwwenkai-regular-subset-116.woff2"
+    },
+    {
+      "filename": "lxgwwenkai-regular-subset-117.woff2",
+      "sha256": "6d25c10667c6e89127df46e42627a0e052dfa4b53f42eaab923b89db1f0f3292",
+      "source_url": "https://github.com/mistyu/next-blog/blob/c8a0ea75b0ef4a2016325c0353ce0d29e287809e/public/fonts/lxgw/woff2/lxgwwenkai-regular-subset-117.woff2"
+    },
+    {
+      "filename": "lxgwwenkai-regular-subset-118.woff2",
+      "sha256": "f29c89cd7420937450ecf9ba3c2f23268673a107dfe84c63243769cc0a12c418",
+      "source_url": "https://github.com/mistyu/next-blog/blob/c8a0ea75b0ef4a2016325c0353ce0d29e287809e/public/fonts/lxgw/woff2/lxgwwenkai-regular-subset-118.woff2"
+    },
+    {
+      "filename": "lxgwwenkai-regular-subset-119.woff2",
+      "sha256": "2e7b09ef00f5e8f2398d73d885b96e8ef8693e5c382750205c1d9efaa527c580",
+      "source_url": "https://github.com/mistyu/next-blog/blob/c8a0ea75b0ef4a2016325c0353ce0d29e287809e/public/fonts/lxgw/woff2/lxgwwenkai-regular-subset-119.woff2"
+    }
+  ],
+  "derived": [
+    {
+      "source": "NotoSerifSC-variable.ttf",
+      "name": "EJSerif400",
+      "weight": 400
+    }
+  ],
+  "outputNames": [
+    "EJSerif400.ttf",
+    "EJKai115.ttf",
+    "EJKai116.ttf",
+    "EJKai117.ttf",
+    "EJKai118.ttf",
+    "EJKai119.ttf"
+  ],
+  "expectedOutputs": [
+    {
+      "filename": "EJSerif400.ttf",
+      "sha256": "e2057050d50055d796f0a51a3a0b1a5aa484513c9d4286ae7626760b064b5c49",
+      "bytes": 182864
+    },
+    {
+      "filename": "EJKai115.ttf",
+      "sha256": "02cf48e784c934a4de9607d59aff7a4038650b054569fd0c5232585a14c9128a",
+      "bytes": 1452
+    },
+    {
+      "filename": "EJKai116.ttf",
+      "sha256": "7f2b78ef10b24207a19438852ddddb8734f9d859685ea57804cabeb37740e569",
+      "bytes": 1596
+    },
+    {
+      "filename": "EJKai117.ttf",
+      "sha256": "b300e4c14565b72c6fa11fb258e4aa393897c05c87674529085947a9b1b80fcb",
+      "bytes": 1444
+    },
+    {
+      "filename": "EJKai118.ttf",
+      "sha256": "e458faa43fbf766d18d5d347fb327b0574c23e5d769680c00080e142ae57fd25",
+      "bytes": 1612
+    },
+    {
+      "filename": "EJKai119.ttf",
+      "sha256": "7379182263ffdf8c28ce901711b378d157f72aa2c08084aaa79daabcd24c2350",
+      "bytes": 1444
+    }
+  ],
+  "webfontDerived": [
+    {
+      "source": "lxgwwenkai-regular-subset-115.woff2",
+      "name": "EJKai115"
+    },
+    {
+      "source": "lxgwwenkai-regular-subset-116.woff2",
+      "name": "EJKai116"
+    },
+    {
+      "source": "lxgwwenkai-regular-subset-117.woff2",
+      "name": "EJKai117"
+    },
+    {
+      "source": "lxgwwenkai-regular-subset-118.woff2",
+      "name": "EJKai118"
+    },
+    {
+      "source": "lxgwwenkai-regular-subset-119.woff2",
+      "name": "EJKai119"
+    }
+  ]
+}

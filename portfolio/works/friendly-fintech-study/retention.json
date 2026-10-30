@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "workId": "friendly-fintech-study",
+  "kind": "fixed-static-design",
+  "canvas": {
+    "width": 1200,
+    "height": 750
+  },
+  "entrypoint": "design/scene.mjs",
+  "decisionCard": "DESIGN-RETENTION.md",
+  "sourceAnalysis": [
+    "design/DESIGN-REASONING.md"
+  ],
+  "ruleRefs": [],
+  "ruleStatus": "Case recipe/audit not a new shared family.",
+  "assetUsage": [
+    {
+      "familyId": "design.material-surfaces.v1",
+      "mode": "runtime-import",
+      "modulePath": "engine/design-elements/material-surfaces.mjs",
+      "moduleSha256": "70bf1fcfa89bfbf911f5cf735b1b08e8ae7f360e43bd43a8c831efef579696eb",
+      "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
+      "callsite": "design/scene.mjs",
+      "importToken": "material-surfaces.mjs",
+      "callToken": "surface",
+      "visibleRole": "three device base shells; custom soft masks remain case-local",
+      "snapshotPath": null,
+      "executionEvidence": {
+        "status": "MATCHED_ACCEPTED_FRAME",
+        "recordId": "b08-fintech-material-runtime",
+        "sha256": "51fd9fd54e51e23a3ae3021984dac8755fc081457b6fe6dc6b66422a78a18d09",
+        "frameSha256": "0b84476429d6e14445ffa9d95750cb762ccbefa11b38d0c94aaa8151b62f1184",
+        "storage": "SCRATCH_LOCAL_ONLY",
+        "durableStorage": "NOT_LOCATED",
+        "note": "Integrator import-seam instrumentation delegated unchanged material module, observed 3 device calls and accepted-frame identical pixels. Not reviewer rerender or new aesthetic approval."
+      }
+    }
+  ],
+  "nonAssetNote": "Local data, geometry, audit and Canvas-state helpers are not public design families.",
+  "evidence": {
+    "acceptanceSource": "entry.json#/acceptance",
+    "renderHashSource": "entry.json#/cover/source_sha256",
+    "publicCover": "cover.jpg",
+    "comparisonBundle": {
+      "status": "NOT_PUBLISHED",
+      "recordId": "b08-fintech-visual-report",
+      "sha256": "63d4dc2fe8674ef28d5a5d613ddc6dad7b194b2985a12effd9b49001f67f6e21",
+      "storage": "SCRATCH_LOCAL_ONLY",
+      "durableStorage": "NOT_LOCATED",
+      "note": "Local HTML report container not Native PNG hash; embedded images independently checked, durable access not verified."
+    },
+    "independentReview": {
+      "status": "PRIVATE_RECORD_LOCATED",
+      "recordId": "b08-independent-visual-review",
+      "sha256": "819412009e3df2f1e6f712c6c7898118ce065f53c369492767e819cb69e720b8",
+      "storage": "PRIVATE_OWNER_PAGE",
+      "durableStorage": "ACCESS_VERIFIED",
+      "note": "既有独审原文已存仅owner私有Page并读回原字节SHA；无新增审美验收。"
+    },
+    "visualReport": {
+      "recordId": "b08-verified-private-report-fintech",
+      "sha256": "63d4dc2fe8674ef28d5a5d613ddc6dad7b194b2985a12effd9b49001f67f6e21",
+      "storage": "PRIVATE_LIBRARY",
+      "durableStorage": "ACCESS_VERIFIED",
+      "acceptedFrameBinding": "EXACT_PIXELS",
+      "status": "NOT_PUBLISHED",
+      "artifactKind": "html-report",
+      "note": "实际取回私有Library HTML并核对终审容器SHA，全部嵌图可解码；精确绑定仅检测原尺寸图和无边并排半图，未建立不推错版。未验证浏览器预览，不构成新审美验收。"
+    }
+  },
+  "motionTransfer": {
+    "status": "NOT_TESTED",
+    "note": "Fixed Native static only; no motion or responsive validation."
+  }
+}

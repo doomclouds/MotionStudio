@@ -1,0 +1,162 @@
+{
+  "originalInputs": [
+    {
+      "filename": "NotoSansSC-variable.ttf",
+      "sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+      "bytes": 17772300,
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "notice": "LICENSES/NotoSans-OFL.txt"
+    },
+    {
+      "filename": "Figtree[wght].ttf",
+      "sha256": "26ad3db9b31ff7dde67a91ff515d022d2f495cd506590699cf264f0bfe6fb714",
+      "bytes": 62712,
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/figtree",
+      "notice": "LICENSES/figtree-OFL.txt"
+    }
+  ],
+  "recipes": [
+    {
+      "source": "NotoSansSC-variable.ttf",
+      "filename": "Sans400.ttf",
+      "weight": 400,
+      "instantiateFirst": false,
+      "legacyWeight400": false
+    },
+    {
+      "source": "NotoSansSC-variable.ttf",
+      "filename": "Sans500.ttf",
+      "weight": 500,
+      "instantiateFirst": false,
+      "legacyWeight400": false
+    },
+    {
+      "source": "NotoSansSC-variable.ttf",
+      "filename": "Sans600.ttf",
+      "weight": 600,
+      "instantiateFirst": false,
+      "legacyWeight400": false
+    },
+    {
+      "source": "NotoSansSC-variable.ttf",
+      "filename": "Sans700.ttf",
+      "weight": 700,
+      "instantiateFirst": false,
+      "legacyWeight400": false
+    },
+    {
+      "source": "NotoSansSC-variable.ttf",
+      "filename": "Sans800.ttf",
+      "weight": 800,
+      "instantiateFirst": false,
+      "legacyWeight400": false
+    },
+    {
+      "source": "NotoSansSC-variable.ttf",
+      "filename": "Sans900.ttf",
+      "weight": 900,
+      "instantiateFirst": false,
+      "legacyWeight400": false
+    },
+    {
+      "source": "Figtree[wght].ttf",
+      "filename": "Figtree500.ttf",
+      "weight": 500,
+      "instantiateFirst": false,
+      "legacyWeight400": false
+    },
+    {
+      "source": "Figtree[wght].ttf",
+      "filename": "Figtree600.ttf",
+      "weight": 600,
+      "instantiateFirst": false,
+      "legacyWeight400": false
+    },
+    {
+      "source": "Figtree[wght].ttf",
+      "filename": "Figtree700.ttf",
+      "weight": 700,
+      "instantiateFirst": false,
+      "legacyWeight400": false
+    },
+    {
+      "source": "Figtree[wght].ttf",
+      "filename": "Figtree800.ttf",
+      "weight": 800,
+      "instantiateFirst": false,
+      "legacyWeight400": false
+    }
+  ],
+  "outputs": [
+    {
+      "filename": "Sans400.ttf",
+      "sha256": "b66d983a97b83fd9ed7dff2cefe1a9a6812e91bd3e33fca4b6ad44eff1a54b52",
+      "bytes": 35972,
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "notice": "LICENSES/NotoSans-OFL.txt"
+    },
+    {
+      "filename": "Sans500.ttf",
+      "sha256": "a6edf61658648a7ff22b2f6bb1e0d0d47b68ccaddb3babd05b7f03f657a00a32",
+      "bytes": 36000,
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "notice": "LICENSES/NotoSans-OFL.txt"
+    },
+    {
+      "filename": "Sans600.ttf",
+      "sha256": "b29e47bdee24531079ec0601d4039fa8c3b63334c8d1f05737fbb82978e32a0d",
+      "bytes": 36000,
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "notice": "LICENSES/NotoSans-OFL.txt"
+    },
+    {
+      "filename": "Sans700.ttf",
+      "sha256": "19252cf9ac9087fd17d0c3999c60801a43002b5d925b5798ea278d80c76129c8",
+      "bytes": 35976,
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "notice": "LICENSES/NotoSans-OFL.txt"
+    },
+    {
+      "filename": "Sans800.ttf",
+      "sha256": "2584ec873ef16861bd0ccc623ec96108cdf3bb6aa3075dfb722f6915e8b5094f",
+      "bytes": 35972,
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "notice": "LICENSES/NotoSans-OFL.txt"
+    },
+    {
+      "filename": "Sans900.ttf",
+      "sha256": "92f094b47eefc01de9bc2ffe59f1cf9b5136df1931bdfbaea535741f9833ba52",
+      "bytes": 35952,
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "notice": "LICENSES/NotoSans-OFL.txt"
+    },
+    {
+      "filename": "Figtree500.ttf",
+      "sha256": "16159ac2eda6d5cd2104c6a66eb68258bfba9b036c39afc9fc559d75230a86ca",
+      "bytes": 13092,
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/figtree",
+      "notice": "LICENSES/figtree-OFL.txt"
+    },
+    {
+      "filename": "Figtree600.ttf",
+      "sha256": "1731a4264ebb17b9efa298c07b1c65cfe5c5f7ccf3e3fc1e4d27d05b2c362f5b",
+      "bytes": 13128,
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/figtree",
+      "notice": "LICENSES/figtree-OFL.txt"
+    },
+    {
+      "filename": "Figtree700.ttf",
+      "sha256": "1ba0247ba7558a592c2baddf5711540c9d8535c298a5afb672b9d1b025167984",
+      "bytes": 13120,
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/figtree",
+      "notice": "LICENSES/figtree-OFL.txt"
+    },
+    {
+      "filename": "Figtree800.ttf",
+      "sha256": "72dd88b43ffd1580ef85aabb971e1e35b2f90532c877e023f8b9fb2fcec9e46b",
+      "bytes": 13116,
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/figtree",
+      "notice": "LICENSES/figtree-OFL.txt"
+    }
+  ]
+}

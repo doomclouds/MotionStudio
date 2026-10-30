@@ -127,3 +127,14 @@ Five retained fixed-size studies; only these self-rendered cover identities are 
 - `portfolio/works/salary-unit-stack-study/cover.jpg`: 1200 × 750, 238,964 bytes; SHA-256 `348c4bcc4ad087a3d568e8fb5d4d5cf665aa6acf8a26aa95f1e59e38c181ecb0`.
 - `portfolio/works/topo-outdoor-study/cover.jpg`: 1200 × 750, 187,937 bytes; SHA-256 `829b73f016c879ca4f5735f73a2a7fff07fb66abe695f583642431548aa9bec9`.
 - `portfolio/works/weather-art-study/cover.jpg`: 1200 × 750, 150,795 bytes; SHA-256 `6d9f45c310d3bbbb37a819afebc983ac52a4e2177f0badedddac760eea5a1099`.
+
+
+## B08 approved static covers
+
+Five retained fixed-size studies; only these self-rendered cover identities are permitted. External fonts and private source comparison reports are not redistributed.
+
+- `portfolio/works/editorial-weekly-study/cover.jpg`: 1200 × 750, 164,990 bytes; SHA-256 `011a4aae22f89e50b227c4d4e66b26154655b5e56b15cccc9dde366675b5e39c`.
+- `portfolio/works/friendly-fintech-study/cover.jpg`: 1200 × 750, 205,945 bytes; SHA-256 `d19435c87f4c6d25a19265cc830c6b44a70ef9111217febc7e5e03bf3fbbef1d`.
+- `portfolio/works/mountain-book-jacket-study/cover.jpg`: 1200 × 750, 108,357 bytes; SHA-256 `f90472b7510634a7a855e3bfab20c0e4f91c16bf6a0b49b1377ee4c780bd2144`.
+- `portfolio/works/scientific-figure-study/cover.jpg`: 1200 × 750, 147,644 bytes; SHA-256 `cf0f57eef7b5a588912f92b7b9a5fa1f7d46d4aec494c9ce42414842c14b07ca`.
+- `portfolio/works/theatre-manifesto-study/cover.jpg`: 1200 × 750, 201,964 bytes; SHA-256 `186ebadd944bbdbef3eb1dfc86034029d11c7b6652ab363cc13a4102a7a0ddd0`.

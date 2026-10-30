@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "workId": "theatre-manifesto-study",
+  "kind": "fixed-static-design",
+  "canvas": {
+    "width": 1200,
+    "height": 750
+  },
+  "entrypoint": "design/scene.mjs",
+  "decisionCard": "DESIGN-RETENTION.md",
+  "sourceAnalysis": [
+    "design/DESIGN-ANALYSIS.md"
+  ],
+  "ruleRefs": [],
+  "ruleStatus": "Case recipe/audit not a new shared family.",
+  "assetUsage": [],
+  "nonAssetNote": "Local data, geometry, audit and Canvas-state helpers are not public design families.",
+  "evidence": {
+    "acceptanceSource": "entry.json#/acceptance",
+    "renderHashSource": "entry.json#/cover/source_sha256",
+    "publicCover": "cover.jpg",
+    "comparisonBundle": {
+      "status": "NOT_PUBLISHED",
+      "recordId": "b08-manifesto-visual-report",
+      "sha256": "cdd8f413c15a63f05787d67d0f0b6bc4c960a21ea1231364b85741a5c8197097",
+      "storage": "SCRATCH_LOCAL_ONLY",
+      "durableStorage": "NOT_LOCATED",
+      "note": "Local HTML report container not Native PNG hash; embedded images independently checked, durable access not verified."
+    },
+    "independentReview": {
+      "status": "PRIVATE_RECORD_LOCATED",
+      "recordId": "b08-independent-visual-review",
+      "sha256": "819412009e3df2f1e6f712c6c7898118ce065f53c369492767e819cb69e720b8",
+      "storage": "PRIVATE_OWNER_PAGE",
+      "durableStorage": "ACCESS_VERIFIED",
+      "note": "既有独审原文已存仅owner私有Page并读回原字节SHA；无新增审美验收。"
+    },
+    "visualReport": {
+      "recordId": "b08-verified-private-report-manifesto",
+      "sha256": "cdd8f413c15a63f05787d67d0f0b6bc4c960a21ea1231364b85741a5c8197097",
+      "storage": "PRIVATE_LIBRARY",
+      "durableStorage": "ACCESS_VERIFIED",
+      "acceptedFrameBinding": "NOT_ESTABLISHED",
+      "status": "NOT_PUBLISHED",
+      "artifactKind": "html-report",
+      "note": "实际取回私有Library HTML并核对终审容器SHA，全部嵌图可解码；精确绑定仅检测原尺寸图和无边并排半图，未建立不推错版。未验证浏览器预览，不构成新审美验收。"
+    }
+  },
+  "motionTransfer": {
+    "status": "NOT_TESTED",
+    "note": "Fixed Native static only; no motion or responsive validation."
+  }
+}

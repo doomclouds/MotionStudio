@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "workId": "editorial-weekly-study",
+  "kind": "fixed-static-design",
+  "canvas": {
+    "width": 1200,
+    "height": 750
+  },
+  "entrypoint": "design/scene.mjs",
+  "decisionCard": "DESIGN-RETENTION.md",
+  "sourceAnalysis": [
+    "DESIGN-REASONING.md"
+  ],
+  "ruleRefs": [],
+  "ruleStatus": "Case design decision card; no separate registered rule or new public family.",
+  "assetUsage": [],
+  "nonAssetNote": "Editorial role JSON is a content-design record, not an automatic compositor or public family. Geometry and typography stay case-local.",
+  "evidence": {
+    "acceptanceSource": "entry.json#/acceptance",
+    "renderHashSource": "entry.json#/cover/source_sha256",
+    "publicCover": "cover.jpg",
+    "comparisonBundle": {
+      "status": "NOT_PUBLISHED",
+      "recordId": "b08-editorial-visual-report",
+      "sha256": "2f3bcbff13ad373bc1b70da119bb36cf1efd4e48eb42318127cb89c844500e43",
+      "storage": "SCRATCH_LOCAL_ONLY",
+      "durableStorage": "NOT_LOCATED",
+      "note": "Local HTML report container not Native PNG hash; embedded images independently checked, durable access not verified."
+    },
+    "independentReview": {
+      "status": "PRIVATE_RECORD_LOCATED",
+      "recordId": "b08-independent-visual-review",
+      "sha256": "819412009e3df2f1e6f712c6c7898118ce065f53c369492767e819cb69e720b8",
+      "storage": "PRIVATE_OWNER_PAGE",
+      "durableStorage": "ACCESS_VERIFIED",
+      "note": "既有独审原文已存仅owner私有Page并读回原字节SHA；无新增审美验收。"
+    },
+    "visualReport": {
+      "recordId": "b08-verified-private-report-editorial",
+      "sha256": "2f3bcbff13ad373bc1b70da119bb36cf1efd4e48eb42318127cb89c844500e43",
+      "storage": "PRIVATE_LIBRARY",
+      "durableStorage": "ACCESS_VERIFIED",
+      "acceptedFrameBinding": "EXACT_PIXELS",
+      "status": "NOT_PUBLISHED",
+      "artifactKind": "html-report",
+      "note": "实际取回私有Library HTML并核对终审容器SHA，全部嵌图可解码；精确绑定仅检测原尺寸图和无边并排半图，未建立不推错版。未验证浏览器预览，不构成新审美验收。"
+    }
+  },
+  "motionTransfer": {
+    "status": "NOT_TESTED",
+    "note": "Fixed static only; no browser/responsive/printing/factual-data or motion verification."
+  }
+}

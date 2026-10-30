@@ -137,6 +137,11 @@ class SourceTreeFixtures(unittest.TestCase):
             'portfolio/works/salary-unit-stack-study/cover.jpg': '348c4bcc4ad087a3d568e8fb5d4d5cf665aa6acf8a26aa95f1e59e38c181ecb0',
             'portfolio/works/topo-outdoor-study/cover.jpg': '829b73f016c879ca4f5735f73a2a7fff07fb66abe695f583642431548aa9bec9',
             'portfolio/works/weather-art-study/cover.jpg': '6d9f45c310d3bbbb37a819afebc983ac52a4e2177f0badedddac760eea5a1099',
+            'portfolio/works/editorial-weekly-study/cover.jpg': '011a4aae22f89e50b227c4d4e66b26154655b5e56b15cccc9dde366675b5e39c',
+            'portfolio/works/friendly-fintech-study/cover.jpg': 'd19435c87f4c6d25a19265cc830c6b44a70ef9111217febc7e5e03bf3fbbef1d',
+            'portfolio/works/mountain-book-jacket-study/cover.jpg': 'f90472b7510634a7a855e3bfab20c0e4f91c16bf6a0b49b1377ee4c780bd2144',
+            'portfolio/works/scientific-figure-study/cover.jpg': 'cf0f57eef7b5a588912f92b7b9a5fa1f7d46d4aec494c9ce42414842c14b07ca',
+            'portfolio/works/theatre-manifesto-study/cover.jpg': '186ebadd944bbdbef3eb1dfc86034029d11c7b6652ab363cc13a4102a7a0ddd0',
             'portfolio/works/irreverent-pop-study/cover.jpg': 'df8f621e07865727a8d2a99fe66d9ce23e7b5747861732a14a503152dff72f35',
             'portfolio/works/hk-street-signs-study/cover.jpg': '6d83409c6444e4ea6bd903075b7652300f6be7a066c15aa4bb0f06131aae4223',
             'portfolio/works/pixel-hiking-study/cover.jpg': '3e520725c9ca504d5b1e6cf45880f29bec31ce8bd3f1b03ffbd77af4d79eb82b',
@@ -419,6 +424,46 @@ class SourceTreeFixtures(unittest.TestCase):
         self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
     def test_weather_art_study_cover_wrong_path_rejected(self):
         self.add('portfolio/works/weather-art-study/other.jpg',(ROOT/'portfolio/works/weather-art-study/cover.jpg').read_bytes());self.audit(False)
+    def test_exact_editorial_weekly_study_cover_allowed(self):
+        name='portfolio/works/editorial-weekly-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes());self.audit(True)
+    def test_editorial_weekly_study_cover_tamper_rejected(self):
+        name='portfolio/works/editorial-weekly-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
+    def test_editorial_weekly_study_cover_wrong_path_rejected(self):
+        self.add('portfolio/works/editorial-weekly-study/other.jpg',(ROOT/'portfolio/works/editorial-weekly-study/cover.jpg').read_bytes());self.audit(False)
+    def test_exact_friendly_fintech_study_cover_allowed(self):
+        name='portfolio/works/friendly-fintech-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes());self.audit(True)
+    def test_friendly_fintech_study_cover_tamper_rejected(self):
+        name='portfolio/works/friendly-fintech-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
+    def test_friendly_fintech_study_cover_wrong_path_rejected(self):
+        self.add('portfolio/works/friendly-fintech-study/other.jpg',(ROOT/'portfolio/works/friendly-fintech-study/cover.jpg').read_bytes());self.audit(False)
+    def test_exact_mountain_book_jacket_study_cover_allowed(self):
+        name='portfolio/works/mountain-book-jacket-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes());self.audit(True)
+    def test_mountain_book_jacket_study_cover_tamper_rejected(self):
+        name='portfolio/works/mountain-book-jacket-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
+    def test_mountain_book_jacket_study_cover_wrong_path_rejected(self):
+        self.add('portfolio/works/mountain-book-jacket-study/other.jpg',(ROOT/'portfolio/works/mountain-book-jacket-study/cover.jpg').read_bytes());self.audit(False)
+    def test_exact_scientific_figure_study_cover_allowed(self):
+        name='portfolio/works/scientific-figure-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes());self.audit(True)
+    def test_scientific_figure_study_cover_tamper_rejected(self):
+        name='portfolio/works/scientific-figure-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
+    def test_scientific_figure_study_cover_wrong_path_rejected(self):
+        self.add('portfolio/works/scientific-figure-study/other.jpg',(ROOT/'portfolio/works/scientific-figure-study/cover.jpg').read_bytes());self.audit(False)
+    def test_exact_theatre_manifesto_study_cover_allowed(self):
+        name='portfolio/works/theatre-manifesto-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes());self.audit(True)
+    def test_theatre_manifesto_study_cover_tamper_rejected(self):
+        name='portfolio/works/theatre-manifesto-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
+    def test_theatre_manifesto_study_cover_wrong_path_rejected(self):
+        self.add('portfolio/works/theatre-manifesto-study/other.jpg',(ROOT/'portfolio/works/theatre-manifesto-study/cover.jpg').read_bytes());self.audit(False)
     def test_exact_irreverent_pop_study_cover_allowed(self):
         name='portfolio/works/irreverent-pop-study/cover.jpg'
         self.add(name,(ROOT/name).read_bytes());self.audit(True)

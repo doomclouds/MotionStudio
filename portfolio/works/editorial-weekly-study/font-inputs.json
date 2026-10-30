@@ -1,0 +1,102 @@
+{
+  "originalInputs": [
+    {
+      "filename": "GeistMono-variable.ttf",
+      "sha256": "d00e590b8eb3a59acc329b2d044fd143ae935090b7da33199ebee27cc7de8196",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/geistmono"
+    },
+    {
+      "filename": "Inter-var.ttf",
+      "sha256": "c8d76e1cb2a0a7cfbbae1e390be4e4b942b27f99ec07e1024b1fc916045eed09",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/inter"
+    },
+    {
+      "filename": "NotoSansSC-variable.ttf",
+      "sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc"
+    }
+  ],
+  "derived": [
+    {
+      "source": "NotoSansSC-variable.ttf",
+      "name": "EJSans400",
+      "weight": 400
+    },
+    {
+      "source": "NotoSansSC-variable.ttf",
+      "name": "EJSans500",
+      "weight": 500
+    },
+    {
+      "source": "NotoSansSC-variable.ttf",
+      "name": "EJSans700",
+      "weight": 700
+    },
+    {
+      "source": "NotoSansSC-variable.ttf",
+      "name": "EJSans900",
+      "weight": 900
+    },
+    {
+      "source": "Inter-var.ttf",
+      "name": "EJInter500",
+      "weight": 500
+    },
+    {
+      "source": "Inter-var.ttf",
+      "name": "EJInter900",
+      "weight": 900
+    },
+    {
+      "source": "GeistMono-variable.ttf",
+      "name": "EJMono600",
+      "weight": 600
+    }
+  ],
+  "outputNames": [
+    "EJSans400.ttf",
+    "EJSans500.ttf",
+    "EJSans700.ttf",
+    "EJSans900.ttf",
+    "EJInter500.ttf",
+    "EJInter900.ttf",
+    "EJMono600.ttf"
+  ],
+  "expectedOutputs": [
+    {
+      "filename": "EJSans400.ttf",
+      "sha256": "76f7853150138622a4ed6c7ff93cdda3545a1be178d5b1e62b3d34165cd51e34",
+      "bytes": 131096
+    },
+    {
+      "filename": "EJSans500.ttf",
+      "sha256": "880d539b7ad3e3fa154d403c2eeafe1ae500547fb69c5eedefe1c450343b0da0",
+      "bytes": 131044
+    },
+    {
+      "filename": "EJSans700.ttf",
+      "sha256": "e9cc4453342a60298c9e4311b0a3ba5cd70eb87353ddc067aa5cae587a6665eb",
+      "bytes": 131900
+    },
+    {
+      "filename": "EJSans900.ttf",
+      "sha256": "81b044c258b4ca93abc3cdee58fd4d818e1e73a4b0c1f764a77c863d2fa1c72c",
+      "bytes": 131692
+    },
+    {
+      "filename": "EJInter500.ttf",
+      "sha256": "1bd7981b85f0928d9ae35c8a33b408c099f75f3e55d3571abefaaacf7aa5c91c",
+      "bytes": 60348
+    },
+    {
+      "filename": "EJInter900.ttf",
+      "sha256": "9224290da06106075ac2a46e314e66549dbe60b1b468ee8b2766609a6e6d9a43",
+      "bytes": 60752
+    },
+    {
+      "filename": "EJMono600.ttf",
+      "sha256": "32fb6f2c2ca5d5e1e5cd9b0d328a37fa8902aff2ec2fc868fec6f511a31ecd4a",
+      "bytes": 30220
+    }
+  ]
+}

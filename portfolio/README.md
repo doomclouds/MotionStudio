@@ -178,6 +178,28 @@
 
 [天气本身就是一张图](works/weather-art-study/README.md) — 1200×750固定静态设计标本，完整可编辑源码、外置字体双重校验、独立重渲染与统一设计卡保留；实际公共族调用及案例内配方见retention.json，未升级配方为新通用族。原样例内容与残差按PARTIAL披露，不代表真实业务数据或浏览器/动效验收。
 
+## Huashu B08 · 编辑层级、书衣、宣言与专业图版
+
+[![城市周报 · 编辑式粗野主义](works/editorial-weekly-study/cover.jpg)](works/editorial-weekly-study/README.md)
+
+[城市周报 · 编辑式粗野主义](works/editorial-weekly-study/README.md) — 1200×750固定静态设计标本，完整可编辑源码、外置字体双重校验、独立重渲染与统一设计卡保留；实际公共族调用及案例内配方见retention.json，未升级配方为新通用族。原样例内容与残差按PARTIAL披露，不代表真实业务数据或浏览器/动效验收。
+
+[![友好金融三屏 · 完整静态复刻](works/friendly-fintech-study/cover.jpg)](works/friendly-fintech-study/README.md)
+
+[友好金融三屏 · 完整静态复刻](works/friendly-fintech-study/README.md) — 1200×750固定静态设计标本，完整可编辑源码、外置字体双重校验、独立重渲染与统一设计卡保留；实际公共族调用及案例内配方见retention.json，未升级配方为新通用族。原样例内容与残差按PARTIAL披露，不代表真实业务数据或浏览器/动效验收。
+
+[![山行 · 展开书衣](works/mountain-book-jacket-study/cover.jpg)](works/mountain-book-jacket-study/README.md)
+
+[山行 · 展开书衣](works/mountain-book-jacket-study/README.md) — 1200×750固定静态设计标本，完整可编辑源码、外置字体双重校验、独立重渲染与统一设计卡保留；实际公共族调用及案例内配方见retention.json，未升级配方为新通用族。原样例内容与残差按PARTIAL披露，不代表真实业务数据或浏览器/动效验收。
+
+[![科研图版 · 完整静态复刻](works/scientific-figure-study/cover.jpg)](works/scientific-figure-study/README.md)
+
+[科研图版 · 完整静态复刻](works/scientific-figure-study/README.md) — 1200×750固定静态设计标本，完整可编辑源码、外置字体双重校验、独立重渲染与统一设计卡保留；实际公共族调用及案例内配方见retention.json，未升级配方为新通用族。原样例内容与残差按PARTIAL披露，不代表真实业务数据或浏览器/动效验收。
+
+[![剧场渐变宣言 · 完整静态复刻](works/theatre-manifesto-study/cover.jpg)](works/theatre-manifesto-study/README.md)
+
+[剧场渐变宣言 · 完整静态复刻](works/theatre-manifesto-study/README.md) — 1200×750固定静态设计标本，完整可编辑源码、外置字体双重校验、独立重渲染与统一设计卡保留；实际公共族调用及案例内配方见retention.json，未升级配方为新通用族。原样例内容与残差按PARTIAL披露，不代表真实业务数据或浏览器/动效验收。
+
 ## 最小结构
 
 ```text

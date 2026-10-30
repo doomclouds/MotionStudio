@@ -1,0 +1,57 @@
+{
+  "originalInputs": [
+    {
+      "filename": "NotoSansSC-variable.ttf",
+      "sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+      "bytes": 17772300,
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "notice": "LICENSES/NotoSansSC-OFL.txt"
+    },
+    {
+      "filename": "Archivo-variable.ttf",
+      "sha256": "0e094a7d3c7c4c25cf1310c4b30014f1dae9332220b1c2c88f4fa996f0b05053",
+      "bytes": 658596,
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/archivo",
+      "notice": "LICENSES/Archivo-OFL.txt"
+    },
+    {
+      "filename": "Anton-Regular.ttf",
+      "sha256": "a4ba3a92350ebb031da0cb47630ac49eb265082ca1bc0450442f4a83ab947cab",
+      "bytes": 170812,
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/anton",
+      "notice": "LICENSES/Anton-OFL.txt"
+    }
+  ],
+  "recipes": [
+    {
+      "source": "NotoSansSC-variable.ttf",
+      "filename": "ManifestoSans900.ttf",
+      "weight": 900,
+      "instantiateFirst": true,
+      "legacyWeight400": true
+    },
+    {
+      "source": "Archivo-variable.ttf",
+      "filename": "ManifestoArchivo800.ttf",
+      "weight": 800,
+      "instantiateFirst": true,
+      "legacyWeight400": true
+    }
+  ],
+  "outputs": [
+    {
+      "filename": "ManifestoSans900.ttf",
+      "sha256": "ec7b54013f1ee18c3aae9819cc441450d26fa1051e2eaa4d77d4c44ee39abab4",
+      "bytes": 23432,
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "notice": "LICENSES/NotoSansSC-OFL.txt"
+    },
+    {
+      "filename": "ManifestoArchivo800.ttf",
+      "sha256": "f8cb3dc21063200b2d763bff24bcf7f5efa7cb0a13fbd55ae92def330b15aa14",
+      "bytes": 15896,
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/archivo",
+      "notice": "LICENSES/Archivo-OFL.txt"
+    }
+  ]
+}

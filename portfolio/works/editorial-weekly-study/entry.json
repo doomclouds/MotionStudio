@@ -1,0 +1,242 @@
+{
+  "schema": 4,
+  "id": "editorial-weekly-study",
+  "version": "1.0.0",
+  "title": "城市周报 · 编辑式粗野主义",
+  "status": "source-release",
+  "unofficial_recreation": true,
+  "original": {
+    "author": "alchaincyf (花叔 · 花生)",
+    "title": "Huashu design specimen",
+    "url": "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/web/01-editorial-brutalism.html"
+  },
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "LICENSES/Inter-OFL.txt",
+      "LICENSES/huashu-MIT-LICENSE.txt",
+      "LICENSES/NotoSansSC-OFL.txt",
+      "LICENSES/GeistMono-OFL.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/LICENSE",
+      "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "https://github.com/google/fonts/tree/main/ofl/inter",
+      "https://github.com/google/fonts/tree/main/ofl/geistmono"
+    ]
+  },
+  "files": [
+    {
+      "path": "ASSET-USAGE.md",
+      "sha256": "96d908f46abe98ee3e361376c7c552bf574a4f14a39366bf60372705231be4b7",
+      "role": "documentation"
+    },
+    {
+      "path": "CREDITS.md",
+      "sha256": "3a153296d6af6c70125fbc18d9a6e33c1013410a0b6f6d6d2c479fc2f035a09f",
+      "role": "documentation"
+    },
+    {
+      "path": "DESIGN-REASONING.md",
+      "sha256": "ecbb99e8ec6c0612632e7ecb590bb2d9065590de8ec412a540ea79545b432d75",
+      "role": "documentation"
+    },
+    {
+      "path": "DESIGN-RETENTION.md",
+      "sha256": "10cb22d526296e086a2b475842c41d442b0b2ede790724bec706fc052ddbdb1c",
+      "role": "documentation"
+    },
+    {
+      "path": "LICENSES/GeistMono-OFL.txt",
+      "sha256": "1781d2806a07d91c4edf4740b88449fab7d0eadad53f7c351b94cd4d4eb8c00f",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/Inter-OFL.txt",
+      "sha256": "67c5d5206b96f8340b95fabd02ae60701e0b20ce2594d976216f1065e5aa3822",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/NotoSansSC-OFL.txt",
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/huashu-MIT-LICENSE.txt",
+      "sha256": "6d6a2a9caf2e6d2b76974050427053b2892d8aa4c33fd168ce63a537fcee9d96",
+      "role": "license"
+    },
+    {
+      "path": "README.md",
+      "sha256": "ee15f765ff41c62b0bc3bd57cea90af75e774b0be52b8a45ca1d7a2b91ba39e8",
+      "role": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "011a4aae22f89e50b227c4d4e66b26154655b5e56b15cccc9dde366675b5e39c",
+      "role": "cover"
+    },
+    {
+      "path": "design/editorial-role-recipe.json",
+      "sha256": "7087da40081c1c1b4ef45991bda46ad601f91c1e3810acc47ab7c32141d7d54d",
+      "role": "config"
+    },
+    {
+      "path": "design/scene.mjs",
+      "sha256": "cdd4af4e6c370c9f58e0f3d45a2f6be193724b6ed6e509aa135bbcffc0c55416",
+      "role": "source"
+    },
+    {
+      "path": "font-charset.txt",
+      "sha256": "0932d7dde4fe07a63c5bc788442314ae0c935f0e0189513fd60fe69c061546b6",
+      "role": "documentation"
+    },
+    {
+      "path": "font-inputs.json",
+      "sha256": "0005d6d4fce9f43f2a13c1ceb114d3c4c3fbd224845169c563a8d5644cdfa943",
+      "role": "config"
+    },
+    {
+      "path": "locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "role": "lock"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "3376138df78fb0b3f62bc57d80dc440204cbe0a0709a07396e39636873862e6f",
+      "role": "lock"
+    },
+    {
+      "path": "prepare-fonts.py",
+      "sha256": "5d24b684b243726213647a22ff3a3f884d572ca8375febf22f8c401c2f770dcc",
+      "role": "source"
+    },
+    {
+      "path": "retention.json",
+      "sha256": "8db77f0442c1dd8b1528fef25bb4b0e1c91b7d4aefb7cf512b89367f8f334c8f",
+      "role": "config"
+    }
+  ],
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "locks/npm-package-lock.json"
+    }
+  ],
+  "render": {
+    "entrypoint": "design/scene.mjs",
+    "width": 1200,
+    "height": 750
+  },
+  "resources": [
+    {
+      "id": "ejsans400",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "76f7853150138622a4ed6c7ff93cdda3545a1be178d5b1e62b3d34165cd51e34",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "EJSans400.ttf",
+      "bytes": 131096,
+      "instructions": "Obtain originalInputs; run prepare-fonts.py. Original and derived hashes fail closed."
+    },
+    {
+      "id": "ejsans500",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "880d539b7ad3e3fa154d403c2eeafe1ae500547fb69c5eedefe1c450343b0da0",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "EJSans500.ttf",
+      "bytes": 131044,
+      "instructions": "Obtain originalInputs; run prepare-fonts.py. Original and derived hashes fail closed."
+    },
+    {
+      "id": "ejsans700",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "e9cc4453342a60298c9e4311b0a3ba5cd70eb87353ddc067aa5cae587a6665eb",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "EJSans700.ttf",
+      "bytes": 131900,
+      "instructions": "Obtain originalInputs; run prepare-fonts.py. Original and derived hashes fail closed."
+    },
+    {
+      "id": "ejsans900",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "81b044c258b4ca93abc3cdee58fd4d818e1e73a4b0c1f764a77c863d2fa1c72c",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "EJSans900.ttf",
+      "bytes": 131692,
+      "instructions": "Obtain originalInputs; run prepare-fonts.py. Original and derived hashes fail closed."
+    },
+    {
+      "id": "ejinter500",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/Inter-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/inter",
+      "sha256": "1bd7981b85f0928d9ae35c8a33b408c099f75f3e55d3571abefaaacf7aa5c91c",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "EJInter500.ttf",
+      "bytes": 60348,
+      "instructions": "Obtain originalInputs; run prepare-fonts.py. Original and derived hashes fail closed."
+    },
+    {
+      "id": "ejinter900",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/Inter-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/inter",
+      "sha256": "9224290da06106075ac2a46e314e66549dbe60b1b468ee8b2766609a6e6d9a43",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "EJInter900.ttf",
+      "bytes": 60752,
+      "instructions": "Obtain originalInputs; run prepare-fonts.py. Original and derived hashes fail closed."
+    },
+    {
+      "id": "ejmono600",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/GeistMono-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/geistmono",
+      "sha256": "32fb6f2c2ca5d5e1e5cd9b0d328a37fa8902aff2ec2fc868fec6f511a31ecd4a",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "EJMono600.ttf",
+      "bytes": 30220,
+      "instructions": "Obtain originalInputs; run prepare-fonts.py. Original and derived hashes fail closed."
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "f17b66418e13a7fd1fbe304cfd5dcb3b81f42125d3738dc7784b314e5627925b",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "Complete still and detail independently reviewed; user retention conveyed by parent. Static only; font/JPEG/shadow residuals. No printing, responsive, browser, actual publication facts or motion validation."
+    }
+  }
+}

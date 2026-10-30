@@ -1,0 +1,231 @@
+{
+  "schema": 4,
+  "id": "theatre-manifesto-study",
+  "version": "1.0.0",
+  "title": "剧场渐变宣言 · 完整静态复刻",
+  "status": "source-release",
+  "unofficial_recreation": true,
+  "original": {
+    "author": "alchaincyf (花叔 · 花生)",
+    "title": "Huashu design specimen",
+    "url": "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/ppt/04-full-bleed-gradient-manifesto.html"
+  },
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "LICENSES/Anton-OFL.txt",
+      "LICENSES/Archivo-OFL.txt",
+      "LICENSES/NotoSansSC-OFL.txt",
+      "LICENSES/huashu-MIT-LICENSE.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/LICENSE",
+      "https://github.com/google/fonts"
+    ]
+  },
+  "files": [
+    {
+      "path": "CREDITS.md",
+      "sha256": "9d25d258cef41a171a6d57ee146b1d0a699ddd6eba9e087e524670555f6b1d2a",
+      "role": "documentation"
+    },
+    {
+      "path": "DESIGN-RETENTION.md",
+      "sha256": "ae97aa5afb13326ef5a85bc91b84408d602a28b1c2a762cab2e6e7ad715841b3",
+      "role": "documentation"
+    },
+    {
+      "path": "LICENSES/Anton-OFL.txt",
+      "sha256": "ee67e6ee22790b7929f1a3769ca2801d565c64b5a9096942c1adf5596de9c9e4",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/Archivo-OFL.txt",
+      "sha256": "108b4e57c9c796d3d38d0428ca7ee39de47ad93187302718d9b2d8864b9b716b",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/NotoSansSC-OFL.txt",
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/huashu-MIT-LICENSE.txt",
+      "sha256": "6d6a2a9caf2e6d2b76974050427053b2892d8aa4c33fd168ce63a537fcee9d96",
+      "role": "license"
+    },
+    {
+      "path": "README.md",
+      "sha256": "0ea1b8af28727842e97a5e6ffb346d445949d103e921b4b5800ab41608290e9e",
+      "role": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "186ebadd944bbdbef3eb1dfc86034029d11c7b6652ab363cc13a4102a7a0ddd0",
+      "role": "cover"
+    },
+    {
+      "path": "design/DESIGN-ANALYSIS.md",
+      "sha256": "5e4e4b2b44cd02f4ac490857740c5b8c64d40c05ea4387d9be53a0443448ae88",
+      "role": "documentation"
+    },
+    {
+      "path": "design/SETTLEMENT.md",
+      "sha256": "97e101051a00a662084e1c8bdfdeb59a38845ee8b8a7c6079db18c7799308cce",
+      "role": "documentation"
+    },
+    {
+      "path": "design/content.json",
+      "sha256": "7c7947855bed987362ec188f0d795a47ce732c75e8f7c0a275ca66760bbfe9c8",
+      "role": "config"
+    },
+    {
+      "path": "design/manifesto-stack.mjs",
+      "sha256": "5fe2c64e705527b803c05fc27012e7b14c5002084d404bf3158baf1dce0b98ea",
+      "role": "source"
+    },
+    {
+      "path": "design/scene.mjs",
+      "sha256": "31d2b99aabab93de1a9949f10643a681454b5d883ba84e429c548b4db50a9937",
+      "role": "source"
+    },
+    {
+      "path": "design/shared.mjs",
+      "sha256": "e36af17f96bd06eb250f27d5be53d678da7a72cb326df0ecb66155c0383d1122",
+      "role": "source"
+    },
+    {
+      "path": "font-charset.txt",
+      "sha256": "f3552892643bd395723950b8d605c774880fccec7664d17935c74163256d0403",
+      "role": "documentation"
+    },
+    {
+      "path": "font-inputs.json",
+      "sha256": "65478f8492a5aad5f6a790ca1deaf6320b6bb761207dc146a2d49df32437623a",
+      "role": "config"
+    },
+    {
+      "path": "locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "role": "lock"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "c97986608711fff48e780026471834a114f117d30fd4f1b15c3e76b21a760a46",
+      "role": "lock"
+    },
+    {
+      "path": "prepare-fonts.py",
+      "sha256": "98fb802fb3b6f994cdd6930735919e61e87e93df1b2f830a51151edeab7d525f",
+      "role": "source"
+    },
+    {
+      "path": "retention.json",
+      "sha256": "c32bd2bd0287bd499315c4f7ae382c75d54d26523d4ce418183fda3a6eba086f",
+      "role": "config"
+    },
+    {
+      "path": "tests/recipe.test.mjs",
+      "sha256": "360de6a72e796ec426f8abd66f86f1242a7b514c4ead4a611f6a3973ee8c535c",
+      "role": "source"
+    }
+  ],
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "locks/npm-package-lock.json"
+    }
+  ],
+  "render": {
+    "entrypoint": "design/scene.mjs",
+    "width": 1200,
+    "height": 750
+  },
+  "resources": [
+    {
+      "id": "notosanssc-variable-ttf",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "NotoSansSC-variable.ttf",
+      "bytes": 17772300,
+      "instructions": "Provide in MANIFESTO_FONT_DIR; prepare-fonts.py verifies original and derived hashes."
+    },
+    {
+      "id": "archivo-variable-ttf",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/Archivo-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/archivo",
+      "sha256": "0e094a7d3c7c4c25cf1310c4b30014f1dae9332220b1c2c88f4fa996f0b05053",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Archivo-variable.ttf",
+      "bytes": 658596,
+      "instructions": "Provide in MANIFESTO_FONT_DIR; prepare-fonts.py verifies original and derived hashes."
+    },
+    {
+      "id": "anton-regular-ttf",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/Anton-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/anton",
+      "sha256": "a4ba3a92350ebb031da0cb47630ac49eb265082ca1bc0450442f4a83ab947cab",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Anton-Regular.ttf",
+      "bytes": 170812,
+      "instructions": "Provide in MANIFESTO_FONT_DIR; prepare-fonts.py verifies original and derived hashes."
+    },
+    {
+      "id": "manifestosans900-ttf",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "ec7b54013f1ee18c3aae9819cc441450d26fa1051e2eaa4d77d4c44ee39abab4",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "ManifestoSans900.ttf",
+      "bytes": 23432,
+      "instructions": "Provide in MANIFESTO_FONT_DIR; prepare-fonts.py verifies original and derived hashes."
+    },
+    {
+      "id": "manifestoarchivo800-ttf",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/Archivo-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/archivo",
+      "sha256": "f8cb3dc21063200b2d763bff24bcf7f5efa7cb0a13fbd55ae92def330b15aa14",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "ManifestoArchivo800.ttf",
+      "bytes": 15896,
+      "instructions": "Provide in MANIFESTO_FONT_DIR; prepare-fonts.py verifies original and derived hashes."
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "21c8668c9ca3d8bcd8cd9872c2cc01a09d35b49681f2d73b10b133c89e12c59e",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "Independent complete still/details reviewed; font/JPEG residuals and sample-data limitations disclosed. User retained; no browser or motion approval."
+    }
+  }
+}
