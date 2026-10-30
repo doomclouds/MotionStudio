@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "workId": "film-festival-study",
+  "kind": "fixed-static-design",
+  "canvas": {
+    "width": 1200,
+    "height": 750
+  },
+  "entrypoint": "design/scene.mjs",
+  "decisionCard": "DESIGN-RETENTION.md",
+  "sourceAnalysis": [
+    "DESIGN-REASONING.md"
+  ],
+  "ruleRefs": [],
+  "ruleStatus": "Case decision card and local recipe; no new registered public family.",
+  "assetUsage": [
+    {
+      "familyId": "design.print-poster.v1",
+      "mode": "runtime-import",
+      "modulePath": "engine/design-elements/print-poster.mjs",
+      "moduleSha256": "56203ff52eef7375bf1c8efe20b926dc0197572353f44c82f1243930a7e26fcf",
+      "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
+      "callsite": "design/scene.mjs",
+      "importToken": "print-poster.mjs",
+      "callToken": "drawPaper",
+      "visibleRole": "选场次 CTA 的硬边纸签和偏移阴影",
+      "snapshotPath": null,
+      "executionEvidence": {
+        "status": "MATCHED_ACCEPTED_FRAME",
+        "recordId": "b06-native-restore-film-festival-study",
+        "sha256": "106858829fad3b9bc76a0add797e0e5d0d55fe72218fd0b5f120beefa5f6cd09",
+        "frameSha256": "3555929f3f9851734ae4654816b821131de1e9243a21c613e99314fb49d0957f",
+        "storage": "SCRATCH_LOCAL_ONLY",
+        "durableStorage": "NOT_LOCATED",
+        "note": "Rebuilt from hash-verified external fonts; original Native frame exact. Scene call receipt, not independent instrumentation or new aesthetic approval."
+      }
+    }
+  ],
+  "nonAssetNote": "Case-specific geometry, helpers and seasonal-strip are not registered public families. No unsupported 14-family migration claim.",
+  "evidence": {
+    "acceptanceSource": "entry.json#/acceptance",
+    "renderHashSource": "entry.json#/cover/source_sha256",
+    "publicCover": "cover.jpg",
+    "comparisonBundle": {
+      "recordId": "b06-festival-visual-report",
+      "sha256": "20469eb91fde4587b49c8ec04086e07fbbb2d42d1da4a4c43ba200d13fbf8265",
+      "storage": "SCRATCH_LOCAL_ONLY",
+      "durableStorage": "NOT_LOCATED",
+      "note": "Local HTML report container with original/comparison images. Hash identifies HTML, not a single Native PNG; durable access not verified.",
+      "status": "NOT_PUBLISHED"
+    },
+    "independentReview": {
+      "recordId": "b06-independent-visual-review",
+      "sha256": "b28e448eea20642f8a0fbc4a18b01e6c6f070dff2ccb716c716bce69c3695416",
+      "storage": "SCRATCH_LOCAL_ONLY",
+      "durableStorage": "NOT_LOCATED",
+      "status": "PRIVATE_RECORD_LOCATED",
+      "note": "Shared report explicitly covers this case; source/candidate visually inspected, not a fresh author self-check."
+    }
+  },
+  "motionTransfer": {
+    "status": "NOT_TESTED",
+    "note": "Fixed static only; no responsive, browser, interaction or motion validation."
+  }
+}

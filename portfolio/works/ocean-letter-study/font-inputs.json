@@ -1,0 +1,64 @@
+{
+  "inputs": [
+    {
+      "file": "NotoSansSC-variable.ttf",
+      "sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+      "bytes": 17772300,
+      "weights": [
+        400,
+        500,
+        600,
+        700
+      ],
+      "opticalSizes": {},
+      "prefix": "OceanSans",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "notice": "LICENSES/NotoSansSC-OFL.txt"
+    },
+    {
+      "file": "NotoSerifSC-variable.ttf",
+      "sha256": "050080d9255a86808f2945bffac582b31ef32bc36411ce29563b4961670c66f9",
+      "bytes": 25125512,
+      "weights": [
+        400,
+        450,
+        600
+      ],
+      "opticalSizes": {},
+      "prefix": "OceanSerif",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notoserifsc",
+      "notice": "LICENSES/NotoSerifSC-OFL.txt"
+    },
+    {
+      "file": "Inter-var.ttf",
+      "sha256": "c8d76e1cb2a0a7cfbbae1e390be4e4b942b27f99ec07e1024b1fc916045eed09",
+      "bytes": 254236,
+      "weights": [
+        400,
+        600
+      ],
+      "opticalSizes": {},
+      "prefix": "OceanInter",
+      "source_url": "https://github.com/rsms/inter",
+      "notice": "LICENSES/Inter-OFL.txt"
+    },
+    {
+      "file": "Newsreader-variable.ttf",
+      "sha256": "8a08d13f8a6c0d51be379a60af84f945f65369a67e509ee3c3bdcc421254d7c1",
+      "bytes": 451664,
+      "weights": [
+        400,
+        500,
+        600
+      ],
+      "opticalSizes": {
+        "400": 19,
+        "500": 72,
+        "600": 42
+      },
+      "prefix": "OceanNews",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/newsreader",
+      "notice": "LICENSES/Newsreader-OFL.txt"
+    }
+  ]
+}

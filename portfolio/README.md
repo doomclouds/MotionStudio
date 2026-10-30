@@ -134,6 +134,28 @@
 
 [反叛流行 · AI写的，别像AI](works/irreverent-pop-study/README.md) — 1200×750。反叛流行写作工具首屏；营销统计及模型断言未经核实，不代表GPT或OpenAI性能宣传。 完整工程独立重渲染匹配已审帧，视觉残差仍按PARTIAL披露；未验证浏览器、交互或视频。
 
+## Huashu B06 · 出版导航、空间编码与年度叙事
+
+[![影展志 · 十天五十二部](works/film-festival-study/cover.jpg)](works/film-festival-study/README.md)
+
+[影展志 · 十天五十二部](works/film-festival-study/README.md) — 1200×750固定静态设计标本，完整可编辑源码、外置字体双重校验、独立重渲染与统一设计卡保留；实际公共族调用及案例内配方见retention.json，未升级配方为新通用族。原样例内容与残差按PARTIAL披露，不代表真实业务数据或浏览器/动效验收。
+
+[![南鸢过境 · 完整静态复刻](works/nanyuan-cartographic-study/cover.jpg)](works/nanyuan-cartographic-study/README.md)
+
+[南鸢过境 · 完整静态复刻](works/nanyuan-cartographic-study/README.md) — 1200×750固定静态设计标本，完整可编辑源码、外置字体双重校验、独立重渲染与统一设计卡保留；实际公共族调用及案例内配方见retention.json，未升级配方为新通用族。原样例内容与残差按PARTIAL披露，不代表真实业务数据或浏览器/动效验收。
+
+[![海洋基金年度信 · 编辑式长文](works/ocean-letter-study/cover.jpg)](works/ocean-letter-study/README.md)
+
+[海洋基金年度信 · 编辑式长文](works/ocean-letter-study/README.md) — 1200×750固定静态设计标本，完整可编辑源码、外置字体双重校验、独立重渲染与统一设计卡保留；实际公共族调用及案例内配方见retention.json，未升级配方为新通用族。原样例内容与残差按PARTIAL披露，不代表真实业务数据或浏览器/动效验收。
+
+[![节气行 · 山里的朱砂](works/solar-terms-study/cover.jpg)](works/solar-terms-study/README.md)
+
+[节气行 · 山里的朱砂](works/solar-terms-study/README.md) — 1200×750固定静态设计标本，完整可编辑源码、外置字体双重校验、独立重渲染与统一设计卡保留；实际公共族调用及案例内配方见retention.json，未升级配方为新通用族。原样例内容与残差按PARTIAL披露，不代表真实业务数据或浏览器/动效验收。
+
+[![沿线设施图例 · 完整静态复刻](works/trail-pictogram-study/cover.jpg)](works/trail-pictogram-study/README.md)
+
+[沿线设施图例 · 完整静态复刻](works/trail-pictogram-study/README.md) — 1200×750固定静态设计标本，完整可编辑源码、外置字体双重校验、独立重渲染与统一设计卡保留；实际公共族调用及案例内配方见retention.json，未升级配方为新通用族。原样例内容与残差按PARTIAL披露，不代表真实业务数据或浏览器/动效验收。
+
 ## 最小结构
 
 ```text

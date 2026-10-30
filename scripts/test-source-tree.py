@@ -127,6 +127,11 @@ class SourceTreeFixtures(unittest.TestCase):
             'portfolio/works/bauhaus-theatre-study/cover.jpg': '131a46b5fb87e7012c7c66343812a1715cc39ecb43b943c03d433a145539a28a',
             'portfolio/works/ocean-plastic-treemap-study/cover.jpg': 'a29e8e88bbf480f08814ca2a6359ced3eb03244afdcc287b6208887b0b575488',
             'portfolio/works/health-color-code-study/cover.jpg': '224b2740ccb52dab46f5ef7fd8c67fd7c6d650f4d03a927d4c7057c2c557d982',
+            'portfolio/works/film-festival-study/cover.jpg': 'f97635fde456907014bd3711307301381b0070f27960cca46437658a4d1aa0fb',
+            'portfolio/works/nanyuan-cartographic-study/cover.jpg': 'cf130c02fa97f29e200df7f092dbd99dd6921c35c754548e935973bafb29dff9',
+            'portfolio/works/ocean-letter-study/cover.jpg': '7cfa0901c6fed9bef76975cd73817dfd9ac9d3292e58d4024d168af4d7bf8d20',
+            'portfolio/works/solar-terms-study/cover.jpg': '42b5e88e2e60a87c2406b01a2d5323e4578421155cf2efbd094a479f132cd81d',
+            'portfolio/works/trail-pictogram-study/cover.jpg': '9d536ff3f96812e4dcb473883be09cbeaf9f159c24f4f912de5d3e43265d8461',
             'portfolio/works/irreverent-pop-study/cover.jpg': 'df8f621e07865727a8d2a99fe66d9ce23e7b5747861732a14a503152dff72f35',
             'portfolio/works/hk-street-signs-study/cover.jpg': '6d83409c6444e4ea6bd903075b7652300f6be7a066c15aa4bb0f06131aae4223',
             'portfolio/works/pixel-hiking-study/cover.jpg': '3e520725c9ca504d5b1e6cf45880f29bec31ce8bd3f1b03ffbd77af4d79eb82b',
@@ -329,6 +334,46 @@ class SourceTreeFixtures(unittest.TestCase):
         self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
     def test_health_color_code_study_cover_wrong_path_rejected(self):
         self.add('portfolio/works/health-color-code-study/other.jpg',(ROOT/'portfolio/works/health-color-code-study/cover.jpg').read_bytes());self.audit(False)
+    def test_exact_film_festival_study_cover_allowed(self):
+        name='portfolio/works/film-festival-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes());self.audit(True)
+    def test_film_festival_study_cover_tamper_rejected(self):
+        name='portfolio/works/film-festival-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
+    def test_film_festival_study_cover_wrong_path_rejected(self):
+        self.add('portfolio/works/film-festival-study/other.jpg',(ROOT/'portfolio/works/film-festival-study/cover.jpg').read_bytes());self.audit(False)
+    def test_exact_nanyuan_cartographic_study_cover_allowed(self):
+        name='portfolio/works/nanyuan-cartographic-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes());self.audit(True)
+    def test_nanyuan_cartographic_study_cover_tamper_rejected(self):
+        name='portfolio/works/nanyuan-cartographic-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
+    def test_nanyuan_cartographic_study_cover_wrong_path_rejected(self):
+        self.add('portfolio/works/nanyuan-cartographic-study/other.jpg',(ROOT/'portfolio/works/nanyuan-cartographic-study/cover.jpg').read_bytes());self.audit(False)
+    def test_exact_ocean_letter_study_cover_allowed(self):
+        name='portfolio/works/ocean-letter-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes());self.audit(True)
+    def test_ocean_letter_study_cover_tamper_rejected(self):
+        name='portfolio/works/ocean-letter-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
+    def test_ocean_letter_study_cover_wrong_path_rejected(self):
+        self.add('portfolio/works/ocean-letter-study/other.jpg',(ROOT/'portfolio/works/ocean-letter-study/cover.jpg').read_bytes());self.audit(False)
+    def test_exact_solar_terms_study_cover_allowed(self):
+        name='portfolio/works/solar-terms-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes());self.audit(True)
+    def test_solar_terms_study_cover_tamper_rejected(self):
+        name='portfolio/works/solar-terms-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
+    def test_solar_terms_study_cover_wrong_path_rejected(self):
+        self.add('portfolio/works/solar-terms-study/other.jpg',(ROOT/'portfolio/works/solar-terms-study/cover.jpg').read_bytes());self.audit(False)
+    def test_exact_trail_pictogram_study_cover_allowed(self):
+        name='portfolio/works/trail-pictogram-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes());self.audit(True)
+    def test_trail_pictogram_study_cover_tamper_rejected(self):
+        name='portfolio/works/trail-pictogram-study/cover.jpg'
+        self.add(name,(ROOT/name).read_bytes()+b'tamper');self.audit(False)
+    def test_trail_pictogram_study_cover_wrong_path_rejected(self):
+        self.add('portfolio/works/trail-pictogram-study/other.jpg',(ROOT/'portfolio/works/trail-pictogram-study/cover.jpg').read_bytes());self.audit(False)
     def test_exact_irreverent_pop_study_cover_allowed(self):
         name='portfolio/works/irreverent-pop-study/cover.jpg'
         self.add(name,(ROOT/name).read_bytes());self.audit(True)

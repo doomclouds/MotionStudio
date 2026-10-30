@@ -1,0 +1,242 @@
+{
+  "schema": 4,
+  "id": "film-festival-study",
+  "version": "1.0.0",
+  "title": "影展志 · 十天五十二部",
+  "status": "source-release",
+  "unofficial_recreation": true,
+  "original": {
+    "author": "alchaincyf (花叔 · 花生)",
+    "title": "Huashu design specimen",
+    "url": "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/web/02-neo-brutalism.html"
+  },
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "LICENSES/huashu-MIT-LICENSE.txt",
+      "LICENSES/NotoSansSC-OFL.txt",
+      "LICENSES/Fraunces-OFL.txt",
+      "LICENSES/NotoSerifSC-OFL.txt",
+      "LICENSES/SpaceGrotesk-OFL.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/LICENSE",
+      "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "https://github.com/google/fonts/tree/main/ofl/notoserifsc",
+      "https://github.com/google/fonts/tree/main/ofl/spacegrotesk",
+      "https://github.com/google/fonts/tree/main/ofl/fraunces"
+    ]
+  },
+  "files": [
+    {
+      "path": "ASSET-USAGE.md",
+      "sha256": "2a57c3f503ff746b1fa58841e9e8aa29e9ecf70ef5a9be90ac5367c3eb36c377",
+      "role": "documentation"
+    },
+    {
+      "path": "CREDITS.md",
+      "sha256": "3152992def1807f665f4ea571fee194692b2bb85d8ea1000c98e63ed549c9eba",
+      "role": "documentation"
+    },
+    {
+      "path": "DESIGN-REASONING.md",
+      "sha256": "c8ad1f054ffb2b2d3451e76755d841da89014741d0edb2c68b298a9da9e4e3f0",
+      "role": "documentation"
+    },
+    {
+      "path": "DESIGN-RETENTION.md",
+      "sha256": "19ee178c9b136e902826031c127be9d5e6a796ced794ba9c7761567ac2d9cc84",
+      "role": "documentation"
+    },
+    {
+      "path": "LICENSES/Fraunces-OFL.txt",
+      "sha256": "bdf4c22802eaf804f998195871c6b8938aac2ac14b2d78a8bd66a6f1eced833b",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/NotoSansSC-OFL.txt",
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/NotoSerifSC-OFL.txt",
+      "sha256": "5e0da210fb04058a8c0087985d2d456b931c2579811a49655721d3cf0c36b6d6",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/SpaceGrotesk-OFL.txt",
+      "sha256": "564ce565c371c5e5bbf286006565a7c9aa55a9f56e7ca58d56e05d649dd61a72",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/huashu-MIT-LICENSE.txt",
+      "sha256": "6d6a2a9caf2e6d2b76974050427053b2892d8aa4c33fd168ce63a537fcee9d96",
+      "role": "license"
+    },
+    {
+      "path": "README.md",
+      "sha256": "48771d625ca37f3e8b3ecec2dc5647f541b73f752e2aab7d037c33a3d3cf35f5",
+      "role": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "f97635fde456907014bd3711307301381b0070f27960cca46437658a4d1aa0fb",
+      "role": "cover"
+    },
+    {
+      "path": "design/festival-role-recipe.json",
+      "sha256": "3b78af2f0deb9ec990403b515a35f61411d1afc78ec961d143e39ecc97229db6",
+      "role": "config"
+    },
+    {
+      "path": "design/scene.mjs",
+      "sha256": "b0f662228cfe496afc3eef8fd34a3c30876f26be732d23a900fbeddc7acb44fe",
+      "role": "source"
+    },
+    {
+      "path": "font-charset.txt",
+      "sha256": "a570e5bcc9a427a6cc9bcb914af860caf3c646df1d723dc6f5a43bf672495446",
+      "role": "documentation"
+    },
+    {
+      "path": "font-inputs.json",
+      "sha256": "8d85159ff801d083103d5fb7bd82bdd79cd9625c9d8049949d056dbb322b1f9c",
+      "role": "config"
+    },
+    {
+      "path": "locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "role": "lock"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "3376138df78fb0b3f62bc57d80dc440204cbe0a0709a07396e39636873862e6f",
+      "role": "lock"
+    },
+    {
+      "path": "prepare-fonts.py",
+      "sha256": "045684552fd5f3e204564f584cd53a857d094623680b4a1274dd45f8c1a827ff",
+      "role": "source"
+    },
+    {
+      "path": "retention.json",
+      "sha256": "9acdddb978e79595f3e9d0a2dd74d604ad0dac375c6af35aba55d69d7ea39c0b",
+      "role": "config"
+    },
+    {
+      "path": "ui-dependencies.json",
+      "sha256": "e67f42a626da224987c7fc23c1cb8028e8f0955584433db70cca8a2ef4d6e792",
+      "role": "config"
+    }
+  ],
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "locks/npm-package-lock.json"
+    }
+  ],
+  "render": {
+    "entrypoint": "design/scene.mjs",
+    "width": 1200,
+    "height": 750
+  },
+  "resources": [
+    {
+      "id": "fssans500",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "d13ff5f186de10a075962438e0b3617088d1f72118aa7c67ed6065d4b3a8a125",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "FSSans500.ttf",
+      "bytes": 125112,
+      "instructions": "Obtain originalInputs and run prepare-fonts.py. Original and derived hashes fail closed."
+    },
+    {
+      "id": "fssans700",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "8618f72d048596d9245ff56867b97a497bdf188182e305b4bbaddc0daaeab091",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "FSSans700.ttf",
+      "bytes": 126060,
+      "instructions": "Obtain originalInputs and run prepare-fonts.py. Original and derived hashes fail closed."
+    },
+    {
+      "id": "fssans900",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "149c2f29ec44b814406d29b40be16c8ab2984fb11505d2b4227de757060f2c70",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "FSSans900.ttf",
+      "bytes": 125856,
+      "instructions": "Obtain originalInputs and run prepare-fonts.py. Original and derived hashes fail closed."
+    },
+    {
+      "id": "fsserif700",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSerifSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notoserifsc",
+      "sha256": "b491e9a3a8fd1e6605e4eb453ac7f7b164cfdf1454f422f80bf243f83d630b8c",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "FSSerif700.ttf",
+      "bytes": 174760,
+      "instructions": "Obtain originalInputs and run prepare-fonts.py. Original and derived hashes fail closed."
+    },
+    {
+      "id": "fsspace700",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/SpaceGrotesk-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/spacegrotesk",
+      "sha256": "09d9199986bfb5d988113a52e0695323b4871ae6ce27dee56bb6a5e7cd4ed362",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "FSSpace700.ttf",
+      "bytes": 28876,
+      "instructions": "Obtain originalInputs and run prepare-fonts.py. Original and derived hashes fail closed."
+    },
+    {
+      "id": "fsfraunces600",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/Fraunces-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/fraunces",
+      "sha256": "5ee56672fdb9e0f865d0750532f1f94aa67e8551e8fe9d328e3ab8a66bcd9004",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "FSFraunces600.ttf",
+      "bytes": 22656,
+      "instructions": "Obtain originalInputs and run prepare-fonts.py. Original and derived hashes fail closed."
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "3555929f3f9851734ae4654816b821131de1e9243a21c613e99314fb49d0957f",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "Complete still and critical details independently reviewed; user requested retention. Font, paper shading and JPEG raster residuals remain. No responsive, browser, interaction or video validation."
+    }
+  }
+}

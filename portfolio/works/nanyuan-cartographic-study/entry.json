@@ -1,0 +1,283 @@
+{
+  "schema": 4,
+  "id": "nanyuan-cartographic-study",
+  "version": "1.0.0",
+  "title": "南鸢过境 · 完整静态复刻",
+  "status": "source-release",
+  "unofficial_recreation": true,
+  "original": {
+    "author": "alchaincyf (花叔 · 花生)",
+    "title": "Huashu info/08-cartographic-lead design specimen",
+    "url": "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/info/08-cartographic-lead.html"
+  },
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "LICENSES/NotoSans-OFL.txt",
+      "LICENSES/huashu-MIT-LICENSE.txt",
+      "LICENSES/ibmplexmono-OFL.txt",
+      "LICENSES/ibmplexsans-OFL.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/LICENSE",
+      "https://github.com/google/fonts"
+    ]
+  },
+  "files": [
+    {
+      "path": "CREDITS.md",
+      "sha256": "715ee8eb5b8fcc410c26064d6c750d910ded90fa3b34c73fb7972872492b0cc0",
+      "role": "documentation"
+    },
+    {
+      "path": "DESIGN-REASONING.md",
+      "sha256": "877c6c28eee95d085892b13b12145431dcb01231a006773ebe77ce61a7a4593d",
+      "role": "documentation"
+    },
+    {
+      "path": "DESIGN-RETENTION.md",
+      "sha256": "d61e58d955223b3067ceed15d564117cd283f943eeb194d25c206fc2ee82e661",
+      "role": "documentation"
+    },
+    {
+      "path": "LICENSES/NotoSans-OFL.txt",
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/huashu-MIT-LICENSE.txt",
+      "sha256": "6d6a2a9caf2e6d2b76974050427053b2892d8aa4c33fd168ce63a537fcee9d96",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/ibmplexmono-OFL.txt",
+      "sha256": "7e6b2818edbd8f6a01ae80641cc8f16a51080d08fb4e532be3a0b6f74adb07da",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/ibmplexsans-OFL.txt",
+      "sha256": "7e6b2818edbd8f6a01ae80641cc8f16a51080d08fb4e532be3a0b6f74adb07da",
+      "role": "license"
+    },
+    {
+      "path": "README.md",
+      "sha256": "8ab05c5dc41743a7bcf42ca1c3758fbe1fac2ed0cf71841637b2f7d55230ca1c",
+      "role": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "cf130c02fa97f29e200df7f092dbd99dd6921c35c754548e935973bafb29dff9",
+      "role": "cover"
+    },
+    {
+      "path": "design/area-symbol-recipe.mjs",
+      "sha256": "c5aafaf7f0b9c83382121dd5637d2049cb5a673a060c7227f57c5f33665ecba7",
+      "role": "source"
+    },
+    {
+      "path": "design/data.mjs",
+      "sha256": "cc36d2d4a23ac75274303853b6e08fbb61d3644624f0dba6a614b6cfd4184324",
+      "role": "source"
+    },
+    {
+      "path": "design/scene.mjs",
+      "sha256": "b066aaec5ada3cded87e3e674aa39d891c34538b16bfdf488a0b7c300f0ee81e",
+      "role": "source"
+    },
+    {
+      "path": "font-inputs.json",
+      "sha256": "4a89d69b68347eb43a73eec24be80de9b4ecaf138ddc5bf9b8b2e4d0e4bc0634",
+      "role": "config"
+    },
+    {
+      "path": "locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "role": "lock"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "c97986608711fff48e780026471834a114f117d30fd4f1b15c3e76b21a760a46",
+      "role": "lock"
+    },
+    {
+      "path": "prepare-fonts.py",
+      "sha256": "f5b42df61d337bbfa4dc1ae39ce76056b33a64312779f9b1fbbdb234bb3fd5f1",
+      "role": "source"
+    },
+    {
+      "path": "retention.json",
+      "sha256": "f2970b02c42772308e895410359fb7f00a73efe7ede614f9e584813938489cd5",
+      "role": "config"
+    }
+  ],
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "locks/npm-package-lock.json"
+    }
+  ],
+  "render": {
+    "entrypoint": "design/scene.mjs",
+    "width": 1200,
+    "height": 750
+  },
+  "resources": [
+    {
+      "id": "notosanssc-variable",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSans-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "NotoSansSC-variable.ttf",
+      "bytes": 17772300,
+      "instructions": "Provide in NANYUAN_MAP_FONT_DIR; prepare-fonts.py checks original/derived identity."
+    },
+    {
+      "id": "ibmplexsans-variable",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/ibmplexsans-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/ibmplexsans",
+      "sha256": "3b031aa4216174205bd8471f88a49b91f093169e9e87bd5262242bc5967fe2e3",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "IBMPlexSans-variable.ttf",
+      "bytes": 537244,
+      "instructions": "Provide in NANYUAN_MAP_FONT_DIR; prepare-fonts.py checks original/derived identity."
+    },
+    {
+      "id": "ibmplexmono-regular",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/ibmplexmono-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/ibmplexmono",
+      "sha256": "6a3412f058c7d8dfd9170c41e85ade48e5156ecb89356110ca57a0a27734af46",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "IBMPlexMono-Regular.ttf",
+      "bytes": 135580,
+      "instructions": "Provide in NANYUAN_MAP_FONT_DIR; prepare-fonts.py checks original/derived identity."
+    },
+    {
+      "id": "ibmplexmono-medium",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/ibmplexmono-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/ibmplexmono",
+      "sha256": "a9b4c49bb299e05b5f6c481e7fb5e78943d2793249a0c8874ab574a2d1ea6755",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "IBMPlexMono-Medium.ttf",
+      "bytes": 136704,
+      "instructions": "Provide in NANYUAN_MAP_FONT_DIR; prepare-fonts.py checks original/derived identity."
+    },
+    {
+      "id": "sans400",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSans-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "c8aebabf73485670780969236b7327ddb40a6d552249aba6bc2b3f8407b4a2fc",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Sans400.ttf",
+      "bytes": 41388,
+      "instructions": "Provide in NANYUAN_MAP_FONT_DIR; prepare-fonts.py checks original/derived identity."
+    },
+    {
+      "id": "sans700",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSans-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "e06ff82dba3484eafab8d9916c96acb3a2db2fd25217caedd47e0f2417085dc1",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Sans700.ttf",
+      "bytes": 41392,
+      "instructions": "Provide in NANYUAN_MAP_FONT_DIR; prepare-fonts.py checks original/derived identity."
+    },
+    {
+      "id": "sans900",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSans-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "0e67d012538e386deaebcebcd6f197eef451b749b9df996ffd64afa3fa14044c",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Sans900.ttf",
+      "bytes": 41356,
+      "instructions": "Provide in NANYUAN_MAP_FONT_DIR; prepare-fonts.py checks original/derived identity."
+    },
+    {
+      "id": "plex400",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/ibmplexsans-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/ibmplexsans",
+      "sha256": "85cd5eb28bd6ccb4e3997c6379a4d3ffa57ee93214b7cd48f5e7505baf6b7c4e",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Plex400.ttf",
+      "bytes": 47664,
+      "instructions": "Provide in NANYUAN_MAP_FONT_DIR; prepare-fonts.py checks original/derived identity."
+    },
+    {
+      "id": "plex500",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/ibmplexsans-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/ibmplexsans",
+      "sha256": "ad5a6786ce8f9966b118a68d80f388f1cb257ed43db74fec33a6d5c6a7b44125",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Plex500.ttf",
+      "bytes": 47624,
+      "instructions": "Provide in NANYUAN_MAP_FONT_DIR; prepare-fonts.py checks original/derived identity."
+    },
+    {
+      "id": "plex600",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/ibmplexsans-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/ibmplexsans",
+      "sha256": "1fa329371f74e1b728cfdf533eef635e9f23dc27fb0d08748bf7294dd6c7f4f4",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Plex600.ttf",
+      "bytes": 47668,
+      "instructions": "Provide in NANYUAN_MAP_FONT_DIR; prepare-fonts.py checks original/derived identity."
+    },
+    {
+      "id": "plex700",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/ibmplexsans-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/ibmplexsans",
+      "sha256": "63bf69f18f552789a2ebcfc93206a67830c19fcfe41b18c5143d9a2162b0b474",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Plex700.ttf",
+      "bytes": 47564,
+      "instructions": "Provide in NANYUAN_MAP_FONT_DIR; prepare-fonts.py checks original/derived identity."
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "2533458573064ba7ef1422fc573cabd8e3ebc5043cda7fbbfa52b6c9e3b0e478",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "Independent complete static/source/detail comparison passed; typography/JPEG differences and original factual/grammar limitations remain disclosed."
+    }
+  }
+}

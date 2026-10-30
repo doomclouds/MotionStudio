@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "workId": "ocean-letter-study",
+  "kind": "fixed-static-design",
+  "canvas": {
+    "width": 1200,
+    "height": 750
+  },
+  "entrypoint": "design/scene.mjs",
+  "decisionCard": "DESIGN-RETENTION.md",
+  "sourceAnalysis": [
+    "design/DESIGN-ANALYSIS.md",
+    "design/SETTLEMENT.md"
+  ],
+  "ruleRefs": [],
+  "ruleStatus": "No separate formal rule card claimed; use decisionCard and sourceAnalysis.",
+  "assetUsage": [
+    {
+      "familyId": "design.material-surfaces.v1",
+      "mode": "vendored-snapshot",
+      "modulePath": "engine/design-elements/material-surfaces.mjs",
+      "moduleSha256": "70bf1fcfa89bfbf911f5cf735b1b08e8ae7f360e43bd43a8c831efef579696eb",
+      "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
+      "callsite": "design/scene.mjs",
+      "importToken": "material-surfaces.mjs",
+      "callToken": "drawSurface",
+      "visibleRole": "右侧数字旁证小卡白色底面和细边，opaque零阴影一次",
+      "snapshotPath": "design/material-surfaces.mjs",
+      "executionEvidence": {
+        "status": "MATCHED_ACCEPTED_FRAME",
+        "recordId": "ocean-letter-native-checks",
+        "sha256": "e99407a2cd8ec493d82b6d50405f3a5b82f36bfeb054cbbeac9f70184e87b47d",
+        "frameSha256": "b232587c974632392b14be3a6b6a843f1727f8a336f4030930bf129f1933e5cf",
+        "storage": "SCRATCH_LOCAL_ONLY",
+        "durableStorage": "NOT_LOCATED",
+        "note": "Author runtime recorded one visible opaque material call and accepted-frame hash. Not independent instrumentation."
+      }
+    }
+  ],
+  "nonAssetNote": "Shared state helper is not a family. editorial-columns.mjs is a case-local candidate recipe, not one of the 14 public families. No other family reuse claimed.",
+  "evidence": {
+    "acceptanceSource": "entry.json#/acceptance",
+    "renderHashSource": "entry.json#/cover/source_sha256",
+    "publicCover": "cover.jpg",
+    "comparisonBundle": {
+      "status": "NOT_PUBLISHED",
+      "recordId": "b06-letter-visual-report",
+      "sha256": "b1615d29879b3b50c33084b9ea6c328db68a67053a178d6f4090d1b264749362",
+      "storage": "SCRATCH_LOCAL_ONLY",
+      "durableStorage": "NOT_LOCATED",
+      "note": "Local HTML report container; SHA identifies HTML bytes, not separately accepted PNG. Embedded comparisons checked by independent reviewer. Durable storage not verified."
+    },
+    "independentReview": {
+      "status": "PRIVATE_RECORD_LOCATED",
+      "recordId": "b06-independent-visual-review",
+      "sha256": "b28e448eea20642f8a0fbc4a18b01e6c6f070dff2ccb716c716bce69c3695416",
+      "storage": "SCRATCH_LOCAL_ONLY",
+      "durableStorage": "NOT_LOCATED",
+      "note": "Shared report explicitly covers this case; source/candidate visually inspected, not a fresh author self-check."
+    }
+  },
+  "motionTransfer": {
+    "status": "NOT_TESTED",
+    "note": "Fixed-size static only. No interaction, responsive layout, animation, audio or AV-sync approval implied."
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "fonts": [
+    {
+      "output": "OceanSans400.ttf",
+      "sha256": "463863607143d0709d3d309ca6a99fb6fd05461862aaa18bc27bf1e48ff6e249",
+      "weight": 400,
+      "source": "NotoSansSC-variable.ttf",
+      "source_sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da"
+    },
+    {
+      "output": "OceanSans500.ttf",
+      "sha256": "5781d7cd8f6568c0876a51be920381364fda69cae5cdf823fbb4ca4b7e6a0050",
+      "weight": 500,
+      "source": "NotoSansSC-variable.ttf",
+      "source_sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da"
+    },
+    {
+      "output": "OceanSans600.ttf",
+      "sha256": "3869140ef960a15140de12477772ad3ab02e6e348e5e00a0f937b95caca460fa",
+      "weight": 600,
+      "source": "NotoSansSC-variable.ttf",
+      "source_sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da"
+    },
+    {
+      "output": "OceanSans700.ttf",
+      "sha256": "d1cf3bc0546e182a08ba46e565e21a400175257c54ae59834e90d3848606dc5b",
+      "weight": 700,
+      "source": "NotoSansSC-variable.ttf",
+      "source_sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da"
+    },
+    {
+      "output": "OceanSerif400.ttf",
+      "sha256": "ee52fe5499a93cfa317c64cf8cf927b5aa9e1fd4949a8c55213c72907b142ddb",
+      "weight": 400,
+      "source": "NotoSerifSC-variable.ttf",
+      "source_sha256": "050080d9255a86808f2945bffac582b31ef32bc36411ce29563b4961670c66f9"
+    },
+    {
+      "output": "OceanSerif450.ttf",
+      "sha256": "3f2e0fc8e5b6072f127862e01c775b83563d8e38c975be495b346b41f8bbe1da",
+      "weight": 450,
+      "source": "NotoSerifSC-variable.ttf",
+      "source_sha256": "050080d9255a86808f2945bffac582b31ef32bc36411ce29563b4961670c66f9"
+    },
+    {
+      "output": "OceanSerif600.ttf",
+      "sha256": "2be9d6fba721377d660904e3f4a59e9c6d1986d3051c141b9e50a949cb30b9e0",
+      "weight": 600,
+      "source": "NotoSerifSC-variable.ttf",
+      "source_sha256": "050080d9255a86808f2945bffac582b31ef32bc36411ce29563b4961670c66f9"
+    },
+    {
+      "output": "OceanInter400.ttf",
+      "sha256": "9a3d05fe7c641f581febcbe1691dd489ea7637349455bc2e7a00c13ca65f44f5",
+      "weight": 400,
+      "source": "Inter-var.ttf",
+      "source_sha256": "c8d76e1cb2a0a7cfbbae1e390be4e4b942b27f99ec07e1024b1fc916045eed09"
+    },
+    {
+      "output": "OceanInter600.ttf",
+      "sha256": "34d2327147025e224405d068def8555d86f645f620fbac31114cebce4eb34ebb",
+      "weight": 600,
+      "source": "Inter-var.ttf",
+      "source_sha256": "c8d76e1cb2a0a7cfbbae1e390be4e4b942b27f99ec07e1024b1fc916045eed09"
+    },
+    {
+      "output": "OceanNews400.ttf",
+      "sha256": "64c12cb21630fc6170f2b2338894ebb83aaa5caf724597c5daa9aa704b9a3e75",
+      "weight": 400,
+      "source": "Newsreader-variable.ttf",
+      "source_sha256": "8a08d13f8a6c0d51be379a60af84f945f65369a67e509ee3c3bdcc421254d7c1"
+    },
+    {
+      "output": "OceanNews500.ttf",
+      "sha256": "586a786fa6b1657dfa628b4e248b7c25940d4c47ab9d9166d3b8885e4dab4d56",
+      "weight": 500,
+      "source": "Newsreader-variable.ttf",
+      "source_sha256": "8a08d13f8a6c0d51be379a60af84f945f65369a67e509ee3c3bdcc421254d7c1"
+    },
+    {
+      "output": "OceanNews600.ttf",
+      "sha256": "5c10fd5061557afcb22c83ad78179ec2a11af1079dbbab6388dc2f15c5bdb9e9",
+      "weight": 600,
+      "source": "Newsreader-variable.ttf",
+      "source_sha256": "8a08d13f8a6c0d51be379a60af84f945f65369a67e509ee3c3bdcc421254d7c1"
+    }
+  ]
+}

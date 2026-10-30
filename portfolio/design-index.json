@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "countingUnit": "stable callable family; no function, case or snapshot duplication",
-  "staticWorks": 26,
+  "staticWorks": 31,
   "families": [
     {
       "id": "design.print-poster.v1",
@@ -9,6 +9,7 @@
       "guidance": "https://github.com/doomclouds/MotionStudio/blob/cae18d21f2fbef9702c8ce94ce68abd9eda826a4/skills/motion-film-director/research/design-knowledge/cases/ui-003-print-poster.md",
       "sourceCases": [],
       "actualUsers": [
+        "film-festival-study",
         "hk-street-signs-study",
         "pixel-hiking-study"
       ]
@@ -49,7 +50,9 @@
       "actualUsers": [
         "health-color-code-study",
         "irreverent-pop-study",
+        "ocean-letter-study",
         "playful-roast-timer-study",
+        "solar-terms-study",
         "song-block-print-study"
       ]
     },
@@ -225,6 +228,42 @@
       "comparisonBundle": "NOT_PUBLISHED",
       "reportStorage": "PRIVATE_LIBRARY",
       "acceptedFrameBinding": "EXACT_PIXELS",
+      "motionTransfer": "NOT_TESTED"
+    },
+    {
+      "id": "film-festival-study",
+      "decisionCard": "works/film-festival-study/DESIGN-RETENTION.md",
+      "sourceAnalysis": [
+        "DESIGN-REASONING.md"
+      ],
+      "assetUsage": [
+        {
+          "familyId": "design.print-poster.v1",
+          "mode": "runtime-import",
+          "modulePath": "engine/design-elements/print-poster.mjs",
+          "moduleSha256": "56203ff52eef7375bf1c8efe20b926dc0197572353f44c82f1243930a7e26fcf",
+          "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
+          "callsite": "design/scene.mjs",
+          "importToken": "print-poster.mjs",
+          "callToken": "drawPaper",
+          "visibleRole": "选场次 CTA 的硬边纸签和偏移阴影",
+          "snapshotPath": null,
+          "executionEvidence": {
+            "status": "MATCHED_ACCEPTED_FRAME",
+            "recordId": "b06-native-restore-film-festival-study",
+            "sha256": "106858829fad3b9bc76a0add797e0e5d0d55fe72218fd0b5f120beefa5f6cd09",
+            "frameSha256": "3555929f3f9851734ae4654816b821131de1e9243a21c613e99314fb49d0957f",
+            "storage": "SCRATCH_LOCAL_ONLY",
+            "durableStorage": "NOT_LOCATED",
+            "note": "Rebuilt from hash-verified external fonts; original Native frame exact. Scene call receipt, not independent instrumentation or new aesthetic approval."
+          }
+        }
+      ],
+      "visualStatus": "PARTIAL",
+      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
+      "comparisonBundle": "NOT_PUBLISHED",
+      "reportStorage": "SCRATCH_LOCAL_ONLY",
+      "acceptedFrameBinding": "NOT_CHECKED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -434,6 +473,57 @@
       "motionTransfer": "NOT_TESTED"
     },
     {
+      "id": "nanyuan-cartographic-study",
+      "decisionCard": "works/nanyuan-cartographic-study/DESIGN-RETENTION.md",
+      "sourceAnalysis": [
+        "DESIGN-REASONING.md"
+      ],
+      "assetUsage": [],
+      "visualStatus": "PARTIAL",
+      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
+      "comparisonBundle": "NOT_PUBLISHED",
+      "reportStorage": "SCRATCH_LOCAL_ONLY",
+      "acceptedFrameBinding": "NOT_CHECKED",
+      "motionTransfer": "NOT_TESTED"
+    },
+    {
+      "id": "ocean-letter-study",
+      "decisionCard": "works/ocean-letter-study/DESIGN-RETENTION.md",
+      "sourceAnalysis": [
+        "design/DESIGN-ANALYSIS.md",
+        "design/SETTLEMENT.md"
+      ],
+      "assetUsage": [
+        {
+          "familyId": "design.material-surfaces.v1",
+          "mode": "vendored-snapshot",
+          "modulePath": "engine/design-elements/material-surfaces.mjs",
+          "moduleSha256": "70bf1fcfa89bfbf911f5cf735b1b08e8ae7f360e43bd43a8c831efef579696eb",
+          "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
+          "callsite": "design/scene.mjs",
+          "importToken": "material-surfaces.mjs",
+          "callToken": "drawSurface",
+          "visibleRole": "右侧数字旁证小卡白色底面和细边，opaque零阴影一次",
+          "snapshotPath": "design/material-surfaces.mjs",
+          "executionEvidence": {
+            "status": "MATCHED_ACCEPTED_FRAME",
+            "recordId": "ocean-letter-native-checks",
+            "sha256": "e99407a2cd8ec493d82b6d50405f3a5b82f36bfeb054cbbeac9f70184e87b47d",
+            "frameSha256": "b232587c974632392b14be3a6b6a843f1727f8a336f4030930bf129f1933e5cf",
+            "storage": "SCRATCH_LOCAL_ONLY",
+            "durableStorage": "NOT_LOCATED",
+            "note": "Author runtime recorded one visible opaque material call and accepted-frame hash. Not independent instrumentation."
+          }
+        }
+      ],
+      "visualStatus": "PARTIAL",
+      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
+      "comparisonBundle": "NOT_PUBLISHED",
+      "reportStorage": "SCRATCH_LOCAL_ONLY",
+      "acceptedFrameBinding": "NOT_CHECKED",
+      "motionTransfer": "NOT_TESTED"
+    },
+    {
       "id": "ocean-plastic-treemap-study",
       "decisionCard": "works/ocean-plastic-treemap-study/DESIGN-RETENTION.md",
       "sourceAnalysis": [
@@ -583,6 +673,42 @@
       "motionTransfer": "NOT_TESTED"
     },
     {
+      "id": "solar-terms-study",
+      "decisionCard": "works/solar-terms-study/DESIGN-RETENTION.md",
+      "sourceAnalysis": [
+        "DESIGN-REASONING.md"
+      ],
+      "assetUsage": [
+        {
+          "familyId": "design.material-surfaces.v1",
+          "mode": "runtime-import",
+          "modulePath": "engine/design-elements/material-surfaces.mjs",
+          "moduleSha256": "70bf1fcfa89bfbf911f5cf735b1b08e8ae7f360e43bd43a8c831efef579696eb",
+          "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
+          "callsite": "design/scene.mjs",
+          "importToken": "material-surfaces.mjs",
+          "callToken": "surface",
+          "visibleRole": "路线卡基础不透明材质，仅卡底",
+          "snapshotPath": null,
+          "executionEvidence": {
+            "status": "MATCHED_ACCEPTED_FRAME",
+            "recordId": "b06-native-restore-solar-terms-study",
+            "sha256": "736802de0f39548f9506d40d987da0e9a241e65512e0f085885a99c8c4e3de33",
+            "frameSha256": "59bb438714e0bedf3cf0d22a21ce9791cb0361409b4cb4ea35498f2e1ccd41bf",
+            "storage": "SCRATCH_LOCAL_ONLY",
+            "durableStorage": "NOT_LOCATED",
+            "note": "Rebuilt from hash-verified external fonts; original Native frame exact. Scene call receipt, not independent instrumentation or new aesthetic approval."
+          }
+        }
+      ],
+      "visualStatus": "PARTIAL",
+      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
+      "comparisonBundle": "NOT_PUBLISHED",
+      "reportStorage": "SCRATCH_LOCAL_ONLY",
+      "acceptedFrameBinding": "NOT_CHECKED",
+      "motionTransfer": "NOT_TESTED"
+    },
+    {
       "id": "song-block-print-study",
       "decisionCard": "works/song-block-print-study/DESIGN-RETENTION.md",
       "sourceAnalysis": [
@@ -658,6 +784,20 @@
       "comparisonBundle": "NOT_PUBLISHED",
       "reportStorage": "PRIVATE_LIBRARY",
       "acceptedFrameBinding": "NOT_ESTABLISHED",
+      "motionTransfer": "NOT_TESTED"
+    },
+    {
+      "id": "trail-pictogram-study",
+      "decisionCard": "works/trail-pictogram-study/DESIGN-RETENTION.md",
+      "sourceAnalysis": [
+        "DESIGN-REASONING.md"
+      ],
+      "assetUsage": [],
+      "visualStatus": "PARTIAL",
+      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
+      "comparisonBundle": "NOT_PUBLISHED",
+      "reportStorage": "SCRATCH_LOCAL_ONLY",
+      "acceptedFrameBinding": "NOT_CHECKED",
       "motionTransfer": "NOT_TESTED"
     },
     {

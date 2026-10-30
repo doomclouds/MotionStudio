@@ -1,0 +1,226 @@
+{
+  "schema": 4,
+  "id": "solar-terms-study",
+  "version": "1.0.0",
+  "title": "节气行 · 山里的朱砂",
+  "status": "source-release",
+  "unofficial_recreation": true,
+  "original": {
+    "author": "alchaincyf (花叔 · 花生)",
+    "title": "Huashu design specimen",
+    "url": "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/east/07-traditional-colors-solar-terms.html"
+  },
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "LICENSES/huashu-MIT-LICENSE.txt",
+      "LICENSES/NotoSansSC-OFL.txt",
+      "LICENSES/NotoSerifSC-OFL.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/LICENSE",
+      "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "https://github.com/google/fonts/tree/main/ofl/notoserifsc"
+    ]
+  },
+  "files": [
+    {
+      "path": "ASSET-USAGE.md",
+      "sha256": "f5e4a767ea48f2069a5b55b421f08d398bbde4e24d64837093ff933117d9b077",
+      "role": "documentation"
+    },
+    {
+      "path": "CREDITS.md",
+      "sha256": "ead8aceb58c57013cd02e6d0528a79ffa5615e0afbd8eb4e4c82d37996cf8fff",
+      "role": "documentation"
+    },
+    {
+      "path": "DESIGN-REASONING.md",
+      "sha256": "93438324496e083953ded403f30c5e7f408eb70cbdc593d11a75bfcdf9b07030",
+      "role": "documentation"
+    },
+    {
+      "path": "DESIGN-RETENTION.md",
+      "sha256": "b2ccedde8244ddad1dd28592957bfb59386df78d9b0420ea87871a5a19455b0c",
+      "role": "documentation"
+    },
+    {
+      "path": "LICENSES/NotoSansSC-OFL.txt",
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/NotoSerifSC-OFL.txt",
+      "sha256": "5e0da210fb04058a8c0087985d2d456b931c2579811a49655721d3cf0c36b6d6",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/huashu-MIT-LICENSE.txt",
+      "sha256": "6d6a2a9caf2e6d2b76974050427053b2892d8aa4c33fd168ce63a537fcee9d96",
+      "role": "license"
+    },
+    {
+      "path": "README.md",
+      "sha256": "8da02848242a25c989b1da59015e98f0fdcaf26f52ca6e1095d045882010eb4f",
+      "role": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "42b5e88e2e60a87c2406b01a2d5323e4578421155cf2efbd094a479f132cd81d",
+      "role": "cover"
+    },
+    {
+      "path": "design/recipe-checks.json",
+      "sha256": "8e3578033369ff4fc6328ce476f216cbde350037714d41201b1b5822cd014fc7",
+      "role": "config"
+    },
+    {
+      "path": "design/scene.mjs",
+      "sha256": "0a4b847bae6873ff7b3096bf7129922f660ea785c9d8aea1d8faaec6bb720aa9",
+      "role": "source"
+    },
+    {
+      "path": "design/seasonal-strip.mjs",
+      "sha256": "b1992845e4731d607b926c12ae12ab697480eed475198a67993a0019f40dd350",
+      "role": "source"
+    },
+    {
+      "path": "design/terms.json",
+      "sha256": "1fbbcf4827d4aefc4e86855d8ff434912a1a133a794d0f560aebd8d2d9206299",
+      "role": "config"
+    },
+    {
+      "path": "font-charset.txt",
+      "sha256": "a570e5bcc9a427a6cc9bcb914af860caf3c646df1d723dc6f5a43bf672495446",
+      "role": "documentation"
+    },
+    {
+      "path": "font-inputs.json",
+      "sha256": "e6c0e187809c83a9a3dfc795e230fcec83db060c3ea0cfdcb99c928dc20bc478",
+      "role": "config"
+    },
+    {
+      "path": "locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "role": "lock"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "3376138df78fb0b3f62bc57d80dc440204cbe0a0709a07396e39636873862e6f",
+      "role": "lock"
+    },
+    {
+      "path": "prepare-fonts.py",
+      "sha256": "045684552fd5f3e204564f584cd53a857d094623680b4a1274dd45f8c1a827ff",
+      "role": "source"
+    },
+    {
+      "path": "retention.json",
+      "sha256": "440f351f64c9c85aa86f72dee61df82a7ee47d83a080c3e46dc65b1261dbf213",
+      "role": "config"
+    },
+    {
+      "path": "ui-dependencies.json",
+      "sha256": "64674fa4f13ab875ee1a967ebb95447da5762464cbd7396fbc59db84ed9aafd5",
+      "role": "config"
+    }
+  ],
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "locks/npm-package-lock.json"
+    }
+  ],
+  "render": {
+    "entrypoint": "design/scene.mjs",
+    "width": 1200,
+    "height": 750
+  },
+  "resources": [
+    {
+      "id": "fssans400",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "78543e41aa5446bb98859a128c1d063ec17cda4fb53f0c4b923b919a6317b57d",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "FSSans400.ttf",
+      "bytes": 125272,
+      "instructions": "Obtain originalInputs and run prepare-fonts.py. Original and derived hashes fail closed."
+    },
+    {
+      "id": "fssans500",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "d13ff5f186de10a075962438e0b3617088d1f72118aa7c67ed6065d4b3a8a125",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "FSSans500.ttf",
+      "bytes": 125112,
+      "instructions": "Obtain originalInputs and run prepare-fonts.py. Original and derived hashes fail closed."
+    },
+    {
+      "id": "fsserif400",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSerifSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notoserifsc",
+      "sha256": "032f6a142514819ed2d4b904c4ea69af5dbe8ca77a6d5fd1adca9cd34b266b19",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "FSSerif400.ttf",
+      "bytes": 174716,
+      "instructions": "Obtain originalInputs and run prepare-fonts.py. Original and derived hashes fail closed."
+    },
+    {
+      "id": "fsserif600",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSerifSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notoserifsc",
+      "sha256": "dacaf398edae711ad12ee9aeb3243a7610bc34d7b9a8a73c5beb8bd6cb4b28e5",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "FSSerif600.ttf",
+      "bytes": 174732,
+      "instructions": "Obtain originalInputs and run prepare-fonts.py. Original and derived hashes fail closed."
+    },
+    {
+      "id": "fsserif900",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSerifSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notoserifsc",
+      "sha256": "484b266b3717606af495b6f88554f4d4d82849daaaad9570344965fb8e84f0b8",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "FSSerif900.ttf",
+      "bytes": 174796,
+      "instructions": "Obtain originalInputs and run prepare-fonts.py. Original and derived hashes fail closed."
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "59bb438714e0bedf3cf0d22a21ce9791cb0361409b4cb4ea35498f2e1ccd41bf",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "Complete still and critical details independently reviewed; user requested retention. Font, paper shading and JPEG raster residuals remain. No responsive, browser, interaction or video validation."
+    }
+  }
+}

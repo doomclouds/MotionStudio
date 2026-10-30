@@ -1,0 +1,466 @@
+{
+  "receipts": [
+    {
+      "candidate": "seasonal-strip-recipe",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 1200,
+        "height": 232
+      },
+      "activeIndex": 16,
+      "regions": [
+        {
+          "name": "立春",
+          "x": 0,
+          "y": 70,
+          "width": 48.78048780487805,
+          "height": 162,
+          "selected": false,
+          "color": "#8CC7B5"
+        },
+        {
+          "name": "雨水",
+          "x": 48.78048780487805,
+          "y": 70,
+          "width": 48.78048780487805,
+          "height": 162,
+          "selected": false,
+          "color": "#B4C98B"
+        },
+        {
+          "name": "惊蛰",
+          "x": 97.5609756097561,
+          "y": 70,
+          "width": 48.78048780487805,
+          "height": 162,
+          "selected": false,
+          "color": "#A3B87A"
+        },
+        {
+          "name": "春分",
+          "x": 146.34146341463415,
+          "y": 70,
+          "width": 48.78048780487805,
+          "height": 162,
+          "selected": false,
+          "color": "#F0AEB2"
+        },
+        {
+          "name": "清明",
+          "x": 195.1219512195122,
+          "y": 70,
+          "width": 48.78048780487805,
+          "height": 162,
+          "selected": false,
+          "color": "#789262"
+        },
+        {
+          "name": "谷雨",
+          "x": 243.90243902439025,
+          "y": 70,
+          "width": 48.78048780487805,
+          "height": 162,
+          "selected": false,
+          "color": "#5FB3A1"
+        },
+        {
+          "name": "立夏",
+          "x": 292.6829268292683,
+          "y": 70,
+          "width": 48.78048780487805,
+          "height": 162,
+          "selected": false,
+          "color": "#2B9C8E"
+        },
+        {
+          "name": "小满",
+          "x": 341.4634146341464,
+          "y": 70,
+          "width": 48.78048780487805,
+          "height": 162,
+          "selected": false,
+          "color": "#D8C26A"
+        },
+        {
+          "name": "芒种",
+          "x": 390.2439024390244,
+          "y": 70,
+          "width": 48.78048780487805,
+          "height": 162,
+          "selected": false,
+          "color": "#F2B91A"
+        },
+        {
+          "name": "夏至",
+          "x": 439.0243902439024,
+          "y": 70,
+          "width": 48.78048780487805,
+          "height": 162,
+          "selected": false,
+          "color": "#1B5E9B"
+        },
+        {
+          "name": "小暑",
+          "x": 487.80487804878044,
+          "y": 70,
+          "width": 48.78048780487805,
+          "height": 162,
+          "selected": false,
+          "color": "#CFE8EE"
+        },
+        {
+          "name": "大暑",
+          "x": 536.5853658536585,
+          "y": 70,
+          "width": 48.78048780487805,
+          "height": 162,
+          "selected": false,
+          "color": "#E27A8B"
+        },
+        {
+          "name": "立秋",
+          "x": 585.3658536585365,
+          "y": 70,
+          "width": 48.78048780487805,
+          "height": 162,
+          "selected": false,
+          "color": "#C9B03A"
+        },
+        {
+          "name": "处暑",
+          "x": 634.1463414634145,
+          "y": 70,
+          "width": 48.78048780487805,
+          "height": 162,
+          "selected": false,
+          "color": "#F2A93A"
+        },
+        {
+          "name": "白露",
+          "x": 682.9268292682925,
+          "y": 70,
+          "width": 48.78048780487805,
+          "height": 162,
+          "selected": false,
+          "color": "#EEE9DC"
+        },
+        {
+          "name": "秋分",
+          "x": 731.7073170731705,
+          "y": 70,
+          "width": 48.78048780487805,
+          "height": 162,
+          "selected": false,
+          "color": "#C1832B"
+        },
+        {
+          "name": "寒露",
+          "x": 780.4878048780486,
+          "y": 0,
+          "width": 78.04878048780489,
+          "height": 232,
+          "selected": true,
+          "color": "#D8411F"
+        },
+        {
+          "name": "霜降",
+          "x": 858.5365853658534,
+          "y": 70,
+          "width": 48.78048780487805,
+          "height": 162,
+          "selected": false,
+          "color": "#A05A3A"
+        },
+        {
+          "name": "立冬",
+          "x": 907.3170731707314,
+          "y": 70,
+          "width": 48.78048780487805,
+          "height": 162,
+          "selected": false,
+          "color": "#3C4558"
+        },
+        {
+          "name": "小雪",
+          "x": 956.0975609756094,
+          "y": 70,
+          "width": 48.78048780487805,
+          "height": 162,
+          "selected": false,
+          "color": "#4B5666"
+        },
+        {
+          "name": "大雪",
+          "x": 1004.8780487804875,
+          "y": 70,
+          "width": 48.78048780487805,
+          "height": 162,
+          "selected": false,
+          "color": "#E6E3DA"
+        },
+        {
+          "name": "冬至",
+          "x": 1053.6585365853655,
+          "y": 70,
+          "width": 48.78048780487805,
+          "height": 162,
+          "selected": false,
+          "color": "#26241F"
+        },
+        {
+          "name": "小寒",
+          "x": 1102.4390243902435,
+          "y": 70,
+          "width": 48.78048780487805,
+          "height": 162,
+          "selected": false,
+          "color": "#2B4A6B"
+        },
+        {
+          "name": "大寒",
+          "x": 1151.2195121951215,
+          "y": 70,
+          "width": 48.78048780487805,
+          "height": 162,
+          "selected": false,
+          "color": "#6B7B8C"
+        }
+      ],
+      "encoding": "ordered seasonal color identity; width and height emphasize selection, not measured quantities",
+      "pngSHA256": "2ab2036172f88b9a244295f3f9d20733c866ec26bae7d81a93c3e50e4913012f"
+    },
+    {
+      "candidate": "seasonal-strip-recipe",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 1200,
+        "height": 232
+      },
+      "activeIndex": 21,
+      "regions": [
+        {
+          "name": "立春",
+          "x": 0,
+          "y": 70,
+          "width": 48.78048780487805,
+          "height": 162,
+          "selected": false,
+          "color": "#8CC7B5"
+        },
+        {
+          "name": "雨水",
+          "x": 48.78048780487805,
+          "y": 70,
+          "width": 48.78048780487805,
+          "height": 162,
+          "selected": false,
+          "color": "#B4C98B"
+        },
+        {
+          "name": "惊蛰",
+          "x": 97.5609756097561,
+          "y": 70,
+          "width": 48.78048780487805,
+          "height": 162,
+          "selected": false,
+          "color": "#A3B87A"
+        },
+        {
+          "name": "春分",
+          "x": 146.34146341463415,
+          "y": 70,
+          "width": 48.78048780487805,
+          "height": 162,
+          "selected": false,
+          "color": "#F0AEB2"
+        },
+        {
+          "name": "清明",
+          "x": 195.1219512195122,
+          "y": 70,
+          "width": 48.78048780487805,
+          "height": 162,
+          "selected": false,
+          "color": "#789262"
+        },
+        {
+          "name": "谷雨",
+          "x": 243.90243902439025,
+          "y": 70,
+          "width": 48.78048780487805,
+          "height": 162,
+          "selected": false,
+          "color": "#5FB3A1"
+        },
+        {
+          "name": "立夏",
+          "x": 292.6829268292683,
+          "y": 70,
+          "width": 48.78048780487805,
+          "height": 162,
+          "selected": false,
+          "color": "#2B9C8E"
+        },
+        {
+          "name": "小满",
+          "x": 341.4634146341464,
+          "y": 70,
+          "width": 48.78048780487805,
+          "height": 162,
+          "selected": false,
+          "color": "#D8C26A"
+        },
+        {
+          "name": "芒种",
+          "x": 390.2439024390244,
+          "y": 70,
+          "width": 48.78048780487805,
+          "height": 162,
+          "selected": false,
+          "color": "#F2B91A"
+        },
+        {
+          "name": "夏至",
+          "x": 439.0243902439024,
+          "y": 70,
+          "width": 48.78048780487805,
+          "height": 162,
+          "selected": false,
+          "color": "#1B5E9B"
+        },
+        {
+          "name": "小暑",
+          "x": 487.80487804878044,
+          "y": 70,
+          "width": 48.78048780487805,
+          "height": 162,
+          "selected": false,
+          "color": "#CFE8EE"
+        },
+        {
+          "name": "大暑",
+          "x": 536.5853658536585,
+          "y": 70,
+          "width": 48.78048780487805,
+          "height": 162,
+          "selected": false,
+          "color": "#E27A8B"
+        },
+        {
+          "name": "立秋",
+          "x": 585.3658536585365,
+          "y": 70,
+          "width": 48.78048780487805,
+          "height": 162,
+          "selected": false,
+          "color": "#C9B03A"
+        },
+        {
+          "name": "处暑",
+          "x": 634.1463414634145,
+          "y": 70,
+          "width": 48.78048780487805,
+          "height": 162,
+          "selected": false,
+          "color": "#F2A93A"
+        },
+        {
+          "name": "白露",
+          "x": 682.9268292682925,
+          "y": 70,
+          "width": 48.78048780487805,
+          "height": 162,
+          "selected": false,
+          "color": "#EEE9DC"
+        },
+        {
+          "name": "秋分",
+          "x": 731.7073170731705,
+          "y": 70,
+          "width": 48.78048780487805,
+          "height": 162,
+          "selected": false,
+          "color": "#C1832B"
+        },
+        {
+          "name": "寒露",
+          "x": 780.4878048780486,
+          "y": 70,
+          "width": 48.78048780487805,
+          "height": 162,
+          "selected": false,
+          "color": "#D8411F"
+        },
+        {
+          "name": "霜降",
+          "x": 829.2682926829266,
+          "y": 70,
+          "width": 48.78048780487805,
+          "height": 162,
+          "selected": false,
+          "color": "#A05A3A"
+        },
+        {
+          "name": "立冬",
+          "x": 878.0487804878046,
+          "y": 70,
+          "width": 48.78048780487805,
+          "height": 162,
+          "selected": false,
+          "color": "#3C4558"
+        },
+        {
+          "name": "小雪",
+          "x": 926.8292682926826,
+          "y": 70,
+          "width": 48.78048780487805,
+          "height": 162,
+          "selected": false,
+          "color": "#4B5666"
+        },
+        {
+          "name": "大雪",
+          "x": 975.6097560975606,
+          "y": 70,
+          "width": 48.78048780487805,
+          "height": 162,
+          "selected": false,
+          "color": "#E6E3DA"
+        },
+        {
+          "name": "冬至",
+          "x": 1024.3902439024387,
+          "y": 0,
+          "width": 78.04878048780489,
+          "height": 232,
+          "selected": true,
+          "color": "#26241F"
+        },
+        {
+          "name": "小寒",
+          "x": 1102.4390243902435,
+          "y": 70,
+          "width": 48.78048780487805,
+          "height": 162,
+          "selected": false,
+          "color": "#2B4A6B"
+        },
+        {
+          "name": "大寒",
+          "x": 1151.2195121951215,
+          "y": 70,
+          "width": 48.78048780487805,
+          "height": 162,
+          "selected": false,
+          "color": "#6B7B8C"
+        }
+      ],
+      "encoding": "ordered seasonal color identity; width and height emphasize selection, not measured quantities",
+      "pngSHA256": "4d9014f0e71932d12051cf60dd7ea55cd532dd36b1948b39a09648ac176b37ab"
+    }
+  ],
+  "rejected": 8,
+  "scope": "two fixed-layout selection variants; not a second accepted artwork or responsive validation"
+}

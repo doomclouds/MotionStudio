@@ -1,0 +1,341 @@
+{
+  "schema": 4,
+  "id": "ocean-letter-study",
+  "version": "1.0.0",
+  "title": "海洋基金年度信 · 编辑式长文",
+  "status": "source-release",
+  "unofficial_recreation": true,
+  "original": {
+    "author": "alchaincyf (花叔 · 花生)",
+    "title": "Huashu editorial longform design specimen",
+    "url": "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/ppt/17-editorial-longform.html"
+  },
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "LICENSES/Inter-OFL.txt",
+      "LICENSES/Newsreader-OFL.txt",
+      "LICENSES/NotoSansSC-OFL.txt",
+      "LICENSES/NotoSerifSC-OFL.txt",
+      "LICENSES/huashu-MIT-LICENSE.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/LICENSE",
+      "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "https://github.com/google/fonts/tree/main/ofl/notoserifsc",
+      "https://github.com/rsms/inter",
+      "https://github.com/google/fonts/tree/main/ofl/newsreader",
+      "https://github.com/doomclouds/MotionStudio/blob/0947507961eb5624ddd5c1240758baefa3246fd8/engine/design-elements/material-surfaces.mjs",
+      "https://github.com/doomclouds/MotionStudio/blob/0947507961eb5624ddd5c1240758baefa3246fd8/engine/design-elements/shared.mjs"
+    ]
+  },
+  "files": [
+    {
+      "path": "CREDITS.md",
+      "sha256": "2c042071a84ec1358e19f57e94f12ec4f60b4e9d3e0b60bcc9f907f7e1563dfb",
+      "role": "documentation"
+    },
+    {
+      "path": "DESIGN-RETENTION.md",
+      "sha256": "9a9db2ef0ae625dc21d8e0a654c214d42641c69d50e8ad5b73a7e07edd5f8600",
+      "role": "documentation"
+    },
+    {
+      "path": "LICENSES/Inter-OFL.txt",
+      "sha256": "67c5d5206b96f8340b95fabd02ae60701e0b20ce2594d976216f1065e5aa3822",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/Newsreader-OFL.txt",
+      "sha256": "fdfad38143ec470553cae82a1e45320bdd1b9ec70415d37bd0171051d8a4ded8",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/NotoSansSC-OFL.txt",
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/NotoSerifSC-OFL.txt",
+      "sha256": "5e0da210fb04058a8c0087985d2d456b931c2579811a49655721d3cf0c36b6d6",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/huashu-MIT-LICENSE.txt",
+      "sha256": "6d6a2a9caf2e6d2b76974050427053b2892d8aa4c33fd168ce63a537fcee9d96",
+      "role": "license"
+    },
+    {
+      "path": "README.md",
+      "sha256": "959349d96a15515e872f3e8a70dcc585c47a3af07cbca7a106331ce219166ed3",
+      "role": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "7cfa0901c6fed9bef76975cd73817dfd9ac9d3292e58d4024d168af4d7bf8d20",
+      "role": "cover"
+    },
+    {
+      "path": "design/DESIGN-ANALYSIS.md",
+      "sha256": "97f2a12f39a85e41f782b2b197510b1203563c4837f456b130aa0882facc9796",
+      "role": "documentation"
+    },
+    {
+      "path": "design/SETTLEMENT.md",
+      "sha256": "c84df99bbe55baea1558226f08047a0de18465288ed772e98db783a6502e84ef",
+      "role": "documentation"
+    },
+    {
+      "path": "design/content.json",
+      "sha256": "2794fc0c42cca7ba41af2d9a4111ef80884f82cbb5794fcaf94f631b0f316be7",
+      "role": "config"
+    },
+    {
+      "path": "design/editorial-columns.mjs",
+      "sha256": "6e37ef8afb4f11d7fa320a908805ca51feb4190b425c2db12da68410effcbf75",
+      "role": "source"
+    },
+    {
+      "path": "design/material-surfaces.mjs",
+      "sha256": "70bf1fcfa89bfbf911f5cf735b1b08e8ae7f360e43bd43a8c831efef579696eb",
+      "role": "source"
+    },
+    {
+      "path": "design/scene.mjs",
+      "sha256": "bdea5624ab77bb903b855516de1933c5bf858c71bbd599d522115b97c0f1eb34",
+      "role": "source"
+    },
+    {
+      "path": "design/shared.mjs",
+      "sha256": "e36af17f96bd06eb250f27d5be53d678da7a72cb326df0ecb66155c0383d1122",
+      "role": "source"
+    },
+    {
+      "path": "font-charset.txt",
+      "sha256": "fa35b738190ffdd24d85c43cfe65e4bc62aaa5f7f2c30978c0300b5fb7ade217",
+      "role": "config"
+    },
+    {
+      "path": "font-inputs.json",
+      "sha256": "00e25d48351b110fc89c0ec34c33b161a469deadef581d8d01f04eeb0a323e0e",
+      "role": "config"
+    },
+    {
+      "path": "fonts.lock.json",
+      "sha256": "f0710fd9a69b050a8544992377ef2bf6cea7d7e92ce8edfe77e42d5db095c2ab",
+      "role": "config"
+    },
+    {
+      "path": "locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "role": "lock"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "c97986608711fff48e780026471834a114f117d30fd4f1b15c3e76b21a760a46",
+      "role": "lock"
+    },
+    {
+      "path": "module-snapshots.json",
+      "sha256": "046974b27e37325ccc84a079aeddd9e7780a57de822843e01acdc3364340e4c5",
+      "role": "config"
+    },
+    {
+      "path": "prepare-fonts.py",
+      "sha256": "0acb601b774c52db8911830258a04b743f137a0fe1c9d4505cab775566442d25",
+      "role": "source"
+    },
+    {
+      "path": "retention.json",
+      "sha256": "65379a1914a9516bd06d4b5a97e73c6644cbcb78c85536b7329e19f391ba6f85",
+      "role": "config"
+    },
+    {
+      "path": "verify.mjs",
+      "sha256": "ba0dfd6c4bc194acd7c9c8966013448cd74c1fe143cf1b7eb80bff0cd9123ea2",
+      "role": "source"
+    }
+  ],
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "locks/npm-package-lock.json"
+    }
+  ],
+  "render": {
+    "entrypoint": "design/scene.mjs",
+    "width": 1200,
+    "height": 750
+  },
+  "resources": [
+    {
+      "id": "oceansans400",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "463863607143d0709d3d309ca6a99fb6fd05461862aaa18bc27bf1e48ff6e249",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "OceanSans400.ttf",
+      "bytes": 57396,
+      "instructions": "Supply originals per font-inputs.json, run prepare-fonts.py; set OCEAN_LETTER_FONT_DIR to prepared directory. Missing or mismatched fonts fail closed."
+    },
+    {
+      "id": "oceansans500",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "5781d7cd8f6568c0876a51be920381364fda69cae5cdf823fbb4ca4b7e6a0050",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "OceanSans500.ttf",
+      "bytes": 57384,
+      "instructions": "Supply originals per font-inputs.json, run prepare-fonts.py; set OCEAN_LETTER_FONT_DIR to prepared directory. Missing or mismatched fonts fail closed."
+    },
+    {
+      "id": "oceansans600",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "3869140ef960a15140de12477772ad3ab02e6e348e5e00a0f937b95caca460fa",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "OceanSans600.ttf",
+      "bytes": 57388,
+      "instructions": "Supply originals per font-inputs.json, run prepare-fonts.py; set OCEAN_LETTER_FONT_DIR to prepared directory. Missing or mismatched fonts fail closed."
+    },
+    {
+      "id": "oceansans700",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "d1cf3bc0546e182a08ba46e565e21a400175257c54ae59834e90d3848606dc5b",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "OceanSans700.ttf",
+      "bytes": 57360,
+      "instructions": "Supply originals per font-inputs.json, run prepare-fonts.py; set OCEAN_LETTER_FONT_DIR to prepared directory. Missing or mismatched fonts fail closed."
+    },
+    {
+      "id": "oceanserif400",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSerifSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notoserifsc",
+      "sha256": "ee52fe5499a93cfa317c64cf8cf927b5aa9e1fd4949a8c55213c72907b142ddb",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "OceanSerif400.ttf",
+      "bytes": 75832,
+      "instructions": "Supply originals per font-inputs.json, run prepare-fonts.py; set OCEAN_LETTER_FONT_DIR to prepared directory. Missing or mismatched fonts fail closed."
+    },
+    {
+      "id": "oceanserif450",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSerifSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notoserifsc",
+      "sha256": "3f2e0fc8e5b6072f127862e01c775b83563d8e38c975be495b346b41f8bbe1da",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "OceanSerif450.ttf",
+      "bytes": 75800,
+      "instructions": "Supply originals per font-inputs.json, run prepare-fonts.py; set OCEAN_LETTER_FONT_DIR to prepared directory. Missing or mismatched fonts fail closed."
+    },
+    {
+      "id": "oceanserif600",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/NotoSerifSC-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notoserifsc",
+      "sha256": "2be9d6fba721377d660904e3f4a59e9c6d1986d3051c141b9e50a949cb30b9e0",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "OceanSerif600.ttf",
+      "bytes": 75800,
+      "instructions": "Supply originals per font-inputs.json, run prepare-fonts.py; set OCEAN_LETTER_FONT_DIR to prepared directory. Missing or mismatched fonts fail closed."
+    },
+    {
+      "id": "oceaninter400",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/Inter-OFL.txt",
+      "source_url": "https://github.com/rsms/inter",
+      "sha256": "9a3d05fe7c641f581febcbe1691dd489ea7637349455bc2e7a00c13ca65f44f5",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "OceanInter400.ttf",
+      "bytes": 22884,
+      "instructions": "Supply originals per font-inputs.json, run prepare-fonts.py; set OCEAN_LETTER_FONT_DIR to prepared directory. Missing or mismatched fonts fail closed."
+    },
+    {
+      "id": "oceaninter600",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/Inter-OFL.txt",
+      "source_url": "https://github.com/rsms/inter",
+      "sha256": "34d2327147025e224405d068def8555d86f645f620fbac31114cebce4eb34ebb",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "OceanInter600.ttf",
+      "bytes": 22976,
+      "instructions": "Supply originals per font-inputs.json, run prepare-fonts.py; set OCEAN_LETTER_FONT_DIR to prepared directory. Missing or mismatched fonts fail closed."
+    },
+    {
+      "id": "oceannews400",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/Newsreader-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/newsreader",
+      "sha256": "64c12cb21630fc6170f2b2338894ebb83aaa5caf724597c5daa9aa704b9a3e75",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "OceanNews400.ttf",
+      "bytes": 15492,
+      "instructions": "Supply originals per font-inputs.json, run prepare-fonts.py; set OCEAN_LETTER_FONT_DIR to prepared directory. Missing or mismatched fonts fail closed."
+    },
+    {
+      "id": "oceannews500",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/Newsreader-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/newsreader",
+      "sha256": "586a786fa6b1657dfa628b4e248b7c25940d4c47ab9d9166d3b8885e4dab4d56",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "OceanNews500.ttf",
+      "bytes": 15608,
+      "instructions": "Supply originals per font-inputs.json, run prepare-fonts.py; set OCEAN_LETTER_FONT_DIR to prepared directory. Missing or mismatched fonts fail closed."
+    },
+    {
+      "id": "oceannews600",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "notice": "LICENSES/Newsreader-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/newsreader",
+      "sha256": "5c10fd5061557afcb22c83ad78179ec2a11af1079dbbab6388dc2f15c5bdb9e9",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "OceanNews600.ttf",
+      "bytes": 15568,
+      "instructions": "Supply originals per font-inputs.json, run prepare-fonts.py; set OCEAN_LETTER_FONT_DIR to prepared directory. Missing or mismatched fonts fail closed."
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "b232587c974632392b14be3a6b6a843f1727f8a336f4030930bf129f1933e5cf",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "Complete editorial composition and details independently reviewed and accepted for collection. Body serif adjusted to 450; font rasterization and punctuation/justification differences remain. All institutional and statistical claims are unverified specimen copy; 68% bar is not quantitative mapping. Native static only; no browser, interaction, responsive, motion or audio validation."
+    }
+  }
+}

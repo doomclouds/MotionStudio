@@ -105,3 +105,14 @@ Five complete fixed-frame studies retain editable code, design reasoning, runtim
 - `portfolio/works/irreverent-pop-study/cover.jpg`: 1200 × 750, 160,993 bytes; SHA-256 `df8f621e07865727a8d2a99fe66d9ce23e7b5747861732a14a503152dff72f35`.
 
 No wildcard media permission is granted. Covers derive from the accepted Native recreations; schema4 does not imply browser, interaction, audio or animation validation.
+
+
+## B06 approved static covers
+
+Five retained fixed-size studies; only these self-rendered cover identities are permitted. External fonts and private source comparison reports are not redistributed.
+
+- `portfolio/works/film-festival-study/cover.jpg`: 1200 × 750, 233,664 bytes; SHA-256 `f97635fde456907014bd3711307301381b0070f27960cca46437658a4d1aa0fb`.
+- `portfolio/works/nanyuan-cartographic-study/cover.jpg`: 1200 × 750, 161,434 bytes; SHA-256 `cf130c02fa97f29e200df7f092dbd99dd6921c35c754548e935973bafb29dff9`.
+- `portfolio/works/ocean-letter-study/cover.jpg`: 1200 × 750, 160,669 bytes; SHA-256 `7cfa0901c6fed9bef76975cd73817dfd9ac9d3292e58d4024d168af4d7bf8d20`.
+- `portfolio/works/solar-terms-study/cover.jpg`: 1200 × 750, 145,341 bytes; SHA-256 `42b5e88e2e60a87c2406b01a2d5323e4578421155cf2efbd094a479f132cd81d`.
+- `portfolio/works/trail-pictogram-study/cover.jpg`: 1200 × 750, 168,331 bytes; SHA-256 `9d536ff3f96812e4dcb473883be09cbeaf9f159c24f4f912de5d3e43265d8461`.

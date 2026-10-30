@@ -1,0 +1,100 @@
+{
+  "originalInputs": [
+    {
+      "filename": "NotoSansSC-variable.ttf",
+      "sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+      "bytes": 17772300,
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc"
+    },
+    {
+      "filename": "NotoSerifSC-variable.ttf",
+      "sha256": "050080d9255a86808f2945bffac582b31ef32bc36411ce29563b4961670c66f9",
+      "bytes": 25125512,
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notoserifsc"
+    },
+    {
+      "filename": "SpaceGrotesk-variable.ttf",
+      "sha256": "acad6de1fc93436f5c0f1f4137751ef04f1aea3063e7036535970ffcfbd79f72",
+      "bytes": 136676,
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/spacegrotesk"
+    },
+    {
+      "filename": "Fraunces-variable.ttf",
+      "sha256": "177ff6c0f14e5550a3c624247cd1189611d4eb65d000b14944c63d967958abbb",
+      "bytes": 360440,
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/fraunces"
+    }
+  ],
+  "derived": [
+    {
+      "source": "NotoSansSC-variable.ttf",
+      "name": "FSSans500",
+      "weight": 550
+    },
+    {
+      "source": "NotoSansSC-variable.ttf",
+      "name": "FSSans700",
+      "weight": 700
+    },
+    {
+      "source": "NotoSansSC-variable.ttf",
+      "name": "FSSans900",
+      "weight": 900
+    },
+    {
+      "source": "NotoSerifSC-variable.ttf",
+      "name": "FSSerif700",
+      "weight": 700
+    },
+    {
+      "source": "SpaceGrotesk-variable.ttf",
+      "name": "FSSpace700",
+      "weight": 700
+    },
+    {
+      "source": "Fraunces-variable.ttf",
+      "name": "FSFraunces600",
+      "weight": 600
+    }
+  ],
+  "outputNames": [
+    "FSSans500.ttf",
+    "FSSans700.ttf",
+    "FSSans900.ttf",
+    "FSSerif700.ttf",
+    "FSSpace700.ttf",
+    "FSFraunces600.ttf"
+  ],
+  "expectedOutputs": [
+    {
+      "filename": "FSSans500.ttf",
+      "sha256": "d13ff5f186de10a075962438e0b3617088d1f72118aa7c67ed6065d4b3a8a125",
+      "bytes": 125112
+    },
+    {
+      "filename": "FSSans700.ttf",
+      "sha256": "8618f72d048596d9245ff56867b97a497bdf188182e305b4bbaddc0daaeab091",
+      "bytes": 126060
+    },
+    {
+      "filename": "FSSans900.ttf",
+      "sha256": "149c2f29ec44b814406d29b40be16c8ab2984fb11505d2b4227de757060f2c70",
+      "bytes": 125856
+    },
+    {
+      "filename": "FSSerif700.ttf",
+      "sha256": "b491e9a3a8fd1e6605e4eb453ac7f7b164cfdf1454f422f80bf243f83d630b8c",
+      "bytes": 174760
+    },
+    {
+      "filename": "FSSpace700.ttf",
+      "sha256": "09d9199986bfb5d988113a52e0695323b4871ae6ce27dee56bb6a5e7cd4ed362",
+      "bytes": 28876
+    },
+    {
+      "filename": "FSFraunces600.ttf",
+      "sha256": "5ee56672fdb9e0f865d0750532f1f94aa67e8551e8fe9d328e3ab8a66bcd9004",
+      "bytes": 22656
+    }
+  ]
+}

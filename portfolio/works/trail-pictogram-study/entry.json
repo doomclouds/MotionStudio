@@ -1,0 +1,241 @@
+{
+  "schema": 4,
+  "id": "trail-pictogram-study",
+  "version": "1.0.0",
+  "title": "沿线设施图例 · 完整静态复刻",
+  "status": "source-release",
+  "unofficial_recreation": true,
+  "original": {
+    "author": "alchaincyf (花叔 · 花生)",
+    "title": "Huashu info/14-pictogram-system design specimen",
+    "url": "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/info/14-pictogram-system.html"
+  },
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "LICENSES/Jost-OFL.txt",
+      "LICENSES/NotoSans-OFL.txt",
+      "LICENSES/huashu-MIT-LICENSE.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/LICENSE",
+      "https://github.com/google/fonts"
+    ]
+  },
+  "files": [
+    {
+      "path": "CREDITS.md",
+      "sha256": "9fe0ddd3744d6df07426418b865023fa61c00ca60b040f8653684f57e8895146",
+      "role": "documentation"
+    },
+    {
+      "path": "DESIGN-REASONING.md",
+      "sha256": "80916ed29ecaa3879e40e5022af1db8733d4d254e8c777b27a2b5eeffe7fa1c4",
+      "role": "documentation"
+    },
+    {
+      "path": "DESIGN-RETENTION.md",
+      "sha256": "54e35297f8aad34cabd3fba68417e66d2f088d3b9839e17f812fca2010065b09",
+      "role": "documentation"
+    },
+    {
+      "path": "LICENSES/Jost-OFL.txt",
+      "sha256": "1af3438a4d5f0ed2bdbc5751a5a67ebf6d537334161184b7fbb68503ef0ea0c5",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/NotoSans-OFL.txt",
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/huashu-MIT-LICENSE.txt",
+      "sha256": "6d6a2a9caf2e6d2b76974050427053b2892d8aa4c33fd168ce63a537fcee9d96",
+      "role": "license"
+    },
+    {
+      "path": "README.md",
+      "sha256": "233509060a0edb8ed84a9c85f00f9bb2739f3053e8f421c1efdccdf08ebce156",
+      "role": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "9d536ff3f96812e4dcb473883be09cbeaf9f159c24f4f912de5d3e43265d8461",
+      "role": "cover"
+    },
+    {
+      "path": "design/data.mjs",
+      "sha256": "371b83232741a84ddde7d4265869b3d515e7029718f813f3b1b7be6078592c70",
+      "role": "source"
+    },
+    {
+      "path": "design/pictogram-draw-recipe.mjs",
+      "sha256": "e6428806bd74a8c58ea7d4e3a5afbe9e0957560a3576a77ee521c1c1c21a7488",
+      "role": "source"
+    },
+    {
+      "path": "design/scene.mjs",
+      "sha256": "967d1dbc79895bcfd6c14a4492b13ce3f939effb18cdc797f599dddad61151fa",
+      "role": "source"
+    },
+    {
+      "path": "font-inputs.json",
+      "sha256": "32464fdbc524dc42e67f0bbf2af35125530b74b15513561681f43536747c0590",
+      "role": "config"
+    },
+    {
+      "path": "locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "role": "lock"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "c97986608711fff48e780026471834a114f117d30fd4f1b15c3e76b21a760a46",
+      "role": "lock"
+    },
+    {
+      "path": "prepare-fonts.py",
+      "sha256": "f5b42df61d337bbfa4dc1ae39ce76056b33a64312779f9b1fbbdb234bb3fd5f1",
+      "role": "source"
+    },
+    {
+      "path": "retention.json",
+      "sha256": "995d73b6ce5d0f0566bd50f88e0001a449d533b560365b28ccd26104e7598bb8",
+      "role": "config"
+    }
+  ],
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "locks/npm-package-lock.json"
+    }
+  ],
+  "render": {
+    "entrypoint": "design/scene.mjs",
+    "width": 1200,
+    "height": 750
+  },
+  "resources": [
+    {
+      "id": "notosanssc-variable",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSans-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "NotoSansSC-variable.ttf",
+      "bytes": 17772300,
+      "instructions": "Provide in TRAIL_PICTOGRAM_FONT_DIR; prepare-fonts.py checks original/derived identity."
+    },
+    {
+      "id": "jost-variable",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/Jost-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/jost",
+      "sha256": "6343b70971000b04c5d401c96ae08ce371086135e999d5e1e1413039c0213076",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Jost-variable.ttf",
+      "bytes": 134996,
+      "instructions": "Provide in TRAIL_PICTOGRAM_FONT_DIR; prepare-fonts.py checks original/derived identity."
+    },
+    {
+      "id": "sans400",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSans-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "775acc82b6068ab56ff3367515f9fdce5bb5f12a5d62528406aa716c36f7a0d5",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Sans400.ttf",
+      "bytes": 38068,
+      "instructions": "Provide in TRAIL_PICTOGRAM_FONT_DIR; prepare-fonts.py checks original/derived identity."
+    },
+    {
+      "id": "sans500",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSans-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "fff9bca13800836325c93fa700fea22e35cd4d12f1dea642669508b41a9a1b5f",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Sans500.ttf",
+      "bytes": 38080,
+      "instructions": "Provide in TRAIL_PICTOGRAM_FONT_DIR; prepare-fonts.py checks original/derived identity."
+    },
+    {
+      "id": "sans700",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/NotoSans-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "1b4327d2f809993df693919051a2e3b59463553d44296c67dcac66c4e1042655",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Sans700.ttf",
+      "bytes": 38032,
+      "instructions": "Provide in TRAIL_PICTOGRAM_FONT_DIR; prepare-fonts.py checks original/derived identity."
+    },
+    {
+      "id": "jost400",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/Jost-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/jost",
+      "sha256": "34a4ff4a106e91657e7047eb0da82c12f2fe68ed986ff216df8e0d0a8fc5490d",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Jost400.ttf",
+      "bytes": 10780,
+      "instructions": "Provide in TRAIL_PICTOGRAM_FONT_DIR; prepare-fonts.py checks original/derived identity."
+    },
+    {
+      "id": "jost500",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/Jost-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/jost",
+      "sha256": "37079cf7305357c21056149b1229e995497a6f156a9374ae2fb42569cd729891",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Jost500.ttf",
+      "bytes": 10812,
+      "instructions": "Provide in TRAIL_PICTOGRAM_FONT_DIR; prepare-fonts.py checks original/derived identity."
+    },
+    {
+      "id": "jost700",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "notice": "LICENSES/Jost-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/jost",
+      "sha256": "d451626a4f0775ef1b5947792c1fae4eeed162305ec33f96e9879244ebd41794",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Jost700.ttf",
+      "bytes": 10812,
+      "instructions": "Provide in TRAIL_PICTOGRAM_FONT_DIR; prepare-fonts.py checks original/derived identity."
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "ddff1dbb45e4d004aabead34a40bb9d85d69c7cfa3589095f952b63756efecc1",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "Independent complete static/source/detail comparison passed; typography/JPEG differences and original factual/grammar limitations remain disclosed."
+    }
+  }
+}

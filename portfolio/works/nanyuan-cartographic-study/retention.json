@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "workId": "nanyuan-cartographic-study",
+  "kind": "fixed-static-design",
+  "canvas": {
+    "width": 1200,
+    "height": 750
+  },
+  "entrypoint": "design/scene.mjs",
+  "decisionCard": "DESIGN-RETENTION.md",
+  "sourceAnalysis": [
+    "DESIGN-REASONING.md"
+  ],
+  "ruleRefs": [],
+  "ruleStatus": "Case decision/recipe retained, no formal shared rule claimed.",
+  "assetUsage": [],
+  "nonAssetNote": "No runtime public UI-family import among the 14-family catalog. Caller-path / area-radius recipes are local code candidates, not counted shared assets. Their exact source hashes are listed in entry.json.",
+  "evidence": {
+    "acceptanceSource": "entry.json#/acceptance",
+    "renderHashSource": "entry.json#/cover/source_sha256",
+    "publicCover": "cover.jpg",
+    "comparisonBundle": {
+      "status": "NOT_PUBLISHED",
+      "recordId": "b06-map-visual-report",
+      "sha256": "9f6d4e62242d28ea60c4f761d4fd13d93f7c394d82aaca06a9a13f72f711a2f0",
+      "storage": "SCRATCH_LOCAL_ONLY",
+      "durableStorage": "NOT_LOCATED",
+      "note": "Local HTML report container; this SHA identifies HTML not the accepted PNG. Embedded image bytes checked previously, not browser preview or evidence of durable owner access."
+    },
+    "independentReview": {
+      "status": "PRIVATE_RECORD_LOCATED",
+      "recordId": "b06-independent-visual-review",
+      "sha256": "b28e448eea20642f8a0fbc4a18b01e6c6f070dff2ccb716c716bce69c3695416",
+      "storage": "SCRATCH_LOCAL_ONLY",
+      "durableStorage": "NOT_LOCATED",
+      "note": "Shared report explicitly covers this case; source/candidate visually inspected, not a fresh author self-check."
+    }
+  },
+  "motionTransfer": {
+    "status": "NOT_TESTED",
+    "note": "Fixed static only; no browser/interactivity/responsiveness/Motion/audio approval."
+  }
+}

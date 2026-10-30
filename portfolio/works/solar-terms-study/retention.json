@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "workId": "solar-terms-study",
+  "kind": "fixed-static-design",
+  "canvas": {
+    "width": 1200,
+    "height": 750
+  },
+  "entrypoint": "design/scene.mjs",
+  "decisionCard": "DESIGN-RETENTION.md",
+  "sourceAnalysis": [
+    "DESIGN-REASONING.md"
+  ],
+  "ruleRefs": [],
+  "ruleStatus": "Case decision card and local recipe; no new registered public family.",
+  "assetUsage": [
+    {
+      "familyId": "design.material-surfaces.v1",
+      "mode": "runtime-import",
+      "modulePath": "engine/design-elements/material-surfaces.mjs",
+      "moduleSha256": "70bf1fcfa89bfbf911f5cf735b1b08e8ae7f360e43bd43a8c831efef579696eb",
+      "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
+      "callsite": "design/scene.mjs",
+      "importToken": "material-surfaces.mjs",
+      "callToken": "surface",
+      "visibleRole": "路线卡基础不透明材质，仅卡底",
+      "snapshotPath": null,
+      "executionEvidence": {
+        "status": "MATCHED_ACCEPTED_FRAME",
+        "recordId": "b06-native-restore-solar-terms-study",
+        "sha256": "736802de0f39548f9506d40d987da0e9a241e65512e0f085885a99c8c4e3de33",
+        "frameSha256": "59bb438714e0bedf3cf0d22a21ce9791cb0361409b4cb4ea35498f2e1ccd41bf",
+        "storage": "SCRATCH_LOCAL_ONLY",
+        "durableStorage": "NOT_LOCATED",
+        "note": "Rebuilt from hash-verified external fonts; original Native frame exact. Scene call receipt, not independent instrumentation or new aesthetic approval."
+      }
+    }
+  ],
+  "nonAssetNote": "Case-specific geometry, helpers and seasonal-strip are not registered public families. No unsupported 14-family migration claim.",
+  "evidence": {
+    "acceptanceSource": "entry.json#/acceptance",
+    "renderHashSource": "entry.json#/cover/source_sha256",
+    "publicCover": "cover.jpg",
+    "comparisonBundle": {
+      "recordId": "b06-solar-visual-report",
+      "sha256": "6a3064fba59be5aaca74137d5e4eeca15c1c006a7c7d1f44a6355bb8b24b4f90",
+      "storage": "SCRATCH_LOCAL_ONLY",
+      "durableStorage": "NOT_LOCATED",
+      "note": "Local HTML report container with original/comparison images. Hash identifies HTML, not a single Native PNG; durable access not verified.",
+      "status": "NOT_PUBLISHED"
+    },
+    "independentReview": {
+      "recordId": "b06-independent-visual-review",
+      "sha256": "b28e448eea20642f8a0fbc4a18b01e6c6f070dff2ccb716c716bce69c3695416",
+      "storage": "SCRATCH_LOCAL_ONLY",
+      "durableStorage": "NOT_LOCATED",
+      "status": "PRIVATE_RECORD_LOCATED",
+      "note": "Shared report explicitly covers this case; source/candidate visually inspected, not a fresh author self-check."
+    }
+  },
+  "motionTransfer": {
+    "status": "NOT_TESTED",
+    "note": "Fixed static only; no responsive, browser, interaction or motion validation."
+  }
+}
