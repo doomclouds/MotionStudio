@@ -1,0 +1,11 @@
+import{bounds,theme,array,text,number,font,fit,local,state}from'./shared.mjs';
+export const id='design.typographic-focus.v1';
+export const version=1;
+export const guidance='./docs/typographic-focus.md';
+export function validate(p){bounds(p?.bounds);theme(p.theme);const d=p.data;if(!d)throw new TypeError('data required');if(d.paintBackground!==undefined&&typeof d.paintBackground!=='boolean')throw new TypeError('paintBackground boolean');array(d.lines,'lines',1,4).forEach((s,i)=>text(s,`line${i}`,45));text(d.kicker,'kicker',70);array(d.body,'body',1,4).forEach(s=>text(s,'body',120));number(d.titleSize,'titleSize',24,180);number(d.bodySize,'bodySize',12,32);number(d.padding??24,'padding',0,100);if(!['left','center'].includes(d.align??'left'))throw new RangeError('align');number(d.accentLine??-1,'accentLine',-1,d.lines.length-1);if(!Number.isInteger(d.accentLine??-1))throw new TypeError('accentLine integer');return p}
+export function draw(c,p){validate(p);const b=p.bounds,d=p.data,t=p.theme,pad=d.padding??24,W=b.width-2*pad,lh=d.titleSize*1.05,bodyY=pad+36+d.lines.length*lh+24;
+ if(W<20||bodyY+d.body.length*d.bodySize*1.45>b.height-pad)throw new RangeError('vertical text overflow');
+ // Preflight every string before touching pixels.
+ state(c,()=>{font(c,12,t.fontFamily,700);fit(c,d.kicker,W,'kicker');font(c,d.titleSize,t.displayFont??t.fontFamily,800);d.lines.forEach(s=>fit(c,s,W,'title'));font(c,d.bodySize,t.fontFamily);d.body.forEach(s=>fit(c,s,W,'body'))})
+ return local(c,b,()=>{if(d.paintBackground!==false){c.fillStyle=t.surface;c.fillRect(0,0,b.width,b.height);}const at=(s,y,size,weight,col,family=t.fontFamily)=>{font(c,size,family,weight);const x=(d.align??'left')==='center'?(b.width-c.measureText(s).width)/2:pad;c.fillStyle=col;c.fillText(s,x,y);return{x:b.x+x,y:b.y+y-size,width:c.measureText(s).width,height:size}};const regions=[];regions.push(at(d.kicker,pad+12,12,700,t.accent));d.lines.forEach((s,i)=>regions.push(at(s,pad+36+(i+1)*lh-d.titleSize*.16,d.titleSize,800,i===d.accentLine?t.accent:t.ink,t.displayFont??t.fontFamily)));d.body.forEach((s,i)=>regions.push(at(s,bodyY+(i+1)*d.bodySize*1.45-d.bodySize*.2,d.bodySize,400,t.muted)));return{id,bounds:{...b},regions,readingOrder:['kicker','headline','support'],semantics:'authored copy; not verified claims'}})
+}

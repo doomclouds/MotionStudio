@@ -56,6 +56,16 @@ def main():
             assert not any(n.endswith(('.wav', '.mp4', '.mp3')) or '/node_modules/' in n for n in names)
             z.extractall(temp / 'fresh')
         skill = temp / 'fresh/motion-film-director'
+        design = skill / 'runtime/design-elements'
+        catalog = json.loads((design / 'catalog.json').read_text())
+        assert len(catalog['assets']) == 6
+        assert (design / 'print-poster.mjs').read_bytes() == (ROOT / 'engine/design-elements/print-poster.mjs').read_bytes()
+        run(['node', '--input-type=module', '-e', "const m=await import(process.argv[1]);if(Object.keys(m.registry).length!==5)throw Error('Registry missing');", (design / 'index.mjs').as_uri()])
+        if os.environ.get('MOTION_ENGINE_ROOT') and os.environ.get('UI_TEST_FONT_DIR'):
+            run(['node', str(design / 'test/verify.mjs'), str(temp / 'design-test-results.json')])
+            run(['node', str(design / 'test-print-poster.mjs')])
+        else:
+            print('NOT_RUN: design Canvas rendering tests require MOTION_ENGINE_ROOT and UI_TEST_FONT_DIR; extracted imports and source bytes checked')
         for test in ('test_design_knowledge.py', 'test_video_knowledge.py', 'test_static_knowledge.py', 'test_check_delivery.py', 'test_check_final_delivery.py', 'test_validate_delivery_report.py'):
             run(['python3', str(skill / 'scripts' / test)])
         kb_cli = skill / 'scripts/video_knowledge.py'

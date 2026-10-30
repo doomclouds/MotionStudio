@@ -133,6 +133,12 @@ python3 scripts/build-skill.py \
 node engine/motion-elements/scripts/query-catalog.mjs list --kind recipe
 ```
 
+## 静态设计积木
+
+[设计积木索引](engine/design-elements/Index.md) 将设计意图、可调用代码、输入边界和不同内容的组合配方对应起来。现有 print-poster 保持原 API，新增文字主视觉、色彩分区、材质表面、语义节点序列和参数刻度五族；它们不计入 60 个 Motion 机制。
+
+先按内容目的选表达，再定品牌颜色、字体和材质，静态审阅后才尝试 motion。两套组合为固定 1440×900 合成复用测试，不是新增优秀作品、任意内容自动布局或已证实的审美迁移。已有作品场景未改为导入这些模块。源码 Skill 包含这层代码，但字体与渲染证据不打包。
+
 ## 声音与证据
 
 **声音也能编辑，判断仍需听见。** [Timeline Core](https://github.com/doomclouds/MotionStudio/tree/dev/engine/motion-timeline-core) 管理有理数时间、裁剪／拆分／移动、暂停续播与声部路由；[Audio Core](https://github.com/doomclouds/MotionStudio/tree/dev/engine/motion-audio-core) 执行本地混音、增益／淡变／自动化，并检查编码后的声音。它不是 DAW，不含自动均衡、压缩或 ducking，更不把技术测量当成听审。

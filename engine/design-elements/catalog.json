@@ -1,0 +1,156 @@
+{
+  "schemaVersion": 1,
+  "countingUnit": "stable callable design family, not function or case",
+  "assets": [
+    {
+      "id": "design.print-poster.v1",
+      "version": 1,
+      "status": "existing-published",
+      "entry": "print-poster.mjs",
+      "exports": [
+        "drawPaper",
+        "drawOverprint",
+        "drawPoster"
+      ],
+      "guidance": "https://github.com/doomclouds/MotionStudio/blob/cae18d21f2fbef9702c8ce94ce68abd9eda826a4/skills/motion-film-director/research/design-knowledge/cases/ui-003-print-poster.md",
+      "verification": "existing test-print-poster.mjs; unchanged by this patch"
+    },
+    {
+      "id": "design.typographic-focus.v1",
+      "version": 1,
+      "status": "published-source-technical-reviewed",
+      "entry": "typographic-focus.mjs",
+      "exports": [
+        "validate",
+        "draw"
+      ],
+      "guidance": "docs/typographic-focus.md",
+      "example": "examples/typographic-focus.mjs",
+      "sourceCases": [
+        "https://github.com/doomclouds/MotionStudio/blob/cae18d21f2fbef9702c8ce94ce68abd9eda826a4/portfolio/works/slow-roast-study/README.md",
+        "https://github.com/doomclouds/MotionStudio/blob/cae18d21f2fbef9702c8ce94ce68abd9eda826a4/portfolio/works/hanzi-poster-study/README.md",
+        "https://github.com/doomclouds/MotionStudio/blob/cae18d21f2fbef9702c8ce94ce68abd9eda826a4/portfolio/works/cycling-year-report/README.md"
+      ],
+      "compositionEvidence": [
+        "examples/compositions.mjs#reading-sessions",
+        "examples/compositions.mjs#creative-lab"
+      ],
+      "tests": "test/verify.mjs",
+      "verificationLimits": [
+        "native-static",
+        "not-browser",
+        "not-motion",
+        "not-user-approved-new-artwork"
+      ]
+    },
+    {
+      "id": "design.color-sections.v1",
+      "version": 1,
+      "status": "published-source-technical-reviewed",
+      "entry": "color-sections.mjs",
+      "exports": [
+        "validate",
+        "draw"
+      ],
+      "guidance": "docs/color-sections.md",
+      "example": "examples/color-sections.mjs",
+      "sourceCases": [
+        "https://github.com/doomclouds/MotionStudio/blob/cae18d21f2fbef9702c8ce94ce68abd9eda826a4/portfolio/works/muqi-study/README.md",
+        "https://github.com/doomclouds/MotionStudio/blob/cae18d21f2fbef9702c8ce94ce68abd9eda826a4/portfolio/works/slow-roast-study/README.md",
+        "https://github.com/doomclouds/MotionStudio/blob/cae18d21f2fbef9702c8ce94ce68abd9eda826a4/portfolio/works/shanghai-deco-study/README.md"
+      ],
+      "compositionEvidence": [
+        "examples/compositions.mjs#reading-sessions",
+        "examples/compositions.mjs#creative-lab"
+      ],
+      "tests": "test/verify.mjs",
+      "verificationLimits": [
+        "native-static",
+        "not-browser",
+        "not-motion",
+        "not-user-approved-new-artwork"
+      ]
+    },
+    {
+      "id": "design.material-surfaces.v1",
+      "version": 1,
+      "status": "published-source-technical-reviewed",
+      "entry": "material-surfaces.mjs",
+      "exports": [
+        "validate",
+        "draw"
+      ],
+      "guidance": "docs/material-surfaces.md",
+      "example": "examples/material-surfaces.mjs",
+      "sourceCases": [
+        "https://github.com/doomclouds/MotionStudio/blob/cae18d21f2fbef9702c8ce94ce68abd9eda826a4/portfolio/works/liquid-glass-study/README.md",
+        "https://github.com/doomclouds/MotionStudio/blob/cae18d21f2fbef9702c8ce94ce68abd9eda826a4/portfolio/works/vinyl-study/README.md"
+      ],
+      "compositionEvidence": [
+        "examples/compositions.mjs#reading-sessions",
+        "examples/compositions.mjs#creative-lab"
+      ],
+      "tests": "test/verify.mjs",
+      "verificationLimits": [
+        "native-static",
+        "not-browser",
+        "not-motion",
+        "not-user-approved-new-artwork"
+      ]
+    },
+    {
+      "id": "design.semantic-data.v1",
+      "version": 1,
+      "status": "published-source-technical-reviewed",
+      "entry": "semantic-data.mjs",
+      "exports": [
+        "validate",
+        "draw"
+      ],
+      "guidance": "docs/semantic-data.md",
+      "example": "examples/semantic-data.mjs",
+      "sourceCases": [
+        "https://github.com/doomclouds/MotionStudio/blob/cae18d21f2fbef9702c8ce94ce68abd9eda826a4/portfolio/works/tea-conversation-map/README.md",
+        "https://github.com/doomclouds/MotionStudio/blob/cae18d21f2fbef9702c8ce94ce68abd9eda826a4/portfolio/works/theatre-narrative-wave/README.md"
+      ],
+      "compositionEvidence": [
+        "examples/compositions.mjs#reading-sessions",
+        "examples/compositions.mjs#creative-lab"
+      ],
+      "tests": "test/verify.mjs",
+      "verificationLimits": [
+        "native-static",
+        "not-browser",
+        "not-motion",
+        "not-user-approved-new-artwork"
+      ]
+    },
+    {
+      "id": "design.parameter-controls.v1",
+      "version": 1,
+      "status": "published-source-technical-reviewed",
+      "entry": "parameter-controls.mjs",
+      "exports": [
+        "validate",
+        "draw"
+      ],
+      "guidance": "docs/parameter-controls.md",
+      "example": "examples/parameter-controls.mjs",
+      "sourceCases": [
+        "https://github.com/doomclouds/MotionStudio/blob/cae18d21f2fbef9702c8ce94ce68abd9eda826a4/portfolio/works/hardware-sampler-study/README.md",
+        "https://github.com/doomclouds/MotionStudio/blob/cae18d21f2fbef9702c8ce94ce68abd9eda826a4/portfolio/works/liquid-glass-study/README.md"
+      ],
+      "compositionEvidence": [
+        "examples/compositions.mjs#reading-sessions",
+        "examples/compositions.mjs#creative-lab"
+      ],
+      "tests": "test/verify.mjs",
+      "verificationLimits": [
+        "native-static",
+        "not-browser",
+        "not-motion",
+        "not-user-approved-new-artwork"
+      ]
+    }
+  ]
+}

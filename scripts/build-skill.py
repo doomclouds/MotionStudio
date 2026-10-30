@@ -21,7 +21,7 @@ def main():
     for name in names:
         if name.startswith('skills/motion-film-director/'):
             rel = name.removeprefix('skills/motion-film-director/')
-        elif any(name.startswith('engine/' + core + '/') for core in ('motion-render-core', 'motion-timeline-core', 'motion-audio-core', 'motion-elements')):
+        elif any(name.startswith('engine/' + core + '/') for core in ('motion-render-core', 'motion-timeline-core', 'motion-audio-core', 'motion-elements', 'design-elements')):
             rel = 'runtime/' + name.removeprefix('engine/')
         elif name in ('tools/reference-benchmark/event_intervals.py', 'tools/reference-benchmark/test_event_intervals.py', 'tools/reference-benchmark/event-intervals.example.synthetic.json', 'tools/reference-benchmark/EVENT_INTERVALS.md', 'tools/reference-benchmark/event_interval_report.py', 'tools/reference-benchmark/test_event_interval_report.py', 'tools/reference-benchmark/EVENT_INTERVAL_REPORT.md', 'tools/reference-benchmark/stem_balance.py', 'tools/reference-benchmark/test_stem_balance.py', 'tools/reference-benchmark/STEM_BALANCE.md', 'tools/reference-benchmark/event_correspondence.py', 'tools/reference-benchmark/test_event_correspondence.py', 'tools/reference-benchmark/example_event_correspondence.py', 'tools/reference-benchmark/EVENT_CORRESPONDENCE.md'):
             rel = 'runtime/review-tools/' + name.rsplit('/', 1)[1]
@@ -49,6 +49,9 @@ def main():
     required += ['runtime/motion-elements/' + name for name in ('lib/attractor-field.mjs', 'lib/slice-displacement.mjs', 'adapters/slice-displacement.mjs', 'examples/field-slices-scene.mjs', 'test/field-slices.test.mjs')]
     required += ['runtime/motion-elements/' + name for name in ('lib/linear-mask.mjs', 'adapters/linear-mask.mjs', 'examples/linear-mask-study.mjs', 'test/linear-mask.test.mjs')]
     required += ['runtime/motion-elements/' + name for name in ('lib/sampled-band.mjs', 'adapters/sampled-band.mjs', 'examples/sampled-band-study.mjs', 'test/sampled-band.test.mjs')]
+    required += ['runtime/design-elements/' + name for name in ('index.mjs', 'catalog.json', 'Index.md', 'README.md', 'CASE-COVERAGE.md', 'print-poster.mjs', 'test-print-poster.mjs', 'shared.mjs', 'test/verify.mjs', 'examples/compositions.mjs', 'examples/render.mjs')]
+    for family in ('typographic-focus', 'color-sections', 'material-surfaces', 'semantic-data', 'parameter-controls'):
+        required += ['runtime/design-elements/' + family + '.mjs', 'runtime/design-elements/docs/' + family + '.md', 'runtime/design-elements/examples/' + family + '.mjs']
     if any(name not in payload for name in required): raise SystemExit('Required source/license missing')
     required_stem = ['runtime/review-tools/' + name for name in ('stem_balance.py', 'test_stem_balance.py', 'STEM_BALANCE.md')]
     if any(name not in payload for name in required_stem): raise SystemExit('Optional stem-balance source/documentation missing')
