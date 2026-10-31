@@ -1,0 +1,1 @@
+{"name":"motionstudio-halftone-scalar-candidate","version":"0.0.0","private":true,"license":"MIT","scripts":{"test":"node test.cjs","examples":"node examples.cjs"},"dependencies":{"@napi-rs/canvas":"0.1.100"}}

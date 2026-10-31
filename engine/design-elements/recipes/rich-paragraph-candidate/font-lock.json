@@ -1,0 +1,26 @@
+{
+  "repository": "google/fonts",
+  "commit": "2e61f4355afd22b801791b0df176065082423b87",
+  "license": "OFL-1.1",
+  "mode": "unmodified files; registration aliases only",
+  "files": [
+    {
+      "id": "inter",
+      "bytes": 876576,
+      "sha256": "29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031",
+      "gitBlob": "047c92f6e2212473dc436020afed689527076d44",
+      "upstreamPath": "ofl/inter/Inter[opsz,wght].ttf",
+      "file": "inter.ttf",
+      "url": "https://github.com/google/fonts/blob/2e61f4355afd22b801791b0df176065082423b87/ofl/inter/Inter[opsz,wght].ttf"
+    },
+    {
+      "id": "mono",
+      "bytes": 187208,
+      "sha256": "48715a42ec242c21e9f02692891e147d022299a52e48d5e413e1a942193ffeda",
+      "gitBlob": "aa310be8b717fe3774f9444dd89d5f4101cc6d10",
+      "upstreamPath": "ofl/jetbrainsmono/JetBrainsMono[wght].ttf",
+      "file": "mono.ttf",
+      "url": "https://github.com/google/fonts/blob/2e61f4355afd22b801791b0df176065082423b87/ofl/jetbrainsmono/JetBrainsMono[wght].ttf"
+    }
+  ]
+}

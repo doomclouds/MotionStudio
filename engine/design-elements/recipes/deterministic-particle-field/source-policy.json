@@ -1,0 +1,25 @@
+{
+  "schema": "deterministic-particle-source-boundary/v1",
+  "allowed": [
+    "bounded pure module",
+    "original font-free synthetic fixtures",
+    "contracts and design guidance",
+    "tests",
+    "package lock",
+    "full legal notices and source identities"
+  ],
+  "excluded": [
+    "source screenshots and original HTML",
+    "source-scene adapters",
+    "product branding or original UI copy",
+    "font binaries and font preparations",
+    "private review material and storage identifiers",
+    "native dependencies and caches",
+    "generated media and output"
+  ],
+  "newPublicFamilies": 0,
+  "newFormalRecipes": 0,
+  "rootMediaAllowlistChanged": false,
+  "catalogRegistrationChanged": false,
+  "noAutomaticPublication": true
+}

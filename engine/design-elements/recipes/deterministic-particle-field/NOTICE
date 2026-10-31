@@ -1,0 +1,21 @@
+Deterministic Particle Field — modified static code
+
+Upstream: OpenDesign worker-visualizer, nexu-io/open-design
+Fixed commit: 12d970eacc8971150e3c76470d2a9afe16dc2ed1
+Copyright 2026 Open Design contributors
+
+The upstream repository's full Apache License, Version 2.0 is retained in LICENSE.
+The plugin metadata separately declares MIT and names OpenDesign as author.
+This modified extraction is supplied under Apache-2.0, not silently relicensed
+under the host repository's root MIT license. See RIGHTS.md for this distinction.
+
+Changes: deterministic unsigned seed; pure bounded Float32 point plan;
+transparent offscreen tile; opaque handle and state-preserving placement;
+explicit single/lifted alpha semantics; bounded validation, native tests;
+two original font-free synthetic composition fixtures. No upstream worker,
+timer, source HTML, screenshot, diagnostic labels or complete scene is bundled.
+
+No fonts are used. The historical Inter notice in licenses/Inter-OFL-1.1.txt
+is attribution-only; no Inter binary or derivative is included or required.
+External native development renderer: @napi-rs/canvas 0.1.100, MIT;
+the full dependency notice is in licenses/napi-canvas-MIT.txt.

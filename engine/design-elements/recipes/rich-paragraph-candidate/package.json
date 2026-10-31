@@ -1,0 +1,13 @@
+{
+  "name": "motionstudio-rich-paragraph-candidate",
+  "version": "0.0.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "scripts": {
+    "test": "node --test test.cjs test-runtime.cjs",
+    "render": "node examples/render.cjs"
+  },
+  "dependencies": {
+    "@napi-rs/canvas": "0.1.100"
+  }
+}

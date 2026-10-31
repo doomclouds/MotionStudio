@@ -1,0 +1,9 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),{createHash}=require('node:crypto');
+const{createScalarTile}=require('./index.cjs'),{ocean,orchard}=require('./fixtures.cjs');
+function backend(){const entry=require.resolve(process.env.CANVAS_MODULE||'@napi-rs/canvas');const pkg=require(path.join(path.dirname(entry),'package.json'));if(pkg.name!=='@napi-rs/canvas'||pkg.version!=='0.1.100')throw Error('Canvas0.1.100 required');return require(entry)}
+function compose(api,kind){if(!['wave','islands'].includes(kind))throw Error('known composition required');const cv=api.createCanvas(1040,680),g=cv.getContext('2d');g.fillStyle=kind==='wave'?'#eee6db':'#efe3cc';g.fillRect(0,0,1040,680);
+ if(kind==='wave'){const p=ocean();g.drawImage(createScalarTile(p,api),40,40);g.drawImage(createScalarTile({...p,angle:-.34,pitch:18,width:420,height:280},api),580,360);g.fillStyle='#55466f';g.fillRect(40,360,460,24);g.fillRect(540,40,460,24);g.fillRect(40,412,180,12);g.fillRect(820,92,180,12)}
+ else{const p=orchard();g.drawImage(createScalarTile(p,api),60,120);g.drawImage(createScalarTile({...p,width:560,height:280,pitch:13},api),420,60);g.fillStyle='#843b33';g.fillRect(420,400,560,24);g.fillRect(420,448,280,12);g.fillRect(60,580,280,12)}return cv}
+if(require.main===module){const target=process.argv[2];if(!target||!path.isAbsolute(target))throw Error('Absolute new external output directory required');const out=path.resolve(target),root=__dirname;if(out===root||out.startsWith(root+path.sep))throw Error('Outputs must stay outside package');if(fs.existsSync(out)||fs.lstatSync?.(out,{throwIfNoEntry:false}))throw Error('New output directory required');const api=backend();fs.mkdirSync(out,{recursive:true});for(const kind of ['wave','islands']){const b=compose(api,kind).toBuffer('image/png');fs.writeFileSync(path.join(out,kind+'.png'),b,{flag:'wx'});console.log(kind,createHash('sha256').update(b).digest('hex'))}}
+module.exports={backend,compose};

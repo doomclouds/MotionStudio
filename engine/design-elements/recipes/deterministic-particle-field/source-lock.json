@@ -1,0 +1,50 @@
+{
+  "schema": "deterministic-particle-source-lock/v1",
+  "upstreamRootLicense": "Apache-2.0",
+  "upstreamPluginMetadataLicense": "MIT",
+  "upstreamPluginAuthor": "OpenDesign",
+  "extractionLicense": "Apache-2.0",
+  "files": [
+    {
+      "path": "LICENSE",
+      "sourceUrl": "https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/LICENSE",
+      "bytes": 11296,
+      "sha256": "9d95806a26532623360eb84bb17d298f394b55ef73fb4c0796d99b4319b2b0da",
+      "gitBlob": "eb79c35bd865477e525b18e56f35d56fbe0f7110",
+      "included": true
+    },
+    {
+      "path": "plugins/_official/examples/worker-visualizer/example.html",
+      "sourceUrl": "https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/plugins/_official/examples/worker-visualizer/example.html",
+      "bytes": 5624,
+      "sha256": "594e282764c45570012e27b5a1db0350fbecdf112498b8a29ae85a233e769f0a",
+      "gitBlob": "5c9e8d0bacc8bafd873f2351ad86e2cd00cbb1d8",
+      "included": false
+    },
+    {
+      "path": "plugins/_official/examples/worker-visualizer/open-design.json",
+      "sourceUrl": "https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/plugins/_official/examples/worker-visualizer/open-design.json",
+      "bytes": 11244,
+      "sha256": "755bd74229504f71e1f4e6b833b3dfaa77614e2d7b2578a82c14dcbff6d11a6a",
+      "gitBlob": "85e81d3afe959a3011daf56342c9c3264a586618",
+      "included": false
+    },
+    {
+      "path": "plugins/_official/examples/worker-visualizer/SKILL.md",
+      "sourceUrl": "https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/plugins/_official/examples/worker-visualizer/SKILL.md",
+      "bytes": 4033,
+      "sha256": "5a36b7ca3d07b245d4ccf3cbe250b7f977e26803d618dbffba3b4ddbd600fd47",
+      "gitBlob": "2bc12aba5edc018e6ca17df22eb2a2dbeab23723",
+      "included": false
+    },
+    {
+      "path": "ofl/inter/OFL.txt",
+      "sourceUrl": "https://github.com/google/fonts/blob/2e61f4355afd22b801791b0df176065082423b87/ofl/inter/OFL.txt",
+      "bytes": 4377,
+      "sha256": "5b9321a4298cfeb6b34354164a1c3afc3db114569984c502b9b35d988fd58c57",
+      "gitBlob": "21f6aff961064c2e429f570995e446bcdd555422",
+      "included": true,
+      "role": "historical attribution only; no font dependency"
+    }
+  ]
+}

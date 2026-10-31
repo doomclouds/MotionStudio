@@ -1,0 +1,45 @@
+{
+  "schema": "deterministic-particle-candidate/v1",
+  "baseCommit": "41e939b96099ef12c4d01b2d879b92a65b2c7f20",
+  "status": "BOUNDED_SOURCE_ONLY_CANDIDATE",
+  "id": "candidate.deterministic-particle-field",
+  "entry": "index.mjs",
+  "exports": [
+    "planField",
+    "particleFieldTile",
+    "place"
+  ],
+  "newPublicFamilies": 0,
+  "newFormalRecipes": 0,
+  "originalCasePortfolioMigrated": false,
+  "nativeFullFrameAdaptersIncluded": false,
+  "runtimeImports": [],
+  "fontsRequired": 0,
+  "examples": [
+    {
+      "id": "schedule-board",
+      "width": 1040,
+      "height": 640
+    },
+    {
+      "id": "route-diagram",
+      "width": 700,
+      "height": 920
+    }
+  ],
+  "fixtureMeaning": "font-free synthetic schematic content; not real schedule/map/data",
+  "ownerBatchRecognition": "RECORDED; eight-work study batch, consolidation/submission requested",
+  "ownerCandidateAestheticAcceptance": "NOT_RECORDED",
+  "independentReview": "REQUIRED",
+  "integration": "PENDING_COORDINATOR",
+  "publication": "NOT_PERFORMED",
+  "browser": "NOT_RUN",
+  "motion": "NOT_IMPLEMENTED",
+  "sourcePolicy": "source-policy.json",
+  "rights": "RIGHTS.md",
+  "promotionGates": [
+    "independent code/rights review",
+    "coordinator bounded source integration",
+    "new-brief reuse evidence and separate family API decision for any future promotion"
+  ]
+}

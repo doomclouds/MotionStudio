@@ -1,0 +1,9 @@
+# Attribution and scope
+
+Scalar interpolation, rotated dot mask, palette mixing, vignette and deterministic grain are adapted from the local CPU implementation of OpenDesign's official `webgl-halftone-drift`, fixed public repository `nexu-io/open-design@12d970eacc8971150e3c76470d2a9afe16dc2ed1`, example HTML `plugins/_official/examples/webgl-halftone-drift/example.html` (Git blob `f3086323b6079b0f2f0847b120f0428f3d33aa41`). The fixed example metadata declares MIT and author OpenDesign. Preserve `licenses/OpenDesign-example-MIT.txt`: it states the declaration and full terms, not a separately fetched example LICENSE. Repository-root Apache context is not substituted for the example declaration.
+
+New constrained interface, snapshots, budgets, synthetic fixtures, tests and compositions are MotionStudio changes under the repository MIT notice copied to LICENSE. Do not remove upstream attribution. The native adapter uses @napi-rs/canvas0.1.100 under its separate MIT notice. No fonts, pictures, third-party logos, SVGs or imagegen assets are needed.
+
+**Excluded:** original screenshot, calibrated25×25 study mesh, reference-derived scalar values, editorial typography, private review IDs/hashes/reports and case artwork. No original artwork file is read by this package. `fixtures.cjs` generates two new analytic fields (9×7 sinusoidal waves;7×9 Gaussian islands) from explicit formulas. These are invented illustrative scalars, not observations or sampled source pixels. Math/reference attribution is retained without distributing private evidence.
+
+No rights for arbitrary downstream scalar/image-derived content are granted by this code. Caller owns input rights. Group-level user acceptance of delivered works is not a claim of separate aesthetic approval of every helper or of this new projection. Local candidate, no automatic publication or new public-family registration.

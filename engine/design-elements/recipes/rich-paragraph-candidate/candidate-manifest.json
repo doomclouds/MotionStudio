@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "id": "candidate.rich-paragraph.v1",
+  "status": "isolated-source-candidate-awaiting-independent-review",
+  "baseCommit": "41e939b96099ef12c4d01b2d879b92a65b2c7f20",
+  "entry": "paragraph.cjs",
+  "exports": [
+    "createRichParagraphEngine"
+  ],
+  "methods": [
+    "layout",
+    "tile",
+    "draw"
+  ],
+  "newPublicFamilies": 0,
+  "newFormalRecipes": 0,
+  "portfolioEntryAdded": false,
+  "originalFullFrameAdapterIncluded": false,
+  "syntheticExamples": [
+    "fieldnote",
+    "archive"
+  ],
+  "upstreamLicenses": [
+    "Apache-2.0: HTMLAnything origin",
+    "MIT: OpenDesign declared adaptation"
+  ],
+  "nativeChangesLicense": "Apache-2.0",
+  "fontLicense": "OFL-1.1",
+  "fonts": "CALLER_INJECTED; optional exact external OFL example inputs",
+  "ownerBatchRetention": "AUTHORIZED",
+  "ownerExtractedCandidateAestheticAcceptance": "NOT_RECORDED",
+  "independentReview": "PENDING",
+  "publication": "NOT_PERFORMED",
+  "browser": "NOT_RUN",
+  "motion": "NOT_RUN",
+  "promotionGates": [
+    "independent candidate review",
+    "new-brief reuse and family deduplication",
+    "explicit integration/promotion; no automatic public family admission"
+  ]
+}
