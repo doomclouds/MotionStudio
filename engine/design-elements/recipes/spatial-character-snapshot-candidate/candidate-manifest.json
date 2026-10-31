@@ -1,0 +1,27 @@
+{
+  "id": "spatial-character-snapshot-candidate",
+  "status": "ISOLATED_UNREGISTERED_CANDIDATE",
+  "newPublicFamilies": 0,
+  "catalogRegistrations": 0,
+  "published": false,
+  "entry": "index.mjs:createSpatialCharacterKit",
+  "views": [
+    "gridTile",
+    "summaryTile"
+  ],
+  "placement": "place",
+  "model": "normalizeGrid",
+  "domain": "bounded printable ASCII spatial addresses / mark role / cursor priority / same-handle summary",
+  "not": [
+    "operator interpreter",
+    "terminal emulator",
+    "editor",
+    "audio/MIDI",
+    "motion-validated component"
+  ],
+  "sourceLicense": "MIT; Orca MIT preserved separately",
+  "fontLicense": "OFL, unmodified exact public IBM Plex Mono Medium500 external",
+  "generatedMediaInPayload": false,
+  "fontBinariesInPayload": false,
+  "privateReferencesInPayload": false
+}

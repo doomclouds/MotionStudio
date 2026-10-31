@@ -1,0 +1,41 @@
+{
+  "name": "motionstudio-byte-field-diagnostic-candidate",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "description": "Bounded synthetic byte field with linked histogram and sample annotation; static candidate only",
+  "scripts": {
+    "test": "DISABLE_SYSTEM_FONTS_LOAD=1 node --test test.mjs test-runtime.mjs",
+    "render": "DISABLE_SYSTEM_FONTS_LOAD=1 node render.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "@napi-rs/canvas": "0.1.100"
+  },
+  "files": [
+    "CONTRACT.md",
+    "CREDITS.md",
+    "DESIGN-GUIDE.md",
+    "LICENSE",
+    "README.md",
+    "examples.mjs",
+    "fixtures.mjs",
+    "font-lock.json",
+    "index.mjs",
+    "input.mjs",
+    "io.mjs",
+    "kit.mjs",
+    "licenses/Liberation-OFL.txt",
+    "licenses/Liberation-distribution-copyright.txt",
+    "licenses/Upstream-MIT.txt",
+    "model.mjs",
+    "provenance.json",
+    "render.mjs",
+    "runtime.mjs",
+    "test-runtime.mjs",
+    "test.mjs"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "schema": 1,
+  "upstreamContext": {
+    "repository": "https://github.com/dfranx/SHADERed",
+    "commit": "780e96791fd8ac48f1f656309211660d78ff9095",
+    "licenseURL": "https://github.com/dfranx/SHADERed/blob/780e96791fd8ac48f1f656309211660d78ff9095/LICENSE",
+    "licenseFile": "licenses/Upstream-MIT.txt",
+    "licenseSHA256": "fcd8fc484647cc698add9e4ad7c07f477449d212e4ec166b7704a98998fc988f",
+    "codeExecuted": false,
+    "algorithmCopied": false
+  },
+  "newCodeLicense": "MIT",
+  "font": {
+    "mode": "provide-exact-external",
+    "lock": "font-lock.json",
+    "license": "licenses/Liberation-OFL.txt",
+    "licenseSHA256": "93fed46019c38bbe566b479d22148e2e8a1e85ada614accb0211c37b2c61c19b",
+    "distributionNotice": "licenses/Liberation-distribution-copyright.txt",
+    "publicExactDownloadRecovery": "NOT_VERIFIED"
+  },
+  "excluded": [
+    "original screenshot",
+    "source window/product identity",
+    "full upstream source",
+    "CC BY-NC-SA rain/shader art",
+    "music",
+    "font binaries",
+    "private evidence and storage identities"
+  ],
+  "candidateStatus": "unregistered-not-published",
+  "newFormalFamilies": 0,
+  "newFormalRecipeRegistrations": 0,
+  "newExampleOwnerAestheticApproval": "NOT_CLAIMED",
+  "browserQA": "NOT_RUN",
+  "motionQA": "NOT_RUN"
+}

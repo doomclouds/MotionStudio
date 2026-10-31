@@ -1,0 +1,17 @@
+{
+  "schema": "spatial-character-font/v1",
+  "fonts": [
+    {
+      "file": "IBMPlexMono-Medium.ttf",
+      "sha256": "a9b4c49bb299e05b5f6c481e7fb5e78943d2793249a0c8874ab574a2d1ea6755",
+      "gitBlob": "33c546f68b6007a45a3f10e845523abb2db25399",
+      "bytes": 136704,
+      "url": "https://raw.githubusercontent.com/google/fonts/2e61f4355afd22b801791b0df176065082423b87/ofl/ibmplexmono/IBMPlexMono-Medium.ttf",
+      "alias": "SpatialGridMono",
+      "license": "licenses/IBMPlexMono-OFL.txt",
+      "licenseSHA256": "7e6b2818edbd8f6a01ae80641cc8f16a51080d08fb4e532be3a0b6f74adb07da",
+      "weight": 500,
+      "derivative": false
+    }
+  ]
+}

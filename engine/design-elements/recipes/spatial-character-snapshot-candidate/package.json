@@ -1,0 +1,1 @@
+{"name":"bounded-spatial-character-candidate","version":"0.0.0","private":true,"type":"module","scripts":{"test":"node --test test.mjs test-runtime.mjs","render":"node examples/render.mjs"},"dependencies":{"@napi-rs/canvas":"0.1.100"}}

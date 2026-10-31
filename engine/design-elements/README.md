@@ -90,3 +90,7 @@ Two bounded [composition recipes](recipes/b06/README.md) reuse existing families
 ## Fifth-group restricted static candidates
 
 The [candidate and case-selection index](recipes/fifth-static-candidates/Index.md) links bounded scalar material, same-source file grid/summary, and indexed pixel layer recipes to their design guides, contracts, callable modules, two synthetic compositions each, and full notices. These are source-only restricted candidates, **not new registered design families, formal recipes, or portfolio works**. Existing registry counts stay unchanged. Fonts, generated examples, original application images and private review/storage metadata remain external; the GPL Surge study is not part of this projection.
+
+## Sixth-group same-source static candidates
+
+The [two-candidate selection index](recipes/sixth-static-candidates/Index.md) links an original byte-field/histogram/sample-note combination and a spatial character/mark/cursor/same-handle summary. These **44 source-only texts** are restricted candidates, not new registered families, formal recipes or portfolio works. Design guidance distinguishes them from scalar materials, numeric grids, code spans and indexed pixels. Exact external font conditions differ; generated examples and private reference/review materials are excluded, and static validation is not motion/browser or individual aesthetic acceptance.

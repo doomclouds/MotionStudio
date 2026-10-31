@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "mode": "provide-exact-external",
+  "family": "ByteDiagnosticSans400",
+  "fileName": "LiberationSans-Regular.ttf",
+  "bytes": 410820,
+  "sha256": "bade59d822652f76e6941aa87b40a87c13d1cc70db98ededb5011127efafd1d3",
+  "source": "Unmodified Liberation Fonts 2.1.5 distribution file; exact public download recovery NOT_VERIFIED",
+  "license": "OFL-1.1; full notices in licenses/",
+  "replacementPolicy": "No fallback or silent font substitution; changed font requires new layout and ink verification"
+}

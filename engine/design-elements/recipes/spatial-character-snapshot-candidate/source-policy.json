@@ -1,0 +1,36 @@
+{
+  "schema": "bounded-spatial-character-source/v1",
+  "allowedPaths": [
+    "CONTRACT.md",
+    "DESIGN.md",
+    "LICENSE",
+    "NOTICES.md",
+    "README.md",
+    "candidate-manifest.json",
+    "check-source.py",
+    "examples/compositions.mjs",
+    "examples/render.mjs",
+    "fetch-font.py",
+    "font-lock.json",
+    "index.mjs",
+    "licenses/Canvas-MIT.txt",
+    "licenses/IBMPlexMono-OFL.txt",
+    "licenses/Orca-MIT.txt",
+    "package-lock.json",
+    "package.json",
+    "runtime.mjs",
+    "source-policy.json",
+    "test-runtime.mjs",
+    "test.mjs"
+  ],
+  "excluded": [
+    "original screenshot/window/source-program/CSS/Input Mono/mascot",
+    "historical or private fixtures/brand identities in visuals",
+    "font binaries",
+    "generated media/layout output",
+    "private reports/audits/backup IDs",
+    "node_modules/cache"
+  ],
+  "rootMediaAllowlistChanged": false,
+  "catalogRegistrationChanged": false
+}

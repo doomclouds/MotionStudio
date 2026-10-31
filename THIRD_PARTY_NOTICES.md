@@ -102,3 +102,12 @@ The [three-candidate index](engine/design-elements/recipes/fifth-static-candidat
 - [Indexed pixel layer](engine/design-elements/recipes/indexed-pixel-layer-candidate/CREDITS.md): new repository-MIT code, Pixelorama MIT provenance at `fae9327992f1506f340b920e0fa6515a88298079`, and independently authored synthetic index/palette fixtures. No prior generated artwork or image-derived model is included.
 
 All three use a separately installed Native Canvas0.1.100 MIT dependency and retain its full notice. These additions exclude Surge/GPL materials; they add no formal family, application, logo, cover, original media or private audit evidence.
+
+## Sixth-group restricted source candidates
+
+The [two-candidate index](engine/design-elements/recipes/sixth-static-candidates/Index.md) does not clear original application art, private references or product identities.
+
+- [Byte-field diagnostic](engine/design-elements/recipes/byte-field-diagnostic-candidate/CREDITS.md): new MIT formulas/model/views and synthetic examples; SHADERed context at `780e96791fd8ac48f1f656309211660d78ff9095` retains the original MIT notice. No upstream application function, shader or screenshot is imported. Separately licensed CC BY-NC-SA rain artwork and music are excluded. Unmodified Liberation Sans 2.1.5 is external provide-exact under its full OFL/distribution notice; no font binary or verified public binary downloader is included.
+- [Spatial-character snapshot](engine/design-elements/recipes/spatial-character-snapshot-candidate/NOTICES.md): MIT authored extraction and Orca MIT context at `223e45c84db14cb77fb1d31e29a3ad94652080d8`, with original contributor notices preserved. No original executable program, Input Mono CSS/font, screenshot, mascot or product shell is included. Unmodified IBM Plex Mono Medium 500 is externally restored from its fixed official Google Fonts source under OFL, retained in full.
+
+Native Canvas 0.1.100 remains a separate installed MIT dependency with its own distribution notices. Root MIT does not replace font/dependency licenses or grant rights to excluded visual assets. Neither candidate is a formal new family, motion system, browser app or factual measurement tool.
