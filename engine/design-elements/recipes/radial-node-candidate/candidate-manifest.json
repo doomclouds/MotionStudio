@@ -1,0 +1,24 @@
+{
+  "schema": "bounded-radial-node-candidate/v1",
+  "name": "Radial classification with same-model evidence",
+  "status": "isolated-source-candidate-not-promoted",
+  "entry": "index.mjs",
+  "newPublicFamilies": 0,
+  "registryChanges": 0,
+  "published": false,
+  "scope": "one static restricted recipe; no source reference media/font binaries/private records",
+  "implementationLicense": "MIT",
+  "themeMethodLicense": "CC0-1.0",
+  "externalFontsLicense": "OFL-1.1",
+  "publicBaseline": "doomclouds/MotionStudio@6f5bccd58e00fda9fedc60bfe9338330055a4c34",
+  "examples": [
+    "guide",
+    "signal"
+  ],
+  "futureGates": [
+    "independent review",
+    "latest combined-tree/history policy",
+    "owner-authorized integration"
+  ],
+  "noMotionOrInteraction": true
+}

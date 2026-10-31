@@ -1,0 +1,30 @@
+{
+  "masterSHA256": "74df1f61ab9d4bfaa961c65f8dc991deaae2885b0a6a6d6a60ed23980b3c8554",
+  "fontTools": "4.61.1",
+  "axes": {
+    "wdth": 100,
+    "wght": [
+      400,
+      600
+    ]
+  },
+  "renamedASCIISubsets": true,
+  "files": [
+    {
+      "path": "RadialRecipeSans-400.ttf",
+      "bytes": 14664,
+      "sha256": "6892afeb07efd2ebe356e353f1f2126f1c060d0ceed72b787dee2876576dbbff",
+      "alias": "RadialRecipeSans400",
+      "weight": 400
+    },
+    {
+      "path": "RadialRecipeSans-600.ttf",
+      "bytes": 14688,
+      "sha256": "4e1e06eca9217b7c3045a8c89c1f639d4b4abdf88ae10f3b6b756613ea2c8961",
+      "alias": "RadialRecipeSans600",
+      "weight": 600
+    }
+  ],
+  "generationSHA256": "6ec6a3d26ecaeef1de5c73efeba934076f4549f3aff2d8590c0eb02e35e0f814",
+  "masterURL": "https://raw.githubusercontent.com/kando-menu/kando/63c2502c11d31ca709c6496642745c75dc37e8a2/assets/fonts/NotoSans-VariableFont_wdth,wght.ttf"
+}

@@ -120,3 +120,7 @@ The [two-candidate index](engine/design-elements/recipes/seventh-static-candidat
 - [Glyph evidence](engine/design-elements/recipes/glyph-evidence-candidate/NOTICES.md): Apache-2.0 source and FontGoggles Apache/AUTHORS context retained; Canvas and FontTools have their separate MIT notices. Fraunces/Inter font masters **and derived outline JSON** remain OFL font software and are not included. Fixed official recovery/preparation sources are documented. No original Mac window, reference screenshot or upstream application is imported.
 
 Generated demonstrations, private audit records, storage identities and font binaries are excluded. Both methods are static restricted candidates, not new formal families, hardware measurements, live-axis controls or a motion/browser guarantee.
+
+## Eighth static source candidates
+
+The bounded drape recipe retains the MIT formwork-driftwear formula notice (2026 bswxyz), with its new MIT adaptation separately identified. Radial-node retains MIT implementation/program context, CC0 Rainbow Labels method attribution, and Noto Sans OFL notices separately; no font binaries or upstream screenshot are included. Each package ships complete applicable notices and pinned source identities. External Native Canvas and font build tools retain their own terms. See [candidate index](engine/design-elements/recipes/eighth-static-candidates/Index.md).

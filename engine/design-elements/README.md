@@ -98,3 +98,7 @@ The [two-candidate selection index](recipes/sixth-static-candidates/Index.md) li
 ## Seventh-group reconstructed restricted candidates
 
 The [timing/glyph evidence index](recipes/seventh-static-candidates/Index.md) links 62 source-only texts with design guides, contracts and two different-content compositions per method. Discrete digital/bus timing and fixed unshaped glyph evidence remain restricted candidates: zero new registered families, formal recipes or portfolio works. Exact external fonts, generated outlines, dependencies and outputs stay outside the repository; private references and audit/storage data are excluded. Newly reconstructed packages received new technical reviews, not reused historical acceptance. These are static explanatory assets, not hardware capture, shaping, browser interaction or tested motion.
+
+## Eighth source-only candidates
+
+[Bounded drape material and radial category composition](recipes/eighth-static-candidates/Index.md) retain their own contracts, design guidance, examples, source notices and tests. No formal family/recipe count or registry is changed; external Native/font preparation and static limits apply.

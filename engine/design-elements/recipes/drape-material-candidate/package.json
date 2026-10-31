@@ -1,0 +1,18 @@
+{
+  "name": "bounded-drape-material-candidate",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "exports": "./index.mjs",
+  "scripts": {
+    "test": "DISABLE_SYSTEM_FONTS_LOAD=1 node --test test.mjs test-io.mjs",
+    "examples": "DISABLE_SYSTEM_FONTS_LOAD=1 node render.mjs",
+    "check-source": "python3 check-source.py",
+    "test:math": "python3 verify-math.py",
+    "test:all": "npm test && npm run test:math && npm run check-source"
+  },
+  "dependencies": {
+    "@napi-rs/canvas": "0.1.100"
+  }
+}

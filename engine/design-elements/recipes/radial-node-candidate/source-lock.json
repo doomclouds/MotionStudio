@@ -1,0 +1,87 @@
+{
+  "schema": "radial-node-primary-sources/v1",
+  "sources": [
+    {
+      "repo": "kando-menu/kando",
+      "commit": "63c2502c11d31ca709c6496642745c75dc37e8a2",
+      "path": "LICENSES/MIT.txt",
+      "url": "https://raw.githubusercontent.com/kando-menu/kando/63c2502c11d31ca709c6496642745c75dc37e8a2/LICENSES/MIT.txt",
+      "bytes": 1078,
+      "sha256": "b85dcd3e453d05982552c52b5fc9e0bdd6d23c6f8e844b984a88af32570b0cc0",
+      "gitBlob": "2071b23b0e08594ea6bc99ac71129ef992abf498",
+      "licenseLayer": "MIT program context"
+    },
+    {
+      "repo": "kando-menu/kando",
+      "commit": "63c2502c11d31ca709c6496642745c75dc37e8a2",
+      "path": "LICENSES/OFL-1.1.txt",
+      "url": "https://raw.githubusercontent.com/kando-menu/kando/63c2502c11d31ca709c6496642745c75dc37e8a2/LICENSES/OFL-1.1.txt",
+      "bytes": 4016,
+      "sha256": "8eea8287e5876b539670cadb82e99f9a7afddec6f6730811be1daf25d2e9bcfd",
+      "gitBlob": "6fe84ee21ebe5d2b54dc63b53b4d5c404c083409",
+      "licenseLayer": "OFL-1.1"
+    },
+    {
+      "repo": "kando-menu/kando",
+      "commit": "63c2502c11d31ca709c6496642745c75dc37e8a2",
+      "path": "assets/fonts/NotoSans-VariableFont_wdth,wght.ttf.license",
+      "url": "https://raw.githubusercontent.com/kando-menu/kando/63c2502c11d31ca709c6496642745c75dc37e8a2/assets/fonts/NotoSans-VariableFont_wdth,wght.ttf.license",
+      "bytes": 70,
+      "sha256": "1bffdf9ca388d9de20f30a0b459d07c47ecb7d2e92180f7d84309299c3655e83",
+      "gitBlob": "638261b991dab12051cbe532c2efdbf34c7f8d77",
+      "licenseLayer": "OFL-1.1"
+    },
+    {
+      "repo": "kando-menu/kando",
+      "commit": "63c2502c11d31ca709c6496642745c75dc37e8a2",
+      "path": "LICENSES/CC0-1.0.txt",
+      "url": "https://raw.githubusercontent.com/kando-menu/kando/63c2502c11d31ca709c6496642745c75dc37e8a2/LICENSES/CC0-1.0.txt",
+      "bytes": 7048,
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+      "gitBlob": "0e259d42c996742e9e3cba14c677129b2c1b6311",
+      "licenseLayer": "CC0-1.0"
+    },
+    {
+      "repo": "kando-menu/kando",
+      "commit": "7fa98818186fd7f9af4446408b5ba1d5d6cb6570",
+      "path": "assets/menu-themes/rainbow-labels/theme.css",
+      "url": "https://raw.githubusercontent.com/kando-menu/kando/7fa98818186fd7f9af4446408b5ba1d5d6cb6570/assets/menu-themes/rainbow-labels/theme.css",
+      "bytes": 5540,
+      "sha256": "2d301b564e0818002c392aae03ec4720b161f2a46007aa5d8a659ad7da5b7b60",
+      "gitBlob": "194033b492c80b0f252e60fab919aeff32dfa649",
+      "licenseLayer": "CC0-1.0"
+    },
+    {
+      "repo": "kando-menu/kando",
+      "commit": "7fa98818186fd7f9af4446408b5ba1d5d6cb6570",
+      "path": "assets/menu-themes/rainbow-labels/theme.json5",
+      "url": "https://raw.githubusercontent.com/kando-menu/kando/7fa98818186fd7f9af4446408b5ba1d5d6cb6570/assets/menu-themes/rainbow-labels/theme.json5",
+      "bytes": 1747,
+      "sha256": "4e36b1b7c57f0ac91e992187dd37ec887ca560f658675306ad2181ea84be127e",
+      "gitBlob": "fd479b2adf27c1673bfea6161038bfc6ce468092",
+      "licenseLayer": "CC0-1.0"
+    },
+    {
+      "repo": "kando-menu/kando",
+      "commit": "63c2502c11d31ca709c6496642745c75dc37e8a2",
+      "path": "LICENSE.md",
+      "url": "https://raw.githubusercontent.com/kando-menu/kando/63c2502c11d31ca709c6496642745c75dc37e8a2/LICENSE.md",
+      "bytes": 568,
+      "sha256": "fd6cb731b549de5452efacb0833cda7a328eb5263537d29ca18de9d7938f7bab",
+      "gitBlob": "0c752b02f096d6e7f6e8e55ac2c95caec6369adc",
+      "licenseLayer": "MIT program context"
+    },
+    {
+      "repo": "kando-menu/kando",
+      "commit": "63c2502c11d31ca709c6496642745c75dc37e8a2",
+      "path": "assets/fonts/NotoSans-VariableFont_wdth,wght.ttf",
+      "url": "https://raw.githubusercontent.com/kando-menu/kando/63c2502c11d31ca709c6496642745c75dc37e8a2/assets/fonts/NotoSans-VariableFont_wdth,wght.ttf",
+      "bytes": 2490816,
+      "sha256": "74df1f61ab9d4bfaa961c65f8dc991deaae2885b0a6a6d6a60ed23980b3c8554",
+      "gitBlob": "f7d0d78ed3a48ef9c16ae6de52cc2e55809f2c61",
+      "licenseLayer": "OFL-1.1 external binary, NOT source payload"
+    }
+  ],
+  "noScreenshotOrApplicationSourceImported": true,
+  "noPublication": true
+}

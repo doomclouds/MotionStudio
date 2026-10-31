@@ -1,0 +1,38 @@
+{
+  "files": [
+    "CONTRACT.md",
+    "CREDITS.md",
+    "DESIGN-GUIDE.md",
+    "LICENSE",
+    "README.md",
+    "SOURCE.json",
+    "check-source.py",
+    "drape.mjs",
+    "example-type.mjs",
+    "examples.mjs",
+    "fixtures.mjs",
+    "index.mjs",
+    "input.mjs",
+    "io.mjs",
+    "kit.mjs",
+    "licenses/Canvas-MIT.txt",
+    "licenses/Upstream-MIT.txt",
+    "model-samples.mjs",
+    "package-lock.json",
+    "package.json",
+    "render.mjs",
+    "runtime.mjs",
+    "source-policy.json",
+    "test-io.mjs",
+    "test.mjs",
+    "verify-math.py"
+  ],
+  "licenseSha256": {
+    "LICENSE": "51081b2bb380c76625b93c19740282c3e81bfefae7e1131d07557fee5c96799c",
+    "licenses/Upstream-MIT.txt": "c73eb61b4be11a3f64e2e75eba91073b7256c72673f363ba2bf0f7cc0e8e3c43",
+    "licenses/Canvas-MIT.txt": "8802fecf9da4367bc23bcf20b21cc143785fc6c92b152f3fa7fbe6ce08d344d6"
+  },
+  "publicFamiliesAdded": 0,
+  "formalRecipesAdded": 0,
+  "scope": "One source-only restricted material recipe; no references, private records, fonts, images or installed dependencies."
+}

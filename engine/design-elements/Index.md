@@ -88,3 +88,7 @@
 ## 第七组：离散时序与字形证据
 
 [两项受限候选与组合索引](recipes/seventh-static-candidates/Index.md)链接同源半 tick 数字/符号总线和固定实例的 outline/Unicode/hmtx/轴证据。62 个新重建文本（27＋35），不含参考图、字体/轮廓资源或私有记录；0 新增公共族、正式配方和 portfolio。精确外置字体条件不同，PULSE provide-exact 不冒称公网恢复。新组合的技术审查不等于用户逐项审美验收，静态不等于 motion。
+
+## Eighth restricted static recipes
+
+See [bounded drape and radial categories](recipes/eighth-static-candidates/Index.md): opt-in source candidates only;0 new registered families.

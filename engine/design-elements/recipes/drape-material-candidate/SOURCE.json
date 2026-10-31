@@ -1,0 +1,26 @@
+{
+  "repository": "shellcat-com/formwork-driftwear",
+  "commit": "f23fdd3c9a737afa9577000007b3e53120b9e58b",
+  "license": "MIT",
+  "copyright": "2026 bswxyz",
+  "algorithmLocation": "main.js lines59-105 (drawDrape), plus mulberry32 helper",
+  "inputs": [
+    {
+      "path": "main.js",
+      "url": "https://github.com/shellcat-com/formwork-driftwear/blob/f23fdd3c9a737afa9577000007b3e53120b9e58b/main.js",
+      "bytes": 14604,
+      "sha256": "9b925c5049d85859fdde9ddf744386f2e90b6cb944441cffa0c2cec09b45382e",
+      "gitBlob": "abe861080f3bcdfb665cab8939a3598ad7bd8fa4"
+    },
+    {
+      "path": "LICENSE",
+      "url": "https://github.com/shellcat-com/formwork-driftwear/blob/f23fdd3c9a737afa9577000007b3e53120b9e58b/LICENSE",
+      "bytes": 1063,
+      "sha256": "c73eb61b4be11a3f64e2e75eba91073b7256c72673f363ba2bf0f7cc0e8e3c43",
+      "gitBlob": "fd848d06be7230c9d7208c0ab7c85cb523116f11"
+    }
+  ],
+  "upstreamProgramExecuted": false,
+  "sourceWebsiteOrReferenceIncluded": false,
+  "publicFamilyAdded": false
+}
