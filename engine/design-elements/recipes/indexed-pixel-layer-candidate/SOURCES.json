@@ -1,0 +1,16 @@
+{
+  "designStudySource": {
+    "repository": "Orama-Interactive/Pixelorama",
+    "canonicalRepository": "https://github.com/Orama-Interactive/Pixelorama",
+    "commit": "fae9327992f1506f340b920e0fa6515a88298079",
+    "readme": "https://github.com/Orama-Interactive/Pixelorama/blob/fae9327992f1506f340b920e0fa6515a88298079/README.md",
+    "licenseURL": "https://github.com/Orama-Interactive/Pixelorama/blob/fae9327992f1506f340b920e0fa6515a88298079/LICENSE",
+    "licenseGitBlob": "4baf05ee8fc00add66ef378713ec00f50940bab3",
+    "licenseSHA256": "07ddf85025568856f9b92fb7193589dd055c749c563aa9b2d4e943eb53ef61f9",
+    "license": "MIT software only; no artwork permission inferred"
+  },
+  "implementation": "New bounded indexed-color extraction/reimplementation under repository MIT; not an editor or historical algorithm port",
+  "fixtures": "Two newly authored finite synthetic index arrays; not traced, sampled or quantized from an image",
+  "visualResources": [],
+  "optionalRuntime": {"package": "@napi-rs/canvas", "version": "0.1.100", "license": "MIT", "lock": "package-lock.json"}
+}

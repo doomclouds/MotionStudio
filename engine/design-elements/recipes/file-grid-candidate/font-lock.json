@@ -1,0 +1,43 @@
+{
+  "schema": "file-grid-font-lock/v1",
+  "repository": "google/fonts",
+  "commit": "2e61f4355afd22b801791b0df176065082423b87",
+  "python": "3.12.14",
+  "fontTools": "4.61.1",
+  "source": {
+    "file": "Inter[opsz,wght].ttf",
+    "bytes": 876576,
+    "sha256": "29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031",
+    "gitBlob": "047c92f6e2212473dc436020afed689527076d44",
+    "url": "https://raw.githubusercontent.com/google/fonts/2e61f4355afd22b801791b0df176065082423b87/ofl/inter/Inter%5Bopsz%2Cwght%5D.ttf",
+    "licenseUrl": "https://raw.githubusercontent.com/google/fonts/2e61f4355afd22b801791b0df176065082423b87/ofl/inter/OFL.txt",
+    "licenseSHA256": "5b9321a4298cfeb6b34354164a1c3afc3db114569984c502b9b35d988fd58c57",
+    "licenseFile": "Inter-OFL.txt"
+  },
+  "derived": [
+    {
+      "file": "PGSans400.ttf",
+      "alias": "PGSans400",
+      "sha256": "05dda17779673c130b394e31c6c9a155e9e2374cd4593a41e0725009fae001c2",
+      "bytes": 341260,
+      "outlineWeight": 400,
+      "axes": {
+        "opsz": 14,
+        "wght": 400
+      },
+      "normalizedWeightClass": 400
+    },
+    {
+      "file": "PGSans600.ttf",
+      "alias": "PGSans600",
+      "sha256": "9f567619ec984cf3305e05d046b4f87fcc930c233eb428fe3674d7623d8e524a",
+      "bytes": 342524,
+      "outlineWeight": 600,
+      "axes": {
+        "opsz": 14,
+        "wght": 600
+      },
+      "normalizedWeightClass": 400
+    }
+  ]
+}

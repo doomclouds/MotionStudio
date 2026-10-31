@@ -1,0 +1,19 @@
+{
+  "id": "indexed-pixel-layer-candidate",
+  "status": "restricted-local-candidate-pending-independent-review",
+  "kind": "indexed-raster-to-rgba-with-canvas-adapter",
+  "publicFamiliesAdded": 0,
+  "registeredRecipesAdded": 0,
+  "entry": "index.cjs",
+  "exports": ["renderIndexedPixels", "createPixelLayer"],
+  "fontsRequired": false,
+  "externalImagesRequired": false,
+  "originalStudyArtworkIncluded": false,
+  "imageDerivedModelIncluded": false,
+  "privateEvidenceIncluded": false,
+  "runtimeNetwork": false,
+  "userAcceptance": "Not separately asserted for this extracted API or its two new compositions",
+  "examples": ["new 16x12 signal array / wide quilt", "new 24x16 weave array / portrait folio"],
+  "licenses": ["MIT new candidate code and synthetic fixtures", "Pixelorama MIT attribution", "optional Native Canvas MIT"],
+  "publication": "not submitted or pushed by this candidate task"
+}

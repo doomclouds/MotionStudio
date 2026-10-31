@@ -1,0 +1,17 @@
+{
+  "name": "motionstudio-indexed-pixel-layer-candidate",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "main": "index.cjs",
+  "scripts": {
+    "test": "node --test test.cjs test-output.cjs",
+    "examples": "node examples.cjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "@napi-rs/canvas": "0.1.100"
+  }
+}

@@ -1,0 +1,14 @@
+# Use a field as a material, not as unexplained data
+
+1. **Purpose before effect.** This field supplies an authored continuous material with contour-like highlights. It has no measured quantities, geographical meaning or causal model. Do not label its curves as financial, health or scientific evidence.
+2. **Keep the composition quiet.** Dense highlights need large uninterrupted areas and calm margins. Put essential text on a separate opaque surface; apparent texture brightness is not a verified text contrast ratio. Do not reduce the artwork and assume fine highlights survive thumbnail/downsampled display.
+3. **Palette encodes hierarchy, not a prohibition.** Three RGB stops are interpolated and further shaded, so the image may be darker than the stop colors. Choose a dark structural stop, a midtone carrying material identity and a restrained lighter highlight. Warm copper/indigo is appropriate for the first material sample; the second uses mineral green with sand to support its tide-like abstract composition. Green is allowed where context and contrast justify it. There is no universal recommended palette.
+4. **Control density deliberately.** Increase frequency for a smaller visual rhythm, but high density may alias or look like moiré after resizing. Phase changes the authored pattern, not elapsed time. Re-rendering varying phase is possible, but no animation cadence, continuity/performance benchmark or motion-engine integration is supplied.
+5. **Compose independently.** One tile can serve a clipped disc, three swatches or a large background. `place` inherits host alpha and clip deliberately. The circular clip in tidal-map is intentional; it does not imply the core crops its output or detects circles. Decorative underlines in ember-sequence do not encode data.
+6. **Do not confuse related primitives.** A scalar field is not a halftone dot renderer, particle field, chart or reusable editor window. Both this and those candidates may belong under material studies; a new output look is not sufficient reason to register another public family. Keep this one bounded recipe until broader distinct uses justify promotion.
+
+## Two actual compositions
+- **ember-sequence:** three equal264×456 swatches on a960×640 warm neutral sheet; phases/densities and copper/indigo colors differ. Equal area supports comparison, varied underlines are only decorative.
+- **tidal-map:** one520×520 clipped focal disc plus three248×144 rectangular material studies on a960×640 dark sheet; different phase, density and mineral/sand palette. Its large/small scale contrast tests reuse without a screenshot, bitmap, logo or font.
+
+They are code-made synthetic examples, not separate reference reconstructions, photographic materials or owner aesthetic acceptance. Future changing typography, tiny-size presentation, motion and responsive/browser use each need their own visual review.

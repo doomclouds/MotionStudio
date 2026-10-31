@@ -92,3 +92,13 @@ The two static studies adapt nexu-io/OpenDesign `frame-swiss-grid` and `frame-da
 ## OpenDesign second-group static candidates
 
 [Selective source retention](engine/design-elements/recipes/open-design-static-three/README.md) adapts three `nexu-io/open-design` video-template styles at fixed commit `12d970eacc8971150e3c76470d2a9afe16dc2ed1`: Data Chart, Light Leak Cinema and Bold Signal. These adaptations retain their Apache-2.0 notice and do not inherit the root MIT license by location. Bold Signal's credited frontend-slides preset retains Zara Zhang's separate MIT notice. External fonts retain their OFL copyright/license identities; Noto Serif SC is linked to the matching official fixed Google Fonts commit. Full notices, precise sources and modification/distribution boundaries are in the candidate's [RIGHTS.md](engine/design-elements/recipes/open-design-static-three/RIGHTS.md) and `licenses/`. No upstream screenshot, font binary, public cover, audio or private report is included; sample data and film/launch wording are not factual claims.
+
+## Fifth-group source-only restricted candidates
+
+The [three-candidate index](engine/design-elements/recipes/fifth-static-candidates/Index.md) does not confer rights to source application artwork, brands, screenshots or private research records.
+
+- [Scalar field](engine/design-elements/recipes/scalar-field-candidate/CREDITS.md): new MIT code; Graphite source context at `038ffae6a4158d015eee2c4ababf0c090e776c52` retains the exact MIT and Apache-2.0 notices. Graphite branding/icons have a separate proprietary boundary and are excluded. No image/font/mesh input is bundled.
+- [File grid and summary](engine/design-elements/recipes/file-grid-candidate/CREDITS.md): new MIT code and OpenMTP MIT attribution at `5da350b69c6d0d4aed67a063498ee89c7448400a`. Its separately credited CC BY 3.0 icons are not copied; neutral glyphs are authored primitives. Inter remains an external fixed OFL font, with its notice and recovery/derivation scripts; no font binary is redistributed.
+- [Indexed pixel layer](engine/design-elements/recipes/indexed-pixel-layer-candidate/CREDITS.md): new repository-MIT code, Pixelorama MIT provenance at `fae9327992f1506f340b920e0fa6515a88298079`, and independently authored synthetic index/palette fixtures. No prior generated artwork or image-derived model is included.
+
+All three use a separately installed Native Canvas0.1.100 MIT dependency and retain its full notice. These additions exclude Surge/GPL materials; they add no formal family, application, logo, cover, original media or private audit evidence.

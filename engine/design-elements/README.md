@@ -86,3 +86,7 @@ Two bounded [composition recipes](recipes/b06/README.md) reuse existing families
 ## B10 bounded recipes
 
 [Explicit code spans and semantic value grid](recipes/b10/README.md): two bounded source-only recipes; zero new families, no migrated source scenes, no user aesthetic approval of synthetic combinations. Explicit ranges/nulls/units, LTR authored spans; not a parser or factual log.
+
+## Fifth-group restricted static candidates
+
+The [candidate and case-selection index](recipes/fifth-static-candidates/Index.md) links bounded scalar material, same-source file grid/summary, and indexed pixel layer recipes to their design guides, contracts, callable modules, two synthetic compositions each, and full notices. These are source-only restricted candidates, **not new registered design families, formal recipes, or portfolio works**. Existing registry counts stay unchanged. Fonts, generated examples, original application images and private review/storage metadata remain external; the GPL Surge study is not part of this projection.

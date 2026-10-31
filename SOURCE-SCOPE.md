@@ -184,3 +184,9 @@ These exact exceptions do not authorize any other media. The case-local helpers 
 ## Public semantic-index projection
 
 The generated portfolio indexes and query output expose only public source relationships and existing entry declarations. Review/comparison artifacts, record identifiers, document fingerprints and storage metadata are not included. New Swiss Grid and Data Rollup retention sidecars use schema 2 with `reviewArtifacts: NOT_INCLUDED`; that status does not claim private evidence is missing. Legal source/dependency identities and self-rendered frame hashes remain intact. Legacy evidence inputs are validation-only and are not copied into the public projection; this change does not rewrite or erase previously published history.
+
+## Fifth-group restricted static source recipes
+
+Exactly three candidate source packages are added under `engine/design-elements/recipes/`: `scalar-field-candidate` (14 UTF-8 files), `file-grid-candidate` (25), and `indexed-pixel-layer-candidate` (18). A separate [candidate/case-selection index](engine/design-elements/recipes/fifth-static-candidates/Index.md) links guidance, contracts, examples and complete notices without changing the public family registry, formal recipe catalog or portfolio. These 57 package files contain no image/font binary, original application markup/screenshot, generated preview, prior image-derived pixel model, private audit identity or storage receipt.
+
+Only file-grid needs fonts; its fixed official Inter/OFL acquisition and derivation scripts write to caller-owned external directories. Runtime dependencies are externally installed. Graphite proprietary branding, OpenMTP third-party icons, Pixelorama original artwork/editor shell, and the separate GPL Surge study are excluded. Two synthetic compositions per candidate are tests of limited reuse, not new accepted client works or a promise of animation/interaction.

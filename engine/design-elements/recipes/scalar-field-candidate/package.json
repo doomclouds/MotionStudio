@@ -1,0 +1,14 @@
+{
+  "name": "bounded-scalar-field-candidate",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "test": "node --test test.mjs",
+    "render": "node render.mjs"
+  },
+  "dependencies": {
+    "@napi-rs/canvas": "0.1.100"
+  }
+}

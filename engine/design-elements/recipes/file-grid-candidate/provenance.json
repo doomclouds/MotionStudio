@@ -1,0 +1,44 @@
+{
+  "schema": "restricted-file-grid-recipe-provenance/v1",
+  "newCodeLicense": "MIT",
+  "publicFamilyRegistration": false,
+  "formalFamilyIncrement": 0,
+  "candidateRecipes": 1,
+  "tileFactories": [
+    "fileGridTile",
+    "paneSummaryTile"
+  ],
+  "upstream": {
+    "repository": "ganeshrvel/openmtp",
+    "commit": "5da350b69c6d0d4aed67a063498ee89c7448400a",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/ganeshrvel/openmtp/5da350b69c6d0d4aed67a063498ee89c7448400a/LICENSE",
+    "licenseSHA256": "ad6e7e5b750c182b0befb4ecf7220bb412f61e1c2b91e577b3089f1145206034",
+    "licenseGitBlob": "6902897493c5ffdcb72c66b58cbf06b1aa7d2d3c",
+    "sourceContextUrl": "https://github.com/ganeshrvel/openmtp/blob/5da350b69c6d0d4aed67a063498ee89c7448400a/app/containers/HomePage/components/FileExplorerTableBodyGridRender.jsx",
+    "relationship": "Native grid/summary interpretation of file-grid layout; no application shell or copied product glyph assets. New glyph geometry, fixtures, composition code, adapters and contract. MIT upstream notice retained conservatively."
+  },
+  "excludedAssets": {
+    "officialScreenshot": false,
+    "officialIconPaths": false,
+    "thirdPartyCCBYIcons": false,
+    "originalAppFrame": false,
+    "privateReportsOrAuditIDs": false,
+    "fontBinaries": false
+  },
+  "separateIconNotice": "Upstream README separately credits flaticon/good-ware/kiranshastry icons under CC BY 3.0. None of those icon assets is included or used here; MIT is not a blanket asset license.",
+  "fonts": {
+    "repository": "google/fonts",
+    "commit": "2e61f4355afd22b801791b0df176065082423b87",
+    "license": "OFL-1.1",
+    "lock": "font-lock.json",
+    "binaryLocation": "external only",
+    "instances": "PGSans400/PGSans600, pinned fontTools; renamed aliases and regular registration flags, original outline weight retained"
+  },
+  "runtime": {
+    "library": "@napi-rs/canvas",
+    "version": "0.1.100",
+    "license": "MIT"
+  },
+  "screenshotsAndInteraction": "Not included; static generated compositions only. No current-product/runtime-equivalence claim."
+}
