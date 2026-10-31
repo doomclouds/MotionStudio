@@ -1,0 +1,42 @@
+[
+  {
+    "file": "UISans.ttf",
+    "alias": "DemoLedgerBody",
+    "sha256": "78ebd93f8e3d4891939396c6365fdb31410080db4a249c98d5490d3e8708371e",
+    "bytes": 66444,
+    "license": "OFL-1.1",
+    "acquisition": "Exact authorized offline font inputs; no network download guarantee",
+    "upstream": "https://github.com/rsms/inter",
+    "modified": true
+  },
+  {
+    "file": "UISans600.ttf",
+    "alias": "DemoLedgerBold",
+    "sha256": "a8bd4b4be452df1f5a4e3c58c34410e3a2c18e9958c212a28c5218e3b16e85a4",
+    "bytes": 66544,
+    "license": "OFL-1.1",
+    "acquisition": "Exact authorized offline font inputs; no network download guarantee",
+    "upstream": "https://github.com/rsms/inter",
+    "modified": true
+  },
+  {
+    "file": "LiberationSerif-Bold.ttf",
+    "alias": "DemoLedgerDisplay",
+    "sha256": "443a4dbd694b6e4689925947b456e0532e10b19c90fa32eb39ea6c2cd9db9ebd",
+    "bytes": 370196,
+    "license": "OFL-1.1",
+    "acquisition": "Exact authorized offline font inputs; no network download guarantee",
+    "upstream": "https://github.com/liberationfonts/liberation-fonts",
+    "modified": false
+  },
+  {
+    "file": "LiberationMono-Regular.ttf",
+    "alias": "DemoLedgerMono",
+    "sha256": "5883330d94debd992952cd8f0571b225f478c2d797d3f36c7521b0a5c9bde0f2",
+    "bytes": 319624,
+    "license": "OFL-1.1",
+    "acquisition": "Exact authorized offline font inputs; no network download guarantee",
+    "upstream": "https://github.com/liberationfonts/liberation-fonts",
+    "modified": false
+  }
+]

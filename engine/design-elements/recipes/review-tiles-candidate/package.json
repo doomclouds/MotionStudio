@@ -1,0 +1,14 @@
+{
+  "name": "motionstudio-review-tiles-candidate",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node test.mjs && node test-runtime.mjs",
+    "render": "node examples.mjs"
+  },
+  "dependencies": {
+    "@napi-rs/canvas": "0.1.100"
+  },
+  "exports": "./index.mjs"
+}

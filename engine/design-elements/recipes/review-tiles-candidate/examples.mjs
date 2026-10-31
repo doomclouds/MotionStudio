@@ -1,0 +1,5 @@
+import fs from 'node:fs';import path from 'node:path';import {createRequire} from 'node:module';import {createReviewTiles} from './index.mjs';import {examples} from './fixtures.mjs';
+const output=process.argv[2];if(!output||!path.isAbsolute(output))throw Error('absolute new output directory required');try{fs.lstatSync(output);throw Error('output must not exist')}catch(e){if(e.code!=='ENOENT')throw e;}
+const tiles=createReviewTiles({fontRoot:process.env.REVIEW_TILE_FONTS}),require=createRequire(import.meta.url),api=require('@napi-rs/canvas');
+// Build both compositions fully before filesystem output.
+const bytes=examples.map(p=>{const c=api.createCanvas(1440,500),g=c.getContext('2d');g.fillStyle='#f4f1ea';g.fillRect(0,0,c.width,c.height);const d=tiles.diffPreviewTile({...p,width:640}),r=tiles.reviewerSummaryTile({...p,width:640});g.drawImage(d,80,48);g.drawImage(r,80,360);return c.toBuffer('image/png')});fs.mkdirSync(output);bytes.forEach((b,i)=>fs.writeFileSync(path.join(output,`example-${i+1}.png`),b,{flag:'wx'}));

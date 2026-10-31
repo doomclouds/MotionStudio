@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "id": "feature-stack-candidate",
+  "status": "local-engineering-candidate-not-submitted",
+  "baseline": "1f29b18f2e93d26e5937e533b5b9aeada96d5d7b",
+  "exports": [
+    "layoutFeatureStack",
+    "drawFeatureStack"
+  ],
+  "candidateCount": 1,
+  "registeredFamilyIncrement": 0,
+  "formalRecipeIncrement": 0,
+  "ownerItemizedAcceptance": "NOT_CLAIMED",
+  "examples": "synthetic input/layout transfers, not accepted new works",
+  "scope": "Native Canvas static only",
+  "externalResources": [
+    "Canvas 0.1.100",
+    "Inter Tight derived FeatureStack500/600"
+  ],
+  "excluded": [
+    "source artwork and HTML",
+    "source marketing text and brands",
+    "QR and account/link content",
+    "font/icon/image binaries",
+    "private reviews and backup metadata",
+    "generated outputs"
+  ],
+  "upstream": {
+    "repository": "nexu-io/open-design",
+    "commit": "12d970eacc8971150e3c76470d2a9afe16dc2ed1",
+    "example": "plugins/_official/examples/poster-hero/example.html",
+    "gitBlob": "3720cf64ec09e0f32e90805a9c705d2853ada10e",
+    "declaredLicense": "MIT",
+    "rootNotice": "Apache-2.0"
+  },
+  "overlap": [
+    "typographic-focus",
+    "semantic-data",
+    "parameter-controls"
+  ],
+  "sharedApiImports": []
+}

@@ -1,0 +1,8 @@
+Invoice demo ledger candidate
+Changed from the attributed OpenDesign invoice design-template structure.
+OpenDesign contributors retain their applicable Apache-2.0 rights.
+This extraction adds original fictional fixtures, strict integer-cent validation,
+independent annotated Native tiles, external-resource setup and tests.
+It does not include the original invoice, source image, original sample rows,
+identity or payment information. NOT PAYABLE. Demonstration rates only.
+Fonts retain their separate SIL OFL notices in licenses/.

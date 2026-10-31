@@ -1,0 +1,30 @@
+{
+  "schema": "invoice-demo-source-boundary/v1",
+  "scope": "generic bounded synthetic code only",
+  "allowed": [
+    "module source",
+    "original fictional fixtures",
+    "bounded API/design documentation",
+    "tests",
+    "npm lock",
+    "external font identities and full licenses",
+    "upstream legal attribution"
+  ],
+  "excluded": [
+    "original invoice adapter",
+    "original HTML and screenshot",
+    "original sample rows or actual payment metadata",
+    "full source-case visual report",
+    "private review receipts and storage IDs",
+    "fonts and generated raster/binary output",
+    "node_modules"
+  ],
+  "fixedSafetyLabels": [
+    "NOT PAYABLE",
+    "Demo tax",
+    "DEMO TAX ONLY / NOT PAYABLE"
+  ],
+  "rootMediaAllowlistChanged": false,
+  "catalogRegistrationChanged": false,
+  "noAutomaticPublication": true
+}

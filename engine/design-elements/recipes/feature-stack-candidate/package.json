@@ -1,0 +1,14 @@
+{
+  "name": "motionstudio-feature-stack-candidate",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Bounded static feature-list candidate; no registered family",
+  "scripts": {
+    "test": "node test.cjs",
+    "examples": "node render.cjs",
+    "test:fonts": "python3 test-prepare.py"
+  },
+  "dependencies": {
+    "@napi-rs/canvas": "0.1.100"
+  }
+}

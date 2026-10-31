@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "status": "source-integration-candidate",
+  "baseCommit": "1f29b18f2e93d26e5937e533b5b9aeada96d5d7b",
+  "selectedCandidates": [
+    {
+      "id": "candidate.invoice-demo-ledger.v1",
+      "exports": [
+        "computeInvoice",
+        "lineItemsTile",
+        "totalsTile"
+      ],
+      "entry": "index.mjs",
+      "relatedExistingFamilies": [
+        "design.semantic-data.v1",
+        "design.typographic-focus.v1"
+      ],
+      "runtimeImportsExistingFamilies": []
+    }
+  ],
+  "newPublicFamilies": 0,
+  "newFormalRecipes": 0,
+  "originalCasePortfolioMigrated": false,
+  "nativeFullFrameAdaptersIncluded": false,
+  "syntheticExamples": [
+    "workshop",
+    "archive"
+  ],
+  "ownerAestheticAcceptance": "NOT_RECORDED",
+  "publication": "NOT_PERFORMED",
+  "browser": "NOT_RUN",
+  "motion": "NOT_RUN",
+  "fonts": "EXACT_EXTERNAL_OFFLINE_INPUTS_REQUIRED",
+  "sourcePolicy": "source-policy.json",
+  "licenses": [
+    "Apache-2.0",
+    "OFL-1.1"
+  ],
+  "promotionGates": [
+    "Independent final candidate review",
+    "Actual new-brief reuse and deduplication",
+    "Formal source integration and explicit publication decision",
+    "No original invoice/reference/payment data in projection"
+  ]
+}

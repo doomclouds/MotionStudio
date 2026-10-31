@@ -1,0 +1,11 @@
+# Attribution and resource boundary
+
+Derived static visual conventions: OpenDesign contributors, `nexu-io/open-design` fixed commit `12d970eacc8971150e3c76470d2a9afe16dc2ed1`, `plugins/_official/examples/orbit-github/example.html` (public Git blob `a02fbee59d0feb4dcc6d655f3311533a87506809`). Public fixed source: https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/plugins/_official/examples/orbit-github/example.html . Its sibling `open-design.json` declares MIT and OpenDesign authorship; no separate plugin license file was present in that fixed directory. Repository Apache-2.0 notice is retained additionally, not a replacement for the plugin's MIT declaration or blanket rights to brands/media.
+
+Changes: native Canvas diff rows and reviewer summary, fictional replacement data, original generic geometric file/check symbols, bounded text validation, isolated output canvases and explicit resource setup. No Octocat, source SVG path, full inbox chrome, original HTML/PNG or source scripts are distributed here. Source identity in attribution is provenance, not endorsement/branding.
+
+Exact external assets: UISans.ttf and UISans600.ttf are renamed Inter500/600 derivatives (internal DecisionStudy names); LiberationMono-Regular.ttf is unchanged Liberation Mono. Full Inter OFL and Liberation copyright/OFL notices accompany this projection. Their bytes are excluded; SHA values are necessary executable resource identities, not private review IDs. These are substitutes for original system font stacks, not recovered screenshot font identities. The historical Inter subset derivation is not offered as a network-recovery promise.
+
+Canvas0.1.100 is an external MIT dependency, installed via its lockfile. No third-party image assets are required. This projection includes only code, contracts, fictional fixtures, package/resource locks and legal notices; no private evidence/archive references are needed to use it. Publication remains a coordinator decision.
+
+The new MotionStudio implementation follows the repository MIT license, copied unchanged as `licenses/MotionStudio-MIT.txt` (the repository copyright notice is preserved, not invented for upstream work). OpenDesign provenance and font notices remain separately applicable; this does not relicense third-party assets.

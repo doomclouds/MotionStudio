@@ -1,0 +1,14 @@
+{
+  "name": "invoice-demo-ledger-candidate",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "license": "Apache-2.0",
+  "scripts": {
+    "test": "node test.mjs && node test-runtime.mjs",
+    "render": "node examples/render.mjs"
+  },
+  "dependencies": {
+    "@napi-rs/canvas": "0.1.100"
+  }
+}

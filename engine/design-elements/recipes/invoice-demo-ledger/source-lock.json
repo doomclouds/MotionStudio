@@ -1,0 +1,11 @@
+{
+  "repository": "nexu-io/open-design",
+  "commit": "12d970eacc8971150e3c76470d2a9afe16dc2ed1",
+  "path": "design-templates/invoice/example.html",
+  "gitBlob": "9e6748b06df01917288adf7c9f05138eb6fccbd7",
+  "license": "Apache-2.0 per repository-root license",
+  "sourceHTMLIncluded": false,
+  "originalReferenceIncluded": false,
+  "originalInvoiceAdapterIncluded": false,
+  "originalMonetaryFixtureIncluded": false
+}

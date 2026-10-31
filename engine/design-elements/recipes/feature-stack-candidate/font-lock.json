@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "input": {
+    "repository": "google/fonts",
+    "commit": "2e61f4355afd22b801791b0df176065082423b87",
+    "sourcePath": "ofl/intertight/InterTight[wght].ttf",
+    "url": "https://raw.githubusercontent.com/google/fonts/2e61f4355afd22b801791b0df176065082423b87/ofl/intertight/InterTight%5Bwght%5D.ttf",
+    "gitBlob": "7d64212163dc15e7f3de5487672668dbde589365",
+    "sha256": "b81b73dcb64df3c230cabade7df6c5773bf863233f24c9ee51087519f1f88b6f",
+    "license": "SIL OFL 1.1",
+    "bytes": 581588
+  },
+  "outputs": [
+    {
+      "file": "FeatureStack500.ttf",
+      "alias": "FeatureStack500",
+      "weight": 500,
+      "sha256": "f3f510e1c273f9d860cb4e851345f2550a7432bbfb14de2ffffa573b7d2b0bc6",
+      "bytes": 309000
+    },
+    {
+      "file": "FeatureStack600.ttf",
+      "alias": "FeatureStack600",
+      "weight": 600,
+      "sha256": "127f9ed3366ee4719adb8266bea81623cc9d566cc410f8fb20148ddd92d93fff",
+      "bytes": 309708
+    }
+  ],
+  "supportedText": "printable ASCII U+0020..U+007E only",
+  "restoration": "explicit provided input; no automatic downloads",
+  "fontTools": "4.61.1"
+}

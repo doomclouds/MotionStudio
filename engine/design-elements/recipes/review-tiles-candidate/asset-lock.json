@@ -1,0 +1,17 @@
+[
+  {
+    "file": "UISans.ttf",
+    "alias": "ReviewTileSans",
+    "sha256": "78ebd93f8e3d4891939396c6365fdb31410080db4a249c98d5490d3e8708371e"
+  },
+  {
+    "file": "UISans600.ttf",
+    "alias": "ReviewTileBold",
+    "sha256": "a8bd4b4be452df1f5a4e3c58c34410e3a2c18e9958c212a28c5218e3b16e85a4"
+  },
+  {
+    "file": "LiberationMono-Regular.ttf",
+    "alias": "ReviewTileMono",
+    "sha256": "5883330d94debd992952cd8f0571b225f478c2d797d3f36c7521b0a5c9bde0f2"
+  }
+]

@@ -1,0 +1,4 @@
+// Entirely fictional editorial/code snippets; no accounts, network or identity data.
+export const examples=[{
+ file:'examples/weather-card.js',lines:[{kind:'context',lineNo:1,text:'const demo = true;'},{kind:'remove',lineNo:2,text:'const theme = "night";'},{kind:'add',lineNo:2,text:'const theme = "day";'}],reviewers:[{initials:'A',status:'approved',color:'#336699'},{initials:'B',status:'pending',color:'#886644'}],caption:'fictional code review'
+},{file:'notes/garden-guide.md',lines:[{kind:'context',lineNo:18,text:'# Imaginary garden'},{kind:'add',lineNo:19,text:'Water the sample seedlings.'},{kind:'add',lineNo:20,text:'Record a fictional observation.'},{kind:'remove',lineNo:21,text:'Placeholder paragraph.'}],reviewers:[{initials:'X',status:'none',color:'#775599'},{initials:'Y',status:'approved',color:'#227755'},{initials:'Z',status:'approved',color:'#447799'}],caption:'fictional editorial review'}];
