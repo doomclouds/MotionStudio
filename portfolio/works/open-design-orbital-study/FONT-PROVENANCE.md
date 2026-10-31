@@ -1,0 +1,4 @@
+# External font boundary
+All font bytes are kept outside the repository. font-lock.json pins both retained original snapshots and retained static derivatives. A source/axes pair describes how the derivative was made; it is NOT a claim that an unpinned fontTools timestamp will recreate its exact SHA. This archive presently restores from user-supplied exact retained bytes, not automatic font downloading or cold font derivation. Google Fonts main can change; source URLs are provenance, while SHA is the identity. Fonts must retain their respective OFL notices if redistributed separately. Do not distribute modified font binaries under reserved names from this engineering archive.
+
+Some source snapshots and unused early-weight variants remain mandatory locked external inputs for the original renderer's full-set preflight; do not count them all as visible typefaces. The source screenshot's platform font revision was not recovered.

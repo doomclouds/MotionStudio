@@ -1,0 +1,72 @@
+{
+  "fonttools": "4.61.1",
+  "originalInputs": [
+    {
+      "file": "Serif.ttf",
+      "sha256": "4daecea457258c9ebeb8bc99ed3fd24353618bfad3ea4b93fa0b5d0468fc04e4",
+      "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/gelasio/Gelasio%5Bwght%5D.ttf"
+    },
+    {
+      "file": "Sans.ttf",
+      "sha256": "29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031",
+      "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/inter/Inter%5Bopsz,wght%5D.ttf"
+    }
+  ],
+  "derived": [
+    {
+      "file": "Serif700.ttf",
+      "source": "Serif.ttf",
+      "axes": {
+        "wght": 700
+      },
+      "sha256": "2c26e34b1b8b0e056bce9dcd2af5da6a893c238766da3d97f84abc7b3faec5ae",
+      "modified": 3788434649
+    },
+    {
+      "file": "Sans400.ttf",
+      "source": "Sans.ttf",
+      "axes": {
+        "wght": 400,
+        "opsz": 14
+      },
+      "sha256": "0b59f6b6fc9e8a9ad8032802d1797c4237d9288a3e7b7661517070627b577060",
+      "modified": 3799418781
+    },
+    {
+      "file": "Sans500.ttf",
+      "source": "Sans.ttf",
+      "axes": {
+        "wght": 500,
+        "opsz": 14
+      },
+      "sha256": "9e768af4a2976d59fc993dc286386249818ada8b3ce5b6e9f2bdfe260260a6c1",
+      "modified": 3799418781
+    },
+    {
+      "file": "Sans600.ttf",
+      "source": "Sans.ttf",
+      "axes": {
+        "wght": 600,
+        "opsz": 14
+      },
+      "sha256": "dd5fd52722848f96b7d79ad9a407e4464a93c012416734ad8265082132a838b8",
+      "modified": 3799418781
+    },
+    {
+      "file": "Serif600.ttf",
+      "source": "Serif.ttf",
+      "axes": {
+        "wght": 600
+      },
+      "sha256": "0bb8c9ac7585e665b05215c62cf9b9c4c4bbaad5ebfbcaf317ff02a61fa89e37",
+      "modified": 3788434649
+    }
+  ],
+  "runtimeFiles": [
+    "Serif700.ttf",
+    "Sans400.ttf",
+    "Sans500.ttf",
+    "Sans600.ttf",
+    "Serif600.ttf"
+  ]
+}

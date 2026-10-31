@@ -1,0 +1,282 @@
+{
+  "schema": 4,
+  "id": "level-three-screen-study",
+  "version": "1.0.0",
+  "title": "Level · 三屏日常任务",
+  "status": "source-release",
+  "unofficial_recreation": true,
+  "original": {
+    "author": "OpenDesign / nexu-io",
+    "title": "gamified-app",
+    "url": "https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/design-templates/gamified-app/example.html"
+  },
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "licenses/LICENSE-UPSTREAM.txt",
+      "licenses/ibmplexmono-OFL.txt",
+      "licenses/instrumentserif-OFL.txt",
+      "licenses/inter-OFL.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/design-templates/gamified-app/example.html",
+      "https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/LICENSE"
+    ]
+  },
+  "files": [
+    {
+      "path": "CREDITS.md",
+      "sha256": "bf498dcf738be85bb2a4ce048eade9faca41559af2378422c9fb8d0b018d63a0",
+      "role": "documentation"
+    },
+    {
+      "path": "DESIGN-RETENTION.md",
+      "sha256": "b20c195cd6955c4b8ccd3cb2ad7b777e844d591fc553c91c167108124eea193e",
+      "role": "documentation"
+    },
+    {
+      "path": "LICENSE-SCOPE.md",
+      "sha256": "8c0392f3350bce9e820107d1673195027e6fe258be9f359c9b6e2328afd9fb94",
+      "role": "documentation"
+    },
+    {
+      "path": "README.md",
+      "sha256": "0d0ddf864935b11dc6caf92cdf9d8f1f3dba54bd58813e17dcb83c396d4a7f32",
+      "role": "documentation"
+    },
+    {
+      "path": "case.json",
+      "sha256": "f93c2f53c0cde3984c4986164c51a555a937e00473a3ee160280b5a69cd040bd",
+      "role": "lock"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "e6269ef24a2bd80c4c420f45d823512eed5352b395feb78dbaccbef82b29112d",
+      "role": "cover"
+    },
+    {
+      "path": "font-preparation.json",
+      "sha256": "dc07eef166cdec14c004cf95ba0b08a3687cc0c497b9db78e71e9131f2ff55bb",
+      "role": "lock"
+    },
+    {
+      "path": "licenses/LICENSE-UPSTREAM.txt",
+      "sha256": "9d95806a26532623360eb84bb17d298f394b55ef73fb4c0796d99b4319b2b0da",
+      "role": "license"
+    },
+    {
+      "path": "licenses/ibmplexmono-OFL.txt",
+      "sha256": "d741e57d5f865e294df801f96b7b5161a88b211df65887e4358d271c9fc5fb4f",
+      "role": "license"
+    },
+    {
+      "path": "licenses/instrumentserif-OFL.txt",
+      "sha256": "b6b2292aa580937fb63796878d65a027a27f8c3db2d97601d0c34d9031f4ca17",
+      "role": "license"
+    },
+    {
+      "path": "licenses/inter-OFL.txt",
+      "sha256": "5dd548d31a85f756e01d63e00d7faf1e324103ed3e9102fcbbabf2cc2db6dd39",
+      "role": "license"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "71327dcac7ada24641f00e45165e97021c3d5ae94440e6b7e89b9fea7f05db89",
+      "role": "lock"
+    },
+    {
+      "path": "package.json",
+      "sha256": "2321fbb4e7d726f101538ebe32709b3fb38398e330b5495d408dade2c7724dec",
+      "role": "lock"
+    },
+    {
+      "path": "prepare-fonts.py",
+      "sha256": "248123471950508672c78bda2c506e55e490082462f7b5d26d0744130cc92ba5",
+      "role": "source"
+    },
+    {
+      "path": "quest-data.json",
+      "sha256": "36c39e9b6539ed0da53425908e0e130adc345a29912fb09e210c0c95d50b3e28",
+      "role": "lock"
+    },
+    {
+      "path": "quest-grid.cjs",
+      "sha256": "34744797fff83b3512e10e4f568c151b662678668f42b5821a96c6360cba6bcc",
+      "role": "source"
+    },
+    {
+      "path": "render.cjs",
+      "sha256": "219bbbfad5efa3ec2cf94f37fdbd0246809abc0d4b8873ef332422a6e2b89de5",
+      "role": "source"
+    },
+    {
+      "path": "resources.json",
+      "sha256": "aec36f85c72bbb6afd5087fd3e3ef48d4f8707fe716b1cb38190be464d427c43",
+      "role": "lock"
+    },
+    {
+      "path": "retention.json",
+      "sha256": "c0e5498f17e31ebe408ed2986c19a0d1bef5ea798d7b08639a03275b76b8f6c6",
+      "role": "lock"
+    },
+    {
+      "path": "runtime-lock.json",
+      "sha256": "de20d9edbe9a2166af124c9a89e266fddabc89d279766050ea4b2b4b721bd2d3",
+      "role": "lock"
+    },
+    {
+      "path": "runtime.cjs",
+      "sha256": "5121cf554a583c5be60d046227c6394fdce279c2afee2551400cb49f00bd738c",
+      "role": "source"
+    },
+    {
+      "path": "test.cjs",
+      "sha256": "fd1e3e96609f34ab6043f6be0a8efd8139b6c2414821ac206acfdbad712f14da",
+      "role": "source"
+    },
+    {
+      "path": "verify.cjs",
+      "sha256": "de7ecc53065b5ddc91de8e29d5b24e752139fd75787f6d9df1ad3b988bde9762",
+      "role": "source"
+    }
+  ],
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "runtime-lock.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "package-lock.json"
+    },
+    {
+      "name": "fonttools",
+      "version": "4.61.1",
+      "lock": "runtime-lock.json"
+    }
+  ],
+  "render": {
+    "entrypoint": "render.cjs",
+    "width": 1024,
+    "height": 576
+  },
+  "resources": [
+    {
+      "id": "ibmplexmono-medium-ttf",
+      "mode": "provide",
+      "license": "SIL OFL 1.1",
+      "notice": "licenses/ibmplexmono-OFL.txt",
+      "source_url": "https://github.com/google/fonts",
+      "sha256": "a9b4c49bb299e05b5f6c481e7fb5e78943d2793249a0c8874ab574a2d1ea6755",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "IBMPlexMono-Medium.ttf",
+      "bytes": 136704,
+      "instructions": "Prepare from exact original font inputs using prepare-fonts.py, then supply external OD_RESOURCE_DIR."
+    },
+    {
+      "id": "ibmplexmono-regular-ttf",
+      "mode": "provide",
+      "license": "SIL OFL 1.1",
+      "notice": "licenses/ibmplexmono-OFL.txt",
+      "source_url": "https://github.com/google/fonts",
+      "sha256": "6a3412f058c7d8dfd9170c41e85ade48e5156ecb89356110ca57a0a27734af46",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "IBMPlexMono-Regular.ttf",
+      "bytes": 135580,
+      "instructions": "Prepare from exact original font inputs using prepare-fonts.py, then supply external OD_RESOURCE_DIR."
+    },
+    {
+      "id": "instrumentserif-italic-ttf",
+      "mode": "provide",
+      "license": "SIL OFL 1.1",
+      "notice": "licenses/instrumentserif-OFL.txt",
+      "source_url": "https://github.com/google/fonts",
+      "sha256": "08939b8bdf534afec24ae0ef5e03f948940cd9a8fe08e7fecbad040e62327385",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "InstrumentSerif-Italic.ttf",
+      "bytes": 71592,
+      "instructions": "Prepare from exact original font inputs using prepare-fonts.py, then supply external OD_RESOURCE_DIR."
+    },
+    {
+      "id": "inter-ttf",
+      "mode": "provide",
+      "license": "SIL OFL 1.1",
+      "notice": "licenses/inter-OFL.txt",
+      "source_url": "https://github.com/google/fonts",
+      "sha256": "c8d76e1cb2a0a7cfbbae1e390be4e4b942b27f99ec07e1024b1fc916045eed09",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Inter.ttf",
+      "bytes": 254236,
+      "instructions": "Prepare from exact original font inputs using prepare-fonts.py, then supply external OD_RESOURCE_DIR."
+    },
+    {
+      "id": "inter400-ttf",
+      "mode": "provide",
+      "license": "SIL OFL 1.1",
+      "notice": "licenses/inter-OFL.txt",
+      "source_url": "https://github.com/google/fonts",
+      "sha256": "3ee534a97f519e58113b63878b7360d14e54dbf5a23d4c8710e3fa86f8d42f9a",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Inter400.ttf",
+      "bytes": 95488,
+      "instructions": "Prepare from exact original font inputs using prepare-fonts.py, then supply external OD_RESOURCE_DIR."
+    },
+    {
+      "id": "inter500-ttf",
+      "mode": "provide",
+      "license": "SIL OFL 1.1",
+      "notice": "licenses/inter-OFL.txt",
+      "source_url": "https://github.com/google/fonts",
+      "sha256": "03a712a4b822cb5d81c38b97643e663b3a554cd1ddb62f314bb6474d63e069e1",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Inter500.ttf",
+      "bytes": 95508,
+      "instructions": "Prepare from exact original font inputs using prepare-fonts.py, then supply external OD_RESOURCE_DIR."
+    },
+    {
+      "id": "inter600-ttf",
+      "mode": "provide",
+      "license": "SIL OFL 1.1",
+      "notice": "licenses/inter-OFL.txt",
+      "source_url": "https://github.com/google/fonts",
+      "sha256": "7b7f5bf2301f5b3b17a8b58705815e19bb3a2c979f81a2c0c63eafaa4520f99a",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Inter600.ttf",
+      "bytes": 95636,
+      "instructions": "Prepare from exact original font inputs using prepare-fonts.py, then supply external OD_RESOURCE_DIR."
+    },
+    {
+      "id": "inter700-ttf",
+      "mode": "provide",
+      "license": "SIL OFL 1.1",
+      "notice": "licenses/inter-OFL.txt",
+      "source_url": "https://github.com/google/fonts",
+      "sha256": "346151e8edc3de4805743575b327596bc7249f1321f11ac47bed8c3c22519b83",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Inter700.ttf",
+      "bytes": 95736,
+      "instructions": "Prepare from exact original font inputs using prepare-fonts.py, then supply external OD_RESOURCE_DIR."
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "603ccae209d83305b602c32d2f460e58b3310548381b12d4cb21c8715b2f0561",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "Owner approved all ten shown OpenDesign works and requested retention/push. Peer reviewed fixed frame and bounded helpers; no browser/interactivity/Motion approval."
+    }
+  }
+}

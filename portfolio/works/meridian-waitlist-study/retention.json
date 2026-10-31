@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "workId": "meridian-waitlist-study",
+  "kind": "fixed-static-design",
+  "canvas": {
+    "width": 2557,
+    "height": 1232
+  },
+  "entrypoint": "design/scene.mjs",
+  "decisionCard": "DESIGN-RETENTION.md",
+  "sourceAnalysis": [],
+  "ruleRefs": [],
+  "ruleStatus": "No separate formal rule card claimed; use decisionCard and sourceAnalysis.",
+  "assetUsage": [],
+  "nonAssetNote": "Shared drawing helpers and case-local scene code are not public design families; no runtime reuse is inferred from visual similarity.",
+  "evidence": {
+    "acceptanceSource": "entry.json#/acceptance",
+    "renderHashSource": "entry.json#/cover/source_sha256",
+    "publicCover": "cover.jpg",
+    "comparisonBundle": {
+      "status": "NOT_PUBLISHED",
+      "recordId": "meridian-waitlist-study-comparison",
+      "sha256": "ce1bf4b22abea19097865de51dbfc20f188c69a63b02c9efab56aa796551d5ef",
+      "storage": "SCRATCH_LOCAL_ONLY",
+      "durableStorage": "NOT_LOCATED",
+      "note": "Original/rebuild HTML container; private report not distributed. No durable retrieval claimed."
+    },
+    "independentReview": {
+      "status": "PRIVATE_RECORD_LOCATED",
+      "recordId": "open-design-first-three-review",
+      "sha256": "7fb7b8a81a2399c70c3708474f77feef721d09bf07ec935785e7d2f4290bff43",
+      "storage": "SCRATCH_LOCAL_ONLY",
+      "durableStorage": "NOT_LOCATED",
+      "note": "Independent visual and bounded helper tests; latest owner keep separately recorded in entry acceptance."
+    }
+  },
+  "motionTransfer": {
+    "status": "NOT_TESTED",
+    "note": "Fixed-size static only. No interaction, responsive layout, animation, audio or AV-sync approval implied."
+  }
+}

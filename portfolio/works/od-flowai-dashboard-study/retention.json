@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "workId": "od-flowai-dashboard-study",
+  "kind": "fixed-static-design",
+  "canvas": {
+    "width": 1024,
+    "height": 554
+  },
+  "entrypoint": "design/scene.mjs",
+  "decisionCard": "DESIGN-RETENTION.md",
+  "sourceAnalysis": [
+    "ASSET-USAGE.md",
+    "CREDITS.md"
+  ],
+  "ruleRefs": [],
+  "ruleStatus": "Case decision card only; no new formal rule index entry.",
+  "assetUsage": [],
+  "nonAssetNote": "Actual case-local helper calls retained; no published family runtime import. Cross-case adapters remain separate candidates, not original scene replacements.",
+  "evidence": {
+    "acceptanceSource": "entry.json#/acceptance",
+    "renderHashSource": "entry.json#/cover/source_sha256",
+    "publicCover": "cover.jpg",
+    "comparisonBundle": {
+      "status": "NOT_PUBLISHED",
+      "recordId": "od-flowai-dashboard-study-final-comparison",
+      "sha256": "84acb4be676c2d09b91402184c4cc5a8c68cf057df1ee86164370eec1dfeda3d",
+      "storage": "SCRATCH_LOCAL_ONLY",
+      "durableStorage": "NOT_LOCATED",
+      "note": "Private report also preserved inside verified private backup archive; this legacy field does not claim standalone public report access."
+    },
+    "independentReview": {
+      "status": "PRIVATE_RECORD_LOCATED",
+      "recordId": "od-flowai-dashboard-study-independent-final",
+      "sha256": "8e8a2426ee6d37db86eb839162ad334a490471900737175f650c0afe46579081",
+      "storage": "SCRATCH_LOCAL_ONLY",
+      "durableStorage": "NOT_LOCATED",
+      "note": "Scoped final review preserved privately; not redistributed. Original frame reviewed; source-only adapter cold restore independently pending."
+    }
+  },
+  "motionTransfer": {
+    "status": "NOT_TESTED",
+    "note": "Static reconstruction only; no interaction, browser, responsive or motion validation."
+  }
+}

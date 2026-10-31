@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "countingUnit": "stable callable family; no function, case or snapshot duplication",
-  "staticWorks": 53,
+  "staticWorks": 62,
   "families": [
     {
       "id": "design.print-poster.v1",
@@ -304,6 +304,18 @@
       "motionTransfer": "NOT_TESTED"
     },
     {
+      "id": "editorial-eguide-study",
+      "decisionCard": "works/editorial-eguide-study/DESIGN-RETENTION.md",
+      "sourceAnalysis": [],
+      "assetUsage": [],
+      "visualStatus": "PARTIAL",
+      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
+      "comparisonBundle": "NOT_PUBLISHED",
+      "reportStorage": "SCRATCH_LOCAL_ONLY",
+      "acceptedFrameBinding": "NOT_CHECKED",
+      "motionTransfer": "NOT_TESTED"
+    },
+    {
       "id": "editorial-weekly-study",
       "decisionCard": "works/editorial-weekly-study/DESIGN-RETENTION.md",
       "sourceAnalysis": [
@@ -574,6 +586,18 @@
       "motionTransfer": "NOT_TESTED"
     },
     {
+      "id": "level-three-screen-study",
+      "decisionCard": "works/level-three-screen-study/DESIGN-RETENTION.md",
+      "sourceAnalysis": [],
+      "assetUsage": [],
+      "visualStatus": "PARTIAL",
+      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
+      "comparisonBundle": "NOT_PUBLISHED",
+      "reportStorage": "SCRATCH_LOCAL_ONLY",
+      "acceptedFrameBinding": "NOT_CHECKED",
+      "motionTransfer": "NOT_TESTED"
+    },
+    {
       "id": "liquid-glass-study",
       "decisionCard": "works/liquid-glass-study/DESIGN-RETENTION.md",
       "sourceAnalysis": [
@@ -672,6 +696,18 @@
       "comparisonBundle": "NOT_PUBLISHED",
       "reportStorage": "PRIVATE_LIBRARY",
       "acceptedFrameBinding": "NOT_ESTABLISHED",
+      "motionTransfer": "NOT_TESTED"
+    },
+    {
+      "id": "meridian-waitlist-study",
+      "decisionCard": "works/meridian-waitlist-study/DESIGN-RETENTION.md",
+      "sourceAnalysis": [],
+      "assetUsage": [],
+      "visualStatus": "PARTIAL",
+      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
+      "comparisonBundle": "NOT_PUBLISHED",
+      "reportStorage": "SCRATCH_LOCAL_ONLY",
+      "acceptedFrameBinding": "NOT_CHECKED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -801,6 +837,93 @@
       "comparisonBundle": "NOT_PUBLISHED",
       "reportStorage": "PRIVATE_LIBRARY",
       "acceptedFrameBinding": "EXACT_PIXELS",
+      "motionTransfer": "NOT_TESTED"
+    },
+    {
+      "id": "od-flowai-dashboard-study",
+      "decisionCard": "works/od-flowai-dashboard-study/DESIGN-RETENTION.md",
+      "sourceAnalysis": [
+        "ASSET-USAGE.md",
+        "CREDITS.md"
+      ],
+      "assetUsage": [],
+      "visualStatus": "PARTIAL",
+      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
+      "comparisonBundle": "NOT_PUBLISHED",
+      "reportStorage": "SCRATCH_LOCAL_ONLY",
+      "acceptedFrameBinding": "NOT_CHECKED",
+      "motionTransfer": "NOT_TESTED"
+    },
+    {
+      "id": "od-lull-onboarding-study",
+      "decisionCard": "works/od-lull-onboarding-study/DESIGN-RETENTION.md",
+      "sourceAnalysis": [
+        "ASSET-USAGE.md",
+        "CREDITS.md"
+      ],
+      "assetUsage": [],
+      "visualStatus": "PARTIAL",
+      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
+      "comparisonBundle": "NOT_PUBLISHED",
+      "reportStorage": "SCRATCH_LOCAL_ONLY",
+      "acceptedFrameBinding": "NOT_CHECKED",
+      "motionTransfer": "NOT_TESTED"
+    },
+    {
+      "id": "od-social-carousel-study",
+      "decisionCard": "works/od-social-carousel-study/DESIGN-RETENTION.md",
+      "sourceAnalysis": [
+        "ASSET-USAGE.md",
+        "CREDITS.md"
+      ],
+      "assetUsage": [],
+      "visualStatus": "PARTIAL",
+      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
+      "comparisonBundle": "NOT_PUBLISHED",
+      "reportStorage": "SCRATCH_LOCAL_ONLY",
+      "acceptedFrameBinding": "NOT_CHECKED",
+      "motionTransfer": "NOT_TESTED"
+    },
+    {
+      "id": "open-design-hanafuda-study",
+      "decisionCard": "works/open-design-hanafuda-study/DESIGN-RETENTION.md",
+      "sourceAnalysis": [
+        "CREDITS.md"
+      ],
+      "assetUsage": [],
+      "visualStatus": "PARTIAL",
+      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
+      "comparisonBundle": "NOT_PUBLISHED",
+      "reportStorage": "SCRATCH_LOCAL_ONLY",
+      "acceptedFrameBinding": "NOT_CHECKED",
+      "motionTransfer": "NOT_TESTED"
+    },
+    {
+      "id": "open-design-orbital-study",
+      "decisionCard": "works/open-design-orbital-study/DESIGN-RETENTION.md",
+      "sourceAnalysis": [
+        "CREDITS.md"
+      ],
+      "assetUsage": [],
+      "visualStatus": "PARTIAL",
+      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
+      "comparisonBundle": "NOT_PUBLISHED",
+      "reportStorage": "SCRATCH_LOCAL_ONLY",
+      "acceptedFrameBinding": "NOT_CHECKED",
+      "motionTransfer": "NOT_TESTED"
+    },
+    {
+      "id": "open-design-swiss-cover-study",
+      "decisionCard": "works/open-design-swiss-cover-study/DESIGN-RETENTION.md",
+      "sourceAnalysis": [
+        "CREDITS.md"
+      ],
+      "assetUsage": [],
+      "visualStatus": "PARTIAL",
+      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
+      "comparisonBundle": "NOT_PUBLISHED",
+      "reportStorage": "SCRATCH_LOCAL_ONLY",
+      "acceptedFrameBinding": "NOT_CHECKED",
       "motionTransfer": "NOT_TESTED"
     },
     {

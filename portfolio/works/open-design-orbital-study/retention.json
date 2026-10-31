@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "workId": "open-design-orbital-study",
+  "kind": "fixed-static-design",
+  "canvas": {
+    "width": 1024,
+    "height": 576
+  },
+  "entrypoint": "render.cjs",
+  "decisionCard": "DESIGN-RETENTION.md",
+  "sourceAnalysis": [
+    "CREDITS.md"
+  ],
+  "ruleRefs": [],
+  "ruleStatus": "Local composition recipe only; no new public family.",
+  "assetUsage": [],
+  "nonAssetNote": "Native Canvas case-local helpers; no MotionStudio public family dependency claimed.",
+  "evidence": {
+    "acceptanceSource": "entry.json#/acceptance",
+    "renderHashSource": "entry.json#/cover/source_sha256",
+    "publicCover": "cover.jpg",
+    "comparisonBundle": {
+      "status": "NOT_PUBLISHED",
+      "recordId": "orbital-private-report",
+      "sha256": "c0e4312bb9f44475f4a63889e7eae372fae212248e0c74921fcdb61cfe8cdbd7",
+      "storage": "SCRATCH_LOCAL_ONLY",
+      "durableStorage": "NOT_LOCATED",
+      "note": "Source screenshot comparison excluded from public tree."
+    },
+    "independentReview": {
+      "status": "PRIVATE_RECORD_LOCATED",
+      "recordId": "orbital-independent-review",
+      "sha256": "c17befb50c56a85c86790d292a33cb93b52d241d056a7b71c5de827221c8c449",
+      "storage": "SCRATCH_LOCAL_ONLY",
+      "durableStorage": "NOT_LOCATED",
+      "note": "Visual review of final static frame, not integration validation or owner substitute."
+    }
+  },
+  "motionTransfer": {
+    "status": "NOT_TESTED",
+    "note": "Fixed static only; no interaction, animation, sound or PPT export."
+  }
+}

@@ -1,0 +1,203 @@
+{
+  "schema": 4,
+  "id": "od-flowai-dashboard-study",
+  "version": "1.0.0",
+  "title": "FlowAI · 团队面板静态快照",
+  "status": "source-release",
+  "unofficial_recreation": true,
+  "original": {
+    "author": "OpenDesign / nexu-io",
+    "title": "flowai-live-dashboard-template",
+    "url": "https://github.com/nexu-io/open-design/tree/12d970eacc8971150e3c76470d2a9afe16dc2ed1/design-templates/flowai-live-dashboard-template"
+  },
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "LICENSES/OpenDesign-APACHE-2.txt",
+      "LICENSES/inter-OFL.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/LICENSE",
+      "https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/plugins/_official/examples/flowai-live-dashboard-template/open-design.json",
+      "https://github.com/google/fonts"
+    ]
+  },
+  "files": [
+    {
+      "path": "ASSET-USAGE.md",
+      "sha256": "673dc4aed91bec306fdd745c404ab5bab7bd3941019ebceb80be31e3663e52f6",
+      "role": "documentation"
+    },
+    {
+      "path": "CREDITS.md",
+      "sha256": "6df8cff317d78ca2c463eabcfdedd42a2be8d4968b478ff12c8560e663a02ed6",
+      "role": "documentation"
+    },
+    {
+      "path": "DESIGN-RETENTION.md",
+      "sha256": "159e51fe468797ee75055c05670cf80f518e745636ff355b312649f9082ebc5d",
+      "role": "documentation"
+    },
+    {
+      "path": "LICENSES/OpenDesign-APACHE-2.txt",
+      "sha256": "9d95806a26532623360eb84bb17d298f394b55ef73fb4c0796d99b4319b2b0da",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/inter-OFL.txt",
+      "sha256": "5b9321a4298cfeb6b34354164a1c3afc3db114569984c502b9b35d988fd58c57",
+      "role": "license"
+    },
+    {
+      "path": "README.md",
+      "sha256": "bf0c402fb4882ba771766dfb74dd66207fa849515fde4a949e52a569e9d07169",
+      "role": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "6d0ea820cc423e0c4c7d85101f24badc14c08e8e2e6c7c5ed02915afd430bf57",
+      "role": "cover"
+    },
+    {
+      "path": "design/activity-table.cjs",
+      "sha256": "599a3a1b34b1f1a0a037eb435cc639a1687cf5779f69c69add811054832a7f6e",
+      "role": "source"
+    },
+    {
+      "path": "design/native.cjs",
+      "sha256": "b884a45874b4165d74c7b05dbc7dd9a34d0e3ee2a078b2ca383da604724c46e4",
+      "role": "source"
+    },
+    {
+      "path": "design/resources.cjs",
+      "sha256": "cd326185d67fd8a4eafbd11e3ffcb2b695e2245f6ee4e2713796cb63d4ea763b",
+      "role": "source"
+    },
+    {
+      "path": "design/scene.mjs",
+      "sha256": "50fc36ce8da0661ed0e3493be087db056a38756ece698dee63d675f553f42655",
+      "role": "source"
+    },
+    {
+      "path": "font-inputs.json",
+      "sha256": "890939bd314b70853de49f6157068d9dac54fcce855dbf3e863feae6941fef38",
+      "role": "config"
+    },
+    {
+      "path": "locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "role": "lock"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "59c468f1139824327c67869b6e516926505edfbe1104dcaf1e6d1f651ee7acbb",
+      "role": "lock"
+    },
+    {
+      "path": "prepare-fonts.py",
+      "sha256": "205c57fc44d09d6866212cd77c4ddff669c8fafc559e71d84ce7ac625fd0fc19",
+      "role": "source"
+    },
+    {
+      "path": "resource-lock.json",
+      "sha256": "7b0a6bdda7c081b732995c869c8c5934834803f1c8b4e5adb0b4a17a829064f4",
+      "role": "config"
+    },
+    {
+      "path": "retention.json",
+      "sha256": "fa1d5ed6bd25956acbf8ebd09d5cb611e0a932458ce3e282ce18343f0a0c1512",
+      "role": "config"
+    },
+    {
+      "path": "test.mjs",
+      "sha256": "0ea4ec4e2ff2fa17925a977b96099c3b55e6ce2dbecea9a618974886736fcbe8",
+      "role": "source"
+    }
+  ],
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "locks/npm-package-lock.json"
+    }
+  ],
+  "render": {
+    "entrypoint": "design/scene.mjs",
+    "width": 1024,
+    "height": 554
+  },
+  "resources": [
+    {
+      "id": "inter400",
+      "mode": "provide",
+      "license": "SIL OFL; external exact font bytes, not distributed",
+      "notice": "LICENSES/inter-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/inter",
+      "sha256": "3ee534a97f519e58113b63878b7360d14e54dbf5a23d4c8710e3fa86f8d42f9a",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Inter400.ttf",
+      "bytes": 95488,
+      "instructions": "Provide locked originalInputs and run prepare-fonts.py. Family URL is not a guarantee current upstream bytes match. FlowAI historical input provenance URL unresolved; private exact copy required."
+    },
+    {
+      "id": "inter500",
+      "mode": "provide",
+      "license": "SIL OFL; external exact font bytes, not distributed",
+      "notice": "LICENSES/inter-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/inter",
+      "sha256": "03a712a4b822cb5d81c38b97643e663b3a554cd1ddb62f314bb6474d63e069e1",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Inter500.ttf",
+      "bytes": 95508,
+      "instructions": "Provide locked originalInputs and run prepare-fonts.py. Family URL is not a guarantee current upstream bytes match. FlowAI historical input provenance URL unresolved; private exact copy required."
+    },
+    {
+      "id": "inter600",
+      "mode": "provide",
+      "license": "SIL OFL; external exact font bytes, not distributed",
+      "notice": "LICENSES/inter-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/inter",
+      "sha256": "7b7f5bf2301f5b3b17a8b58705815e19bb3a2c979f81a2c0c63eafaa4520f99a",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Inter600.ttf",
+      "bytes": 95636,
+      "instructions": "Provide locked originalInputs and run prepare-fonts.py. Family URL is not a guarantee current upstream bytes match. FlowAI historical input provenance URL unresolved; private exact copy required."
+    },
+    {
+      "id": "inter700",
+      "mode": "provide",
+      "license": "SIL OFL; external exact font bytes, not distributed",
+      "notice": "LICENSES/inter-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/inter",
+      "sha256": "346151e8edc3de4805743575b327596bc7249f1321f11ac47bed8c3c22519b83",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Inter700.ttf",
+      "bytes": 95736,
+      "instructions": "Provide locked originalInputs and run prepare-fonts.py. Family URL is not a guarantee current upstream bytes match. FlowAI historical input provenance URL unresolved; private exact copy required."
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "bd1fce573150cc0914f04d6f645051869f13c2ddb259ad233720a3982453f50d",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "User approved displayed ten works for retention/push on 2026-10-30. Scoped independent original still review; exact cold-restored frame matched. No implication of browser/interaction/motion or new adapter aesthetic approval."
+    }
+  }
+}

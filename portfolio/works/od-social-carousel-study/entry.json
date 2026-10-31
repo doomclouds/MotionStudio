@@ -1,0 +1,197 @@
+{
+  "schema": 4,
+  "id": "od-social-carousel-study",
+  "version": "1.0.0",
+  "title": "Social · 三卡景观叙事",
+  "status": "source-release",
+  "unofficial_recreation": true,
+  "original": {
+    "author": "OpenDesign / nexu-io",
+    "title": "social-carousel",
+    "url": "https://github.com/nexu-io/open-design/tree/12d970eacc8971150e3c76470d2a9afe16dc2ed1/design-templates/social-carousel"
+  },
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "LICENSES/OpenDesign-APACHE-2.txt",
+      "LICENSES/ibmplexmono-OFL.txt",
+      "LICENSES/instrumentserif-OFL.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/LICENSE",
+      "https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/plugins/_official/examples/social-carousel/open-design.json",
+      "https://github.com/google/fonts"
+    ]
+  },
+  "files": [
+    {
+      "path": "ASSET-USAGE.md",
+      "sha256": "673dc4aed91bec306fdd745c404ab5bab7bd3941019ebceb80be31e3663e52f6",
+      "role": "documentation"
+    },
+    {
+      "path": "CREDITS.md",
+      "sha256": "97df2ed4d0b55026bc01ca76efb177a77e4a03991574775a0c230798b3b05b68",
+      "role": "documentation"
+    },
+    {
+      "path": "DESIGN-RETENTION.md",
+      "sha256": "94010c64dd60b2fa3e27c08ea1f11b31aabf060982378967bcd24e546d316c6f",
+      "role": "documentation"
+    },
+    {
+      "path": "LICENSES/OpenDesign-APACHE-2.txt",
+      "sha256": "9d95806a26532623360eb84bb17d298f394b55ef73fb4c0796d99b4319b2b0da",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/ibmplexmono-OFL.txt",
+      "sha256": "7e6b2818edbd8f6a01ae80641cc8f16a51080d08fb4e532be3a0b6f74adb07da",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/instrumentserif-OFL.txt",
+      "sha256": "129ed7618959716959f2941fdd5b49e0ad6e6c1d78726761786a00253d865521",
+      "role": "license"
+    },
+    {
+      "path": "README.md",
+      "sha256": "17d99b6f5274dd56f72de1d9624df5d9c751bd3320a4dc34022ba9e3d7b3918f",
+      "role": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "30f2883b9e55b58063e9f64d3c0ab936b8794c1a4a672ea9927d0d89d0d77c91",
+      "role": "cover"
+    },
+    {
+      "path": "design/card.cjs",
+      "sha256": "844ce04363f0d57392397723715c6de8ce85d4340d1ce84af556351558a893cd",
+      "role": "source"
+    },
+    {
+      "path": "design/native.cjs",
+      "sha256": "51279db7752cd3411491c0001c29274c4bc902d857531f076ece508a69738625",
+      "role": "source"
+    },
+    {
+      "path": "design/resources.cjs",
+      "sha256": "cd326185d67fd8a4eafbd11e3ffcb2b695e2245f6ee4e2713796cb63d4ea763b",
+      "role": "source"
+    },
+    {
+      "path": "design/scene.mjs",
+      "sha256": "4b7e23a1084189037676da465c5f092c1a9409fe5390c7fed3d433130e925d9a",
+      "role": "source"
+    },
+    {
+      "path": "font-inputs.json",
+      "sha256": "ab42d5bc63921bd7a77e75b27484fbd837129920173eacb44ae9ed1f71a13729",
+      "role": "config"
+    },
+    {
+      "path": "locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "role": "lock"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "59c468f1139824327c67869b6e516926505edfbe1104dcaf1e6d1f651ee7acbb",
+      "role": "lock"
+    },
+    {
+      "path": "prepare-fonts.py",
+      "sha256": "205c57fc44d09d6866212cd77c4ddff669c8fafc559e71d84ce7ac625fd0fc19",
+      "role": "source"
+    },
+    {
+      "path": "resource-lock.json",
+      "sha256": "e4b2ec35b758b9061d6aa80205f574aaca2f72393d41888947f68dc3708f9a6c",
+      "role": "config"
+    },
+    {
+      "path": "retention.json",
+      "sha256": "a7c08f759f3620cec0c3cdab6bbbc5b4dedc86c7e0040c044137f149a0983980",
+      "role": "config"
+    },
+    {
+      "path": "test.mjs",
+      "sha256": "0437f5f12407c9525d0402ef5a850124fae79488d5b9a5932e330c34e68755ba",
+      "role": "source"
+    }
+  ],
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "locks/npm-package-lock.json"
+    }
+  ],
+  "render": {
+    "entrypoint": "design/scene.mjs",
+    "width": 1024,
+    "height": 576
+  },
+  "resources": [
+    {
+      "id": "instrumentserif-regular",
+      "mode": "provide",
+      "license": "SIL OFL; external exact font bytes, not distributed",
+      "notice": "LICENSES/instrumentserif-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/instrumentserif",
+      "sha256": "498efd461f6ddfcb7a111bf9a565709d2085d48201d501ead960d93e84ffbb88",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "InstrumentSerif-Regular.ttf",
+      "bytes": 70012,
+      "instructions": "Provide locked originalInputs and run prepare-fonts.py; verify exact original and derived hashes."
+    },
+    {
+      "id": "instrumentserif-italic",
+      "mode": "provide",
+      "license": "SIL OFL; external exact font bytes, not distributed",
+      "notice": "LICENSES/instrumentserif-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/instrumentserif",
+      "sha256": "08939b8bdf534afec24ae0ef5e03f948940cd9a8fe08e7fecbad040e62327385",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "InstrumentSerif-Italic.ttf",
+      "bytes": 71592,
+      "instructions": "Provide locked originalInputs and run prepare-fonts.py; verify exact original and derived hashes."
+    },
+    {
+      "id": "ibmplexmono-regular",
+      "mode": "provide",
+      "license": "SIL OFL; external exact font bytes, not distributed",
+      "notice": "LICENSES/ibmplexmono-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/ibmplexmono",
+      "sha256": "6a3412f058c7d8dfd9170c41e85ade48e5156ecb89356110ca57a0a27734af46",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "IBMPlexMono-Regular.ttf",
+      "bytes": 135580,
+      "instructions": "Provide locked originalInputs and run prepare-fonts.py; verify exact original and derived hashes."
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "be8efda5b80870868d2138d6b4e45e3caa957f187e45abe9c9c80481857c3b82",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "User approved displayed ten works for retention/push on 2026-10-30. Scoped independent original still review; exact cold-restored frame matched. No implication of browser/interaction/motion or new adapter aesthetic approval."
+    }
+  }
+}

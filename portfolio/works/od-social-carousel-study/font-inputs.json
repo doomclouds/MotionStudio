@@ -1,0 +1,26 @@
+{
+  "fonttools": "4.61.1",
+  "originalInputs": [
+    {
+      "file": "InstrumentSerif-Regular.ttf",
+      "sha256": "498efd461f6ddfcb7a111bf9a565709d2085d48201d501ead960d93e84ffbb88",
+      "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/instrumentserif/InstrumentSerif-Regular.ttf"
+    },
+    {
+      "file": "InstrumentSerif-Italic.ttf",
+      "sha256": "08939b8bdf534afec24ae0ef5e03f948940cd9a8fe08e7fecbad040e62327385",
+      "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/instrumentserif/InstrumentSerif-Italic.ttf"
+    },
+    {
+      "file": "IBMPlexMono-Regular.ttf",
+      "sha256": "6a3412f058c7d8dfd9170c41e85ade48e5156ecb89356110ca57a0a27734af46",
+      "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/ibmplexmono/IBMPlexMono-Regular.ttf"
+    }
+  ],
+  "derived": [],
+  "runtimeFiles": [
+    "InstrumentSerif-Regular.ttf",
+    "InstrumentSerif-Italic.ttf",
+    "IBMPlexMono-Regular.ttf"
+  ]
+}

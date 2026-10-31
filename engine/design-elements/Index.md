@@ -62,3 +62,9 @@
 ## B10 文本片段与数值格网
 
 [显式彩色文本与等面积格网](recipes/b10/README.md)是两种固定尺寸受限配方。0新增族，原scene未迁移，新组合未用户审美认可。量程/空值/单位和显式片段角色必须由内容提供，不执行或解析代码。
+
+## OpenDesign 局部候选与去品牌配方
+
+[Social / Lull / FlowAI受限适配候选](recipes/open-design-three/Index.md)：独立测试候选，来源作品未迁移；不计新增公共族或正式配方。
+
+[Metric board去品牌配方](recipes/metric-board/README.md)：仅通用指标板与合成示例，不发布Merchant手机原画、品牌或商标；不计新增公共族。

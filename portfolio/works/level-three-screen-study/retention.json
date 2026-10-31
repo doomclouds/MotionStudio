@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "workId": "level-three-screen-study",
+  "kind": "fixed-static-design",
+  "canvas": {
+    "width": 1024,
+    "height": 576
+  },
+  "entrypoint": "render.cjs",
+  "decisionCard": "DESIGN-RETENTION.md",
+  "sourceAnalysis": [],
+  "ruleRefs": [],
+  "ruleStatus": "No separate formal rule card claimed; use decisionCard and sourceAnalysis.",
+  "assetUsage": [],
+  "nonAssetNote": "Shared drawing helpers and case-local scene code are not public design families; no runtime reuse is inferred from visual similarity.",
+  "evidence": {
+    "acceptanceSource": "entry.json#/acceptance",
+    "renderHashSource": "entry.json#/cover/source_sha256",
+    "publicCover": "cover.jpg",
+    "comparisonBundle": {
+      "status": "NOT_PUBLISHED",
+      "recordId": "level-three-screen-study-comparison",
+      "sha256": "939ee67343302cfd6270375d6a765ca6ed5bada50210ce6dd2d6397ea7635276",
+      "storage": "SCRATCH_LOCAL_ONLY",
+      "durableStorage": "NOT_LOCATED",
+      "note": "Original/rebuild HTML container; private report not distributed. No durable retrieval claimed."
+    },
+    "independentReview": {
+      "status": "PRIVATE_RECORD_LOCATED",
+      "recordId": "open-design-first-three-review",
+      "sha256": "7fb7b8a81a2399c70c3708474f77feef721d09bf07ec935785e7d2f4290bff43",
+      "storage": "SCRATCH_LOCAL_ONLY",
+      "durableStorage": "NOT_LOCATED",
+      "note": "Independent visual and bounded helper tests; latest owner keep separately recorded in entry acceptance."
+    }
+  },
+  "motionTransfer": {
+    "status": "NOT_TESTED",
+    "note": "Fixed-size static only. No interaction, responsive layout, animation, audio or AV-sync approval implied."
+  }
+}

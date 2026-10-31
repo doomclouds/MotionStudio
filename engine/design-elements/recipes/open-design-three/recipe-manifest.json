@@ -1,0 +1,31 @@
+{
+  "status": "isolated-author-tested-candidate-not-admitted",
+  "newFamilies": 0,
+  "sharedFamilyCount": 14,
+  "publicRecipeCountUnchanged": 9,
+  "sourceSceneMigrated": false,
+  "userOriginalWorkApproval": true,
+  "userNewRecipeAestheticApproval": false,
+  "recipes": [
+    {
+      "id": "candidate.od-social-series.v1",
+      "code": "src/social-series.cjs",
+      "guidance": "docs/social-series.md"
+    },
+    {
+      "id": "candidate.od-phone-stage.v1",
+      "code": "src/phone-stage.mjs",
+      "guidance": "docs/phone-stage.md"
+    },
+    {
+      "id": "candidate.od-semantic-table.v1",
+      "code": "src/semantic-table.cjs",
+      "guidance": "docs/semantic-table.md"
+    }
+  ],
+  "verification": [
+    "test.mjs",
+    "test-io.mjs"
+  ],
+  "composition": "examples/compose.mjs"
+}

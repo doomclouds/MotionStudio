@@ -1,0 +1,231 @@
+{
+  "schema": 4,
+  "id": "open-design-hanafuda-study",
+  "version": "1.0.0",
+  "title": "Hanafuda \u00b7 1889 static study",
+  "status": "source-release",
+  "unofficial_recreation": true,
+  "original": {
+    "author": "OpenDesign / nexu-io",
+    "title": "Hanafuda \u00b7 1889 static study",
+    "url": "https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/design-templates/sprite-animation/example.html"
+  },
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "licenses/ibmplexmono-OFL.txt",
+      "licenses/dmserifdisplay-OFL.txt",
+      "licenses/OpenDesign-LICENSE.txt",
+      "licenses/notoserifjp-OFL.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/nexu-io/open-design",
+      "https://github.com/google/fonts"
+    ]
+  },
+  "files": [
+    {
+      "path": "CREDITS.md",
+      "sha256": "78b7be25c6b59ea4187991dc83af84a9edae7fc537bc9a30106128d862caed92",
+      "role": "documentation"
+    },
+    {
+      "path": "DESIGN-RETENTION.md",
+      "sha256": "9dbd9d2e8ce886a8cea941db15fb0a7d13d5b54819ce5d5b4aa934cb9d8d7e70",
+      "role": "documentation"
+    },
+    {
+      "path": "FONT-PROVENANCE.md",
+      "sha256": "82cf87b48d9ceb0dc05e95c930438610b5669eb81e4f69e51e4d66adb2547cec",
+      "role": "documentation"
+    },
+    {
+      "path": "README.md",
+      "sha256": "5fa10ff8a57203082db7c3bc043464c72188551f08242cdce7346dbb1a8de645",
+      "role": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "244893e7d31e2233e24faafd24b0e011a81faceb999b06bad50d3e67845e2b78",
+      "role": "cover"
+    },
+    {
+      "path": "design/pixel-card.mjs",
+      "sha256": "d72fb96e7cebbe0bfed951078418e1f40ba36d5d7d1a562398193abd2bc10162",
+      "role": "source"
+    },
+    {
+      "path": "design/scene.mjs",
+      "sha256": "20f424b79d5fc184dbe9b555da0cca454ec973cbca71cb84156b7d1304eac37a",
+      "role": "source"
+    },
+    {
+      "path": "design/timeline.mjs",
+      "sha256": "11836d8d94c69304125a6a26ebc6c17a041ab4b3f4bc9121a4b63fdf810dbcbb",
+      "role": "source"
+    },
+    {
+      "path": "font-lock.json",
+      "sha256": "029ea26fd72e4375bf4400f45d9a1c7ee314c48fc4c32cb44c2e350c09efbcb2",
+      "role": "config"
+    },
+    {
+      "path": "licenses/OpenDesign-LICENSE.txt",
+      "sha256": "9d95806a26532623360eb84bb17d298f394b55ef73fb4c0796d99b4319b2b0da",
+      "role": "license"
+    },
+    {
+      "path": "licenses/dmserifdisplay-OFL.txt",
+      "sha256": "a3e5cdd67d4571dd0a24fcc968de0efde7ae97ef752daf0906e4767619dd7231",
+      "role": "license"
+    },
+    {
+      "path": "licenses/ibmplexmono-OFL.txt",
+      "sha256": "7e6b2818edbd8f6a01ae80641cc8f16a51080d08fb4e532be3a0b6f74adb07da",
+      "role": "license"
+    },
+    {
+      "path": "licenses/notoserifjp-OFL.txt",
+      "sha256": "5e0da210fb04058a8c0087985d2d456b931c2579811a49655721d3cf0c36b6d6",
+      "role": "license"
+    },
+    {
+      "path": "locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "role": "lock"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "d55463ce0211bd8cf716288c8a390e2190fdf32fd62befdad5ed093ae124abc7",
+      "role": "lock"
+    },
+    {
+      "path": "render.mjs",
+      "sha256": "6e1e214a22da8164a6f5a1713b1d7ecaed81367dea971279b65800fa6935f600",
+      "role": "source"
+    },
+    {
+      "path": "resources.cjs",
+      "sha256": "9503d1f1728418d270e63b7ae128022d1c99f84706b505a3affb2f2abe3c1305",
+      "role": "source"
+    },
+    {
+      "path": "retention.json",
+      "sha256": "e21a4f755c1101fab8a692ccf59b01acd5f9ea5d9d9e3b356fee7779976811c1",
+      "role": "config"
+    },
+    {
+      "path": "source-lock.json",
+      "sha256": "a181e81ee6331a6e442c3fdfa9b428e7cf4beb3a95c8be7cdab3581f06413fd7",
+      "role": "config"
+    },
+    {
+      "path": "test-resources.cjs",
+      "sha256": "43ef3cad5d29a68bcf0c281d5b27244f792a92595bc8260d90b4210857f906fd",
+      "role": "source"
+    },
+    {
+      "path": "test.mjs",
+      "sha256": "47382eeb54054f99c73b6cdc2a7f85b745cd88d6ca7107b44fc450ed6e5d1a50",
+      "role": "source"
+    }
+  ],
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "locks/npm-package-lock.json"
+    }
+  ],
+  "render": {
+    "entrypoint": "render.mjs",
+    "width": 1024,
+    "height": 576
+  },
+  "resources": [
+    {
+      "id": "font-0",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font snapshot",
+      "notice": "licenses/notoserifjp-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notoserifjp",
+      "sha256": "4407f4c3574a4823bc5c093e09a6c8bf3a41b1dd10ca118075c34e92d73deb42",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Japanese700.ttf",
+      "bytes": 8074324,
+      "instructions": "Provide exact byte-locked file externally under OD_FONT_DIR. Source snapshots/derived variants are identified in font-lock; no automatic fetch or reproduction of unknown timestamps is claimed."
+    },
+    {
+      "id": "font-1",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font snapshot",
+      "notice": "licenses/notoserifjp-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notoserifjp",
+      "sha256": "2fd527ba12b6a44ec30d796d633360da0aeba6c5d4af1304ce12bb4dc15a7dfc",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Japanese.ttf",
+      "bytes": 13574352,
+      "instructions": "Provide exact byte-locked file externally under OD_FONT_DIR. Source snapshots/derived variants are identified in font-lock; no automatic fetch or reproduction of unknown timestamps is claimed."
+    },
+    {
+      "id": "font-2",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font snapshot",
+      "notice": "licenses/ibmplexmono-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/ibmplexmono",
+      "sha256": "6a3412f058c7d8dfd9170c41e85ade48e5156ecb89356110ca57a0a27734af46",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Mono.ttf",
+      "bytes": 135580,
+      "instructions": "Provide exact byte-locked file externally under OD_FONT_DIR. Source snapshots/derived variants are identified in font-lock; no automatic fetch or reproduction of unknown timestamps is claimed."
+    },
+    {
+      "id": "font-3",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font snapshot",
+      "notice": "licenses/dmserifdisplay-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/dmserifdisplay",
+      "sha256": "df74c0ac387baeaeb0fe4f2324e1668e6a3ed8c09cd9796fe162c71753e19e45",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Italic.ttf",
+      "bytes": 71208,
+      "instructions": "Provide exact byte-locked file externally under OD_FONT_DIR. Source snapshots/derived variants are identified in font-lock; no automatic fetch or reproduction of unknown timestamps is claimed."
+    },
+    {
+      "id": "font-4",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font snapshot",
+      "notice": "licenses/dmserifdisplay-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/dmserifdisplay",
+      "sha256": "8cc3643535edf039aa5d95440a8542735e9197e4f4b8d9303e980fefbf5ab616",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Display.ttf",
+      "bytes": 76580,
+      "instructions": "Provide exact byte-locked file externally under OD_FONT_DIR. Source snapshots/derived variants are identified in font-lock; no automatic fetch or reproduction of unknown timestamps is claimed."
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "3895c3d3dc6f59b45208ec1e5f9f915127be802d252a83ebc450d13f69752c03",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "Actually viewed original/faithful/readable. Faithful intentionally retains year-caption collision; readable revision moves year and reflows description. Flower silhouette remains visibly different; exact captured source animation phase unknown. No screenshot layer claim independently code-reviewed only at helper level."
+    }
+  }
+}

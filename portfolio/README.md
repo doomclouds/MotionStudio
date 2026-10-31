@@ -390,3 +390,26 @@ EXACT_PIXELS只表示报告嵌图与已审帧像素匹配，不代表新审美�
 
 ### 新增富岳展览首屏
 [工程与恢复说明](works/hokusai-exhibition-study/README.md) · [设计决策](works/hokusai-exhibition-study/DESIGN-RETENTION.md)。1440×900固定静态，Met公版画作替换原设计印本；外置SHA资源，0新增公共族。
+
+## OpenDesign · 九个静态源码案例
+
+以下为九个固定画布学习复刻，不是完整交互产品；所需字体外置，视觉残差见各自README。Level和FlowAI须自备精确旧版字体，当前上游文件不保证可直接替换。Merchant仅收去品牌配方，不收原手机画面。
+
+[![Editorial Eguide · 双页创作指南](works/editorial-eguide-study/cover.jpg)](works/editorial-eguide-study/README.md)
+
+[![Level · 三屏日常任务](works/level-three-screen-study/cover.jpg)](works/level-three-screen-study/README.md)
+
+[![Meridian · 候补发布首屏](works/meridian-waitlist-study/cover.jpg)](works/meridian-waitlist-study/README.md)
+
+[![FlowAI · 团队面板静态快照](works/od-flowai-dashboard-study/cover.jpg)](works/od-flowai-dashboard-study/README.md)
+
+[![Lull · 温暖三屏引导](works/od-lull-onboarding-study/cover.jpg)](works/od-lull-onboarding-study/README.md)
+
+[![Social · 三卡景观叙事](works/od-social-carousel-study/cover.jpg)](works/od-social-carousel-study/README.md)
+
+[![Hanafuda · 1889 static study](works/open-design-hanafuda-study/cover.jpg)](works/open-design-hanafuda-study/README.md)
+
+[![Orbital · radial broadcast](works/open-design-orbital-study/cover.jpg)](works/open-design-orbital-study/README.md)
+
+[![Swiss · blue roadmap cover](works/open-design-swiss-cover-study/cover.jpg)](works/open-design-swiss-cover-study/README.md)
+

@@ -1,0 +1,221 @@
+{
+  "schema": 4,
+  "id": "od-lull-onboarding-study",
+  "version": "1.0.0",
+  "title": "Lull · 温暖三屏引导",
+  "status": "source-release",
+  "unofficial_recreation": true,
+  "original": {
+    "author": "OpenDesign / nexu-io",
+    "title": "mobile-onboarding",
+    "url": "https://github.com/nexu-io/open-design/tree/12d970eacc8971150e3c76470d2a9afe16dc2ed1/design-templates/mobile-onboarding"
+  },
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "LICENSES/OpenDesign-APACHE-2.txt",
+      "LICENSES/gelasio-OFL.txt",
+      "LICENSES/inter-OFL.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/LICENSE",
+      "https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/plugins/_official/examples/mobile-onboarding/open-design.json",
+      "https://github.com/google/fonts"
+    ]
+  },
+  "files": [
+    {
+      "path": "ASSET-USAGE.md",
+      "sha256": "673dc4aed91bec306fdd745c404ab5bab7bd3941019ebceb80be31e3663e52f6",
+      "role": "documentation"
+    },
+    {
+      "path": "CREDITS.md",
+      "sha256": "5220b7c7313fb4e6269c8f95f0924e197c1e6a4af88e554ca6ab332f058b5a77",
+      "role": "documentation"
+    },
+    {
+      "path": "DESIGN-RETENTION.md",
+      "sha256": "a3d5585af27acf41ba04dd3c97c25c89dacecf17986aac84ba43ae3cd1a8b7e8",
+      "role": "documentation"
+    },
+    {
+      "path": "LICENSES/OpenDesign-APACHE-2.txt",
+      "sha256": "9d95806a26532623360eb84bb17d298f394b55ef73fb4c0796d99b4319b2b0da",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/gelasio-OFL.txt",
+      "sha256": "b393cb01867c919b44381512120dc3e4c954c7b47e2035c405f3a324799a4d29",
+      "role": "license"
+    },
+    {
+      "path": "LICENSES/inter-OFL.txt",
+      "sha256": "5b9321a4298cfeb6b34354164a1c3afc3db114569984c502b9b35d988fd58c57",
+      "role": "license"
+    },
+    {
+      "path": "README.md",
+      "sha256": "e5459dddd667e286a2b706e8298b515495a24eda77d20993e59499df7e122d0e",
+      "role": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "091c1521268f4254d7121d03abbf1a951f82f2c8b969c41ecd4921fc3194dd07",
+      "role": "cover"
+    },
+    {
+      "path": "design/native.mjs",
+      "sha256": "81262bdc5efb8c9e7dc7760d49709b74446c665650fcda9225231a67c025b322",
+      "role": "source"
+    },
+    {
+      "path": "design/onboarding-frame.mjs",
+      "sha256": "cbaa5ae7ba5af654d1c9d9407cfde32df4b71c22ce136680dfb1ac509c238923",
+      "role": "source"
+    },
+    {
+      "path": "design/resources.cjs",
+      "sha256": "cd326185d67fd8a4eafbd11e3ffcb2b695e2245f6ee4e2713796cb63d4ea763b",
+      "role": "source"
+    },
+    {
+      "path": "design/scene.mjs",
+      "sha256": "ab6d542b3f2768c2ed998fffb381b92a3390d552b46d8f2000080e207231c3ee",
+      "role": "source"
+    },
+    {
+      "path": "font-inputs.json",
+      "sha256": "461df33cd9d213d66acaa0136df8a559e81f4eb431f05bab00fdf9a3bc7e8d2b",
+      "role": "config"
+    },
+    {
+      "path": "locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "role": "lock"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "59c468f1139824327c67869b6e516926505edfbe1104dcaf1e6d1f651ee7acbb",
+      "role": "lock"
+    },
+    {
+      "path": "prepare-fonts.py",
+      "sha256": "205c57fc44d09d6866212cd77c4ddff669c8fafc559e71d84ce7ac625fd0fc19",
+      "role": "source"
+    },
+    {
+      "path": "resource-lock.json",
+      "sha256": "cfe90c7fd5de4d38a4c92dca6cdedcce60c47982cb6c9bbc08c8e6b9734008b4",
+      "role": "config"
+    },
+    {
+      "path": "retention.json",
+      "sha256": "d3babb95eee1be8a0861655bd947c1ae0b91a71756976775402207c6a0f8e001",
+      "role": "config"
+    },
+    {
+      "path": "test.mjs",
+      "sha256": "4681a1b621359ab406bcea8a380ac47a4c6f16b20633d5096b401ce33134deb6",
+      "role": "source"
+    }
+  ],
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "locks/npm-package-lock.json"
+    }
+  ],
+  "render": {
+    "entrypoint": "design/scene.mjs",
+    "width": 1024,
+    "height": 576
+  },
+  "resources": [
+    {
+      "id": "serif700",
+      "mode": "provide",
+      "license": "SIL OFL; external exact font bytes, not distributed",
+      "notice": "LICENSES/gelasio-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/gelasio",
+      "sha256": "2c26e34b1b8b0e056bce9dcd2af5da6a893c238766da3d97f84abc7b3faec5ae",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Serif700.ttf",
+      "bytes": 107864,
+      "instructions": "Provide locked originalInputs and run prepare-fonts.py; verify exact original and derived hashes."
+    },
+    {
+      "id": "sans400",
+      "mode": "provide",
+      "license": "SIL OFL; external exact font bytes, not distributed",
+      "notice": "LICENSES/inter-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/inter",
+      "sha256": "0b59f6b6fc9e8a9ad8032802d1797c4237d9288a3e7b7661517070627b577060",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Sans400.ttf",
+      "bytes": 341396,
+      "instructions": "Provide locked originalInputs and run prepare-fonts.py; verify exact original and derived hashes."
+    },
+    {
+      "id": "sans500",
+      "mode": "provide",
+      "license": "SIL OFL; external exact font bytes, not distributed",
+      "notice": "LICENSES/inter-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/inter",
+      "sha256": "9e768af4a2976d59fc993dc286386249818ada8b3ce5b6e9f2bdfe260260a6c1",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Sans500.ttf",
+      "bytes": 341984,
+      "instructions": "Provide locked originalInputs and run prepare-fonts.py; verify exact original and derived hashes."
+    },
+    {
+      "id": "sans600",
+      "mode": "provide",
+      "license": "SIL OFL; external exact font bytes, not distributed",
+      "notice": "LICENSES/inter-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/inter",
+      "sha256": "dd5fd52722848f96b7d79ad9a407e4464a93c012416734ad8265082132a838b8",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Sans600.ttf",
+      "bytes": 342660,
+      "instructions": "Provide locked originalInputs and run prepare-fonts.py; verify exact original and derived hashes."
+    },
+    {
+      "id": "serif600",
+      "mode": "provide",
+      "license": "SIL OFL; external exact font bytes, not distributed",
+      "notice": "LICENSES/gelasio-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/gelasio",
+      "sha256": "0bb8c9ac7585e665b05215c62cf9b9c4c4bbaad5ebfbcaf317ff02a61fa89e37",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Serif600.ttf",
+      "bytes": 107972,
+      "instructions": "Provide locked originalInputs and run prepare-fonts.py; verify exact original and derived hashes."
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "a70cad482d0d6c0ff6193c4a3c167a78d7e6fce545b781158637cb5a3533bf33",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "User approved displayed ten works for retention/push on 2026-10-30. Scoped independent original still review; exact cold-restored frame matched. No implication of browser/interaction/motion or new adapter aesthetic approval."
+    }
+  }
+}

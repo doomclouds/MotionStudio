@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "workId": "od-lull-onboarding-study",
+  "kind": "fixed-static-design",
+  "canvas": {
+    "width": 1024,
+    "height": 576
+  },
+  "entrypoint": "design/scene.mjs",
+  "decisionCard": "DESIGN-RETENTION.md",
+  "sourceAnalysis": [
+    "ASSET-USAGE.md",
+    "CREDITS.md"
+  ],
+  "ruleRefs": [],
+  "ruleStatus": "Case decision card only; no new formal rule index entry.",
+  "assetUsage": [],
+  "nonAssetNote": "Actual case-local helper calls retained; no published family runtime import. Cross-case adapters remain separate candidates, not original scene replacements.",
+  "evidence": {
+    "acceptanceSource": "entry.json#/acceptance",
+    "renderHashSource": "entry.json#/cover/source_sha256",
+    "publicCover": "cover.jpg",
+    "comparisonBundle": {
+      "status": "NOT_PUBLISHED",
+      "recordId": "od-lull-onboarding-study-final-comparison",
+      "sha256": "b19124a70e9f3eac36f5a9fe8234e22ec705baa79f2ff190bacb3b6cf099055d",
+      "storage": "SCRATCH_LOCAL_ONLY",
+      "durableStorage": "NOT_LOCATED",
+      "note": "Private report also preserved inside verified private backup archive; this legacy field does not claim standalone public report access."
+    },
+    "independentReview": {
+      "status": "PRIVATE_RECORD_LOCATED",
+      "recordId": "od-lull-onboarding-study-independent-final",
+      "sha256": "cc81197bf68dbbff7a1ac6d0d9f201a1bb56cf36094b4f7399affa9f8bcf7f9c",
+      "storage": "SCRATCH_LOCAL_ONLY",
+      "durableStorage": "NOT_LOCATED",
+      "note": "Scoped final review preserved privately; not redistributed. Original frame reviewed; source-only adapter cold restore independently pending."
+    }
+  },
+  "motionTransfer": {
+    "status": "NOT_TESTED",
+    "note": "Static reconstruction only; no interaction, browser, responsive or motion validation."
+  }
+}

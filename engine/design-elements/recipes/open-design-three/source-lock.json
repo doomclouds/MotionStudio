@@ -1,0 +1,81 @@
+{
+  "baseline": {
+    "observedCheckout": "MotionStudio dev",
+    "head": "ab20a97cc1e76ada16461a083fcc9fbe8b7d5555",
+    "catalogSHA256": "c77dacf127ddaa14011dce4a344e1d4e8ef8cc2480e0352bb7520c89d1c17e66",
+    "familyCount": 14,
+    "recipeCount": 9,
+    "recipeManifests": [
+      {
+        "path": "engine/design-elements/recipes/b06/recipe-manifest.json",
+        "sha256": "1eccc8cac0dfbaa4489612d3a35c0570b1fc37943e08b41b292ffb8498497e2f"
+      },
+      {
+        "path": "engine/design-elements/recipes/b08/recipe-manifest.json",
+        "sha256": "a4ffa2abe674f35a95b43790a440229a82efdbefc95869c449fc8fb7fe730346"
+      },
+      {
+        "path": "engine/design-elements/recipes/b09/recipe-manifest.json",
+        "sha256": "6c242d5043babed6f22057a2cfcfe8b8552def1009265361b4321b956d8c936b"
+      },
+      {
+        "path": "engine/design-elements/recipes/b10/recipe-manifest.json",
+        "sha256": "46c8fd7f64e17280be0860e141d2274b67c5d5a86eb038a111c2a4df30191de5"
+      },
+      {
+        "path": "engine/design-elements/recipes/xhs08/recipe-manifest.json",
+        "sha256": "3ed5de4573c2993d780d45ddcaeb13d31f1413f7e831e1cbcd5366a3d975dd6a"
+      }
+    ],
+    "note": "Published baseline ab20a97; catalog and recipe manifests read-only."
+  },
+  "modules": [
+    {
+      "case": "social",
+      "source": "portfolio/works/od-social-carousel-study/design/card.cjs",
+      "snapshot": "snapshots/social-card.cjs",
+      "sha256": "844ce04363f0d57392397723715c6de8ce85d4340d1ce84af556351558a893cd",
+      "originalSceneMigrated": false
+    },
+    {
+      "case": "lull",
+      "source": "portfolio/works/od-lull-onboarding-study/design/onboarding-frame.mjs",
+      "snapshot": "snapshots/lull-frame.mjs",
+      "sha256": "cbaa5ae7ba5af654d1c9d9407cfde32df4b71c22ce136680dfb1ac509c238923",
+      "originalSceneMigrated": false
+    },
+    {
+      "case": "flowai",
+      "source": "portfolio/works/od-flowai-dashboard-study/design/activity-table.cjs",
+      "snapshot": "snapshots/flowai-table.cjs",
+      "sha256": "599a3a1b34b1f1a0a037eb435cc639a1687cf5779f69c69add811054832a7f6e",
+      "originalSceneMigrated": false
+    }
+  ],
+  "fonts": [
+    {
+      "path": "InstrumentSerif-Regular.ttf",
+      "sha256": "498efd461f6ddfcb7a111bf9a565709d2085d48201d501ead960d93e84ffbb88"
+    },
+    {
+      "path": "InstrumentSerif-Italic.ttf",
+      "sha256": "08939b8bdf534afec24ae0ef5e03f948940cd9a8fe08e7fecbad040e62327385"
+    },
+    {
+      "path": "IBMPlexMono-Regular.ttf",
+      "sha256": "6a3412f058c7d8dfd9170c41e85ade48e5156ecb89356110ca57a0a27734af46"
+    }
+  ],
+  "sourceCommit": "12d970eacc8971150e3c76470d2a9afe16dc2ed1",
+  "licenseEvidence": [
+    {
+      "source": "OpenDesign upstream fixed commit",
+      "rootLicense": "Apache-2.0",
+      "officialExampleMetadataLicense": "MIT",
+      "fontLicense": "SIL OFL external not distributed"
+    }
+  ],
+  "publicFamilyDelta": 0,
+  "publicRecipeDelta": 0,
+  "userAcceptance": false
+}

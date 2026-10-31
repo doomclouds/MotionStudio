@@ -1,0 +1,251 @@
+{
+  "schema": 4,
+  "id": "open-design-orbital-study",
+  "version": "1.0.0",
+  "title": "Orbital \u00b7 radial broadcast",
+  "status": "source-release",
+  "unofficial_recreation": true,
+  "original": {
+    "author": "OpenDesign / nexu-io",
+    "title": "Orbital \u00b7 radial broadcast",
+    "url": "https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/design-templates/motion-frames/example.html"
+  },
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "licenses/ibmplexmono-OFL.txt",
+      "licenses/cormorantgaramond-OFL.txt",
+      "licenses/OpenDesign-LICENSE.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/nexu-io/open-design",
+      "https://github.com/google/fonts"
+    ]
+  },
+  "files": [
+    {
+      "path": "CREDITS.md",
+      "sha256": "cd4c80aad2e9ab804e81c030efa98df562d05a8ed524443b5470e675d895b2dc",
+      "role": "documentation"
+    },
+    {
+      "path": "DESIGN-RETENTION.md",
+      "sha256": "99ee0140d7dda004842fdb651d9f7979f47f5c0be2279706ac91468ecf2620ce",
+      "role": "documentation"
+    },
+    {
+      "path": "FONT-PROVENANCE.md",
+      "sha256": "82cf87b48d9ceb0dc05e95c930438610b5669eb81e4f69e51e4d66adb2547cec",
+      "role": "documentation"
+    },
+    {
+      "path": "README.md",
+      "sha256": "42e289750592d1647de431c153804a0c591b257fc7c771cf66088c3dac3c31eb",
+      "role": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "0ce91be86f4c98b7c0ac9fa84182edbf845e276c39cdd82dd125ef6d2311bbde",
+      "role": "cover"
+    },
+    {
+      "path": "design/orbital-field.cjs",
+      "sha256": "cb6f77f8f84a1405b3284d39c8abd60443fc9d75d0dc31ec22bdebfe299710af",
+      "role": "source"
+    },
+    {
+      "path": "font-lock.json",
+      "sha256": "2fa18ab66ef6c447b312abc2fa0cfb8bebaf1fa7cd3b3e9f083bbe3a7703d9e4",
+      "role": "config"
+    },
+    {
+      "path": "licenses/OpenDesign-LICENSE.txt",
+      "sha256": "9d95806a26532623360eb84bb17d298f394b55ef73fb4c0796d99b4319b2b0da",
+      "role": "license"
+    },
+    {
+      "path": "licenses/cormorantgaramond-OFL.txt",
+      "sha256": "60700d351cac4650c51f3f9db318d2a420f8b45052dba2715eb5fec41f0f6956",
+      "role": "license"
+    },
+    {
+      "path": "licenses/ibmplexmono-OFL.txt",
+      "sha256": "7e6b2818edbd8f6a01ae80641cc8f16a51080d08fb4e532be3a0b6f74adb07da",
+      "role": "license"
+    },
+    {
+      "path": "locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "role": "lock"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "d55463ce0211bd8cf716288c8a390e2190fdf32fd62befdad5ed093ae124abc7",
+      "role": "lock"
+    },
+    {
+      "path": "render.cjs",
+      "sha256": "3c7eb7fcbdce552a80e2ca23f460d037ad5f55ad02672a66f3c8aa770a10b856",
+      "role": "source"
+    },
+    {
+      "path": "resources.cjs",
+      "sha256": "9503d1f1728418d270e63b7ae128022d1c99f84706b505a3affb2f2abe3c1305",
+      "role": "source"
+    },
+    {
+      "path": "retention.json",
+      "sha256": "ad4966a3ec60b87d08441c83cfd177475c3f88ac6eaf10b8553abfbed464a6aa",
+      "role": "config"
+    },
+    {
+      "path": "source-lock.json",
+      "sha256": "3d8279b8008664f9e77a1a78ade111e7c74e665fe148302c9197a7d40248dfe8",
+      "role": "config"
+    },
+    {
+      "path": "test-resources.cjs",
+      "sha256": "43ef3cad5d29a68bcf0c281d5b27244f792a92595bc8260d90b4210857f906fd",
+      "role": "source"
+    },
+    {
+      "path": "test.cjs",
+      "sha256": "c8cde8dbdd1c7085b349b3d39e9938f4ffc31c2f2ba558f2b471949514e577e4",
+      "role": "source"
+    }
+  ],
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "locks/npm-package-lock.json"
+    }
+  ],
+  "render": {
+    "entrypoint": "render.cjs",
+    "width": 1024,
+    "height": 576
+  },
+  "resources": [
+    {
+      "id": "font-0",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font snapshot",
+      "notice": "licenses/cormorantgaramond-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/cormorantgaramond",
+      "sha256": "e25aacd5912db15bdd7d11c76953fd1b5bb58a842c1e5928eb271ccd24a71af1",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Cormorant400.ttf",
+      "bytes": 774016,
+      "instructions": "Provide exact byte-locked file externally under OD_FONT_DIR. Source snapshots/derived variants are identified in font-lock; no automatic fetch or reproduction of unknown timestamps is claimed."
+    },
+    {
+      "id": "font-1",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font snapshot",
+      "notice": "licenses/ibmplexmono-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/ibmplexmono",
+      "sha256": "a9b4c49bb299e05b5f6c481e7fb5e78943d2793249a0c8874ab574a2d1ea6755",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Mono500.ttf",
+      "bytes": 136704,
+      "instructions": "Provide exact byte-locked file externally under OD_FONT_DIR. Source snapshots/derived variants are identified in font-lock; no automatic fetch or reproduction of unknown timestamps is claimed."
+    },
+    {
+      "id": "font-2",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font snapshot",
+      "notice": "licenses/cormorantgaramond-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/cormorantgaramond",
+      "sha256": "bc3d6db9ac6f72175c452de365e02518a99e35930d9cf9d67e5d050be93f07f9",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Cormorant600.ttf",
+      "bytes": 774032,
+      "instructions": "Provide exact byte-locked file externally under OD_FONT_DIR. Source snapshots/derived variants are identified in font-lock; no automatic fetch or reproduction of unknown timestamps is claimed."
+    },
+    {
+      "id": "font-3",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font snapshot",
+      "notice": "licenses/ibmplexmono-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/ibmplexmono",
+      "sha256": "6a3412f058c7d8dfd9170c41e85ade48e5156ecb89356110ca57a0a27734af46",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Mono.ttf",
+      "bytes": 135580,
+      "instructions": "Provide exact byte-locked file externally under OD_FONT_DIR. Source snapshots/derived variants are identified in font-lock; no automatic fetch or reproduction of unknown timestamps is claimed."
+    },
+    {
+      "id": "font-4",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font snapshot",
+      "notice": "licenses/cormorantgaramond-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/cormorantgaramond",
+      "sha256": "a3847599c3802a0534d8467be98fa480643a058d1de3852bbb3e39029ea3706d",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "CormorantItalic600.ttf",
+      "bytes": 454472,
+      "instructions": "Provide exact byte-locked file externally under OD_FONT_DIR. Source snapshots/derived variants are identified in font-lock; no automatic fetch or reproduction of unknown timestamps is claimed."
+    },
+    {
+      "id": "font-5",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font snapshot",
+      "notice": "licenses/cormorantgaramond-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/cormorantgaramond",
+      "sha256": "0f48ea6abb2084537854f7174c470991a463b13036309e3b50a81511611c530d",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "CormorantItalic.ttf",
+      "bytes": 715644,
+      "instructions": "Provide exact byte-locked file externally under OD_FONT_DIR. Source snapshots/derived variants are identified in font-lock; no automatic fetch or reproduction of unknown timestamps is claimed."
+    },
+    {
+      "id": "font-6",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font snapshot",
+      "notice": "licenses/cormorantgaramond-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/cormorantgaramond",
+      "sha256": "0c7d03f82209a3e2af61e20432d0bc8a411a404d4a10d489c16a84ef480c96a3",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "CormorantItalic400.ttf",
+      "bytes": 454392,
+      "instructions": "Provide exact byte-locked file externally under OD_FONT_DIR. Source snapshots/derived variants are identified in font-lock; no automatic fetch or reproduction of unknown timestamps is claimed."
+    },
+    {
+      "id": "font-7",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font snapshot",
+      "notice": "licenses/cormorantgaramond-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/cormorantgaramond",
+      "sha256": "b20b7d9626dd956b2c5e558692ad328b1f19e3275e2782db4fa07670d83f35e0",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Cormorant.ttf",
+      "bytes": 1195560,
+      "instructions": "Provide exact byte-locked file externally under OD_FONT_DIR. Source snapshots/derived variants are identified in font-lock; no automatic fetch or reproduction of unknown timestamps is claimed."
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "67d60879ea8ac82cdaea684968ed734cd888e8e828d64287ec37f7c009b52c60",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "Source, final, comparison, two modes actually viewed. Main caption weight repaired. Main scene actually calls helper once. Extreme inputs rejected."
+    }
+  }
+}

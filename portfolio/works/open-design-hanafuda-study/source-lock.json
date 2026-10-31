@@ -1,0 +1,9 @@
+{
+  "upstreamCommit": "12d970eacc8971150e3c76470d2a9afe16dc2ed1",
+  "url": "https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/design-templates/sprite-animation/example.html",
+  "htmlSHA256": "56fa105a6f3c269642da25c7dd18f78287e6aa9fc7d2921e7c26019ce12e0f16",
+  "htmlGitBlobSHA1": "238340ac2007d70662372bafeee1044d009491dc",
+  "referenceBundled": false,
+  "browserExecuted": false,
+  "userAcceptance": "2026-10-30: ten static examples accepted, requested reusable assets then push; no motion approval."
+}

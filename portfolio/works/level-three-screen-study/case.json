@@ -1,0 +1,10 @@
+{
+  "id": "level-three-screen-study",
+  "status": "owner-kept-awaiting-integration",
+  "entrypoint": "render.cjs",
+  "output": "level-native.png",
+  "userAccepted": true,
+  "publicFamiliesAdded": 0,
+  "sourceCommit": "12d970eacc8971150e3c76470d2a9afe16dc2ed1",
+  "reviewedFrameSHA256": "603ccae209d83305b602c32d2f460e58b3310548381b12d4cb21c8715b2f0561"
+}

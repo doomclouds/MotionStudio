@@ -1,0 +1,268 @@
+{
+  "schema": 4,
+  "id": "open-design-swiss-cover-study",
+  "version": "1.0.0",
+  "title": "Swiss \u00b7 blue roadmap cover",
+  "status": "source-release",
+  "unofficial_recreation": true,
+  "original": {
+    "author": "OpenDesign / nexu-io",
+    "title": "Swiss \u00b7 blue roadmap cover",
+    "url": "https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/skills/deck-swiss-international/example.html"
+  },
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "licenses/inter-OFL.txt",
+      "licenses/notosanssc-OFL.txt",
+      "licenses/jetbrainsmono-OFL.txt",
+      "licenses/OpenDesign-LICENSE.txt",
+      "licenses/intertight-OFL.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/nexu-io/open-design",
+      "https://github.com/google/fonts"
+    ]
+  },
+  "files": [
+    {
+      "path": "CREDITS.md",
+      "sha256": "682b53ac6616edf6ae959c7108803bdab9c9df0939d95630247eac2c1927ce41",
+      "role": "documentation"
+    },
+    {
+      "path": "DESIGN-RETENTION.md",
+      "sha256": "8b73be6e24b2a17bd5d8e4c947c5fb649dc29e9c253088b2419708e4e2e0ad24",
+      "role": "documentation"
+    },
+    {
+      "path": "FONT-PROVENANCE.md",
+      "sha256": "82cf87b48d9ceb0dc05e95c930438610b5669eb81e4f69e51e4d66adb2547cec",
+      "role": "documentation"
+    },
+    {
+      "path": "README.md",
+      "sha256": "a2e3dfe966361d55b0e9bdff55e1c7061ae0bd05129411aa208c8e903d9734a6",
+      "role": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "526a621b966ea8414de82a2d3f75943a5d30f3b83da5821807c6c099e38baf49",
+      "role": "cover"
+    },
+    {
+      "path": "design/scene.mjs",
+      "sha256": "a3c7d7ac727142e4db8f57f8d8f1fd7a81b72b973e88ca21b1694fbc4ba2b68a",
+      "role": "source"
+    },
+    {
+      "path": "design/title-block.mjs",
+      "sha256": "3b78fce2cf9c8dff71b3e0608c23ad16e8faaa3076688b8d9bfc84de8b186a66",
+      "role": "source"
+    },
+    {
+      "path": "font-lock.json",
+      "sha256": "c4b2e32e92bac75fd4bcd0a7cadfc5257254b8ca6e78196643717e651f3981e6",
+      "role": "config"
+    },
+    {
+      "path": "licenses/OpenDesign-LICENSE.txt",
+      "sha256": "9d95806a26532623360eb84bb17d298f394b55ef73fb4c0796d99b4319b2b0da",
+      "role": "license"
+    },
+    {
+      "path": "licenses/inter-OFL.txt",
+      "sha256": "5b9321a4298cfeb6b34354164a1c3afc3db114569984c502b9b35d988fd58c57",
+      "role": "license"
+    },
+    {
+      "path": "licenses/intertight-OFL.txt",
+      "sha256": "50240ab035cf1b6b3307940235481d515c4b6de3ab1fa843dbe59e7892cb9d58",
+      "role": "license"
+    },
+    {
+      "path": "licenses/jetbrainsmono-OFL.txt",
+      "sha256": "b2fe5e8987594e9ffd1d2ca52a2f5d73eb8335243893c5d6254b5ad69269591d",
+      "role": "license"
+    },
+    {
+      "path": "licenses/notosanssc-OFL.txt",
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+      "role": "license"
+    },
+    {
+      "path": "locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "role": "lock"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "d55463ce0211bd8cf716288c8a390e2190fdf32fd62befdad5ed093ae124abc7",
+      "role": "lock"
+    },
+    {
+      "path": "render.mjs",
+      "sha256": "9ef87d7064a0987247e59dc91d14e8d09707f2d17570bb300be9ee40c9c8f294",
+      "role": "source"
+    },
+    {
+      "path": "resources.cjs",
+      "sha256": "9503d1f1728418d270e63b7ae128022d1c99f84706b505a3affb2f2abe3c1305",
+      "role": "source"
+    },
+    {
+      "path": "retention.json",
+      "sha256": "4a434c4cc3833dfe2c10de28c0e81789017b1745bd8724c86f0ce7594b116eea",
+      "role": "config"
+    },
+    {
+      "path": "source-lock.json",
+      "sha256": "aa4c978c554973ba33c35fcfc7060fd82ff339091d2f1b7440a9cd26b6e5f2fa",
+      "role": "config"
+    },
+    {
+      "path": "test-resources.cjs",
+      "sha256": "43ef3cad5d29a68bcf0c281d5b27244f792a92595bc8260d90b4210857f906fd",
+      "role": "source"
+    },
+    {
+      "path": "test.mjs",
+      "sha256": "5dd3c2964034a6316cf71e6483805405b02c17bbf0f5263adf1d7b3553bb1b86",
+      "role": "source"
+    }
+  ],
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "locks/npm-package-lock.json"
+    }
+  ],
+  "render": {
+    "entrypoint": "render.mjs",
+    "width": 1524,
+    "height": 858
+  },
+  "resources": [
+    {
+      "id": "font-0",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font snapshot",
+      "notice": "licenses/intertight-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/intertight",
+      "sha256": "b81b73dcb64df3c230cabade7df6c5773bf863233f24c9ee51087519f1f88b6f",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Display.ttf",
+      "bytes": 581588,
+      "instructions": "Provide exact byte-locked file externally under OD_FONT_DIR. Source snapshots/derived variants are identified in font-lock; no automatic fetch or reproduction of unknown timestamps is claimed."
+    },
+    {
+      "id": "font-1",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font snapshot",
+      "notice": "licenses/intertight-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/intertight",
+      "sha256": "91acb19623025d7ed0c6ec4ffdbd62ef1c96db1ccac9e90a3661ffef1995637e",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Display900.ttf",
+      "bytes": 311404,
+      "instructions": "Provide exact byte-locked file externally under OD_FONT_DIR. Source snapshots/derived variants are identified in font-lock; no automatic fetch or reproduction of unknown timestamps is claimed."
+    },
+    {
+      "id": "font-2",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font snapshot",
+      "notice": "licenses/jetbrainsmono-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/jetbrainsmono",
+      "sha256": "48715a42ec242c21e9f02692891e147d022299a52e48d5e413e1a942193ffeda",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Mono.ttf",
+      "bytes": 187208,
+      "instructions": "Provide exact byte-locked file externally under OD_FONT_DIR. Source snapshots/derived variants are identified in font-lock; no automatic fetch or reproduction of unknown timestamps is claimed."
+    },
+    {
+      "id": "font-3",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font snapshot",
+      "notice": "licenses/jetbrainsmono-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/jetbrainsmono",
+      "sha256": "cb8d369b206db428af15a6b9aef0cf71c036a9dee5d2d105e87c8824700cb881",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Mono500.ttf",
+      "bytes": 115172,
+      "instructions": "Provide exact byte-locked file externally under OD_FONT_DIR. Source snapshots/derived variants are identified in font-lock; no automatic fetch or reproduction of unknown timestamps is claimed."
+    },
+    {
+      "id": "font-4",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font snapshot",
+      "notice": "licenses/inter-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/inter",
+      "sha256": "0b59f6b6fc9e8a9ad8032802d1797c4237d9288a3e7b7661517070627b577060",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Sans.ttf",
+      "bytes": 341396,
+      "instructions": "Provide exact byte-locked file externally under OD_FONT_DIR. Source snapshots/derived variants are identified in font-lock; no automatic fetch or reproduction of unknown timestamps is claimed."
+    },
+    {
+      "id": "font-5",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font snapshot",
+      "notice": "licenses/notosanssc-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "CJK.ttf",
+      "bytes": 17772300,
+      "instructions": "Provide exact byte-locked file externally under OD_FONT_DIR. Source snapshots/derived variants are identified in font-lock; no automatic fetch or reproduction of unknown timestamps is claimed."
+    },
+    {
+      "id": "font-6",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font snapshot",
+      "notice": "licenses/intertight-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/intertight",
+      "sha256": "2ab5dc3c5325daf2a1fe8644cf2eec2af92615b5129181d51586504413d3ba33",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Display400.ttf",
+      "bytes": 305928,
+      "instructions": "Provide exact byte-locked file externally under OD_FONT_DIR. Source snapshots/derived variants are identified in font-lock; no automatic fetch or reproduction of unknown timestamps is claimed."
+    },
+    {
+      "id": "font-7",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; external font snapshot",
+      "notice": "licenses/notosanssc-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "sha256": "b7bebb49c3c6b0266362cf75dd9bdd9bf5fbe5fb390be8f7808ebedef376de76",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "CJK400.ttf",
+      "bytes": 10595948,
+      "instructions": "Provide exact byte-locked file externally under OD_FONT_DIR. Source snapshots/derived variants are identified in font-lock; no automatic fetch or reproduction of unknown timestamps is claimed."
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "139661798ed1192d7827f9e513eb6f51ff348c96a2ce87b77caa0d13a7905728",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "Source crop and complete first slide actually viewed. Typography/blue/layout closely match; ASCII pattern remains more blocky than reference. No main visual blocker."
+    }
+  }
+}

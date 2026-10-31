@@ -1,0 +1,10 @@
+{
+  "id": "editorial-eguide-study",
+  "status": "owner-kept-awaiting-integration",
+  "entrypoint": "render.mjs",
+  "output": "eguide-native-v02.png",
+  "userAccepted": true,
+  "publicFamiliesAdded": 0,
+  "sourceCommit": "12d970eacc8971150e3c76470d2a9afe16dc2ed1",
+  "reviewedFrameSHA256": "883bb611e11ba911377e0b1c9c6b39365102cbc2ef9dda560795d51addeb1aad"
+}

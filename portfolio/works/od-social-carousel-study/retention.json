@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "workId": "od-social-carousel-study",
+  "kind": "fixed-static-design",
+  "canvas": {
+    "width": 1024,
+    "height": 576
+  },
+  "entrypoint": "design/scene.mjs",
+  "decisionCard": "DESIGN-RETENTION.md",
+  "sourceAnalysis": [
+    "ASSET-USAGE.md",
+    "CREDITS.md"
+  ],
+  "ruleRefs": [],
+  "ruleStatus": "Case decision card only; no new formal rule index entry.",
+  "assetUsage": [],
+  "nonAssetNote": "Actual case-local helper calls retained; no published family runtime import. Cross-case adapters remain separate candidates, not original scene replacements.",
+  "evidence": {
+    "acceptanceSource": "entry.json#/acceptance",
+    "renderHashSource": "entry.json#/cover/source_sha256",
+    "publicCover": "cover.jpg",
+    "comparisonBundle": {
+      "status": "NOT_PUBLISHED",
+      "recordId": "od-social-carousel-study-final-comparison",
+      "sha256": "bf4a263e755697742407d8d9c6cbfb0b5b90bbd7eff4358553e0a5710ad9caad",
+      "storage": "SCRATCH_LOCAL_ONLY",
+      "durableStorage": "NOT_LOCATED",
+      "note": "Private report also preserved inside verified private backup archive; this legacy field does not claim standalone public report access."
+    },
+    "independentReview": {
+      "status": "PRIVATE_RECORD_LOCATED",
+      "recordId": "od-social-carousel-study-independent-final",
+      "sha256": "90fbc184aa4ded9ec8e8bc16bf3a1d2c5651b200fd4c51c1f258518e280f70d8",
+      "storage": "SCRATCH_LOCAL_ONLY",
+      "durableStorage": "NOT_LOCATED",
+      "note": "Scoped final review preserved privately; not redistributed. Original frame reviewed; source-only adapter cold restore independently pending."
+    }
+  },
+  "motionTransfer": {
+    "status": "NOT_TESTED",
+    "note": "Static reconstruction only; no interaction, browser, responsive or motion validation."
+  }
+}

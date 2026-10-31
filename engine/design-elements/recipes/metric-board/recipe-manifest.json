@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "recipeId": "recipe.metric-board.v1",
+  "assetId": "ui.data.validated-metric-tile",
+  "baseCommit": "ab20a97cc1e76ada16461a083fcc9fbe8b7d5555",
+  "entry": "metrics.cjs",
+  "export": "drawMetric",
+  "examples": [
+    "render.cjs:board",
+    "render.cjs:workshop"
+  ],
+  "nativeScene": "scene.mjs",
+  "guidance": "DESIGN-GUIDE.md",
+  "newFamilies": 0,
+  "status": "candidate-not-pushed",
+  "sourceSceneMigrated": false,
+  "originalScreenshotIncluded": false,
+  "userAestheticApproval": false,
+  "runtime": {
+    "node": "24.x",
+    "canvas": "0.1.100"
+  },
+  "tests": "test.cjs"
+}

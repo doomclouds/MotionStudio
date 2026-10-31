@@ -1,0 +1,81 @@
+{
+  "fontTools": "4.61.1",
+  "fonts": [
+    {
+      "input": "IBMPlexMono-Medium.ttf",
+      "inputSHA256": "a9b4c49bb299e05b5f6c481e7fb5e78943d2793249a0c8874ab574a2d1ea6755",
+      "output": "IBMPlexMono-Medium.ttf",
+      "outputSHA256": "a9b4c49bb299e05b5f6c481e7fb5e78943d2793249a0c8874ab574a2d1ea6755",
+      "axes": null,
+      "modified": 3750829241
+    },
+    {
+      "input": "IBMPlexMono-Regular.ttf",
+      "inputSHA256": "6a3412f058c7d8dfd9170c41e85ade48e5156ecb89356110ca57a0a27734af46",
+      "output": "IBMPlexMono-Regular.ttf",
+      "outputSHA256": "6a3412f058c7d8dfd9170c41e85ade48e5156ecb89356110ca57a0a27734af46",
+      "axes": null,
+      "modified": 3750829241
+    },
+    {
+      "input": "InstrumentSerif-Italic.ttf",
+      "inputSHA256": "08939b8bdf534afec24ae0ef5e03f948940cd9a8fe08e7fecbad040e62327385",
+      "output": "InstrumentSerif-Italic.ttf",
+      "outputSHA256": "08939b8bdf534afec24ae0ef5e03f948940cd9a8fe08e7fecbad040e62327385",
+      "axes": null,
+      "modified": 3761885183
+    },
+    {
+      "input": "Inter.ttf",
+      "inputSHA256": "c8d76e1cb2a0a7cfbbae1e390be4e4b942b27f99ec07e1024b1fc916045eed09",
+      "output": "Inter.ttf",
+      "outputSHA256": "c8d76e1cb2a0a7cfbbae1e390be4e4b942b27f99ec07e1024b1fc916045eed09",
+      "axes": null,
+      "modified": 3875613961
+    },
+    {
+      "input": "Inter.ttf",
+      "inputSHA256": "c8d76e1cb2a0a7cfbbae1e390be4e4b942b27f99ec07e1024b1fc916045eed09",
+      "output": "Inter400.ttf",
+      "outputSHA256": "3ee534a97f519e58113b63878b7360d14e54dbf5a23d4c8710e3fa86f8d42f9a",
+      "axes": {
+        "opsz": 14.0,
+        "wght": 400
+      },
+      "modified": 3876246971
+    },
+    {
+      "input": "Inter.ttf",
+      "inputSHA256": "c8d76e1cb2a0a7cfbbae1e390be4e4b942b27f99ec07e1024b1fc916045eed09",
+      "output": "Inter500.ttf",
+      "outputSHA256": "03a712a4b822cb5d81c38b97643e663b3a554cd1ddb62f314bb6474d63e069e1",
+      "axes": {
+        "opsz": 14.0,
+        "wght": 500
+      },
+      "modified": 3876246973
+    },
+    {
+      "input": "Inter.ttf",
+      "inputSHA256": "c8d76e1cb2a0a7cfbbae1e390be4e4b942b27f99ec07e1024b1fc916045eed09",
+      "output": "Inter600.ttf",
+      "outputSHA256": "7b7f5bf2301f5b3b17a8b58705815e19bb3a2c979f81a2c0c63eafaa4520f99a",
+      "axes": {
+        "opsz": 14.0,
+        "wght": 600
+      },
+      "modified": 3876246974
+    },
+    {
+      "input": "Inter.ttf",
+      "inputSHA256": "c8d76e1cb2a0a7cfbbae1e390be4e4b942b27f99ec07e1024b1fc916045eed09",
+      "output": "Inter700.ttf",
+      "outputSHA256": "346151e8edc3de4805743575b327596bc7249f1321f11ac47bed8c3c22519b83",
+      "axes": {
+        "opsz": 14.0,
+        "wght": 700
+      },
+      "modified": 3876246975
+    }
+  ]
+}

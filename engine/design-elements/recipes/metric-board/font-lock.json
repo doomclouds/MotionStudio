@@ -1,0 +1,9 @@
+{
+  "family": "IBM Plex Mono Regular",
+  "license": "OFL-1.1",
+  "source": "https://github.com/google/fonts/tree/main/ofl/ibmplexmono",
+  "file": "IBMPlexMono-Regular.ttf",
+  "sha256": "6a3412f058c7d8dfd9170c41e85ade48e5156ecb89356110ca57a0a27734af46",
+  "mode": "download original hash-locked OFL font externally with prepare-font.py; mutable source URL fails closed if changed",
+  "downloadUrl": "https://raw.githubusercontent.com/google/fonts/main/ofl/ibmplexmono/IBMPlexMono-Regular.ttf"
+}

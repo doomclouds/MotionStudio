@@ -1,0 +1,9 @@
+{
+  "upstreamCommit": "12d970eacc8971150e3c76470d2a9afe16dc2ed1",
+  "url": "https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/skills/deck-swiss-international/example.html",
+  "htmlSHA256": "fcd94bf610076be855e5949d1d94620a626fe18d36e55394f04768374953d40c",
+  "htmlGitBlobSHA1": "114d3cd3748400e1a94cb7171afe0718942f3819",
+  "referenceBundled": false,
+  "browserExecuted": false,
+  "userAcceptance": "2026-10-30: ten static examples accepted, requested reusable assets then push; no motion approval."
+}

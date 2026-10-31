@@ -1,0 +1,78 @@
+{
+  "publishedFamilyIds": [
+    "design.print-poster.v1",
+    "design.typographic-focus.v1",
+    "design.color-sections.v1",
+    "design.material-surfaces.v1",
+    "design.semantic-data.v1",
+    "design.parameter-controls.v1",
+    "design.expressive-type.v1",
+    "design.radial-scale.v1",
+    "design.diagonal-field.v1",
+    "design.authored-paths.v1",
+    "design.vertical-imprint.v1",
+    "design.geometric-marks.v1",
+    "design.proportional-partition.v1",
+    "design.ratio-rings.v1"
+  ],
+  "publishedRecipeIds": [
+    "recipe.ordered-focus.v1",
+    "recipe.editorial-evidence.v1",
+    "recipe.manifesto-stack.v1",
+    "recipe.partition-donut.v1",
+    "recipe.emphasis-tile.v1",
+    "recipe.unit-pictogram.v1",
+    "recipe.code-spans.v1",
+    "recipe.value-grid.v1",
+    "recipe.xhs08-semantic-area.v1"
+  ],
+  "candidateRelations": {
+    "social-series": {
+      "closestFamilies": [
+        "design.typographic-focus.v1",
+        "design.material-surfaces.v1",
+        "design.authored-paths.v1"
+      ],
+      "closestRecipes": [
+        "recipe.ordered-focus.v1",
+        "recipe.emphasis-tile.v1"
+      ],
+      "difference": "cinematic fixed landscape series; not generic typography/surface layer",
+      "actualRuntime": [
+        "snapshots/social-card.cjs"
+      ],
+      "publishedFamilyRuntimeImports": []
+    },
+    "phone-stage": {
+      "closestFamilies": [
+        "design.material-surfaces.v1",
+        "design.parameter-controls.v1"
+      ],
+      "closestRecipes": [
+        "recipe.ordered-focus.v1"
+      ],
+      "difference": "device-content demonstration; not generic material or functioning controls",
+      "actualRuntime": [
+        "snapshots/lull-frame.mjs"
+      ],
+      "publishedFamilyRuntimeImports": []
+    },
+    "semantic-table": {
+      "closestFamilies": [
+        "design.semantic-data.v1",
+        "design.proportional-partition.v1"
+      ],
+      "closestRecipes": [
+        "recipe.value-grid.v1",
+        "recipe.editorial-evidence.v1"
+      ],
+      "difference": "verbatim records/status; no numeric area or heatmap mapping",
+      "actualRuntime": [],
+      "sourceSnapshotUsedAtRuntime": false,
+      "publishedFamilyRuntimeImports": []
+    }
+  },
+  "newPublicFamilies": 0,
+  "newPublicRecipes": 0,
+  "candidateCount": 3
+}

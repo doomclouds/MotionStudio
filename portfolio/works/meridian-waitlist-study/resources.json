@@ -1,0 +1,36 @@
+{
+  "fonts": [
+    {
+      "file": "DMSans.ttf",
+      "sha256": "8cd08d97e89c24d0aa92edd2f0f4c8ee6195eee9b7c9f154865a58b02f0c1c0d"
+    },
+    {
+      "file": "DMSans400.ttf",
+      "sha256": "f99615d1fb5d65597bbe912dd9f32ab94ec98fd1d51685106228aa3c6a5770a9"
+    },
+    {
+      "file": "DMSans500.ttf",
+      "sha256": "3b36bfef89796fa2dfadaa682fddf8e75394d5231ff0fc98320f56fa0b41e6b8"
+    },
+    {
+      "file": "DMSans600.ttf",
+      "sha256": "24f0c4f7afd5950936614c4619d8304cbbb508f1015a2d6c189870784f1dcea9"
+    },
+    {
+      "file": "DMSans700.ttf",
+      "sha256": "7de5905e47f467b52224326434f49ec6a3db7aca205004b9bee9c842279a29c7"
+    },
+    {
+      "file": "Syne.ttf",
+      "sha256": "ce5ac77142a65cab2248a1a2ebb740b1d4d9c20b52488877d3ff664d1356104a"
+    },
+    {
+      "file": "Syne700.ttf",
+      "sha256": "2ab620af1f53bec9dda34c46055d6ab9fbf4b638a3e57207f7a0c91f874f4b58"
+    },
+    {
+      "file": "Syne800.ttf",
+      "sha256": "eea8faba00757631a10fff086540e024d4f712ad35fbedee60cdbf41998887fc"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+const fs=require('fs'),path=require('path'),crypto=require('crypto');
+const root=fs.realpathSync(__dirname),lock=require('./resources.json');let boundary=root;for(let p=root;;p=path.dirname(p)){if(fs.existsSync(path.join(p,'.git'))||fs.existsSync(path.join(p,'portfolio','works'))){boundary=fs.realpathSync(p);break;}if(path.dirname(p)===p)break;}
+function outside(v){if(!v||!path.isAbsolute(v))throw Error('absolute external path required');let p=v;while(true){try{if(fs.lstatSync(p).isSymbolicLink())throw Error('symlink rejected');break;}catch(e){if(e.code!=='ENOENT')throw e;p=path.dirname(p)}}const resolved=path.resolve(fs.realpathSync(p),path.relative(p,v));if(resolved===boundary||resolved.startsWith(boundary+path.sep))throw Error('path must be outside repository (or standalone work)');return resolved;}
+const dir=outside(process.env.OD_RESOURCE_DIR);for(const f of lock.fonts){const p=path.join(dir,f.file);if(fs.lstatSync(p).isSymbolicLink()||crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex')!==f.sha256)throw Error('font SHA mismatch: '+f.file);}
+const output=outside(process.env.OD_OUTPUT_DIR);if(fs.existsSync(output)&&fs.readdirSync(output).length)throw Error('output must be new or empty');fs.mkdirSync(output,{recursive:true});
+module.exports={resource:name=>path.join(dir,name),output};

@@ -1,0 +1,10 @@
+{
+  "id": "meridian-waitlist-study",
+  "status": "owner-kept-awaiting-integration",
+  "entrypoint": "design/scene.mjs",
+  "output": "candidate.png",
+  "userAccepted": true,
+  "publicFamiliesAdded": 0,
+  "sourceCommit": "12d970eacc8971150e3c76470d2a9afe16dc2ed1",
+  "reviewedFrameSHA256": "94447469319afad3cde9cf12760badcbe01a3e6a6cff23f116fe6b7db4a2dde1"
+}

@@ -1,0 +1,36 @@
+{
+  "fonts": [
+    {
+      "file": "IBMPlexMono-Medium.ttf",
+      "sha256": "a9b4c49bb299e05b5f6c481e7fb5e78943d2793249a0c8874ab574a2d1ea6755"
+    },
+    {
+      "file": "IBMPlexMono-Regular.ttf",
+      "sha256": "6a3412f058c7d8dfd9170c41e85ade48e5156ecb89356110ca57a0a27734af46"
+    },
+    {
+      "file": "InstrumentSerif-Italic.ttf",
+      "sha256": "08939b8bdf534afec24ae0ef5e03f948940cd9a8fe08e7fecbad040e62327385"
+    },
+    {
+      "file": "Inter.ttf",
+      "sha256": "c8d76e1cb2a0a7cfbbae1e390be4e4b942b27f99ec07e1024b1fc916045eed09"
+    },
+    {
+      "file": "Inter400.ttf",
+      "sha256": "3ee534a97f519e58113b63878b7360d14e54dbf5a23d4c8710e3fa86f8d42f9a"
+    },
+    {
+      "file": "Inter500.ttf",
+      "sha256": "03a712a4b822cb5d81c38b97643e663b3a554cd1ddb62f314bb6474d63e069e1"
+    },
+    {
+      "file": "Inter600.ttf",
+      "sha256": "7b7f5bf2301f5b3b17a8b58705815e19bb3a2c979f81a2c0c63eafaa4520f99a"
+    },
+    {
+      "file": "Inter700.ttf",
+      "sha256": "346151e8edc3de4805743575b327596bc7249f1321f11ac47bed8c3c22519b83"
+    }
+  ]
+}

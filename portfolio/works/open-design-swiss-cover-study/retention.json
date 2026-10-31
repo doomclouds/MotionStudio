@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "workId": "open-design-swiss-cover-study",
+  "kind": "fixed-static-design",
+  "canvas": {
+    "width": 1524,
+    "height": 858
+  },
+  "entrypoint": "render.mjs",
+  "decisionCard": "DESIGN-RETENTION.md",
+  "sourceAnalysis": [
+    "CREDITS.md"
+  ],
+  "ruleRefs": [],
+  "ruleStatus": "Local composition recipe only; no new public family.",
+  "assetUsage": [],
+  "nonAssetNote": "Native Canvas case-local helpers; no MotionStudio public family dependency claimed.",
+  "evidence": {
+    "acceptanceSource": "entry.json#/acceptance",
+    "renderHashSource": "entry.json#/cover/source_sha256",
+    "publicCover": "cover.jpg",
+    "comparisonBundle": {
+      "status": "NOT_PUBLISHED",
+      "recordId": "swiss-private-report",
+      "sha256": "e8f3853a5ae78df9def66a7e1f15c8afcc92800efc9ad6218b56c04c19928646",
+      "storage": "SCRATCH_LOCAL_ONLY",
+      "durableStorage": "NOT_LOCATED",
+      "note": "Source screenshot comparison excluded from public tree."
+    },
+    "independentReview": {
+      "status": "PRIVATE_RECORD_LOCATED",
+      "recordId": "swiss-independent-review",
+      "sha256": "91c7c83bb31941beabe9f71906fc18d9f0c801e55838f088158177b314ec5f15",
+      "storage": "SCRATCH_LOCAL_ONLY",
+      "durableStorage": "NOT_LOCATED",
+      "note": "Visual review of final static frame, not integration validation or owner substitute."
+    }
+  },
+  "motionTransfer": {
+    "status": "NOT_TESTED",
+    "note": "Fixed static only; no interaction, animation, sound or PPT export."
+  }
+}

@@ -123,6 +123,16 @@ class SourceTreeFixtures(unittest.TestCase):
     def test_public_policy_only_allows_exact_reviewed_images(self):
         allow = json.loads((ROOT / 'scripts/source-assets-allowlist.json').read_text())['assets']
         self.assertEqual(allow, {
+            'portfolio/works/editorial-eguide-study/cover.jpg': '813292adf2e3a6c29e62464a7d8d38cdcef7c1583b7e1e9890ca1f9796967d98',
+            'portfolio/works/level-three-screen-study/cover.jpg': 'e6269ef24a2bd80c4c420f45d823512eed5352b395feb78dbaccbef82b29112d',
+            'portfolio/works/meridian-waitlist-study/cover.jpg': '71b21627695277eea61b1699d0d1db3ecb6ce888dd80ef04979e49612701c5ec',
+            'portfolio/works/od-flowai-dashboard-study/cover.jpg': '6d0ea820cc423e0c4c7d85101f24badc14c08e8e2e6c7c5ed02915afd430bf57',
+            'portfolio/works/od-lull-onboarding-study/cover.jpg': '091c1521268f4254d7121d03abbf1a951f82f2c8b969c41ecd4921fc3194dd07',
+            'portfolio/works/od-social-carousel-study/cover.jpg': '30f2883b9e55b58063e9f64d3c0ab936b8794c1a4a672ea9927d0d89d0d77c91',
+            'portfolio/works/open-design-hanafuda-study/cover.jpg': '244893e7d31e2233e24faafd24b0e011a81faceb999b06bad50d3e67845e2b78',
+            'portfolio/works/open-design-orbital-study/cover.jpg': '0ce91be86f4c98b7c0ac9fa84182edbf845e276c39cdd82dd125ef6d2311bbde',
+            'portfolio/works/open-design-swiss-cover-study/cover.jpg': '526a621b966ea8414de82a2d3f75943a5d30f3b83da5821807c6c099e38baf49',
+
             'portfolio/works/xhs-blank-vertical-study/cover.jpg': 'b7d12d1c72398b805cadc1519fb6a184f673803f64f5cacc7b0c59cd85c52d49',
             'portfolio/works/song-block-print-study/cover.jpg': '6223f4018b87f59c3cd4613450e216250a5687f96973640d01302d59da5151a3',
             'portfolio/works/bauhaus-theatre-study/cover.jpg': '131a46b5fb87e7012c7c66343812a1715cc39ecb43b943c03d433a145539a28a',
@@ -180,6 +190,60 @@ class SourceTreeFixtures(unittest.TestCase):
             'portfolio/works/hardware-sampler-study/cover.jpg': '98f00db4ebf08339a2e55975ce0133cf65ce5a029460db108deaef557852b766',
             'portfolio/works/shanghai-deco-study/cover.jpg': 'ec6f76cea9a55360a5c7cc0c82543735335e5dc194fbc8b23d9ed5561431d251',
         })
+    def test_exact_editorial_eguide_study_new_cover(self):
+        name='portfolio/works/editorial-eguide-study/cover.jpg'; self.add(name,(ROOT/name).read_bytes()); self.audit(True)
+    def test_tampered_editorial_eguide_study_new_cover(self):
+        name='portfolio/works/editorial-eguide-study/cover.jpg'; self.add(name,(ROOT/name).read_bytes()+b'tamper'); self.audit(False)
+    def test_wrong_path_editorial_eguide_study_new_cover(self):
+        name='portfolio/works/editorial-eguide-study/cover.jpg'; self.add('portfolio/works/not-approved/other.jpg',(ROOT/name).read_bytes()); self.audit(False)
+    def test_exact_level_three_screen_study_new_cover(self):
+        name='portfolio/works/level-three-screen-study/cover.jpg'; self.add(name,(ROOT/name).read_bytes()); self.audit(True)
+    def test_tampered_level_three_screen_study_new_cover(self):
+        name='portfolio/works/level-three-screen-study/cover.jpg'; self.add(name,(ROOT/name).read_bytes()+b'tamper'); self.audit(False)
+    def test_wrong_path_level_three_screen_study_new_cover(self):
+        name='portfolio/works/level-three-screen-study/cover.jpg'; self.add('portfolio/works/not-approved/other.jpg',(ROOT/name).read_bytes()); self.audit(False)
+    def test_exact_meridian_waitlist_study_new_cover(self):
+        name='portfolio/works/meridian-waitlist-study/cover.jpg'; self.add(name,(ROOT/name).read_bytes()); self.audit(True)
+    def test_tampered_meridian_waitlist_study_new_cover(self):
+        name='portfolio/works/meridian-waitlist-study/cover.jpg'; self.add(name,(ROOT/name).read_bytes()+b'tamper'); self.audit(False)
+    def test_wrong_path_meridian_waitlist_study_new_cover(self):
+        name='portfolio/works/meridian-waitlist-study/cover.jpg'; self.add('portfolio/works/not-approved/other.jpg',(ROOT/name).read_bytes()); self.audit(False)
+    def test_exact_od_flowai_dashboard_study_new_cover(self):
+        name='portfolio/works/od-flowai-dashboard-study/cover.jpg'; self.add(name,(ROOT/name).read_bytes()); self.audit(True)
+    def test_tampered_od_flowai_dashboard_study_new_cover(self):
+        name='portfolio/works/od-flowai-dashboard-study/cover.jpg'; self.add(name,(ROOT/name).read_bytes()+b'tamper'); self.audit(False)
+    def test_wrong_path_od_flowai_dashboard_study_new_cover(self):
+        name='portfolio/works/od-flowai-dashboard-study/cover.jpg'; self.add('portfolio/works/not-approved/other.jpg',(ROOT/name).read_bytes()); self.audit(False)
+    def test_exact_od_lull_onboarding_study_new_cover(self):
+        name='portfolio/works/od-lull-onboarding-study/cover.jpg'; self.add(name,(ROOT/name).read_bytes()); self.audit(True)
+    def test_tampered_od_lull_onboarding_study_new_cover(self):
+        name='portfolio/works/od-lull-onboarding-study/cover.jpg'; self.add(name,(ROOT/name).read_bytes()+b'tamper'); self.audit(False)
+    def test_wrong_path_od_lull_onboarding_study_new_cover(self):
+        name='portfolio/works/od-lull-onboarding-study/cover.jpg'; self.add('portfolio/works/not-approved/other.jpg',(ROOT/name).read_bytes()); self.audit(False)
+    def test_exact_od_social_carousel_study_new_cover(self):
+        name='portfolio/works/od-social-carousel-study/cover.jpg'; self.add(name,(ROOT/name).read_bytes()); self.audit(True)
+    def test_tampered_od_social_carousel_study_new_cover(self):
+        name='portfolio/works/od-social-carousel-study/cover.jpg'; self.add(name,(ROOT/name).read_bytes()+b'tamper'); self.audit(False)
+    def test_wrong_path_od_social_carousel_study_new_cover(self):
+        name='portfolio/works/od-social-carousel-study/cover.jpg'; self.add('portfolio/works/not-approved/other.jpg',(ROOT/name).read_bytes()); self.audit(False)
+    def test_exact_open_design_hanafuda_study_new_cover(self):
+        name='portfolio/works/open-design-hanafuda-study/cover.jpg'; self.add(name,(ROOT/name).read_bytes()); self.audit(True)
+    def test_tampered_open_design_hanafuda_study_new_cover(self):
+        name='portfolio/works/open-design-hanafuda-study/cover.jpg'; self.add(name,(ROOT/name).read_bytes()+b'tamper'); self.audit(False)
+    def test_wrong_path_open_design_hanafuda_study_new_cover(self):
+        name='portfolio/works/open-design-hanafuda-study/cover.jpg'; self.add('portfolio/works/not-approved/other.jpg',(ROOT/name).read_bytes()); self.audit(False)
+    def test_exact_open_design_orbital_study_new_cover(self):
+        name='portfolio/works/open-design-orbital-study/cover.jpg'; self.add(name,(ROOT/name).read_bytes()); self.audit(True)
+    def test_tampered_open_design_orbital_study_new_cover(self):
+        name='portfolio/works/open-design-orbital-study/cover.jpg'; self.add(name,(ROOT/name).read_bytes()+b'tamper'); self.audit(False)
+    def test_wrong_path_open_design_orbital_study_new_cover(self):
+        name='portfolio/works/open-design-orbital-study/cover.jpg'; self.add('portfolio/works/not-approved/other.jpg',(ROOT/name).read_bytes()); self.audit(False)
+    def test_exact_open_design_swiss_cover_study_new_cover(self):
+        name='portfolio/works/open-design-swiss-cover-study/cover.jpg'; self.add(name,(ROOT/name).read_bytes()); self.audit(True)
+    def test_tampered_open_design_swiss_cover_study_new_cover(self):
+        name='portfolio/works/open-design-swiss-cover-study/cover.jpg'; self.add(name,(ROOT/name).read_bytes()+b'tamper'); self.audit(False)
+    def test_wrong_path_open_design_swiss_cover_study_new_cover(self):
+        name='portfolio/works/open-design-swiss-cover-study/cover.jpg'; self.add('portfolio/works/not-approved/other.jpg',(ROOT/name).read_bytes()); self.audit(False)
     def test_exact_xhs_blank_vertical_cover_allowed(self):
         name='portfolio/works/xhs-blank-vertical-study/cover.jpg'
         self.add(name,(ROOT/name).read_bytes());self.audit(True)

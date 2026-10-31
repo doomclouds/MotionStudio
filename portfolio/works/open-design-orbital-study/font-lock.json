@@ -1,0 +1,51 @@
+[
+  {
+    "file": "Cormorant400.ttf",
+    "sha256": "e25aacd5912db15bdd7d11c76953fd1b5bb58a842c1e5928eb271ccd24a71af1",
+    "source": "Cormorant.ttf",
+    "axes": {
+      "wght": 400
+    }
+  },
+  {
+    "file": "Mono500.ttf",
+    "sha256": "a9b4c49bb299e05b5f6c481e7fb5e78943d2793249a0c8874ab574a2d1ea6755",
+    "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/ibmplexmono/IBMPlexMono-Medium.ttf"
+  },
+  {
+    "file": "Cormorant600.ttf",
+    "sha256": "bc3d6db9ac6f72175c452de365e02518a99e35930d9cf9d67e5d050be93f07f9",
+    "source": "Cormorant.ttf",
+    "axes": {
+      "wght": 600
+    }
+  },
+  {
+    "file": "Mono.ttf",
+    "sha256": "6a3412f058c7d8dfd9170c41e85ade48e5156ecb89356110ca57a0a27734af46"
+  },
+  {
+    "file": "CormorantItalic600.ttf",
+    "sha256": "a3847599c3802a0534d8467be98fa480643a058d1de3852bbb3e39029ea3706d",
+    "source": "CormorantItalic.ttf",
+    "axes": {
+      "wght": 600
+    }
+  },
+  {
+    "file": "CormorantItalic.ttf",
+    "sha256": "0f48ea6abb2084537854f7174c470991a463b13036309e3b50a81511611c530d"
+  },
+  {
+    "file": "CormorantItalic400.ttf",
+    "sha256": "0c7d03f82209a3e2af61e20432d0bc8a411a404d4a10d489c16a84ef480c96a3",
+    "source": "CormorantItalic.ttf",
+    "axes": {
+      "wght": 400
+    }
+  },
+  {
+    "file": "Cormorant.ttf",
+    "sha256": "b20b7d9626dd956b2c5e558692ad328b1f19e3275e2782db4fa07670d83f35e0"
+  }
+]

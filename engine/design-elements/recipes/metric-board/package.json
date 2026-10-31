@@ -1,0 +1,13 @@
+{
+  "name": "motionstudio-metric-board-recipe",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "dependencies": {
+    "@napi-rs/canvas": "0.1.100"
+  },
+  "scripts": {
+    "test": "node test.cjs",
+    "render": "node render.cjs"
+  }
+}

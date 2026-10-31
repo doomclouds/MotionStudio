@@ -1,0 +1,52 @@
+[
+  {
+    "file": "Display.ttf",
+    "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/intertight/InterTight%5Bwght%5D.ttf",
+    "sha256": "b81b73dcb64df3c230cabade7df6c5773bf863233f24c9ee51087519f1f88b6f"
+  },
+  {
+    "file": "Display900.ttf",
+    "source": "Display.ttf",
+    "axes": {
+      "wght": 900
+    },
+    "sha256": "91acb19623025d7ed0c6ec4ffdbd62ef1c96db1ccac9e90a3661ffef1995637e"
+  },
+  {
+    "file": "Mono.ttf",
+    "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/jetbrainsmono/JetBrainsMono%5Bwght%5D.ttf",
+    "sha256": "48715a42ec242c21e9f02692891e147d022299a52e48d5e413e1a942193ffeda"
+  },
+  {
+    "file": "Mono500.ttf",
+    "source": "Mono.ttf",
+    "axes": {
+      "wght": 500
+    },
+    "sha256": "cb8d369b206db428af15a6b9aef0cf71c036a9dee5d2d105e87c8824700cb881"
+  },
+  {
+    "file": "Sans.ttf",
+    "sha256": "0b59f6b6fc9e8a9ad8032802d1797c4237d9288a3e7b7661517070627b577060"
+  },
+  {
+    "file": "CJK.ttf",
+    "sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da"
+  },
+  {
+    "file": "Display400.ttf",
+    "source": "Display.ttf",
+    "axes": {
+      "wght": 400
+    },
+    "sha256": "2ab5dc3c5325daf2a1fe8644cf2eec2af92615b5129181d51586504413d3ba33"
+  },
+  {
+    "file": "CJK400.ttf",
+    "source": "CJK.ttf",
+    "axes": {
+      "wght": 400
+    },
+    "sha256": "b7bebb49c3c6b0266362cf75dd9bdd9bf5fbe5fb390be8f7808ebedef376de76"
+  }
+]

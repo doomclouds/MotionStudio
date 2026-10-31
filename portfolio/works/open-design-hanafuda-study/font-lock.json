@@ -1,0 +1,26 @@
+[
+  {
+    "file": "Japanese700.ttf",
+    "sha256": "4407f4c3574a4823bc5c093e09a6c8bf3a41b1dd10ca118075c34e92d73deb42",
+    "source": "Japanese.ttf",
+    "axes": {
+      "wght": 700
+    }
+  },
+  {
+    "file": "Japanese.ttf",
+    "sha256": "2fd527ba12b6a44ec30d796d633360da0aeba6c5d4af1304ce12bb4dc15a7dfc"
+  },
+  {
+    "file": "Mono.ttf",
+    "sha256": "6a3412f058c7d8dfd9170c41e85ade48e5156ecb89356110ca57a0a27734af46"
+  },
+  {
+    "file": "Italic.ttf",
+    "sha256": "df74c0ac387baeaeb0fe4f2324e1668e6a3ed8c09cd9796fe162c71753e19e45"
+  },
+  {
+    "file": "Display.ttf",
+    "sha256": "8cc3643535edf039aa5d95440a8542735e9197e4f4b8d9303e980fefbf5ab616"
+  }
+]

@@ -1,0 +1,40 @@
+{
+  "fonts": [
+    {
+      "file": "Cormorant.ttf",
+      "sha256": "b20b7d9626dd956b2c5e558692ad328b1f19e3275e2782db4fa07670d83f35e0"
+    },
+    {
+      "file": "Cormorant500.ttf",
+      "sha256": "4c93cc45d63ec9e1a704eb94a31c277b48d23c1271fc6704e4a6801451dd6cb6"
+    },
+    {
+      "file": "Cormorant700.ttf",
+      "sha256": "0e2963d83c2f353b7a93a06f9a1e81c241620266cfa5de7a94e4b9cdb5dc85ee"
+    },
+    {
+      "file": "CormorantItalic.ttf",
+      "sha256": "0f48ea6abb2084537854f7174c470991a463b13036309e3b50a81511611c530d"
+    },
+    {
+      "file": "CormorantItalic500.ttf",
+      "sha256": "8da57dd57bbe743cfacf4a9b16f6047e0b0b85c0572a51795dee1bc27b0c956e"
+    },
+    {
+      "file": "CormorantItalic700.ttf",
+      "sha256": "917aeb05dfd3290212b5414a9be05dfa7a013048294a3ee2126dcbca3552c460"
+    },
+    {
+      "file": "DM.ttf",
+      "sha256": "94b5fa7bac0f406cb3149512037f37ea21b55cecd732c3fd3a076260441399cd"
+    },
+    {
+      "file": "DMItalic.ttf",
+      "sha256": "d016b81df5cd7462188a0ba11dc343ce2897dffa39fb1fcff0fef0bb7684364e"
+    },
+    {
+      "file": "Mono.ttf",
+      "sha256": "6a3412f058c7d8dfd9170c41e85ade48e5156ecb89356110ca57a0a27734af46"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "upstreamCommit": "12d970eacc8971150e3c76470d2a9afe16dc2ed1",
+  "url": "https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/design-templates/motion-frames/example.html",
+  "htmlSHA256": "fa6a8376730990c64f792602638cff3075aa0c10eb5a938be998d850bc0124d6",
+  "htmlGitBlobSHA1": "36edc0ae6fdc2d66a61089407c6c41740c8e0f69",
+  "referenceBundled": false,
+  "browserExecuted": false,
+  "userAcceptance": "2026-10-30: ten static examples accepted, requested reusable assets then push; no motion approval."
+}

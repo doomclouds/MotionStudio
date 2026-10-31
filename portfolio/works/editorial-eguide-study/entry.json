@@ -1,0 +1,289 @@
+{
+  "schema": 4,
+  "id": "editorial-eguide-study",
+  "version": "1.0.0",
+  "title": "Editorial Eguide · 双页创作指南",
+  "status": "source-release",
+  "unofficial_recreation": true,
+  "original": {
+    "author": "OpenDesign / nexu-io",
+    "title": "digital-eguide",
+    "url": "https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/design-templates/digital-eguide/example.html"
+  },
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "licenses/OpenDesign-LICENSE.txt",
+      "licenses/cormorantgaramond-OFL.txt",
+      "licenses/dmseriftext-OFL.txt",
+      "licenses/ibmplexmono-OFL.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/design-templates/digital-eguide/example.html",
+      "https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/LICENSE"
+    ]
+  },
+  "files": [
+    {
+      "path": "CREDITS.md",
+      "sha256": "eac88a151fe0b5476da4c65799e4e0c820711245c66671de9ad97f489d63082e",
+      "role": "documentation"
+    },
+    {
+      "path": "DESIGN-RETENTION.md",
+      "sha256": "aec678a8bc916cf42d23f1c0a2274327cf661bc02b2eeaaf2d5be39ea947add0",
+      "role": "documentation"
+    },
+    {
+      "path": "README.md",
+      "sha256": "88e27593cab92489452a5970d1123e243676411c0f549bbe33f9eb960e905813",
+      "role": "documentation"
+    },
+    {
+      "path": "case.json",
+      "sha256": "07032e61328d2222b644e7b267ba82e40cbb4834ca729f3e15c1f6ecc5afc97f",
+      "role": "lock"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "813292adf2e3a6c29e62464a7d8d38cdcef7c1583b7e1e9890ca1f9796967d98",
+      "role": "cover"
+    },
+    {
+      "path": "design/editorial-sheet.mjs",
+      "sha256": "e81dcb949139494275bee410fe2556989c82f285c41eff6ab0308103e64a62b7",
+      "role": "source"
+    },
+    {
+      "path": "design/scene.mjs",
+      "sha256": "b714f10cfa512e12d0ad4224059221688b6eb07b80b15efbb73f680e4bd61043",
+      "role": "source"
+    },
+    {
+      "path": "font-preparation.json",
+      "sha256": "2453810fb24d488c3cdc06fd8660448592fc42f974bc3a8885c1f1ef40ba2f26",
+      "role": "lock"
+    },
+    {
+      "path": "licenses/OpenDesign-LICENSE.txt",
+      "sha256": "9d95806a26532623360eb84bb17d298f394b55ef73fb4c0796d99b4319b2b0da",
+      "role": "license"
+    },
+    {
+      "path": "licenses/cormorantgaramond-OFL.txt",
+      "sha256": "6f5a41d57400577a50aae88475b11f292f3d7de78ee7d5113c69577331d8ad31",
+      "role": "license"
+    },
+    {
+      "path": "licenses/dmseriftext-OFL.txt",
+      "sha256": "aa49c876a28d8c0b0a3027d6c25b9c607eee8c0fb96165011d42a6ace1408fe1",
+      "role": "license"
+    },
+    {
+      "path": "licenses/ibmplexmono-OFL.txt",
+      "sha256": "d741e57d5f865e294df801f96b7b5161a88b211df65887e4358d271c9fc5fb4f",
+      "role": "license"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "9dd9194999822865e002b7c64a98152a07a56f7fb31e44425cc772ef98b05573",
+      "role": "lock"
+    },
+    {
+      "path": "package.json",
+      "sha256": "1f0b2dd79596066c84e74bb090531ad7116611933aca439a6f20b045b6724530",
+      "role": "lock"
+    },
+    {
+      "path": "prepare-fonts.py",
+      "sha256": "248123471950508672c78bda2c506e55e490082462f7b5d26d0744130cc92ba5",
+      "role": "source"
+    },
+    {
+      "path": "render.mjs",
+      "sha256": "561f4c3dd9ddb7b719991fbc42331b3e37c4d666e79888f1bdb990144f1c1bf8",
+      "role": "source"
+    },
+    {
+      "path": "resources.json",
+      "sha256": "d34fa53e0b29dc3f451d56ada6cca93e04e47b64bb120955146686be587b6723",
+      "role": "lock"
+    },
+    {
+      "path": "retention.json",
+      "sha256": "c7a67537f42535be757f5907dcee0b26d37e32b56f1100c6a0a27810e60e8d72",
+      "role": "lock"
+    },
+    {
+      "path": "runtime-lock.json",
+      "sha256": "de20d9edbe9a2166af124c9a89e266fddabc89d279766050ea4b2b4b721bd2d3",
+      "role": "lock"
+    },
+    {
+      "path": "runtime.cjs",
+      "sha256": "5121cf554a583c5be60d046227c6394fdce279c2afee2551400cb49f00bd738c",
+      "role": "source"
+    },
+    {
+      "path": "test.mjs",
+      "sha256": "28f266801b77cdef36ef72cf9623b3e2c279236fb040017c7206e7edc76eea92",
+      "role": "source"
+    },
+    {
+      "path": "verify.cjs",
+      "sha256": "de7ecc53065b5ddc91de8e29d5b24e752139fd75787f6d9df1ad3b988bde9762",
+      "role": "source"
+    }
+  ],
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "runtime-lock.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "package-lock.json"
+    },
+    {
+      "name": "fonttools",
+      "version": "4.61.1",
+      "lock": "runtime-lock.json"
+    }
+  ],
+  "render": {
+    "entrypoint": "render.mjs",
+    "width": 1024,
+    "height": 576
+  },
+  "resources": [
+    {
+      "id": "cormorant-ttf",
+      "mode": "provide",
+      "license": "SIL OFL 1.1",
+      "notice": "licenses/cormorantgaramond-OFL.txt",
+      "source_url": "https://github.com/google/fonts",
+      "sha256": "b20b7d9626dd956b2c5e558692ad328b1f19e3275e2782db4fa07670d83f35e0",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Cormorant.ttf",
+      "bytes": 1195560,
+      "instructions": "Prepare from exact original font inputs using prepare-fonts.py, then supply external OD_RESOURCE_DIR."
+    },
+    {
+      "id": "cormorant500-ttf",
+      "mode": "provide",
+      "license": "SIL OFL 1.1",
+      "notice": "licenses/cormorantgaramond-OFL.txt",
+      "source_url": "https://github.com/google/fonts",
+      "sha256": "4c93cc45d63ec9e1a704eb94a31c277b48d23c1271fc6704e4a6801451dd6cb6",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Cormorant500.ttf",
+      "bytes": 774336,
+      "instructions": "Prepare from exact original font inputs using prepare-fonts.py, then supply external OD_RESOURCE_DIR."
+    },
+    {
+      "id": "cormorant700-ttf",
+      "mode": "provide",
+      "license": "SIL OFL 1.1",
+      "notice": "licenses/cormorantgaramond-OFL.txt",
+      "source_url": "https://github.com/google/fonts",
+      "sha256": "0e2963d83c2f353b7a93a06f9a1e81c241620266cfa5de7a94e4b9cdb5dc85ee",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Cormorant700.ttf",
+      "bytes": 773164,
+      "instructions": "Prepare from exact original font inputs using prepare-fonts.py, then supply external OD_RESOURCE_DIR."
+    },
+    {
+      "id": "cormorantitalic-ttf",
+      "mode": "provide",
+      "license": "SIL OFL 1.1",
+      "notice": "licenses/cormorantgaramond-OFL.txt",
+      "source_url": "https://github.com/google/fonts",
+      "sha256": "0f48ea6abb2084537854f7174c470991a463b13036309e3b50a81511611c530d",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "CormorantItalic.ttf",
+      "bytes": 715644,
+      "instructions": "Prepare from exact original font inputs using prepare-fonts.py, then supply external OD_RESOURCE_DIR."
+    },
+    {
+      "id": "cormorantitalic500-ttf",
+      "mode": "provide",
+      "license": "SIL OFL 1.1",
+      "notice": "licenses/cormorantgaramond-OFL.txt",
+      "source_url": "https://github.com/google/fonts",
+      "sha256": "8da57dd57bbe743cfacf4a9b16f6047e0b0b85c0572a51795dee1bc27b0c956e",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "CormorantItalic500.ttf",
+      "bytes": 454628,
+      "instructions": "Prepare from exact original font inputs using prepare-fonts.py, then supply external OD_RESOURCE_DIR."
+    },
+    {
+      "id": "cormorantitalic700-ttf",
+      "mode": "provide",
+      "license": "SIL OFL 1.1",
+      "notice": "licenses/cormorantgaramond-OFL.txt",
+      "source_url": "https://github.com/google/fonts",
+      "sha256": "917aeb05dfd3290212b5414a9be05dfa7a013048294a3ee2126dcbca3552c460",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "CormorantItalic700.ttf",
+      "bytes": 454196,
+      "instructions": "Prepare from exact original font inputs using prepare-fonts.py, then supply external OD_RESOURCE_DIR."
+    },
+    {
+      "id": "dm-ttf",
+      "mode": "provide",
+      "license": "SIL OFL 1.1",
+      "notice": "licenses/dmseriftext-OFL.txt",
+      "source_url": "https://github.com/google/fonts",
+      "sha256": "94b5fa7bac0f406cb3149512037f37ea21b55cecd732c3fd3a076260441399cd",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "DM.ttf",
+      "bytes": 78376,
+      "instructions": "Prepare from exact original font inputs using prepare-fonts.py, then supply external OD_RESOURCE_DIR."
+    },
+    {
+      "id": "dmitalic-ttf",
+      "mode": "provide",
+      "license": "SIL OFL 1.1",
+      "notice": "licenses/dmseriftext-OFL.txt",
+      "source_url": "https://github.com/google/fonts",
+      "sha256": "d016b81df5cd7462188a0ba11dc343ce2897dffa39fb1fcff0fef0bb7684364e",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "DMItalic.ttf",
+      "bytes": 71156,
+      "instructions": "Prepare from exact original font inputs using prepare-fonts.py, then supply external OD_RESOURCE_DIR."
+    },
+    {
+      "id": "mono-ttf",
+      "mode": "provide",
+      "license": "SIL OFL 1.1",
+      "notice": "licenses/ibmplexmono-OFL.txt",
+      "source_url": "https://github.com/google/fonts",
+      "sha256": "6a3412f058c7d8dfd9170c41e85ade48e5156ecb89356110ca57a0a27734af46",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Mono.ttf",
+      "bytes": 135580,
+      "instructions": "Prepare from exact original font inputs using prepare-fonts.py, then supply external OD_RESOURCE_DIR."
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "883bb611e11ba911377e0b1c9c6b39365102cbc2ef9dda560795d51addeb1aad",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "Owner approved all ten shown OpenDesign works and requested retention/push. Peer reviewed fixed frame and bounded helpers; no browser/interactivity/Motion approval."
+    }
+  }
+}

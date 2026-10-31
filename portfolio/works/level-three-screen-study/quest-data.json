@@ -1,0 +1,72 @@
+[
+  {
+    "id": "body",
+    "glyph": "B",
+    "title": "Body",
+    "lines": [
+      "20-min strength:",
+      "pushups & planks"
+    ],
+    "xp": 90,
+    "fill": "#ffe1d9",
+    "accent": "#ff7a52"
+  },
+  {
+    "id": "read",
+    "glyph": "R",
+    "title": "Read",
+    "lines": [
+      "Four Thousand Weeks"
+    ],
+    "xp": 60,
+    "fill": "#ffe9bf",
+    "accent": "#f0b54a"
+  },
+  {
+    "id": "listen",
+    "glyph": "L",
+    "title": "Listen",
+    "lines": [
+      "Huberman Lab — Sleep",
+      "Architecture"
+    ],
+    "xp": 50,
+    "fill": "#f3e6ff",
+    "accent": "#b08bf2"
+  },
+  {
+    "id": "nourish",
+    "glyph": "N",
+    "title": "Nourish",
+    "lines": [
+      "Cook a high-protein",
+      "lunch"
+    ],
+    "xp": 70,
+    "fill": "#d2eecb",
+    "accent": "#6cba5b"
+  },
+  {
+    "id": "mind",
+    "glyph": "M",
+    "title": "Mind",
+    "lines": [
+      "10-min focus",
+      "meditation"
+    ],
+    "xp": 40,
+    "fill": "#ffd6f1",
+    "accent": "#e76aae"
+  },
+  {
+    "id": "watch",
+    "glyph": "W",
+    "title": "Watch",
+    "lines": [
+      "The Bear · S3 E4"
+    ],
+    "xp": 30,
+    "fill": "#d6e7ff",
+    "accent": "#4a86e9"
+  }
+]

@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "workId": "open-design-hanafuda-study",
+  "kind": "fixed-static-design",
+  "canvas": {
+    "width": 1024,
+    "height": 576
+  },
+  "entrypoint": "render.mjs",
+  "decisionCard": "DESIGN-RETENTION.md",
+  "sourceAnalysis": [
+    "CREDITS.md"
+  ],
+  "ruleRefs": [],
+  "ruleStatus": "Local composition recipe only; no new public family.",
+  "assetUsage": [],
+  "nonAssetNote": "Native Canvas case-local helpers; no MotionStudio public family dependency claimed.",
+  "evidence": {
+    "acceptanceSource": "entry.json#/acceptance",
+    "renderHashSource": "entry.json#/cover/source_sha256",
+    "publicCover": "cover.jpg",
+    "comparisonBundle": {
+      "status": "NOT_PUBLISHED",
+      "recordId": "hanafuda-private-comparison-png",
+      "sha256": "4a85673214da62cd2ac8cf86413be18b454793f7b1fd86b0e51a6db2e059d74f",
+      "storage": "SCRATCH_LOCAL_ONLY",
+      "durableStorage": "NOT_LOCATED",
+      "note": "Actual retained original-left/faithful-right PNG comparison, not an HTML report; excluded from public tree. Exact source image included only in private comparison."
+    },
+    "independentReview": {
+      "status": "PRIVATE_RECORD_LOCATED",
+      "recordId": "hanafuda-independent-review",
+      "sha256": "9cf51bfbfaaf6571184b5a68a4a6de2d76c5372917d9052cc310a567b2bfa95f",
+      "storage": "SCRATCH_LOCAL_ONLY",
+      "durableStorage": "NOT_LOCATED",
+      "note": "Visual review of final static frame, not integration validation or owner substitute."
+    }
+  },
+  "motionTransfer": {
+    "status": "NOT_TESTED",
+    "note": "Fixed static only; no interaction, animation, sound or PPT export."
+  }
+}
