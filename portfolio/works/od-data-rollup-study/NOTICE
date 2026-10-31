@@ -1,0 +1,1 @@
+Data Rollup static adaptation. Source: nexu-io/open-design at 12d970eacc8971150e3c76470d2a9afe16dc2ed1, plugins/_official/video-templates/frame-data-rollup, Apache-2.0. Modified 2026-10-31: reauthored static Canvas, explicit scale semantics, external resources and regression tests. No animation or source screenshot is included.

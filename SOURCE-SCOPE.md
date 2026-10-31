@@ -163,3 +163,24 @@ Five retained fixed-size studies; only these self-rendered cover identities are 
 
 ## Hokusai exhibition study
 `portfolio/works/hokusai-exhibition-study` adds only source, resource/font locks, MIT/OFL/public-domain attribution and one exact allowlisted self-rendered cover. Met JP11 input artwork and font binaries remain external; no upstream reference screenshot, private report or bird image is distributed. This new case does not restore or publish the missing former workspace batches.
+
+## Proposed isolated static-effects code candidate
+
+The prepared increment under `engine/design-elements/recipes/static-effects-candidate/` contains bounded native code, synthetic input fixtures, design guidance, public source/font locks, external-only acquisition/runtime/output adapters and Apache/OFL notices. It adds no media exception, portfolio entry, registered design family or admitted public recipe. Original previews/HTML, fonts, render outputs, private review evidence and case-specific owner feedback stay external. The owner has requested consolidation/submission of this group; this proposal does not itself execute that submission or assert itemized adapter aesthetic acceptance.
+
+## OpenDesign second group Swiss Grid and Data Rollup static studies
+
+Two owner-retained fixed-frame Native studies are included as case-local source recipes, not new public design families. Fonts and runtimes remain externally supplied with exact locks; upstream PNG/HTML, private comparisons and reports, font binaries, video and audio are excluded. Restoration requires the declared external resources, not an unverified clean-machine download guarantee. Visual review remains PARTIAL; browser, interaction and motion are untested. Only these two self-rendered 1280 × 720 JPEG covers are added, each at most 1 MiB:
+
+- `portfolio/works/od-swiss-grid-study/cover.jpg`: 63,672 bytes; SHA-256 `09ac9706b0af3a554931d6c748bb05c6dc8f77aa30747fabc269e7e3efa27ba5`.
+- `portfolio/works/od-data-rollup-study/cover.jpg`: 64,888 bytes; SHA-256 `a72af5cadfb735fa5d3d5488f383bc82a8f2f9e88a8188eddb57b7dd52c35e98`.
+
+These exact exceptions do not authorize any other media. The case-local helpers do not increase the registered public-family count.
+
+## OpenDesign second-group selective source retention
+
+`engine/design-elements/recipes/open-design-static-three/` retains two bounded source candidates (synthetic zero-baseline chart and deterministic static light field), plus three complete static source-case snapshots for Data Chart, Light Leak and Bold Signal. Bold Signal remains case-local; this adds zero public families and zero formal recipes. Batch retention/submission is authorized, without inventing separate owner approval for the two new synthetic cross-content compositions. No portfolio entry or cover is added. All original/derived fonts, original previews/HTML, comparisons, rendered examples and private review records remain external. Explicit optional font preparation uses fixed official URLs, size/Git blob/SHA checks and output paths outside the repository; rendering never fetches. Existing source-media allowlists are unchanged. Static Native adapter verification does not establish motion, browser or cross-platform equivalence.
+
+## Public semantic-index projection
+
+The generated portfolio indexes and query output expose only public source relationships and existing entry declarations. Review/comparison artifacts, record identifiers, document fingerprints and storage metadata are not included. New Swiss Grid and Data Rollup retention sidecars use schema 2 with `reviewArtifacts: NOT_INCLUDED`; that status does not claim private evidence is missing. Legal source/dependency identities and self-rendered frame hashes remain intact. Legacy evidence inputs are validation-only and are not copied into the public projection; this change does not rewrite or erase previously published history.

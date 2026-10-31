@@ -352,10 +352,10 @@ python3 -m unittest discover -s portfolio -p 'test_*.py'
 **每个静态作品必须有 `DESIGN-RETENTION.md` 与 `retention.json`。** 不搬迁旧分析、场景或外置资源：统一卡连接旧分析和真实代码；`entry.json` 继续是文件完整性、固定画幅、运行入口、资源与验收的唯一权威。静态schema4和既有Motion schema2/3兼容，视频工程的src/、prepare/render入口、听审和声画验收不受此修订改变。
 
 - 统一设计卡回答：内容与受众、品牌定位/语气（没有完整品牌系统就明说）、颜色职责/面积与对比、构图/字体/材料、可迁移规则与反例、代码调用和案例专用部分、审阅范围与后续视频边界。复刻来源、例文事实与残差须明确；不能只列颜色数值或赞美风格。
-- `retention.json` schemaVersion=1：workId/kind/canvas/entrypoint映射作品；decisionCard/sourceAnalysis映射分析；ruleRefs只引用真实独立方法卡（空数组不等于没有设计思考）；assetUsage记录稳定familyId、runtime-import或vendored-snapshot、模块与来源commit/hash、调用点和可见职责；evidence指向entry验收和证据身份；motionTransfer保留NOT_TESTED，直到独立视频实验获得证据后另行扩展协议。
+- 新公开 `retention.json` 使用 schemaVersion=2：workId/kind/canvas/entrypoint映射作品；decisionCard/sourceAnalysis映射分析；ruleRefs只引用真实独立方法卡（空数组不等于没有设计思考）；assetUsage保留稳定familyId、模块来源commit/hash、调用点和可见职责，不含私人调用回执。evidence只引用entry验收、自绘帧与公开cover，并明确 `reviewArtifacts: {status: NOT_INCLUDED}`；motionTransfer保留NOT_TESTED。schemaVersion=1仅作历史验证兼容，不是新增公开记录规范。
 - 公共设计族的契约/文字/代码/配方在 `engine/design-elements/`；`catalog.json` 为公共族数量来源。源案例启发与真正调用严格区分。共享绘图工具、完整案例、函数、配方或模块快照都不新增族数。无合适模块就保留案例代码，不硬套。
 - 运行时导入保留传递依赖锁；快照保留来源及SHA，不冒称自动跟随公共模块更新。先按作品README准备合法外置字体，再独立进程以固定尺寸运行，不能宣称克隆后无资源即可复现。
-- 参考/复刻/局部对照、问题与修改、实际帧hash组成可视证据；公开目录的cover仅导航，不替代完整报告。当前比较包状态NOT_PUBLISHED如实保留。私人记录仅可发布经审查的非敏感记录ID/hash，绝不放本地绝对路径、私有链接或授权原文。PRIVATE_RECORD_LOCATED只表示定位记录，不代表公开可访问、审核全通过或本次重新渲染。
+- 参考/复刻/局部对照、问题与修改、实际帧hash组成可视证据；公开目录的cover仅导航，不替代完整报告。新增公开sidecar和生成索引不纳入审查/对照材料、私人记录ID、文档指纹、存储断言、本地绝对路径、私有链接或授权原文。NOT_INCLUDED不表示证据缺失，也不声明其存在或可访问性；源码和自绘帧身份与私有报告身份必须分开。
 - 收藏、可再现、技术检查、视觉残差和公开许可分别管理。技术测试与像素差异不是审美评分；静态通过不是动效、交互、响应式或听审通过。源素材与完整报告公开仍需逐项权利范围审查。
 
 维护命令（从仓库根运行）：
@@ -380,13 +380,13 @@ python portfolio/retention.py --query --text 品牌
 python portfolio/retention.py --query --text 像素 --family design.color-sections.v1
 ```
 
-搜索作品ID、标题、统一设计卡与原分析全文，按字面子串匹配（不区分英文大小写），不搜索私人报告。`--family`必须是完整稳定ID，筛选真实调用而不是来源启发；与`--text`取交集。输出作品/卡路径、实际族、视觉和证据状态；不评分、排名或推定审美适用性。零匹配返回count=0，未知族或空白查询报错。无过滤条件列全部静态作品。只能在完整仓库使用，缺少仓库不能当成零结果；查询不写文件。
+搜索作品ID、标题、统一设计卡与原分析全文，按字面子串匹配（不区分英文大小写），不搜索私人报告。`--family`必须是完整稳定ID，筛选真实调用而不是来源启发；与`--text`取交集。输出作品/卡路径、实际族、entry视觉声明、NOT_INCLUDED和NOT_TESTED边界，不输出私人证据或存储状态；不评分、排名或推定审美适用性。零匹配返回count=0，未知族或空白查询报错。无过滤条件列全部静态作品。只能在完整仓库使用，缺少仓库不能当成零结果；查询不写文件。
 
-### 私有持久证据身份
+### 历史 schema 1 验证兼容
 
-归档核验后，可在evidence中新增 `visualReport`，而不覆盖原 `comparisonBundle` 的PNG/局部材料身份：状态仍NOT_PUBLISHED，记录非敏感opaque ID、HTML容器SHA、artifactKind=html-report、storage=PRIVATE_LIBRARY、durableStorage=ACCESS_VERIFIED，以及acceptedFrameBinding=EXACT_PIXELS或NOT_ESTABLISHED。独审原字节经私有Page回读验证后可将原独审记录升级为PRIVATE_OWNER_PAGE/ACCESS_VERIFIED；运行调用回执不能随之自动升级。
+校验器保留读取旧schema 1记录的兼容性，仅用于检查其既有契约与源码关系；这不授权在新公开包中增加私人记录标识、报告指纹或存储断言。新公开sidecar使用上述schema 2的NOT_INCLUDED结构。无论输入版本如何，Markdown、机器索引和只读查询都按公开白名单投影，不复制历史私人回执字段。
 
-EXACT_PIXELS只表示报告嵌图与已审帧像素匹配，不代表新审美验收或浏览器预览通过。NOT_ESTABLISHED必须保留，尤其不能把有持久HTML报告说成已审原帧对照的完整闭环。公开库只保存受控记录ID/hash与状态，不公开Library/Page私有ID或URL。自动校验只检查记录契约与索引一致性，远端字节取回/解码与权限复核需另有实际执行证据。
+私有原始记录及备份不因投影而更改，NOT_INCLUDED也不应替换成“未找到”或冒称审查通过。此修订不擦除已发布历史；如需清理历史公开内容，必须另行审查范围和授权。源码测试、像素一致、艺术判断、浏览器和动画验收仍分别记录，不能互相推定。
 
 ### 新增富岳展览首屏
 [工程与恢复说明](works/hokusai-exhibition-study/README.md) · [设计决策](works/hokusai-exhibition-study/DESIGN-RETENTION.md)。1440×900固定静态，Met公版画作替换原设计印本；外置SHA资源，0新增公共族。
@@ -413,3 +413,17 @@ EXACT_PIXELS只表示报告嵌图与已审帧像素匹配，不代表新审美�
 
 [![Swiss · blue roadmap cover](works/open-design-swiss-cover-study/cover.jpg)](works/open-design-swiss-cover-study/README.md)
 
+
+## OpenDesign second group fixed static studies
+
+[![Swiss Grid static study](works/od-swiss-grid-study/cover.jpg)](works/od-swiss-grid-study/README.md)
+
+[Swiss Grid](works/od-swiss-grid-study/README.md) — 1920 × 1080 complete fixed Native study. Helvetica is not claimed recovered: Liberation/Archivo and geometric percent marks are disclosed substitutes. One case-local composition recipe; no new public family. Exact external fonts/runtime required; visual PARTIAL, browser/interaction/motion untested.
+
+[![Data Rollup static study](works/od-data-rollup-study/cover.jpg)](works/od-data-rollup-study/README.md)
+
+[Data Rollup](works/od-data-rollup-study/README.md) — 1440 × 810 complete fixed Native study. Values are source sample data, not actual GitHub analytics; the faithful log-offset mapping is not a value-ratio bar scale. One bounded bar recipe with explicit linear/log-offset modes; no new public family. Exact external fonts/runtime required; visual PARTIAL, browser/interaction/motion untested.
+
+### Public evidence boundary
+
+The semantic index and `retention.py --query` are public source projections, not private review ledgers. `NOT_INCLUDED` means review artifacts and their identifiers, document hashes and storage metadata are not part of this public projection; it does not mean the evidence is missing. Source/module provenance and self-rendered frame hashes remain public, and existing PARTIAL / NOT_TESTED declarations are unchanged.

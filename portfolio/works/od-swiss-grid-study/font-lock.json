@@ -1,0 +1,22 @@
+[
+  {
+    "file": "LiberationSans-Regular.ttf",
+    "sha256": "bade59d822652f76e6941aa87b40a87c13d1cc70db98ededb5011127efafd1d3",
+    "bytes": 410820
+  },
+  {
+    "file": "LiberationSans-Bold.ttf",
+    "sha256": "1b5f2da6f4cadce4c05b9ecebe3a6fcd374eb95ae443605e799f4c3287978939",
+    "bytes": 414568
+  },
+  {
+    "file": "SwissArchivo200.ttf",
+    "sha256": "3c06eed6b8c69e660f94c3f17e94377bacd84156fb2390706e9d0b15befcc085",
+    "bytes": 121428
+  },
+  {
+    "file": "SwissArchivo300.ttf",
+    "sha256": "c5d3ab0d319dce3e19b67c624072322daf724cf020f0f190a4a8a7fe3e24a228",
+    "bytes": 121444
+  }
+]

@@ -1,0 +1,13 @@
+# Provenance and distribution boundary
+
+All three selected complete source templates are from`nexu-io/open-design@12d970eacc8971150e3c76470d2a9afe16dc2ed1`, under`plugins/_official/video-templates/`: frame-data-chart-nyt, frame-light-leak-cinema, frame-bold-signal. Their source metadata and repository license declareApache-2.0; corresponding full notices are retained in`licenses/`. These portions are not relicensed as the root toolkit MIT.
+
+Bold Signal also credits Zara Zhang's frontend-slides original preset underMIT; its full MIT notice is retained separately. Source metadata names no specific studio origin for that preset. No photograph, stock texture, logo image, audio or generated bitmap is embedded in these modules. Reference text remains sample material, not endorsement, actual launch/film evidence or verified market statistics. Data Chart's NYT-style label is stylistic specimen copy, not an official publisher association.
+
+Font rights are independent: IBM Plex, Source Serif, EB Garamond, Archivo Black, Space Grotesk and Noto Serif SC areOFL1.1. Font binaries stay external. Fixed-instance/renamed outputs preserve copyright/license metadata. Four Chart Latin files are lossless decompressions apart from checkSumAdjustment; broader edits would require rechecking reserved-name conditions rather than merely changing a Canvas alias.
+
+Exact public sources and byte identities are in`resources.json`. All active OpenDesignWOFF2 are tied to the fixed sourcecommit. Noto Serif SC2.003-H1 is tied to`google/fonts@2e61f4355afd22b801791b0df176065082423b87`, file`ofl/notoserifsc/NotoSerifSC[wght].ttf`,25,125,512bytes, blob`eab063faf229160a52d3760f5555150e4eb9e5bf`, SHA`050080d9255a86808f2945bffac582b31ef32bc36411ce29563b4961670c66f9`. Its samecommitOFL is retained as`licenses/data-chart-NotoSerifSC-OFL.txt` (blob`94d1bf7b52481343e2983fb7751e8b7abe1ea07b`, SHA`5e0da210fb04058a8c0087985d2d456b931c2579811a49655721d3cf0c36b6d6`). This public fallback identity does not establish the original screenshot's Chinese font.
+
+Other retainedOFL texts are official project notice copies with matching embedded author/project identities, not asserted contemporaneous companions of every historicWOFF2 subset. Font licenses and verified hashes do not imply user approval, trademark rights, or media rights outside this precise source-only candidate.
+
+No upstream screenshot/HTML, private review report/receipt, local absolute path, user feedback transcript, generated image/font, archive or cover is proposed for Git. No media allowlist exception is added. Batch approval authorizes this selective source submission; new public catalog families, motion capabilities and user approval of newly generated compositions are not inferred.

@@ -1,0 +1,92 @@
+[
+  {
+    "source": "od-next-title-reference-20261031/frame-creative-voltage/source/fonts/f45592e776f666632.woff2",
+    "source_sha256": "cfff412005eed2f0152d1c110c78ac564642b943e64322fbd687083177d6fa70",
+    "source_names": {
+      "0": "Copyright 2019 The Syne Project Authors (https://gitlab.com/bonjour-monde/fonderie/syne-typeface)",
+      "1": "Syne",
+      "2": "Regular",
+      "3": "2.200;NONE;Syne-Regular",
+      "4": "Syne Regular",
+      "5": "Version 2.200",
+      "6": "Syne-Regular",
+      "14": "https://scripts.sil.org/OFL",
+      "261": "Weight",
+      "262": "Regular",
+      "263": "Medium",
+      "264": "SemiBold",
+      "265": "Bold",
+      "266": "ExtraBold",
+      "267": "Syne-Regular",
+      "268": "Syne-Medium",
+      "269": "Syne-SemiBold",
+      "270": "Syne-Bold",
+      "271": "Syne-ExtraBold"
+    },
+    "native_file": "assets/VoltageDisplay.ttf",
+    "native_sha256": "c7f73a40bf0d4e324116dc158f051418faf6bac9d6d04a20e6c2c742bbf4de68",
+    "native_family": "VoltageDisplay",
+    "weight_instance": 800,
+    "license": "OFL-1.1"
+  },
+  {
+    "source": "od-next-title-reference-20261031/frame-creative-voltage/source/fonts/f73772e776f666632.woff2",
+    "source_sha256": "1c591acdadd5ea398bad6aa21b36498dde59035ad366d1dbb05bbc0e537e7bc9",
+    "source_names": {
+      "0": "Copyright 2014 The Caveat Project Authors (https://github.com/googlefonts/caveat)",
+      "1": "Caveat SemiBold",
+      "2": "Regular",
+      "3": "2.000;CYRE;Caveat-SemiBold",
+      "4": "Caveat SemiBold",
+      "5": "Version 2.000",
+      "6": "Caveat-SemiBold",
+      "14": "http://scripts.sil.org/OFL",
+      "16": "Caveat",
+      "17": "SemiBold",
+      "256": "Weight"
+    },
+    "native_file": "assets/VoltageScript.ttf",
+    "native_sha256": "1c34cad485238e9de2397862b94aac0d7fe489ad7dea24bd5078dade0221ca4a",
+    "native_family": "VoltageScript",
+    "weight_instance": null,
+    "license": "OFL-1.1"
+  },
+  {
+    "source": "od-next-title-reference-20261031/frame-creative-voltage/source/fonts/f77512e776f666632.woff2",
+    "source_sha256": "e0c8e616bda27642f4c3cebaecff6525d901e73afc8a227cbbb0f2af4810f300",
+    "source_names": {
+      "0": "Copyright 2016 The Space Mono Project Authors (https://github.com/googlefonts/spacemono)",
+      "1": "Space Mono",
+      "2": "Regular",
+      "3": "1.003;NONE;SpaceMono-Regular",
+      "4": "Space Mono Regular",
+      "5": "Version 1.003; ttfautohint (v1.8.4.7-5d5b)",
+      "6": "SpaceMono-Regular",
+      "14": "https://openfontlicense.org"
+    },
+    "native_file": "assets/VoltageMono400.ttf",
+    "native_sha256": "9275a5862a8d0c947ec75e276a4616404da3764351755edb2ec22228223a98d6",
+    "native_family": "VoltageMono400",
+    "weight_instance": null,
+    "license": "OFL-1.1"
+  },
+  {
+    "source": "od-next-title-reference-20261031/frame-creative-voltage/source/fonts/f33512e776f666632.woff2",
+    "source_sha256": "af7cf6d2b897ec453acdcdacde4e9bcc8410718af5914de865b453e09f10eebc",
+    "source_names": {
+      "0": "Copyright 2016 The Space Mono Project Authors (https://github.com/googlefonts/spacemono)",
+      "1": "Space Mono",
+      "2": "Bold",
+      "3": "1.003;NONE;SpaceMono-Bold",
+      "4": "Space Mono Bold",
+      "5": "Version 1.003; ttfautohint (v1.8.4.7-5d5b)",
+      "6": "SpaceMono-Bold",
+      "14": "https://openfontlicense.org"
+    },
+    "native_file": "assets/VoltageMono700.ttf",
+    "native_sha256": "c3b870b936844103b824a7f70b7e513ac29e930e21199da73162ad52401f9dfc",
+    "native_family": "VoltageMono700",
+    "weight_instance": null,
+    "license": "OFL-1.1"
+  }
+]

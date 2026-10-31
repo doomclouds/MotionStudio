@@ -1,0 +1,32 @@
+Creative Voltage — static Native study, 2026-10-31
+
+Source composition: nexu-io/open-design, commit
+12d970eacc8971150e3c76470d2a9afe16dc2ed1,
+plugins/_official/video-templates/frame-creative-voltage.
+Author declared by upstream manifests: nexu-io. License: Apache-2.0.
+Original pipeline lineage: nexu-io/html-video/templates/frame-creative-voltage.
+
+Design provenance: frontend-slides, Zara Zhang, MIT,
+STYLE_PRESETS.md, "Creative Voltage" preset.
+The upstream manifests describe their CSS/SVG transformation as original and
+state that no frontend-slides source code was copied verbatim. This adaptation
+retains that provenance and the MIT notice without implying ownership of the preset.
+
+Changes here: frozen visible settled frame; removed animation semantics;
+native Canvas panel/glow, editable display/script/monospace text and original
+underline curve; separated text contract, source tokens, reusable code bricks;
+added visual comparisons, test evidence and design guidance. The supplied PNG
+is reference-only and never a rendering layer. No animation is implemented.
+
+Fonts, pinned from supplied source, all OFL-1.1:
+- Syne 2.200, variable 400–800; native instance uses real 800, renamed VoltageDisplay.
+- Caveat SemiBold 2.000, renamed VoltageScript.
+- Space Mono 1.003, regular/bold, renamed VoltageMono400 / VoltageMono700.
+Exact embedded copyright/name records and binary hashes are in
+evidence/font-metadata.json. Original WOFF2 files are unmodified. Converted or
+instanced TTF derivatives are renamed and retain their respective OFL notices.
+
+Keep this NOTICE and all five license files with the reusable package.
+References and combined comparison sheets remain local study evidence and are
+excluded from the reusable-code ZIP. No public distribution, push, deployment,
+animation fidelity, browser verification or user acceptance is implied.

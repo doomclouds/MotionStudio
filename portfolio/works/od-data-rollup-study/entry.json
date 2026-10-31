@@ -1,0 +1,234 @@
+{
+  "schema": 4,
+  "id": "od-data-rollup-study",
+  "version": "1.0.0",
+  "title": "Data Rollup · explicit-scale bar frame",
+  "status": "source-release",
+  "unofficial_recreation": true,
+  "original": {
+    "author": "OpenDesign / nexu-io",
+    "title": "Data Rollup · explicit-scale bar frame",
+    "url": "https://github.com/nexu-io/open-design/tree/12d970eacc8971150e3c76470d2a9afe16dc2ed1/plugins/_official/video-templates/frame-data-rollup"
+  },
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "NOTICE",
+      "licenses/DejaVu-copyright.txt",
+      "licenses/Inter-OFL.txt",
+      "licenses/MotionStudio-MIT.txt",
+      "licenses/OpenDesign-LICENSE.txt",
+      "licenses/napi-rs-canvas-MIT.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/plugins/_official/video-templates/frame-data-rollup/open-design.json",
+      "https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/LICENSE"
+    ]
+  },
+  "files": [
+    {
+      "path": "CREDITS.md",
+      "sha256": "ab6dd27cf17554bc0d3b39b67adc2434ee0ecb4cbe4f12cdff09f2122cc2b9c8",
+      "role": "documentation"
+    },
+    {
+      "path": "DESIGN-RETENTION.md",
+      "sha256": "7fd05cbeb8e49612a48f8ac34b7f22f2444e2787a93447841759395cf9fd23ae",
+      "role": "documentation"
+    },
+    {
+      "path": "FONT-PROVENANCE.md",
+      "sha256": "6444e48cb44f17fb65395da34f3d2aee926f848ffa7cb84ffef9ba533e076277",
+      "role": "documentation"
+    },
+    {
+      "path": "LICENSE-PROVENANCE.json",
+      "sha256": "62d638afce8938f84138b46f70dbd5780add59282cfd801b9ddcf95711bd7631",
+      "role": "config"
+    },
+    {
+      "path": "NOTICE",
+      "sha256": "427c8b4e0ba83ad0ea8e39e0a42bb4e6a54bcd6a4ee3ef8d7f523e85cf14f1da",
+      "role": "license"
+    },
+    {
+      "path": "README.md",
+      "sha256": "09e2664a8ab4e583ce2f67a0be51cc80306bcef0838bd28d48f69f6265a16645",
+      "role": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "a72af5cadfb735fa5d3d5488f383bc82a8f2f9e88a8188eddb57b7dd52c35e98",
+      "role": "cover"
+    },
+    {
+      "path": "design/bars.mjs",
+      "sha256": "c988a45999aca5dda25a0371f46eef7605788d7179dc77090016b739ec177b4a",
+      "role": "source"
+    },
+    {
+      "path": "font-lock.json",
+      "sha256": "cde499514009ec803771fcffa83c3acff6cb012ed4312e8a66e573d354e74594",
+      "role": "config"
+    },
+    {
+      "path": "font-provenance.json",
+      "sha256": "f1cf089f54eabcfcd677976d77bee2eea86caf5c09f0f4cdf707199aee8593a1",
+      "role": "config"
+    },
+    {
+      "path": "licenses/DejaVu-copyright.txt",
+      "sha256": "e81d9dced49fea2a7d576cbea283873de58563c5d488f954deb282843c3ea79c",
+      "role": "license"
+    },
+    {
+      "path": "licenses/Inter-OFL.txt",
+      "sha256": "5dd548d31a85f756e01d63e00d7faf1e324103ed3e9102fcbbabf2cc2db6dd39",
+      "role": "license"
+    },
+    {
+      "path": "licenses/MotionStudio-MIT.txt",
+      "sha256": "0c1e09b3b98b71f5de69420a09313081f3def9b7827d2fbac730d984920fabc1",
+      "role": "license"
+    },
+    {
+      "path": "licenses/OpenDesign-LICENSE.txt",
+      "sha256": "9d95806a26532623360eb84bb17d298f394b55ef73fb4c0796d99b4319b2b0da",
+      "role": "license"
+    },
+    {
+      "path": "licenses/napi-rs-canvas-MIT.txt",
+      "sha256": "8802fecf9da4367bc23bcf20b21cc143785fc6c92b152f3fa7fbe6ce08d344d6",
+      "role": "license"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "0bf5498b9e2a4067405a4a813bd1f2734ea4fed76ba61b4ada950aab30c14090",
+      "role": "lock"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "5724111a5691e0c00ced72b1aafa3e4f51c15542874092c18e6ecf8314936f98",
+      "role": "lock"
+    },
+    {
+      "path": "package.json",
+      "sha256": "fedeee6011e7809f1dc9e9cb0a1788d65f463191e615fbc2bfdbde7b0f855d4e",
+      "role": "config"
+    },
+    {
+      "path": "recipe-manifest.json",
+      "sha256": "0d2c881b280e7cd30ab04902a76594d2a154a4117b1f0f2ee729150df25226f2",
+      "role": "config"
+    },
+    {
+      "path": "render.mjs",
+      "sha256": "f0543433e15aa98d658e6fe3d4225af5e9fe31dd32637b0e388812d74e40c54f",
+      "role": "source"
+    },
+    {
+      "path": "resources.cjs",
+      "sha256": "d3ad36d14e3d7a6f9b6c579ad5d380fa92ac8e57583d56f5958a2b76e4de3c6e",
+      "role": "source"
+    },
+    {
+      "path": "retention.json",
+      "sha256": "d706163a49a68d20ccb954cbb04d426367cb47c0117629b0196e92978630e911",
+      "role": "config"
+    },
+    {
+      "path": "source-lock.json",
+      "sha256": "153c1e0c1655e7949ed7a63cf1c85cf21f983ef8386683ee4937773c85533188",
+      "role": "config"
+    },
+    {
+      "path": "test-composition.mjs",
+      "sha256": "d8a646db33f0bc19b6a9b843df89afbe4350e125b1fc8c04f4750c20d0414506",
+      "role": "source"
+    },
+    {
+      "path": "test-resources.cjs",
+      "sha256": "9f595b119935a235b0b191a42b9d134635147cf9ea42b53dd39f9977088ca805",
+      "role": "source"
+    },
+    {
+      "path": "test.mjs",
+      "sha256": "f05c507f21b0342caa633c6b066050516b98d69f52238acbbda361b7b9b2af94",
+      "role": "source"
+    }
+  ],
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "package-lock.json"
+    }
+  ],
+  "render": {
+    "entrypoint": "render.mjs",
+    "width": 1440,
+    "height": 810
+  },
+  "resources": [
+    {
+      "id": "font-0",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; exact external snapshot",
+      "notice": "licenses/Inter-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/inter",
+      "sha256": "cfdf3c6fbe15ac98e3a3c0c312a607455369af9c83bb1b1abc322e116ac62ca0",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Inter800.ttf",
+      "bytes": 505884,
+      "instructions": "Supply exact locked regular file in external OD_FONT_DIR. Source URL documents provenance only; no automatic exact recovery or timestamp-identical regeneration is promised."
+    },
+    {
+      "id": "font-1",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; exact external snapshot",
+      "notice": "licenses/Inter-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/inter",
+      "sha256": "5a0f3a7347d9e01fcfa4e3437377a954ebf379e767d4e7893807fc1aa33fb5c2",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "Inter500.ttf",
+      "bytes": 511152,
+      "instructions": "Supply exact locked regular file in external OD_FONT_DIR. Source URL documents provenance only; no automatic exact recovery or timestamp-identical regeneration is promised."
+    },
+    {
+      "id": "font-2",
+      "mode": "provide",
+      "license": "Bitstream Vera / DejaVu terms; exact external snapshot",
+      "notice": "licenses/DejaVu-copyright.txt",
+      "source_url": "https://dejavu-fonts.github.io/",
+      "sha256": "0d3c03d1b667192f91223660a3163325cf83132662fe4d9f7d6e596bf7a995c2",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "MonoBold.ttf",
+      "bytes": 334268,
+      "instructions": "Supply exact locked regular file in external OD_FONT_DIR. Source URL documents provenance only; no automatic exact recovery or timestamp-identical regeneration is promised."
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "432970bde28394cf0e5040f8e8bbacf671f07b139619a658975930df8555db4d",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "Full static comparison reviewed. Declared Inter/DejaVu substitutions, numeric glyphs and approximately half-pixel baseline/antialias residuals remain. Default rerender bytes exactly match the independently reviewed static frame; no browser, responsiveness or motion approval."
+    }
+  }
+}

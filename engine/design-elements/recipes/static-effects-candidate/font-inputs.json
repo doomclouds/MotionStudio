@@ -1,0 +1,59 @@
+{
+  "sources": [
+    {
+      "id": "space-grotesk",
+      "file": "SpaceGrotesk.woff2",
+      "url": "https://raw.githubusercontent.com/nexu-io/open-design/12d970eacc8971150e3c76470d2a9afe16dc2ed1/plugins/_official/video-templates/frame-glitch-title/source/fonts/f71552e776f666632.woff2",
+      "bytes": 22320,
+      "sha256": "a0d054c4af557de20afd6ca59f47ab353bcaec49c63ff04b6c9d39d0f8910557",
+      "gitBlob": "7b0e76a5c9bdfdb5ccc8c9ab44780b5ff788c6db",
+      "license": "OFL-1.1",
+      "notice": "licenses/spacegrotesk-OFL.txt",
+      "availability": "official pinned source identity verified; this run uses exact-byte external offline cache"
+    },
+    {
+      "id": "jetbrains-mono",
+      "file": "JetBrainsMono.woff2",
+      "url": "https://raw.githubusercontent.com/nexu-io/open-design/12d970eacc8971150e3c76470d2a9afe16dc2ed1/plugins/_official/video-templates/frame-glitch-title/source/fonts/f2d342e776f666632.woff2",
+      "bytes": 31340,
+      "sha256": "2c32b9b3ee358c119e210f6f5195f9bd34894d78a785ff2e95d60e718e400af4",
+      "gitBlob": "2ca6ac605954ee884442db8ea1d61093000bcc29",
+      "license": "OFL-1.1",
+      "notice": "licenses/jetbrainsmono-OFL.txt",
+      "availability": "official pinned source identity verified; this run uses exact-byte external offline cache"
+    },
+    {
+      "id": "inter-tight",
+      "file": "InterTight.woff2",
+      "url": "https://raw.githubusercontent.com/nexu-io/open-design/12d970eacc8971150e3c76470d2a9afe16dc2ed1/plugins/_official/video-templates/frame-liquid-bg-hero/source/fonts/f65382e776f666632.woff2",
+      "bytes": 44916,
+      "sha256": "83d548cd73ef2e039167db3adb5ea9d7a7870466ffc8a162c9820bc348938aaf",
+      "gitBlob": "228154ffb1f2541f1d67ae8381310e7d338f7f9f",
+      "license": "OFL-1.1",
+      "notice": "licenses/InterTight-OFL.txt",
+      "availability": "official pinned source identity verified; this run uses exact-byte external offline cache"
+    },
+    {
+      "id": "noto-sans-sc",
+      "file": "NotoSansSC.ttf",
+      "url": "https://raw.githubusercontent.com/google/fonts/6c1dbe27dcf7d817d4b62cec033ba77fa8e2a5ec/ofl/notosanssc/NotoSansSC%5Bwght%5D.ttf",
+      "bytes": 17772300,
+      "sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+      "gitBlob": "fb0637bafbcd804fe32152370a1225990745b4bc",
+      "license": "OFL-1.1",
+      "notice": "licenses/NotoSansSC-OFL.txt",
+      "availability": "official pinned source identity verified; this run uses exact-byte external offline cache"
+    },
+    {
+      "id": "noto-serif-sc",
+      "file": "NotoSerifSC.ttf",
+      "url": "https://raw.githubusercontent.com/google/fonts/6c1dbe27dcf7d817d4b62cec033ba77fa8e2a5ec/ofl/notoserifsc/NotoSerifSC%5Bwght%5D.ttf",
+      "bytes": 25125512,
+      "sha256": "050080d9255a86808f2945bffac582b31ef32bc36411ce29563b4961670c66f9",
+      "gitBlob": "eab063faf229160a52d3760f5555150e4eb9e5bf",
+      "license": "OFL-1.1",
+      "notice": "licenses/NotoSerifSC-OFL.txt",
+      "availability": "official pinned source identity verified; this run uses exact-byte external offline cache"
+    }
+  ]
+}

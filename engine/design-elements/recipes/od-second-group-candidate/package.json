@@ -1,0 +1,12 @@
+{
+  "name": "motionstudio-od-second-group-candidate",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@napi-rs/canvas": "0.1.100"
+  },
+  "scripts": {
+    "test": "node test.mjs && node test-tilted-type.mjs && node test-font-failure.mjs && python3 test-prepare.py"
+  }
+}

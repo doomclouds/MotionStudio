@@ -1,0 +1,38 @@
+[
+  {
+    "file": "licenses/Archivo-OFL.txt",
+    "inputSHA256": "108b4e57c9c796d3d38d0428ca7ee39de47ad93187302718d9b2d8864b9b716b",
+    "packagedSHA256": "1778201b7bd33e8c08a2eda32a4ad2f69bc38ced9731b01cc3fc47f268c8ef3c",
+    "modification": "Trailing whitespace / extra terminal blank lines only; legal wording unchanged"
+  },
+  {
+    "file": "licenses/Apache-2.0.txt",
+    "inputSHA256": "9d95806a26532623360eb84bb17d298f394b55ef73fb4c0796d99b4319b2b0da",
+    "packagedSHA256": "9d95806a26532623360eb84bb17d298f394b55ef73fb4c0796d99b4319b2b0da",
+    "modification": "byte-identical"
+  },
+  {
+    "file": "licenses/napi-rs-canvas-MIT.txt",
+    "inputSHA256": "8802fecf9da4367bc23bcf20b21cc143785fc6c92b152f3fa7fbe6ce08d344d6",
+    "packagedSHA256": "8802fecf9da4367bc23bcf20b21cc143785fc6c92b152f3fa7fbe6ce08d344d6",
+    "modification": "byte-identical"
+  },
+  {
+    "file": "licenses/Hyperframes-Apache-2.0.txt",
+    "inputSHA256": "4259155fb06f127687ee7b0a8a3682d45132db0f2da26cbc0b7a2d1e796436b8",
+    "packagedSHA256": "4259155fb06f127687ee7b0a8a3682d45132db0f2da26cbc0b7a2d1e796436b8",
+    "modification": "byte-identical"
+  },
+  {
+    "file": "licenses/MotionStudio-MIT.txt",
+    "inputSHA256": "0c1e09b3b98b71f5de69420a09313081f3def9b7827d2fbac730d984920fabc1",
+    "packagedSHA256": "0c1e09b3b98b71f5de69420a09313081f3def9b7827d2fbac730d984920fabc1",
+    "modification": "byte-identical"
+  },
+  {
+    "file": "licenses/Liberation-OFL.txt",
+    "inputSHA256": "fe646bf3d73a9066cd92e305cb1d76b9f2b328567bc422708ae5bf0341dbbe0a",
+    "packagedSHA256": "e0f20018e350e0b1ba1b4d91999a635a5214d329630ef9f9c6af396f6d2788fa",
+    "modification": "Trailing whitespace / extra terminal blank lines only; legal wording unchanged"
+  }
+]

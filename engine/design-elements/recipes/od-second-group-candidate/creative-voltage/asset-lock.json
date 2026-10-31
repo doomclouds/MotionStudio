@@ -1,0 +1,22 @@
+[
+  {
+    "file": "VoltageDisplay.ttf",
+    "sha256": "c7f73a40bf0d4e324116dc158f051418faf6bac9d6d04a20e6c2c742bbf4de68",
+    "bytes": 30876
+  },
+  {
+    "file": "VoltageMono400.ttf",
+    "sha256": "9275a5862a8d0c947ec75e276a4616404da3764351755edb2ec22228223a98d6",
+    "bytes": 23152
+  },
+  {
+    "file": "VoltageMono700.ttf",
+    "sha256": "c3b870b936844103b824a7f70b7e513ac29e930e21199da73162ad52401f9dfc",
+    "bytes": 22812
+  },
+  {
+    "file": "VoltageScript.ttf",
+    "sha256": "1c34cad485238e9de2397862b94aac0d7fe489ad7dea24bd5078dade0221ca4a",
+    "bytes": 112948
+  }
+]

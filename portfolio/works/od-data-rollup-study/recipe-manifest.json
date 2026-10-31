@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "od-data-rollup-study.local-recipe.v1",
+  "kind": "case-local-composition-recipe",
+  "publication": "isolated-overlay-not-submitted",
+  "userAcceptance": "APPROVED_FIXED_STATIC_STUDY",
+  "familyCountAdded": 0,
+  "recipeCount": 1,
+  "entrypoint": "design/bars.mjs#drawBars",
+  "helpers": [
+    "planBars"
+  ],
+  "helperCounting": "Not independent recipes or new families",
+  "scope": "Fixed Native static only",
+  "frameSha256": "432970bde28394cf0e5040f8e8bbacf671f07b139619a658975930df8555db4d",
+  "integrationBase": "5f5e8f1395581a89bf5314a4c5f452f8ffb72fb5",
+  "acceptanceBoundary": "User approved displayed second-group static work and requested brick retention/submission. Not browser, interaction, animation or universal helper aesthetic acceptance."
+}

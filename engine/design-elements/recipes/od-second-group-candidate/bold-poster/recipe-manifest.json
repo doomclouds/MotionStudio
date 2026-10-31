@@ -1,0 +1,23 @@
+{
+  "id": "od-second-bold-poster",
+  "status": "restricted-integration-candidate",
+  "userAestheticAcceptance": "RECEIVED_FOR_SOURCE_STUDY",
+  "publicFamilyIncrement": 0,
+  "registeredRecipeIncrement": 0,
+  "frame": [
+    1920,
+    1080
+  ],
+  "runtime": "@napi-rs/canvas 0.1.100",
+  "resourceMode": "provide-exact-external",
+  "source": "source-provenance.json",
+  "license": "Apache-2.0 with separate font/provenance notices",
+  "notVerified": [
+    "animation",
+    "audio",
+    "responsive browser",
+    "public integration approval"
+  ],
+  "publicApiApproval": "NOT_RECEIVED",
+  "publication": "AUTHORIZED_FOR_UNIFIED_INTEGRATION_NOT_PUBLISHED"
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "path": "reference/open-design.json",
+    "sourceURL": "https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/plugins/_official/video-templates/frame-bold-poster/open-design.json",
+    "gitBlobSHA": "4482fce056dc3de19ba9e286566f850038b42088",
+    "sha256": "243116902d5b33a2a1cea3a9f6d1cf685d2aeaf34fe400ee43f44b9f15d70aba"
+  },
+  {
+    "path": "reference/upstream.html",
+    "sourceURL": "https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/plugins/_official/video-templates/frame-bold-poster/source/index.html",
+    "gitBlobSHA": "86117759bd8359dc28d22df5b0c55da488cce0f3",
+    "sha256": "9bf8772fdf32e8788c416300ff3e9b510bbbdd8ec935c12142aea9d08c194c35"
+  },
+  {
+    "path": "reference/template.json",
+    "sourceURL": "https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/plugins/_official/video-templates/frame-bold-poster/template.json",
+    "gitBlobSHA": "d278ddd6db8feeb20445faa4a26256ca379b4fc8",
+    "sha256": "2cef3d7828ef28735d72aeae9de6483eb1cac2ccdc5f9c4858c0c352c635817b"
+  },
+  {
+    "path": "reference/original.png",
+    "sourceURL": "https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/plugins/_official/video-templates/frame-bold-poster/preview.png",
+    "gitBlobSHA": "6bf48e754642c625e4e750bbe1dc38898c0c6e5e",
+    "sha256": "47c33139df9e54bc064ffc2139c3dd2a6dc7f59c3443a434b91d636925ebcdcb"
+  }
+]

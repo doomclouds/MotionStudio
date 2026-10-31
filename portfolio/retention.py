@@ -7,6 +7,7 @@ from pathlib import Path, PurePosixPath
 
 TOP = {'schemaVersion','workId','kind','canvas','entrypoint','decisionCard','sourceAnalysis','ruleRefs','ruleStatus','assetUsage','nonAssetNote','evidence','motionTransfer'}
 USAGE = {'familyId','mode','modulePath','moduleSha256','sourceCommit','callsite','importToken','callToken','visibleRole','snapshotPath','executionEvidence'}
+PUBLIC_USAGE = USAGE - {'executionEvidence'}
 SHA = re.compile(r'[a-f0-9]{64}')
 
 def require(ok, message):
@@ -45,7 +46,8 @@ def inspect(root):
         if e['schema']!=4: continue # Motion keeps existing schema and review dimensions
         p=folder/'retention.json'; require(p.is_file(),'missing static retention: '+folder.name)
         d=read(p); require(set(d)==TOP,'unexpected retention keys: '+folder.name)
-        require(d['schemaVersion']==1 and d['kind']=='fixed-static-design' and d['workId']==e['id']==folder.name,'work identity mismatch')
+        require(d['schemaVersion'] in [1,2] and d['kind']=='fixed-static-design' and d['workId']==e['id']==folder.name,'work identity mismatch')
+        public_only=d['schemaVersion']==2
         require(d['canvas']=={k:e['render'][k] for k in ['width','height']},'canvas mismatch')
         require(d['entrypoint']==e['render']['entrypoint'],'entrypoint mismatch')
         local(folder,d['entrypoint']); local(folder,d['decisionCard'])
@@ -54,7 +56,7 @@ def inspect(root):
         require(isinstance(d['assetUsage'],list),'usage must be list')
         seen=set()
         for u in d['assetUsage']:
-            require(set(u)==USAGE,'unexpected usage keys')
+            require(set(u)==(PUBLIC_USAGE if public_only else USAGE),'unexpected usage keys')
             require(u['familyId'] in ids and u['familyId'] not in seen,'unknown/duplicate family ID'); seen.add(u['familyId'])
             require(u['mode'] in ['runtime-import','vendored-snapshot'],'unsupported dependency mode')
             require(u['modulePath']=='engine/design-elements/'+ids[u['familyId']]['entry'],'family entry mismatch')
@@ -81,10 +83,16 @@ def inspect(root):
                         require(digest(local(root/'engine/design-elements',f['path']))==f['sha256'],'transitive dependency mismatch')
                 else:
                     require(u['moduleSha256'] in code,'runtime hardcoded dependency hash absent')
-        ev=d['evidence']; require(set(ev) in [{'acceptanceSource','renderHashSource','publicCover','comparisonBundle','independentReview'},{'acceptanceSource','renderHashSource','publicCover','comparisonBundle','independentReview','visualReport'}],'unexpected evidence fields')
+        ev=d['evidence']
+        if public_only:
+            require(set(ev)=={'acceptanceSource','renderHashSource','publicCover','reviewArtifacts'},'unexpected public evidence fields')
+            require(ev['reviewArtifacts']=={'status':'NOT_INCLUDED'},'public review artifacts must be explicitly not included')
+        else:
+            # Legacy records remain readable for validation, never copied into public outputs.
+            require(set(ev) in [{'acceptanceSource','renderHashSource','publicCover','comparisonBundle','independentReview'},{'acceptanceSource','renderHashSource','publicCover','comparisonBundle','independentReview','visualReport'}],'unexpected evidence fields')
         require(ev['acceptanceSource']=='entry.json#/acceptance' and ev['renderHashSource']=='entry.json#/cover/source_sha256','duplicate acceptance source not allowed')
         require(ev['publicCover']==e['cover']['path'],'cover mismatch'); local(folder,ev['publicCover'])
-        for key in ['comparisonBundle','independentReview']+(['visualReport'] if 'visualReport' in ev else []):
+        for key in ([] if public_only else ['comparisonBundle','independentReview']+(['visualReport'] if 'visualReport' in ev else [])):
             record=ev[key]
             basekeys={'status','recordId','sha256','storage','durableStorage','note'}
             extra={'acceptedFrameBinding','artifactKind'} if key=='visualReport' else set()
@@ -105,7 +113,7 @@ def inspect(root):
                         require(record['artifactKind']=='html-report','durable report hash must identify HTML container')
                         require(record['acceptedFrameBinding'] in ['EXACT_PIXELS','NOT_ESTABLISHED'],'explicit accepted-frame binding required')
                 if key=='independentReview':require(record['status']=='PRIVATE_RECORD_LOCATED','located storage conflicts with review status')
-        for usage in d['assetUsage']:
+        for usage in ([] if public_only else d['assetUsage']):
             record=usage['executionEvidence']
             require(set(record)=={'status','recordId','sha256','frameSha256','storage','durableStorage','note'},'unexpected runtime evidence fields')
             require(record['status']=='MATCHED_ACCEPTED_FRAME' and record['frameSha256']==e['cover']['source_sha256'],'runtime frame mismatch')
@@ -115,6 +123,17 @@ def inspect(root):
         require(not re.search(r'/workspace/|/home/agent/|libfile_',p.read_text()),'private location leaked')
         works.append((d,e))
     return assets,works
+
+def public_usage(usages):
+    """Allowlist source/code relationships; never serialize private execution receipts."""
+    return [{key:usage[key] for key in sorted(PUBLIC_USAGE)} for usage in usages]
+
+def public_work(d,e):
+    """A public source projection, not a disclosure about private evidence existence."""
+    return {'id':d['workId'],'decisionCard':'works/'+d['workId']+'/'+d['decisionCard'],
+            'sourceAnalysis':d['sourceAnalysis'],'assetUsage':public_usage(d['assetUsage']),
+            'visualStatus':e['acceptance']['visual']['status'],'reviewArtifacts':'NOT_INCLUDED',
+            'motionTransfer':'NOT_TESTED'}
 
 def outputs(root):
     assets,works=inspect(root)
@@ -126,12 +145,12 @@ def outputs(root):
             if match:
                 origin.append(match.group(1))
         family.append({'id':a['id'],'entry':a['entry'],'guidance':a['guidance'],'sourceCases':origin,'actualUsers':[d['workId'] for d,e in works if any(u['familyId']==a['id'] for u in d['assetUsage'])]})
-    data={'schemaVersion':1,'countingUnit':'stable callable family; no function, case or snapshot duplication','staticWorks':len(works),'families':family,'works':[{'id':d['workId'],'decisionCard':'works/'+d['workId']+'/'+d['decisionCard'],'sourceAnalysis':d['sourceAnalysis'],'assetUsage':d['assetUsage'],'visualStatus':e['acceptance']['visual']['status'],'reviewEvidence':d['evidence']['independentReview']['status'],'comparisonBundle':d['evidence']['comparisonBundle']['status'],'reportStorage':d['evidence'].get('visualReport',d['evidence']['comparisonBundle'])['storage'],'acceptedFrameBinding':d['evidence'].get('visualReport',d['evidence']['comparisonBundle']).get('acceptedFrameBinding','NOT_CHECKED'),'motionTransfer':'NOT_TESTED'} for d,e in works]}
-    lines=['# 静态设计沉淀索引（自动生成）','','运行 `python portfolio/retention.py --write` 生成；`--check` 拒绝漂移。不是新的审美验收。','',f'完整静态作品 {len(works)}；公共族 {len(assets)}；在已发布作品源码中实际调用的不同族 {sum(bool(f["actualUsers"]) for f in family)}。作品收藏、模块测试、可视复核、素材公开权限分别判断。','','| 作品/统一设计卡 | 实际公共族 | 视觉状态（来自entry） | 独审证据身份 | 对照报告 |','|---|---|---|---|---|']
+    data={'schemaVersion':2,'countingUnit':'stable callable family; no function, case or snapshot duplication','evidencePolicy':'Review artifacts, identifiers, document hashes and storage metadata are not included in this public projection; this makes no claim that private evidence is absent.','staticWorks':len(works),'families':family,'works':[public_work(d,e) for d,e in works]}
+    lines=['# 静态设计沉淀索引（自动生成）','','运行 `python portfolio/retention.py --write` 生成；`--check` 拒绝漂移。不是新的审美验收。','',f'完整静态作品 {len(works)}；公共族 {len(assets)}；在已发布作品源码中实际调用的不同族 {sum(bool(f["actualUsers"]) for f in family)}。作品收藏、模块测试、可视复核、素材公开权限分别判断。','','| 作品/统一设计卡 | 实际公共族 | 视觉状态（来自entry） | 公开审查材料 | 动态迁移 |','|---|---|---|---|---|']
     for d,e in works:
         labels=', '.join(u['familyId'].replace('design.','').replace('.v1','')+('（快照）' if u['mode']=='vendored-snapshot' else '') for u in d['assetUsage']) or '0（案例代码保留）'
-        lines.append(f'| [{e["title"]}](works/{d["workId"]}/{d["decisionCard"]}) | {labels} | {e["acceptance"]["visual"]["status"]} | {d["evidence"]["independentReview"]["status"]} | {d['evidence'].get('visualReport',d['evidence']['comparisonBundle'])['storage']} / {d['evidence'].get('visualReport',d['evidence']['comparisonBundle']).get('acceptedFrameBinding','NOT_CHECKED')}；未公开 |')
-    lines+=['','完整可运行入口、画幅、文件hash及验收以各作品entry.json为准。retention.json只补语义关联，不重写验收。旧分析路径原位保留，由统一设计卡和sidecar导航。','原始参考/对照证据受独立权限约束，未公开不表示未做，也不能推定已存在可访问报告。私人证据ID/hash只供受控记录核对，公开校验器不宣称读取了私有报告。存储与验收帧绑定逐例列明：PRIVATE_LIBRARY/PRIVATE_OWNER_PAGE及ACCESS_VERIFIED仅表示私有报告/评审容器已取回核对，不公开私有链接；EXACT_PIXELS表示报告嵌图含已审帧相同像素，NOT_ESTABLISHED仅表示未找到完全相同的原尺寸嵌图，不推定报告版本错误，也不能宣称完整原帧对照闭环。HTML哈希不冒充单独PNG哈希；浏览器预览和新的审美验收均不推定。运行调用回执仍按独立存储状态记账。','', '## 公共族：来源与真实调用分开','','| 族 | 来源作品（非调用证明） | 已发布作品真实调用 |','|---|---|---|']
+        lines.append(f'| [{e["title"]}](works/{d["workId"]}/{d["decisionCard"]}) | {labels} | {e["acceptance"]["visual"]["status"]} | NOT_INCLUDED | NOT_TESTED |')
+    lines+=['','完整可运行入口、画幅、源码和自绘帧hash及验收声明以各作品entry.json为准。retention.json只补语义关联，不重写验收。旧分析路径原位保留，由统一设计卡和sidecar导航。','本索引只投影公开源码关系与entry已有声明，不包含审查/对照材料、私人记录标识、文档指纹或存储信息。NOT_INCLUDED仅表示未纳入公开投影，不表示相关材料缺失，也不推定其存在、存放位置或可访问性。保留PARTIAL和NOT_TESTED等边界；源码校验不等于新的审美、浏览器或动画验收。','', '## 公共族：来源与真实调用分开','','| 族 | 来源作品（非调用证明） | 已发布作品真实调用 |','|---|---|---|']
     for f in family: lines.append('| ['+f['id']+'](../engine/design-elements/'+f['entry']+') | '+(', '.join(f['sourceCases']) or '见模块指导')+' | '+(', '.join(f['actualUsers']) or '尚无已发布作品调用；看独立配方')+' |')
     coverage=['# 作品与公共资产覆盖（自动生成）','','旧16案的逐例设计关系与未泛化边界完整保留于[历史设计说明](CASE-DESIGN-NOTES.md)，不是调用账单。','','详见 [完整静态作品语义索引（远端仓库，不随Skill打包）](https://github.com/doomclouds/MotionStudio/blob/dev/portfolio/DESIGN-INDEX.md)。本表区分“提供提取灵感的来源”与“源码实际调用”，不能用来源关系冒充复用。','',*lines[lines.index('| 族 | 来源作品（非调用证明） | 已发布作品真实调用 |'):]]
     coverage=[s.replace('(../engine/design-elements/','(') for s in coverage]
@@ -149,7 +168,7 @@ def query(root, text=None, family=None):
         if family is not None and family not in families:continue
         corpus='\n'.join([d['workId'],e['title'],local(folder,d['decisionCard']).read_text(),*[local(folder,p).read_text() for p in d['sourceAnalysis']]])
         if text is not None and text.casefold() not in corpus.casefold():continue
-        rows.append({'workId':d['workId'],'title':e['title'],'decisionCard':'portfolio/works/'+d['workId']+'/'+d['decisionCard'],'families':families,'visualStatus':e['acceptance']['visual']['status'],'reviewEvidence':d['evidence']['independentReview']['status'],'reviewStorage':d['evidence']['independentReview']['storage'],'durableStorage':d['evidence']['independentReview']['durableStorage'],'comparisonBundle':d['evidence']['comparisonBundle']['status'],'reportStorage':d['evidence'].get('visualReport',d['evidence']['comparisonBundle'])['storage'],'acceptedFrameBinding':d['evidence'].get('visualReport',d['evidence']['comparisonBundle']).get('acceptedFrameBinding','NOT_CHECKED'),'motionTransfer':d['motionTransfer']['status']})
+        rows.append({'workId':d['workId'],'title':e['title'],'decisionCard':'portfolio/works/'+d['workId']+'/'+d['decisionCard'],'families':families,'visualStatus':e['acceptance']['visual']['status'],'reviewArtifacts':'NOT_INCLUDED','motionTransfer':d['motionTransfer']['status']})
     return {'query':{'text':text,'family':family,'combination':'intersection','semantics':'case-insensitive literal substring; family matches actual use, not inspiration'},'count':len(rows),'results':rows,'limits':'No aesthetic ranking or inferred suitability. Zero matches means no literal match, not no relevant design. Full repository required; private evidence content is not searched.'}
 
 def main():

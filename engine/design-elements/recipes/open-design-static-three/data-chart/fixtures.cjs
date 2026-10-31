@@ -1,0 +1,11 @@
+const span=(text,role='serif',accent=false)=>({text,role,accent});
+const reference={width:1920,height:1080,theme:{paper:'#f7f5ee',ink:'#1a1a1a',accent:'#a91d1d'},kicker:'GLOBAL · MONTHLY ACTIVE USERS · 2018–2026',frameLabel:'FRAME 04 · CHART',headline:[
+ [span('AI agent 月活在 '),span('2024 之后','italic',true),span(' 进入两段抛物线')],
+ [span('——')],
+ [span('第一段由云端 Claude / GPT 推动, 第二段由')],
+ [span('本地 CLI agent 普及。')]
+],chart:{mode:'reference-geometry',dataKind:'synthetic',disclosure:'Synthesized industry estimates; visual specimen only, coordinates and axis labels are inconsistent.',acknowledgeAxisMismatch:true,bounds:{x:320,y:432.18,width:1280,height:1280*460/1100},points:[410,405,395,380,355,320,270,195,90].map((y,i)=>({x:60+i*120,y,label:`'${18+i}`})),ticks:[{y:60,label:'640M'},{y:180,label:'420M'},{y:300,label:'210M'},{y:420,label:'0'}],accentStart:6,annotations:[{index:6,dx:4,dy:-20,text:'2024 · 310M'},{index:7,dx:-6,dy:-20,text:'2025 · 468M',accent:true},{index:8,dx:-10,dy:-20,text:'2026 · 640M',accent:true,align:'right'}],callout:['⤴ Inflection point','local CLI agents普及']},footer:['Source · Synthesized industry estimates, 2026-05','Chart by HTML-Anything','NYT-STYLE · FRAME-DATA-CHART-NYT']};
+const transfer=JSON.parse(JSON.stringify(reference));
+Object.assign(transfer,{theme:{paper:'#f3f4ed',ink:'#18312b',accent:'#1a7062'},kicker:'SYNTHETIC STUDIO SAMPLE · READING HOURS · 2018–2026',frameLabel:'TRANSFER · STATIC',headline:[[span('阅读记录：把 '),span('持续积累','italic',true),span(' 看得更清楚')],[span('——')],[span('同一个编辑图表组件，替换主题与数据；')],[span('线性坐标来自数值，不代表实际调研。')]],footer:['Source · Synthetic test data, not survey evidence','Shared chart + editorial frame recipe','FIXED 1920 × 1080 · NO MOTION']});
+transfer.chart={mode:'linear-values',dataKind:'synthetic',disclosure:'Synthetic reading-hour test fixture; no real survey claim.',bounds:reference.chart.bounds,domain:[0,120],points:[3,8,16,28,35,52,70,92,112].map((value,i)=>({value,label:`'${18+i}`})),ticks:[0,40,80,120].map(value=>({value,label:String(value)+'h'})),accentStart:5,annotations:[{index:5,dx:-12,dy:-20,text:'2023 · 52h',align:'right'},{index:7,dx:-10,dy:-20,text:'2025 · 92h',accent:true,align:'right'},{index:8,dx:-10,dy:-20,text:'2026 · 112h',accent:true,align:'right'}],callout:['Synthetic specimen','Values map to a linear axis']};
+module.exports={reference,transfer};

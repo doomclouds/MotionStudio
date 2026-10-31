@@ -1,0 +1,27 @@
+{
+  "baseCommit": "5f5e8f1395581a89bf5314a4c5f452f8ffb72fb5",
+  "globalCatalogSha256": "c77dacf127ddaa14011dce4a344e1d4e8ef8cc2480e0352bb7520c89d1c17e66",
+  "actualGlobalFamilyCalls": [],
+  "newRegisteredFamilies": 0,
+  "newAdmittedPublicRecipes": 0,
+  "relations": [
+    {
+      "candidate": "chromatic-title",
+      "related": [
+        "design.expressive-type.v1",
+        "design.typographic-focus.v1"
+      ],
+      "relationship": "conceptual overlap only; does not call these modules",
+      "futureDecision": "Consider a channel-offset variant in expressive-type after real reuse; do not add a color-effect family merely from this case."
+    },
+    {
+      "candidate": "soft-orb-editorial",
+      "related": [
+        "design.material-surfaces.v1",
+        "design.typographic-focus.v1"
+      ],
+      "relationship": "conceptual overlap only; direct blurred circles and fixed mixed-type component",
+      "futureDecision": "Consider shared backdrop slot or local recipe; do not count an orb/gradient family."
+    }
+  ]
+}

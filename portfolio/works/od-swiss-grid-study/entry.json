@@ -1,0 +1,257 @@
+{
+  "schema": 4,
+  "id": "od-swiss-grid-study",
+  "version": "1.0.0",
+  "title": "Swiss Grid · overlapping statistic poster",
+  "status": "source-release",
+  "unofficial_recreation": true,
+  "original": {
+    "author": "OpenDesign / nexu-io; heygen-com / Hyperframes",
+    "title": "Swiss Grid · overlapping statistic poster",
+    "url": "https://github.com/nexu-io/open-design/tree/12d970eacc8971150e3c76470d2a9afe16dc2ed1/plugins/_official/video-templates/frame-swiss-grid"
+  },
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "NOTICE",
+      "licenses/Apache-2.0.txt",
+      "licenses/Archivo-OFL.txt",
+      "licenses/Hyperframes-Apache-2.0.txt",
+      "licenses/Liberation-OFL.txt",
+      "licenses/MotionStudio-MIT.txt",
+      "licenses/napi-rs-canvas-MIT.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/plugins/_official/video-templates/frame-swiss-grid/open-design.json",
+      "https://github.com/heygen-com/hyperframes/blob/main/LICENSE"
+    ]
+  },
+  "files": [
+    {
+      "path": "CONTRACT.md",
+      "sha256": "5365f6643a136b4dd3bd8584e0683c1806ad0065f2217a678ccce4a25bbaed0f",
+      "role": "documentation"
+    },
+    {
+      "path": "CREDITS.md",
+      "sha256": "74bed8d8eb5917b9ff8a3bfdb8ac182e87822a925b87af723e84297a2a6f3065",
+      "role": "documentation"
+    },
+    {
+      "path": "DESIGN-RETENTION.md",
+      "sha256": "f7fc9e8dbdf1b873cb0bed0498498a16c50f9df89a9e6a5808be5c9d13ede9f6",
+      "role": "documentation"
+    },
+    {
+      "path": "FONT-PROVENANCE.md",
+      "sha256": "66186e6efdc880eaec6bcd9105a0b84ecb99dee2611de146c38086da1b285a47",
+      "role": "documentation"
+    },
+    {
+      "path": "LICENSE-PROVENANCE.json",
+      "sha256": "c014fcb82a2b90d92bb75b40c721802e4b448ddba827047db9421e2b42548e66",
+      "role": "config"
+    },
+    {
+      "path": "NOTICE",
+      "sha256": "65d32939313080aac036b7cb4266ab0730a5cd60ccb7f2e912341583a8d02bbe",
+      "role": "license"
+    },
+    {
+      "path": "README.md",
+      "sha256": "6f7e48132614e864616cfe98a314346b1d168f797ee44158cda23a7e28ea0011",
+      "role": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "09ac9706b0af3a554931d6c748bb05c6dc8f77aa30747fabc269e7e3efa27ba5",
+      "role": "cover"
+    },
+    {
+      "path": "font-lock.json",
+      "sha256": "d6ae7021c468e87f282783835097ab7c334943f2c21730515c893aaa77065dfd",
+      "role": "config"
+    },
+    {
+      "path": "font-provenance.json",
+      "sha256": "8ee348164993b242b616738de7bb10798762fd890a0f8c6b877b010be412b194",
+      "role": "config"
+    },
+    {
+      "path": "licenses/Apache-2.0.txt",
+      "sha256": "9d95806a26532623360eb84bb17d298f394b55ef73fb4c0796d99b4319b2b0da",
+      "role": "license"
+    },
+    {
+      "path": "licenses/Archivo-OFL.txt",
+      "sha256": "1778201b7bd33e8c08a2eda32a4ad2f69bc38ced9731b01cc3fc47f268c8ef3c",
+      "role": "license"
+    },
+    {
+      "path": "licenses/Hyperframes-Apache-2.0.txt",
+      "sha256": "4259155fb06f127687ee7b0a8a3682d45132db0f2da26cbc0b7a2d1e796436b8",
+      "role": "license"
+    },
+    {
+      "path": "licenses/Liberation-OFL.txt",
+      "sha256": "e0f20018e350e0b1ba1b4d91999a635a5214d329630ef9f9c6af396f6d2788fa",
+      "role": "license"
+    },
+    {
+      "path": "licenses/MotionStudio-MIT.txt",
+      "sha256": "0c1e09b3b98b71f5de69420a09313081f3def9b7827d2fbac730d984920fabc1",
+      "role": "license"
+    },
+    {
+      "path": "licenses/napi-rs-canvas-MIT.txt",
+      "sha256": "8802fecf9da4367bc23bcf20b21cc143785fc6c92b152f3fa7fbe6ce08d344d6",
+      "role": "license"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "0bf5498b9e2a4067405a4a813bd1f2734ea4fed76ba61b4ada950aab30c14090",
+      "role": "lock"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "6685e9cd86a5e813ca587777e374129a231c3f70403e87fc28f84f2768f3b3c6",
+      "role": "lock"
+    },
+    {
+      "path": "package.json",
+      "sha256": "ea5f0ece7257d78f92c42595fc4c0d0ddd0907e495cfc713c7aed1668fc78e86",
+      "role": "config"
+    },
+    {
+      "path": "recipe-manifest.json",
+      "sha256": "3ea0b263218379dc490a16fcc8dd4d8f01734bea505f59f642b9bd1dc5fb099b",
+      "role": "config"
+    },
+    {
+      "path": "render.cjs",
+      "sha256": "f46c22d150f299049803f6cb05c67871c666e73912a2154da2181fb93bac8cf9",
+      "role": "source"
+    },
+    {
+      "path": "resources.cjs",
+      "sha256": "d3ad36d14e3d7a6f9b6c579ad5d380fa92ac8e57583d56f5958a2b76e4de3c6e",
+      "role": "source"
+    },
+    {
+      "path": "retention.json",
+      "sha256": "2041a89c4dfc0f77a125e21784a95ccfa842ccd1cde45bb17b9c3a4e046dd9e8",
+      "role": "config"
+    },
+    {
+      "path": "scene.json",
+      "sha256": "026fead41639e5877b1c2849ba74545738b94b22cf3248031a1460dfdb37a338",
+      "role": "config"
+    },
+    {
+      "path": "source-lock.json",
+      "sha256": "f611644fe8f6231bd2f8fea3ae175d5064daadbd5c21291cf39a9fbab75aa3e3",
+      "role": "config"
+    },
+    {
+      "path": "test-composition.cjs",
+      "sha256": "ca2becc0d8222a8f3a5a2a8aa8a32dea1397073d28929cfffc7e17a89e9ebe1a",
+      "role": "source"
+    },
+    {
+      "path": "test-resources.cjs",
+      "sha256": "9f595b119935a235b0b191a42b9d134635147cf9ea42b53dd39f9977088ca805",
+      "role": "source"
+    },
+    {
+      "path": "test.cjs",
+      "sha256": "9c98d8f45699bad3ead77940876e1133b9a78adac9f82fefbe5438414eb9aa53",
+      "role": "source"
+    }
+  ],
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "package-lock.json"
+    }
+  ],
+  "render": {
+    "entrypoint": "render.cjs",
+    "width": 1920,
+    "height": 1080
+  },
+  "resources": [
+    {
+      "id": "font-0",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; exact external snapshot",
+      "notice": "licenses/Liberation-OFL.txt",
+      "source_url": "https://github.com/liberationfonts/liberation-fonts",
+      "sha256": "bade59d822652f76e6941aa87b40a87c13d1cc70db98ededb5011127efafd1d3",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "LiberationSans-Regular.ttf",
+      "bytes": 410820,
+      "instructions": "Supply exact locked regular file in external OD_FONT_DIR. Source URL documents provenance only; no automatic exact recovery or timestamp-identical regeneration is promised."
+    },
+    {
+      "id": "font-1",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; exact external snapshot",
+      "notice": "licenses/Liberation-OFL.txt",
+      "source_url": "https://github.com/liberationfonts/liberation-fonts",
+      "sha256": "1b5f2da6f4cadce4c05b9ecebe3a6fcd374eb95ae443605e799f4c3287978939",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "LiberationSans-Bold.ttf",
+      "bytes": 414568,
+      "instructions": "Supply exact locked regular file in external OD_FONT_DIR. Source URL documents provenance only; no automatic exact recovery or timestamp-identical regeneration is promised."
+    },
+    {
+      "id": "font-2",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; exact external snapshot",
+      "notice": "licenses/Archivo-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/archivo",
+      "sha256": "3c06eed6b8c69e660f94c3f17e94377bacd84156fb2390706e9d0b15befcc085",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "SwissArchivo200.ttf",
+      "bytes": 121428,
+      "instructions": "Supply exact locked regular file in external OD_FONT_DIR. Source URL documents provenance only; no automatic exact recovery or timestamp-identical regeneration is promised."
+    },
+    {
+      "id": "font-3",
+      "mode": "provide",
+      "license": "SIL OFL 1.1; exact external snapshot",
+      "notice": "licenses/Archivo-OFL.txt",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/archivo",
+      "sha256": "c5d3ab0d319dce3e19b67c624072322daf724cf020f0f190a4a8a7fe3e24a228",
+      "permission": "user-supplied-not-distributed",
+      "local_path": "SwissArchivo300.ttf",
+      "bytes": 121444,
+      "instructions": "Supply exact locked regular file in external OD_FONT_DIR. Source URL documents provenance only; no automatic exact recovery or timestamp-identical regeneration is promised."
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "f66aa39fa71ed345244976bc7578169f30800f9b1ae72acbbccf07d10a76827c",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "Full static comparison reviewed. Declared Liberation/Archivo substitution, geometric percent rings, local glyph/ink and edge softness residuals remain. Default rerender bytes exactly match the independently reviewed static frame; no browser, responsiveness or motion approval."
+    }
+  }
+}

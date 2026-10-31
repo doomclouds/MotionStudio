@@ -1,0 +1,27 @@
+[
+  {
+    "file": "DecisionStudy500.ttf",
+    "sha256": "78ebd93f8e3d4891939396c6365fdb31410080db4a249c98d5490d3e8708371e",
+    "bytes": 66444
+  },
+  {
+    "file": "DecisionStudy600.ttf",
+    "sha256": "a8bd4b4be452df1f5a4e3c58c34410e3a2c18e9958c212a28c5218e3b16e85a4",
+    "bytes": 66544
+  },
+  {
+    "file": "connectors.svg",
+    "sha256": "ff42681c564019a4ff0159cabe057f8964b8ed1891dc7dfb8522a57df203e347",
+    "bytes": 1460
+  },
+  {
+    "file": "cursor.svg",
+    "sha256": "3a3954461cf3f8f7df339eaaaa8983dd9c5a02735b51511d4ea20dd97bec6b6a",
+    "bytes": 308
+  },
+  {
+    "file": "thumb-up-noto.png",
+    "sha256": "b86fae95e8787a969cacc7e4077283be88fe7c91313dccff90a7e3ca339f9be8",
+    "bytes": 1882
+  }
+]

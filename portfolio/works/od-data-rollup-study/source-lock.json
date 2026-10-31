@@ -1,0 +1,47 @@
+{
+  "commit": "12d970eacc8971150e3c76470d2a9afe16dc2ed1",
+  "base": "plugins/_official/video-templates/frame-data-rollup",
+  "browserExecuted": false,
+  "scope": "complete static preview only",
+  "files": [
+    {
+      "path": "preview.png",
+      "sha256": "1d78dad71876d807d7033b9f30d04b9f972047431f602f8ea165fb8979d0e8bc",
+      "gitBlobSHA1": "d8c2d8edc5cbb9bf8f61a1b30d56b0440888f1de",
+      "fixedUpstreamBlobSHA1": "d8c2d8edc5cbb9bf8f61a1b30d56b0440888f1de",
+      "localDifference": "Byte exact fixed upstream blob."
+    },
+    {
+      "path": "template.json",
+      "sha256": "a3386179633bb5f189c86d7363d140a11a7de1401bfb9b87ee652a12018f03e1",
+      "gitBlobSHA1": "035b7f8fcadafb5b49ca26a69d302ff0baea8444",
+      "fixedUpstreamBlobSHA1": "e45131cc16f669226e3e04209081c1ee50eb57d7",
+      "canonicalUpstreamSHA256": "f4021836d6b3a49ee0b6185738b43de9c7a8ba87bd44bd72bdb62b83bfc8982e",
+      "localDifference": "Local connector text adds one trailing LF; removing exactly one LF reproduces fixed upstream Git blob."
+    },
+    {
+      "path": "open-design.json",
+      "sha256": "389cc77ddf8b2033fe321f01fa1e102ddb080464fe09d0fa3c119e540355bc58",
+      "gitBlobSHA1": "594c0ba29e3a56c1f3641480eb29e6d81a2a495c",
+      "fixedUpstreamBlobSHA1": "e033b72533d54f6944f936dda6c81914efb13e9a",
+      "canonicalUpstreamSHA256": "8bff139875fb76df1a0423c18cf2312af1fb1dea35d2fa56435850a75ea1de83",
+      "localDifference": "Local connector text adds one trailing LF; removing exactly one LF reproduces fixed upstream Git blob."
+    },
+    {
+      "path": "source/DataRollup.tsx",
+      "sha256": "dcac0dad9cd5166e538147711a2a07520cb5c09944421c63e6687d0a0b719dc9",
+      "gitBlobSHA1": "6fb9ac9bb07f15ce0df16510c90994d568f02101",
+      "fixedUpstreamBlobSHA1": "3f8969bec8c311c0fce73372bf9c85a5c7696254",
+      "canonicalUpstreamSHA256": "af3bea37764c04e571bdf158748e3442b9cc788dbc7e94226c6519586d752e15",
+      "localDifference": "Local connector text adds one trailing LF; removing exactly one LF reproduces fixed upstream Git blob."
+    },
+    {
+      "path": "source/Root.tsx",
+      "sha256": "ce3a434d1449e21e11d7c258f27d6cad6fbcdcfb1695c5776dcd3c83c99b98e6",
+      "gitBlobSHA1": "9d3284a3c7f0c77327ba400eb480fe9b3015f3a0",
+      "fixedUpstreamBlobSHA1": "49a91fa616e957681b85722acd4fcf07e011f0ba",
+      "canonicalUpstreamSHA256": "613d7be4f5fe24f2f15280791af69fe871ac9a365ff68ff5d4a46b6e9a0d5b15",
+      "localDifference": "Local connector text adds one trailing LF; removing exactly one LF reproduces fixed upstream Git blob."
+    }
+  ]
+}

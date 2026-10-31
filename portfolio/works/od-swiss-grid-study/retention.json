@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 2,
+  "workId": "od-swiss-grid-study",
+  "kind": "fixed-static-design",
+  "canvas": {
+    "width": 1920,
+    "height": 1080
+  },
+  "entrypoint": "render.cjs",
+  "decisionCard": "DESIGN-RETENTION.md",
+  "sourceAnalysis": [
+    "CREDITS.md",
+    "FONT-PROVENANCE.md"
+  ],
+  "ruleRefs": [],
+  "ruleStatus": "One case-local bounded composition recipe; zero new public families. See recipe-manifest.json.",
+  "assetUsage": [],
+  "nonAssetNote": "No MotionStudio public family dependency claimed. Helper functions are not separately counted as recipes.",
+  "evidence": {
+    "acceptanceSource": "entry.json#/acceptance",
+    "renderHashSource": "entry.json#/cover/source_sha256",
+    "publicCover": "cover.jpg",
+    "reviewArtifacts": {
+      "status": "NOT_INCLUDED"
+    }
+  },
+  "motionTransfer": {
+    "status": "NOT_TESTED",
+    "note": "Fixed static only, not animation, browser interaction, audio, responsive layout or video export."
+  }
+}

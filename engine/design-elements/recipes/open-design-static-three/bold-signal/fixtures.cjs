@@ -1,0 +1,3 @@
+'use strict';
+const common={width:1920,height:1080,contentKind:'fictional-demo',disclosure:'Sample launch copy; not evidence of a real launch.'};
+module.exports={reference:{...common,section:{index:1,total:4},navLabels:['SIGNAL','BUILD','SHIP','SCALE'],activeIndex:0,label:'LAUNCH · 2026',titleLines:['Bring your','own agent.'],footer:'HTML-VIDEO · BOLD SIGNAL',palette:{stageEdge:'#1a1a1a',stageMid:'#2d2d2d',text:'#ffffff',card:'#ff5722',ink:'#1a1a1a'}},transfer:{...common,section:{index:2,total:4},navLabels:['IDEA','MAKE','REFINE','SHARE'],activeIndex:1,label:'STUDY · 2026',titleLines:['Make room','for ideas.'],footer:'FICTIONAL DEMO · NO PRODUCT LAUNCH',palette:{stageEdge:'#101d24',stageMid:'#25383e',text:'#f3f6eb',card:'#b1e5bb',ink:'#102e33'}}};

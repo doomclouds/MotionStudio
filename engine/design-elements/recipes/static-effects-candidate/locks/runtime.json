@@ -1,0 +1,9 @@
+{
+  "node": "24.22.1",
+  "canvas": "0.1.100",
+  "python": "3.13.5",
+  "fontTools": "4.57.0",
+  "brotli": "1.1.0",
+  "platform": "linux-x64",
+  "scope": "Verified local environment; no clean-OS or cross-platform guarantee"
+}

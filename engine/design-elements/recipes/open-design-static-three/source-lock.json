@@ -1,0 +1,72 @@
+{
+  "baseCommit": "5f5e8f1395581a89bf5314a4c5f452f8ffb72fb5",
+  "sources": [
+    {
+      "case": "data-chart",
+      "template": "frame-data-chart-nyt",
+      "sourceCommit": "12d970eacc8971150e3c76470d2a9afe16dc2ed1",
+      "sourceURL": "https://github.com/nexu-io/open-design/tree/12d970eacc8971150e3c76470d2a9afe16dc2ed1/plugins/_official/video-templates/frame-data-chart-nyt",
+      "modules": [
+        {
+          "file": "paint.cjs",
+          "sha256": "ff09c98cc2fbb1cfd5c50ecd42b9e9a149afec7549240ba62b40dd7afab5f2c9"
+        },
+        {
+          "file": "fixtures.cjs",
+          "sha256": "5c5f3c3b1fa3f2cab331e6fd7e250ae9e21782524b3fe73997e8667a760b101a"
+        }
+      ],
+      "pureModulesUnchanged": true
+    },
+    {
+      "case": "light-leak",
+      "template": "frame-light-leak-cinema",
+      "sourceCommit": "12d970eacc8971150e3c76470d2a9afe16dc2ed1",
+      "sourceURL": "https://github.com/nexu-io/open-design/tree/12d970eacc8971150e3c76470d2a9afe16dc2ed1/plugins/_official/video-templates/frame-light-leak-cinema",
+      "modules": [
+        {
+          "file": "film-frame.cjs",
+          "sha256": "d2e9c7b482fb2240ea5c84e9017bf40d6e98f99af2c41ec1e154154f041ff1d9"
+        },
+        {
+          "file": "fixtures.cjs",
+          "sha256": "c2b292a3c5c74c5212eb31d3a89890a875c4cdacb23b3e42b7339110521ea86d"
+        }
+      ],
+      "pureModulesUnchanged": true
+    },
+    {
+      "case": "bold-signal",
+      "template": "frame-bold-signal",
+      "sourceCommit": "12d970eacc8971150e3c76470d2a9afe16dc2ed1",
+      "sourceURL": "https://github.com/nexu-io/open-design/tree/12d970eacc8971150e3c76470d2a9afe16dc2ed1/plugins/_official/video-templates/frame-bold-signal",
+      "modules": [
+        {
+          "file": "signal-frame.cjs",
+          "sha256": "8c9054a7856cc61f122e116ff886272a07af530e5065ed97d82f97f33040ec29",
+          "nativeOriginalSHA256": "cc60c111f636264ca2875c4f161167cb5514e652f9a231f6349853d35d77a82c"
+        },
+        {
+          "file": "fixtures.cjs",
+          "sha256": "31d1412766278fd1748055c9887329580ecdbad3022033d0c1fdc86006d35c83"
+        }
+      ],
+      "pureModulesUnchanged": false,
+      "integrationChange": "Validation-only dense authored-array rejection; painting and fixtures unchanged."
+    }
+  ],
+  "expectedStaticPngSHA256": {
+    "data-chart": {
+      "reference": "51c667bec2556749e45027b0cd4607e2911b399f63d4d8c5b3af21eeffadd1c7",
+      "transfer": "296316ab8aa3f8c4a8482b2ca425f7549bc351f9320c1a37a8693e3da914109b"
+    },
+    "light-leak": {
+      "reference": "2f8701ccab16eb14a9f80173fab9b4a2db533949f8ef97901b7ca841bb4b0873",
+      "transfer": "ae9288f7e0d31a722696423d77551fdef8f660260472c80ce6bc0ea2290a85fe"
+    },
+    "bold-signal": {
+      "reference": "12806443df228fdce7288f752f8f2941a3046459c56742aa1bf4ae558a436469",
+      "transfer": "ae07aceb26b4df68fde9af78ebd3b1add6725f2a722dbc430f6c75b980b17f82"
+    }
+  }
+}

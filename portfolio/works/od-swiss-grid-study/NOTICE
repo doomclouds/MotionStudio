@@ -1,0 +1,39 @@
+Swiss Grid — Native static study, modified 2026-10-31.
+
+Composition adapted from nexu-io/open-design, commit
+12d970eacc8971150e3c76470d2a9afe16dc2ed1,
+plugins/_official/video-templates/frame-swiss-grid.
+Manifest author/attribution: heygen-com / Hyperframes,
+hyperframes registry/examples/swiss-grid. Apache License 2.0.
+Official upstream: https://github.com/heygen-com/hyperframes
+Source receipt and fixed URLs: source-lock.json.
+
+Changes: reauthored fixed 1920×1080 Native canvas drawing; removed all motion,
+runtime, media and network inputs; preserved the full official poster's overlapping
+title/card state. The light underlying grid and video are hidden in this poster
+and are not invented as visible assets. Fixed opacity/position are inferred from
+the poster and source geometry, not a claim to have replayed its original timing.
+
+Original source specifies Helvetica Neue / Helvetica / Arial but supplies no
+font binaries. These commercial fonts are NOT bundled. Explicit substitutions:
+Liberation Sans 2.1.5, unmodified, SIL OFL 1.1 (Google / Red Hat);
+Archivo variable font, SIL OFL 1.1, Copyright 2020 The Archivo Project Authors.
+Archivo derivatives are instantiated at weight 200 and 300, width 100, and renamed
+SwissArchivo200 / SwissArchivo300. See font-provenance.json.
+Source and generated font binaries remain under OFL, not Apache.
+Percent suffix is independently constructed from circles and a quadrilateral;
+text width, weight and vertical scale have explicit Native optical calibration.
+Do not represent substituted glyphs as original Helvetica outlines.
+
+No GSAP code, video, photo, Helvetica font, or Nimbus Sans is included in the
+source overlay. Private raw source recovery is separate.
+The full original preview is only in private comparison evidence, never loaded
+by render.cjs. Detail crops are QA aids, never represented as complete works.
+
+HYPERFRAMES and 47% are unverified sample copy from the reference, not an endorsement
+or a verified survey claim. Replace them before external/commercial communication.
+This is an independent static study, not an official product or brand asset.
+
+Renderer dependency @napi-rs/canvas 0.1.100: MIT; dependency is declared rather
+than vendored. Preserve its installed distribution's own third-party notices.
+The owner authorized static retention and submission. This overlay awaits coordinated integration and does not itself push.

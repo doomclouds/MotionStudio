@@ -1,0 +1,75 @@
+{
+  "repository": "nexu-io/open-design",
+  "commit": "12d970eacc8971150e3c76470d2a9afe16dc2ed1",
+  "copied_runtime": "none; upstream shell is excluded because it vendors GSAP",
+  "files": [
+    {
+      "sourcePath": "plugins/_official/video-templates/frame-decision-tree/open-design.json",
+      "localPath": "od-next-source-recovery-20261031/frame-decision-tree/open-design.json",
+      "gitBlob": "10e5375ebd7ec53b4a39877eae51a84d8ea5782d",
+      "sha256": "55c0378f982d574d3fc3746688a2b8f1afe111be6646f432e4538584eefc5d1f",
+      "sourceURL": "https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/plugins/_official/video-templates/frame-decision-tree/open-design.json",
+      "bytes": 3400
+    },
+    {
+      "sourcePath": "plugins/_official/video-templates/frame-decision-tree/template.json",
+      "localPath": "od-next-source-recovery-20261031/frame-decision-tree/template.json",
+      "gitBlob": "fbd2d59f2e3a32ee2e14796393cb1a1e6981981a",
+      "sha256": "edd3bb0a5b59ab48722e8348abcc391c475376274b982c7d8b87e67d7c24a2c7",
+      "sourceURL": "https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/plugins/_official/video-templates/frame-decision-tree/template.json",
+      "bytes": 911
+    },
+    {
+      "sourcePath": "plugins/_official/video-templates/frame-decision-tree/source/compositions/decision_tree.html",
+      "localPath": "od-next-source-recovery-20261031/frame-decision-tree/source/compositions/decision_tree.html",
+      "gitBlob": "c78d284c5c95dc3aa7f73ca1728eee6873773fe8",
+      "sha256": "c717644dda14c899877e41e6174e4eaf3ef2b0d5e9c4032f1ce54e218dc1d927",
+      "sourceURL": "https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/plugins/_official/video-templates/frame-decision-tree/source/compositions/decision_tree.html",
+      "bytes": 13008
+    },
+    {
+      "sourcePath": "LICENSE",
+      "localPath": "od-next-source-recovery-20261031/LICENSE",
+      "gitBlob": "eb79c35bd865477e525b18e56f35d56fbe0f7110",
+      "sha256": "9d95806a26532623360eb84bb17d298f394b55ef73fb4c0796d99b4319b2b0da",
+      "sourceURL": "https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/LICENSE",
+      "bytes": 11296
+    },
+    {
+      "sourcePath": "plugins/_official/video-templates/frame-decision-tree/preview.png",
+      "localPath": "od-next-source-recovery-20261031/frame-decision-tree/preview.png",
+      "gitBlob": "5baab94438f964bbfce1860821fa35b406e21cea",
+      "sha256": "0f43171d5c52bf302be5b78c4fce90699ab3e2ab6a8ea0d76443b53b2663ecb9",
+      "sourceURL": "https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/plugins/_official/video-templates/frame-decision-tree/preview.png",
+      "bytes": 236550,
+      "dimensions": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "sourcePath": "plugins/_official/video-templates/frame-decision-tree/source/fonts.css",
+      "localPath": "od-next-source-recovery-20261031/frame-decision-tree/source/fonts.css",
+      "gitBlob": "a92f7a67530f72670c538fcc85067694359d9db9",
+      "sha256": "ca664cabf755a048ac834387ce48e0561f58d79471cbd18e8a853fa820545924",
+      "sourceURL": "https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/plugins/_official/video-templates/frame-decision-tree/source/fonts.css",
+      "bytes": 6359
+    },
+    {
+      "sourcePath": "plugins/_official/video-templates/frame-decision-tree/source/fonts/f77552e776f666632.woff2",
+      "localPath": "od-next-source-recovery-20261031/frame-decision-tree/source/fonts/f77552e776f666632.woff2",
+      "gitBlob": "2cd45edf43e09cc2a636223245f0563655d0cc0d",
+      "sha256": "fccca918fea40089dacadc7045861314d1a6bc91f1f323cc1eeb22ebcdb321b5",
+      "sourceURL": "https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/plugins/_official/video-templates/frame-decision-tree/source/fonts/f77552e776f666632.woff2",
+      "bytes": 25844
+    },
+    {
+      "sourcePath": "plugins/_official/video-templates/frame-decision-tree/source/fonts/f6e772e776f666632.woff2",
+      "localPath": "od-next-source-recovery-20261031/frame-decision-tree/source/fonts/f6e772e776f666632.woff2",
+      "gitBlob": "91dc3e8529921cabc74fb1dacf5253260b9c8cca",
+      "sha256": "c940764593d0fe5d596be327ca7558855e018039fb78509aa21921fd3644c3e4",
+      "sourceURL": "https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/plugins/_official/video-templates/frame-decision-tree/source/fonts/f6e772e776f666632.woff2",
+      "bytes": 48432
+    }
+  ]
+}

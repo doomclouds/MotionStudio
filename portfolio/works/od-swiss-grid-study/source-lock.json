@@ -1,0 +1,88 @@
+{
+  "upstreamCommit": "12d970eacc8971150e3c76470d2a9afe16dc2ed1",
+  "files": [
+    {
+      "path": "source/index.html",
+      "sha": "182a6c71e74dde44e82cd72be32656e7eb887a56",
+      "url": "https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/plugins/_official/video-templates/frame-swiss-grid/source/index.html",
+      "verifiedGitBlob": true,
+      "sha256": "b88a8cca022e6c6be5ae973781b8687e074fd134440355ba76b06e3fe9552b0f",
+      "bytes": 78134
+    },
+    {
+      "path": "template.json",
+      "sha": "cd581f936c911a020857216ef0814a9a98b09097",
+      "url": "https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/plugins/_official/video-templates/frame-swiss-grid/template.json",
+      "verifiedGitBlob": true,
+      "sha256": "a60cea94d215782f892d831b1b503c60b16ec0fedcf1b38cc37e53874ef88832",
+      "bytes": 885
+    },
+    {
+      "path": "source/compositions/intro.html",
+      "sha": "85fc56c4ad78d2dafde68ab78415fe360283413b",
+      "url": "https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/plugins/_official/video-templates/frame-swiss-grid/source/compositions/intro.html",
+      "verifiedGitBlob": true,
+      "sha256": "ea8facd2e2fcc2acfc8c696564028efd90ffd93cd367eccf4782b674c8b0a01c",
+      "bytes": 3405
+    },
+    {
+      "path": "source/compositions/graphics.html",
+      "sha": "3abf35338bb58af470a36c94c78b66dd32e2533e",
+      "url": "https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/plugins/_official/video-templates/frame-swiss-grid/source/compositions/graphics.html",
+      "verifiedGitBlob": true,
+      "sha256": "cee6886629f691e7639322f755e20b99190ba1ec756c13fce9520a8a35f3f7e5",
+      "bytes": 5635
+    },
+    {
+      "path": "source/compositions/captions.html",
+      "sha": "1911add77fb180548ffb542aed0066c1e0daa508",
+      "url": "https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/plugins/_official/video-templates/frame-swiss-grid/source/compositions/captions.html",
+      "verifiedGitBlob": true,
+      "sha256": "f4e1fef05723356901e3a81712c339e87902288c3ffb2f05ab2149642cffdf21",
+      "bytes": 5640
+    },
+    {
+      "path": "source/assets/swiss-grid.svg",
+      "sha": "0749d48fafc30e319b8747a8c9462c0940d09761",
+      "url": "https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/plugins/_official/video-templates/frame-swiss-grid/source/assets/swiss-grid.svg",
+      "verifiedGitBlob": true,
+      "sha256": "f77e046034c92dae2451514f5683187768fd98f526e2c4adb1c7faeede0c6501",
+      "bytes": 6202
+    },
+    {
+      "path": "preview.png",
+      "sha": "4f51c952fca30bd98d7033a73d4b01d9c5be8f1b",
+      "url": "https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/plugins/_official/video-templates/frame-swiss-grid/preview.png",
+      "verifiedGitBlob": true,
+      "sha256": "6762d08d4241036deca51be48389354216f2408ea1d3acbe5f228e55ffe5f30f",
+      "bytes": 215625
+    },
+    {
+      "path": "open-design.json",
+      "sha": "ea20c0137d416e0feab4d5445a9450f1c07388c1",
+      "url": "https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/plugins/_official/video-templates/frame-swiss-grid/open-design.json",
+      "verifiedGitBlob": true,
+      "sha256": "20a33e8f9ba6c97ccdd72472edc941a529d066875c92861ab11a829d216fa31c",
+      "bytes": 3352
+    },
+    {
+      "path": "Archivo.ttf",
+      "sha": "cc64253d36665a5ca0d6719cdf1e32b3de453b51",
+      "url": "https://github.com/google/fonts/blob/main/ofl/archivo/Archivo[wdth,wght].ttf",
+      "verifiedGitBlob": true,
+      "sha256": "0e094a7d3c7c4c25cf1310c4b30014f1dae9332220b1c2c88f4fa996f0b05053",
+      "bytes": 658596
+    },
+    {
+      "path": "Archivo-OFL.txt",
+      "sha": "8597481ebc941863ab228e79ea4305507cd73cc6",
+      "url": "https://github.com/google/fonts/blob/main/ofl/archivo/OFL.txt",
+      "verifiedGitBlob": true,
+      "sha256": "108b4e57c9c796d3d38d0428ca7ee39de47ad93187302718d9b2d8864b9b716b",
+      "bytes": 4388
+    }
+  ],
+  "fontChoice": "Original Helvetica/Arial binaries not supplied; explicit OFL substitution. AGPL Nimbus Sans investigated but not used or bundled.",
+  "sourceReadScope": "Full source inspected; source/index.html contains a vendored runtime in private recovery only. No upstream scripts or runtime copied into reusable package.",
+  "previewScope": "Full official 1920x1080 PNG used only in private comparison; never a rendering layer."
+}

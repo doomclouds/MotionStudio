@@ -1,7 +1,8 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "countingUnit": "stable callable family; no function, case or snapshot duplication",
-  "staticWorks": 62,
+  "evidencePolicy": "Review artifacts, identifiers, document hashes and storage metadata are not included in this public projection; this makes no claim that private evidence is absent.",
+  "staticWorks": 64,
   "families": [
     {
       "id": "design.print-poster.v1",
@@ -169,32 +170,20 @@
       ],
       "assetUsage": [
         {
+          "callToken": "sections",
+          "callsite": "design/scene.mjs",
           "familyId": "design.color-sections.v1",
+          "importToken": "color-sections.mjs",
           "mode": "runtime-import",
           "modulePath": "engine/design-elements/color-sections.mjs",
           "moduleSha256": "cf2cf8ebf1b1bf8bd65dbbaef11f9546db9fe096d3eba7a0b18936e616ec2dd8",
-          "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
-          "callsite": "design/scene.mjs",
-          "importToken": "color-sections.mjs",
-          "callToken": "sections",
-          "visibleRole": "黄色/米白两区，非几何插画",
           "snapshotPath": null,
-          "executionEvidence": {
-            "status": "MATCHED_ACCEPTED_FRAME",
-            "recordId": "ui-call-audit-20261030-bauhaus-theatre-study",
-            "sha256": "754c4e2d936968d7474a0434cb4196e7b2ac312f9456f5aa033ca6d05c382955",
-            "frameSha256": "a2708f2b6d374d58dc902640b8461b5e27e00c0910ec6236169e6fbcbb16a9fc",
-            "storage": "SCRATCH_LOCAL_ONLY",
-            "durableStorage": "NOT_LOCATED",
-            "note": "Independent instrumented runtime confirmed visible calls and exact accepted-frame identity. Technical evidence, not new aesthetic approval."
-          }
+          "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
+          "visibleRole": "黄色/米白两区，非几何插画"
         }
       ],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "PRIVATE_LIBRARY",
-      "acceptedFrameBinding": "EXACT_PIXELS",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -205,10 +194,7 @@
       ],
       "assetUsage": [],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "PRIVATE_LIBRARY",
-      "acceptedFrameBinding": "EXACT_PIXELS",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -219,10 +205,7 @@
       ],
       "assetUsage": [],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "PRIVATE_LIBRARY",
-      "acceptedFrameBinding": "NOT_ESTABLISHED",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -233,32 +216,20 @@
       ],
       "assetUsage": [
         {
+          "callToken": "surface",
+          "callsite": "design/scene.mjs",
           "familyId": "design.material-surfaces.v1",
+          "importToken": "material-surfaces.mjs",
           "mode": "runtime-import",
           "modulePath": "engine/design-elements/material-surfaces.mjs",
           "moduleSha256": "70bf1fcfa89bfbf911f5cf735b1b08e8ae7f360e43bd43a8c831efef579696eb",
-          "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
-          "callsite": "design/scene.mjs",
-          "importToken": "material-surfaces.mjs",
-          "callToken": "surface",
-          "visibleRole": "暗色桌面面板底层",
           "snapshotPath": null,
-          "executionEvidence": {
-            "status": "MATCHED_ACCEPTED_FRAME",
-            "recordId": "b09-native-restore-command-palette-study",
-            "sha256": "a7731b5ce63a065eb34aad3c488ca89f5dd4a49b3538119a1ffa80908dbf345a",
-            "frameSha256": "0d43c3b37b0fd575e1a6ea22ced93667a0aaefd49c0630c43571d60ea0f6d828",
-            "storage": "SCRATCH_LOCAL_ONLY",
-            "durableStorage": "NOT_LOCATED",
-            "note": "Author clean external-font restore matched full accepted Native frame; scene call receipt, not independent instrumentation or new aesthetic review."
-          }
+          "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
+          "visibleRole": "暗色桌面面板底层"
         }
       ],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "PRIVATE_LIBRARY",
-      "acceptedFrameBinding": "EXACT_PIXELS",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -269,10 +240,7 @@
       ],
       "assetUsage": [],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "PRIVATE_LIBRARY",
-      "acceptedFrameBinding": "EXACT_PIXELS",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -283,10 +251,7 @@
       ],
       "assetUsage": [],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "PRIVATE_LIBRARY",
-      "acceptedFrameBinding": "EXACT_PIXELS",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -297,10 +262,7 @@
       ],
       "assetUsage": [],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "PRIVATE_LIBRARY",
-      "acceptedFrameBinding": "EXACT_PIXELS",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -309,10 +271,7 @@
       "sourceAnalysis": [],
       "assetUsage": [],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "SCRATCH_LOCAL_ONLY",
-      "acceptedFrameBinding": "NOT_CHECKED",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -323,10 +282,7 @@
       ],
       "assetUsage": [],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "PRIVATE_LIBRARY",
-      "acceptedFrameBinding": "EXACT_PIXELS",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -337,32 +293,20 @@
       ],
       "assetUsage": [
         {
+          "callToken": "drawPaper",
+          "callsite": "design/scene.mjs",
           "familyId": "design.print-poster.v1",
+          "importToken": "print-poster.mjs",
           "mode": "runtime-import",
           "modulePath": "engine/design-elements/print-poster.mjs",
           "moduleSha256": "56203ff52eef7375bf1c8efe20b926dc0197572353f44c82f1243930a7e26fcf",
-          "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
-          "callsite": "design/scene.mjs",
-          "importToken": "print-poster.mjs",
-          "callToken": "drawPaper",
-          "visibleRole": "选场次 CTA 的硬边纸签和偏移阴影",
           "snapshotPath": null,
-          "executionEvidence": {
-            "status": "MATCHED_ACCEPTED_FRAME",
-            "recordId": "b06-native-restore-film-festival-study",
-            "sha256": "106858829fad3b9bc76a0add797e0e5d0d55fe72218fd0b5f120beefa5f6cd09",
-            "frameSha256": "3555929f3f9851734ae4654816b821131de1e9243a21c613e99314fb49d0957f",
-            "storage": "SCRATCH_LOCAL_ONLY",
-            "durableStorage": "NOT_LOCATED",
-            "note": "Rebuilt from hash-verified external fonts; original Native frame exact. Scene call receipt, not independent instrumentation or new aesthetic approval."
-          }
+          "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
+          "visibleRole": "选场次 CTA 的硬边纸签和偏移阴影"
         }
       ],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "PRIVATE_LIBRARY",
-      "acceptedFrameBinding": "EXACT_PIXELS",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -373,32 +317,20 @@
       ],
       "assetUsage": [
         {
+          "callToken": "surface",
+          "callsite": "design/scene.mjs",
           "familyId": "design.material-surfaces.v1",
+          "importToken": "material-surfaces.mjs",
           "mode": "runtime-import",
           "modulePath": "engine/design-elements/material-surfaces.mjs",
           "moduleSha256": "70bf1fcfa89bfbf911f5cf735b1b08e8ae7f360e43bd43a8c831efef579696eb",
-          "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
-          "callsite": "design/scene.mjs",
-          "importToken": "material-surfaces.mjs",
-          "callToken": "surface",
-          "visibleRole": "three device base shells; custom soft masks remain case-local",
           "snapshotPath": null,
-          "executionEvidence": {
-            "status": "MATCHED_ACCEPTED_FRAME",
-            "recordId": "b08-fintech-material-runtime",
-            "sha256": "51fd9fd54e51e23a3ae3021984dac8755fc081457b6fe6dc6b66422a78a18d09",
-            "frameSha256": "0b84476429d6e14445ffa9d95750cb762ccbefa11b38d0c94aaa8151b62f1184",
-            "storage": "SCRATCH_LOCAL_ONLY",
-            "durableStorage": "NOT_LOCATED",
-            "note": "Integrator import-seam instrumentation delegated unchanged material module, observed 3 device calls and accepted-frame identical pixels. Not reviewer rerender or new aesthetic approval."
-          }
+          "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
+          "visibleRole": "three device base shells; custom soft masks remain case-local"
         }
       ],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "PRIVATE_LIBRARY",
-      "acceptedFrameBinding": "EXACT_PIXELS",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -409,32 +341,20 @@
       ],
       "assetUsage": [
         {
+          "callToken": "surface",
+          "callsite": "design/scene.mjs",
           "familyId": "design.material-surfaces.v1",
+          "importToken": "material-surfaces.mjs",
           "mode": "runtime-import",
           "modulePath": "engine/design-elements/material-surfaces.mjs",
           "moduleSha256": "70bf1fcfa89bfbf911f5cf735b1b08e8ae7f360e43bd43a8c831efef579696eb",
-          "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
-          "callsite": "design/scene.mjs",
-          "importToken": "material-surfaces.mjs",
-          "callToken": "surface",
-          "visibleRole": "6 opaque rounded card surfaces across 3 authored phone compositions",
           "snapshotPath": null,
-          "executionEvidence": {
-            "status": "MATCHED_ACCEPTED_FRAME",
-            "recordId": "b10-native-restore-gentle-activity-study",
-            "sha256": "00fafae320a7aa0d7a8cb4be54c2b47bb3c4491891b23482436d124c84241ce6",
-            "frameSha256": "fa2a538a60133861d8a0c612e4752ec09d946531437af8d6800b762224b4ba01",
-            "storage": "SCRATCH_LOCAL_ONLY",
-            "durableStorage": "NOT_LOCATED",
-            "note": "Author independent external-font restore; 6 actual calls, exact accepted static frame. Not independent instrumentation or medical validation."
-          }
+          "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
+          "visibleRole": "6 opaque rounded card surfaces across 3 authored phone compositions"
         }
       ],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "PRIVATE_LIBRARY",
-      "acceptedFrameBinding": "EXACT_PIXELS",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -445,10 +365,7 @@
       ],
       "assetUsage": [],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "PRIVATE_LIBRARY",
-      "acceptedFrameBinding": "NOT_ESTABLISHED",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -459,10 +376,7 @@
       ],
       "assetUsage": [],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "PRIVATE_LIBRARY",
-      "acceptedFrameBinding": "EXACT_PIXELS",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -473,32 +387,20 @@
       ],
       "assetUsage": [
         {
+          "callToken": "surface",
+          "callsite": "design/scene.mjs",
           "familyId": "design.material-surfaces.v1",
+          "importToken": "material-surfaces.mjs",
           "mode": "runtime-import",
           "modulePath": "engine/design-elements/material-surfaces.mjs",
           "moduleSha256": "70bf1fcfa89bfbf911f5cf735b1b08e8ae7f360e43bd43a8c831efef579696eb",
-          "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
-          "callsite": "design/scene.mjs",
-          "importToken": "material-surfaces.mjs",
-          "callToken": "surface",
-          "visibleRole": "两个设备壳与大浮卡",
           "snapshotPath": null,
-          "executionEvidence": {
-            "status": "MATCHED_ACCEPTED_FRAME",
-            "recordId": "ui-call-audit-20261030-health-color-code-study",
-            "sha256": "f402445461fc632e2b8b4528b72fa973b5c0c59220b742ed2edbfefb5db7907a",
-            "frameSha256": "80f9ea0a51bea21f3d3ca4a6b2e5a6185735fddf8dc866e6a718756f1fbf3e0a",
-            "storage": "SCRATCH_LOCAL_ONLY",
-            "durableStorage": "NOT_LOCATED",
-            "note": "Independent instrumented runtime confirmed visible calls and exact accepted-frame identity. Technical evidence, not new aesthetic approval."
-          }
+          "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
+          "visibleRole": "两个设备壳与大浮卡"
         }
       ],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "PRIVATE_LIBRARY",
-      "acceptedFrameBinding": "EXACT_PIXELS",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -509,32 +411,20 @@
       ],
       "assetUsage": [
         {
+          "callToken": "drawOverprint",
+          "callsite": "design/scene.mjs",
           "familyId": "design.print-poster.v1",
+          "importToken": "print-poster.mjs",
           "mode": "runtime-import",
           "modulePath": "engine/design-elements/print-poster.mjs",
           "moduleSha256": "56203ff52eef7375bf1c8efe20b926dc0197572353f44c82f1243930a7e26fcf",
-          "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
-          "callsite": "design/scene.mjs",
-          "importToken": "print-poster.mjs",
-          "callToken": "drawOverprint",
-          "visibleRole": "硬偏移招牌文字",
           "snapshotPath": null,
-          "executionEvidence": {
-            "status": "MATCHED_ACCEPTED_FRAME",
-            "recordId": "ui-call-audit-20261030-hk-street-signs-study",
-            "sha256": "f0c7b749f400a62bf23e9b16c42d36c12d2daab081f9ca7c967472320273a373",
-            "frameSha256": "3712bde73026df5c60119786779e54ccabb488f864a09a9a4de36d711ef4036f",
-            "storage": "SCRATCH_LOCAL_ONLY",
-            "durableStorage": "NOT_LOCATED",
-            "note": "Independent instrumented runtime confirmed visible calls and exact accepted-frame identity. Technical evidence, not new aesthetic approval."
-          }
+          "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
+          "visibleRole": "硬偏移招牌文字"
         }
       ],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "PRIVATE_LIBRARY",
-      "acceptedFrameBinding": "NOT_ESTABLISHED",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -543,10 +433,7 @@
       "sourceAnalysis": [],
       "assetUsage": [],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "SCRATCH_LOCAL_ONLY",
-      "acceptedFrameBinding": "NOT_CHECKED",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -557,32 +444,20 @@
       ],
       "assetUsage": [
         {
+          "callToken": "drawSurface",
+          "callsite": "design/scene.mjs",
           "familyId": "design.material-surfaces.v1",
+          "importToken": "material-surfaces.mjs",
           "mode": "vendored-snapshot",
           "modulePath": "engine/design-elements/material-surfaces.mjs",
           "moduleSha256": "70bf1fcfa89bfbf911f5cf735b1b08e8ae7f360e43bd43a8c831efef579696eb",
-          "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
-          "callsite": "design/scene.mjs",
-          "importToken": "material-surfaces.mjs",
-          "callToken": "drawSurface",
-          "visibleRole": "两个系统窗纸面",
           "snapshotPath": "design/material-surfaces.mjs",
-          "executionEvidence": {
-            "status": "MATCHED_ACCEPTED_FRAME",
-            "recordId": "ui-call-audit-20261030-irreverent-pop-study",
-            "sha256": "46f363787a0e8e81a1d45c39d30df28efbab91b11897bc267d023e9ab46bba3d",
-            "frameSha256": "8e82b77a44b217f999f97fcef75050167fba7c82c87739d898314680d5d585a3",
-            "storage": "SCRATCH_LOCAL_ONLY",
-            "durableStorage": "NOT_LOCATED",
-            "note": "Independent instrumented runtime confirmed visible calls and exact accepted-frame identity. Technical evidence, not new aesthetic approval."
-          }
+          "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
+          "visibleRole": "两个系统窗纸面"
         }
       ],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "PRIVATE_LIBRARY",
-      "acceptedFrameBinding": "NOT_ESTABLISHED",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -591,10 +466,7 @@
       "sourceAnalysis": [],
       "assetUsage": [],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "SCRATCH_LOCAL_ONLY",
-      "acceptedFrameBinding": "NOT_CHECKED",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -605,10 +477,7 @@
       ],
       "assetUsage": [],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "PRIVATE_LIBRARY",
-      "acceptedFrameBinding": "EXACT_PIXELS",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -620,10 +489,7 @@
       ],
       "assetUsage": [],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "PRIVATE_LIBRARY",
-      "acceptedFrameBinding": "NOT_ESTABLISHED",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -635,10 +501,7 @@
       ],
       "assetUsage": [],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "PRIVATE_LIBRARY",
-      "acceptedFrameBinding": "NOT_ESTABLISHED",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -649,10 +512,7 @@
       ],
       "assetUsage": [],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "PRIVATE_LIBRARY",
-      "acceptedFrameBinding": "NOT_ESTABLISHED",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -663,10 +523,7 @@
       ],
       "assetUsage": [],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "PRIVATE_LIBRARY",
-      "acceptedFrameBinding": "EXACT_PIXELS",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -678,10 +535,7 @@
       ],
       "assetUsage": [],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "PRIVATE_LIBRARY",
-      "acceptedFrameBinding": "NOT_ESTABLISHED",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -692,10 +546,7 @@
       ],
       "assetUsage": [],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "PRIVATE_LIBRARY",
-      "acceptedFrameBinding": "NOT_ESTABLISHED",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -704,10 +555,7 @@
       "sourceAnalysis": [],
       "assetUsage": [],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "SCRATCH_LOCAL_ONLY",
-      "acceptedFrameBinding": "NOT_CHECKED",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -718,32 +566,20 @@
       ],
       "assetUsage": [
         {
+          "callToken": "surface",
+          "callsite": "design/scene.mjs",
           "familyId": "design.material-surfaces.v1",
+          "importToken": "material-surfaces.mjs",
           "mode": "runtime-import",
           "modulePath": "engine/design-elements/material-surfaces.mjs",
           "moduleSha256": "70bf1fcfa89bfbf911f5cf735b1b08e8ae7f360e43bd43a8c831efef579696eb",
-          "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
-          "callsite": "design/scene.mjs",
-          "importToken": "material-surfaces.mjs",
-          "callToken": "surface",
-          "visibleRole": "书衣的同色纸面基础，非完整封套生成器",
           "snapshotPath": null,
-          "executionEvidence": {
-            "status": "MATCHED_ACCEPTED_FRAME",
-            "recordId": "b08-native-restore-mountain-book-jacket-study",
-            "sha256": "bef745f7e853b45d695b75db89429efdd92feb65d3f2c38cd0215d597832c00d",
-            "frameSha256": "2a6e9ef70770e365869bf92836175945a7acda7746b0268dd765a854ac67e974",
-            "storage": "SCRATCH_LOCAL_ONLY",
-            "durableStorage": "NOT_LOCATED",
-            "note": "Author clean font restore reproduced original Native frame. Scene call receipt, not independent instrumentation or new aesthetic review."
-          }
+          "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
+          "visibleRole": "书衣的同色纸面基础，非完整封套生成器"
         }
       ],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "PRIVATE_LIBRARY",
-      "acceptedFrameBinding": "EXACT_PIXELS",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -754,10 +590,7 @@
       ],
       "assetUsage": [],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "PRIVATE_LIBRARY",
-      "acceptedFrameBinding": "EXACT_PIXELS",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -768,10 +601,7 @@
       ],
       "assetUsage": [],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "PRIVATE_LIBRARY",
-      "acceptedFrameBinding": "EXACT_PIXELS",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -782,10 +612,7 @@
       ],
       "assetUsage": [],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "PRIVATE_LIBRARY",
-      "acceptedFrameBinding": "EXACT_PIXELS",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -797,32 +624,20 @@
       ],
       "assetUsage": [
         {
+          "callToken": "drawSurface",
+          "callsite": "design/scene.mjs",
           "familyId": "design.material-surfaces.v1",
+          "importToken": "material-surfaces.mjs",
           "mode": "vendored-snapshot",
           "modulePath": "engine/design-elements/material-surfaces.mjs",
           "moduleSha256": "70bf1fcfa89bfbf911f5cf735b1b08e8ae7f360e43bd43a8c831efef579696eb",
-          "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
-          "callsite": "design/scene.mjs",
-          "importToken": "material-surfaces.mjs",
-          "callToken": "drawSurface",
-          "visibleRole": "右侧数字旁证小卡白色底面和细边，opaque零阴影一次",
           "snapshotPath": "design/material-surfaces.mjs",
-          "executionEvidence": {
-            "status": "MATCHED_ACCEPTED_FRAME",
-            "recordId": "ocean-letter-native-checks",
-            "sha256": "e99407a2cd8ec493d82b6d50405f3a5b82f36bfeb054cbbeac9f70184e87b47d",
-            "frameSha256": "b232587c974632392b14be3a6b6a843f1727f8a336f4030930bf129f1933e5cf",
-            "storage": "SCRATCH_LOCAL_ONLY",
-            "durableStorage": "NOT_LOCATED",
-            "note": "Author runtime recorded one visible opaque material call and accepted-frame hash. Not independent instrumentation."
-          }
+          "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
+          "visibleRole": "右侧数字旁证小卡白色底面和细边，opaque零阴影一次"
         }
       ],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "PRIVATE_LIBRARY",
-      "acceptedFrameBinding": "NOT_ESTABLISHED",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -833,10 +648,19 @@
       ],
       "assetUsage": [],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "PRIVATE_LIBRARY",
-      "acceptedFrameBinding": "EXACT_PIXELS",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "motionTransfer": "NOT_TESTED"
+    },
+    {
+      "id": "od-data-rollup-study",
+      "decisionCard": "works/od-data-rollup-study/DESIGN-RETENTION.md",
+      "sourceAnalysis": [
+        "CREDITS.md",
+        "FONT-PROVENANCE.md"
+      ],
+      "assetUsage": [],
+      "visualStatus": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -848,10 +672,7 @@
       ],
       "assetUsage": [],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "SCRATCH_LOCAL_ONLY",
-      "acceptedFrameBinding": "NOT_CHECKED",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -863,10 +684,7 @@
       ],
       "assetUsage": [],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "SCRATCH_LOCAL_ONLY",
-      "acceptedFrameBinding": "NOT_CHECKED",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -878,10 +696,19 @@
       ],
       "assetUsage": [],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "SCRATCH_LOCAL_ONLY",
-      "acceptedFrameBinding": "NOT_CHECKED",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "motionTransfer": "NOT_TESTED"
+    },
+    {
+      "id": "od-swiss-grid-study",
+      "decisionCard": "works/od-swiss-grid-study/DESIGN-RETENTION.md",
+      "sourceAnalysis": [
+        "CREDITS.md",
+        "FONT-PROVENANCE.md"
+      ],
+      "assetUsage": [],
+      "visualStatus": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -892,10 +719,7 @@
       ],
       "assetUsage": [],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "SCRATCH_LOCAL_ONLY",
-      "acceptedFrameBinding": "NOT_CHECKED",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -906,10 +730,7 @@
       ],
       "assetUsage": [],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "SCRATCH_LOCAL_ONLY",
-      "acceptedFrameBinding": "NOT_CHECKED",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -920,10 +741,7 @@
       ],
       "assetUsage": [],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "SCRATCH_LOCAL_ONLY",
-      "acceptedFrameBinding": "NOT_CHECKED",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -934,53 +752,32 @@
       ],
       "assetUsage": [
         {
+          "callToken": "drawOverprint",
+          "callsite": "design/scene.mjs",
           "familyId": "design.print-poster.v1",
+          "importToken": "print-poster.mjs",
           "mode": "runtime-import",
           "modulePath": "engine/design-elements/print-poster.mjs",
           "moduleSha256": "56203ff52eef7375bf1c8efe20b926dc0197572353f44c82f1243930a7e26fcf",
-          "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
-          "callsite": "design/scene.mjs",
-          "importToken": "print-poster.mjs",
-          "callToken": "drawOverprint",
-          "visibleRole": "HUD硬偏移文字",
           "snapshotPath": null,
-          "executionEvidence": {
-            "status": "MATCHED_ACCEPTED_FRAME",
-            "recordId": "ui-call-audit-20261030-pixel-hiking-study",
-            "sha256": "907575da9cc790ff4961ac5ca9de47767c813938d167b4bf3ce3cfdd2b1165f6",
-            "frameSha256": "207ad3d9c972d96eef1abc3e77cc62d9efb9a21e8672130a050a7630790b83f5",
-            "storage": "SCRATCH_LOCAL_ONLY",
-            "durableStorage": "NOT_LOCATED",
-            "note": "Independent instrumented runtime confirmed visible calls and exact accepted-frame identity. Technical evidence, not new aesthetic approval."
-          }
+          "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
+          "visibleRole": "HUD硬偏移文字"
         },
         {
+          "callToken": "drawSections",
+          "callsite": "design/scene.mjs",
           "familyId": "design.color-sections.v1",
+          "importToken": "color-sections.mjs",
           "mode": "runtime-import",
           "modulePath": "engine/design-elements/color-sections.mjs",
           "moduleSha256": "cf2cf8ebf1b1bf8bd65dbbaef11f9546db9fe096d3eba7a0b18936e616ec2dd8",
-          "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
-          "callsite": "design/scene.mjs",
-          "importToken": "color-sections.mjs",
-          "callToken": "drawSections",
-          "visibleRole": "森林/山脊/湖泊底层分区",
           "snapshotPath": null,
-          "executionEvidence": {
-            "status": "MATCHED_ACCEPTED_FRAME",
-            "recordId": "ui-call-audit-20261030-pixel-hiking-study",
-            "sha256": "907575da9cc790ff4961ac5ca9de47767c813938d167b4bf3ce3cfdd2b1165f6",
-            "frameSha256": "207ad3d9c972d96eef1abc3e77cc62d9efb9a21e8672130a050a7630790b83f5",
-            "storage": "SCRATCH_LOCAL_ONLY",
-            "durableStorage": "NOT_LOCATED",
-            "note": "Independent instrumented runtime confirmed visible calls and exact accepted-frame identity. Technical evidence, not new aesthetic approval."
-          }
+          "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
+          "visibleRole": "森林/山脊/湖泊底层分区"
         }
       ],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "PRIVATE_LIBRARY",
-      "acceptedFrameBinding": "NOT_ESTABLISHED",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -991,32 +788,20 @@
       ],
       "assetUsage": [
         {
+          "callToken": "surface",
+          "callsite": "design/scene.mjs",
           "familyId": "design.material-surfaces.v1",
+          "importToken": "material-surfaces.mjs",
           "mode": "runtime-import",
           "modulePath": "engine/design-elements/material-surfaces.mjs",
           "moduleSha256": "70bf1fcfa89bfbf911f5cf735b1b08e8ae7f360e43bd43a8c831efef579696eb",
-          "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
-          "callsite": "design/scene.mjs",
-          "importToken": "material-surfaces.mjs",
-          "callToken": "surface",
-          "visibleRole": "设备表面",
           "snapshotPath": null,
-          "executionEvidence": {
-            "status": "MATCHED_ACCEPTED_FRAME",
-            "recordId": "ui-call-audit-20261030-playful-roast-timer-study",
-            "sha256": "c4fe50c92905c079f7daf1de4d3bc6ee0faa9e0db3925ac393f21d8abea87ae0",
-            "frameSha256": "7f72a28d0f8f17e263a02bb6bf9af728d77c1cf1c957e66d650a9f62f7ccc60a",
-            "storage": "SCRATCH_LOCAL_ONLY",
-            "durableStorage": "NOT_LOCATED",
-            "note": "Independent instrumented runtime confirmed visible calls and exact accepted-frame identity. Technical evidence, not new aesthetic approval."
-          }
+          "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
+          "visibleRole": "设备表面"
         }
       ],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "PRIVATE_LIBRARY",
-      "acceptedFrameBinding": "EXACT_PIXELS",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -1027,10 +812,7 @@
       ],
       "assetUsage": [],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "PRIVATE_LIBRARY",
-      "acceptedFrameBinding": "EXACT_PIXELS",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -1041,32 +823,20 @@
       ],
       "assetUsage": [
         {
+          "callToken": "surface",
+          "callsite": "design/scene.mjs",
           "familyId": "design.material-surfaces.v1",
+          "importToken": "material-surfaces.mjs",
           "mode": "runtime-import",
           "modulePath": "engine/design-elements/material-surfaces.mjs",
           "moduleSha256": "70bf1fcfa89bfbf911f5cf735b1b08e8ae7f360e43bd43a8c831efef579696eb",
-          "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
-          "callsite": "design/scene.mjs",
-          "importToken": "material-surfaces.mjs",
-          "callToken": "surface",
-          "visibleRole": "暗色圆角代码卡基础",
           "snapshotPath": null,
-          "executionEvidence": {
-            "status": "MATCHED_ACCEPTED_FRAME",
-            "recordId": "b07-native-restore-recursion-lecture-study",
-            "sha256": "750577180f67c3c5ec48213ab5398a11c6b2e4b88f6c0c2441a216d0682b04cc",
-            "frameSha256": "a70562f618426db28c9543a43218abdb7b19cd845dfc9c2091a3dbea55da4591",
-            "storage": "SCRATCH_LOCAL_ONLY",
-            "durableStorage": "NOT_LOCATED",
-            "note": "Author clean external-font restore reproduced original frame; scene call receipt, not independent execution attribution or new aesthetic review."
-          }
+          "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
+          "visibleRole": "暗色圆角代码卡基础"
         }
       ],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "PRIVATE_LIBRARY",
-      "acceptedFrameBinding": "EXACT_PIXELS",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -1077,32 +847,20 @@
       ],
       "assetUsage": [
         {
+          "callToken": "surface",
+          "callsite": "design/scene.mjs",
           "familyId": "design.material-surfaces.v1",
+          "importToken": "material-surfaces.mjs",
           "mode": "runtime-import",
           "modulePath": "engine/design-elements/material-surfaces.mjs",
           "moduleSha256": "70bf1fcfa89bfbf911f5cf735b1b08e8ae7f360e43bd43a8c831efef579696eb",
-          "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
-          "callsite": "design/scene.mjs",
-          "importToken": "material-surfaces.mjs",
-          "callToken": "surface",
-          "visibleRole": "Code panel opaque base once, radius12/elevation0; not complete docs layout",
           "snapshotPath": null,
-          "executionEvidence": {
-            "status": "MATCHED_ACCEPTED_FRAME",
-            "recordId": "b10-ui-call-rollcall-docs-study",
-            "sha256": "c772d83360e6678c35a969b8d51544b6c789d06b044460076d80cc05466489f5",
-            "frameSha256": "5c1cbe6f6a54a9a5cf1e4e9122600313df9a92cf8da9fe3f96011eeb0afc45eb",
-            "storage": "SCRATCH_LOCAL_ONLY",
-            "durableStorage": "NOT_LOCATED",
-            "note": "Temporary import seam logged one real module draw and delegated original; frame byte-identical. Technical author audit, not independent new aesthetic review."
-          }
+          "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
+          "visibleRole": "Code panel opaque base once, radius12/elevation0; not complete docs layout"
         }
       ],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "PRIVATE_LIBRARY",
-      "acceptedFrameBinding": "EXACT_PIXELS",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -1113,32 +871,20 @@
       ],
       "assetUsage": [
         {
+          "callToken": "surface",
+          "callsite": "design/scene.mjs",
           "familyId": "design.material-surfaces.v1",
+          "importToken": "material-surfaces.mjs",
           "mode": "runtime-import",
           "modulePath": "engine/design-elements/material-surfaces.mjs",
           "moduleSha256": "70bf1fcfa89bfbf911f5cf735b1b08e8ae7f360e43bd43a8c831efef579696eb",
-          "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
-          "callsite": "design/scene.mjs",
-          "importToken": "material-surfaces.mjs",
-          "callToken": "surface",
-          "visibleRole": "右上说明纸的纸面和边缘，圆角硬影为案例代码",
           "snapshotPath": null,
-          "executionEvidence": {
-            "status": "MATCHED_ACCEPTED_FRAME",
-            "recordId": "b07-ui-call-salary-unit-stack-study",
-            "sha256": "dabaaccfce50eb4dfd18dd9ce4baf80d40edaafdf6985764cdddab1ea6bcd042",
-            "frameSha256": "8ba295c4f648c9f9380e3e7af9adf7ec4dcbb9c445b1a4d2f2f97ee3b5f6efd6",
-            "storage": "SCRATCH_LOCAL_ONLY",
-            "durableStorage": "NOT_LOCATED",
-            "note": "Temporary import-seam wrapper recorded actual shared draw calls and delegated unchanged module; accepted source untouched, frame byte-identical. Author technical execution audit, not new independent aesthetic approval."
-          }
+          "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
+          "visibleRole": "右上说明纸的纸面和边缘，圆角硬影为案例代码"
         }
       ],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "PRIVATE_LIBRARY",
-      "acceptedFrameBinding": "EXACT_PIXELS",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -1149,10 +895,7 @@
       ],
       "assetUsage": [],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "PRIVATE_LIBRARY",
-      "acceptedFrameBinding": "EXACT_PIXELS",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -1163,10 +906,7 @@
       ],
       "assetUsage": [],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "PRIVATE_LIBRARY",
-      "acceptedFrameBinding": "EXACT_PIXELS",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -1177,10 +917,7 @@
       ],
       "assetUsage": [],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "PRIVATE_LIBRARY",
-      "acceptedFrameBinding": "NOT_ESTABLISHED",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -1191,32 +928,20 @@
       ],
       "assetUsage": [
         {
+          "callToken": "surface",
+          "callsite": "design/scene.mjs",
           "familyId": "design.material-surfaces.v1",
+          "importToken": "material-surfaces.mjs",
           "mode": "runtime-import",
           "modulePath": "engine/design-elements/material-surfaces.mjs",
           "moduleSha256": "70bf1fcfa89bfbf911f5cf735b1b08e8ae7f360e43bd43a8c831efef579696eb",
-          "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
-          "callsite": "design/scene.mjs",
-          "importToken": "material-surfaces.mjs",
-          "callToken": "surface",
-          "visibleRole": "路线卡基础不透明材质，仅卡底",
           "snapshotPath": null,
-          "executionEvidence": {
-            "status": "MATCHED_ACCEPTED_FRAME",
-            "recordId": "b06-native-restore-solar-terms-study",
-            "sha256": "736802de0f39548f9506d40d987da0e9a241e65512e0f085885a99c8c4e3de33",
-            "frameSha256": "59bb438714e0bedf3cf0d22a21ce9791cb0361409b4cb4ea35498f2e1ccd41bf",
-            "storage": "SCRATCH_LOCAL_ONLY",
-            "durableStorage": "NOT_LOCATED",
-            "note": "Rebuilt from hash-verified external fonts; original Native frame exact. Scene call receipt, not independent instrumentation or new aesthetic approval."
-          }
+          "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
+          "visibleRole": "路线卡基础不透明材质，仅卡底"
         }
       ],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "PRIVATE_LIBRARY",
-      "acceptedFrameBinding": "EXACT_PIXELS",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -1227,32 +952,20 @@
       ],
       "assetUsage": [
         {
+          "callToken": "surface",
+          "callsite": "design/scene.mjs",
           "familyId": "design.material-surfaces.v1",
+          "importToken": "material-surfaces.mjs",
           "mode": "runtime-import",
           "modulePath": "engine/design-elements/material-surfaces.mjs",
           "moduleSha256": "70bf1fcfa89bfbf911f5cf735b1b08e8ae7f360e43bd43a8c831efef579696eb",
-          "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
-          "callsite": "design/scene.mjs",
-          "importToken": "material-surfaces.mjs",
-          "callToken": "surface",
-          "visibleRole": "纸叶基础，非完整版式",
           "snapshotPath": null,
-          "executionEvidence": {
-            "status": "MATCHED_ACCEPTED_FRAME",
-            "recordId": "ui-call-audit-20261030-song-block-print-study",
-            "sha256": "e17cd6a93ba04fb903a4596e10b8ff95c08e53aec3ca1a60a1b6472358e959d4",
-            "frameSha256": "8ce0165678c02ae64ce907437281ccad705bf4d221ac0423ffde6927013e5165",
-            "storage": "SCRATCH_LOCAL_ONLY",
-            "durableStorage": "NOT_LOCATED",
-            "note": "Independent instrumented runtime confirmed visible calls and exact accepted-frame identity. Technical evidence, not new aesthetic approval."
-          }
+          "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
+          "visibleRole": "纸叶基础，非完整版式"
         }
       ],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "PRIVATE_LIBRARY",
-      "acceptedFrameBinding": "EXACT_PIXELS",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -1263,10 +976,7 @@
       ],
       "assetUsage": [],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "PRIVATE_LIBRARY",
-      "acceptedFrameBinding": "NOT_ESTABLISHED",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -1277,10 +987,7 @@
       ],
       "assetUsage": [],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "PRIVATE_LIBRARY",
-      "acceptedFrameBinding": "EXACT_PIXELS",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -1291,10 +998,7 @@
       ],
       "assetUsage": [],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "PRIVATE_LIBRARY",
-      "acceptedFrameBinding": "NOT_ESTABLISHED",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -1305,10 +1009,7 @@
       ],
       "assetUsage": [],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "PRIVATE_LIBRARY",
-      "acceptedFrameBinding": "NOT_ESTABLISHED",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -1319,32 +1020,20 @@
       ],
       "assetUsage": [
         {
+          "callToken": "surface",
+          "callsite": "design/scene.mjs",
           "familyId": "design.material-surfaces.v1",
+          "importToken": "material-surfaces.mjs",
           "mode": "runtime-import",
           "modulePath": "engine/design-elements/material-surfaces.mjs",
           "moduleSha256": "70bf1fcfa89bfbf911f5cf735b1b08e8ae7f360e43bd43a8c831efef579696eb",
-          "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
-          "callsite": "design/scene.mjs",
-          "importToken": "material-surfaces.mjs",
-          "callToken": "surface",
-          "visibleRole": "三台设备的底层壳面与柔影",
           "snapshotPath": null,
-          "executionEvidence": {
-            "status": "MATCHED_ACCEPTED_FRAME",
-            "recordId": "b07-ui-call-topo-outdoor-study",
-            "sha256": "853a308aefd3fa89fa05b8507b20c45b05c2a1c189b2571d2dee6864fdd4d978",
-            "frameSha256": "7a32c3c584023ee0526ee19da2c1bf1125681f340ef69f050f937294d667822d",
-            "storage": "SCRATCH_LOCAL_ONLY",
-            "durableStorage": "NOT_LOCATED",
-            "note": "Temporary import-seam wrapper recorded actual shared draw calls and delegated unchanged module; accepted source untouched, frame byte-identical. Author technical execution audit, not new independent aesthetic approval."
-          }
+          "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
+          "visibleRole": "三台设备的底层壳面与柔影"
         }
       ],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "PRIVATE_LIBRARY",
-      "acceptedFrameBinding": "EXACT_PIXELS",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -1355,10 +1044,7 @@
       ],
       "assetUsage": [],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "PRIVATE_LIBRARY",
-      "acceptedFrameBinding": "EXACT_PIXELS",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -1369,10 +1055,7 @@
       ],
       "assetUsage": [],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "PRIVATE_LIBRARY",
-      "acceptedFrameBinding": "EXACT_PIXELS",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -1381,10 +1064,7 @@
       "sourceAnalysis": [],
       "assetUsage": [],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "PRIVATE_LIBRARY",
-      "acceptedFrameBinding": "NOT_ESTABLISHED",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -1395,10 +1075,7 @@
       ],
       "assetUsage": [],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "PRIVATE_LIBRARY",
-      "acceptedFrameBinding": "NOT_ESTABLISHED",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -1409,10 +1086,7 @@
       ],
       "assetUsage": [],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "PRIVATE_LIBRARY",
-      "acceptedFrameBinding": "EXACT_PIXELS",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -1424,10 +1098,7 @@
       ],
       "assetUsage": [],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "SCRATCH_LOCAL_ONLY",
-      "acceptedFrameBinding": "NOT_CHECKED",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     },
     {
@@ -1438,32 +1109,20 @@
       ],
       "assetUsage": [
         {
+          "callToken": "sections",
+          "callsite": "design/scene.mjs",
           "familyId": "design.color-sections.v1",
+          "importToken": "color-sections.mjs",
           "mode": "runtime-import",
           "modulePath": "engine/design-elements/color-sections.mjs",
           "moduleSha256": "cf2cf8ebf1b1bf8bd65dbbaef11f9546db9fe096d3eba7a0b18936e616ec2dd8",
-          "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
-          "callsite": "design/scene.mjs",
-          "importToken": "color-sections.mjs",
-          "callToken": "sections",
-          "visibleRole": "640/560红白品牌分区",
           "snapshotPath": null,
-          "executionEvidence": {
-            "status": "MATCHED_ACCEPTED_FRAME",
-            "recordId": "b09-native-restore-xie-symbol-study",
-            "sha256": "8464e1b7a2e9ddbe47c0f087f7a3e2541b426eca5e7ca835d15d5fcd3d3c2377",
-            "frameSha256": "d71f1a93ec17de044feb20dc4bb821405dac6e4fa46449744a6119e4bd78fe56",
-            "storage": "SCRATCH_LOCAL_ONLY",
-            "durableStorage": "NOT_LOCATED",
-            "note": "Author clean external-font restore matched full accepted Native frame; scene call receipt, not independent instrumentation or new aesthetic review."
-          }
+          "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
+          "visibleRole": "640/560红白品牌分区"
         }
       ],
       "visualStatus": "PARTIAL",
-      "reviewEvidence": "PRIVATE_RECORD_LOCATED",
-      "comparisonBundle": "NOT_PUBLISHED",
-      "reportStorage": "PRIVATE_LIBRARY",
-      "acceptedFrameBinding": "EXACT_PIXELS",
+      "reviewArtifacts": "NOT_INCLUDED",
       "motionTransfer": "NOT_TESTED"
     }
   ]

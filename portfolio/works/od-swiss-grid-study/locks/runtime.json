@@ -1,0 +1,6 @@
+{
+  "node": "24.22.1",
+  "canvas": "0.1.100",
+  "platform": "linux-x64-gnu",
+  "scope": "Existing installed dependency tested; clean installation separately tested using cached npm artifacts."
+}

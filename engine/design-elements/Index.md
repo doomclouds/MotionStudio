@@ -68,3 +68,11 @@
 [Social / Lull / FlowAI受限适配候选](recipes/open-design-three/Index.md)：独立测试候选，来源作品未迁移；不计新增公共族或正式配方。
 
 [Metric board去品牌配方](recipes/metric-board/README.md)：仅通用指标板与合成示例，不发布Merchant手机原画、品牌或商标；不计新增公共族。
+
+## 待审：静态通道标题与软光团编辑配方
+
+[static-effects-candidate](recipes/static-effects-candidate/README.md) 仅为隔离候选集成：Glitch / Liquid 两个局部配方，外置字体与输出，不增加14族/9配方，不新增portfolio条目。用户已对本组表达认可并要求沉淀提交；不等于适配器单项审美验收。技术测试不替代独审或真实复用；此链接是拟议增量，不表示已执行提交。
+
+## OpenDesign 第二组 · 选择性沉淀
+
+[两项受限候选与三案源码](recipes/open-design-static-three/README.md)：显式零基线线性图表、固定种子光场；Bold Signal仅保留案例配方。批次保留/提交已获授权；新组合未单独用户审美验收，0新增公共族/正式配方。字体全部外置且固定官方URL可获取；Native静态适配不等于动画。

@@ -1,0 +1,18 @@
+[
+  {
+    "path": "assets/DecisionStudy500.ttf",
+    "sha256": "78ebd93f8e3d4891939396c6365fdb31410080db4a249c98d5490d3e8708371e",
+    "derived_from": "assets/inter-latin.woff2",
+    "axis_wght": 500,
+    "renamed_family": "DecisionStudy500",
+    "license": "OFL-1.1"
+  },
+  {
+    "path": "assets/DecisionStudy600.ttf",
+    "sha256": "a8bd4b4be452df1f5a4e3c58c34410e3a2c18e9958c212a28c5218e3b16e85a4",
+    "derived_from": "assets/inter-latin.woff2",
+    "axis_wght": 600,
+    "renamed_family": "DecisionStudy600",
+    "license": "OFL-1.1"
+  }
+]

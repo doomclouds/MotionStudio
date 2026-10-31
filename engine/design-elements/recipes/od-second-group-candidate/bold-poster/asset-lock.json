@@ -1,0 +1,22 @@
+[
+  {
+    "file": "Display.ttf",
+    "sha256": "a12d75fc4b373d19a624133b59469b3f07284fb17bf7ceea030027c372f66e05",
+    "bytes": 37484
+  },
+  {
+    "file": "Italic.ttf",
+    "sha256": "4e8350c8344a4f62c9197595dfc3c7f8acdd2a7ed336b56e7eb0e436f8f45b8c",
+    "bytes": 47756
+  },
+  {
+    "file": "Sans500.ttf",
+    "sha256": "ca05749df23a20e5dd2f2aa16b665b51c33f31adfced10e14d1ac144605f6f63",
+    "bytes": 31908
+  },
+  {
+    "file": "Sans700.ttf",
+    "sha256": "18f1dda23569174eb8eea6dd2fb31c40ad1508ad6752cc4a3d9496826ef573f6",
+    "bytes": 31856
+  }
+]

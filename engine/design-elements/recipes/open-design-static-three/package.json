@@ -1,0 +1,12 @@
+{
+  "name": "motionstudio-od-static-three-candidates",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "test": "node test-all.cjs",
+    "test:integration": "node test-integration.mjs"
+  },
+  "dependencies": {
+    "@napi-rs/canvas": "0.1.100"
+  }
+}

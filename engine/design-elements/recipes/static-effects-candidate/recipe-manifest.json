@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "status": "isolated-author-tested-candidate-not-admitted",
+  "baseCommit": "5f5e8f1395581a89bf5314a4c5f452f8ffb72fb5",
+  "baseTree": "e18aebf410085ca3928cb02256a46c415030b2c1",
+  "newFamilies": 0,
+  "newAdmittedPublicRecipes": 0,
+  "sharedFamilyCountUnchanged": 14,
+  "publicRecipeCountUnchanged": 9,
+  "ownerAdapterAestheticApproval": false,
+  "portfolioEntriesAdded": 0,
+  "newMediaAllowlistEntries": 0,
+  "fontBinariesIncluded": false,
+  "originalPreviewIncluded": false,
+  "independentIntegrationReview": "not-yet-established",
+  "recipes": [
+    {
+      "id": "candidate.od-chromatic-title.v1",
+      "module": "src/chromatic-frame.cjs",
+      "guidance": "docs/chromatic-title.md",
+      "exports": [
+        "drawChromaticTitle",
+        "drawSignalField",
+        "drawSignalMark",
+        "draw"
+      ]
+    },
+    {
+      "id": "candidate.od-soft-orb-editorial.v1",
+      "module": "src/soft-orb-frame.cjs",
+      "guidance": "docs/soft-orb-editorial.md",
+      "exports": [
+        "drawLiquidField",
+        "drawMixedHeadline",
+        "draw"
+      ]
+    }
+  ],
+  "verification": [
+    "test.cjs"
+  ],
+  "examples": "examples.cjs",
+  "remainingGates": [
+    "independent final integration review",
+    "coordinator integration and authorized submission",
+    "real new-task reuse and deduplication decision before formal API admission",
+    "itemized adapter aesthetic review before claiming such acceptance",
+    "optional clean-machine/network setup validation"
+  ],
+  "ownerGroupAcknowledgement": true,
+  "ownerGroupSubmissionRequested": true,
+  "ownerItemizedOriginalWorkFeedback": false,
+  "ownerFeedbackScope": "Group-level acknowledgement and consolidation/submission request relayed by coordinator on 2026-10-31; not itemized adapter acceptance",
+  "submissionExecution": "coordinator only; this isolated candidate has not been committed or pushed",
+  "originalCasePortfolioMigrated": false,
+  "nativeFullFrameAdaptersIncluded": true
+}

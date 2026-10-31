@@ -1,0 +1,35 @@
+{
+  "repository": "nexu-io/open-design",
+  "commit": "12d970eacc8971150e3c76470d2a9afe16dc2ed1",
+  "license": "Apache-2.0",
+  "sourceFrames": [
+    "frame-glitch-title",
+    "frame-liquid-bg-hero"
+  ],
+  "sourcePaths": [
+    "plugins/_official/video-templates/frame-glitch-title",
+    "plugins/_official/video-templates/frame-liquid-bg-hero"
+  ],
+  "nativeModules": [
+    {
+      "target": "src/chromatic-frame.cjs",
+      "sha256": "4bd565962d4b56ce079b75ed8feb0f49265119ba54292bbba603bcb90e7216ef",
+      "modification": "Native Canvas adaptation; integration strengthens sparse-input preflight, geometry domain and caller typography-state isolation. Reference/transfer pixels remain unchanged. Original PNG/HTML not included."
+    },
+    {
+      "target": "src/soft-orb-frame.cjs",
+      "sha256": "a82eb693b9ca19494556daa0fcc4efe36766d800da6e75917f4db132cd6f2fc4",
+      "modification": "Native Canvas adaptation; integration strengthens sparse-input preflight, geometry domain and caller typography-state isolation. Reference/transfer pixels remain unchanged. Original PNG/HTML not included."
+    }
+  ],
+  "baseCommit": "5f5e8f1395581a89bf5314a4c5f452f8ffb72fb5",
+  "baseTree": "e18aebf410085ca3928cb02256a46c415030b2c1",
+  "baseCatalogSha256": "c77dacf127ddaa14011dce4a344e1d4e8ef8cc2480e0352bb7520c89d1c17e66",
+  "fontPublicIdentityCheck": {
+    "googleFontsCommit": "6c1dbe27dcf7d817d4b62cec033ba77fa8e2a5ec",
+    "notoSourceGitBlobsMatchExistingBytes": true,
+    "largeFontBytesRefetched": false
+  },
+  "originalPreviewIncluded": false,
+  "fontBinariesIncluded": false
+}

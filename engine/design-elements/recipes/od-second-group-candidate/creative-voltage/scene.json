@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "1.0.0",
+  "frame": {"width": 1920, "height": 1080},
+  "copy": {
+    "meta": "// CREATIVE_MODE · ON",
+    "headline": ["Render", "any", "video."],
+    "script": "make it move",
+    "caption": "html-video · creative voltage"
+  },
+  "tokens": {
+    "blue": "#2f4bff",
+    "dark": "#0d0d14",
+    "white": "#ffffff",
+    "outline": "#6f86ff",
+    "split": 0.47,
+    "headlineSize": 132,
+    "headlineLineHeight": 0.96,
+    "headlineTracking": -3,
+    "headlineRight": 110,
+    "headlineTop": 300,
+    "headlineWidth": 760,
+    "scriptSize": 120,
+    "scriptRotation": -7,
+    "scriptLeft": 90,
+    "scriptTop": 420,
+    "monoSize": 18,
+    "metaTracking": 3,
+    "captionTracking": 2
+  },
+  "state": "settled-static-reference",
+  "scope": "One complete static 1920×1080 title frame; no animation or UI"
+}

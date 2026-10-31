@@ -120,9 +120,35 @@ class SourceTreeFixtures(unittest.TestCase):
         self.add('apparently-safe.txt', PNG)
         (self.repo / 'apparently-safe.txt').write_text('safe worktree replacement')
         self.audit(False, 'unapproved-media:PNG')
+    def test_od_swiss_rollup_exact_covers_allowed(self):
+        for name in ['od-swiss-grid-study', 'od-data-rollup-study']:
+            with self.subTest(work=name):
+                rel='portfolio/works/'+name+'/cover.jpg'
+                self.add(rel,(ROOT/rel).read_bytes()); self.audit(True)
+    def test_od_swiss_rollup_cover_tamper_rejected(self):
+        for name in ['od-swiss-grid-study', 'od-data-rollup-study']:
+            with self.subTest(work=name):
+                rel='portfolio/works/'+name+'/cover.jpg'
+                self.add(rel,(ROOT/rel).read_bytes()+b'bad');self.audit(False,'approved-source-asset-hash-mismatch')
+    def test_od_swiss_rollup_cover_wrong_path_rejected(self):
+        for name in ['od-swiss-grid-study', 'od-data-rollup-study']:
+            with self.subTest(work=name):
+                rel='portfolio/works/'+name+'/cover.jpg'
+                self.add(rel.replace('cover.jpg','other.jpg'),(ROOT/rel).read_bytes());self.audit(False,'unapproved-media:JPEG')
+    def test_od_swiss_rollup_cover_non_jpeg_rejected(self):
+        for name in ['od-swiss-grid-study', 'od-data-rollup-study']:
+            with self.subTest(work=name):
+                self.add('portfolio/works/'+name+'/cover.jpg',PNG);self.audit(False,'invalid-portfolio-cover-format-or-size')
+    def test_od_swiss_rollup_cover_oversize_rejected(self):
+        for name in ['od-swiss-grid-study', 'od-data-rollup-study']:
+            with self.subTest(work=name):
+                self.add('portfolio/works/'+name+'/cover.jpg',b'\xff\xd8\xff'+b'x'*(1024*1024));self.audit(False,'invalid-portfolio-cover-format-or-size')
     def test_public_policy_only_allows_exact_reviewed_images(self):
         allow = json.loads((ROOT / 'scripts/source-assets-allowlist.json').read_text())['assets']
         self.assertEqual(allow, {
+            'portfolio/works/od-data-rollup-study/cover.jpg': 'a72af5cadfb735fa5d3d5488f383bc82a8f2f9e88a8188eddb57b7dd52c35e98',
+            'portfolio/works/od-swiss-grid-study/cover.jpg': '09ac9706b0af3a554931d6c748bb05c6dc8f77aa30747fabc269e7e3efa27ba5',
+
             'portfolio/works/editorial-eguide-study/cover.jpg': '813292adf2e3a6c29e62464a7d8d38cdcef7c1583b7e1e9890ca1f9796967d98',
             'portfolio/works/level-three-screen-study/cover.jpg': 'e6269ef24a2bd80c4c420f45d823512eed5352b395feb78dbaccbef82b29112d',
             'portfolio/works/meridian-waitlist-study/cover.jpg': '71b21627695277eea61b1699d0d1db3ecb6ce888dd80ef04979e49612701c5ec',

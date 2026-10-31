@@ -1,0 +1,17 @@
+[
+  {
+    "file": "Inter800.ttf",
+    "sha256": "cfdf3c6fbe15ac98e3a3c0c312a607455369af9c83bb1b1abc322e116ac62ca0",
+    "bytes": 505884
+  },
+  {
+    "file": "Inter500.ttf",
+    "sha256": "5a0f3a7347d9e01fcfa4e3437377a954ebf379e767d4e7893807fc1aa33fb5c2",
+    "bytes": 511152
+  },
+  {
+    "file": "MonoBold.ttf",
+    "sha256": "0d3c03d1b667192f91223660a3163325cf83132662fe4d9f7d6e596bf7a995c2",
+    "bytes": 334268
+  }
+]

@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "decision-tree",
+  "frame": {"width": 1920, "height": 1080, "scale": 1.2, "origin": [960, 300]},
+  "title": "Should I learn to code?",
+  "nodes": [
+    {"id": "root", "text": "Should I learn to code?", "x": 960, "y": 100, "tone": "yellow", "maxTextWidth": 200},
+    {"id": "yes", "text": "Yes", "x": 600, "y": 300, "tone": "green", "maxTextWidth": 40},
+    {"id": "not-sure", "text": "Not sure", "x": 1320, "y": 300, "tone": "peach", "maxTextWidth": 80},
+    {"id": "python", "text": "Start with Python", "x": 400, "y": 500, "tone": "lavender", "selected": true, "maxTextWidth": 150},
+    {"id": "nocode", "text": "Try no-code first", "x": 800, "y": 500, "tone": "blue", "maxTextWidth": 150},
+    {"id": "website", "text": "Build a personal website", "x": 1120, "y": 500, "tone": "pink", "maxTextWidth": 215},
+    {"id": "course", "text": "Take a free intro course", "x": 1520, "y": 500, "tone": "yellow", "maxTextWidth": 210}
+  ],
+  "edges": [["root", "yes"], ["root", "not-sure"], ["yes", "python"], ["yes", "nocode"], ["not-sure", "website"], ["not-sure", "course"]],
+  "labels": [
+    {"text": "Yes", "x": 780, "y": 230, "maxTextWidth": 45},
+    {"text": "Not sure", "x": 1140, "y": 230, "maxTextWidth": 80}
+  ],
+  "cursor": {"x": 500, "y": 580, "tag": "You"},
+  "reaction": {"x": 510, "y": 500, "asset": "thumb-up-noto.png"},
+  "state": "preview-selected-corrected-python-with-reaction",
+  "scope": "One complete static frame; no animation, editor, graph solver or interactivity"
+}

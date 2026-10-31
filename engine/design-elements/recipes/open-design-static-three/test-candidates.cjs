@@ -1,0 +1,26 @@
+'use strict';
+const assert=require('assert/strict'),r=require('./shared/runtime.cjs'),{drawLinearChart}=require('./src/linear-chart.cjs'),{drawLightField}=require('./src/light-field.cjs'),{compose}=require('./examples/compose.cjs');const api=r.canvasApi(),env=r.loadFonts('data-chart',api),theme=r.fixtures('data-chart').transfer.theme;const clone=x=>JSON.parse(JSON.stringify(x)),results=[];function test(name,fn){fn();results.push(name)}function canvas(){return api.createCanvas(1600,1080)}function chart(){const p=clone(r.fixtures('data-chart').transfer.chart);p.bounds={x:100,y:200,width:1320,height:552};p.annotations.forEach(a=>a.text=a.text.replaceAll('·','/'));return p}function field(){const p=clone(r.fixtures('light-leak').transfer.field);p.bounds={x:40,y:60,width:720,height:300};return p}function reject(change,re){const c=canvas(),g=c.getContext('2d'),before=r.sha(c.toBuffer('image/png')),p=chart();change(p);assert.throws(()=>drawLinearChart(g,p,theme,env),re);assert.equal(r.sha(c.toBuffer('image/png')),before)}function freeze(p){Object.freeze(p);for(const v of Object.values(p))if(v&&typeof v==='object')freeze(v);return p}
+test('zero-baseline synthetic chart valid',()=>assert.equal(drawLinearChart(canvas().getContext('2d'),chart(),theme,env).mode,'linear-values'));
+test('source inconsistent geometry is not promoted',()=>reject(p=>p.mode='reference-geometry',/linear-values only/));
+test('nonintegral component resolution rejected',()=>reject(p=>{p.bounds.width=1320.1;p.bounds.height=p.bounds.width*460/1100},/integer/));
+test('excessive component size rejected',()=>reject(p=>{p.bounds.width=3300;p.bounds.height=1380},/660/));
+test('tick endpoints mandatory',()=>reject(p=>p.ticks.pop(),/endpoints/));
+test('duplicate ticks rejected',()=>reject(p=>p.ticks[1].value=0,/increase/));
+test('nonaudited nonASCII copy rejected',()=>reject(p=>p.points[0].label='中文',/ASCII/));
+test('escaped annotation rejected before caller paint',()=>reject(p=>p.annotations[0].dx=5000,/bounds/));
+test('annotation count bounded',()=>reject(p=>p.annotations=Array(13).fill(p.annotations[0]),/annotations/));
+test('category labels cannot exceed slot',()=>reject(p=>p.points[4].label='W'.repeat(20),/slot/));
+test('twelve point labels respect actual87px slot',()=>reject(p=>p.points=Array.from({length:12},(_,i)=>({value:i*10,label:'W'.repeat(14)})),/slot/));
+test('axis label cannot run into plot',()=>reject(p=>p.ticks[2].label='100000000',/gutter/));
+test('callout cannot grow past two lines',()=>reject(p=>p.callout.push('Third'),/two/));
+test('frozen inputs not mutated',()=>{const p=freeze(chart()),before=JSON.stringify(p);drawLinearChart(canvas().getContext('2d'),p,theme,env);assert.equal(JSON.stringify(p),before)});
+test('caller current path and typography preserved',()=>{const c=canvas(),g=c.getContext('2d');g.font='13px serif';g.wordSpacing='-25px';g.direction='rtl';g.beginPath();g.rect(1,1,10,10);drawLinearChart(g,chart(),theme,env);assert.equal(g.font,'13px serif');assert.equal(g.wordSpacing,'-25px');assert.equal(g.direction,'rtl');g.fillStyle='#ff00ff';g.fill();assert.deepEqual([...g.getImageData(5,5,1,1).data],[255,0,255,255])});
+test('caller typography cannot alter measurement or clip plot',()=>{const a=canvas(),b=canvas(),g=b.getContext('2d');g.direction='rtl';g.wordSpacing='-25px';g.fontKerning='none';g.fontStretch='condensed';g.fontVariantCaps='small-caps';drawLinearChart(a.getContext('2d'),chart(),theme,env);drawLinearChart(g,chart(),theme,env);assert.equal(r.sha(a.toBuffer('image/png')),r.sha(b.toBuffer('image/png')))});
+test('bad palette leaves caller untouched',()=>{const c=canvas(),before=r.sha(c.toBuffer('image/png'));assert.throws(()=>drawLinearChart(c.getContext('2d'),chart(),{...theme,accent:'red'},env),/RRGGBB/);assert.equal(r.sha(c.toBuffer('image/png')),before)});
+test('missing glyph environment cannot fall back silently',()=>assert.throws(()=>drawLinearChart(canvas().getContext('2d'),chart(),theme,{canvasApi:api}),/coverage/));
+test('light field paints only bounded area without caller effects',()=>{const g=canvas().getContext('2d');drawLightField(g,field(),{canvasApi:api});assert.equal(g.getImageData(0,0,1,1).data[3],0);assert.equal(g.getImageData(60,80,1,1).data[3],255)});
+test('field caller path retained',()=>{const g=canvas().getContext('2d');g.beginPath();g.rect(1,1,10,10);drawLightField(g,field(),{canvasApi:api});g.fillStyle='#ff00ff';g.fill();assert.deepEqual([...g.getImageData(5,5,1,1).data],[255,0,255,255])});
+test('fractional light field resolution rejected',()=>{const p=field();p.bounds.width=720.5;assert.throws(()=>drawLightField(canvas().getContext('2d'),p,{canvasApi:api}),/integer/)});
+test('deterministic field with frozen props',()=>{const a=canvas(),b=canvas(),p=freeze(field());drawLightField(a.getContext('2d'),p,{canvasApi:api});drawLightField(b.getContext('2d'),p,{canvasApi:api});assert.equal(r.sha(a.toBuffer('image/png')),r.sha(b.toBuffer('image/png')))});
+test('two cross-content compositions call the same wrappers',()=>assert.notEqual(r.sha(compose('reading',api).png),r.sha(compose('workshop',api).png)));
+console.log(JSON.stringify({candidateChecks:results.length,status:'PASS',results,newPublicFamilies:0,newFormalRecipes:0}));

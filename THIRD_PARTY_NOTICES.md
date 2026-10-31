@@ -80,3 +80,15 @@ Unofficial educational reproductions, not operating products, verified scientifi
 
 ## Hokusai exhibition study
 `portfolio/works/hokusai-exhibition-study` adds only source, resource/font locks, MIT/OFL/public-domain attribution and one exact allowlisted self-rendered cover. Met JP11 input artwork and font binaries remain external; no upstream reference screenshot, private report or bird image is distributed. This new case does not restore or publish the missing former workspace batches.
+
+## Proposed static-effects candidate (not portfolio acceptance)
+
+The isolated `engine/design-elements/recipes/static-effects-candidate/` proposal adapts nexu-io/OpenDesign Glitch Title and Liquid Background Hero at commit12d970eacc8971150e3c76470d2a9afe16dc2ed1 under Apache-2.0. Its package license/RIGHTS.md preserve that scope; external font derivatives remain OFL-1.1. No source PNG/HTML, font binary or unapproved cover is added, and no itemized adapter aesthetic approval is inferred from the group-level consolidation/submission request.
+
+## OpenDesign second group Swiss Grid and Data Rollup
+
+The two static studies adapt nexu-io/OpenDesign `frame-swiss-grid` and `frame-data-rollup` at `12d970eacc8971150e3c76470d2a9afe16dc2ed1` under Apache-2.0. Each case retains source identities, applicable adapter/dependency MIT attribution, and separate OFL/DejaVu notices. Swiss Grid includes the official Hyperframes Apache notice as supplementary current-license evidence, not a claimed historical upstream checkout; Liberation/Archivo replace unavailable Helvetica, with geometric percent marks. Fonts are external exact snapshots. Sample wording and Data Rollup values are attributed design samples, not affiliation, endorsements, verified survey results or actual GitHub analytics. Only Native-generated covers are included; original reference imagery and raw upstream runtime are excluded.
+
+## OpenDesign second-group static candidates
+
+[Selective source retention](engine/design-elements/recipes/open-design-static-three/README.md) adapts three `nexu-io/open-design` video-template styles at fixed commit `12d970eacc8971150e3c76470d2a9afe16dc2ed1`: Data Chart, Light Leak Cinema and Bold Signal. These adaptations retain their Apache-2.0 notice and do not inherit the root MIT license by location. Bold Signal's credited frontend-slides preset retains Zara Zhang's separate MIT notice. External fonts retain their OFL copyright/license identities; Noto Serif SC is linked to the matching official fixed Google Fonts commit. Full notices, precise sources and modification/distribution boundaries are in the candidate's [RIGHTS.md](engine/design-elements/recipes/open-design-static-three/RIGHTS.md) and `licenses/`. No upstream screenshot, font binary, public cover, audio or private report is included; sample data and film/launch wording are not factual claims.

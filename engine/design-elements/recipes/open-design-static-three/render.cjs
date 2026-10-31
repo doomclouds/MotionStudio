@@ -1,0 +1,3 @@
+'use strict';
+const runtime=require('./shared/runtime.cjs'),io=require('./shared/external-io.cjs');
+if(require.main===module){const id=process.argv[2];runtime.caseInfo(id);const api=runtime.canvasApi(),env=runtime.loadFonts(id,api),files={};for(const variant of ['reference','transfer'])files[id+'-'+variant+'.png']=runtime.render(id,runtime.fixtures(id)[variant],env,api).png;io.writeNewDirectory(process.env.OD_STATIC_OUTPUT_DIR,files);console.log(JSON.stringify({case:id,outputs:Object.entries(files).map(([file,b])=>({file,sha256:runtime.sha(b)})),scope:'Static candidate only; no owner approval or animation claim'}))}

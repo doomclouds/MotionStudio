@@ -1,0 +1,28 @@
+Decision Tree — static Native study, 2026-10-31
+
+Derived from the decision-tree composition attributed to heygen-com / Hyperframes,
+forked via nexu-io/html-video and distributed in nexu-io/open-design.
+Upstream snapshot: 12d970eacc8971150e3c76470d2a9afe16dc2ed1
+Path: plugins/_official/video-templates/frame-decision-tree
+Upstream manifests declare Apache-2.0. Full Apache license: LICENSES/Apache-2.0.txt.
+
+Changes: removed all timeline/GSAP code, selected the observed corrected-Python
+still-frame state, separated semantic copy from geometry, externalized original
+connector/cursor SVG assets, added native Canvas composition/rendering, contracts,
+tests and visual evidence. The raster reference is never loaded by the renderer.
+No upstream GSAP runtime or GSAP license claim is included in this deliverable.
+
+Inter font: Copyright 2016 The Inter Project Authors (https://github.com/rsms/inter).
+Original pinned WOFF2 metadata: Inter 4.001; git-66647c0bb. The original file is
+unmodified. Native weight instances are renamed DecisionStudy500/600 and remain
+OFL-1.1. The SIL Open Font License is in LICENSES/Inter-OFL-1.1.txt.
+
+Reaction image: an unmodified PNG bitmap extracted from the u1F44D glyph of
+Noto Color Emoji 2.051 (2025-08-18; e92753bfa55fd449e427d4d325f9c8c40408c74e).
+Embedded font copyright: Copyright 2022 Google Inc.; OFL-1.1. See LICENSES and
+evidence/emoji-metadata.json. It intentionally replaces the reference's unidentified
+system emoji. No claim of an exact glyph match is made.
+
+Original reference and combined comparison sheets are local reference evidence,
+not reusable implementation assets and not included in the reusable-code archive.
+No public distribution, publication approval, or user acceptance is implied.

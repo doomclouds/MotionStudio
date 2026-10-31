@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "status": "source-integration-candidate",
+  "baseCommit": "5f5e8f1395581a89bf5314a4c5f452f8ffb72fb5",
+  "batchRetentionAndSubmission": "OWNER_AUTHORIZED",
+  "newCompositionsOwnerVisualReview": "NOT_RECORDED",
+  "newPublicFamilies": 0,
+  "newFormalRecipes": 0,
+  "selectedCandidates": [
+    {
+      "id": "candidate.synthetic-linear-chart.v1",
+      "entry": "src/linear-chart.cjs",
+      "export": "drawLinearChart",
+      "relatedExistingFamilies": [
+        "design.semantic-data.v1"
+      ],
+      "runtimeImportsExistingFamilies": []
+    },
+    {
+      "id": "candidate.static-light-field.v1",
+      "entry": "src/light-field.cjs",
+      "export": "drawLightField",
+      "relatedExistingFamilies": [
+        "design.material-surfaces.v1"
+      ],
+      "runtimeImportsExistingFamilies": []
+    }
+  ],
+  "caseOnly": [
+    {
+      "case": "bold-signal",
+      "reason": "Surface and title hierarchy overlap existing families; preserve exact case, do not promote a new card family."
+    }
+  ],
+  "sourceCases": [
+    "data-chart",
+    "light-leak",
+    "bold-signal"
+  ],
+  "tests": [
+    "test-all.cjs",
+    "test-integration.mjs"
+  ],
+  "examples": [
+    "examples/compose.cjs:reading",
+    "examples/compose.cjs:workshop"
+  ],
+  "documentation": [
+    "README.md",
+    "CANDIDATE-GUIDE.md",
+    "RIGHTS.md"
+  ],
+  "resources": "resources.json",
+  "sourceLock": "source-lock.json",
+  "mediaIncluded": false,
+  "motion": "NOT_TESTED",
+  "browser": "NOT_TESTED",
+  "promotionGates": [
+    "Independent review of final changed adapters",
+    "At least two real new briefs per candidate",
+    "Annotation semantic/collision review for each chart",
+    "Formal deduplication and public-catalog decision"
+  ],
+  "originalCasePortfolioMigrated": false,
+  "nativeFullFrameAdaptersIncluded": true
+}

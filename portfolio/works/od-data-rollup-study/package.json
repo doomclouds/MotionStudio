@@ -1,0 +1,16 @@
+{
+  "name": "od-data-rollup-study",
+  "version": "0.1.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=24"
+  },
+  "dependencies": {
+    "@napi-rs/canvas": "0.1.100"
+  },
+  "scripts": {
+    "render": "node render.mjs",
+    "test": "node test.mjs"
+  }
+}

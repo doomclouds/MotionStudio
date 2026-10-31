@@ -1,0 +1,24 @@
+{
+  "system_source": "/usr/share/fonts/truetype/noto/NotoColorEmoji.ttf",
+  "source_sha256": "dac5c27651082d6c53dab5081f50d2022ddf6877d730fa919cf6a4fc2af22de0",
+  "name_records": {
+    "0": "Copyright 2022 Google Inc.",
+    "1": "Noto Color Emoji",
+    "2": "Regular",
+    "3": "Noto Color Emoji",
+    "4": "Noto Color Emoji",
+    "5": "Version 2.051;GOOG;noto-emoji:20250818:e92753bfa55fd449e427d4d325f9c8c40408c74e",
+    "6": "NotoColorEmoji",
+    "7": "Noto is a trademark of Google Inc.",
+    "8": "Google, Inc.",
+    "9": "Google, Inc.",
+    "10": "Color emoji font using CBDT glyph data.",
+    "11": "http://www.google.com/get/noto/",
+    "12": "http://www.google.com/get/noto/",
+    "13": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This Font Software is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the SIL Open Font License for the specific language, permissions and limitations governing your use of this Font Software.",
+    "14": "http://scripts.sil.org/OFL"
+  },
+  "glyph": "u1F44D",
+  "method": "Unmodified CBDT bitmap extracted; no screenshot sampling",
+  "reference_glyph_identity": "unverified; deliberate licensed substitution"
+}

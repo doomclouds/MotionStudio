@@ -1,0 +1,161 @@
+{
+  "repository": "nexu-io/open-design",
+  "commit": "12d970eacc8971150e3c76470d2a9afe16dc2ed1",
+  "files": [
+    {
+      "sourcePath": "plugins/_official/video-templates/frame-creative-voltage/preview.png",
+      "localPath": "od-next-title-reference-20261031/frame-creative-voltage/preview.png",
+      "gitBlob": "32d2fcdf247ab14e2fc1af02d75044eba2464840",
+      "sha256": "6d101fdf23b39d7ff6ee8df167c68db7d913cc9f4d09f65a5d7bcbb6fb500ff1",
+      "sourceURL": "https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/plugins/_official/video-templates/frame-creative-voltage/preview.png",
+      "bytes": 232337,
+      "dimensions": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "sourcePath": "plugins/_official/video-templates/frame-creative-voltage/open-design.json",
+      "localPath": "od-next-title-reference-20261031/frame-creative-voltage/open-design.json",
+      "gitBlob": "989280aea5bc69307b93fa6290cce2557b99118b",
+      "sha256": "125989854d590b3f7eb2d25e065ff3ce450dab282b8db997d7d46929de2ade4e",
+      "sourceURL": "https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/plugins/_official/video-templates/frame-creative-voltage/open-design.json",
+      "bytes": 4517
+    },
+    {
+      "sourcePath": "plugins/_official/video-templates/frame-creative-voltage/template.json",
+      "localPath": "od-next-title-reference-20261031/frame-creative-voltage/template.json",
+      "gitBlob": "f58e2c9d15ae585079213b4f60b5279a6f793184",
+      "sha256": "2d1981576ceb080720cd401c4c352b351ce8eb3990a77ade293777a3833c5e94",
+      "sourceURL": "https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/plugins/_official/video-templates/frame-creative-voltage/template.json",
+      "bytes": 1783
+    },
+    {
+      "sourcePath": "plugins/_official/video-templates/frame-creative-voltage/source/index.html",
+      "localPath": "od-next-title-reference-20261031/frame-creative-voltage/source/index.html",
+      "gitBlob": "0c60e7d1129fa605213f71bb50da89cb1e35a13c",
+      "sha256": "2b610deb978808fdf087d17fb4a8b3ac7aaaddc1d249d6dbba792e863b3055a0",
+      "sourceURL": "https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/plugins/_official/video-templates/frame-creative-voltage/source/index.html",
+      "bytes": 4595
+    },
+    {
+      "sourcePath": "plugins/_official/video-templates/frame-creative-voltage/source/fonts.css",
+      "localPath": "od-next-title-reference-20261031/frame-creative-voltage/source/fonts.css",
+      "gitBlob": "d38d9770eb83bcb5bb16d3c562ceda3e829164e4",
+      "sha256": "3f5601b157ce41756b884c91e22dff2c23f2faa078baab4fd5ec7bee1a79c9ea",
+      "sourceURL": "https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/plugins/_official/video-templates/frame-creative-voltage/source/fonts.css",
+      "bytes": 5644
+    },
+    {
+      "sourcePath": "LICENSE",
+      "localPath": "od-next-title-reference-20261031/LICENSE",
+      "gitBlob": "eb79c35bd865477e525b18e56f35d56fbe0f7110",
+      "sha256": "9d95806a26532623360eb84bb17d298f394b55ef73fb4c0796d99b4319b2b0da",
+      "sourceURL": "https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/LICENSE",
+      "bytes": 11296
+    },
+    {
+      "sourcePath": "plugins/_official/video-templates/frame-creative-voltage/source/fonts/f34742e776f666632.woff2",
+      "localPath": "od-next-title-reference-20261031/frame-creative-voltage/source/fonts/f34742e776f666632.woff2",
+      "gitBlob": "3c27829b85edf4dbfc3faa24e546393611b86e67",
+      "sha256": "51cefd3db27d2bd31f8f14b969a19465aff8a6383bcb00c2ef6578cea17d938b",
+      "sourceURL": "https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/plugins/_official/video-templates/frame-creative-voltage/source/fonts/f34742e776f666632.woff2",
+      "bytes": 25776
+    },
+    {
+      "sourcePath": "plugins/_official/video-templates/frame-creative-voltage/source/fonts/f73772e776f666632.woff2",
+      "localPath": "od-next-title-reference-20261031/frame-creative-voltage/source/fonts/f73772e776f666632.woff2",
+      "gitBlob": "3f8518c7b39b1bb9789375cc555de50fef8c7ff8",
+      "sha256": "1c591acdadd5ea398bad6aa21b36498dde59035ad366d1dbb05bbc0e537e7bc9",
+      "sourceURL": "https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/plugins/_official/video-templates/frame-creative-voltage/source/fonts/f73772e776f666632.woff2",
+      "bytes": 51296
+    },
+    {
+      "sourcePath": "plugins/_official/video-templates/frame-creative-voltage/source/fonts/f62672e776f666632.woff2",
+      "localPath": "od-next-title-reference-20261031/frame-creative-voltage/source/fonts/f62672e776f666632.woff2",
+      "gitBlob": "2cfc68698ebab463487471c39d1c1a0f24ed1156",
+      "sha256": "1ab5cb4b90a56d6031db3618250a1f1bb52a275df5a0ec9ae8e62686550f1af4",
+      "sourceURL": "https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/plugins/_official/video-templates/frame-creative-voltage/source/fonts/f62672e776f666632.woff2",
+      "bytes": 4116
+    },
+    {
+      "sourcePath": "plugins/_official/video-templates/frame-creative-voltage/source/fonts/f77512e776f666632.woff2",
+      "localPath": "od-next-title-reference-20261031/frame-creative-voltage/source/fonts/f77512e776f666632.woff2",
+      "gitBlob": "44de035ad80f9563e0638cfea928bced88e1710d",
+      "sha256": "e0c8e616bda27642f4c3cebaecff6525d901e73afc8a227cbbb0f2af4810f300",
+      "sourceURL": "https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/plugins/_official/video-templates/frame-creative-voltage/source/fonts/f77512e776f666632.woff2",
+      "bytes": 9464
+    },
+    {
+      "sourcePath": "plugins/_official/video-templates/frame-creative-voltage/source/fonts/f59672e776f666632.woff2",
+      "localPath": "od-next-title-reference-20261031/frame-creative-voltage/source/fonts/f59672e776f666632.woff2",
+      "gitBlob": "eb5444d88aa884f4e351ebd5d616af3227269ff0",
+      "sha256": "e9c42e9aad5bf74da01a810f8777a1ce45d924c4f28faf3a19b046b8f813321c",
+      "sourceURL": "https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/plugins/_official/video-templates/frame-creative-voltage/source/fonts/f59672e776f666632.woff2",
+      "bytes": 4168
+    },
+    {
+      "sourcePath": "plugins/_official/video-templates/frame-creative-voltage/source/fonts/f33512e776f666632.woff2",
+      "localPath": "od-next-title-reference-20261031/frame-creative-voltage/source/fonts/f33512e776f666632.woff2",
+      "gitBlob": "fcb9b937e21a8bc2e1ccfbdbd2f7286f657995d6",
+      "sha256": "af7cf6d2b897ec453acdcdacde4e9bcc8410718af5914de865b453e09f10eebc",
+      "sourceURL": "https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/plugins/_official/video-templates/frame-creative-voltage/source/fonts/f33512e776f666632.woff2",
+      "bytes": 9552
+    },
+    {
+      "sourcePath": "plugins/_official/video-templates/frame-creative-voltage/source/fonts/f4d672e776f666632.woff2",
+      "localPath": "od-next-title-reference-20261031/frame-creative-voltage/source/fonts/f4d672e776f666632.woff2",
+      "gitBlob": "90304c48f1ff0de107def5b6abea06d4e98178ec",
+      "sha256": "bbe669d7448c351de7dc0a945a94aa6e0d9c0464ea2ccd85152cb3f53229306a",
+      "sourceURL": "https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/plugins/_official/video-templates/frame-creative-voltage/source/fonts/f4d672e776f666632.woff2",
+      "bytes": 11252
+    },
+    {
+      "sourcePath": "plugins/_official/video-templates/frame-creative-voltage/source/fonts/f45592e776f666632.woff2",
+      "localPath": "od-next-title-reference-20261031/frame-creative-voltage/source/fonts/f45592e776f666632.woff2",
+      "gitBlob": "fb292f315a6f224498e692dc7c4a68c3e5420143",
+      "sha256": "cfff412005eed2f0152d1c110c78ac564642b943e64322fbd687083177d6fa70",
+      "sourceURL": "https://github.com/nexu-io/open-design/blob/12d970eacc8971150e3c76470d2a9afe16dc2ed1/plugins/_official/video-templates/frame-creative-voltage/source/fonts/f45592e776f666632.woff2",
+      "bytes": 34560
+    }
+  ],
+  "license_evidence": [
+    {
+      "repository": "google/fonts",
+      "sourcePath": "ofl/caveat/OFL.txt",
+      "gitBlob": "6e5220c9576d98dfc684e550ddf0d87f68b3edc5",
+      "sha256": "1f9d81d094273d82f3898a1ee8b598a717d050ecbf5ff7bede105b704880157b",
+      "sourceURL": "https://github.com/google/fonts/blob/main/ofl/caveat/OFL.txt",
+      "localPath": "od-next-title-reference-20261031/LICENSES/caveat-OFL.txt",
+      "scope": "Official project current license text, blob pinned; not claimed historic binary-version download."
+    },
+    {
+      "repository": "google/fonts",
+      "sourcePath": "ofl/spacemono/OFL.txt",
+      "gitBlob": "a72b0a7845bec3214559673ffeba60c816a21841",
+      "sha256": "8e4ee42b2553e1e01504e61cb0d46d148cd8c9e5eacaa3622a7df2d4f2955b9f",
+      "sourceURL": "https://github.com/google/fonts/blob/main/ofl/spacemono/OFL.txt",
+      "localPath": "od-next-title-reference-20261031/LICENSES/spacemono-OFL.txt",
+      "scope": "Official project current license text, blob pinned; not claimed historic binary-version download."
+    },
+    {
+      "repository": "google/fonts",
+      "sourcePath": "ofl/syne/OFL.txt",
+      "gitBlob": "f410e51ceb99dcbf9fb3048c09a525243001b542",
+      "sha256": "cc43cdce6f91c57989af8459341c276655e34224e954fa69c2ad700831a742d8",
+      "sourceURL": "https://github.com/google/fonts/blob/main/ofl/syne/OFL.txt",
+      "localPath": "od-next-title-reference-20261031/LICENSES/syne-OFL.txt",
+      "scope": "Official project current license text, blob pinned; not claimed historic binary-version download."
+    },
+    {
+      "repository": "zarazhangrui/frontend-slides",
+      "sourcePath": "LICENSE",
+      "gitBlob": "746da6896f2da755b5b54987b4f29a7eea1320b5",
+      "sha256": "62928eb197fe4662d1efc3af0735b3ba5df3c0308badd9a2baf2b619009f5366",
+      "sourceURL": "https://github.com/zarazhangrui/frontend-slides/blob/main/LICENSE",
+      "localPath": "od-next-title-reference-20261031/LICENSES/frontend-slides-MIT.txt",
+      "scope": "Official project current license text, blob pinned; not claimed historic binary-version download."
+    }
+  ],
+  "note": "Official project license texts are content-pinned, not claimed to be fetched at exact historical font binary revisions. No remote mutation."
+}

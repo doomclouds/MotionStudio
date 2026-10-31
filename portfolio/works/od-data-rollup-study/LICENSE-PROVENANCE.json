@@ -1,0 +1,32 @@
+[
+  {
+    "file": "licenses/OpenDesign-LICENSE.txt",
+    "inputSHA256": "9d95806a26532623360eb84bb17d298f394b55ef73fb4c0796d99b4319b2b0da",
+    "packagedSHA256": "9d95806a26532623360eb84bb17d298f394b55ef73fb4c0796d99b4319b2b0da",
+    "modification": "byte-identical"
+  },
+  {
+    "file": "licenses/DejaVu-copyright.txt",
+    "inputSHA256": "63d3ba759d12804c5b31a9d5940d855c1820d1f5999e6b0872eb1c7ff045fbc9",
+    "packagedSHA256": "e81d9dced49fea2a7d576cbea283873de58563c5d488f954deb282843c3ea79c",
+    "modification": "Trailing whitespace / extra terminal blank lines only; legal wording unchanged"
+  },
+  {
+    "file": "licenses/Inter-OFL.txt",
+    "inputSHA256": "5b9321a4298cfeb6b34354164a1c3afc3db114569984c502b9b35d988fd58c57",
+    "packagedSHA256": "5dd548d31a85f756e01d63e00d7faf1e324103ed3e9102fcbbabf2cc2db6dd39",
+    "modification": "Trailing whitespace / extra terminal blank lines only; legal wording unchanged"
+  },
+  {
+    "file": "licenses/napi-rs-canvas-MIT.txt",
+    "inputSHA256": "8802fecf9da4367bc23bcf20b21cc143785fc6c92b152f3fa7fbe6ce08d344d6",
+    "packagedSHA256": "8802fecf9da4367bc23bcf20b21cc143785fc6c92b152f3fa7fbe6ce08d344d6",
+    "modification": "byte-identical"
+  },
+  {
+    "file": "licenses/MotionStudio-MIT.txt",
+    "inputSHA256": "0c1e09b3b98b71f5de69420a09313081f3def9b7827d2fbac730d984920fabc1",
+    "packagedSHA256": "0c1e09b3b98b71f5de69420a09313081f3def9b7827d2fbac730d984920fabc1",
+    "modification": "byte-identical"
+  }
+]
