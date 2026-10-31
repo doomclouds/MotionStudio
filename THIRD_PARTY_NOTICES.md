@@ -111,3 +111,12 @@ The [two-candidate index](engine/design-elements/recipes/sixth-static-candidates
 - [Spatial-character snapshot](engine/design-elements/recipes/spatial-character-snapshot-candidate/NOTICES.md): MIT authored extraction and Orca MIT context at `223e45c84db14cb77fb1d31e29a3ad94652080d8`, with original contributor notices preserved. No original executable program, Input Mono CSS/font, screenshot, mascot or product shell is included. Unmodified IBM Plex Mono Medium 500 is externally restored from its fixed official Google Fonts source under OFL, retained in full.
 
 Native Canvas 0.1.100 remains a separate installed MIT dependency with its own distribution notices. Root MIT does not replace font/dependency licenses or grant rights to excluded visual assets. Neither candidate is a formal new family, motion system, browser app or factual measurement tool.
+
+## Seventh-group timing and glyph-evidence candidates
+
+The [two-candidate index](engine/design-elements/recipes/seventh-static-candidates/Index.md) preserves separate rights rather than extending the root MIT license to all nested assets.
+
+- [Timing diagram](engine/design-elements/recipes/timing-diagram-candidate/CREDITS.md): new/reconstructed MIT study code and synthetic models; WaveDrom documentation MIT at `375378efff2116ab2a03cdc3575d8ca73d49a429` and the reused static utility MIT notice are retained. No screenshot or upstream timing engine is bundled. Exact unmodified Liberation Sans is external under full OFL/distribution notices, with public exact download not verified.
+- [Glyph evidence](engine/design-elements/recipes/glyph-evidence-candidate/NOTICES.md): Apache-2.0 source and FontGoggles Apache/AUTHORS context retained; Canvas and FontTools have their separate MIT notices. Fraunces/Inter font masters **and derived outline JSON** remain OFL font software and are not included. Fixed official recovery/preparation sources are documented. No original Mac window, reference screenshot or upstream application is imported.
+
+Generated demonstrations, private audit records, storage identities and font binaries are excluded. Both methods are static restricted candidates, not new formal families, hardware measurements, live-axis controls or a motion/browser guarantee.

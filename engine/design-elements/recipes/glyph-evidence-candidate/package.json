@@ -1,0 +1,14 @@
+{
+  "name": "glyph-evidence-reextract-candidate",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "license": "Apache-2.0",
+  "scripts": {
+    "test": "node --test test.mjs"
+  },
+  "dependencies": {
+    "@napi-rs/canvas": "0.1.100"
+  },
+  "description": "Unregistered bounded unshaped glyph evidence recipe"
+}

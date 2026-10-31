@@ -1,0 +1,35 @@
+{
+  "schema": "bounded-timing-provenance/v1",
+  "status": "rebuilt-unregistered-source-only-candidate",
+  "reconstruction": "New extraction from a preserved licensed study; not byte-identical recovery of the unavailable earlier candidate.",
+  "upstream": {
+    "repository": "https://github.com/wavedrom/wavedrom.github.io",
+    "commit": "375378efff2116ab2a03cdc3575d8ca73d49a429",
+    "license": "MIT",
+    "licenseSha256": "68f6442e5967ddb6a75ec8a4570215cac8cc415ea293c05cf857843c73fa5a57"
+  },
+  "utilities": {
+    "repository": "https://github.com/doomclouds/MotionStudio",
+    "commit": "6f5bccd58e00fda9fedc60bfe9338330055a4c34",
+    "path": "engine/design-elements/recipes/byte-field-diagnostic-candidate",
+    "license": "MIT"
+  },
+  "resources": {
+    "font": "external provide-exact; automatic public restoration not verified",
+    "fontLicense": "SIL-OFL-1.1",
+    "runtime": "@napi-rs/canvas 0.1.100; MIT"
+  },
+  "excluded": [
+    "reference screenshots",
+    "private records and audit identifiers",
+    "font binaries",
+    "upstream runtime",
+    "hardware data"
+  ],
+  "acceptance": "group-level positive feedback; no individual acceptance of new samples claimed",
+  "registry": {
+    "newFamilies": 0,
+    "newRegisteredRecipes": 0
+  },
+  "scope": "static synthetic timing information design, not hardware measurement or animation"
+}

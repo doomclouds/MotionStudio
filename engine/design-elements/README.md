@@ -94,3 +94,7 @@ The [candidate and case-selection index](recipes/fifth-static-candidates/Index.m
 ## Sixth-group same-source static candidates
 
 The [two-candidate selection index](recipes/sixth-static-candidates/Index.md) links an original byte-field/histogram/sample-note combination and a spatial character/mark/cursor/same-handle summary. These **44 source-only texts** are restricted candidates, not new registered families, formal recipes or portfolio works. Design guidance distinguishes them from scalar materials, numeric grids, code spans and indexed pixels. Exact external font conditions differ; generated examples and private reference/review materials are excluded, and static validation is not motion/browser or individual aesthetic acceptance.
+
+## Seventh-group reconstructed restricted candidates
+
+The [timing/glyph evidence index](recipes/seventh-static-candidates/Index.md) links 62 source-only texts with design guides, contracts and two different-content compositions per method. Discrete digital/bus timing and fixed unshaped glyph evidence remain restricted candidates: zero new registered families, formal recipes or portfolio works. Exact external fonts, generated outlines, dependencies and outputs stay outside the repository; private references and audit/storage data are excluded. Newly reconstructed packages received new technical reviews, not reused historical acceptance. These are static explanatory assets, not hardware capture, shaping, browser interaction or tested motion.

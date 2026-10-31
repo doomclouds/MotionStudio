@@ -84,3 +84,7 @@
 ## 第六组：同源字节诊断与空间字符
 
 [两项受限静态候选索引](recipes/sixth-static-candidates/Index.md)连接原创量化场/直方图/采样注记，以及二维字符/标记/光标/同源摘要。44 个文本文件，不含原图、字体二进制或审查记录；0 新增公共族、正式配方和 portfolio 作品。外置精确字体条件分别为 Liberation provide-exact 与固定官方 IBM OFL 获取，不能混称全部公网恢复已验证。
+
+## 第七组：离散时序与字形证据
+
+[两项受限候选与组合索引](recipes/seventh-static-candidates/Index.md)链接同源半 tick 数字/符号总线和固定实例的 outline/Unicode/hmtx/轴证据。62 个新重建文本（27＋35），不含参考图、字体/轮廓资源或私有记录；0 新增公共族、正式配方和 portfolio。精确外置字体条件不同，PULSE provide-exact 不冒称公网恢复。新组合的技术审查不等于用户逐项审美验收，静态不等于 motion。

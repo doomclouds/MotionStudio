@@ -1,0 +1,68 @@
+{
+  "schema": "glyph-evidence-instances/v1",
+  "fontTools": "4.61.1",
+  "ascii": [
+    32,
+    126
+  ],
+  "instances": [
+    {
+      "id": "serif-display",
+      "master": "fraunces.ttf",
+      "label": "Fraunces / Display",
+      "axes": {
+        "opsz": 96,
+        "wght": 800,
+        "SOFT": 0,
+        "WONK": 1
+      }
+    },
+    {
+      "id": "serif-soft",
+      "master": "fraunces.ttf",
+      "label": "Fraunces / Soft",
+      "axes": {
+        "opsz": 48,
+        "wght": 600,
+        "SOFT": 60,
+        "WONK": 1
+      }
+    },
+    {
+      "id": "sans-text",
+      "master": "inter.ttf",
+      "label": "Inter / Text",
+      "axes": {
+        "opsz": 24,
+        "wght": 400
+      }
+    },
+    {
+      "id": "sans-heavy",
+      "master": "inter.ttf",
+      "label": "Inter / Heavy",
+      "axes": {
+        "opsz": 32,
+        "wght": 800
+      }
+    },
+    {
+      "id": "ui-regular",
+      "master": "inter.ttf",
+      "label": "Evidence UI Regular",
+      "axes": {
+        "opsz": 14,
+        "wght": 400
+      }
+    },
+    {
+      "id": "ui-bold",
+      "master": "inter.ttf",
+      "label": "Evidence UI Semibold",
+      "axes": {
+        "opsz": 14,
+        "wght": 600
+      }
+    }
+  ]
+}

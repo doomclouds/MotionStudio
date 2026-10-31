@@ -1,0 +1,25 @@
+{
+  "schema": "glyph-evidence-external-resources/v1",
+  "files": [
+    {
+      "path": "fraunces-OFL.txt",
+      "bytes": 4391,
+      "sha256": "bdf4c22802eaf804f998195871c6b8938aac2ac14b2d78a8bd66a6f1eced833b"
+    },
+    {
+      "path": "generation.json",
+      "bytes": 296,
+      "sha256": "d967a213a0bbc567f3a11a8c3d98203814d5b8068ee2e4dd84f5b9659831cd9e"
+    },
+    {
+      "path": "inter-OFL.txt",
+      "bytes": 4377,
+      "sha256": "5b9321a4298cfeb6b34354164a1c3afc3db114569984c502b9b35d988fd58c57"
+    },
+    {
+      "path": "outlines.json",
+      "bytes": 955794,
+      "sha256": "8dc312fdc3c7f88530c79a5f588e79950a5e4f39a38852f4287815c57a881564"
+    }
+  ]
+}

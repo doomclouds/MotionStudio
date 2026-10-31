@@ -1,0 +1,24 @@
+{
+  "schema": "glyph-evidence-masters/v1",
+  "commit": "2e61f4355afd22b801791b0df176065082423b87",
+  "files": [
+    {
+      "file": "fraunces.ttf",
+      "family": "fraunces",
+      "upstreamPath": "ofl/fraunces/Fraunces[SOFT,WONK,opsz,wght].ttf",
+      "url": "https://raw.githubusercontent.com/google/fonts/2e61f4355afd22b801791b0df176065082423b87/ofl/fraunces/Fraunces%5BSOFT%2CWONK%2Copsz%2Cwght%5D.ttf",
+      "bytes": 360440,
+      "sha256": "177ff6c0f14e5550a3c624247cd1189611d4eb65d000b14944c63d967958abbb",
+      "gitBlob": "8210f9488d3c732359a9292dd09aca3f2bae830e"
+    },
+    {
+      "file": "inter.ttf",
+      "family": "inter",
+      "upstreamPath": "ofl/inter/Inter[opsz,wght].ttf",
+      "url": "https://raw.githubusercontent.com/google/fonts/2e61f4355afd22b801791b0df176065082423b87/ofl/inter/Inter%5Bopsz%2Cwght%5D.ttf",
+      "bytes": 876576,
+      "sha256": "29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031",
+      "gitBlob": "047c92f6e2212473dc436020afed689527076d44"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+// SPDX-License-Identifier: MIT
+import{fail,record,dense,int,text,deep}from'./input.mjs';
+const owned=new WeakSet();
+export function compileTiming(input){const o=record(input,['cycles','rows']);const cycles=int(o.cycles,4,10),ticks=cycles*2;const rows=dense(o.rows,1,6).map(x=>{const r=record(x,['name','type','values']);const name=text(r.name,14);if(r.type==='digital'){const values=dense(r.values,ticks,ticks).map(v=>int(v,0,1));return{name,type:'digital',values};}if(r.type==='bus'){const values=dense(r.values,1,ticks).map(x=>{const s=record(x,['start','end','label']);return{start:int(s.start,0,ticks-1),end:int(s.end,1,ticks),label:s.label===null?null:text(s.label,8)};});let pos=0;for(const s of values){if(s.start!==pos||s.end<=s.start)fail('contiguous full bus partition');pos=s.end;}if(pos!==ticks)fail('full bus partition');return{name,type:'bus',values};}fail('digital or bus');});if(new Set(rows.map(r=>r.name)).size!==rows.length)fail('unique lane names');const m=deep({cycles,ticks,rows});owned.add(m);return m;}
+export function assertModel(m){if(!owned.has(m))throw TypeError('owned compiled timing model required');return m;}
