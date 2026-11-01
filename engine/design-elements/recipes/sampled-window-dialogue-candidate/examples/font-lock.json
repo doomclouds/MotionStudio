@@ -1,0 +1,44 @@
+{
+  "fonts": [
+    {
+      "path": "ComposeRegular.ttf",
+      "alias": "ComposeRegular",
+      "sha256": "63bd54def170d712db23cd3cc210910fd1701dcf36c2c44e6dd39d016df03139",
+      "bytes": 130348,
+      "axes": {
+        "wght": 400,
+        "wdth": 100
+      },
+      "source": "OpenSans[wdth,wght].ttf",
+      "sourceSHA256": "36643644f318a812aab2d2ed3bb98f8cf0872527f835fe9398d95fe6b9adb878",
+      "metadataWeight": 400
+    },
+    {
+      "path": "ComposeSemibold.ttf",
+      "alias": "ComposeSemibold",
+      "sha256": "82fe11ff5dc414cf5b4f630e326d144e8ea4d4a6eeeba291aa272bbfdab91714",
+      "bytes": 130240,
+      "axes": {
+        "wght": 600,
+        "wdth": 100
+      },
+      "source": "OpenSans[wdth,wght].ttf",
+      "sourceSHA256": "36643644f318a812aab2d2ed3bb98f8cf0872527f835fe9398d95fe6b9adb878",
+      "metadataWeight": 400
+    },
+    {
+      "path": "ComposeBold.ttf",
+      "alias": "ComposeBold",
+      "sha256": "89653713e625387a596db2fe777f3116042a16aa1b620ccafb9820b53ef34c0e",
+      "bytes": 130360,
+      "axes": {
+        "wght": 700,
+        "wdth": 100
+      },
+      "source": "OpenSans[wdth,wght].ttf",
+      "sourceSHA256": "36643644f318a812aab2d2ed3bb98f8cf0872527f835fe9398d95fe6b9adb878",
+      "metadataWeight": 400
+    }
+  ],
+  "boundary": "Full OFL Open Sans400/600/700 wdth100. Public-recoverable example fonts; core engines only accept injected families. Regular aliases preserve real instance outlines, copyright/OFL/nameID25."
+}

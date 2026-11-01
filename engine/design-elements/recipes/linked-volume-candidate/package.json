@@ -1,0 +1,14 @@
+{
+  "name": "linked-volume-candidate",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "dependencies": {
+    "@napi-rs/canvas": "0.1.100"
+  },
+  "scripts": {
+    "test": "node --test test.mjs",
+    "examples": "node examples.mjs"
+  }
+}

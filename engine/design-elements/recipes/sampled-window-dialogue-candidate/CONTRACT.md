@@ -1,0 +1,25 @@
+# API and observable limits
+
+## Sampled windows
+
+`createPixelSource({width,height,pixels})`: width/height 1..2048, product <=4,000,000; exact ordinary Uint8ClampedArray over nonshared ArrayBuffer, length = width*height*4. Intrinsic typed-array buffer/length getters are used; additional named properties on the pixel view are ignored without consumption. Input is copied into an inaccessible WeakMap. Returned `{width,height}` token frozen. No URL, filesystem, color profile or automatic orientation handling.
+
+`createWindowModel({width,height,panels})`: width/height16..1600 and <=2,000,000 pixels; 1..32 own dense panel records. A panel has exactly `id,x,y,width,height,u0,v0,u1,v1`. IDs unique ASCII identifiers. Destination integer rectangles must fit and not overlap by positive area; touching edges is permitted. Normalized source coordinates are integer millionths 0..1,000,000 and ordered. The renderer intentionally stretches a source rectangle to its destination; it does not infer crop, cover or aspect ratio.
+
+For local destination x, sample `floor(sourceWidth * (u0*2*destWidth + (2*x+1)*(u1-u0)) / (2*destWidth*1e6))`; analogous y. Bounds keep exact integer products under 2^53. `inspectPixel(model,source,x,y)` returns the same source coordinate/RGBA and panel ID, or null for a transparent gap. `renderPixels` returns fresh RGBA, never mutates source, and preserves even RGB underneath alpha zero. This is nearest-neighbor lookup, not a high-quality filter, measured material, volume, live view or security redaction.
+
+`createWindowEngine({createCanvas,ImageData}).tile(model,source)` performs pure sampling then Native putImageData into a fresh canvas. Native premultiplication/decoding may quantize partial-alpha RGB; pure pixels are authoritative, and Native is tested against its own independent putImageData baseline. This distinction also matters when saving/reloading PNG.
+
+## Authored dialogue
+
+`createDialogueModel({title,participants,messages,groupGap})` takes printable ASCII with at least one nonspace character; title1..52 chars, labels1..24; 1..8 participants, 1..32 messages, each 1..5 authored lines1..80 chars. IDs are unique and author references resolve. Minutes0..10079 nondecreasing represent seven **synthetic** days, not date/timezone instants. groupGap0..120 is a minute interval. Consecutive messages join only if author, day and allowed gap match; nonadjacent same-author messages never join. Equal timestamps are allowed. Counts and labels derive from the same issued frozen model. Unused participants do not inflate active voices. No unread/live/persistence/message-send claim.
+
+`createDialogueEngine({createCanvas,regularFamily,semiboldFamily})` allocates a private1x1 measurement surface once. Family aliases match `[A-Za-z][A-Za-z0-9]{1,48}`, must be trusted already-registered fonts with coverage; no fallback discovery/registration occurs in the core. `plan(model,options)` accepts width400..1100 (default640), padding20..48 (24), fontSize14..24 (18), maxHeight180..2000 (1400), theme paper/night (paper). Undefined/omission defaults; null rejects. Title25px, summary13px and timestamps12px are fixed. Body is authored line breaks, not automatic wrapping/shaping. Every line is checked with actual TextMetrics against a disjoint bounded slot. A semantically legal model may fail actual ink/height, including a negative-bearing leading glyph, long name or timestamp under a different font. Plans allocate no result canvas and do not draw on a host. TextMetrics are continuous metrics, not a universal AA-pixel enclosure under every backend/font.
+
+`tile(plan)` accepts only an issued plan from the same engine. It paints panel fills and text on a fresh transparent canvas at1x. External background is caller-chosen. No arbitrary color/theme injection, pagination or virtual list.
+
+## Common trust and state
+
+Records must be plain or null-prototype own-data objects; unknown keys, symbols/accessors and missing required fields reject. Arrays must be ordinary, dense own canonical indices without extra keys/accessors. Internally created arrays use defineProperty, so inherited numeric getters/setters do not receive own plan/model appends. Trusted JS intrinsics and honest Native APIs are assumed; hostile Proxies, monkey-patched builtins, malicious native extensions, cross-realm objects and concurrent caller mutation are not covered.
+
+Issued models/plans deeply frozen. Returned tile wrapper frozen but canvas remains **mutable**, so later caller painting affects placement. `place(host,x=0,y=0)` accepts finite |coordinate|<=1e6 and uses direct same-backing drawImage only. It inherits caller transform, clip, alpha, composite and shadow; it changes neither host current path nor style state. No reset, isolation from a dirty factory, arbitrary translation-equivalence or PNG-decoded equivalence promise. Fresh canvas factories are trusted. PixelRatio is not an option; examples and tiles are1x. No universal memory/time benchmark or accessibility compliance assertion.

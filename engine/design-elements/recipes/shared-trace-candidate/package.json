@@ -1,0 +1,1 @@
+{"name":"restricted-shared-trace-candidate","version":"0.1.0","private":true,"type":"module","license":"MPL-2.0","engines":{"node":">=24"},"scripts":{"test":"node --test test.mjs","render":"node render.mjs"}}

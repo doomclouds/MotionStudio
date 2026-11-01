@@ -272,3 +272,7 @@ The catalog contains 60 foundations + 7 separate recipes: seventeen registration
 ## 第九组：字幕状态与作者指定字节编辑
 
 [两项受限源码候选](engine/design-elements/recipes/ninth-static-candidates/Index.md)保留毫秒字幕的选中/当前状态分离，以及给定编辑的双坐标/逐字节来源证据。仅64个已审文本，字体/依赖/输出外置；MIT、BSD-2-Clause与OFL分别保留。0新增正式族、portfolio或媒体；不是播放器、转录器、自动diff或逐项审美验收。
+
+## 第十组：同源体积、显式采样/对话与连续游标
+
+[三包四种受限方法](engine/design-elements/recipes/tenth-static-candidates/Index.md)保留62个已审文本：linked-volume21、sampled-window/authored-dialogue23、shared-trace18。前两包MIT；TRACE为MPL-2.0且保留MIT辅助文件，根MIT不覆盖其许可。字体/依赖/产物外置；PHASE GPL/CC私存包、原图与私有记录完全排除。0新增正式族、配方或portfolio，不声称实时应用、医学/科学事实或逐项审美验收。

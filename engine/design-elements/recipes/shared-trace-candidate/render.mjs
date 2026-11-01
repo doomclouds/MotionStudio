@@ -1,0 +1,6 @@
+// SPDX-License-Identifier: MPL-2.0
+import fs from'node:fs';import path from'node:path';import{fileURLToPath}from'node:url';import{example}from'./examples.mjs';
+const root=path.dirname(fileURLToPath(import.meta.url));
+export function outputPath(raw){if(typeof raw!=='string'||!path.isAbsolute(raw)||path.normalize(raw)!==raw||path.resolve(raw)!==raw||raw===root||raw.startsWith(root+path.sep)||fs.existsSync(raw))throw Error('new normalized external absolute output');let p=raw;while(true){try{const st=fs.lstatSync(p);if(st.isSymbolicLink()||!st.isDirectory())throw Error('real directory ancestors');}catch(e){if(e.code!=='ENOENT')throw e;}const n=path.dirname(p);if(n===p)break;p=n;}if(!fs.statSync(path.dirname(raw)).isDirectory())throw Error('existing parent');return raw;}
+export function render(raw){const out=outputPath(raw),all=[example(0),example(1)];fs.mkdirSync(out);for(let i=0;i<all.length;i++){fs.writeFileSync(path.join(out,`composition-${i+1}.svg`),all[i].svg,{flag:'wx'});fs.writeFileSync(path.join(out,`composition-${i+1}.json`),JSON.stringify({model:all[i].model,tiles:all[i].tiles},null,2)+'\n',{flag:'wx'});}return out;}
+if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)){if(process.argv.length!==3)throw Error('node render.mjs /absolute/new-output');render(process.argv[2]);}

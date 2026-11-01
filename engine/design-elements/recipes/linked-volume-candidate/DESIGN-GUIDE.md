@@ -1,0 +1,12 @@
+# Design: three cuts, one field
+
+Use this when a small bounded scalar grid has a meaningful third axis and the reader needs to compare cuts through the **same** location: synthetic materials, toy numeric fields or controlled data-structure demonstrations. Do not label a generated grid as a measured scan, segmentation, topography or clinical result.
+
+1. Keep xy/xz/yz orientation and scale labels explicit. Here rows invert the vertical axis so increasing y/z points upward. Crosshair intersection must be the same selected voxel; a manually overridden slice suppresses it rather than pretending to remain synchronized.
+2. Preserve square cells. Letterboxing is better than distorting one axis or cropping missing rows. Pixelation honestly represents discrete sampling, not a failed smooth-image renderer.
+3. Use one ordered palette and threshold set across the views. Palette remains configurable; blue/warm neutrals and plum/peach are demonstration choices, not bans on other colors. Bins are authored numeric intervals, not discovered tissue or semantic classes. The scalar blend makes within-bin change visible but a categorical legend alone cannot recover exact values; expose the byte/sidecar values when precision matters.
+4. Whole-volume bars describe the full distribution, not the active slice. Keep this distinction in labels. Bar heights are count/total; independent percentages need not be normalized by arbitrary display rounding.
+5. Plan motion from `moveCursor` and re-render, if a future product needs it. This package exports stills only; it does not implement scrubbing, interpolation, playback or an interactive view.
+6. Add your own typography and accessible text from frozen metadata. These fontless previews are primitive composition tests, not a finished information display. White crosshairs may lack contrast on bright custom palettes; test your intended background and selection treatment.
+
+The two examples intentionally change content and layout: a monotonic three-axis ramp in a large-plus-small strip, and an oscillating lattice in a four-panel square arrangement. Both use a new model, not a recolored screenshot. This differs from a 2D scalar-field texture, indexed-pixel sprite or byte-field diagnostic: the reusable information is 3-axis indexing and a shared selected cell across independent cuts plus full-volume summary. It does not create a new generic public component family by itself.

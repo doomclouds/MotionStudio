@@ -96,3 +96,7 @@ See [bounded drape and radial categories](recipes/eighth-static-candidates/Index
 ## 第九组：毫秒字幕状态与作者指定字节编辑
 
 [两项受限源码候选索引](recipes/ninth-static-candidates/Index.md)链接同模型字幕列表/区间/透明当前字幕，以及给定编辑的base→target坐标/来源证据。64个原包文本（31＋33），0新增公共族、正式配方或portfolio。MIT/BSD-2与外置OFL分别适用；不带原图、字体、预览或私有审查。不是播放器/自动转录/自动diff，独立技术验证不等于用户逐项审美验收。
+
+## 第十组：体积切片、采样窗/对话与共享游标
+
+[三包四种受限方法](recipes/tenth-static-candidates/Index.md)：21文本linked-volume（MIT）、23文本sampled-window/authored-dialogue（MIT）、18文本shared-trace（MPL-2.0＋MIT辅助）。62原包文本保持审定字节，0新增族/正式配方/portfolio；字体/依赖/产物外置，不含PHASE GPL私存、参考图或私有记录。静态与同源模型验证不等于应用/浏览器/音频/医学能力或用户逐项审美认可。

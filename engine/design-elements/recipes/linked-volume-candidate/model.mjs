@@ -1,0 +1,15 @@
+// SPDX-License-Identifier: MIT
+// Adapted from FORMFIELD's original own-data / orthogonal slicing model.
+import {fields,list,number,one,frozen,put} from './input.mjs';
+const volumes=new WeakMap(),slices=new WeakMap();
+const planes=['xy','xz','yz'];
+function triple(a,lo,hi){return list(a,3,3).map(v=>number(v,lo,hi,true));}
+function cursorFor(a,size){const c=list(a,3,3);return c.map((v,i)=>number(v,0,size[i]-1,true));}
+function volume(h){if(!volumes.has(h))throw TypeError('owned volume');return volumes.get(h);}
+function handle(d){const h=Object.freeze({});volumes.set(h,d);return h;}
+export function createVolume(input){const o=fields(input,['size','values','cursor','thresholds']);const size=triple(o.size,2,64),total=size[0]*size[1]*size[2];if(total>65536)throw RangeError('65536 cells maximum');const cursor=cursorFor(o.cursor,size),thresholds=list(o.thresholds,1,7);let prev=0;for(const t of thresholds){number(t,1,255,true);if(t<=prev)throw RangeError('strict thresholds');prev=t;}const source=list(o.values,total,total);for(const v of source)number(v,0,255,true);const values=Uint8Array.from(source),counts=Array(thresholds.length+1).fill(0);let sum=0,min=255,max=0;for(const v of values){let bin=0;while(bin<thresholds.length&&v>=thresholds[bin])bin++;counts[bin]++;sum+=v;min=Math.min(min,v);max=Math.max(max,v);}return handle({size,cursor,thresholds,values,total,counts,sum,min,max});}
+export function inspect(h){const d=volume(h);return frozen({size:[...d.size],cursor:[...d.cursor],thresholds:[...d.thresholds],counts:[...d.counts],total:d.total,sum:d.sum,min:d.min,max:d.max,mean:d.sum/d.total,selected:cell(h,...d.cursor),syntheticUnits:'dimensionless bytes; caller supplied'});}
+export function cell(h,x,y,z){const d=volume(h);number(x,0,d.size[0]-1,true);number(y,0,d.size[1]-1,true);number(z,0,d.size[2]-1,true);const value=d.values[(z*d.size[1]+y)*d.size[0]+x];let bin=0;while(bin<d.thresholds.length&&value>=d.thresholds[bin])bin++;return Object.freeze({value,bin});}
+export function moveCursor(h,c){const d=volume(h);return handle({...d,cursor:cursorFor(c,d.size)});}
+export function slice(h,plane,index){const d=volume(h);one(plane,planes);const axis=plane==='xy'?2:plane==='xz'?1:0;if(index===undefined)index=d.cursor[axis];number(index,0,d.size[axis]-1,true);const width=plane==='yz'?d.size[1]:d.size[0],height=plane==='xy'?d.size[1]:d.size[2],values=[],bins=[],counts=Array(d.thresholds.length+1).fill(0);let sum=0;for(let v=0;v<height;v++)for(let u=0;u<width;u++){const p=plane==='xy'?[u,height-1-v,index]:plane==='xz'?[u,index,height-1-v]:[index,u,height-1-v],c=cell(h,...p);put(values,c.value);put(bins,c.bin);counts[c.bin]++;sum+=c.value;}const cursorPixel=plane==='xy'?[d.cursor[0]+.5,height-d.cursor[1]-.5]:plane==='xz'?[d.cursor[0]+.5,height-d.cursor[2]-.5]:[d.cursor[1]+.5,height-d.cursor[2]-.5];const s=frozen({plane,index,width,height,values,bins,counts,sum,total:width*height,cursorPixel,cursorOnSlice:index===d.cursor[axis],selected:cell(h,...d.cursor)});slices.set(s,true);return s;}
+export function checkedSlice(s){if(!slices.has(s))throw TypeError('owned slice');return s;}
