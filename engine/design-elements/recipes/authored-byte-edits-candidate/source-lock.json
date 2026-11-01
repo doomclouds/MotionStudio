@@ -1,0 +1,12 @@
+{
+  "upstream": {
+    "repo": "HexFiend/HexFiend",
+    "commit": "32cb2ef78d2ff3bc6ecf326a6b19eeebb2945c13",
+    "licensePath": "License.txt",
+    "url": "https://raw.githubusercontent.com/HexFiend/HexFiend/32cb2ef78d2ff3bc6ecf326a6b19eeebb2945c13/License.txt",
+    "local": "licenses/HexFiend-BSD-2-Clause.txt",
+    "sha256": "dde1db66ceca540e5adb468d9590b4ff2d275d516a334ac808e9652c81dd3619"
+  },
+  "font": "font-spec.json",
+  "scope": "Public text/rights identity only, no original screenshot/private case paths"
+}

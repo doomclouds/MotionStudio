@@ -1,0 +1,26 @@
+{
+  "advisory": true,
+  "runtimeAuthority": "hardcoded bytes/SHA in runtime.mjs",
+  "unmodified": true,
+  "registrationAlias": "ByteEvidenceMono",
+  "files": [
+    {
+      "repo": "google/fonts",
+      "commit": "2e61f4355afd22b801791b0df176065082423b87",
+      "sourcePath": "ofl/ibmplexmono/IBMPlexMono-Regular.ttf",
+      "url": "https://raw.githubusercontent.com/google/fonts/2e61f4355afd22b801791b0df176065082423b87/ofl/ibmplexmono/IBMPlexMono-Regular.ttf",
+      "bytes": 135580,
+      "sha256": "6a3412f058c7d8dfd9170c41e85ade48e5156ecb89356110ca57a0a27734af46",
+      "gitBlob": "0c9770d5183ba60dc4350d3e011b782a320761ae"
+    },
+    {
+      "repo": "google/fonts",
+      "commit": "2e61f4355afd22b801791b0df176065082423b87",
+      "sourcePath": "ofl/ibmplexmono/OFL.txt",
+      "url": "https://raw.githubusercontent.com/google/fonts/2e61f4355afd22b801791b0df176065082423b87/ofl/ibmplexmono/OFL.txt",
+      "bytes": 4456,
+      "sha256": "7e6b2818edbd8f6a01ae80641cc8f16a51080d08fb4e532be3a0b6f74adb07da",
+      "gitBlob": "c35c4c618fab33da8695177b3a6cefe0810b7b28"
+    }
+  ]
+}

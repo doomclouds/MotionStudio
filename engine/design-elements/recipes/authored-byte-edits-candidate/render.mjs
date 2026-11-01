@@ -1,0 +1,3 @@
+// SPDX-License-Identifier: BSD-2-Clause
+import{loadRuntime,fresh,writeOutputs}from'./runtime.mjs';import{compose}from'./examples.mjs';
+const a=process.argv.slice(2);if(a.length!==2||a[0]!=='--output')throw Error('node render.mjs --output ABS_NEW_EXTERNAL_DIR');fresh(a[1]);const env=loadRuntime(),files={};for(const id of['packet','archive']){const r=compose(env,id);files[id+'.png']=r.canvas.toBuffer('image/png');files[id+'-layout.json']=Buffer.from(JSON.stringify(r.layout,null,2)+'\n');files[id+'-pair.png']=r.kit.png(r.pair);files[id+'-summary.png']=r.kit.png(r.summary);}writeOutputs(a[1],files);

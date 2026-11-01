@@ -1,0 +1,30 @@
+{
+  "python": "3.12.14",
+  "fontTools": "4.61.1",
+  "fonts": [
+    {
+      "alias": "CueRegular",
+      "path": "CueRegular.ttf",
+      "axes": {
+        "opsz": 14,
+        "wght": 400
+      },
+      "bytes": 341260,
+      "sha256": "5ab83231dabf85149be825a93958871274a28ebba68ff5e7e13bf880968093fc"
+    },
+    {
+      "alias": "CueSemibold",
+      "path": "CueSemibold.ttf",
+      "axes": {
+        "opsz": 14,
+        "wght": 600
+      },
+      "bytes": 342528,
+      "sha256": "2118f515aac54a3eeb577931260b7d6600f14425af46e2f2c20314e010c986f2"
+    }
+  ],
+  "notice": {
+    "path": "OFL.txt",
+    "sha256": "5b9321a4298cfeb6b34354164a1c3afc3db114569984c502b9b35d988fd58c57"
+  }
+}

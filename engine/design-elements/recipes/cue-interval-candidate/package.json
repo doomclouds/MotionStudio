@@ -1,0 +1,1 @@
+{"name":"bounded-cue-interval-candidate","version":"0.1.0","type":"module","private":true,"license":"MIT","dependencies":{"@napi-rs/canvas":"0.1.100"},"scripts":{"test":"node --expose-gc --test test.mjs"}}

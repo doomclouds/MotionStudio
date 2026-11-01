@@ -206,3 +206,7 @@ The timing model is synthetic and unitless; its exact Liberation font is externa
 ## Bounded drape and radial-node source candidates
 
 The two packages under `engine/design-elements/recipes/drape-material-candidate` and `radial-node-candidate` contain60 reviewed text files only. Generated previews, original references, private evidence/checkpoint identifiers, installed dependencies and font binaries are excluded. The discovery index adds no registry entry. Radial fonts are fetched/prepared to external directories from exact pinned public bytes; drape has no font/image inputs.
+
+## Ninth-group cue and authored-byte source candidates
+
+Exactly64 reviewed package text files are added under `engine/design-elements/recipes/cue-interval-candidate` (31) and `authored-byte-edits-candidate` (33), with a separate [discovery index](engine/design-elements/recipes/ninth-static-candidates/Index.md). No registered family, formal recipe/portfolio entry or source-media exception changes. The two packages retain their distinct MIT and BSD-2-Clause licenses; OFL fonts are externally restored/prepared from pinned official sources, with no font binary in Git. Original application/reference imagery, film/generated stills, product UI, rendered previews, private audit/storage records, caches and dependencies remain outside the source projection. All example content is synthetic; static models do not establish playback, parsing, automatic diff discovery, animation or user aesthetic acceptance.

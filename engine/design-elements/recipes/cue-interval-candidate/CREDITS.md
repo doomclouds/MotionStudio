@@ -1,0 +1,8 @@
+# Rights and provenance
+
+- New bounded model, tile extraction, original examples, tests and guidance: MIT; retain `LICENSE` and `licenses/Study-MIT.txt`. The historic study-author name is copyright attribution only, not a product brand in the compositions.
+- Subtitle Edit upstream context: `SubtitleEdit/subtitleedit@9e6d69b68b6830ca5873b2f612da12bdd77b26de`, root `LICENSE`, MIT Copyright(c)2026 Nikolaj Olsson. Exact notice in `licenses/SubtitleEdit-MIT.txt`; SHA256 `1bc4dcdb06d5507eacf67399674a5a6fa0f5f5270d15eefd7b4b2040319ceba0`. No screenshot, third-party film, program assets, app chrome, executable or original fixture is included or fetched.
+- Inter: `google/fonts@2e61f4355afd22b801791b0df176065082423b87`, `ofl/inter/Inter[opsz,wght].ttf`, SIL OFL1.1. Original master SHA256 `29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031`, Git blob `047c92f6e2212473dc436020afed689527076d44`; OFL SHA256 `5b9321a4298cfeb6b34354164a1c3afc3db114569984c502b9b35d988fd58c57`, blob `21f6aff961064c2e429f570995e446bcdd555422`. Complete renamed derived fonts remain OFL, not MIT. Both binary inputs and outputs are external. See `licenses/Inter-OFL.txt` and `FONT-LOCK.json`.
+- Native dependency `@napi-rs/canvas`0.1.100: MIT notice in `licenses/Native-Canvas-MIT.txt`; restore dependencies from the external runtime lock. Its transitive/runtime distribution notices remain applicable; this package does not relicense them.
+
+No source image rights are inferred from a source-code license. No generated art, logo, user identity or product endorsement is carried into this candidate. All new prose describes synthetic states, not real media or production safety. No C2PA/authenticity claims apply because no generated bitmap asset is used.

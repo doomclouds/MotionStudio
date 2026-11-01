@@ -1,0 +1,24 @@
+{
+  "schema": "authored-byte-edits-candidate/v1",
+  "name": "Authored base-to-target byte edit evidence",
+  "status": "isolated-source-candidate-not-promoted",
+  "entry": "index.mjs",
+  "newPublicFamilies": 0,
+  "registryChanges": 0,
+  "published": false,
+  "license": "BSD-2-Clause",
+  "externalFontLicense": "OFL-1.1",
+  "runtimeLicense": "MIT",
+  "examples": [
+    "packet",
+    "archive"
+  ],
+  "baseline": "doomclouds/MotionStudio@16bc9bae02ad2904bff0e21274f3634657638d49",
+  "baselineTree": "70ad3e4ef620f2059a47182888fd8e7aeea9a683",
+  "scope": "author-provided base-coordinate edits; two byte views, table and summary; not diff search",
+  "futureGates": [
+    "fresh independent candidate review",
+    "latest combined repository/index/history policy",
+    "coordinator integration and authorized publication"
+  ]
+}

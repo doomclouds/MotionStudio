@@ -268,3 +268,7 @@ The catalog contains 60 foundations + 7 separate recipes: seventeen registration
 ### 文本片段与格网的静态组合
 
 [B10两种受限配方](engine/design-elements/recipes/b10/README.md)验证同一输入驱动配置片段与格网量程/单位，保持14族计数；不执行代码、不把原作CSS热度当真实测量，也不声称任意字体系自动适配。
+
+## 第九组：字幕状态与作者指定字节编辑
+
+[两项受限源码候选](engine/design-elements/recipes/ninth-static-candidates/Index.md)保留毫秒字幕的选中/当前状态分离，以及给定编辑的双坐标/逐字节来源证据。仅64个已审文本，字体/依赖/输出外置；MIT、BSD-2-Clause与OFL分别保留。0新增正式族、portfolio或媒体；不是播放器、转录器、自动diff或逐项审美验收。

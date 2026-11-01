@@ -92,3 +92,7 @@
 ## Eighth restricted static recipes
 
 See [bounded drape and radial categories](recipes/eighth-static-candidates/Index.md): opt-in source candidates only;0 new registered families.
+
+## 第九组：毫秒字幕状态与作者指定字节编辑
+
+[两项受限源码候选索引](recipes/ninth-static-candidates/Index.md)链接同模型字幕列表/区间/透明当前字幕，以及给定编辑的base→target坐标/来源证据。64个原包文本（31＋33），0新增公共族、正式配方或portfolio。MIT/BSD-2与外置OFL分别适用；不带原图、字体、预览或私有审查。不是播放器/自动转录/自动diff，独立技术验证不等于用户逐项审美验收。

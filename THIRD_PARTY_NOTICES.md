@@ -124,3 +124,10 @@ Generated demonstrations, private audit records, storage identities and font bin
 ## Eighth static source candidates
 
 The bounded drape recipe retains the MIT formwork-driftwear formula notice (2026 bswxyz), with its new MIT adaptation separately identified. Radial-node retains MIT implementation/program context, CC0 Rainbow Labels method attribution, and Noto Sans OFL notices separately; no font binaries or upstream screenshot are included. Each package ships complete applicable notices and pinned source identities. External Native Canvas and font build tools retain their own terms. See [candidate index](engine/design-elements/recipes/eighth-static-candidates/Index.md).
+
+## Ninth-group source-only cue and byte-edit recipes
+
+- [Cue intervals](engine/design-elements/recipes/cue-interval-candidate/CREDITS.md): authored MIT extraction, preserved study and SubtitleEdit MIT notice at `9e6d69b68b6830ca5873b2f612da12bdd77b26de`. Complete Inter master/renamed instances retain OFL and stay external. No original movie still, application screenshot, product shell or imagery is imported.
+- [Authored byte edits](engine/design-elements/recipes/authored-byte-edits-candidate/NOTICES.md): BSD-2-Clause study/extraction and HexFiend attribution remain separate from root MIT. Unmodified IBM Plex Mono is external under OFL; source and restored font identities are pinned in that package. No source screenshot, user file, app identity or generated preview is distributed.
+
+Native Canvas0.1.100 is an external MIT dependency with its retained notice. Neither package grants source-image/trademark rights or changes other nested licenses. The64 text-only projection adds no public family or accepted portfolio work; each package contains its full applicable notices and limited static contract.

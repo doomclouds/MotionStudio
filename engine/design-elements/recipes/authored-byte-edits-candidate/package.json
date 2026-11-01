@@ -1,0 +1,14 @@
+{
+  "name": "authored-byte-edits-source-candidate",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "@napi-rs/canvas": "0.1.100"
+  },
+  "scripts": {
+    "test": "node --expose-gc --test test.mjs",
+    "render": "node render.mjs"
+  }
+}
