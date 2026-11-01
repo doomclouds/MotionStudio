@@ -1,0 +1,24 @@
+# Eleventh-group bounded source candidates
+
+Two packages, three explicit mechanisms: **47 reviewed source texts; 0 new registered families, recipes or portfolio works.** This discovery index is not a full-page migration, an authoritative inventory of all methods, or itemized owner aesthetic acceptance. Earlier private/pending wording in unchanged package snapshots is historical; repository-level review and any later publication are separate gates.
+
+| Package | New reusable relationship | Contract and code | Source terms | Runtime/resources |
+|---|---|---|---|---|
+| [Flow ledger](../flow-ledger-candidate/README.md) | Paired integer rate knots → exact trapezoid totals → complete independent facet partitions and stable rankings; cursor values from the same curve | [Design](../flow-ledger-candidate/DESIGN-GUIDE.md), [contract](../flow-ledger-candidate/CONTRACT.md), [model](../flow-ledger-candidate/lib/model.mjs), [SVG tiles](../flow-ledger-candidate/lib/geometry.mjs), [examples](../flow-ledger-candidate/examples.mjs) | [MIT](../flow-ledger-candidate/LICENSE), [notices](../flow-ledger-candidate/CREDITS.md); Sniffnet's MIT alternative selected, both MIT/Apache texts retained | Node builtins, no font/image/Canvas dependency; Python stdlib packaging/tests |
+| [Explicit geometry](../explicit-geometry-candidates/README.md) | Caller-authored binary row runs → continuous capsules; ordered opaque square insets → ideal visible band areas | [Design](../explicit-geometry-candidates/DESIGN-GUIDE.md), [contract](../explicit-geometry-candidates/CONTRACT.md), [API](../explicit-geometry-candidates/index.mjs), [examples](../explicit-geometry-candidates/examples/compositions.mjs) | [MIT](../explicit-geometry-candidates/LICENSE), [8B/other notices](../explicit-geometry-candidates/CREDITS.md) | Font-free core with caller-supplied Canvas; external Native MIT and unmodified Instrument Sans OFL for example captions |
+
+## Selection, not automatic promotion
+
+Flow's value is the exact additive ledger and truthful repeated partition/rank relationships, not a new generic line chart: complete facets each sum to the same total and **must not be added across facets**. Its cursor does not filter totals. Per-facet rank bars use local maxima; raw widths across facets are not directly comparable. Zero-rate categories remain explicit; no real network capture or measured telemetry is imported. [Deduplication](../flow-ledger-candidate/DEDUP.md) states the fixed comparison scope.
+
+Geometry has no built-in alphabet, automatic wordmark, random seed, pixel-art cell renderer or preset six-motif family. One maximal run is one capsule. Square band areas are ideal integer geometry, not raster coverage/material quantities; tiny or same-color bands can merge visually. See [comparison](../explicit-geometry-candidates/NON-DUPLICATION.md). Host composition/labels/color meaning/accessibility remain caller responsibilities.
+
+## License and asset boundaries
+
+The two source packages remain separate MIT implementations with their exact copyright notices. Flow retains the authentic Sniffnet **MIT OR Apache-2.0** notices; selecting MIT does not make both alternatives cumulative or change unrelated asset terms. It also preserves separate MIT helper and independently authored matrix-label notices. Geometry preserves 8B MIT influence notices without source photographs, page layout/brand words, scripts or original graphics. Root MIT does not override any separately noticed font or dependency license.
+
+Keep npm installations, public font masters, rendered SVG/PNG/JSON, reports, probes and caches **outside this repository**. The external font is complete unmodified OFL Instrument Sans, not a source screenshot's proven historical font. The core geometry needs no font; the example caption renderer validates one pinned master. Optional Native rasterization of Flow is private verification, not a public package dependency.
+
+No original/reference/generated picture, font binary/outline asset, private report/audit/storage locator, real user dataset or application shell is projected. No GPL/CC BY-SA PHASE package or source app is included. Code licensing does not imply reference/brand/image clearance. This is limited source-distribution assessment, not a general legal, production, scientific or commercial guarantee.
+
+All three mechanisms remain static, bounded, fail-before-result on their declared validation cases. Legal numeric models can still fail actual-fit/render budgets. Trust assumptions and raster translation limits are package-specific; no universal typography, Canvas state, browser, animation, audio or interaction guarantee is added. The packages do not import or relicense one another.

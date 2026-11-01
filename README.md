@@ -276,3 +276,7 @@ The catalog contains 60 foundations + 7 separate recipes: seventeen registration
 ## 第十组：同源体积、显式采样/对话与连续游标
 
 [三包四种受限方法](engine/design-elements/recipes/tenth-static-candidates/Index.md)保留62个已审文本：linked-volume21、sampled-window/authored-dialogue23、shared-trace18。前两包MIT；TRACE为MPL-2.0且保留MIT辅助文件，根MIT不覆盖其许可。字体/依赖/产物外置；PHASE GPL/CC私存包、原图与私有记录完全排除。0新增正式族、配方或portfolio，不声称实时应用、医学/科学事实或逐项审美验收。
+
+## 第十一组：流量账本与显式几何
+
+[两包三种受限方法](engine/design-elements/recipes/eleventh-static-candidates/Index.md)：22 文本 flow-ledger（精确积分、完整分类分区、稳定排名）＋25 文本 explicit-geometry（连续行段、嵌套方形理想面积）。47 原包文本保持审定字节与 MIT/独立通知；字体和 Native 仅外置示例资源。0 新增正式族、配方或 portfolio；不含原图、私有记录、字体二进制或 GPL 包，不声称真实网络/材料统计、动态应用或逐项审美验收。

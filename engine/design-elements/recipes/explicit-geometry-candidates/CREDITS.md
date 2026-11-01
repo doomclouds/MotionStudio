@@ -1,0 +1,10 @@
+# Rights and provenance
+
+New extraction, input infrastructure, examples and tests: MIT, copyright2026 OpenAI-assisted study contributors; full LICENSE retained. Geometry methods are adapted from previous private code-native studies influenced by two **MIT 2026 8B** templates. Their shared upstream notice is preserved at licenses/8B-MIT.txt; no claim that basic nested squares or binary lettering were newly invented.
+
+- [8bsite/repair-shop-website-template](https://github.com/8bsite/repair-shop-website-template/tree/5e430ed133241ef85b8cc209d3da09246da0a780): horizontal dot/capsule visual relation, not source REFLOW wordmark, historical phase, whole page or source code execution.
+- [8bsite/ceramic-tile-website-template](https://github.com/8bsite/ceramic-tile-website-template/tree/5ac7f50e06db5c8441310d26c632f6405c2dc58f): border/core visual relation. Explicit caller layers replace seeded source motif/page arrangements.
+- [Instrument Sans](https://github.com/google/fonts/tree/6c1dbe27dcf7d817d4b62cec033ba77fa8e2a5ec/ofl/instrumentsans): copyright2022 The Instrument Sans Project Authors, full OFL in licenses/InstrumentSans-OFL.txt. Example supporting text uses the full **unmodified** variable master, supplied/fetched outside this package and registered under a local runtime alias. No derived font, renamed font binary or claim of historical screenshot font identity. Core geometric marks use no font outlines.
+- Native renderer @napi-rs/canvas0.1.100: MIT notice in licenses/Canvas-MIT.txt. External npm dependency, not source template scripts.
+
+No original screenshots, private reports, fonts, photos, generated images, icons, branded assets, GSAP or Lenis are included in the text package. All examples are new procedural geometry and fictional editorial copy. Original references/unknown stock rights are not implied cleared by source MIT. Fixed source/lock details are in SOURCES.json. This is a private candidate, not a legal/trademark/production clearance or automatic publishing permission.

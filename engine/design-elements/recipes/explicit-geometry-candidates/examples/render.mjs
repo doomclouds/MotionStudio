@@ -1,0 +1,4 @@
+import fs from'node:fs';import path from'node:path';import{createHash}from'node:crypto';import{checkedPath,loadNative}from'./runtime.mjs';import{compose}from'./compositions.mjs';
+const output=checkedPath(process.argv[2],{fresh:true});const n=loadNative(),products=[];
+for(const name of ['exhibition','fieldguide']){const r=compose(n,name);products.push([name+'.png',r.canvas.toBuffer('image/png')],[name+'.json',Buffer.from(JSON.stringify(r.metadata,null,2)+'\n')]);}
+fs.mkdirSync(output);const hashes=[];for(const [name,b]of products){fs.writeFileSync(path.join(output,name),b,{flag:'wx'});hashes.push({path:name,bytes:b.length,sha256:createHash('sha256').update(b).digest('hex')});}fs.writeFileSync(path.join(output,'outputs.json'),JSON.stringify(hashes,null,2)+'\n',{flag:'wx'});console.log(JSON.stringify({output,files:5}));

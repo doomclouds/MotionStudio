@@ -100,3 +100,7 @@ See [bounded drape and radial categories](recipes/eighth-static-candidates/Index
 ## 第十组：体积切片、采样窗/对话与共享游标
 
 [三包四种受限方法](recipes/tenth-static-candidates/Index.md)：21文本linked-volume（MIT）、23文本sampled-window/authored-dialogue（MIT）、18文本shared-trace（MPL-2.0＋MIT辅助）。62原包文本保持审定字节，0新增族/正式配方/portfolio；字体/依赖/产物外置，不含PHASE GPL私存、参考图或私有记录。静态与同源模型验证不等于应用/浏览器/音频/医学能力或用户逐项审美认可。
+
+## 第十一组：精确账本与显式段/方形
+
+[两包三种受限方法](recipes/eleventh-static-candidates/Index.md)：flow-ledger 22 文本＋explicit-geometry 25 文本。前者把积分总量、完整分区与稳定排名绑定同一合成模型；后者保留自编二进制连续段和有序嵌套理想面积，不自动升级为字体/随机纹理/通用图表。MIT 与独立来源/字体通知原样保留；0 正式族/配方/portfolio，资源/产物外置，私图、字体二进制与 GPL 队列排除。

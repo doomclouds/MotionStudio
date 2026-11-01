@@ -1,0 +1,74 @@
+{
+  "sourceInfluence": [
+    {
+      "repo": "8bsite/repair-shop-website-template",
+      "commit": "5e430ed133241ef85b8cc209d3da09246da0a780",
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/8bsite/repair-shop-website-template/5e430ed133241ef85b8cc209d3da09246da0a780/LICENSE",
+      "bytes": 1076,
+      "sha256": "bf6dc1ef87d6f84fe3962bf6a46179cd9bbeb4c713a6caf024add08be792578b",
+      "gitBlob": "f88bd5f31f9c756b28d741478845dd7d189c1efe"
+    },
+    {
+      "repo": "8bsite/repair-shop-website-template",
+      "commit": "5e430ed133241ef85b8cc209d3da09246da0a780",
+      "path": "CREDITS.md",
+      "url": "https://raw.githubusercontent.com/8bsite/repair-shop-website-template/5e430ed133241ef85b8cc209d3da09246da0a780/CREDITS.md",
+      "bytes": 3523,
+      "sha256": "27f200464f251e797be03306213cf97b458b7bdf346b33a64356246aaec01869",
+      "gitBlob": "d5a72d786acb89e7c1ec1cf2c6232f45d86dab27"
+    },
+    {
+      "repo": "8bsite/repair-shop-website-template",
+      "commit": "5e430ed133241ef85b8cc209d3da09246da0a780",
+      "path": "index.html",
+      "url": "https://raw.githubusercontent.com/8bsite/repair-shop-website-template/5e430ed133241ef85b8cc209d3da09246da0a780/index.html",
+      "bytes": 110258,
+      "sha256": "ed1b8e7e01efaa0381417b46d18e6825af15783236b0e40b377f23feeb5697d4",
+      "gitBlob": "90addb690e7b1ec026b9a8429ab1a23c2b7219d4"
+    },
+    {
+      "repo": "8bsite/ceramic-tile-website-template",
+      "commit": "5ac7f50e06db5c8441310d26c632f6405c2dc58f",
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/8bsite/ceramic-tile-website-template/5ac7f50e06db5c8441310d26c632f6405c2dc58f/LICENSE",
+      "bytes": 1076,
+      "sha256": "bf6dc1ef87d6f84fe3962bf6a46179cd9bbeb4c713a6caf024add08be792578b",
+      "gitBlob": "f88bd5f31f9c756b28d741478845dd7d189c1efe"
+    },
+    {
+      "repo": "8bsite/ceramic-tile-website-template",
+      "commit": "5ac7f50e06db5c8441310d26c632f6405c2dc58f",
+      "path": "CREDITS.md",
+      "url": "https://raw.githubusercontent.com/8bsite/ceramic-tile-website-template/5ac7f50e06db5c8441310d26c632f6405c2dc58f/CREDITS.md",
+      "bytes": 1332,
+      "sha256": "51c6825fac8658095479cf083f5a702322a84339dcec6fe0f9331e6372e7ab18",
+      "gitBlob": "af24ed12e8fb07eae68da7a7b8c1497cedefe16a"
+    },
+    {
+      "repo": "8bsite/ceramic-tile-website-template",
+      "commit": "5ac7f50e06db5c8441310d26c632f6405c2dc58f",
+      "path": "index.html",
+      "url": "https://raw.githubusercontent.com/8bsite/ceramic-tile-website-template/5ac7f50e06db5c8441310d26c632f6405c2dc58f/index.html",
+      "bytes": 116394,
+      "sha256": "2f2d4dc0bbbf6129500cb0397c3b83816a08959deb68abb651fa8900d45b1d90",
+      "gitBlob": "383d503d990766f22996e28f98eaf3171b32e2aa"
+    }
+  ],
+  "exampleFont": {
+    "url": "https://raw.githubusercontent.com/google/fonts/6c1dbe27dcf7d817d4b62cec033ba77fa8e2a5ec/ofl/instrumentsans/InstrumentSans%5Bwdth,wght%5D.ttf",
+    "bytes": 194336,
+    "sha256": "b24f1812584816958afcf22e22d08e44318c5e51651e25d2438efdde389b33b1",
+    "gitBlob": "3589b81b22d3defc725dfdcdf16b5da7c9adc691",
+    "usage": "Unmodified master only in external examples; no font in core"
+  },
+  "deduplicationBaseline": {
+    "repo": "doomclouds/MotionStudio",
+    "branch": "dev",
+    "commit": "78efc55e7197bfc1575936e2a839404cf13ad635",
+    "inventory": "14 catalog families + 9 recipes + 32 candidates, broad manual count not unified registry"
+  },
+  "originalStudyMigrated": false,
+  "formalFamiliesAdded": 0,
+  "publicationAuthorized": false
+}

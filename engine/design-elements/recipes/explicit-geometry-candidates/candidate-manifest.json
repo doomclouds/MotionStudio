@@ -1,0 +1,19 @@
+{
+  "status": "PRIVATE_EXTRACTION_INDEPENDENT_REVIEW_PENDING_AT_FREEZE",
+  "methods": [
+    "explicit-binary-row-runs",
+    "ordered-nested-squares"
+  ],
+  "entry": "index.mjs",
+  "guidance": "DESIGN-GUIDE.md",
+  "contract": "CONTRACT.md",
+  "compositions": [
+    "examples/compositions.mjs:exhibition",
+    "examples/compositions.mjs:fieldguide"
+  ],
+  "newFormalFamilies": 0,
+  "newRegisteredRecipes": 0,
+  "originalStudiesMigrated": false,
+  "publicPush": false,
+  "ownerAestheticApproval": false
+}
