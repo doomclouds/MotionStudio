@@ -1,0 +1,9 @@
+# Rights / attribution
+
+- New complementary-seam implementation and new synthetic plate examples: original static composition study contributors, MIT (`LICENSE`). No third-party photo, generated raster, source screenshot, film, icon, font outline dump or private report is in this source projection.
+- Strict own-data helpers (`data.mjs`) are reused byte-for-byte from MotionStudio's existing `sampled-window-dialogue-candidate` at the fixed dev commit in `SOURCES.json`; same original contributor MIT notice is retained. The example sampler's two external files are existing published repository code, **not new methods**. Their exact source paths/hashes are in `examples/input-lock.json`; public availability/access is not assumed just because a URL is recorded.
+- Conceptual learning from private original static language-course/toy studies: shared-image continuity, not transferred pixels, brand, content or upstream implementation. No 8B HTML/GSAP/Lenis/photograph is bundled or executed. Original reference/photo rights are not converted into code permission.
+- Example lettering uses the full, unmodified Instrument Sans variable master from google/fonts fixed `6c1dbe27dcf7d817d4b62cec033ba77fa8e2a5ec`. SIL OFL 1.1 complete text is `licenses/InstrumentSans-OFL.txt`; binary stays external. It is a new example font choice, not historical screenshot font recovery. No modifications or subsets are made.
+- Optional trusted raster backend `@napi-rs/canvas` 0.1.100, MIT notice `licenses/Canvas-MIT.txt`, lockfile pins npm dependencies. OS/architecture Native binaries are installed externally; no backend is included in the text projection.
+
+Original code licensing is independent of arbitrary user-supplied image rights. A caller must hold rights to any new source pixels. This candidate authorizes no upload, distribution, real-person inference, publication or asset clearance on their behalf.

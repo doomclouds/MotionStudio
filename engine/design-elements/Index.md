@@ -104,3 +104,7 @@ See [bounded drape and radial categories](recipes/eighth-static-candidates/Index
 ## 第十一组：精确账本与显式段/方形
 
 [两包三种受限方法](recipes/eleventh-static-candidates/Index.md)：flow-ledger 22 文本＋explicit-geometry 25 文本。前者把积分总量、完整分区与稳定排名绑定同一合成模型；后者保留自编二进制连续段和有序嵌套理想面积，不自动升级为字体/随机纹理/通用图表。MIT 与独立来源/字体通知原样保留；0 正式族/配方/portfolio，资源/产物外置，私图、字体二进制与 GPL 队列排除。
+
+## 第十二组：同一平面的互补分界
+
+[Complementary seam 受限候选](recipes/twelfth-static-candidates/Index.md)：25 文本、1 方法、0 新正式族/配方/portfolio。单调分界决定同一 RGBA 平面的互补像素归属；两份可独立由宿主放置。既有 sampled-window 仅复用，不另计；不是通用多边形切割/纸张模拟。MIT 与外置 Native/OFL 通知保留；私图、字体和 GPL 统计队列排除。

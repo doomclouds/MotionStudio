@@ -1,0 +1,22 @@
+[
+  {
+    "path": "sampled-window/sampled-window.mjs",
+    "bytes": 3796,
+    "sha256": "28312ad400c230bb3b8abe871ce6d91689a9ad8a1352a2053144244d8c73f37b",
+    "url": "https://raw.githubusercontent.com/doomclouds/MotionStudio/b7841f6f865e3f7b1dbd0e1063f6ea470c66da32/engine/design-elements/recipes/sampled-window-dialogue-candidate/lib/sampled-window.mjs",
+    "gitBlob": "57d032e97a0ad3cda6bee62cef73ffe5bbdc6d0d"
+  },
+  {
+    "path": "sampled-window/data.mjs",
+    "bytes": 2161,
+    "sha256": "7ebc7610580e5ca3ab37c096d1f9ec6a5cc3b743ec05661b0193c6af2e4efa99",
+    "url": "https://raw.githubusercontent.com/doomclouds/MotionStudio/b7841f6f865e3f7b1dbd0e1063f6ea470c66da32/engine/design-elements/recipes/sampled-window-dialogue-candidate/lib/data.mjs",
+    "gitBlob": "ec9fb774d46624b8b66759ba305b20a73c3f0f2b"
+  },
+  {
+    "path": "InstrumentSans.ttf",
+    "bytes": 194336,
+    "sha256": "b24f1812584816958afcf22e22d08e44318c5e51651e25d2438efdde389b33b1",
+    "url": "https://raw.githubusercontent.com/google/fonts/6c1dbe27dcf7d817d4b62cec033ba77fa8e2a5ec/ofl/instrumentsans/InstrumentSans%5Bwdth,wght%5D.ttf"
+  }
+]

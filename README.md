@@ -280,3 +280,7 @@ The catalog contains 60 foundations + 7 separate recipes: seventeen registration
 ## 第十一组：流量账本与显式几何
 
 [两包三种受限方法](engine/design-elements/recipes/eleventh-static-candidates/Index.md)：22 文本 flow-ledger（精确积分、完整分类分区、稳定排名）＋25 文本 explicit-geometry（连续行段、嵌套方形理想面积）。47 原包文本保持审定字节与 MIT/独立通知；字体和 Native 仅外置示例资源。0 新增正式族、配方或 portfolio；不含原图、私有记录、字体二进制或 GPL 包，不声称真实网络/材料统计、动态应用或逐项审美验收。
+
+## 第十二组：互补分界受限源码
+
+[Complementary seam](engine/design-elements/recipes/twelfth-static-candidates/Index.md)：25 原包文本将同一 RGBA 平面沿一条显式单调分界划成两份可独立放置的互补片。既有 sampled-window 仍是外置复用依赖，不重复计数；0 新增正式族/配方/portfolio。保留 MIT 与独立 Native/OFL 通知；不含私图、字体二进制或 GPL selection-summary，不声称任意裁纸/分割、动效或逐项审美验收。

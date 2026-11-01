@@ -146,3 +146,9 @@ Native Canvas is an external MIT dependency for the first two packages, with ful
 - [Explicit geometry](engine/design-elements/recipes/explicit-geometry-candidates/CREDITS.md): MIT row-run and ordered-square methods, with full 8B MIT influence notice. No source wordmark/font outline, source page imagery, stock photo, GSAP or Lenis is copied into the text projection. Example captions require an externally fetched unmodified Instrument Sans master under its complete OFL notice; Native Canvas is externally installed under its separate MIT notice.
 
 All 47 package files retain their reviewed bytes and notices. These source licenses do not grant excluded screenshot, trademark or picture rights. No GPL/CC BY-SA private candidate is included; root license cannot override independently noticed resources. No new registered design family or client/portfolio acceptance is asserted.
+
+## Twelfth-group complementary-seam source-only candidate
+
+[Complementary seam notices](engine/design-elements/recipes/complementary-seam-candidate/CREDITS.md) preserve the new MIT implementation and existing MIT data/helper attribution. The example sampler is restored externally from the pinned published repository bytes; it is neither relicensed nor recounted. The font-free core includes no font or image asset. Optional Native Canvas 0.1.100 and full unmodified Instrument Sans are separately noticed MIT/OFL dependencies, installed/restored outside the repository.
+
+All 25 package texts retain their reviewed bytes. No 8B page implementation, stock photograph, generated picture, screenshot, font binary/outline, GSAP/Lenis, GPL selection-summary, private report or storage locator is included. A later caller-supplied image needs its own rights; source licensing does not clear excluded imagery or brands. No formal family or portfolio acceptance is added.

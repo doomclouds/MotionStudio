@@ -222,3 +222,9 @@ No PHASEPAIR/Mixxx/Tango GPL or CC BY-SA package, original screenshot/applicatio
 The [two-package index](engine/design-elements/recipes/eleventh-static-candidates/Index.md) links 47 reviewed UTF-8 texts: 22 flow-ledger and 25 explicit-geometry. Only independent source mechanisms and synthetic examples are included, not FLOWGROVE/MENDRA source applications, whole source pages, private previews or original references. No catalog, registry, portfolio, source-policy or media exception is changed.
 
 Flow uses MIT terms with Sniffnet's MIT alternative and both authentic alternative notices preserved, plus separate helper/label notices. Geometry remains MIT with retained 8B influence attribution; external Native MIT and Instrument Sans OFL are separate. All installed dependencies, font masters, outputs and audit/storage records stay external. No GPL/CC BY-SA package, image or font binary is in this increment. Historical pending/private flags inside unchanged snapshots do not assert current publication or production readiness.
+
+## Twelfth-group exact complementary-seam source candidate
+
+The [discovery index](engine/design-elements/recipes/twelfth-static-candidates/Index.md) links exactly 25 reviewed UTF-8 source files. One caller-supplied plane is partitioned by one monotone seam; existing sampled-window code is only a pinned external example input, not another new method. No catalog, registry, portfolio, source-policy or media exception changes.
+
+MIT core/example/helper terms remain intact; example Native MIT and unmodified Instrument Sans OFL are separate, external resources. Exclude all private screenshots/generated art, fonts/outlines, app shells, audit/storage records and GPL selection-summary. Raw RGBA ownership is distinct from Native premultiplication and ideal geometry. Historical pending/private wording in exact source snapshots does not assert current publication or production readiness.

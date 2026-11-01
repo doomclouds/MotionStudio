@@ -1,0 +1,15 @@
+{
+  "id": "complementary-seam-candidate",
+  "methods": [
+    "complementary-authored-seam"
+  ],
+  "registeredFamiliesAdded": 0,
+  "formalRecipesAdded": 0,
+  "status": "AUTHOR_FROZEN_PENDING_INDEPENDENT_REVIEW",
+  "base": "b7841f6f865e3f7b1dbd0e1063f6ea470c66da32",
+  "examples": [
+    "Split / Field",
+    "Cut / Exchange"
+  ],
+  "privateReferencesRequired": false
+}
