@@ -66,6 +66,8 @@ node engine/motion-elements/scripts/query-catalog.mjs show --id fragment.fixed-t
 
 [折叠标量场与径向扰动](docs/guides/folded-ripple-candidate.md)：固定五轮二维场与单次绝对时间事件；源码机制研究，未与原例可视预览核验，不增加正式计数。
 
+[多频密度与细脊材料](docs/guides/filament-density-candidate.md)：可播种二维标量纹理；分离密度与扭曲细脊，不是烟流模拟，仅局部静帧研究、不增加正式计数。
+
 ## 质量与权利边界
 
 目录命中与技术测试只提供机制候选，不构成风格推荐。实验示例不是优质动效或默认风格锚点。完整作品被用户否决时，私有Case记录作品质量不通过，不能以局部认可或“仅未验”充当成功迁移；也不能反推每个数学原语失效。重用须重新说明场景并验证。
