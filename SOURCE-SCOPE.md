@@ -228,3 +228,9 @@ Flow uses MIT terms with Sniffnet's MIT alternative and both authentic alternati
 The [discovery index](engine/design-elements/recipes/twelfth-static-candidates/Index.md) links exactly 25 reviewed UTF-8 source files. One caller-supplied plane is partitioned by one monotone seam; existing sampled-window code is only a pinned external example input, not another new method. No catalog, registry, portfolio, source-policy or media exception changes.
 
 MIT core/example/helper terms remain intact; example Native MIT and unmodified Instrument Sans OFL are separate, external resources. Exclude all private screenshots/generated art, fonts/outlines, app shells, audit/storage records and GPL selection-summary. Raw RGBA ownership is distinct from Native premultiplication and ideal geometry. Historical pending/private wording in exact source snapshots does not assert current publication or production readiness.
+
+## Thirteenth-group exact ink-bay text candidate
+
+The [discovery index](engine/design-elements/recipes/thirteenth-static-candidates/Index.md) links 32 exact reviewed UTF-8 package texts. Primary actual ink plus a gap derives a same-row opposite annotation bay; existing ink alignment is not a new method. No catalog, formal recipe registry, portfolio, source-policy or media exception changes.
+
+Independent MIT implementation/helpers retain their notices; the8B design-origin MIT notice does not bring its implementation, imagery or brand. Native MIT and Instrument Sans/Geist OFL resources are separate and external. No screenshots, generated art, fonts/outlines, private audit/storage records or GPL package are projected. Historical PENDING/private wording in exact source snapshots is not current publication, production or aesthetic acceptance.

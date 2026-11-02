@@ -108,3 +108,7 @@ See [bounded drape and radial categories](recipes/eighth-static-candidates/Index
 ## 第十二组：同一平面的互补分界
 
 [Complementary seam 受限候选](recipes/twelfth-static-candidates/Index.md)：25 文本、1 方法、0 新正式族/配方/portfolio。单调分界决定同一 RGBA 平面的互补像素归属；两份可独立由宿主放置。既有 sampled-window 仅复用，不另计；不是通用多边形切割/纸张模拟。MIT 与外置 Native/OFL 通知保留；私图、字体和 GPL 统计队列排除。
+
+## 第十三组：随主墨迹变化的注记区
+
+[Ink-bay 受限候选](recipes/thirteenth-static-candidates/Index.md)：32 文本、1 个受限组合关系、0 新正式族/配方/portfolio。主字墨迹加显式间隔派生同一行相反侧注记区，次文本通过实际 fit 才可绘制；既有墨迹对齐不重复计数。MIT 实现和独立外置 OFL/Native 通知保留；无私图、字体二进制或 GPL 队列，不声称自动换行、动态布局或用户逐项审美验收。

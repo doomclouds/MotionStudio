@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "repository": "google/fonts",
+  "commit": "6c1dbe27dcf7d817d4b62cec033ba77fa8e2a5ec",
+  "files": [
+    {
+      "path": "geist/Geist[wght].ttf",
+      "bytes": 169056,
+      "sha256": "73894e0448cae90a92b6c2f8732b7bb9acb7b94c418bff559dad4a18e1de9659",
+      "gitBlob": "f63f0afc6390323715972b6645115485f37cc9f4",
+      "url": "https://raw.githubusercontent.com/google/fonts/6c1dbe27dcf7d817d4b62cec033ba77fa8e2a5ec/ofl/geist/Geist%5Bwght%5D.ttf"
+    },
+    {
+      "path": "geist/METADATA.pb",
+      "bytes": 1348,
+      "sha256": "62d302155bfbf778e9c488ef00671a4ad71a8a4cdc808ec66ceb668373afe900",
+      "gitBlob": "e9ba1c28356f1fc1a1373a98feb9b6fb948a7763",
+      "url": "https://raw.githubusercontent.com/google/fonts/6c1dbe27dcf7d817d4b62cec033ba77fa8e2a5ec/ofl/geist/METADATA.pb"
+    },
+    {
+      "path": "geist/OFL.txt",
+      "bytes": 4387,
+      "sha256": "1781d2806a07d91c4edf4740b88449fab7d0eadad53f7c351b94cd4d4eb8c00f",
+      "gitBlob": "61f6f4b7853081236aec6407f2dd3c7170997f84",
+      "url": "https://raw.githubusercontent.com/google/fonts/6c1dbe27dcf7d817d4b62cec033ba77fa8e2a5ec/ofl/geist/OFL.txt"
+    },
+    {
+      "path": "instrumentsans/InstrumentSans[wdth,wght].ttf",
+      "bytes": 194336,
+      "sha256": "b24f1812584816958afcf22e22d08e44318c5e51651e25d2438efdde389b33b1",
+      "gitBlob": "3589b81b22d3defc725dfdcdf16b5da7c9adc691",
+      "url": "https://raw.githubusercontent.com/google/fonts/6c1dbe27dcf7d817d4b62cec033ba77fa8e2a5ec/ofl/instrumentsans/InstrumentSans%5Bwdth,wght%5D.ttf"
+    },
+    {
+      "path": "instrumentsans/METADATA.pb",
+      "bytes": 1449,
+      "sha256": "111191daf841919d5d09b88ca7a17fb691c4b835c61ca81c958f334c40c11535",
+      "gitBlob": "ae799bd1e4cb371fbf236572fd1c0628825d94ad",
+      "url": "https://raw.githubusercontent.com/google/fonts/6c1dbe27dcf7d817d4b62cec033ba77fa8e2a5ec/ofl/instrumentsans/METADATA.pb"
+    },
+    {
+      "path": "instrumentsans/OFL.txt",
+      "bytes": 4403,
+      "sha256": "9e27a72ed30eb49a08678f6a5d6ed98ec7ba5368f541637ee0683ec9134ef966",
+      "gitBlob": "26bd2f954bfa282d235370728095db97d8a36f6f",
+      "url": "https://raw.githubusercontent.com/google/fonts/6c1dbe27dcf7d817d4b62cec033ba77fa8e2a5ec/ofl/instrumentsans/OFL.txt"
+    }
+  ]
+}

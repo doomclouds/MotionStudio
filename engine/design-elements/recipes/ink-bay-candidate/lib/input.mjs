@@ -1,0 +1,10 @@
+// MIT. Own-data snapshots; ordinary object/array domain, not a Proxy sandbox.
+export const own=(o,k)=>Object.prototype.hasOwnProperty.call(o,k);
+export function append(a,...v){for(const x of v)Object.defineProperty(a,String(a.length),{value:x,writable:true,enumerable:true,configurable:true});return a}
+export function record(o,keys){if(!o||typeof o!=='object'||Array.isArray(o)||![Object.prototype,null].includes(Object.getPrototypeOf(o)))throw TypeError('plain record');let ds=Object.getOwnPropertyDescriptors(o),ks=Reflect.ownKeys(ds);if(ks.length!==keys.length||ks.some(k=>typeof k!=='string'||!keys.includes(k)))throw TypeError('exact record keys');let out=Object.create(null);for(const k of keys){if(!own(ds,k)||!own(ds[k],'value')||!ds[k].enumerable)throw TypeError('own enumerable data');Object.defineProperty(out,k,{value:ds[k].value,enumerable:true});}return out}
+export function dense(a,min,max){if(!Array.isArray(a)||Object.getPrototypeOf(a)!==Array.prototype)throw TypeError('ordinary array');let ds=Object.getOwnPropertyDescriptors(a),n=ds.length.value;int(n,min,max);if(Reflect.ownKeys(ds).length!==n+1)throw TypeError('dense exact array');let out=[];for(let i=0;i<n;i++){let k=String(i);if(!own(ds,k)||!own(ds[k],'value')||!ds[k].enumerable)throw TypeError('own dense data');append(out,ds[k].value)}return out}
+export function num(v,a,b){if(typeof v!=='number'||!Number.isFinite(v)||v<a||v>b)throw RangeError('finite bounded number');return v}
+export function int(v,a,b){num(v,a,b);if(!Number.isSafeInteger(v))throw RangeError('integer');return v}
+export function text(v,a,b){if(typeof v!=='string'||v.length<a||v.length>b||v.trim()!==v||!/^[\x20-\x7e]+$/.test(v))throw TypeError('trimmed printable ASCII');return v}
+export function color(v){if(typeof v!=='string'||!/^#[0-9a-fA-F]{6}$/.test(v))throw TypeError('opaque hex color');return v.toLowerCase()}
+export function freeze(o){if(o&&typeof o==='object'&&!Object.isFrozen(o)){for(const k of Object.keys(o))freeze(o[k]);Object.freeze(o)}return o}

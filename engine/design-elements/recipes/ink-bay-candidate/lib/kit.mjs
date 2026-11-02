@@ -1,0 +1,9 @@
+// SPDX-License-Identifier: MIT
+import{num}from'./input.mjs';import{layoutRows,isLayout}from'./layout.mjs';
+export function setup(c,size,role){c.setTransform(1,0,0,1,0,0);c.globalAlpha=1;c.globalCompositeOperation='source-over';c.filter='none';c.shadowColor='transparent';c.shadowBlur=0;c.shadowOffsetX=0;c.shadowOffsetY=0;c.font=size+'px '+(role==='headline'?'BayDisplay':'BayText');c.textAlign='left';c.textBaseline='alphabetic';c.direction='ltr';c.fontKerning='normal';c.fontStretch='normal';c.fontVariantCaps='normal';c.textRendering='auto';c.letterSpacing='0px';c.wordSpacing='0px'}
+export function createInkBayKit(api){if(typeof api?.createCanvas!=='function')throw Error('trusted canvas API');const m=api.createCanvas(1,1).getContext('2d'),plans=new WeakSet(),tiles=new WeakSet();const measure=(text,size,role)=>{setup(m,size,role);const q=m.measureText(text);return{left:q.actualBoundingBoxLeft,right:q.actualBoundingBoxRight,ascent:q.actualBoundingBoxAscent,descent:q.actualBoundingBoxDescent,advance:q.width}};
+ function plan(model,options){const p=layoutRows(model,options,measure);plans.add(p);return p}
+ function drawFresh(c,p,dx=0,dy=0){if(!plans.has(p)||!isLayout(p))throw Error('issued kit plan');num(dx,-100000,100000);num(dy,-100000,100000);for(const q of p.ops){setup(c,q.size,q.role);c.translate(dx,dy);c.fillStyle=q.color;c.fillText(q.text,q.x,q.y)}}
+ function tile(p){if(!plans.has(p))throw Error('issued kit plan');const canvas=api.createCanvas(p.width,p.height);drawFresh(canvas.getContext('2d'),p);const t=Object.freeze({canvas,plan:p});tiles.add(t);return t}
+ function place(c,t,x,y){if(!tiles.has(t))throw Error('issued kit tile');num(x,-100000,100000);num(y,-100000,100000);c.save();try{c.drawImage(t.canvas,x,y)}finally{c.restore()}}
+ return Object.freeze({plan,tile,place,drawFresh})}

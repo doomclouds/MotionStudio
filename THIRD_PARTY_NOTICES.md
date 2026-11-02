@@ -152,3 +152,9 @@ All 47 package files retain their reviewed bytes and notices. These source licen
 [Complementary seam notices](engine/design-elements/recipes/complementary-seam-candidate/CREDITS.md) preserve the new MIT implementation and existing MIT data/helper attribution. The example sampler is restored externally from the pinned published repository bytes; it is neither relicensed nor recounted. The font-free core includes no font or image asset. Optional Native Canvas 0.1.100 and full unmodified Instrument Sans are separately noticed MIT/OFL dependencies, installed/restored outside the repository.
 
 All 25 package texts retain their reviewed bytes. No 8B page implementation, stock photograph, generated picture, screenshot, font binary/outline, GSAP/Lenis, GPL selection-summary, private report or storage locator is included. A later caller-supplied image needs its own rights; source licensing does not clear excluded imagery or brands. No formal family or portfolio acceptance is added.
+
+## Thirteenth-group ink-bay source-only candidate
+
+[Ink-bay credits](engine/design-elements/recipes/ink-bay-candidate/CREDITS.md) retain MIT implementation/helper/source-origin notices without copying the original8B template runtime, photograph, generated artwork or brand. All32 package texts preserve reviewed bytes. [Font notices](engine/design-elements/recipes/ink-bay-candidate/notices/fonts/README.md) separately identify fixed Instrument Sans and Geist OFL masters, modified aliases and recoverable instance parameters; full notices are included, font binaries and contours are not. Native Canvas0.1.100 is an external MIT dependency with its complete notice.
+
+No original/private image, full page, GSAP/Lenis, audit/storage locator or GPL queue is included. Root MIT does not relicense OFL or imply image/trademark/commercial clearance. No formal family, recipe or portfolio acceptance is added.

@@ -284,3 +284,7 @@ The catalog contains 60 foundations + 7 separate recipes: seventeen registration
 ## 第十二组：互补分界受限源码
 
 [Complementary seam](engine/design-elements/recipes/twelfth-static-candidates/Index.md)：25 原包文本将同一 RGBA 平面沿一条显式单调分界划成两份可独立放置的互补片。既有 sampled-window 仍是外置复用依赖，不重复计数；0 新增正式族/配方/portfolio。保留 MIT 与独立 Native/OFL 通知；不含私图、字体二进制或 GPL selection-summary，不声称任意裁纸/分割、动效或逐项审美验收。
+
+## 第十三组：主墨迹派生同行注记区
+
+[Ink-bay 受限文本候选](engine/design-elements/recipes/thirteenth-static-candidates/Index.md)：32 原样文本，主标题实际墨迹与显式间隔共同确定相反侧剩余注记区，内容变化影响可容纳的次文本。墨迹测量/对齐本身复用既有思路，不另计；0 新正式族、配方或 portfolio。MIT 实现与外置 Native/OFL 通知分层，无原图、字体二进制、整页品牌或 GPL 队列。静态实际 fit 可拒绝合法内容，不声称自动换行/响应式/动画或逐项审美认可。
