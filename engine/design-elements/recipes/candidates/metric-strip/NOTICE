@@ -1,0 +1,10 @@
+OpenDesign Live Dashboard visual study
+Source: nexu-io/open-design, commit 12d970eacc8971150e3c76470d2a9afe16dc2ed1
+Reference: apps/web/public/community-templates/live-artifact.webp
+Source example: design-templates/live-dashboard/example.html
+Source project license: Apache License, Version 2.0.
+
+The bounded metric-strip model is an independent implementation inspired by the
+visible count / part-whole metric row. No source image, font, app shell, connector,
+or refresh implementation is distributed in this candidate. Changes: return
+explicit geometry and integer formatting only; delta meaning is caller-authored.

@@ -132,3 +132,11 @@ See [bounded drape and radial categories](recipes/batches/eighth-static-candidat
 - [XHS08 语义面积源码](recipes/candidates/xhs08/README.md)（已被 portable 构建/测试引用；不等于完成正式配方晋级）
 
 从仓库根目录运行，按需查询已提交树：`python3 scripts/design-navigation.py --repo . --format markdown`；`--details` 展开逐项来源声明和权利入口。该工具不读取未提交更改、不登记资产，也不生成需手工维护的第二份清单。
+
+## 决策建议与验证边界 · 待审候选
+
+[Decision support](recipes/candidates/decision-support/README.md)：将作者给定的建议、竞争解释、下一步测量和可逆试验放在同一受限静态面板；不自动推断因果或判断研究可信度。复刻首屏中实际调用，并有两份合成内容与单测；0 新公共族、正式配方或已接受作品。Apache-2.0，字体与图像证据外置，非网页/响应式验收。
+
+## Metric strip · fixed snapshot candidate
+
+[Count / explicit part-whole strip](recipes/candidates/metric-strip/README.md) returns a bounded horizontal layout and display fields without drawing or live-data claims. Caller-authored delta meaning is not inferred from its sign; font fit remains the consumer's responsibility. Independent Apache-2.0 model inspired by OpenDesign, with no original screenshots, fonts or connector. Not a formal family or accepted work.
