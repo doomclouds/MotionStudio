@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 3,
   "kind": "case",
   "id": "case-new-reference",
   "revision": 1,
@@ -14,7 +14,8 @@
     "sha256": null,
     "duration_seconds": null,
     "rights": "未核验",
-    "access": "尚未获取媒体"
+    "access": "尚未获取媒体",
+    "origin": "external-reference"
   },
   "inspection": {
     "date": "YYYY-MM-DD",
@@ -33,5 +34,11 @@
   "supersedes": [],
   "unverified_questions": [
     "先确认作品身份、来源、实际时长与权限。"
-  ]
+  ],
+  "evidence_type": "video",
+  "decision": {
+    "schema_version": 3,
+    "record_state": "not-recorded",
+    "reason": "模板尚未记录决策；未据此推断方案、控制条件、执行结果或批准。"
+  }
 }

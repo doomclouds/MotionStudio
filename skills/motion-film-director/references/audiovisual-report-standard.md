@@ -103,4 +103,4 @@ python3 skills/motion-film-director/scripts/validate_delivery_report.py /local/r
 
 用户报告只交付项目根`output/review/overview.png`与`output/review/report.html`，影片MP4另交。不提供PDF、内部JSON或源码/完整资源ZIP，除非用户明确要求。内部JSON仍用于规范校验和证据追踪，不是第三份用户报告。
 
-`check_final_delivery.py VIDEO --packet PACKET --project-root PROJECT`默认写这两个固定文件：overview复用已有benchmark PNG，非参考任务可复用已有PNG画面总览；不生成新的诊断计算。原有`--report`仅保留显式旧调用兼容，不作为新的用户交付约定。已有文件拒绝覆盖；需要复验时先按项目流程保留历史版本，不删除旧报告掩盖变化。
+`check_final_delivery.py VIDEO --packet PACKET --project-root PROJECT`默认写这两个固定文件：overview复用已有benchmark PNG，非参考任务可复用已有PNG画面总览；不生成新的诊断计算。不提供HTML-only分支或`--report`参数；只使用`--project-root`选择项目目录。已有文件拒绝覆盖；需要复验时先按项目流程保留历史版本，不删除旧报告掩盖变化。

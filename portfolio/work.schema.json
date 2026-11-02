@@ -1,0 +1,1251 @@
+{
+  "type": "object",
+  "properties": {
+    "schema": {
+      "const": "motionstudio.work/1"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "kind": {
+      "enum": [
+        "static",
+        "video"
+      ]
+    },
+    "publication": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "enum": [
+            "released",
+            "source-release",
+            "not-published"
+          ]
+        }
+      },
+      "required": [
+        "status"
+      ],
+      "additionalProperties": false
+    },
+    "authorship": {
+      "type": "object",
+      "properties": {
+        "unofficial_recreation": {
+          "type": "boolean"
+        },
+        "original": {
+          "type": "object",
+          "properties": {
+            "author": {
+              "type": "string",
+              "minLength": 1
+            },
+            "title": {
+              "type": "string",
+              "minLength": 1
+            },
+            "url": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "author",
+            "title",
+            "url"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "unofficial_recreation"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "unofficial_recreation": {
+                "const": true
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "original"
+            ]
+          }
+        }
+      ]
+    },
+    "rights": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "enum": [
+            "reviewed",
+            "reviewed-publication-scope",
+            "NOT_REVIEWED"
+          ]
+        },
+        "credits": {
+          "type": "string",
+          "minLength": 1
+        },
+        "notices": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "evidence_urls": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "required": [
+        "status",
+        "credits",
+        "notices",
+        "evidence_urls"
+      ],
+      "additionalProperties": false
+    },
+    "files": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "kind": {
+            "enum": [
+              "source",
+              "config",
+              "documentation",
+              "license",
+              "lock",
+              "cover"
+            ]
+          }
+        },
+        "required": [
+          "path",
+          "sha256",
+          "kind"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "runtime": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "version": {
+            "type": "string",
+            "minLength": 1
+          },
+          "lock": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "name",
+          "version",
+          "lock"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "render": {
+      "type": "object",
+      "properties": {
+        "entrypoint": {
+          "type": "string",
+          "minLength": 1
+        },
+        "width": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "height": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "timeline": {
+          "type": "object",
+          "properties": {
+            "frames": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "fps_num": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "fps_den": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          "required": [
+            "frames",
+            "fps_num",
+            "fps_den"
+          ],
+          "additionalProperties": false
+        },
+        "audio": {
+          "type": "object",
+          "properties": {
+            "sample_rate": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "channels": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          "required": [
+            "sample_rate",
+            "channels"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "entrypoint",
+        "width",
+        "height"
+      ],
+      "additionalProperties": false
+    },
+    "resources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "enum": [
+              "font",
+              "image",
+              "audio",
+              "vector",
+              "archive",
+              "other",
+              "unclassified"
+            ]
+          },
+          "kind_basis": {
+            "type": "object",
+            "properties": {
+              "method": {
+                "enum": [
+                  "declared",
+                  "source-contract",
+                  "filename-hint",
+                  "unresolved"
+                ]
+              }
+            },
+            "required": [
+              "method"
+            ],
+            "additionalProperties": false
+          },
+          "mode": {
+            "enum": [
+              "fetch",
+              "generate",
+              "provide"
+            ]
+          },
+          "license": {
+            "type": "string",
+            "minLength": 1
+          },
+          "notice": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_url": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "permission": {
+            "enum": [
+              "explicit-license",
+              "user-supplied-not-distributed"
+            ]
+          },
+          "fetch_url": {
+            "type": "string",
+            "minLength": 1
+          },
+          "max_bytes": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "generator": {
+            "type": "string",
+            "minLength": 1
+          },
+          "local_path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "bytes": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "instructions": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "id",
+          "kind",
+          "kind_basis",
+          "mode",
+          "license",
+          "notice",
+          "source_url",
+          "sha256",
+          "permission"
+        ],
+        "additionalProperties": false,
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "mode": {
+                  "const": "fetch"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "fetch_url",
+                "max_bytes"
+              ],
+              "not": {
+                "anyOf": [
+                  {
+                    "required": [
+                      "bytes"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "generator"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "instructions"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "local_path"
+                    ]
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "mode": {
+                  "const": "generate"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "generator"
+              ],
+              "not": {
+                "anyOf": [
+                  {
+                    "required": [
+                      "bytes"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "fetch_url"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "instructions"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "local_path"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "max_bytes"
+                    ]
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "mode": {
+                  "const": "provide"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "local_path",
+                "bytes",
+                "instructions"
+              ],
+              "not": {
+                "anyOf": [
+                  {
+                    "required": [
+                      "fetch_url"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "generator"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "max_bytes"
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    "cover": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "enum": [
+            "rendered-frame",
+            "rendered-static"
+          ]
+        },
+        "source_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "frame": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "rights_status": {
+          "enum": [
+            "reviewed"
+          ]
+        },
+        "credit": {
+          "type": "string",
+          "minLength": 1
+        },
+        "binding": {
+          "type": "object",
+          "properties": {
+            "version": {
+              "type": "string",
+              "minLength": 1
+            },
+            "applicability": {
+              "const": "historical-preview"
+            }
+          },
+          "required": [
+            "version",
+            "applicability"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "path",
+        "kind",
+        "source_sha256",
+        "frame",
+        "rights_status",
+        "credit"
+      ],
+      "additionalProperties": false
+    },
+    "acceptance": {
+      "type": "object",
+      "properties": {
+        "complete_work": {
+          "type": "boolean"
+        },
+        "owner_keep": {
+          "type": "boolean"
+        },
+        "clean_restore": {
+          "type": "boolean"
+        },
+        "technical": {
+          "type": "boolean"
+        },
+        "visual": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "enum": [
+                "PASSED",
+                "PARTIAL",
+                "NOT_REVIEWED"
+              ]
+            },
+            "coverage": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "status",
+            "coverage"
+          ],
+          "additionalProperties": false
+        },
+        "listened": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "enum": [
+                "PASSED",
+                "NOT_LISTENED"
+              ]
+            },
+            "coverage": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "status",
+            "coverage"
+          ],
+          "additionalProperties": false
+        },
+        "av_sync": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "enum": [
+                "PASSED",
+                "NUMERIC_ONLY",
+                "NOT_REVIEWED"
+              ]
+            },
+            "coverage": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "status",
+            "coverage"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "complete_work",
+        "owner_keep",
+        "clean_restore",
+        "technical",
+        "visual"
+      ],
+      "additionalProperties": false
+    },
+    "design": {
+      "type": "object",
+      "properties": {
+        "decisionCard": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sourceAnalysis": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "ruleRefs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "ruleStatus": {
+          "type": "string",
+          "minLength": 1
+        },
+        "assetUsage": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "familyId": {
+                "type": "string",
+                "minLength": 1
+              },
+              "mode": {
+                "enum": [
+                  "runtime-import",
+                  "vendored-snapshot"
+                ]
+              },
+              "modulePath": {
+                "type": "string",
+                "minLength": 1
+              },
+              "moduleSha256": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              "sourceCommit": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{40}$"
+              },
+              "callsite": {
+                "type": "string",
+                "minLength": 1
+              },
+              "importToken": {
+                "type": "string",
+                "minLength": 1
+              },
+              "callToken": {
+                "type": "string",
+                "minLength": 1
+              },
+              "visibleRole": {
+                "type": "string",
+                "minLength": 1
+              },
+              "snapshotPath": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "required": [
+              "familyId",
+              "mode",
+              "modulePath",
+              "moduleSha256",
+              "sourceCommit",
+              "callsite",
+              "importToken",
+              "callToken",
+              "visibleRole",
+              "snapshotPath"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "nonAssetNote": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "decisionCard",
+        "sourceAnalysis",
+        "ruleRefs",
+        "ruleStatus",
+        "assetUsage",
+        "nonAssetNote"
+      ],
+      "additionalProperties": false
+    },
+    "evidence": {
+      "type": "object",
+      "properties": {
+        "reviewArtifacts": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "NOT_INCLUDED"
+            }
+          },
+          "required": [
+            "status"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "reviewArtifacts"
+      ],
+      "additionalProperties": false
+    },
+    "transfer": {
+      "type": "object",
+      "properties": {
+        "motion": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "NOT_TESTED"
+            },
+            "note": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "status",
+            "note"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "motion"
+      ],
+      "additionalProperties": false
+    },
+    "lifecycle": {
+      "enum": [
+        "retained",
+        "candidate"
+      ]
+    },
+    "verification": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "const": "NOT_RUN"
+        },
+        "reason": {
+          "const": "dependency-upgrade"
+        },
+        "dimensions": {
+          "type": "object",
+          "properties": {
+            "clean_restore": {
+              "const": "NOT_RUN"
+            },
+            "technical": {
+              "const": "NOT_RUN"
+            },
+            "visual": {
+              "const": "NOT_RUN"
+            },
+            "listened": {
+              "const": "NOT_RUN"
+            },
+            "av_sync": {
+              "const": "NOT_RUN"
+            }
+          },
+          "required": [
+            "clean_restore",
+            "technical",
+            "visual"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "status",
+        "reason",
+        "dimensions"
+      ],
+      "additionalProperties": false
+    },
+    "history": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "version": {
+            "type": "string",
+            "minLength": 1
+          },
+          "recorded_in": {
+            "type": "object",
+            "properties": {
+              "commit": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{40}$"
+              },
+              "path": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "commit",
+              "path"
+            ],
+            "additionalProperties": false
+          },
+          "dependency_commit": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{40}$"
+          },
+          "applicability": {
+            "const": "historical-only"
+          },
+          "acceptance": {
+            "type": "object",
+            "properties": {
+              "complete_work": {
+                "type": "boolean"
+              },
+              "owner_keep": {
+                "type": "boolean"
+              },
+              "clean_restore": {
+                "type": "boolean"
+              },
+              "technical": {
+                "type": "boolean"
+              },
+              "visual": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "enum": [
+                      "PASSED",
+                      "PARTIAL",
+                      "NOT_REVIEWED"
+                    ]
+                  },
+                  "coverage": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "status",
+                  "coverage"
+                ],
+                "additionalProperties": false
+              },
+              "listened": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "enum": [
+                      "PASSED",
+                      "NOT_LISTENED"
+                    ]
+                  },
+                  "coverage": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "status",
+                  "coverage"
+                ],
+                "additionalProperties": false
+              },
+              "av_sync": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "enum": [
+                      "PASSED",
+                      "NUMERIC_ONLY",
+                      "NOT_REVIEWED"
+                    ]
+                  },
+                  "coverage": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "status",
+                  "coverage"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "complete_work",
+              "owner_keep",
+              "clean_restore",
+              "technical",
+              "visual"
+            ],
+            "additionalProperties": false
+          },
+          "rights": {
+            "type": "object",
+            "properties": {
+              "status": {
+                "enum": [
+                  "reviewed",
+                  "reviewed-publication-scope",
+                  "NOT_REVIEWED"
+                ]
+              },
+              "credits": {
+                "type": "string",
+                "minLength": 1
+              },
+              "notices": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "evidence_urls": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            },
+            "required": [
+              "status",
+              "credits",
+              "notices",
+              "evidence_urls"
+            ],
+            "additionalProperties": false
+          },
+          "cover": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "minLength": 1
+              },
+              "kind": {
+                "enum": [
+                  "rendered-frame",
+                  "rendered-static"
+                ]
+              },
+              "source_sha256": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              "frame": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "rights_status": {
+                "enum": [
+                  "reviewed"
+                ]
+              },
+              "credit": {
+                "type": "string",
+                "minLength": 1
+              },
+              "binding": {
+                "type": "object",
+                "properties": {
+                  "version": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "applicability": {
+                    "const": "historical-preview"
+                  }
+                },
+                "required": [
+                  "version",
+                  "applicability"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "path",
+              "kind",
+              "source_sha256",
+              "frame",
+              "rights_status",
+              "credit"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "version",
+          "recorded_in",
+          "dependency_commit",
+          "applicability",
+          "acceptance",
+          "rights",
+          "cover"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1
+    }
+  },
+  "required": [
+    "schema",
+    "id",
+    "version",
+    "title",
+    "kind",
+    "publication",
+    "authorship",
+    "rights",
+    "files",
+    "runtime",
+    "render",
+    "resources",
+    "cover",
+    "evidence",
+    "lifecycle"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:motionstudio:work:1",
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "kind": {
+            "const": "static"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "render": {
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "timeline"
+                  ]
+                },
+                {
+                  "required": [
+                    "audio"
+                  ]
+                }
+              ]
+            }
+          },
+          "acceptance": {
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "listened"
+                  ]
+                },
+                {
+                  "required": [
+                    "av_sync"
+                  ]
+                }
+              ]
+            }
+          },
+          "cover": {
+            "properties": {
+              "kind": {
+                "const": "rendered-static"
+              },
+              "frame": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "render": {
+            "required": [
+              "timeline",
+              "audio"
+            ]
+          },
+          "acceptance": {
+            "required": [
+              "listened",
+              "av_sync"
+            ]
+          },
+          "cover": {
+            "properties": {
+              "kind": {
+                "const": "rendered-frame"
+              },
+              "frame": {
+                "type": "integer",
+                "minimum": 0
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "lifecycle": {
+            "const": "candidate"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "history",
+          "verification"
+        ],
+        "not": {
+          "required": [
+            "acceptance"
+          ]
+        },
+        "properties": {
+          "publication": {
+            "properties": {
+              "status": {
+                "const": "not-published"
+              }
+            }
+          },
+          "rights": {
+            "properties": {
+              "status": {
+                "const": "NOT_REVIEWED"
+              }
+            }
+          },
+          "cover": {
+            "required": [
+              "binding"
+            ]
+          }
+        }
+      },
+      "else": {
+        "required": [
+          "acceptance"
+        ],
+        "not": {
+          "anyOf": [
+            {
+              "required": [
+                "verification"
+              ]
+            },
+            {
+              "required": [
+                "history"
+              ]
+            }
+          ]
+        },
+        "properties": {
+          "publication": {
+            "properties": {
+              "status": {
+                "enum": [
+                  "released",
+                  "source-release"
+                ]
+              }
+            }
+          },
+          "rights": {
+            "properties": {
+              "status": {
+                "enum": [
+                  "reviewed",
+                  "reviewed-publication-scope"
+                ]
+              }
+            }
+          },
+          "cover": {
+            "not": {
+              "required": [
+                "binding"
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
+}

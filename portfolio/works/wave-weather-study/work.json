@@ -1,0 +1,211 @@
+{
+  "id": "wave-weather-study",
+  "version": "1.0.0",
+  "title": "今天的浪 · 玩味错位天气海报",
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "LICENSES/NotoSansSC-OFL.txt",
+      "LICENSES/ZCOOLKuaiLe-OFL.txt",
+      "LICENSES/huashu-MIT-LICENSE.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/LICENSE",
+      "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "https://github.com/google/fonts/tree/main/ofl/zcoolkuaile"
+    ]
+  },
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "locks/npm-package-lock.json"
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "1730383991ac65da1cc214897aa77665c6e76a7542ab186f55d70bb993c22290",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "Complete still and critical details reviewed. Font/JPEG/antialiasing residuals remain. Fixed static only, no browser, responsive, interaction or video validation."
+    }
+  },
+  "schema": "motionstudio.work/1",
+  "lifecycle": "retained",
+  "kind": "static",
+  "publication": {
+    "status": "source-release"
+  },
+  "authorship": {
+    "unofficial_recreation": true,
+    "original": {
+      "author": "alchaincyf (花叔 · 花生)",
+      "title": "Huashu design specimen",
+      "url": "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/east/10-hattori-playful-offset.html"
+    }
+  },
+  "render": {
+    "entrypoint": "design/scene.mjs",
+    "width": 1200,
+    "height": 750
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "86bd4b4a483e9f0f7f5ea5466269d60942bb2e7912ff9268de4567232ab2cf8a",
+      "kind": "documentation"
+    },
+    {
+      "path": "font-charset.txt",
+      "sha256": "1ab5a70b444d58a639dc401234c85a45043a6a09577d2e4f2188352a72f7385d",
+      "kind": "documentation"
+    },
+    {
+      "path": "CREDITS.md",
+      "sha256": "735fab1bdb34911bbd8ee2fc97390340eca275cc3460bc27dab32ec79ca4a79a",
+      "kind": "documentation"
+    },
+    {
+      "path": "DESIGN-REASONING.md",
+      "sha256": "47802320f1acb0d96f980e300da3ff97796d68658b660c0a929330517365e170",
+      "kind": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "40be54ada883fd596aaabf9072ef5489fcc13375323fbe51b320296000b60c48",
+      "kind": "cover"
+    },
+    {
+      "path": "prepare-fonts.py",
+      "sha256": "be407256ced02442d3167fffc61ed33d2c6b7cb1c23366ad621615b8d5106103",
+      "kind": "source"
+    },
+    {
+      "path": "font-inputs.json",
+      "sha256": "487e4f7a97c288c0c83cb1164309acd6fd004e16ff1146e1175d70791e787f55",
+      "kind": "config"
+    },
+    {
+      "path": "locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "kind": "lock"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "3376138df78fb0b3f62bc57d80dc440204cbe0a0709a07396e39636873862e6f",
+      "kind": "lock"
+    },
+    {
+      "path": "LICENSES/huashu-MIT-LICENSE.txt",
+      "sha256": "6d6a2a9caf2e6d2b76974050427053b2892d8aa4c33fd168ce63a537fcee9d96",
+      "kind": "license"
+    },
+    {
+      "path": "LICENSES/ZCOOLKuaiLe-OFL.txt",
+      "sha256": "91ef06981e715027e93a66e95fe827db07c4c959dbca164489509febc0dfe400",
+      "kind": "license"
+    },
+    {
+      "path": "LICENSES/NotoSansSC-OFL.txt",
+      "sha256": "babcfe66c8a098b2fa279bc724a3a342f8124f77ce18941fbcc1bbb39823cded",
+      "kind": "license"
+    },
+    {
+      "path": "design/scene.mjs",
+      "sha256": "2f6697d163a216a2d1f407ef74cc1827df0190334d541379b4c3f1ea54bdb6ab",
+      "kind": "source"
+    },
+    {
+      "path": "DESIGN-RETENTION.md",
+      "sha256": "44c945dfb1f8fcca9c8447258cada1644b0d5ebb2181696355f05f7c10a5e50b",
+      "kind": "documentation"
+    }
+  ],
+  "resources": [
+    {
+      "bytes": 496276,
+      "id": "pairsans500",
+      "instructions": "Obtain hash-matched originalInputs from font-inputs.json, then run prepare-fonts.py; original and output identities are both fail-closed, and render checks output SHA.",
+      "license": "SIL OFL 1.1; external font file, not distributed",
+      "local_path": "PairSans500.ttf",
+      "mode": "provide",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "permission": "user-supplied-not-distributed",
+      "sha256": "834c13770abff875f3a13aac626a1b389f61c94706d5e488fffaf44c2aabb836",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "kind": "unclassified",
+      "kind_basis": {
+        "method": "unresolved"
+      }
+    },
+    {
+      "bytes": 496372,
+      "id": "pairsans900",
+      "instructions": "Obtain hash-matched originalInputs from font-inputs.json, then run prepare-fonts.py; original and output identities are both fail-closed, and render checks output SHA.",
+      "license": "SIL OFL 1.1; external font file, not distributed",
+      "local_path": "PairSans900.ttf",
+      "mode": "provide",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "permission": "user-supplied-not-distributed",
+      "sha256": "518765b2fd6215305b3ccbd26e900aa67e0ae3bb4f1081ba5afd321c51f549d4",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "kind": "unclassified",
+      "kind_basis": {
+        "method": "unresolved"
+      }
+    },
+    {
+      "bytes": 1514968,
+      "id": "zcoolkuaile-regular",
+      "instructions": "Obtain hash-matched originalInputs from font-inputs.json, then run prepare-fonts.py; original and output identities are both fail-closed, and render checks output SHA.",
+      "license": "SIL OFL 1.1; external font file, not distributed",
+      "local_path": "ZCOOLKuaiLe-Regular.ttf",
+      "mode": "provide",
+      "notice": "LICENSES/ZCOOLKuaiLe-OFL.txt",
+      "permission": "user-supplied-not-distributed",
+      "sha256": "812a6fc1fe54b6d73a419245c32dfeba8aa33104d5be90d1cf6af082007cb71d",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/zcoolkuaile",
+      "kind": "unclassified",
+      "kind_basis": {
+        "method": "unresolved"
+      }
+    }
+  ],
+  "evidence": {
+    "reviewArtifacts": {
+      "status": "NOT_INCLUDED"
+    }
+  },
+  "design": {
+    "decisionCard": "DESIGN-RETENTION.md",
+    "nonAssetNote": "Shared drawing helpers and case-local scene code are not public design families; no runtime reuse is inferred from visual similarity.",
+    "ruleRefs": [],
+    "ruleStatus": "No separate formal rule card claimed; use decisionCard and sourceAnalysis.",
+    "sourceAnalysis": [
+      "DESIGN-REASONING.md"
+    ],
+    "assetUsage": []
+  },
+  "transfer": {
+    "motion": {
+      "status": "NOT_TESTED",
+      "note": "Fixed-size static only. No interaction, responsive layout, animation, audio or AV-sync approval implied."
+    }
+  }
+}

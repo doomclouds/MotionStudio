@@ -1,5 +1,5 @@
 const fs=require('node:fs'),path=require('node:path'),os=require('node:os'),assert=require('node:assert/strict'),{spawnSync}=require('node:child_process'),{createHash}=require('node:crypto');
-const root=__dirname,entry=JSON.parse(fs.readFileSync(path.join(root,'entry.json'))),lock=JSON.parse(fs.readFileSync(path.join(root,'font-lock.json'))),f=lock[0].file,repo=path.resolve(root,'../../..');let checks=0;
+const root=__dirname,entry=JSON.parse(fs.readFileSync(path.join(root,'work.json'))),lock=JSON.parse(fs.readFileSync(path.join(root,'font-lock.json'))),f=lock[0].file,repo=path.resolve(root,'../../..');let checks=0;
 function child(env,expr){return spawnSync(process.execPath,['-e',expr],{cwd:root,env:{...process.env,...env},encoding:'utf8'})}
 function denied(env,expr){assert.notEqual(child(env,expr).status,0);checks++}
 denied({OD_FONT_DIR:''},`require('./resources.cjs').font('${f}')`);

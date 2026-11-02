@@ -26,4 +26,4 @@
 
 ## 后续受限组合研究
 
-[文本片段与数值格网](../../../engine/design-elements/recipes/b10/README.md)参考本例设计逻辑但补充了复用的字形边界、量程和空值契约。原scene未迁移新接口，技术组合未用户审美认可，0新增公共族。
+[文本片段与数值格网](../../../engine/design-elements/recipes/reviewed/b10/README.md)参考本例设计逻辑但补充了复用的字形边界、量程和空值契约。原scene未迁移新接口，技术组合未用户审美认可，0新增公共族。

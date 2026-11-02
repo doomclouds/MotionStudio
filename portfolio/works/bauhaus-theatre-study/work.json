@@ -1,0 +1,266 @@
+{
+  "id": "bauhaus-theatre-study",
+  "version": "1.0.0",
+  "title": "河湾小剧场 · 三出戏一个舞台",
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "LICENSES/huashu-MIT-LICENSE.txt",
+      "LICENSES/NotoSansSC-OFL.txt",
+      "LICENSES/Poppins-OFL.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/LICENSE",
+      "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "https://github.com/google/fonts/tree/main/ofl/poppins"
+    ]
+  },
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "locks/npm-package-lock.json"
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "a2708f2b6d374d58dc902640b8461b5e27e00c0910ec6236169e6fbcbb16a9fc",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "Complete still and critical details independently reviewed; user requested retention. Font, paper shading and JPEG raster residuals remain. No responsive, browser, interaction or video validation."
+    }
+  },
+  "schema": "motionstudio.work/1",
+  "lifecycle": "retained",
+  "kind": "static",
+  "publication": {
+    "status": "source-release"
+  },
+  "authorship": {
+    "unofficial_recreation": true,
+    "original": {
+      "author": "alchaincyf (花叔 · 花生)",
+      "title": "Huashu design specimen",
+      "url": "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/web/10-bauhaus-geometric.html"
+    }
+  },
+  "render": {
+    "entrypoint": "design/scene.mjs",
+    "width": 1200,
+    "height": 750
+  },
+  "files": [
+    {
+      "path": "ASSET-USAGE.md",
+      "sha256": "781b2c2944d267344ca633571150dd70674f930eb36634d8362fc758219c3ad3",
+      "kind": "documentation"
+    },
+    {
+      "path": "CREDITS.md",
+      "sha256": "037d36edd26f7d092767884d9c8b55051637d3cfdf2305b9f0e5cf56d765ea7e",
+      "kind": "documentation"
+    },
+    {
+      "path": "DESIGN-REASONING.md",
+      "sha256": "6ddb9f1a6c7058715ddcf555af5f45cb63f9580988d08d75aed108f587cb2ac6",
+      "kind": "documentation"
+    },
+    {
+      "path": "LICENSES/NotoSansSC-OFL.txt",
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+      "kind": "license"
+    },
+    {
+      "path": "LICENSES/Poppins-OFL.txt",
+      "sha256": "6be04893d770899a015649c7aa3b582f871b272f8747a92b78b17c3e5c8b2573",
+      "kind": "license"
+    },
+    {
+      "path": "LICENSES/huashu-MIT-LICENSE.txt",
+      "sha256": "6d6a2a9caf2e6d2b76974050427053b2892d8aa4c33fd168ce63a537fcee9d96",
+      "kind": "license"
+    },
+    {
+      "path": "README.md",
+      "sha256": "600cc9932ab51fb8aa8065011cfd27066fb9dc30eea60c80877486af734fc243",
+      "kind": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "131a46b5fb87e7012c7c66343812a1715cc39ecb43b943c03d433a145539a28a",
+      "kind": "cover"
+    },
+    {
+      "path": "design/scene.mjs",
+      "sha256": "6d958c060811371ff64f24de53a05d380079b50a5461b540c06a529f970257ba",
+      "kind": "source"
+    },
+    {
+      "path": "font-charset.txt",
+      "sha256": "43cb4042f4ee0a94414235a2b3cca03e7266f719693f1ca4b533a9fe6610132f",
+      "kind": "documentation"
+    },
+    {
+      "path": "font-inputs.json",
+      "sha256": "8c65b4b36f1f9090616a1591114068341d93c94ef1d8c1591233f887d42730f3",
+      "kind": "config"
+    },
+    {
+      "path": "locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "kind": "lock"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "3376138df78fb0b3f62bc57d80dc440204cbe0a0709a07396e39636873862e6f",
+      "kind": "lock"
+    },
+    {
+      "path": "prepare-fonts.py",
+      "sha256": "85222080e9a2b944f447dc2c1db9fed773155dc10c99b9185afc9128450bc163",
+      "kind": "source"
+    },
+    {
+      "path": "ui-dependencies.json",
+      "sha256": "193c1c8e1d29b09714e426b42a648454e0f68951abd711f4d08641bf8cd9703f",
+      "kind": "config"
+    },
+    {
+      "path": "DESIGN-RETENTION.md",
+      "sha256": "829083a091b6bf0e76a17f9e4375dba7c0c5bf7836b984686d824acf1a7557f7",
+      "kind": "documentation"
+    }
+  ],
+  "resources": [
+    {
+      "bytes": 117560,
+      "id": "sans500",
+      "instructions": "Obtain originalInputs and run prepare-fonts.py. Original and derived hashes fail closed.",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "local_path": "Sans500.ttf",
+      "mode": "provide",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "permission": "user-supplied-not-distributed",
+      "sha256": "ac1ddb9a8935868c82a84d950b0c7803654cad0dd58c051d9ddde7ab909285ea",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "kind": "unclassified",
+      "kind_basis": {
+        "method": "unresolved"
+      }
+    },
+    {
+      "bytes": 118308,
+      "id": "sans700",
+      "instructions": "Obtain originalInputs and run prepare-fonts.py. Original and derived hashes fail closed.",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "local_path": "Sans700.ttf",
+      "mode": "provide",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "permission": "user-supplied-not-distributed",
+      "sha256": "46151670c812ed549557feec473c2ee3ac9019b3c546cd90a885d77e8b80198c",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "kind": "unclassified",
+      "kind_basis": {
+        "method": "unresolved"
+      }
+    },
+    {
+      "bytes": 118104,
+      "id": "sans900",
+      "instructions": "Obtain originalInputs and run prepare-fonts.py. Original and derived hashes fail closed.",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "local_path": "Sans900.ttf",
+      "mode": "provide",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "permission": "user-supplied-not-distributed",
+      "sha256": "af550f62a7152bece448e07a3d8e8d37088604dacec2789a5c3f8d548ab02b20",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "kind": "unclassified",
+      "kind_basis": {
+        "method": "unresolved"
+      }
+    },
+    {
+      "bytes": 157312,
+      "id": "poppins-semibold",
+      "instructions": "Obtain originalInputs and run prepare-fonts.py. Original and derived hashes fail closed.",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "local_path": "Poppins-SemiBold.ttf",
+      "mode": "provide",
+      "notice": "LICENSES/Poppins-OFL.txt",
+      "permission": "user-supplied-not-distributed",
+      "sha256": "d3bf1bdaf0550e83da9ac0b1d1d9fe6db086835a83aa28578e609a394b9a0286",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/poppins",
+      "kind": "unclassified",
+      "kind_basis": {
+        "method": "unresolved"
+      }
+    },
+    {
+      "bytes": 154836,
+      "id": "poppins-extrabold",
+      "instructions": "Obtain originalInputs and run prepare-fonts.py. Original and derived hashes fail closed.",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "local_path": "Poppins-ExtraBold.ttf",
+      "mode": "provide",
+      "notice": "LICENSES/Poppins-OFL.txt",
+      "permission": "user-supplied-not-distributed",
+      "sha256": "f2ab17c1a63a0ecc12c2461848fc8a469395e3cd2d641803e889c643d9f958e1",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/poppins",
+      "kind": "unclassified",
+      "kind_basis": {
+        "method": "unresolved"
+      }
+    }
+  ],
+  "evidence": {
+    "reviewArtifacts": {
+      "status": "NOT_INCLUDED"
+    }
+  },
+  "design": {
+    "decisionCard": "DESIGN-RETENTION.md",
+    "nonAssetNote": "Shared drawing helpers and case-local scene code are not public design families; no runtime reuse is inferred from visual similarity.",
+    "ruleRefs": [],
+    "ruleStatus": "No separate formal rule card claimed; use decisionCard and sourceAnalysis.",
+    "sourceAnalysis": [
+      "DESIGN-REASONING.md"
+    ],
+    "assetUsage": [
+      {
+        "callToken": "sections",
+        "callsite": "design/scene.mjs",
+        "familyId": "design.color-sections.v1",
+        "importToken": "color-sections.mjs",
+        "mode": "runtime-import",
+        "modulePath": "engine/design-elements/color-sections.mjs",
+        "moduleSha256": "cf2cf8ebf1b1bf8bd65dbbaef11f9546db9fe096d3eba7a0b18936e616ec2dd8",
+        "snapshotPath": null,
+        "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
+        "visibleRole": "黄色/米白两区，非几何插画"
+      }
+    ]
+  },
+  "transfer": {
+    "motion": {
+      "status": "NOT_TESTED",
+      "note": "Fixed-size static only. No interaction, responsive layout, animation, audio or AV-sync approval implied."
+    }
+  }
+}

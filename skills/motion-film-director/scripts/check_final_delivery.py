@@ -1,11 +1,9 @@
 #!/usr/bin/env python3
 """Fail-closed audiovisual review package gate; no automatic artistic approval."""
 import argparse
-import base64
 from datetime import datetime, timezone
 from fractions import Fraction
 import hashlib
-import html
 import importlib.util
 import json
 import os
@@ -333,43 +331,6 @@ def standardize(result, packet, inputs):
     return result
 
 
-def render_report(result, pictures, comparison_pictures=(), diagnostic_links=None):
-    escape = html.escape
-    def section(title, value):
-        return '<section><h2>' + escape(title) + '</h2><pre>' + escape(json.dumps(value, ensure_ascii=False, indent=2)) + '</pre></section>'
-    images = ''.join('<figure><img alt="Bound visual review artifact" src="data:' + mime +
-        ';base64,' + base64.b64encode(raw).decode() + '"><figcaption>SHA256 ' + sha +
-        '</figcaption></figure>' for mime, raw, sha in pictures)
-    sections = section('1 · Identity, scope and decision', {
-        'report_standard': result['report_standard'], 'version': result['report_standard_version'],
-        'generated_at': result['generated_at'], 'summary': result['summary'],
-        'movie': result['movie'], 'target_duration_seconds': result['target_duration_seconds'],
-        'status': result['status'], 'owner_approval': result['owner_approval'], 'blockers': result['blockers']})
-    sections += section('2 · Technical checks (not perception)', result['technical'])
-    if result.get('reference_based'):
-        sections += section('2A · Existing full comparison, waveforms and heatmaps', result['comparison_diagnostics'])
-        for name, item in result['comparison_diagnostics'].items():
-            for artifact in item['artifacts']:
-                # Relative links remain useful only when delivered with the verified diagnostic directory.
-                from urllib.parse import quote
-                sections += '<p>' + escape(name + ' / ' + artifact['role']) + ': <a href="' + escape(quote((diagnostic_links or {}).get(artifact['path'], artifact['path']), safe='/')) + '">' + escape(artifact['path']) + '</a></p>'
-    sections += '<section><h2>3 · Visual evidence</h2>' + images + '</section>'
-    for index, (kind, review_result) in enumerate(result['reviews'].items(), 4):
-        sections += section(str(index) + ' · ' + kind + ' review — method, coverage and findings', review_result)
-    sections += section('7 · Issue register and resolution', result['issues'])
-    sections += section('8 · Before / after comparison', result['before_after'])
-    for label, mime, raw, sha in comparison_pictures:
-        sections += '<figure><figcaption>' + escape(label) + ' · SHA256 ' + sha + '</figcaption><img alt="Before or after comparison" src="data:' + mime + ';base64,' + base64.b64encode(raw).decode() + '"></figure>'
-    sections += section('9 · Known limits and provenance', {'known_limits': result['known_limits'],
-        'trust_boundary': result['trust_boundary'], 'evidence_index': result['evidence_index'],
-        'packet_sha256': result['packet_sha256']})
-    return ('<!doctype html><html lang="en"><meta charset="utf-8">'
-        '<meta name="viewport" content="width=device-width">'
-        '<meta http-equiv="Content-Security-Policy" content="default-src \'none\'; img-src data:; style-src \'unsafe-inline\'">'
-        '<title>Audiovisual delivery review</title><style>body{max-width:1100px;margin:2rem auto;padding:1rem;font:16px system-ui;background:#101820;color:#edf4fa}pre{white-space:pre-wrap;overflow-wrap:anywhere}img{max-width:100%}section,figure{padding:1rem;border:1px solid #617383}h1{color:#ffd780}</style>'
-        '<h1>' + escape(result['status']) + '</h1><p>Not owner acceptance. Statements authenticate neither actual hearing nor artistic quality.</p>' + sections + '</html>')
-
-
 def load_fixed_renderer(path=None):
     """Only the repository renderer or an explicitly selected trusted local source."""
     source = Path(path).resolve() if path else Path(__file__).resolve().parents[3] / 'tools/reference-benchmark/report.py'
@@ -471,22 +432,18 @@ def render_canonical_pair(result, pictures, comparison_pictures, inputs, rendere
 
 
 def main(argv=None):
-    parser = argparse.ArgumentParser(description=__doc__)
+    parser = argparse.ArgumentParser(description=__doc__, allow_abbrev=False)
     parser.add_argument('video', type=Path)
     parser.add_argument('--packet', type=Path, required=True)
     parser.add_argument('--trusted-review-key', type=Path, action='append', default=[])
     parser.add_argument('--report-renderer', type=Path, help='Explicit trusted repository report.py for portable canonical rendering; imports local code')
     parser.add_argument('--project-root', type=Path, default=Path.cwd(), help='Fixed report location: PROJECT/output/review/')
-    parser.add_argument('--report', type=Path, help='Legacy explicit HTML path; omit for canonical PNG+HTML delivery')
     parser.add_argument('--ffprobe', default='ffprobe')
     parser.add_argument('--ffmpeg', default='ffmpeg')
     args = parser.parse_args(argv)
-    canonical = args.report is None
-    if canonical:
-        args.report = args.project_root.resolve() / 'output/review/report.html'
+    report_path = args.project_root.resolve() / 'output/review/report.html'
     try:
-        if canonical:
-            args.report.parent.mkdir(parents=True, exist_ok=True)
+        report_path.parent.mkdir(parents=True, exist_ok=True)
         inputs = Inputs(args.packet.parent)
         packet = load_json(inputs.read(args.packet))
         if not isinstance(packet, dict) or type(packet.get('schema')) is not int or packet.get('schema') != 1:
@@ -547,19 +504,13 @@ def main(argv=None):
                     '-protocol_whitelist', 'file,pipe', '-i', str((inputs.root / spec['path']).resolve()),
                     '-f', 'null', '-'], capture_output=True, check=True, timeout=60)
                 comparison_pictures.append((pair['issue_id'] + ' / ' + side, mime, raw, spec['sha256']))
-        diagnostic_links = {artifact['path']: os.path.relpath(inputs.root / artifact['path'], args.report.parent.resolve())
-            for item in result.get('comparison_diagnostics', {}).values() for artifact in item['artifacts']}
-        overview = None
-        if canonical:
-            overview_raw, report = render_canonical_pair(result, pictures, comparison_pictures, inputs, args.report_renderer)
-            overview = (args.report.parent / 'overview.png', overview_raw)
-            result['overview'] = {'path': str(overview[0]), 'sha256': hashlib.sha256(overview_raw).hexdigest()}
-            result['presentation_version'] = 'motionstudio-review-v1'
-            result['user_report_formats'] = ['png', 'html']
-        else:
-            report = render_report(result, pictures, comparison_pictures, diagnostic_links).encode('utf-8')
+        overview_raw, report = render_canonical_pair(result, pictures, comparison_pictures, inputs, args.report_renderer)
+        overview = (report_path.parent / 'overview.png', overview_raw)
+        result['overview'] = {'path': str(overview[0]), 'sha256': hashlib.sha256(overview_raw).hexdigest()}
+        result['presentation_version'] = 'motionstudio-review-v1'
+        result['user_report_formats'] = ['png', 'html']
         inputs.recheck()
-        result['report'] = {'path': str(args.report.resolve()), 'sha256': hashlib.sha256(report).hexdigest()}
+        result['report'] = {'path': str(report_path.resolve()), 'sha256': hashlib.sha256(report).hexdigest()}
         errors = validate_report(result)
         if errors:
             raise ValueError('Report standard validation: ' + '; '.join(errors))
@@ -568,29 +519,28 @@ def main(argv=None):
         overview_published = False
         temporary = None
         try:
-            with tempfile.NamedTemporaryFile(dir=args.report.parent, prefix='.delivery-report-', delete=False) as output:
+            with tempfile.NamedTemporaryFile(dir=report_path.parent, prefix='.delivery-report-', delete=False) as output:
                 temporary = Path(output.name)
                 output.write(report)
                 output.flush()
                 os.fsync(output.fileno())
             inputs.recheck()
-            if overview:
-                with tempfile.NamedTemporaryFile(dir=args.report.parent, prefix='.delivery-overview-', delete=False) as image_output:
-                    image_temporary = Path(image_output.name)
-                    image_output.write(overview[1])
-                    image_output.flush()
-                    os.fsync(image_output.fileno())
-                try:
-                    os.link(image_temporary, overview[0])
-                    overview_published = True
-                finally:
-                    image_temporary.unlink(missing_ok=True)
-            os.link(temporary, args.report)
+            with tempfile.NamedTemporaryFile(dir=report_path.parent, prefix='.delivery-overview-', delete=False) as image_output:
+                image_temporary = Path(image_output.name)
+                image_output.write(overview[1])
+                image_output.flush()
+                os.fsync(image_output.fileno())
+            try:
+                os.link(image_temporary, overview[0])
+                overview_published = True
+            finally:
+                image_temporary.unlink(missing_ok=True)
+            os.link(temporary, report_path)
             published = True
             inputs.recheck()
         except BaseException:
             if published:
-                args.report.unlink(missing_ok=True)
+                report_path.unlink(missing_ok=True)
             if overview_published:
                 overview[0].unlink(missing_ok=True)
             raise

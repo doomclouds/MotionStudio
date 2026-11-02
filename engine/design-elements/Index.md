@@ -1,5 +1,13 @@
 # UI 设计积木索引
 
+[配方源码角色分层](recipes/README.md)：`reviewed/` 按既有技术复核声明组织、`candidates/` 保留其他受限源码、`batches/` 仅保存批次导航。目录不授予成熟或审美状态，不保留旧路径兼容。
+
+## 历史包声明与当前 Git 树
+
+包内 README / manifest 可能保留作者冻结时的 `private`、`not pushed`、`NOT_PERFORMED` 或待集成声明。已明确标注为快照的文字按其作者阶段理解；其他声明仍按原件作用域读取，不能由目录存在自动判为过期。
+
+文件存在于所查询的已提交 Git 树，只证明该版本已纳入该树；不证明远端已推送、公开发布、独立审查完成、正式族/配方晋级或用户审美验收。导航展示当前查询提交与原始声明，不覆写历史 manifest；私有素材/证据边界和各级许可继续适用。按需查询工具只读已提交树，未提交整理须另行核对。
+
 计数单位为可调用的设计族，不是作品、函数或截图。
 
 | 稳定 ID | 文字指导 | 代码 | 复用场景 |
@@ -46,69 +54,81 @@
 
 | 配方 | 内容目的 | 设计与运行入口 |
 |---|---|---|
-| recipe.ordered-focus.v1 | 24项读序与当前任务焦点 | [说明](recipes/b06/docs/ordered-focus.md) · [运行](recipes/b06/README.md) |
-| recipe.editorial-evidence.v1 | 编辑式长文与同源面积证据 | [说明](recipes/b06/docs/editorial-evidence.md) · [运行](recipes/b06/README.md) |
+| recipe.ordered-focus.v1 | 24项读序与当前任务焦点 | [说明](recipes/reviewed/b06/docs/ordered-focus.md) · [运行](recipes/reviewed/b06/README.md) |
+| recipe.editorial-evidence.v1 | 编辑式长文与同源面积证据 | [说明](recipes/reviewed/b06/docs/editorial-evidence.md) · [运行](recipes/reviewed/b06/README.md) |
 
 每种配方以两份不同内容验证；字体和生成图/报告全部外置，实际依赖与边界见配方manifest及锁。
 
 ## B08 句法与份额配方
 
-[两种1200×750受限配方](recipes/b08/README.md)：显式句法宣言与完整外图例单环份额。新公共族0；五来源作品未迁移，新合成组合未获用户审美认可。两种内容变体、绘前边界/输入拒绝及源码出处均有独立审查。
+[两种1200×750受限配方](recipes/reviewed/b08/README.md)：显式句法宣言与完整外图例单环份额。新公共族0；五来源作品未迁移，新合成组合未获用户审美认可。两种内容变体、绘前边界/输入拒绝及源码出处均有独立审查。
 
 ## B09 强调词与单位图符配方
 
-[两种1200×750受限配方](recipes/b09/README.md)：有安全边界的旋转词块与同尺寸全/半/零单位图符。新公共族0；五来源作品未迁移，新合成组合未获用户审美认可。两种内容变体、绘前边界/输入拒绝及源码出处均有独立审查。
+[两种1200×750受限配方](recipes/reviewed/b09/README.md)：有安全边界的旋转词块与同尺寸全/半/零单位图符。新公共族0；五来源作品未迁移，新合成组合未获用户审美认可。两种内容变体、绘前边界/输入拒绝及源码出处均有独立审查。
 
 ## B10 文本片段与数值格网
 
-[显式彩色文本与等面积格网](recipes/b10/README.md)是两种固定尺寸受限配方。0新增族，原scene未迁移，新组合未用户审美认可。量程/空值/单位和显式片段角色必须由内容提供，不执行或解析代码。
+[显式彩色文本与等面积格网](recipes/reviewed/b10/README.md)是两种固定尺寸受限配方。0新增族，原scene未迁移，新组合未用户审美认可。量程/空值/单位和显式片段角色必须由内容提供，不执行或解析代码。
 
 ## OpenDesign 局部候选与去品牌配方
 
-[Social / Lull / FlowAI受限适配候选](recipes/open-design-three/Index.md)：独立测试候选，来源作品未迁移；不计新增公共族或正式配方。
+[Social / Lull / FlowAI受限适配候选](recipes/candidates/open-design-three/Index.md)：独立测试候选，来源作品未迁移；不计新增公共族或正式配方。
 
-[Metric board去品牌配方](recipes/metric-board/README.md)：仅通用指标板与合成示例，不发布Merchant手机原画、品牌或商标；不计新增公共族。
+[Metric board去品牌配方](recipes/candidates/metric-board/README.md)：仅通用指标板与合成示例，不发布Merchant手机原画、品牌或商标；不计新增公共族。
 
 ## 待审：静态通道标题与软光团编辑配方
 
-[static-effects-candidate](recipes/static-effects-candidate/README.md) 仅为隔离候选集成：Glitch / Liquid 两个局部配方，外置字体与输出，不增加14族/9配方，不新增portfolio条目。用户已对本组表达认可并要求沉淀提交；不等于适配器单项审美验收。技术测试不替代独审或真实复用；此链接是拟议增量，不表示已执行提交。
+[static-effects-candidate](recipes/candidates/static-effects-candidate/README.md) 仅为隔离候选集成：Glitch / Liquid 两个局部配方，外置字体与输出，不增加14族/9配方，不新增portfolio条目。用户已对本组表达认可并要求沉淀提交；不等于适配器单项审美验收。技术测试不替代独审或真实复用；此链接是拟议增量，不表示已执行提交。
 
 ## OpenDesign 第二组 · 选择性沉淀
 
-[两项受限候选与三案源码](recipes/open-design-static-three/README.md)：显式零基线线性图表、固定种子光场；Bold Signal仅保留案例配方。批次保留/提交已获授权；新组合未单独用户审美验收，0新增公共族/正式配方。字体全部外置且固定官方URL可获取；Native静态适配不等于动画。
+[两项受限候选与三案源码](recipes/candidates/open-design-static-three/README.md)：显式零基线线性图表、固定种子光场；Bold Signal仅保留案例配方。批次保留/提交已获授权；新组合未单独用户审美验收，0新增公共族/正式配方。字体全部外置且固定官方URL可获取；Native静态适配不等于动画。
 
 ## 第五组：材质场、文件格网与索引色像素层
 
-[三项受限静态候选与双内容案例索引](recipes/fifth-static-candidates/Index.md)链接设计指导、契约、可调用代码、样例与完整许可。只保留去品牌的57文本源码投影；不增加公共14族、正式配方或portfolio作品，不把私有完整研究画面或其审计记录作为公开资产。标量场与像素层无需字体，文件格网使用固定官方来源的外置OFL字体。
+[三项受限静态候选与双内容案例索引](recipes/batches/fifth-static-candidates/Index.md)链接设计指导、契约、可调用代码、样例与完整许可。只保留去品牌的57文本源码投影；不增加公共14族、正式配方或portfolio作品，不把私有完整研究画面或其审计记录作为公开资产。标量场与像素层无需字体，文件格网使用固定官方来源的外置OFL字体。
 
 ## 第六组：同源字节诊断与空间字符
 
-[两项受限静态候选索引](recipes/sixth-static-candidates/Index.md)连接原创量化场/直方图/采样注记，以及二维字符/标记/光标/同源摘要。44 个文本文件，不含原图、字体二进制或审查记录；0 新增公共族、正式配方和 portfolio 作品。外置精确字体条件分别为 Liberation provide-exact 与固定官方 IBM OFL 获取，不能混称全部公网恢复已验证。
+[两项受限静态候选索引](recipes/batches/sixth-static-candidates/Index.md)连接原创量化场/直方图/采样注记，以及二维字符/标记/光标/同源摘要。44 个文本文件，不含原图、字体二进制或审查记录；0 新增公共族、正式配方和 portfolio 作品。外置精确字体条件分别为 Liberation provide-exact 与固定官方 IBM OFL 获取，不能混称全部公网恢复已验证。
 
 ## 第七组：离散时序与字形证据
 
-[两项受限候选与组合索引](recipes/seventh-static-candidates/Index.md)链接同源半 tick 数字/符号总线和固定实例的 outline/Unicode/hmtx/轴证据。62 个新重建文本（27＋35），不含参考图、字体/轮廓资源或私有记录；0 新增公共族、正式配方和 portfolio。精确外置字体条件不同，PULSE provide-exact 不冒称公网恢复。新组合的技术审查不等于用户逐项审美验收，静态不等于 motion。
+[两项受限候选与组合索引](recipes/batches/seventh-static-candidates/Index.md)链接同源半 tick 数字/符号总线和固定实例的 outline/Unicode/hmtx/轴证据。62 个新重建文本（27＋35），不含参考图、字体/轮廓资源或私有记录；0 新增公共族、正式配方和 portfolio。精确外置字体条件不同，PULSE provide-exact 不冒称公网恢复。新组合的技术审查不等于用户逐项审美验收，静态不等于 motion。
 
 ## Eighth restricted static recipes
 
-See [bounded drape and radial categories](recipes/eighth-static-candidates/Index.md): opt-in source candidates only;0 new registered families.
+See [bounded drape and radial categories](recipes/batches/eighth-static-candidates/Index.md): opt-in source candidates only;0 new registered families.
 
 ## 第九组：毫秒字幕状态与作者指定字节编辑
 
-[两项受限源码候选索引](recipes/ninth-static-candidates/Index.md)链接同模型字幕列表/区间/透明当前字幕，以及给定编辑的base→target坐标/来源证据。64个原包文本（31＋33），0新增公共族、正式配方或portfolio。MIT/BSD-2与外置OFL分别适用；不带原图、字体、预览或私有审查。不是播放器/自动转录/自动diff，独立技术验证不等于用户逐项审美验收。
+[两项受限源码候选索引](recipes/batches/ninth-static-candidates/Index.md)链接同模型字幕列表/区间/透明当前字幕，以及给定编辑的base→target坐标/来源证据。64个原包文本（31＋33），0新增公共族、正式配方或portfolio。MIT/BSD-2与外置OFL分别适用；不带原图、字体、预览或私有审查。不是播放器/自动转录/自动diff，独立技术验证不等于用户逐项审美验收。
 
 ## 第十组：体积切片、采样窗/对话与共享游标
 
-[三包四种受限方法](recipes/tenth-static-candidates/Index.md)：21文本linked-volume（MIT）、23文本sampled-window/authored-dialogue（MIT）、18文本shared-trace（MPL-2.0＋MIT辅助）。62原包文本保持审定字节，0新增族/正式配方/portfolio；字体/依赖/产物外置，不含PHASE GPL私存、参考图或私有记录。静态与同源模型验证不等于应用/浏览器/音频/医学能力或用户逐项审美认可。
+[三包四种受限方法](recipes/batches/tenth-static-candidates/Index.md)：21文本linked-volume（MIT）、23文本sampled-window/authored-dialogue（MIT）、18文本shared-trace（MPL-2.0＋MIT辅助）。62原包文本保持审定字节，0新增族/正式配方/portfolio；字体/依赖/产物外置，不含PHASE GPL私存、参考图或私有记录。静态与同源模型验证不等于应用/浏览器/音频/医学能力或用户逐项审美认可。
 
 ## 第十一组：精确账本与显式段/方形
 
-[两包三种受限方法](recipes/eleventh-static-candidates/Index.md)：flow-ledger 22 文本＋explicit-geometry 25 文本。前者把积分总量、完整分区与稳定排名绑定同一合成模型；后者保留自编二进制连续段和有序嵌套理想面积，不自动升级为字体/随机纹理/通用图表。MIT 与独立来源/字体通知原样保留；0 正式族/配方/portfolio，资源/产物外置，私图、字体二进制与 GPL 队列排除。
+[两包三种受限方法](recipes/batches/eleventh-static-candidates/Index.md)：flow-ledger 22 文本＋explicit-geometry 25 文本。前者把积分总量、完整分区与稳定排名绑定同一合成模型；后者保留自编二进制连续段和有序嵌套理想面积，不自动升级为字体/随机纹理/通用图表。MIT 与独立来源/字体通知原样保留；0 正式族/配方/portfolio，资源/产物外置，私图、字体二进制与 GPL 队列排除。
 
 ## 第十二组：同一平面的互补分界
 
-[Complementary seam 受限候选](recipes/twelfth-static-candidates/Index.md)：25 文本、1 方法、0 新正式族/配方/portfolio。单调分界决定同一 RGBA 平面的互补像素归属；两份可独立由宿主放置。既有 sampled-window 仅复用，不另计；不是通用多边形切割/纸张模拟。MIT 与外置 Native/OFL 通知保留；私图、字体和 GPL 统计队列排除。
+[Complementary seam 受限候选](recipes/batches/twelfth-static-candidates/Index.md)：25 文本、1 方法、0 新正式族/配方/portfolio。单调分界决定同一 RGBA 平面的互补像素归属；两份可独立由宿主放置。既有 sampled-window 仅复用，不另计；不是通用多边形切割/纸张模拟。MIT 与外置 Native/OFL 通知保留；私图、字体和 GPL 统计队列排除。
 
 ## 第十三组：随主墨迹变化的注记区
 
-[Ink-bay 受限候选](recipes/thirteenth-static-candidates/Index.md)：32 文本、1 个受限组合关系、0 新正式族/配方/portfolio。主字墨迹加显式间隔派生同一行相反侧注记区，次文本通过实际 fit 才可绘制；既有墨迹对齐不重复计数。MIT 实现和独立外置 OFL/Native 通知保留；无私图、字体二进制或 GPL 队列，不声称自动换行、动态布局或用户逐项审美验收。
+[Ink-bay 受限候选](recipes/batches/thirteenth-static-candidates/Index.md)：32 文本、1 个受限组合关系、0 新正式族/配方/portfolio。主字墨迹加显式间隔派生同一行相反侧注记区，次文本通过实际 fit 才可绘制；既有墨迹对齐不重复计数。MIT 实现和独立外置 OFL/Native 通知保留；无私图、字体二进制或 GPL 队列，不声称自动换行、动态布局或用户逐项审美验收。
+
+## 补充源码入口（保持原声明，不自动晋级）
+
+以下既有源码包补齐发现入口，不改变族、正式配方、作品计数或包内历史状态。生命周期与权利仍以各包原始 manifest、契约和通知分别读取。
+
+- [确定性粒子场](recipes/candidates/deterministic-particle-field/README.md)
+- [合成演示账本](recipes/candidates/invoice-demo-ledger/README.md)
+- [OpenDesign 第二组候选源码](recipes/candidates/od-second-group-candidate/README.md)
+- [静态评审片段](recipes/candidates/review-tiles-candidate/README.md)
+- [XHS08 语义面积源码](recipes/candidates/xhs08/README.md)（已被 portable 构建/测试引用；不等于完成正式配方晋级）
+
+从仓库根目录运行，按需查询已提交树：`python3 scripts/design-navigation.py --repo . --format markdown`；`--details` 展开逐项来源声明和权利入口。该工具不读取未提交更改、不登记资产，也不生成需手工维护的第二份清单。

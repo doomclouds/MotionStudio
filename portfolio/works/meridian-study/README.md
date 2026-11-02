@@ -8,7 +8,7 @@ Complete editable source: `design/scene.mjs`. [Design reasoning](DESIGN-REASONIN
 
 ## Restore and render
 
-Use the existing MotionStudio Native core and its lock. Obtain licensed original inputs named LiberationSans-Regular.ttf, LiberationSans-Bold.ttf into an external directory, matching `font-inputs.json` SHA identities; family URLs and actual terms are in `entry.json`/`LICENSES`. Preparation verifies the supplied original Liberation Sans files directly; no subsetting or font derivation occurs. The render entry checks those same hashes.
+Use the existing MotionStudio Native core and its lock. Obtain licensed original inputs named LiberationSans-Regular.ttf, LiberationSans-Bold.ttf into an external directory, matching `font-inputs.json` SHA identities; family URLs and actual terms are in `work.json`/`LICENSES`. Preparation verifies the supplied original Liberation Sans files directly; no subsetting or font derivation occurs. The render entry checks those same hashes.
 
 ```sh
 python prepare-fonts.py --font-dir /absolute/external-fonts

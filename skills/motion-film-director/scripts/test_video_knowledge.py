@@ -14,7 +14,7 @@ class KnowledgeTests(unittest.TestCase):
         self.tmp=tempfile.TemporaryDirectory(); self.base=Path(self.tmp.name)/'skill'; self.root=self.base/'research/video-knowledge'
         # Entirely synthetic in-memory metadata; no source media or production case is read.
         case = {
-            'schema_version':1, 'kind':'case', 'id':'case-synthetic', 'revision':1,
+            'schema_version':3, 'evidence_type':'video', 'kind':'case', 'id':'case-synthetic', 'revision':1,
             'title':'Synthetic structural fixture, not an observed film', 'status':'observed-with-limits',
             'tags':['rhythm'], 'revision_note':'Fictional test data only', 'supersedes':[],
             'source':{'origin':'external-reference', 'creator':'Synthetic fixture', 'title':'Fictional media',
@@ -26,14 +26,15 @@ class KnowledgeTests(unittest.TestCase):
             'interpretations':[{'claim_type':'inferred','alternative':'Synthetic alternative','evidence':['O1']}],
             'technique_ids':['tech-synthetic'], 'feedback':[]}
         technique = {
-            'schema_version':1,'kind':'technique','id':'tech-synthetic','revision':1,'title':'Synthetic hypothesis',
+            'schema_version':3,'evidence_type':'video','kind':'technique','id':'tech-synthetic','revision':1,'title':'Synthetic hypothesis',
             'status':'hypothesis','tags':['rhythm'],'claim_type':'inferred','hypothesis':'Fixture only',
             'evidence':[{'case_id':'case-synthetic','observation_ids':['O1']}],
             'applies_when':'Test only','limits':'No actual observation','counterexample':'Synthetic counterexample',
             'falsification_test':'Mutation fixture','rule_level':'candidate',
             'validation':{'state':'not-tested-in-transfer','results':[]},'revision_note':'Synthetic data','supersedes':[]}
-        index={'schema_version':1,'cases':[{'id':case['id'],'path':'cases/synthetic.json','tags':case['tags']}],
-               'techniques':[{'id':technique['id'],'path':'techniques/synthetic.json','tags':technique['tags']}], 'legacy':[]}
+        case['decision'] = json.loads((k.DEFAULT_ROOT.parent.parent/'references/knowledge-decision-example/cases/plan.json').read_text())['decision']
+        index={'schema_version':3,'scope':'Synthetic fixtures only','cases':[{'id':case['id'],'path':'cases/synthetic.json','tags':case['tags']}],
+               'techniques':[{'id':technique['id'],'path':'techniques/synthetic.json','tags':technique['tags']}]}
         for rel,data in [('cases/synthetic.json',case),('techniques/synthetic.json',technique),('index.json',index)]:
             path=self.root/rel;path.parent.mkdir(parents=True,exist_ok=True);path.write_text(json.dumps(data))
     def tearDown(self): self.tmp.cleanup()
@@ -48,6 +49,29 @@ class KnowledgeTests(unittest.TestCase):
         errors,cards=k.validate(self.root);self.assertEqual(errors,[])
         self.assertEqual(len(k.query(cards,['rhythm'],kind='technique',limit=1)),1)
         self.assertEqual(k.query(cards,['nonexistent']),[])
+    def test_old_versions_legacy_and_unknown_fields_rejected(self):
+        original=(self.root/'index.json').read_text()
+        for mutation in ({'schema_version':1}, {'schema_version':2}, {'legacy':[]}, {'extra':'not discarded'}):
+            (self.root/'index.json').write_text(original)
+            self.edit('index.json',lambda index:index.update(mutation))
+            self.bad()
+        (self.root/'index.json').write_text(original)
+        self.edit('cases/synthetic.json',lambda c:c['source'].update(unknown_fact='preserve, never ignore'))
+        self.bad()
+    def test_no_decision_is_not_a_runtime_mode(self):
+        self.edit('cases/synthetic.json',lambda c:c.pop('decision'))
+        self.bad()
+    def test_observations_survive_unrecorded_decision(self):
+        self.edit('cases/synthetic.json',lambda c:c.update(decision={'schema_version':3,'record_state':'not-recorded','reason':'Source records observations only.'}))
+        errors,cards=k.validate(self.root);self.assertEqual(errors,[])
+        self.assertTrue(k.query(cards,method='dense-frames'))
+        self.assertEqual(k.decide(cards)['status'],'no-match')
+        self.edit('cases/synthetic.json',lambda c:c['decision'].update(options=[]))
+        self.bad()
+    def test_duplicate_json_key_rejected(self):
+        p=self.root/'index.json'
+        p.write_text(p.read_text().replace('"schema_version": 3','"schema_version": 3, "schema_version": 3'))
+        self.bad()
     def test_method_filter_does_not_invent_listening(self):
         errors,cards=k.validate(self.root);self.assertEqual(errors,[])
         self.assertEqual(k.query(cards,method='actual-listening'),[])
@@ -126,7 +150,6 @@ class DecisionTests(unittest.TestCase):
         self.assertFalse(marker.exists())
     def tested(self):
         candidate=json.loads((self.root/'cases/synthetic.json').read_text())
-        candidate.pop('decision',None)
         candidate.update(id='case-synthetic-candidate',technique_ids=[])
         candidate['source']['sha256']=hashlib.sha256(b'synthetic candidate').hexdigest()
         (self.root/'cases/candidate.json').write_text(json.dumps(candidate))
@@ -140,6 +163,8 @@ class DecisionTests(unittest.TestCase):
             d['evidence_refs'].append(dict(d['evidence_refs'][0],id='E2',case_id='case-synthetic-candidate',binding_id='candidate'))
             d['result'].update(outcome='supports',evidence_ids=['E1','E2'])
         self.change(modify)
+        decision=json.loads((self.root/'cases/synthetic.json').read_text())['decision']
+        self.edit('cases/candidate.json',lambda c:c.update(decision=decision))
     def test_tested_structural_fixture(self):
         self.tested();self.assertEqual(k.validate(self.root)[0],[])
     def test_invalid_control_preserves_inconclusive(self):
@@ -162,7 +187,7 @@ class DecisionTests(unittest.TestCase):
         self.tested()
         self.change(lambda d:(d.update(lifecycle='falsified'),d['result'].update(outcome='contradicts')))
         errors,cards=k.validate(self.root);self.assertEqual(errors,[])
-        result=k.decide(cards);self.assertEqual(result['recommendations'],[]);self.assertEqual(len(result['counterevidence']),1)
+        result=k.decide(cards);self.assertEqual(result['recommendations'],[]);self.assertEqual({item['case_id'] for item in result['counterevidence']},{'case-synthetic','case-synthetic-candidate'})
         for state in ('withdrawn','stale'):
             self.change(lambda d:d.update(lifecycle=state))
             errors,cards=k.validate(self.root);self.assertEqual(errors,[])
@@ -208,7 +233,7 @@ class DecisionTests(unittest.TestCase):
         self.tested();self.feedback_case(status='withdrawn',result='retracted')
         errors,cards=k.validate(self.root);self.assertEqual(errors,[])
         result=k.decide(cards);self.assertEqual(result['recommendations'],[])
-        item=result['counterevidence'][0]
+        item=next(item for item in result['counterevidence'] if item['case_id']=='case-synthetic')
         self.assertEqual(item['result']['evidence_ids'],['E1','E2'])
         self.assertEqual(item['result']['owner_feedback_refs'][0]['case_revision'],1)
         self.assertTrue(item['unavailable_reasons'])
@@ -249,9 +274,14 @@ class DecisionTests(unittest.TestCase):
         self.edit('cases/candidate.json',lambda c:c.update(status='withdrawn'))
         errors,_=k.validate(self.root)
         self.assertTrue(any('promotion contradicts linked decision' in e for e in errors))
-    def test_legacy_no_decision_promotion_still_valid(self):
+    def test_unrecorded_decision_cannot_promote_transfer(self):
+        self.tested();self.promote()
+        self.edit('cases/synthetic.json',lambda c:c.update(decision={'schema_version':3,'record_state':'not-recorded','reason':'Observation record without a recorded decision.'}))
+        errors,_=k.validate(self.root)
+        self.assertTrue(any('promotion contradicts linked decision' in e for e in errors))
+    def test_no_decision_promotion_rejected(self):
         self.tested();self.promote()
         self.edit('cases/synthetic.json',lambda c:c.pop('decision'))
-        self.assertEqual(k.validate(self.root)[0],[])
+        self.bad()
 
 if __name__=='__main__': unittest.main()

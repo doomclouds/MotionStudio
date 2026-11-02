@@ -1,6 +1,6 @@
 # 天文台夜观 · 环形信息图
 
-完整1200×750固定静态Native工程，用户已同意收藏。Huashu样张非官方复刻，非杉浦康平本人作品或真实天文资料。设计逻辑见design/DESIGN-ANALYSIS.md；沉淀入口DESIGN-RETENTION.md与retention.json。
+完整1200×750固定静态Native工程，用户已同意收藏。Huashu样张非官方复刻，非杉浦康平本人作品或真实天文资料。设计逻辑见design/DESIGN-ANALYSIS.md；沉淀入口DESIGN-RETENTION.md与work.json。
 
 ## 离线复现
 按font-inputs.json官方来源及固定SHA合法自备原字体，使用fonttools4.61.1与locks中的Native版本：

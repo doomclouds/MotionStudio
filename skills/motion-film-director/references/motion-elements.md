@@ -307,7 +307,7 @@ glyph内部采样不加到公wrapper数。570次run提交不等于全程完整�
 
 ### 折叠纸面与印刷附着
 
-`geometry.hinged-panel`：`compileHingedPanel` + `sampleHingedPanel`，canonical `lib/foundations/geometry/hinged-panel.mjs`；使用[指南](../../../engine/motion-elements/docs/hinged-panel.md)。
+`geometry.hinged-panel`：`compileHingedPanel` + `sampleHingedPanel`，canonical `lib/foundations/geometry/hinged-panel.mjs`；使用[指南（便携包）](../runtime/motion-elements/docs/hinged-panel.md) / [指南（源码仓库）](https://github.com/doomclouds/MotionStudio/blob/ebda9d2661be84e1314cee14baf4acd241b6069e/engine/motion-elements/docs/hinged-panel.md)。
 这是XYZ凸平面铰链几何，单项机制；`transformHingedPoint`只映射同一matrix下装饰点，不另计。
 父/子在共同展开画稿坐标定义，parent×local；12值row-major不是Canvas六值矩阵。投影/绘图/排序由作品负责，不能假称真实纸张物理或通用3D。
 3..64顶点、输入点±10000、角±2π、128层上限，严格own字段/普通稠密数组。
@@ -317,26 +317,26 @@ glyph内部采样不加到公wrapper数。570次run提交不等于全程完整�
 
 ### 悬线、时间重叠与显式分阶段交接
 
-- `geometry.catenary` / `compileCatenary`：[指南](../../../engine/motion-elements/docs/catenary.md)，canonical `lib/foundations/geometry/catenary.mjs`。支持端点＋长度＋重力确定静态弧线；不是动态绳索、碰撞或任意近竖直求解。浮点near-taut与半程接缝、弧长地址非实测长度限制须保留。原片冻结runtime与公共修正版用独立数值/Native桥接，不冒同字节或全片重制。
-- `composition.interval-lanes` / `intervalLaneLayout`：[指南](../../../engine/motion-elements/docs/interval-lanes.md)，canonical `lib/foundations/layout/interval-lanes.mjs`。固定半开区间最少分轨；调用者改时间，不由API自动排程。初始化快照经交接消费不冒每帧重新求解。
-- `recipe.staged-layout-handoff` / `compileStagedLayoutHandoff`：[指南](../../../engine/motion-elements/docs/staged-layout-handoff.md)，位于recipes，1配方不计基础。明确same-ID snapshots/waypoint及连续ranges；内部边界后段、reduced全局终态。无自动避碰、改时或waypoint生成。历史项目手写分段不是新API调用证明。
+- `geometry.catenary` / `compileCatenary`：[指南（便携包）](../runtime/motion-elements/docs/catenary.md) / [指南（源码仓库）](https://github.com/doomclouds/MotionStudio/blob/ebda9d2661be84e1314cee14baf4acd241b6069e/engine/motion-elements/docs/catenary.md)，canonical `lib/foundations/geometry/catenary.mjs`。支持端点＋长度＋重力确定静态弧线；不是动态绳索、碰撞或任意近竖直求解。浮点near-taut与半程接缝、弧长地址非实测长度限制须保留。原片冻结runtime与公共修正版用独立数值/Native桥接，不冒同字节或全片重制。
+- `composition.interval-lanes` / `intervalLaneLayout`：[指南（便携包）](../runtime/motion-elements/docs/interval-lanes.md) / [指南（源码仓库）](https://github.com/doomclouds/MotionStudio/blob/ebda9d2661be84e1314cee14baf4acd241b6069e/engine/motion-elements/docs/interval-lanes.md)，canonical `lib/foundations/layout/interval-lanes.mjs`。固定半开区间最少分轨；调用者改时间，不由API自动排程。初始化快照经交接消费不冒每帧重新求解。
+- `recipe.staged-layout-handoff` / `compileStagedLayoutHandoff`：[指南（便携包）](../runtime/motion-elements/docs/staged-layout-handoff.md) / [指南（源码仓库）](https://github.com/doomclouds/MotionStudio/blob/ebda9d2661be84e1314cee14baf4acd241b6069e/engine/motion-elements/docs/staged-layout-handoff.md)，位于recipes，1配方不计基础。明确same-ID snapshots/waypoint及连续ranges；内部边界后段、reduced全局终态。无自动避碰、改时或waypoint生成。历史项目手写分段不是新API调用证明。
 
 两部实际有声候选与源码/逐项调用/提交和可见范围已私有绑定；限定帧审不升级常速、听审、用户艺术或通用迁移。保持catalog的各质量门，不将项目图像/声音/参数写入公开机制。
 
 
 ### 显式场提取轮廓
 
-`geometry.iso-contour` / `compileContourGrid`、`extractIsoContours`，canonical `lib/foundations/geometry/iso-contour.mjs`，见[指南](../../../engine/motion-elements/docs/iso-contour.md)。一个基础，不按场源、level或配色重复计数。固定两三角线性域提取isolines，并非通用filled-domain求解；closed不能替代branch/plateau/open检查。公共65536样本上限与IEEE退化诊断明确，未经证明不得称实时、连续拓扑或解析场精确边界。
+`geometry.iso-contour` / `compileContourGrid`、`extractIsoContours`，canonical `lib/foundations/geometry/iso-contour.mjs`，见[指南（便携包）](../runtime/motion-elements/docs/iso-contour.md) / [指南（源码仓库）](https://github.com/doomclouds/MotionStudio/blob/ebda9d2661be84e1314cee14baf4acd241b6069e/engine/motion-elements/docs/iso-contour.md)。一个基础，不按场源、level或配色重复计数。固定两三角线性域提取isolines，并非通用filled-domain求解；closed不能替代branch/plateau/open检查。公共65536样本上限与IEEE退化诊断明确，未经证明不得称实时、连续拓扑或解析场精确边界。
 
 实际10.4秒候选有624次提取与全部真实fill/clip/outline证据；公共硬化版另有624帧状态/路径和22代表PNG+22新进程桥接，原片/源码不覆盖。限定帧审不是常速、听审、用户艺术认可或跨作品迁移；遵守目录质量门，不把私有媒体/参数入库。
 
 
 ### 图像成为纸卡；照片成为有注释的作品墙
 
-- `raster.neighborhood-convolution`：[指南](../../../engine/motion-elements/docs/convolution.md)。真实归一正核卷积，blur/unsharp不拆数量；sRGB非线性光，alpha与64M总tap预算明确，缓存不冒每帧重算。
-- `raster.projective-quad`：[指南](../../../engine/motion-elements/docs/projective-raster.md)。凸四角单应逆采样，点helper/别名一个机制；无AA/mipmap或真正3D。
-- `composition.masonry`：[指南](../../../engine/motion-elements/docs/masonry.md)。源序最短列，不是globaloptimal/自动测图裁切。
-- `composition.anchored-labels`：[指南](../../../engine/motion-elements/docs/anchored-labels.md)。显式测量框与候选first-fit；unplaced明确，不自动生成候选/leader或识别焦点。
+- `raster.neighborhood-convolution`：[指南（便携包）](../runtime/motion-elements/docs/convolution.md) / [指南（源码仓库）](https://github.com/doomclouds/MotionStudio/blob/ebda9d2661be84e1314cee14baf4acd241b6069e/engine/motion-elements/docs/convolution.md)。真实归一正核卷积，blur/unsharp不拆数量；sRGB非线性光，alpha与64M总tap预算明确，缓存不冒每帧重算。
+- `raster.projective-quad`：[指南（便携包）](../runtime/motion-elements/docs/projective-raster.md) / [指南（源码仓库）](https://github.com/doomclouds/MotionStudio/blob/ebda9d2661be84e1314cee14baf4acd241b6069e/engine/motion-elements/docs/projective-raster.md)。凸四角单应逆采样，点helper/别名一个机制；无AA/mipmap或真正3D。
+- `composition.masonry`：[指南（便携包）](../runtime/motion-elements/docs/masonry.md) / [指南（源码仓库）](https://github.com/doomclouds/MotionStudio/blob/ebda9d2661be84e1314cee14baf4acd241b6069e/engine/motion-elements/docs/masonry.md)。源序最短列，不是globaloptimal/自动测图裁切。
+- `composition.anchored-labels`：[指南（便携包）](../runtime/motion-elements/docs/anchored-labels.md) / [指南（源码仓库）](https://github.com/doomclouds/MotionStudio/blob/ebda9d2661be84e1314cee14baf4acd241b6069e/engine/motion-elements/docs/anchored-labels.md)。显式测量框与候选first-fit；unplaced明确，不自动生成候选/leader或识别焦点。
 
 两部实际有声候选分别覆盖2项；纸卡公共输入硬化与原片通过540帧实际buffer/draw桥接和22代表PNG+22新Node，不冒新编码；摄影两项保持原10文件runtime闭包字节，旧staged recipe复用不计新。保留49帧三注释全不透明的读时风险，数量/工程合格不是风格背书。常速、听审、用户与迁移门依catalog，不导入私人素材。
 

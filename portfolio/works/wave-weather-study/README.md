@@ -8,7 +8,7 @@ Complete editable source: `design/scene.mjs`. [Design reasoning](DESIGN-REASONIN
 
 ## Restore and render
 
-Use the existing MotionStudio Native core and its lock. Obtain licensed original inputs named NotoSansSC-variable.ttf, ZCOOLKuaiLe-Regular.ttf into an external directory, matching `font-inputs.json` SHA identities; family URLs and actual terms are in `entry.json`/`LICENSES`. Preparation verifies original inputs before writing; it verifies output font identities after derivation, and the render entry checks the same output hashes. Noto subsets use deterministic metadata. Use the pinned fonttools version in locks/runtime.json when preparing.
+Use the existing MotionStudio Native core and its lock. Obtain licensed original inputs named NotoSansSC-variable.ttf, ZCOOLKuaiLe-Regular.ttf into an external directory, matching `font-inputs.json` SHA identities; family URLs and actual terms are in `work.json`/`LICENSES`. Preparation verifies original inputs before writing; it verifies output font identities after derivation, and the render entry checks the same output hashes. Noto subsets use deterministic metadata. Use the pinned fonttools version in locks/runtime.json when preparing.
 
 ```sh
 python prepare-fonts.py --font-dir /absolute/external-fonts

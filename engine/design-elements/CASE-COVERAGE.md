@@ -1,22 +1,22 @@
 # 作品与公共资产覆盖（自动生成）
 
-旧16案的逐例设计关系与未泛化边界完整保留于[历史设计说明](CASE-DESIGN-NOTES.md)，不是调用账单。
+由portfolio/work.py index生成；作品真源仅work.json。来源不是调用证明，候选调用不代表复验通过。
 
-详见 [完整静态作品语义索引（远端仓库，不随Skill打包）](https://github.com/doomclouds/MotionStudio/blob/dev/portfolio/DESIGN-INDEX.md)。本表区分“提供提取灵感的来源”与“源码实际调用”，不能用来源关系冒充复用。
+[统一作品索引](../../portfolio/INDEX.md) · [历史设计说明](CASE-DESIGN-NOTES.md)
 
-| 族 | 来源作品（非调用证明） | 已发布作品真实调用 |
-|---|---|---|
-| [design.print-poster.v1](print-poster.mjs) | 见模块指导 | film-festival-study, hk-street-signs-study, pixel-hiking-study |
-| [design.typographic-focus.v1](typographic-focus.mjs) | slow-roast-study, hanzi-poster-study, cycling-year-report | 尚无已发布作品调用；看独立配方 |
-| [design.color-sections.v1](color-sections.mjs) | muqi-study, slow-roast-study, shanghai-deco-study | bauhaus-theatre-study, pixel-hiking-study, xie-symbol-study |
-| [design.material-surfaces.v1](material-surfaces.mjs) | liquid-glass-study, vinyl-study | command-palette-study, friendly-fintech-study, gentle-activity-study, health-color-code-study, irreverent-pop-study, mountain-book-jacket-study, ocean-letter-study, playful-roast-timer-study, recursion-lecture-study, rollcall-docs-study, salary-unit-stack-study, solar-terms-study, song-block-print-study, topo-outdoor-study |
-| [design.semantic-data.v1](semantic-data.mjs) | tea-conversation-map, theatre-narrative-wave | 尚无已发布作品调用；看独立配方 |
-| [design.parameter-controls.v1](parameter-controls.mjs) | hardware-sampler-study, liquid-glass-study | 尚无已发布作品调用；看独立配方 |
-| [design.expressive-type.v1](expressive-type.mjs) | cycling-year-report, wave-weather-study | 尚无已发布作品调用；看独立配方 |
-| [design.radial-scale.v1](radial-scale.mjs) | hardware-sampler-study | 尚无已发布作品调用；看独立配方 |
-| [design.diagonal-field.v1](diagonal-field.mjs) | muqi-study | 尚无已发布作品调用；看独立配方 |
-| [design.authored-paths.v1](authored-paths.mjs) | theatre-narrative-wave, bus-morning-study | 尚无已发布作品调用；看独立配方 |
-| [design.vertical-imprint.v1](vertical-imprint.mjs) | song-block-print-study | 尚无已发布作品调用；看独立配方 |
-| [design.geometric-marks.v1](geometric-marks.mjs) | bauhaus-theatre-study | 尚无已发布作品调用；看独立配方 |
-| [design.proportional-partition.v1](proportional-partition.mjs) | ocean-plastic-treemap-study | 尚无已发布作品调用；看独立配方 |
-| [design.ratio-rings.v1](ratio-rings.mjs) | health-color-code-study | 尚无已发布作品调用；看独立配方 |
+|族|来源作品|已保留版本使用|候选使用（NOT_RUN）|
+|---|---|---|---|
+|[design.print-poster.v1](print-poster.mjs)|—|—|[film-festival-study](../../portfolio/works/film-festival-study/README.md), [hk-street-signs-study](../../portfolio/works/hk-street-signs-study/README.md), [pixel-hiking-study](../../portfolio/works/pixel-hiking-study/README.md)|
+|[design.typographic-focus.v1](typographic-focus.mjs)|[slow-roast-study](../../portfolio/works/slow-roast-study/README.md), [hanzi-poster-study](../../portfolio/works/hanzi-poster-study/README.md), [cycling-year-report](../../portfolio/works/cycling-year-report/README.md)|—|—|
+|[design.color-sections.v1](color-sections.mjs)|[muqi-study](../../portfolio/works/muqi-study/README.md), [slow-roast-study](../../portfolio/works/slow-roast-study/README.md), [shanghai-deco-study](../../portfolio/works/shanghai-deco-study/README.md)|[bauhaus-theatre-study](../../portfolio/works/bauhaus-theatre-study/README.md), [xie-symbol-study](../../portfolio/works/xie-symbol-study/README.md)|[pixel-hiking-study](../../portfolio/works/pixel-hiking-study/README.md)|
+|[design.material-surfaces.v1](material-surfaces.mjs)|[liquid-glass-study](../../portfolio/works/liquid-glass-study/README.md), [vinyl-study](../../portfolio/works/vinyl-study/README.md)|[command-palette-study](../../portfolio/works/command-palette-study/README.md), [friendly-fintech-study](../../portfolio/works/friendly-fintech-study/README.md), [gentle-activity-study](../../portfolio/works/gentle-activity-study/README.md), [health-color-code-study](../../portfolio/works/health-color-code-study/README.md), [irreverent-pop-study](../../portfolio/works/irreverent-pop-study/README.md), [mountain-book-jacket-study](../../portfolio/works/mountain-book-jacket-study/README.md), [ocean-letter-study](../../portfolio/works/ocean-letter-study/README.md), [playful-roast-timer-study](../../portfolio/works/playful-roast-timer-study/README.md), [recursion-lecture-study](../../portfolio/works/recursion-lecture-study/README.md), [rollcall-docs-study](../../portfolio/works/rollcall-docs-study/README.md), [salary-unit-stack-study](../../portfolio/works/salary-unit-stack-study/README.md), [solar-terms-study](../../portfolio/works/solar-terms-study/README.md), [song-block-print-study](../../portfolio/works/song-block-print-study/README.md), [topo-outdoor-study](../../portfolio/works/topo-outdoor-study/README.md)|—|
+|[design.semantic-data.v1](semantic-data.mjs)|[tea-conversation-map](../../portfolio/works/tea-conversation-map/README.md), [theatre-narrative-wave](../../portfolio/works/theatre-narrative-wave/README.md)|—|—|
+|[design.parameter-controls.v1](parameter-controls.mjs)|[hardware-sampler-study](../../portfolio/works/hardware-sampler-study/README.md), [liquid-glass-study](../../portfolio/works/liquid-glass-study/README.md)|—|—|
+|[design.expressive-type.v1](expressive-type.mjs)|[cycling-year-report](../../portfolio/works/cycling-year-report/README.md), [wave-weather-study](../../portfolio/works/wave-weather-study/README.md)|—|—|
+|[design.radial-scale.v1](radial-scale.mjs)|[hardware-sampler-study](../../portfolio/works/hardware-sampler-study/README.md)|—|—|
+|[design.diagonal-field.v1](diagonal-field.mjs)|[muqi-study](../../portfolio/works/muqi-study/README.md)|—|—|
+|[design.authored-paths.v1](authored-paths.mjs)|[theatre-narrative-wave](../../portfolio/works/theatre-narrative-wave/README.md), [bus-morning-study](../../portfolio/works/bus-morning-study/README.md)|—|—|
+|[design.vertical-imprint.v1](vertical-imprint.mjs)|[song-block-print-study](../../portfolio/works/song-block-print-study/README.md)|—|—|
+|[design.geometric-marks.v1](geometric-marks.mjs)|[bauhaus-theatre-study](../../portfolio/works/bauhaus-theatre-study/README.md)|—|—|
+|[design.proportional-partition.v1](proportional-partition.mjs)|[ocean-plastic-treemap-study](../../portfolio/works/ocean-plastic-treemap-study/README.md)|—|—|
+|[design.ratio-rings.v1](ratio-rings.mjs)|[health-color-code-study](../../portfolio/works/health-color-code-study/README.md)|—|—|

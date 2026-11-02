@@ -60,7 +60,8 @@
         ],
         "visualDemo": "examples/gallery-scene.mjs",
         "artisticReview": "NOT_RUN",
-        "originalProductionTransfer": "NOT_RUN"
+        "originalProductionTransfer": "NOT_RUN",
+        "guidance": "docs/guides/core-api-and-time.md"
       },
       "knowledgeLinks": [],
       "tags": [
@@ -116,7 +117,8 @@
         ],
         "visualDemo": "examples/gallery-scene.mjs",
         "artisticReview": "NOT_RUN",
-        "originalProductionTransfer": "NOT_RUN"
+        "originalProductionTransfer": "NOT_RUN",
+        "guidance": "docs/guides/core-api-and-time.md"
       },
       "knowledgeLinks": [],
       "tags": [
@@ -166,7 +168,8 @@
         ],
         "visualDemo": "examples/gallery-scene.mjs",
         "artisticReview": "NOT_RUN",
-        "originalProductionTransfer": "NOT_RUN"
+        "originalProductionTransfer": "NOT_RUN",
+        "guidance": "docs/guides/core-api-and-time.md"
       },
       "knowledgeLinks": [],
       "tags": [
@@ -221,7 +224,8 @@
         ],
         "visualDemo": "examples/gallery-scene.mjs",
         "artisticReview": "NOT_RUN",
-        "originalProductionTransfer": "NOT_RUN"
+        "originalProductionTransfer": "NOT_RUN",
+        "guidance": "docs/guides/core-api-and-time.md"
       },
       "knowledgeLinks": [],
       "tags": [
@@ -278,7 +282,8 @@
         ],
         "visualDemo": "examples/gallery-scene.mjs",
         "artisticReview": "NOT_RUN",
-        "originalProductionTransfer": "NOT_RUN"
+        "originalProductionTransfer": "NOT_RUN",
+        "guidance": "docs/guides/core-api-and-time.md"
       },
       "knowledgeLinks": [],
       "tags": [
@@ -330,7 +335,8 @@
         ],
         "visualDemo": "examples/gallery-scene.mjs",
         "artisticReview": "NOT_RUN",
-        "originalProductionTransfer": "NOT_RUN"
+        "originalProductionTransfer": "NOT_RUN",
+        "guidance": "docs/guides/core-api-and-time.md"
       },
       "knowledgeLinks": [],
       "tags": [
@@ -383,7 +389,8 @@
         ],
         "visualDemo": "examples/gallery-scene.mjs",
         "artisticReview": "NOT_RUN",
-        "originalProductionTransfer": "NOT_RUN"
+        "originalProductionTransfer": "NOT_RUN",
+        "guidance": "docs/guides/core-api-and-time.md"
       },
       "knowledgeLinks": [],
       "tags": [
@@ -436,7 +443,8 @@
         ],
         "visualDemo": "examples/gallery-scene.mjs",
         "artisticReview": "NOT_RUN",
-        "originalProductionTransfer": "NOT_RUN"
+        "originalProductionTransfer": "NOT_RUN",
+        "guidance": "docs/guides/core-api-and-time.md"
       },
       "knowledgeLinks": [],
       "tags": [
@@ -480,7 +488,8 @@
         ],
         "visualDemo": "examples/gallery-scene.mjs",
         "artisticReview": "NOT_RUN",
-        "originalProductionTransfer": "NOT_RUN"
+        "originalProductionTransfer": "NOT_RUN",
+        "guidance": "docs/guides/core-api-and-time.md"
       },
       "knowledgeLinks": [],
       "tags": [
@@ -556,7 +565,8 @@
         ],
         "visualDemo": "examples/gallery-scene.mjs",
         "artisticReview": "NOT_RUN",
-        "originalProductionTransfer": "NOT_RUN"
+        "originalProductionTransfer": "NOT_RUN",
+        "guidance": "docs/guides/core-api-and-time.md"
       },
       "knowledgeLinks": [],
       "tags": [
@@ -605,7 +615,8 @@
         ],
         "demo": "examples/path-scene.mjs",
         "artisticReview": "NOT_RUN",
-        "originalProductionTransfer": "NOT_RUN"
+        "originalProductionTransfer": "NOT_RUN",
+        "guidance": "docs/guides/paths-and-contours.md"
       },
       "knowledgeLinks": [],
       "tags": [
@@ -650,7 +661,8 @@
         ],
         "demo": "examples/settle-reveal-scene.mjs",
         "artisticReview": "NOT_RUN",
-        "originalProductionTransfer": "NOT_RUN"
+        "originalProductionTransfer": "NOT_RUN",
+        "guidance": "docs/guides/settle-and-local-reveal.md"
       },
       "knowledgeLinks": [],
       "tags": [
@@ -716,7 +728,8 @@
         ],
         "demo": "examples/tiles-scene.mjs",
         "artisticReview": "NOT_RUN",
-        "originalProductionTransfer": "NOT_RUN"
+        "originalProductionTransfer": "NOT_RUN",
+        "guidance": "docs/guides/fixed-tiles.md"
       },
       "knowledgeLinks": [],
       "tags": [
@@ -773,7 +786,8 @@
         ],
         "demo": "examples/focus-handoff-scene.mjs",
         "artisticReview": "NOT_RUN",
-        "originalProductionTransfer": "NOT_RUN"
+        "originalProductionTransfer": "NOT_RUN",
+        "guidance": "docs/guides/focus-handoff.md"
       },
       "knowledgeLinks": [],
       "tags": [
@@ -834,7 +848,8 @@
         ],
         "demo": "examples/tile-signature-scene.mjs",
         "artisticReview": "NOT_RUN",
-        "originalProductionTransfer": "NOT_RUN"
+        "originalProductionTransfer": "NOT_RUN",
+        "guidance": "docs/guides/tile-signature.md"
       },
       "knowledgeLinks": [],
       "tags": [
@@ -894,7 +909,8 @@
         ],
         "demo": "examples/iris-scene.mjs",
         "artisticReview": "NOT_RUN",
-        "originalProductionTransfer": "NOT_RUN"
+        "originalProductionTransfer": "NOT_RUN",
+        "guidance": "docs/guides/reveal-transitions.md"
       },
       "knowledgeLinks": [],
       "tags": [
@@ -976,7 +992,8 @@
         ],
         "demo": "examples/registered-polygon-morph-scene.mjs",
         "artisticReview": "NOT_RUN",
-        "originalProductionTransfer": "NOT_RUN"
+        "originalProductionTransfer": "NOT_RUN",
+        "guidance": "docs/guides/paths-and-contours.md"
       },
       "knowledgeLinks": [],
       "tags": [
@@ -1021,7 +1038,8 @@
         ],
         "demo": "examples/field-slices-scene.mjs",
         "artisticReview": "NOT_RUN",
-        "originalProductionTransfer": "NOT_RUN"
+        "originalProductionTransfer": "NOT_RUN",
+        "guidance": "docs/guides/field-and-slices.md"
       },
       "knowledgeLinks": [],
       "tags": [
@@ -1074,7 +1092,8 @@
         ],
         "demo": "examples/field-slices-scene.mjs",
         "artisticReview": "NOT_RUN",
-        "originalProductionTransfer": "NOT_RUN"
+        "originalProductionTransfer": "NOT_RUN",
+        "guidance": "docs/guides/field-and-slices.md"
       },
       "knowledgeLinks": [],
       "tags": [
@@ -1129,7 +1148,8 @@
         ],
         "demo": "examples/linear-mask-study.mjs",
         "artisticReview": "NOT_RUN",
-        "originalProductionTransfer": "NOT_RUN"
+        "originalProductionTransfer": "NOT_RUN",
+        "guidance": "docs/guides/reveal-transitions.md"
       },
       "knowledgeLinks": [],
       "tags": [
@@ -1183,7 +1203,8 @@
         ],
         "visualDemo": "examples/sampled-band-study.mjs",
         "artisticReview": "NOT_RUN",
-        "originalProductionTransfer": "NOT_RUN"
+        "originalProductionTransfer": "NOT_RUN",
+        "guidance": "docs/guides/paths-and-contours.md"
       },
       "knowledgeLinks": [],
       "tags": [
@@ -1343,7 +1364,8 @@
         ],
         "visualDemo": "examples/light-echo-field-scene.mjs",
         "artisticReview": "NOT_RUN",
-        "originalProductionTransfer": "NOT_RUN"
+        "originalProductionTransfer": "NOT_RUN",
+        "guidance": "docs/guides/light-echo-field.md"
       },
       "knowledgeLinks": [],
       "tags": [
@@ -2125,7 +2147,7 @@
         "audioListening": "NOT_LISTENED",
         "ownerArtisticAcceptance": "REJECTED_NOT_STYLE_REFERENCE",
         "guidance": "docs/two-link-ik.md",
-        "sourceVersionRelation": "The original film solver and dependency bytes remain frozen privately. Current classification moves the same solver body to foundations/geometry with only its relative validate import changed; the legacy path explicitly re-exports the same function as the canonical and index entries. Public source hashes therefore differ, not a byte-identical-film claim. Separate original/current replays preserve all840 complete scene states and1680 actual solver results;9 original Native frames match in forward/reverse/repeated order and9 fresh Node processes. No new movie encode or artistic acceptance; historical film/manifests unchanged.",
+        "sourceVersionRelation": "The original film solver and dependency bytes remain frozen privately. Current classification moves the same solver body to foundations/geometry with only its relative validate import changed; at that historical migration stage the legacy path re-exported the canonical function; the current cleanup removes that facade and directly routes the public entry to the canonical implementation. Public source hashes therefore differ, not a byte-identical-film claim. Separate original/current replays preserve all840 complete scene states and1680 actual solver results;9 original Native frames match in forward/reverse/repeated order and9 fresh Node processes. No new movie encode or artistic acceptance; historical film/manifests unchanged.",
         "validationCoverage": "1680 solver results consumed in frames 0–839, two arms with fixed lengths and opposite bend. Declared contact frames are reachable with zero target error. No projected, fallback or singular-pose film coverage.",
         "callEvidenceScope": "Render-time state-result counters and reach/error records with frozen-source input/draw crosscheck, not independent per-call argument interception.",
         "ownerFeedbackScope": "The delivered character work was rejected for visual/design quality and must not be recommended as a successful style reference. This does not invalidate the tested numerical IK contract or actual-call evidence."
@@ -2261,7 +2283,7 @@
         "audioListening": "NOT_LISTENED",
         "ownerArtisticAcceptance": "LIMITED_ACCEPTANCE_NOT_STYLE_ENDORSEMENT",
         "guidance": "docs/sticky-interval.md",
-        "sourceVersionRelation": "Responsibility-directory migration keeps the same solver body except the relative validator import; the legacy entry re-exports the canonical function. This is not a byte-identical-film claim. The original film/runtime/manifest are unchanged. Separate baseline and migrated copies each replayed all 750 Native scene states and the 990 sticky input/result calls against the original receipt; 22 original PNGs matched in forward/reverse/repeat, plus the migrated version in 22 fresh Node processes. The public index remains unchanged and is not film-consumed. This is not new film encoding, full-frame pixel comparison, normal-speed viewing, listening or additional artistic acceptance.",
+        "sourceVersionRelation": "Responsibility-directory migration keeps the same solver body except the relative validator import; at that historical stage the legacy entry re-exported the canonical function; the current cleanup removes the facade and directly routes the public entry to the canonical implementation. This is not a byte-identical-film claim. The original film/runtime/manifest are unchanged. Separate baseline and migrated copies each replayed all 750 Native scene states and the 990 sticky input/result calls against the original receipt; 22 original PNGs matched in forward/reverse/repeat, plus the migrated version in 22 fresh Node processes. The public index remains unchanged and is not film-consumed. This is not new film encoding, full-frame pixel comparison, normal-speed viewing, listening or additional artistic acceptance.",
         "validationCoverage": "990 successful calls and rectangle draws: two titles over frames 0–494. First title normal0–128, pinned129–275, released276–494; released geometry visible only276–323, later calculations are offscreen. No negative/extreme/single-point interval film coverage. Final-version nine encoded sticky frames plus four poster/handoff/end frames reviewed; old-version review is not reused as final-version evidence.",
         "callEvidenceScope": "Render-time actual sticky input/result snapshots and draw counters, crosschecked against frozen-source consumers; not independent parameter interception.",
         "ownerFeedbackScope": "Limited acceptance of this delivered UI work, not rejection and not endorsement as a style reference. Technical validity, listening and generic production transfer remain separate."
@@ -3573,9 +3595,9 @@
       ],
       "evidence": {
         "technicalTests": [
-          "test/candidate-finite-particles.test.mjs"
+          "test/finite-particles.test.mjs"
         ],
-        "guidance": "docs/candidates/finite-particles.md",
+        "guidance": "docs/foundations/motion.finite-particles.md",
         "visualDemo": null,
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN",
@@ -3628,9 +3650,9 @@
       ],
       "evidence": {
         "technicalTests": [
-          "test/candidate-weighted-hierarchy.test.mjs"
+          "test/weighted-hierarchy.test.mjs"
         ],
-        "guidance": "docs/candidates/weighted-hierarchy.md",
+        "guidance": "docs/foundations/composition.weighted-hierarchy.md",
         "visualDemo": null,
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN",
@@ -3672,9 +3694,9 @@
       ],
       "evidence": {
         "technicalTests": [
-          "test/candidate-temporal.test.mjs"
+          "test/temporal.test.mjs"
         ],
-        "guidance": "docs/candidates/temporal-exposure.md",
+        "guidance": "docs/foundations/raster.temporal-exposure.md",
         "visualDemo": null,
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN",
@@ -3716,9 +3738,9 @@
       ],
       "evidence": {
         "technicalTests": [
-          "test/candidate-poisson-disc.test.mjs"
+          "test/poisson-disc.test.mjs"
         ],
-        "guidance": "docs/candidates/poisson-disc.md",
+        "guidance": "docs/foundations/composition.poisson-disc.md",
         "visualDemo": null,
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN",
@@ -3767,9 +3789,9 @@
       ],
       "evidence": {
         "technicalTests": [
-          "test/candidate-fixed-string-wave.test.mjs"
+          "test/fixed-string-wave.test.mjs"
         ],
-        "guidance": "docs/private-candidates/fixed-string-wave/ORIGIN-CONTRACT.md",
+        "guidance": "docs/foundations/motion.fixed-string-wave.md",
         "visualDemo": null,
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN",
@@ -3814,9 +3836,9 @@
       ],
       "evidence": {
         "technicalTests": [
-          "test/candidate-visibility-fan.test.mjs"
+          "test/visibility-fan.test.mjs"
         ],
-        "guidance": "docs/private-candidates/visibility-fan/ORIGIN-CONTRACT.md",
+        "guidance": "docs/foundations/geometry.visibility-fan.md",
         "visualDemo": null,
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN",
@@ -3858,9 +3880,9 @@
       ],
       "evidence": {
         "technicalTests": [
-          "test/candidate-grid-transport.test.mjs"
+          "test/grid-transport.test.mjs"
         ],
-        "guidance": "docs/private-candidates/grid-transport/ORIGIN-CONTRACT.md",
+        "guidance": "docs/foundations/field.grid-transport.md",
         "visualDemo": null,
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN",
@@ -3933,9 +3955,9 @@
       ],
       "evidence": {
         "technicalTests": [
-          "test/candidate-arrival-field-support.test.mjs"
+          "test/arrival-field-support.test.mjs"
         ],
-        "guidance": "docs/private-candidates/arrival-field-origin-contracts.md",
+        "guidance": "docs/foundations/field.arrival-field.md",
         "visualDemo": null,
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN",
@@ -3998,9 +4020,9 @@
       ],
       "evidence": {
         "technicalTests": [
-          "test/hard-disc-private.test.mjs"
+          "test/hard-disc-events.test.mjs"
         ],
-        "guidance": "docs/private-candidates/hard-disc-isolated-events/README.md",
+        "guidance": "docs/foundations/motion.hard-disc-isolated-events.md",
         "visualDemo": null,
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN",
@@ -4055,9 +4077,9 @@
       ],
       "evidence": {
         "technicalTests": [
-          "test/candidate-ray-chain.test.mjs"
+          "test/ray-chain.test.mjs"
         ],
-        "guidance": "docs/private-candidates/ray-chain/ORIGIN-CONTRACT.md",
+        "guidance": "docs/foundations/geometry.ray-chain.md",
         "visualDemo": null,
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN",
@@ -4109,7 +4131,7 @@
         "technicalTests": [
           "test/seven-foundations-geometry.test.mjs"
         ],
-        "guidance": "docs/private-candidates/seven-foundations/geometry-GUIDE.zh-CN.md",
+        "guidance": "docs/foundations/geometry.voronoi-cells.md",
         "visualDemo": null,
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN",
@@ -4153,7 +4175,7 @@
         "technicalTests": [
           "test/seven-foundations-geometry.test.mjs"
         ],
-        "guidance": "docs/private-candidates/seven-foundations/geometry-GUIDE.zh-CN.md",
+        "guidance": "docs/foundations/composition.minimum-cost-assignment.md",
         "visualDemo": null,
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN",
@@ -4206,7 +4228,7 @@
         "technicalTests": [
           "test/seven-foundations-geometry.test.mjs"
         ],
-        "guidance": "docs/private-candidates/seven-foundations/geometry-GUIDE.zh-CN.md",
+        "guidance": "docs/foundations/geometry.rectangle-obstacle-route.md",
         "visualDemo": null,
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN",
@@ -4255,7 +4277,7 @@
         "technicalTests": [
           "test/seven-foundations-geometry.test.mjs"
         ],
-        "guidance": "docs/private-candidates/seven-foundations/geometry-GUIDE.zh-CN.md",
+        "guidance": "docs/foundations/geometry.radial-landmark-warp.md",
         "visualDemo": null,
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN",
@@ -4298,7 +4320,7 @@
         "technicalTests": [
           "test/seven-foundations-raster.test.mjs"
         ],
-        "guidance": "docs/private-candidates/seven-foundations/raster-GUIDE.zh-CN.md",
+        "guidance": "docs/foundations/raster.euclidean-distance-transform.md",
         "visualDemo": null,
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN",
@@ -4356,7 +4378,7 @@
         "technicalTests": [
           "test/seven-foundations-raster.test.mjs"
         ],
-        "guidance": "docs/private-candidates/seven-foundations/raster-GUIDE.zh-CN.md",
+        "guidance": "docs/foundations/raster.palette-error-diffusion.md",
         "visualDemo": null,
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN",
@@ -4422,7 +4444,7 @@
         "technicalTests": [
           "test/seven-foundations-raster.test.mjs"
         ],
-        "guidance": "docs/private-candidates/seven-foundations/raster-GUIDE.zh-CN.md",
+        "guidance": "docs/foundations/field.projected-reaction-diffusion.md",
         "visualDemo": null,
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN",

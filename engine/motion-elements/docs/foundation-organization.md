@@ -1,6 +1,13 @@
-# 基础机制职责目录与旧路径兼容
+# 基础机制职责目录与迁移记录
 
-目录整理不新增机制。当前为 **43基础＋7配方**（新增曲线/字格/尺寸换行机制另有真实作品证据；分类迁移本身仍不计数）；目录别名、辅助函数、适配器和重导出入口不计数。实验状态及每件作品原有的技术/用户反馈/视听检查状态不因迁移而升级。
+## 当前入口（无旧路径兼容）
+
+`lib/index.mjs` 直接导出 `lib/foundations/field/attractor-field.mjs`、`lib/foundations/geometry/two-link-ik.mjs` 和 `lib/foundations/layout/sticky-interval.mjs`。三个同名平层 wrapper 已删除，现役消费者直接更新；不保重导出或路径回退。下文“保留旧入口”“三入口”“query wrapper”等属于当时迁移记录，不是当前可执行路径。原实现与作品锁未改；不得把当前目录整理称为原影片重渲染或升级接受状态。
+
+## 历史分类阶段记录
+
+
+目录整理不新增机制。当前数量与状态以 [catalog.json](../catalog.json) 和目录检索 CLI 为真源。本次整理核对的源码快照 `9406f299` 为 **60基础＋7配方，67项全部 experimental**；这是快照核对，不是长期计数承诺。下文 39＋7、43＋7 是不同历史集成节点，不可当成当前总数。目录别名、辅助函数、适配器和重导出入口不计数。实验状态及每件作品原有的技术/用户反馈/视听检查状态不因迁移而升级。
 
 ## 当前已实施：field、两连杆几何与sticky布局小域
 
@@ -27,7 +34,7 @@ const state = sampleAttractorField(plan, {
 
 这仍是无历史、无速度的局部二维方向场，不是粒子积分/流体/光流。原参数、限制、奇点及冻结状态语义不变。旧入口创建的plan可由canonical入口采样，反之亦然。直接用不同query URL导入canonical实现会创建独立模块实例及独立品牌，不能混用其plan；这不是跨实例序列化格式。注意：给旧re-export入口URL添加query只重新加载入口，本身不会给其依赖的canonical URL加query，因此仍共享同一品牌。迁移前给旧实现URL加query曾可创建独立品牌；此刻意cache-busting用法不能继续被当作隔离契约。需要显式独立实例的调用者应使用不同canonical URL，普通旧路径导入无需修改。
 
-## 新机制直接分类
+## 已记录的阶段新增机制（非当前全部机制清单）
 
 | 职责 | canonical 实现 | 稳定 ID |
 |---|---|---|
@@ -43,7 +50,7 @@ const state = sampleAttractorField(plan, {
 | 非负归一邻域卷积 | `lib/foundations/raster/convolution.mjs` | `raster.neighborhood-convolution` |
 | 四角单应图像映射 | `lib/foundations/raster/projective-raster.mjs` | `raster.projective-quad` |
 
-此处十一项均为新机制，没有需要兼容的旧平层路径；总入口显式re-export同一模块实例。
+此处十一项在对应引入阶段均为新机制，没有需要兼容的旧平层路径；总入口显式re-export同一模块实例。
 `typography`是物理职责目录，不另造query kind，也不把辅助采样算成第二条曲线机制。
 
 ## 分类原则与后续边界
@@ -65,10 +72,10 @@ const state = sampleAttractorField(plan, {
 
 `raster/`新域只放本批新模块；既有matte/displacement旧入口与冻结源码不移动、不复制。别名和点映射helper不增加基础数量。
 
-## 两连杆几何迁移范围
+## 历史节点：两连杆几何迁移范围
 
-这次仅将两连杆solver归入已有geometry职责目录；旧入口显式re-export，index保持原路径，
-源码主体仅相对validate导入路径变化。0新增机制/作品，计数仍39基础＋7配方。
+该阶段仅将两连杆solver归入已有geometry职责目录；旧入口显式re-export，index保持原路径，
+源码主体仅相对validate导入路径变化。0新增机制/作品，该历史节点计数为39基础＋7配方，不代表当前catalog总数。
 三入口函数===，同输入输出/异常合同不变。旧wrapper加query不再创建独立solver函数，
 需独立函数对象时使用canonical query URL；详见[two-link-ik.md](two-link-ik.md)。
 
@@ -76,7 +83,7 @@ Tessel锁13文件与Favorite52锁55文件均与本次迁移文件零交集，锁
 角色影片自己的冻结runtime/manifest不被改写；迁移版hash不同，不沿用历史同字节说法。
 用户否定角色作品的视觉设计，REJECTED_NOT_STYLE_REFERENCE不变；纯状态迁移验证不升级其艺术状态。
 
-## Sticky布局迁移范围
+## 历史节点：Sticky布局迁移范围
 
 此次只把既有纵向sticky约束归入layout职责目录，旧入口/index继续导出同一函数，0新增。
 数学主体仅相对validator路径变化，原API、IEEE阈值与验证行为保留。
@@ -84,6 +91,6 @@ wrapper query与canonical query的身份差异见[sticky-interval.md](sticky-int
 Tessel13及Favorite52的55锁定文件零交集；原演出列表影片源码、runtime、manifest和媒体不变。
 迁移不是原片重制；用户有限认可、NOT_DONE常速、NOT_LISTENED听审、NOT_RUN通用迁移状态均不升级。
 
-## 印刷与柔性响应新增（非旧域迁移）
+## 历史节点：印刷与柔性响应新增（非旧域迁移）
 
-新增实现直接位于geometry/halftone-screen、raster/morphology-coverage、geometry/affine-skin和motion/damped-response；两个internal严格数据helper不计数。新增4基础，总43基础＋7配方，原field/IK/sticky迁移仍为0新增。旧路径与作品冻结源码不变。证据及局限见[公共集成](print-rig-integration.md)。
+新增实现直接位于geometry/halftone-screen、raster/morphology-coverage、geometry/affine-skin和motion/damped-response；两个internal严格数据helper不计数。该阶段新增4基础，当时总43基础＋7配方，原field/IK/sticky迁移仍为0新增。旧路径与作品冻结源码不变。证据及局限见[公共集成](print-rig-integration.md)。

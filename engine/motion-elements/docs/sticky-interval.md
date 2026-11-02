@@ -142,7 +142,9 @@ Native夹具只证明正确的调用方clip/save/restore用法，不代表新增
 复用应先核固定源码/素材身份，再重建状态、代表Native帧与声音，完整编码后审查实际遮挡、身份连续性及视听。
 官方参考与许可取舍见[ui-scroll-reference-decisions.md](ui-scroll-reference-decisions.md)。
 
-## 职责目录与旧入口兼容（0新增）
+## 当前入口与历史迁移记录（0新增）
+
+当前只使用职责目录 canonical 实现和公共 index；旧平层 wrapper 已删除，无兼容路径。以下三入口与等价桥接叙述保留历史迁移范围，不是本次清理的新验证结果。
 
 实现位于 `lib/foundations/layout/sticky-interval.mjs`；原 `lib/sticky-interval.mjs`
 显式重导出同一个 `stickyIntervalLayout`，`lib/index.mjs` 保留旧路径导出。

@@ -1,0 +1,183 @@
+{
+  "id": "meridian-study",
+  "version": "1.0.0",
+  "title": "Meridian · 黑白对分品牌与产品首屏",
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "LICENSES/Liberation-OFL.txt",
+      "LICENSES/huashu-MIT-LICENSE.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/LICENSE",
+      "https://github.com/liberationfonts/liberation-fonts"
+    ]
+  },
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "locks/npm-package-lock.json"
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "b76a920d3ac2613cd3f59a1d62e94a23fca51d4671d9f32da584133f5e3c3afa",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "Complete still and critical details reviewed. Font/JPEG/antialiasing residuals remain, and Meridian font substitution is explicit. Fixed static only, no browser, responsive, interaction or video validation."
+    }
+  },
+  "schema": "motionstudio.work/1",
+  "lifecycle": "retained",
+  "kind": "static",
+  "publication": {
+    "status": "source-release"
+  },
+  "authorship": {
+    "unofficial_recreation": true,
+    "original": {
+      "author": "alchaincyf (花叔 · 花生)",
+      "title": "Huashu design specimen",
+      "url": "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/showcases/website-saas/saas-pentagram.html"
+    }
+  },
+  "render": {
+    "entrypoint": "design/scene.mjs",
+    "width": 1440,
+    "height": 900
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "0944ed3f50b12fb4e02873acdac6e9c6925ade97f71d46e80cca6c2a86e61d87",
+      "kind": "documentation"
+    },
+    {
+      "path": "CREDITS.md",
+      "sha256": "448177a635c7776ddba4b08e42f23d77a9c25e5dc41e1c175bdf8af11d2d6d0f",
+      "kind": "documentation"
+    },
+    {
+      "path": "DESIGN-REASONING.md",
+      "sha256": "ecd323e84db873b0beeb26dcec63845c47fe601193b1ffc596936412dd4b26a1",
+      "kind": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "4ba747751f084e0f9420bc09435b4b218b4aded8f3844c8a455460a350b422ce",
+      "kind": "cover"
+    },
+    {
+      "path": "prepare-fonts.py",
+      "sha256": "2611df2f1e8919bb7c40fcbec5447b85670ef4031774a270df38ce7faab79946",
+      "kind": "source"
+    },
+    {
+      "path": "font-inputs.json",
+      "sha256": "db1795e5aac76c268d8b8609d75db73bac61d902acb9637b0543242664cf1a10",
+      "kind": "config"
+    },
+    {
+      "path": "locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "kind": "lock"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "3376138df78fb0b3f62bc57d80dc440204cbe0a0709a07396e39636873862e6f",
+      "kind": "lock"
+    },
+    {
+      "path": "LICENSES/huashu-MIT-LICENSE.txt",
+      "sha256": "6d6a2a9caf2e6d2b76974050427053b2892d8aa4c33fd168ce63a537fcee9d96",
+      "kind": "license"
+    },
+    {
+      "path": "LICENSES/Liberation-OFL.txt",
+      "sha256": "f32df582a2aab128c07b2f7e36e7b928dc5f6bd82657b905c04f91459f9e5cf9",
+      "kind": "license"
+    },
+    {
+      "path": "design/scene.mjs",
+      "sha256": "e6e975295f11f60d49a6ee9d8ac91e0a090e6bf37db0b643f24667d3e85526a0",
+      "kind": "source"
+    },
+    {
+      "path": "DESIGN-RETENTION.md",
+      "sha256": "2ff99d3a61efb66bda7fc88c9521293a0468fa64deb8e836bb86797cba112d12",
+      "kind": "documentation"
+    }
+  ],
+  "resources": [
+    {
+      "bytes": 410820,
+      "id": "liberationsans-regular",
+      "instructions": "Obtain hash-matched originalInputs from font-inputs.json, then run prepare-fonts.py; original and output identities are both fail-closed, and render checks output SHA.",
+      "license": "SIL OFL 1.1; external font file, not distributed",
+      "local_path": "LiberationSans-Regular.ttf",
+      "mode": "provide",
+      "notice": "LICENSES/Liberation-OFL.txt",
+      "permission": "user-supplied-not-distributed",
+      "sha256": "bade59d822652f76e6941aa87b40a87c13d1cc70db98ededb5011127efafd1d3",
+      "source_url": "https://github.com/liberationfonts/liberation-fonts",
+      "kind": "unclassified",
+      "kind_basis": {
+        "method": "unresolved"
+      }
+    },
+    {
+      "bytes": 414568,
+      "id": "liberationsans-bold",
+      "instructions": "Obtain hash-matched originalInputs from font-inputs.json, then run prepare-fonts.py; original and output identities are both fail-closed, and render checks output SHA.",
+      "license": "SIL OFL 1.1; external font file, not distributed",
+      "local_path": "LiberationSans-Bold.ttf",
+      "mode": "provide",
+      "notice": "LICENSES/Liberation-OFL.txt",
+      "permission": "user-supplied-not-distributed",
+      "sha256": "1b5f2da6f4cadce4c05b9ecebe3a6fcd374eb95ae443605e799f4c3287978939",
+      "source_url": "https://github.com/liberationfonts/liberation-fonts",
+      "kind": "unclassified",
+      "kind_basis": {
+        "method": "unresolved"
+      }
+    }
+  ],
+  "evidence": {
+    "reviewArtifacts": {
+      "status": "NOT_INCLUDED"
+    }
+  },
+  "design": {
+    "decisionCard": "DESIGN-RETENTION.md",
+    "nonAssetNote": "Shared drawing helpers and case-local scene code are not public design families; no runtime reuse is inferred from visual similarity.",
+    "ruleRefs": [],
+    "ruleStatus": "No separate formal rule card claimed; use decisionCard and sourceAnalysis.",
+    "sourceAnalysis": [
+      "DESIGN-REASONING.md"
+    ],
+    "assetUsage": []
+  },
+  "transfer": {
+    "motion": {
+      "status": "NOT_TESTED",
+      "note": "Fixed-size static only. No interaction, responsive layout, animation, audio or AV-sync approval implied."
+    }
+  }
+}

@@ -2,6 +2,10 @@
 
 以下是2026-10-23公开官方文档核对快照，未执行模型调用、未发送新片数据。技术可行不等于允许上传；每次外发须有覆盖具体影片、数据、服务和用途的批准。拒绝后不能换端点、工具、环境、URL/Base64或压缩/拆分绕过。技能/报告/分发包不得包含凭据；获准调用从目标环境既有安全环境变量取用，遵循实际权限，不展示密钥。
 
+## 官方技术与价格出处（可选审查）
+
+以下五个外部 URL 分别用于型号、调用指南、Chat 参数、官方价格和计费说明溯源，不是默认离线渲染的依赖。2026-11-02 本次整理未重新联网核验其可达性，也未更新历史能力、参数或价格快照；“未核实”不等于死链。实际启用外部审查前，仍须在获准环境核对当前型号、参数和计费，并取得具体数据外发与预算批准。
+
 ## 精确型号与输入边界
 
 仅适用 **`qwen3.8-omni-flash`**，不是旧Omni或realtime。官方说明支持文本/图像/音频/视频组合输入，视频可含声音，输出仅文本。默认`use_multichannel=false`按单声道解析；立体声文件本身不证明多声道分析已启用。[模型页](https://www.qianwenai.com/models/qwen3.8-omni-flash)、[调用指南](https://help.aliyun.com/zh/model-studio/qwen-omni)
@@ -25,8 +29,8 @@ fps有文档不一致：Chat参考列默认2、范围0.1–10，但适用列表�
 
 ## 可执行入口（2026-10-25）
 
-仓库已新增默认百炼原生音频适配：[`scripts/audio_review.py`](../../../scripts/audio_review.py)，
-操作及边界见 [`AUDIO-REVIEW.md`](../../../scripts/AUDIO-REVIEW.md)。默认仅本地 dry-run；
+仓库已新增默认百炼原生音频适配：[`scripts/audio_review.py`（便携包）](../runtime/review-tools/audio_review.py) / [`scripts/audio_review.py`（源码仓库）](https://github.com/doomclouds/MotionStudio/blob/ebda9d2661be84e1314cee14baf4acd241b6069e/scripts/audio_review.py)，
+操作及边界见 [`AUDIO-REVIEW.md`（便携包）](../runtime/review-tools/AUDIO-REVIEW.md) / [`AUDIO-REVIEW.md`（源码仓库）](https://github.com/doomclouds/MotionStudio/blob/ebda9d2661be84e1314cee14baf4acd241b6069e/scripts/AUDIO-REVIEW.md)。默认仅本地 dry-run；
 真实调用须当前安全环境凭据、明确片段外发同意、当日价格确认和预算。离线 mock 测试
 不等于已接通，更不等于已听审某部影片。成功模型返回只标 `reviewed`，不替代用户过审。
 技术测量仍沿用 motion-check；音频单独输入不能判定声画同步。

@@ -1,0 +1,297 @@
+{
+  "id": "pixel-hiking-study",
+  "version": "1.0.1",
+  "title": "鹿鸣山 · 像素徒步三关",
+  "rights": {
+    "status": "NOT_REVIEWED",
+    "credits": "CREDITS.md",
+    "notices": [
+      "LICENSES/huashu-MIT-LICENSE.txt",
+      "LICENSES/PressStart2P-OFL.txt",
+      "LICENSES/NotoSansSC-OFL.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/LICENSE",
+      "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "https://github.com/google/fonts/tree/main/ofl/pressstart2p"
+    ]
+  },
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "locks/npm-package-lock.json"
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "207ad3d9c972d96eef1abc3e77cc62d9efb9a21e8672130a050a7630790b83f5",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md",
+    "binding": {
+      "version": "1.0.0",
+      "applicability": "historical-preview"
+    }
+  },
+  "schema": "motionstudio.work/1",
+  "lifecycle": "candidate",
+  "kind": "static",
+  "publication": {
+    "status": "not-published"
+  },
+  "authorship": {
+    "unofficial_recreation": true,
+    "original": {
+      "author": "alchaincyf (花叔 · 花生)",
+      "title": "Huashu design specimen",
+      "url": "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/web/09-pixel-side-scroller.html"
+    }
+  },
+  "render": {
+    "entrypoint": "design/scene.mjs",
+    "width": 1200,
+    "height": 750
+  },
+  "files": [
+    {
+      "path": "ASSET-USAGE.md",
+      "sha256": "efc26af1a1cf1a6b96c3c6cba12b5957bb0702c4cd1fcf0815a1f0f00ebefd39",
+      "kind": "documentation"
+    },
+    {
+      "path": "CREDITS.md",
+      "sha256": "bdf0a3a75eeeb89b25c63e5edd0aa235feb361b2fbfdc3f2dd9edcdd1a6643b3",
+      "kind": "documentation"
+    },
+    {
+      "path": "DESIGN-REASONING.md",
+      "sha256": "47de953ad073796a8c0396e9b11b8ba0e0ecf28ace798f04b30f9c31cea19666",
+      "kind": "documentation"
+    },
+    {
+      "path": "LICENSES/NotoSansSC-OFL.txt",
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+      "kind": "license"
+    },
+    {
+      "path": "LICENSES/PressStart2P-OFL.txt",
+      "sha256": "705960c3281a5765ecc0b59bd4ed7ca59eed165748076bc2fc3e8fdbfeb944b0",
+      "kind": "license"
+    },
+    {
+      "path": "LICENSES/huashu-MIT-LICENSE.txt",
+      "sha256": "6d6a2a9caf2e6d2b76974050427053b2892d8aa4c33fd168ce63a537fcee9d96",
+      "kind": "license"
+    },
+    {
+      "path": "README.md",
+      "sha256": "c4a4eddfc04c461b1b9c16dcfab45a7838e96dafd3ce163b734514388b8f889b",
+      "kind": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "3e520725c9ca504d5b1e6cf45880f29bec31ce8bd3f1b03ffbd77af4d79eb82b",
+      "kind": "cover"
+    },
+    {
+      "path": "design/scene.mjs",
+      "sha256": "d6d2bc44efb8f259ab4448d1294a84015e73e346fc992db7ccfa3c6716f478a5",
+      "kind": "source"
+    },
+    {
+      "path": "design/terrain.json",
+      "sha256": "904fad96d908b0938275cd7a1b5aeae961d952eb86befe49564c06e5e2ed1256",
+      "kind": "config"
+    },
+    {
+      "path": "font-charset.txt",
+      "sha256": "1ab5a70b444d58a639dc401234c85a45043a6a09577d2e4f2188352a72f7385d",
+      "kind": "documentation"
+    },
+    {
+      "path": "font-inputs.json",
+      "sha256": "c6b8f7d5c0a113119e74097701c22d4eaf652689528268d18a1fb00e322c5bf8",
+      "kind": "config"
+    },
+    {
+      "path": "locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "kind": "lock"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "3376138df78fb0b3f62bc57d80dc440204cbe0a0709a07396e39636873862e6f",
+      "kind": "lock"
+    },
+    {
+      "path": "prepare-fonts.py",
+      "sha256": "85222080e9a2b944f447dc2c1db9fed773155dc10c99b9185afc9128450bc163",
+      "kind": "source"
+    },
+    {
+      "path": "ui-dependencies.json",
+      "sha256": "b630305b682d2719242bd25d2250096bac8f7bc92885dab4dab8486a9bb96a83",
+      "kind": "config"
+    },
+    {
+      "path": "DESIGN-RETENTION.md",
+      "sha256": "996149bd28b5c4a60324fe7484b52c8d83999ac6c231757f16c992207c9cd109",
+      "kind": "documentation"
+    }
+  ],
+  "resources": [
+    {
+      "bytes": 496276,
+      "id": "pairsans500",
+      "instructions": "Obtain originalInputs and run prepare-fonts.py. Original and derived hashes fail closed.",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "local_path": "PairSans500.ttf",
+      "mode": "provide",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "permission": "user-supplied-not-distributed",
+      "sha256": "834c13770abff875f3a13aac626a1b389f61c94706d5e488fffaf44c2aabb836",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "kind": "unclassified",
+      "kind_basis": {
+        "method": "unresolved"
+      }
+    },
+    {
+      "bytes": 496372,
+      "id": "pairsans900",
+      "instructions": "Obtain originalInputs and run prepare-fonts.py. Original and derived hashes fail closed.",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "local_path": "PairSans900.ttf",
+      "mode": "provide",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "permission": "user-supplied-not-distributed",
+      "sha256": "518765b2fd6215305b3ccbd26e900aa67e0ae3bb4f1081ba5afd321c51f549d4",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "kind": "unclassified",
+      "kind_basis": {
+        "method": "unresolved"
+      }
+    },
+    {
+      "bytes": 118204,
+      "id": "pressstart2p-regular",
+      "instructions": "Obtain originalInputs and run prepare-fonts.py. Original and derived hashes fail closed.",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "local_path": "PressStart2P-Regular.ttf",
+      "mode": "provide",
+      "notice": "LICENSES/PressStart2P-OFL.txt",
+      "permission": "user-supplied-not-distributed",
+      "sha256": "034c77f1f05ec89421e4a63f0e3a4ca1ecf852cc6d2bf611f126f275728e017d",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/pressstart2p",
+      "kind": "unclassified",
+      "kind_basis": {
+        "method": "unresolved"
+      }
+    }
+  ],
+  "evidence": {
+    "reviewArtifacts": {
+      "status": "NOT_INCLUDED"
+    }
+  },
+  "design": {
+    "decisionCard": "DESIGN-RETENTION.md",
+    "nonAssetNote": "Shared drawing helpers and case-local scene code are not public design families; no runtime reuse is inferred from visual similarity.",
+    "ruleRefs": [],
+    "ruleStatus": "No separate formal rule card claimed; use decisionCard and sourceAnalysis.",
+    "sourceAnalysis": [
+      "DESIGN-REASONING.md"
+    ],
+    "assetUsage": [
+      {
+        "callToken": "drawOverprint",
+        "callsite": "design/scene.mjs",
+        "familyId": "design.print-poster.v1",
+        "importToken": "print-poster.mjs",
+        "mode": "runtime-import",
+        "modulePath": "engine/design-elements/print-poster.mjs",
+        "moduleSha256": "f30e3f0967f0ab8ef65857a68c3cb77d42b356e6e8b1b4a01820811525dad64d",
+        "snapshotPath": null,
+        "sourceCommit": "bd3750a4c27408bf90abc18cb16c1455d23442c9",
+        "visibleRole": "HUD硬偏移文字"
+      },
+      {
+        "callToken": "drawSections",
+        "callsite": "design/scene.mjs",
+        "familyId": "design.color-sections.v1",
+        "importToken": "color-sections.mjs",
+        "mode": "runtime-import",
+        "modulePath": "engine/design-elements/color-sections.mjs",
+        "moduleSha256": "cf2cf8ebf1b1bf8bd65dbbaef11f9546db9fe096d3eba7a0b18936e616ec2dd8",
+        "snapshotPath": null,
+        "sourceCommit": "bd3750a4c27408bf90abc18cb16c1455d23442c9",
+        "visibleRole": "森林/山脊/湖泊底层分区"
+      }
+    ]
+  },
+  "transfer": {
+    "motion": {
+      "status": "NOT_TESTED",
+      "note": "Fixed-size static only. No interaction, responsive layout, animation, audio or AV-sync approval implied."
+    }
+  },
+  "history": [
+    {
+      "version": "1.0.0",
+      "recorded_in": {
+        "commit": "bd3750a4c27408bf90abc18cb16c1455d23442c9",
+        "path": "portfolio/works/pixel-hiking-study/entry.json"
+      },
+      "dependency_commit": "0947507961eb5624ddd5c1240758baefa3246fd8",
+      "applicability": "historical-only",
+      "acceptance": {
+        "complete_work": true,
+        "owner_keep": true,
+        "clean_restore": true,
+        "technical": true,
+        "visual": {
+          "status": "PARTIAL",
+          "coverage": "Complete still and critical details independently reviewed; user requested retention. Font, glow and JPEG raster residuals remain. No responsive, browser, interaction or video validation."
+        }
+      },
+      "rights": {
+        "status": "reviewed-publication-scope",
+        "credits": "CREDITS.md",
+        "notices": [
+          "LICENSES/huashu-MIT-LICENSE.txt",
+          "LICENSES/PressStart2P-OFL.txt",
+          "LICENSES/NotoSansSC-OFL.txt"
+        ],
+        "evidence_urls": [
+          "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/LICENSE",
+          "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+          "https://github.com/google/fonts/tree/main/ofl/pressstart2p"
+        ]
+      },
+      "cover": {
+        "path": "cover.jpg",
+        "kind": "rendered-static",
+        "source_sha256": "207ad3d9c972d96eef1abc3e77cc62d9efb9a21e8672130a050a7630790b83f5",
+        "frame": null,
+        "rights_status": "reviewed",
+        "credit": "CREDITS.md"
+      }
+    }
+  ],
+  "verification": {
+    "status": "NOT_RUN",
+    "reason": "dependency-upgrade",
+    "dimensions": {
+      "clean_restore": "NOT_RUN",
+      "technical": "NOT_RUN",
+      "visual": "NOT_RUN"
+    }
+  }
+}

@@ -1,0 +1,382 @@
+{
+  "id": "friendly-fintech-study",
+  "version": "1.0.0",
+  "title": "友好金融三屏 · 完整静态复刻",
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "LICENSES/NotoSans-OFL.txt",
+      "LICENSES/figtree-OFL.txt",
+      "LICENSES/huashu-MIT-LICENSE.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/LICENSE",
+      "https://github.com/google/fonts"
+    ]
+  },
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "locks/npm-package-lock.json"
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "0b84476429d6e14445ffa9d95750cb762ccbefa11b38d0c94aaa8151b62f1184",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "Independent complete still/details reviewed; font/JPEG residuals and sample-data limitations disclosed. User retained; no browser or motion approval."
+    }
+  },
+  "schema": "motionstudio.work/1",
+  "lifecycle": "retained",
+  "kind": "static",
+  "publication": {
+    "status": "source-release"
+  },
+  "authorship": {
+    "unofficial_recreation": true,
+    "original": {
+      "author": "alchaincyf (花叔 · 花生)",
+      "title": "Huashu design specimen",
+      "url": "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/app/04-friendly-fintech.html"
+    }
+  },
+  "render": {
+    "entrypoint": "design/scene.mjs",
+    "width": 1200,
+    "height": 750
+  },
+  "files": [
+    {
+      "path": "CREDITS.md",
+      "sha256": "d1c588ae385a193baee31ad36c16ecea9928ac6cafbd14362c86ac12d4e178d1",
+      "kind": "documentation"
+    },
+    {
+      "path": "DESIGN-RETENTION.md",
+      "sha256": "f3847269f90dc1fbaae67006a341dac19bc9d2051c4dac3d98a4784c01ba39e9",
+      "kind": "documentation"
+    },
+    {
+      "path": "LICENSES/NotoSans-OFL.txt",
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+      "kind": "license"
+    },
+    {
+      "path": "LICENSES/figtree-OFL.txt",
+      "sha256": "140d37233e7f3ce7313798befa9600893bcceaf41a55fa0fa5ad52f7f657a268",
+      "kind": "license"
+    },
+    {
+      "path": "LICENSES/huashu-MIT-LICENSE.txt",
+      "sha256": "6d6a2a9caf2e6d2b76974050427053b2892d8aa4c33fd168ce63a537fcee9d96",
+      "kind": "license"
+    },
+    {
+      "path": "README.md",
+      "sha256": "15c3277660e84462130906908b5a151c533bf24ddf378598a491e125b516bb27",
+      "kind": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "d19435c87f4c6d25a19265cc830c6b44a70ef9111217febc7e5e03bf3fbbef1d",
+      "kind": "cover"
+    },
+    {
+      "path": "design/DESIGN-REASONING.md",
+      "sha256": "0e84f04f14f8a4a24537f410572cd60a72af3018f4a73c9260bd48f0843be42c",
+      "kind": "documentation"
+    },
+    {
+      "path": "design/partition-audit-recipe.mjs",
+      "sha256": "9c1e07c1a6881bd7b0313e75cd78637149e8715a5a48ad4086d05c70cea1fd0a",
+      "kind": "source"
+    },
+    {
+      "path": "design/scene.mjs",
+      "sha256": "b7160bc2eb118324c196e2908ea4c779e440b46ebdb328794710ddc659fd313f",
+      "kind": "source"
+    },
+    {
+      "path": "design/soft-mask.mjs",
+      "sha256": "207643ac29ca3e919e0281baa7314957690be02586137caffbbd72387b4ddb5c",
+      "kind": "source"
+    },
+    {
+      "path": "font-charset.txt",
+      "sha256": "e415021043cf06094698e9b58b4d13ec4545efad1e72405dbab6b46a8cc55c2f",
+      "kind": "documentation"
+    },
+    {
+      "path": "font-inputs.json",
+      "sha256": "6fe6e4a04e0f9a0b5a7a6ac5e2381142a97e30884555d9c34cdbf49f617a8308",
+      "kind": "config"
+    },
+    {
+      "path": "locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "kind": "lock"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "c97986608711fff48e780026471834a114f117d30fd4f1b15c3e76b21a760a46",
+      "kind": "lock"
+    },
+    {
+      "path": "prepare-fonts.py",
+      "sha256": "98fb802fb3b6f994cdd6930735919e61e87e93df1b2f830a51151edeab7d525f",
+      "kind": "source"
+    },
+    {
+      "path": "tests/recipe.test.mjs",
+      "sha256": "246fe53541ad895359aba27307903835840c0e99c2212280983a07e130343b71",
+      "kind": "source"
+    }
+  ],
+  "resources": [
+    {
+      "bytes": 17772300,
+      "id": "notosanssc-variable-ttf",
+      "instructions": "Provide in FINTECH_FONT_DIR; prepare-fonts.py verifies original and derived hashes.",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "local_path": "NotoSansSC-variable.ttf",
+      "mode": "provide",
+      "notice": "LICENSES/NotoSans-OFL.txt",
+      "permission": "user-supplied-not-distributed",
+      "sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "kind": "unclassified",
+      "kind_basis": {
+        "method": "unresolved"
+      }
+    },
+    {
+      "bytes": 62712,
+      "id": "figtree-wght-ttf",
+      "instructions": "Provide in FINTECH_FONT_DIR; prepare-fonts.py verifies original and derived hashes.",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "local_path": "Figtree[wght].ttf",
+      "mode": "provide",
+      "notice": "LICENSES/figtree-OFL.txt",
+      "permission": "user-supplied-not-distributed",
+      "sha256": "26ad3db9b31ff7dde67a91ff515d022d2f495cd506590699cf264f0bfe6fb714",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/figtree",
+      "kind": "unclassified",
+      "kind_basis": {
+        "method": "unresolved"
+      }
+    },
+    {
+      "bytes": 35972,
+      "id": "sans400-ttf",
+      "instructions": "Provide in FINTECH_FONT_DIR; prepare-fonts.py verifies original and derived hashes.",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "local_path": "Sans400.ttf",
+      "mode": "provide",
+      "notice": "LICENSES/NotoSans-OFL.txt",
+      "permission": "user-supplied-not-distributed",
+      "sha256": "b66d983a97b83fd9ed7dff2cefe1a9a6812e91bd3e33fca4b6ad44eff1a54b52",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "kind": "unclassified",
+      "kind_basis": {
+        "method": "unresolved"
+      }
+    },
+    {
+      "bytes": 36000,
+      "id": "sans500-ttf",
+      "instructions": "Provide in FINTECH_FONT_DIR; prepare-fonts.py verifies original and derived hashes.",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "local_path": "Sans500.ttf",
+      "mode": "provide",
+      "notice": "LICENSES/NotoSans-OFL.txt",
+      "permission": "user-supplied-not-distributed",
+      "sha256": "a6edf61658648a7ff22b2f6bb1e0d0d47b68ccaddb3babd05b7f03f657a00a32",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "kind": "unclassified",
+      "kind_basis": {
+        "method": "unresolved"
+      }
+    },
+    {
+      "bytes": 36000,
+      "id": "sans600-ttf",
+      "instructions": "Provide in FINTECH_FONT_DIR; prepare-fonts.py verifies original and derived hashes.",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "local_path": "Sans600.ttf",
+      "mode": "provide",
+      "notice": "LICENSES/NotoSans-OFL.txt",
+      "permission": "user-supplied-not-distributed",
+      "sha256": "b29e47bdee24531079ec0601d4039fa8c3b63334c8d1f05737fbb82978e32a0d",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "kind": "unclassified",
+      "kind_basis": {
+        "method": "unresolved"
+      }
+    },
+    {
+      "bytes": 35976,
+      "id": "sans700-ttf",
+      "instructions": "Provide in FINTECH_FONT_DIR; prepare-fonts.py verifies original and derived hashes.",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "local_path": "Sans700.ttf",
+      "mode": "provide",
+      "notice": "LICENSES/NotoSans-OFL.txt",
+      "permission": "user-supplied-not-distributed",
+      "sha256": "19252cf9ac9087fd17d0c3999c60801a43002b5d925b5798ea278d80c76129c8",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "kind": "unclassified",
+      "kind_basis": {
+        "method": "unresolved"
+      }
+    },
+    {
+      "bytes": 35972,
+      "id": "sans800-ttf",
+      "instructions": "Provide in FINTECH_FONT_DIR; prepare-fonts.py verifies original and derived hashes.",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "local_path": "Sans800.ttf",
+      "mode": "provide",
+      "notice": "LICENSES/NotoSans-OFL.txt",
+      "permission": "user-supplied-not-distributed",
+      "sha256": "2584ec873ef16861bd0ccc623ec96108cdf3bb6aa3075dfb722f6915e8b5094f",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "kind": "unclassified",
+      "kind_basis": {
+        "method": "unresolved"
+      }
+    },
+    {
+      "bytes": 35952,
+      "id": "sans900-ttf",
+      "instructions": "Provide in FINTECH_FONT_DIR; prepare-fonts.py verifies original and derived hashes.",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "local_path": "Sans900.ttf",
+      "mode": "provide",
+      "notice": "LICENSES/NotoSans-OFL.txt",
+      "permission": "user-supplied-not-distributed",
+      "sha256": "92f094b47eefc01de9bc2ffe59f1cf9b5136df1931bdfbaea535741f9833ba52",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "kind": "unclassified",
+      "kind_basis": {
+        "method": "unresolved"
+      }
+    },
+    {
+      "bytes": 13092,
+      "id": "figtree500-ttf",
+      "instructions": "Provide in FINTECH_FONT_DIR; prepare-fonts.py verifies original and derived hashes.",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "local_path": "Figtree500.ttf",
+      "mode": "provide",
+      "notice": "LICENSES/figtree-OFL.txt",
+      "permission": "user-supplied-not-distributed",
+      "sha256": "16159ac2eda6d5cd2104c6a66eb68258bfba9b036c39afc9fc559d75230a86ca",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/figtree",
+      "kind": "unclassified",
+      "kind_basis": {
+        "method": "unresolved"
+      }
+    },
+    {
+      "bytes": 13128,
+      "id": "figtree600-ttf",
+      "instructions": "Provide in FINTECH_FONT_DIR; prepare-fonts.py verifies original and derived hashes.",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "local_path": "Figtree600.ttf",
+      "mode": "provide",
+      "notice": "LICENSES/figtree-OFL.txt",
+      "permission": "user-supplied-not-distributed",
+      "sha256": "1731a4264ebb17b9efa298c07b1c65cfe5c5f7ccf3e3fc1e4d27d05b2c362f5b",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/figtree",
+      "kind": "unclassified",
+      "kind_basis": {
+        "method": "unresolved"
+      }
+    },
+    {
+      "bytes": 13120,
+      "id": "figtree700-ttf",
+      "instructions": "Provide in FINTECH_FONT_DIR; prepare-fonts.py verifies original and derived hashes.",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "local_path": "Figtree700.ttf",
+      "mode": "provide",
+      "notice": "LICENSES/figtree-OFL.txt",
+      "permission": "user-supplied-not-distributed",
+      "sha256": "1ba0247ba7558a592c2baddf5711540c9d8535c298a5afb672b9d1b025167984",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/figtree",
+      "kind": "unclassified",
+      "kind_basis": {
+        "method": "unresolved"
+      }
+    },
+    {
+      "bytes": 13116,
+      "id": "figtree800-ttf",
+      "instructions": "Provide in FINTECH_FONT_DIR; prepare-fonts.py verifies original and derived hashes.",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "local_path": "Figtree800.ttf",
+      "mode": "provide",
+      "notice": "LICENSES/figtree-OFL.txt",
+      "permission": "user-supplied-not-distributed",
+      "sha256": "72dd88b43ffd1580ef85aabb971e1e35b2f90532c877e023f8b9fb2fcec9e46b",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/figtree",
+      "kind": "unclassified",
+      "kind_basis": {
+        "method": "unresolved"
+      }
+    }
+  ],
+  "evidence": {
+    "reviewArtifacts": {
+      "status": "NOT_INCLUDED"
+    }
+  },
+  "design": {
+    "decisionCard": "DESIGN-RETENTION.md",
+    "nonAssetNote": "Local data, geometry, audit and Canvas-state helpers are not public design families.",
+    "ruleRefs": [],
+    "ruleStatus": "Case recipe/audit not a new shared family.",
+    "sourceAnalysis": [
+      "design/DESIGN-REASONING.md"
+    ],
+    "assetUsage": [
+      {
+        "callToken": "surface",
+        "callsite": "design/scene.mjs",
+        "familyId": "design.material-surfaces.v1",
+        "importToken": "material-surfaces.mjs",
+        "mode": "runtime-import",
+        "modulePath": "engine/design-elements/material-surfaces.mjs",
+        "moduleSha256": "70bf1fcfa89bfbf911f5cf735b1b08e8ae7f360e43bd43a8c831efef579696eb",
+        "snapshotPath": null,
+        "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
+        "visibleRole": "three device base shells; custom soft masks remain case-local"
+      }
+    ]
+  },
+  "transfer": {
+    "motion": {
+      "status": "NOT_TESTED",
+      "note": "Fixed Native static only; no motion or responsive validation."
+    }
+  }
+}

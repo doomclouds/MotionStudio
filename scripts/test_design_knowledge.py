@@ -1,0 +1,80 @@
+import json
+from pathlib import Path
+import shutil
+import tempfile
+import unittest
+import design_knowledge as dk
+
+
+class DesignKnowledgeTests(unittest.TestCase):
+    def test_real_catalog_and_portable_links(self):
+        self.assertEqual(dk.validate(), [])
+
+    def test_literal_search_and_no_match(self):
+        data = dk.catalog()
+        self.assertEqual(dk.find(data, '功能色')[0]['id'], 'ui-002-instrument')
+        self.assertEqual(dk.find(data, 'Dashboard')[0]['id'], 'ui-001-dashboard')
+        self.assertEqual(dk.find(data, 'dashboard', 'instrument-interfaces'), [])
+        self.assertEqual(dk.find(data, 'no-such-design-zzzz'), [])
+        self.assertEqual(dk.find(data, '受众')[0]['id'], 'content-decisions')
+
+    def test_shared_reference_workflow_is_discoverable(self):
+        matches = dk.find(dk.catalog(), '跨例')
+        self.assertEqual([e['id'] for e in matches], ['reference-to-composition'])
+        self.assertEqual(matches[0]['type'], 'decision-guide')
+        guide = dk.ROOT / matches[0]['path']
+        self.assertTrue(guide.is_file())
+        self.assertIn('本阶段创造目标：需求驱动的迭代循环', guide.read_text())
+        base = Path(__file__).resolve().parents[1]
+        # UI is repository-only; a Motion portable has only its root SKILL.md.
+        motion = base / 'skills/motion-film-director/SKILL.md'
+        entries = [motion if motion.exists() else base / 'SKILL.md']
+        ui = base / 'skills/ui-design-director/SKILL.md'
+        if ui.exists():
+            entries.append(ui)
+        import re
+        for entry in entries:
+            links = re.findall(r'\[[^\]]*\]\(([^)]+)\)', entry.read_text())
+            refs = [x for x in links if x.endswith('/reference-to-composition.md')]
+            self.assertEqual(len(refs), 1)
+            self.assertEqual((entry.parent / refs[0]).resolve(), guide.resolve())
+
+    def test_guides_do_not_enter_evidence_catalog(self):
+        base = Path(__file__).resolve().parents[1]
+        skill = base / 'skills/motion-film-director' if (base / 'skills/motion-film-director').is_dir() else base
+        video = json.loads((skill / 'research/video-knowledge/index.json').read_text())
+        self.assertTrue(all(video[k] == [] for k in ('cases', 'techniques')))
+        self.assertEqual(video['schema_version'], 3)
+        self.assertNotIn('legacy', video)
+        self.assertTrue(all(e['type'] == 'public-method-summary' for e in dk.catalog()['entries']))
+
+    def test_invalid_duplicate_path_private_locator_and_orphan(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp) / 'skill/knowledge/design'
+            shutil.copytree(dk.ROOT, root)
+            data = dk.catalog(root)
+            data['entries'].append(dict(data['entries'][0]))
+            (root / 'index.json').write_text(json.dumps(data))
+            (root / 'cases/orphan.md').write_text('[broken](missing.md)\nfile://private')
+            issues = dk.validate(root)
+            self.assertTrue(any('duplicate' in i for i in issues))
+            self.assertIn('case files/index differ', issues)
+            self.assertTrue(any('private locator' in i for i in issues))
+            self.assertTrue(any('broken/nonportable' in i for i in issues))
+
+    def test_motion_ids_exist_without_counting_recipes_as_foundations(self):
+        base = Path(__file__).resolve().parents[1]
+        skill = base / 'skills/motion-film-director' if (base / 'skills/motion-film-director').is_dir() else base
+        portable = skill / 'runtime/motion-elements/catalog.json'
+        source = skill.parents[1] / 'engine/motion-elements/catalog.json'
+        catalog = json.loads((portable if portable.exists() else source).read_text())
+        ids = {e['id'] for e in catalog['elements']}
+        import re
+        doc = (skill / 'references/design-to-motion.md').read_text()
+        referenced = set(re.findall(r'`((?:motion|composition|recipe|geometry|transition|reveal)\.[a-z-]+)`', doc))
+        self.assertTrue(referenced)
+        self.assertEqual(referenced - ids, set())
+
+
+if __name__ == '__main__':
+    unittest.main()

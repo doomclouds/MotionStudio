@@ -101,7 +101,7 @@ python3 scripts/review_film.py report projects/my-film/tmp/review/matched-001/re
 
 人工实际观看/合听与模型辅助记录分列。模型必须真的接收相关媒体而非仅脚本/转录，并遵守既有单独授权、上传范围、费用和版本绑定；模型意见不是人耳体验或 OWNER 批准。未运行、受阻、缺失、过期一律保留 `UNVERIFIED / NOT_RUN / BLOCKED`，不得宣称相关门通过。报告按钮、mocked DOM 控件测试和数值夹具不能证明实际播放或听过；稀疏块位移也不是对象/相机分解，静态背景可能使中位数接近零。
 
-后续内容审查的研究与事件契约见[中文研究说明](https://github.com/doomclouds/MotionStudio/blob/dev/reference-benchmark-research/content/RESEARCH.zh-CN.md)和[content-review schema](https://github.com/doomclouds/MotionStudio/blob/dev/reference-benchmark-research/content/content-review.schema.json)：区分 observed / planned / hypothesized，串联证据→差异→原因假设→建议→复验。现有[独立内容标注校验器](https://github.com/doomclouds/MotionStudio/blob/dev/tools/reference-benchmark/CONTENT_REVIEW.md)仅离线校验 schema、引用、媒体 SHA/时间窗并导出 HTML/JSON 注释报告，**尚未接入低层 benchmark 自动观察内容或听审**；退出0只表示契约有效，不证明注释真实、因果成立或作品通过。示例是合成格式演示，不能作为真实影片证据，也不替代上表实际行动。
+后续内容审查的研究与事件契约见[中文研究说明](https://github.com/doomclouds/MotionStudio/blob/dev/tools/reference-benchmark/research/content-review.zh-CN.md)和[content-review schema](https://github.com/doomclouds/MotionStudio/blob/dev/tools/reference-benchmark/schemas/content-review.schema.json)：区分 observed / planned / hypothesized，串联证据→差异→原因假设→建议→复验。现有[独立内容标注校验器](https://github.com/doomclouds/MotionStudio/blob/dev/tools/reference-benchmark/CONTENT_REVIEW.md)仅离线校验 schema、引用、媒体 SHA/时间窗并导出 HTML/JSON 注释报告，**尚未接入低层 benchmark 自动观察内容或听审**；退出0只表示契约有效，不证明注释真实、因果成立或作品通过。示例是合成格式演示，不能作为真实影片证据，也不替代上表实际行动。
 
 ### 2.5D资产接入与动作责任（仅在分层图像参与动画时）
 

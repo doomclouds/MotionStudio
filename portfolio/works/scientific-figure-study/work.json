@@ -1,0 +1,380 @@
+{
+  "id": "scientific-figure-study",
+  "version": "1.0.0",
+  "title": "科研图版 · 完整静态复刻",
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "LICENSES/NotoSans-OFL.txt",
+      "LICENSES/RobotoMono-OFL.txt",
+      "LICENSES/huashu-MIT-LICENSE.txt",
+      "LICENSES/sourcesans3-OFL.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/LICENSE",
+      "https://github.com/google/fonts"
+    ]
+  },
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "locks/npm-package-lock.json"
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "976bee22089d8c6111009fef07e56a2510e1c6fcb5694ae6f0837c25c01e16b4",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "Independent complete still/details reviewed; font/JPEG residuals and sample-data limitations disclosed. User retained; no browser or motion approval."
+    }
+  },
+  "schema": "motionstudio.work/1",
+  "lifecycle": "retained",
+  "kind": "static",
+  "publication": {
+    "status": "source-release"
+  },
+  "authorship": {
+    "unofficial_recreation": true,
+    "original": {
+      "author": "alchaincyf (花叔 · 花生)",
+      "title": "Huashu design specimen",
+      "url": "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/info/19-scientific-figure-plate.html"
+    }
+  },
+  "render": {
+    "entrypoint": "design/scene.mjs",
+    "width": 1200,
+    "height": 750
+  },
+  "files": [
+    {
+      "path": "CREDITS.md",
+      "sha256": "91d4709a462d088f28227cf6047749faafb8937a40fb1abbfc5d8f894f2b0d16",
+      "kind": "documentation"
+    },
+    {
+      "path": "DESIGN-RETENTION.md",
+      "sha256": "6476b8db2cc91a0c73290d2cab2881bed0c6a5f68bf40ab6b1f095bcf4288420",
+      "kind": "documentation"
+    },
+    {
+      "path": "LICENSES/NotoSans-OFL.txt",
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+      "kind": "license"
+    },
+    {
+      "path": "LICENSES/RobotoMono-OFL.txt",
+      "sha256": "50ab8dd54680d3473f649c9db86fece88434d097c7834475c1c72d2f8c429215",
+      "kind": "license"
+    },
+    {
+      "path": "LICENSES/huashu-MIT-LICENSE.txt",
+      "sha256": "6d6a2a9caf2e6d2b76974050427053b2892d8aa4c33fd168ce63a537fcee9d96",
+      "kind": "license"
+    },
+    {
+      "path": "LICENSES/sourcesans3-OFL.txt",
+      "sha256": "09746787287a289323b0ec3cff4d1a4a801331b82b7207c1e186f5d26619a392",
+      "kind": "license"
+    },
+    {
+      "path": "README.md",
+      "sha256": "b6bfb256a7c4781db395326e972638f769b3b479c0446097c3737619e6680d5b",
+      "kind": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "cf0f57eef7b5a588912f92b7b9a5fa1f7d46d4aec494c9ce42414842c14b07ca",
+      "kind": "cover"
+    },
+    {
+      "path": "design/DESIGN-REASONING.md",
+      "sha256": "51242c9cd85d70988b82b7a897b9b3870cf3be4dd621851a9ae007c462c1bc88",
+      "kind": "documentation"
+    },
+    {
+      "path": "design/caption.mjs",
+      "sha256": "e7c7123ad34fb5471015ecd531735aff4d5cf891439742030cc256b306b9e636",
+      "kind": "source"
+    },
+    {
+      "path": "design/plot-audit-recipe.mjs",
+      "sha256": "ec8513d07aab1a0bb4320d687494b8a0bd68d5f61ef3a863f9939e1e40f5a0ce",
+      "kind": "source"
+    },
+    {
+      "path": "design/scene.mjs",
+      "sha256": "f3436f7564bd6cfed8c21dc43f92e6f17ebf0c764a5c2f0451be17a32c213888",
+      "kind": "source"
+    },
+    {
+      "path": "design/source-plot.mjs",
+      "sha256": "d20a0edb069c3dbb1b59a32df148c62bd0d4a219b08259458285a56286316f4c",
+      "kind": "source"
+    },
+    {
+      "path": "font-charset.txt",
+      "sha256": "c5d2a2f7ae96495d5d754c444938481d2c562bd8e7f2ed8a67364b1f8d5e9352",
+      "kind": "documentation"
+    },
+    {
+      "path": "font-inputs.json",
+      "sha256": "5270561418d70183eb129475c38f147a54ba2c7fa2064396900be86f9f619cd8",
+      "kind": "config"
+    },
+    {
+      "path": "locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "kind": "lock"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "c97986608711fff48e780026471834a114f117d30fd4f1b15c3e76b21a760a46",
+      "kind": "lock"
+    },
+    {
+      "path": "prepare-fonts.py",
+      "sha256": "98fb802fb3b6f994cdd6930735919e61e87e93df1b2f830a51151edeab7d525f",
+      "kind": "source"
+    },
+    {
+      "path": "tests/recipe.test.mjs",
+      "sha256": "dc8bbe97bd9192a4ce43d7db829ca81894574cffefd1e01e83d90257f625af3c",
+      "kind": "source"
+    }
+  ],
+  "resources": [
+    {
+      "bytes": 17772300,
+      "id": "notosanssc-variable-ttf",
+      "instructions": "Provide in SCIENCE_FONT_DIR; prepare-fonts.py verifies original and derived hashes.",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "local_path": "NotoSansSC-variable.ttf",
+      "mode": "provide",
+      "notice": "LICENSES/NotoSans-OFL.txt",
+      "permission": "user-supplied-not-distributed",
+      "sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "kind": "unclassified",
+      "kind_basis": {
+        "method": "unresolved"
+      }
+    },
+    {
+      "bytes": 646340,
+      "id": "sourcesans3-wght-ttf",
+      "instructions": "Provide in SCIENCE_FONT_DIR; prepare-fonts.py verifies original and derived hashes.",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "local_path": "SourceSans3[wght].ttf",
+      "mode": "provide",
+      "notice": "LICENSES/sourcesans3-OFL.txt",
+      "permission": "user-supplied-not-distributed",
+      "sha256": "042fe2cc0b933e328410d7acbd0aa6a1873dca5aef81875f4bc214b08825c7b9",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/sourcesans3",
+      "kind": "unclassified",
+      "kind_basis": {
+        "method": "unresolved"
+      }
+    },
+    {
+      "bytes": 183700,
+      "id": "robotomono-variable-ttf",
+      "instructions": "Provide in SCIENCE_FONT_DIR; prepare-fonts.py verifies original and derived hashes.",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "local_path": "RobotoMono-variable.ttf",
+      "mode": "provide",
+      "notice": "LICENSES/RobotoMono-OFL.txt",
+      "permission": "user-supplied-not-distributed",
+      "sha256": "66a80e79d17e4c7cabd162e2916578a4cc08fd19eef6e2a643305eae9c567b2b",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/robotomono",
+      "kind": "unclassified",
+      "kind_basis": {
+        "method": "unresolved"
+      }
+    },
+    {
+      "bytes": 42804,
+      "id": "sans400-ttf",
+      "instructions": "Provide in SCIENCE_FONT_DIR; prepare-fonts.py verifies original and derived hashes.",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "local_path": "Sans400.ttf",
+      "mode": "provide",
+      "notice": "LICENSES/NotoSans-OFL.txt",
+      "permission": "user-supplied-not-distributed",
+      "sha256": "b8e6fc433c5e8b4267b6f6e568c2ea3b757cddb70f815844c4dce8d0a97b33a4",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "kind": "unclassified",
+      "kind_basis": {
+        "method": "unresolved"
+      }
+    },
+    {
+      "bytes": 42804,
+      "id": "sans500-ttf",
+      "instructions": "Provide in SCIENCE_FONT_DIR; prepare-fonts.py verifies original and derived hashes.",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "local_path": "Sans500.ttf",
+      "mode": "provide",
+      "notice": "LICENSES/NotoSans-OFL.txt",
+      "permission": "user-supplied-not-distributed",
+      "sha256": "f2d21c2dd9060f8038e6dd995724980872436c988d64c83169670665a13d6ec4",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "kind": "unclassified",
+      "kind_basis": {
+        "method": "unresolved"
+      }
+    },
+    {
+      "bytes": 42804,
+      "id": "sans600-ttf",
+      "instructions": "Provide in SCIENCE_FONT_DIR; prepare-fonts.py verifies original and derived hashes.",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "local_path": "Sans600.ttf",
+      "mode": "provide",
+      "notice": "LICENSES/NotoSans-OFL.txt",
+      "permission": "user-supplied-not-distributed",
+      "sha256": "1f3c48928adf5408192c8422b73b0c46484a7aca9860bb06f17b9e98717794e6",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "kind": "unclassified",
+      "kind_basis": {
+        "method": "unresolved"
+      }
+    },
+    {
+      "bytes": 42804,
+      "id": "sans700-ttf",
+      "instructions": "Provide in SCIENCE_FONT_DIR; prepare-fonts.py verifies original and derived hashes.",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "local_path": "Sans700.ttf",
+      "mode": "provide",
+      "notice": "LICENSES/NotoSans-OFL.txt",
+      "permission": "user-supplied-not-distributed",
+      "sha256": "8d3b6ae3e166e341d2097eb15a9f5ce50d4e2401aac809225551986ba3c6e419",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "kind": "unclassified",
+      "kind_basis": {
+        "method": "unresolved"
+      }
+    },
+    {
+      "bytes": 17728,
+      "id": "source400-ttf",
+      "instructions": "Provide in SCIENCE_FONT_DIR; prepare-fonts.py verifies original and derived hashes.",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "local_path": "Source400.ttf",
+      "mode": "provide",
+      "notice": "LICENSES/sourcesans3-OFL.txt",
+      "permission": "user-supplied-not-distributed",
+      "sha256": "7340d09ed56ac2c66c2e0c121fbf6b1ab4ab736a6affb5a8a8e3b09a8f138b8b",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/sourcesans3",
+      "kind": "unclassified",
+      "kind_basis": {
+        "method": "unresolved"
+      }
+    },
+    {
+      "bytes": 17732,
+      "id": "source600-ttf",
+      "instructions": "Provide in SCIENCE_FONT_DIR; prepare-fonts.py verifies original and derived hashes.",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "local_path": "Source600.ttf",
+      "mode": "provide",
+      "notice": "LICENSES/sourcesans3-OFL.txt",
+      "permission": "user-supplied-not-distributed",
+      "sha256": "f4eb8d59cffa4e75711024362c135a2265fc6c0f733f8f6ab25e198d15bb5d45",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/sourcesans3",
+      "kind": "unclassified",
+      "kind_basis": {
+        "method": "unresolved"
+      }
+    },
+    {
+      "bytes": 17724,
+      "id": "source700-ttf",
+      "instructions": "Provide in SCIENCE_FONT_DIR; prepare-fonts.py verifies original and derived hashes.",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "local_path": "Source700.ttf",
+      "mode": "provide",
+      "notice": "LICENSES/sourcesans3-OFL.txt",
+      "permission": "user-supplied-not-distributed",
+      "sha256": "c0d3f485eadf692e0b335bf146be766f2fcb6acbcaf794b3a5b7d41b74f5086c",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/sourcesans3",
+      "kind": "unclassified",
+      "kind_basis": {
+        "method": "unresolved"
+      }
+    },
+    {
+      "bytes": 12744,
+      "id": "mono400-ttf",
+      "instructions": "Provide in SCIENCE_FONT_DIR; prepare-fonts.py verifies original and derived hashes.",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "local_path": "Mono400.ttf",
+      "mode": "provide",
+      "notice": "LICENSES/RobotoMono-OFL.txt",
+      "permission": "user-supplied-not-distributed",
+      "sha256": "0e38559e5088d1790212ea76ee4a18a83aa3a7082b8fe6938b5c9e03af51d253",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/robotomono",
+      "kind": "unclassified",
+      "kind_basis": {
+        "method": "unresolved"
+      }
+    },
+    {
+      "bytes": 12744,
+      "id": "mono500-ttf",
+      "instructions": "Provide in SCIENCE_FONT_DIR; prepare-fonts.py verifies original and derived hashes.",
+      "license": "SIL OFL 1.1; external font not distributed",
+      "local_path": "Mono500.ttf",
+      "mode": "provide",
+      "notice": "LICENSES/RobotoMono-OFL.txt",
+      "permission": "user-supplied-not-distributed",
+      "sha256": "a9d76ca3ac37dd5666d052bf649fb6c1189138565234592c6135e0a26a2f0a4d",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/robotomono",
+      "kind": "unclassified",
+      "kind_basis": {
+        "method": "unresolved"
+      }
+    }
+  ],
+  "evidence": {
+    "reviewArtifacts": {
+      "status": "NOT_INCLUDED"
+    }
+  },
+  "design": {
+    "decisionCard": "DESIGN-RETENTION.md",
+    "nonAssetNote": "Local data, geometry, audit and Canvas-state helpers are not public design families.",
+    "ruleRefs": [],
+    "ruleStatus": "Case recipe/audit not a new shared family.",
+    "sourceAnalysis": [
+      "design/DESIGN-REASONING.md"
+    ],
+    "assetUsage": []
+  },
+  "transfer": {
+    "motion": {
+      "status": "NOT_TESTED",
+      "note": "Fixed Native static only; no motion or responsive validation."
+    }
+  }
+}

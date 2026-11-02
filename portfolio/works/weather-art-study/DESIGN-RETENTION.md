@@ -17,7 +17,7 @@
 检查主画遮挡/硬影、三缩略比例、标题与图标高光、阅读顺序。保留字体字重/栅格和JPEG细节残差；无浏览器、响应式、交互或视频验收。用户已收藏；工程准备发布。
 
 ## 验证身份
-原帧身份见 entry.cover，作者独立恢复回执与既有独审分别记录 retention.json；静态通过不推定 Motion 迁移。
+原帧身份见 entry.cover，作者独立恢复回执与既有独审分别记录 work.json；静态通过不推定 Motion 迁移。
 
 ## 可运行配方验例
 `MOTION_ENGINE_ROOT=/absolute/engine/motion-render-core node test-weather-recipe.mjs` 渲染4个手工预设并拒绝7个非法输入，不需要字体。预设的标签/含义不会自动适配新内容，不能称跨任意内容组合验证。

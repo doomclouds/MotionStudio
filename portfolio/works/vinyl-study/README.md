@@ -2,7 +2,7 @@
 
 1200×750 Native Canvas reconstruction of the [Huashu design specimen](https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/web/03-memphis-maximalism.html), not a real store's official site. Upstream MIT attribution is preserved in `LICENSES/huashu-MIT-LICENSE.txt`. Geometry, typography and paper dots are editable; source screenshots, generated textures and external artwork are not used. No production review reports or images are redistributed.
 
-`design/scene.mjs` is the full composition, not the simplified synthetic fixture. `design/content.json` separates content. This remains a case-specific composition: it is not a generic responsive framework or a newly invented motion element. [Design reasoning](../../../skills/motion-film-director/research/design-knowledge/cases/ui-003-print-poster.md).
+`design/scene.mjs` is the full composition, not the simplified synthetic fixture. `design/content.json` separates content. This remains a case-specific composition: it is not a generic responsive framework or a newly invented motion element. [Design reasoning](../../../knowledge/design/cases/ui-003-print-poster.md).
 
 ## Dependencies and rendering
 

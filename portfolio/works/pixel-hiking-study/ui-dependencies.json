@@ -1,11 +1,12 @@
 {
   "repository": "MotionStudio",
-  "tested_commit": "0947507961eb5624ddd5c1240758baefa3246fd8",
+  "dependency_commit": "bd3750a4c27408bf90abc18cb16c1455d23442c9",
+  "verification_status": "NOT_RUN",
   "root": "engine/design-elements",
   "files": [
     {
       "path": "print-poster.mjs",
-      "sha256": "56203ff52eef7375bf1c8efe20b926dc0197572353f44c82f1243930a7e26fcf"
+      "sha256": "f30e3f0967f0ab8ef65857a68c3cb77d42b356e6e8b1b4a01820811525dad64d"
     },
     {
       "path": "color-sections.mjs",

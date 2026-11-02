@@ -2,6 +2,10 @@
 
 This is a deliberately narrow **toolkit source snapshot with explicitly reviewed portfolio source entries**, not publication of the private production workspace, general film-project collection, research archive, or finished films.
 
+## Policy and exact media identities
+
+This document defines the publication and rights boundaries. The machine-readable list of reviewed media paths and SHA-256 identities is [scripts/source-assets-allowlist.json](scripts/source-assets-allowlist.json); [scripts/check-source-tree.py](scripts/check-source-tree.py) enforces it together with source exclusions and media constraints. The detailed entries below preserve the scope and rights of each exception, not a separate permission to add media. Changes must keep policy, allowlist and checks aligned; a hash or a passing check does not grant rights. Portfolio retention requirements remain in [portfolio/README.md](portfolio/README.md).
+
 ## Included
 
 - Original bounded static design primitives (existing print-poster plus typography, color sections, material surfaces, semantic node sequences, parameter controls, expressive typography, radial scales, diagonal fields and illustrative authored paths), design guidance, synthetic composition recipes and tests in `engine/design-elements/`, linked to public design guidance. No source artwork, production recreation, bundled fonts, generated previews or private review evidence are included.
@@ -24,7 +28,7 @@ This is a deliberately narrow **toolkit source snapshot with explicitly reviewed
 - The entire private `projects/` collection: film implementations, project assets/fonts, restoration metadata, source acquisition indexes, product evidence, briefs, private reviews, and feedback.
 - Director Skill research datasets and production cases, including media identity hashes, local evidence locations, acquisition records and individual commissioning feedback.
 - Actual production catalog and case datasets (distinct from the synthetic, static motion-element API catalog). Generic query/validation tools remain, with an empty default library and explicitly synthetic test fixtures; passing those tests is not validation of any private production case.
-- Generated frames, films, review reports (except the three exact reviewed image exceptions described in this document), private reference media, and historical Git development commits.
+- Generated frames, films, review reports (except exact reviewed preview/cover identities in the source asset allowlist, within the rights boundaries described here), private reference media, and historical Git development commits.
 
 These materials remain in the original private workspace; they were not deleted there. The explicitly listed Tessel entry is rerenderable after its licensed resource setup; Favorite52 is separately retained as a conditional source release requiring exact user-supplied resources, as detailed below. Neither publishes a private production directory. Tessel font restoration code is included, while font binaries and all runtime audio/background assets remain external. No fonts, photographs or audio are redistributed by this snapshot.
 
@@ -56,7 +60,7 @@ Four further complete fixed-frame studies retain editable code, content, design 
 - `portfolio/works/hardware-sampler-study/cover.jpg`: 93,138 bytes; SHA-256 `98f00db4ebf08339a2e55975ce0133cf65ce5a029460db108deaef557852b766`.
 - `portfolio/works/shanghai-deco-study/cover.jpg`: 95,401 bytes; SHA-256 `ec6f76cea9a55360a5c7cc0c82543735335e5dc194fbc8b23d9ed5561431d251`.
 
-No wildcard media permission is granted. Their entry.json schema4 records static source releases and explicit visual residuals, without implying audio, animation or interaction review.
+No wildcard media permission is granted. Their work.json kind=static records the original static source-release facts and explicit visual residuals, without implying audio, animation or interaction review.
 
 ## Huashu B02 retained static works
 
@@ -68,7 +72,7 @@ Five further fixed-frame studies retain full editable source, design reasoning, 
 - `portfolio/works/theatre-narrative-wave/cover.jpg`: 89,026 bytes; SHA-256 `8c5e96fba95b2e572387ebcc5ff7c7a8131f1df85a4b307af87fb4d9ee63e5b1`.
 - `portfolio/works/liquid-glass-study/cover.jpg`: 239,267 bytes; SHA-256 `dafc85a12ef859aadc0de540cba83c7fd2b8bdcf68e64a6211bd15f346ec7026`.
 
-No wildcard media permission is granted. Covers derive only from the accepted Native recreations; schema4 does not imply browser, interaction, audio or animation validation.
+No wildcard media permission is granted. Covers derive only from the accepted Native recreations; kind=static does not imply browser, interaction, audio or animation validation.
 
 ## Huashu B03 retained static works
 
@@ -80,7 +84,7 @@ Five complete fixed-frame studies retain editable code, design reasoning, runtim
 - `portfolio/works/wave-weather-study/cover.jpg`: 1200 × 750, 157,870 bytes; SHA-256 `40be54ada883fd596aaabf9072ef5489fcc13375323fbe51b320296000b60c48`.
 - `portfolio/works/meridian-study/cover.jpg`: 1440 × 900, 142,391 bytes; SHA-256 `4ba747751f084e0f9420bc09435b4b218b4aded8f3844c8a455460a350b422ce`.
 
-No wildcard media permission is granted. Covers derive from the accepted Native recreations; schema4 does not imply browser, interaction, audio or animation validation. Meridian is retained at its original 1440 × 900 frame, not rescaled to the other works.
+No wildcard media permission is granted. Covers derive from the accepted Native recreations; kind=static does not imply browser, interaction, audio or animation validation. Meridian is retained at its original 1440 × 900 frame, not rescaled to the other works.
 
 ## Huashu B04 retained static works
 
@@ -92,7 +96,7 @@ Five complete fixed-frame studies retain editable code, design reasoning, runtim
 - `portfolio/works/playful-roast-timer-study/cover.jpg`: 1200 × 750, 208,684 bytes; SHA-256 `9eacecbbdad38c57c037c3b2bbd2ace1d1f24566218598e4a04cfd4ec59379c4`.
 - `portfolio/works/market-method-study/cover.jpg`: 1200 × 750, 123,298 bytes; SHA-256 `cba9bdf156b79022d86c51dcc6371b537ca2de95bb29e86c61724f24d63255b9`.
 
-No wildcard media permission is granted. Covers derive from the accepted Native recreations; schema4 does not imply browser, interaction, audio or animation validation.
+No wildcard media permission is granted. Covers derive from the accepted Native recreations; kind=static does not imply browser, interaction, audio or animation validation.
 
 ## Huashu B05 retained static works
 
@@ -104,7 +108,7 @@ Five complete fixed-frame studies retain editable code, design reasoning, runtim
 - `portfolio/works/health-color-code-study/cover.jpg`: 1200 × 750, 155,611 bytes; SHA-256 `224b2740ccb52dab46f5ef7fd8c67fd7c6d650f4d03a927d4c7057c2c557d982`.
 - `portfolio/works/irreverent-pop-study/cover.jpg`: 1200 × 750, 160,993 bytes; SHA-256 `df8f621e07865727a8d2a99fe66d9ce23e7b5747861732a14a503152dff72f35`.
 
-No wildcard media permission is granted. Covers derive from the accepted Native recreations; schema4 does not imply browser, interaction, audio or animation validation.
+No wildcard media permission is granted. Covers derive from the accepted Native recreations; kind=static does not imply browser, interaction, audio or animation validation.
 
 
 ## B06 approved static covers
@@ -166,7 +170,7 @@ Five retained fixed-size studies; only these self-rendered cover identities are 
 
 ## Proposed isolated static-effects code candidate
 
-The prepared increment under `engine/design-elements/recipes/static-effects-candidate/` contains bounded native code, synthetic input fixtures, design guidance, public source/font locks, external-only acquisition/runtime/output adapters and Apache/OFL notices. It adds no media exception, portfolio entry, registered design family or admitted public recipe. Original previews/HTML, fonts, render outputs, private review evidence and case-specific owner feedback stay external. The owner has requested consolidation/submission of this group; this proposal does not itself execute that submission or assert itemized adapter aesthetic acceptance.
+The prepared increment under `engine/design-elements/recipes/candidates/static-effects-candidate/` contains bounded native code, synthetic input fixtures, design guidance, public source/font locks, external-only acquisition/runtime/output adapters and Apache/OFL notices. It adds no media exception, portfolio entry, registered design family or admitted public recipe. Original previews/HTML, fonts, render outputs, private review evidence and case-specific owner feedback stay external. The owner has requested consolidation/submission of this group; this proposal does not itself execute that submission or assert itemized adapter aesthetic acceptance.
 
 ## OpenDesign second group Swiss Grid and Data Rollup static studies
 
@@ -179,58 +183,58 @@ These exact exceptions do not authorize any other media. The case-local helpers 
 
 ## OpenDesign second-group selective source retention
 
-`engine/design-elements/recipes/open-design-static-three/` retains two bounded source candidates (synthetic zero-baseline chart and deterministic static light field), plus three complete static source-case snapshots for Data Chart, Light Leak and Bold Signal. Bold Signal remains case-local; this adds zero public families and zero formal recipes. Batch retention/submission is authorized, without inventing separate owner approval for the two new synthetic cross-content compositions. No portfolio entry or cover is added. All original/derived fonts, original previews/HTML, comparisons, rendered examples and private review records remain external. Explicit optional font preparation uses fixed official URLs, size/Git blob/SHA checks and output paths outside the repository; rendering never fetches. Existing source-media allowlists are unchanged. Static Native adapter verification does not establish motion, browser or cross-platform equivalence.
+`engine/design-elements/recipes/candidates/open-design-static-three/` retains two bounded source candidates (synthetic zero-baseline chart and deterministic static light field), plus three complete static source-case snapshots for Data Chart, Light Leak and Bold Signal. Bold Signal remains case-local; this adds zero public families and zero formal recipes. Batch retention/submission is authorized, without inventing separate owner approval for the two new synthetic cross-content compositions. No portfolio entry or cover is added. All original/derived fonts, original previews/HTML, comparisons, rendered examples and private review records remain external. Explicit optional font preparation uses fixed official URLs, size/Git blob/SHA checks and output paths outside the repository; rendering never fetches. Existing source-media allowlists are unchanged. Static Native adapter verification does not establish motion, browser or cross-platform equivalence.
 
 ## Public semantic-index projection
 
-The generated portfolio indexes and query output expose only public source relationships and existing entry declarations. Review/comparison artifacts, record identifiers, document fingerprints and storage metadata are not included. New Swiss Grid and Data Rollup retention sidecars use schema 2 with `reviewArtifacts: NOT_INCLUDED`; that status does not claim private evidence is missing. Legal source/dependency identities and self-rendered frame hashes remain intact. Legacy evidence inputs are validation-only and are not copied into the public projection; this change does not rewrite or erase previously published history.
+The generated portfolio indexes and query output expose only public work/1 source relationships and recorded declarations. Review/comparison artifacts, private record identifiers, document fingerprints and storage metadata are NOT_INCLUDED; this does not claim absence or review. Original values remain in fixed Git history without rewriting it. External references are data, not accessibility guarantees or new material-existence gates. Candidate dependency upgrades remain NOT_RUN, with original acceptance and cover bound only to history. No new media permission is granted.
 
 ## Fifth-group restricted static source recipes
 
-Exactly three candidate source packages are added under `engine/design-elements/recipes/`: `scalar-field-candidate` (14 UTF-8 files), `file-grid-candidate` (25), and `indexed-pixel-layer-candidate` (18). A separate [candidate/case-selection index](engine/design-elements/recipes/fifth-static-candidates/Index.md) links guidance, contracts, examples and complete notices without changing the public family registry, formal recipe catalog or portfolio. These 57 package files contain no image/font binary, original application markup/screenshot, generated preview, prior image-derived pixel model, private audit identity or storage receipt.
+Exactly three candidate source packages are added under `engine/design-elements/recipes/`: `scalar-field-candidate` (14 UTF-8 files), `file-grid-candidate` (25), and `indexed-pixel-layer-candidate` (18). A separate [candidate/case-selection index](engine/design-elements/recipes/batches/fifth-static-candidates/Index.md) links guidance, contracts, examples and complete notices without changing the public family registry, formal recipe catalog or portfolio. These 57 package files contain no image/font binary, original application markup/screenshot, generated preview, prior image-derived pixel model, private audit identity or storage receipt.
 
 Only file-grid needs fonts; its fixed official Inter/OFL acquisition and derivation scripts write to caller-owned external directories. Runtime dependencies are externally installed. Graphite proprietary branding, OpenMTP third-party icons, Pixelorama original artwork/editor shell, and the separate GPL Surge study are excluded. Two synthetic compositions per candidate are tests of limited reuse, not new accepted client works or a promise of animation/interaction.
 
 ## Sixth-group same-source static candidates
 
-Exactly two source-only candidate packages are retained: `byte-field-diagnostic-candidate` (23 text files) and `spatial-character-snapshot-candidate` (21). The [candidate/case-selection index](engine/design-elements/recipes/sixth-static-candidates/Index.md) links their contracts, design guidance, synthetic examples and licenses. They add no formal family, recipe registration or portfolio work. No original screenshot/application, private review identity, font/image binary or generated example is included.
+Exactly two source-only candidate packages are retained: `byte-field-diagnostic-candidate` (23 text files) and `spatial-character-snapshot-candidate` (21). The [candidate/case-selection index](engine/design-elements/recipes/batches/sixth-static-candidates/Index.md) links their contracts, design guidance, synthetic examples and licenses. They add no formal family, recipe registration or portfolio work. No original screenshot/application, private review identity, font/image binary or generated example is included.
 
 The first links an original quantized field, histogram and sampled-byte note, not real diagnostic data; its exact external Liberation font is provide-exact, with public binary recovery unverified. The second links an ASCII-address grid and derived summary, not executable code; its exact IBM Plex Mono font is recoverable from a fixed official URL. All resources and outputs for this integration must remain outside the repository. Static source validation does not establish browser, interaction, animation or per-example user acceptance.
 
 ## Seventh-group reconstructed source-only candidates
 
-The [timing and glyph-evidence selection index](engine/design-elements/recipes/seventh-static-candidates/Index.md) links exactly two restricted packages: `timing-diagram-candidate` (27 UTF-8 texts) and `glyph-evidence-candidate` (35). They are new audited reconstructions, not claimed recovery of unavailable prior candidate bytes. No public family, formal recipe registration, portfolio entry or media exception is added. Original references/applications, private review/storage metadata, font binaries, generated outline JSON, example PNGs, reports and caches remain excluded.
+The [timing and glyph-evidence selection index](engine/design-elements/recipes/batches/seventh-static-candidates/Index.md) links exactly two restricted packages: `timing-diagram-candidate` (27 UTF-8 texts) and `glyph-evidence-candidate` (35). They are new audited reconstructions, not claimed recovery of unavailable prior candidate bytes. No public family, formal recipe registration, portfolio entry or media exception is added. Original references/applications, private review/storage metadata, font binaries, generated outline JSON, example PNGs, reports and caches remain excluded.
 
 The timing model is synthetic and unitless; its exact Liberation font is external provide-exact, not verified public binary recovery. Glyph evidence is fixed unshaped font data, not a shaping engine; fixed official OFL masters and OFL-derived outlines remain external. All dependencies/resources/output must be outside the repository. Static technical checks do not establish browser, motion or individual aesthetic acceptance.
 
 ## Bounded drape and radial-node source candidates
 
-The two packages under `engine/design-elements/recipes/drape-material-candidate` and `radial-node-candidate` contain60 reviewed text files only. Generated previews, original references, private evidence/checkpoint identifiers, installed dependencies and font binaries are excluded. The discovery index adds no registry entry. Radial fonts are fetched/prepared to external directories from exact pinned public bytes; drape has no font/image inputs.
+The two packages under `engine/design-elements/recipes/candidates/drape-material-candidate` and `radial-node-candidate` contain60 reviewed text files only. Generated previews, original references, private evidence/checkpoint identifiers, installed dependencies and font binaries are excluded. The discovery index adds no registry entry. Radial fonts are fetched/prepared to external directories from exact pinned public bytes; drape has no font/image inputs.
 
 ## Ninth-group cue and authored-byte source candidates
 
-Exactly64 reviewed package text files are added under `engine/design-elements/recipes/cue-interval-candidate` (31) and `authored-byte-edits-candidate` (33), with a separate [discovery index](engine/design-elements/recipes/ninth-static-candidates/Index.md). No registered family, formal recipe/portfolio entry or source-media exception changes. The two packages retain their distinct MIT and BSD-2-Clause licenses; OFL fonts are externally restored/prepared from pinned official sources, with no font binary in Git. Original application/reference imagery, film/generated stills, product UI, rendered previews, private audit/storage records, caches and dependencies remain outside the source projection. All example content is synthetic; static models do not establish playback, parsing, automatic diff discovery, animation or user aesthetic acceptance.
+Exactly64 reviewed package text files are added under `engine/design-elements/recipes/candidates/cue-interval-candidate` (31) and `authored-byte-edits-candidate` (33), with a separate [discovery index](engine/design-elements/recipes/batches/ninth-static-candidates/Index.md). No registered family, formal recipe/portfolio entry or source-media exception changes. The two packages retain their distinct MIT and BSD-2-Clause licenses; OFL fonts are externally restored/prepared from pinned official sources, with no font binary in Git. Original application/reference imagery, film/generated stills, product UI, rendered previews, private audit/storage records, caches and dependencies remain outside the source projection. All example content is synthetic; static models do not establish playback, parsing, automatic diff discovery, animation or user aesthetic acceptance.
 
 ## Tenth-group separated text-only candidates
 
-The [three-package index](engine/design-elements/recipes/tenth-static-candidates/Index.md) links exactly62 reviewed UTF-8 package texts: linked-volume21, sampled-window-dialogue23 and shared-trace18. The first two retain MIT source terms; shared-trace remains MPL-2.0 with its MIT helper separately noticed. This is source distribution, not a conversion to the root license. No catalog/registry, portfolio or media allowlist changes.
+The [three-package index](engine/design-elements/recipes/batches/tenth-static-candidates/Index.md) links exactly62 reviewed UTF-8 package texts: linked-volume21, sampled-window-dialogue23 and shared-trace18. The first two retain MIT source terms; shared-trace remains MPL-2.0 with its MIT helper separately noticed. This is source distribution, not a conversion to the root license. No catalog/registry, portfolio or media allowlist changes.
 
 No PHASEPAIR/Mixxx/Tango GPL or CC BY-SA package, original screenshot/application markup, private audit/storage record, font binary, generated image, preview or runtime dependency is projected. All resources, fonts, installed dependencies, generated SVG/PNG/JSON and reports stay outside the repository. Synthetic volume bytes, authored messages and finite traces are not clinical data, actual communication, measured telemetry or live interaction. Historical private/pending wording inside unchanged package snapshots does not assert current publication or owner itemized acceptance.
 
 ## Eleventh-group exact source candidates
 
-The [two-package index](engine/design-elements/recipes/eleventh-static-candidates/Index.md) links 47 reviewed UTF-8 texts: 22 flow-ledger and 25 explicit-geometry. Only independent source mechanisms and synthetic examples are included, not FLOWGROVE/MENDRA source applications, whole source pages, private previews or original references. No catalog, registry, portfolio, source-policy or media exception is changed.
+The [two-package index](engine/design-elements/recipes/batches/eleventh-static-candidates/Index.md) links 47 reviewed UTF-8 texts: 22 flow-ledger and 25 explicit-geometry. Only independent source mechanisms and synthetic examples are included, not FLOWGROVE/MENDRA source applications, whole source pages, private previews or original references. No catalog, registry, portfolio, source-policy or media exception is changed.
 
 Flow uses MIT terms with Sniffnet's MIT alternative and both authentic alternative notices preserved, plus separate helper/label notices. Geometry remains MIT with retained 8B influence attribution; external Native MIT and Instrument Sans OFL are separate. All installed dependencies, font masters, outputs and audit/storage records stay external. No GPL/CC BY-SA package, image or font binary is in this increment. Historical pending/private flags inside unchanged snapshots do not assert current publication or production readiness.
 
 ## Twelfth-group exact complementary-seam source candidate
 
-The [discovery index](engine/design-elements/recipes/twelfth-static-candidates/Index.md) links exactly 25 reviewed UTF-8 source files. One caller-supplied plane is partitioned by one monotone seam; existing sampled-window code is only a pinned external example input, not another new method. No catalog, registry, portfolio, source-policy or media exception changes.
+The [discovery index](engine/design-elements/recipes/batches/twelfth-static-candidates/Index.md) links exactly 25 reviewed UTF-8 source files. One caller-supplied plane is partitioned by one monotone seam; existing sampled-window code is only a pinned external example input, not another new method. No catalog, registry, portfolio, source-policy or media exception changes.
 
 MIT core/example/helper terms remain intact; example Native MIT and unmodified Instrument Sans OFL are separate, external resources. Exclude all private screenshots/generated art, fonts/outlines, app shells, audit/storage records and GPL selection-summary. Raw RGBA ownership is distinct from Native premultiplication and ideal geometry. Historical pending/private wording in exact source snapshots does not assert current publication or production readiness.
 
 ## Thirteenth-group exact ink-bay text candidate
 
-The [discovery index](engine/design-elements/recipes/thirteenth-static-candidates/Index.md) links 32 exact reviewed UTF-8 package texts. Primary actual ink plus a gap derives a same-row opposite annotation bay; existing ink alignment is not a new method. No catalog, formal recipe registry, portfolio, source-policy or media exception changes.
+The [discovery index](engine/design-elements/recipes/batches/thirteenth-static-candidates/Index.md) links 32 exact reviewed UTF-8 package texts. Primary actual ink plus a gap derives a same-row opposite annotation bay; existing ink alignment is not a new method. No catalog, formal recipe registry, portfolio, source-policy or media exception changes.
 
 Independent MIT implementation/helpers retain their notices; the8B design-origin MIT notice does not bring its implementation, imagery or brand. Native MIT and Instrument Sans/Geist OFL resources are separate and external. No screenshots, generated art, fonts/outlines, private audit/storage records or GPL package are projected. Historical PENDING/private wording in exact source snapshots is not current publication, production or aesthetic acceptance.

@@ -29,4 +29,4 @@ Noto Serif SC900粗细笔画并存，保留编辑立场与生活文化气；Inte
 
 ## 后续受限组合研究
 
-[强调词与单位图符组合](../../../engine/design-elements/recipes/b09/README.md)参考本例设计判断并修正复用中的编码/边界问题；原scene未调用该新接口。新组合经有边界技术独审，未获用户审美认可，不增加公共族。
+[强调词与单位图符组合](../../../engine/design-elements/recipes/reviewed/b09/README.md)参考本例设计判断并修正复用中的编码/边界问题；原scene未调用该新接口。新组合经有边界技术独审，未获用户审美认可，不增加公共族。

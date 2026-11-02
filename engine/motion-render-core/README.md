@@ -4,18 +4,18 @@ Production rendering is Node.js + @napi-rs/canvas → PNG frames → FFmpeg. No 
 
 ## Manual runtime setup
 
-Requires Node.js >=24 (tested here with v24.22.1). The exact direct dependency is `@napi-rs/canvas` 0.1.100; no lockfile is currently supplied. This pins the direct package, not a complete platform/runtime lock or cross-platform pixel equivalence. FFmpeg and ffprobe must be separately available, with the `libx264` encoder for the Skill video wrapper.
+Requires Node.js >=24 (tested here with v24.22.1). The exact direct dependency is `@napi-rs/canvas` 0.1.100; the tracked package-lock.json locks npm dependencies. It does not lock Node, FFmpeg, the OS or fonts, or promise cross-platform pixel equivalence. Linux x64 is verified; macOS/Windows and other architectures have not been verified in this release check. FFmpeg and ffprobe must be separately available, with the `libx264` encoder for the Skill video wrapper.
 
 Choose one setup route; rendering itself never installs or downloads dependencies:
 
 1. **New installation, explicitly run by you:** from the workspace repository, `cd engine/motion-render-core`; from the extracted portable Skill directory, `cd runtime/motion-render-core`. In that core directory run:
 
    ```sh
-   npm install --ignore-scripts
+   npm ci --ignore-scripts
    node --test test/native.test.mjs
    ```
 
-   The npm command downloads the declared dependency and platform-specific optional package and may create a local lockfile. Do not omit optional dependencies. Merely declaring the dependency does not download it during rendering. Do not commit `node_modules` or platform binaries.
+   The npm command downloads the declared dependency and platform-specific optional package using the tracked lockfile. Do not omit optional dependencies. Merely declaring the dependency does not download it during rendering. Do not commit `node_modules` or platform binaries.
 
 2. **Use an existing installation:** do not run npm. Supply `--canvas-module /absolute/path/to/node_modules/@napi-rs/canvas` to the core or Skill CLI, or set `MOTIONSTUDIO_CANVAS_MODULE` to that path. Use the tested version 0.1.100; the loader records the loaded version but does not enforce the pin for an explicit external installation.
 
@@ -82,3 +82,5 @@ acceptance; consult `shot-report.json`.
 `node --test test/native.test.mjs test/stream.test.mjs` includes small synthetic
 stream/restart, boundary, backpressure, source-mutation and cancellation checks.
 These require existing Canvas and FFmpeg/ffprobe installations; nothing is installed.
+
+当前唯一逐帧 CLI 为 `scripts/render.mjs`，直接承载原生 Canvas 实现；不再经过 render-native 转发路径。参数、输出和错误行为保持原实现，不新增浏览器后端。影片编排／编码仍由 Motion Skill 的 render-shot 调用，不因入口整理减少功能。

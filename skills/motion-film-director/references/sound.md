@@ -57,4 +57,4 @@
 
 ## 本地合成与卡点知识
 
-需要了解已用的离线合成、手工事件时点与真实 RMS 数据流，或评估统一事件表/声音积木候选时，读[声音与画面事件方法（仓库入口）](../../../engine/motion-elements/docs/audio-visual-cue-methods.md)；独立 Skill 包请打开 `runtime/motion-elements/docs/audio-visual-cue-methods.md`。这是匿名项目经验与 NOT_IMPLEMENTED 提案，不新增已登记 API/基础/配方；组级卡点正向反馈不升级逐片听审或通用艺术认可。
+需要了解已用的离线合成、手工事件时点与真实 RMS 数据流，或评估统一事件表/声音积木候选时，读[声音与画面事件方法（仓库入口）（便携包）](../runtime/motion-elements/docs/audio-visual-cue-methods.md) / [声音与画面事件方法（仓库入口）（源码仓库）](https://github.com/doomclouds/MotionStudio/blob/ebda9d2661be84e1314cee14baf4acd241b6069e/engine/motion-elements/docs/audio-visual-cue-methods.md)；独立 Skill 包请打开 `runtime/motion-elements/docs/audio-visual-cue-methods.md`。这是匿名项目经验与 NOT_IMPLEMENTED 提案，不新增已登记 API/基础/配方；组级卡点正向反馈不升级逐片听审或通用艺术认可。

@@ -5,7 +5,7 @@ The public library is intentionally empty. It ships a structural validator, quer
 ## Begin with authorized local inputs
 
 1. Define the creative question and the scope of permission. A public source page does not grant reuse, modification or distribution rights.
-2. Copy the blank templates into a separate local library outside this repository. Create an `index.json` with `schema_version: 1`, `cases`, `techniques`, and an empty `legacy` array. Index only cards you are authorized to store.
+2. Copy the blank templates into a separate local library outside this repository. Create an `index.json` with exactly `schema_version: 3`, `scope`, `cases`, and `techniques`. All cards declare `schema_version: 3` and `evidence_type: video | static-probe`; every Case includes a schema 3 decision-state object, either full `record_state: recorded` or exactly `schema_version`, `record_state: not-recorded`, and an accurate nonempty `reason`. Index only cards you are authorized to store.
 3. Keep uninspected references `unverified`. Record only actions actually performed; distinguish observations, interpretations, plans and feedback. Do not invent hashes, listening, approval or source access.
 4. Link hypotheses to observations, retain alternatives and counterexamples, and test their transfer limits. Structural validity is not truth, perceptual review or artistic approval.
 5. Keep original media, private review records, local machine paths, signed URLs and credentials outside the public repository. Review any proposed publication separately; a successful validator does not authorize sharing.
@@ -27,10 +27,13 @@ The defaults validate as empty and queries return `[]`; that is intentional, not
 
 See [SCHEMA.md](SCHEMA.md) and `templates/` for the data contract. Tests construct explicitly synthetic fixtures in temporary locations; they validate structure and safety boundaries, not real films or sounds.
 
-## First decision-support increment
+## Required decision context
 
-Use a Case's optional, strictly versioned `decision` extension when a production
-choice is blocked. Describe symptoms and constraints; compare at least two
+State whether decision context was recorded on every Case. If no real decision
+was recorded, use the minimal `not-recorded` object with an accurate reason; do
+not invent options, experiments or results. Observations remain queryable, while
+`decide` excludes not-recorded records. An actual recorded but unexecuted plan
+uses `record_state: recorded` and result `not-tested`. Describe symptoms and constraints; compare at least two
 options; choose a bounded test; preserve its baseline, candidate, confounders,
 actual evidence and scoped feedback. Link existing content-review issues/evidence
 rather than copying their facts into another review system. Timeline/audio/render
@@ -71,7 +74,16 @@ Before reusing a recommendation, inspect its `result` references and
 `recommendation_type`, not just the recommendations array. A proposed experiment
 is not a supported rule. Withdraw feedback using its Case status or an explicit
 `result: retracted`/`withdrawn` marker; availability propagates through evidence
-and owner-feedback dependencies. New decision-bearing Cases cannot be cited as
+and owner-feedback dependencies. Cases cannot be cited as
 positive Technique promotion evidence when their recorded control, outcome,
-lifecycle or dependencies contradict that claim. Older Cases without decision
-records still need a separate review of controls before practical reuse.
+lifecycle or dependencies contradict that claim. A not-recorded marker preserves
+observations but cannot supply decision recommendations or production promotion.
+
+## Existing external libraries
+
+Use the explicit [one-time migration procedure](MIGRATION.md) for an authorized
+old library. The runtime does not reinterpret old versions or follow historical
+path slots. Conversion never implies that a private library was inspected, that
+its statements are true, or that execution/publication is authorized. Unknown
+fields stop conversion for maintainer review. Absent old decision context becomes
+an explicit not-recorded marker, never inferred choices or results.

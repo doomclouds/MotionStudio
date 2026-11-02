@@ -4,4 +4,4 @@ This source distribution contains schemas, empty catalogs and reusable validatio
 
 ## Design methods
 
-[UI 设计总索引](design-knowledge/INDEX.md) organizes explicitly authorized, de-materialized method summaries by problem category, with a [MotionStudio production map](design-knowledge/MOTIONSTUDIO.md). These are navigation summaries, not private evidence records, media, or video Case/Technique entries. The default video knowledge catalog remains empty.
+[UI 设计总索引](../../../knowledge/design/INDEX.md) organizes explicitly authorized, de-materialized method summaries by problem category, with a [MotionStudio production map](../references/design-to-motion.md). These are navigation summaries, not private evidence records, media, or video Case/Technique entries. The default video knowledge catalog remains empty.

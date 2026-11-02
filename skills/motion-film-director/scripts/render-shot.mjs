@@ -3,6 +3,18 @@ import {readFile,writeFile,mkdir,rename,access,mkdtemp} from 'node:fs/promises';
 import {resolve,join,dirname,sep} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {createHash} from 'node:crypto';
+if(process.argv.slice(2).some(arg=>arg==='--help'||arg==='-h')) {
+ console.log(`Usage: node render-shot.mjs --work NEW_DIRECTORY [options]
+  --scene PATH             Canvas scene (default: bundled silent technical fixture)
+  --audio PATH             Existing audio file; mutually exclusive with --audio-timeline
+  --audio-timeline PATH     Existing timeline JSON; optional repeatable --source-root PATH
+  --canvas-module PATH     Existing Canvas module; otherwise environment/local resolution
+  --ffmpeg PATH --ffprobe PATH   Existing executables; default: PATH
+  --chunk-frames N          Opt-in sequential PNG streaming
+No automatic installation, network call or artistic approval. Existing outputs are refused.
+See references/engine-use.md and engine/motion-render-core/README.md.`);
+ process.exit(0);
+}
 const args=process.argv.slice(2),allowed=new Set(['--work','--scene','--audio','--audio-timeline','--source-root','--canvas-module','--ffmpeg','--ffprobe','--chunk-frames']);
 for(let i=0;i<args.length;i+=2)if(!allowed.has(args[i])||args[i+1]===undefined)throw Error('Expected supported option/value pairs; see references/engine-use.md');
 for(const key of allowed)if(key!=='--source-root'&&args.filter(a=>a===key).length>1)throw Error('Duplicate option: '+key);

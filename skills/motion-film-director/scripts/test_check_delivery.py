@@ -33,8 +33,8 @@ class DurationTests(unittest.TestCase):
             with self.subTest(duration=duration):
                 self.assertEqual(check.evaluate('user-sample', movie(duration))['status'], status)
 
-    def test_short_internal_and_final_are_not_rejected_by_sample_rule(self):
-        for role in ('internal-test', 'final'):
+    def test_short_internal_is_not_rejected_by_sample_rule(self):
+        for role in ('internal-test',):
             result = check.evaluate(role, movie('1/30'))
             self.assertEqual(result['status'], 'not_applicable')
             self.assertEqual(result['owner_artistic_approval'], 'not_checked')
@@ -110,7 +110,7 @@ class DurationTests(unittest.TestCase):
             path = Path(directory) / 'synthetic.txt'
             path.write_text('SYNTHETIC not media')
             for role, duration, code in [('user-sample', '6.99', 1), ('user-sample', '7', 0),
-                                         ('internal-test', '1', 0), ('final', '1', 0)]:
+                                         ('internal-test', '1', 0)]:
                 with self.subTest(role=role, duration=duration), contextlib.redirect_stdout(io.StringIO()), \
                      patch.object(check.subprocess, 'run', return_value=subprocess.CompletedProcess([], 0, json.dumps(probe(duration)), '')):
                     self.assertEqual(check.main([str(path), '--role', role]), code)
@@ -140,7 +140,9 @@ class DurationTests(unittest.TestCase):
             self.assertEqual(raised.exception.code, 2)
             with patch.object(check, 'inspect') as inspect:
                 self.assertEqual(check.main(['synthetic.txt', '--role', 'user-sample', '--short-original', 'original.txt']), 2)
-                self.assertEqual(check.main(['synthetic.txt', '--role', 'final', '--short-original', 'original.txt', '--exception-record', 'record.json']), 2)
+                with self.assertRaises(SystemExit) as rejected:
+                    check.main(['synthetic.txt', '--role', 'final'])
+                self.assertEqual(rejected.exception.code, 2)
                 inspect.assert_not_called()
 
     def test_cli_rejects_exception_or_media_mutated_after_evaluation(self):

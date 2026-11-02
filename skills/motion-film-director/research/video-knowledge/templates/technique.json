@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 3,
   "kind": "technique",
   "id": "tech-new-mechanism",
   "revision": 1,
@@ -19,5 +19,6 @@
   },
   "rule_level": "candidate",
   "revision_note": "模板，不是已成立知识。",
-  "supersedes": []
+  "supersedes": [],
+  "evidence_type": "video"
 }

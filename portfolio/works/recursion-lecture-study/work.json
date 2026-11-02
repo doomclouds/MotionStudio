@@ -1,0 +1,234 @@
+{
+  "id": "recursion-lecture-study",
+  "version": "1.0.0",
+  "title": "递归 · 单概念糖果舞台",
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "LICENSES/huashu-MIT-LICENSE.txt",
+      "LICENSES/jetbrainsmono-OFL.txt",
+      "LICENSES/NotoSansSC-OFL.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/LICENSE",
+      "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "https://github.com/google/fonts/tree/main/ofl/jetbrainsmono"
+    ]
+  },
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "locks/npm-package-lock.json"
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "a70562f618426db28c9543a43218abdb7b19cd845dfc9c2091a3dbea55da4591",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "Complete still and detail independently reviewed, user retained. Static only; font/JPEG residuals; no responsive, browser, classroom effectiveness, code execution or motion validation."
+    }
+  },
+  "schema": "motionstudio.work/1",
+  "lifecycle": "retained",
+  "kind": "static",
+  "publication": {
+    "status": "source-release"
+  },
+  "authorship": {
+    "unofficial_recreation": true,
+    "original": {
+      "author": "alchaincyf (花叔 · 花生)",
+      "title": "Huashu design specimen",
+      "url": "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/ppt/05-candy-lecture-stage.html"
+    }
+  },
+  "render": {
+    "entrypoint": "design/scene.mjs",
+    "width": 1200,
+    "height": 750
+  },
+  "files": [
+    {
+      "path": "ASSET-USAGE.md",
+      "sha256": "b8ec6b250337b77a4627344b5e5d17ae094a7cd8c014871214e62e8bc2ab99ce",
+      "kind": "documentation"
+    },
+    {
+      "path": "CREDITS.md",
+      "sha256": "f8e6e5b6e309953ff8b10cc49d274766ef99b6b96b303a056cee2d68ebfcbdec",
+      "kind": "documentation"
+    },
+    {
+      "path": "DESIGN-REASONING.md",
+      "sha256": "9a1d27fc54a415c2375e79d3328e4a00cf5baf2f91e63892f2f1e5dcf0088211",
+      "kind": "documentation"
+    },
+    {
+      "path": "DESIGN-RETENTION.md",
+      "sha256": "abd79fd910c240540c18bad1005cd69c229da42d7a129f4f0271bd1e0564ce21",
+      "kind": "documentation"
+    },
+    {
+      "path": "LICENSES/NotoSansSC-OFL.txt",
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+      "kind": "license"
+    },
+    {
+      "path": "LICENSES/huashu-MIT-LICENSE.txt",
+      "sha256": "6d6a2a9caf2e6d2b76974050427053b2892d8aa4c33fd168ce63a537fcee9d96",
+      "kind": "license"
+    },
+    {
+      "path": "LICENSES/jetbrainsmono-OFL.txt",
+      "sha256": "b2fe5e8987594e9ffd1d2ca52a2f5d73eb8335243893c5d6254b5ad69269591d",
+      "kind": "license"
+    },
+    {
+      "path": "README.md",
+      "sha256": "a6eef6827dd3756e8a59a79a03d029a1527b6013555d93870a504d472b6867d5",
+      "kind": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "abae41e0704b87e56c88bf9e5da552ec149ef13a1805fd128c5a0e9af751bf4c",
+      "kind": "cover"
+    },
+    {
+      "path": "design/scene.mjs",
+      "sha256": "61aa0e372985fdb49ca046aa8b2c7ed5074955e275d62730537f9f3b1aa89125",
+      "kind": "source"
+    },
+    {
+      "path": "font-charset.txt",
+      "sha256": "de57cf760fe0a0be33bec079ba19a07952760ecb8c74d96d5520e7be01ef1b91",
+      "kind": "documentation"
+    },
+    {
+      "path": "font-inputs.json",
+      "sha256": "57ca230e4b43f64fac3453b378cda112af530c1e40e650d1661e7ebff76d34b6",
+      "kind": "config"
+    },
+    {
+      "path": "locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "kind": "lock"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "3376138df78fb0b3f62bc57d80dc440204cbe0a0709a07396e39636873862e6f",
+      "kind": "lock"
+    },
+    {
+      "path": "prepare-fonts.py",
+      "sha256": "5d24b684b243726213647a22ff3a3f884d572ca8375febf22f8c401c2f770dcc",
+      "kind": "source"
+    },
+    {
+      "path": "ui-dependencies.json",
+      "sha256": "64674fa4f13ab875ee1a967ebb95447da5762464cbd7396fbc59db84ed9aafd5",
+      "kind": "config"
+    }
+  ],
+  "resources": [
+    {
+      "bytes": 94620,
+      "id": "wlsans500",
+      "instructions": "Obtain originalInputs; run prepare-fonts.py. Original and derived hashes fail closed.",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "local_path": "WLSans500.ttf",
+      "mode": "provide",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "permission": "user-supplied-not-distributed",
+      "sha256": "d227520e495249448b52a847674349d16e2f3516e4cea7b5ebd73d8bea2c84d9",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "kind": "unclassified",
+      "kind_basis": {
+        "method": "unresolved"
+      }
+    },
+    {
+      "bytes": 95352,
+      "id": "wlsans900",
+      "instructions": "Obtain originalInputs; run prepare-fonts.py. Original and derived hashes fail closed.",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "local_path": "WLSans900.ttf",
+      "mode": "provide",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "permission": "user-supplied-not-distributed",
+      "sha256": "89d60c72cc766e6341081a6fb445fb8d5081ff2626eebe99e136076666c36ea8",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "kind": "unclassified",
+      "kind_basis": {
+        "method": "unresolved"
+      }
+    },
+    {
+      "bytes": 45824,
+      "id": "wlmono400",
+      "instructions": "Obtain originalInputs; run prepare-fonts.py. Original and derived hashes fail closed.",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "local_path": "WLMono400.ttf",
+      "mode": "provide",
+      "notice": "LICENSES/jetbrainsmono-OFL.txt",
+      "permission": "user-supplied-not-distributed",
+      "sha256": "71ca40c6a34e59a92c4107844cdf2dac2cee60e49a53828377d7730097bf4cda",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/jetbrainsmono",
+      "kind": "unclassified",
+      "kind_basis": {
+        "method": "unresolved"
+      }
+    }
+  ],
+  "evidence": {
+    "reviewArtifacts": {
+      "status": "NOT_INCLUDED"
+    }
+  },
+  "design": {
+    "decisionCard": "DESIGN-RETENTION.md",
+    "nonAssetNote": "Weather four-preset code is a case-local recipe, not a public family. No reuse inferred from visual similarity.",
+    "ruleRefs": [],
+    "ruleStatus": "Case decision card; no separate registered rule or new public family.",
+    "sourceAnalysis": [
+      "DESIGN-REASONING.md"
+    ],
+    "assetUsage": [
+      {
+        "callToken": "surface",
+        "callsite": "design/scene.mjs",
+        "familyId": "design.material-surfaces.v1",
+        "importToken": "material-surfaces.mjs",
+        "mode": "runtime-import",
+        "modulePath": "engine/design-elements/material-surfaces.mjs",
+        "moduleSha256": "70bf1fcfa89bfbf911f5cf735b1b08e8ae7f360e43bd43a8c831efef579696eb",
+        "snapshotPath": null,
+        "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
+        "visibleRole": "暗色圆角代码卡基础"
+      }
+    ]
+  },
+  "transfer": {
+    "motion": {
+      "status": "NOT_TESTED",
+      "note": "Fixed static only, not browser/responsive/teaching execution or motion validation."
+    }
+  }
+}

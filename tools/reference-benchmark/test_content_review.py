@@ -53,7 +53,7 @@ class ContentReviewTests(unittest.TestCase):
     def test_schema_extra_property(self):
         self.review['invented_quality_score']=98; self.assertFalse(self.check()['valid'])
     def test_synthetic_cannot_enter_real_mode(self):
-        ex=json.loads((cr.DEFAULT_SCHEMA.parent/'example.synthetic.json').read_text())
+        ex=json.loads((Path(__file__).resolve().parent/'examples/content-review.synthetic.json').read_text())
         self.assertFalse(self.check(ex)['valid'])
         self.assertTrue(self.check(ex,True)['valid'])
     def test_html_and_json_cli(self):

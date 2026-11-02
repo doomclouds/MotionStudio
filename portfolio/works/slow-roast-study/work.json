@@ -1,0 +1,246 @@
+{
+  "id": "slow-roast-study",
+  "version": "1.0.0",
+  "title": "慢火 · 巨型字品牌首屏",
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "LICENSES/Anton-OFL.txt",
+      "LICENSES/NotoSansSC-OFL.txt",
+      "LICENSES/NotoSerifSC-OFL.txt",
+      "LICENSES/PlayfairDisplay-OFL.txt",
+      "LICENSES/huashu-MIT-LICENSE.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/LICENSE",
+      "https://github.com/google/fonts/tree/main/ofl/anton",
+      "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "https://github.com/google/fonts/tree/main/ofl/notoserifsc",
+      "https://github.com/google/fonts/tree/main/ofl/playfairdisplay"
+    ]
+  },
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "locks/npm-package-lock.json"
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "2b70305c50160c471c252e46245c86845e83d3222a6f9ad6103bd45cd9cbbf7f",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "Complete still and critical detail comparison reviewed. Local font rasterization/spacing and JPEG-edge differences remain. Fixed static only; no responsive, interaction, browser or video validation."
+    }
+  },
+  "schema": "motionstudio.work/1",
+  "lifecycle": "retained",
+  "kind": "static",
+  "publication": {
+    "status": "source-release"
+  },
+  "authorship": {
+    "unofficial_recreation": true,
+    "original": {
+      "author": "alchaincyf (花叔 · 花生)",
+      "title": "Huashu design specimen",
+      "url": "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/web/06-bold-big-type.html"
+    }
+  },
+  "render": {
+    "entrypoint": "design/scene.mjs",
+    "width": 1200,
+    "height": 750
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "12c9a77f3a48e07f5b83a59ee7615f0929df75d6cb4c1d6bcdafeac982b9e593",
+      "kind": "documentation"
+    },
+    {
+      "path": "font-charset.txt",
+      "sha256": "1ab5a70b444d58a639dc401234c85a45043a6a09577d2e4f2188352a72f7385d",
+      "kind": "documentation"
+    },
+    {
+      "path": "CREDITS.md",
+      "sha256": "bf3c0a9c5f6995e2ad1436e863a3a2c36559e281ef4907b3ed64185f5555c696",
+      "kind": "documentation"
+    },
+    {
+      "path": "DESIGN-REASONING.md",
+      "sha256": "40c692a39bd861d7bd5b2d4d37075ee2cf35fbb1f9240ad822687e0a2eea83c2",
+      "kind": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "35f604bb0dd4e83bfeae7c4e8c72a539d0d6ca35c8acd5d68b6e837ab01c2707",
+      "kind": "cover"
+    },
+    {
+      "path": "prepare-fonts.py",
+      "sha256": "4997b25f4ff44a684bf6c2ce225dda7978103f0b5153e8070c7009fde8ca7bc1",
+      "kind": "source"
+    },
+    {
+      "path": "font-inputs.json",
+      "sha256": "46b50ce8767c63c7f68ed0ae82f01820ddd7f3a5d700413e959b7432ddb197cf",
+      "kind": "config"
+    },
+    {
+      "path": "locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "kind": "lock"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "23417aadf608822bbc7efa4d5c5ba664a7a224feee7447c6883b2661faa9994f",
+      "kind": "lock"
+    },
+    {
+      "path": "LICENSES/huashu-MIT-LICENSE.txt",
+      "sha256": "6d6a2a9caf2e6d2b76974050427053b2892d8aa4c33fd168ce63a537fcee9d96",
+      "kind": "license"
+    },
+    {
+      "path": "LICENSES/NotoSansSC-OFL.txt",
+      "sha256": "babcfe66c8a098b2fa279bc724a3a342f8124f77ce18941fbcc1bbb39823cded",
+      "kind": "license"
+    },
+    {
+      "path": "LICENSES/PlayfairDisplay-OFL.txt",
+      "sha256": "0bb2b43ffd21233963b5d0c0eb6f1abffa776ec53c56131b5818708f2730ffd6",
+      "kind": "license"
+    },
+    {
+      "path": "LICENSES/NotoSerifSC-OFL.txt",
+      "sha256": "5e0da210fb04058a8c0087985d2d456b931c2579811a49655721d3cf0c36b6d6",
+      "kind": "license"
+    },
+    {
+      "path": "LICENSES/Anton-OFL.txt",
+      "sha256": "9267baca92b7a7ce9db6dd9e6cc32c9fe3ddf1ac96e421d5f87c5746b9089d6a",
+      "kind": "license"
+    },
+    {
+      "path": "design/scene.mjs",
+      "sha256": "884b2a13cdc57ed44b87ad3ade563944ce157633dcfd1a8dbe1dc4ab8626c834",
+      "kind": "source"
+    },
+    {
+      "path": "design/helpers.mjs",
+      "sha256": "736e9be3088d9551af31c572e395b86e2c5f23211f1392d2132f4137228305b6",
+      "kind": "source"
+    },
+    {
+      "path": "DESIGN-RETENTION.md",
+      "sha256": "b5633d62deb73bed1d49369e7a68b1dde48470ebfd2ac5c72ad16e960ebe94ca",
+      "kind": "documentation"
+    }
+  ],
+  "resources": [
+    {
+      "bytes": 496276,
+      "id": "pairsans500",
+      "instructions": "Supply licensed inputs per font-inputs.json and run prepare-fonts.py; font output metadata may vary but original input identities and pixel regression are separately documented.",
+      "license": "SIL OFL 1.1; externally supplied, not distributed",
+      "local_path": "PairSans500.ttf",
+      "mode": "provide",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "permission": "user-supplied-not-distributed",
+      "sha256": "23fb7a24ab1b48f5cb2ae68bab874b926dce1e214fcf852f442159a7e2465c67",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "kind": "unclassified",
+      "kind_basis": {
+        "method": "unresolved"
+      }
+    },
+    {
+      "bytes": 677756,
+      "id": "pairserif900",
+      "instructions": "Supply licensed inputs per font-inputs.json and run prepare-fonts.py; font output metadata may vary but original input identities and pixel regression are separately documented.",
+      "license": "SIL OFL 1.1; externally supplied, not distributed",
+      "local_path": "PairSerif900.ttf",
+      "mode": "provide",
+      "notice": "LICENSES/NotoSerifSC-OFL.txt",
+      "permission": "user-supplied-not-distributed",
+      "sha256": "bee66e0544f9227086e51443c612968f8c3afa940b2b4bc1a8bef0a372d3c4a1",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notoserifsc",
+      "kind": "unclassified",
+      "kind_basis": {
+        "method": "unresolved"
+      }
+    },
+    {
+      "bytes": 51548,
+      "id": "pairplayfair700",
+      "instructions": "Supply licensed inputs per font-inputs.json and run prepare-fonts.py; font output metadata may vary but original input identities and pixel regression are separately documented.",
+      "license": "SIL OFL 1.1; externally supplied, not distributed",
+      "local_path": "PairPlayfair700.ttf",
+      "mode": "provide",
+      "notice": "LICENSES/PlayfairDisplay-OFL.txt",
+      "permission": "user-supplied-not-distributed",
+      "sha256": "87f99f2c4d44d60bee30a2f71753802265aed0487e3c671dbd2ec131cd09e507",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/playfairdisplay",
+      "kind": "unclassified",
+      "kind_basis": {
+        "method": "unresolved"
+      }
+    },
+    {
+      "bytes": 170812,
+      "id": "anton-regular",
+      "instructions": "Supply licensed inputs per font-inputs.json and run prepare-fonts.py; font output metadata may vary but original input identities and pixel regression are separately documented.",
+      "license": "SIL OFL 1.1; externally supplied, not distributed",
+      "local_path": "Anton-Regular.ttf",
+      "mode": "provide",
+      "notice": "LICENSES/Anton-OFL.txt",
+      "permission": "user-supplied-not-distributed",
+      "sha256": "a4ba3a92350ebb031da0cb47630ac49eb265082ca1bc0450442f4a83ab947cab",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/anton",
+      "kind": "unclassified",
+      "kind_basis": {
+        "method": "unresolved"
+      }
+    }
+  ],
+  "evidence": {
+    "reviewArtifacts": {
+      "status": "NOT_INCLUDED"
+    }
+  },
+  "design": {
+    "decisionCard": "DESIGN-RETENTION.md",
+    "nonAssetNote": "Shared drawing helpers and case-local scene code are not public design families; no runtime reuse is inferred from visual similarity.",
+    "ruleRefs": [],
+    "ruleStatus": "No separate formal rule card claimed; use decisionCard and sourceAnalysis.",
+    "sourceAnalysis": [
+      "DESIGN-REASONING.md"
+    ],
+    "assetUsage": []
+  },
+  "transfer": {
+    "motion": {
+      "status": "NOT_TESTED",
+      "note": "Fixed-size static only. No interaction, responsive layout, animation, audio or AV-sync approval implied."
+    }
+  }
+}

@@ -12,7 +12,7 @@ Profile common schema:
 Comparison:
 - `schema_version`, `algorithm`, `inputs` hashes, `alignment` `{mode:'RAW_TIME',applied_offset_s:0,dtw:'NOT_RUN',note}`
 - `deltas` feature name `{unit,mean_signed,mean_absolute,rmse,status:'OBSERVED',note}`. No global score.
-- `audio_deltas`: integrated_lufs, true_peak_db, rms_db, lr_balance each numeric/null.
+- `audio_deltas`: integrated_lufs, true_peak_dbtp, global_rms_db each numeric/null. With samples in both inputs, mean_bin_rms_db_delta and lr_balance are numeric/null; mean_bin_rms_db_delta_note states the scope. The bin delta is the mean of raw-time paired 100 ms bin dB differences, including the -120 dB silence floor; it is not whole-file RMS or LUFS. No legacy rms_db alias is emitted.
 - `offset_estimates`: audio_envelope / visual_motion `{status:'ESTIMATED'|'UNINFORMATIVE',offset_s,correlation,uncertainty_s,definition}` Positive means candidate later. Diagnostic only, never applied.
 - `events`: annotated cause pairs `{label,source_certainty,cause,expected_lag_s,reference_visual_s,reference_audio_s,candidate_visual_s,candidate_audio_s,reference_lag_s,candidate_lag_s,lag_error_s,status}` optional nulls.
 - `clips`: `{label,start_s,end_s,reference_path,candidate_path}` <=3 clips <=10s each; no entire film.

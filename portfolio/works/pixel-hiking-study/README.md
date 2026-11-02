@@ -1,3 +1,5 @@
+> 当前为 **1.0.1 候选（candidate / NOT_RUN）**：仅升级共享模块的指导路径依赖身份，未复渲或重新接受；封面为历史预览。下文原有收录/复现说明属于历史 1.0.0，原接受事实见 work.json 的 history，不能作为本候选通过证明。
+
 # 鹿鸣山 · 像素徒步三关
 
 用户已收藏；完整固定尺寸静态复刻，不代表响应式网页、可玩游戏或视频。
@@ -6,4 +8,4 @@
 2. 设置 `PIXEL_FONT_DIR=/absolute/fonts`，`MOTION_UI_ASSETS_ROOT=/absolute/MotionStudio/engine/design-elements`。UI 依赖版本与所有传递依赖 SHA 见 ui-dependencies.json；不符则拒绝加载。
 3. 使用仓库 Native 渲染器 `node engine/motion-render-core/scripts/render.mjs --scene ABS/design/scene.mjs --work /absolute/output --frames 0`。
 
-运行依赖已发布 UI 积木，不复制模块为新的真源。素材为代码绘制与外置字体，没有上游截图、字体二进制、生成图或视频。唯一封面来自本作品自渲染 PNG。字体原源链接和许可见 entry.json / LICENSES；设计逻辑、残差与示例数据边界见 DESIGN-REASONING.md。
+运行依赖已发布 UI 积木，不复制模块为新的真源。素材为代码绘制与外置字体，没有上游截图、字体二进制、生成图或视频。唯一封面来自本作品自渲染 PNG。字体原源链接和许可见 work.json / LICENSES；设计逻辑、残差与示例数据边界见 DESIGN-REASONING.md。

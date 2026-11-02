@@ -2,6 +2,8 @@
 
 This layer stores **design intent linked to callable implementation and composition evidence**. It is separate from the existing 60 motion mechanisms and 7 motion recipes. A scene, helper function, screenshot or source-case count is not a building-block count.
 
+See [recipe source roles](recipes/README.md) for the direct `reviewed/`, `candidates/`, and `batches/` layout. Roles preserve existing claims; they do not approve every file in a package.
+
 ## Inventory and truth boundary
 
 `catalog.json` is the single index. There is **1 existing published asset family**, `design.print-poster.v1`, and **13 added source-published, technically reviewed families** (5 base + 4 specialist + 4 B05), for **14 families total**. Publication does not mean the synthetic compositions are user-approved brand designs. The four full compositions and eighteen per-family sample renders are synthetic transfer tests, not 22 new accepted designs. Existing portfolio scenes remain unchanged; this layer does not claim they already import these APIs.
@@ -73,32 +75,32 @@ Skill包中同样使用runtime/design-elements路径；打包测试只有三个�
 
 ## B06 composition recipes
 
-Two bounded [composition recipes](recipes/b06/README.md) reuse existing families and source-case helpers; each has two different-content fixtures. They add zero families, do not migrate original scenes, and do not confer user aesthetic approval. Runtime imports/fonts are pinned; generated evidence is written only to caller-owned external directories.
+Two bounded [composition recipes](recipes/reviewed/b06/README.md) reuse existing families and source-case helpers; each has two different-content fixtures. They add zero families, do not migrate original scenes, and do not confer user aesthetic approval. Runtime imports/fonts are pinned; generated evidence is written only to caller-owned external directories.
 
 ## B08 bounded recipes
 
-[Explicit manifesto + full-legend partition](recipes/b08/README.md) adds two source-only composition recipes, not public families. Fixed two-column contracts, no automatic typography/financial/scientific inference, no source-scene migration or new user aesthetic approval.
+[Explicit manifesto + full-legend partition](recipes/reviewed/b08/README.md) adds two source-only composition recipes, not public families. Fixed two-column contracts, no automatic typography/financial/scientific inference, no source-scene migration or new user aesthetic approval.
 
 ## B09 bounded recipes
 
-[Bounded rotated emphasis + equal-size unit pictograms](recipes/b09/README.md) adds two source-only composition recipes, not public families. Fixed two-column contracts, finite rotated bounds and whole/half units; no automatic typography or real-world inference, no source-scene migration or new user aesthetic approval.
+[Bounded rotated emphasis + equal-size unit pictograms](recipes/reviewed/b09/README.md) adds two source-only composition recipes, not public families. Fixed two-column contracts, finite rotated bounds and whole/half units; no automatic typography or real-world inference, no source-scene migration or new user aesthetic approval.
 
 ## B10 bounded recipes
 
-[Explicit code spans and semantic value grid](recipes/b10/README.md): two bounded source-only recipes; zero new families, no migrated source scenes, no user aesthetic approval of synthetic combinations. Explicit ranges/nulls/units, LTR authored spans; not a parser or factual log.
+[Explicit code spans and semantic value grid](recipes/reviewed/b10/README.md): two bounded source-only recipes; zero new families, no migrated source scenes, no user aesthetic approval of synthetic combinations. Explicit ranges/nulls/units, LTR authored spans; not a parser or factual log.
 
 ## Fifth-group restricted static candidates
 
-The [candidate and case-selection index](recipes/fifth-static-candidates/Index.md) links bounded scalar material, same-source file grid/summary, and indexed pixel layer recipes to their design guides, contracts, callable modules, two synthetic compositions each, and full notices. These are source-only restricted candidates, **not new registered design families, formal recipes, or portfolio works**. Existing registry counts stay unchanged. Fonts, generated examples, original application images and private review/storage metadata remain external; the GPL Surge study is not part of this projection.
+The [candidate and case-selection index](recipes/batches/fifth-static-candidates/Index.md) links bounded scalar material, same-source file grid/summary, and indexed pixel layer recipes to their design guides, contracts, callable modules, two synthetic compositions each, and full notices. These are source-only restricted candidates, **not new registered design families, formal recipes, or portfolio works**. Existing registry counts stay unchanged. Fonts, generated examples, original application images and private review/storage metadata remain external; the GPL Surge study is not part of this projection.
 
 ## Sixth-group same-source static candidates
 
-The [two-candidate selection index](recipes/sixth-static-candidates/Index.md) links an original byte-field/histogram/sample-note combination and a spatial character/mark/cursor/same-handle summary. These **44 source-only texts** are restricted candidates, not new registered families, formal recipes or portfolio works. Design guidance distinguishes them from scalar materials, numeric grids, code spans and indexed pixels. Exact external font conditions differ; generated examples and private reference/review materials are excluded, and static validation is not motion/browser or individual aesthetic acceptance.
+The [two-candidate selection index](recipes/batches/sixth-static-candidates/Index.md) links an original byte-field/histogram/sample-note combination and a spatial character/mark/cursor/same-handle summary. These **44 source-only texts** are restricted candidates, not new registered families, formal recipes or portfolio works. Design guidance distinguishes them from scalar materials, numeric grids, code spans and indexed pixels. Exact external font conditions differ; generated examples and private reference/review materials are excluded, and static validation is not motion/browser or individual aesthetic acceptance.
 
 ## Seventh-group reconstructed restricted candidates
 
-The [timing/glyph evidence index](recipes/seventh-static-candidates/Index.md) links 62 source-only texts with design guides, contracts and two different-content compositions per method. Discrete digital/bus timing and fixed unshaped glyph evidence remain restricted candidates: zero new registered families, formal recipes or portfolio works. Exact external fonts, generated outlines, dependencies and outputs stay outside the repository; private references and audit/storage data are excluded. Newly reconstructed packages received new technical reviews, not reused historical acceptance. These are static explanatory assets, not hardware capture, shaping, browser interaction or tested motion.
+The [timing/glyph evidence index](recipes/batches/seventh-static-candidates/Index.md) links 62 source-only texts with design guides, contracts and two different-content compositions per method. Discrete digital/bus timing and fixed unshaped glyph evidence remain restricted candidates: zero new registered families, formal recipes or portfolio works. Exact external fonts, generated outlines, dependencies and outputs stay outside the repository; private references and audit/storage data are excluded. Newly reconstructed packages received new technical reviews, not reused historical acceptance. These are static explanatory assets, not hardware capture, shaping, browser interaction or tested motion.
 
 ## Eighth source-only candidates
 
-[Bounded drape material and radial category composition](recipes/eighth-static-candidates/Index.md) retain their own contracts, design guidance, examples, source notices and tests. No formal family/recipe count or registry is changed; external Native/font preparation and static limits apply.
+[Bounded drape material and radial category composition](recipes/batches/eighth-static-candidates/Index.md) retain their own contracts, design guidance, examples, source notices and tests. No formal family/recipe count or registry is changed; external Native/font preparation and static limits apply.

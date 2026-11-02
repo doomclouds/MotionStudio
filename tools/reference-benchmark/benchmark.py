@@ -555,9 +555,8 @@ def compare_profiles(ref, cand, ref_rgb=None, cand_rgb=None):
             if bt[0]<=r["t_s"]<=bt[-1]:
                 j=int(np.argmin(np.abs(bt-r["t_s"])))
                 raw_audio.append((r,ba[j]))
-        audio_delta["rms_db"]=rounded(np.mean([b["rms_dbfs"]-a["rms_dbfs"] for a,b in raw_audio])) if raw_audio else None
-        audio_delta["mean_bin_rms_db_delta"]=audio_delta["rms_db"]
-        audio_delta["rms_db_note"]="Legacy rms_db is the mean of 100ms-bin dB differences, including a -120dB silence floor; not global RMS or LUFS"
+        audio_delta["mean_bin_rms_db_delta"]=rounded(np.mean([b["rms_dbfs"]-a["rms_dbfs"] for a,b in raw_audio])) if raw_audio else None
+        audio_delta["mean_bin_rms_db_delta_note"]="Mean of 100ms-bin dB differences, including a -120dB silence floor; not global RMS or LUFS"
         balances=[b["lr_balance"]-a["lr_balance"] for a,b in raw_audio if a["lr_balance"] is not None and b["lr_balance"] is not None]
         audio_delta["lr_balance"]=rounded(np.mean(balances)) if balances else None
     motion_offset=offset_estimate([r["frame_difference"] or 0 for r in a],[r["frame_difference"] or 0 for r in b],CONFIG["sample_period_s"])

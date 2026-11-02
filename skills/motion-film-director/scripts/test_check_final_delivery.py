@@ -70,14 +70,20 @@ class FinalDeliveryTests(unittest.TestCase):
         inputs.read(video)
         return self.movie, {'status': 'passed', 'full_av_decode': 'passed', 'decoded_frames': 10}
 
-    def run_gate(self, key='trusted', mock_technical=True, report='report.html'):
+    def run_gate(self, key='trusted', mock_technical=True, project='delivery'):
         packet_path = self.root / 'packet.json'
         packet_path.write_text(json.dumps(self.packet))
-        args = [str(self.video), '--packet', str(packet_path), '--report', str(self.root / report)]
+        args = [str(self.video), '--packet', str(packet_path), '--project-root', str(self.root / project)]
         if key:
             args += ['--trusted-review-key', str(self.keys / (key + '.pem'))]
         out, err = io.StringIO(), io.StringIO()
-        with contextlib.redirect_stdout(out), contextlib.redirect_stderr(err):
+        # Policy tests exercise the canonical pair API with a synthetic renderer.
+        # Actual fixed-template output is checked separately below.
+        class Renderer:
+            def render_gate_report(self, *args, **kwargs):
+                return PNG, b'<html>SYNTHETIC policy fixture; not a real review report</html>'
+        with contextlib.redirect_stdout(out), contextlib.redirect_stderr(err), \
+             patch.object(gate, 'load_fixed_renderer', return_value=Renderer()):
             if mock_technical:
                 with patch.object(gate, 'technical', side_effect=self.technical):
                     code = gate.main(args)
@@ -106,14 +112,14 @@ class FinalDeliveryTests(unittest.TestCase):
     def test_passed_wrapper_cannot_upgrade_incomplete_source(self):
         for index, status in enumerate(('NOT_LISTENED', 'blocked', 'failed', 'pending', 'unverified', 'NOT_RUN', 'not_reviewed', 'not_checked', 'SKIPPED_NOT_CONFIGURED', 'optional_not_run')):
             self.bind_source('audio', {'status': status})
-            code, result = self.run_gate(report=f'incomplete-source-{index}.html')
+            code, result = self.run_gate(project=f'incomplete-source-{index}')
             self.assertEqual(code, 1, result)
             self.assertIn('Source evidence is not completed', ' '.join(result['blockers']))
 
     def test_sparse_model_source_cannot_become_continuous_visual_or_av_review(self):
         for index, kind in enumerate(('visual', 'av_sync')):
             self.bind_source(kind, self.model_source())
-            code, result = self.run_gate(report=f'sparse-source-{index}.html')
+            code, result = self.run_gate(project=f'sparse-source-{index}')
             self.assertEqual(code, 1, result)
             self.assertIn('cannot establish normal-speed', ' '.join(result['blockers']))
 
@@ -137,10 +143,10 @@ class FinalDeliveryTests(unittest.TestCase):
             if mutation == 'no_observations': source['review']['observations'] = []
             if mutation == 'mismatched_response': source['provider_receipt']['response_text'] = '{}'
             self.bind_source('audio', source)
-            code, result = self.run_gate(report=f'bad-model-{index}.html')
+            code, result = self.run_gate(project=f'bad-model-{index}')
             self.assertEqual(code, 1, result)
         self.bind_source('audio', self.model_source())
-        code, result = self.run_gate(report='valid-model.html')
+        code, result = self.run_gate(project='valid-model')
         self.assertEqual(code, 0, result)
 
     def test_source_review_media_hash_mismatch_is_not_hidden_by_wrapper(self):
@@ -164,7 +170,7 @@ class FinalDeliveryTests(unittest.TestCase):
         self.save_review('visual')
         code, result = self.run_gate()
         self.assertEqual(code, 2, result)
-        self.assertFalse((self.root / 'report.html').exists())
+        self.assertFalse((self.root / 'delivery/output/review/report.html').exists())
 
     def test_signed_attestations_are_not_owner_or_hearing_proof(self):
         code, result = self.run_gate()
@@ -172,18 +178,16 @@ class FinalDeliveryTests(unittest.TestCase):
         self.assertEqual(result['status'], 'ready_for_owner_review')
         self.assertEqual(result['owner_approval'], 'not_checked')
         self.assertEqual(result['reviews']['audio']['authentication'], 'signed_attestation_not_proof_of_perception')
-        self.assertEqual(result['report']['sha256'], gate.digest(self.root / 'report.html'))
-        report = (self.root / 'report.html').read_text()
-        self.assertIn(self.movie['sha256'], report)
-        self.assertIn('data:image/png;base64,', report)
+        self.assertEqual(result['report']['sha256'], gate.digest(self.root / 'delivery/output/review/report.html'))
+        self.assertEqual(result['user_report_formats'], ['png', 'html'])
+        self.assertEqual(result['overview']['sha256'], gate.digest(self.root / 'delivery/output/review/overview.png'))
 
     def test_generated_report_matches_versioned_standard(self):
         code, result = self.run_gate()
         self.assertEqual(code, 0, result)
         self.assertEqual(gate.validate_report(result), [])
         self.assertEqual(result['report_standard_version'], 1)
-        self.assertIn('9 · Known limits', (self.root / 'report.html').read_text())
-        self.assertEqual(list(self.root.glob('.delivery-report-*')), [])
+        self.assertEqual(list((self.root / 'delivery/output/review').glob('.delivery-*')), [])
 
     def test_repair_requires_visual_before_after(self):
         self.packet['revision_kind'] = 'repair'
@@ -196,9 +200,10 @@ class FinalDeliveryTests(unittest.TestCase):
         code, result = self.run_gate()
         self.assertEqual(code, 1, result)
         self.assertEqual(result['comparison_diagnostics']['benchmark']['status'], 'NOT_RUN')
-        self.assertIn('2A · Existing full comparison', (self.root / 'report.html').read_text())
 
-    def test_default_user_reports_are_fixed_png_and_html_only(self):
+    def test_user_reports_are_fixed_png_and_html_only_and_review_text_is_escaped(self):
+        self.records['visual']['observations'][0]['finding'] = '<script>alert("fixture")</script>'
+        self.save_review('visual')
         packet_path = self.root / 'packet.json'
         packet_path.write_text(json.dumps(self.packet))
         args = [str(self.video), '--packet', str(packet_path), '--project-root', str(self.root),
@@ -223,6 +228,11 @@ class FinalDeliveryTests(unittest.TestCase):
         self.assertEqual(struct.unpack('>II',(directory/'overview.png').read_bytes()[16:24]), (1800,5400))
         self.assertNotEqual((directory/'overview.png').read_bytes(), PNG)
         self.assertEqual((directory/'report.html').read_text().count('id="delivery-assessment"'), 1)
+        report = (directory / 'report.html').read_text()
+        self.assertIn(self.movie['sha256'], report)
+        self.assertIn('data:image/png;base64,', report)
+        self.assertNotIn('<script>alert("fixture")</script>', report)
+        self.assertIn('&lt;script&gt;', report)
 
     def test_explicit_renderer_and_missing_renderer_contract(self):
         explicit = self.root / 'trusted-fixture-renderer.py'
@@ -289,7 +299,7 @@ class FinalDeliveryTests(unittest.TestCase):
             with self.subTest(status=status):
                 self.records['audio']['status'] = status
                 self.save_review('audio')
-                code, result = self.run_gate(report=f'status-{index}.html')
+                code, result = self.run_gate(project=f'status-{index}')
                 self.assertEqual(code, 2 if isinstance(status, bool) else 1)
                 self.assertEqual(result['status'], 'error' if isinstance(status, bool) else 'review_candidate')
 
@@ -298,7 +308,7 @@ class FinalDeliveryTests(unittest.TestCase):
             with self.subTest(method=method):
                 self.records['audio']['method'] = method
                 self.save_review('audio')
-                code, result = self.run_gate(report=f'method-{index}.html')
+                code, result = self.run_gate(project=f'method-{index}')
                 self.assertEqual(code, 2 if isinstance(method, bool) else 1)
                 if not isinstance(method, bool):
                     self.assertTrue(any('perceptual' in x for x in result['blockers']))
@@ -310,7 +320,7 @@ class FinalDeliveryTests(unittest.TestCase):
         self.assertIn('Missing audio review', ' '.join(result['blockers']))
         self.records['audio'] = {'listened': True, 'status': 'passed'}
         self.save_review('audio', sign=False)
-        code, result = self.run_gate(report='checkbox.html')
+        code, result = self.run_gate(project='checkbox')
         self.assertEqual(code, 1)
         self.assertEqual(result['reviews']['audio']['authentication'], 'declared_not_authenticated')
 
@@ -318,12 +328,12 @@ class FinalDeliveryTests(unittest.TestCase):
         for index, issues in enumerate((None, [{'finding': 'SYNTHETIC masking', 'disposition': 'pending', 'rationale': 'not fixed'}], [{'finding': 'SYNTHETIC masking', 'disposition': 'resolved', 'rationale': ''}])):
             self.records['audio']['issues'] = issues
             self.save_review('audio')
-            code, result = self.run_gate(report=f'issues-{index}.html')
+            code, result = self.run_gate(project=f'issues-{index}')
             self.assertEqual(code, 1, result)
         for index, disposition in enumerate(('resolved', 'accepted')):
             self.records['audio']['issues'] = [{'finding': 'SYNTHETIC masking', 'disposition': disposition, 'rationale': 'Synthetic rationale; not actual acceptance'}]
             self.save_review('audio')
-            code, result = self.run_gate(report=f'disposed-{index}.html')
+            code, result = self.run_gate(project=f'disposed-{index}')
             self.assertEqual(code, 0, result)
 
     def test_unsigned_complete_review_is_explicitly_unauthenticated(self):
@@ -349,26 +359,24 @@ class FinalDeliveryTests(unittest.TestCase):
         code, result = self.run_gate()
         self.assertEqual(code, 1)
         self.packet['schema'] = True
-        code, result = self.run_gate(report='boolean-packet.html')
+        code, result = self.run_gate(project='boolean-packet')
         self.assertEqual(code, 2)
 
     def test_report_removed_when_final_input_recheck_fails(self):
         recheck = gate.Inputs.recheck
-        count = 0
         def mutate(inputs):
-            nonlocal count
-            count += 1
-            if count == 2:
+            if (self.root / 'delivery/output/review/report.html').exists():
                 self.video.write_bytes(b'changed after report write')
             return recheck(inputs)
         with patch.object(gate.Inputs, 'recheck', new=mutate):
             code, result = self.run_gate()
         self.assertEqual(code, 2)
-        self.assertFalse((self.root / 'report.html').exists())
+        self.assertFalse((self.root / 'delivery/output/review/report.html').exists())
+        self.assertFalse((self.root / 'delivery/output/review/overview.png').exists())
 
     def test_wrong_or_absent_trust_key_cannot_authenticate(self):
         for index, key in enumerate(('other', None)):
-            code, result = self.run_gate(key=key, report=f'key-{index}.html')
+            code, result = self.run_gate(key=key, project=f'key-{index}')
             self.assertEqual(code, 1)
             self.assertIsNone(result['reviews']['audio']['signer_key_sha256'])
 
@@ -385,7 +393,7 @@ class FinalDeliveryTests(unittest.TestCase):
         for index, name in enumerate(('audio.json', 'source.txt', 'contact.png')):
             original = (self.root / name).read_bytes()
             (self.root / name).write_bytes(original + b'tamper')
-            code, result = self.run_gate(report=f'stale-{index}.html')
+            code, result = self.run_gate(project=f'stale-{index}')
             self.assertEqual(code, 2)
             self.assertIn('hash mismatch', result['error'])
             (self.root / name).write_bytes(original)
@@ -397,7 +405,7 @@ class FinalDeliveryTests(unittest.TestCase):
         self.assertEqual(code, 1)
         self.assertIn('different media', ' '.join(result['blockers']))
         self.packet['movie_sha256'] = 'b' * 64
-        code, result = self.run_gate(report='wrong-packet.html')
+        code, result = self.run_gate(project='wrong-packet')
         self.assertEqual(code, 2)
 
     def test_coverage_gap_not_hidden_by_overlap(self):
@@ -408,14 +416,14 @@ class FinalDeliveryTests(unittest.TestCase):
         self.assertIn('full encoded movie', ' '.join(result['blockers']))
         self.records['audio']['coverage'] = [['1/2', 1], [0, '3/4']]
         self.save_review('audio')
-        code, result = self.run_gate(report='covered.html')
+        code, result = self.run_gate(project='covered')
         self.assertEqual(code, 0, result)
 
     def test_malformed_or_out_of_range_observations_error(self):
         for index, observation in enumerate(({}, {'start_s': -1, 'end_s': 1, 'finding': 'fixture'}, {'start_s': False, 'end_s': 1, 'finding': 'fixture'})):
             self.records['audio']['observations'] = [observation]
             self.save_review('audio')
-            code, result = self.run_gate(report=f'bad-observation-{index}.html')
+            code, result = self.run_gate(project=f'bad-observation-{index}')
             self.assertEqual(code, 2, result)
 
     def test_missing_findings_source_and_visual_artifacts_block(self):
@@ -427,25 +435,35 @@ class FinalDeliveryTests(unittest.TestCase):
         self.assertEqual(code, 1)
         self.assertTrue(any('visual report' in x for x in result['blockers']))
 
-    def test_html_is_escaped_and_inert(self):
-        self.records['visual']['observations'][0]['finding'] = '<script>alert("fixture")</script>'
-        self.save_review('visual')
-        code, result = self.run_gate()
-        self.assertEqual(code, 0, result)
-        report = (self.root / 'report.html').read_text()
-        self.assertNotIn('<script>', report)
-        self.assertIn('&lt;script&gt;', report)
-        self.assertIn('Content-Security-Policy', report)
-
     def test_existing_report_or_input_never_overwritten(self):
-        (self.root / 'report.html').write_bytes(b'prior-report')
+        directory = self.root / 'delivery/output/review'
+        directory.mkdir(parents=True)
+        (directory / 'report.html').write_bytes(b'prior-report')
         code, result = self.run_gate()
         self.assertEqual(code, 2)
-        self.assertEqual((self.root / 'report.html').read_bytes(), b'prior-report')
+        self.assertEqual((directory / 'report.html').read_bytes(), b'prior-report')
+        self.assertFalse((directory / 'overview.png').exists())
         original = self.video.read_bytes()
-        code, result = self.run_gate(report=self.video.name)
+        code, result = self.run_gate(project=self.video.name)
         self.assertEqual(code, 2)
         self.assertEqual(self.video.read_bytes(), original)
+
+    def test_existing_overview_never_overwritten(self):
+        directory = self.root / 'delivery/output/review'
+        directory.mkdir(parents=True)
+        (directory / 'overview.png').write_bytes(b'prior-overview')
+        code, result = self.run_gate()
+        self.assertEqual(code, 2, result)
+        self.assertEqual((directory / 'overview.png').read_bytes(), b'prior-overview')
+        self.assertFalse((directory / 'report.html').exists())
+        self.assertEqual(list(directory.glob('.delivery-*')), [])
+
+    def test_removed_html_only_cli_is_rejected_before_inspection(self):
+        with contextlib.redirect_stderr(io.StringIO()), patch.object(gate, 'technical') as inspect:
+            with self.assertRaises(SystemExit) as rejected:
+                gate.main(['synthetic.movie', '--packet', 'packet.json', '--report', 'old.html'])
+            self.assertEqual(rejected.exception.code, 2)
+            inspect.assert_not_called()
 
     def test_target_duration_mismatch_is_not_complete_film(self):
         self.packet['target_duration_seconds'] = '20'

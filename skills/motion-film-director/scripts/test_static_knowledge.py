@@ -40,14 +40,14 @@ def fixture(root, assets):
             'outcome':'supports' if value==0 else 'contradicts'})
         refs.append({'id':'E-'+name,'kind':'static-observation','case_id':'case-static-fixture','case_revision':1,
             'observation_id':'obs-'+name,'run_id':'fixture-run','artifact_ids':[name],'artifact_hashes':{name:artifacts[-1]['sha256']}})
-    d={'schema_version':2,'lifecycle':'active','problem':{'symptom':'synthetic edge test','goal':'Exercise contract, not certify a real result.','hard_constraints':[],'preserve':[]},
+    d={'schema_version':3,'record_state':'recorded','lifecycle':'active','problem':{'symptom':'synthetic edge test','goal':'Exercise contract, not certify a real result.','hard_constraints':[],'preserve':[]},
        'options':[{'id':v['id'],'variant_id':v['id'],'action':'Synthetic choice '+v['id'],'cost':'Fixture only.','risks':['No real validation.']} for v in variants],
        'chosen_option_id':'after','rationale':'Synthetic fixture only.','experiment':{'baseline_variant_id':'before','candidate_variant_id':'after',
        'varied_parameters':['method'],'control_validity':'valid','confounders':[],'protocol':'Do not execute this fixture.','acceptance':'Schema consistency only.','stop_condition':'Stop after parser test.','regression_scope':['Synthetic scope.']},
        'evidence_refs':refs,'result':{'scope_kind':'synthetic-static-technical','claim':'synthetic-zero-channel','reference_semantics':'synthetic-reference','outcome':'supports','evidence_ids':['E-before','E-after'],'owner_feedback_refs':[]},
        'applies_when':'Only test fixtures.','counterexample':'All actual production.','not_verified':['No real execution, observation, listening or approval.'],
        'permission_semantics':'informational-only-not-authorization'}
-    c={'schema_version':2,'kind':'case','id':'case-static-fixture','revision':1,'title':'Synthetic test-only record; not actual execution',
+    c={'schema_version':3,'evidence_type':'static-probe','kind':'case','id':'case-static-fixture','revision':1,'title':'Synthetic test-only record; not actual execution',
        'status':'recorded-with-limits','tags':['synthetic-edge'],'revision_note':'Entirely fictional run labels to test validators.','supersedes':[],
        'source':{'origin':'synthetic','creator':'Test fixture','title':'No actual probe','rights':'No rights or permissions asserted.','access':'Local temporary fixture.'},
        'artifact':{'kind':'static-probe'},'run':{'id':'fixture-run','execution_state':'recorded-executed','execution_evidence':'recorded-receipt',
@@ -55,7 +55,7 @@ def fixture(root, assets):
        'exit_code':None,'exit_code_unknown_reason':'No actual execution.','script_artifact_id':'script','result_artifact_id':'receipt','input_artifact_ids':[],
        'environment':{'runtime':'synthetic','runtime_version':'fixture','backend':'synthetic','backend_version':'fixture','os':'synthetic','arch':'synthetic'},
        'parameters':{'width':2,'height':2},'variants':variants},'artifacts':artifacts,'observations':observations,'technique_ids':[],'feedback':[],'decision':d}
-    index={'schema_version':2,'capabilities':[s.CAPABILITY],'scope':'Synthetic parser fixture only.','cases':[{'id':c['id'],'path':'cases/static.json','tags':c['tags']}],'techniques':[]}
+    index={'schema_version':3,'scope':'Synthetic parser fixture only.','cases':[{'id':c['id'],'path':'cases/static.json','tags':c['tags']}],'techniques':[]}
     (root/'cases').mkdir();(root/'cases/static.json').write_text(json.dumps(c));(root/'index.json').write_text(json.dumps(index))
     return c
 
@@ -83,10 +83,10 @@ class StaticTests(unittest.TestCase):
     def test_no_listening(self):self.edit(lambda c:c['observations'][0].update(method='actual-listening'));self.bad()
     def test_no_production_origin(self):self.edit(lambda c:c['source'].update(origin='original-production'));self.bad()
     def test_unknown_fields(self):self.edit(lambda c:c['run'].update(extra=True));self.bad()
-    def test_unknown_version(self):self.edit(lambda c:c['decision'].update(schema_version=3));self.bad()
-    def test_missing_capability(self):
+    def test_unknown_version(self):self.edit(lambda c:c['decision'].update(schema_version=2));self.bad()
+    def test_removed_capabilities_rejected(self):
         p=self.root/'index.json';x=json.loads(p.read_text());x['capabilities']=[];p.write_text(json.dumps(x));self.bad()
-    def test_v1_index_rejects_v2_case(self):
+    def test_old_index_rejected(self):
         p=self.root/'index.json';x=json.loads(p.read_text());x.update(schema_version=1,legacy=[]);p.write_text(json.dumps(x));self.bad()
     def test_unknown_time_and_exit_require_reason(self):self.edit(lambda c:c['run'].update(exit_code_unknown_reason=None));self.bad()
     def test_timestamp_requires_zone(self):self.edit(lambda c:c['run'].update(recorded_at='2026-01-01'));self.bad()
@@ -214,10 +214,32 @@ class StaticTests(unittest.TestCase):
         self.edit(change);self.assertEqual(k.decide(self.valid())['recommendations'][0]['outcome'],'not-tested')
     def add_technique(self):
         c=json.loads((self.root/'cases/static.json').read_text())
-        t={'schema_version':1,'kind':'technique','id':'tech-static-fixture','revision':1,'title':'Synthetic candidate only','status':'hypothesis','tags':['synthetic-edge'],'claim_type':'inferred','hypothesis':'Fixture only','evidence':[{'case_id':c['id'],'observation_ids':['obs-after']}],'applies_when':'Tests','limits':'No production','counterexample':'Real production','falsification_test':'Fixture mutation','validation':{'state':'not-tested-in-transfer','results':[]},'rule_level':'candidate','revision_note':'Fixture only','supersedes':[]}
+        t={'schema_version':3,'evidence_type':'static-probe','kind':'technique','id':'tech-static-fixture','revision':1,'title':'Synthetic candidate only','status':'hypothesis','tags':['synthetic-edge'],'claim_type':'inferred','hypothesis':'Fixture only','evidence':[{'case_id':c['id'],'observation_ids':['obs-after']}],'applies_when':'Tests','limits':'No production','counterexample':'Real production','falsification_test':'Fixture mutation','validation':{'state':'not-tested-in-transfer','results':[]},'rule_level':'candidate','revision_note':'Fixture only','supersedes':[]}
         (self.root/'techniques').mkdir();(self.root/'techniques/fixture.json').write_text(json.dumps(t))
         p=self.root/'index.json';x=json.loads(p.read_text());x['techniques']=[{'id':t['id'],'path':'techniques/fixture.json','tags':t['tags']}];p.write_text(json.dumps(x))
         return t
+    def test_one_index_supports_both_types_without_cross_type_evidence(self):
+        self.add_technique()
+        example=k.DEFAULT_ROOT.parent.parent/'references/knowledge-decision-example/cases/plan.json'
+        video=json.loads(example.read_text())
+        (self.root/'cases/video.json').write_text(json.dumps(video))
+        p=self.root/'index.json';index=json.loads(p.read_text())
+        index['cases'].append({'id':video['id'],'path':'cases/video.json','tags':video['tags']})
+        p.write_text(json.dumps(index))
+        cards=self.valid()
+        self.assertEqual({c['evidence_type'] for c in cards.values()}, {'video','static-probe'})
+        self.assertEqual({item['case_id'] for item in k.decide(cards)['recommendations']}, {video['id'],'case-static-fixture'})
+        self.assertTrue(all(c['evidence_type']=='static-probe' for c in k.query(cards,method='static-pixel-probe')))
+        tpath=self.root/'techniques/fixture.json';tech=json.loads(tpath.read_text())
+        tech['evidence'][0]['case_id']=video['id'];tpath.write_text(json.dumps(tech))
+        self.bad()
+    def test_observations_survive_unrecorded_decision_without_recommendation(self):
+        self.edit(lambda c:c.update(decision={'schema_version':3,'record_state':'not-recorded','reason':'No decision was recorded in this synthetic source.'}))
+        cards=self.valid()
+        self.assertTrue(k.query(cards,method='static-pixel-probe'))
+        self.assertEqual(k.decide(cards)['status'],'no-match')
+        self.edit(lambda c:c['decision'].update(result={'outcome':'supports'}))
+        self.bad()
     def test_static_candidate_allowed(self):self.add_technique();self.valid()
     def test_static_production_promotion_rejected(self):
         t=self.add_technique();t.update(rule_level='tested-in-scope',status='tested-with-limits');t['validation']={'state':'tested-with-limits','results':[{'case_id':'case-static-fixture','outcome':'supports'}]}

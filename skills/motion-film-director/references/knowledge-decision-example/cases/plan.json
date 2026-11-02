@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 3,
   "kind": "case",
   "id": "case-synthetic-decision-plan",
   "revision": 1,
@@ -35,7 +35,7 @@
   "revision_note": "Synthetic schema demonstration only.",
   "supersedes": [],
   "decision": {
-    "schema_version": 1,
+    "schema_version": 3,
     "lifecycle": "active",
     "problem": {
       "symptom": "A fictional UI confirmation sound may be masked by music.",
@@ -95,6 +95,8 @@
     "not_verified": [
       "Entirely synthetic plan; no media exists, no listening, test or owner acceptance occurred."
     ],
-    "permission_semantics": "informational-only-not-authorization"
-  }
+    "permission_semantics": "informational-only-not-authorization",
+    "record_state": "recorded"
+  },
+  "evidence_type": "video"
 }

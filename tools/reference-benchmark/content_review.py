@@ -10,7 +10,7 @@ import re
 import subprocess
 import sys
 
-DEFAULT_SCHEMA = Path(__file__).resolve().parents[2] / 'reference-benchmark-research/content/content-review.schema.json'
+DEFAULT_SCHEMA = Path(__file__).resolve().parent / 'schemas/content-review.schema.json'
 
 
 def sha256(path):

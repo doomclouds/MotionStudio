@@ -1,0 +1,338 @@
+{
+  "schema": "motionstudio.metadata-migration/1",
+  "source_commit": "bd3750a4c27408bf90abc18cb16c1455d23442c9",
+  "scope": "Metadata only; external references retained as data, not accessed or guaranteed.",
+  "private_fields": "Original source history retained; private identities are not copied into public projections.",
+  "works": [
+    {
+      "id": "bauhaus-theatre-study",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "bookcraft-vinyl-annual-study",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "bus-morning-study",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "command-palette-study",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "cosmic-observatory-study",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "cycling-magazine-study",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "cycling-year-report",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "editorial-eguide-study",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "editorial-weekly-study",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "favorite52",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "film-festival-study",
+      "version": "1.0.1",
+      "lifecycle": "candidate"
+    },
+    {
+      "id": "friendly-fintech-study",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "gentle-activity-study",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "hanzi-poster-study",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "hardware-sampler-study",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "health-color-code-study",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "hk-street-signs-study",
+      "version": "1.0.1",
+      "lifecycle": "candidate"
+    },
+    {
+      "id": "hokusai-exhibition-study",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "irreverent-pop-study",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "level-three-screen-study",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "liquid-glass-study",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "mandala-observatory-study",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "market-livingroom-study",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "market-method-study",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "market-section-study",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "memory-case-study",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "meridian-study",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "meridian-waitlist-study",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "mountain-book-jacket-study",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "muqi-study",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "nanyuan-cartographic-study",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "night-observatory-study",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "ocean-letter-study",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "ocean-plastic-treemap-study",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "od-data-rollup-study",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "od-flowai-dashboard-study",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "od-lull-onboarding-study",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "od-social-carousel-study",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "od-swiss-grid-study",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "open-design-hanafuda-study",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "open-design-orbital-study",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "open-design-swiss-cover-study",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "pixel-hiking-study",
+      "version": "1.0.1",
+      "lifecycle": "candidate"
+    },
+    {
+      "id": "playful-roast-timer-study",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "pro-camera-study",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "recursion-lecture-study",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "rollcall-docs-study",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "salary-unit-stack-study",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "scientific-figure-study",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "shanghai-deco-study",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "slow-roast-study",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "solar-terms-study",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "song-block-print-study",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "tea-conversation-map",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "tea-voice-study",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "tessel",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "theatre-manifesto-study",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "theatre-narrative-wave",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "topo-outdoor-study",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "trail-pictogram-study",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "vinyl-isotype-study",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "vinyl-study",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "wave-weather-study",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "weather-art-study",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "xhs-blank-vertical-study",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    },
+    {
+      "id": "xie-symbol-study",
+      "version": "1.0.0",
+      "lifecycle": "retained"
+    }
+  ]
+}

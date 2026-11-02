@@ -4,12 +4,29 @@ Does not alter the canonical Git index, install dependencies, or retain media.
 import argparse, hashlib, importlib.util, json, os, shutil, subprocess, tempfile, zipfile
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
+# Extracted snapshots do not bundle native dependencies. Reuse only the declared
+# local installation, not the author's global NODE_PATH or cloud fallback.
+LOCAL_MODULES = ROOT / 'engine/motion-render-core/node_modules'
+LOCAL_CANVAS = LOCAL_MODULES / '@napi-rs/canvas'
+TEST_ENV = dict(os.environ, NODE_PATH=str(LOCAL_MODULES), MOTIONSTUDIO_CANVAS_MODULE=str(LOCAL_CANVAS))
 def run(args, **kwargs):
+    kwargs['env'] = dict(kwargs.get('env', TEST_ENV), NODE_PATH=str(LOCAL_MODULES), MOTIONSTUDIO_CANVAS_MODULE=str(LOCAL_CANVAS))
     return subprocess.run(args, cwd=ROOT, check=True, **kwargs)
+def expected_source_bytes(rel, layout):
+    if rel.startswith('knowledge/design/') or rel in {'scripts/design_knowledge.py', 'scripts/test_design_knowledge.py'}:
+        source = rel
+    else:
+        source = (('scripts/' if rel.rsplit('/', 1)[1] in {'audio_review.py', 'audiovisual_review.py', 'test_audio_review.py', 'test_audiovisual_review.py', 'AUDIO-REVIEW.md'} else 'tools/reference-benchmark/') + rel.removeprefix('runtime/review-tools/') if rel.startswith('runtime/review-tools/') else 'engine/' + rel.removeprefix('runtime/') if rel.startswith('runtime/') else rel if rel in {'LICENSE', '.env.example'} else 'skills/motion-film-director/' + rel)
+    return layout.source_bytes(ROOT, source)
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--skip-video", action="store_true", help="Skip video-producing gallery and audio/video-wrapper smoke; report partial validation")
     args = parser.parse_args()
+    if not (LOCAL_CANVAS / 'package.json').is_file():
+        raise SystemExit('Install the declared test dependency first: npm ci --prefix engine/motion-render-core --ignore-scripts')
+    run(['node', '-e', "const c=require(process.env.MOTIONSTUDIO_CANVAS_MODULE);c.createCanvas(2,2).toBuffer('image/png')"])
+    print('Native tests explicitly reuse the local core npm installation; no bundled binary or global NODE_PATH is assumed')
     actual = Path(subprocess.check_output(['git', 'rev-parse', '--git-path', 'index'], cwd=ROOT).decode().strip())
     if not actual.is_absolute(): actual = ROOT / actual
     before = hashlib.sha256(actual.read_bytes()).hexdigest()
@@ -27,6 +44,8 @@ def main():
         sources.extend(['tools/reference-benchmark/stem_balance.py', 'tools/reference-benchmark/test_stem_balance.py', 'tools/reference-benchmark/STEM_BALANCE.md'])
         sources.extend(['skills/motion-film-director/references/motion-elements.md', 'skills/motion-film-director/scripts/test-audio-timeline.mjs', 'skills/motion-film-director/references/knowledge-decision-example/index.json', 'skills/motion-film-director/references/knowledge-decision-example/cases/plan.json'])
         sources.extend(['skills/motion-film-director/scripts/static_knowledge.py', 'skills/motion-film-director/scripts/test_static_knowledge.py', 'skills/motion-film-director/research/video-knowledge/STATIC-SCHEMA.md'])
+        sources.extend(str(p.relative_to(ROOT)) for p in (ROOT / 'knowledge/design').rglob('*') if p.is_file())
+        sources.extend(['scripts/design_knowledge.py', 'scripts/test_design_knowledge.py', 'scripts/skill-layout.py'])
         sources.extend(subprocess.check_output(['git', 'diff', '--name-only'], cwd=ROOT).decode().splitlines())
         run(['git', 'add', '--', *sources], env=env)
         run(['python3', 'scripts/check-source-tree.py'], env=env)
@@ -41,21 +60,25 @@ def main():
             assert not any(n.rsplit('/', 1)[-1] == '.env' for n in names)
             for license_path in ('runtime/motion-elements/LICENSE', 'runtime/motion-audio-core/LICENSE', 'runtime/motion-timeline-core/LICENSE', 'runtime/motion-render-core/LICENSES/napi-rs-canvas-MIT.txt', 'LICENSES/huashu-motion-MIT.txt'):
                 assert 'motion-film-director/' + license_path in names
+            layout_spec = importlib.util.spec_from_file_location('skill_layout', ROOT / 'scripts/skill-layout.py')
+            layout = importlib.util.module_from_spec(layout_spec)
+            layout_spec.loader.exec_module(layout)
             for name in names:
                 rel = name.removeprefix('motion-film-director/')
                 if rel in {'runtime-source.json', 'manifest.json'}: continue
-                source = ROOT / (('scripts/' if rel.rsplit('/', 1)[1] in {'audio_review.py', 'audiovisual_review.py', 'test_audio_review.py', 'test_audiovisual_review.py', 'AUDIO-REVIEW.md'} else 'tools/reference-benchmark/') + rel.removeprefix('runtime/review-tools/') if rel.startswith('runtime/review-tools/') else 'engine/' + rel.removeprefix('runtime/') if rel.startswith('runtime/') else rel if rel in {'LICENSE', '.env.example'} else 'skills/motion-film-director/' + rel)
-                assert z.read(name) == source.read_bytes(), 'Stale packaged source: ' + name
+                assert z.read(name) == expected_source_bytes(rel, layout), 'Stale packaged source: ' + name
             default_kb = json.loads(z.read('motion-film-director/research/video-knowledge/index.json'))
-            assert all(default_kb[key] == [] for key in ('cases', 'techniques', 'legacy'))
+            assert all(default_kb[key] == [] for key in ('cases', 'techniques'))
+            assert default_kb['schema_version'] == 3 and 'legacy' not in default_kb
             for rel in ('index.json', 'cases/plan.json'):
                 assert 'motion-film-director/references/knowledge-decision-example/' + rel in names
             assert 'motion-film-director/runtime/motion-elements/catalog.json' in names
             assert 'motion-film-director/references/motion-elements.md' in names
-            print('All packaged source bytes match current worktree; package licenses, elements catalog, synthetic KB example and empty default KB verified')
+            print('All packaged source bytes match canonical sources with native package link layout; package licenses, elements catalog, synthetic KB example and empty default KB verified')
             assert not any(n.endswith(('.wav', '.mp4', '.mp3')) or '/node_modules/' in n for n in names)
             z.extractall(temp / 'fresh')
         skill = temp / 'fresh/motion-film-director'
+        run(['python3', 'scripts/test-skill-links.py', '--package', str(skill)])
         design = skill / 'runtime/design-elements'
         catalog = json.loads((design / 'catalog.json').read_text())
         assert len(catalog['assets']) == 14
@@ -67,7 +90,7 @@ def main():
             run(['node', str(design / 'test-print-poster.mjs')])
         else:
             print('NOT_RUN: design Canvas rendering tests require MOTION_ENGINE_ROOT, UI_TEST_FONT_DIR and UI_B05_FONT_FILE; extracted imports and source bytes checked')
-        recipes = design / 'recipes/b06'
+        recipes = design / 'recipes/reviewed/b06'
         manifest = json.loads((recipes / 'recipe-manifest.json').read_text())
         assert manifest['sharedFamilyCountDelta'] == 0 and len(manifest['recipes']) == 2
         assert all(not item['originalSceneCallsComposite'] for item in manifest['recipes'])
@@ -79,7 +102,7 @@ def main():
             run(['node', str(recipes / 'test-runtime.mjs')], env=recipe_env)
         else:
             print('NOT_RUN: B06 composite recipe renders require MOTION_ENGINE_ROOT and pinned B06_FONT_FILE; no family or aesthetic approval inferred')
-        b08 = design / 'recipes/b08'
+        b08 = design / 'recipes/reviewed/b08'
         b08_manifest = json.loads((b08 / 'recipe-manifest.json').read_text())
         assert b08_manifest['newFamilies'] == 0 and len(b08_manifest['recipes']) == 2
         assert not b08_manifest['sourceSceneMigrated'] and not b08_manifest['userAestheticApproval']
@@ -89,7 +112,7 @@ def main():
                 run(['node', str(b08 / test)], env=b08_env)
         else:
             print('NOT_RUN: B08 recipe renders require MOTION_ENGINE_ROOT/B08_DISPLAY_FONT/B08_BODY_FONT; no family or aesthetic approval inferred')
-        b09 = design / 'recipes/b09'
+        b09 = design / 'recipes/reviewed/b09'
         b09_manifest = json.loads((b09 / 'recipe-manifest.json').read_text())
         assert b09_manifest['newFamilies'] == 0 and len(b09_manifest['recipes']) == 2
         assert not b09_manifest['sourceSceneMigrated'] and not b09_manifest['userAestheticApproval']
@@ -99,7 +122,7 @@ def main():
                 run(['node', str(b09 / test)], env=b09_env)
         else:
             print('NOT_RUN: B09 recipe renders require MOTION_ENGINE_ROOT/B09_DISPLAY_FONT/B09_BODY_FONT; no family or aesthetic approval inferred')
-        b10 = design / 'recipes/b10'
+        b10 = design / 'recipes/reviewed/b10'
         b10_manifest = json.loads((b10 / 'recipe-manifest.json').read_text())
         assert b10_manifest['newFamilies'] == 0 and len(b10_manifest['recipes']) == 2
         assert not b10_manifest['sourceSceneMigrated'] and not b10_manifest['userAestheticApproval']
@@ -109,7 +132,7 @@ def main():
                 run(['node', str(b10 / test)], env=b10_env)
         else:
             print('NOT_RUN: B10 requires engine and pinned external display/body/code fonts; no aesthetic approval inferred')
-        xhs08 = design / 'recipes/xhs08'
+        xhs08 = design / 'recipes/candidates/xhs08'
         xhs_entry = json.loads((xhs08 / 'entry.json').read_text())
         for item in xhs_entry['files']:
             assert hashlib.sha256((xhs08 / item['path']).read_bytes()).hexdigest() == item['sha256']
@@ -119,7 +142,7 @@ def main():
             run(['node', str(xhs08 / 'render.mjs')], env={**os.environ, 'XHS08_OUTPUT_DIR': str(temp / 'xhs08-output')})
         else:
             print('NOT_RUN: XHS08 render/runtime gates require pinned external XHS08_FONT_FILE; numeric/pixel tests executed')
-        for test in ('test_design_knowledge.py', 'test_video_knowledge.py', 'test_static_knowledge.py', 'test_check_delivery.py', 'test_check_final_delivery.py', 'test_validate_delivery_report.py'):
+        for test in ('test_design_knowledge.py', 'test_video_knowledge.py', 'test_static_knowledge.py', 'test_migrate_video_knowledge.py', 'test_check_delivery.py', 'test_check_final_delivery.py', 'test_validate_delivery_report.py'):
             run(['python3', str(skill / 'scripts' / test)])
         kb_cli = skill / 'scripts/video_knowledge.py'
         empty_kb = json.loads(subprocess.check_output(['python3', str(kb_cli), 'validate']))
@@ -127,7 +150,7 @@ def main():
         no_match = json.loads(subprocess.check_output(['python3', str(kb_cli), 'decide', '--text', 'iris']))
         assert no_match['status'] == 'no-match' and no_match['recommendations'] == []
         assert (skill / 'research/video-knowledge/STATIC-SCHEMA.md').is_file()
-        print('Extracted legacy/static knowledge tests and empty-default validate/decide passed')
+        print('Extracted typed video/static knowledge tests and empty-default validate/decide passed')
         elements = skill / 'runtime/motion-elements'
         tests = sorted(elements.glob('test/*.test.mjs'))
         assert tests, 'Portable motion-elements tests missing'

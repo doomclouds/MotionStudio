@@ -8,6 +8,7 @@ import tempfile
 import unittest
 from unittest.mock import patch
 import wave
+from datetime import datetime, timedelta
 
 spec = importlib.util.spec_from_file_location('audio_review', Path(__file__).with_name('audio_review.py'))
 a = importlib.util.module_from_spec(spec)
@@ -15,6 +16,17 @@ spec.loader.exec_module(a)
 
 class AudioReviewTests(unittest.TestCase):
     def setUp(self):
+        # Synthetic time belongs to the test, never to the production price gate.
+        self.today = a.PRICE_DATE
+        owner = self
+        class FixtureDateTime(datetime):
+            @classmethod
+            def now(cls, tz=None):
+                value = cls.combine(owner.today, cls.min.time(), tzinfo=a.timezone.utc)
+                return value.astimezone(tz) if tz else value.replace(tzinfo=None)
+        clock = patch.object(a, 'datetime', FixtureDateTime)
+        clock.start()
+        self.addCleanup(clock.stop)
         self.temp = tempfile.TemporaryDirectory()
         self.root = Path(self.temp.name)
         self.audio = self.root / 'clip.wav'
@@ -62,6 +74,23 @@ class AudioReviewTests(unittest.TestCase):
             with self.subTest(value=value), self.assertRaises(a.ReviewError): self.run_live(budget=value)
     def test_price_ack_required(self):
         with self.assertRaises(a.ReviewError): self.run_live(price_confirmed=None)
+    def test_price_snapshot_seven_day_boundary_accepts_mock_only(self):
+        self.today = a.PRICE_DATE + timedelta(days=7)
+        self.assertEqual(self.run_live()['native_audio_review'], 'reviewed')
+    def test_expired_and_future_price_snapshots_refuse_before_transport(self):
+        for age in (8, -1):
+            with self.subTest(age=age):
+                self.today = a.PRICE_DATE + timedelta(days=age)
+                with self.assertRaisesRegex(a.ReviewError, 'Reverify official current pricing'):
+                    self.run_live(transport=lambda *x: self.fail('Transport must not run'))
+                self.assertFalse(self.out.exists())
+    def test_price_ack_must_match_fixture_today(self):
+        for delta in (-1, 1):
+            with self.subTest(delta=delta):
+                with self.assertRaisesRegex(a.ReviewError, 'Reverify official current pricing'):
+                    self.run_live(price_confirmed=(self.today + timedelta(days=delta)).isoformat(),
+                                  transport=lambda *x: self.fail('Transport must not run'))
+                self.assertFalse(self.out.exists())
     def test_timestamps(self):
         r = self.review()
         r['observations'] = [dict(start_s=0, end_s=2, category='pulse', evidence='pulse', severity='info', suggestion='verify')]

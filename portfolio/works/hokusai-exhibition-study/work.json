@@ -1,0 +1,229 @@
+{
+  "id": "hokusai-exhibition-study",
+  "version": "1.0.0",
+  "title": "富岳三十六景 · 展览首屏",
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "LICENSE",
+      "LICENSES/NotoSansSC-OFL.txt",
+      "LICENSES/NotoSerifSC-OFL.txt",
+      "LICENSES/Met-public-domain.txt"
+    ],
+    "evidence_urls": [
+      "https://www.metmuseum.org/art/collection/search/36492",
+      "https://github.com/google/fonts"
+    ]
+  },
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "runtime-lock.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "npm-package-lock.json"
+    },
+    {
+      "name": "fonttools",
+      "version": "4.61.1",
+      "lock": "runtime-lock.json"
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "075e220cda59222e6414ad8f636e922812f9784913021e0ec6507b000d685fdb",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "Previously reviewed fixed frame and report identities; alternate Met print disclosed. No interaction, motion or full website validation."
+    }
+  },
+  "schema": "motionstudio.work/1",
+  "lifecycle": "retained",
+  "kind": "static",
+  "publication": {
+    "status": "source-release"
+  },
+  "authorship": {
+    "unofficial_recreation": true,
+    "original": {
+      "author": "alchaincyf / Huashu Design",
+      "title": "Hokusai exhibition hero",
+      "url": "https://github.com/alchaincyf/huashu-design/releases/download/v3.0.0/case-hokusai-hero.jpg"
+    }
+  },
+  "render": {
+    "entrypoint": "scene.cjs",
+    "width": 1440,
+    "height": 900
+  },
+  "files": [
+    {
+      "path": "CREDITS.md",
+      "sha256": "d9170d1e7ce29cf2c32118182465bcf5514328b0caff6ab9bc1cb4f8093cf423",
+      "kind": "documentation"
+    },
+    {
+      "path": "DESIGN-RETENTION.md",
+      "sha256": "df529285326f77b1b0d240e114a41892b2f37e199bc127b0cc3729b55bd288ab",
+      "kind": "documentation"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "57abcf883a206316b3198eccab73490064564a8cc5396d951e4f2ef16764d3f9",
+      "kind": "license"
+    },
+    {
+      "path": "LICENSES/Met-public-domain.txt",
+      "sha256": "8b09856bc433595426e97e5f64d2a4c0e4da85e11c4e16348e33aaf10b496d25",
+      "kind": "license"
+    },
+    {
+      "path": "LICENSES/NotoSansSC-OFL.txt",
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+      "kind": "license"
+    },
+    {
+      "path": "LICENSES/NotoSerifSC-OFL.txt",
+      "sha256": "5e0da210fb04058a8c0087985d2d456b931c2579811a49655721d3cf0c36b6d6",
+      "kind": "license"
+    },
+    {
+      "path": "README.md",
+      "sha256": "f4c66686da73c7f24c80350ef1779a7e74e77c0b77e3119a2661e9fad7b6088c",
+      "kind": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "f57840315f3e23b38b0a07db14bc5c2d595d3f00167b38281ee3fcece10e550d",
+      "kind": "cover"
+    },
+    {
+      "path": "font-charset.txt",
+      "sha256": "31ea2a3c20d930b5b9d71a7ac7e2b8fb2254181c49c4b5c313efa7e483a4aaac",
+      "kind": "documentation"
+    },
+    {
+      "path": "font-preparation.json",
+      "sha256": "f1b35b02a410f402f74f18e76c3b142bcb5f99cb4537cc9a57219cda59db0b00",
+      "kind": "lock"
+    },
+    {
+      "path": "npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "kind": "lock"
+    },
+    {
+      "path": "package.json",
+      "sha256": "8e680c6dc5b9e770192ba0dcaa9262972210587da50c4b8cb2daf827ffd97dea",
+      "kind": "config"
+    },
+    {
+      "path": "prepare-fonts.py",
+      "sha256": "f993d45b1475b257e05553a9d205a10b9ccb414643aaa113022bda7ecb2aa107",
+      "kind": "source"
+    },
+    {
+      "path": "resource-lock.json",
+      "sha256": "bbd516ea50585bf589792f9327cee4776fa35c559bd2349561159e79bb3f4f00",
+      "kind": "lock"
+    },
+    {
+      "path": "runtime-lock.json",
+      "sha256": "59c468f1139824327c67869b6e516926505edfbe1104dcaf1e6d1f651ee7acbb",
+      "kind": "lock"
+    },
+    {
+      "path": "scene.cjs",
+      "sha256": "fd944e26022f5b558f656da18c061174eb2a9e5c0942bcef77ba605111eadb1f",
+      "kind": "source"
+    },
+    {
+      "path": "verify.cjs",
+      "sha256": "043281bc2112b0846b10f7384239a8dd66bc56d3c8f3a0dcb25b7e1083963285",
+      "kind": "source"
+    }
+  ],
+  "resources": [
+    {
+      "bytes": 19716,
+      "id": "hokusaiserif900-ttf",
+      "instructions": "Supply the exact licensed input in external HOKUSAI_RESOURCE_DIR. Fonts may be reconstructed using prepare-fonts.py; artwork must be obtained from the identified Met object, never the reference screenshot.",
+      "license": "SIL OFL 1.1",
+      "local_path": "HokusaiSerif900.ttf",
+      "mode": "provide",
+      "notice": "LICENSES/NotoSerifSC-OFL.txt",
+      "permission": "user-supplied-not-distributed",
+      "sha256": "57e8393458f5f77d113d407c882c8dc56391c6fe625b9f99aac345916b8cd719",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notoserifsc",
+      "kind": "unclassified",
+      "kind_basis": {
+        "method": "unresolved"
+      }
+    },
+    {
+      "bytes": 15376,
+      "id": "hokusaisans500-ttf",
+      "instructions": "Supply the exact licensed input in external HOKUSAI_RESOURCE_DIR. Fonts may be reconstructed using prepare-fonts.py; artwork must be obtained from the identified Met object, never the reference screenshot.",
+      "license": "SIL OFL 1.1",
+      "local_path": "HokusaiSans500.ttf",
+      "mode": "provide",
+      "notice": "LICENSES/NotoSansSC-OFL.txt",
+      "permission": "user-supplied-not-distributed",
+      "sha256": "63239c202c6071924b421dee84444be6e8be99cb34d66d78979e6c14cfb7dcf6",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "kind": "unclassified",
+      "kind_basis": {
+        "method": "unresolved"
+      }
+    },
+    {
+      "bytes": 177417,
+      "id": "met-jp11-jpg",
+      "instructions": "Supply the exact licensed input in external HOKUSAI_RESOURCE_DIR. Fonts may be reconstructed using prepare-fonts.py; artwork must be obtained from the identified Met object, never the reference screenshot.",
+      "license": "Public Domain",
+      "local_path": "met-jp11.jpg",
+      "mode": "provide",
+      "notice": "LICENSES/Met-public-domain.txt",
+      "permission": "user-supplied-not-distributed",
+      "sha256": "dbe4e1b2db586f51c5a8f08aff8ac9412406afe4b76226b28e80c652d3a5a4a2",
+      "source_url": "https://www.metmuseum.org/art/collection/search/36492",
+      "kind": "unclassified",
+      "kind_basis": {
+        "method": "unresolved"
+      }
+    }
+  ],
+  "evidence": {
+    "reviewArtifacts": {
+      "status": "NOT_INCLUDED"
+    }
+  },
+  "design": {
+    "decisionCard": "DESIGN-RETENTION.md",
+    "nonAssetNote": "Shared drawing helpers and case-local scene code are not public design families; no runtime reuse is inferred from visual similarity.",
+    "ruleRefs": [],
+    "ruleStatus": "No separate formal rule card claimed; use decisionCard and sourceAnalysis.",
+    "sourceAnalysis": [],
+    "assetUsage": []
+  },
+  "transfer": {
+    "motion": {
+      "status": "NOT_TESTED",
+      "note": "Fixed-size static only. No interaction, responsive layout, animation, audio or AV-sync approval implied."
+    }
+  }
+}

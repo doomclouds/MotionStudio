@@ -1,0 +1,287 @@
+{
+  "id": "mountain-book-jacket-study",
+  "version": "1.0.0",
+  "title": "山行 · 展开书衣",
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "LICENSES/huashu-MIT-LICENSE.txt",
+      "LICENSES/NotoSerifSC-OFL.txt",
+      "LICENSES/WenKai-OFL.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/LICENSE",
+      "https://github.com/google/fonts/tree/main/ofl/notoserifsc",
+      "https://github.com/chawyehsu/lxgw-wenkai-webfont/blob/main/packages/lxgw-wenkai-webfont/OFL.txt"
+    ]
+  },
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "locks/npm-package-lock.json"
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "2a6e9ef70770e365869bf92836175945a7acda7746b0268dd765a854ac67e974",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "Complete still and detail independently reviewed; user retention conveyed by parent. Static only; font/JPEG/shadow residuals. No printing, responsive, browser, actual publication facts or motion validation."
+    }
+  },
+  "schema": "motionstudio.work/1",
+  "lifecycle": "retained",
+  "kind": "static",
+  "publication": {
+    "status": "source-release"
+  },
+  "authorship": {
+    "unofficial_recreation": true,
+    "original": {
+      "author": "alchaincyf (花叔 · 花生)",
+      "title": "Huashu design specimen",
+      "url": "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/east/03-republic-book-jacket.html"
+    }
+  },
+  "render": {
+    "entrypoint": "design/scene.mjs",
+    "width": 1200,
+    "height": 750
+  },
+  "files": [
+    {
+      "path": "ASSET-USAGE.md",
+      "sha256": "eff2b58b19529d2c943d524dbc3f483315c5d0a49aa8255345900e9aeaaf740c",
+      "kind": "documentation"
+    },
+    {
+      "path": "CREDITS.md",
+      "sha256": "9ecc740602f6f0165fd31d086eaa09ee9d2897763130a8da73c5b80cac2e3e94",
+      "kind": "documentation"
+    },
+    {
+      "path": "DESIGN-REASONING.md",
+      "sha256": "c5b474518b8bdefe6bc22cb243a8994d4a7dad3b8506d5c7285c30ca6049ba3d",
+      "kind": "documentation"
+    },
+    {
+      "path": "DESIGN-RETENTION.md",
+      "sha256": "db6b935bcb8f454907efaadf446b0b54d57a2684516f6ffe495c2f781911298e",
+      "kind": "documentation"
+    },
+    {
+      "path": "LICENSES/NotoSerifSC-OFL.txt",
+      "sha256": "5e0da210fb04058a8c0087985d2d456b931c2579811a49655721d3cf0c36b6d6",
+      "kind": "license"
+    },
+    {
+      "path": "LICENSES/WenKai-OFL.txt",
+      "sha256": "4b4017c83d793c3e44f0c0c1fc9d57d0d38154d1a43efcd309e3cc54f4c5315b",
+      "kind": "license"
+    },
+    {
+      "path": "LICENSES/huashu-MIT-LICENSE.txt",
+      "sha256": "6d6a2a9caf2e6d2b76974050427053b2892d8aa4c33fd168ce63a537fcee9d96",
+      "kind": "license"
+    },
+    {
+      "path": "README.md",
+      "sha256": "143f08a99fe9e29f31a2cb3bfe9f411c6c056be732505e6f7be6d3e8c657876c",
+      "kind": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "f90472b7510634a7a855e3bfab20c0e4f91c16bf6a0b49b1377ee4c780bd2144",
+      "kind": "cover"
+    },
+    {
+      "path": "design/scene.mjs",
+      "sha256": "2808f95102311da9b801ef915d2412aa8f047088ba3dd7230d0f35a3550e2bea",
+      "kind": "source"
+    },
+    {
+      "path": "font-charset.txt",
+      "sha256": "0932d7dde4fe07a63c5bc788442314ae0c935f0e0189513fd60fe69c061546b6",
+      "kind": "documentation"
+    },
+    {
+      "path": "font-inputs.json",
+      "sha256": "ef3bad2f00890b9a4e1b15506e897b2d2083c74cd0ae9643bf6267cbae8fcbac",
+      "kind": "config"
+    },
+    {
+      "path": "locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "kind": "lock"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "3376138df78fb0b3f62bc57d80dc440204cbe0a0709a07396e39636873862e6f",
+      "kind": "lock"
+    },
+    {
+      "path": "prepare-fonts.py",
+      "sha256": "f33726fdbb0eac47df5fb5ddc196949e5a951868397ac5f6354934f7e4202051",
+      "kind": "source"
+    },
+    {
+      "path": "prepare-wenkai.py",
+      "sha256": "6425ccd619df9722722a48ef3bf62015d0948ac7e6a12744286cfe6aeeb0686a",
+      "kind": "source"
+    },
+    {
+      "path": "ui-dependencies.json",
+      "sha256": "64674fa4f13ab875ee1a967ebb95447da5762464cbd7396fbc59db84ed9aafd5",
+      "kind": "config"
+    }
+  ],
+  "resources": [
+    {
+      "bytes": 182864,
+      "id": "ejserif400",
+      "instructions": "Obtain originalInputs; run prepare-fonts.py. Original and derived hashes fail closed.",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "local_path": "EJSerif400.ttf",
+      "mode": "provide",
+      "notice": "LICENSES/NotoSerifSC-OFL.txt",
+      "permission": "user-supplied-not-distributed",
+      "sha256": "e2057050d50055d796f0a51a3a0b1a5aa484513c9d4286ae7626760b064b5c49",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notoserifsc",
+      "kind": "unclassified",
+      "kind_basis": {
+        "method": "unresolved"
+      }
+    },
+    {
+      "bytes": 1452,
+      "id": "ejkai115",
+      "instructions": "Fixed mirror WOFF2 inputs; prepare-fonts.py with fonttools4.61.1 and --webfont-python interpreter with fonttools4.57.0+Brotli; dual SHA fail closed.",
+      "license": "SIL OFL 1.1; external derived font, not distributed",
+      "local_path": "EJKai115.ttf",
+      "mode": "provide",
+      "notice": "LICENSES/WenKai-OFL.txt",
+      "permission": "user-supplied-not-distributed",
+      "sha256": "02cf48e784c934a4de9607d59aff7a4038650b054569fd0c5232585a14c9128a",
+      "source_url": "https://github.com/mistyu/next-blog/blob/c8a0ea75b0ef4a2016325c0353ce0d29e287809e/public/fonts/lxgw/woff2/lxgwwenkai-regular-subset-115.woff2",
+      "kind": "unclassified",
+      "kind_basis": {
+        "method": "unresolved"
+      }
+    },
+    {
+      "bytes": 1596,
+      "id": "ejkai116",
+      "instructions": "Fixed mirror WOFF2 inputs; prepare-fonts.py with fonttools4.61.1 and --webfont-python interpreter with fonttools4.57.0+Brotli; dual SHA fail closed.",
+      "license": "SIL OFL 1.1; external derived font, not distributed",
+      "local_path": "EJKai116.ttf",
+      "mode": "provide",
+      "notice": "LICENSES/WenKai-OFL.txt",
+      "permission": "user-supplied-not-distributed",
+      "sha256": "7f2b78ef10b24207a19438852ddddb8734f9d859685ea57804cabeb37740e569",
+      "source_url": "https://github.com/mistyu/next-blog/blob/c8a0ea75b0ef4a2016325c0353ce0d29e287809e/public/fonts/lxgw/woff2/lxgwwenkai-regular-subset-116.woff2",
+      "kind": "unclassified",
+      "kind_basis": {
+        "method": "unresolved"
+      }
+    },
+    {
+      "bytes": 1444,
+      "id": "ejkai117",
+      "instructions": "Fixed mirror WOFF2 inputs; prepare-fonts.py with fonttools4.61.1 and --webfont-python interpreter with fonttools4.57.0+Brotli; dual SHA fail closed.",
+      "license": "SIL OFL 1.1; external derived font, not distributed",
+      "local_path": "EJKai117.ttf",
+      "mode": "provide",
+      "notice": "LICENSES/WenKai-OFL.txt",
+      "permission": "user-supplied-not-distributed",
+      "sha256": "b300e4c14565b72c6fa11fb258e4aa393897c05c87674529085947a9b1b80fcb",
+      "source_url": "https://github.com/mistyu/next-blog/blob/c8a0ea75b0ef4a2016325c0353ce0d29e287809e/public/fonts/lxgw/woff2/lxgwwenkai-regular-subset-117.woff2",
+      "kind": "unclassified",
+      "kind_basis": {
+        "method": "unresolved"
+      }
+    },
+    {
+      "bytes": 1612,
+      "id": "ejkai118",
+      "instructions": "Fixed mirror WOFF2 inputs; prepare-fonts.py with fonttools4.61.1 and --webfont-python interpreter with fonttools4.57.0+Brotli; dual SHA fail closed.",
+      "license": "SIL OFL 1.1; external derived font, not distributed",
+      "local_path": "EJKai118.ttf",
+      "mode": "provide",
+      "notice": "LICENSES/WenKai-OFL.txt",
+      "permission": "user-supplied-not-distributed",
+      "sha256": "e458faa43fbf766d18d5d347fb327b0574c23e5d769680c00080e142ae57fd25",
+      "source_url": "https://github.com/mistyu/next-blog/blob/c8a0ea75b0ef4a2016325c0353ce0d29e287809e/public/fonts/lxgw/woff2/lxgwwenkai-regular-subset-118.woff2",
+      "kind": "unclassified",
+      "kind_basis": {
+        "method": "unresolved"
+      }
+    },
+    {
+      "bytes": 1444,
+      "id": "ejkai119",
+      "instructions": "Fixed mirror WOFF2 inputs; prepare-fonts.py with fonttools4.61.1 and --webfont-python interpreter with fonttools4.57.0+Brotli; dual SHA fail closed.",
+      "license": "SIL OFL 1.1; external derived font, not distributed",
+      "local_path": "EJKai119.ttf",
+      "mode": "provide",
+      "notice": "LICENSES/WenKai-OFL.txt",
+      "permission": "user-supplied-not-distributed",
+      "sha256": "7379182263ffdf8c28ce901711b378d157f72aa2c08084aaa79daabcd24c2350",
+      "source_url": "https://github.com/mistyu/next-blog/blob/c8a0ea75b0ef4a2016325c0353ce0d29e287809e/public/fonts/lxgw/woff2/lxgwwenkai-regular-subset-119.woff2",
+      "kind": "unclassified",
+      "kind_basis": {
+        "method": "unresolved"
+      }
+    }
+  ],
+  "evidence": {
+    "reviewArtifacts": {
+      "status": "NOT_INCLUDED"
+    }
+  },
+  "design": {
+    "decisionCard": "DESIGN-RETENTION.md",
+    "nonAssetNote": "Editorial role JSON is a content-design record, not an automatic compositor or public family. Geometry and typography stay case-local.",
+    "ruleRefs": [],
+    "ruleStatus": "Case design decision card; no separate registered rule or new public family.",
+    "sourceAnalysis": [
+      "DESIGN-REASONING.md"
+    ],
+    "assetUsage": [
+      {
+        "callToken": "surface",
+        "callsite": "design/scene.mjs",
+        "familyId": "design.material-surfaces.v1",
+        "importToken": "material-surfaces.mjs",
+        "mode": "runtime-import",
+        "modulePath": "engine/design-elements/material-surfaces.mjs",
+        "moduleSha256": "70bf1fcfa89bfbf911f5cf735b1b08e8ae7f360e43bd43a8c831efef579696eb",
+        "snapshotPath": null,
+        "sourceCommit": "0947507961eb5624ddd5c1240758baefa3246fd8",
+        "visibleRole": "书衣的同色纸面基础，非完整封套生成器"
+      }
+    ]
+  },
+  "transfer": {
+    "motion": {
+      "status": "NOT_TESTED",
+      "note": "Fixed static only; no browser/responsive/printing/factual-data or motion verification."
+    }
+  }
+}

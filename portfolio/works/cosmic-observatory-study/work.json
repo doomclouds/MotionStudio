@@ -1,0 +1,286 @@
+{
+  "id": "cosmic-observatory-study",
+  "version": "1.0.0",
+  "title": "今夜观木星 · 复古未来观象台",
+  "rights": {
+    "status": "reviewed-publication-scope",
+    "credits": "CREDITS.md",
+    "notices": [
+      "LICENSES/NotoSerif-OFL.txt",
+      "LICENSES/huashu-MIT-LICENSE.txt",
+      "LICENSES/NotoSans-OFL.txt",
+      "LICENSES/spacemono-OFL.txt",
+      "LICENSES/cormorantgaramond-OFL.txt"
+    ],
+    "evidence_urls": [
+      "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/LICENSE",
+      "https://github.com/google/fonts"
+    ]
+  },
+  "runtime": [
+    {
+      "name": "node",
+      "version": "24.22.1",
+      "lock": "locks/runtime.json"
+    },
+    {
+      "name": "canvas",
+      "version": "0.1.100",
+      "lock": "locks/npm-package-lock.json"
+    }
+  ],
+  "cover": {
+    "path": "cover.jpg",
+    "kind": "rendered-static",
+    "source_sha256": "a4cfef99fc86e38956777dc8bd371c87a41a4c8f1818afdd6734d7f58e884387",
+    "frame": null,
+    "rights_status": "reviewed",
+    "credit": "CREDITS.md"
+  },
+  "acceptance": {
+    "complete_work": true,
+    "owner_keep": true,
+    "clean_restore": true,
+    "technical": true,
+    "visual": {
+      "status": "PARTIAL",
+      "coverage": "完整固定画面已独立视觉复核且用户允许收藏。中文斜体近似、字形栅格与局部字距；轨道非比例，活动日期和天文说法未事实核查，不用于真实观测指南。未验证浏览器、交互、响应式、视频或音频。"
+    }
+  },
+  "schema": "motionstudio.work/1",
+  "lifecycle": "retained",
+  "kind": "static",
+  "publication": {
+    "status": "source-release"
+  },
+  "authorship": {
+    "unofficial_recreation": true,
+    "original": {
+      "author": "alchaincyf (花叔 · 花生)",
+      "title": "今夜观木星 · 复古未来观象台",
+      "url": "https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/web/07-cosmic-retro-futurism.html"
+    }
+  },
+  "render": {
+    "entrypoint": "design/scene.mjs",
+    "width": 1200,
+    "height": 750
+  },
+  "files": [
+    {
+      "path": "CREDITS.md",
+      "sha256": "a37249cfff8398e740450670c07001015dcf86cab3319fd0ea22a9fd2ba0d9d3",
+      "kind": "documentation"
+    },
+    {
+      "path": "LICENSES/NotoSans-OFL.txt",
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+      "kind": "license"
+    },
+    {
+      "path": "LICENSES/NotoSerif-OFL.txt",
+      "sha256": "5e0da210fb04058a8c0087985d2d456b931c2579811a49655721d3cf0c36b6d6",
+      "kind": "license"
+    },
+    {
+      "path": "LICENSES/cormorantgaramond-OFL.txt",
+      "sha256": "60700d351cac4650c51f3f9db318d2a420f8b45052dba2715eb5fec41f0f6956",
+      "kind": "license"
+    },
+    {
+      "path": "LICENSES/huashu-MIT-LICENSE.txt",
+      "sha256": "6d6a2a9caf2e6d2b76974050427053b2892d8aa4c33fd168ce63a537fcee9d96",
+      "kind": "license"
+    },
+    {
+      "path": "LICENSES/spacemono-OFL.txt",
+      "sha256": "8e4ee42b2553e1e01504e61cb0d46d148cd8c9e5eacaa3622a7df2d4f2955b9f",
+      "kind": "license"
+    },
+    {
+      "path": "README.md",
+      "sha256": "b721afa1665c35b769d075fa2a66ece1a10334cc3bf7bf0c94f9407e0db4e58c",
+      "kind": "documentation"
+    },
+    {
+      "path": "cover.jpg",
+      "sha256": "e4ff31cfb20c7fe3c815ce867e91ab3c556152a09816265613135faeddd3e03b",
+      "kind": "cover"
+    },
+    {
+      "path": "design/DESIGN-REASONING.md",
+      "sha256": "729e83ea89e58a653964ef44cf46860f9b95f6a649af44b4eeb07536ed45f64f",
+      "kind": "documentation"
+    },
+    {
+      "path": "design/scene.mjs",
+      "sha256": "86876986214437aedfeeeb8a50f5377d572aa79586dafec1f33a9549c76a8900",
+      "kind": "source"
+    },
+    {
+      "path": "font-charset.txt",
+      "sha256": "4c76e93ab00739c65d8c315d8b105e0b20c57fb14f76c10d527a852c85876d3f",
+      "kind": "config"
+    },
+    {
+      "path": "font-inputs.json",
+      "sha256": "877c61e85f7eb9309c174e5847a5d9c7b9afc679cf65b93660cab78bed270e73",
+      "kind": "config"
+    },
+    {
+      "path": "locks/npm-package-lock.json",
+      "sha256": "6f4455ca262f16d475a7b0e0f0ffd55862eba5580ed7576a677edc8969acb00c",
+      "kind": "lock"
+    },
+    {
+      "path": "locks/runtime.json",
+      "sha256": "c97986608711fff48e780026471834a114f117d30fd4f1b15c3e76b21a760a46",
+      "kind": "lock"
+    },
+    {
+      "path": "prepare-fonts.py",
+      "sha256": "665f033cedcbbad8d18624c916b76cb5f4ca3b3eafbf4fcb8dda680240ce8773",
+      "kind": "source"
+    },
+    {
+      "path": "DESIGN-RETENTION.md",
+      "sha256": "0f02201e72b8a639b98de7273b03289ccf4c69a1bb866dfb55d47bcb779a8fbb",
+      "kind": "documentation"
+    }
+  ],
+  "resources": [
+    {
+      "bytes": 36628,
+      "id": "monosans400",
+      "instructions": "Legally supply original font inputs, then run prepare-fonts.py outside the repository and set COSMIC_FONT_DIR. Original and derived hashes are verified.",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "local_path": "MonoSans400.ttf",
+      "mode": "provide",
+      "notice": "LICENSES/NotoSans-OFL.txt",
+      "permission": "user-supplied-not-distributed",
+      "sha256": "40addb03b6e09916683ef873dd4ceee6114b0121c9bd6f45fa470d8e4f6750ac",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "kind": "unclassified",
+      "kind_basis": {
+        "method": "unresolved"
+      }
+    },
+    {
+      "bytes": 36612,
+      "id": "headingsans700",
+      "instructions": "Legally supply original font inputs, then run prepare-fonts.py outside the repository and set COSMIC_FONT_DIR. Original and derived hashes are verified.",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "local_path": "HeadingSans700.ttf",
+      "mode": "provide",
+      "notice": "LICENSES/NotoSans-OFL.txt",
+      "permission": "user-supplied-not-distributed",
+      "sha256": "b25442360b5b336d04d53a7558ddc5c0a2e297d359014606b0d5a52038108a27",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "kind": "unclassified",
+      "kind_basis": {
+        "method": "unresolved"
+      }
+    },
+    {
+      "bytes": 48052,
+      "id": "serif500",
+      "instructions": "Legally supply original font inputs, then run prepare-fonts.py outside the repository and set COSMIC_FONT_DIR. Original and derived hashes are verified.",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "local_path": "Serif500.ttf",
+      "mode": "provide",
+      "notice": "LICENSES/NotoSerif-OFL.txt",
+      "permission": "user-supplied-not-distributed",
+      "sha256": "f870b05601a358b0437d770224ef1205230953fc2d1269dd16be590a7885b9de",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notoserifsc",
+      "kind": "unclassified",
+      "kind_basis": {
+        "method": "unresolved"
+      }
+    },
+    {
+      "bytes": 48052,
+      "id": "serif700",
+      "instructions": "Legally supply original font inputs, then run prepare-fonts.py outside the repository and set COSMIC_FONT_DIR. Original and derived hashes are verified.",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "local_path": "Serif700.ttf",
+      "mode": "provide",
+      "notice": "LICENSES/NotoSerif-OFL.txt",
+      "permission": "user-supplied-not-distributed",
+      "sha256": "ea15070b70807e544e6691a3cee1f953c0f44a2b1f5526f54c273d87649162f7",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/notoserifsc",
+      "kind": "unclassified",
+      "kind_basis": {
+        "method": "unresolved"
+      }
+    },
+    {
+      "bytes": 454392,
+      "id": "cormorantitalic500",
+      "instructions": "Legally supply original font inputs, then run prepare-fonts.py outside the repository and set COSMIC_FONT_DIR. Original and derived hashes are verified.",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "local_path": "CormorantItalic500.ttf",
+      "mode": "provide",
+      "notice": "LICENSES/cormorantgaramond-OFL.txt",
+      "permission": "user-supplied-not-distributed",
+      "sha256": "ac20baf2e9e8b68668399ea494a8d52e577938c39622688c71a4170e973ef145",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/cormorantgaramond",
+      "kind": "unclassified",
+      "kind_basis": {
+        "method": "unresolved"
+      }
+    },
+    {
+      "bytes": 99356,
+      "id": "spacemonoregular",
+      "instructions": "Legally supply original font inputs, then run prepare-fonts.py outside the repository and set COSMIC_FONT_DIR. Original and derived hashes are verified.",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "local_path": "SpaceMono-Regular.ttf",
+      "mode": "provide",
+      "notice": "LICENSES/spacemono-OFL.txt",
+      "permission": "user-supplied-not-distributed",
+      "sha256": "95837e182baeeada83368f7748db28357f0a1b75c6b84ff7065b5edf933c8e18",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/spacemono",
+      "kind": "unclassified",
+      "kind_basis": {
+        "method": "unresolved"
+      }
+    },
+    {
+      "bytes": 98232,
+      "id": "spacemonobold",
+      "instructions": "Legally supply original font inputs, then run prepare-fonts.py outside the repository and set COSMIC_FONT_DIR. Original and derived hashes are verified.",
+      "license": "SIL OFL 1.1; external font, not distributed",
+      "local_path": "SpaceMono-Bold.ttf",
+      "mode": "provide",
+      "notice": "LICENSES/spacemono-OFL.txt",
+      "permission": "user-supplied-not-distributed",
+      "sha256": "405e73d41afb7e5906efce206a326af5c956f38e255f35421c260e861e599c59",
+      "source_url": "https://github.com/google/fonts/tree/main/ofl/spacemono",
+      "kind": "unclassified",
+      "kind_basis": {
+        "method": "unresolved"
+      }
+    }
+  ],
+  "evidence": {
+    "reviewArtifacts": {
+      "status": "NOT_INCLUDED"
+    }
+  },
+  "design": {
+    "decisionCard": "DESIGN-RETENTION.md",
+    "nonAssetNote": "Shared drawing helpers and case-local scene code are not public design families; no runtime reuse is inferred from visual similarity.",
+    "ruleRefs": [],
+    "ruleStatus": "No separate formal rule card claimed; use decisionCard and sourceAnalysis.",
+    "sourceAnalysis": [
+      "design/DESIGN-REASONING.md"
+    ],
+    "assetUsage": []
+  },
+  "transfer": {
+    "motion": {
+      "status": "NOT_TESTED",
+      "note": "Fixed-size static only. No interaction, responsive layout, animation, audio or AV-sync approval implied."
+    }
+  }
+}

@@ -1,7 +1,6 @@
 {
-  "schema_version": 1,
+  "schema_version": 3,
   "scope": "Empty public library; schemas and tools only. No private review records are distributed.",
   "cases": [],
-  "techniques": [],
-  "legacy": []
+  "techniques": []
 }

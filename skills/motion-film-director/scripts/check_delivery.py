@@ -9,7 +9,7 @@ import subprocess
 import sys
 
 MIN_SAMPLE_SECONDS = Fraction(7)
-ROLES = ('internal-test', 'user-sample', 'final')
+ROLES = ('internal-test', 'user-sample')
 
 
 def digest(path):

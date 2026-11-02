@@ -8,4 +8,4 @@ MIT 要求软件副本或实质部分附版权和许可，并非要求导出视�
 
 项目场景、品牌/产品标志、音频、字体、照片和参考影片分别核权利；代码许可不自动授予示范影片、人物形象或第三方商标的使用权。私人项目及其素材不随公开工具集分发；排除项目不改变原有素材来源义务。Node、FFmpeg 和原生依赖二进制为现有外部安装，本包不重新分发这些二进制。
 
-静态 UI 复刻方法研究参考 JimLiu/baoyu-design 固定版本 `0fd52fc77765b214cfcc2ced20b092b2969bb0b0` 中 hi-fi-design、import-from-html、data-visualization、design-feedback 与 fork-verifier-agent；具体映射见[方法合同](references/static-ui-reference-study.md)。本包只含原创方法重述，不携带上游提示词、执行链、媒体或私有研究记录；保守保留其 [MIT 版权与许可](LICENSES/baoyu-design-MIT.txt)，不将其宣称为官方设计系统或当前宿主工具能力。
+静态 UI 复刻方法研究参考 JimLiu/baoyu-design 固定版本 `0fd52fc77765b214cfcc2ced20b092b2969bb0b0` 中 hi-fi-design、import-from-html、data-visualization、design-feedback 与 fork-verifier-agent；具体映射见[方法合同](../../knowledge/design/static-ui-reference-study.md)。本包只含原创方法重述，不携带上游提示词、执行链、媒体或私有研究记录；保守保留其 [MIT 版权与许可](LICENSES/baoyu-design-MIT.txt)，不将其宣称为官方设计系统或当前宿主工具能力。

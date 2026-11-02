@@ -21,7 +21,7 @@ python3 skills/motion-film-director/scripts/check_final_delivery.py /absolute/fi
 便携 Skill 不包含完整数值 benchmark/模板依赖；规范报告必须使用仓库的既有 renderer。
 便携入口可通过 `--report-renderer /absolute/MotionStudio/tools/reference-benchmark/report.py`
 显式指定已安装依赖的本地仓库。缺少 renderer 或 Pillow/NumPy 时明确失败，不降级为旧报告。
-`--report` 显式路径只保留旧版兼容，不是 canonical 固定报告入口。
+只支持`--project-root`固定PNG＋HTML报告入口；不再提供`--report`或HTML-only分支。
 
 `report.py --delivery-output` 是底层排版/测试入口，不能在交付门发布之后再运行。
 它拒绝覆盖已存在的 PNG 或 HTML，防止使交付清单 hash 失效。底层接口只使用已有测量，

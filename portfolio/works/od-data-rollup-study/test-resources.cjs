@@ -21,6 +21,6 @@ const t=fs.mkdtempSync(path.join(os.tmpdir(),'od-resource-negative-'));try{
  for(const val of ['',root,(fs.existsSync(path.join(repo,'portfolio'))?path.join(repo,'portfolio'):repo)])deny({CANVAS_MODULE:val},"require('./resources.cjs').canvas()");
  const fake=path.join(t,'runtime');fs.mkdirSync(fake);fs.writeFileSync(path.join(fake,'package.json'),JSON.stringify({version:'0.0.0'}));deny({CANVAS_MODULE:fake},"require('./resources.cjs').canvas()");
  const good=run({OD_OUTPUT_DIR:t},"require('./resources.cjs').write('good.txt','good')");assert.equal(good.status,0,good.stderr);assert.equal(fs.readFileSync(path.join(t,'good.txt'),'utf8'),'good');n++;
- const entry=JSON.parse(fs.readFileSync(path.join(root,'entry.json')));assert.equal(createHash('sha256').update(fs.readFileSync(require('./resources.cjs').output('faithful.png'))).digest('hex'),entry.cover.source_sha256);n++;
+ const entry=JSON.parse(fs.readFileSync(path.join(root,'work.json')));assert.equal(createHash('sha256').update(fs.readFileSync(require('./resources.cjs').output('faithful.png'))).digest('hex'),entry.cover.source_sha256);n++;
 }finally{fs.rmSync(t,{recursive:true,force:true})}
 console.log(n+' resource/exact-frame assertions PASS');

@@ -12,7 +12,6 @@ import stat
 from datetime import datetime
 from pathlib import Path, PurePosixPath
 
-CAPABILITY = 'synthetic-static-probe-v1'
 HASH = re.compile(r'[0-9a-f]{64}')
 ID = re.compile(r'[a-zA-Z0-9][a-zA-Z0-9._-]*')
 UNAVAILABLE = {'stale', 'withdrawn', 'superseded', 'falsified'}
@@ -93,8 +92,8 @@ def json_equal(left, right):
 
 
 def validate_case(c):
-    exact(c, 'schema_version kind id revision title status tags revision_note supersedes source artifact run artifacts observations technique_ids feedback decision', 'static Case')
-    require(type(c['schema_version']) is int and c['schema_version'] == 2 and c['kind'] == 'case', 'static Case version/kind')
+    exact(c, 'schema_version evidence_type kind id revision title status tags revision_note supersedes source artifact run artifacts observations technique_ids feedback decision', 'static Case')
+    require(type(c['schema_version']) is int and c['schema_version'] == 3 and c['evidence_type'] == 'static-probe' and c['kind'] == 'case', 'static Case version/kind')
     require(isinstance(c['id'], str) and re.fullmatch(r'case-[a-z0-9]+(?:-[a-z0-9]+)*', c['id']), 'invalid case ID')
     require(type(c['revision']) is int and c['revision'] > 0, 'invalid revision')
     require(all(string(c[k]) for k in ('title', 'revision_note')), 'missing case text')
@@ -227,10 +226,23 @@ def validate_case(c):
     validate_decision(c, artifacts, variants, observations)
 
 
+def decision_recorded(d):
+    """An explicit absence preserves observations, never invents a decision."""
+    require(isinstance(d, dict) and type(d.get('schema_version')) is int and d['schema_version'] == 3,
+            'decision requires schema 3')
+    require(d.get('record_state') in {'recorded', 'not-recorded'}, 'explicit decision record_state required')
+    if d['record_state'] == 'not-recorded':
+        exact(d, 'schema_version record_state reason', 'unrecorded decision')
+        require(string(d['reason']), 'unrecorded decision requires an accurate reason')
+        return False
+    return True
+
+
 def validate_decision(c, artifacts, variants, observations):
     d = c['decision']
-    exact(d, 'schema_version lifecycle problem options chosen_option_id rationale experiment evidence_refs result applies_when counterexample not_verified permission_semantics', 'static decision')
-    require(type(d['schema_version']) is int and d['schema_version'] == 2, 'static decision requires version 2')
+    if not decision_recorded(d): return
+    exact(d, 'schema_version record_state lifecycle problem options chosen_option_id rationale experiment evidence_refs result applies_when counterexample not_verified permission_semantics', 'static decision')
+    require(type(d['schema_version']) is int and d['schema_version'] == 3, 'static decision requires version 3')
     require(d['lifecycle'] in {'active'} | UNAVAILABLE, 'invalid decision lifecycle')
     require(d['permission_semantics'] == 'informational-only-not-authorization', 'permission is not authorization')
     require(all(string(d[k]) for k in ('rationale', 'applies_when', 'counterexample')), 'missing decision text')
@@ -297,43 +309,25 @@ def validate_decision(c, artifacts, variants, observations):
         require(r['outcome'] == 'contradicts', 'falsified requires contradicting result')
 
 
-def validate_library(root, index):
-    errors, cards = [], {}
-    try:
-        exact(index, 'schema_version capabilities scope cases techniques', 'static index')
-        require(type(index['schema_version']) is int and index['schema_version'] == 2, 'unsupported static index')
-        require(index['capabilities'] == [CAPABILITY] and string(index['scope']), 'explicit static capability required')
-        require(isinstance(index['cases'], list) and isinstance(index['techniques'], list), 'index entries must be lists')
-        indexed = set()
-        for group, kind in [('cases', 'case'), ('techniques', 'technique')]:
-            for entry in index[group]:
-                exact(entry, 'id path tags', 'index entry')
-                require(safe_relative(entry['path']) and entry['path'].startswith(group + '/') and entry['path'].endswith('.json'), 'unsafe index path')
-                require(entry['path'] not in indexed, 'duplicate index path')
-                indexed.add(entry['path'])
-                p = root / entry['path']
-                require(not any(q.is_symlink() for q in [p, *p.parents] if q != root.parent), 'symlink in card path')
-                c = json.loads(p.read_text(encoding='utf-8'))
-                require(c.get('id') == entry['id'] and c.get('kind') == kind and c.get('tags') == entry['tags'], 'index/card identity mismatch')
-                require(c['id'] not in cards, 'duplicate card ID')
-                cards[c['id']] = c
-        actual = {p.relative_to(root).as_posix() for group in ('cases', 'techniques') for p in (root / group).rglob('*.json')}
-        require(indexed == actual, 'unindexed/missing cards')
-        for c in cards.values():
+def validate_cards(cards):
+    """Validate the static-probe branch of the single schema-3 library."""
+    errors = []
+    for c in cards.values():
+        try:
             if c['kind'] == 'case':
                 validate_case(c)
                 require(all(i in cards and cards[i]['kind'] == 'technique' for i in c['technique_ids']), 'broken technique link')
             else:
                 validate_technique(c, cards)
             require(all(i in cards and i != c['id'] for i in c['supersedes']), 'broken supersedes link')
-    except (OSError, ValueError, TypeError, KeyError, AttributeError) as exc:
-        errors.append(f'typed-static: {exc}')
-    return errors, cards
+        except (OSError, ValueError, TypeError, KeyError, AttributeError) as exc:
+            errors.append(f'typed-static: {exc}')
+    return errors
 
 
 def validate_technique(t, cards):
-    exact(t, 'schema_version kind id revision title status tags claim_type hypothesis evidence applies_when limits counterexample falsification_test validation rule_level revision_note supersedes', 'static candidate Technique')
-    require(type(t['schema_version']) is int and t['schema_version'] == 1 and t['kind'] == 'technique', 'Technique remains v1')
+    exact(t, 'schema_version evidence_type kind id revision title status tags claim_type hypothesis evidence applies_when limits counterexample falsification_test validation rule_level revision_note supersedes', 'static candidate Technique')
+    require(type(t['schema_version']) is int and t['schema_version'] == 3 and t['evidence_type'] == 'static-probe' and t['kind'] == 'technique', 'Technique requires schema 3')
     require(isinstance(t['id'], str) and re.fullmatch(r'tech-[a-z0-9]+(?:-[a-z0-9]+)*', t['id']), 'invalid Technique ID')
     require(type(t['revision']) is int and t['revision'] > 0, 'invalid Technique revision')
     require(t['status'] in {'hypothesis', 'superseded', 'withdrawn'} and t['rule_level'] == 'candidate' and t['claim_type'] == 'inferred', 'static-only evidence cannot promote a production Technique')
@@ -344,7 +338,7 @@ def validate_technique(t, cards):
     for e in t['evidence']:
         exact(e, 'case_id observation_ids', 'Technique evidence')
         case = cards.get(e['case_id'], {})
-        require(case.get('kind') == 'case' and case.get('schema_version') == 2, 'static candidate requires typed static Case')
+        require(case.get('kind') == 'case' and case.get('evidence_type') == 'static-probe', 'static candidate requires typed static Case')
         require(strings(e['observation_ids'], True) and set(e['observation_ids']) <= {o['id'] for o in case['observations']}, 'broken static Technique evidence')
 
 
@@ -365,6 +359,7 @@ def unavailable_reasons(card_id, cards, seen=None):
             reasons.extend(unavailable_reasons(e['case_id'], cards, seen))
     else:
         d = c['decision']
+        if not decision_recorded(d): return sorted(set(reasons))
         if d['lifecycle'] in UNAVAILABLE or d['result']['outcome'] == 'contradicts':
             reasons.append(f'{card_id}: unavailable decision lifecycle/result')
         for e in d['evidence_refs']:
@@ -432,7 +427,7 @@ def verify_artifacts(cards, artifact_root, max_file_bytes=64 * 1024 * 1024, max_
         return dict(report, status='blocked', error=str(exc))
     try:
         for c in sorted(cards.values(), key=lambda x: x['id']):
-            if c.get('schema_version') != 2 or c.get('kind') != 'case':
+            if c.get('evidence_type') != 'static-probe' or c.get('kind') != 'case':
                 continue
             row = {'case_id': c['id'], 'revision': c['revision'], 'status': 'checked', 'artifacts': []}
             for a in c['artifacts']:

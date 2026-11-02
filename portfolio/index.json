@@ -1,0 +1,951 @@
+{
+  "schema": "motionstudio.work-index/1",
+  "source": "work/1-only",
+  "evidencePolicy": "NOT_INCLUDED is disclosure policy, not proof of review or absence.",
+  "counts": {
+    "works": 66,
+    "static": 64,
+    "video": 2,
+    "candidates": 3
+  },
+  "families": [
+    {
+      "id": "design.print-poster.v1",
+      "entry": "print-poster.mjs",
+      "guidance": "https://github.com/doomclouds/MotionStudio/blob/cae18d21f2fbef9702c8ce94ce68abd9eda826a4/skills/motion-film-director/research/design-knowledge/cases/ui-003-print-poster.md",
+      "sourceCases": [],
+      "actualUsers": [],
+      "candidateUsers": [
+        "film-festival-study",
+        "hk-street-signs-study",
+        "pixel-hiking-study"
+      ]
+    },
+    {
+      "id": "design.typographic-focus.v1",
+      "entry": "typographic-focus.mjs",
+      "guidance": "docs/typographic-focus.md",
+      "sourceCases": [
+        "slow-roast-study",
+        "hanzi-poster-study",
+        "cycling-year-report"
+      ],
+      "actualUsers": [],
+      "candidateUsers": []
+    },
+    {
+      "id": "design.color-sections.v1",
+      "entry": "color-sections.mjs",
+      "guidance": "docs/color-sections.md",
+      "sourceCases": [
+        "muqi-study",
+        "slow-roast-study",
+        "shanghai-deco-study"
+      ],
+      "actualUsers": [
+        "bauhaus-theatre-study",
+        "xie-symbol-study"
+      ],
+      "candidateUsers": [
+        "pixel-hiking-study"
+      ]
+    },
+    {
+      "id": "design.material-surfaces.v1",
+      "entry": "material-surfaces.mjs",
+      "guidance": "docs/material-surfaces.md",
+      "sourceCases": [
+        "liquid-glass-study",
+        "vinyl-study"
+      ],
+      "actualUsers": [
+        "command-palette-study",
+        "friendly-fintech-study",
+        "gentle-activity-study",
+        "health-color-code-study",
+        "irreverent-pop-study",
+        "mountain-book-jacket-study",
+        "ocean-letter-study",
+        "playful-roast-timer-study",
+        "recursion-lecture-study",
+        "rollcall-docs-study",
+        "salary-unit-stack-study",
+        "solar-terms-study",
+        "song-block-print-study",
+        "topo-outdoor-study"
+      ],
+      "candidateUsers": []
+    },
+    {
+      "id": "design.semantic-data.v1",
+      "entry": "semantic-data.mjs",
+      "guidance": "docs/semantic-data.md",
+      "sourceCases": [
+        "tea-conversation-map",
+        "theatre-narrative-wave"
+      ],
+      "actualUsers": [],
+      "candidateUsers": []
+    },
+    {
+      "id": "design.parameter-controls.v1",
+      "entry": "parameter-controls.mjs",
+      "guidance": "docs/parameter-controls.md",
+      "sourceCases": [
+        "hardware-sampler-study",
+        "liquid-glass-study"
+      ],
+      "actualUsers": [],
+      "candidateUsers": []
+    },
+    {
+      "id": "design.expressive-type.v1",
+      "entry": "expressive-type.mjs",
+      "guidance": "docs/expressive-type.md",
+      "sourceCases": [
+        "cycling-year-report",
+        "wave-weather-study"
+      ],
+      "actualUsers": [],
+      "candidateUsers": []
+    },
+    {
+      "id": "design.radial-scale.v1",
+      "entry": "radial-scale.mjs",
+      "guidance": "docs/radial-scale.md",
+      "sourceCases": [
+        "hardware-sampler-study"
+      ],
+      "actualUsers": [],
+      "candidateUsers": []
+    },
+    {
+      "id": "design.diagonal-field.v1",
+      "entry": "diagonal-field.mjs",
+      "guidance": "docs/diagonal-field.md",
+      "sourceCases": [
+        "muqi-study"
+      ],
+      "actualUsers": [],
+      "candidateUsers": []
+    },
+    {
+      "id": "design.authored-paths.v1",
+      "entry": "authored-paths.mjs",
+      "guidance": "docs/authored-paths.md",
+      "sourceCases": [
+        "theatre-narrative-wave",
+        "bus-morning-study"
+      ],
+      "actualUsers": [],
+      "candidateUsers": []
+    },
+    {
+      "id": "design.vertical-imprint.v1",
+      "entry": "vertical-imprint.mjs",
+      "guidance": "docs/vertical-imprint.md",
+      "sourceCases": [
+        "song-block-print-study"
+      ],
+      "actualUsers": [],
+      "candidateUsers": []
+    },
+    {
+      "id": "design.geometric-marks.v1",
+      "entry": "geometric-marks.mjs",
+      "guidance": "docs/geometric-marks.md",
+      "sourceCases": [
+        "bauhaus-theatre-study"
+      ],
+      "actualUsers": [],
+      "candidateUsers": []
+    },
+    {
+      "id": "design.proportional-partition.v1",
+      "entry": "proportional-partition.mjs",
+      "guidance": "docs/proportional-partition.md",
+      "sourceCases": [
+        "ocean-plastic-treemap-study"
+      ],
+      "actualUsers": [],
+      "candidateUsers": []
+    },
+    {
+      "id": "design.ratio-rings.v1",
+      "entry": "ratio-rings.mjs",
+      "guidance": "docs/ratio-rings.md",
+      "sourceCases": [
+        "health-color-code-study"
+      ],
+      "actualUsers": [],
+      "candidateUsers": []
+    }
+  ],
+  "works": [
+    {
+      "id": "bauhaus-theatre-study",
+      "version": "1.0.0",
+      "title": "河湾小剧场 · 三出戏一个舞台",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": [
+        "design.color-sections.v1"
+      ]
+    },
+    {
+      "id": "bookcraft-vinyl-annual-study",
+      "version": "1.0.0",
+      "title": "一千二百四十八张 · 完整静态复刻",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": []
+    },
+    {
+      "id": "bus-morning-study",
+      "version": "1.0.0",
+      "title": "公交早晨 · 计算式数据肖像",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": []
+    },
+    {
+      "id": "command-palette-study",
+      "version": "1.0.0",
+      "title": "tide · 深色命令面板",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": [
+        "design.material-surfaces.v1"
+      ]
+    },
+    {
+      "id": "cosmic-observatory-study",
+      "version": "1.0.0",
+      "title": "今夜观木星 · 复古未来观象台",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": []
+    },
+    {
+      "id": "cycling-magazine-study",
+      "version": "1.0.0",
+      "title": "骑行年报 · 杂志双页",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": []
+    },
+    {
+      "id": "cycling-year-report",
+      "version": "1.0.0",
+      "title": "骑行年报 · Y2K数字主视觉",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": []
+    },
+    {
+      "id": "editorial-eguide-study",
+      "version": "1.0.0",
+      "title": "Editorial Eguide · 双页创作指南",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": []
+    },
+    {
+      "id": "editorial-weekly-study",
+      "version": "1.0.0",
+      "title": "城市周报 · 编辑式粗野主义",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": []
+    },
+    {
+      "id": "favorite52",
+      "version": "1.0.0",
+      "title": "Favorite52 · 52秒非官方复刻源码（外置资源）",
+      "kind": "video",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": []
+    },
+    {
+      "id": "film-festival-study",
+      "version": "1.0.1",
+      "title": "影展志 · 十天五十二部",
+      "kind": "static",
+      "lifecycle": "candidate",
+      "publication": "not-published",
+      "visual": "NOT_RUN",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": [
+        "design.print-poster.v1"
+      ]
+    },
+    {
+      "id": "friendly-fintech-study",
+      "version": "1.0.0",
+      "title": "友好金融三屏 · 完整静态复刻",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": [
+        "design.material-surfaces.v1"
+      ]
+    },
+    {
+      "id": "gentle-activity-study",
+      "version": "1.0.0",
+      "title": "温和运动 · 暗色三屏",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": [
+        "design.material-surfaces.v1"
+      ]
+    },
+    {
+      "id": "hanzi-poster-study",
+      "version": "1.0.0",
+      "title": "市 · 汉字实验海报",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": []
+    },
+    {
+      "id": "hardware-sampler-study",
+      "version": "1.0.0",
+      "title": "采样台 · 硬件面板三屏静态复刻",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": []
+    },
+    {
+      "id": "health-color-code-study",
+      "version": "1.0.0",
+      "title": "健康数据颜色编码 · 完整静态复刻",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": [
+        "design.material-surfaces.v1"
+      ]
+    },
+    {
+      "id": "hk-street-signs-study",
+      "version": "1.0.1",
+      "title": "新旺唱片 · 港式街招",
+      "kind": "static",
+      "lifecycle": "candidate",
+      "publication": "not-published",
+      "visual": "NOT_RUN",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": [
+        "design.print-poster.v1"
+      ]
+    },
+    {
+      "id": "hokusai-exhibition-study",
+      "version": "1.0.0",
+      "title": "富岳三十六景 · 展览首屏",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": []
+    },
+    {
+      "id": "irreverent-pop-study",
+      "version": "1.0.0",
+      "title": "反叛流行 · AI写的，别像AI",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": [
+        "design.material-surfaces.v1"
+      ]
+    },
+    {
+      "id": "level-three-screen-study",
+      "version": "1.0.0",
+      "title": "Level · 三屏日常任务",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": []
+    },
+    {
+      "id": "liquid-glass-study",
+      "version": "1.0.0",
+      "title": "液态玻璃 · 冲浪预报三屏展示",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": []
+    },
+    {
+      "id": "mandala-observatory-study",
+      "version": "1.0.0",
+      "title": "天文台夜观 · 环形信息图",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": []
+    },
+    {
+      "id": "market-livingroom-study",
+      "version": "1.0.0",
+      "title": "菜市场是客厅 · 玩味编辑",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": []
+    },
+    {
+      "id": "market-method-study",
+      "version": "1.0.0",
+      "title": "菜市场方法论 · 从圆心向外",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": []
+    },
+    {
+      "id": "market-section-study",
+      "version": "1.0.0",
+      "title": "菜市场剖面 · 完整静态复刻",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": []
+    },
+    {
+      "id": "memory-case-study",
+      "version": "1.0.0",
+      "title": "AI记忆系统 · 纵向案例",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": []
+    },
+    {
+      "id": "meridian-study",
+      "version": "1.0.0",
+      "title": "Meridian · 黑白对分品牌与产品首屏",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": []
+    },
+    {
+      "id": "meridian-waitlist-study",
+      "version": "1.0.0",
+      "title": "Meridian · 候补发布首屏",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": []
+    },
+    {
+      "id": "mountain-book-jacket-study",
+      "version": "1.0.0",
+      "title": "山行 · 展开书衣",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": [
+        "design.material-surfaces.v1"
+      ]
+    },
+    {
+      "id": "muqi-study",
+      "version": "1.0.0",
+      "title": "幕启 · 地方剧场票务品牌首屏",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": []
+    },
+    {
+      "id": "nanyuan-cartographic-study",
+      "version": "1.0.0",
+      "title": "南鸢过境 · 完整静态复刻",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": []
+    },
+    {
+      "id": "night-observatory-study",
+      "version": "1.0.0",
+      "title": "夜的厚度 · 完整静态复刻",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": []
+    },
+    {
+      "id": "ocean-letter-study",
+      "version": "1.0.0",
+      "title": "海洋基金年度信 · 编辑式长文",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": [
+        "design.material-surfaces.v1"
+      ]
+    },
+    {
+      "id": "ocean-plastic-treemap-study",
+      "version": "1.0.0",
+      "title": "海里的塑料 · 完整静态复刻",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": []
+    },
+    {
+      "id": "od-data-rollup-study",
+      "version": "1.0.0",
+      "title": "Data Rollup · explicit-scale bar frame",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": []
+    },
+    {
+      "id": "od-flowai-dashboard-study",
+      "version": "1.0.0",
+      "title": "FlowAI · 团队面板静态快照",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": []
+    },
+    {
+      "id": "od-lull-onboarding-study",
+      "version": "1.0.0",
+      "title": "Lull · 温暖三屏引导",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": []
+    },
+    {
+      "id": "od-social-carousel-study",
+      "version": "1.0.0",
+      "title": "Social · 三卡景观叙事",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": []
+    },
+    {
+      "id": "od-swiss-grid-study",
+      "version": "1.0.0",
+      "title": "Swiss Grid · overlapping statistic poster",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": []
+    },
+    {
+      "id": "open-design-hanafuda-study",
+      "version": "1.0.0",
+      "title": "Hanafuda · 1889 static study",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": []
+    },
+    {
+      "id": "open-design-orbital-study",
+      "version": "1.0.0",
+      "title": "Orbital · radial broadcast",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": []
+    },
+    {
+      "id": "open-design-swiss-cover-study",
+      "version": "1.0.0",
+      "title": "Swiss · blue roadmap cover",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": []
+    },
+    {
+      "id": "pixel-hiking-study",
+      "version": "1.0.1",
+      "title": "鹿鸣山 · 像素徒步三关",
+      "kind": "static",
+      "lifecycle": "candidate",
+      "publication": "not-published",
+      "visual": "NOT_RUN",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": [
+        "design.print-poster.v1",
+        "design.color-sections.v1"
+      ]
+    },
+    {
+      "id": "playful-roast-timer-study",
+      "version": "1.0.0",
+      "title": "烘焙计时 · 完整静态复刻",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": [
+        "design.material-surfaces.v1"
+      ]
+    },
+    {
+      "id": "pro-camera-study",
+      "version": "1.0.0",
+      "title": "专业相机 · 参数控制三屏",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": []
+    },
+    {
+      "id": "recursion-lecture-study",
+      "version": "1.0.0",
+      "title": "递归 · 单概念糖果舞台",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": [
+        "design.material-surfaces.v1"
+      ]
+    },
+    {
+      "id": "rollcall-docs-study",
+      "version": "1.0.0",
+      "title": "rollcall分类文档 · 完整静态复刻",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": [
+        "design.material-surfaces.v1"
+      ]
+    },
+    {
+      "id": "salary-unit-stack-study",
+      "version": "1.0.0",
+      "title": "钱是怎么飞走的 · 完整静态复刻",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": [
+        "design.material-surfaces.v1"
+      ]
+    },
+    {
+      "id": "scientific-figure-study",
+      "version": "1.0.0",
+      "title": "科研图版 · 完整静态复刻",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": []
+    },
+    {
+      "id": "shanghai-deco-study",
+      "version": "1.0.0",
+      "title": "摩登焙香 · 装饰艺术月历静态复刻",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": []
+    },
+    {
+      "id": "slow-roast-study",
+      "version": "1.0.0",
+      "title": "慢火 · 巨型字品牌首屏",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": []
+    },
+    {
+      "id": "solar-terms-study",
+      "version": "1.0.0",
+      "title": "节气行 · 山里的朱砂",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": [
+        "design.material-surfaces.v1"
+      ]
+    },
+    {
+      "id": "song-block-print-study",
+      "version": "1.0.0",
+      "title": "候風錄 · 宋刻版式",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": [
+        "design.material-surfaces.v1"
+      ]
+    },
+    {
+      "id": "tea-conversation-map",
+      "version": "1.0.0",
+      "title": "茶馆里的七个夜晚 · 数据人文主义信息图",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": []
+    },
+    {
+      "id": "tea-voice-study",
+      "version": "1.0.0",
+      "title": "茶话声 · 声音品牌完整首屏静态复刻",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": []
+    },
+    {
+      "id": "tessel",
+      "version": "1.0.0",
+      "title": "Tessel · 33秒非官方Canvas2D复刻",
+      "kind": "video",
+      "lifecycle": "retained",
+      "publication": "released",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": []
+    },
+    {
+      "id": "theatre-manifesto-study",
+      "version": "1.0.0",
+      "title": "剧场渐变宣言 · 完整静态复刻",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": []
+    },
+    {
+      "id": "theatre-narrative-wave",
+      "version": "1.0.0",
+      "title": "现在与可能 · 小剧场叙事波形",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": []
+    },
+    {
+      "id": "topo-outdoor-study",
+      "version": "1.0.0",
+      "title": "户外地形工具 · 完整静态复刻",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": [
+        "design.material-surfaces.v1"
+      ]
+    },
+    {
+      "id": "trail-pictogram-study",
+      "version": "1.0.0",
+      "title": "沿线设施图例 · 完整静态复刻",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": []
+    },
+    {
+      "id": "vinyl-isotype-study",
+      "version": "1.0.0",
+      "title": "唱片销量图形统计 · 完整静态复刻",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": []
+    },
+    {
+      "id": "vinyl-study",
+      "version": "1.0.0",
+      "title": "黑胶商店 · 完整固定画幅静态复刻",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": []
+    },
+    {
+      "id": "wave-weather-study",
+      "version": "1.0.0",
+      "title": "今天的浪 · 玩味错位天气海报",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": []
+    },
+    {
+      "id": "weather-art-study",
+      "version": "1.0.0",
+      "title": "天气本身就是一张图",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": []
+    },
+    {
+      "id": "xhs-blank-vertical-study",
+      "version": "1.0.0",
+      "title": "留白 · 竖排与印章（原创鸟替代）",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": []
+    },
+    {
+      "id": "xie-symbol-study",
+      "version": "1.0.0",
+      "title": "XIE · 红白超级符号",
+      "kind": "static",
+      "lifecycle": "retained",
+      "publication": "source-release",
+      "visual": "PARTIAL",
+      "reviewArtifacts": "NOT_INCLUDED",
+      "families": [
+        "design.color-sections.v1"
+      ]
+    }
+  ]
+}

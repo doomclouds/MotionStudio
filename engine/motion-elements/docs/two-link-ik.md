@@ -115,7 +115,9 @@ node --test engine/motion-elements/test/*.test.mjs
 私有复现应先核所有冻结源与音频身份，重建原创声音及代表Native帧，再完整编码/full-decode与比对调用范围。
 数值与像素的同机复现不等于跨平台后端一致；新作品仍需实际听看与用户验收。
 
-## 职责目录与旧入口兼容（0新增）
+## 当前入口与历史迁移记录（0新增）
+
+当前只使用职责目录 canonical 实现和公共 index；旧平层 wrapper 已删除，无兼容路径。以下三入口与等价桥接叙述保留历史迁移范围，不是本次清理的新验证结果。
 
 实际实现位于 `lib/foundations/geometry/two-link-ik.mjs`。
 `lib/two-link-ik.mjs` 只显式重导出同一个 `solveTwoLinkIK`；

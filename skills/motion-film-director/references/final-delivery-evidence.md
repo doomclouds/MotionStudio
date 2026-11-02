@@ -93,4 +93,4 @@ openssl pkeyutl -sign -rawin -inkey /secure/reviewer-private.pem \
 4. 原始记录与证据hash、声明式/签名式来源状态及认证边界；
 5. 明确的`review_candidate`或`ready_for_owner_review`，不预填OWNER接受。
 
-stdout结果清单绑定生成HTML的SHA-256；把成片、HTML与清单一起交付。`--report`必须指向新文件，工具拒绝覆盖已有报告或输入；每次复验使用新报告名。报告里的画面不是“报告通过”的替代证据；交付前应打开生成的HTML检查实际可读性、图片呈现与状态是否误导。若成片或证据改变，重跑检查；若报告之后被修改，清单hash失效。没有报错不等于画面/听觉审美成功，`ready_for_owner_review`也不等于OWNER已经接受。
+stdout结果清单绑定固定PNG与HTML的SHA-256；用户交付包含成片、`overview.png`与`report.html`，机器清单仅作内部证据。使用`--project-root`选择项目，工具只写`output/review/`下这两个固定文件，拒绝覆盖已有报告或输入。复验前按项目版本流程保留旧报告，或选择新的版本项目目录；不删除历史、也不再提供`--report`或HTML-only旁路。报告里的画面不是“报告通过”的替代证据；交付前应打开生成的HTML检查实际可读性、图片呈现与状态是否误导。若成片或证据改变，重跑检查；若报告之后被修改，清单hash失效。没有报错不等于画面/听觉审美成功，`ready_for_owner_review`也不等于OWNER已经接受。

@@ -4,7 +4,17 @@
 
 ## 运行
 
-依赖已安装的 Python 3.12+、NumPy、SciPy、Pillow，以及带 `libx264` / `ebur128` 的 FFmpeg / ffprobe。开发环境实测 Python 3.12.14、NumPy 2.3.5、SciPy 1.17.0、Pillow 12.3.0；没有导入 OpenCV / torch，也不自动安装。无需浏览器即可导出；HTML 的视频/交互是否可用仍应在交付环境验证。
+依赖已安装的 Python 3.12+、NumPy、SciPy、Pillow、jsonschema（内容审查 schema 校验），以及带 `libx264` / `ebur128` 的 FFmpeg / ffprobe。开发环境实测 Python 3.12.14、NumPy 2.3.5、SciPy 1.17.0、Pillow 12.3.0、jsonschema 4.26.0；没有导入 OpenCV / torch，也不自动安装。无需浏览器即可导出；HTML 的视频/交互是否可用仍应在交付环境验证。
+
+首次使用可在自己的虚拟环境安装（只有安装需要联网；不影响基础渲染）：
+
+```bash
+python3 -m venv /your/local/motionstudio-venv
+# 按系统方式激活 venv，或直接使用其中的 Python；Windows 为 Scripts/python.exe
+/your/local/motionstudio-venv/bin/python -m pip install -r tools/reference-benchmark/requirements.txt
+```
+
+requirements 固定已测版本，不是包含系统库/平台 wheel 的通用锁。顶层 `doctor --full` 检查 PATH 上的 `python3`；请先激活相应虚拟环境。其他平台未因此获得验证。
 
 ```bash
 python3 tools/reference-benchmark/benchmark.py \
@@ -67,6 +77,10 @@ LPIPS、DISTS、dense optical flow、RAFT、CLAP、Synchformer 明确 `NOT_RUN`�
 
 ## 研究依据
 
+### 方法论文出处（不是运行时下载依赖）
+
+本节 Ellis 与 VBench 两条论文链接在 2026-11-02 本次整理中未重新联网核验可达性，保留为方法出处，不将未核实记为死链。默认离线诊断不依赖访问这两条链接；文献引用不表示论文方法已经完整实现或外部模型已经运行。
+
 完整元数据、主论文 URL、发表状态、代码许可边界、可运行/未运行状态见 [`method-references.json`](method-references.json)。核心采用：
 
 1. Wang et al., *Image Quality Assessment: From Error Visibility to Structural Similarity*, IEEE TIP 2004 — [作者论文](https://ece.uwaterloo.ca/~z70wang/publications/ssim.pdf)。本地结构诊断，不代替审美。
@@ -97,3 +111,7 @@ node tools/reference-benchmark/test_report_js.cjs
 ## 实验性可选：自有分轨电平竞争诊断
 
 [独立 stem-balance sidecar](STEM_BALANCE.md)读取显式 hash/原点绑定的本地原生 float32 PCM 分轨与母带，显示同窗频带能量竞争及有条件的重构误差界。它不改变默认流程，不分离参考视频混音，不判断掩蔽/听感/情绪适配，也不修改音频。
+
+## 独立内容审查与模块资料
+
+[内容审查校验器](CONTENT_REVIEW.md)使用模块内 `schemas/` 的结构契约，`examples/` 存放其合成教学输入，`research/` 保留其研究与论文来源。研究不是运行证据，合成输入不是影片实测；许可与公开边界仍以根 [第三方声明](../../THIRD_PARTY_NOTICES.md)和[源码范围](../../SOURCE-SCOPE.md)为准，不引入模型、权重或媒体分发权。

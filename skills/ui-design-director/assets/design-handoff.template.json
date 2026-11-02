@@ -1,0 +1,70 @@
+{
+  "schema_version": "0.2",
+  "project_id": "new-project",
+  "design_version": "draft-1",
+  "entry_mode": "direct",
+  "delivery_status": "draft",
+  "source_revision": null,
+  "brief": {
+    "audience": null,
+    "primary_message": null,
+    "verified_claims": []
+  },
+  "target": {
+    "width": null,
+    "height": null,
+    "language": null,
+    "viewing_scale": null
+  },
+  "direction": {
+    "concept": null,
+    "rejected_alternatives": []
+  },
+  "content": {
+    "canonical_text": [],
+    "data_sources": [],
+    "illustrative_flags": [],
+    "provenance_note": null
+  },
+  "tokens": {},
+  "states": [],
+  "objects": [],
+  "assets": [],
+  "artifacts": [],
+  "must_keep": [],
+  "safe_regions": [],
+  "implementation": {
+    "family_ids": [],
+    "recipe_ids": [],
+    "caller_responsibilities": [],
+    "dependencies": [],
+    "support_domain": null
+  },
+  "evidence": [],
+  "gates": {
+    "static_technical": {
+      "status": "not_assessed",
+      "evidence_ids": []
+    },
+    "static_visual": {
+      "status": "not_assessed",
+      "evidence_ids": []
+    },
+    "owner_acceptance": {
+      "status": "not_assessed",
+      "evidence_ids": []
+    },
+    "motion_viewing": {
+      "status": "not_assessed",
+      "evidence_ids": []
+    }
+  },
+  "publish_permission": {
+    "status": "not_granted",
+    "authorization": null
+  },
+  "motion_questions": [],
+  "motion_receipt": null,
+  "unresolved_issues": [],
+  "history_evidence": []
+}

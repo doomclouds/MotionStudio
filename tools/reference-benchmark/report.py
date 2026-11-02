@@ -445,8 +445,8 @@ def render_report(output: Path, render_target: Path = None):
         deltas+=f'<tr><th scope="row">{_s(key)}</th><td>{_num(row.get("mean_signed"),4,True)}</td><td>{_num(row.get("mean_absolute"),4)}</td><td>{_num(row.get("rmse"),4)}</td><td>{_s(row.get("unit",""))}</td></tr>'
     ssim=comp.get('deltas',{}).get('ssim',{})
     ssim_note=f'逐时空间结构 SSIM 均值 {_num(ssim.get("mean_signed"),3)}（不是差值，也不是美学分）。'+str(ssim.get('note','')) if ssim else 'SSIM 未运行。'
-    audio_delta_labels={'integrated_lufs':'整片综合响度 Δ / LU','true_peak_dbtp':'真峰 Δ / dB','true_peak_db':'真峰 Δ / dB','rms_db':'平均 100ms 窗 RMS dB 均差（非整片 RMS）','mean_bin_rms_db_delta':'平均 100ms 窗 RMS dB 均差（非整片 RMS）','global_rms_db':'整片 PCM 功率 RMS Δ / dB','rms_dbfs':'整片 PCM RMS Δ / dB','lr_balance':'平均左右能量比 Δ / 无量纲'}
-    audio_delta_rows=''.join(f'<tr><th>{_s(audio_delta_labels.get(k,k))}</th><td>{_num(v,3,True)}</td></tr>' for k,v in comp.get('audio_deltas',{}).items() if (_finite(v) or v is None) and not (k=='rms_db' and 'mean_bin_rms_db_delta' in comp.get('audio_deltas',{})))
+    audio_delta_labels={'integrated_lufs':'整片综合响度 Δ / LU','true_peak_dbtp':'真峰 Δ / dB','true_peak_db':'真峰 Δ / dB','mean_bin_rms_db_delta':'平均 100ms 窗 RMS dB 均差（非整片 RMS）','global_rms_db':'整片 PCM 功率 RMS Δ / dB','rms_dbfs':'整片 PCM RMS Δ / dB','lr_balance':'平均左右能量比 Δ / 无量纲'}
+    audio_delta_rows=''.join(f'<tr><th>{_s(audio_delta_labels.get(k,k))}</th><td>{_num(v,3,True)}</td></tr>' for k,v in comp.get('audio_deltas',{}).items() if (_finite(v) or v is None))
     offsets=''
     for key,row in comp.get('offset_estimates',{}).items():
         if not isinstance(row,dict): continue

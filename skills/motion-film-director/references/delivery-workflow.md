@@ -38,14 +38,13 @@
 ```sh
 python3 skills/motion-film-director/scripts/check_delivery.py /local/sample.mp4 --role user-sample
 python3 skills/motion-film-director/scripts/check_delivery.py /local/probe.mp4 --role internal-test
-python3 skills/motion-film-director/scripts/check_delivery.py /local/complete.mp4 --role final
 ```
 
-工具只用现有ffprobe读取**单一视频流**时长并绑定文件hash，不取可能被长音轨撑大的容器时长，不渲染、不联网、不安装依赖。优先使用`duration_ts × time_base`的有理数精确值，小于7不向上舍入；否则读取视频流`duration`，不对ffprobe已报小数再次舍入，但该回退受其原始报告精度限制。缺少可靠字段、多个视频流或文件变化即报错。此元数据检查不证明完整解码、无填充、内容完整、真实听看或审批；final仍须另核委托片长。
+工具只用现有ffprobe读取**单一视频流**时长并绑定文件hash，不取可能被长音轨撑大的容器时长，不渲染、不联网、不安装依赖。优先使用`duration_ts × time_base`的有理数精确值，小于7不向上舍入；否则读取视频流`duration`，不对ffprobe已报小数再次舍入，但该回退受其原始报告精度限制。缺少可靠字段、多个视频流或文件变化即报错。此元数据检查不证明完整解码、无填充、内容完整、真实听看或审批；完整片由第6节完整交付门核对委托片长与证据。
 
 短原作例外使用`--short-original /local/original.mp4 --exception-record /local/exception.json`，仅适用于`user-sample`。记录字段必须恰为：`kind: short-original-user-exception`、`sample_sha256`、`original_sha256`、非空`user_quote`、非空`approval_reference`。两hash须匹配实际文件，原作视频流必须确实不足7秒；记录只保存真实用户授权，不让agent自行填写“同意”。工具只能验证声明结构与绑定，**不能认证用户身份或原话真实性**，输出`exception_recorded`及`authorization: declared_not_verified`，操作者仍须核对实际授权。
 
-退出0仅表示时长门`passed/not_applicable`或已绑定例外声明；退出1表示样片不足7秒且无适用例外；退出2表示输入/依赖/测量错误。任何退出码都不是影片或艺术审批。**兼容保留的`--role final`仅表示样片下限不适用，绝不是完整交付门；完整片必须继续运行第6节。** 测试入口：`python3 skills/motion-film-director/scripts/test_check_delivery.py`。
+退出0仅表示时长门`passed/not_applicable`或已绑定例外声明；退出1表示样片不足7秒且无适用例外；退出2表示输入/依赖/测量错误。任何退出码都不是影片或艺术审批。此CLI只接受`user-sample`与`internal-test`；完整片直接运行第6节，不再提供`--role final`时长旁路。 测试入口：`python3 skills/motion-film-director/scripts/test_check_delivery.py`。
 
 
 ## 6. 完整交付门：不能用时长绿灯代替视听审查
@@ -56,7 +55,7 @@ python3 skills/motion-film-director/scripts/check_final_delivery.py /local/compl
   --project-root /local/project
 ```
 
-工具使用已有本地`ffprobe`/`ffmpeg`核对单一视频流、单一音频流、实际帧数、视频时长和完整声画解码，在显式提供签名时以已有`openssl`校验签名，核验三类审查记录、证据和媒体hash，生成可视化HTML报告，并在stdout清单中输出报告SHA-256。无需联网、上传、安装依赖或付费调用。签名是可选的来源认证增强，不是生产前置条件。无签名但完整真实的审查记录与原始证据可满足声明式审查门，认证状态保留`declared_not_authenticated`；不能据此称已认证听审。若提供签名，则必须验证成功；可重复指定`--trusted-review-key`，只提供独立确认的审查者公钥，不从packet自动信任公钥。运行前准备见[交付证据合同与模板](final-delivery-evidence.md)。
+工具使用已有本地`ffprobe`/`ffmpeg`核对单一视频流、单一音频流、实际帧数、视频时长和完整声画解码，在显式提供签名时以已有`openssl`校验签名，核验三类审查记录、证据和媒体hash，在`PROJECT/output/review/`生成固定`overview.png`与`report.html`，并在stdout清单中输出两份报告SHA-256。无需联网、上传、安装依赖或付费调用。签名是可选的来源认证增强，不是生产前置条件。无签名但完整真实的审查记录与原始证据可满足声明式审查门，认证状态保留`declared_not_authenticated`；不能据此称已认证听审。若提供签名，则必须验证成功；可重复指定`--trusted-review-key`，只提供独立确认的审查者公钥，不从packet自动信任公钥。运行前准备见[交付证据合同与模板](final-delivery-evidence.md)。
 
 | 层 | 必备证据 | 不能替代它的东西 |
 |---|---|---|
@@ -77,8 +76,8 @@ python3 skills/motion-film-director/scripts/check_final_delivery.py /local/compl
 参考/旧新版任务先按审查SOP G节发现并复用既有benchmark完整比较页/总览及motion-check热力图，不因新报告而遗漏波形、频谱和运动诊断。用户报告固定为项目`output/review/overview.png`和`report.html`；内部JSON不作为附件，PDF和资源包须另有明确要求。
 
 报告形式固定为 `motionstudio-review-v1`：仓库中的
-[`REPORT_TEMPLATE.md`](../../../tools/reference-benchmark/REPORT_TEMPLATE.md) 定义模块顺序、
+[`REPORT_TEMPLATE.md`（仓库专属规范，需完整仓库 renderer）](https://github.com/doomclouds/MotionStudio/blob/ebda9d2661be84e1314cee14baf4acd241b6069e/tools/reference-benchmark/REPORT_TEMPLATE.md) 定义模块顺序、
 配色/字级、共同坐标、方法/状态与缺失占位；默认完整交付门先调用固定 renderer，
 再对最终 PNG/HTML 计算 hash 并一次发布，禁止后续独立排版覆盖已绑定文件；
 不依赖项目私有拼装脚本。展示版本不替代本节证据门，便携包不含完整 benchmark 时须通过
-`--report-renderer` 指向已安装依赖的仓库 renderer。`--report` 仅为旧版兼容入口，不是规范报告交付。
+`--report-renderer` 指向已安装依赖的仓库 renderer。不提供`--report`或HTML-only分支。

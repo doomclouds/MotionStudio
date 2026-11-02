@@ -1,23 +1,29 @@
 # Synthetic static evidence: bounded M1 contract
 
-This is an opt-in **index v2**, separate from the unchanged v1 video library.
-The public default index stays empty and v1. Old readers reject index v2.
-No private probe receipts or media ship with this extension. The temporary fixtures
-in `scripts/test_static_knowledge.py` are fictional parser data, not executed probes.
+Static probes use the **unified schema 3** with `evidence_type: static-probe`.
+The public default index stays empty. This typed branch preserves synthetic
+static/code-probe capabilities without presenting them as video viewing, hearing
+or production-transfer evidence. The temporary fixtures in
+`scripts/test_static_knowledge.py` are fictional parser data, not executed probes.
 
-## Scope and compatibility
+## Typed branch and common envelope
 
-An index has exactly `schema_version: 2`,
-`capabilities: ["synthetic-static-probe-v1"]`, `scope`, `cases`, and `techniques`.
-Entries have `id`, normalized relative `path`, and matching `tags`. M1 accepts only
-Case v2/static-probe and v1 candidate Techniques in this envelope; mixed video/static
-libraries and cross-case decision evidence are deliberately unsupported. Existing
-v1 envelopes keep their existing validator, query and decision behavior.
+The single index has exactly `schema_version: 3`, `scope`, `cases`, and `techniques`.
+Entries have `id`, normalized relative `path`, and matching `tags`. Both static
+Cases and candidate Techniques have `schema_version: 3` and
+`evidence_type: static-probe`; Case decision-state objects have `schema_version: 3`: either a full recorded
+decision or the exact not-recorded marker described in [SCHEMA.md](SCHEMA.md).
+The common loader routes by evidence type, never by an old version or capability
+fallback. Video records use the same index contract and their own video evidence
+rules in [SCHEMA.md](SCHEMA.md). Cross-type links and evidence are rejected;
+they do not establish a static claim or production transfer. Cross-case static decision evidence remains out of
+scope. Conversion from older libraries is an explicit [maintenance action](MIGRATION.md),
+not automatic runtime behavior.
 
 The executable exact-field contract is `scripts/static_knowledge.py`. Unknown fields
 or versions fail closed. Cases contain identity/revision/title/status/tags,
 revision_note/supersedes, source, artifact, run, artifacts, observations,
-technique_ids, empty feedback, and a required decision v2. `source.origin` is always
+technique_ids, empty feedback, and a required decision-state object schema 3. `source.origin` is always
 `synthetic`; `artifact.kind` is always `static-probe`. No durations, video ranges,
 listening, production-transfer results, owner feedback or permission inheritance.
 
@@ -55,7 +61,7 @@ Semantic truth, correct sampling and claimed reference intent remain review duti
 
 ## Decisions and reuse
 
-Decision v2 preserves problem, alternatives, chosen option, rationale, experiment,
+The recorded static decision branch (`record_state: recorded`) preserves problem, alternatives, chosen option, rationale, experiment,
 costs/risks, applicability, counterexample, limits and informational-only permission.
 Its evidence refs bind current same-case revision, observation, run and every output
 hash. A valid comparison needs distinct baseline/candidate variants, declared
@@ -64,7 +70,7 @@ Supporting/contradicting results require both variants' observations for the exa
 claim and semantics. Contradicting/inconclusive candidate observations cannot be
 hidden by omitting their refs from the selected result.
 
-Results are only `synthetic-static-technical`. `decide` labels recorded support
+Results are only `synthetic-static-technical`. `decide` excludes not-recorded decision states; it labels recorded support
 explicitly and always warns that it is not independently certified execution,
 video viewing, listening, production or artistic approval. Unavailable lifecycle
 and contradicting results are counterevidence. Default query suppresses unavailable
@@ -93,8 +99,8 @@ No command executes probes, fetches URLs or authorizes publication.
 
 ## Deliberate M1 limits
 
-No private Iris conversion is included here. No cross-case decisions, video/static
-mixing, credential detector for arbitrary parameter text, parameter-unit registry,
+No private Iris conversion is included here. No cross-case static decisions,
+cross-type promotion, credential detector for arbitrary parameter text, parameter-unit registry,
 receipt-content verification, signing, database, or automatic stale-state writes.
 Source/receipt authenticity, rights, parameter meanings/units and artistic/audio
 acceptance need separate review. Synthetic fixtures cannot establish any of them.
