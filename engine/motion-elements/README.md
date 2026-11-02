@@ -62,6 +62,8 @@ node engine/motion-elements/scripts/query-catalog.mjs show --id fragment.fixed-t
 
 [球面光斑场](docs/guides/spherical-splats-candidate.md)：独立可测试的表面标量投影研究；尚未进入 catalog / 公共 barrel，不增加机制计数，不代表原参考 shader 或真实体积。
 
+[有序共享边界分带](docs/guides/ordered-bands-candidate.md)：固定同序 ID 的归一分区插值；拒绝跨身份重排，不提供语义推断，不增加正式机制计数。
+
 ## 质量与权利边界
 
 目录命中与技术测试只提供机制候选，不构成风格推荐。实验示例不是优质动效或默认风格锚点。完整作品被用户否决时，私有Case记录作品质量不通过，不能以局部认可或“仅未验”充当成功迁移；也不能反推每个数学原语失效。重用须重新说明场景并验证。
