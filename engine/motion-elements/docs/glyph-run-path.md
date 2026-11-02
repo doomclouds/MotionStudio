@@ -49,6 +49,12 @@ const run = layoutGlyphRunOnPath(path, {
 
 调用者可以`translate(position)`、`rotate(angle)`后，从local `x=-advance/2,y=0`绘制该字格的内容，再恢复Canvas状态。字体大小/字体资源、文字到glyph的映射、测量和Canvas样式由调用者负责；API本身不读取字体或Canvas。正交法线偏移是中心点的几何平移，不会扭曲字形。
 
+## 闭合字环的调用方余量分配
+
+在平滑闭合路径上重复一段文字时，不要逐字累加角度直至超过一圈：最后一个字格会跨接缝，且按前一个字宽推进中心会使宽窄字间距不均。先用实际字体测量完整短语，选择能容纳的整数重复数；设路径长度为 L、重复后 N 个字格的 advance 总和为 A，则可取 `g=(L-A)/N`，将 `tracking=g`、`startDistance=g/2` 交给既有接口。末端自然保留另一半 g，首尾间距与内部间距一致；这是调用方编排，不新增闭环模式或自动 fit。
+
+须先确认 g 非负且满足字段域、N≤256、接缝位置及切线平滑；用编译路径的 `totalLength` 而非另算的理想圆周，继续遵守浮点 fit 检查，不放宽验证器。该方法只安排字格，不保证弯曲后墨迹没有碰撞：大字、细半径、overhang 与复杂 shaping 仍须实际看接缝和邻字。绝对时间的整环旋转可留在父矩阵；固定字格布局无需每帧重编译。私有字环修正仅有有限帧与乱序求值证据，不证明常速阅读或艺术接受。
+
 ## 范围与失败是显式的
 
 - 整个advance run必须容纳在路径内；`span <= plan.totalLength - startDistance` 是canonical **IEEE浮点**边界。无epsilon、裁切、折返、负tracking或自动缩小。
