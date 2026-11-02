@@ -58,6 +58,10 @@ node engine/motion-elements/scripts/query-catalog.mjs show --id fragment.fixed-t
 | 合成gallery／技术检查／机制提炼 | [展示与收录](docs/guides/gallery-and-registration.md) |
 | 既有作品调用与版本桥接 | [历史批次及限定证据](docs/history/production-batches.md)，不是当前作品通过证明 |
 
+## 未注册研究候选
+
+[球面光斑场](docs/guides/spherical-splats-candidate.md)：独立可测试的表面标量投影研究；尚未进入 catalog / 公共 barrel，不增加机制计数，不代表原参考 shader 或真实体积。
+
 ## 质量与权利边界
 
 目录命中与技术测试只提供机制候选，不构成风格推荐。实验示例不是优质动效或默认风格锚点。完整作品被用户否决时，私有Case记录作品质量不通过，不能以局部认可或“仅未验”充当成功迁移；也不能反推每个数学原语失效。重用须重新说明场景并验证。
