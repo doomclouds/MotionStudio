@@ -10,9 +10,12 @@
 
 ## 最小使用与受限合同
 
-```js
+从仓库根运行（Node 24+；不需要 Canvas、FFmpeg 或外部素材）：
+
+```sh
+node --input-type=module <<'JS'
 import {compileFilamentDensity, sampleFilamentDensity}
-  from '../../lib/foundations/field/filament-density.mjs';
+  from './engine/motion-elements/lib/foundations/field/filament-density.mjs';
 const plan = compileFilamentDensity({
   seed:29, scale:4, warp:1.2, ridgeWidth:.25, filamentMix:.85,
 });
@@ -20,7 +23,24 @@ const field = sampleFilamentDensity(plan, {
   width:240, height:160, offsetX:0, offsetY:0,
 });
 // field.density: row-major Float64Array, [0,1], newly allocated.
+console.log(field.width, field.height, field.density.length); // 240 160 38400
+JS
 ```
+
+现有中性示例已经完成调色；从仓库根取出 RGBA 像素副本（不写文件、不编码视频）：
+
+```sh
+node --input-type=module <<'JS'
+import {filamentDensityFrame} from './engine/motion-elements/examples/filament-density.mjs';
+import {copyRasterPixels} from './engine/motion-elements/lib/raster-effects.mjs';
+const snapshot = filamentDensityFrame(0, 2, {reducedMotion:false});
+const pixels = copyRasterPixels(snapshot);
+console.log(snapshot.width, snapshot.height, pixels.length);
+// pixels 为行优先 Uint8ClampedArray，RGBA 四通道；修改副本不改变 snapshot。
+JS
+```
+
+`snapshot` 仅公开宽高，不含可直接读取的 `.pixels`。实际显示仍由现有 Canvas 调用层消费像素；此命令不代表视觉验证。
 
 - seed：0..2³²−1 安全整数；scale：0.25..12，空间频率倍率；warp：0..2，噪声坐标位移倍率；ridgeWidth：0.04..0.8，无量纲细脊响应宽度；filamentMix：0..1，0为纯密度，1为密度×细脊。脊线只降低密度，不制造超过基底的能量。
 - width/height 各1..256整数，最多65,536样本、单个结果数组524,288字节；每像素固定9次二维 value-noise（每次4个格点哈希），无迭代缓存或分辨率隐藏增长。这里只限定本次输出和算法空间，不承诺整个进程峰值内存或调用者保留多个结果的内存。

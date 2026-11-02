@@ -14,16 +14,32 @@
 
 [源码](../../lib/foundations/layout/ordered-bands.mjs) / [两个中性示例](../../examples/ordered-bands.mjs) / [测试](../../test/ordered-bands.test.mjs)。
 
-```js
+从仓库根运行（Node 24+；不需要 Canvas、FFmpeg 或外部素材）：
+
+```sh
+node --input-type=module <<'JS'
 import {compileOrderedBands, sampleOrderedBands}
-  from '../../lib/foundations/layout/ordered-bands.mjs';
+  from './engine/motion-elements/lib/foundations/layout/ordered-bands.mjs';
 const plan = compileOrderedBands({
   from:[{id:'work',weight:2},{id:'rest',weight:3}],
   to:[{id:'work',weight:4},{id:'rest',weight:1}],
 });
 const state = sampleOrderedBands(plan, .5);
 // boundaries = [0, .6, 1]; bands 提供 id/start/end/fraction，均为归一坐标。
+console.log(state.boundaries); // [0, 0.6000000000000001, 1]（浮点近似）
+JS
 ```
+
+已有 Canvas 场景可直接调用现有绘制示例，不需要新适配器。下面保存到仓库根的 `.mjs` 场景文件中；`ctx` 由宿主提供已初始化的 Canvas 2D context，不是独立可执行命令：
+
+```js
+import {createOrderedBandExample} from './engine/motion-elements/examples/ordered-bands.mjs';
+const example = createOrderedBandExample(0);
+example.draw(ctx, .5, 640, 120); // 当前局部原点；调用者可先平移/裁切。
+// reduced motion 由宿主选择静态端点，例如 example.draw(ctx, 1, 640, 120)。
+```
+
+纯采样命令不依赖 Canvas；真正绘制需宿主已提供 Canvas（仓库 Native 路径使用 `@napi-rs/canvas`）。示例不写文件、不安装依赖。
 
 1. 输入 `from/to` 各 1..128 个 `{id,weight}`；两端 ID 数量、顺序必须完全相同，ID 唯一且符合现有实例 ID 规则。插入、删除、换序直接拒绝，不隐式匹配、补齐或切帧。需要出现/消失时显式保留同一 ID 并将权重设零。
 2. 权重为有限数 0..1e12，各端总量须正。分别归一化后求前缀边界 `A_i/B_i`。**不是先插值原始量再归一化**；端点总量变化不表达为整个画面面积变化。

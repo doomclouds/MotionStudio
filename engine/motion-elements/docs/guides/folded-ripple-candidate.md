@@ -8,16 +8,36 @@
 
 实现：[folded-ripple.mjs](../../lib/foundations/field/folded-ripple.mjs)。原创数学选择为五轮固定旋转＋正弦坐标扰动，累加正序 smoothstep 的窄脊响应并平均；没有抄录原例的模铺排、常量偏移、倒数距离链或其色调公式。单次脉冲使用绝对事件时间差、平滑起振、空间与时间指数衰减，方向用有限软化分母避免中心奇点。所有 smooth 边界严格正序。
 
-```js
+从仓库根运行（Node 24+；不需要 Canvas、FFmpeg 或外部素材）：
+
+```sh
+node --input-type=module <<'JS'
 import {compileFoldedRipple, sampleFoldedRipple}
-  from '../../lib/foundations/field/folded-ripple.mjs';
+  from './engine/motion-elements/lib/foundations/field/folded-ripple.mjs';
 const plan = compileFoldedRipple({
   scale:1.2, speed:.4, ridgeWidth:.2,
   pulse:{x:0, y:0, at:1, strength:.2, decay:2}, // 或 null
 });
 const grid = sampleFoldedRipple(plan, {width:128,height:96,seconds:1.3});
 // grid.density: 新建 Float64Array，行优先，范围 [0,1]。
+console.log(grid.width, grid.height, grid.density.length); // 128 96 12288
+JS
 ```
+
+现有中性示例已经完成调色；从仓库根取出 RGBA 像素副本（不写文件、不编码视频）：
+
+```sh
+node --input-type=module <<'JS'
+import {foldedRippleFrame} from './engine/motion-elements/examples/folded-ripple.mjs';
+import {copyRasterPixels} from './engine/motion-elements/lib/raster-effects.mjs';
+const snapshot = foldedRippleFrame(0, 2, {reducedMotion:false});
+const pixels = copyRasterPixels(snapshot);
+console.log(snapshot.width, snapshot.height, pixels.length);
+// pixels 为行优先 Uint8ClampedArray，RGBA 四通道；修改副本不改变 snapshot。
+JS
+```
+
+`snapshot` 仅公开宽高，不含可直接读取的 `.pixels`。实际显示仍由现有 Canvas 调用层消费像素；此命令不代表视觉验证。
 
 ## 受限合同
 

@@ -20,9 +20,12 @@
 
 实现：[spherical-splats.mjs](../../lib/foundations/field/spherical-splats.mjs)。
 
-```js
+从仓库根运行（Node 24+；不需要 Canvas、FFmpeg 或外部素材）：
+
+```sh
+node --input-type=module <<'JS'
 import {compileSphericalSplats, sampleSphericalSplats}
-  from '../../lib/foundations/field/spherical-splats.mjs';
+  from './engine/motion-elements/lib/foundations/field/spherical-splats.mjs';
 const plan = compileSphericalSplats({lobes:[{
   direction:{x:0.6,y:-0.3,z:0.7}, sigma:0.2, strength:2,
 }]});
@@ -30,7 +33,24 @@ const field = sampleSphericalSplats(plan, {
   width:128, height:128, yaw:Math.PI/4, pitch:0.2,
 });
 // field.density 和 field.coverage 是独立 Float64Array，行优先，均在 [0,1]。
+console.log(field.width, field.height, field.density.length); // 128 128 16384
+JS
 ```
+
+现有中性示例已经完成调色；从仓库根取出 RGBA 像素副本（不写文件、不编码视频）：
+
+```sh
+node --input-type=module <<'JS'
+import {sphericalSplatFrame} from './engine/motion-elements/examples/spherical-splats.mjs';
+import {copyRasterPixels} from './engine/motion-elements/lib/raster-effects.mjs';
+const snapshot = sphericalSplatFrame(0, 2, {reducedMotion:false});
+const pixels = copyRasterPixels(snapshot);
+console.log(snapshot.width, snapshot.height, pixels.length);
+// pixels 为行优先 Uint8ClampedArray，RGBA 四通道；修改副本不改变 snapshot。
+JS
+```
+
+`snapshot` 仅公开宽高，不含可直接读取的 `.pixels`。实际显示仍由现有 Canvas 调用层消费像素；此命令不代表视觉验证。
 
 - 0..32 个斑块；空场 density 为 0，但投影球 coverage 仍存在。方向各分量 ±1e4，长度至少 1e-8，编译归一化并复制，后续源对象变更不影响 plan。
 - `sigma` 0.03..2 是球面弦距尺度，`strength` 0..8；场由 `sum(strength * exp((dot-1)/sigma²))` 累加，再用 `1-exp(-sum)` 压到 [0,1]。强度不是亮度、能量或物理单位。
