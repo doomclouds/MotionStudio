@@ -29,5 +29,6 @@
 | 主物、品牌态度与印刷语法 | [品牌招贴分类](../categories/brand-posters/INDEX.md) |
 | 怎样从内容决定表达和视觉取舍 | [内容决策](../CONTENT-DECISIONS.md)、[设计指南](../DESIGN-GUIDE.md) |
 | 怎样研究参考并验证迁移 | [静态参考研究合同](../static-ui-reference-study.md)、[参考到组合与再创作](../reference-to-composition.md) |
+| 怎样分析整片、保留指定形式，再核局部运动假说 | [导演研究与创意转化](../../../skills/motion-film-director/references/reference-mechanism.md)；按问题选读，不把抽帧或私有短试当作常速视听验收 |
 
 方法卡不是作品全集，源码不是实际观感。优秀与否要对应本次目标给出可定位优点和缺陷；从参考提取关系而非照搬资产。库内不够时，按授权研究外部可靠来源，不把新例子的计划或相似度当已验证结论。
