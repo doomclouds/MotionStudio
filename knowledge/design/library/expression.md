@@ -4,6 +4,7 @@
 
 | 表达问题 | 优先阅读的原文件 |
 |---|---|
+| 比较或解释之后，怎样连接同一对象的下一步？ | [证据到行动](../static-ui-reference-study.md#学习回顾从可解释证据到下一次行动)：来自学习回顾的有限观察，关注依据、对象对应与可见范围；不要求沿用纸本风格，跨领域有效性仍须另验。 |
 | 一句主张、章节/活动信息、标题字形气质 | [文字主视觉](../../../engine/design-elements/docs/typographic-focus.md)、[表现文字](../../../engine/design-elements/docs/expressive-type.md)、[纵列印记](../../../engine/design-elements/docs/vertical-imprint.md) |
 | 主张与证据分开、阅读方向与安全区 | [色彩分区](../../../engine/design-elements/docs/color-sections.md)、[斜切色域](../../../engine/design-elements/docs/diagonal-field.md) |
 | 实体纸感、叠印、主物与少量行动信息 | [印刷招贴方法及反例](../cases/ui-003-print-poster.md)、[材质表面](../../../engine/design-elements/docs/material-surfaces.md) |
