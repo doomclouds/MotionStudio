@@ -29,3 +29,21 @@
 ## 重组证据与状态
 
 同源码的两个候选样例：蓝紫珊瑚色听音面板；米色印刷工作坊纸签。位置、尺寸、内容、表面、颜色和层级全部参数化，不修改实现。它们是重组验证画面，不新增优秀作品计数；审美需独立看图，不能以像素不同代替好看。正式验证结果由上层统一报告关联，不预填通过。
+
+## 轻量组合例：同一工作区的跨区主题一致性
+
+[shared-theme.mjs](../examples/shared-theme.mjs)以现有 material-surfaces、typographic-focus 和 parameter-controls 组合一个原创固定画幅示例；[测试与外置渲染](../examples/shared-theme.test.mjs)覆盖两套调色角色 × paused/active 两个演示状态。不是新主题资产、候选、框架或真实应用；不增加注册数量。现有 `theme` 输入已能承担这种组合，不需要仅为配色新增公共 API。
+
+先声明角色及作用区，再在同一内容/状态下比较主题：背景、主表面、内层表面、正文、次要字、强调、边线、轨道分别来自单一 palette。侧栏、正文、参数卡、提示卡和输入区示意都消费这些角色；允许不同区域使用不同表面角色，不要求所有区域颜色完全相同。状态仍由独立输入决定，换主题不应改变内容 ID、参数值、禁用状态或几何。图中 paused/active 只标静态演示，不暗示后台任务或交互已执行。
+
+这是对[Creator Mode 参考片](https://x.com/DeepSeekHarness/status/2117256196227019194/video/1)约63–70秒关系的去素材化练习：可见换肤同时影响多个区域，但影片不证明持久保存、任意插件适配或具体 CSS/token 实现。本例不复制原片界面、皮肤、品牌、文案或图像；当前仅两套显式颜色及一份固定内容，不泛化为自动主题设计。
+
+从仓库根运行：
+
+```sh
+DISABLE_SYSTEM_FONTS_LOAD=1 MOTION_ENGINE_ROOT=/absolute/installed/engine/motion-render-core UI_TEST_FONT_DIR=/absolute/dejavu-font-directory node --test engine/design-elements/examples/shared-theme.test.mjs
+```
+
+沿用现有示例的外置 Native/字体方式：Node 24、`@napi-rs/canvas` 0.1.100、调用者许可下的 DejaVuSans.ttf 和 DejaVuSans-Bold.ttf（DejaVu/Bitstream 条款，不是仓库 MIT）。不捆绑字体、不联网；输出记录实际字体 SHA256，未验证跨机器像素一致。加 `UI_THEME_OUTPUT=/absolute/new-external-directory` 可生成四张1440×900 PNG、调用/几何记录和资源身份；目录必须新建、非符号链接且在此仓库外，产物不入库。缺依赖直接报错，不能把未渲染当测试通过。
+
+测试既比对角色传参、内容、状态、测量几何，也抽查实际表面和强调标记像素；仍需实看整图，不能凭几处像素宣称所有文字对比、可访问性或审美通过。禁用态降低对比沿用原控件行为，未做可访问性认证。范围不含字体/间距主题、浏览器样式传播、菜单/弹层、响应式、持久化或动画；这些需求应在真实场景内另验，不通过扩建本例伪造能力。
