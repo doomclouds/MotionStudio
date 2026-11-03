@@ -87,11 +87,17 @@ test('absolute input states are repeatable in shuffled order and a separate proc
  const script=`import{solveTwoLinkIK as solve}from ${JSON.stringify(new URL('../lib/foundations/geometry/two-link-ik.mjs',import.meta.url).href)};console.log(JSON.stringify(${JSON.stringify(inputs)}.map(solve)));`;
  const p=spawnSync(process.execPath,['--input-type=module','-e',script],{encoding:'utf8'});assert.equal(p.status,0,p.stderr);assert.deepEqual(JSON.parse(p.stdout),expected);
 });
-test('native joint/endpoint rendering is stable in reverse order and a fresh process; technical not art',()=>{
+test('native returned-point rendering responds to joint changes and is stable in reverse/fresh-process replay; technical not art',()=>{
  const {api}=loadNativeCanvas(),inputs=[0,10,20].map(y=>({...base,root:{x:20,y:30},target:{x:70,y:30+y}}));
- const draw=s=>{const o=solve(s),c=api.createCanvas(100,100),x=c.getContext('2d');x.fillStyle='white';x.fillRect(0,0,100,100);x.strokeStyle='black';x.lineWidth=3;x.beginPath();x.moveTo(o.root.x,o.root.y);x.lineTo(o.joint.x,o.joint.y);x.lineTo(o.end.x,o.end.y);x.stroke();x.fillStyle='red';x.fillRect(o.end.x-2,o.end.y-2,4,4);return createHash('sha256').update(c.toBuffer('image/png')).digest('hex');};
+ const drawPoints=o=>{const c=api.createCanvas(100,100),x=c.getContext('2d');x.fillStyle='white';x.fillRect(0,0,100,100);x.strokeStyle='black';x.lineWidth=3;x.beginPath();x.moveTo(o.root.x,o.root.y);x.lineTo(o.joint.x,o.joint.y);x.lineTo(o.end.x,o.end.y);x.stroke();x.fillStyle='red';x.fillRect(o.end.x-2,o.end.y-2,4,4);return createHash('sha256').update(c.toBuffer('image/png')).digest('hex');};
+ const draw=s=>drawPoints(solve(s));
+ // A real solver call alone is not consumption: the returned joint must affect pixels.
+ const original=solve(inputs[0]),changed=structuredClone(original);changed.joint.x+=4;
+ assert.deepEqual(changed.root,original.root);assert.deepEqual(changed.end,original.end);
+ assert.notEqual(drawPoints(changed),drawPoints(original));
+ assert.deepEqual(solve(inputs[0]),original);
  const hashes=inputs.map(draw);assert.deepEqual([...inputs].reverse().map(draw),[...hashes].reverse());
- const script=`import{solveTwoLinkIK as solve}from ${JSON.stringify(new URL('../lib/foundations/geometry/two-link-ik.mjs',import.meta.url).href)};import{loadNativeCanvas}from ${JSON.stringify(new URL('../../motion-render-core/lib/native.mjs',import.meta.url).href)};import{createHash}from'node:crypto';const{api}=loadNativeCanvas();const draw=${draw.toString()};console.log(JSON.stringify(${JSON.stringify(inputs)}.map(draw)));`;
+ const script=`import{solveTwoLinkIK as solve}from ${JSON.stringify(new URL('../lib/foundations/geometry/two-link-ik.mjs',import.meta.url).href)};import{loadNativeCanvas}from ${JSON.stringify(new URL('../../motion-render-core/lib/native.mjs',import.meta.url).href)};import{createHash}from'node:crypto';const{api}=loadNativeCanvas();const drawPoints=${drawPoints.toString()};const draw=${draw.toString()};console.log(JSON.stringify(${JSON.stringify(inputs)}.map(draw)));`;
  const p=spawnSync(process.execPath,['--input-type=module','-e',script],{encoding:'utf8'});assert.equal(p.status,0,p.stderr);assert.deepEqual(JSON.parse(p.stdout),hashes);
 });
 
