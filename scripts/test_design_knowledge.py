@@ -7,6 +7,22 @@ import design_knowledge as dk
 
 
 class DesignKnowledgeTests(unittest.TestCase):
+    def test_midstage_identity_and_shared_scroll_boundaries(self):
+        guide = (dk.ROOT / 'reference-to-composition.md').read_text()
+        for term in ('中段身份', '同页滚动'):
+            self.assertEqual([e['id'] for e in dk.find(dk.catalog(), term)],
+                             ['reference-to-composition'])
+        for boundary in ('联合修订', '近似栅格诊断', '不是精确可见表面积',
+                         '固定时刻只改变scroll', '未编码渲染帧',
+                         '不是实际输入、打印、AI能力或效率证明',
+                         '“后发生”不是“前者触发”', '额外寻帧检查的总调用数'):
+            self.assertIn(boundary, guide)
+        shelf = (dk.ROOT / 'library/motion.md').read_text()
+        for anchor in ('持续身份还须在拥挤中段看得见', '同页滚动让章节提示消费实际位置'):
+            self.assertEqual(shelf.count('#' + anchor), 1)
+        for private_marker in ('-private-', '/workspace/', 'file://'):
+            self.assertNotIn(private_marker, guide)
+
     def test_reuse_consumption_scope(self):
         guide = (dk.ROOT / 'reference-to-composition.md').read_text()
         section = guide.split('## 4. 实现与质量对照闭环', 1)[1].split('## 逐轮指挥与反馈回流', 1)[0]

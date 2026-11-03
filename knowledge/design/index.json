@@ -110,7 +110,7 @@
     },
     {
       "id": "reference-to-composition",
-      "version": 17,
+      "version": 18,
       "category": "workflow",
       "title": "参考发现蒸馏与有意图组合",
       "tags": [
@@ -195,7 +195,9 @@
         "折面续纹",
         "同钟呼应",
         "转侧见层",
-        "近递姿态"
+        "近递姿态",
+        "中段身份",
+        "同页滚动"
       ],
       "path": "reference-to-composition.md",
       "type": "decision-guide"
