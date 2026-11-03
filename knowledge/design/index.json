@@ -110,7 +110,7 @@
     },
     {
       "id": "reference-to-composition",
-      "version": 5,
+      "version": 6,
       "category": "workflow",
       "title": "参考发现蒸馏与有意图组合",
       "tags": [
@@ -140,7 +140,12 @@
         "共同投影",
         "暂时让路",
         "用途改变",
-        "通路反例"
+        "通路反例",
+        "字内重建",
+        "首字归位",
+        "同线异材",
+        "分片用途",
+        "定锚换境"
       ],
       "path": "reference-to-composition.md",
       "type": "decision-guide"
