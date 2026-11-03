@@ -126,6 +126,36 @@
       ],
       "path": "reference-to-composition.md",
       "type": "decision-guide"
+    },
+    {
+      "id": "static-ui-reference-study",
+      "version": 1,
+      "category": "workflow",
+      "title": "固定画幅参考研究与有限状态合同",
+      "tags": [
+        "静态合同",
+        "状态一致性",
+        "透明壳",
+        "不透明主体",
+        "正交相机",
+        "遮挡",
+        "章节预览",
+        "资源修订",
+        "快照",
+        "音频界面",
+        "通道",
+        "场景",
+        "样本版本",
+        "波形",
+        "过期请求",
+        "嵌套图谱",
+        "边账本",
+        "等距选区",
+        "规范成员",
+        "跨栏标题"
+      ],
+      "path": "static-ui-reference-study.md",
+      "type": "decision-guide"
     }
   ]
 }

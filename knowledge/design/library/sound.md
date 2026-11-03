@@ -9,6 +9,7 @@
 | 需要合法的声音候选，怎样比较并保留来源 | [声音寻源与比较](../../../skills/motion-film-director/references/sfx-sourcing.md) |
 | 旁白、音乐和事件声怎样裁剪、移动、暂停/续播、分声部 | [Timeline Core](../../../engine/motion-timeline-core/README.md) |
 | 混音、增益、淡变与显式自动化怎么执行 | [Audio Core能力与API](../../../engine/motion-audio-core/README.md) |
+| 音频界面的场景、通道、样本与波形怎样保持同版本 | [通道场景的受控内容](../static-ui-reference-study.md#通道场景排队的是受控内容不是一个名称)：仅有限界面状态模型；请求时冻结内容，提交前查过期，不是实时调度、播放、录音或听审证据。 |
 | 怎样核对实际输出的声音与画面关系 | [视听审查流程](../../../skills/motion-film-director/references/audiovisual-review-sop.md) |
 
 先查核心README的支持/拒绝边界，再写调用；指南中提到的处理手法不等于引擎已经实现。显式gain自动化不能说成自动ducking，技术测量不能说成听审。授权素材、音轨使用/同步权利与成片接受分别确认，不由库的许可代替。

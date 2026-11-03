@@ -39,6 +39,26 @@ class DesignKnowledgeTests(unittest.TestCase):
             self.assertEqual(len(refs), 1)
             self.assertEqual((entry.parent / refs[0]).resolve(), guide.resolve())
 
+    def test_bounded_static_methods_are_literal_navigation(self):
+        data = dk.catalog()
+        for term in ('静态合同', '透明壳', '样本版本', '章节预览', '等距选区'):
+            matches = dk.find(data, term)
+            self.assertEqual([e['id'] for e in matches], ['static-ui-reference-study'])
+            self.assertEqual(matches[0]['type'], 'decision-guide')
+            self.assertEqual(matches[0]['path'], 'static-ui-reference-study.md')
+        self.assertEqual(dk.find(data, '样本版本', 'brand-posters'), [])
+        self.assertEqual(dk.find(data, '无对应方法zzzz'), [])
+        cases = [e['id'] for e in data['entries']]
+        self.assertNotIn('static-ui-reference-study', cases)
+        for shelf, anchor, limits in (
+            ('motion.md', '参照外壳主体遮挡与壳体透明度分别验证', ('正交相机', '封闭凸盒', '不代表')),
+            ('sound.md', '通道场景排队的是受控内容不是一个名称', ('有限界面状态模型', '不是实时调度', '听审证据')),
+        ):
+            text = (dk.ROOT / 'library' / shelf).read_text()
+            rows = [line for line in text.splitlines() if '#' + anchor in line]
+            self.assertEqual(len(rows), 1)
+            self.assertTrue(all(word in rows[0] for word in limits))
+
     def test_guides_do_not_enter_evidence_catalog(self):
         base = Path(__file__).resolve().parents[1]
         skill = base / 'skills/motion-film-director' if (base / 'skills/motion-film-director').is_dir() else base

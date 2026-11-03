@@ -11,6 +11,7 @@
 | 路径、轮廓、带路文字 | [路径与轮廓](../../../engine/motion-elements/docs/guides/paths-and-contours.md)、[沿路径字格](../../../engine/motion-elements/docs/glyph-run-path.md) |
 | 场、切片、光迹和栅格关系 | [场与切片](../../../engine/motion-elements/docs/guides/field-and-slices.md)、[光迹场](../../../engine/motion-elements/docs/guides/light-echo-field.md)、[栅格效果](../../../engine/motion-elements/docs/raster-effects.md) |
 | 多版本比较的首尾正确，中途却互相遮挡？ | [比较副本的可见窗口](../../../skills/motion-film-director/references/motion.md#比较副本让可见窗口避开相互穿越)：先分离后出现、先退出后归位；内部实验反例，不是优秀作品或艺术通过证明。 |
+| 要保留透明容器参照，又看清不透明内部主体 | [参照外壳的分离验证](../static-ui-reference-study.md#参照外壳主体遮挡与壳体透明度分别验证)：仅正交相机、封闭凸盒与有界主体；先固定几何/相机比较透明度，再单独改变视角，不代表通用透明排序、物理材料或常速动态验收。 |
 | 还需更底层的几何/布局/模拟关系 | [已登记基础机制阅读入口](../../../engine/motion-elements/docs/registered-foundations.md)，再按其指针读具体机制；完整记录回catalog |
 | 球面投影、有序份额或风格化材料的受限研究 | [未注册研究候选](../../../engine/motion-elements/README.md#未注册研究候选)；先读用途与限制，不在现役 catalog 中，不代表正式准入 |
 
