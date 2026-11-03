@@ -7,6 +7,22 @@ import design_knowledge as dk
 
 
 class DesignKnowledgeTests(unittest.TestCase):
+    def test_brand_carrier_method_navigation(self):
+        for term in ('纸面隐喻', '多载体同标', '跨面图场', '图形呼应', '经过后响应'):
+            matches = dk.find(dk.catalog(), term)
+            self.assertEqual([e['id'] for e in matches], ['reference-to-composition'])
+            self.assertEqual(matches[0]['type'], 'decision-guide')
+        for shelf in ('expression.md', 'motion.md'):
+            text = (dk.ROOT / 'library' / shelf).read_text()
+            rows = [x for x in text.splitlines() if '#品牌与载体区分视觉呼应和实际共享关系' in x]
+            self.assertEqual(len(rows), 1)
+            self.assertTrue(all(x in rows[0] for x in ('源静帧不证原动效', '近静音不代听审', '未常速', '不是新积木')))
+        guide = (dk.ROOT / 'reference-to-composition.md').read_text()
+        self.assertIn('## 品牌与载体：区分视觉呼应和实际共享关系', guide)
+        self.assertIn('一组程序绘制的静态载体', guide)
+        self.assertIn('测量底噪附近的数值不等于音轨不存在', guide)
+        self.assertIn('不是保持铰线/纸长的真实折叠', guide)
+
     def test_atmosphere_relationship_navigation(self):
         for term in ('近缘遮挡', '同色异织', '接触后变形', '共同到岸', '缺席残影'):
             matches = dk.find(dk.catalog(), term)
