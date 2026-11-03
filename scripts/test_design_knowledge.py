@@ -7,6 +7,19 @@ import design_knowledge as dk
 
 
 class DesignKnowledgeTests(unittest.TestCase):
+    def test_use_and_space_scope(self):
+        guide = (dk.ROOT / 'reference-to-composition.md').read_text()
+        for term in ('沿途净空', '功能同锚', '信息同源', '用途载体'):
+            self.assertEqual([e['id'] for e in dk.find(dk.catalog(), term)],
+                             ['reference-to-composition'])
+        for boundary in ('放置完成先于撤手', 'geometryBounds', '未用的 matrix/zIndex 不计消费',
+                         '不证明布局算法最优', '同一记录', 'transformPoint',
+                         '虚构时间、地点和服务须在图上明示', '动作意图不等于完成',
+                         '局部放大读法不是连续光学映射', '纯生成栅格没有调用引擎'):
+            self.assertIn(boundary, guide)
+        shelf = (dk.ROOT / 'library/expression.md').read_text()
+        self.assertEqual(shelf.count('#用途与空间让信息有共同锚点'), 1)
+
     def test_accumulation_variants_and_protected_regions(self):
         guide = (dk.ROOT / 'reference-to-composition.md').read_text()
         for term in ('累积回返', '变体载体', '预设缩放', '全帧保护区'):

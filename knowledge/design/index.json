@@ -110,7 +110,7 @@
     },
     {
       "id": "reference-to-composition",
-      "version": 20,
+      "version": 21,
       "category": "workflow",
       "title": "参考发现蒸馏与有意图组合",
       "tags": [
@@ -204,7 +204,11 @@
         "累积回返",
         "变体载体",
         "预设缩放",
-        "全帧保护区"
+        "全帧保护区",
+        "沿途净空",
+        "功能同锚",
+        "信息同源",
+        "用途载体"
       ],
       "path": "reference-to-composition.md",
       "type": "decision-guide"
