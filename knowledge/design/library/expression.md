@@ -23,7 +23,7 @@
 |---|---|
 | [晨间简报](https://open-design.ai/showcase/morning-briefing-dashboard-design/) | 日期、摘要和优先事项的读序；示例计数不一致，不当真实待办。 |
 | [90天入职手册](https://open-design.ai/showcase/employee-onboarding-guide-design/) | 日、周与阶段三个时间尺度；样例年份/星期有矛盾，勾选外观不等于交互。 |
-| [Kami纸本产品刊物](https://open-design.ai/showcase/editorial-product-website-design/) | 衬线正文、期号、章节边栏与局部批注；上游Kami by tw93，Community分发，产品数字不是已验能力。 |
+| [Kami纸本产品刊物](https://open-design.ai/showcase/editorial-product-website-design/) | 衬线正文、期号、章节边栏与局部批注；上游Kami by tw93，Community分发，产品数字不是已验能力。后续完整桌面静态研究补充[同家族长页迁移](../DESIGN-GUIDE.md#同家族长页迁移分区锚点差异侧栏与行内断行)，不代表网页验收。 |
 | [中文七卡编辑轮播](https://open-design.ai/showcase/ai-workflow-social-carousel-design/) | 短行、固定页码与色场的连续读序；静态七卡不证明swipe，效率数字无测量依据。 |
 | [Northwind决策规格书](https://open-design.ai/showcase/authentication-product-specification-design/) | 草稿、范围、证据和未决问题分工；表格标题与项数、基线时间窗需纠错，不是认证或合规证明。 |
 
