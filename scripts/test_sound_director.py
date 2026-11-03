@@ -59,6 +59,16 @@ class SoundDirectorTests(unittest.TestCase):
         self.assertIn('../../../knowledge/design/library/INDEX.md', page.read_text())
         self.assertIn('实际取用→甄别→归位→新上下文验证', page.read_text())
 
+    def test_listening_checkpoint_and_experience_loop_are_explicit(self):
+        text = (ROOT / PAGES[2]).read_text()
+        for required in ['合成前停点', '不阻断技术草案', '参考分析完成',
+                         '原始证据位置', '观察和解释分开', '对照缺口',
+                         '同画面、同窗口', '未收到反馈保持待反馈', '实际分轨']:
+            self.assertIn(required, text)
+        shelf = (ROOT / 'knowledge/design/library/sound.md').read_text()
+        self.assertIn('references/sound-direction.md', shelf)
+        self.assertIn('合成前', (ROOT / PAGES[0]).read_text())
+
     def test_dependency_guidance_matches_core_lock(self):
         core = ROOT / 'engine/motion-render-core'
         package = json.loads((core / 'package.json').read_text())

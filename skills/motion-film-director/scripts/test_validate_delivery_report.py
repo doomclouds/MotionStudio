@@ -86,6 +86,20 @@ class ReportTests(unittest.TestCase):
         data['status'] = 'ready_for_owner_review'
         self.assertTrue(validator.validate_report(data))
 
+    def test_unheard_technical_draft_is_allowed_but_cannot_be_promoted(self):
+        # Synthetic declarations only: protects the existing gate, not perception.
+        for status in ('NOT_LISTENED', 'NOT_RUN', 'BLOCKED', 'SKIPPED_NOT_CONFIGURED'):
+            with self.subTest(status=status):
+                data = fixture()
+                data['status'] = 'review_candidate'
+                data['blockers'] = ['Actual output listening and AV review unavailable']
+                for kind in ('audio', 'av_sync'):
+                    data['reviews'][kind] = {'status': status, 'blockers': ['Not heard']}
+                self.assertEqual(validator.validate_report(data), [])
+                data['status'] = 'ready_for_owner_review'
+                data['blockers'] = []
+                self.assertTrue(validator.validate_report(data))
+
     def test_no_approved_status_or_fake_authentication(self):
         for status in ('approved_final', True, 'passed'):
             data = fixture(); data['status'] = status

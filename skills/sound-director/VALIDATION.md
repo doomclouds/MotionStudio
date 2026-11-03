@@ -23,12 +23,23 @@
 
 停止条件是完成对应任务和证据门，或明确阻断/待用户授权；不是凑足迭代次数。真实听审不可用就交代缺口，不以结构测试替代。需要声线样本、外部上传/服务或发布时按当前授权另处理。
 
+## 必测反例（记录真实结果，不造听审）
+
+- 只有候选网页、许可与技术测量：参考/输出仍 `NOT_LISTENED`，可以交技术草案，不能交“研究完成/更好听”的结论。
+- 只有参考听审：输出质量与常速声画仍未验；只有输出听审：不能倒补参考分析完成。
+- 只有模型音频结果或人耳局部记录：不扩大为全片连续声画通过。新混音/重编码后不复用旧 hash 的通过记录。
+- 实际展示不能播放或尚无用户反馈：保留交付问题/待反馈，不把生成 listen 页面或“已发送”当用户听过。
+- 参考听审和许可齐备但只改一个 cue：复核受影响关系及最终上下文，不强制额外扩库、全新配乐或固定数量参考。
+
+以下离线测试只保护文字路由、已有候选/通过门和技术合同，无法认证真人听过；真实任务仍须逐项执行以上反例与原始证据核对。
+
 ## 可复跑的离线检查
 
 从仓库根运行：
 
 ```sh
 python3 scripts/test_sound_director.py
+python3 skills/motion-film-director/scripts/test_validate_delivery_report.py
 python3 scripts/test-skill-links.py
 python3 scripts/test_ui_design_director.py
 node --test engine/motion-timeline-core/test/*.test.mjs engine/motion-audio-core/test/*.test.mjs
