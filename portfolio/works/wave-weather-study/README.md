@@ -10,9 +10,13 @@ Complete editable source: `design/scene.mjs`. [Design reasoning](DESIGN-REASONIN
 
 Use the existing MotionStudio Native core and its lock. Obtain licensed original inputs named NotoSansSC-variable.ttf, ZCOOLKuaiLe-Regular.ttf into an external directory, matching `font-inputs.json` SHA identities; family URLs and actual terms are in `work.json`/`LICENSES`. Preparation verifies original inputs before writing; it verifies output font identities after derivation, and the render entry checks the same output hashes. Noto subsets use deterministic metadata. Use the pinned fonttools version in locks/runtime.json when preparing.
 
+Run from the MotionStudio repository root after preparing the existing [Native core dependencies](../../../engine/motion-render-core/README.md). Replace the external directory values below with absolute paths outside the repository; the font directory contains the licensed original inputs and receives the prepared fonts. These commands do not download fonts or install dependencies. The family URLs identify the source family, not a guarantee that its current files match the required SHA.
+
 ```sh
-python prepare-fonts.py --font-dir /absolute/external-fonts
-WAVE_FONT_DIR=/absolute/external-fonts node ENGINE/scripts/render.mjs --scene ABS/design/scene.mjs --work /absolute/new-output --frames 0
+WAVE_FONT_DIR=/absolute/external-fonts
+WAVE_WORK_DIR=/absolute/new-output
+python3 portfolio/works/wave-weather-study/prepare-fonts.py --font-dir "$WAVE_FONT_DIR"
+WAVE_FONT_DIR="$WAVE_FONT_DIR" node engine/motion-render-core/scripts/render.mjs --scene portfolio/works/wave-weather-study/design/scene.mjs --work "$WAVE_WORK_DIR" --frames 0
 ```
 
 All fonts and generated files remain outside Git. Missing/wrong fonts fail closed. To change Chinese copy, extend font-charset.txt, reprepare and deliberately update output identities and visual regression; the existing identity contract intentionally does not silently accept changed fonts.

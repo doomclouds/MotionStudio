@@ -13,9 +13,14 @@
 
 使用仓库已有 engine/motion-render-core 的锁定依赖与Python fonttools 4.61.1。字体二进制不随工程入库；按 font-inputs.json 中源文件名准备官方许可字体到外部目录。准备脚本核验输入SHA，生成改名静态子集，写入给定输出目录，不下载或执行外部代码。
 
+以下从 MotionStudio 仓库根运行，先按 [Native core 说明](../../../engine/motion-render-core/README.md)准备已有渲染依赖。把三个外置目录变量替换成仓库外的绝对路径；命令不下载字体或自动安装依赖。家族来源 URL 不保证其当前文件匹配所要求的 SHA，必须使用已核身份的原始输入。
+
 ```sh
-python prepare-fonts.py --source-dir /absolute/source-fonts --output-dir /absolute/prepared-fonts
-MUQI_FONT_DIR=/absolute/prepared-fonts node ENGINE/scripts/render.mjs --scene ABS/design/scene.mjs --work /absolute/new-render-dir --frames 0
+MUQI_SOURCE_FONT_DIR=/absolute/source-fonts
+MUQI_FONT_DIR=/absolute/prepared-fonts
+MUQI_WORK_DIR=/absolute/new-render-dir
+python3 portfolio/works/muqi-study/prepare-fonts.py --source-dir "$MUQI_SOURCE_FONT_DIR" --output-dir "$MUQI_FONT_DIR"
+MUQI_FONT_DIR="$MUQI_FONT_DIR" node engine/motion-render-core/scripts/render.mjs --scene portfolio/works/muqi-study/design/scene.mjs --work "$MUQI_WORK_DIR" --frames 0
 ```
 
 修改内容后需重新运行字体准备脚本，使新字符进入子集；新的文本长度还需重新检查固定画幅中的溢出。相同源字体、渲染器和固定内容的PNG可与验收画面一致。不同平台/字体版本不能保证像素相同。缺少字体目录或文件会明确失败。输出目录应在Git之外。

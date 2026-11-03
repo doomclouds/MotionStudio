@@ -4,7 +4,7 @@
 
 ## 完整作品：看组合语境
 
-[作品总索引](../../../portfolio/INDEX.md) → 选择相关静态/视频对象 → 该作品 `work.json`、README、其design所指decisionCard与sourceAnalysis → 需要时看源码和有权限的实际输出。[作品合同](../../../portfolio/README.md)解释当前/历史状态、资源与证据边界。这里不再抄一份作品名单或成熟度表。
+[作品总索引](../../../portfolio/INDEX.md) → 选择相关静态/视频对象 → 该作品 `work.json`、README、其design所指decisionCard与sourceAnalysis → 打开 README 所指的公开 `cover` 并读设计卡，核对实际构图而非只读摘要；实现前再核相关源码/scene。用于运动判断时，还须观察有权限取得的实际连续片段，封面只支持所见静态关系，不能代替节奏、动作或听审。公开预览不转授素材使用权；缺少所需输出或权限时保留观察缺口，不索取或公开私有评审材料。[作品合同](../../../portfolio/README.md)解释当前/历史状态、资源与证据边界。这里不再抄一份作品名单或成熟度表。
 
 - 内容/构图关系从作品说明进入；实际调用看 `design.assetUsage` 及本版代码，不能仅由外观推断。
 - 来源启发看UI catalog的 `sourceCases` 及各族guidance，和实际调用分开读。[既有覆盖表](../../../engine/design-elements/CASE-COVERAGE.md)已区分这两种关系，无须新增关系账本。
