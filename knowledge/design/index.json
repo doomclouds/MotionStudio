@@ -110,7 +110,7 @@
     },
     {
       "id": "reference-to-composition",
-      "version": 4,
+      "version": 5,
       "category": "workflow",
       "title": "参考发现蒸馏与有意图组合",
       "tags": [
@@ -136,7 +136,11 @@
         "字形腾空",
         "环境解法",
         "支撑交接",
-        "最小可达距离"
+        "最小可达距离",
+        "共同投影",
+        "暂时让路",
+        "用途改变",
+        "通路反例"
       ],
       "path": "reference-to-composition.md",
       "type": "decision-guide"

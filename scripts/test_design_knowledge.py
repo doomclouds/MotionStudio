@@ -94,6 +94,15 @@ class DesignKnowledgeTests(unittest.TestCase):
         for limit in ('最小可达距离', '支撑标记不证明重心平衡', '样片无音轨，原片并非无音轨', '两者均未常速观看、未听审'):
             self.assertIn(limit, guide)
 
+    def test_shared_space_methods_are_bounded_and_discoverable(self):
+        for term in ('共同投影', '暂时让路', '用途改变', '通路反例'):
+            self.assertEqual([e['id'] for e in dk.find(dk.catalog(), term)], ['reference-to-composition'])
+        for shelf in ('expression.md', 'motion.md'):
+            self.assertIn('#共同空间合框让路与用途改变', (dk.ROOT / 'library' / shelf).read_text())
+        guide = (dk.ROOT / 'reference-to-composition.md').read_text()
+        for boundary in ('原创样片全部无音轨', '关键手部被头身遮住', '版本冲突保留', '未靠近支柱', '闭环也可能读成保护或禁闭'):
+            self.assertIn(boundary, guide)
+
     def test_guides_do_not_enter_evidence_catalog(self):
         base = Path(__file__).resolve().parents[1]
         skill = base / 'skills/motion-film-director' if (base / 'skills/motion-film-director').is_dir() else base
