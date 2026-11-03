@@ -7,6 +7,22 @@ import design_knowledge as dk
 
 
 class DesignKnowledgeTests(unittest.TestCase):
+    def test_material_and_pose_keep_consumption_and_static_limits(self):
+        guide = (dk.ROOT / 'reference-to-composition.md').read_text()
+        for term in ('控件回执', '静态接触', '粗细异材', '冷暖修补', '同柜异材'):
+            self.assertEqual([e['id'] for e in dk.find(dk.catalog(), term)],
+                             ['reference-to-composition'])
+        for boundary in ('返回的 thumb', '闲置求值不计画面贡献',
+                         '中心线端点约束到表面', '对应地形/台面多边形内',
+                         '只称停在地图旁', '记录偏差而非以文字覆盖像素',
+                         '固定抽屉伸出差异不证明抽拉顺序',
+                         '提示词自述不升级为独立工具来源证明',
+                         '纯静态程序图与生成栅格均不是静音影片'):
+            self.assertIn(boundary, guide)
+        for shelf in ('expression.md', 'motion.md'):
+            text = (dk.ROOT / 'library' / shelf).read_text()
+            self.assertEqual(text.count('#材质对比与姿态须分别核显示和行为'), 1)
+
     def test_use_and_space_scope(self):
         guide = (dk.ROOT / 'reference-to-composition.md').read_text()
         for term in ('沿途净空', '功能同锚', '信息同源', '用途载体'):
@@ -35,7 +51,9 @@ class DesignKnowledgeTests(unittest.TestCase):
         expression = (dk.ROOT / 'library/expression.md').read_text()
         self.assertEqual(motion.count('#累积回返把完成次数与呈现阶段分开'), 1)
         self.assertEqual(expression.count('#变体与载体用共享依据核对显示'), 1)
-        qa = (dk.ROOT.parents[1] / 'skills/motion-film-director/references/qa.md').read_text()
+        base = dk.ROOT.parents[1]
+        skill = base / 'skills/motion-film-director' if (base / 'skills/motion-film-director').is_dir() else base
+        qa = (skill / 'references/qa.md').read_text()
         for boundary in ('每一原生帧', '旧版作为会失败的负对照', '保护区外', '有损编码另看关键邻帧'):
             self.assertIn(boundary, qa)
         for private_marker in ('-private-', '/workspace/', 'file://'):
