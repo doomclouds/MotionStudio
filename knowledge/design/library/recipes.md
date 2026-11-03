@@ -17,6 +17,8 @@
 
 - 六条短消息怎样分主次而不暗示数量比例？读[编辑式信息组候选](../../../engine/design-elements/recipes/candidates/editorial-feature-group/README.md)：固定角色与作者分行，不自动换行或响应式；需用实际字体重新规划并实看。
 
+- 连续混合样式文本需要按词换行？读[Latin 行内换行候选](../../../engine/design-elements/recipes/candidates/inline-run-wrap-candidate/README.md)：仅 ASCII、NBSP 与换行，样式边界和 NBSP 不断词；预检实际字形与删除线边界，由调用者提供并验证字体，不是通用国际化排版或正式族。
+
 ## 数据、份额与同源证据
 
 当多个视图需要共同解释同一份数值、总量、类别或作者给定的编辑关系时查这里；先核模型语义与图形编码是否相符，而非只选好看的图形。

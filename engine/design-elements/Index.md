@@ -147,3 +147,7 @@ See [bounded drape and radial categories](recipes/batches/eighth-static-candidat
 - [作者指定依赖图](recipes/candidates/authored-dependency-map/README.md)：稳定 ID、作者坐标与静态无环依赖，不自动布局或避障，也不证明流程运行。
 
 两项均为源码候选，不增加公共族、正式配方或已接受作品；实际使用须读取原契约、许可并检查输出。
+
+## Continuous Latin inline runs · unregistered candidate
+
+[Inline run wrapping](recipes/candidates/inline-run-wrap-candidate/README.md) fits continuous styled ASCII/NBSP text with real glyph bounds, shared baselines and optional strike fragments. Ordinary spaces permit wrapping; style boundaries and NBSP do not. Bounded static candidate only, not multilingual layout, a font resolver, a formal family or an accepted work; fonts and rendered examples remain external.

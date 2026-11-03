@@ -1,0 +1,3 @@
+import {createRequire} from 'node:module';
+export function runtime(){if(!process.env.CANVAS_MODULE)throw Error('CANVAS_MODULE must point to a separately installed @napi-rs/canvas');const api=createRequire(import.meta.url)(process.env.CANVAS_MODULE);for(const [key,family]of [['FONT_REGULAR','InlineRegular'],['FONT_BOLD','InlineBold'],['FONT_ITALIC','InlineItalic']]){if(!process.env[key]||!api.GlobalFonts.registerFromPath(process.env[key],family))throw Error(`${key} must identify a readable caller-supplied font`)}return api}
+export const styles={normal:{family:'InlineBold',weight:700,italic:false,color:'#242421'},emphasis:{family:'InlineItalic',weight:400,italic:true,color:'#9f503a'},body:{family:'InlineRegular',weight:400,italic:false,color:'#45483f'}};
