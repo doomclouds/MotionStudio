@@ -110,7 +110,7 @@
     },
     {
       "id": "reference-to-composition",
-      "version": 2,
+      "version": 3,
       "category": "workflow",
       "title": "参考发现蒸馏与有意图组合",
       "tags": [
@@ -128,7 +128,12 @@
         "局部遮护",
         "阻断补位",
         "地点留读",
-        "尺度揭示"
+        "尺度揭示",
+        "成功反应",
+        "画域边界",
+        "跨景行程",
+        "禁用控件",
+        "字形腾空"
       ],
       "path": "reference-to-composition.md",
       "type": "decision-guide"

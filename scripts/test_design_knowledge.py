@@ -76,6 +76,15 @@ class DesignKnowledgeTests(unittest.TestCase):
             self.assertIn('### ' + title, guide)
         self.assertIn('没有音轨是制作选择，不是声音已经听过', guide)
 
+    def test_emotion_methods_keep_shared_navigation_and_limits(self):
+        for term in ('成功反应', '画域边界', '跨景行程', '禁用控件', '字形腾空'):
+            self.assertEqual([e['id'] for e in dk.find(dk.catalog(), term)], ['reference-to-composition'])
+        for shelf in ('expression.md', 'motion.md'):
+            self.assertIn('#情绪与品牌让动作和部件承担表达', (dk.ROOT / 'library' / shelf).read_text())
+        guide = (dk.ROOT / 'reference-to-composition.md').read_text()
+        for limit in ('未连接状态', '不构成通用排版', '显示遮罩与数值边界条件分开', '不能把有声样片误写成静音'):
+            self.assertIn(limit, guide)
+
     def test_guides_do_not_enter_evidence_catalog(self):
         base = Path(__file__).resolve().parents[1]
         skill = base / 'skills/motion-film-director' if (base / 'skills/motion-film-director').is_dir() else base
