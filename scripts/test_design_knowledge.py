@@ -85,6 +85,15 @@ class DesignKnowledgeTests(unittest.TestCase):
         for limit in ('未连接状态', '不构成通用排版', '显示遮罩与数值边界条件分开', '不能把有声样片误写成静音'):
             self.assertIn(limit, guide)
 
+    def test_environment_strategy_is_a_bounded_existing_guide(self):
+        for term in ('环境解法', '支撑交接', '最小可达距离'):
+            self.assertEqual([e['id'] for e in dk.find(dk.catalog(), term)], ['reference-to-composition'])
+        shelf = (dk.ROOT / 'library/motion.md').read_text()
+        self.assertIn('#已有环境怎样让第二次尝试成为新策略', shelf)
+        guide = (dk.ROOT / 'reference-to-composition.md').read_text()
+        for limit in ('最小可达距离', '支撑标记不证明重心平衡', '样片无音轨，原片并非无音轨', '两者均未常速观看、未听审'):
+            self.assertIn(limit, guide)
+
     def test_guides_do_not_enter_evidence_catalog(self):
         base = Path(__file__).resolve().parents[1]
         skill = base / 'skills/motion-film-director' if (base / 'skills/motion-film-director').is_dir() else base
