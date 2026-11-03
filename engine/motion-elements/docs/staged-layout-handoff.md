@@ -60,3 +60,7 @@ const state=sampleStagedLayoutHandoff(plan,T(3),{reducedMotion:false});
 - [MIT许可证](https://github.com/juliangarnier/anime/blob/3552e706433ebd22010c631d875b31f17a52985c/LICENSE.md)，Julian Garnier 2025。
 
 本模块为基于既有MotionStudio纯采样接口的原创组合；没有复制Anime.js代码、没有引入其runtime，也没有将参考阅读等同于集成验证。
+
+## Submit control to status line
+
+A [caller-owned action/status composition](action-status-usage.md) shows that the existing staged handoff already covers stable-container translation and size changes; icon/text/state timing remains caller-owned. Two synthetic sizes/content variants add no runtime API or registered recipe.
