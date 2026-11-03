@@ -12,6 +12,8 @@
 
 ## 未注册受限候选
 
+[二维半板身份交接](docs/split-flap-candidate.md)：上下半面共轴压缩与中点身份切换的有界支持候选，非三维翻页；不进入公共 barrel/catalog 计数。
+
 [单主体口沿遮挡合成](docs/single-occlusion-candidate.md)仅为单主体、单遮挡、统一前景色的最终 raster 合成候选，复用现有 snapshot 合同；不进入公共 barrel/catalog 计数。先读合同与 Native 验证边界。
 
 ## 最小调用
