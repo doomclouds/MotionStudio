@@ -108,3 +108,7 @@ The [timing/glyph evidence index](recipes/batches/seventh-static-candidates/Inde
 ## Same-source briefing composition example
 
 [Linked briefing](examples/linked-briefing.md) combines existing material surfaces and metric-strip with caller-owned stable record IDs. Its two original content sets and executable Native checks demonstrate explicit snapshot counts, priority/detail correspondence, bounded geometry and overflow rejection. No new family/recipe/portfolio count, media, font, automatic synchronization or browser behavior is implied.
+
+## Contour-aware raster rim candidate
+
+[Bounded merged-mask rim](recipes/candidates/contour-rim-candidate/README.md) separates a thin screen-space edge shade from a quiet face, with three original synthetic masks and an isolated no-rim control. Source-only and unregistered; not extrusion geometry, PBR, a new design family or an accepted work.
