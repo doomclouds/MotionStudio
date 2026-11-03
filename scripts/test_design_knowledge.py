@@ -7,6 +7,28 @@ import design_knowledge as dk
 
 
 class DesignKnowledgeTests(unittest.TestCase):
+    def test_material_space_method_navigation(self):
+        for term in ('材料后显', '折面续纹', '同钟呼应', '转侧见层', '近递姿态'):
+            matches = dk.find(dk.catalog(), term)
+            self.assertEqual([e['id'] for e in matches], ['reference-to-composition'])
+            self.assertEqual(matches[0]['type'], 'decision-guide')
+        for shelf in ('expression.md', 'motion.md'):
+            rows = [line for line in (dk.ROOT / 'library' / shelf).read_text().splitlines()
+                    if '#材料与空间分清身份连续和控制因果' in line]
+            self.assertEqual(len(rows), 1)
+            self.assertTrue(all(word in rows[0] for word in
+                ('有限2.5D/二维非物理', '二次编码来源', '无真实交互', '近静音不代听审',
+                 '未常速', '未听审', '不是新积木')))
+        guide = (dk.ROOT / 'reference-to-composition.md').read_text()
+        section = guide.split('## 材料与空间：分清身份连续和控制因果', 1)[1]
+        for boundary in ('材料说明先于最终整合展示', '后存PNG仍含先前压缩',
+                         '不是原始渲染证明', '没有真实交互', '只共享影片时钟',
+                         '深度线索组合消融，不是单变量试验', '必须删除旧定长声称及测试',
+                         '朝向相机的billboard', '不是整案影片'):
+            self.assertIn(boundary, section)
+        for private_marker in ('-private-', '/workspace/', 'SHA256', 'file://'):
+            self.assertNotIn(private_marker, section)
+
     def test_invitation_revision_method_navigation(self):
         for term in ('字牌合列', '主名伴语', '负路成景', '首字带句', '拒案换件'):
             matches = dk.find(dk.catalog(), term)
