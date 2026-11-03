@@ -52,6 +52,8 @@
 - [标量场](../../../engine/design-elements/recipes/candidates/scalar-field-candidate/README.md)、[网点标量](../../../engine/design-elements/recipes/candidates/halftone-scalar-candidate/README.md)、[索引色像素层](../../../engine/design-elements/recipes/candidates/indexed-pixel-layer-candidate/README.md)、[确定性粒子场](../../../engine/design-elements/recipes/candidates/deterministic-particle-field/README.md)。
 - [垂坠材质](../../../engine/design-elements/recipes/candidates/drape-material-candidate/README.md)、[互补分界](../../../engine/design-elements/recipes/candidates/complementary-seam-candidate/README.md)、[文件格网](../../../engine/design-elements/recipes/candidates/file-grid-candidate/README.md)、[特征堆栈](../../../engine/design-elements/recipes/candidates/feature-stack-candidate/README.md)。
 
+- 已有 coverage mask，但最终叠色在边缘变暗或透明前景丢失主体？读[单主体遮挡合成候选](../../../engine/motion-elements/docs/single-occlusion-candidate.md)：一个背景、一个未预遮罩主体、一张 alpha 覆盖图与统一前景 RGBA；复用现有 snapshot，仅验证当前 Native Canvas 的静态最终像素，不是通用多层引擎或正式族。一次性场景优先考虑普通 painter order。
+
 ## 从来源组合进入
 
 当需求接近已有整组来源的内容组织、但尚不能映射到一个窄机制时，从这些包的设计解释反推组合关系；不能直接套来源品牌或把来源作品当可自由复制素材。

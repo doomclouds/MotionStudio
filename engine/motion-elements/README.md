@@ -10,6 +10,10 @@
 - 基础机制按 `lib/foundations/<职责>/` 组织；配方在 `lib/recipes.mjs`／`lib/recipes/`，支持在 `lib/support/`，适配器在 `adapters/`。旧candidate barrel及field/IK/sticky平层wrapper已移除，不提供兼容路径。其他尚在平层的真实实现不是别名。
 - **运行时验证器管输入行为，catalog管稳定身份和检索，docs管使用边界。** 不从catalog动态执行外部代码，也不把JSON示例当另一个校验器。
 
+## 未注册受限候选
+
+[单主体口沿遮挡合成](docs/single-occlusion-candidate.md)仅为单主体、单遮挡、统一前景色的最终 raster 合成候选，复用现有 snapshot 合同；不进入公共 barrel/catalog 计数。先读合同与 Native 验证边界。
+
 ## 最小调用
 
 ```js
