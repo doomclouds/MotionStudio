@@ -7,6 +7,22 @@ import design_knowledge as dk
 
 
 class DesignKnowledgeTests(unittest.TestCase):
+    def test_material_story_method_navigation(self):
+        for term in ('片瓣改读', '同材显形', '漫画回落', '包装保护', '异媒介共处'):
+            matches = dk.find(dk.catalog(), term)
+            self.assertEqual([e['id'] for e in matches], ['reference-to-composition'])
+            self.assertEqual(matches[0]['type'], 'decision-guide')
+        for shelf in ('expression.md', 'motion.md'):
+            text = (dk.ROOT / 'library' / shelf).read_text()
+            rows = [x for x in text.splitlines() if '#材质与讲述让身份线索先于解释' in x]
+            self.assertEqual(len(rows), 1)
+            self.assertTrue(all(x in rows[0] for x in ('未常速', '未听审', '审美验收', '不是新积木')))
+        guide = (dk.ROOT / 'reference-to-composition.md').read_text()
+        self.assertIn('## 材质与讲述：让身份线索先于解释', guide)
+        self.assertIn('固定ID列表不证明每片运行时追踪', guide)
+        self.assertIn('明确为生成资产', guide)
+        self.assertIn('最终文字/主体零相交不能证明开场标题/页脚不相撞', guide)
+
     def test_state_story_method_navigation(self):
         for term in ('来源与序列', '隔墙通行', '概念界面', '跨景手势', '跳过与等待'):
             matches = dk.find(dk.catalog(), term)
