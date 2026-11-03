@@ -4,9 +4,9 @@
 
 ## 手动准备依赖（两条路线选一）
 
-需要 Node.js >=24（当前验证版本 v24.22.1）。核心声明精确依赖 `@napi-rs/canvas` 0.1.100；当前没有 lockfile，不能据此宣称依赖树完全锁定或跨平台像素一致。FFmpeg、ffprobe 仍需已有安装，视频编码需支持 `libx264`。
+需要 Node.js >=24（当前验证版本 v24.22.1）。核心声明精确依赖 `@napi-rs/canvas` 0.1.100；已跟踪的 `package-lock.json` 锁定 npm 依赖树，不锁定 Node、FFmpeg、操作系统或字体，也不保证跨平台像素一致。FFmpeg、ffprobe 仍需已有安装，视频编码需支持 `libx264`。
 
-- **新安装：** 在源码仓库根目录先 `cd engine/motion-render-core`；在解压后的可移植 Skill 根目录则 `cd runtime/motion-render-core`。然后由使用者明确执行 `npm install --ignore-scripts`，再执行 `node --test test/native.test.mjs`。安装命令会下载声明的包及平台可选依赖，并可能生成本地 lockfile；不要排除 optional dependencies，不要把 node_modules 或平台二进制提交进 Git。仅声明依赖不会在渲染时自动下载。
+- **新安装：** 在源码仓库根目录先 `cd engine/motion-render-core`；在解压后的可移植 Skill 根目录则 `cd runtime/motion-render-core`。然后由使用者明确执行 `npm ci --ignore-scripts`，再执行 `node --test test/native.test.mjs`。安装命令使用已跟踪的 lockfile 下载声明的包及平台可选依赖；不要排除 optional dependencies，不要把 node_modules 或平台二进制提交进 Git。仅声明依赖不会在渲染时自动下载。
 - **已有安装：** 无须运行 npm，给核心或 Skill 入口传入 `--canvas-module /absolute/path/to/node_modules/@napi-rs/canvas`，或设置 `MOTIONSTUDIO_CANVAS_MODULE`。使用已验版本 0.1.100；外部路径实际加载版本会被记录，但 loader 不会强制校验版本声明。
 
 解析顺序：显式路径 → 环境变量 → 核心目录的普通 Node 模块解析 → 云环境既有 `/opt/codex/runtimes/codex-primary-runtime/dependencies/node/node_modules/@napi-rs/canvas` 回退。指定的显式路径或环境变量无效时直接失败，不继续回退；外部机器不必具备这个云路径。下列命令从 Skill 根目录运行，安装后请回到该目录。
