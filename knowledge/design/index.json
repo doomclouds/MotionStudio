@@ -110,7 +110,7 @@
     },
     {
       "id": "reference-to-composition",
-      "version": 11,
+      "version": 12,
       "category": "workflow",
       "title": "参考发现蒸馏与有意图组合",
       "tags": [
@@ -170,7 +170,12 @@
         "重复镜头",
         "延迟倒影",
         "暗面辨形",
-        "延后释放"
+        "延后释放",
+        "近缘遮挡",
+        "同色异织",
+        "接触后变形",
+        "共同到岸",
+        "缺席残影"
       ],
       "path": "reference-to-composition.md",
       "type": "decision-guide"

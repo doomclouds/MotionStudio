@@ -7,6 +7,22 @@ import design_knowledge as dk
 
 
 class DesignKnowledgeTests(unittest.TestCase):
+    def test_atmosphere_relationship_navigation(self):
+        for term in ('近缘遮挡', '同色异织', '接触后变形', '共同到岸', '缺席残影'):
+            matches = dk.find(dk.catalog(), term)
+            self.assertEqual([e['id'] for e in matches], ['reference-to-composition'])
+            self.assertEqual(matches[0]['type'], 'decision-guide')
+        for shelf in ('expression.md', 'motion.md'):
+            text = (dk.ROOT / 'library' / shelf).read_text()
+            rows = [x for x in text.splitlines() if '#氛围与关系让情绪先有可读的画面依据' in x]
+            self.assertEqual(len(rows), 1)
+            self.assertTrue(all(x in rows[0] for x in ('静态imagegen', '静音二维示意', '未常速', '未听审', '非参考级', '不是新积木')))
+        guide = (dk.ROOT / 'reference-to-composition.md').read_text()
+        self.assertIn('## 氛围与关系：让情绪先有可读的画面依据', guide)
+        self.assertIn('五项不全是影片', guide)
+        self.assertIn('中心线零隙不保证全轮廓不穿透', guide)
+        self.assertIn('不是水体/空气的物理分层', guide)
+
     def test_material_timing_method_navigation(self):
         for term in ('固定灯位', '重复镜头', '延迟倒影', '暗面辨形', '延后释放'):
             matches = dk.find(dk.catalog(), term)
