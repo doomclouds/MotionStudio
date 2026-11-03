@@ -47,3 +47,28 @@ DISABLE_SYSTEM_FONTS_LOAD=1 MOTION_ENGINE_ROOT=/absolute/installed/engine/motion
 沿用现有示例的外置 Native/字体方式：Node 24、`@napi-rs/canvas` 0.1.100、调用者许可下的 DejaVuSans.ttf 和 DejaVuSans-Bold.ttf（DejaVu/Bitstream 条款，不是仓库 MIT）。不捆绑字体、不联网；输出记录实际字体 SHA256，未验证跨机器像素一致。加 `UI_THEME_OUTPUT=/absolute/new-external-directory` 可生成四张1440×900 PNG、调用/几何记录和资源身份；目录必须新建、非符号链接且在此仓库外，产物不入库。缺依赖直接报错，不能把未渲染当测试通过。
 
 测试既比对角色传参、内容、状态、测量几何，也抽查实际表面和强调标记像素；仍需实看整图，不能凭几处像素宣称所有文字对比、可访问性或审美通过。禁用态降低对比沿用原控件行为，未做可访问性认证。范围不含字体/间距主题、浏览器样式传播、菜单/弹层、响应式、持久化或动画；这些需求应在真实场景内另验，不通过扩建本例伪造能力。
+
+## 方向短笔触：非注册示例
+
+[directional-paint.mjs](../examples/directional-paint.mjs) 是单独可调用的原创绘制示例，不扩展上面的 `paper/opaque/glass` 契约、不注册新族。用于调用者已经画好底色和轮廓后，以短多边形色块和细高光表达局部方向；不是油画仿真或自动风格迁移。
+
+`drawDirectionalPaint(ctx,{bounds,palette,seed,count,length,width,angleAt})` 在矩形范围内确定性分布笔触；调用者先设置任意轮廓 clip，函数进一步裁到 bounds。`angleAt(u,v)` 接收归一化位置、返回弧度，须是纯函数且不访问画布；全部角度先检查后绘制。seed 为 uint32；count 1–10000；length 2–80px；width 1–20px 且不大于 length；bounds 尺寸16–2048px、坐标绝对值不超过1e6；palette 为2–8个六位十六进制颜色。画布继承调用者 alpha/合成/变换；绘制后恢复变换、clip、所改样式，但与普通 Canvas 绘制一样替换当前 path。输入/回调及 Canvas 后端是可信调用者资源，不是恶意对象沙箱。
+
+同一函数附带两份无字体原创输入：绿色叶形的斜向渐变方向场、暖色弯带的波动方向场。轮廓、尺寸、方向、色板、笔触宽长均不同；它们仅证明局部方向纹理可复用，不是两件审美通过作品。均匀密度与重复笔触仍明显；不适用于需要真实颜料厚度、自然干刷边缘或随形自动推导笔触的任务。先在最终画幅判断方向是否帮助形体，再调密度，不能把全屏噪声当材料。
+
+字体/图片/音乐均不需要，Node 使用调用者提供的 `@napi-rs/canvas`。测试写入仓库外全新目录：
+
+```sh
+CANVAS_MODULE=/absolute/path/to/node_modules/@napi-rs/canvas \
+node engine/design-elements/test-directional-paint.mjs /absolute/new-private-output
+```
+
+[测试](../test-directional-paint.mjs)覆盖两输入实际出图、同seed重复、换seed差异、矩形与调用者clip、输入不变、状态恢复及非法输入绘制前拒绝。确定性只针对相同回调/输入/后端环境；没有跨后端逐像素、动画连续性、音频或用户接受结论。
+
+### 与已有材料的分工
+
+- [print-poster](../print-poster.mjs) 是纸签与硬偏移叠印，不能代替方向笔触。
+- 漫画网点优先用现有 [halftone-screen](../../motion-elements/docs/halftone-screen.md) 或 [标量网点候选](../recipes/candidates/halftone-scalar-candidate/README.md)，保持各自原状态。集中线的位置/留白仍由构图决定，不为这一观察另建网点或排线积木。
+- 砖墙、喷漆、粗糙描边和滴流分别处理：墙缝应穿过未覆盖区域，喷漆局部透明度逐渐衰减；把它们烘为整张材质会锁死构图。当前不提供新的喷漆/砖墙函数，因为尚无独立双输入实渲验证；[drape候选](../recipes/candidates/drape-material-candidate/README.md) 的布面明暗也不能冒充这些材料。
+
+研究来源：[Open Design Usage Reset](https://open-design.ai/showcase/usage-reset-motion-video-design/) 的6秒私有研究，仅抽帧观察，不是连续观看、实际听审或声画同步验收。上述代码和两份输入是原创程序几何，适用仓库 MIT；未带入原片像素、标形、字体、音乐或私有对照报告。来源链接不转授参考设计/品牌权利。局部材质改善与此示例运行均不等于原片复刻或用户审美通过。
