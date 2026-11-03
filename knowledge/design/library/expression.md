@@ -4,6 +4,8 @@
 
 | 表达问题 | 优先阅读的原文件 |
 |---|---|
+| 修改一个对象后，字段、注释与时间读数如何保持一致？ | [检查器与累计计时](../static-ui-reference-study.md#检查器与累计计时同一状态的不同读数)：端点相关解释、累计/分段及无比较状态；固定静态关系，不是交互引擎。 |
+| 周矩阵边界或跨栏大标题怎样跟随内容？ | [文件签与周矩阵](../static-ui-reference-study.md#文件签与周矩阵分隔线也有数据作用域)、[跨栏标题](../static-ui-reference-study.md#跨栏标题句序负空间与主题符号)：数据作用域、句序与名义高度检查；浏览器仍待验。 |
 | 比较或解释之后，怎样连接同一对象的下一步？ | [证据到行动](../static-ui-reference-study.md#学习回顾从可解释证据到下一次行动)：来自学习回顾的有限观察，关注依据、对象对应与可见范围；不要求沿用纸本风格，跨领域有效性仍须另验。另见[行动身份与图像身份](../static-ui-reference-study.md#跨内容迁移观察行动身份与图像身份分别核对)的限定迁移观察。 |
 | 多种工具怎样统一品牌，又保留各自任务布局与操作因果？ | [产品发布中的界面与镜头分工](../../../skills/motion-film-director/references/reference-mechanism.md#产品发布片逐轮增加证据再收束承诺)：稳定宿主、字段到预览、主题作用域、原文到解释；状态与几何各自验证，不冒称真实交互 |
 | 一句主张、章节/活动信息、标题字形气质 | [文字主视觉](../../../engine/design-elements/docs/typographic-focus.md)、[表现文字](../../../engine/design-elements/docs/expressive-type.md)、[纵列印记](../../../engine/design-elements/docs/vertical-imprint.md) |
