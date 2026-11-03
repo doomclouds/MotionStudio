@@ -20,6 +20,16 @@ const {items}=sampleLayoutHandoff(plan,{n:'2',d:'1'},{reducedMotion:false});
 
 reducedMotion只让共享项直接使用终态位置/尺寸；不改变phase/progress、进入退出透明度或时间段。这里是一个明确静态空间策略，不保证适合所有无障碍情境。
 
+## 曲线选择与时钟边界
+
+[实现](../lib/recipes/layout-handoff.mjs)固定使用 smoothstep：共享项位置/尺寸与进入/退出透明度使用同一曲线；没有可选 `curve` 字段。返回的 `phase/progress` 描述传入时间在 range 中的位置，`progress` 是线性时钟进度，不是缓动后的空间进度。不能再把它直接当作已采样几何的进度，令文字、图标与容器错拍。
+
+单个对象的简单位置或尺寸变化若已有明确速度要求，优先用现有 [ease / lerp](../lib/math.mjs) 保持同一个内容进度，不必为了调用配方引入身份匹配或额外时钟。需要显式变换轨道时，[sampleMotion 的曲线合同](guides/core-api-and-time.md)另有 linear、smoothstep 和受限 cubic-bezier；缩放整个内容不等于容器改变尺寸后的内容重排。
+
+有界参考：[Tessel 编排](https://github.com/doomclouds/MotionStudio/blob/9806a1bd7c44f44cb331576b032417f58c655081/portfolio/works/tessel/src/choreography.mjs)对 shared 日程项先求目标空间进度，再用[反 smoothstep](https://github.com/doomclouds/MotionStudio/blob/9806a1bd7c44f44cb331576b032417f58c655081/portfolio/works/tessel/src/math.mjs)构造合成采样时间；返回矩形供场景绘制。这是调用者适配，不是配方原生支持任意曲线，也不证明新内容或整片审美通过。
+
+若采用这种适配，点击、字幕、阅读停留仍用原项目时间；返回的 `phase/progress` 对应合成时间，不能混作原时间或直接推进 [staged-layout-handoff](staged-layout-handoff.md) 的阶段边界。还需核端点、量化误差、所需曲线的单调性，以及新进/退出透明度是否也被改速。Tessel 的进入/退出由项目另行编排，不能据此宣称这些透明度路径已获该场景验证。先比较直接使用底层 API 的代价；本说明不新增 API、通用重映射器或兼容层。
+
 ## 限制与证据
 不能插值旋转/skew/透视，不处理碰撞、文字重排、手势物理、跨场景资源装载或内容宽高测量。内容绘制与Canvas状态隔离由调用者负责，本配方只输出纯状态。
 
