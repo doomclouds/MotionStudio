@@ -7,6 +7,23 @@ import design_knowledge as dk
 
 
 class DesignKnowledgeTests(unittest.TestCase):
+    def test_view_reading_method_navigation(self):
+        for term in ('微缩通行', '细节单位', '整句恢复', '分支来路', '弯带读窗'):
+            matches = dk.find(dk.catalog(), term)
+            self.assertEqual([e['id'] for e in matches], ['reference-to-composition'])
+            self.assertEqual(matches[0]['type'], 'decision-guide')
+        for shelf in ('expression.md', 'motion.md'):
+            text = (dk.ROOT / 'library' / shelf).read_text()
+            rows = [x for x in text.splitlines() if '#尺度与阅读先兑现关系再分配注意力' in x]
+            self.assertEqual(len(rows), 1)
+            self.assertTrue(all(x in rows[0] for x in ('未常速', '未听审', '审美验收', '不是新积木')))
+        guide = (dk.ROOT / 'reference-to-composition.md').read_text()
+        self.assertIn('## 尺度与阅读：先兑现关系再分配注意力', guide)
+        self.assertIn('阶段标签不是首个满遮罩像素', guide)
+        self.assertIn('坐标边界倍率不等于像素数量', guide)
+        self.assertIn('不保证有损编码帧逐像素不变', guide)
+        self.assertIn('构图对齐不等于共同三维空间', guide)
+
     def test_material_story_method_navigation(self):
         for term in ('片瓣改读', '同材显形', '漫画回落', '包装保护', '异媒介共处'):
             matches = dk.find(dk.catalog(), term)

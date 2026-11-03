@@ -110,7 +110,7 @@
     },
     {
       "id": "reference-to-composition",
-      "version": 9,
+      "version": 10,
       "category": "workflow",
       "title": "参考发现蒸馏与有意图组合",
       "tags": [
@@ -160,7 +160,12 @@
         "同材显形",
         "漫画回落",
         "包装保护",
-        "异媒介共处"
+        "异媒介共处",
+        "微缩通行",
+        "细节单位",
+        "整句恢复",
+        "分支来路",
+        "弯带读窗"
       ],
       "path": "reference-to-composition.md",
       "type": "decision-guide"
