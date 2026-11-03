@@ -110,7 +110,7 @@
     },
     {
       "id": "reference-to-composition",
-      "version": 10,
+      "version": 11,
       "category": "workflow",
       "title": "参考发现蒸馏与有意图组合",
       "tags": [
@@ -165,7 +165,12 @@
         "细节单位",
         "整句恢复",
         "分支来路",
-        "弯带读窗"
+        "弯带读窗",
+        "固定灯位",
+        "重复镜头",
+        "延迟倒影",
+        "暗面辨形",
+        "延后释放"
       ],
       "path": "reference-to-composition.md",
       "type": "decision-guide"

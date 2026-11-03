@@ -7,6 +7,22 @@ import design_knowledge as dk
 
 
 class DesignKnowledgeTests(unittest.TestCase):
+    def test_material_timing_method_navigation(self):
+        for term in ('固定灯位', '重复镜头', '延迟倒影', '暗面辨形', '延后释放'):
+            matches = dk.find(dk.catalog(), term)
+            self.assertEqual([e['id'] for e in matches], ['reference-to-composition'])
+            self.assertEqual(matches[0]['type'], 'decision-guide')
+        for shelf in ('expression.md', 'motion.md'):
+            text = (dk.ROOT / 'library' / shelf).read_text()
+            rows = [x for x in text.splitlines() if '#材质与时序先隔离变量再判断表达' in x]
+            self.assertEqual(len(rows), 1)
+            self.assertTrue(all(x in rows[0] for x in ('静音', '未常速', '未听审', '非参考级', '不是新积木')))
+        guide = (dk.ROOT / 'reference-to-composition.md').read_text()
+        self.assertIn('## 材质与时序：先隔离变量再判断表达', guide)
+        self.assertIn('固定图像裁切拉远没有三维视差', guide)
+        self.assertIn('参数原点固定不等于图形面积质心固定', guide)
+        self.assertIn('不能同时宣称金属真实度提高', guide)
+
     def test_view_reading_method_navigation(self):
         for term in ('微缩通行', '细节单位', '整句恢复', '分支来路', '弯带读窗'):
             matches = dk.find(dk.catalog(), term)
