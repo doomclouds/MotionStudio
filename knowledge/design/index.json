@@ -110,7 +110,7 @@
     },
     {
       "id": "reference-to-composition",
-      "version": 7,
+      "version": 8,
       "category": "workflow",
       "title": "参考发现蒸馏与有意图组合",
       "tags": [
@@ -150,7 +150,12 @@
         "载体读窗",
         "环境呼应",
         "源线可见",
-        "成员相位"
+        "成员相位",
+        "来源与序列",
+        "隔墙通行",
+        "概念界面",
+        "跨景手势",
+        "跳过与等待"
       ],
       "path": "reference-to-composition.md",
       "type": "decision-guide"

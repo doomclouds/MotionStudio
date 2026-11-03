@@ -7,6 +7,21 @@ import design_knowledge as dk
 
 
 class DesignKnowledgeTests(unittest.TestCase):
+    def test_state_story_method_navigation(self):
+        for term in ('来源与序列', '隔墙通行', '概念界面', '跨景手势', '跳过与等待'):
+            matches = dk.find(dk.catalog(), term)
+            self.assertEqual([e['id'] for e in matches], ['reference-to-composition'])
+            self.assertEqual(matches[0]['type'], 'decision-guide')
+        for shelf in ('expression.md', 'motion.md'):
+            text = (dk.ROOT / 'library' / shelf).read_text()
+            rows = [x for x in text.splitlines() if '#状态与叙事让变化兑现具体关系' in x]
+            self.assertEqual(len(rows), 1)
+            self.assertTrue(all(x in rows[0] for x in ('未常速', '未听审', '非实时', '非真实产品', '不是新积木')))
+        guide = (dk.ROOT / 'reference-to-composition.md').read_text()
+        self.assertIn('## 状态与叙事：让变化兑现具体关系', guide)
+        self.assertIn('没有可见共同交付物', guide)
+        self.assertIn('不是实时条件执行', guide)
+
     def test_carrier_field_method_navigation(self):
         for term in ('行色记忆', '载体读窗', '环境呼应', '源线可见', '成员相位'):
             matches = dk.find(dk.catalog(), term)
