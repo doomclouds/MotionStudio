@@ -7,6 +7,18 @@ import design_knowledge as dk
 
 
 class DesignKnowledgeTests(unittest.TestCase):
+    def test_reuse_consumption_scope(self):
+        guide = (dk.ROOT / 'reference-to-composition.md').read_text()
+        section = guide.split('## 4. 实现与质量对照闭环', 1)[1].split('## 逐轮指挥与反馈回流', 1)[0]
+        for boundary in ('返回值/状态由哪个绘制或后果计算点消费',
+                         '仅保存而未用于输出的字段不计该职责',
+                         '若实际使用或依赖关系仍有疑问', '最小同版扰动或删减对照',
+                         '应保持不变的部分', '不要只看全图差异',
+                         '不要求每个简单调用都新建对照', '不为增加使用量强加机制'):
+            self.assertIn(boundary, section)
+        for private_marker in ('-private-', '/workspace/', 'file://'):
+            self.assertNotIn(private_marker, section)
+
     def test_material_space_method_navigation(self):
         for term in ('材料后显', '折面续纹', '同钟呼应', '转侧见层', '近递姿态'):
             matches = dk.find(dk.catalog(), term)
