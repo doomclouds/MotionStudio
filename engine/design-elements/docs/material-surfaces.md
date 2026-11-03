@@ -52,7 +52,9 @@ DISABLE_SYSTEM_FONTS_LOAD=1 MOTION_ENGINE_ROOT=/absolute/installed/engine/motion
 
 [directional-paint.mjs](../examples/directional-paint.mjs) 是单独可调用的原创绘制示例，不扩展上面的 `paper/opaque/glass` 契约、不注册新族。用于调用者已经画好底色和轮廓后，以短多边形色块和细高光表达局部方向；不是油画仿真或自动风格迁移。
 
-`drawDirectionalPaint(ctx,{bounds,palette,seed,count,length,width,angleAt})` 在矩形范围内确定性分布笔触；调用者先设置任意轮廓 clip，函数进一步裁到 bounds。`angleAt(u,v)` 接收归一化位置、返回弧度，须是纯函数且不访问画布；全部角度先检查后绘制。seed 为 uint32；count 1–10000；length 2–80px；width 1–20px 且不大于 length；bounds 尺寸16–2048px、坐标绝对值不超过1e6；palette 为2–8个六位十六进制颜色。画布继承调用者 alpha/合成/变换；绘制后恢复变换、clip、所改样式，但与普通 Canvas 绘制一样替换当前 path。输入/回调及 Canvas 后端是可信调用者资源，不是恶意对象沙箱。
+`drawDirectionalPaint(ctx,{bounds,palette,seed,count,length,width,angleAt,brush})` 在矩形范围内确定性分布笔触；调用者先设置任意轮廓 clip，函数进一步裁到 bounds。`angleAt(u,v)` 接收归一化位置、返回弧度，须是纯函数且不访问画布；全部角度先检查后绘制。seed 为 uint32；count 1–10000；length 2–80px；width 1–20px 且不大于 length；bounds 尺寸16–2048px、坐标绝对值不超过1e6；palette 为2–8个六位十六进制颜色。画布继承调用者 alpha/合成/变换；绘制后恢复变换、clip、所改样式，但与普通 Canvas 绘制一样替换当前 path。输入/回调及 Canvas 后端是可信调用者资源，不是恶意对象沙箱。
+
+可选 `brush: 'taper'` 只把直笔触轮廓改为固定的中段宽、两端窄压力包络（12段，端点宽度系数0.12）；省略或显式 `'polygon'` 保持原六边笔刷和随机序列。其他值在绘制前拒绝。不加曲率、边缘噪声、笔毛沉积或新注册机制，原高光保持不变，因此细端附近可能仍有高光越出色块。它是图形轮廓选项，不是物理压力模拟或普遍审美升级。`drawPaintExample(ctx,variant,seed,{brush})` 在原 leaf/ribbon 输入上可显式比较；旧三参数调用不变。
 
 同一函数附带两份无字体原创输入：绿色叶形的斜向渐变方向场、暖色弯带的波动方向场。轮廓、尺寸、方向、色板、笔触宽长均不同；它们仅证明局部方向纹理可复用，不是两件审美通过作品。均匀密度与重复笔触仍明显；不适用于需要真实颜料厚度、自然干刷边缘或随形自动推导笔触的任务。先在最终画幅判断方向是否帮助形体，再调密度，不能把全屏噪声当材料。
 
@@ -64,6 +66,16 @@ node engine/design-elements/test-directional-paint.mjs /absolute/new-private-out
 ```
 
 [测试](../test-directional-paint.mjs)覆盖两输入实际出图、同seed重复、换seed差异、矩形与调用者clip、输入不变、状态恢复及非法输入绘制前拒绝。确定性只针对相同回调/输入/后端环境；没有跨后端逐像素、动画连续性、音频或用户接受结论。
+
+可选压力策略的[专项测试](../test-directional-pressure.mjs)需要调用者在仓库外提供固定改动前实现，避免把当前代码与自身比较。它比较两输入、三种seed的旧/省略/显式polygon逐像素输出，另验taper重现、边界和非法参数、晚发生方向错误、状态属性及后续实际填色/描边（含渐变与clip）。兼容性结论限定相同已安装Canvas后端；不把像素差当审美接受。示例包装函数也显式恢复颜色/线宽，避免部分Native后端restore后的属性不一致。
+
+```sh
+# 从审查指定的改动前提交导出；BASE_SHA 必须由评审固定，不能使用改动后的 HEAD。
+git show "$BASE_SHA":engine/design-elements/examples/directional-paint.mjs > /absolute/private/baseline.mjs
+CANVAS_MODULE=/absolute/path/to/node_modules/@napi-rs/canvas \
+BASELINE_DIRECTIONAL_PAINT=/absolute/private/baseline.mjs \
+node engine/design-elements/test-directional-pressure.mjs /absolute/new-private-pressure-output
+```
 
 ### 与已有材料的分工
 

@@ -1,6 +1,6 @@
 // Original bounded example, MIT (repository LICENSE). No source images or fonts.
 // Not registered in the design dispatcher. The caller authors the direction field.
-export function drawDirectionalPaint(ctx, {bounds, palette, seed, count=1200, length=18, width=5, angleAt}) {
+export function drawDirectionalPaint(ctx, {bounds, palette, seed, count=1200, length=18, width=5, angleAt, brush='polygon'}) {
   if (!bounds || !['x','y','width','height'].every(k=>Number.isFinite(bounds[k]))) throw new TypeError('finite bounds required');
   const {x,y,width:w,height:h}=bounds;
   if(Math.abs(x)>1e6||Math.abs(y)>1e6||w<16||h<16||w>2048||h>2048) throw new RangeError('bounds outside example budget');
@@ -9,6 +9,7 @@ export function drawDirectionalPaint(ctx, {bounds, palette, seed, count=1200, le
   if(!Number.isInteger(count)||count<1||count>10000) throw new RangeError('count must be 1..10000');
   if(!Number.isFinite(length)||length<2||length>80||!Number.isFinite(width)||width<1||width>20||width>length) throw new RangeError('stroke size invalid');
   if(typeof angleAt!=='function') throw new TypeError('caller angleAt(u,v) required');
+  if(!['polygon','taper'].includes(brush)) throw new RangeError('brush must be polygon or taper');
   // Integer PRNG; no clock, global randomness, source pixels or retained caller data.
   let state=seed; const random=()=>{state=(Math.imul(state,1664525)+1013904223)>>>0;return state/4294967296};
   const marks=[];
@@ -27,8 +28,21 @@ export function drawDirectionalPaint(ctx, {bounds, palette, seed, count=1200, le
       ctx.save();
       try {
         ctx.translate(m.x,m.y);ctx.rotate(m.a);
+        if(brush==='polygon') {
         ctx.beginPath();ctx.moveTo(-m.l*.5,-m.b*.32);ctx.lineTo(-m.l*.35,-m.b*.5);
         ctx.lineTo(m.l*.4,-m.b*.4);ctx.lineTo(m.l*.52,0);ctx.lineTo(m.l*.38,m.b*.44);ctx.lineTo(-m.l*.45,m.b*.35);ctx.closePath();
+        } else {
+          // Optional straight pressure envelope only: same marks, field and RNG.
+          // No curvature, edge noise, bristle deposits or physical paint claim.
+          ctx.beginPath();
+          for(const side of [-1,1]) for(let j=0;j<=12;j++) {
+            const k=side<0?j:12-j,u=k/12;
+            const pressure=.12+.88*Math.sin(Math.PI*u)**.65;
+            const px=(u-.5)*m.l,py=side*m.b*.5*pressure;
+            if(side===-1&&j===0) ctx.moveTo(px,py);else ctx.lineTo(px,py);
+          }
+          ctx.closePath();
+        }
         ctx.fillStyle=m.color;ctx.fill();
         ctx.beginPath();ctx.moveTo(-m.l*.35,-m.b*.15);ctx.lineTo(m.l*.3,-m.b*.2);
         ctx.strokeStyle='rgba(255,255,255,.16)';ctx.lineWidth=Math.max(.5,m.b*.12);ctx.stroke();
@@ -41,8 +55,10 @@ export function drawDirectionalPaint(ctx, {bounds, palette, seed, count=1200, le
 
 // Two independently authored, font-free content shapes. No original emblem,
 // arrow, cypress, moon, manga symbol, wall or branded composition is retained.
-export function drawPaintExample(ctx, variant, seed=42) {
+export function drawPaintExample(ctx, variant, seed=42, {brush='polygon'}={}) {
   if(!['leaf','ribbon'].includes(variant)) throw new RangeError('unknown example');
+  if(!['polygon','taper'].includes(brush)) throw new RangeError('brush must be polygon or taper');
+  const style={fillStyle:ctx.fillStyle,strokeStyle:ctx.strokeStyle,lineWidth:ctx.lineWidth};
   ctx.save();
   try {
     ctx.fillStyle='#f4eddf';ctx.fillRect(0,0,640,480);
@@ -54,8 +70,8 @@ export function drawPaintExample(ctx, variant, seed=42) {
     }
     ctx.closePath();ctx.clip();
     ctx.fillStyle=variant==='leaf'?'#233f32':'#60333e';ctx.fillRect(0,0,640,480);
-    drawDirectionalPaint(ctx,{bounds:{x:40,y:40,width:560,height:400},seed,count:2300,length:variant==='leaf'?23:34,width:variant==='leaf'?6:8,
+    drawDirectionalPaint(ctx,{bounds:{x:40,y:40,width:560,height:400},seed,brush,count:2300,length:variant==='leaf'?23:34,width:variant==='leaf'?6:8,
       palette:variant==='leaf'?['#30553d','#527947','#9eac63','#c3cb8a']:['#824451','#b76764','#db9274','#f0c4a1'],
       angleAt:variant==='leaf'?(u,v)=>-.58+.7*(v-.5):(u,v)=>.8*Math.cos(u*Math.PI*2)});
-  } finally {ctx.restore()}
+  } finally {ctx.restore();Object.assign(ctx,style)}
 }
