@@ -15,16 +15,16 @@
 
 这些原文件各自说明适用、输入限制与例子。不能由形状相似推断语义等价，例如量程指针和完成比不是同一表达。需要更具体的组合，转[配方与候选](recipes.md)；需要完整内容/构图语境，转[作品与方法](works.md)。静态可用不证明动态、浏览器、响应式或用户接受。
 
-## 纸本编辑参考线索（待独立研究，不是作品或配方）
+## 纸本编辑参考线索与有限静态研究（不是作品或配方）
 
-以下五项是已观察首屏的外部来源线索，不等于五件完成复刻。这里只保存出处与研究问题；不分发上游截图、字体、品牌或代码，不从网站页脚推定媒体许可。首屏观察不覆盖全页、交互、窄屏或动效；任何后续实现均须独立核查内容与权利。
+以下五项保存来源、研究问题及后续有限静态研究的入口，不等于五件完成网页复刻；各自范围见下表和原文。不分发上游截图、字体、品牌或代码，不从网站页脚推定媒体许可。首屏观察不覆盖全页、交互、窄屏或动效；任何后续实现均须独立核查内容与权利。
 
 | 来源 | 值得核查的关系与已有反例 |
 |---|---|
-| [晨间简报](https://open-design.ai/showcase/morning-briefing-dashboard-design/) | 日期、摘要和优先事项的读序；示例计数不一致，不当真实待办。 |
-| [90天入职手册](https://open-design.ai/showcase/employee-onboarding-guide-design/) | 日、周与阶段三个时间尺度；样例年份/星期有矛盾，勾选外观不等于交互。 |
+| [晨间简报](https://open-design.ai/showcase/morning-briefing-dashboard-design/) | 已有顶部/中段固定画幅对照，仍有字形及行基线残差；读序与口径沿用[静态研究合同](../static-ui-reference-study.md)。示例计数/优先项关联不一致，未集成的投影 helper 不证明同步，不新增方法或积木。 |
+| [90天入职手册](https://open-design.ai/showcase/employee-onboarding-guide-design/) | 首屏静态对照补充[欢迎区与时间轨分工](../DESIGN-GUIDE.md#编辑式工作文档欢迎时间与引证各守职责)；周/阶段仍待视觉核查，样例日期/星期矛盾不推广。 |
 | [Kami纸本产品刊物](https://open-design.ai/showcase/editorial-product-website-design/) | 衬线正文、期号、章节边栏与局部批注；上游Kami by tw93，Community分发，产品数字不是已验能力。后续完整桌面静态研究补充[同家族长页迁移](../DESIGN-GUIDE.md#同家族长页迁移分区锚点差异侧栏与行内断行)，不代表网页验收。 |
-| [中文七卡编辑轮播](https://open-design.ai/showcase/ai-workflow-social-carousel-design/) | 短行、固定页码与色场的连续读序；静态七卡不证明swipe，效率数字无测量依据。 |
-| [Northwind决策规格书](https://open-design.ai/showcase/authentication-product-specification-design/) | 草稿、范围、证据和未决问题分工；表格标题与项数、基线时间窗需纠错，不是认证或合规证明。 |
+| [中文七卡编辑轮播](https://open-design.ai/showcase/ai-workflow-social-carousel-design/) | 仅首卡上下段静态对照，短行与固定边锚不另造方法；第2–7卡未实看，不能推定全套色场节奏或swipe，效率数字无测量依据。 |
+| [Northwind决策规格书](https://open-design.ai/showcase/authentication-product-specification-design/) | 顶部静态对照补充[论述与引证的不等宽分工](../DESIGN-GUIDE.md#编辑式工作文档欢迎时间与引证各守职责)；范围/指标帧缺匹配原图，后续章节不提升为独立视觉通过。不是认证或合规证明。 |
 
 先按任务选择一项深入查看，不默认五项全读或套用纸张外观。表面风格可由现有材质/字排合同辅助；日历、任务状态和语义表格仍需宿主实现，不能将候选映射写成已发生的积木调用。
