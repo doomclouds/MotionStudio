@@ -79,7 +79,7 @@
 
 ## 待审：静态通道标题与软光团编辑配方
 
-[static-effects-candidate](recipes/candidates/static-effects-candidate/README.md) 仅为隔离候选集成：Glitch / Liquid 两个局部配方，外置字体与输出，不增加14族/9配方，不新增portfolio条目。用户已对本组表达认可并要求沉淀提交；不等于适配器单项审美验收。技术测试不替代独审或真实复用；此链接是拟议增量，不表示已执行提交。
+[static-effects-candidate](recipes/candidates/static-effects-candidate/README.md) 仅为隔离候选集成：Glitch / Liquid 两个局部配方，外置字体与输出，不新增公共族、正式配方或portfolio条目；当前登记与配方声明分别以[catalog](catalog.json)及[配方原始manifest与只读查询](recipes/README.md)为准。用户已对本组表达认可并要求沉淀提交；不等于适配器单项审美验收。技术测试不替代独审或真实复用；此链接是拟议增量，不表示已执行提交。
 
 ## OpenDesign 第二组 · 选择性沉淀
 

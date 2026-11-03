@@ -24,6 +24,10 @@
 - [径向类别](../../../engine/design-elements/recipes/candidates/radial-node-candidate/README.md)、[语义面积](../../../engine/design-elements/recipes/candidates/xhs08/README.md)、[显式段与方形](../../../engine/design-elements/recipes/candidates/explicit-geometry-candidates/README.md)。
 - [字节场诊断](../../../engine/design-elements/recipes/candidates/byte-field-diagnostic-candidate/README.md)、[作者指定字节编辑](../../../engine/design-elements/recipes/candidates/authored-byte-edits-candidate/README.md)。
 
+## 建议、反证与下一步
+
+当需要把作者给定的建议与竞争解释、下一步测量和可逆行动一起呈现时，读[决策支持候选](../../../engine/design-elements/recipes/candidates/decision-support/README.md)的契约、例子和反例；它不判断建议是否正确，不是自动决策器。
+
 ## 时间、窗口与多视图关系
 
 当需要表达当前/选择状态、时间区间、共享游标或同一对象的不同采样视图时查这里；先区分静态证据模型与实际应用运行能力。
