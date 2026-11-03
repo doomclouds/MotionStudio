@@ -19,6 +19,7 @@
 
 当多个视图需要共同解释同一份数值、总量、类别或作者给定的编辑关系时查这里；先核模型语义与图形编码是否相符，而非只选好看的图形。
 
+- [固定指标条](../../../engine/design-elements/recipes/candidates/metric-strip/README.md)：未注册的源码候选；2–6 项整数计数或显式部分/总量，返回等宽布局，不绘制、不支持单位/小数/百分比。准确约束与实现见[源码](../../../engine/design-elements/recipes/candidates/metric-strip/metric-strip.mjs)，不是实时仪表板。
 - [指标板](../../../engine/design-elements/recipes/candidates/metric-board/README.md)、[流量账本](../../../engine/design-elements/recipes/candidates/flow-ledger-candidate/README.md)、[演示账本](../../../engine/design-elements/recipes/candidates/invoice-demo-ledger/README.md)。
 - [径向类别](../../../engine/design-elements/recipes/candidates/radial-node-candidate/README.md)、[语义面积](../../../engine/design-elements/recipes/candidates/xhs08/README.md)、[显式段与方形](../../../engine/design-elements/recipes/candidates/explicit-geometry-candidates/README.md)。
 - [字节场诊断](../../../engine/design-elements/recipes/candidates/byte-field-diagnostic-candidate/README.md)、[作者指定字节编辑](../../../engine/design-elements/recipes/candidates/authored-byte-edits-candidate/README.md)。
