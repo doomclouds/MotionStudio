@@ -105,3 +105,5 @@ brief/主张→参考发现筛选与实看跨例蒸馏（小修按影响缩减�
 研究优秀作品时先核整片承诺与信息/证据结构，再用[机制研究卡](references/reference-mechanism.md)研究关键局部。不把逆向拆解称原稿，不把参考数量或技术短样当完整片通过。
 
 完整成片交付固定PNG总览＋HTML报告，并附简短经验沉淀总结；样片不要求报告。成片报告遵循版本化[交付报告规范](references/audiovisual-report-standard.md)，结构有效不等于影片通过；复用[审核校准经验](references/review-calibration-lessons.md)时保留适用边界，不把候选配方当已实现能力。
+
+需交付可编辑源码、接续制作或可迁移工程时，执行 [三导演可重建交接](references/rebuild-handoff.md)：给接收方完整命令、输入/版本校验、明确根绑定与例外，实际在新项目根重跑后才报告已测恢复范围；普通成片交付不强制附工程包。

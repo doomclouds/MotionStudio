@@ -12,7 +12,8 @@ layout = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(layout)
 PAGES = ['skills/sound-director/SKILL.md', 'skills/sound-director/VALIDATION.md',
          'skills/motion-film-director/references/sound-direction.md',
-         'skills/motion-film-director/references/voice-direction.md']
+         'skills/motion-film-director/references/voice-direction.md',
+         'skills/motion-film-director/references/rebuild-handoff.md']
 
 class SoundDirectorTests(unittest.TestCase):
     def test_repository_routes(self):
@@ -69,6 +70,17 @@ class SoundDirectorTests(unittest.TestCase):
             self.assertIn('package-lock.json', text)
             self.assertNotIn('没有 lockfile', text)
             self.assertNotIn('npm install --ignore-scripts', text)
+
+    def test_rebuild_handoff_has_all_director_consumers(self):
+        for name in ['skills/motion-film-director/SKILL.md',
+                     'skills/ui-design-director/references/handoff-contract.md',
+                     'skills/motion-film-director/references/sound-direction.md',
+                     'skills/sound-director/VALIDATION.md']:
+            self.assertIn('rebuild-handoff.md', (ROOT / name).read_text())
+        text = (ROOT / PAGES[4]).read_text()
+        for required in ['完整命令', '起始 cwd', '版本/hash', '条件可重建',
+                         'NOT_RUN', '新的授权项目根', '不支持 `..`']:
+            self.assertIn(required, text)
 
     def test_no_duplicate_runtime_or_media(self):
         self.assertEqual({p.name for p in (ROOT / 'skills/sound-director').iterdir()},
