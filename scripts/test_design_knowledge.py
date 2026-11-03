@@ -7,6 +7,28 @@ import design_knowledge as dk
 
 
 class DesignKnowledgeTests(unittest.TestCase):
+    def test_accumulation_variants_and_protected_regions(self):
+        guide = (dk.ROOT / 'reference-to-composition.md').read_text()
+        for term in ('累积回返', '变体载体', '预设缩放', '全帧保护区'):
+            self.assertEqual([e['id'] for e in dk.find(dk.catalog(), term)],
+                             ['reference-to-composition'])
+        for boundary in ('compilePolyline/samplePath', 'compileCubicPath/sampleCubicPath',
+                         '仅扰动位置不能独立证明切线贡献', '后段不计画面职责',
+                         '预编排同钟不是返回事件检测', '显示尺寸是否包含选框padding',
+                         '不代表控件返回值驱动主体', '纯静态产物不是静音影片',
+                         '跨片复用同一原创合成配方'):
+            self.assertIn(boundary, guide)
+        motion = (dk.ROOT / 'library/motion.md').read_text()
+        expression = (dk.ROOT / 'library/expression.md').read_text()
+        self.assertEqual(motion.count('#累积回返把完成次数与呈现阶段分开'), 1)
+        self.assertEqual(expression.count('#变体与载体用共享依据核对显示'), 1)
+        qa = (dk.ROOT.parents[1] / 'skills/motion-film-director/references/qa.md').read_text()
+        for boundary in ('每一原生帧', '旧版作为会失败的负对照', '保护区外', '有损编码另看关键邻帧'):
+            self.assertIn(boundary, qa)
+        for private_marker in ('-private-', '/workspace/', 'file://'):
+            self.assertNotIn(private_marker, guide)
+            self.assertNotIn(private_marker, qa)
+
     def test_midstage_identity_and_shared_scroll_boundaries(self):
         guide = (dk.ROOT / 'reference-to-composition.md').read_text()
         for term in ('中段身份', '同页滚动'):

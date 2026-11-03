@@ -55,6 +55,14 @@ class DesignLayoutTests(unittest.TestCase):
             static=(target/'knowledge/design/static-ui-reference-study.md').read_text()
             self.assertIn('../../LICENSES/baoyu-design-MIT.txt',static)
             self.assertTrue((target/'LICENSES/baoyu-design-MIT.txt').is_file())
+    def test_protected_region_guide_survives_package_projection(self):
+        rel = 'knowledge/design/reference-to-composition.md'
+        projected = layout.source_bytes(ROOT, rel).decode()
+        self.assertIn('../../references/qa.md#保护区检查覆盖全部相关帧', projected)
+        qa = layout.source_bytes(ROOT, 'skills/motion-film-director/references/qa.md').decode()
+        self.assertIn('旧版作为会失败的负对照', qa)
+        self.assertNotIn('/workspace/', projected)
+
     def test_fixed_historical_provenance_bytes_unchanged(self):
         self.assertEqual(layout.source_bytes(ROOT,'engine/design-elements/catalog.json'),(ROOT/'engine/design-elements/catalog.json').read_bytes())
         original=(ROOT/'knowledge/design/cases/ui-003-print-poster.md').read_text()
