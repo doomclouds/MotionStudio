@@ -15,6 +15,8 @@
 - [富文本段落](../../../engine/design-elements/recipes/candidates/rich-paragraph-candidate/README.md)、[墨迹与注记区](../../../engine/design-elements/recipes/candidates/ink-bay-candidate/README.md)、[字形证据](../../../engine/design-elements/recipes/candidates/glyph-evidence-candidate/README.md)。
 - [空间字符](../../../engine/design-elements/recipes/candidates/spatial-character-snapshot-candidate/README.md)、[评审片段](../../../engine/design-elements/recipes/candidates/review-tiles-candidate/README.md)、[静态标题效果](../../../engine/design-elements/recipes/candidates/static-effects-candidate/README.md)。
 
+- 六条短消息怎样分主次而不暗示数量比例？读[编辑式信息组候选](../../../engine/design-elements/recipes/candidates/editorial-feature-group/README.md)：固定角色与作者分行，不自动换行或响应式；需用实际字体重新规划并实看。
+
 ## 数据、份额与同源证据
 
 当多个视图需要共同解释同一份数值、总量、类别或作者给定的编辑关系时查这里；先核模型语义与图形编码是否相符，而非只选好看的图形。
@@ -23,6 +25,10 @@
 - [指标板](../../../engine/design-elements/recipes/candidates/metric-board/README.md)、[流量账本](../../../engine/design-elements/recipes/candidates/flow-ledger-candidate/README.md)、[演示账本](../../../engine/design-elements/recipes/candidates/invoice-demo-ledger/README.md)。
 - [径向类别](../../../engine/design-elements/recipes/candidates/radial-node-candidate/README.md)、[语义面积](../../../engine/design-elements/recipes/candidates/xhs08/README.md)、[显式段与方形](../../../engine/design-elements/recipes/candidates/explicit-geometry-candidates/README.md)。
 - [字节场诊断](../../../engine/design-elements/recipes/candidates/byte-field-diagnostic-candidate/README.md)、[作者指定字节编辑](../../../engine/design-elements/recipes/candidates/authored-byte-edits-candidate/README.md)。
+
+## 显式依赖与对象关系
+
+- 已知对象怎样表达有向依赖？读[作者指定依赖图候选](../../../engine/design-elements/recipes/candidates/authored-dependency-map/README.md)：稳定ID、作者坐标与静态无环图，不自动布局或避障；合法输入仍须实看连线与文字，不证明流程实际运行。
 
 ## 建议、反证与下一步
 

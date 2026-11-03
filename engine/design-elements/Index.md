@@ -140,3 +140,10 @@ See [bounded drape and radial categories](recipes/batches/eighth-static-candidat
 ## Metric strip · fixed snapshot candidate
 
 [Count / explicit part-whole strip](recipes/candidates/metric-strip/README.md) returns a bounded horizontal layout and display fields without drawing or live-data claims. Caller-authored delta meaning is not inferred from its sign; font fit remains the consumer's responsibility. Independent Apache-2.0 model inspired by OpenDesign, with no original screenshots, fonts or connector. Not a formal family or accepted work.
+
+## 编辑主次与显式依赖 · 受限候选
+
+- [编辑式信息组](recipes/candidates/editorial-feature-group/README.md)：六条短消息的固定角色与主次关系，不编码数量比例；作者分行、实际字体规划，不自动换行或响应式。
+- [作者指定依赖图](recipes/candidates/authored-dependency-map/README.md)：稳定 ID、作者坐标与静态无环依赖，不自动布局或避障，也不证明流程运行。
+
+两项均为源码候选，不增加公共族、正式配方或已接受作品；实际使用须读取原契约、许可并检查输出。
