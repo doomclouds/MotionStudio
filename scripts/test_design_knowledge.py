@@ -7,6 +7,22 @@ import design_knowledge as dk
 
 
 class DesignKnowledgeTests(unittest.TestCase):
+    def test_invitation_revision_method_navigation(self):
+        for term in ('字牌合列', '主名伴语', '负路成景', '首字带句', '拒案换件'):
+            matches = dk.find(dk.catalog(), term)
+            self.assertEqual([e['id'] for e in matches], ['reference-to-composition'])
+            self.assertEqual(matches[0]['type'], 'decision-guide')
+        for shelf in ('expression.md', 'motion.md'):
+            rows = [line for line in (dk.ROOT / 'library' / shelf).read_text().splitlines()
+                    if '#邀请与修订让组合关系承担有限主张' in line]
+            self.assertEqual(len(rows), 1)
+            self.assertTrue(all(word in rows[0] for word in
+                ('静态imagegen', '脚本非自动规划', '源片段不代表整案音轨', '未常速', '未听审', '不是新积木')))
+        guide = (dk.ROOT / 'reference-to-composition.md').read_text()
+        for boundary in ('邀请词没有重复品牌身份', '各字按顶部对齐可能把句号抬成近似撇号',
+                         '时间顺序满足不代表运行时验证', '只称指定中央入口受阻', '该静态结果没有声音'):
+            self.assertIn(boundary, guide)
+
     def test_reveal_continuity_method_navigation(self):
         for term in ('轨迹成标', '同纹再框', '颗粒撤出', '同形换面', '移壳见架'):
             matches = dk.find(dk.catalog(), term)

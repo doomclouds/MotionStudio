@@ -110,7 +110,7 @@
     },
     {
       "id": "reference-to-composition",
-      "version": 14,
+      "version": 15,
       "category": "workflow",
       "title": "参考发现蒸馏与有意图组合",
       "tags": [
@@ -185,7 +185,12 @@
         "同纹再框",
         "颗粒撤出",
         "同形换面",
-        "移壳见架"
+        "移壳见架",
+        "字牌合列",
+        "主名伴语",
+        "负路成景",
+        "首字带句",
+        "拒案换件"
       ],
       "path": "reference-to-composition.md",
       "type": "decision-guide"
