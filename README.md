@@ -187,6 +187,8 @@ python3 tools/reference-benchmark/event_intervals.py evaluate --help
 
 ### 固定报告模板 · 先看总览，再查证据
 
+先按[检测工具的辅助职责](knowledge/design/reference-to-composition.md#检测工具的辅助职责)确定问题与覆盖。可比条件下，已独立确认的高吻合通常伴随相关测量的小差异；这不是必然定律。**小差异不能反推高吻合、内容正确或好看。** 曲线/频谱接近仅说明已测特征接近，仍须回到真实画面、完整动作与实际声音；短片须显式选窗，不能把被跳过的默认窗口当作检查完成。
+
 报告沿用同一套[版本化呈现规范](tools/reference-benchmark/REPORT_TEMPLATE.md)：暗色背景、青色参考 / 橙色候选、共同时间轴与数值尺度；方法、缺失项与审查状态必须显式保留。用户报告固定为 `output/review/overview.png` 与 `output/review/report.html`，不默认增加 PDF 或资源包。
 
 <a href="docs/assets/report-overview.png"><img src="docs/assets/report-overview.png" width="100%" alt="MotionStudio 统一报告示例：参考与候选的缩略图、视觉曲线、频谱、波形、变化热图及审查边界。当前是待审候选，不是验收通过。" /></a>

@@ -26,6 +26,25 @@ plan 只读本地文件并输出 JSON，不创建报告、不跑 FFmpeg、不联
 
 默认 review/run 不自动运行 sidecar。其输出 **DIAGNOSTIC_NOT_APPROVAL**，`NO_EVENT_OBSERVATIONS` / `PARTIAL_EVENT_EVIDENCE` 必须原样保留。退出0、编辑数0、相同时间或 hash 都不是艺术通过，也不能替代正常速连续观看、真实合听和用户接受。
 
+## 仓库外私有项目的当前路线
+
+`review_film.py plan/run/compare` 当前用仓库内 Git 文件作 source snapshot；`run/compare` 的输出还须处于仓库内已忽略目录。这些限制用于 Git 快照与防泄露，不应放宽或绕过。它们不是外置私有项目的通用 wrapper。不要为调用它们把私有源码、影片、参考或报告搬入公开仓库，也不要修改 ignore 绕过边界。
+
+外置项目使用已支持本地外部路径的底层入口，工作目录与输出仍留在已授权私有根下；以下从实际源码仓库根执行（替换示例路径，输出使用新目录）：
+
+```sh
+python3 skills/motion-film-director/scripts/motion-check/motion_check.py /private/project/film.mp4 --out /private/project/check-new
+python3 tools/reference-benchmark/benchmark.py --reference /private/reference.mp4 --candidate /private/project/film.mp4 --out /private/project/compare-new --window 0:1 --window 3:5 --window 7:9 --keyframe '0:开场' --keyframe '4:关键动作' --keyframe '8:结尾'
+```
+
+第二条仅演示9秒参考任务如何显式选择稀疏关键窗；留出未导出的间隔，不将整片拆成连续短窗变相打包。其他片长/动作重新选择，不机械复制；短窗用于必要诊断，不代表整片观看或分发授权。核实际导出覆盖；没有参考不强求双片诊断。事件对应/区间仍按各自合同显式传媒体、观察标注和证据根，不由 benchmark 自动识别。
+
+在项目现有记录中保留真实源码/依赖、媒体、工具版本和产物 hash、命令、检查范围及未验项；原生渲染报告可绑定生成身份，事后源码快照不能证明由其生成。该路线是分步技术诊断，不等价于完整包装审查，不生成或冒充 `review_film.py` 的 wrapper receipt，也不免除最终交付门。已有完整交付入口仍按其自己的 packet/project-root 合同执行；缺真实观看、听审或同步证据保持候选。
+
+`audio_review.py` / `audiovisual_review.py` 的可选模型入口可能上传媒体并收费，须按各自合同取得独立授权；本分步路线不授权或自动调用它们。
+
+便携包不包含完整数值 benchmark；只有可达的底层工具才能执行，缺依赖明确报告，不虚称已运行。先读[共同辅助判断边界](../../../knowledge/design/reference-to-composition.md#检测工具的辅助职责)，把测量、解释与内容判断分列。
+
 ## 2. 跑低成本本地技术层
 
 ```bash
