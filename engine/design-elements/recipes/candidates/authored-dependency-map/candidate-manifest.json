@@ -1,0 +1,12 @@
+{
+  "id": "authored-dependency-map-candidate",
+  "version": 1,
+  "status": "source-only-candidate-pending-independent-review",
+  "entry": "index.mjs",
+  "examples": "examples.mjs",
+  "test": "test.mjs",
+  "contract": "CONTRACT.md",
+  "registered_family": false,
+  "scope": "caller-positioned static directed acyclic graph; no automatic layout or routing",
+  "resources": "external caller-provided Canvas and licensed registered font; no bundled binary resources"
+}
