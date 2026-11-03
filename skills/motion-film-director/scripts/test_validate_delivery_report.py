@@ -87,18 +87,33 @@ class ReportTests(unittest.TestCase):
         self.assertTrue(validator.validate_report(data))
 
     def test_unheard_technical_draft_is_allowed_but_cannot_be_promoted(self):
-        # Synthetic declarations only: protects the existing gate, not perception.
-        for status in ('NOT_LISTENED', 'NOT_RUN', 'BLOCKED', 'SKIPPED_NOT_CONFIGURED'):
-            with self.subTest(status=status):
+        # Keep every evidence field valid so only the review status can reject.
+        # Synthetic declarations test policy, never actual perception.
+        for kind in ('visual', 'audio', 'av_sync'):
+            for status in ('NOT_LISTENED', 'NOT_RUN', 'BLOCKED', 'SKIPPED_NOT_CONFIGURED'):
+                with self.subTest(kind=kind, status=status):
+                    data = fixture()
+                    self.assertEqual(validator.validate_report(data), [])
+                    data['reviews'][kind]['status'] = status
+                    self.assertEqual(validator.validate_report(data),
+                                     [kind + ': not passed in ready report'])
+                    data['status'] = 'review_candidate'
+                    data['blockers'] = ['Synthetic review remains unavailable']
+                    self.assertEqual(validator.validate_report(data), [])
+
+    def test_review_blocker_alone_prevents_ready(self):
+        for kind in ('visual', 'audio', 'av_sync'):
+            with self.subTest(kind=kind):
                 data = fixture()
-                data['status'] = 'review_candidate'
-                data['blockers'] = ['Actual output listening and AV review unavailable']
-                for kind in ('audio', 'av_sync'):
-                    data['reviews'][kind] = {'status': status, 'blockers': ['Not heard']}
-                self.assertEqual(validator.validate_report(data), [])
-                data['status'] = 'ready_for_owner_review'
-                data['blockers'] = []
-                self.assertTrue(validator.validate_report(data))
+                data['reviews'][kind]['blockers'] = ['Synthetic unresolved review blocker']
+                self.assertEqual(validator.validate_report(data),
+                                 [kind + ': not passed in ready report'])
+
+    def test_report_blocker_alone_prevents_ready(self):
+        data = fixture()
+        data['blockers'] = ['Synthetic unresolved report blocker']
+        self.assertEqual(validator.validate_report(data),
+                         ['ready report cannot contain blockers'])
 
     def test_no_approved_status_or_fake_authentication(self):
         for status in ('approved_final', True, 'passed'):
