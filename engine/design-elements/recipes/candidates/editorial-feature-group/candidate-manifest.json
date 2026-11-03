@@ -1,0 +1,13 @@
+{
+  "name": "editorial-feature-group",
+  "status": "private-review-candidate",
+  "registered_families_added": 0,
+  "formal_recipes_added": 0,
+  "entry": "index.mjs",
+  "examples": "examples.mjs",
+  "tests": "test.mjs",
+  "scope": "static six-cell authored editorial layout, explicit caller Canvas and font",
+  "resources_bundled": false,
+  "automatic_responsiveness": false,
+  "user_aesthetic_acceptance": false
+}

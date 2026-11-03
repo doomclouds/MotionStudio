@@ -1,0 +1,17 @@
+# Bounded contract
+
+`geometry(model)` accepts finite width800–1800, topHeight440–900, bottomHeight170–400, gap8–40, inset20–60, split.4–.6. Defaults are in source. Cells narrower than100 or shorter than70 after padding reject. Geometry alone does not promise content fits.
+
+`planGroup(ctx,model,{fontFamily})` requires exactly six `{label,title,body}` entries, `excerpt` lines and one authored `stat` string. Lines are nonempty plain strings, max1000 characters, without embedded newline/tab; arrays max24 lines. These are authored lines, not wrapped paragraphs. Unsupported content rejects; nothing truncates or scales. Numeric statements are text provided by the caller, not verified or computed facts.
+
+Actual Canvas glyph metrics include advance, overhangs, ascent and descent. Each role uses its real content rectangle; body bottom is derived from the excerpt/stat reservation or cell bottom. The excerpt reserves132px with16px padding; the stat reserves50px. Styles/line heights are fixed. Maximum ascent/descent across a role preserves a shared line baseline. Nonfinite metrics, line totals or glyph bounds exceeding available space reject before any host painting. Fonts/resources must already be registered; missing-glyph substitution is a caller validation concern.
+
+The returned plan is deeply frozen and accepted by `drawGroup` only if issued by this module instance; serialized copies are review receipts, not runnable plans. Inputs remain unchanged. Plans record all role slots and measured ink. Font/backend changes after planning invalidate the caller's fit assumption; replan and visually inspect.
+
+`drawGroup` takes an explicit compatible `canvasApi`, nonnegative finite x/y <=10000, and optional opaque six-digit RGB palette values. It paints a new isolated transparent layer, then composites once. Planning and palette/argument rejection do not paint the host. Caller Canvas state is saved/restored. Existing caller transform, clipping and alpha apply to final placement intentionally. Allocation/native failures and the final host drawImage are not transactional filesystem or host-surface guarantees. Use a trusted same-process Canvas implementation; this is not an adversarial sandbox.
+
+No I/O, registration, automatic breakpoints, interactions, animation, live service state, accessibility certification or arbitrary script support. The tests cover finite explicit cases and Native integration supplied by the caller, not universal font safety.
+
+## Text state normalization
+
+Measurement and isolated-layer painting share the same explicit text state: alphabetic baseline, left alignment, left-to-right direction, zero letter/word spacing, no kerning, normal stretch/caps/variation settings, automatic text rendering and English language. The examples are left-to-right editorial text, not a bidirectional layout implementation. Each role sets its font before applying these properties. Supported properties are set consistently on both contexts; a Canvas implementation must provide compatible metrics and painting. The original measurement context's complete supported text state is captured and explicitly restored after success or failure, in addition to Canvas save/restore. Existing host text state does not influence the final drawImage. Nondefault baseline/alignment/direction regressions compare the full plan, caller state and actual resulting raster against canonical state.
