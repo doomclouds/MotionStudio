@@ -68,7 +68,13 @@ test('Native Canvas independent painter oracle: final alpha and black/white disp
 test('restricted candidate remains discoverable without barrel or catalog promotion',()=>{
  const read=p=>readFileSync(new URL(p,import.meta.url),'utf8');
  assert(read('../README.md').includes('docs/single-occlusion-candidate.md'));
- assert(read('../../../knowledge/design/library/recipes.md').includes('engine/motion-elements/docs/single-occlusion-candidate.md'));
+ const recipesURL=new URL('../../../knowledge/design/library/recipes.md',import.meta.url);
+ const links=[...readFileSync(recipesURL,'utf8').matchAll(/\]\(([^)]+single-occlusion-candidate\.md)\)/g)];
+ // Packaging relocates engine/ to runtime/. Verify the resolved destination,
+ // not one checkout-specific spelling, without relaxing candidate visibility.
+ const expected=new URL('../docs/single-occlusion-candidate.md',import.meta.url);
+ assert(links.some(([,target])=>new URL(target,recipesURL).href===expected.href));
+ assert(readFileSync(expected,'utf8').length>0);
  assert(!read('../lib/index.mjs').includes('single-occlusion'));
  assert(!read('../catalog.json').includes('single-occlusion'));
 });
