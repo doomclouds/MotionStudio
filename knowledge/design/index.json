@@ -110,7 +110,7 @@
     },
     {
       "id": "reference-to-composition",
-      "version": 13,
+      "version": 14,
       "category": "workflow",
       "title": "参考发现蒸馏与有意图组合",
       "tags": [
@@ -180,7 +180,12 @@
         "多载体同标",
         "跨面图场",
         "图形呼应",
-        "经过后响应"
+        "经过后响应",
+        "轨迹成标",
+        "同纹再框",
+        "颗粒撤出",
+        "同形换面",
+        "移壳见架"
       ],
       "path": "reference-to-composition.md",
       "type": "decision-guide"

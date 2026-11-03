@@ -7,6 +7,22 @@ import design_knowledge as dk
 
 
 class DesignKnowledgeTests(unittest.TestCase):
+    def test_reveal_continuity_method_navigation(self):
+        for term in ('轨迹成标', '同纹再框', '颗粒撤出', '同形换面', '移壳见架'):
+            matches = dk.find(dk.catalog(), term)
+            self.assertEqual([e['id'] for e in matches], ['reference-to-composition'])
+            self.assertEqual(matches[0]['type'], 'decision-guide')
+        for shelf in ('expression.md', 'motion.md'):
+            rows = [line for line in (dk.ROOT / 'library' / shelf).read_text().splitlines()
+                    if '#显露与延续确认变化前后保留了什么' in line]
+            self.assertEqual(len(rows), 1)
+            self.assertTrue(all(word in rows[0] for word in
+                ('组合消融非单变量', '二维示意非物理', '源有音但未听审', '原创静音', '未常速', '不是新积木')))
+        guide = (dk.ROOT / 'reference-to-composition.md').read_text()
+        for boundary in ('标题独立淡入', '独立绘制的粉末擦痕不是工具实际画出的结果',
+                         '去掉颗粒层', '不是最终院线镜头', '不等于完整空间桁架'):
+            self.assertIn(boundary, guide)
+
     def test_brand_carrier_method_navigation(self):
         for term in ('纸面隐喻', '多载体同标', '跨面图场', '图形呼应', '经过后响应'):
             matches = dk.find(dk.catalog(), term)
