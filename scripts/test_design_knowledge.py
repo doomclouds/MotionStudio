@@ -59,6 +59,23 @@ class DesignKnowledgeTests(unittest.TestCase):
             self.assertEqual(len(rows), 1)
             self.assertTrue(all(word in rows[0] for word in limits))
 
+    def test_spatial_narrative_reuses_the_shared_guide(self):
+        for term in ('空间叙事', '局部遮护', '阻断补位', '地点留读', '尺度揭示'):
+            matches = dk.find(dk.catalog(), term)
+            self.assertEqual([e['id'] for e in matches], ['reference-to-composition'])
+            self.assertEqual(matches[0]['path'], 'reference-to-composition.md')
+        anchor = '空间与因果叙事让环境变化兑现主张'
+        for shelf in ('expression.md', 'motion.md'):
+            text = (dk.ROOT / 'library' / shelf).read_text()
+            self.assertIn('../reference-to-composition.md#' + anchor, text)
+        guide = (dk.ROOT / 'reference-to-composition.md').read_text()
+        self.assertIn('## 空间与因果叙事：让环境变化兑现主张', guide)
+        for title in ('观察者与环境回应', '局部遮护必须在环境仍继续时成立',
+                      '先看见阻断，再用同一规则兑现变化', '地点承载文字，留下经过而非留住旧字幕',
+                      '隐去上下文后，以同一物件揭示尺度'):
+            self.assertIn('### ' + title, guide)
+        self.assertIn('没有音轨是制作选择，不是声音已经听过', guide)
+
     def test_guides_do_not_enter_evidence_catalog(self):
         base = Path(__file__).resolve().parents[1]
         skill = base / 'skills/motion-film-director' if (base / 'skills/motion-film-director').is_dir() else base

@@ -4,6 +4,7 @@
 
 | 镜头/时间问题 | 原始指南入口 |
 |---|---|
+| 拉远、旅行与环境回应怎样带来新信息，而非只换画面？ | [空间与因果叙事](../reference-to-composition.md#空间与因果叙事让环境变化兑现主张)：到达触发、地点留读、同物件尺度揭示；原创有限时序，静态源未证明原作动效，常速与声音另验。 |
 | 时间、对象状态与核心调用怎么组织 | [核心API与时间](../../../engine/motion-elements/docs/guides/core-api-and-time.md)、[Canvas组合](../../../engine/motion-elements/docs/guides/canvas-composition.md) |
 | 进场后落定、局部展开，保留可读焦点 | [落定与局部揭示](../../../engine/motion-elements/docs/guides/settle-and-local-reveal.md)、[揭示与转场](../../../engine/motion-elements/docs/guides/reveal-transitions.md) |
 | 多卡信息怎样接力，而不是同时争抢 | [焦点交接](../../../engine/motion-elements/docs/guides/focus-handoff.md)、[布局交接](../../../engine/motion-elements/docs/staged-layout-handoff.md) |

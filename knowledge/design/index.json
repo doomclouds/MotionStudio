@@ -110,7 +110,7 @@
     },
     {
       "id": "reference-to-composition",
-      "version": 1,
+      "version": 2,
       "category": "workflow",
       "title": "参考发现蒸馏与有意图组合",
       "tags": [
@@ -122,7 +122,13 @@
         "组合",
         "声音",
         "真实调用",
-        "对照"
+        "对照",
+        "空间叙事",
+        "环境回应",
+        "局部遮护",
+        "阻断补位",
+        "地点留读",
+        "尺度揭示"
       ],
       "path": "reference-to-composition.md",
       "type": "decision-guide"
