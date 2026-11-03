@@ -110,7 +110,7 @@
     },
     {
       "id": "reference-to-composition",
-      "version": 18,
+      "version": 19,
       "category": "workflow",
       "title": "参考发现蒸馏与有意图组合",
       "tags": [
@@ -197,7 +197,10 @@
         "转侧见层",
         "近递姿态",
         "中段身份",
-        "同页滚动"
+        "同页滚动",
+        "连续遮挡",
+        "独立读窗",
+        "静帧陈列"
       ],
       "path": "reference-to-composition.md",
       "type": "decision-guide"

@@ -23,6 +23,21 @@ class DesignKnowledgeTests(unittest.TestCase):
         for private_marker in ('-private-', '/workspace/', 'file://'):
             self.assertNotIn(private_marker, guide)
 
+    def test_action_visibility_and_static_staging_scope(self):
+        guide = (dk.ROOT / 'reference-to-composition.md').read_text()
+        for term in ('连续遮挡', '独立读窗', '静帧陈列'):
+            self.assertEqual([e['id'] for e in dk.find(dk.catalog(), term)],
+                             ['reference-to-composition'])
+        for boundary in ('调用总数不是去重资产数或利用率', '明确零代码复用',
+                         '负宽绘制可能留下反向细条', '首次可见时刻',
+                         '纯静态', '不是单变量尺度消融', '合成声未听审'):
+            self.assertIn(boundary, guide)
+        shelf = (dk.ROOT / 'library/motion.md').read_text()
+        for anchor in ('动作后果靠连续遮挡和独立读窗兑现', '静帧材料与陈列只迁移已看见的关系'):
+            self.assertEqual(shelf.count('#' + anchor), 1)
+        for marker in ('-private-', '/workspace/', 'file://'):
+            self.assertNotIn(marker, guide)
+
     def test_reuse_consumption_scope(self):
         guide = (dk.ROOT / 'reference-to-composition.md').read_text()
         section = guide.split('## 4. 实现与质量对照闭环', 1)[1].split('## 逐轮指挥与反馈回流', 1)[0]
