@@ -110,7 +110,7 @@
     },
     {
       "id": "reference-to-composition",
-      "version": 6,
+      "version": 7,
       "category": "workflow",
       "title": "参考发现蒸馏与有意图组合",
       "tags": [
@@ -145,7 +145,12 @@
         "首字归位",
         "同线异材",
         "分片用途",
-        "定锚换境"
+        "定锚换境",
+        "行色记忆",
+        "载体读窗",
+        "环境呼应",
+        "源线可见",
+        "成员相位"
       ],
       "path": "reference-to-composition.md",
       "type": "decision-guide"

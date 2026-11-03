@@ -7,6 +7,21 @@ import design_knowledge as dk
 
 
 class DesignKnowledgeTests(unittest.TestCase):
+    def test_carrier_field_method_navigation(self):
+        for term in ('行色记忆', '载体读窗', '环境呼应', '源线可见', '成员相位'):
+            matches = dk.find(dk.catalog(), term)
+            self.assertEqual([e['id'] for e in matches], ['reference-to-composition'])
+            self.assertEqual(matches[0]['type'], 'decision-guide')
+        for shelf in ('expression.md', 'motion.md'):
+            text = (dk.ROOT / 'library' / shelf).read_text()
+            rows = [x for x in text.splitlines() if '#载体与场让共同依据决定可见变化' in x]
+            self.assertEqual(len(rows), 1)
+            self.assertTrue(all(x in rows[0] for x in ('静音', '未常速', '未听审', '不是新积木')))
+        guide = (dk.ROOT / 'reference-to-composition.md').read_text()
+        self.assertIn('旧来源动态补证，不计新来源', guide)
+        self.assertIn('不是同一几何输入', guide)
+        self.assertIn('二维均匀源线长度的可见比例', guide)
+
     def test_bounded_brand_identity_navigation(self):
         for term in ('字内重建', '首字归位', '同线异材', '分片用途', '定锚换境'):
             matches = dk.find(dk.catalog(), term)
