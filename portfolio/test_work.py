@@ -23,6 +23,9 @@ class WorkContract(unittest.TestCase):
   self.assertEqual(read(PORTFOLIO/'index.json'),data);self.assertEqual((PORTFOLIO/'INDEX.md').read_text(),work.index_markdown(data));self.assertEqual((ROOT/'engine/design-elements/CASE-COVERAGE.md').read_text(),work.coverage_markdown(data))
   self.assertEqual(len(work.query(PORTFOLIO,ROOT,kind='video')),2);self.assertEqual(work.query(PORTFOLIO,ROOT,text='[not-a-regex.*]'),[])
   self.assertTrue(all(r['visual']=='NOT_RUN' for r in data['works'] if r['lifecycle']=='candidate'))
+ def test_video_semantic_navigation_queries(self):
+  for term,expected in [('日历','tessel'),('日程重排','tessel'),('像素','favorite52'),('闯关','favorite52')]:
+   self.assertIn(expected,{row['id'] for row in work.query(PORTFOLIO,ROOT,text=term,kind='video')})
  def test_external_references_have_no_reachability_field_or_gate(self):
   for _,d in work.load_all(PORTFOLIO):
    self.assertEqual(d['evidence'],{'reviewArtifacts':{'status':'NOT_INCLUDED'}});self.assertTrue(all('availability' not in r for r in d['resources']))
