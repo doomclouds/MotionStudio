@@ -104,3 +104,7 @@ The [timing/glyph evidence index](recipes/batches/seventh-static-candidates/Inde
 ## Eighth source-only candidates
 
 [Bounded drape material and radial category composition](recipes/batches/eighth-static-candidates/Index.md) retain their own contracts, design guidance, examples, source notices and tests. No formal family/recipe count or registry is changed; external Native/font preparation and static limits apply.
+
+## Same-source briefing composition example
+
+[Linked briefing](examples/linked-briefing.md) combines existing material surfaces and metric-strip with caller-owned stable record IDs. Its two original content sets and executable Native checks demonstrate explicit snapshot counts, priority/detail correspondence, bounded geometry and overflow rejection. No new family/recipe/portfolio count, media, font, automatic synchronization or browser behavior is implied.
