@@ -56,3 +56,5 @@
 | 重复短反馈、语音轮次边界和同家族声音怎样协作 | [Samsung One UI：Sound](https://developer.samsung.com/one-ui/sound-and-haptic/sound.html)，Clear and immediate auditory feedback / A harmoniously articulated hearing experience / Sound identity | 区分输入与删除、开始与结束；放入全段后是否产生疲劳或语义混淆 |
 
 来源文字核对：2026-11-03；未下载或实际听审其中音频。作者的设计目标不是本项目效果证据；有新任务时重新核来源、适用与授权，不把此处导航计作已调用素材。
+
+[配色与配器的共同段落](../design/studies/indexed-story-systems.md#用共同段落组织配色和配器)研究逐层退出、确认音与主题的关系，以及声部静默和总混音静默的区别；它是方法而非新增音频资产或听审结论。

@@ -244,3 +244,7 @@ Independent MIT implementation/helpers retain their notices; the8B design-origin
 ## Three spot-ink source candidate
 
 [spot-ink-print-candidate](engine/design-elements/recipes/candidates/spot-ink-print-candidate/README.md) retains one credited MIT-derived compositor, validated render-plan interface, original synthetic fixtures and bounded diagnostic tools as text only. LemoLab’s full MIT notice and fixed source provenance remain authoritative. No registered family, foundation, portfolio entry or media exception is added. Upstream oracle, film sources, fonts, original/rebuilt sound, rendered media, installed dependencies and production evidence remain outside this repository. Real-browser execution and artistic acceptance are not established by the offline shader checks.
+
+## Protected palette model candidate
+
+The [protected-palette-model-candidate](engine/design-elements/recipes/candidates/protected-palette-model-candidate/README.md) contains six text files: two bounded helpers, synthetic tests, contract and complete MIT notices. It prepares models for the existing indexed-pixel renderer without changing its dimensions or palette contract. No source story, character, pixel font, palette artwork, soundtrack, upstream test oracle, production evidence or generated media is included. No family, foundation, registry, portfolio or media exception is added.
