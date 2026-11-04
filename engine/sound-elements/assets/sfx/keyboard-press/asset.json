@@ -1,0 +1,56 @@
+{
+  "schema": "sound-asset/1",
+  "id": "keyboard-press",
+  "version": 1,
+  "title": "短键按压",
+  "kind": "sfx",
+  "category": "ui-feedback",
+  "moods": [
+    "tactile",
+    "restrained"
+  ],
+  "status": "candidate",
+  "design": {
+    "intent": "以短噪声按压、低频键帽联想与延迟释键支持可见键入动作，不替代状态确认或泛用UI轻触。",
+    "use_when": "可见文字实际新增或明确键被按下时按事件摆位；密集键入可重叠，但先检查增益、覆盖与留白。",
+    "avoid_when": "占位符、静态文字、仅光标闪烁、成功确认、要求真实特定键盘录音或没有键入动作的画面。",
+    "mix_notes": "固定52ms recipe；seed=84701；LCG 1664525/1013904223/2^32生成[-1,1)均匀噪声；1400/6500Hz双单极低通之差。按压=1.5ms线性起音×exp(-105t)，噪声系数0.11；键帽=(sin(2π235t)+0.34sin(2π510t))×exp(-95t)×同起音，系数0.075；19ms后释键以1ms起音×exp(-190(t-0.019))调制同噪声，系数0.024；最后4ms线性淡出到末样本零。左右同值，无随机变体接口。密集重叠的机械重复感与配乐遮蔽须实际试听。"
+  },
+  "audio": {
+    "duration_seconds": 0.052,
+    "format": "wav",
+    "codec": "pcm_s16le",
+    "sample_rate": 48000,
+    "channels": 2,
+    "duration_basis": "recipe",
+    "loop": {
+      "mode": "one-shot",
+      "start_sample": null,
+      "end_sample": null,
+      "listened_seam": false
+    }
+  },
+  "source": {
+    "kind": "generated",
+    "entry": "../../../synth.py",
+    "recipe": "keyboard-press",
+    "sha256": null,
+    "creator": "MotionStudio contributors",
+    "provenance": "Original bounded procedural synthesis; no recordings, samples, borrowed melody or brand audio. Fixed standard-library press/body/release recipe, not an exact PCM reproduction of a production mix or numerical-library prototype. Seed and all synthesis parameters are stated in mix_notes."
+  },
+  "rights": {
+    "license": "MIT",
+    "license_entry": "../../../LICENSE",
+    "use": "allowed",
+    "standalone_distribution": "allowed",
+    "conditions": "Retain the MIT copyright and permission notice with the source and generated asset redistribution. No trademark, voice or endorsement rights implied.",
+    "basis": "Original source and synthesis without third-party samples."
+  },
+  "review": {
+    "technical": "RUN_REQUIRED",
+    "listening": "NOT_LISTENED",
+    "av_sync": "NOT_RUN",
+    "owner": "NOT_RUN",
+    "limits": "NOT_LISTENED: no certification of keyboard realism, audibility, pleasantness, mix suitability or owner acceptance. Nonzero event coverage and silent-gap tests establish technical timing only, not visual synchronization or perceptual approval."
+  }
+}

@@ -102,8 +102,8 @@ def main():
     for role, asset in (('motion', 'transform'), ('motion', 'opacity'), ('motion', 'anchored-squash'), ('motion', 'shake'), ('transition', 'push'), ('transition', 'rect-wipe')):
         required += ['runtime/motion-elements/lib/foundations/' + role + '/' + asset + '/' + name for name in ('README.md', 'design.md', 'index.mjs', 'examples/contract.mjs', 'test/' + asset + '.test.mjs', 'test/asset-directory.test.mjs')]
     required += ['runtime/motion-elements/lib/internal/element-dispatch.mjs']
-    required += ['runtime/sound-elements/README.md', 'runtime/sound-elements/LICENSE', 'runtime/sound-elements/INDEX.md', 'runtime/sound-elements/sound.py', 'runtime/sound-elements/synth.py', 'runtime/sound-elements/test_sound.py', 'knowledge/sound/INDEX.md']
-    required += ['runtime/sound-elements/assets/' + ('bgm/' if ident == 'quiet-pulse-bed' else 'sfx/') + ident + '/' + name for name in ('asset.json', 'design.md') for ident in ('soft-tick', 'settle-chime', 'air-pass', 'low-land', 'quiet-pulse-bed', 'paper-rub', 'print-snap', 'resonant-tap')]
+    required += ['runtime/sound-elements/README.md', 'runtime/sound-elements/LICENSE', 'runtime/sound-elements/INDEX.md', 'runtime/sound-elements/sound.py', 'runtime/sound-elements/synth.py', 'runtime/sound-elements/test_sound.py', 'runtime/sound-elements/test_keyboard.py', 'knowledge/sound/INDEX.md']
+    required += ['runtime/sound-elements/assets/' + ('bgm/' if ident == 'quiet-pulse-bed' else 'sfx/') + ident + '/' + name for name in ('asset.json', 'design.md') for ident in ('soft-tick', 'settle-chime', 'air-pass', 'low-land', 'quiet-pulse-bed', 'paper-rub', 'print-snap', 'resonant-tap', 'keyboard-press')]
     required += ['runtime/motion-render-core/scripts/render.mjs']
     required += ['scripts/video_knowledge.py', 'scripts/static_knowledge.py', 'scripts/test_video_knowledge.py', 'scripts/test_static_knowledge.py', 'research/video-knowledge/STATIC-SCHEMA.md']
     required += ['runtime/review-tools/' + name for name in ('audio_review.py', 'audiovisual_review.py', 'test_audio_review.py', 'test_audiovisual_review.py', 'AUDIO-REVIEW.md')]

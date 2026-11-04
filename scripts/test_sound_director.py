@@ -71,6 +71,16 @@ class SoundDirectorTests(unittest.TestCase):
         self.assertIn('references/sound-direction.md', shelf)
         self.assertIn('合成前', (ROOT / PAGES[0]).read_text())
 
+    def test_typing_coverage_keeps_signal_and_perception_separate(self):
+        text = (ROOT / 'skills/motion-film-director/references/sound.md').read_text()
+        for required in ['从画面建立分母', '逐事件映射而非填标签', '检查实际信号链',
+                         '单独判实际可辨', '可见更新和字符数两个单位',
+                         '连续短间隔', '含长停顿及短连击', 'NOT_LISTENED',
+                         '短窗方向选择不能改写成全片']:
+            self.assertIn(required, text)
+        self.assertIn('sound.md#连续键入事件覆盖不等于实际可辨',
+                      (ROOT / PAGES[2]).read_text())
+
     def test_dependency_guidance_matches_core_lock(self):
         core = ROOT / 'engine/motion-render-core'
         package = json.loads((core / 'package.json').read_text())

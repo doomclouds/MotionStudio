@@ -6,6 +6,8 @@
 
 - [空气穿行](assets/sfx/air-pass/design.md) · air-pass · transition · 0.6s · candidate / NOT_LISTENED
   以噪声能量包络支持跨区域移动。
+- [短键按压](assets/sfx/keyboard-press/design.md) · keyboard-press · ui-feedback · 0.052s · candidate / NOT_LISTENED
+  以短噪声按压、低频键帽联想与延迟释键支持可见键入动作，不替代状态确认或泛用UI轻触。
 - [低频落点](assets/sfx/low-land/design.md) · low-land · impact · 0.35s · candidate / NOT_LISTENED
   给主要物体一次落定提供低频重量。
 - [纸质摩擦联想](assets/sfx/paper-rub/design.md) · paper-rub · texture · 0.24s · candidate / NOT_LISTENED
