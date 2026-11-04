@@ -11,8 +11,8 @@
   "families": [
     {
       "id": "design.print-poster.v1",
-      "entry": "print-poster.mjs",
-      "guidance": "https://github.com/doomclouds/MotionStudio/blob/cae18d21f2fbef9702c8ce94ce68abd9eda826a4/skills/motion-film-director/research/design-knowledge/cases/ui-003-print-poster.md",
+      "entry": "families/print-poster/index.mjs",
+      "guidance": "families/print-poster/README.md",
       "sourceCases": [],
       "actualUsers": [],
       "candidateUsers": [
@@ -298,7 +298,7 @@
     },
     {
       "id": "film-festival-study",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "title": "影展志 · 十天五十二部",
       "kind": "static",
       "lifecycle": "candidate",
@@ -372,7 +372,7 @@
     },
     {
       "id": "hk-street-signs-study",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "title": "新旺唱片 · 港式街招",
       "kind": "static",
       "lifecycle": "candidate",
@@ -666,7 +666,7 @@
     },
     {
       "id": "pixel-hiking-study",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "title": "鹿鸣山 · 像素徒步三关",
       "kind": "static",
       "lifecycle": "candidate",

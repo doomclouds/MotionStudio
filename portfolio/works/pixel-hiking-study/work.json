@@ -1,6 +1,6 @@
 {
   "id": "pixel-hiking-study",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "title": "鹿鸣山 · 像素徒步三关",
   "rights": {
     "status": "NOT_REVIEWED",
@@ -102,7 +102,7 @@
     },
     {
       "path": "design/scene.mjs",
-      "sha256": "d6d2bc44efb8f259ab4448d1294a84015e73e346fc992db7ccfa3c6716f478a5",
+      "sha256": "e76eb273cc2d20a11ae7505ada2316e7b5459ef2074d5c3c5960820070b44cda",
       "kind": "source"
     },
     {
@@ -137,7 +137,7 @@
     },
     {
       "path": "ui-dependencies.json",
-      "sha256": "b630305b682d2719242bd25d2250096bac8f7bc92885dab4dab8486a9bb96a83",
+      "sha256": "36d8649fea7beff5b7c58f2e1ae9225982f62324f73eb79ee00c21a882565039",
       "kind": "config"
     },
     {
@@ -214,12 +214,12 @@
         "callToken": "drawOverprint",
         "callsite": "design/scene.mjs",
         "familyId": "design.print-poster.v1",
-        "importToken": "print-poster.mjs",
+        "importToken": "index.mjs",
         "mode": "runtime-import",
-        "modulePath": "engine/design-elements/print-poster.mjs",
-        "moduleSha256": "f30e3f0967f0ab8ef65857a68c3cb77d42b356e6e8b1b4a01820811525dad64d",
+        "modulePath": "engine/design-elements/families/print-poster/index.mjs",
+        "moduleSha256": "676adb712b52dff86bd39d5aacd9682ca27e463805ebf7ea555e4099a04c0f43",
         "snapshotPath": null,
-        "sourceCommit": "bd3750a4c27408bf90abc18cb16c1455d23442c9",
+        "sourceCommit": "562c89384c931bf5ef3cbb931ac2a4866607011b",
         "visibleRole": "HUD硬偏移文字"
       },
       {
@@ -231,7 +231,7 @@
         "modulePath": "engine/design-elements/color-sections.mjs",
         "moduleSha256": "cf2cf8ebf1b1bf8bd65dbbaef11f9546db9fe096d3eba7a0b18936e616ec2dd8",
         "snapshotPath": null,
-        "sourceCommit": "bd3750a4c27408bf90abc18cb16c1455d23442c9",
+        "sourceCommit": "562c89384c931bf5ef3cbb931ac2a4866607011b",
         "visibleRole": "森林/山脊/湖泊底层分区"
       }
     ]

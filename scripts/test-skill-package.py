@@ -88,9 +88,13 @@ def main():
         if os.environ.get('MOTION_ENGINE_ROOT') and os.environ.get('UI_TEST_FONT_DIR') and os.environ.get('UI_B05_FONT_FILE'):
             run(['python3', str(design / 'test/verify-cjk-font.py')])
             run(['node', str(design / 'test/verify.mjs'), str(temp / 'design-test-results.json')])
-            run(['node', str(design / 'families/print-poster/test/contract.mjs')])
         else:
             print('NOT_RUN: design Canvas rendering tests require MOTION_ENGINE_ROOT, UI_TEST_FONT_DIR and UI_B05_FONT_FILE; extracted imports and source bytes checked')
+        if os.environ.get('MOTION_ENGINE_ROOT') and (os.environ.get('PRINT_POSTER_FONT_DIR') or os.environ.get('UI_TEST_FONT_DIR')):
+            run(['node', str(design / 'families/print-poster/test/contract.mjs')])
+            run(['node', str(design / 'families/print-poster/examples/render.mjs')])
+        else:
+            print('NOT_RUN: print-poster Native examples require MOTION_ENGINE_ROOT and PRINT_POSTER_FONT_DIR (or UI_TEST_FONT_DIR); no CJK font dependency')
         recipes = design / 'recipes/reviewed/b06'
         manifest = json.loads((recipes / 'recipe-manifest.json').read_text())
         assert manifest['sharedFamilyCountDelta'] == 0 and len(manifest['recipes']) == 2

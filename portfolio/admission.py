@@ -47,7 +47,7 @@ def check_design(d,work,repo):
     else:
      require(set(lock)=={'repository','tested_commit','root','files'},'RETAINED_DEPENDENCY_LOCK_INVALID');commit=lock['tested_commit']
     require(commit==u['sourceCommit'] and lock['root']=='engine/design-elements','DEPENDENCY_COMMIT_OR_ROOT_MISMATCH')
-    require(closure(repo/'engine/design-elements',module.name).issubset({x['path'] for x in lock['files']}),'DEPENDENCY_CLOSURE_INCOMPLETE')
+    require(closure(repo/'engine/design-elements',module.relative_to(repo/'engine/design-elements').as_posix()).issubset({x['path'] for x in lock['files']}),'DEPENDENCY_CLOSURE_INCOMPLETE')
     require(len({x['path'] for x in lock['files']})==len(lock['files']),'DUPLICATE_DEPENDENCY')
     for row in lock['files']:
      require(set(row)=={'path','sha256'},'DEPENDENCY_ROW_FIELDS');require(sha(local(repo/'engine/design-elements',row['path']))==row['sha256'],'DEPENDENCY_BYTES_MISMATCH')

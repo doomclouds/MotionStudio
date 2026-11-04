@@ -3,7 +3,7 @@ import{readFileSync}from'node:fs';
 import{fileURLToPath,pathToFileURL}from'node:url';import path from'node:path';
 const uiRoot=process.env.MOTION_UI_ASSETS_ROOT;if(!uiRoot||!path.isAbsolute(uiRoot))throw Error('Set MOTION_UI_ASSETS_ROOT to the installed engine/design-elements directory');
 for(const r of JSON.parse(readFileSync(new URL('../ui-dependencies.json',import.meta.url))).files)if(createHash('sha256').update(readFileSync(path.join(uiRoot,r.path))).digest('hex')!==r.sha256)throw Error('UI dependency identity mismatch: '+r.path);
-const {drawOverprint}=await import(pathToFileURL(path.join(uiRoot,'print-poster.mjs')));
+const {drawOverprint}=await import(pathToFileURL(path.join(uiRoot,'families/print-poster/index.mjs')));
 const assets=process.env.HK_FONT_DIR;
 function verifyFonts(){if(!assets||!path.isAbsolute(assets))throw Error('Set HK_FONT_DIR to an absolute external font directory');const m=JSON.parse(readFileSync(new URL('../font-inputs.json',import.meta.url)));if(!m.expectedOutputs?.length||m.expectedOutputs.map(r=>r.filename).sort().join('|')!==m.outputNames.slice().sort().join('|'))throw Error('Incomplete font contract');for(const r of m.expectedOutputs)if(createHash('sha256').update(readFileSync(path.join(assets,r.filename))).digest('hex')!==r.sha256)throw Error('Font identity mismatch: '+r.filename)}
 export const config={width:1200,height:750,fps:1,duration:1};

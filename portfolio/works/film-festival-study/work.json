@@ -1,6 +1,6 @@
 {
   "id": "film-festival-study",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "title": "影展志 · 十天五十二部",
   "rights": {
     "status": "NOT_REVIEWED",
@@ -126,7 +126,7 @@
     },
     {
       "path": "design/scene.mjs",
-      "sha256": "b0f662228cfe496afc3eef8fd34a3c30876f26be732d23a900fbeddc7acb44fe",
+      "sha256": "04504dd83a7df523a5ce2ec768be5d677d0708e24597fdd6772df3f9a098e0f8",
       "kind": "source"
     },
     {
@@ -156,7 +156,7 @@
     },
     {
       "path": "ui-dependencies.json",
-      "sha256": "0679bb9bb24fb7529084258c60e746fa06bfa0161889f30d621d35c7e2d91567",
+      "sha256": "2a5dda491c84b915f88ac092475fb71ac2c402f5d80757c1a6f7fa0afc1f127a",
       "kind": "config"
     }
   ],
@@ -276,12 +276,12 @@
         "callToken": "drawPaper",
         "callsite": "design/scene.mjs",
         "familyId": "design.print-poster.v1",
-        "importToken": "print-poster.mjs",
+        "importToken": "index.mjs",
         "mode": "runtime-import",
-        "modulePath": "engine/design-elements/print-poster.mjs",
-        "moduleSha256": "f30e3f0967f0ab8ef65857a68c3cb77d42b356e6e8b1b4a01820811525dad64d",
+        "modulePath": "engine/design-elements/families/print-poster/index.mjs",
+        "moduleSha256": "676adb712b52dff86bd39d5aacd9682ca27e463805ebf7ea555e4099a04c0f43",
         "snapshotPath": null,
-        "sourceCommit": "bd3750a4c27408bf90abc18cb16c1455d23442c9",
+        "sourceCommit": "562c89384c931bf5ef3cbb931ac2a4866607011b",
         "visibleRole": "选场次 CTA 的硬边纸签和偏移阴影"
       }
     ]

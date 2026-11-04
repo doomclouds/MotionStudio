@@ -6,6 +6,13 @@ from validate_work import Blocked,read,sha,SCHEMA
 from schema_check import check_schema,matches
 ROOT=Path(__file__).resolve().parents[1];PORTFOLIO=ROOT/'portfolio'
 class WorkContract(unittest.TestCase):
+ def test_nested_family_dependency_closure_uses_relative_path(self):
+  with tempfile.TemporaryDirectory() as directory:
+   root=Path(directory); (root/'families/poster').mkdir(parents=True)
+   (root/'families/poster/index.mjs').write_text("import {helper} from './helper.mjs';")
+   (root/'families/poster/helper.mjs').write_text('export const helper=1;')
+   (root/'index.mjs').write_text('export const unrelated=true;')
+   self.assertEqual(admission.closure(root,'families/poster/index.mjs'),{'families/poster/index.mjs','families/poster/helper.mjs'})
  def test_only_current_contract_is_active(self):
   rows=work.load_all(PORTFOLIO);self.assertEqual(len(rows),66)
   self.assertTrue(all(d['schema']=='motionstudio.work/1' for _,d in rows))

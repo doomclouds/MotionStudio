@@ -1,6 +1,6 @@
 {
   "id": "hk-street-signs-study",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "title": "新旺唱片 · 港式街招",
   "rights": {
     "status": "NOT_REVIEWED",
@@ -109,7 +109,7 @@
     },
     {
       "path": "design/scene.mjs",
-      "sha256": "3e3005531d7795fb6df5e5cb18687bc62c9e3c71edb314ec35fb56f7a9018af2",
+      "sha256": "1dd42c4c0bd84dad1da255cda723444c65ed5edfb7364c543bd5377bccad3a29",
       "kind": "source"
     },
     {
@@ -139,7 +139,7 @@
     },
     {
       "path": "ui-dependencies.json",
-      "sha256": "0679bb9bb24fb7529084258c60e746fa06bfa0161889f30d621d35c7e2d91567",
+      "sha256": "2a5dda491c84b915f88ac092475fb71ac2c402f5d80757c1a6f7fa0afc1f127a",
       "kind": "config"
     },
     {
@@ -232,12 +232,12 @@
         "callToken": "drawOverprint",
         "callsite": "design/scene.mjs",
         "familyId": "design.print-poster.v1",
-        "importToken": "print-poster.mjs",
+        "importToken": "index.mjs",
         "mode": "runtime-import",
-        "modulePath": "engine/design-elements/print-poster.mjs",
-        "moduleSha256": "f30e3f0967f0ab8ef65857a68c3cb77d42b356e6e8b1b4a01820811525dad64d",
+        "modulePath": "engine/design-elements/families/print-poster/index.mjs",
+        "moduleSha256": "676adb712b52dff86bd39d5aacd9682ca27e463805ebf7ea555e4099a04c0f43",
         "snapshotPath": null,
-        "sourceCommit": "bd3750a4c27408bf90abc18cb16c1455d23442c9",
+        "sourceCommit": "562c89384c931bf5ef3cbb931ac2a4866607011b",
         "visibleRole": "硬偏移招牌文字"
       }
     ]

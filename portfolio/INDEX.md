@@ -14,13 +14,13 @@
 |[Editorial Eguide · 双页创作指南](works/editorial-eguide-study/README.md)|static|1.0.0|retained|PARTIAL|未声明|
 |[城市周报 · 编辑式粗野主义](works/editorial-weekly-study/README.md)|static|1.0.0|retained|PARTIAL|未声明|
 |[Favorite52 · 52秒非官方复刻源码（外置资源）](works/favorite52/README.md)|video|1.0.0|retained|PARTIAL|未声明|
-|[影展志 · 十天五十二部](works/film-festival-study/README.md)|static|1.0.1|candidate|NOT_RUN|design.print-poster.v1|
+|[影展志 · 十天五十二部](works/film-festival-study/README.md)|static|1.0.2|candidate|NOT_RUN|design.print-poster.v1|
 |[友好金融三屏 · 完整静态复刻](works/friendly-fintech-study/README.md)|static|1.0.0|retained|PARTIAL|design.material-surfaces.v1|
 |[温和运动 · 暗色三屏](works/gentle-activity-study/README.md)|static|1.0.0|retained|PARTIAL|design.material-surfaces.v1|
 |[市 · 汉字实验海报](works/hanzi-poster-study/README.md)|static|1.0.0|retained|PARTIAL|未声明|
 |[采样台 · 硬件面板三屏静态复刻](works/hardware-sampler-study/README.md)|static|1.0.0|retained|PARTIAL|未声明|
 |[健康数据颜色编码 · 完整静态复刻](works/health-color-code-study/README.md)|static|1.0.0|retained|PARTIAL|design.material-surfaces.v1|
-|[新旺唱片 · 港式街招](works/hk-street-signs-study/README.md)|static|1.0.1|candidate|NOT_RUN|design.print-poster.v1|
+|[新旺唱片 · 港式街招](works/hk-street-signs-study/README.md)|static|1.0.2|candidate|NOT_RUN|design.print-poster.v1|
 |[富岳三十六景 · 展览首屏](works/hokusai-exhibition-study/README.md)|static|1.0.0|retained|PARTIAL|未声明|
 |[反叛流行 · AI写的，别像AI](works/irreverent-pop-study/README.md)|static|1.0.0|retained|PARTIAL|design.material-surfaces.v1|
 |[Level · 三屏日常任务](works/level-three-screen-study/README.md)|static|1.0.0|retained|PARTIAL|未声明|
@@ -46,7 +46,7 @@
 |[Hanafuda · 1889 static study](works/open-design-hanafuda-study/README.md)|static|1.0.0|retained|PARTIAL|未声明|
 |[Orbital · radial broadcast](works/open-design-orbital-study/README.md)|static|1.0.0|retained|PARTIAL|未声明|
 |[Swiss · blue roadmap cover](works/open-design-swiss-cover-study/README.md)|static|1.0.0|retained|PARTIAL|未声明|
-|[鹿鸣山 · 像素徒步三关](works/pixel-hiking-study/README.md)|static|1.0.1|candidate|NOT_RUN|design.print-poster.v1, design.color-sections.v1|
+|[鹿鸣山 · 像素徒步三关](works/pixel-hiking-study/README.md)|static|1.0.2|candidate|NOT_RUN|design.print-poster.v1, design.color-sections.v1|
 |[烘焙计时 · 完整静态复刻](works/playful-roast-timer-study/README.md)|static|1.0.0|retained|PARTIAL|design.material-surfaces.v1|
 |[专业相机 · 参数控制三屏](works/pro-camera-study/README.md)|static|1.0.0|retained|PARTIAL|未声明|
 |[递归 · 单概念糖果舞台](works/recursion-lecture-study/README.md)|static|1.0.0|retained|PARTIAL|design.material-surfaces.v1|
