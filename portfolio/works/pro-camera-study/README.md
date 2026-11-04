@@ -1,6 +1,6 @@
 # 专业相机 · 参数控制三屏
 
-完整1200×750静态Native工程；用户已同意收录。非官方Huashu设计标本复刻，不是原创构图、运营品牌或真实产品。设计逻辑见design/DESIGN-REASONING.md。
+完整1200×750静态Native工程；用户已同意收录。非官方Huashu设计标本复刻，不是原创构图、运营品牌或真实产品。设计逻辑见design.md。
 
 ## 离线复现
 
@@ -16,3 +16,5 @@ ENGINE为MotionStudio的engine/motion-render-core；Node与Canvas版本见locks�
 https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/app/05-pro-camera.html
 
 取景区忠实保留渐变占位，非真实照片；高频斜纹JPEG晕彩和手机阴影近似，非可拍照App。 无imagegen、来源截图贴图；唯一cover.jpg来自完整Native重建。已审PNG SHA-256：`f51057a88f0c170ded0e0b639b7fc1bcda6797168a76bd466ead16ee2cb3d292`。未验证浏览器、交互、响应式、音视频。外置资源条件下的本机重现不保证跨系统像素一致。
+
+设计意图、场景结构、复用与验证边界见[design.md](design.md)。

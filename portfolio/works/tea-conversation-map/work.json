@@ -95,18 +95,13 @@
     },
     {
       "path": "README.md",
-      "sha256": "f876fa1a7188c4bf856a0382d94259a7584ffdcf052babd4843179d0e9a51921",
+      "sha256": "60857a0fbcfe19278219f8a167bf009563d34dd0b9379a84edaadf6802e6880d",
       "kind": "documentation"
     },
     {
       "path": "cover.jpg",
       "sha256": "25836584db11ca8ec85dd0266fb5a9eec7afb050da6809d1950c5596b14dff2b",
       "kind": "cover"
-    },
-    {
-      "path": "design/DESIGN-ANALYSIS.md",
-      "sha256": "dac894cab589224089486885aac184ab89d2f5113ece9243b8db20a8e349351e",
-      "kind": "documentation"
     },
     {
       "path": "design/common.mjs",
@@ -159,8 +154,8 @@
       "kind": "source"
     },
     {
-      "path": "DESIGN-RETENTION.md",
-      "sha256": "4e6f23fe1d9d3df9dd507744fa0b7c07c6333cdd7308826e26ac75eca32f1653",
+      "path": "design.md",
+      "sha256": "e6af1b7dd1f7d05330f33499be9bf6c4c037ad98c112fa460b54c4b6d0791196",
       "kind": "documentation"
     }
   ],
@@ -252,13 +247,11 @@
     }
   },
   "design": {
-    "decisionCard": "DESIGN-RETENTION.md",
+    "decisionCard": "design.md",
     "nonAssetNote": "Shared drawing helpers and case-local scene code are not public design families; no runtime reuse is inferred from visual similarity.",
     "ruleRefs": [],
     "ruleStatus": "No separate formal rule card claimed; use decisionCard and sourceAnalysis.",
-    "sourceAnalysis": [
-      "design/DESIGN-ANALYSIS.md"
-    ],
+    "sourceAnalysis": [],
     "assetUsage": []
   },
   "transfer": {

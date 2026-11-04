@@ -44,7 +44,7 @@ python3 scripts/design_knowledge.py validate
 
 ## 已保留作品与实际代码调用
 
-静态设计与视频作品的统一入口是[作品设计索引](../../portfolio/INDEX.md)，`work.json` 是唯一机器真源，以 kind 区分静态/视频，以 lifecycle 区分已保留版本与待复验候选；有设计卡的作品继续用 `DESIGN-RETENTION.md` 记录内容/品牌/配色/构图决策。外部引用仅作为原始数据保留，不检查或保证可达；公开审查材料 NOT_INCLUDED，不提升历史或候选接受状态。公共族的来源作品与实际调用分列，不把方法适配说成已重构原作品。
+静态设计与视频作品的统一入口是[作品设计索引](../../portfolio/INDEX.md)，`work.json` 是唯一机器真源，以 kind 区分静态/视频，以 lifecycle 区分已保留版本与待复验候选；设计说明唯一入口由 `work.json` 的 `design.decisionCard` 指定，记录内容/品牌/配色/构图决策；已整理场景归并至 `design.md`，尚未迁移的三件候选仍按各自合同进入 `DESIGN-RETENTION.md`，不保留同一作品的平行设计卡。外部引用仅作为原始数据保留，不检查或保证可达；公开审查材料 NOT_INCLUDED，不提升历史或候选接受状态。公共族的来源作品与实际调用分列，不把方法适配说成已重构原作品。
 
 这里现有三张独立方法卡不等于作品总量；`scripts/design_knowledge.py`只检索本目录index.json，不自动检索作品。查看全部作品使用上述索引，校验运行 `python3 portfolio/work.py index --check`。将来新增方法卡仍需独立归纳与审阅，不按作品数量机械复制。
 

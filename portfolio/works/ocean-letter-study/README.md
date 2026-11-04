@@ -1,6 +1,6 @@
 # 海洋基金年度信 · 编辑式长文
 
-完整1200×750固定静态Native工程，用户已同意收藏。Huashu样张非官方复刻，不是原创基金会品牌或真实环境报告。设计逻辑见design/DESIGN-ANALYSIS.md，沉淀入口DESIGN-RETENTION.md与work.json。
+完整1200×750固定静态Native工程，用户已同意收藏。Huashu样张非官方复刻，不是原创基金会品牌或真实环境报告。设计逻辑与沉淀入口见design.md，当前状态见work.json。
 
 ## 离线复现
 按font-inputs.json固定源SHA合法自备字体，使用fonttools4.61.1与locks中的Native版本：
@@ -16,6 +16,8 @@ ENGINE是MotionStudio的engine/motion-render-core。源和派生字体分别验S
 ## 语义与真实复用
 基金会、人名、引语、62/24处、38%→46%和三次复测都仅源例文未核验；68%示意条无数据映射，不得当覆盖率图。正文是固定断行，并非自动流排。
 
-实际调用本地material-surfaces快照opaque一次作小卡；shared只是状态工具。快照源commit与SHA在module-snapshots.json，不是实时从引擎导入。新增drawAuthoredColumns是本例真实调用的候选配方，不列入14个公共设计族，不自动避碰/分页；验证与边界见design/SETTLEMENT.md。
+实际调用本地material-surfaces快照opaque一次作小卡；shared只是状态工具。快照源commit与SHA在module-snapshots.json，不是实时从引擎导入。新增drawAuthoredColumns是本例真实调用的候选配方，不列入14个公共设计族，不自动避碰/分页；验证与边界见design.md。
 
-仅自渲染cover随工程留存。报告容器已从私有Library取回、独审原文已在仅所有者私有Page读回核验，work.json逐项记录；年度信尚未建立报告嵌图与原尺寸帧的精确像素绑定，不推定版本错误。正文450经独审校准，仍有字体栅格/标点/齐行差异；没有浏览器、响应式、交互、音视频验证。
+仅自渲染cover随工程留存。既有记录描述报告容器已从私有Library取回、独审原文已在仅所有者私有Page读回核验；本次未重做读回，work.json只公开接受范围与文件身份，不含这些私人回执；年度信尚未建立报告嵌图与原尺寸帧的精确像素绑定，不推定版本错误。正文450经独审校准，仍有字体栅格/标点/齐行差异；没有浏览器、响应式、交互、音视频验证。
+
+设计意图、候选配方、实现入口与验证边界见[design.md](design.md)。

@@ -3,7 +3,7 @@
 ## 索引真源（CURRENT）
 
 - motion-elements / design-elements 的 catalog 与各自契约：按所属工具维护，稳定 ID 不因标题变化重造。
-- `portfolio/works/*/work.json`：唯一作品机器真源；静态/视频以 kind 区分，当前候选与历史接受分开。已有 `DESIGN-RETENTION.md` 继续保存设计说明；`portfolio/index.json` / `portfolio/INDEX.md` 由 `portfolio/work.py index --write` 同源生成，不手工造第二套目录。
+- `portfolio/works/*/work.json`：唯一作品机器真源；静态/视频以 kind 区分，当前候选与历史接受分开。设计说明唯一入口由 `work.json` 的 `design.decisionCard` 指定，已整理场景使用 `design.md`；尚未迁移的三件候选仍保留合同指定的 `DESIGN-RETENTION.md`，不得按旧文件名批量删除；`portfolio/index.json` / `portfolio/INDEX.md` 由 `portfolio/work.py index --write` 同源生成，不手工造第二套目录。
 - `knowledge/design/index.json` 与分类/方法卡：按该目录 INDEX.md 同步；它只覆盖所收方法卡，不代表全部作品。
 - 外置 video-knowledge 库：按自己的 schema/工作流维护；公开默认空库保持为空。
 - specs/README.md 只索引治理规则，不缓存所有作品、方法或机制数量。数量与实现状态查询当时实际 catalog/工具，避免永久写死。

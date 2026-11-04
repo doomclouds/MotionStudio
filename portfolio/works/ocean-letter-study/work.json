@@ -78,11 +78,6 @@
       "kind": "documentation"
     },
     {
-      "path": "DESIGN-RETENTION.md",
-      "sha256": "702ec3c681fa15bffb9929bafd5f624a8fa3f3aedb45ac4ef74ee0aff730ca06",
-      "kind": "documentation"
-    },
-    {
       "path": "LICENSES/Inter-OFL.txt",
       "sha256": "67c5d5206b96f8340b95fabd02ae60701e0b20ce2594d976216f1065e5aa3822",
       "kind": "license"
@@ -109,23 +104,13 @@
     },
     {
       "path": "README.md",
-      "sha256": "8380ecb56ae5fd7b426ad47d91b2e23e3f643dbde781e5ccbd6bc6be78ea4519",
+      "sha256": "f3d0c349d18cc6ed8993961261043f89fd2e8ada11d72c4468e58dad2ae5fe23",
       "kind": "documentation"
     },
     {
       "path": "cover.jpg",
       "sha256": "7cfa0901c6fed9bef76975cd73817dfd9ac9d3292e58d4024d168af4d7bf8d20",
       "kind": "cover"
-    },
-    {
-      "path": "design/DESIGN-ANALYSIS.md",
-      "sha256": "97f2a12f39a85e41f782b2b197510b1203563c4837f456b130aa0882facc9796",
-      "kind": "documentation"
-    },
-    {
-      "path": "design/SETTLEMENT.md",
-      "sha256": "c84df99bbe55baea1558226f08047a0de18465288ed772e98db783a6502e84ef",
-      "kind": "documentation"
     },
     {
       "path": "design/content.json",
@@ -191,6 +176,11 @@
       "path": "verify.mjs",
       "sha256": "ba0dfd6c4bc194acd7c9c8966013448cd74c1fe143cf1b7eb80bff0cd9123ea2",
       "kind": "source"
+    },
+    {
+      "path": "design.md",
+      "sha256": "f96b7aeb9b7021049d4f0e9e786b175651f3af014352f40421c056f67dbf4e3c",
+      "kind": "documentation"
     }
   ],
   "resources": [
@@ -393,14 +383,11 @@
     }
   },
   "design": {
-    "decisionCard": "DESIGN-RETENTION.md",
+    "decisionCard": "design.md",
     "nonAssetNote": "Shared state helper is not a family. editorial-columns.mjs is a case-local candidate recipe, not one of the 14 public families. No other family reuse claimed.",
     "ruleRefs": [],
     "ruleStatus": "No separate formal rule card claimed; use decisionCard and sourceAnalysis.",
-    "sourceAnalysis": [
-      "design/DESIGN-ANALYSIS.md",
-      "design/SETTLEMENT.md"
-    ],
+    "sourceAnalysis": [],
     "assetUsage": [
       {
         "callToken": "drawSurface",

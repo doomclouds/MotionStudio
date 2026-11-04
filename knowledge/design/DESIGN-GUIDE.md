@@ -184,7 +184,7 @@
 
 ### 虚构竞速鞋发布首屏：主张、产品与方向边界的协同
 
-本段来自一次1600×1000原创静态探索的有限观察，不新增方法卡、作品或积木。参考入口是本库的[骑行年报](../../portfolio/works/cycling-year-report/design.md)、[慢火](../../portfolio/works/slow-roast-study/design.md)和[幕启](../../portfolio/works/muqi-study/DESIGN-RETENTION.md)：本次实际查看三件本地封面与相关说明，不声称访问或复核其外部原作。原作归属、非官方复刻与静态PARTIAL状态仍以各作品work.json为准。探索画面、源码及评审留在授权私有项目，不随本段公开。
+本段来自一次1600×1000原创静态探索的有限观察，不新增方法卡、作品或积木。参考入口是本库的[骑行年报](../../portfolio/works/cycling-year-report/design.md)、[慢火](../../portfolio/works/slow-roast-study/design.md)和[幕启](../../portfolio/works/muqi-study/design.md)：本次实际查看三件本地封面与相关说明，不声称访问或复核其外部原作。原作归属、非官方复刻与静态PARTIAL状态仍以各作品work.json为准。探索画面、源码及评审留在授权私有项目，不随本段公开。
 
 **观察到的关系。** 大面积单一高饱和底色承载左侧两行粗窄宣言，右侧是明确可辨的原创鞋体插画；同一前倾标识出现在导航与鞋身。斜分区将较安静的材料/形态说明置于下方，主按钮保持高对比。此次收到有限正向反馈；它仅支持这一版整体方向值得继续，不等于正式作品集收录、全面审美通过或转化率证据。
 

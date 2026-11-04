@@ -13,3 +13,5 @@
 - 修改索引或目录前遵守 [索引与迁移](specs/indexes-and-migration.md)；完成时报告实际变更、测试与未验项，不自动提交、推送、发布或删除历史。
 
 - 作品只读 `portfolio/works/*/work.json`，使用 `python3 portfolio/work.py` 的 inspect/query/index/admit-check；无旧schema兼容。外部引用只保留数据，不做可达性门；candidate/NOT_RUN不当作已接受。
+
+- 创作与复用任务按需读 [三导演任务闭环与本地证据](tools/director-evidence/README.md)：在已有设计说明中贯通需求、阅读/选择、真实消费、复验及缺口回写；可选工具只记录正文输出和 Node 执行，不证明模型理解、设计质量或实际听审。

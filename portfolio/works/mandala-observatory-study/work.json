@@ -73,11 +73,6 @@
       "kind": "documentation"
     },
     {
-      "path": "DESIGN-RETENTION.md",
-      "sha256": "0a1a7d306095503fb26efbd95a8c73b23ac9472748246ea1f08ce97b0d430d6b",
-      "kind": "documentation"
-    },
-    {
       "path": "LICENSES/NotoSansSC-OFL.txt",
       "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
       "kind": "license"
@@ -94,23 +89,13 @@
     },
     {
       "path": "README.md",
-      "sha256": "d797f94e767efdde7ec93b09531c6935ea07ce04d09e8d548b5e304c670a24ce",
+      "sha256": "ae315698423c77b0a6e6b46ffaf69ddceb36f10fe83a4256562b5b5496235664",
       "kind": "documentation"
     },
     {
       "path": "cover.jpg",
       "sha256": "940e922906ba722bdba20e62062e0b634cb05326a7842cd7d28dfa55f34c2e1f",
       "kind": "cover"
-    },
-    {
-      "path": "design/DESIGN-ANALYSIS.md",
-      "sha256": "6f504ee3159a04eb45b2431040d644b77608f7ec5d42492fdeb0ca2b43bd0030",
-      "kind": "documentation"
-    },
-    {
-      "path": "design/SETTLEMENT.md",
-      "sha256": "a0f551f92e901430f016961fa1c919cdca2ca01e5b83a20c029b344cd41ece15",
-      "kind": "documentation"
     },
     {
       "path": "design/content.json",
@@ -181,6 +166,11 @@
       "path": "verify.mjs",
       "sha256": "e146458d8b5664b364e60614d1cae520009f23c79947da5d536b38c31cc97728",
       "kind": "source"
+    },
+    {
+      "path": "design.md",
+      "sha256": "7703e53436999180e2daac78f0761341526271395f759dc436fd07e1aa432a59",
+      "kind": "documentation"
     }
   ],
   "resources": [
@@ -319,14 +309,11 @@
     }
   },
   "design": {
-    "decisionCard": "DESIGN-RETENTION.md",
+    "decisionCard": "design.md",
     "nonAssetNote": "No public design-family invocation. Shared state helper is a local snapshot. orbit-labels is a real case-local authored-label candidate, not a new public family.",
     "ruleRefs": [],
     "ruleStatus": "No separate formal rule card claimed; use decisionCard and sourceAnalysis.",
-    "sourceAnalysis": [
-      "design/DESIGN-ANALYSIS.md",
-      "design/SETTLEMENT.md"
-    ],
+    "sourceAnalysis": [],
     "assetUsage": []
   },
   "transfer": {

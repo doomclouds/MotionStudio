@@ -1,6 +1,6 @@
 # 幕启 · 地方剧场票务品牌首屏
 
-1200×750完整固定画幅静态学习复刻。[固定原作](https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/web/14-angled-fluid-gradient.html)；详见 [来源许可](CREDITS.md) 与 [设计逻辑](design/DESIGN-ANALYSIS.md)。这不是原品牌官方网站，也不是新增的通用动效机制。
+1200×750完整固定画幅静态学习复刻。[固定原作](https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/web/14-angled-fluid-gradient.html)；详见 [来源许可](CREDITS.md) 与 [设计逻辑](design.md)。这不是原品牌官方网站，也不是新增的通用动效机制。
 
 ## 工程内容
 
@@ -28,3 +28,5 @@ MUQI_FONT_DIR="$MUQI_FONT_DIR" node engine/motion-render-core/scripts/render.mjs
 静态全图与局部对照已审阅，仍有字体栅格化、渐变/软影以及二维透视近似；没有浏览器、交互、响应式、视频或声音验收。像素差异不是审美分数。
 
 ![作品预览](cover.jpg)
+
+设计意图、场景结构、复用与验证边界见[design.md](design.md)。

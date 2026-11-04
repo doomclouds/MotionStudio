@@ -76,11 +76,6 @@
       "kind": "documentation"
     },
     {
-      "path": "DESIGN-RETENTION.md",
-      "sha256": "1436366d850083639ab7004639f5f37f317f1c06314152e2dc8c330edccc2321",
-      "kind": "documentation"
-    },
-    {
       "path": "LICENSES/Fraunces-OFL.txt",
       "sha256": "bdf4c22802eaf804f998195871c6b8938aac2ac14b2d78a8bd66a6f1eced833b",
       "kind": "license"
@@ -107,23 +102,13 @@
     },
     {
       "path": "README.md",
-      "sha256": "f67b02055ad568d68c184e44a4c763a35eb19efb766db5211779d3e44cdadf87",
+      "sha256": "feb7879f91b65eb1c8695209a1c7b6c1b758e3a09b0f9960dcdd318e826f8a4f",
       "kind": "documentation"
     },
     {
       "path": "cover.jpg",
       "sha256": "38c4cdf514c1150df39da015cae5d135290e918dc40cb3c75f39a286e170726a",
       "kind": "cover"
-    },
-    {
-      "path": "design/DESIGN-ANALYSIS.md",
-      "sha256": "bc086027a52e90871c8960cc70c6d8fd5de670c54f440e6f587a9a8db87b9ef7",
-      "kind": "documentation"
-    },
-    {
-      "path": "design/SETTLEMENT.md",
-      "sha256": "5d1e0b5f244bd79736a466e0c420868a0c21666fa2cb817e1d0a4428b2fea389",
-      "kind": "documentation"
     },
     {
       "path": "design/content.json",
@@ -184,6 +169,11 @@
       "path": "verify.mjs",
       "sha256": "b6705ea5e2481c57bdcc8920fbc88cf0c56aa7f23b2f70f8d6e9fca6b9b15e7e",
       "kind": "source"
+    },
+    {
+      "path": "design.md",
+      "sha256": "a9ea281b3a81cc49b973758ca6680791bc0c4f834a40525a09e66bc52559b351",
+      "kind": "documentation"
     }
   ],
   "resources": [
@@ -306,14 +296,11 @@
     }
   },
   "design": {
-    "decisionCard": "DESIGN-RETENTION.md",
+    "decisionCard": "design.md",
     "nonAssetNote": "No public design-family call. shared is a local utility snapshot. emphasis-tile is a case-local authored phrase recipe with advance-width budget only.",
     "ruleRefs": [],
     "ruleStatus": "No separate formal rule card claimed; use decisionCard and sourceAnalysis.",
-    "sourceAnalysis": [
-      "design/DESIGN-ANALYSIS.md",
-      "design/SETTLEMENT.md"
-    ],
+    "sourceAnalysis": [],
     "assetUsage": []
   },
   "transfer": {

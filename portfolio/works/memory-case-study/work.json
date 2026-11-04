@@ -74,11 +74,6 @@
       "kind": "documentation"
     },
     {
-      "path": "DESIGN-RETENTION.md",
-      "sha256": "51604093ccf02f988775fd6c3902b63609434ae95ff637a7f8285a7337042f69",
-      "kind": "documentation"
-    },
-    {
       "path": "LICENSES/Nimbus-license.txt",
       "sha256": "1315a62758a603a3e6e87a79b8389563789c59c1740b9db8bc2b20e2e2145458",
       "kind": "license"
@@ -95,23 +90,13 @@
     },
     {
       "path": "README.md",
-      "sha256": "cd0c85d7f2a123c67c2608b493cc417acfff06410c1820d2dfa1212df578b3be",
+      "sha256": "43366b5904e22acd59409d5ddee2d761a03aae51d38ac67a818cc20e67b899b2",
       "kind": "documentation"
     },
     {
       "path": "cover.jpg",
       "sha256": "1507cc6721c7bcaed6cff2d08b48f8bd62cba3913670961fed11425af80cb8e9",
       "kind": "cover"
-    },
-    {
-      "path": "design/DESIGN-ANALYSIS.md",
-      "sha256": "9e9b9c4571f233219f28eb5e53b43d7ae8088e836588c0a76ce15e42e4640bb1",
-      "kind": "documentation"
-    },
-    {
-      "path": "design/SETTLEMENT.md",
-      "sha256": "f511281a323449de82c512af9d4fd6ba28d5647d7cb7d46498f961dd9ad96525",
-      "kind": "documentation"
     },
     {
       "path": "design/content.json",
@@ -167,6 +152,11 @@
       "path": "verify.mjs",
       "sha256": "eb74cedf6ee0a6e3d9e690fad7888aa8b448f5b88bb27ee0f8c001fcec366b89",
       "kind": "source"
+    },
+    {
+      "path": "design.md",
+      "sha256": "94447c92cee3ff15bf697b5ccc4681058c5528f3e2c76abb75082807a0bdc0c2",
+      "kind": "documentation"
     }
   ],
   "resources": [
@@ -257,14 +247,11 @@
     }
   },
   "design": {
-    "decisionCard": "DESIGN-RETENTION.md",
+    "decisionCard": "design.md",
     "nonAssetNote": "No public family or shared snapshot. ratio-audit is an actually invoked case-local arithmetic preflight, not a drawing family.",
     "ruleRefs": [],
     "ruleStatus": "No separate formal rule card claimed; use decisionCard and sourceAnalysis.",
-    "sourceAnalysis": [
-      "design/DESIGN-ANALYSIS.md",
-      "design/SETTLEMENT.md"
-    ],
+    "sourceAnalysis": [],
     "assetUsage": []
   },
   "transfer": {

@@ -5,8 +5,8 @@
 ## 证据与状态
 
 - [固定来源](https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/ppt/14-narrative-sparkline.html)；原作归属以CREDITS.md及work.json为准，非原创构图声明。
-- 本次核对：`design/scene.mjs`、`README.md`、`work.json`、`design/DESIGN-ANALYSIS.md`、`design/content.json`；结合现有自渲染封面检查宏观关系。
-- 这是文档沉淀修复：未在本次重新渲染、浏览器验收或复算全部模型。既有验收/复现范围见work.json与README，封面缩略检查不替代完整尺寸视觉复核。
+- 既有设计卡核对：`design/scene.mjs`、`README.md`、`work.json`、`design/content.json`；结合现有自渲染封面检查宏观关系。
+- 既有卡片是文档沉淀修复，不代表新渲染、浏览器验收或全模型复算。既有验收/复现范围见work.json与README，封面缩略检查不替代完整尺寸视觉复核。
 
 ## 内容目的与品牌性格
 
@@ -35,3 +35,13 @@
 ## 用于 Motion Studio 的入口
 
 先按上述内容任务选择本例，再取可迁移判断；具体源码保留完整案例入口，不把所有视觉关系拆成小零件。换文案/数据/字体/画幅后必须重渲染并对照本卡的阅读顺序与事实边界。当前只支持已记录的固定尺寸静态学习，不推定浏览器、响应式、交互、Motion或跨内容迁移已通过。公开族新增、参数契约与代码测试应另行审核，本卡不自动增加族计数。
+
+## 实现与验证
+
+完整固定画幅Native文字与几何复刻，无来源截图贴图或imagegen。设计与数据可编辑；原作内容限制如上。已审阅完整图与局部，但字体栅格化、字重、材质仍有近似。未验证浏览器、交互、响应式、视频或声音。此工程不是新增通用动效机制。
+
+## 当前实现与恢复入口
+
+完整固定场景见[design/scene.mjs](design/scene.mjs)，合同画幅1200×750；运行、字体及依赖见[README](README.md)，署名与许可见[CREDITS.md](CREDITS.md)。原分析未提供额外设计细节，其实现与验证范围已并入本页，原设计卡中的具体判断和反例完整保留，不维护平行入口。
+
+当前状态与文件身份见[work.json](work.json)。本次只整理文档，未重新渲染或视觉复审，没有新增动态/交互/声音验证或用户接受；公开合同不包含私人回执与报告，外部引用不保证可达或转授权利。

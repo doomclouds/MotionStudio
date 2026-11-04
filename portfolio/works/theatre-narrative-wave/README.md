@@ -1,6 +1,6 @@
 # 现在与可能 · 小剧场叙事波形
 
-完整1200×750固定静态学习复刻。[原作](https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/ppt/14-narrative-sparkline.html)；见[设计逻辑](design/DESIGN-ANALYSIS.md)与[许可](CREDITS.md)。该例已获收藏，但不是通用设计能力或动效质量的证明。
+完整1200×750固定静态学习复刻。[原作](https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/ppt/14-narrative-sparkline.html)；见[设计逻辑](design.md)与[许可](CREDITS.md)。该例已获收藏，但不是通用设计能力或动效质量的证明。
 
 ## 离线重现
 
@@ -17,3 +17,5 @@ THEATRE_FONT_DIR=/absolute/prepared-fonts MOTION_ENGINE_ROOT=/absolute/engine/mo
 图形用于叙事隐喻，无量化轴，不能作为真实业绩趋势或预测。未验证浏览器、交互、响应式、视频及声音。
 
 ![作品预览](cover.jpg)
+
+设计意图、实现入口与验证边界见[design.md](design.md)。
