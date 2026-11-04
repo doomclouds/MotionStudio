@@ -8,4 +8,8 @@
 
 两内容组合：茶事三阶段（一行三项）与街巷笔记四个索引（二行两列），改变语义映射、格数、形状、旋转和色彩；配合竖排文本与横排说明。示例只为可组合性证据，不宣称新品牌审美已经获批。
 
-稳定来源作品：`portfolio/works/bauhaus-theatre-study`。本地提取快照：`song-bauhaus-candidates/bauhaus`。这里是设计关系提取；原作品scene未改为调用本模块，真实新调用见`examples/b05-compositions.mjs`。
+稳定来源作品：`portfolio/works/bauhaus-theatre-study`。本地提取快照：`song-bauhaus-candidates/bauhaus`。这里是设计关系提取；原作品scene未改为调用本模块，真实新调用见[B05组合](../../examples/b05-compositions.mjs)。
+
+## 当前执行入口
+
+当前合同与依赖见 [README](README.md)，直接运行 [示例](examples/render.mjs)及[测试](test/contract.mjs)。以上本地提取快照/核验文件是历史来源记录，不随本目录分发，也不是运行依赖；不据历史说明声称本次重新视觉接受。B05完整组合另有CJK字体要求，本目录的英文独立样例只需声明的DejaVu字体。

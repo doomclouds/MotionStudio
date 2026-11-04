@@ -3,11 +3,11 @@ import assert from 'node:assert/strict';
 import vm from 'node:vm';
 import {spawnSync} from 'node:child_process';
 import {createHash} from 'node:crypto';
-import {intervalLaneLayout as layout} from '../lib/foundations/layout/interval-lanes.mjs';
-import {compileLayoutHandoff,sampleLayoutHandoff} from '../lib/recipes/layout-handoff.mjs';
-import {rational as T} from '../lib/time.mjs';
-import {transformBounds,transformPoint} from '../lib/matrix.mjs';
-import {loadNativeCanvas} from '../../motion-render-core/lib/native.mjs';
+import {intervalLaneLayout as layout} from '../index.mjs';
+import {compileLayoutHandoff,sampleLayoutHandoff} from '../../../../recipes/layout-handoff.mjs';
+import {rational as T} from '../../../../time.mjs';
+import {transformBounds,transformPoint} from '../../../../matrix.mjs';
+import {loadNativeCanvas} from '../../../../../../motion-render-core/lib/native.mjs';
 const e=(itemId,start,end)=>({itemId,start,end});
 const base=()=>({items:[e('a',0,4),e('b',2,6),e('c',3,8),e('d',6,10)],domain:{start:0,end:12},width:240,laneHeight:20,laneGap:5});
 const assignments=s=>Object.fromEntries(s.lanes.flatMap((l,i)=>l.itemIds.map(id=>[id,i])).sort());
@@ -92,6 +92,6 @@ test('old handoff exact endpoints, reduced policy and empty handling remain expl
 function draw(api,s){const c=api.createCanvas(280,120),ctx=c.getContext('2d');ctx.fillStyle='#e9e2d5';ctx.fillRect(0,0,280,120);for(const v of s.items){ctx.save();ctx.translate(10,10);ctx.transform(...v.matrix);ctx.fillStyle=['#bf5138','#22545b','#ac8739','#6b6679'][v.zIndex%4];ctx.fillRect(0,0,v.rect.width,v.rect.height);ctx.restore();}return createHash('sha256').update(c.toBuffer('image/png')).digest('hex');}
 test('fresh Node state and Native repeated/reversed samples match without history',()=>{
  const inputs=[base(),{...base(),items:[]},{...base(),items:base().items.map(v=>v.itemId==='c'?e('c',8,12):v)}],states=inputs.map(layout),{api}=loadNativeCanvas(),hashes=states.map(s=>draw(api,s));for(const i of [2,0,1,2])assert.equal(draw(api,layout(inputs[i])),hashes[i]);
- const code=`import{intervalLaneLayout as layout}from ${JSON.stringify(new URL('../lib/foundations/layout/interval-lanes.mjs',import.meta.url).href)};import{loadNativeCanvas}from ${JSON.stringify(new URL('../../motion-render-core/lib/native.mjs',import.meta.url).href)};import{createHash}from'node:crypto';const inputs=${JSON.stringify(inputs)},states=inputs.map(layout),draw=${draw.toString()};const{api}=loadNativeCanvas();console.log(JSON.stringify({states,hashes:states.map(s=>draw(api,s))}));`;
+ const code=`import{intervalLaneLayout as layout}from ${JSON.stringify(new URL('../index.mjs',import.meta.url).href)};import{loadNativeCanvas}from ${JSON.stringify(new URL('../../../../../../motion-render-core/lib/native.mjs',import.meta.url).href)};import{createHash}from'node:crypto';const inputs=${JSON.stringify(inputs)},states=inputs.map(layout),draw=${draw.toString()};const{api}=loadNativeCanvas();console.log(JSON.stringify({states,hashes:states.map(s=>draw(api,s))}));`;
  const p=spawnSync(process.execPath,['--input-type=module','-e',code],{encoding:'utf8'});assert.equal(p.status,0,p.stderr);assert.equal(p.stdout.trim(),JSON.stringify({states,hashes}));
 });

@@ -157,8 +157,8 @@ solver及实际导入依赖与影片一致，但存档未使用的旧index不等
 
 ## 悬线与排期批：2 基础＋1 配方
 
-- `geometry.catenary`：由支持端点、固定输入长度和重力方向求静态悬链线，按弧长地址取点/切线。[使用/数值范围/原影片桥接](../catenary.md)。不是动态绳索或电传播模拟。
-- `composition.interval-lanes`：固定半开区间按重叠分配最少互换轨道；显式改时后重算端点快照。[使用/最少性/投影限制](../interval-lanes.md)。不自动改时间。
+- `geometry.catenary`：由支持端点、固定输入长度和重力方向求静态悬链线，按弧长地址取点/切线。[使用/数值范围/原影片桥接](../../lib/foundations/geometry/catenary/README.md)。不是动态绳索或电传播模拟。
+- `composition.interval-lanes`：固定半开区间按重叠分配最少互换轨道；显式改时后重算端点快照。[使用/最少性/投影限制](../../lib/foundations/layout/interval-lanes/README.md)。不自动改时间。
 - `recipe.staged-layout-handoff`：明确中间布局和连续时段，组合旧handoff为先横移再收轨等交互。[调用/阶段/reduced规则](../staged-layout-handoff.md)。这是配方，不计基础，也不自动避碰或生成waypoint。
 
 分别有8.5秒和8秒有声候选、实际调用/绘图回执与限定独立解码帧审。

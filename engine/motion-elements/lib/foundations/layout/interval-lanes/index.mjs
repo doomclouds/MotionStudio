@@ -1,6 +1,6 @@
 /** Fixed half-open numeric intervals -> minimum interchangeable horizontal lanes. */
-import {object, number, id, freeze, fail} from '../../validate.mjs';
-import {composeTransform, transformBounds} from '../../matrix.mjs';
+import {object, number, id, freeze, fail} from '../../../validate.mjs';
+import {composeTransform, transformBounds} from '../../../matrix.mjs';
 function dense(a) {
   if (!Array.isArray(a) || Object.getPrototypeOf(a) !== Array.prototype || a.length > 128) fail('Expected ordinary same-realm array of 0..128 items');
   for (let i = 0; i < a.length; i++) if (!Object.hasOwn(a, i)) fail('Sparse array');

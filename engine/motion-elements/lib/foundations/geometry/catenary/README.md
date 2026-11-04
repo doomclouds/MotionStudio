@@ -1,10 +1,17 @@
 # Hanging cable geometry — experimental
 
+<!-- asset-self-description: geometry.catenary -->
+
+## 当前资产入口
+
+本页为`geometry.catenary`当前合同，机器登记与证据见[catalog](../../../../catalog.json)；[design.md](design.md)说明设计选择，[index.mjs](index.mjs)是实际实现，[examples/contract.mjs](examples/contract.mjs)运行公共barrel与catalog输入的独立断言，[专属测试](test/catenary.test.mjs)保留原数值回归。原模块/guide/test位置不保留wrapper。
+
+
 For a designed cable, garland or hanging connection between two supports, compute a uniform flexible cable's static equilibrium shape from endpoints, length and gravity. Sample it by normalized arc address to place a stroke, marker or ornament. This is **one geometry mechanism**, not rope dynamics, collision, elasticity, a force integrator, or a guarantee that a moving cable is physically plausible. Animate inputs with an existing timeline; the solver has no clock/history.
 
 ## API
 
-Import `compileCatenary`, `sampleCatenary`, `sampleCatenaryPolyline` from `lib/foundations/geometry/catenary.mjs`.
+Import `compileCatenary`, `sampleCatenary`, `sampleCatenaryPolyline` from `lib/foundations/geometry/catenary/index.mjs`.
 
 ```js
 const plan = compileCatenary({
@@ -34,7 +41,7 @@ This is floating-point geometry, **not certified interval arithmetic or exact-re
 
 ## Tests and evidence boundaries
 
-Run `node --test test/catenary.test.mjs` from `engine/motion-elements`. Tests cover symmetry, independent quadrature and dense-polyline length, finite-difference tangent, reversal/rotation, large-scale one-ULP positive slack and removed-threshold continuity, near-vertical constraints, series/halfway seams, strict input errors, copied/frozen state, module-brand isolation and new-process deterministic seek.
+Run `node --test lib/foundations/geometry/catenary/test/catenary.test.mjs` from `engine/motion-elements`. Tests cover symmetry, independent quadrature and dense-polyline length, finite-difference tangent, reversal/rotation, large-scale one-ULP positive slack and removed-threshold continuity, near-vertical constraints, series/halfway seams, strict input errors, copied/frozen state, module-brand isolation and new-process deterministic seek.
 
 An actual8.5-second/510-frame sound candidate uses the original frozen prototype:511 compile calls including1 initialization,2330 public samples (510 ledger-only midpoints;1820 used for geometry),510 polyline evaluations with181 samples each. Independent original-film review verifies2040 cord strokes,1020 attached root/plug matrices and47 pulse frames. Public polyline internal samples are not an extra mechanism.
 
@@ -47,3 +54,18 @@ Normal-speed viewing remainsNOT_DONE, listeningNOT_LISTENED, owner artistic acce
 Original implementation, no copied third-party code or new runtime dependency. Mathematical references checked2026-10-29: [MathWorld Catenary](https://mathworld.wolfram.com/Catenary.html) for uniform gravity equilibrium and [OpenStax hyperbolic calculus](https://openstax.org/books/calculus-volume-2/pages/2-9-calculus-of-the-hyperbolic-functions) for derivatives/inverses. These are references, not a license to copy their text or figures.
 
 Among the requested open-source tools, [Matter.js0.20 Constraint source](https://github.com/liabru/matter-js/blob/0.20.0/src/constraint/Constraint.js) and [API](https://brm.io/matter-js/docs/classes/Constraint.html) describe body-to-body distance constraints with stiffness and an iterative solver. Its [MIT license](https://github.com/liabru/matter-js/blob/0.20.0/LICENSE) was checked. A chain of those constraints is a different stateful approximation, not this stateless equilibrium solution; it is not imported or copied. [Paper.js Curve](https://paperjs.org/reference/curve/) provides authored Bézier length/offset/tangent queries; those are useful sampling precedents but do not solve a hanging cable from supports and length. Existing cubic/polyline paths and rigid two-link IK remain different mechanisms. Stroke styling, pulses, lights and time choreography belong to the caller and are not counted as new foundations.
+
+## 运行与恢复
+
+从完整仓库根运行：
+
+```sh
+node engine/motion-elements/lib/foundations/geometry/catenary/examples/contract.mjs
+node --test engine/motion-elements/lib/foundations/geometry/catenary/test/*.test.mjs
+```
+
+Node24+。实现无外部依赖。公共barrel还间接加载相邻motion-timeline-core及Node内建crypto，恢复时保留仓库/portable相邻布局。示例不联网、不读取媒体、不生成影片。代码适用[包MIT许可](../../../../LICENSE)，不授权参考文献图表或历史作品的媒体、字体、声音。
+
+目录整理不改变算法、数值范围或接受状态。历史影片和旧版等价记录仍绑定原版本，不能从文件搬迁推导新版影片重渲或听看通过。现有跨资产集成测试保留在包test目录，不复制进每个资产。
+
+专属测试是纯数值/新进程求值，不需要Canvas。与interval-lanes及staged配方的Native联合验证仍在[共享测试](../../../../test/cable-schedule-integration.test.mjs)。

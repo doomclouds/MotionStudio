@@ -104,7 +104,7 @@ def main():
             run(['node', str(parameter / 'examples/render.mjs')])
         else:
             print('NOT_RUN: parameter-controls Native tests require MOTION_ENGINE_ROOT and PARAMETER_CONTROLS_FONT_DIR (or UI_TEST_FONT_DIR)')
-        for family in ('radial-scale', 'diagonal-field', 'authored-paths', 'typographic-focus', 'semantic-data', 'expressive-type'):
+        for family in ('radial-scale', 'diagonal-field', 'authored-paths', 'typographic-focus', 'semantic-data', 'expressive-type', 'geometric-marks', 'proportional-partition', 'ratio-rings'):
             family_root = design / 'families' / family
             assert (family_root / 'index.mjs').read_bytes() == (ROOT / 'engine/design-elements/families' / family / 'index.mjs').read_bytes()
             for old in (family + '.mjs', 'docs/' + family + '.md', 'examples/' + family + '.mjs'):

@@ -11,4 +11,8 @@
 
 两真实内容组合：档案分类库存与制作工时计划；再结合独立ratio-rings表达“完成目标”，不把分类份额误当完成率。
 
-稳定来源作品：`portfolio/works/ocean-plastic-treemap-study`。本地提取快照：`ocean-health-batch/ocean`。这里是设计关系提取；原作品scene未改为调用本模块，真实新调用见`examples/b05-compositions.mjs`。
+稳定来源作品：`portfolio/works/ocean-plastic-treemap-study`。本地提取快照：`ocean-health-batch/ocean`。这里是设计关系提取；原作品scene未改为调用本模块，真实新调用见[B05组合](../../examples/b05-compositions.mjs)。
+
+## 当前执行入口
+
+当前合同与依赖见 [README](README.md)，直接运行 [示例](examples/render.mjs)及[测试](test/contract.mjs)。以上本地提取快照/核验文件是历史来源记录，不随本目录分发，也不是运行依赖；不据历史说明声称本次重新视觉接受。B05完整组合另有CJK字体要求，本目录的英文独立样例只需声明的DejaVu字体。

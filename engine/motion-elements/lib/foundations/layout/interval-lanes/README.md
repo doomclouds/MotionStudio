@@ -1,5 +1,12 @@
 # 固定半开区间最少分轨（experimental）
 
+<!-- asset-self-description: composition.interval-lanes -->
+
+## 当前资产入口
+
+本页为`composition.interval-lanes`当前合同，机器登记与证据见[catalog](../../../../catalog.json)；[design.md](design.md)说明设计选择，[index.mjs](index.mjs)是实际实现，[examples/contract.mjs](examples/contract.mjs)运行公共barrel与catalog输入的独立断言，[专属测试](test/interval-lanes.test.mjs)保留原数值回归。原模块/guide/test位置不保留wrapper。
+
+
 ## 场景和唯一新增机制
 
 在排期或片段时间条中保留所有固定时间范围，以不同轨道显示互相重叠的项目；调用者明确更改某个范围后，再计算新的静态轨道快照。这里只分配轨道，**不更改时间、不筛掉项目、不自动解决排程**。
@@ -9,7 +16,7 @@
 ## 接口与合成例子
 
 ```js
-import {intervalLaneLayout} from '../lib/foundations/layout/interval-lanes.mjs';
+import {intervalLaneLayout} from './index.mjs';
 const result = intervalLaneLayout({
   items: [
     {itemId:'segment-a',start:0,end:4},
@@ -88,3 +95,18 @@ const result = intervalLaneLayout({
 测试覆盖普通/嵌套/相接/相邻浮点区间、同起点tie、最小free轨、空/最大输入、严格拒绝、映射下限、输入复制与深冻、排列不变性、独立BigInt端点深度oracle、旧handoff端点/reduced兼容及Native乱序/新进程合成像素。
 
 实际8秒/480帧有声候选中，2次初始化产生3轨与2轨两个静态快照，随后由新显式分阶段交接配方消费。没有把松手编排伪称当帧重新分轨。480次配方采样中313帧提交1252次卡片绘图，312帧Native alpha为正（首提交帧alpha量化为0）；采样/提交/可见不能互换。运行时与10文件闭包同原冻结源码逐字节相等；总index是后续接入，不是原片导入。独立全状态/实际Canvas、33新进程代表帧和42实际编码节点限定审通过。真实媒体/源hash/帧范围/调用回执私有保存，不进入公共库。常速NOT_DONE、听审NOT_LISTENED、用户艺术PENDING_USER、跨场景迁移NOT_RUN；不由数学测试或限定帧审升级。
+
+## 运行与恢复
+
+从完整仓库根运行：
+
+```sh
+node engine/motion-elements/lib/foundations/layout/interval-lanes/examples/contract.mjs
+node --test engine/motion-elements/lib/foundations/layout/interval-lanes/test/*.test.mjs
+```
+
+Node24+。实现只复用共享[validate](../../../validate.mjs)与[matrix](../../../matrix.mjs)，不复制通用校验和矩阵。公共barrel还间接加载相邻motion-timeline-core及Node内建crypto，恢复时保留仓库/portable相邻布局。示例不联网、不读取媒体、不生成影片。代码适用[包MIT许可](../../../../LICENSE)，不授权参考文献图表或历史作品的媒体、字体、声音。
+
+目录整理不改变算法、数值范围或接受状态。历史影片和旧版等价记录仍绑定原版本，不能从文件搬迁推导新版影片重渲或听看通过。现有跨资产集成测试保留在包test目录，不复制进每个资产。
+
+专属测试含Native合成像素与新进程检查，需已声明版本@napi-rs/canvas。缺失时报告阻断，不删除测试。输入沿用共享validator，已知getter可能被执行，不能把它称为不可信对象沙箱。

@@ -40,8 +40,8 @@ export {flowWrapLayout} from './foundations/layout/flow-wrap.mjs';
 
 export {compileHingedPanel, sampleHingedPanel, transformHingedPoint} from './foundations/geometry/hinged-panel.mjs';
 
-export {compileCatenary, sampleCatenary, sampleCatenaryPolyline} from './foundations/geometry/catenary.mjs';
-export {intervalLaneLayout} from './foundations/layout/interval-lanes.mjs';
+export {compileCatenary, sampleCatenary, sampleCatenaryPolyline} from './foundations/geometry/catenary/index.mjs';
+export {intervalLaneLayout} from './foundations/layout/interval-lanes/index.mjs';
 export {compileStagedLayoutHandoff, sampleStagedLayoutHandoff} from './recipes/staged-layout-handoff.mjs';
 
 export {compileContourGrid, extractIsoContours} from './foundations/geometry/iso-contour.mjs';
@@ -58,7 +58,7 @@ export {compileDampedResponse,sampleDampedResponse} from './foundations/motion/d
 // Registered mechanisms and two uncounted support extensions; canonical module instances.
 export {compileFiniteParticles, sampleFiniteParticles} from './foundations/motion/finite-particles/index.mjs';
 export {layoutWeightedHierarchy} from './foundations/layout/weighted-hierarchy/index.mjs';
-export {compileTemporalExposure, sampleTemporalExposure} from './foundations/raster/temporal-exposure.mjs';
+export {compileTemporalExposure, sampleTemporalExposure} from './foundations/raster/temporal-exposure/index.mjs';
 export {samplePoissonDisc} from './foundations/layout/poisson-disc/index.mjs';
 export {compileSpriteAtlas, sampleSpriteAtlas} from './foundations/raster/sprite-atlas.mjs';
 export {compileFixedStringWave, sampleFixedStringWave} from './foundations/motion/fixed-string-wave/index.mjs';

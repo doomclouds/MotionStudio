@@ -1,7 +1,7 @@
 import*as vertical from'./vertical-imprint.mjs';
-import*as marks from'./geometric-marks.mjs';
-import*as partition from'./proportional-partition.mjs';
-import*as rings from'./ratio-rings.mjs';
+import*as marks from'./families/geometric-marks/index.mjs';
+import*as partition from'./families/proportional-partition/index.mjs';
+import*as rings from'./families/ratio-rings/index.mjs';
 import*as expressive from'./families/expressive-type/index.mjs';
 import*as radial from'./families/radial-scale/index.mjs';
 import*as diagonal from'./families/diagonal-field/index.mjs';

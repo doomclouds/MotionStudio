@@ -1,4 +1,4 @@
-import{test}from'node:test';import assert from'node:assert/strict';import{compileTemporalExposure as compile,sampleTemporalExposure as sample}from'../lib/foundations/raster/temporal-exposure.mjs';
+import{test}from'node:test';import assert from'node:assert/strict';import{compileTemporalExposure as compile,sampleTemporalExposure as sample}from'../index.mjs';
 const pixel=(...v)=>new Uint8ClampedArray(v);const run=(p,f,readFrame)=>sample(p,f,{width:1,height:1,readFrame});
 test('independent rational premultiplied oracle',()=>{const p=compile({offsets:[0,1],weights:[1,3]});const a=pixel(240,20,80,128),b=pixel(10,200,50,64);let x=run(p,8,f=>f===8?a:b);assert.deepEqual([...x.data],[102,128,62,80]);assert.deepEqual([...a],[240,20,80,128])});
 test('transparent colored pixels do not bleed',()=>{assert.deepEqual([...run(compile({offsets:[0,1],weights:[1,1]}),2,f=>f===2?pixel(255,0,0,0):pixel(0,0,255,255)).data],[0,0,255,128])});

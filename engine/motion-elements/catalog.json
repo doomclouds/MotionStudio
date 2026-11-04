@@ -2657,16 +2657,17 @@
         "audioListening": "NOT_LISTENED",
         "ownerArtisticAcceptance": "PENDING_USER",
         "technicalTests": [
-          "test/catenary.test.mjs",
+          "lib/foundations/geometry/catenary/test/catenary.test.mjs",
           "test/cable-schedule-integration.test.mjs"
         ],
-        "guidance": "docs/catenary.md",
+        "guidance": "lib/foundations/geometry/catenary/README.md",
         "videoValidation": "VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE_WITH_VERSION_EQUIVALENCE",
         "visualReview": "DECODED_FRAME_REVIEW_NO_BLOCKERS",
-        "sourceVersionRelation": "Public revision removes a prototype taut threshold and changes stable excess/arc formulas. Original frozen film runtime and historical manifests remain untouched. Final revised8.5-second candidate has a separate510-frame actual-state/cable-path numeric bridge and13 representative Native PNG plus13 fresh-process comparisons; state is not bit-identical and this is not a new encoded film. Public index export is later integration.",
+        "sourceVersionRelation": "Public revision removes a prototype taut threshold and changes stable excess/arc formulas. Original frozen film runtime and historical manifests remain untouched. Final revised8.5-second candidate has a separate510-frame actual-state/cable-path numeric bridge and13 representative Native PNG plus13 fresh-process comparisons; state is not bit-identical and this is not a new encoded film. Public index export is later integration. Later asset-directory colocation preserves this historical evidence: catenary body stays byte-identical; interval-lanes changes only relative shared-helper imports. No new film replay or acceptance is inferred.",
         "validationCoverage": "Final revised510-frame/60fps candidate:511 compile calls including1 initialization;2330 public point samples, of which510 are ledger-only midpoints and1820 feed geometry;510 polyline evaluations provide181 points each to the cable strokes. Internal polyline sampling is not a second mechanism.",
         "callEvidenceScope": "Actual producer ledger and Native drawing interception, with all510 primary cable paths numerically compared across runtime versions. Measured largest point delta8.66e-13;13 selected Native PNGs and13 fresh-process rebuilds match. Independent original-film review confirms2040 cord strokes,1020 root/plug matrices and47 pulse frames. This fixture does not prove the entire numerical domain, all-frame pixel equality, listening or artistic transfer.",
-        "compositionScope": "Existing opacity/Canvas/time support reused; endpoint choreography, electrical pulse, plug/lamp art and sound remain project composition."
+        "compositionScope": "Existing opacity/Canvas/time support reused; endpoint choreography, electrical pulse, plug/lamp art and sound remain project composition.",
+        "executableExample": "lib/foundations/geometry/catenary/examples/contract.mjs"
       },
       "knowledgeLinks": [],
       "tags": [
@@ -2731,16 +2732,17 @@
         "audioListening": "NOT_LISTENED",
         "ownerArtisticAcceptance": "PENDING_USER",
         "technicalTests": [
-          "test/interval-lanes.test.mjs",
+          "lib/foundations/layout/interval-lanes/test/interval-lanes.test.mjs",
           "test/cable-schedule-integration.test.mjs"
         ],
-        "guidance": "docs/interval-lanes.md",
+        "guidance": "lib/foundations/layout/interval-lanes/README.md",
         "videoValidation": "VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE",
         "visualReview": "DECODED_FRAME_REVIEW_NO_BLOCKERS",
-        "sourceVersionRelation": "Runtime and all10 frozen runtime files byte-match the actual private film. Public index export is later integration, not an original-film import.",
+        "sourceVersionRelation": "Runtime and all10 frozen runtime files byte-match the actual private film. Public index export is later integration, not an original-film import. Later asset-directory colocation preserves this historical evidence: catenary body stays byte-identical; interval-lanes changes only relative shared-helper imports. No new film replay or acceptance is inferred.",
         "validationCoverage": "An8-second/480-frame candidate actually initializes2 fixed-interval layouts, with minimal lane counts3 then2, and consumes these endpoints through1 explicit staged handoff plan. Only caller-authored input changes the time range; no per-frame partition call is claimed.",
         "callEvidenceScope": "Actual two input/output snapshots and downstream480 recipe samples;313 frames submit1252 card draws,312 frames have positive Native alpha. The first submitted frame quantizes tozero alpha. Static initialization and cached consumption are not mislabeled repeated API calls or continuously visible pixels.",
-        "compositionScope": "Existing layout-handoff, transformBounds and rational time reused; the new explicit staged recipe is separately counted as a recipe. Caller edit/waypoint/pointer, generated image and sound are project work."
+        "compositionScope": "Existing layout-handoff, transformBounds and rational time reused; the new explicit staged recipe is separately counted as a recipe. Caller edit/waypoint/pointer, generated image and sound are project work.",
+        "executableExample": "lib/foundations/layout/interval-lanes/examples/contract.mjs"
       },
       "knowledgeLinks": [],
       "tags": [
@@ -3697,16 +3699,16 @@
       ],
       "evidence": {
         "technicalTests": [
-          "test/temporal.test.mjs"
+          "lib/foundations/raster/temporal-exposure/test/temporal.test.mjs"
         ],
-        "guidance": "docs/foundations/raster.temporal-exposure.md",
+        "guidance": "lib/foundations/raster/temporal-exposure/README.md",
         "visualDemo": null,
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN",
         "normalSpeedViewing": "NOT_DONE",
         "audioListening": "NOT_LISTENED",
         "registrationScope": "Local registration preparation only; published baseline remains 39 foundations + 7 recipes.",
-        "executableExample": "examples/registered-foundations.mjs"
+        "executableExample": "lib/foundations/raster/temporal-exposure/examples/contract.mjs"
       },
       "knowledgeLinks": [],
       "tags": [

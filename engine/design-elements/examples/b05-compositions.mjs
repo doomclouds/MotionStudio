@@ -1,7 +1,7 @@
 import{drawAsset}from'../index.mjs';
 import{examples as vertical}from'./vertical-imprint.mjs';
-import{examples as marks}from'./geometric-marks.mjs';
-import{examples as partitions}from'./proportional-partition.mjs';
+import{examples as marks}from'../families/geometric-marks/examples/cases.mjs';
+import{examples as partitions}from'../families/proportional-partition/examples/cases.mjs';
 export const b05Recipes=[
 {id:'tea-notebook-system',kind:'editorial',theme:{surface:'#E7D8B7',ink:'#282033',muted:'#6A5C53',accent:'#AA3E31',fontFamily:'sans-serif'},vertical:vertical[0],marks:{...marks[0].data,items:marks[0].data.items.map((k,i)=>({...k,label:['OBSERVE','BREW','SHARE'][i]}))},support:{kicker:'CONTEMPORARY TYPE STUDY',lines:['Tea notes,','a visual language.'],body:['Upright columns preserve reading order.','Shapes identify the three workshop stages.','Fictional writing, not a historical facsimile.'],titleSize:42,bodySize:17,padding:0}},
 {id:'street-notebook-system',kind:'editorial',theme:{surface:'#E8E5DE',ink:'#292A39',muted:'#666371',accent:'#555183',fontFamily:'sans-serif'},vertical:vertical[1],marks:{...marks[1].data,items:marks[1].data.items.map((k,i)=>({...k,label:['ARCHIVE','WINDOWS','COURTYARDS','GATHERING'][i]}))},support:{kicker:'CONTEMPORARY OBSERVATION',lines:['A street seen','in four fragments.'],body:['A four-part mark system indexes the notebook.','The columns are authored fictional fragments.'],titleSize:40,bodySize:17,padding:0}},

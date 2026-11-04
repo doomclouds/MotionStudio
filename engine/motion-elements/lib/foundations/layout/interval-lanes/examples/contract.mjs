@@ -1,0 +1,18 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import * as api from '../../../../index.mjs';
+const catalog=JSON.parse(readFileSync(new URL('../../../../../catalog.json',import.meta.url)));
+const item=catalog.elements.find(e=>e.id==='composition.interval-lanes');
+assert(item);
+const result=api.intervalLaneLayout(item.example);
+assert.equal(result.laneCount,2);assert.equal(result.height,84);
+assert.deepEqual(result.lanes.map(l=>l.itemIds),[['segment-a','segment-c'],['segment-b']]);
+assert.deepEqual(result.items.map(x=>x.matrix[4]),[0,80,240]);
+assert.deepEqual(result.items.map(x=>x.rect.width),[160,160,160]);
+assert(Object.isFrozen(result.items[0].rect));
+const reordered=api.intervalLaneLayout({...item.example,items:[...item.example.items].reverse()});
+assert.deepEqual(reordered.lanes,result.lanes);
+const touch=api.intervalLaneLayout({...item.example,items:[{itemId:'a',start:0,end:4},{itemId:'b',start:4,end:6}]});
+assert.equal(touch.laneCount,1);
+assert.throws(()=>api.intervalLaneLayout({...item.example,items:[{itemId:'bad',start:1,end:1}]}));
+console.log('composition.interval-lanes contract PASS');

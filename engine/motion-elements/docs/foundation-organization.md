@@ -42,9 +42,9 @@ const state = sampleAttractorField(plan, {
 | 显式字格沿路径布局 | `lib/foundations/typography/glyph-run-path.mjs` | `composition.glyph-run-path` |
 | 显式尺寸逐行换行 | `lib/foundations/layout/flow-wrap.mjs` | `composition.flow-wrap` |
 | 凸平面刚性铰链 | `lib/foundations/geometry/hinged-panel.mjs` | `geometry.hinged-panel` |
-| 静态悬链线弧长寻址 | `lib/foundations/geometry/catenary.mjs` | `geometry.catenary` |
+| 静态悬链线弧长寻址 | `lib/foundations/geometry/catenary/index.mjs` | `geometry.catenary` |
 | 固定三角网格等值折线 | `lib/foundations/geometry/iso-contour.mjs` | `geometry.iso-contour` |
-| 固定半开区间最少轨道 | `lib/foundations/layout/interval-lanes.mjs` | `composition.interval-lanes` |
+| 固定半开区间最少轨道 | `lib/foundations/layout/interval-lanes/index.mjs` | `composition.interval-lanes` |
 | 同宽不等高最短列布局 | `lib/foundations/layout/masonry.mjs` | `composition.masonry` |
 | 有限候选锚点标签 | `lib/foundations/layout/anchored-labels.mjs` | `composition.anchored-labels` |
 | 非负归一邻域卷积 | `lib/foundations/raster/convolution.mjs` | `raster.neighborhood-convolution` |

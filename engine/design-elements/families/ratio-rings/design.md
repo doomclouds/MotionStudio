@@ -10,4 +10,8 @@
 
 例一读书进度（含0），例二工作坊准备（含100%）；组合一档案整理目标、组合二制作交付目标。同一实现，目标/单位/数量/颜色/厚度不同；各目标有内容对象，不把无关数值拼成视觉装饰。
 
-稳定来源作品：`portfolio/works/health-color-code-study`。本地提取快照：`ocean-health-batch/health`。这里是设计关系提取；原作品scene未改为调用本模块，真实新调用见`examples/b05-compositions.mjs`。
+稳定来源作品：`portfolio/works/health-color-code-study`。本地提取快照：`ocean-health-batch/health`。这里是设计关系提取；原作品scene未改为调用本模块，真实新调用见[B05组合](../../examples/b05-compositions.mjs)。
+
+## 当前执行入口
+
+当前合同与依赖见 [README](README.md)，直接运行 [示例](examples/render.mjs)及[测试](test/contract.mjs)。以上本地提取快照/核验文件是历史来源记录，不随本目录分发，也不是运行依赖；不据历史说明声称本次重新视觉接受。B05完整组合另有CJK字体要求，本目录的英文独立样例只需声明的DejaVu字体。

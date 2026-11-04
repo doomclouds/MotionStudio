@@ -1,4 +1,4 @@
-import{test}from'node:test';import assert from'node:assert/strict';import{compileCatenary,sampleCatenary,sampleCatenaryPolyline}from'../lib/foundations/geometry/catenary.mjs';
+import{test}from'node:test';import assert from'node:assert/strict';import{compileCatenary,sampleCatenary,sampleCatenaryPolyline}from'../index.mjs';
 const spec=(a={x:0,y:0},b={x:800,y:0},length=1000,gravity={x:0,y:1})=>({from:a,to:b,length,gravity}),near=(a,b,e=1e-7)=>assert.ok(Math.abs(a-b)<e,`${a} != ${b}`);
 test('horizontal symmetric sag and unit tangents',()=>{const p=compileCatenary(spec()),s=sampleCatenary(p,.5);near(s.position.x,400);assert.ok(s.position.y>250);near(s.tangent.x,1);near(s.tangent.y,0);for(let q=0;q<=1;q+=.03125){const a=sampleCatenary(p,q),b=sampleCatenary(p,1-q);near(a.position.y,b.position.y);near(Math.hypot(a.tangent.x,a.tangent.y),1);}});
 test('analytic arc length matches dense independent polyline and derivative',()=>{for(const [b,L]of[[{x:700,y:200},1000],[{x:200,y:-500},700],[{x:1,y:0},31],[{x:1,y:999},1100]]){const p=compileCatenary(spec({x:0,y:0},b,L)),pts=sampleCatenaryPolyline(p,{segments:4096});let len=0;for(let i=1;i<pts.length;i++)len+=Math.hypot(pts[i].position.x-pts[i-1].position.x,pts[i].position.y-pts[i-1].position.y);assert.ok(len<=L+1e-8);near(len,L,L*5e-5);let integral=0,N=65536;for(let i=0;i<N;i++){const x=(i+.5)*p.transverse/N;integral+=Math.cosh((x-p.transverse/2)/p.a-p.w)*p.transverse/N;}near(integral,L,L*1e-8);for(const q of[.1,.4,.6,.9]){let a=sampleCatenary(p,q-1e-5),b=sampleCatenary(p,q+1e-5),s=sampleCatenary(p,q);near((b.position.x-a.position.x)/2e-5/L,s.tangent.x,2e-6);near((b.position.y-a.position.y)/2e-5/L,s.tangent.y,2e-6);}}});
@@ -32,7 +32,7 @@ test('gravity threshold and strict own keys; explicit bounded sampling',()=>{
  assert.equal(sampleCatenaryPolyline(p,{segments:4096}).length,4097);
 });
 test('module brand isolation and fresh-process deterministic seek',async()=>{
- const {execFileSync}=await import('node:child_process');const url=new URL('../lib/foundations/geometry/catenary.mjs',import.meta.url).href;
+ const {execFileSync}=await import('node:child_process');const url=new URL('../index.mjs',import.meta.url).href;
  const p=compileCatenary(spec()),other=await import(url+'?isolated');assert.throws(()=>other.sampleCatenary(p,.5));
  const code=`import{compileCatenary,sampleCatenary}from ${JSON.stringify(url)};const p=compileCatenary(${JSON.stringify(spec())});console.log(JSON.stringify([.9,0,.5,1,.1].map(q=>sampleCatenary(p,q))));`;
  assert.deepEqual(JSON.parse(execFileSync(process.execPath,['--input-type=module','-e',code],{encoding:'utf8'})),[.9,0,.5,1,.1].map(q=>sampleCatenary(p,q)));
