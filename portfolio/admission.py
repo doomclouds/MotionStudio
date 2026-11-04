@@ -1,8 +1,9 @@
 """Independent work/1 static admission gate. No legacy metadata/parser imports."""
 import hashlib,re
 from pathlib import Path
-from validate_work import read,sha,require,validate
+from validate_work import read,require,validate
 import source_checks as s
+import source_identity
 
 def local(root,value):
  root=Path(root);s.relative(value,'local-reference');p=root/value
@@ -11,50 +12,23 @@ def local(root,value):
  for part in Path(value).parts:cursor=cursor/part;require(not cursor.is_symlink(),'REFERENCE_SYMLINK')
  require(p.resolve().is_relative_to(root.resolve()) and p.is_file(),'REFERENCE_MISSING_OR_ESCAPE');return p
 
-def closure(root,name,seen=None):
- seen=set() if seen is None else seen
- if name in seen:return seen
- seen.add(name);code=local(root,name).read_text();require('import(' not in code,'DYNAMIC_DEPENDENCY_UNSUPPORTED')
- for target in re.findall(r"(?:from\s*|import\s*)['\"](\./[^'\"]+)['\"]",code):closure(root,str(Path(name).parent/target),seen)
- return seen
-
-def check_design(d,work,repo):
+def check_design_references(d,work,repo):
+ # These are local work/rule references, not dependency source identities.
+ # Source identities have one strict verifier: source_identity.verify_source.
  if 'design' not in d:return
  design=d['design'];local(work,design['decisionCard'])
  for name in design['sourceAnalysis']:local(work,name)
  for name in design['ruleRefs']:local(repo,name)
- if not design['assetUsage']:return
- assets=read(local(repo,'engine/design-elements/catalog.json'))['assets'];catalog={a['id']:a for a in assets};require(len(catalog)==len(assets),'DUPLICATE_FAMILY_ID');seen=set()
- for u in design['assetUsage']:
-  require(u['familyId'] in catalog and u['familyId'] not in seen,'UNKNOWN_OR_DUPLICATE_FAMILY');seen.add(u['familyId'])
-  require(u['modulePath']=='engine/design-elements/'+catalog[u['familyId']]['entry'],'FAMILY_MODULE_MISMATCH')
-  module=local(repo,u['modulePath']);require(sha(module)==u['moduleSha256'],'MODULE_IDENTITY_MISMATCH')
-  code=local(work,u['callsite']).read_text();require(u['importToken']==module.name and u['importToken'] in code,'IMPORT_EVIDENCE_MISSING')
-  callcode=re.sub(r"/\*[\s\S]*?\*/|//[^\n]*|\"(?:\\.|[^\"\\])*\"|'(?:\\.|[^'\\])*'|`(?:\\.|[^`\\])*`",'',code)
-  require(re.search(r'\b'+re.escape(u['callToken'])+r'\s*\(',callcode) is not None,'CALL_EVIDENCE_MISSING')
-  if u['mode']=='vendored-snapshot':
-   require(sha(local(work,u['snapshotPath']))==u['moduleSha256'],'SNAPSHOT_IDENTITY_MISMATCH')
-   snapshots=read(local(work,'module-snapshots.json'))['files'];require(any(x['path']==u['snapshotPath'] and x['sha256']==u['moduleSha256'] and u['sourceCommit'] in x['source_url'] for x in snapshots),'SNAPSHOT_PROVENANCE_MISSING')
-  else:
-   require(u['snapshotPath'] is None,'RUNTIME_IMPORT_HAS_SNAPSHOT')
-   require(('MOTION_UI_ASSETS_ROOT' in code and 'import(' in code) or u['modulePath'] in code,'RUNTIME_IMPORT_ROOT_MISSING')
-   if (work/'ui-dependencies.json').exists():
-    lock=read(local(work,'ui-dependencies.json'))
-    # Lifecycle semantics, not old work-schema compatibility: frozen tested locks
-    # retain their factual names, untested candidate locks cannot claim tested_commit.
-    if d['lifecycle']=='candidate':
-     require(set(lock)=={'repository','dependency_commit','verification_status','root','files'} and lock['verification_status']=='NOT_RUN','CANDIDATE_DEPENDENCY_LOCK_INVALID');commit=lock['dependency_commit']
-    else:
-     require(set(lock)=={'repository','tested_commit','root','files'},'RETAINED_DEPENDENCY_LOCK_INVALID');commit=lock['tested_commit']
-    require(commit==u['sourceCommit'] and lock['root']=='engine/design-elements','DEPENDENCY_COMMIT_OR_ROOT_MISMATCH')
-    require(closure(repo/'engine/design-elements',module.relative_to(repo/'engine/design-elements').as_posix()).issubset({x['path'] for x in lock['files']}),'DEPENDENCY_CLOSURE_INCOMPLETE')
-    require(len({x['path'] for x in lock['files']})==len(lock['files']),'DUPLICATE_DEPENDENCY')
-    for row in lock['files']:
-     require(set(row)=={'path','sha256'},'DEPENDENCY_ROW_FIELDS');require(sha(local(repo/'engine/design-elements',row['path']))==row['sha256'],'DEPENDENCY_BYTES_MISMATCH')
-   else:require(u['moduleSha256'] in code,'RUNTIME_HARDCODED_IDENTITY_MISSING')
 
-def inspect(work,repo):
- work=Path(work);repo=Path(repo);d=read(local(work,'work.json'));validate(d,work)
+def inspect(work,repo,source_repo=None):
+ """Check local admission gates and recorded historical Design identities.
+
+ Missing historical source blocks this inspection, not the recorded lifecycle.
+ Local safety failures still raise Blocked. No source restoration or execution.
+ """
+ work=Path(work);repo=Path(repo)
+ require(not any((work/name).exists() or (work/name).is_symlink() for name in ('entry.json','retention.json')),'PARALLEL_METADATA_FORBIDDEN')
+ d=read(local(work,'work.json'));validate(d,work)
  inventory={x['path']:x for x in d['files']};cover_dimensions=None
  for path in work.rglob('*'):
   require(not path.is_symlink(),'SOURCE_SYMLINK');rel=path.relative_to(work).as_posix();s.relative(rel,'source-tree')
@@ -93,5 +67,16 @@ def inspect(work,repo):
   require(rights['status']==('reviewed-publication-scope' if d['publication']['status']=='source-release' else 'reviewed'),'PUBLICATION_RIGHTS_MISMATCH')
   if d['publication']['status']=='source-release':require(any(x['mode']=='provide' for x in d['resources']),'SOURCE_RELEASE_RESOURCES_UNDECLARED')
   require(all(d['acceptance'][k] is True for k in ['complete_work','owner_keep','clean_restore','technical']),'REQUIRED_ACCEPTANCE_NOT_ESTABLISHED')
- check_design(d,work,repo)
- return {'id':d['id'],'kind':d['kind'],'lifecycle':d['lifecycle'],'static_checks':'PASSED','admissible':d['lifecycle']=='retained','reason':'RECORDED_GATES_PRESENT' if d['lifecycle']=='retained' else 'CURRENT_VERSION_NOT_RUN','scope':'Static checks only; no render, perceptual review, legal approval or new owner acceptance.'}
+ check_design_references(d,work,repo)
+ source=source_identity.verify_source(work,repo if source_repo is None else source_repo)
+ source_ok=source['sourceVerification'] in {'PASSED','NOT_APPLICABLE'}
+ status='PASSED' if source_ok else source['sourceVerification']
+ reason=('RECORDED_GATES_PRESENT' if d['lifecycle']=='retained' else 'CURRENT_VERSION_NOT_RUN') if source_ok else 'SOURCE_VERIFICATION_'+status
+ return {'id':d['id'],'kind':d['kind'],'lifecycle':d['lifecycle'],
+         'status':status,'static_checks':status,'local_checks':'PASSED',
+         'sourceVerification':source['sourceVerification'],
+         'recoveryAvailability':source['recoveryAvailability'],
+         'admissible':source_ok and d['lifecycle']=='retained','reason':reason,
+         'checks':source['checks'],'errors':source['errors'],
+         'sourceLimitations':source['limitations'],
+         'scope':'Static local admission checks and frozen Design source identities only; no restore, render, perceptual review, legal approval or new owner acceptance.'}

@@ -114,6 +114,15 @@ def main():
                 run(['node', str(family_root / 'examples/render.mjs')])
             else:
                 print('NOT_RUN: ' + family + ' Native examples require declared external runtime and DejaVu fonts')
+        sections = design / 'families/color-sections'
+        assert (sections / 'index.mjs').read_bytes() == (ROOT / 'engine/design-elements/families/color-sections/index.mjs').read_bytes()
+        for old in ('color-sections.mjs', 'docs/color-sections.md', 'examples/color-sections.mjs'):
+            assert not (design / old).exists(), old
+        if os.environ.get('MOTION_ENGINE_ROOT'):
+            run(['node', str(sections / 'test/contract.mjs')])
+            run(['node', str(sections / 'examples/render.mjs')])
+        else:
+            print('NOT_RUN: color-sections Native examples require declared external runtime; no fonts needed')
         vertical = design / 'families/vertical-imprint'
         assert (vertical / 'index.mjs').read_bytes() == (ROOT / 'engine/design-elements/families/vertical-imprint/index.mjs').read_bytes()
         for old in ('vertical-imprint.mjs', 'docs/vertical-imprint.md', 'examples/vertical-imprint.mjs', 'test/verify-cjk-font.py'):

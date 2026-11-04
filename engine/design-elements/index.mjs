@@ -7,7 +7,7 @@ import*as radial from'./families/radial-scale/index.mjs';
 import*as diagonal from'./families/diagonal-field/index.mjs';
 import*as paths from'./families/authored-paths/index.mjs';
 import*as typography from'./families/typographic-focus/index.mjs';
-import*as sections from'./color-sections.mjs';
+import*as sections from'./families/color-sections/index.mjs';
 import*as material from'./material-surfaces.mjs';
 import*as data from'./families/semantic-data/index.mjs';
 import*as controls from'./families/parameter-controls/index.mjs';

@@ -1,7 +1,7 @@
 {
   "schema": "motionstudio.work-index/1",
   "source": "work/1-only",
-  "evidencePolicy": "NOT_INCLUDED is disclosure policy, not proof of review or absence.",
+  "evidencePolicy": "Lifecycle and visual states are recorded facts. Discovery validates local inventory, not historical dependencies or fresh acceptance. NOT_INCLUDED is disclosure policy, not proof of review or absence.",
   "counts": {
     "works": 66,
     "static": 64,
@@ -35,8 +35,8 @@
     },
     {
       "id": "design.color-sections.v1",
-      "entry": "color-sections.mjs",
-      "guidance": "docs/color-sections.md",
+      "entry": "families/color-sections/index.mjs",
+      "guidance": "families/color-sections/design.md",
       "sourceCases": [
         "muqi-study",
         "slow-roast-study",
@@ -191,6 +191,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": [
         "design.color-sections.v1"
       ]
@@ -204,6 +207,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": []
     },
     {
@@ -215,6 +221,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": []
     },
     {
@@ -226,6 +235,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": [
         "design.material-surfaces.v1"
       ]
@@ -239,6 +251,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": []
     },
     {
@@ -250,6 +265,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": []
     },
     {
@@ -261,6 +279,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": []
     },
     {
@@ -272,6 +293,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": []
     },
     {
@@ -283,6 +307,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": []
     },
     {
@@ -294,6 +321,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": []
     },
     {
@@ -305,6 +335,9 @@
       "publication": "not-published",
       "visual": "NOT_RUN",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": [
         "design.print-poster.v1"
       ]
@@ -318,6 +351,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": [
         "design.material-surfaces.v1"
       ]
@@ -331,6 +367,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": [
         "design.material-surfaces.v1"
       ]
@@ -344,6 +383,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": []
     },
     {
@@ -355,6 +397,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": []
     },
     {
@@ -366,6 +411,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": [
         "design.material-surfaces.v1"
       ]
@@ -379,6 +427,9 @@
       "publication": "not-published",
       "visual": "NOT_RUN",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": [
         "design.print-poster.v1"
       ]
@@ -392,6 +443,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": []
     },
     {
@@ -403,6 +457,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": [
         "design.material-surfaces.v1"
       ]
@@ -416,6 +473,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": []
     },
     {
@@ -427,6 +487,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": []
     },
     {
@@ -438,6 +501,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": []
     },
     {
@@ -449,6 +515,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": []
     },
     {
@@ -460,6 +529,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": []
     },
     {
@@ -471,6 +543,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": []
     },
     {
@@ -482,6 +557,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": []
     },
     {
@@ -493,6 +571,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": []
     },
     {
@@ -504,6 +585,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": []
     },
     {
@@ -515,6 +599,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": [
         "design.material-surfaces.v1"
       ]
@@ -528,6 +615,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": []
     },
     {
@@ -539,6 +629,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": []
     },
     {
@@ -550,6 +643,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": []
     },
     {
@@ -561,6 +657,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": [
         "design.material-surfaces.v1"
       ]
@@ -574,6 +673,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": []
     },
     {
@@ -585,6 +687,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": []
     },
     {
@@ -596,6 +701,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": []
     },
     {
@@ -607,6 +715,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": []
     },
     {
@@ -618,6 +729,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": []
     },
     {
@@ -629,6 +743,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": []
     },
     {
@@ -640,6 +757,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": []
     },
     {
@@ -651,6 +771,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": []
     },
     {
@@ -662,6 +785,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": []
     },
     {
@@ -673,6 +799,9 @@
       "publication": "not-published",
       "visual": "NOT_RUN",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": [
         "design.print-poster.v1",
         "design.color-sections.v1"
@@ -687,6 +816,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": [
         "design.material-surfaces.v1"
       ]
@@ -700,6 +832,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": []
     },
     {
@@ -711,6 +846,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": [
         "design.material-surfaces.v1"
       ]
@@ -724,6 +862,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": [
         "design.material-surfaces.v1"
       ]
@@ -737,6 +878,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": [
         "design.material-surfaces.v1"
       ]
@@ -750,6 +894,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": []
     },
     {
@@ -761,6 +908,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": []
     },
     {
@@ -772,6 +922,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": []
     },
     {
@@ -783,6 +936,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": [
         "design.material-surfaces.v1"
       ]
@@ -796,6 +952,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": [
         "design.material-surfaces.v1"
       ]
@@ -809,6 +968,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": []
     },
     {
@@ -820,6 +982,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": []
     },
     {
@@ -831,6 +996,9 @@
       "publication": "released",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": []
     },
     {
@@ -842,6 +1010,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": []
     },
     {
@@ -853,6 +1024,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": []
     },
     {
@@ -864,6 +1038,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": [
         "design.material-surfaces.v1"
       ]
@@ -877,6 +1054,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": []
     },
     {
@@ -888,6 +1068,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": []
     },
     {
@@ -899,6 +1082,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": []
     },
     {
@@ -910,6 +1096,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": []
     },
     {
@@ -921,6 +1110,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": []
     },
     {
@@ -932,6 +1124,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": []
     },
     {
@@ -943,6 +1138,9 @@
       "publication": "source-release",
       "visual": "PARTIAL",
       "reviewArtifacts": "NOT_INCLUDED",
+      "statusScope": "RECORDED",
+      "sourceVerification": "NOT_RUN",
+      "recoveryAvailability": "NOT_CHECKED",
       "families": [
         "design.color-sections.v1"
       ]

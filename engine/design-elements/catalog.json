@@ -49,13 +49,13 @@
       "id": "design.color-sections.v1",
       "version": 1,
       "status": "published-source-technical-reviewed",
-      "entry": "color-sections.mjs",
+      "entry": "families/color-sections/index.mjs",
       "exports": [
         "validate",
         "draw"
       ],
-      "guidance": "docs/color-sections.md",
-      "example": "examples/color-sections.mjs",
+      "guidance": "families/color-sections/design.md",
+      "example": "families/color-sections/examples/render.mjs",
       "sourceCases": [
         "https://github.com/doomclouds/MotionStudio/blob/cae18d21f2fbef9702c8ce94ce68abd9eda826a4/portfolio/works/muqi-study/README.md",
         "https://github.com/doomclouds/MotionStudio/blob/cae18d21f2fbef9702c8ce94ce68abd9eda826a4/portfolio/works/slow-roast-study/README.md",
@@ -71,7 +71,8 @@
         "not-browser",
         "not-motion",
         "not-user-approved-new-artwork"
-      ]
+      ],
+      "sample": "families/color-sections/examples/cases.mjs"
     },
     {
       "id": "design.material-surfaces.v1",
