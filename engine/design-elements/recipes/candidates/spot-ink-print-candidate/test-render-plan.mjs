@@ -1,0 +1,15 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {createSpotInkRenderPlan} from './render-plan.mjs';import {spotInkShaderSources} from './shader-sources.mjs';import {neutralOptions} from './fixtures.mjs';
+const make=(options=neutralOptions)=>createSpotInkRenderPlan({width:320,height:200,options});
+test('pure plan produces canonical uniforms and JSON lossless data',()=>{const p=make();assert.equal(p.schema,'spot-ink-render-plan/1');assert.deepEqual(p.uniforms.uRes,{type:'2fv',value:[320,200]});assert.equal(p.uniforms.uInk.value[0],35/255);assert.deepEqual(JSON.parse(JSON.stringify(p)),p);assert.equal(p.texture.inputAlpha,'opaque-required-shader-ignores');assert.equal(p.uniforms.uTex.type,'1i');});
+test('deep frozen plan and isolated input',()=>{const o=structuredClone(neutralOptions),p=make(o);o.inks[0][0]=255;assert.equal(p.uniforms.uInk.value[0],35/255);const check=x=>{if(x&&typeof x==='object'){assert(Object.isFrozen(x));Object.values(x).forEach(check);}};check(p);assert.throws(()=>p.uniforms.uInk.value[0]=0);});
+test('plan rejects unknown/missing/accessor/invalid dimensions and reflection',()=>{let gets=0;const accessor={width:320,height:200,options:neutralOptions};Object.defineProperty(accessor,'width',{get(){gets++;return 320;}});for(const x of [{width:320,height:200,options:neutralOptions,other:1},{width:320,height:200},{width:0,height:200,options:neutralOptions},{width:4096,height:4096,options:neutralOptions},{width:NaN,height:200,options:neutralOptions},accessor,{width:320,height:200,options:{...neutralOptions,water:null}}])assert.throws(()=>createSpotInkRenderPlan(x));assert.equal(gets,0);});
+test('different caller options produce distinct plans, repeat remains identical',()=>{assert.notDeepEqual(make(),make({...neutralOptions,gate:[0,1,0],off:[[1,2],[0,0],[0,0]]}));assert.deepEqual(make(),make());});
+test('source export immutable and one shader pair, no DOM dependency',()=>{assert(Object.isFrozen(spotInkShaderSources));assert.equal(spotInkShaderSources.language,'GLSL ES 3.00');assert(spotInkShaderSources.vertex.startsWith('#version 300 es'));assert(spotInkShaderSources.fragment.startsWith('#version 300 es'));assert(!spotInkShaderSources.fragment.includes('uWater'));assert.throws(()=>spotInkShaderSources.fragment='bad');});
+
+test('JSONL CLI streams actual canonical plans, invalid later line exits nonzero',async()=>{
+ const {spawnSync}=await import('node:child_process');
+ const input={width:320,height:200,options:neutralOptions};
+ const run=lines=>spawnSync(process.execPath,[new URL('./export-render-plan.mjs',import.meta.url).pathname,'--jsonl'],{input:lines.map(x=>JSON.stringify(x)).join('\n')+'\n',encoding:'utf8'});
+ const good=run([input,{...input,width:400}]);assert.equal(good.status,0);const out=good.stdout.trim().split('\n').map(JSON.parse);assert.equal(out.length,2);assert.deepEqual(out[0].plan,make());assert.deepEqual(out[0].shaderSources,spotInkShaderSources);assert.equal(out[1].plan.width,400);
+ const bad=run([input,{...input,width:0}]);assert.notEqual(bad.status,0);assert.equal(bad.stdout.trim().split('\n').length,1);
+});

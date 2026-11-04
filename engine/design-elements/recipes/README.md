@@ -18,3 +18,7 @@ python3 scripts/design-navigation.py --repo . --details
 ```
 
 The query is read-only and excludes uncommitted edits. Per-package contracts, rights notices and explicit external resources remain required. This directory change does not establish fresh rendering, visual/audio review, cross-platform behavior or final acceptance.
+
+## Material rendering candidate
+
+[Three spot-ink print](candidates/spot-ink-print-candidate/README.md) adapts a credited LemoLab shader into a bounded density-plate compositor and portable render plan. It is source-only, with synthetic tests and optional external-oracle diagnostics; it adds no registered family or portfolio work. Real-browser and artistic acceptance remain separate.

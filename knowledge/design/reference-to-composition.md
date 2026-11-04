@@ -138,3 +138,4 @@ UI 导演先看整页与任务，再以对照定位局部，保留状态/文字/
 - [显露与修订：变化前后如何核对](studies/reveal-and-revision.md)
 - [情绪与动作：表达不能代替后果](studies/emotion-and-action.md)
 - [观察式复刻：画面怎样落到组合](studies/observational-reconstruction.md)
+- [源码辅助媒介学习：墨版、分层时钟与依赖行为](studies/material-logic-from-code.md)

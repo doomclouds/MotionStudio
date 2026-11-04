@@ -1,0 +1,35 @@
+<!doctype html><meta charset="utf-8"><title>Spot ink synthetic tests</title>
+<body><script type="module">
+import {createSpotInkCompositor} from './spot-ink.mjs';
+import {makeRiso} from './reference/upstream-riso.js';
+import {drawFixture,neutralOptions} from './fixtures.mjs';
+const results=[];const ok=(v,msg)=>{if(!v)throw Error(msg);results.push(msg);};
+const make=(w=320,h=200)=>{const c=document.createElement('canvas');c.width=w;c.height=h;return c;};
+const bytes=c=>{const x=make(c.width,c.height),ctx=x.getContext('2d');ctx.drawImage(c,0,0);return ctx.getImageData(0,0,c.width,c.height).data;};
+const eq=(a,b)=>a.length===b.length&&a.every((v,i)=>v===b[i]);
+const throws=(fn,pattern)=>{try{fn();}catch(e){return pattern.test(e.message);}return false;};
+try {
+ const input=make(),output=make(),original=make();document.body.append(output,original);
+ const compositor=createSpotInkCompositor({outputCanvas:output,inputCanvas:input});const print=makeRiso(original,320,200);
+ const cases=[neutralOptions,{...neutralOptions,off:[[2,-1],[-3,2],[1,1]],rot:[.0005,-.0005,0],seed:8,sheet:3,boil:.35}, {...neutralOptions,gate:[1,0,.4],sweep:[80,120,170],period:9,grain:2}];
+ const evidence=[];
+ for(let variant=0;variant<2;variant++)for(let i=0;i<cases.length;i++){
+  drawFixture(input,variant);compositor.render(cases[i]);print(input,cases[i]);const a=bytes(output),b=bytes(original);
+  let max=0,different=0;for(let j=0;j<a.length;j++){const d=Math.abs(a[j]-b[j]);max=Math.max(max,d);different+=d!==0;}
+  evidence.push({variant,case:i,maxByteDifference:max,differingBytes:different});ok(eq(a,b),`upstream exact nonwater match ${variant}/${i}`);
+  compositor.render(cases[i]);ok(eq(a,bytes(output)),`repeat exact ${variant}/${i}`);
+ }
+ drawFixture(input,0);compositor.render(cases[0]);const a=bytes(output);compositor.render(cases[2]);compositor.render(cases[0]);ok(eq(a,bytes(output)),'out-of-order render stable');
+ compositor.render({...neutralOptions,gate:[0,0,0]});const paper=bytes(output);ok(!eq(a,paper),'gates remove ink');
+ const empty=make();empty.getContext('2d').fillRect(0,0,320,200);const blankOut=make();const blank=createSpotInkCompositor({outputCanvas:blankOut,inputCanvas:empty});blank.render(neutralOptions);ok(eq(paper,bytes(blankOut)),'zero densities equal gated paper');blank.dispose();
+ ok(throws(()=>compositor.render({...neutralOptions,water:{y:50}}),/unknown/),'water rejected');
+ input.width=319;ok(throws(()=>compositor.render(neutralOptions),/resized/),'resizing rejected');input.width=320;
+ compositor.dispose();compositor.dispose();ok(throws(()=>compositor.render(neutralOptions),/disposed/),'dispose idempotent and rendering rejected');
+ const occupied=make();occupied.getContext('2d');ok(throws(()=>createSpotInkCompositor({outputCanvas:occupied,inputCanvas:make()}),/WebGL2 unavailable/),'unavailable WebGL2 clear error');
+ ok(throws(()=>createSpotInkCompositor({outputCanvas:make(0,200),inputCanvas:make()}),/dimensions/),'zero canvas rejected');
+ ok(throws(()=>createSpotInkCompositor({outputCanvas:make(4097,1),inputCanvas:make(4097,1)}),/dimensions/),'oversize rejected');
+ const newOutput=make(),fresh=createSpotInkCompositor({outputCanvas:newOutput,inputCanvas:drawFixture(input,0)});fresh.render(cases[0]);ok(eq(a,bytes(newOutput)),'new instance stable');
+ window.testResult={status:'PASS',assertions:results,evidence,renderer:newOutput.getContext('webgl2').getParameter(0x1F01)};
+ fresh.dispose();
+}catch(e){window.testResult={status:'FAIL',assertions:results,error:String(e),stack:e.stack};}
+</script></body>
