@@ -1,6 +1,6 @@
 # 今夜观木星 · 复古未来观象台
 
-完整1200×750静态Native工程；用户已同意收录。非官方Huashu设计标本复刻，不是原创构图、运营品牌或真实产品。设计逻辑见design/DESIGN-REASONING.md。
+完整1200×750静态Native工程；用户已同意收录。非官方Huashu设计标本复刻，不是原创构图、运营品牌或真实产品。设计逻辑见design.md。
 
 ## 离线复现
 
@@ -16,3 +16,5 @@ ENGINE为MotionStudio的engine/motion-render-core；Node与Canvas版本见locks�
 https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/web/07-cosmic-retro-futurism.html
 
 中文斜体近似、字形栅格与局部字距；轨道非比例，活动日期和天文说法未事实核查，不用于真实观测指南。 无imagegen、来源截图贴图；唯一cover.jpg来自完整Native重建。已审PNG SHA-256：`a4cfef99fc86e38956777dc8bd371c87a41a4c8f1818afdd6734d7f58e884387`。未验证浏览器、交互、响应式、音视频。外置资源条件下的本机重现不保证跨系统像素一致。
+
+设计意图、场景结构、复用与验证边界见[design.md](design.md)。

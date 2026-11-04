@@ -1,6 +1,6 @@
 # 反叛流行 · AI写的，别像AI
 
-完整1200×750静态Native工程，用户已同意收录。Huashu设计标本非官方复刻，不是原创品牌或真实模型产品。设计逻辑见design/DESIGN-ANALYSIS.md。
+完整1200×750静态Native工程，用户已同意收录。Huashu设计标本非官方复刻，不是原创品牌或真实模型产品。设计逻辑见design.md。
 
 ## 离线复现
 按font-inputs.json来源与固定SHA合法自备原字体，安装锁定Native运行时及fonttools4.61.1：
@@ -21,3 +21,5 @@ https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60
 实际调用本地design/material-surfaces.mjs的paper分支两次生成窗口底板/硬影，再叠标题栏/旋转/文案。它与shared.mjs是MotionStudio UI源码0947507的本地原样快照，不是运行时从引擎导入；文件SHA及固定源见module-snapshots.json。不把共享状态工具计为设计族。
 
 只有自渲染cover.jpg随源码保留；字体外置，许可保留。仅Native静态复现与人工视觉复核，未验证浏览器、交互、响应式或音视频，不保证跨系统像素一致。
+
+设计意图、场景结构、复用与验证边界见[design.md](design.md)。

@@ -1,6 +1,6 @@
 # 菜市场方法论 · 从圆心向外
 
-完整1200×750静态Native工程，用户已同意收录。Huashu设计标本的非官方复刻，不是原创构图、真实市场调查或经过验证的改造方案。设计逻辑见design/DESIGN-ANALYSIS.md。
+完整1200×750静态Native工程，用户已同意收录。Huashu设计标本的非官方复刻，不是原创构图、真实市场调查或经过验证的改造方案。设计逻辑见design.md。
 
 ## 离线复现
 
@@ -21,3 +21,5 @@ https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60
 偏心嵌套圆表达WHY→HOW→WHAT依赖关系，圆面积/半径不编码统计数据。市场名、两年及31%/4%只有源例文，无实证出处，不构成因果证据。保留源作WHAT与外圆上沿交叠。中文正文栅格更清细、圆边更干净；没有像素匹配源JPEG的承诺。
 
 实际运行的是本作品design/shared.mjs本地快照，原样复制自MotionStudio提交0947507961eb5624ddd5c1240758baefa3246fd8的engine/design-elements/shared.mjs，SHA256 e36af17f96bd06eb250f27d5be53d678da7a72cb326df0ecb66155c0383d1122；不是运行时从引擎导入，只复用Canvas状态工具，不计设计族。径向量表与固定段距标题块不适配，不为复用牺牲语义。全部文字和图形可编辑，没用imagegen或截图贴图。唯一cover为自渲染。仅Native静态验证，未验证浏览器、交互、响应式或音视频；本机复现不保证跨系统像素一致。
+
+设计意图、场景结构、复用与验证边界见[design.md](design.md)。
