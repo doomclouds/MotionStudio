@@ -1,4 +1,4 @@
-import*as vertical from'./vertical-imprint.mjs';
+import*as vertical from'./families/vertical-imprint/index.mjs';
 import*as marks from'./families/geometric-marks/index.mjs';
 import*as partition from'./families/proportional-partition/index.mjs';
 import*as rings from'./families/ratio-rings/index.mjs';

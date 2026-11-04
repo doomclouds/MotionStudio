@@ -142,8 +142,8 @@
     },
     {
       "id": "design.vertical-imprint.v1",
-      "entry": "vertical-imprint.mjs",
-      "guidance": "docs/vertical-imprint.md",
+      "entry": "families/vertical-imprint/index.mjs",
+      "guidance": "families/vertical-imprint/README.md",
       "sourceCases": [
         "song-block-print-study"
       ],

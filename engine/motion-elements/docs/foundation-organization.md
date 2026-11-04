@@ -38,17 +38,17 @@ const state = sampleAttractorField(plan, {
 
 | 职责 | canonical 实现 | 稳定 ID |
 |---|---|---|
-| 控制柄曲线距离寻址 | `lib/foundations/geometry/cubic-path.mjs` | `geometry.cubic-path` |
-| 显式字格沿路径布局 | `lib/foundations/typography/glyph-run-path.mjs` | `composition.glyph-run-path` |
-| 显式尺寸逐行换行 | `lib/foundations/layout/flow-wrap.mjs` | `composition.flow-wrap` |
-| 凸平面刚性铰链 | `lib/foundations/geometry/hinged-panel.mjs` | `geometry.hinged-panel` |
+| 控制柄曲线距离寻址 | `lib/foundations/geometry/cubic-path/index.mjs` | `geometry.cubic-path` |
+| 显式字格沿路径布局 | `lib/foundations/typography/glyph-run-path/index.mjs` | `composition.glyph-run-path` |
+| 显式尺寸逐行换行 | `lib/foundations/layout/flow-wrap/index.mjs` | `composition.flow-wrap` |
+| 凸平面刚性铰链 | `lib/foundations/geometry/hinged-panel/index.mjs` | `geometry.hinged-panel` |
 | 静态悬链线弧长寻址 | `lib/foundations/geometry/catenary/index.mjs` | `geometry.catenary` |
-| 固定三角网格等值折线 | `lib/foundations/geometry/iso-contour.mjs` | `geometry.iso-contour` |
+| 固定三角网格等值折线 | `lib/foundations/geometry/iso-contour/index.mjs` | `geometry.iso-contour` |
 | 固定半开区间最少轨道 | `lib/foundations/layout/interval-lanes/index.mjs` | `composition.interval-lanes` |
-| 同宽不等高最短列布局 | `lib/foundations/layout/masonry.mjs` | `composition.masonry` |
-| 有限候选锚点标签 | `lib/foundations/layout/anchored-labels.mjs` | `composition.anchored-labels` |
-| 非负归一邻域卷积 | `lib/foundations/raster/convolution.mjs` | `raster.neighborhood-convolution` |
-| 四角单应图像映射 | `lib/foundations/raster/projective-raster.mjs` | `raster.projective-quad` |
+| 同宽不等高最短列布局 | `lib/foundations/layout/masonry/index.mjs` | `composition.masonry` |
+| 有限候选锚点标签 | `lib/foundations/layout/anchored-labels/index.mjs` | `composition.anchored-labels` |
+| 非负归一邻域卷积 | `lib/foundations/raster/convolution/index.mjs` | `raster.neighborhood-convolution` |
+| 四角单应图像映射 | `lib/foundations/raster/projective-raster/index.mjs` | `raster.projective-quad` |
 
 此处十一项在对应引入阶段均为新机制，没有需要兼容的旧平层路径；总入口显式re-export同一模块实例。
 `typography`是物理职责目录，不另造query kind，也不把辅助采样算成第二条曲线机制。

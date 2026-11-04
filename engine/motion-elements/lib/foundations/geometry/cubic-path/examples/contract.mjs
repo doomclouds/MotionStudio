@@ -1,0 +1,15 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import * as api from '../../../../index.mjs';
+const catalog=JSON.parse(readFileSync(new URL('../../../../../catalog.json',import.meta.url)));
+const item=catalog.elements.find(e=>e.id==='geometry.cubic-path');
+assert(item);
+const plan=api.compileCubicPath(item.example);
+assert.deepEqual(api.sampleCubicPath(plan,0).position,item.example.segments[0].p0);
+assert.deepEqual(api.sampleCubicPath(plan,1).position,item.example.segments.at(-1).p3);
+const line=api.compileCubicPath({segments:[{p0:{x:0,y:0},p1:{x:0,y:0},p2:{x:0,y:0},p3:{x:100,y:0}}],tolerance:.001});
+const middle=api.sampleCubicPath(line,.5);assert(Math.abs(middle.position.x-50)<.01);assert.equal(middle.position.y,0);
+assert.deepEqual(middle.unitTangent,{x:1,y:0});assert(Object.isFrozen(plan.segments[0].p0));
+assert.deepEqual(api.sampleCubicPath(plan,.4),api.sampleCubicPath(plan,.4));
+assert.throws(()=>api.sampleCubicPath({...plan},.5));assert.throws(()=>api.sampleCubicPath(plan,1.1));
+console.log('geometry.cubic-path contract PASS');

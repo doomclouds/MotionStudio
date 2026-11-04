@@ -6,7 +6,7 @@
 - [typographic-focus](../../../families/typographic-focus/index.mjs) uses authored title/body lines and whole-line emphasis. Prefer it when those inputs are already the intended design.
 - [editorial-evidence](../../reviewed/b06/recipes/editorial-evidence.mjs) composes authored columns and baselines; it does not turn continuous copy into lines.
 - [emphasis-tile](../../reviewed/b09/recipes/emphasis-tile.mjs) is a bounded rotated word/tile, not an inline line-breaking service.
-- [glyph-run-path](../../../../motion-elements/lib/foundations/typography/glyph-run-path.mjs) places caller-measured glyph cells along curves. It does not shape or wrap paragraphs.
+- [glyph-run-path](../../../../motion-elements/lib/foundations/typography/glyph-run-path/index.mjs) places caller-measured glyph cells along curves. It does not shape or wrap paragraphs.
 
 The incremental candidate is only continuous styled-run wrapping with actual ink preflight, a nonbreaking-space contract, uniform size/baseline rhythm, and strike fragments. It is kept separate from existing APIs, not silently added to them. There is no new catalog registration or family count. Adoption still needs independent review and integration against the current branch.
 

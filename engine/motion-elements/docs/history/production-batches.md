@@ -113,7 +113,7 @@ solver及实际导入依赖与影片一致，但存档未使用的旧index不等
 `composition.glyph-run-path` 将显式字格advance排成同一路线上的基线中心/朝向。
 不是折线改色，也不把编译、采样、字体测量、路径绘制缓存或辅助函数另算机制。
 新实现直接放在职责目录`foundations/geometry`及`foundations/typography`，旧路径与作品锁不动。
-见[曲线严格合同](../cubic-path.md)、[字格布局与画法](../glyph-run-path.md)、
+见[曲线严格合同](../../lib/foundations/geometry/cubic-path/README.md)、[字格布局与画法](../../lib/foundations/typography/glyph-run-path/README.md)、
 [Paper.js/Anime.js固定源码与许可取舍](../curved-type-reference-decisions.md)。
 
 一支9.5秒有声原创候选实际使用两项：初始化3次编译；公路径采样分别用于绘图缓存、
@@ -129,7 +129,7 @@ solver及实际导入依赖与影片一致，但存档未使用的旧index不等
 
 `composition.flow-wrap` / `flowWrapLayout`保持项目顺序，依据各自width/height在明确容器宽度里换行。
 它补充等尺寸grid和单轴stack，不按颜色、间距、方向或快照个数增加条目。
-新实现直接位于`lib/foundations/layout/flow-wrap.mjs`；见[尺寸、IEEE边界、组合与官方参考指南](../flow-wrap.md)。
+新实现直接位于`lib/foundations/layout/flow-wrap.mjs`；见[尺寸、IEEE边界、组合与官方参考指南](../../lib/foundations/layout/flow-wrap/README.md)。
 
 7.6秒、60fps有声候选真实执行2次初始化布局，六项从2行变3行；旧layout-handoff两段编排消费端点，
 456帧绘制提交不等于每帧重新排版或全程可见。项目中间腾行快照与UI抽屉时序不另算机制/配方，
@@ -144,7 +144,7 @@ solver及实际导入依赖与影片一致，但存档未使用的旧index不等
 
 `geometry.hinged-panel` 在 authored XYZ 中绕明确折线旋转平面，允许父×子组合；
 印刷点使用同一 sampled matrix。它是可被Canvas投影绘制的几何，不是纯二维旋转或通用三维引擎。
-新实现位于 `lib/foundations/geometry/hinged-panel.mjs`；见[严格输入、画法、父子坐标与入库前官方核验](../hinged-panel.md)。
+新实现位于 `lib/foundations/geometry/hinged-panel.mjs`；见[严格输入、画法、父子坐标与入库前官方核验](../../lib/foundations/geometry/hinged-panel/README.md)。
 
 10.8秒有声候选中8计划、648帧/5184次面片求值、136752辅助点变换均真实供绘制。
 背面/遮挡提交不等同于可见；摄影机、海水、灯光、船及旧stagger/opacity不再计数。
@@ -169,7 +169,7 @@ solver及实际导入依赖与影片一致，但存档未使用的旧index不等
 
 ## 显式标量场等值轮廓：1 基础
 
-`geometry.iso-contour` 将规则标量网格按固定NW-SE两三角线性域提取为折线，真实作品中轮廓可合并、分裂并围出孔洞；不是预定点对应的polygon morph，也不是流体物理。详见[合同、填充前提、数值边界与复现](../iso-contour.md)。
+`geometry.iso-contour` 将规则标量网格按固定NW-SE两三角线性域提取为折线，真实作品中轮廓可合并、分裂并围出孔洞；不是预定点对应的polygon morph，也不是流体物理。详见[合同、填充前提、数值边界与复现](../../lib/foundations/geometry/iso-contour/README.md)。
 
 10.4秒有声候选实际调用1次grid compile、624次extraction，624帧分别fill/clip/outline消费471572顶点。公共硬化版降低样本上限并补IEEE塌缩段诊断；原影片和原冻结源码不改，624帧完整状态与真实绘图几何精确桥接、22代表原PNG及22新Node一致，不冒称新片重编码或全帧像素相等。
 
@@ -178,10 +178,10 @@ solver及实际导入依赖与影片一致，但存档未使用的旧index不等
 
 ## 图片变纸卡与摄影墙：4 基础，2 支独立验证作品
 
-- [邻域卷积](../convolution.md)：显式非负归一核的blur/unsharp是一个机制，不是两个滤镜条目；sRGB/alpha/边界与64M采样预算明确。
-- [四角图像投影](../projective-raster.md)：一张图用单一homography映射到凸四边形，同平面点映射只是helper；无真正3D/抗锯齿或自动前后面切换。
-- [不等高砌列](../masonry.md)：已测高项目按源序落入最短列；不是等格grid、逐行flow-wrap或全局优化。
-- [有限候选锚点标签](../anchored-labels.md)：按优先级尝试避开保护框及已有标签，无位可用明确报告；不测字、不识别焦点、不自动路由引导线。
+- [邻域卷积](../../lib/foundations/raster/convolution/README.md)：显式非负归一核的blur/unsharp是一个机制，不是两个滤镜条目；sRGB/alpha/边界与64M采样预算明确。
+- [四角图像投影](../../lib/foundations/raster/projective-raster/README.md)：一张图用单一homography映射到凸四边形，同平面点映射只是helper；无真正3D/抗锯齿或自动前后面切换。
+- [不等高砌列](../../lib/foundations/layout/masonry/README.md)：已测高项目按源序落入最短列；不是等格grid、逐行flow-wrap或全局优化。
+- [有限候选锚点标签](../../lib/foundations/layout/anchored-labels/README.md)：按优先级尝试避开保护框及已有标签，无位可用明确报告；不测字、不识别焦点、不自动路由引导线。
 
 9秒有声纸卡候选实际验证前两项，8.4秒有声摄影墙候选验证后两项。前者公共输入硬化版有540帧实际状态/像素buffer/绘图记录及22代表PNG+22新Node桥接，原影片不改；后者两个runtime与实际10文件闭包同字节。静态初始化、缓存绘制、正alpha与可见像素严格区分；摄影标签三项全不透明仅49帧，不能凭技术合格宣称舒适阅读。旧staged交接复用不新增配方。
 

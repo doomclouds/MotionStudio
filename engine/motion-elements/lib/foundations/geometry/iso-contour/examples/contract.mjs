@@ -1,0 +1,14 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import * as api from '../../../../index.mjs';
+const catalog=JSON.parse(readFileSync(new URL('../../../../../catalog.json',import.meta.url)));
+const item=catalog.elements.find(e=>e.id==='geometry.iso-contour');
+assert(item);
+const plan=api.compileContourGrid(item.example);
+const input={values:[0,0,0,0,2,0,0,0,0],level:1};const result=api.extractIsoContours(plan,input);
+assert.equal(result.closedLoopCount,1);assert.equal(result.openStripCount,0);assert.equal(result.segmentCount,6);
+const points=result.contours[0].points;assert.equal(points.length,6);assert(points.every(p=>p.x>=.5&&p.x<=1.5&&p.y>=.5&&p.y<=1.5));
+assert(Object.isFrozen(points[0]));assert.deepEqual(result,api.extractIsoContours(plan,input));
+assert.equal(api.extractIsoContours(plan,{values:Array(9).fill(2),level:1}).contours.length,0);
+assert.throws(()=>api.extractIsoContours({...plan},input));assert.throws(()=>api.extractIsoContours(plan,{values:[0],level:1}));
+console.log('geometry.iso-contour contract PASS');

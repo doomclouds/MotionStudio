@@ -16,7 +16,7 @@
 |[design.radial-scale.v1](families/radial-scale/index.mjs)|[hardware-sampler-study](../../portfolio/works/hardware-sampler-study/README.md)|—|—|
 |[design.diagonal-field.v1](families/diagonal-field/index.mjs)|[muqi-study](../../portfolio/works/muqi-study/README.md)|—|—|
 |[design.authored-paths.v1](families/authored-paths/index.mjs)|[theatre-narrative-wave](../../portfolio/works/theatre-narrative-wave/README.md), [bus-morning-study](../../portfolio/works/bus-morning-study/README.md)|—|—|
-|[design.vertical-imprint.v1](vertical-imprint.mjs)|[song-block-print-study](../../portfolio/works/song-block-print-study/README.md)|—|—|
+|[design.vertical-imprint.v1](families/vertical-imprint/index.mjs)|[song-block-print-study](../../portfolio/works/song-block-print-study/README.md)|—|—|
 |[design.geometric-marks.v1](families/geometric-marks/index.mjs)|[bauhaus-theatre-study](../../portfolio/works/bauhaus-theatre-study/README.md)|—|—|
 |[design.proportional-partition.v1](families/proportional-partition/index.mjs)|[ocean-plastic-treemap-study](../../portfolio/works/ocean-plastic-treemap-study/README.md)|—|—|
 |[design.ratio-rings.v1](families/ratio-rings/index.mjs)|[health-color-code-study](../../portfolio/works/health-color-code-study/README.md)|—|—|

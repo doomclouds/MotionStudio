@@ -1,5 +1,5 @@
 import test from 'node:test';import assert from 'node:assert/strict';import {readFileSync} from 'node:fs';
-import * as api from '../lib/index.mjs';import * as canonical from '../lib/foundations/geometry/iso-contour.mjs';import {queryCatalog} from '../lib/catalog-query.mjs';
+import * as api from '../lib/index.mjs';import * as canonical from '../lib/foundations/geometry/iso-contour/index.mjs';import {queryCatalog} from '../lib/catalog-query.mjs';
 const catalog=JSON.parse(readFileSync(new URL('../catalog.json',import.meta.url)));
 test('contour index re-exports same functions and shares canonical brand',()=>{
  assert.equal(api.compileContourGrid,canonical.compileContourGrid);assert.equal(api.extractIsoContours,canonical.extractIsoContours);

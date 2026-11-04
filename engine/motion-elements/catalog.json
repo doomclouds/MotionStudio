@@ -2343,7 +2343,7 @@
       ],
       "evidence": {
         "technicalTests": [
-          "test/cubic-path.test.mjs",
+          "lib/foundations/geometry/cubic-path/test/cubic-path.test.mjs",
           "test/curved-type-integration.test.mjs"
         ],
         "visualDemo": null,
@@ -2354,10 +2354,11 @@
         "normalSpeedViewing": "NOT_DONE",
         "audioListening": "NOT_LISTENED",
         "ownerArtisticAcceptance": "PENDING_USER",
-        "guidance": "docs/cubic-path.md",
-        "sourceVersionRelation": "Both canonical mechanisms and their actually imported validator bytes match the frozen film. Direct module imports are film-consumed; the later public index export is tested separately. Catalog/test/guidance integration does not rewrite historical production manifests.",
+        "guidance": "lib/foundations/geometry/cubic-path/README.md",
+        "sourceVersionRelation": "Both canonical mechanisms and their actually imported validator bytes match the frozen film. Direct module imports are film-consumed; the later public index export is tested separately. Catalog/test/guidance integration does not rewrite historical production manifests. Later asset-directory colocation preserves algorithm bodies and canonical module identity while relocating files and relative imports; preceding byte-match/version-bridge evidence remains bound to its original version, not a new film-equivalence or acceptance claim.",
         "validationCoverage": "Three initialization compiles (direct, four-segment route, approximate prefix address). 5785 public samples:3297 initialize draw caches,1918 feed direct drawing and570 feed camera positioning. Cached polylines are reused without pretending to recompile each frame. Film frames0–569; prefix length is approximate, not an exact seam. Limited encoded-frame review, not continuous viewing.",
-        "callEvidenceScope": "Render-time wrapper inputs/results, cache definitions and draw-consumer records crosschecked against frozen source. Internal glyph path samples are not separately intercepted; call/draw submission counts are not visible-pixel counts."
+        "callEvidenceScope": "Render-time wrapper inputs/results, cache definitions and draw-consumer records crosschecked against frozen source. Internal glyph path samples are not separately intercepted; call/draw submission counts are not visible-pixel counts.",
+        "executableExample": "lib/foundations/geometry/cubic-path/examples/contract.mjs"
       },
       "knowledgeLinks": [],
       "tags": [
@@ -2429,7 +2430,7 @@
       ],
       "evidence": {
         "technicalTests": [
-          "test/glyph-run-path.test.mjs",
+          "lib/foundations/typography/glyph-run-path/test/glyph-run-path.test.mjs",
           "test/curved-type-integration.test.mjs"
         ],
         "visualDemo": null,
@@ -2440,10 +2441,11 @@
         "normalSpeedViewing": "NOT_DONE",
         "audioListening": "NOT_LISTENED",
         "ownerArtisticAcceptance": "PENDING_USER",
-        "guidance": "docs/glyph-run-path.md",
-        "sourceVersionRelation": "Both canonical mechanisms and their actually imported validator bytes match the frozen film. Direct module imports are film-consumed; the later public index export is tested separately. Catalog/test/guidance integration does not rewrite historical production manifests.",
+        "guidance": "lib/foundations/typography/glyph-run-path/README.md",
+        "sourceVersionRelation": "Both canonical mechanisms and their actually imported validator bytes match the frozen film. Direct module imports are film-consumed; the later public index export is tested separately. Catalog/test/guidance integration does not rewrite historical production manifests. Later asset-directory colocation preserves algorithm bodies and canonical module identity while relocating files and relative imports; preceding byte-match/version-bridge evidence remains bound to its original version, not a new film-equivalence or acceptance claim.",
         "validationCoverage": "570 layout calls and570 run draw submissions, with9 explicit advance cells per run. These are not570 wholly visible words. Conservative whole-word screen-bounds window is frames198–569, with intentional tool occlusion; unobstructed bend/read frames have limited encoded review. Only the supplied measured run and normal tangents are film-covered; no general-language or shaping proof.",
-        "callEvidenceScope": "Render-time wrapper inputs/results, cache definitions and draw-consumer records crosschecked against frozen source. Internal glyph path samples are not separately intercepted; call/draw submission counts are not visible-pixel counts."
+        "callEvidenceScope": "Render-time wrapper inputs/results, cache definitions and draw-consumer records crosschecked against frozen source. Internal glyph path samples are not separately intercepted; call/draw submission counts are not visible-pixel counts.",
+        "executableExample": "lib/foundations/typography/glyph-run-path/examples/contract.mjs"
       },
       "knowledgeLinks": [],
       "tags": [
@@ -2498,7 +2500,7 @@
       ],
       "evidence": {
         "technicalTests": [
-          "test/flow-wrap.test.mjs",
+          "lib/foundations/layout/flow-wrap/test/flow-wrap.test.mjs",
           "test/flow-wrap-integration.test.mjs"
         ],
         "visualDemo": null,
@@ -2509,11 +2511,12 @@
         "normalSpeedViewing": "NOT_DONE",
         "audioListening": "NOT_LISTENED",
         "ownerArtisticAcceptance": "PENDING_USER",
-        "guidance": "docs/flow-wrap.md",
-        "sourceVersionRelation": "Canonical flow and its actually imported matrix/validator dependencies match the frozen film byte-for-byte. The scene imports modules directly; the later public index export is tested separately. Catalog/test/guidance integration leaves historical manifests unchanged.",
+        "guidance": "lib/foundations/layout/flow-wrap/README.md",
+        "sourceVersionRelation": "Canonical flow and its actually imported matrix/validator dependencies match the frozen film byte-for-byte. The scene imports modules directly; the later public index export is tested separately. Catalog/test/guidance integration leaves historical manifests unchanged. Later asset-directory colocation changes only relative shared validate/matrix imports and file location; preceding byte-match/film evidence remains bound to its original version, not a new film-equivalence or acceptance claim.",
         "validationCoverage": "Final7.6-second/60fps candidate. Two initialization flow calls produce wide/narrow snapshots with six fixed-size items,2-to3 rows. Existing handoff compiles twice and samples456 frames, each feeding6 tag draw submissions. UI is fully opaque from frame117; reflow198–264 and final state264–455. Cached layout consumption is not456 fresh flow calls. Final-version32 decoded frames have scoped review; old longer-film evidence is not reused.",
         "callEvidenceScope": "Render-time input/output snapshots and draw-consumer records crosschecked with frozen source and complete456-frame JSON-semantics replay; not independent per-call interception. Geometry overlap checks do not prove pixel/ink/shadow visibility.",
-        "compositionScope": "Two-leg waypoint choreography is project-owned and not a third flow output or a general collision solver. No new recipe."
+        "compositionScope": "Two-leg waypoint choreography is project-owned and not a third flow output or a general collision solver. No new recipe.",
+        "executableExample": "lib/foundations/layout/flow-wrap/examples/contract.mjs"
       },
       "knowledgeLinks": [],
       "tags": [
@@ -2584,7 +2587,7 @@
       ],
       "evidence": {
         "technicalTests": [
-          "test/hinged-panel.test.mjs",
+          "lib/foundations/geometry/hinged-panel/test/hinged-panel.test.mjs",
           "test/hinged-panel-integration.test.mjs"
         ],
         "visualDemo": null,
@@ -2596,11 +2599,12 @@
         "audioListening": "NOT_LISTENED",
         "ownerArtisticAcceptance": "PENDING_USER",
         "ownerFeedbackScope": "Positive feedback about the three-film group only; no individual work, parameter, listening or audio-detail acceptance inferred.",
-        "guidance": "docs/hinged-panel.md",
-        "sourceVersionRelation": "Public candidate tightens own-field, required-own, dense-array and128-level hierarchy validation. Geometry arithmetic is preserved; original frozen film runtime and historical manifests remain untouched. Separate648-frame actual-state/draw-path replay plus24 representative Native PNG and fresh-process comparisons bridge old/new versions; not identical source bytes or a new encoded film. Public index export is later integration.",
+        "guidance": "lib/foundations/geometry/hinged-panel/README.md",
+        "sourceVersionRelation": "Public candidate tightens own-field, required-own, dense-array and128-level hierarchy validation. Geometry arithmetic is preserved; original frozen film runtime and historical manifests remain untouched. Separate648-frame actual-state/draw-path replay plus24 representative Native PNG and fresh-process comparisons bridge old/new versions; not identical source bytes or a new encoded film. Public index export is later integration. Later asset-directory colocation preserves algorithm bodies and canonical module identity while relocating files and relative imports; preceding byte-match/version-bridge evidence remains bound to its original version, not a new film-equivalence or acceptance claim.",
         "validationCoverage": "Final10.8-second/60fps candidate:8 compile plans;5184 sampled panel states over648 frames feed actual polygon paths;136752 helper-point evaluations feed printed geometry. Draw submissions may be occluded or back-facing; not all are continuously visible.",
         "callEvidenceScope": "Complete actual usage JSON replay and independent Native path interception of panel fills and mapped decorations. Private frozen media/source/hash identities retained separately.",
-        "compositionScope": "Existing stagger/opacity and time/finite-settle/Canvas support are reused. Camera, water, light and boat remain project choreography, not extra foundations or a new recipe."
+        "compositionScope": "Existing stagger/opacity and time/finite-settle/Canvas support are reused. Camera, water, light and boat remain project choreography, not extra foundations or a new recipe.",
+        "executableExample": "lib/foundations/geometry/hinged-panel/examples/contract.mjs"
       },
       "knowledgeLinks": [],
       "tags": [
@@ -2944,16 +2948,17 @@
         "audioListening": "NOT_LISTENED",
         "ownerArtisticAcceptance": "PENDING_USER",
         "technicalTests": [
-          "test/iso-contour.test.mjs",
+          "lib/foundations/geometry/iso-contour/test/iso-contour.test.mjs",
           "test/iso-contour-integration.test.mjs"
         ],
-        "guidance": "docs/iso-contour.md",
+        "guidance": "lib/foundations/geometry/iso-contour/README.md",
         "videoValidation": "VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE_WITH_VERSION_EQUIVALENCE",
         "visualReview": "DECODED_FRAME_REVIEW_NO_BLOCKERS",
-        "sourceVersionRelation": "The actual frozen film uses an earlier prototype. The public revision reduces the resource cap and reports/discards IEEE-coordinate-collapsed triangle segments; original media/source/manifests are unchanged. Separate actual624-frame Native replays match full usage JSON and all fill/clip/outline paths exactly;22 selected original PNGs and22 fresh-process rebuilds match. Not a new full encoded movie or all-frame pixel comparison.",
+        "sourceVersionRelation": "The actual frozen film uses an earlier prototype. The public revision reduces the resource cap and reports/discards IEEE-coordinate-collapsed triangle segments; original media/source/manifests are unchanged. Separate actual624-frame Native replays match full usage JSON and all fill/clip/outline paths exactly;22 selected original PNGs and22 fresh-process rebuilds match. Not a new full encoded movie or all-frame pixel comparison. Later asset-directory colocation preserves algorithm bodies and canonical module identity while relocating files and relative imports; preceding byte-match/version-bridge evidence remains bound to its original version, not a new film-equivalence or acceptance claim.",
         "validationCoverage": "A10.4-second/624-frame sound candidate calls1 grid compile and624 extractions. Each returned contour is actually filled, clipped and outlined once per frame;471572 contour vertices are consumed. Field and source choreography are project work, not extra foundations.",
         "callEvidenceScope": "Actual producer ledger plus Native path interception verifies624 fill(evenodd),624 clip(evenodd) and624 outlines against all returned vertices and closure commands. Independent original-film review covers48 encoded nodes,22 fresh Native frames and actual fixed-triangle interpolation. This does not clear all generic topology cases, listening or artistic transfer.",
-        "compositionScope": "Existing opacity/Canvas/time support reused. Scalar-field generation, gradients, gloss, typography and sound stay in the private project; none is registered as another mechanism."
+        "compositionScope": "Existing opacity/Canvas/time support reused. Scalar-field generation, gradients, gloss, typography and sound stay in the private project; none is registered as another mechanism.",
+        "executableExample": "lib/foundations/geometry/iso-contour/examples/contract.mjs"
       },
       "knowledgeLinks": [],
       "tags": [
@@ -3015,16 +3020,17 @@
         "ownerArtisticAcceptance": "PENDING_USER",
         "visualReview": "DECODED_FRAME_REVIEW_NO_BLOCKERS",
         "technicalTests": [
-          "test/convolution.test.mjs",
+          "lib/foundations/raster/convolution/test/convolution.test.mjs",
           "test/postcard-raster-fresh.test.mjs",
           "test/image-layout-integration.test.mjs"
         ],
-        "guidance": "docs/convolution.md",
+        "guidance": "lib/foundations/raster/convolution/README.md",
         "videoValidation": "VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE_WITH_VERSION_EQUIVALENCE",
-        "sourceVersionRelation": "Public validation is stricter than the original frozen film: data-only records/arrays and intrinsic byte-view metadata; convolution also caps area times kernel cells at64000000. Pixel loops and arithmetic order are unchanged. Original media/source/manifests remain untouched. Separate540-frame Native replays match full usage and all994 pixel-put/2294 image-draw records exactly;22 original raw PNGs and22 fresh-process frames match. Not a new encoded movie or all-frame pixel comparison.",
+        "sourceVersionRelation": "Public validation is stricter than the original frozen film: data-only records/arrays and intrinsic byte-view metadata; convolution also caps area times kernel cells at64000000. Pixel loops and arithmetic order are unchanged. Original media/source/manifests remain untouched. Separate540-frame Native replays match full usage and all994 pixel-put/2294 image-draw records exactly;22 original raw PNGs and22 fresh-process frames match. Not a new encoded movie or all-frame pixel comparison. Later asset-directory colocation preserves algorithm bodies and canonical module identity while relocating files and relative imports; preceding byte-match/version-bridge evidence remains bound to its original version, not a new film-equivalence or acceptance claim.",
         "validationCoverage": "A9-second/540-frame sound candidate compiles2 kernels and filters2 images at initialization. Cached results are each submitted221 times into front-card textures; no per-frame re-filtering is claimed.",
         "callEvidenceScope": "Actual two filter input/output buffers are independently checked;442 cached image draws consume the results. Blur can be fully overpainted; sharp is initially submitted at zero or quantized-zero alpha. Draw counts and authored contribution flags are not visible-pixel counts. Public bridge records exact buffers and subsequent Native draw source/alpha/matrices.",
-        "compositionScope": "Existing opacity/Canvas/time reused; projective texture mapping is a separately counted foundation. Generated image, card art, focus timing and sound are project work."
+        "compositionScope": "Existing opacity/Canvas/time reused; projective texture mapping is a separately counted foundation. Generated image, card art, focus timing and sound are project work.",
+        "executableExample": "lib/foundations/raster/convolution/examples/contract.mjs"
       },
       "knowledgeLinks": [],
       "tags": [
@@ -3087,16 +3093,17 @@
         "ownerArtisticAcceptance": "PENDING_USER",
         "visualReview": "DECODED_FRAME_REVIEW_NO_BLOCKERS",
         "technicalTests": [
-          "test/projective-raster.test.mjs",
+          "lib/foundations/raster/projective-raster/test/projective-raster.test.mjs",
           "test/postcard-raster-fresh.test.mjs",
           "test/image-layout-integration.test.mjs"
         ],
-        "guidance": "docs/projective-raster.md",
+        "guidance": "lib/foundations/raster/projective-raster/README.md",
         "videoValidation": "VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE_WITH_VERSION_EQUIVALENCE",
-        "sourceVersionRelation": "Public validation is stricter than the original frozen film: data-only records/arrays and intrinsic byte-view metadata; convolution also caps area times kernel cells at64000000. Pixel loops and arithmetic order are unchanged. Original media/source/manifests remain untouched. Separate540-frame Native replays match full usage and all994 pixel-put/2294 image-draw records exactly;22 original raw PNGs and22 fresh-process frames match. Not a new encoded movie or all-frame pixel comparison.",
+        "sourceVersionRelation": "Public validation is stricter than the original frozen film: data-only records/arrays and intrinsic byte-view metadata; convolution also caps area times kernel cells at64000000. Pixel loops and arithmetic order are unchanged. Original media/source/manifests remain untouched. Separate540-frame Native replays match full usage and all994 pixel-put/2294 image-draw records exactly;22 original raw PNGs and22 fresh-process frames match. Not a new encoded movie or all-frame pixel comparison. Later asset-directory colocation preserves algorithm bodies and canonical module identity while relocating files and relative imports; preceding byte-match/version-bridge evidence remains bound to its original version, not a new film-equivalence or acceptance claim.",
         "validationCoverage": "The actual9-second candidate compiles808 projective plans, warps991 outputs and maps1132 attached points. Main card540, postage268 and cancellation ink183 outputs are all drawn to the actual main Canvas.",
         "callEvidenceScope": "Actual original-film interception verifies all991 warped buffers are consumed, not merely imported or logged;808 actual quads have an independent8x8 geometry oracle. Public validation revision preserves540-frame usage, all pixel-put and draw records,22 representative raw PNGs and22 fresh Node frames.",
-        "compositionScope": "Existing opacity/Canvas/time reused; neighborhood convolution counted separately. Face change, shadow, thickness, stamp art/motion and sound are project composition."
+        "compositionScope": "Existing opacity/Canvas/time reused; neighborhood convolution counted separately. Face change, shadow, thickness, stamp art/motion and sound are project composition.",
+        "executableExample": "lib/foundations/raster/projective-raster/examples/contract.mjs"
       },
       "knowledgeLinks": [],
       "tags": [
@@ -3158,15 +3165,16 @@
         "ownerArtisticAcceptance": "PENDING_USER",
         "visualReview": "DECODED_FRAME_REVIEW_NO_BLOCKERS",
         "technicalTests": [
-          "test/masonry.test.mjs",
+          "lib/foundations/layout/masonry/test/masonry.test.mjs",
           "test/image-layout-integration.test.mjs"
         ],
-        "guidance": "docs/masonry.md",
+        "guidance": "lib/foundations/layout/masonry/README.md",
         "videoValidation": "VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE",
-        "sourceVersionRelation": "Both new runtime modules and the10-file actual frozen runtime import closure byte-match the final public files. Public index exports are later integration, not original-film imports. No post-film numeric runtime change.",
+        "sourceVersionRelation": "Both new runtime modules and the10-file actual frozen runtime import closure byte-match the final public files. Public index exports are later integration, not original-film imports. No post-film numeric runtime change. Later asset-directory colocation changes only relative shared validate/matrix imports and file location; preceding byte-match/film evidence remains bound to its original version, not a new film-equivalence or acceptance claim.",
         "validationCoverage": "An8.4-second/504-frame sound candidate calls masonry once after images load. Its actual six-photo endpoint is consumed by an existing staged handoff;145 static wall frames have all six in view and no photo-box overlap.",
         "callEvidenceScope": "Actual Native replay verifies2911 photo drawImage submissions,2904 positive-alpha submissions and2617 positive on-canvas submissions; these are cached endpoint/old-recipe consumption, not2911 new layout solves. Image aspect ratios and matrices are checked across504 frames.",
-        "compositionScope": "Existing staged handoff compiles once and samples504 times, not a new recipe. Generated images, timing, loose/cover layouts, labels/leader art and sound are project work."
+        "compositionScope": "Existing staged handoff compiles once and samples504 times, not a new recipe. Generated images, timing, loose/cover layouts, labels/leader art and sound are project work.",
+        "executableExample": "lib/foundations/layout/masonry/examples/contract.mjs"
       },
       "knowledgeLinks": [],
       "tags": [
@@ -3243,15 +3251,16 @@
         "ownerArtisticAcceptance": "PENDING_USER",
         "visualReview": "DECODED_FRAME_REVIEW_NO_BLOCKERS",
         "technicalTests": [
-          "test/anchored-labels.test.mjs",
+          "lib/foundations/layout/anchored-labels/test/anchored-labels.test.mjs",
           "test/image-layout-integration.test.mjs"
         ],
-        "guidance": "docs/anchored-labels.md",
+        "guidance": "lib/foundations/layout/anchored-labels/README.md",
         "videoValidation": "VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE",
-        "sourceVersionRelation": "Both new runtime modules and the10-file actual frozen runtime import closure byte-match the final public files. Public index exports are later integration, not original-film imports. No post-film numeric runtime change.",
+        "sourceVersionRelation": "Both new runtime modules and the10-file actual frozen runtime import closure byte-match the final public files. Public index exports are later integration, not original-film imports. No post-film numeric runtime change. Later asset-directory colocation changes only relative shared validate/matrix imports and file location; preceding byte-match/film evidence remains bound to its original version, not a new film-equivalence or acceptance claim.",
         "validationCoverage": "The actual8.4-second candidate calls placement once from actual wall-derived anchors/protected boxes. Three notes select real alternatives after focus-box and earlier-label conflicts; returned matrices feed263 label text draws,261 with positive Native alpha.",
         "callEvidenceScope": "Independent actual504-frame replay checks note boxes, measured ink and source matrices. Any note has positive alpha in98 frames; all three are positive together76 frames and fully opaque together49 frames. These windows do not guarantee comfortable reading; static solver calls are not per-frame calls.",
-        "compositionScope": "Existing staged handoff is reused, not new. Caller measures text and authors finite offsets/protected areas; leader lines are project art and not routed or protected by this mechanism."
+        "compositionScope": "Existing staged handoff is reused, not new. Caller measures text and authors finite offsets/protected areas; leader lines are project art and not routed or protected by this mechanism.",
+        "executableExample": "lib/foundations/layout/anchored-labels/examples/contract.mjs"
       },
       "knowledgeLinks": [],
       "tags": [

@@ -1,0 +1,16 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import * as api from '../../../../index.mjs';
+const catalog=JSON.parse(readFileSync(new URL('../../../../../catalog.json',import.meta.url)));
+const item=catalog.elements.find(e=>e.id==='composition.anchored-labels');
+assert(item);
+const result=api.placeAnchoredLabels(item.example);
+assert.equal(result.placedCount,1);assert.equal(result.unplacedCount,0);assert.equal(result.placements[0].candidateIndex,1);
+assert(result.items[0].matrix.every((value,i)=>value===[1,0,0,1,36,68][i]));assert(Object.isFrozen(result.items[0].rect));
+assert.deepEqual(result,api.placeAnchoredLabels(item.example));
+const blocked=api.placeAnchoredLabels({...item.example,labels:item.example.labels.map(l=>({...l,offsets:[l.offsets[0]]}))});
+assert.equal(blocked.unplacedCount,1);assert.deepEqual(blocked.items,[]);assert.equal(blocked.placements[0].candidateIndex,null);
+let reads=0;const bad={...item.example,labels:item.example.labels.map(l=>({...l,get priority(){reads++;return 10;}}))};
+assert.throws(()=>api.placeAnchoredLabels(bad));assert.equal(reads,0);
+assert.throws(()=>api.placeAnchoredLabels({...item.example,clearance:-1}));
+console.log('composition.anchored-labels contract PASS');

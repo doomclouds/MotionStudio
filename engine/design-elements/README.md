@@ -66,7 +66,7 @@ Four further families — expressive-type, radial-scale, diagonal-field and auth
 在现有MOTION_ENGINE_ROOT与UI_TEST_FONT_DIR之外，测试须设置`UI_B05_FONT_FILE=/absolute/path/to/NotoSerifTC-variable.ttf`，提供覆盖实际样例汉字的合法外置完整TC字体；不能误用原作品子集字体。已验证字体SHA256：`0077e18f57c6908f4a000969880940bdb0dad057c0e8d98b49dc364c3d1b09c6`。字体不打包；从官方Google Fonts Noto Serif TC来源按OFL合法准备，其他输入先过覆盖检查。Python检查需要fontTools。
 
 ```sh
-python engine/design-elements/test/verify-cjk-font.py
+python engine/design-elements/families/vertical-imprint/test/verify-font.py
 node engine/design-elements/test/verify.mjs /absolute/test-results.json
 node engine/design-elements/examples/render.mjs /absolute/render-output
 ```

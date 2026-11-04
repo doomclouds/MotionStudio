@@ -34,22 +34,22 @@ export {drawRasterSnapshot} from '../adapters/raster-effects.mjs';
 export {solveTwoLinkIK} from './foundations/geometry/two-link-ik/index.mjs';
 export {planeParallaxLayout} from './foundations/layout/plane-parallax/index.mjs';
 export {stickyIntervalLayout} from './foundations/layout/sticky-interval/index.mjs';
-export {compileCubicPath,sampleCubicPath} from './foundations/geometry/cubic-path.mjs';
-export {layoutGlyphRunOnPath} from './foundations/typography/glyph-run-path.mjs';
-export {flowWrapLayout} from './foundations/layout/flow-wrap.mjs';
+export {compileCubicPath,sampleCubicPath} from './foundations/geometry/cubic-path/index.mjs';
+export {layoutGlyphRunOnPath} from './foundations/typography/glyph-run-path/index.mjs';
+export {flowWrapLayout} from './foundations/layout/flow-wrap/index.mjs';
 
-export {compileHingedPanel, sampleHingedPanel, transformHingedPoint} from './foundations/geometry/hinged-panel.mjs';
+export {compileHingedPanel, sampleHingedPanel, transformHingedPoint} from './foundations/geometry/hinged-panel/index.mjs';
 
 export {compileCatenary, sampleCatenary, sampleCatenaryPolyline} from './foundations/geometry/catenary/index.mjs';
 export {intervalLaneLayout} from './foundations/layout/interval-lanes/index.mjs';
 export {compileStagedLayoutHandoff, sampleStagedLayoutHandoff} from './recipes/staged-layout-handoff.mjs';
 
-export {compileContourGrid, extractIsoContours} from './foundations/geometry/iso-contour.mjs';
+export {compileContourGrid, extractIsoContours} from './foundations/geometry/iso-contour/index.mjs';
 
-export {compileConvolution, convolveRGBA} from './foundations/raster/convolution.mjs';
-export {compileProjectiveRaster, warpProjectiveRGBA, projectRasterPoint, mapProjectivePoint} from './foundations/raster/projective-raster.mjs';
-export {masonryLayout} from './foundations/layout/masonry.mjs';
-export {placeAnchoredLabels} from './foundations/layout/anchored-labels.mjs';
+export {compileConvolution, convolveRGBA} from './foundations/raster/convolution/index.mjs';
+export {compileProjectiveRaster, warpProjectiveRGBA, projectRasterPoint, mapProjectivePoint} from './foundations/raster/projective-raster/index.mjs';
+export {masonryLayout} from './foundations/layout/masonry/index.mjs';
+export {placeAnchoredLabels} from './foundations/layout/anchored-labels/index.mjs';
 
 export {halftoneScreen} from './foundations/geometry/halftone-screen.mjs';
 export {morphologyCoverage} from './foundations/raster/morphology-coverage.mjs';

@@ -6,7 +6,7 @@ import fs from'node:fs';import path from'node:path';import{createRequire}from'no
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const engine=process.env.MOTION_ENGINE_ROOT;if(!engine)throw Error('Set MOTION_ENGINE_ROOT to installed MotionStudio engine/motion-render-core');const canvasApi=createRequire(engine+'/package.json')('@napi-rs/canvas');
 const fontDir=process.env.UI_TEST_FONT_DIR;if(!fontDir)throw Error('Set UI_TEST_FONT_DIR to a directory containing DejaVuSans.ttf, DejaVuSans-Bold.ttf, DejaVuSerif.ttf, DejaVuSerif-Bold.ttf');for(const[name,alias]of [['DejaVuSans.ttf','sans-serif'],['DejaVuSans-Bold.ttf','sans-serif'],['DejaVuSerif.ttf','serif'],['DejaVuSerif-Bold.ttf','serif']])if(!canvasApi.GlobalFonts.registerFromPath(path.join(fontDir,name),alias))throw Error('font registration failed');
-const b05Font=process.env.UI_B05_FONT_FILE;if(!b05Font)throw Error('UI_B05_FONT_FILE required: full licensed NotoSerifTC, not source-only subset');if(!canvasApi.GlobalFonts.registerFromPath(b05Font,'B05Song'))throw Error('Song font registration failed');
+const b05Font=process.env.UI_B05_FONT_FILE;if(!b05Font)throw Error('UI_B05_FONT_FILE required: licensed complete CJK font; verify fixture coverage and record its actual identity');if(!canvasApi.GlobalFonts.registerFromPath(b05Font,'B05Song'))throw Error('Song font registration failed');
 const out=path.resolve(process.argv[2]||'ui-assets-evidence');fs.mkdirSync(out,{recursive:true});
 export function backdrop({ctx,width,height}){const g=ctx.createLinearGradient(0,0,width,height);g.addColorStop(0,'#86429B');g.addColorStop(.55,'#4B64CE');g.addColorStop(1,'#EC8A83');ctx.fillStyle=g;ctx.fillRect(0,0,width,height)}
 const evidence=[];

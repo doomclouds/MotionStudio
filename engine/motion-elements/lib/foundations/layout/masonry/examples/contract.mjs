@@ -1,0 +1,16 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import * as api from '../../../../index.mjs';
+const catalog=JSON.parse(readFileSync(new URL('../../../../../catalog.json',import.meta.url)));
+const item=catalog.elements.find(e=>e.id==='composition.masonry');
+assert(item);
+const result=api.masonryLayout(item.example);
+assert.deepEqual(result.columns.map(c=>c.itemIds),[['a','d'],['b','c']]);
+assert.deepEqual(result.columns.map(c=>c.height),[202,177]);assert.equal(result.width,256);assert.equal(result.height,202);
+assert.deepEqual(result.items.map(x=>[x.matrix[4],x.matrix[5]]),[[0,0],[136,0],[136,82],[0,142]]);
+assert(Object.isFrozen(result.items[0].rect));assert.deepEqual(result,api.masonryLayout(item.example));
+const tie=api.masonryLayout({...item.example,items:[{itemId:'a',height:20},{itemId:'b',height:20},{itemId:'c',height:5}]});
+assert.deepEqual(tie.columns[0].itemIds,['a','c']);
+const empty=api.masonryLayout({...item.example,items:[]});assert.equal(empty.width,256);assert.equal(empty.height,0);
+assert.throws(()=>api.masonryLayout({...item.example,columns:0}));
+console.log('composition.masonry contract PASS');

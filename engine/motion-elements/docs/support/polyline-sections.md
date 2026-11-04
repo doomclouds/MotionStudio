@@ -7,7 +7,7 @@
 
 ## 与已有库去重
 
-已读既有 `engine/motion-elements/lib/path.mjs` 与 `foundations/geometry/cubic-path.mjs`：
+已读既有 `engine/motion-elements/lib/path.mjs` 与 `foundations/geometry/cubic-path/index.mjs`：
 
 - `compilePolyline/samplePath` 已能编译折线和查单个距离点；这一编译职责不算本项创新。
 - `sampleTrail` 按固定samples均匀取距离点；直接连接会漏掉不落在采样位置的转角。

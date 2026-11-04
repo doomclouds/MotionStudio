@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import * as api from '../lib/index.mjs';
-import * as hinge from '../lib/foundations/geometry/hinged-panel.mjs';
+import * as hinge from '../lib/foundations/geometry/hinged-panel/index.mjs';
 import {queryCatalog} from '../lib/catalog-query.mjs';
 const catalog=JSON.parse(readFileSync(new URL('../catalog.json',import.meta.url),'utf8'));
 const entry=catalog.elements.find(e=>e.id==='geometry.hinged-panel');

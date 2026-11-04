@@ -8,7 +8,7 @@
 
 ## 自描述资产入口
 
-先由catalog的`evidence.guidance`直达当前合同，再读同目录design、实现、示例与测试。已共置[有限粒子](../../../engine/motion-elements/lib/foundations/motion/finite-particles/README.md)、[固定弦波](../../../engine/motion-elements/lib/foundations/motion/fixed-string-wave/README.md)、[孤立圆盘事件](../../../engine/motion-elements/lib/foundations/motion/hard-disc-events/README.md)、[最小间距点集](../../../engine/motion-elements/lib/foundations/layout/poisson-disc/README.md)。另有[层级面积](../../../engine/motion-elements/lib/foundations/layout/weighted-hierarchy/README.md)、[可见扇区](../../../engine/motion-elements/lib/foundations/geometry/visibility-fan/README.md)、[网格输运](../../../engine/motion-elements/lib/foundations/field/grid-transport/README.md)、[单介质光链](../../../engine/motion-elements/lib/foundations/geometry/ray-chain/README.md)。再有[两连杆IK](../../../engine/motion-elements/lib/foundations/geometry/two-link-ik/README.md)、[校准平面视差](../../../engine/motion-elements/lib/foundations/layout/plane-parallax/README.md)、[分区固定标题](../../../engine/motion-elements/lib/foundations/layout/sticky-interval/README.md)。另有[悬链线](../../../engine/motion-elements/lib/foundations/geometry/catenary/README.md)、[固定区间分轨](../../../engine/motion-elements/lib/foundations/layout/interval-lanes/README.md)、[时间曝光](../../../engine/motion-elements/lib/foundations/raster/temporal-exposure/README.md)。其余条目仍走各自guidance，不以这十四项代表全库完成；共享底层不重复放进各资产。下文影片同字节/等价记录属于原冻结版本及当时迁移，当前IK、视差、sticky共置仅调相对validate导入，不把旧记录冒充新路径的影片等价或新艺术接受。
+先由catalog的`evidence.guidance`直达当前合同，再读同目录design、实现、示例与测试。已共置[有限粒子](../../../engine/motion-elements/lib/foundations/motion/finite-particles/README.md)、[固定弦波](../../../engine/motion-elements/lib/foundations/motion/fixed-string-wave/README.md)、[孤立圆盘事件](../../../engine/motion-elements/lib/foundations/motion/hard-disc-events/README.md)、[最小间距点集](../../../engine/motion-elements/lib/foundations/layout/poisson-disc/README.md)。另有[层级面积](../../../engine/motion-elements/lib/foundations/layout/weighted-hierarchy/README.md)、[可见扇区](../../../engine/motion-elements/lib/foundations/geometry/visibility-fan/README.md)、[网格输运](../../../engine/motion-elements/lib/foundations/field/grid-transport/README.md)、[单介质光链](../../../engine/motion-elements/lib/foundations/geometry/ray-chain/README.md)。再有[两连杆IK](../../../engine/motion-elements/lib/foundations/geometry/two-link-ik/README.md)、[校准平面视差](../../../engine/motion-elements/lib/foundations/layout/plane-parallax/README.md)、[分区固定标题](../../../engine/motion-elements/lib/foundations/layout/sticky-interval/README.md)。另有[悬链线](../../../engine/motion-elements/lib/foundations/geometry/catenary/README.md)、[固定区间分轨](../../../engine/motion-elements/lib/foundations/layout/interval-lanes/README.md)、[时间曝光](../../../engine/motion-elements/lib/foundations/raster/temporal-exposure/README.md)。再有[逐行换行](../../../engine/motion-elements/lib/foundations/layout/flow-wrap/README.md)、[同宽瀑布流](../../../engine/motion-elements/lib/foundations/layout/masonry/README.md)、[锚点标签](../../../engine/motion-elements/lib/foundations/layout/anchored-labels/README.md)。再有[三次曲线](../../../engine/motion-elements/lib/foundations/geometry/cubic-path/README.md)、[路径字格](../../../engine/motion-elements/lib/foundations/typography/glyph-run-path/README.md)、[刚性铰链](../../../engine/motion-elements/lib/foundations/geometry/hinged-panel/README.md)。再有[等值线](../../../engine/motion-elements/lib/foundations/geometry/iso-contour/README.md)、[邻域卷积](../../../engine/motion-elements/lib/foundations/raster/convolution/README.md)、[四角投影](../../../engine/motion-elements/lib/foundations/raster/projective-raster/README.md)。其余条目仍走各自guidance，不以这二十三项代表全库完成；共享底层不重复放进各资产。下文影片同字节/等价记录属于原冻结版本及当时迁移，当前IK、视差、sticky共置仅调相对validate导入，不把旧记录冒充新路径的影片等价或新艺术接受。
 
 ## 五层结构
 
@@ -285,7 +285,7 @@ root/target来自作品同一绝对帧状态，显式bend/fallback；用返回jo
 它与既有polyline分工，不能直接把progress当cubic参数伪称等距离，也不提供导航/碰撞。
 `composition.glyph-run-path`把调用者准备的advance cells排到路径，返回基线中心/法线/朝向；
 不是shaping、kerning、轮廓弯曲、自动fit或遮挡检测。先compile品牌plan，再layout，不能从JSON伪造计划。
-指南为`docs/cubic-path.md`、`docs/glyph-run-path.md`；Paper.js与Anime.js固定源码/许可取舍见`docs/curved-type-reference-decisions.md`。
+指南为`lib/foundations/geometry/cubic-path/README.md`、`lib/foundations/typography/glyph-run-path/README.md`；Paper.js与Anime.js固定源码/许可取舍见`docs/curved-type-reference-decisions.md`。
 新代码直接位于`lib/foundations/geometry/`与`typography/`，没有修改既有作品锁或平层实现。
 
 9.5秒有声候选真实消费两项：3次初始化编译；5785次公sample区分3297缓存构建、1918直接绘图与570相机辅助；
@@ -299,9 +299,9 @@ glyph内部采样不加到公wrapper数。570次run提交不等于全程完整�
 ## 尺寸驱动换行：1基础，复用旧handoff
 
 `composition.flow-wrap`把caller准备的项目宽高按输入顺序装入逐行布局；不测字体、不重排、不stretch，
-不是CSS或最优装箱。`lib/foundations/layout/flow-wrap.mjs`返回旧handoff可消费的items，rows另存静态行成员。
+不是CSS或最优装箱。`lib/foundations/layout/flow-wrap/index.mjs`返回旧handoff可消费的items，rows另存静态行成员。
 用caller自己的中间快照做分段交接仍是项目编排，不计配方或连续避碰；两端合法不意味着所有插值合法。
-完整边界/空组合/用法及ReactSpring固定masonry参考与MIT见`docs/flow-wrap.md`，不把最短列算法误称row-wrap。
+完整边界/空组合/用法及ReactSpring固定masonry参考与MIT见`lib/foundations/layout/flow-wrap/README.md`，不把最短列算法误称row-wrap。
 
 7.6秒、60fps候选用2个真实flow初始化端点，六项从2行到3行；旧recipe456次样本用于绘图，
 开场透明提交不等于可见。flow与实际matrix/validator字节同冻版，后续总入口另测，历史manifest不改。
@@ -311,7 +311,7 @@ glyph内部采样不加到公wrapper数。570次run提交不等于全程完整�
 
 ### 折叠纸面与印刷附着
 
-`geometry.hinged-panel`：`compileHingedPanel` + `sampleHingedPanel`，canonical `lib/foundations/geometry/hinged-panel.mjs`；使用[指南（便携包）](../runtime/motion-elements/docs/hinged-panel.md) / [指南（源码仓库）](https://github.com/doomclouds/MotionStudio/blob/ebda9d2661be84e1314cee14baf4acd241b6069e/engine/motion-elements/docs/hinged-panel.md)。
+`geometry.hinged-panel`：`compileHingedPanel` + `sampleHingedPanel`，canonical `lib/foundations/geometry/hinged-panel/index.mjs`；使用[指南（便携包）](../runtime/motion-elements/lib/foundations/geometry/hinged-panel/README.md) / [指南（源码仓库）](https://github.com/doomclouds/MotionStudio/blob/ebda9d2661be84e1314cee14baf4acd241b6069e/engine/motion-elements/docs/hinged-panel.md)。
 这是XYZ凸平面铰链几何，单项机制；`transformHingedPoint`只映射同一matrix下装饰点，不另计。
 父/子在共同展开画稿坐标定义，parent×local；12值row-major不是Canvas六值矩阵。投影/绘图/排序由作品负责，不能假称真实纸张物理或通用3D。
 3..64顶点、输入点±10000、角±2π、128层上限，严格own字段/普通稠密数组。
@@ -321,8 +321,8 @@ glyph内部采样不加到公wrapper数。570次run提交不等于全程完整�
 
 ### 悬线、时间重叠与显式分阶段交接
 
-- `geometry.catenary` / `compileCatenary`：[指南（便携包）](../runtime/motion-elements/lib/foundations/geometry/catenary/README.md) / [指南（源码仓库）](https://github.com/doomclouds/MotionStudio/blob/ebda9d2661be84e1314cee14baf4acd241b6069e/engine/motion-elements/lib/foundations/geometry/catenary/README.md)，canonical `lib/foundations/geometry/catenary/index.mjs`。支持端点＋长度＋重力确定静态弧线；不是动态绳索、碰撞或任意近竖直求解。浮点near-taut与半程接缝、弧长地址非实测长度限制须保留。原片冻结runtime与公共修正版用独立数值/Native桥接，不冒同字节或全片重制。
-- `composition.interval-lanes` / `intervalLaneLayout`：[指南（便携包）](../runtime/motion-elements/lib/foundations/layout/interval-lanes/README.md) / [指南（源码仓库）](https://github.com/doomclouds/MotionStudio/blob/ebda9d2661be84e1314cee14baf4acd241b6069e/engine/motion-elements/lib/foundations/layout/interval-lanes/README.md)，canonical `lib/foundations/layout/interval-lanes/index.mjs`。固定半开区间最少分轨；调用者改时间，不由API自动排程。初始化快照经交接消费不冒每帧重新求解。
+- `geometry.catenary` / `compileCatenary`：[指南（便携包）](../runtime/motion-elements/lib/foundations/geometry/catenary/README.md) / [指南（源码仓库）](https://github.com/doomclouds/MotionStudio/blob/ebda9d2661be84e1314cee14baf4acd241b6069e/engine/motion-elements/docs/catenary.md)，canonical `lib/foundations/geometry/catenary/index.mjs`。支持端点＋长度＋重力确定静态弧线；不是动态绳索、碰撞或任意近竖直求解。浮点near-taut与半程接缝、弧长地址非实测长度限制须保留。原片冻结runtime与公共修正版用独立数值/Native桥接，不冒同字节或全片重制。
+- `composition.interval-lanes` / `intervalLaneLayout`：[指南（便携包）](../runtime/motion-elements/lib/foundations/layout/interval-lanes/README.md) / [指南（源码仓库）](https://github.com/doomclouds/MotionStudio/blob/ebda9d2661be84e1314cee14baf4acd241b6069e/engine/motion-elements/docs/interval-lanes.md)，canonical `lib/foundations/layout/interval-lanes/index.mjs`。固定半开区间最少分轨；调用者改时间，不由API自动排程。初始化快照经交接消费不冒每帧重新求解。
 - `recipe.staged-layout-handoff` / `compileStagedLayoutHandoff`：[指南（便携包）](../runtime/motion-elements/docs/staged-layout-handoff.md) / [指南（源码仓库）](https://github.com/doomclouds/MotionStudio/blob/ebda9d2661be84e1314cee14baf4acd241b6069e/engine/motion-elements/docs/staged-layout-handoff.md)，位于recipes，1配方不计基础。明确same-ID snapshots/waypoint及连续ranges；内部边界后段、reduced全局终态。无自动避碰、改时或waypoint生成。历史项目手写分段不是新API调用证明。
 
 两部实际有声候选与源码/逐项调用/提交和可见范围已私有绑定；限定帧审不升级常速、听审、用户艺术或通用迁移。保持catalog的各质量门，不将项目图像/声音/参数写入公开机制。
@@ -330,17 +330,17 @@ glyph内部采样不加到公wrapper数。570次run提交不等于全程完整�
 
 ### 显式场提取轮廓
 
-`geometry.iso-contour` / `compileContourGrid`、`extractIsoContours`，canonical `lib/foundations/geometry/iso-contour.mjs`，见[指南（便携包）](../runtime/motion-elements/docs/iso-contour.md) / [指南（源码仓库）](https://github.com/doomclouds/MotionStudio/blob/ebda9d2661be84e1314cee14baf4acd241b6069e/engine/motion-elements/docs/iso-contour.md)。一个基础，不按场源、level或配色重复计数。固定两三角线性域提取isolines，并非通用filled-domain求解；closed不能替代branch/plateau/open检查。公共65536样本上限与IEEE退化诊断明确，未经证明不得称实时、连续拓扑或解析场精确边界。
+`geometry.iso-contour` / `compileContourGrid`、`extractIsoContours`，canonical `lib/foundations/geometry/iso-contour/index.mjs`，见[指南（便携包）](../runtime/motion-elements/lib/foundations/geometry/iso-contour/README.md) / [指南（源码仓库）](https://github.com/doomclouds/MotionStudio/blob/ebda9d2661be84e1314cee14baf4acd241b6069e/engine/motion-elements/docs/iso-contour.md)。一个基础，不按场源、level或配色重复计数。固定两三角线性域提取isolines，并非通用filled-domain求解；closed不能替代branch/plateau/open检查。公共65536样本上限与IEEE退化诊断明确，未经证明不得称实时、连续拓扑或解析场精确边界。
 
 实际10.4秒候选有624次提取与全部真实fill/clip/outline证据；公共硬化版另有624帧状态/路径和22代表PNG+22新进程桥接，原片/源码不覆盖。限定帧审不是常速、听审、用户艺术认可或跨作品迁移；遵守目录质量门，不把私有媒体/参数入库。
 
 
 ### 图像成为纸卡；照片成为有注释的作品墙
 
-- `raster.neighborhood-convolution`：[指南（便携包）](../runtime/motion-elements/docs/convolution.md) / [指南（源码仓库）](https://github.com/doomclouds/MotionStudio/blob/ebda9d2661be84e1314cee14baf4acd241b6069e/engine/motion-elements/docs/convolution.md)。真实归一正核卷积，blur/unsharp不拆数量；sRGB非线性光，alpha与64M总tap预算明确，缓存不冒每帧重算。
-- `raster.projective-quad`：[指南（便携包）](../runtime/motion-elements/docs/projective-raster.md) / [指南（源码仓库）](https://github.com/doomclouds/MotionStudio/blob/ebda9d2661be84e1314cee14baf4acd241b6069e/engine/motion-elements/docs/projective-raster.md)。凸四角单应逆采样，点helper/别名一个机制；无AA/mipmap或真正3D。
-- `composition.masonry`：[指南（便携包）](../runtime/motion-elements/docs/masonry.md) / [指南（源码仓库）](https://github.com/doomclouds/MotionStudio/blob/ebda9d2661be84e1314cee14baf4acd241b6069e/engine/motion-elements/docs/masonry.md)。源序最短列，不是globaloptimal/自动测图裁切。
-- `composition.anchored-labels`：[指南（便携包）](../runtime/motion-elements/docs/anchored-labels.md) / [指南（源码仓库）](https://github.com/doomclouds/MotionStudio/blob/ebda9d2661be84e1314cee14baf4acd241b6069e/engine/motion-elements/docs/anchored-labels.md)。显式测量框与候选first-fit；unplaced明确，不自动生成候选/leader或识别焦点。
+- `raster.neighborhood-convolution`：[指南（便携包）](../runtime/motion-elements/lib/foundations/raster/convolution/README.md) / [指南（源码仓库）](https://github.com/doomclouds/MotionStudio/blob/ebda9d2661be84e1314cee14baf4acd241b6069e/engine/motion-elements/docs/convolution.md)。真实归一正核卷积，blur/unsharp不拆数量；sRGB非线性光，alpha与64M总tap预算明确，缓存不冒每帧重算。
+- `raster.projective-quad`：[指南（便携包）](../runtime/motion-elements/lib/foundations/raster/projective-raster/README.md) / [指南（源码仓库）](https://github.com/doomclouds/MotionStudio/blob/ebda9d2661be84e1314cee14baf4acd241b6069e/engine/motion-elements/docs/projective-raster.md)。凸四角单应逆采样，点helper/别名一个机制；无AA/mipmap或真正3D。
+- `composition.masonry`：[指南（便携包）](../runtime/motion-elements/lib/foundations/layout/masonry/README.md) / [指南（源码仓库）](https://github.com/doomclouds/MotionStudio/blob/ebda9d2661be84e1314cee14baf4acd241b6069e/engine/motion-elements/docs/masonry.md)。源序最短列，不是globaloptimal/自动测图裁切。
+- `composition.anchored-labels`：[指南（便携包）](../runtime/motion-elements/lib/foundations/layout/anchored-labels/README.md) / [指南（源码仓库）](https://github.com/doomclouds/MotionStudio/blob/ebda9d2661be84e1314cee14baf4acd241b6069e/engine/motion-elements/docs/anchored-labels.md)。显式测量框与候选first-fit；unplaced明确，不自动生成候选/leader或识别焦点。
 
 两部实际有声候选分别覆盖2项；纸卡公共输入硬化与原片通过540帧实际buffer/draw桥接和22代表PNG+22新Node，不冒新编码；摄影两项保持原10文件runtime闭包字节，旧staged recipe复用不计新。保留49帧三注释全不透明的读时风险，数量/工程合格不是风格背书。常速、听审、用户与迁移门依catalog，不导入私人素材。
 

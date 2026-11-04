@@ -234,16 +234,16 @@
       "id": "design.vertical-imprint.v1",
       "version": 1,
       "status": "published-source-technical-reviewed",
-      "entry": "vertical-imprint.mjs",
+      "entry": "families/vertical-imprint/index.mjs",
       "exports": [
         "validate",
         "draw"
       ],
-      "guidance": "docs/vertical-imprint.md",
-      "example": "examples/vertical-imprint.mjs",
+      "guidance": "families/vertical-imprint/README.md",
+      "example": "families/vertical-imprint/examples/render.mjs",
       "sourceRelationship": "右起字列、格距与正文批注层级",
       "sourceSceneMigrated": false,
-      "verification": "test/verify.mjs; test/verify-cjk-font.py; examples/b05-compositions.mjs",
+      "verification": "families/vertical-imprint/test/contract.mjs; families/vertical-imprint/test/verify-font.py; test/verify.mjs; examples/b05-compositions.mjs",
       "userAestheticApproval": false,
       "sourceCases": [
         "https://github.com/doomclouds/MotionStudio/blob/186996cf248459eb6dc7c01252fc6b6b2825995d/portfolio/works/song-block-print-study/README.md"
@@ -258,7 +258,8 @@
         "no-source-scene-migration",
         "no-user-aesthetic-approval",
         "not-motion"
-      ]
+      ],
+      "sample": "families/vertical-imprint/examples/cases.mjs"
     },
     {
       "id": "design.geometric-marks.v1",
@@ -273,7 +274,7 @@
       "example": "families/geometric-marks/examples/render.mjs",
       "sourceRelationship": "共享网格/原语/颜色角色的标识家族",
       "sourceSceneMigrated": false,
-      "verification": "families/geometric-marks/test/contract.mjs; test/verify.mjs; test/verify-cjk-font.py; examples/b05-compositions.mjs",
+      "verification": "families/geometric-marks/test/contract.mjs; test/verify.mjs; families/vertical-imprint/test/verify-font.py; examples/b05-compositions.mjs",
       "userAestheticApproval": false,
       "sourceCases": [
         "https://github.com/doomclouds/MotionStudio/blob/186996cf248459eb6dc7c01252fc6b6b2825995d/portfolio/works/bauhaus-theatre-study/README.md"
@@ -304,7 +305,7 @@
       "example": "families/proportional-partition/examples/render.mjs",
       "sourceRelationship": "分类面积表达，独立修正源叶面积比例",
       "sourceSceneMigrated": false,
-      "verification": "families/proportional-partition/test/contract.mjs; test/verify.mjs; test/verify-cjk-font.py; examples/b05-compositions.mjs",
+      "verification": "families/proportional-partition/test/contract.mjs; test/verify.mjs; families/vertical-imprint/test/verify-font.py; examples/b05-compositions.mjs",
       "userAestheticApproval": false,
       "sourceCases": [
         "https://github.com/doomclouds/MotionStudio/blob/186996cf248459eb6dc7c01252fc6b6b2825995d/portfolio/works/ocean-plastic-treemap-study/README.md"
@@ -335,7 +336,7 @@
       "example": "families/ratio-rings/examples/render.mjs",
       "sourceRelationship": "目标比表达，同源value/max推导弧与文字",
       "sourceSceneMigrated": false,
-      "verification": "families/ratio-rings/test/contract.mjs; test/verify.mjs; test/verify-cjk-font.py; examples/b05-compositions.mjs",
+      "verification": "families/ratio-rings/test/contract.mjs; test/verify.mjs; families/vertical-imprint/test/verify-font.py; examples/b05-compositions.mjs",
       "userAestheticApproval": false,
       "sourceCases": [
         "https://github.com/doomclouds/MotionStudio/blob/186996cf248459eb6dc7c01252fc6b6b2825995d/portfolio/works/health-color-code-study/README.md"

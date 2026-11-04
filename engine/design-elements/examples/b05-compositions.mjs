@@ -1,5 +1,5 @@
 import{drawAsset}from'../index.mjs';
-import{examples as vertical}from'./vertical-imprint.mjs';
+import{examples as vertical}from'../families/vertical-imprint/examples/cases.mjs';
 import{examples as marks}from'../families/geometric-marks/examples/cases.mjs';
 import{examples as partitions}from'../families/proportional-partition/examples/cases.mjs';
 export const b05Recipes=[

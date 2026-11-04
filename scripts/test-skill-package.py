@@ -86,7 +86,7 @@ def main():
         assert (design / 'families/print-poster/index.mjs').read_bytes() == (ROOT / 'engine/design-elements/families/print-poster/index.mjs').read_bytes()
         run(['node', '--input-type=module', '-e', "const m=await import(process.argv[1]);if(Object.keys(m.registry).length!==13)throw Error('Registry missing');", (design / 'index.mjs').as_uri()])
         if os.environ.get('MOTION_ENGINE_ROOT') and os.environ.get('UI_TEST_FONT_DIR') and os.environ.get('UI_B05_FONT_FILE'):
-            run(['python3', str(design / 'test/verify-cjk-font.py')])
+            run(['python3', str(design / 'families/vertical-imprint/test/verify-font.py')])
             run(['node', str(design / 'test/verify.mjs'), str(temp / 'design-test-results.json')])
         else:
             print('NOT_RUN: design Canvas rendering tests require MOTION_ENGINE_ROOT, UI_TEST_FONT_DIR and UI_B05_FONT_FILE; extracted imports and source bytes checked')
@@ -114,6 +114,15 @@ def main():
                 run(['node', str(family_root / 'examples/render.mjs')])
             else:
                 print('NOT_RUN: ' + family + ' Native examples require declared external runtime and DejaVu fonts')
+        vertical = design / 'families/vertical-imprint'
+        assert (vertical / 'index.mjs').read_bytes() == (ROOT / 'engine/design-elements/families/vertical-imprint/index.mjs').read_bytes()
+        for old in ('vertical-imprint.mjs', 'docs/vertical-imprint.md', 'examples/vertical-imprint.mjs', 'test/verify-cjk-font.py'):
+            assert not (design / old).exists(), old
+        if os.environ.get('MOTION_ENGINE_ROOT') and (os.environ.get('VERTICAL_IMPRINT_FONT_FILE') or os.environ.get('UI_B05_FONT_FILE')):
+            run(['node', str(vertical / 'test/contract.mjs')])
+            run(['node', str(vertical / 'examples/render.mjs')])
+        else:
+            print('NOT_RUN: vertical-imprint Native checks require runtime and explicitly identified licensed CJK font')
         recipes = design / 'recipes/reviewed/b06'
         manifest = json.loads((recipes / 'recipe-manifest.json').read_text())
         assert manifest['sharedFamilyCountDelta'] == 0 and len(manifest['recipes']) == 2

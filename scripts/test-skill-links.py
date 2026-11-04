@@ -4,21 +4,32 @@ their own separately scoped documentation checks.
 Remote links are not fetched; pinned MotionStudio source targets are checked locally.
 """
 import argparse
+import os
 from pathlib import Path
 import re
+import subprocess
 import tempfile
 import unittest
 from urllib.parse import unquote
 
 ROOT = Path(__file__).resolve().parents[1]
-PIN = 'https://github.com/doomclouds/MotionStudio/blob/ebda9d2661be84e1314cee14baf4acd241b6069e/'
+PIN = re.compile(r'https://github\.com/doomclouds/MotionStudio/blob/([0-9a-f]{40})/(.+)\Z')
 
 def local_target(root, page, target, repository=None):
     target = unquote(target.split('#')[0])
+    if '\x00' in target:
+        return False
     if not target:
         return True
-    if target.startswith(PIN):
-        return True if repository is None else (repository / target[len(PIN):]).is_file()
+    pinned = PIN.fullmatch(target)
+    if pinned:
+        if repository is None:
+            return True  # Portable bundles have no Git history; this is not remote validation.
+        commit, source_path = pinned.groups()
+        result = subprocess.run(['git', '-C', str(repository), 'cat-file', '-t',
+                                 f'{commit}:{source_path}'], capture_output=True, text=True,
+                                env={**os.environ, 'GIT_NO_LAZY_FETCH': '1'})
+        return result.returncode == 0 and result.stdout.strip() == 'blob'
     if re.match(r'[a-zA-Z][a-zA-Z0-9+.-]*:', target):
         return True  # Offline scope: no claim that remote targets or anchors are valid.
     resolved = (page.parent / target).resolve()
@@ -98,6 +109,33 @@ class PathLinkTests(unittest.TestCase):
         dependency.parent.mkdir(parents=True)
         dependency.write_text('[vendor-only](absent.md)')
         self.assertEqual(len(inspect(skill, self.root)[1]), 1)
+    def test_pinned_source_uses_commit_not_current_tree(self):
+        def git(*args):
+            return subprocess.check_output(['git', '-C', str(self.root), *args], text=True).strip()
+        git('init', '-q')
+        (self.root / 'historical.md').write_text('historical source')
+        git('add', 'historical.md')
+        git('-c', 'user.name=Link Test', '-c', 'user.email=link-test@example.invalid',
+            'commit', '-qm', 'Historical fixture')
+        commit = git('rev-parse', 'HEAD')
+        (self.root / 'historical.md').unlink()
+        (self.root / 'new.md').write_text('current-only source')
+        prefix = f'https://github.com/doomclouds/MotionStudio/blob/{commit}/'
+        self.assertTrue(local_target(self.root, self.page, prefix + 'historical.md', self.root))
+        self.assertFalse(local_target(self.root, self.page, prefix + 'new.md', self.root))
+        self.assertFalse(local_target(self.root, self.page, prefix + 'missing.md', self.root))
+        self.assertFalse(local_target(self.root, self.page,
+            'https://github.com/doomclouds/MotionStudio/blob/' + '0' * 40 + '/historical.md', self.root))
+        self.assertTrue(local_target(self.root, self.page, prefix + 'historical.md'))
+        self.assertFalse(local_target(self.root, self.page, prefix + 'historical.md%00', self.root))
+        self.assertFalse(local_target(self.root, self.page, '../bad%00.md', self.root))
+        blob = git('rev-parse', f'{commit}:historical.md')
+        (self.root / '.git/objects' / blob[:2] / blob[2:]).unlink()
+        git('config', 'remote.origin.promisor', 'true')
+        git('config', 'remote.origin.url', str(self.root / 'missing-remote'))
+        self.assertFalse(local_target(self.root, self.page, prefix + 'historical.md', self.root))
+        self.assertFalse((self.root / '.git/objects' / blob[:2] / blob[2:]).exists())
+
     def test_missing_portable_runtime_is_rejected(self):
         self.assertFalse(local_target(self.root, self.page, '../runtime/review-tools/missing.py'))
 

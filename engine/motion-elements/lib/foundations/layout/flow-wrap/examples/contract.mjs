@@ -1,0 +1,15 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import * as api from '../../../../index.mjs';
+const catalog=JSON.parse(readFileSync(new URL('../../../../../catalog.json',import.meta.url)));
+const item=catalog.elements.find(e=>e.id==='composition.flow-wrap');
+assert(item);
+const narrow=api.flowWrapLayout(item.example);
+assert.deepEqual(narrow.rows,[{itemIds:['label-a','label-b'],y:0,width:176,height:48},{itemIds:['label-c'],y:60,width:120,height:32}]);
+assert.equal(narrow.height,92);assert.equal(narrow.width,180);
+const wide=api.flowWrapLayout({...item.example,width:320});assert.equal(wide.rows.length,1);assert.equal(wide.height,48);
+assert.deepEqual(narrow.items.map(x=>x.itemId),item.example.items.map(x=>x.itemId));
+assert(Object.isFrozen(narrow.items[0].rect));assert.deepEqual(narrow,api.flowWrapLayout(item.example));
+const empty=api.flowWrapLayout({...item.example,items:[]});assert.equal(empty.height,0);assert.deepEqual(empty.rows,[]);
+assert.throws(()=>api.flowWrapLayout({...item.example,width:95}));
+console.log('composition.flow-wrap contract PASS');

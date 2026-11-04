@@ -1,0 +1,15 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import * as api from '../../../../index.mjs';
+const catalog=JSON.parse(readFileSync(new URL('../../../../../catalog.json',import.meta.url)));
+const item=catalog.elements.find(e=>e.id==='geometry.hinged-panel');
+assert(item);
+const plan=api.compileHingedPanel(item.example),state=api.sampleHingedPanel(plan,{angle:-Math.PI/2});
+const close=(a,b)=>assert(Math.abs(a-b)<1e-10,`${a} != ${b}`);
+const printed=api.transformHingedPoint(state,{x:0,y:0,z:30});close(printed.x,0);close(printed.y,30);close(printed.z,0);
+for(const side of ['from','to'])for(const axis of ['x','y','z'])close(state.hinge[side][axis],item.example.hinge[side][axis]);
+const child=api.sampleHingedPanel(plan,{angle:-Math.PI/2,parent:state});
+const twice=api.transformHingedPoint(child,{x:0,y:0,z:30});close(twice.y,0);close(twice.z,-30);
+assert.equal(state.matrix.length,12);assert(Object.isFrozen(state.vertices[0]));assert.deepEqual(state,api.sampleHingedPanel(plan,{angle:-Math.PI/2}));
+assert.throws(()=>api.sampleHingedPanel({...plan},{angle:0}));assert.throws(()=>api.sampleHingedPanel(plan,{angle:7}));
+console.log('geometry.hinged-panel contract PASS');

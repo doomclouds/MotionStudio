@@ -1,0 +1,14 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import * as api from '../../../../index.mjs';
+const catalog=JSON.parse(readFileSync(new URL('../../../../../catalog.json',import.meta.url)));
+const item=catalog.elements.find(e=>e.id==='raster.neighborhood-convolution');
+assert(item);
+const plan=api.compileConvolution(item.example),image={width:1,height:1,data:new Uint8ClampedArray([40,80,120,255])};
+const output=api.convolveRGBA(plan,image);assert.deepEqual([...output.data],[40,80,120,255]);assert.notEqual(output.data,image.data);
+const ramp={width:3,height:1,data:new Uint8ClampedArray([10,0,0,255,20,0,0,255,90,0,0,255])};
+const directional=api.compileConvolution({...item.example,kernel:[[0,0,1]]});assert.deepEqual([...api.convolveRGBA(directional,ramp).data].filter((_,i)=>i%4===0),[10,10,20]);
+const transparent={width:1,height:1,data:new Uint8ClampedArray([255,80,90,0])};assert.deepEqual([...api.convolveRGBA(plan,transparent).data],[0,0,0,0]);
+output.data[0]=0;assert.equal(image.data[0],40);assert(Object.isFrozen(plan.weights));
+assert.throws(()=>api.convolveRGBA({...plan},image));assert.throws(()=>api.compileConvolution({...item.example,kernel:[[0]]}));
+console.log('raster.neighborhood-convolution contract PASS');
