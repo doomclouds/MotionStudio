@@ -126,13 +126,15 @@ def sha(data):return hashlib.sha256(data).hexdigest()
 def time(samples):
     f=Fraction(samples,48000);return {'n':str(f.numerator),'d':str(f.denominator)}
 
-def materialize(d,contract,output,library=ROOT,repeats=1):
+def materialize(d,contract,output,library=ROOT,repeats=1,variant=0):
     validate(d,contract.parent,Path(library))
     contract_bytes=contract.read_bytes()
     require(json.loads(contract_bytes)==d, 'contract changed or differs from selected asset')
     require(d['status']=='candidate' and d['rights']['use']=='allowed','asset retired or use rights unresolved')
     require(type(repeats) is int and 1<=repeats<=32,'repeats must be 1..32')
     require(repeats==1 or d['audio']['loop']['mode']=='explicit-repeat','one-shot cannot implicitly loop')
+    if d['source']['kind']=='generated': synth.validate_variant(d['source']['recipe'],variant)
+    else: require(type(variant) is int and variant==0,'local-file does not support synthesis variants')
     output=Path(output).absolute()
     require(not output.resolve().is_relative_to(ROOT.parents[1]) and not output.resolve().is_relative_to(Path(library).resolve()),'output must be outside source/package and input library')
     require(output.parent.is_dir() and not output.exists() and not output.is_symlink(),'output needs existing parent and new directory')
@@ -140,7 +142,7 @@ def materialize(d,contract,output,library=ROOT,repeats=1):
         tmp=Path(tmp); target=tmp/'source.wav'; s=d['source']
         entry=local(contract.parent,s['entry'],Path(library))
         source_hash=sha(entry.read_bytes())
-        if s['kind']=='generated': synth.render(s['recipe'],target)
+        if s['kind']=='generated': synth.render(s['recipe'],target,variant)
         else:
             require(source_hash==s['sha256'],'source hash mismatch')
             shutil.copyfile(entry,target)
@@ -160,6 +162,7 @@ def materialize(d,contract,output,library=ROOT,repeats=1):
               'clips':[{'id':f'cue-{i}','sourceId':d['id'],'sourceRange':{'start':time(start),'end':time(end)},'timelineRange':{'start':time(i*count),'end':time((i+1)*count)},'outputId':'sound','gainDb':0} for i in range(repeats)],
               'stems':[{'id':'sound','outputId':'master'}],'buses':[],'master':{},'views':[]}
         receipt={'schema':'sound-materialization/1','asset_id':d['id'],'version':d['version'],'contract_sha256':sha(contract_bytes),'source_sha256':source_hash,'output_sha256':plan['sources'][0]['expectedSha256'],
+                 'generation':{'recipe':s['recipe'],'variant':variant} if s['kind']=='generated' else None,
                  'python':sys.version,'technical':{'frames':n,'sample_peak':peak,'format':'PCM16 stereo 48kHz','status':'PASS'},'listening':'NOT_LISTENED','av_sync':'NOT_RUN','owner':'NOT_RUN','standalone_distribution':d['rights']['standalone_distribution']}
         for name,value in [('timeline.json',plan),('receipt.json',receipt),('asset.json',d)]: (tmp/name).write_text(json.dumps(value,ensure_ascii=False,indent=2)+'\n')
         (tmp/'design.md').write_text(design(d))
@@ -175,8 +178,10 @@ def main(argv=None):
     p.add_argument('--library',type=Path,default=ROOT)
     p.add_argument('--id');p.add_argument('--kind',choices=sorted(CATEGORIES));p.add_argument('--category');p.add_argument('--mood');p.add_argument('--include-retired',action='store_true')
     p.add_argument('--output',type=Path);p.add_argument('--repeats',type=int,default=1)
+    p.add_argument('--variant',type=int,default=0,help='Explicit synthesis variant: keyboard-press 0..3; all other assets 0 only')
     a=p.parse_args(argv)
     try:
+        require(a.command=='render' or a.variant==0,'--variant applies only to render')
         rows=load(a.library, validate_views=a.command != 'design')
         if a.command=='validate': result={'valid':True,'count':len(rows),'listening':'NOT_LISTENED'}
         elif a.command=='index': print(index(rows),end='');return 0
@@ -188,7 +193,7 @@ def main(argv=None):
         else:
             found=[(d,path) for d,path in rows if d['id']==a.id]
             require(len(found)==1 and a.output is not None,'render requires a known --id and --output')
-            result=materialize(*found[0],a.output,a.library,a.repeats)
+            result=materialize(*found[0],a.output,a.library,a.repeats,a.variant)
         print(json.dumps(result,ensure_ascii=False,indent=2));return 0
     except (ValueError,OSError,TypeError,KeyError,wave.Error) as e:
         print(json.dumps({'valid':False,'error':str(e)},ensure_ascii=False),file=sys.stderr);return 1

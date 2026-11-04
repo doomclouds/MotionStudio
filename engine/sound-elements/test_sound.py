@@ -114,7 +114,10 @@ class SoundTests(unittest.TestCase):
         return d,p,library
     def test_local_file_restore_and_rights(self):
         d,p,lib=self.make_local();sound.load(lib)
-        sound.materialize(d,p,self.root/'restored',lib)
+        receipt=sound.materialize(d,p,self.root/'restored',lib)
+        self.assertIsNone(receipt['generation'])
+        with self.assertRaises(ValueError):sound.materialize(d,p,self.root/'no-variant',lib,variant=1)
+        self.assertFalse((self.root/'no-variant').exists())
         d['rights']['use']='unknown'
         with self.assertRaises(ValueError):sound.materialize(d,p,self.root/'blocked',lib)
     def test_hash_mismatch_and_symlink(self):

@@ -11,9 +11,24 @@ RATE = 48000
 DURATIONS = {'soft-tick': 0.12, 'settle-chime': 0.8, 'air-pass': 0.6, 'low-land': 0.35, 'quiet-pulse-bed': 8.0,
              'paper-rub': 0.24, 'print-snap': 0.12, 'resonant-tap': 0.48, 'keyboard-press': 0.052}
 
-def samples(recipe):
+# Finite authored alternatives, not unbounded randomization or an acoustic model.
+# (noise seed, body frequency multiplier, release onset in seconds)
+# Variant zero preserves the original default PCM in the same runtime.
+KEYBOARD_VARIANTS = ((84701, 1.0, .019), (45047, .985, .018),
+                     (13337, 1.015, .020), (96731, .995, .0185))
+
+def validate_variant(recipe, variant):
+    if recipe not in DURATIONS:
+        raise ValueError('Unsupported recipe')
+    count = len(KEYBOARD_VARIANTS) if recipe == 'keyboard-press' else 1
+    if type(variant) is not int or not 0 <= variant < count:
+        raise ValueError(f'{recipe}: variant must be an integer from 0 to {count-1}')
+
+def samples(recipe, variant=0):
+    validate_variant(recipe, variant)
     n = round(DURATIONS[recipe] * RATE)
-    state = 84701 if recipe == 'keyboard-press' else 1977
+    state, body_ratio, release_at = (KEYBOARD_VARIANTS[variant] if recipe == 'keyboard-press'
+                                     else (1977, 1.0, .019))
     low_fast = low_slow = 0.0
     for i in range(n):
         t, u = i / RATE, i / (n - 1)
@@ -45,7 +60,7 @@ def samples(recipe):
             value = .3 * edge * sum(a*math.sin(2*math.pi*f*t)*math.exp(-k*t)
                                    for f,k,a in [(420,12,.8),(913,16,.35),(1647,24,.15)])
         elif recipe == 'keyboard-press':
-            # Fixed short press/body/release, not a physical keyboard model.
+            # Explicitly selected short press/body/release, not a physical keyboard model.
             state = (1664525 * state + 1013904223) & 0xffffffff
             noise = state / 2147483648 - 1
             low_fast += (1 - math.exp(-2*math.pi*6500/RATE)) * (noise-low_fast)
@@ -53,8 +68,8 @@ def samples(recipe):
             band = low_fast-low_slow
             attack = min(t/.0015, 1)
             press = attack * math.exp(-105*t)
-            body = (math.sin(2*math.pi*235*t) + .34*math.sin(2*math.pi*510*t)) * math.exp(-95*t) * attack
-            release_t = max(t-.019, 0)
+            body = (math.sin(2*math.pi*235*body_ratio*t) + .34*math.sin(2*math.pi*510*body_ratio*t)) * math.exp(-95*t) * attack
+            release_t = max(t-release_at, 0)
             release = min(release_t/.001, 1) * math.exp(-190*release_t)
             tail = max(0, min((DURATIONS[recipe]-1/RATE-t)/.004, 1))
             value = (.11*band*press + .075*body + .024*band*release) * tail
@@ -66,7 +81,8 @@ def samples(recipe):
             raise ValueError('Unsupported recipe')
         yield max(-32767, min(32767, round(value * 32767)))
 
-def render(recipe, path):
+def render(recipe, path, variant=0):
+    validate_variant(recipe, variant)  # Reject before creating an output file.
     with wave.open(str(path), 'wb') as out:
         out.setparams((2, 2, RATE, 0, 'NONE', 'not compressed'))
-        out.writeframes(b''.join(struct.pack('<hh', v, v) for v in samples(recipe)))
+        out.writeframes(b''.join(struct.pack('<hh', v, v) for v in samples(recipe, variant)))
