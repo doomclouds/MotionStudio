@@ -23,6 +23,7 @@
 | 失败后怎样利用已有环境换策略，而非拉长肢体赐予成功？ | [环境解法与支撑交接](../studies/emotion-and-action.md#已有环境怎样让第二次尝试成为新策略)：道具提前可见、先看后动、双端可达与支撑切换；静音原创样片仅有限抽帧/模型检查，未常速、非物理步态。 |
 | 固定类别份额变化怎样保持连续覆盖，而不暗示总量不变？ | [有序共享边界分带](../../../engine/motion-elements/lib/foundations/layout/ordered-bands/README.md)：固定同序ID、统一进度、零宽保留；工时与库存两种实际合成调用，份额和总量分列，experimental。 |
 | 历史源码移植的证据能支持什么，不能支持什么？ | [历史移植与整帧时间核对](../../../skills/motion-film-director/references/reference-mechanism.md#模板源码与可见预览不一致时)：游标与结果关联、PTS、邻帧及共享时间映射的有限经验；不是独立观察复刻指南，不计本库消费或效果通过，抽帧不代常速与听审。 |
+| 播放预览与缩略图矛盾，或多语言版本只有外观差异？ | [片内时钟与合成身份](../studies/state-and-reading.md#播放示意中把片内时钟与影片时钟分开)、[语言与数据关系](../studies/state-and-reading.md#多语言并排时保留数据关系而非重复同一文字)：核同一局部时间、合成内容、指标与正文；有限观察候选，非真实播放器、本地化系统或跨内容通过。 |
 | 时间、对象状态与核心调用怎么组织 | [核心API与时间](../../../engine/motion-elements/docs/guides/core-api-and-time.md)、[Canvas组合](../../../engine/motion-elements/docs/guides/canvas-composition.md) |
 | 进场后落定、局部展开，保留可读焦点 | [落定与局部揭示](../../../engine/motion-elements/docs/guides/settle-and-local-reveal.md)、[揭示与转场](../../../engine/motion-elements/docs/guides/reveal-transitions.md) |
 | 多卡信息怎样接力，而不是同时争抢 | [焦点交接](../../../engine/motion-elements/lib/recipes/focus-handoff/README.md)、[布局交接](../../../engine/motion-elements/lib/recipes/staged-layout-handoff/README.md) |
