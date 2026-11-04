@@ -289,6 +289,58 @@ class FinalDeliveryTests(unittest.TestCase):
         self.assertEqual(code, 1, result)
         self.assertEqual(result['comparison_diagnostics']['benchmark']['status'], 'NOT_RUN')
 
+    def original_diagnostics(self):
+        candidate = self.movie['sha256']
+        source = self.artifact('motion.json', json.dumps({'source':{'sha256':candidate}}).encode())
+        heatmap = self.artifact('heatmap.png', PNG)
+        spatial = self.artifact('spatial.png', PNG)
+        self.packet['reference_based'] = False
+        self.packet['comparison_diagnostics'] = {
+            'benchmark': {'status':'NOT_RUN','reason':'Original: no comparison reference.',
+                'candidate_sha256':candidate,'artifacts':[],'panels':[],
+                'method_limits':['No comparison or perceptual review inferred.']},
+            'motion_check': {'status':'COLLECTED_NOT_APPROVED','reason':'Synthetic already-bound diagnostics.',
+                'candidate_sha256':candidate,
+                'artifacts':[dict(source,role='motion_report'),dict(heatmap,role='motion_heatmap'),
+                             dict(spatial,role='spatial_change_map')],
+                'panels':['rgb_difference_heatmap','spatial_mean_change','contact_sheet'],
+                'method_limits':['Synthetic measurements, not real viewing.']}}
+
+    def test_original_keeps_optional_diagnostics_without_requiring_reference(self):
+        self.original_diagnostics()
+        code, result = self.run_gate()
+        self.assertEqual(code, 0, result)
+        self.assertEqual(result['comparison_diagnostics'], self.packet['comparison_diagnostics'])
+        self.assertFalse(result['reference_based'])
+        self.assertTrue(any(a.get('kind') == 'motion_check_diagnostic' for a in result['evidence_index']))
+
+    def test_original_diagnostics_do_not_waive_actual_listening(self):
+        self.original_diagnostics()
+        self.records['audio']['status'] = 'NOT_LISTENED'; self.save_review('audio')
+        code, result = self.run_gate(mock_renderer=False)
+        self.assertEqual(code, 1, result)
+        self.assertEqual(result['status'], 'review_candidate')
+        if (self.root/'delivery/output/review/report.html').exists():
+            page = (self.root/'delivery/output/review/report.html').read_text()
+            self.assertIn('NOT_LISTENED', page)
+            self.assertIn('复用已绑定 motion-check 图片', page)
+
+    def test_original_rejects_stale_or_incomplete_supplied_diagnostics(self):
+        for alteration in ('stale', 'missing_panel', 'fake_comparison', 'fake_reference'):
+            self.original_diagnostics()
+            diagnostics = self.packet['comparison_diagnostics']
+            if alteration == 'stale':
+                diagnostics['motion_check']['candidate_sha256'] = 'e'*64
+            elif alteration == 'missing_panel':
+                diagnostics['motion_check']['panels'] = []
+            elif alteration == 'fake_comparison':
+                diagnostics['benchmark']['status'] = 'COLLECTED_NOT_APPROVED'
+            else:
+                diagnostics['benchmark']['reference_sha256'] = 'e'*64
+            code, result = self.run_gate(project=alteration)
+            self.assertEqual(code, 2, result)
+            self.assertFalse((self.root/alteration/'output/review/report.html').exists())
+
     def test_user_reports_are_fixed_png_and_html_only_and_review_text_is_escaped(self):
         self.records['visual']['observations'][0]['finding'] = '<script>alert("fixture")</script>'
         self.save_review('visual')
@@ -371,6 +423,17 @@ class FinalDeliveryTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, 'different candidate'):
                 gate.render_canonical_pair(result, [], [], gate.Inputs(self.root))
 
+    def test_original_canonical_rejects_foreign_report_despite_reference_field(self):
+        foreign = 'e'*64
+        artifact = self.artifact('foreign-motion.json', json.dumps({'source':{'sha256':foreign}}).encode())
+        result = {'movie':self.movie,'reference_based':False,'comparison_diagnostics':{
+            'benchmark':{'status':'NOT_RUN','reference_sha256':foreign},
+            'motion_check':{'status':'COLLECTED_NOT_APPROVED',
+                'artifacts':[dict(artifact,role='motion_report')]}}}
+        with patch.object(gate, 'load_fixed_renderer', return_value=object()):
+            with self.assertRaisesRegex(ValueError, 'different candidate'):
+                gate.render_canonical_pair(result, [], [], gate.Inputs(self.root))
+
     def test_canonical_accepts_and_labels_dual_motion_reports(self):
         artifacts = []
         reference = 'c'*64
@@ -379,7 +442,7 @@ class FinalDeliveryTests(unittest.TestCase):
             report = self.artifact(name+'/report.json', json.dumps({'source':{'sha256':sha}}).encode())
             panel = self.artifact(name+'/heatmap.png', PNG)
             artifacts.extend([dict(report,role='motion_report'),dict(panel,role='motion_heatmap')])
-        result = {'movie':self.movie,'comparison_diagnostics':{
+        result = {'movie':self.movie,'reference_based':True,'comparison_diagnostics':{
             'benchmark':{'status':'NOT_RUN','reference_sha256':reference},
             'motion_check':{'status':'COLLECTED_NOT_APPROVED','artifacts':artifacts}}}
         class Renderer:

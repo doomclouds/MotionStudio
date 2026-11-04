@@ -131,6 +131,54 @@ class PresentationTests(unittest.TestCase):
         self.assertIn('listening: BLOCKED',page)
         self.assertIn('motionstudio-review-v1',page)
         self.assertNotIn('alt="统一报告总览"',page)
+    def test_gate_original_reuses_bound_picture_without_fabricating_profile_samples(self):
+        import hashlib, io
+        raw = io.BytesIO(); Image.new('RGB', (80, 40), '#ff0055').save(raw, 'PNG')
+        image = raw.getvalue(); sha = hashlib.sha256(image).hexdigest()
+        result = {'movie': {'sha256':'b'*64,'duration_seconds_exact':'3/2'},
+                  'reference_based':False,'technical':{'status':'passed'},
+                  'reviews':{'audio':{'status':'NOT_LISTENED','blockers':['NOT_LISTENED']}},
+                  'status':'review_candidate','blockers':['NOT_LISTENED']}
+        original = json.dumps(result, sort_keys=True)
+        png, page = report.render_gate_report(result, [('image/png', image, sha)])
+        with Image.open(io.BytesIO(png)) as im:
+            self.assertEqual(im.size, (1800, 5400))
+            self.assertEqual(im.getpixel((1320,362)), (255,0,85))
+            # Reference space remains empty; the candidate is not its own reference.
+            self.assertEqual(im.getpixel((470,362)), (11,17,25))
+        page = page.decode()
+        self.assertIn(sha, page)
+        self.assertIn('NOT_LISTENED', page)
+        self.assertNotIn('ready_for_owner_review', page)
+        self.assertEqual(json.dumps(result, sort_keys=True), original)
+
+    def test_bound_visual_preview_accepts_actual_jpeg(self):
+        import hashlib, io
+        raw = io.BytesIO(); Image.new('RGB', (80, 40), 'red').save(raw, 'JPEG', quality=95)
+        image = raw.getvalue(); sha = hashlib.sha256(image).hexdigest()
+        canvas = Image.new('RGB', report.PRESENTATION_SIZE, report.COLORS['bg'])
+        report._draw_bound_visual_preview(canvas, [('image/jpeg', image, sha)])
+        self.assertGreater(canvas.getpixel((1320,362))[0], 250)
+
+    def test_bound_visual_preview_rejects_changed_bytes_and_mime(self):
+        import hashlib, io
+        raw = io.BytesIO(); Image.new('RGB', (8, 4), 'red').save(raw, 'PNG')
+        image = raw.getvalue(); sha = hashlib.sha256(image).hexdigest()
+        canvas = Image.new('RGB', report.PRESENTATION_SIZE)
+        for picture in [('image/png', image, '0'*64), ('image/jpeg', image, sha),
+                        ('image/svg+xml', image, sha)]:
+            with self.subTest(picture=picture[0]), self.assertRaises(ValueError):
+                report._draw_bound_visual_preview(canvas, [picture])
+
+    def test_bound_visuals_do_not_replace_existing_profile_keyframes(self):
+        profile = json.loads((self.out/'candidate.profile.json').read_text())
+        profile['visual']['keyframes'] = [{'frame_index': 0, 't_s': 0}]
+        (self.out/'candidate.profile.json').write_text(json.dumps(profile))
+        with patch.object(report, 'render_report', side_effect=self.baseline), \
+                patch.object(report, '_draw_bound_visual_preview') as fallback:
+            report.render_delivery_report(self.out, self.dest, bound_visuals=[('not-consumed', b'', '')])
+        fallback.assert_not_called()
+
     def test_palette_and_font_contract(self):
         self.assertEqual(report.COLORS['reference'], '#6edac6')
         self.assertEqual(report.COLORS['candidate'], '#f2b773')

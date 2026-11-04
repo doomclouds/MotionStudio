@@ -307,3 +307,52 @@ test('unreferenced sources are identified but allocate no prepared PCM', {skip},
  const bytes=await readFile(source.localPath);bytes.writeFloatLE(0.5,44);await writeFile(source.localPath,bytes);
  await assert.rejects(prepared.verifyIdentity(),/mutation|identity|hash|changed/i);
 });
+
+// Budget boundary checks validate synthetic plans without allocating graph PCM.
+test('graph scalar budget accepts exactly 20M and rejects the next mono/stereo frame', () => {
+ for(const channels of [1,2]){
+  const frames=20_000_000/(4*channels);
+  const doc=document({localPath:'/synthetic/not-opened.wav'},frames,[],{
+   stems:[{id:'music',outputId:'sum'}],buses:[{id:'sum',outputId:'master'}]});
+  doc.project.channelLayout=channels===1?'mono':'stereo';
+  assert.doesNotThrow(()=>validateAudioPlan(doc));
+  doc.project.duration=s(frames+1);
+  assert.throws(()=>validateAudioPlan(doc),error=>{
+   assert.equal(error.code,'AUDIO_GRAPH_BUDGET_EXCEEDED');
+   assert.deepEqual(error.budget,{stems:1,buses:1,buffers:4,frames:frames+1,channels,sampleRate:48000,requiredScalarSamples:20_000_000+4*channels,limitScalarSamples:20_000_000,maxProjectFrames:frames});
+   return true;
+  });
+ }
+});
+
+test('60s stereo five-stem diagnostic gives a safe integer-frame ceiling, not a source/view workaround', async () => {
+ const doc=document({localPath:'/synthetic/not-opened.wav'},60*48000,[],{
+  stems:Array.from({length:5},(_,i)=>({id:`stem${i}`,outputId:'master'})),
+  views:[{id:'short',range:range(0,48000),outputs:['master']}]});
+ doc.project.channelLayout='stereo';
+ assert.throws(()=>validateAudioPlan(doc),error=>{
+  assert.equal(error.budget.requiredScalarSamples,40_320_000);
+  assert.equal(error.budget.maxProjectFrames,1_428_571);
+  assert.match(error.message,/5 stems \+ 0 buses \+ 2/);
+  assert.match(error.message,/Prepared-source storage has a separate/);
+  assert.match(error.message,/export views do not reduce graph/);
+  return true;
+ });
+ await assert.rejects(prepareMix(doc),{code:'AUDIO_GRAPH_BUDGET_EXCEEDED'});
+ doc.views=[];doc.project.duration=s(1_428_571);
+ assert.doesNotThrow(()=>validateAudioPlan(doc));
+ doc.project.duration=s(1_428_572);
+ assert.throws(()=>validateAudioPlan(doc),{code:'AUDIO_GRAPH_BUDGET_EXCEEDED'});
+});
+
+test('prepared-source and graph budgets are independent, not summed', {skip}, async t=>{
+ const dir=await sandbox(t),source=await fixture(dir,'independent-budget',[0.125,0.25]);
+ // A two-frame graph uses six scalar samples. Two distant single-frame clips
+ // require a contiguous source span of exactly 20M, which still passes its gate.
+ const doc=document(source,2,[clip('a',0,1),clip('b',19_999_999,20_000_000,1)]);
+ assert.doesNotThrow(()=>validateAudioPlan(doc));
+ await assert.rejects(prepareMix(doc,{sourceRoots:[dir],workDir:join(dir,'edge')}),/Source exhaustion or prepared span mismatch/);
+ doc.clips[1]=clip('b',20_000_000,20_000_001,1);
+ assert.doesNotThrow(()=>validateAudioPlan(doc));
+ await assert.rejects(prepareMix(doc,{sourceRoots:[dir],workDir:join(dir,'over')}),/Prepared source span memory limit/);
+});

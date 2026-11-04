@@ -17,6 +17,11 @@ python3 skills/motion-film-director/scripts/check_final_delivery.py /absolute/fi
 固定交付为 `output/review/overview.png` 与 `output/review/report.html`；内部 JSON 只作
 机器记录。PDF/资源包不自动作为附件。缺少参考/测量时仍输出同尺寸占位，标明未测；
 不会复制任意旧 PNG 冒充模板。原始影片没有参考不是错误；参考任务缺诊断仍保持候选阻断。
+没有 benchmark profile 帧时，交付门把当前清单已核 hash 的第一份 PNG/JPEG 缩略展示在
+既有候选指定画面槽，标注数量、hash 摘要与缩略用途；全部原图仍在 HTML。不得把接触表
+写成带虚构时码的 profile 样本，也不复制候选作为参考。此为既有画面槽的数据填充，
+不移动图表、不改展示尺寸或版本；尚无测量的图表继续明确未测。图像存在与 hash
+匹配不证明视觉审查记录绑定或观看通过；这些失败继续独立阻断，不能被缩略图覆盖。
 
 便携 Skill 不包含完整数值 benchmark/模板依赖；规范报告必须使用仓库的既有 renderer。
 便携入口可通过 `--report-renderer /absolute/MotionStudio/tools/reference-benchmark/report.py`
@@ -47,10 +52,12 @@ python3 skills/motion-film-director/scripts/check_final_delivery.py /absolute/fi
 }
 ```
 
-配置只声明展示信息，不认证图像内容、采样方法或真实听看。必须使用已有的双片诊断图，
+配置只声明展示信息，不认证图像内容、采样方法或真实听看。参考对照必须使用已有的双片诊断图，
 保留双方标签、时间轴、色阶图例及实际方法；不能填入假数据或只给一方却称双片对照。
 固定色阶 RGB 阈值为 0 / .02 / .05 / .15 / 1（非等距），与既有 motion-check 一致。
 完整方法文字保留在 HTML；PNG 长说明最多显示前 120 字，详述放 HTML。
+原创无参考任务也可显式附同版候选 motion-check 诊断；按候选标注，不称双片对照，
+不要求补造 benchmark，不能从数字诊断升级听审、常速观看或用户接受。
 
 ## 解释与覆盖职责
 

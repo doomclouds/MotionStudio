@@ -173,7 +173,8 @@ def validate_report(report, finalized=True):
             for observation in record.get('observations', []):
                 if not 0 <= _time(observation['start_s']) < _time(observation['end_s']) <= duration:
                     errors.append(kind + ': observation outside movie')
-        if report.get('reference_based') is True:
+        reference_based = report.get('reference_based') is True
+        if reference_based or 'comparison_diagnostics' in report:
             diagnostics = report.get('comparison_diagnostics')
             if not isinstance(diagnostics, dict):
                 errors.append('reference-based report requires existing benchmark and motion-check status')
@@ -187,14 +188,19 @@ def validate_report(report, finalized=True):
                     item = diagnostics[tool]
                     if item['candidate_sha256'] != report['movie']['sha256']:
                         errors.append(tool + ': diagnostic evidence belongs to different candidate')
-                    if tool == 'benchmark' and not item.get('reference_sha256'):
-                        errors.append('benchmark: reference identity required')
+                    if not reference_based and 'reference_sha256' in item:
+                        errors.append(tool + ': non-reference diagnostics cannot declare reference identity')
+                    if tool == 'benchmark':
+                        if reference_based and not item.get('reference_sha256'):
+                            errors.append('benchmark: reference identity required')
+                        if not reference_based and item['status'] == 'COLLECTED_NOT_APPROVED':
+                            errors.append('benchmark: collected comparison requires reference_based true')
                     if item['status'] == 'COLLECTED_NOT_APPROVED':
                         if not roles <= {a['role'] for a in item['artifacts']}:
                             errors.append(tool + ': missing existing full-comparison/heatmap artifacts')
                         if not panels <= set(item['panels']):
                             errors.append(tool + ': required diagnostic panels omitted')
-                    elif ready:
+                    elif ready and reference_based:
                         errors.append(tool + ': diagnostic collection incomplete; retain candidate')
 
         identifiers = set()

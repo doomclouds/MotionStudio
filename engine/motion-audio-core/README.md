@@ -190,3 +190,48 @@ to the selected stream probe, with container duration used conservatively when
 stream duration is absent. An unknown duration (or an overly long container
 fallback) rejects even when a requested selection is short; this bounded first
 implementation does not infer full duration by unbounded decoding.
+
+## Graph budget diagnostics
+
+The full-project graph is bounded independently of prepared-source spans:
+
+```text
+(stem count + bus count + 2) * project frames * channels <= 20,000,000
+max project frames = floor(20,000,000 / ((stems + buses + 2) * channels))
+```
+
+Frames are quantized at 48 kHz; channels are 1 (mono) or 2 (stereo). The two
+additional buffer allowances are part of the existing graph accounting. All
+declared stems/buses count, including silent or unreferenced nodes. This scalar
+budget is not a promise about total process memory usage; decoding, encoding and
+verification also use memory. Other limits still apply, including 600 seconds.
+
+For example, a 60-second stereo project with five stems and no buses requires
+40,320,000 graph scalar samples. Its graph ceiling is 1,428,571 frames
+(about 29.761896 seconds). Use the integer frame ceiling, not rounded-up seconds,
+when authoring a bounded plan. Changing mono/stereo or routing is a creative and
+source-layout decision, never an automatic repair. Fewer nodes can permit a
+longer project, but do not waive the separate prepared-source cap.
+
+`validateAudioPlan` and `prepareMix` reject an over-budget graph before media
+access. The error has `code: "AUDIO_GRAPH_BUDGET_EXCEEDED"` and a `budget` object:
+`stems`, `buses`, `buffers`, `frames`, `channels`, `sampleRate`,
+`requiredScalarSamples`, `limitScalarSamples`, and `maxProjectFrames` (bounded by
+both this topology's graph cap and the 600-second project cap). The CLI prints the
+same actionable message on stderr and exits nonzero. Successful validation still
+returns the normalized plan, not an estimate or a guarantee of source readiness.
+Other resource errors remain separate; no runtime capabilities probe is needed
+for plan validation.
+
+Shortening source selections reduces prepared PCM, not the full graph allocation.
+Export views crop a fully processed master, so a short view cannot bypass this
+limit. The two 20M budgets are not added together and neither can borrow unused
+capacity from the other.
+
+Automatic project segmentation is not implemented. Naively rendering independent
+chunks can reset clip fades/automation coordinates, cut baked source tails, or
+change seam treatments and encoded padding. External stateful processing (such as
+reverb or dynamics, unsupported by this core) also requires continuity and tail
+handling. A separately authored segmented workflow needs explicit sample-boundary,
+envelope, tail and final-assembly verification plus actual listening; passing
+these numeric budget checks is not evidence of audible equivalence or acceptance.

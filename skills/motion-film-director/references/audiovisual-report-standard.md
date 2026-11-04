@@ -101,6 +101,17 @@ python3 skills/motion-film-director/scripts/validate_delivery_report.py /local/r
 
 校验器对声明为参考类的报告检查两条旧管线的状态、媒体绑定与必备面板/产物；缺诊断只能保持候选。交付门读取并核对所附实际产物hash，不自动重新计算、不联网、不安装依赖。完整benchmark的路径/依赖与便携可用边界见SOP G节。
 
+### 原创无参考的已有诊断
+
+`reference_based: false` 时，`comparison_diagnostics` 仍可显式携带同版候选的
+`motion_check`；沿用现有结构，`benchmark` 写 `NOT_RUN` 和真实的无参考原因、空
+artifacts/panels，不填 reference hash。缺少可选诊断不增加参考任务要求；但提供的
+候选身份、hash、已采集声明的必备产物/面板仍全部核验，不能静默丢弃或借无参考跳过
+验证。已采集双片 benchmark 必须真实声明 `reference_based: true`。
+
+此路径只展示已经采集的候选热图/空间图，不新生成波形、频谱或参考数据，也不提升
+任何视觉、听觉或同步状态。原来没有该可选字段的非参考报告保持兼容。
+
 ### 固定格式与路径（覆盖旧PDF交付建议）
 
 用户报告只交付项目根`output/review/overview.png`与`output/review/report.html`，影片MP4另交。不提供PDF、内部JSON或源码/完整资源ZIP，除非用户明确要求。内部JSON仍用于规范校验和证据追踪，不是第三份用户报告。

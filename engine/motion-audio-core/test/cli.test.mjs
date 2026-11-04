@@ -27,3 +27,15 @@ test('library relative assets require an explicit absolute sourceBaseDir', {skip
  await assert.rejects(prepareMix(doc,{sourceRoots:[root],sourceBaseDir:'.',workDir:join(root,'relative-base')}),/absolute/);
  const prepared=await prepareMix(doc,{sourceRoots:[root],sourceBaseDir:root,workDir:join(root,'explicit-base')});t.after(()=>prepared.close());const report=await prepared.render();assert.equal(report.identities.creativePlan,creativeIdentity(doc));assert.deepEqual(decode(report.outputs.master.path),[0.25,0.25,0.25,0.25]);
 });
+
+test('CLI validate exposes graph budget and bounded remedy before media access', async t=>{
+ const root=await sandbox(t),doc=plan({}),timeline=join(root,'budget.json');
+ doc.project.channelLayout='stereo';doc.project.duration=time(60*48000);
+ doc.stems.push(...Array.from({length:4},(_,i)=>({id:`extra${i}`,outputId:'master'})));
+ await writeFile(timeline,JSON.stringify(doc));
+ const result=spawnSync(process.execPath,[cli,'validate','--timeline',timeline],{encoding:'utf8'});
+ assert.equal(result.status,1);assert.equal(result.stdout,'');
+ assert.match(result.stderr,/40320000 scalar samples; limit 20000000/);
+ assert.match(result.stderr,/at most 1428571 project frames at 48000 Hz/);
+ assert.doesNotMatch(result.stderr,/ENOENT|ffmpeg/);
+});

@@ -504,7 +504,7 @@ def render_gate_report(result, pictures, comparison_pictures=(), benchmark_outpu
                            'input': {} if name == 'reference' else {
                                'sha256': result['movie']['sha256'], 'video': {'duration_s': duration}}}
                 (source/(name+'.profile.json')).write_text(json.dumps(profile), encoding='utf-8')
-            (source/'comparison.json').write_text(json.dumps({'title': '成片视听审查 · 测量未提供',
+            (source/'comparison.json').write_text(json.dumps({'title': '成片视听审查 · 已有证据与未验项',
                 'labels': {'reference': '未提供参考 / NOT_RUN', 'candidate': '当前成片'}}), encoding='utf-8')
         statuses = {'technical': 'MEASURED_NOT_APPROVED' if result.get('technical', {}).get('status') == 'passed' else 'FAILED'}
         for display, key in [('visual','visual'), ('listening','audio'), ('av_sync','av_sync')]:
@@ -532,7 +532,8 @@ def render_gate_report(result, pictures, comparison_pictures=(), benchmark_outpu
         destination = root/'pair'
         render_delivery_report(source, destination, {'statuses': statuses, 'panels':panels,
             'reference_based': result.get('reference_based', False),
-            'authorized_silent': result.get('sound_applicability', {}).get('mode') == 'authorized_silent'})
+            'authorized_silent': result.get('sound_applicability', {}).get('mode') == 'authorized_silent'},
+            bound_visuals=pictures if benchmark_output is None else ())
         body = (destination/'report.html').read_text(encoding='utf-8')
         # One assessment section owns actual gate status, records and blockers. Charts
         # remain measurements only; a declaration is never recast as owner approval.
@@ -572,7 +573,42 @@ PRESENTATION_PANELS = (
 PRESENTATION_STATUSES = ('technical', 'visual', 'listening', 'av_sync')
 
 
-def render_delivery_report(output: Path, destination: Path, presentation=None):
+def _draw_bound_visual_preview(canvas, pictures):
+    """Fill the existing candidate-image slot; never invent frame/time metadata.
+
+    The gate has hash-bound these images to the packet, not necessarily a valid
+    visual attestation. Recheck bytes here; review blockers remain independent.
+    Keep this display thumbnail distinct from measured profile samples.
+    Full-size originals and all evidence remain available in the HTML assessment.
+    """
+    import hashlib
+    unique = {}; preview = None
+    for mime, raw, sha in pictures:
+        if mime not in ('image/png', 'image/jpeg') or hashlib.sha256(raw).hexdigest() != sha:
+            raise ValueError('bound visual image MIME/hash mismatch')
+        if sha in unique:
+            continue
+        with Image.open(io.BytesIO(raw)) as source:
+            expected = 'PNG' if mime == 'image/png' else 'JPEG'
+            if source.format != expected or source.width * source.height > 20_000_000:
+                raise ValueError('bound visual image must be a bounded PNG/JPEG')
+            if preview is None:
+                preview = source.convert('RGB')
+        unique[sha] = None
+    if preview is None:
+        return
+    draw = ImageDraw.Draw(canvas)
+    # Preserve v1's candidate identity, image and caption slots. No graph moves.
+    draw.rectangle((920, 228, 1725, 533), fill=COLORS['bg'])
+    preview.thumbnail((800, 250), Image.Resampling.LANCZOS)
+    canvas.paste(preview, (920 + (800-preview.width)//2, 237 + (250-preview.height)//2))
+    draw.text((920, 500), f'清单画面 1 / {len(unique)} · 缩略展示，审查状态另列',
+              font=_font(19), fill=COLORS['muted'])
+    draw.text((920, 524), f'SHA-256 {next(iter(unique))[:24]}… · 完整原图见 HTML',
+              font=_font(16), fill=COLORS['muted'])
+
+
+def render_delivery_report(output: Path, destination: Path, presentation=None, *, bound_visuals=()):
     """Compose the frozen delivery pair from existing benchmark exports.
 
     Optional motion panels are *already measured* paired images relative to output,
@@ -622,10 +658,14 @@ def render_delivery_report(output: Path, destination: Path, presentation=None):
     canvas = Image.new('RGB', PRESENTATION_SIZE, COLORS['bg'])
     canvas.paste(baseline.crop((0, 0, 1800, 2340)), (0, 0))
     draw = ImageDraw.Draw(canvas)
+    if bound_visuals and not _overview_keyframes(cand):
+        _draw_bound_visual_preview(canvas, bound_visuals)
     if spec.get('reference_based') is False:
         draw.rectangle((60,35,1250,155),fill=COLORS['bg'])
         draw.text((68,46),'成片视听审查 · 无参考对照',font=_font(51),fill=COLORS['ink'])
         draw.text((70,117),'缺失测量保留占位 · 不生成替代证据',font=_font(27),fill=COLORS['muted'])
+        draw.rounded_rectangle((1300,50,1735,102),radius=24,fill='#352c23')
+        draw.text((1517,76),'诊断证据 ≠ 审查通过',font=_font(23),fill=COLORS['candidate'],anchor='mm')
     def text(x, y, value, size=24, color='ink'):
         draw.text((x, y), value, font=_font(size), fill=COLORS[color])
     def wrapped(y, value, size=23, width=1660):

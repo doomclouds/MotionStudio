@@ -337,7 +337,7 @@ def standardize(result, packet, inputs):
     if type(reference_based) is not bool:
         raise ValueError('reference_based must be boolean applicability, not an approval flag')
     result['reference_based'] = reference_based
-    if reference_based:
+    if reference_based or 'comparison_diagnostics' in packet:
         diagnostics = packet.get('comparison_diagnostics')
         if diagnostics is None:
             diagnostics = {name: {'status': 'NOT_RUN', 'reason': 'Existing diagnostic output was not supplied in packet; discover/reuse it before declaring complete.',
@@ -346,7 +346,7 @@ def standardize(result, packet, inputs):
             diagnostics['benchmark']['reference_sha256'] = packet.get('reference_sha256', '')
         result['comparison_diagnostics'] = diagnostics
         for name, item in diagnostics.items():
-            if item.get('status') != 'COLLECTED_NOT_APPROVED':
+            if reference_based and item.get('status') != 'COLLECTED_NOT_APPROVED':
                 result['blockers'].append(name + ': existing diagnostic collection not completed')
             for artifact in item.get('artifacts', []):
                 inputs.artifact(artifact)
@@ -423,7 +423,8 @@ def render_canonical_pair(result, pictures, comparison_pictures, inputs, rendere
     motion = result.get('comparison_diagnostics', {}).get('motion_check', {})
     artifacts = motion.get('artifacts', []) if motion.get('status') == 'COLLECTED_NOT_APPROVED' else []
     candidate_sha = result['movie']['sha256']
-    reference_sha = result.get('comparison_diagnostics', {}).get('benchmark', {}).get('reference_sha256')
+    reference_sha = (result.get('comparison_diagnostics', {}).get('benchmark', {}).get('reference_sha256')
+                     if result.get('reference_based') is True else None)
     subjects = {candidate_sha: 'Candidate'}
     if reference_sha:
         subjects[reference_sha] = 'Reference / candidate (same media)' if reference_sha == candidate_sha else 'Reference'
