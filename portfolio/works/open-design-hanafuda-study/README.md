@@ -5,6 +5,8 @@ Install the exact external Canvas dependency from locks/npm-package-lock.json in
 
 Run `node render.mjs` then `node test.mjs`. Outputs and tests never need original screenshots. `node test-resources.cjs` checks missing/tampered inputs and package-local output rejection.
 
-See DESIGN-RETENTION.md for the actual composable helpers and limitations. Helpers are local reusable code, 0 new registered UI families. Owner approval covers static work; motion/interaction not checked. Hanafuda faithful.png retains the reference caption/year collision; readable-revision.png is separately identified as our layout correction, NOT another work.
+See design.md for the actual composable helpers and limitations. Helpers are local reusable code, 0 new registered UI families. Owner approval covers static work; motion/interaction not checked. Hanafuda faithful.png retains the reference caption/year collision; readable-revision.png is separately identified as our layout correction, NOT another work.
 
 Resource boundary: all font/runtime/output directories must resolve outside the entire repository. Every font call rechecks every regular non-symlink file and SHA; no cross-directory cache. Outputs reject symlinks and use exclusive create (wx), never overwrite. Use a fresh external output directory for each full render/test pass. Caller must not concurrently mutate resource directories.
+
+设计意图、场景结构、实际复用、来源与验证边界见[design.md](design.md)。

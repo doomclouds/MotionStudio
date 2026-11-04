@@ -84,11 +84,6 @@
       "kind": "documentation"
     },
     {
-      "path": "DESIGN-RETENTION.md",
-      "sha256": "0704d9db093ddbbac36c96461bb398ee480b34762ff3ea2edfbfed8171fcc848",
-      "kind": "documentation"
-    },
-    {
       "path": "LICENSES/Bodoni-OFL.txt",
       "sha256": "931dfe2e0cd3c9443295f5c1d754b8a8403bf060df50c1d5900267ade83d0046",
       "kind": "license"
@@ -115,23 +110,13 @@
     },
     {
       "path": "README.md",
-      "sha256": "57c7da0d3c4ed682b6a6e6149a492c91f4d2de23b9286a6a67f496c07d514a2c",
+      "sha256": "ace456da108167343500a96cffe315fc1b4180270e4a0f48902934e70c4b094a",
       "kind": "documentation"
     },
     {
       "path": "cover.jpg",
       "sha256": "b7d12d1c72398b805cadc1519fb6a184f673803f64f5cacc7b0c59cd85c52d49",
       "kind": "cover"
-    },
-    {
-      "path": "design/DESIGN-REASONING.md",
-      "sha256": "16002c61c283d02453342d4cf246001bb8e8b55e83e544f0a098de125723de7f",
-      "kind": "documentation"
-    },
-    {
-      "path": "design/REUSABLE-BRICKS.md",
-      "sha256": "11c0b784048d2dfb9f045634e3158edb66f4a33485695f70a49ab6f8726fb3f9",
-      "kind": "documentation"
     },
     {
       "path": "design/common.mjs",
@@ -197,6 +182,11 @@
       "path": "resource-lock.json",
       "sha256": "ca6a517244a0be8a0e8eced8d7cc200a0b48e1207ea4a3a88c085ce7607dfc34",
       "kind": "config"
+    },
+    {
+      "path": "design.md",
+      "sha256": "03758d462dfa2a2bb09750497aa4baf6d58827f96abaf86a10ddbefdd43593c1",
+      "kind": "documentation"
     }
   ],
   "resources": [
@@ -367,14 +357,11 @@
     }
   },
   "design": {
-    "decisionCard": "DESIGN-RETENTION.md",
+    "decisionCard": "design.md",
     "nonAssetNote": "Case-local vertical-editorial.mjs is reusable helper code but not yet a registered public family. External fonts and original generated bird replacements are precisely declared in resource-lock.json.",
     "ruleRefs": [],
     "ruleStatus": "No separate formal rule card claimed; use decisionCard and sourceAnalysis.",
-    "sourceAnalysis": [
-      "design/DESIGN-REASONING.md",
-      "design/REUSABLE-BRICKS.md"
-    ],
+    "sourceAnalysis": [],
     "assetUsage": []
   },
   "transfer": {

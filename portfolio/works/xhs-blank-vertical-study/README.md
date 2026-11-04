@@ -9,3 +9,5 @@ Test: `node design/test-vertical-editorial.mjs`. Run renders in independent Node
 The two exact generated bird PNGs are **not publicly downloadable from this package**. Their resource source_url is an applicable terms/context page, not a PNG download endpoint. A user must supply the retained exact outputs whose names and hashes appear in replacement-provenance.json and resource-lock.json. New image generation will not reproduce these exact bytes. Without both PNGs the accepted frame cannot be restored. This is a source-only release, not an out-of-the-box runnable asset bundle.
 
 Font preparation also requires user-provided original font files matching the locked hashes. --out must name a NEW directory outside the package, with an existing parent. Existing output directories/files/symlinks are refused, not overwritten. All input hashes and all in-memory derived hashes are checked before creating output. Checks remain active under python -O.
+
+设计意图、场景结构、实际复用、来源与验证边界见[design.md](design.md)。
