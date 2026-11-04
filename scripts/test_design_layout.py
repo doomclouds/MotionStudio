@@ -20,17 +20,17 @@ class DesignLayoutTests(unittest.TestCase):
     def test_native_package_knowledge_layout(self):
         with tempfile.TemporaryDirectory(prefix='design-layout-') as d:
             target=Path(d)/'skill';target.mkdir()
-            sources=list((ROOT/'skills/motion-film-director').rglob('*'))+list((ROOT/'knowledge/design').rglob('*'))
+            sources=list((ROOT/'skills/motion-film-director').rglob('*'))+list((ROOT/'knowledge/design').rglob('*'))+list((ROOT/'knowledge/sound').rglob('*'))
             sources += [ROOT/'scripts/design_knowledge.py', ROOT/'scripts/test_design_knowledge.py']
             # Mirror build-skill.py's explicit engine module scope, but copy only
             # real targets directly referenced by the knowledge Markdown fixture.
             # Never add arbitrary repository files or bypass missing-link validation.
             packaged_cores = {'motion-render-core', 'motion-timeline-core',
-                              'motion-audio-core', 'motion-elements', 'design-elements'}
+                              'motion-audio-core', 'motion-elements', 'design-elements', 'sound-elements'}
             tracked = set(subprocess.check_output(
                 ['git', '-C', str(ROOT), 'ls-files', '-z']).decode().split('\0'))
             linked_engine_sources = set()
-            for guide in (ROOT/'knowledge/design').rglob('*.md'):
+            for guide in list((ROOT/'knowledge/design').rglob('*.md')) + list((ROOT/'knowledge/sound').rglob('*.md')):
                 for link in re.findall(r'\[[^\]]*\]\(([^)]+)\)', guide.read_text()):
                     if re.match(r'^[a-zA-Z][a-zA-Z0-9+.-]*:', link) or link.startswith('#'):
                         continue
@@ -56,9 +56,9 @@ class DesignLayoutTests(unittest.TestCase):
             self.assertIn('../../LICENSES/baoyu-design-MIT.txt',static)
             self.assertTrue((target/'LICENSES/baoyu-design-MIT.txt').is_file())
     def test_protected_region_guide_survives_package_projection(self):
-        rel = 'knowledge/design/reference-to-composition.md'
+        rel = 'knowledge/design/studies/brand-and-carriers.md'
         projected = layout.source_bytes(ROOT, rel).decode()
-        self.assertIn('../../references/qa.md#保护区检查覆盖全部相关帧', projected)
+        self.assertIn('../../../references/qa.md#保护区检查覆盖全部相关帧', projected)
         qa = layout.source_bytes(ROOT, 'skills/motion-film-director/references/qa.md').decode()
         self.assertIn('旧版作为会失败的负对照', qa)
         self.assertNotIn('/workspace/', projected)

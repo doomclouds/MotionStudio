@@ -4,7 +4,11 @@
 
 ## 本地注册适配边界
 
-当前目录为61基础＋7配方；此前43基础新增17机制的阶段性暂停已由本轮缺口驱动提炼接续，新增有序共享边界分带，仍按原准入规则保持 experimental；sprite-atlas/polyline-sections是支持扩展，不计数。`lib/index.mjs` 保留既有入口，arrival使用 `lib/node.mjs` / `motion-elements/node`。默认入口既有 timeline `node:crypto` 依赖，不可声称浏览器兼容；纯模块直导路径不变。参见包内 `docs/registered-foundations.md`、`docs/public-api.json` 和 `examples/registered-foundations.mjs`。历史私有记录不可作为本次公开发布证明。
+当前目录为61基础＋7配方；此前43基础新增17机制的阶段性暂停已由本轮缺口驱动提炼接续，新增有序共享边界分带，仍按原准入规则保持 experimental；sprite-atlas/polyline-sections是支持扩展，不计数。`lib/index.mjs` 保留既有入口，arrival使用 `lib/node.mjs` / `motion-elements/node`。默认入口既有 timeline `node:crypto` 依赖，不可声称浏览器兼容；直接模块路径以catalog guidance中的当前资产合同为准；已迁移资产不保留旧路径。参见包内 `docs/registered-foundations.md`、`docs/public-api.json` 和 `examples/registered-foundations.mjs`。历史私有记录不可作为本次公开发布证明。
+
+## 自描述资产入口
+
+先由catalog的`evidence.guidance`直达当前合同，再读同目录design、实现、示例与测试。已共置[有限粒子](../../../engine/motion-elements/lib/foundations/motion/finite-particles/README.md)、[固定弦波](../../../engine/motion-elements/lib/foundations/motion/fixed-string-wave/README.md)、[孤立圆盘事件](../../../engine/motion-elements/lib/foundations/motion/hard-disc-events/README.md)、[最小间距点集](../../../engine/motion-elements/lib/foundations/layout/poisson-disc/README.md)。其余条目仍走各自guidance，不以这四项代表全库完成；共享底层不重复放进各资产。
 
 ## 五层结构
 

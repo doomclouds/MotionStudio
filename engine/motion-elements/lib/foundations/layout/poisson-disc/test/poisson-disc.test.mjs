@@ -1,4 +1,4 @@
-import{test}from'node:test';import assert from'node:assert/strict';import{samplePoissonDisc as S}from'../lib/foundations/layout/poisson-disc.mjs';
+import{test}from'node:test';import assert from'node:assert/strict';import{samplePoissonDisc as S}from'../index.mjs';
 const base={domain:{x:0,y:0,radius:400},exclusion:{x:0,y:0,radius:130},minDistance:100,seed:111,maxPoints:30};
 function oracle(r){for(const p of r.points){assert.ok(Math.hypot(p.x-r.domain.x,p.y-r.domain.y)<=r.domain.radius+1e-9);if(r.exclusion)assert.ok(Math.hypot(p.x-r.exclusion.x,p.y-r.exclusion.y)>=r.exclusion.radius-1e-9)}for(let i=0;i<r.points.length;i++)for(let j=0;j<i;j++)assert.ok(Math.hypot(r.points[i].x-r.points[j].x,r.points[i].y-r.points[j].y)>=r.minDistance-1e-9);assert.ok(r.points.length<=r.maxPoints)}
 test('independent brute-force all-pairs oracle 100seeds',()=>{for(let seed=0;seed<100;seed++)oracle(S({...base,seed}))});

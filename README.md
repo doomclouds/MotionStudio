@@ -16,7 +16,7 @@ MotionStudio 把可编辑的制作过程，留在每一帧背后。
 <img alt="Built with Dots" src="https://img.shields.io/badge/Built%20with-Dots-111111" />
 <a href="#许可与素材"><img alt="License: MIT; third-party materials retain their own terms" src="https://img.shields.io/badge/License-MIT-blue" /></a>
 
-[快速开始](#快速开始) · [工作方式](#工作方式) · [动效积木与配方](#动效积木与配方) · [声音与证据](#声音与证据) · [开发中的审查工具](#开发中的审查工具) · [协作与规范](#协作与规范) · [项目地图](#项目地图)
+[按需求找入口](#按需求找入口) · [快速开始](#快速开始) · [工作方式](#工作方式) · [动效积木与配方](#动效积木与配方) · [声音与证据](#声音与证据) · [开发中的审查工具](#开发中的审查工具) · [协作与规范](#协作与规范) · [项目地图](#项目地图)
 
 </div>
 
@@ -53,6 +53,12 @@ Node.js + Native Canvas 默认输出 PNG 帧，再由 FFmpeg 编码；可选顺�
 </td>
 </tr>
 </table>
+
+## 按需求找入口
+
+- 制作影片：[Motion 导演](skills/motion-film-director/SKILL.md)；设计界面：[UI 导演](skills/ui-design-director/SKILL.md)；配乐、音效与人声：[声音导演](skills/sound-director/SKILL.md)。
+- 尚不确定需要什么能力：从[创作图书馆](knowledge/design/library/INDEX.md)按表达问题选书架，再读资产的设计说明、契约和源码，不要求运行检索程序。
+- 已知领域：直接读[静态设计](engine/design-elements/Index.md)、[运动机制](engine/motion-elements/README.md)、[声音资产](engine/sound-elements/INDEX.md)或[作品集](portfolio/INDEX.md)，不必返回总索引绕行。
 
 ## 工作方式
 
@@ -130,7 +136,7 @@ python3 scripts/build-skill.py \
   --output /absolute/path/outside-repository/motion-film-director.zip
 ```
 
-请在已提交、干净的恢复目录中构建。打包器以 Git 索引列出的 Skill 和核心源码为范围，读取当前文件字节，加入 render、timeline、audio、elements 四个 runtime 快照、独立 review-tools 及校验清单。新建但未进入索引的文件不会自动进入包。
+请在已提交、干净的恢复目录中构建。打包器以 Git 索引列出的 Skill 和核心源码为范围，读取当前文件字节，按当前构建清单加入所属 runtime 快照、独立 review-tools 及校验清单。新建但未进入索引的文件不会自动进入包。
 
 可移植 Skill 包含标准库实现的事件区间 sidecar，**不包含完整的 NumPy / SciPy 视听 benchmark**；使用 sidecar 时仍须显式提供已有 profile、媒体与证据。包内不附带项目媒体、字体、Canvas 原生依赖或 FFmpeg 二进制，须自行准备并核对许可。法律说明及依赖署名必须随实际分发内容保留。
 
@@ -150,9 +156,9 @@ node engine/motion-elements/scripts/query-catalog.mjs list --kind recipe
 
 ## 静态设计积木
 
-[设计积木索引](engine/design-elements/Index.md) 将设计意图、可调用代码、输入边界和不同内容的组合配方对应起来。现有 print-poster 保持原 API，已补文字主视觉、色彩分区、材质表面、语义节点序列和参数刻度五族，以及表现文字、径向读数、斜切色域、叙事路径四个专项族；再补竖排刻本、几何标识、等比例面积分区、精确目标比环四族，合计 14 个静态设计族，不计入 60 个 Motion 机制。
+[设计积木索引](engine/design-elements/Index.md) 按表达问题连接族、组合配方和受限候选。先读每项 design.md 的用途、取舍与反例，再读合同和实际代码；完整清单、状态、来源与许可以所属目录为准，不把候选或参数变体当新正式族。
 
-先按内容目的选表达，再定品牌颜色、字体和材质，静态审阅后才尝试 motion。原有八套组合为固定 1440×900 合成复用测试，不是新增优秀作品、任意内容自动布局或已证实的审美迁移。实际作品调用及本地快照以[完整设计索引](portfolio/INDEX.md)为准；新四族尚未迁移到原 B05 场景，也未获用户对合成组合的审美验收。另有[两种1200×750组合配方](engine/design-elements/recipes/reviewed/b06/README.md)，每种两份内容验证，仍不增加14族计数。源码 Skill 包含这层代码，但字体与渲染证据不打包。
+先按内容目的选表达，再定品牌颜色、字体和材质；静态审阅不替代动态验证。合成配方是有限复用测试，不是优秀作品、任意内容自动布局或审美迁移保证。找真实内容和调用语境，直接读[作品索引](portfolio/INDEX.md)及对应设计说明。源码 Skill 可携带公开设计代码，不附外置字体、私人参考或渲染证据。
 
 ## 声音与证据
 
@@ -231,7 +237,7 @@ node tools/reference-benchmark/test_report_js.cjs
 
 - 从 [AGENTS.md](AGENTS.md) 与 [工程规范索引](specs/README.md) 进入，按任务加载目录职责、资产归属、证据及迁移规则。规范文档已落地，治理状态仍为 DRAFT；不等于逐条批准或全部自动执行。
 - [Motion 导演](skills/motion-film-director/SKILL.md) 负责影片；[UI 设计导演](skills/ui-design-director/SKILL.md) 可直接承接 UI 任务，或响应明确的界面设计缺口。已有设计不强制重做，静态检查不代替整片视听验收。
-- 两导演直接使用 [knowledge/design](knowledge/design/INDEX.md) 这一公共设计知识真源；[来源与环境说明](skills/ui-design-director/references/shared-sources.md) 只做导航，不复制正文。旧设计知识目录与 CLI 不保留兼容层。UI 当前是仓库内薄流程，宿主自动发现与独立便携构建未实现；Motion portable 按当前构建规则携带知识与相关 runtime 快照，不附 UI Skill、portfolio 或完整仓库资料。
+- 三位导演按职责使用 [knowledge/design](knowledge/design/INDEX.md) 这一公共设计知识真源；[来源与环境说明](skills/ui-design-director/references/shared-sources.md) 只做导航，不复制正文。旧设计知识目录与 CLI 不保留兼容层。UI 当前是仓库内薄流程，宿主自动发现与独立便携构建未实现；Motion portable 按当前构建规则携带知识与相关 runtime 快照，不附 UI Skill、portfolio 或完整仓库资料。
 
 - 视频/静态探针知识共用 [schema 3合同](skills/motion-film-director/research/video-knowledge/SCHEMA.md) 与 `video_knowledge.py`；`evidence_type` 保留两类独立能力，所有Case明确decision记录状态；缺失决策用not-recorded标记而不编造，普通观察仍可检索。公开库为空，旧外置库只经[显式一次性迁移](skills/motion-film-director/research/video-knowledge/MIGRATION.md)，不保留运行时旧格式/路径回退，也不声称私库已迁移。
 
@@ -244,6 +250,8 @@ node tools/reference-benchmark/test_report_js.cjs
 | [`engine/motion-timeline-core/`](engine/motion-timeline-core) | 有理数时间、音频编辑契约与纯编辑操作 |
 | [`engine/motion-audio-core/`](engine/motion-audio-core) | 本地音频执行、混音与编码后检查 |
 | [`skills/motion-film-director/`](skills/motion-film-director/) | 导演工作流、知识参考、渲染入口与权利说明 |
+| [`skills/sound-director/`](skills/sound-director/SKILL.md) | 声音工作流入口；生成、实际听审与同步各自验证 |
+| [`knowledge/sound/`](knowledge/sound/INDEX.md) / [`engine/sound-elements/`](engine/sound-elements/README.md) | 唯一声音书架与逐件资产合同；候选不是听审接受 |
 | [`skills/ui-design-director/`](skills/ui-design-director/) | UI 工作流、共享来源导航及有限交接结构检查；仓库内使用 |
 | [`knowledge/design/`](knowledge/design/INDEX.md) / [`scripts/design_knowledge.py`](scripts/design_knowledge.py) | 公共设计知识唯一正文与只读检索入口；非完整作品或私有证据库 |
 | [`AGENTS.md`](AGENTS.md) / [`specs/`](specs/README.md) | 协作入口、治理草案与跨模块边界 |
@@ -280,45 +288,3 @@ node tools/reference-benchmark/test_report_js.cjs
 <sub>MotionStudio · 把想法变成镜头，把修改落在证据上。</sub>
 
 </div>
-
-## Isolated seventeen-mechanism registration preparation
-
-The catalog contains 60 foundations + 7 separate recipes: seventeen registrations added to the prior 43-foundation baseline. Two support extensions are uncounted. Foundation expansion pauses at 60. See `engine/motion-elements/docs/registered-foundations.md` for entrypoints, Node boundary and verification scope.
-
-### 句法与份额的静态组合
-
-[B08两种组合配方](engine/design-elements/recipes/reviewed/b08/README.md)把显式句法行与完整份额图例组合验证，保持14族计数；并非原案例已反向迁移或新作品审美认可。五来源设计的保留/不升族决定、外置字体和可运行测试见配方文档。
-
-### 强调词与单位图符的静态组合
-
-[B09两种组合配方](engine/design-elements/recipes/reviewed/b09/README.md)把受限旋转强调词与同尺寸单位图符组合验证，保持14族计数；并非原案例已反向迁移或新作品审美认可。五来源设计的保留/不升族决定、外置字体和可运行测试见配方文档。
-
-### 文本片段与格网的静态组合
-
-[B10两种受限配方](engine/design-elements/recipes/reviewed/b10/README.md)验证同一输入驱动配置片段与格网量程/单位，保持14族计数；不执行代码、不把原作CSS热度当真实测量，也不声称任意字体系自动适配。
-
-## 第九组：字幕状态与作者指定字节编辑
-
-[两项受限源码候选](engine/design-elements/recipes/batches/ninth-static-candidates/Index.md)保留毫秒字幕的选中/当前状态分离，以及给定编辑的双坐标/逐字节来源证据。仅64个已审文本，字体/依赖/输出外置；MIT、BSD-2-Clause与OFL分别保留。0新增正式族、portfolio或媒体；不是播放器、转录器、自动diff或逐项审美验收。
-
-## 第十组：同源体积、显式采样/对话与连续游标
-
-[三包四种受限方法](engine/design-elements/recipes/batches/tenth-static-candidates/Index.md)保留62个已审文本：linked-volume21、sampled-window/authored-dialogue23、shared-trace18。前两包MIT；TRACE为MPL-2.0且保留MIT辅助文件，根MIT不覆盖其许可。字体/依赖/产物外置；PHASE GPL/CC私存包、原图与私有记录完全排除。0新增正式族、配方或portfolio，不声称实时应用、医学/科学事实或逐项审美验收。
-
-## 第十一组：流量账本与显式几何
-
-[两包三种受限方法](engine/design-elements/recipes/batches/eleventh-static-candidates/Index.md)：22 文本 flow-ledger（精确积分、完整分类分区、稳定排名）＋25 文本 explicit-geometry（连续行段、嵌套方形理想面积）。47 原包文本保持审定字节与 MIT/独立通知；字体和 Native 仅外置示例资源。0 新增正式族、配方或 portfolio；不含原图、私有记录、字体二进制或 GPL 包，不声称真实网络/材料统计、动态应用或逐项审美验收。
-
-## 第十二组：互补分界受限源码
-
-[Complementary seam](engine/design-elements/recipes/batches/twelfth-static-candidates/Index.md)：25 原包文本将同一 RGBA 平面沿一条显式单调分界划成两份可独立放置的互补片。既有 sampled-window 仍是外置复用依赖，不重复计数；0 新增正式族/配方/portfolio。保留 MIT 与独立 Native/OFL 通知；不含私图、字体二进制或 GPL selection-summary，不声称任意裁纸/分割、动效或逐项审美验收。
-
-## 第十三组：主墨迹派生同行注记区
-
-[Ink-bay 受限文本候选](engine/design-elements/recipes/batches/thirteenth-static-candidates/Index.md)：32 原样文本，主标题实际墨迹与显式间隔共同确定相反侧剩余注记区，内容变化影响可容纳的次文本。墨迹测量/对齐本身复用既有思路，不另计；0 新正式族、配方或 portfolio。MIT 实现与外置 Native/OFL 通知分层，无原图、字体二进制、整页品牌或 GPL 队列。静态实际 fit 可拒绝合法内容，不声称自动换行/响应式/动画或逐项审美认可。
-
-作品采用单一[work/1合同](portfolio/README.md)，[统一索引](portfolio/INDEX.md)同时列静态、视频与明确标识的待复验候选；当前源码检查不代表最终验收。
-
-### 声音资产与书架
-
-[声音书架](knowledge/sound/INDEX.md) → [Sound Elements](engine/sound-elements/README.md) → [逐件资产目录](engine/sound-elements/INDEX.md)。与 Design/Motion 元素层并列，提供可调用 SFX/BGM 原创代码候选、单资产自描述合同及私有授权 WAV 恢复；Audio Core 负责执行混音。没有附音频二进制，也没有把技术通过当实际听审。

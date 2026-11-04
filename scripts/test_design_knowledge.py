@@ -1,4 +1,5 @@
 import json
+import re
 from pathlib import Path
 import shutil
 import tempfile
@@ -6,9 +7,52 @@ import unittest
 import design_knowledge as dk
 
 
+def guide_text():
+    """Evidence-boundary assertions cover the book, not a legacy giant file."""
+    workflow = (dk.ROOT / 'reference-to-composition.md').read_text()
+    links = re.findall(r'\]\((studies/[^)#]+\.md)\)', workflow)
+    return workflow + '\n' + '\n'.join((dk.ROOT / link).read_text() for link in links)
+
+
+def shared_shelves_text():
+    # Domain shelves partition study rows; verify the combined navigation once.
+    return '\n'.join((dk.ROOT / 'library' / n).read_text()
+                     for n in ('expression.md', 'motion.md'))
+
+
 class DesignKnowledgeTests(unittest.TestCase):
+    def test_studies_are_direct_unique_routes_not_legacy_anchors(self):
+        workflow = (dk.ROOT / 'reference-to-composition.md').read_text()
+        self.assertLess(len(workflow.splitlines()), 180)
+        links = re.findall(r'\]\((studies/[^)#]+\.md)\)', workflow)
+        actual = {str(p.relative_to(dk.ROOT)) for p in (dk.ROOT / 'studies').glob('*.md')}
+        self.assertEqual(set(links), actual)
+        self.assertEqual(len(links), len(set(links)))
+        # Each research paragraph has one primary domain shelf, not two copies.
+        shelves = shared_shelves_text()
+        routes = re.findall(r'\]\((\.\./studies/[^)]+)\)', shelves)
+        self.assertEqual(len(routes), len(set(routes)))
+        self.assertEqual({route.split('#')[0].removeprefix('../') for route in routes}, actual)
+        def slug(title):
+            return re.sub(r'[^\w\-\s]', '', title.lower()).replace(' ', '-')
+        for route in routes:
+            path, anchor = route.split('#', 1)
+            page = (dk.ROOT / 'library' / path).read_text()
+            self.assertIn(anchor, {slug(x) for x in re.findall(r'^#{1,6} (.*)$', page, re.M)})
+        for page in dk.ROOT.rglob('*.md'):
+            for anchor in re.findall(r'reference-to-composition.md#([^)]*)', page.read_text()):
+                self.assertIn(anchor, {slug(x) for x in re.findall(r'^#{1,6} (.*)$', workflow, re.M)})
+        # Every second-level research chapter has a primary shelf route, not
+        # merely a reachable file containing otherwise undiscoverable chapters.
+        for link in links:
+            page = (dk.ROOT / link).read_text()
+            for title in re.findall(r'^## (.*)$', page, re.M):
+                self.assertIn('../' + link + '#' + slug(title), routes)
+        self.assertFalse((dk.ROOT / 'library/sound.md').exists())
+        self.assertIn('../../sound/INDEX.md', (dk.ROOT / 'library/INDEX.md').read_text())
+
     def test_material_and_pose_keep_consumption_and_static_limits(self):
-        guide = (dk.ROOT / 'reference-to-composition.md').read_text()
+        guide = guide_text()
         for term in ('控件回执', '静态接触', '粗细异材', '冷暖修补', '同柜异材'):
             self.assertEqual([e['id'] for e in dk.find(dk.catalog(), term)],
                              ['reference-to-composition'])
@@ -19,12 +63,11 @@ class DesignKnowledgeTests(unittest.TestCase):
                          '提示词自述不升级为独立工具来源证明',
                          '纯静态程序图与生成栅格均不是静音影片'):
             self.assertIn(boundary, guide)
-        for shelf in ('expression.md', 'motion.md'):
-            text = (dk.ROOT / 'library' / shelf).read_text()
-            self.assertEqual(text.count('#材质对比与姿态须分别核显示和行为'), 1)
+        text = shared_shelves_text()
+        self.assertEqual(text.count('#材质对比与姿态须分别核显示和行为'), 1)
 
     def test_use_and_space_scope(self):
-        guide = (dk.ROOT / 'reference-to-composition.md').read_text()
+        guide = guide_text()
         for term in ('沿途净空', '功能同锚', '信息同源', '用途载体'):
             self.assertEqual([e['id'] for e in dk.find(dk.catalog(), term)],
                              ['reference-to-composition'])
@@ -33,11 +76,11 @@ class DesignKnowledgeTests(unittest.TestCase):
                          '虚构时间、地点和服务须在图上明示', '动作意图不等于完成',
                          '局部放大读法不是连续光学映射', '纯生成栅格没有调用引擎'):
             self.assertIn(boundary, guide)
-        shelf = (dk.ROOT / 'library/expression.md').read_text()
+        shelf = shared_shelves_text()
         self.assertEqual(shelf.count('#用途与空间让信息有共同锚点'), 1)
 
     def test_accumulation_variants_and_protected_regions(self):
-        guide = (dk.ROOT / 'reference-to-composition.md').read_text()
+        guide = guide_text()
         for term in ('累积回返', '变体载体', '预设缩放', '全帧保护区'):
             self.assertEqual([e['id'] for e in dk.find(dk.catalog(), term)],
                              ['reference-to-composition'])
@@ -47,8 +90,8 @@ class DesignKnowledgeTests(unittest.TestCase):
                          '不代表控件返回值驱动主体', '纯静态产物不是静音影片',
                          '跨片复用同一原创合成配方'):
             self.assertIn(boundary, guide)
-        motion = (dk.ROOT / 'library/motion.md').read_text()
-        expression = (dk.ROOT / 'library/expression.md').read_text()
+        motion = shared_shelves_text()
+        expression = shared_shelves_text()
         self.assertEqual(motion.count('#累积回返把完成次数与呈现阶段分开'), 1)
         self.assertEqual(expression.count('#变体与载体用共享依据核对显示'), 1)
         base = dk.ROOT.parents[1]
@@ -61,7 +104,7 @@ class DesignKnowledgeTests(unittest.TestCase):
             self.assertNotIn(private_marker, qa)
 
     def test_midstage_identity_and_shared_scroll_boundaries(self):
-        guide = (dk.ROOT / 'reference-to-composition.md').read_text()
+        guide = guide_text()
         for term in ('中段身份', '同页滚动'):
             self.assertEqual([e['id'] for e in dk.find(dk.catalog(), term)],
                              ['reference-to-composition'])
@@ -70,14 +113,14 @@ class DesignKnowledgeTests(unittest.TestCase):
                          '不是实际输入、打印、AI能力或效率证明',
                          '“后发生”不是“前者触发”', '额外寻帧检查的总调用数'):
             self.assertIn(boundary, guide)
-        shelf = (dk.ROOT / 'library/motion.md').read_text()
+        shelf = shared_shelves_text()
         for anchor in ('持续身份还须在拥挤中段看得见', '同页滚动让章节提示消费实际位置'):
             self.assertEqual(shelf.count('#' + anchor), 1)
         for private_marker in ('-private-', '/workspace/', 'file://'):
             self.assertNotIn(private_marker, guide)
 
     def test_action_visibility_and_static_staging_scope(self):
-        guide = (dk.ROOT / 'reference-to-composition.md').read_text()
+        guide = guide_text()
         for term in ('连续遮挡', '独立读窗', '静帧陈列'):
             self.assertEqual([e['id'] for e in dk.find(dk.catalog(), term)],
                              ['reference-to-composition'])
@@ -85,14 +128,14 @@ class DesignKnowledgeTests(unittest.TestCase):
                          '负宽绘制可能留下反向细条', '首次可见时刻',
                          '纯静态', '不是单变量尺度消融', '合成声未听审'):
             self.assertIn(boundary, guide)
-        shelf = (dk.ROOT / 'library/motion.md').read_text()
+        shelf = shared_shelves_text()
         for anchor in ('动作后果靠连续遮挡和独立读窗兑现', '静帧材料与陈列只迁移已看见的关系'):
             self.assertEqual(shelf.count('#' + anchor), 1)
         for marker in ('-private-', '/workspace/', 'file://'):
             self.assertNotIn(marker, guide)
 
     def test_reuse_consumption_scope(self):
-        guide = (dk.ROOT / 'reference-to-composition.md').read_text()
+        guide = guide_text()
         section = guide.split('## 4. 实现与质量对照闭环', 1)[1].split('## 逐轮指挥与反馈回流', 1)[0]
         for boundary in ('返回值/状态由哪个绘制或后果计算点消费',
                          '仅保存而未用于输出的字段不计该职责',
@@ -108,14 +151,13 @@ class DesignKnowledgeTests(unittest.TestCase):
             matches = dk.find(dk.catalog(), term)
             self.assertEqual([e['id'] for e in matches], ['reference-to-composition'])
             self.assertEqual(matches[0]['type'], 'decision-guide')
-        for shelf in ('expression.md', 'motion.md'):
-            rows = [line for line in (dk.ROOT / 'library' / shelf).read_text().splitlines()
-                    if '#材料与空间分清身份连续和控制因果' in line]
-            self.assertEqual(len(rows), 1)
-            self.assertTrue(all(word in rows[0] for word in
-                ('有限2.5D/二维非物理', '二次编码来源', '无真实交互', '近静音不代听审',
-                 '未常速', '未听审', '不是新积木')))
-        guide = (dk.ROOT / 'reference-to-composition.md').read_text()
+        rows = [line for line in shared_shelves_text().splitlines()
+                if '#材料与空间分清身份连续和控制因果' in line]
+        self.assertEqual(len(rows), 1)
+        self.assertTrue(all(word in rows[0] for word in
+            ('有限2.5D/二维非物理', '二次编码来源', '无真实交互', '近静音不代听审',
+             '未常速', '未听审', '不是新积木')))
+        guide = guide_text()
         section = guide.split('## 材料与空间：分清身份连续和控制因果', 1)[1]
         for boundary in ('材料说明先于最终整合展示', '后存PNG仍含先前压缩',
                          '不是原始渲染证明', '没有真实交互', '只共享影片时钟',
@@ -130,13 +172,12 @@ class DesignKnowledgeTests(unittest.TestCase):
             matches = dk.find(dk.catalog(), term)
             self.assertEqual([e['id'] for e in matches], ['reference-to-composition'])
             self.assertEqual(matches[0]['type'], 'decision-guide')
-        for shelf in ('expression.md', 'motion.md'):
-            rows = [line for line in (dk.ROOT / 'library' / shelf).read_text().splitlines()
-                    if '#邀请与修订让组合关系承担有限主张' in line]
-            self.assertEqual(len(rows), 1)
-            self.assertTrue(all(word in rows[0] for word in
-                ('静态imagegen', '脚本非自动规划', '源片段不代表整案音轨', '未常速', '未听审', '不是新积木')))
-        guide = (dk.ROOT / 'reference-to-composition.md').read_text()
+        rows = [line for line in shared_shelves_text().splitlines()
+                if '#邀请与修订让组合关系承担有限主张' in line]
+        self.assertEqual(len(rows), 1)
+        self.assertTrue(all(word in rows[0] for word in
+            ('静态imagegen', '脚本非自动规划', '源片段不代表整案音轨', '未常速', '未听审', '不是新积木')))
+        guide = guide_text()
         for boundary in ('邀请词没有重复品牌身份', '各字按顶部对齐可能把句号抬成近似撇号',
                          '时间顺序满足不代表运行时验证', '只称指定中央入口受阻', '该静态结果没有声音'):
             self.assertIn(boundary, guide)
@@ -146,13 +187,12 @@ class DesignKnowledgeTests(unittest.TestCase):
             matches = dk.find(dk.catalog(), term)
             self.assertEqual([e['id'] for e in matches], ['reference-to-composition'])
             self.assertEqual(matches[0]['type'], 'decision-guide')
-        for shelf in ('expression.md', 'motion.md'):
-            rows = [line for line in (dk.ROOT / 'library' / shelf).read_text().splitlines()
-                    if '#显露与延续确认变化前后保留了什么' in line]
-            self.assertEqual(len(rows), 1)
-            self.assertTrue(all(word in rows[0] for word in
-                ('组合消融非单变量', '二维示意非物理', '源有音但未听审', '原创静音', '未常速', '不是新积木')))
-        guide = (dk.ROOT / 'reference-to-composition.md').read_text()
+        rows = [line for line in shared_shelves_text().splitlines()
+                if '#显露与延续确认变化前后保留了什么' in line]
+        self.assertEqual(len(rows), 1)
+        self.assertTrue(all(word in rows[0] for word in
+            ('组合消融非单变量', '二维示意非物理', '源有音但未听审', '原创静音', '未常速', '不是新积木')))
+        guide = guide_text()
         for boundary in ('标题独立淡入', '独立绘制的粉末擦痕不是工具实际画出的结果',
                          '去掉颗粒层', '不是最终院线镜头', '不等于完整空间桁架'):
             self.assertIn(boundary, guide)
@@ -162,12 +202,11 @@ class DesignKnowledgeTests(unittest.TestCase):
             matches = dk.find(dk.catalog(), term)
             self.assertEqual([e['id'] for e in matches], ['reference-to-composition'])
             self.assertEqual(matches[0]['type'], 'decision-guide')
-        for shelf in ('expression.md', 'motion.md'):
-            text = (dk.ROOT / 'library' / shelf).read_text()
-            rows = [x for x in text.splitlines() if '#品牌与载体区分视觉呼应和实际共享关系' in x]
-            self.assertEqual(len(rows), 1)
-            self.assertTrue(all(x in rows[0] for x in ('源静帧不证原动效', '近静音不代听审', '未常速', '不是新积木')))
-        guide = (dk.ROOT / 'reference-to-composition.md').read_text()
+        text = shared_shelves_text()
+        rows = [x for x in text.splitlines() if '#品牌与载体区分视觉呼应和实际共享关系' in x]
+        self.assertEqual(len(rows), 1)
+        self.assertTrue(all(x in rows[0] for x in ('源静帧不证原动效', '近静音不代听审', '未常速', '不是新积木')))
+        guide = guide_text()
         self.assertIn('## 品牌与载体：区分视觉呼应和实际共享关系', guide)
         self.assertIn('一组程序绘制的静态载体', guide)
         self.assertIn('测量底噪附近的数值不等于音轨不存在', guide)
@@ -178,12 +217,11 @@ class DesignKnowledgeTests(unittest.TestCase):
             matches = dk.find(dk.catalog(), term)
             self.assertEqual([e['id'] for e in matches], ['reference-to-composition'])
             self.assertEqual(matches[0]['type'], 'decision-guide')
-        for shelf in ('expression.md', 'motion.md'):
-            text = (dk.ROOT / 'library' / shelf).read_text()
-            rows = [x for x in text.splitlines() if '#氛围与关系让情绪先有可读的画面依据' in x]
-            self.assertEqual(len(rows), 1)
-            self.assertTrue(all(x in rows[0] for x in ('静态imagegen', '静音二维示意', '未常速', '未听审', '非参考级', '不是新积木')))
-        guide = (dk.ROOT / 'reference-to-composition.md').read_text()
+        text = shared_shelves_text()
+        rows = [x for x in text.splitlines() if '#氛围与关系让情绪先有可读的画面依据' in x]
+        self.assertEqual(len(rows), 1)
+        self.assertTrue(all(x in rows[0] for x in ('静态imagegen', '静音二维示意', '未常速', '未听审', '非参考级', '不是新积木')))
+        guide = guide_text()
         self.assertIn('## 氛围与关系：让情绪先有可读的画面依据', guide)
         self.assertIn('五项不全是影片', guide)
         self.assertIn('中心线零隙不保证全轮廓不穿透', guide)
@@ -194,12 +232,11 @@ class DesignKnowledgeTests(unittest.TestCase):
             matches = dk.find(dk.catalog(), term)
             self.assertEqual([e['id'] for e in matches], ['reference-to-composition'])
             self.assertEqual(matches[0]['type'], 'decision-guide')
-        for shelf in ('expression.md', 'motion.md'):
-            text = (dk.ROOT / 'library' / shelf).read_text()
-            rows = [x for x in text.splitlines() if '#材质与时序先隔离变量再判断表达' in x]
-            self.assertEqual(len(rows), 1)
-            self.assertTrue(all(x in rows[0] for x in ('静音', '未常速', '未听审', '非参考级', '不是新积木')))
-        guide = (dk.ROOT / 'reference-to-composition.md').read_text()
+        text = shared_shelves_text()
+        rows = [x for x in text.splitlines() if '#材质与时序先隔离变量再判断表达' in x]
+        self.assertEqual(len(rows), 1)
+        self.assertTrue(all(x in rows[0] for x in ('静音', '未常速', '未听审', '非参考级', '不是新积木')))
+        guide = guide_text()
         self.assertIn('## 材质与时序：先隔离变量再判断表达', guide)
         self.assertIn('固定图像裁切拉远没有三维视差', guide)
         self.assertIn('参数原点固定不等于图形面积质心固定', guide)
@@ -210,12 +247,11 @@ class DesignKnowledgeTests(unittest.TestCase):
             matches = dk.find(dk.catalog(), term)
             self.assertEqual([e['id'] for e in matches], ['reference-to-composition'])
             self.assertEqual(matches[0]['type'], 'decision-guide')
-        for shelf in ('expression.md', 'motion.md'):
-            text = (dk.ROOT / 'library' / shelf).read_text()
-            rows = [x for x in text.splitlines() if '#尺度与阅读先兑现关系再分配注意力' in x]
-            self.assertEqual(len(rows), 1)
-            self.assertTrue(all(x in rows[0] for x in ('未常速', '未听审', '审美验收', '不是新积木')))
-        guide = (dk.ROOT / 'reference-to-composition.md').read_text()
+        text = shared_shelves_text()
+        rows = [x for x in text.splitlines() if '#尺度与阅读先兑现关系再分配注意力' in x]
+        self.assertEqual(len(rows), 1)
+        self.assertTrue(all(x in rows[0] for x in ('未常速', '未听审', '审美验收', '不是新积木')))
+        guide = guide_text()
         self.assertIn('## 尺度与阅读：先兑现关系再分配注意力', guide)
         self.assertIn('阶段标签不是首个满遮罩像素', guide)
         self.assertIn('坐标边界倍率不等于像素数量', guide)
@@ -227,12 +263,11 @@ class DesignKnowledgeTests(unittest.TestCase):
             matches = dk.find(dk.catalog(), term)
             self.assertEqual([e['id'] for e in matches], ['reference-to-composition'])
             self.assertEqual(matches[0]['type'], 'decision-guide')
-        for shelf in ('expression.md', 'motion.md'):
-            text = (dk.ROOT / 'library' / shelf).read_text()
-            rows = [x for x in text.splitlines() if '#材质与讲述让身份线索先于解释' in x]
-            self.assertEqual(len(rows), 1)
-            self.assertTrue(all(x in rows[0] for x in ('未常速', '未听审', '审美验收', '不是新积木')))
-        guide = (dk.ROOT / 'reference-to-composition.md').read_text()
+        text = shared_shelves_text()
+        rows = [x for x in text.splitlines() if '#材质与讲述让身份线索先于解释' in x]
+        self.assertEqual(len(rows), 1)
+        self.assertTrue(all(x in rows[0] for x in ('未常速', '未听审', '审美验收', '不是新积木')))
+        guide = guide_text()
         self.assertIn('## 材质与讲述：让身份线索先于解释', guide)
         self.assertIn('固定ID列表不证明每片运行时追踪', guide)
         self.assertIn('明确为生成资产', guide)
@@ -243,12 +278,11 @@ class DesignKnowledgeTests(unittest.TestCase):
             matches = dk.find(dk.catalog(), term)
             self.assertEqual([e['id'] for e in matches], ['reference-to-composition'])
             self.assertEqual(matches[0]['type'], 'decision-guide')
-        for shelf in ('expression.md', 'motion.md'):
-            text = (dk.ROOT / 'library' / shelf).read_text()
-            rows = [x for x in text.splitlines() if '#状态与叙事让变化兑现具体关系' in x]
-            self.assertEqual(len(rows), 1)
-            self.assertTrue(all(x in rows[0] for x in ('未常速', '未听审', '非实时', '非真实产品', '不是新积木')))
-        guide = (dk.ROOT / 'reference-to-composition.md').read_text()
+        text = shared_shelves_text()
+        rows = [x for x in text.splitlines() if '#状态与叙事让变化兑现具体关系' in x]
+        self.assertEqual(len(rows), 1)
+        self.assertTrue(all(x in rows[0] for x in ('未常速', '未听审', '非实时', '非真实产品', '不是新积木')))
+        guide = guide_text()
         self.assertIn('## 状态与叙事：让变化兑现具体关系', guide)
         self.assertIn('没有可见共同交付物', guide)
         self.assertIn('不是实时条件执行', guide)
@@ -258,12 +292,11 @@ class DesignKnowledgeTests(unittest.TestCase):
             matches = dk.find(dk.catalog(), term)
             self.assertEqual([e['id'] for e in matches], ['reference-to-composition'])
             self.assertEqual(matches[0]['type'], 'decision-guide')
-        for shelf in ('expression.md', 'motion.md'):
-            text = (dk.ROOT / 'library' / shelf).read_text()
-            rows = [x for x in text.splitlines() if '#载体与场让共同依据决定可见变化' in x]
-            self.assertEqual(len(rows), 1)
-            self.assertTrue(all(x in rows[0] for x in ('静音', '未常速', '未听审', '不是新积木')))
-        guide = (dk.ROOT / 'reference-to-composition.md').read_text()
+        text = shared_shelves_text()
+        rows = [x for x in text.splitlines() if '#载体与场让共同依据决定可见变化' in x]
+        self.assertEqual(len(rows), 1)
+        self.assertTrue(all(x in rows[0] for x in ('静音', '未常速', '未听审', '不是新积木')))
+        guide = guide_text()
         self.assertIn('旧来源动态补证，不计新来源', guide)
         self.assertIn('不是同一几何输入', guide)
         self.assertIn('二维均匀源线长度的可见比例', guide)
@@ -273,12 +306,11 @@ class DesignKnowledgeTests(unittest.TestCase):
             matches = dk.find(dk.catalog(), term)
             self.assertEqual([e['id'] for e in matches], ['reference-to-composition'])
             self.assertEqual(matches[0]['type'], 'decision-guide')
-        for shelf in ('expression.md', 'motion.md'):
-            text = (dk.ROOT / 'library' / shelf).read_text()
-            rows = [x for x in text.splitlines() if '#品牌身份改变表达不偷换对象' in x]
-            self.assertEqual(len(rows), 1)
-            self.assertTrue(all(x in rows[0] for x in ('静音', '未常速', '未听审', '不是新族')))
-        guide = (dk.ROOT / 'reference-to-composition.md').read_text()
+        text = shared_shelves_text()
+        rows = [x for x in text.splitlines() if '#品牌身份改变表达不偷换对象' in x]
+        self.assertEqual(len(rows), 1)
+        self.assertTrue(all(x in rows[0] for x in ('静音', '未常速', '未听审', '不是新族')))
+        guide = guide_text()
         self.assertIn('## 品牌身份：改变表达，不偷换对象', guide)
         self.assertIn('全不透明帧数不得命名为“可读帧数”', guide)
 
@@ -329,7 +361,8 @@ class DesignKnowledgeTests(unittest.TestCase):
             ('motion.md', '参照外壳主体遮挡与壳体透明度分别验证', ('正交相机', '封闭凸盒', '不代表')),
             ('sound.md', '通道场景排队的是受控内容不是一个名称', ('有限界面状态模型', '不是实时调度', '听审证据')),
         ):
-            text = (dk.ROOT / 'library' / shelf).read_text()
+            text = ((dk.ROOT.parent / 'sound/INDEX.md').read_text() if shelf == 'sound.md'
+                    else (dk.ROOT / 'library' / shelf).read_text())
             rows = [line for line in text.splitlines() if '#' + anchor in line]
             self.assertEqual(len(rows), 1)
             self.assertTrue(all(word in rows[0] for word in limits))
@@ -340,10 +373,9 @@ class DesignKnowledgeTests(unittest.TestCase):
             self.assertEqual([e['id'] for e in matches], ['reference-to-composition'])
             self.assertEqual(matches[0]['path'], 'reference-to-composition.md')
         anchor = '空间与因果叙事让环境变化兑现主张'
-        for shelf in ('expression.md', 'motion.md'):
-            text = (dk.ROOT / 'library' / shelf).read_text()
-            self.assertIn('../reference-to-composition.md#' + anchor, text)
-        guide = (dk.ROOT / 'reference-to-composition.md').read_text()
+        text = shared_shelves_text()
+        self.assertIn('../studies/space-and-causality.md#' + anchor, text)
+        guide = guide_text()
         self.assertIn('## 空间与因果叙事：让环境变化兑现主张', guide)
         for title in ('观察者与环境回应', '局部遮护必须在环境仍继续时成立',
                       '先看见阻断，再用同一规则兑现变化', '地点承载文字，留下经过而非留住旧字幕',
@@ -354,27 +386,25 @@ class DesignKnowledgeTests(unittest.TestCase):
     def test_emotion_methods_keep_shared_navigation_and_limits(self):
         for term in ('成功反应', '画域边界', '跨景行程', '禁用控件', '字形腾空'):
             self.assertEqual([e['id'] for e in dk.find(dk.catalog(), term)], ['reference-to-composition'])
-        for shelf in ('expression.md', 'motion.md'):
-            self.assertIn('#情绪与品牌让动作和部件承担表达', (dk.ROOT / 'library' / shelf).read_text())
-        guide = (dk.ROOT / 'reference-to-composition.md').read_text()
+        self.assertIn('#情绪与品牌让动作和部件承担表达', shared_shelves_text())
+        guide = guide_text()
         for limit in ('未连接状态', '不构成通用排版', '显示遮罩与数值边界条件分开', '不能把有声样片误写成静音'):
             self.assertIn(limit, guide)
 
     def test_environment_strategy_is_a_bounded_existing_guide(self):
         for term in ('环境解法', '支撑交接', '最小可达距离'):
             self.assertEqual([e['id'] for e in dk.find(dk.catalog(), term)], ['reference-to-composition'])
-        shelf = (dk.ROOT / 'library/motion.md').read_text()
+        shelf = shared_shelves_text()
         self.assertIn('#已有环境怎样让第二次尝试成为新策略', shelf)
-        guide = (dk.ROOT / 'reference-to-composition.md').read_text()
+        guide = guide_text()
         for limit in ('最小可达距离', '支撑标记不证明重心平衡', '样片无音轨，原片并非无音轨', '两者均未常速观看、未听审'):
             self.assertIn(limit, guide)
 
     def test_shared_space_methods_are_bounded_and_discoverable(self):
         for term in ('共同投影', '暂时让路', '用途改变', '通路反例'):
             self.assertEqual([e['id'] for e in dk.find(dk.catalog(), term)], ['reference-to-composition'])
-        for shelf in ('expression.md', 'motion.md'):
-            self.assertIn('#共同空间合框让路与用途改变', (dk.ROOT / 'library' / shelf).read_text())
-        guide = (dk.ROOT / 'reference-to-composition.md').read_text()
+        self.assertIn('#共同空间合框让路与用途改变', shared_shelves_text())
+        guide = guide_text()
         for boundary in ('原创样片全部无音轨', '关键手部被头身遮住', '版本冲突保留', '未靠近支柱', '闭环也可能读成保护或禁闭'):
             self.assertIn(boundary, guide)
 

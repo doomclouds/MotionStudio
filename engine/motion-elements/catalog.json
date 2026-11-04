@@ -3738,16 +3738,16 @@
       ],
       "evidence": {
         "technicalTests": [
-          "test/poisson-disc.test.mjs"
+          "lib/foundations/layout/poisson-disc/test/poisson-disc.test.mjs"
         ],
-        "guidance": "docs/foundations/composition.poisson-disc.md",
+        "guidance": "lib/foundations/layout/poisson-disc/README.md",
         "visualDemo": null,
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN",
         "normalSpeedViewing": "NOT_DONE",
         "audioListening": "NOT_LISTENED",
         "registrationScope": "Local registration preparation only; published baseline remains 39 foundations + 7 recipes.",
-        "executableExample": "examples/registered-foundations.mjs"
+        "executableExample": "lib/foundations/layout/poisson-disc/examples/contract.mjs"
       },
       "knowledgeLinks": [],
       "tags": [
@@ -3789,16 +3789,16 @@
       ],
       "evidence": {
         "technicalTests": [
-          "test/fixed-string-wave.test.mjs"
+          "lib/foundations/motion/fixed-string-wave/test/fixed-string-wave.test.mjs"
         ],
-        "guidance": "docs/foundations/motion.fixed-string-wave.md",
+        "guidance": "lib/foundations/motion/fixed-string-wave/README.md",
         "visualDemo": null,
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN",
         "normalSpeedViewing": "NOT_DONE",
         "audioListening": "NOT_LISTENED",
         "registrationScope": "Local registration preparation only; published baseline remains 39 foundations + 7 recipes.",
-        "executableExample": "examples/registered-foundations.mjs"
+        "executableExample": "lib/foundations/motion/fixed-string-wave/examples/contract.mjs"
       },
       "knowledgeLinks": [],
       "tags": [
@@ -4020,16 +4020,16 @@
       ],
       "evidence": {
         "technicalTests": [
-          "test/hard-disc-events.test.mjs"
+          "lib/foundations/motion/hard-disc-events/test/hard-disc-events.test.mjs"
         ],
-        "guidance": "docs/foundations/motion.hard-disc-isolated-events.md",
+        "guidance": "lib/foundations/motion/hard-disc-events/README.md",
         "visualDemo": null,
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN",
         "normalSpeedViewing": "NOT_DONE",
         "audioListening": "NOT_LISTENED",
         "registrationScope": "Local registration preparation only; published baseline remains 39 foundations + 7 recipes.",
-        "executableExample": "examples/registered-foundations.mjs"
+        "executableExample": "lib/foundations/motion/hard-disc-events/examples/contract.mjs"
       },
       "knowledgeLinks": [],
       "tags": [

@@ -67,7 +67,7 @@ class SoundDirectorTests(unittest.TestCase):
                          '原始证据位置', '观察和解释分开', '对照缺口',
                          '同画面、同窗口', '未收到反馈保持待反馈', '实际分轨']:
             self.assertIn(required, text)
-        shelf = (ROOT / 'knowledge/design/library/sound.md').read_text()
+        shelf = (ROOT / 'knowledge/sound/INDEX.md').read_text()
         self.assertIn('references/sound-direction.md', shelf)
         self.assertIn('合成前', (ROOT / PAGES[0]).read_text())
 

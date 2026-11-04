@@ -1,5 +1,5 @@
 import test from 'node:test';import assert from 'node:assert/strict';
-import{compileHardDiscs as compile,sampleHardDiscs as sample}from'../lib/node.mjs';
+import{compileHardDiscs as compile,sampleHardDiscs as sample}from'../../../../node.mjs';
 const near=(a,b,e=1e-9)=>assert.ok(Math.abs(a-b)<=e,`${a} != ${b}`);
 const disc=(id,x,y,vx=0,vy=0,mass=1,radius=20)=>({id,x,y,vx,vy,mass,radius});
 const spec=(discs,duration=3,maxEvents=64)=>({bounds:{x:0,y:0,width:1000,height:600},discs,duration,maxEvents});

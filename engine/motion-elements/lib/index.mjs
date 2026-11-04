@@ -59,13 +59,13 @@ export {compileDampedResponse,sampleDampedResponse} from './foundations/motion/d
 export {compileFiniteParticles, sampleFiniteParticles} from './foundations/motion/finite-particles/index.mjs';
 export {layoutWeightedHierarchy} from './foundations/layout/weighted-hierarchy.mjs';
 export {compileTemporalExposure, sampleTemporalExposure} from './foundations/raster/temporal-exposure.mjs';
-export {samplePoissonDisc} from './foundations/layout/poisson-disc.mjs';
+export {samplePoissonDisc} from './foundations/layout/poisson-disc/index.mjs';
 export {compileSpriteAtlas, sampleSpriteAtlas} from './foundations/raster/sprite-atlas.mjs';
-export {compileFixedStringWave, sampleFixedStringWave} from './foundations/motion/fixed-string-wave.mjs';
+export {compileFixedStringWave, sampleFixedStringWave} from './foundations/motion/fixed-string-wave/index.mjs';
 export {visibilityFan} from './foundations/geometry/visibility-fan.mjs';
 export {compileVelocityGrid, sampleVelocityGrid, compileGridTransport, sampleGridTransport} from './foundations/field/grid-transport.mjs';
 export {compilePolylineSections, extractPolylineSection} from './support/polyline-sections.mjs';
-export {compileHardDiscs, sampleHardDiscs} from './foundations/motion/hard-disc-events.mjs';
+export {compileHardDiscs, sampleHardDiscs} from './foundations/motion/hard-disc-events/index.mjs';
 export {compileOpticalMedium, traceOpticalRay} from './foundations/geometry/ray-chain.mjs';
 export {voronoiCells} from './foundations/geometry/voronoi-cells.mjs';
 export {minimumCostAssignment} from './foundations/layout/minimum-cost-assignment.mjs';

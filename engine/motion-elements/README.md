@@ -10,9 +10,9 @@
 - 基础机制按 `lib/foundations/<职责>/` 组织；配方在 `lib/recipes.mjs`／`lib/recipes/`，支持在 `lib/support/`，适配器在 `adapters/`。旧candidate barrel及field/IK/sticky平层wrapper已移除，不提供兼容路径。其他尚在平层的真实实现不是别名。
 - **运行时验证器管输入行为，catalog管稳定身份和检索，docs管使用边界。** 不从catalog动态执行外部代码，也不把JSON示例当另一个校验器。
 
-## 资产目录试点
+## 资产目录迁移
 
-[有限粒子](lib/foundations/motion/finite-particles/README.md) 将使用合同、设计意图、实际实现、可运行示例和测试放在同一目录。catalog 的 `evidence.guidance` 直接进入资产 README；公开 API 保持不变。仅此项完成目录试点，其余条目仍按各自 guidance 进入，不把统一索引误称为全库整理完成。
+[有限粒子](lib/foundations/motion/finite-particles/README.md) 将使用合同、设计意图、实际实现、可运行示例和测试放在同一目录。catalog 的 `evidence.guidance` 直接进入资产 README；公开 API 保持不变。另已共置[固定弦波](lib/foundations/motion/fixed-string-wave/README.md)、[孤立圆盘事件](lib/foundations/motion/hard-disc-events/README.md)、[最小间距点集](lib/foundations/layout/poisson-disc/README.md)。其余64项仍按各自guidance进入；共享时间、数学、验证与适配器不复制进每项，未把统一索引误称为全库完成。
 
 ## 未注册受限候选
 

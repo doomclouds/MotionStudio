@@ -1,0 +1,15 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import * as api from '../../../../index.mjs';
+const catalog=JSON.parse(readFileSync(new URL('../../../../../catalog.json',import.meta.url)));
+const item=catalog.elements.find(e=>e.id==='motion.fixed-string-wave');
+assert(item);
+const plan = api.compileFixedStringWave(item.example);
+const sample = time => api.sampleFixedStringWave(plan, {time, samples: 5});
+assert.deepEqual(sample(0).points.map(p => p.y), [0,.5,1,.5,0]);
+assert.deepEqual(sample(1).points.map(p => p.y), [0,-.5,-1,-.5,0]);
+assert.deepEqual(sample(2).points, sample(0).points);
+assert.deepEqual(sample(.25), sample(.25));
+assert.throws(() => api.sampleFixedStringWave(plan, {time:-1,samples:5}));
+assert.throws(() => api.compileFixedStringWave({...item.example,speed:0}));
+console.log('motion.fixed-string-wave contract PASS');

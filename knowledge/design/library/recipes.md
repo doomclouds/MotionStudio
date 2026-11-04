@@ -43,7 +43,7 @@
 - [字幕区间 / Cue intervals](../../../engine/design-elements/recipes/candidates/cue-interval-candidate/README.md)、[离散时序](../../../engine/design-elements/recipes/candidates/timing-diagram-candidate/README.md)。
 - [采样窗与指定对话](../../../engine/design-elements/recipes/candidates/sampled-window-dialogue-candidate/README.md)、[共享游标](../../../engine/design-elements/recipes/candidates/shared-trace-candidate/README.md)、[体积切片](../../../engine/design-elements/recipes/candidates/linked-volume-candidate/README.md)。
 
-静态时间模型不等于播放器或已完成声画集成；字幕例子也不授予转录、任意语言或自动排版能力。需要实际运动/音频时再分别读[运动](motion.md)与[声音](sound.md)。
+静态时间模型不等于播放器或已完成声画集成；字幕例子也不授予转录、任意语言或自动排版能力。需要实际运动/音频时再分别读[运动](motion.md)与[声音](../../sound/INDEX.md)。
 
 ## 材质、像素与空间层
 

@@ -41,3 +41,20 @@
 作品机器真源是 `portfolio/works/*/work.json`，静态与视频以 kind 区分，已保留版本与待复验候选以 lifecycle 区分；`portfolio/INDEX.md` 和 `portfolio/index.json` 是同源投影。新 CLI 为 `portfolio/work.py`，不读取旧作品 entry/retention，也不保兼容包装。三件仅指导路径改变而模块身份变化的作品以新版本 candidate/NOT_RUN 标示，历史接受仍绑定旧版本，不能升格为本轮通过。
 
 外部引用作为参数保留原值和含义，不探测其可达性，不作为结构迁移或发布门。原私密引用留 Git 历史，公开投影继续 NOT_INCLUDED；不复制私人标识、报告指纹或存储信息。知识页使用当前仓库本地入口；portable 投影将未打包的 portfolio 链接转为“仅完整仓库”说明，不制造包外断链或引入可变 dev 跳转。
+
+## 流程与研究专题的直接拆分
+
+`reference-to-composition.md` 保留三导演共用的稳定流程和按问题的章节入口；原研究段落分别迁入 `studies/`，各保留来源、反例与未验范围，不复制正文或增设专题机器索引。原指南稳定 ID 继续代表这本流程/专题书，字面元数据不是全文或语义检索。
+
+- 空间、共同投影与用途 → [空间与因果](studies/space-and-causality.md)。
+- 品牌身份、载体/场、跨面与变体 → [品牌与载体](studies/brand-and-carriers.md)。
+- 状态、读窗与累积回返 → [状态与阅读](studies/state-and-reading.md)。
+- 材质讲述、层间空间与姿态 → [材料与深度](studies/material-and-depth.md)。
+- 材质时序与氛围关系 → [时序与氛围](studies/timing-and-atmosphere.md)。
+- 显露延续与邀请修订 → [显露与修订](studies/reveal-and-revision.md)。
+- 情绪品牌与动作后果 → [情绪与动作](studies/emotion-and-action.md)。
+- 观察式复刻 → [画面到组合](studies/observational-reconstruction.md)。
+
+原研究锚点的活动消费者直接指向专题，流程页不保留旧锚点别名。静态/运动书架只为同一研究保留一个主入口，不重复登记同一行；需要跨领域关系时再读邻架。`library/sound.md` 的独有原作者资料与界面交叉问题已并入[声音唯一书架](../sound/INDEX.md)，旧文件删除；声音 Skill、配方和图书馆直接链接该入口。README 不再堆研究批次或固定库存数字，改为领域/资产合同入口，资产自身的源码、状态与权利没有变动。
+
+这次整理只改变阅读路径和对应测试；没有重新实看来源、常速观看、实际听审、复渲或重新接受作品，也没有新分发权限。验证应分别报告链接/锚点、包内投影与源码范围；结构检查不能升级研究结论。回滚撤回整理提交并协调后续消费者，不在新旧路径双写。

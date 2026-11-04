@@ -7,11 +7,11 @@
 - 修复按故事阻断→因果/阅读→节奏→质感，冻结旧版并只改相关机制；回归全部生命周期、近远景与留出时刻，不凭单一SSIM或bbox通过。
 - 短反例：用旧anchors图指认最新候选缺陷，而最新编码已修好，导致无效返工；先核当前artifact再诊断。
 
-观察式复刻出现“主体正确但姿态不对”或“物件停住但仍未放手”时，按共享的[轮廓与相对空间核查](../../../knowledge/design/reference-to-composition.md#轮廓与相对空间先于表面细节)及[接触、释放、离场核查](../../../knowledge/design/reference-to-composition.md#放下物件时分别核接触释放和离场)定位；保留同刻对照与未修差异，不以加细节替代关键姿态和事件时刻。
+观察式复刻出现“主体正确但姿态不对”或“物件停住但仍未放手”时，按共享的[轮廓与相对空间核查](../../../knowledge/design/studies/observational-reconstruction.md#轮廓与相对空间先于表面细节)及[接触、释放、离场核查](../../../knowledge/design/studies/observational-reconstruction.md#放下物件时分别核接触释放和离场)定位；保留同刻对照与未修差异，不以加细节替代关键姿态和事件时刻。
 
-卡组、完整体和散开都出现却不在同一时刻时，先按[阶段与投影组合核查](../../../knowledge/design/reference-to-composition.md#先对齐镜头阶段再组合布局与投影)修镜头阶段；机制复用回执与素材身份另列，库单测不替代片内消费或真实素材核验。
+卡组、完整体和散开都出现却不在同一时刻时，先按[阶段与投影组合核查](../../../knowledge/design/studies/observational-reconstruction.md#先对齐镜头阶段再组合布局与投影)修镜头阶段；机制复用回执与素材身份另列，库单测不替代片内消费或真实素材核验。
 
-界面局部推近、叠层退黑和图表相位问题，按共享[坐标域与合成层级](../../../knowledge/design/reference-to-composition.md#界面推近与退场先分清坐标域和合成层级)、[可见量校正](../../../knowledge/design/reference-to-composition.md#用可见量校正局部相位而非套一个统一缓动)分别查固定层、重叠区和过渡边缘；局部数值接近不替代整片常速与声音审验。
+界面局部推近、叠层退黑和图表相位问题，按共享[坐标域与合成层级](../../../knowledge/design/studies/observational-reconstruction.md#界面推近与退场先分清坐标域和合成层级)、[可见量校正](../../../knowledge/design/studies/observational-reconstruction.md#用可见量校正局部相位而非套一个统一缓动)分别查固定层、重叠区和过渡边缘；局部数值接近不替代整片常速与声音审验。
 
 用户否决高于技术绿灯；明确喜欢是其实际版本的反馈，不等于所有平台或许可通过。未知反馈不填满意。
 

@@ -13,7 +13,7 @@
 | 叙事底床 | BGM / pulse-bed、ambient-bed、rhythmic、melodic、stinger；目前只有低密度脉冲生成候选，其他类别空位 |
 | 旁白和角色表演 | voice / narration、performance；目前空位，声音身份、表演与取得权利需另核 |
 
-分类对应合同 `kind/category`，情绪标签只表明设计目标。模型阅读后按内容推理，不要求运行 query，查询也不等于自动推荐。合成器原理不能替代作品研究，更不能替代优秀配乐的实际筛选和听审。
+分类对应合同 `kind/category`，情绪标签只表明设计目标。模型阅读后按内容推理，不要求运行 query，查询也不等于自动推荐。合成器原理不能替代作品研究，更不能替代优秀配乐的实际筛选和听审。先查核心合同支持/拒绝边界，再写调用；指南提到的处理手法不代表引擎已实现。授权素材、音轨使用/同步权利与成片接受分别确认，不由库的许可代替。
 
 ## 按工作阶段阅读
 
@@ -22,7 +22,6 @@
 - [寻找新音效](../../skills/motion-film-director/references/sfx-sourcing.md)：外部原作者资料、逐项核权、私有候选采集；旧 SFX 工具保持空的公开来源种子，不复制已保留资产事实。
 - [Audio Core](../../engine/motion-audio-core/README.md) 和 [Timeline Core](../../engine/motion-timeline-core/README.md)：执行支持范围、源裁剪、显式增益和混音，不自动 ducking 或 loop。
 - [视听审查](../../skills/motion-film-director/references/audiovisual-review-sop.md)：技术、实际听审、同步与用户决定分开。
-- [既有领域资料](../design/library/sound.md)：原作者声音设计资料及与视觉界面的交叉导航，不重复收藏资产。
 
 ## 既有资源审计边界
 
@@ -31,3 +30,23 @@
 [Tessel 既有声音来源](../../portfolio/works/tessel/CREDITS.md) 和 [固定资源锁](../../portfolio/works/tessel/resources.lock.json) 已声明原作者代码生成的 MIT soundtrack，并保留许可、固定提交、hash与外置准备入口；它是一条音乐+全部 SFX 的影片混音，不是干净 BGM，也没有新听审。沿原作品准备流程恢复，不复制其锁或在本库再造授权记录。便携包不含作品集，缺此材料不代表已恢复音轨。其他作品的原始混音、品牌系统提示音、未知网络音乐一律不由仓库 MIT 自动授权。
 
 希望沉淀“不错的 BGM”，还需逐件获得可授权源、实际听审同条件候选、核独立分发/同步条件并说明适用与反例。现在没有这个证据，所以不填虚构曲目、评分或听审结果。
+
+## 界面与视觉时间的交叉问题
+
+| 本次问题 | 原文件 |
+|---|---|
+| 音频界面的场景、通道、样本与波形怎样保持同版本 | [通道场景的受控内容](../design/static-ui-reference-study.md#通道场景排队的是受控内容不是一个名称)：仅有限界面状态模型；请求时冻结内容，提交前查过期，不是实时调度、播放、录音或听审证据。 |
+
+字幕区间另读[设计配方书架](../design/library/recipes.md)及原契约；静态区间模型不自动转录，也不证明与音频时钟集成。
+
+## 原作者思路：按问题找听审对象
+
+以下只是一手文字/讲座转录的来源导航，不是本库完成的听审记录，也不授予品牌录音的下载、复用或分发权；实际研究仍走声音导演的版本、时段、音频输入与对照证据。交互声音不能直接等同影片配乐，触觉描述也不等同听觉观察。
+
+| 要研究的选择 | 原作者资料与定位 | 待实际验证的迁移问题 |
+|---|---|---|
+| 确认为什么不应过度庆祝；声、触、动画如何共同表达动作 | [Apple WWDC19：Designing Audio-Haptic Experiences](https://developer.apple.com/videos/play/wwdc2019/810/)，Causality / Apple Pay 候选比较 | 同一落定动作换表达力度后，是否仍清楚而不抢焦点；不复制声标 |
+| 状态递进如何形成张力与解决；高频动作何时应退让或静默 | [Google：Good Vibrations](https://design.google/library/ux-sound-haptic-material-design)，Guided Frame / Pixel camera shutter / Silence | 用声音让状态可辨，而非每个动作独立响一下；配乐段落需要另找完整成品对照 |
+| 重复短反馈、语音轮次边界和同家族声音怎样协作 | [Samsung One UI：Sound](https://developer.samsung.com/one-ui/sound-and-haptic/sound.html)，Clear and immediate auditory feedback / A harmoniously articulated hearing experience / Sound identity | 区分输入与删除、开始与结束；放入全段后是否产生疲劳或语义混淆 |
+
+来源文字核对：2026-11-03；未下载或实际听审其中音频。作者的设计目标不是本项目效果证据；有新任务时重新核来源、适用与授权，不把此处导航计作已调用素材。
