@@ -510,7 +510,7 @@ def render_gate_report(result, pictures, comparison_pictures=(), benchmark_outpu
         for display, key in [('visual','visual'), ('listening','audio'), ('av_sync','av_sync')]:
             review = result.get('reviews', {}).get(key, {})
             status = review.get('status')
-            statuses[display] = 'BLOCKED' if review.get('blockers') else 'RECORDED_NOT_VERIFIED' if status in ('passed', 'verified') else 'FAILED' if status == 'failed' else 'UNVERIFIED'
+            statuses[display] = 'NOT_APPLICABLE' if status == 'not_applicable' and result.get('sound_applicability', {}).get('mode') == 'authorized_silent' and key in ('audio', 'av_sync') else 'BLOCKED' if review.get('blockers') else 'RECORDED_NOT_VERIFIED' if status in ('passed', 'verified') else 'FAILED' if status == 'failed' else 'UNVERIFIED'
         panels = {}
         for key, entries in (motion_panels or {}).items():
             if key not in {p[0] for p in PRESENTATION_PANELS}:
@@ -531,7 +531,8 @@ def render_gate_report(result, pictures, comparison_pictures=(), benchmark_outpu
             panels[key] = {'path':name,'method':'复用已绑定 motion-check 图片；原图方法/采样/色阶见交付审查证据，不重新测量。'}
         destination = root/'pair'
         render_delivery_report(source, destination, {'statuses': statuses, 'panels':panels,
-            'reference_based': result.get('reference_based', False)})
+            'reference_based': result.get('reference_based', False),
+            'authorized_silent': result.get('sound_applicability', {}).get('mode') == 'authorized_silent'})
         body = (destination/'report.html').read_text(encoding='utf-8')
         # One assessment section owns actual gate status, records and blockers. Charts
         # remain measurements only; a declaration is never recast as owner approval.
@@ -544,7 +545,7 @@ def render_gate_report(result, pictures, comparison_pictures=(), benchmark_outpu
         if isinstance(movie_display.get('path'), str):
             movie_display['path'] = movie_display['path'].replace('\\', '/').rsplit('/', 1)[-1]
         for title, value in [('阻断与局限', {'blockers':result.get('blockers',[]), 'known_limits':result.get('known_limits',[])}),
-                             ('技术与三类审查记录', {'technical':result.get('technical',{}), 'reviews':result.get('reviews',{})}),
+                             ('技术与三类审查记录', {'technical':result.get('technical',{}), 'sound_applicability':result.get('sound_applicability',{}), 'reviews':result.get('reviews',{})}),
                              ('问题与修复', {'issues':result.get('issues',[]), 'before_after':result.get('before_after',{})}),
                              ('身份与来源', {'movie':movie_display, 'packet_sha256':result.get('packet_sha256'), 'evidence_index':result.get('evidence_index',[])})]:
             evidence += '<details><summary>'+_s(title)+'</summary><pre>'+_s(json.dumps(value,ensure_ascii=False,indent=2))+'</pre></details>'
@@ -591,7 +592,7 @@ def render_delivery_report(output: Path, destination: Path, presentation=None):
     allowed = {'UNVERIFIED', 'NOT_RUN', 'BLOCKED', 'FAILED', 'RECORDED_NOT_VERIFIED', 'MEASURED_NOT_APPROVED'}
     if not isinstance(statuses, dict) or set(statuses) - set(PRESENTATION_STATUSES):
         raise ValueError('unknown presentation status field')
-    if any(value not in allowed for value in statuses.values()):
+    if any(value not in allowed and not (value == 'NOT_APPLICABLE' and key in ('listening', 'av_sync') and spec.get('authorized_silent') is True) for key, value in statuses.items()):
         raise ValueError('presentation does not certify approval; use evidence gate separately')
     panels = spec.get('panels', {})
     if not isinstance(panels, dict) or set(panels) - {p[0] for p in PRESENTATION_PANELS}:
@@ -637,7 +638,7 @@ def render_delivery_report(output: Path, destination: Path, presentation=None):
         text(70, y, line, size, 'muted')
     status = ' / '.join(f'{key}: {statuses.get(key, "UNVERIFIED")}' for key in PRESENTATION_STATUSES)
     wrapped(2355, status)
-    text(70, 2450, '诊断候选 ≠ 用户批准；记录声明不等于已验证实际听看。', 25, 'candidate')
+    text(70, 2450, '授权无音轨：听审 / 声画同步不适用；授权声明未认证。' if spec.get('authorized_silent') is True else '诊断候选 ≠ 用户批准；记录声明不等于已验证实际听看。', 25, 'candidate')
     text(70, 2490, '响度卡片：FFmpeg ebur128；其他方法另列，不混用。原始时间，不自动平移。', 23, 'muted')
     text(70, 2565, '左右声道波形｜完整混音，不是独立 BGM / SFX 音轨', 32)
     text(70, 2615, '±1 FS；共用原始时间轴。定位静音、峰值和声道差异，不能证明音色或同步。', 23, 'muted')
@@ -654,7 +655,7 @@ def render_delivery_report(output: Path, destination: Path, presentation=None):
                 lower = [(150 + float(r['t_s']) / duration * 1570, cy - float(r['peak_min_'+ch]) * 27) for r in reversed(valid)]
                 draw.polygon(upper + lower, fill=COLORS['reference' if i == 0 else 'candidate'])
             else:
-                text(180, cy - 12, '未提供 / NOT_RUN（不是静音）', 20, 'muted')
+                text(180, cy - 12, '候选授权无音轨 / NOT_APPLICABLE' if i == 1 and spec.get('authorized_silent') is True else '未提供 / NOT_RUN（不是静音）', 20, 'muted')
         for t in np.linspace(0, duration, 9):
             text(150 + float(t)/duration*1530, y+155, f'{t:g}s', 18, 'muted')
     text(70, 3086, '原始解码峰值包络；采样间短促事件可能漏检。完整混音不能拆解声源身份。', 22, 'muted')
@@ -693,6 +694,8 @@ def render_delivery_report(output: Path, destination: Path, presentation=None):
     text(70, 5328, f'MotionStudio · {PRESENTATION_VERSION} · 诊断候选，非批准 · 详情见 report.html', 22, 'muted')
     dest.mkdir(parents=True, exist_ok=True)
     canvas.save(dest/'overview.png', optimize=True)
+    if spec.get('authorized_silent') is True:
+        body = body.replace('未实际合听 · UNVERIFIED', '候选无音轨 · NOT_APPLICABLE；参考听审不变')
     body = body.replace('<body>', f'<body data-presentation-version="{PRESENTATION_VERSION}">', 1)
     status_html = f'<section class="section"><h2>审查状态 · 诊断候选，非批准</h2><p>{_s(status)}</p><p class="note">声明记录不是感知认证；技术、视觉、听觉、声画同步与用户批准分别核验。</p></section>'
     body = body.replace('</header>', '</header>'+status_html, 1)

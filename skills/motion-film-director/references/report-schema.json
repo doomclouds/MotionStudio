@@ -781,6 +781,108 @@
           }
         }
       }
+    },
+    "sound_applicability": {
+      "type": "object",
+      "required": [
+        "mode"
+      ],
+      "properties": {
+        "mode": {
+          "enum": [
+            "required",
+            "authorized_silent"
+          ]
+        },
+        "authorization": {
+          "type": "object",
+          "required": [
+            "path",
+            "sha256"
+          ],
+          "properties": {
+            "path": {
+              "type": "string",
+              "minLength": 1
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          },
+          "additionalProperties": false
+        },
+        "record": {
+          "type": "object",
+          "required": [
+            "schema",
+            "kind",
+            "movie_sha256",
+            "authority",
+            "authorization_text",
+            "approval_reference"
+          ],
+          "properties": {
+            "schema": {
+              "type": "integer",
+              "const": 1
+            },
+            "kind": {
+              "const": "authorized-silent-delivery"
+            },
+            "movie_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "authority": {
+              "enum": [
+                "user",
+                "user_approved_work_contract"
+              ]
+            },
+            "authorization_text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "approval_reference": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "authentication": {
+          "enum": [
+            "declared_not_authenticated"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "evidence_index": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "path",
+          "sha256",
+          "kind"
+        ],
+        "properties": {
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "kind": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
     }
   },
   "$defs": {

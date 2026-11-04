@@ -66,11 +66,11 @@ class FinalDeliveryTests(unittest.TestCase):
             subprocess.run(['openssl', 'pkeyutl', '-sign', '-rawin', '-inkey', str(self.keys / 'trusted.key'), '-in', str(self.root / spec['path']), '-out', str(self.root / spec['signature'])], check=True, capture_output=True)
         self.packet['reviews'][kind] = spec
 
-    def technical(self, video, ffprobe, ffmpeg, inputs):
+    def technical(self, video, ffprobe, ffmpeg, inputs, *, silent=False):
         inputs.read(video)
-        return self.movie, {'status': 'passed', 'full_av_decode': 'passed', 'decoded_frames': 10}
+        return self.movie, {'status': 'passed', 'full_av_decode': 'passed', 'decoded_frames': 10, 'stream_count': {'video': 1, 'audio': 0 if silent else 1}}
 
-    def run_gate(self, key='trusted', mock_technical=True, project='delivery'):
+    def run_gate(self, key='trusted', mock_technical=True, project='delivery', mock_renderer=True):
         packet_path = self.root / 'packet.json'
         packet_path.write_text(json.dumps(self.packet))
         args = [str(self.video), '--packet', str(packet_path), '--project-root', str(self.root / project)]
@@ -82,14 +82,102 @@ class FinalDeliveryTests(unittest.TestCase):
         class Renderer:
             def render_gate_report(self, *args, **kwargs):
                 return PNG, b'<html>SYNTHETIC policy fixture; not a real review report</html>'
-        with contextlib.redirect_stdout(out), contextlib.redirect_stderr(err), \
-             patch.object(gate, 'load_fixed_renderer', return_value=Renderer()):
+        renderer_context = patch.object(gate, 'load_fixed_renderer', return_value=Renderer()) if mock_renderer else contextlib.nullcontext()
+        with contextlib.redirect_stdout(out), contextlib.redirect_stderr(err), renderer_context:
             if mock_technical:
                 with patch.object(gate, 'technical', side_effect=self.technical):
                     code = gate.main(args)
             else:
                 code = gate.main(args)
         return code, json.loads(out.getvalue() or err.getvalue())
+
+    def authorize_silence(self, **changes):
+        record = {'schema': 1, 'kind': 'authorized-silent-delivery',
+                  'movie_sha256': self.movie['sha256'], 'authority': 'user',
+                  'authorization_text': 'SYNTHETIC TEST: deliver this work without audio.',
+                  'approval_reference': 'SYNTHETIC TEST instruction, not a real approval'}
+        record.update(changes)
+        self.packet['silent_authorization'] = self.artifact('silent.json', json.dumps(record).encode())
+        self.packet['reviews'] = {'visual': self.packet['reviews']['visual']}
+
+    def test_explicit_silence_is_not_listened_or_synced(self):
+        self.authorize_silence()
+        code, result = self.run_gate()
+        self.assertEqual(code, 0, result)
+        self.assertEqual(result['reviews']['audio']['status'], 'not_applicable')
+        self.assertEqual(result['reviews']['av_sync']['status'], 'not_applicable')
+        self.assertEqual(result['reviews']['visual']['status'], 'passed')
+        self.assertEqual(result['sound_applicability']['authentication'], 'declared_not_authenticated')
+        self.assertTrue(any(x['kind'] == 'silent_authorization' for x in result['evidence_index']))
+        from validate_delivery_report import validate_report
+        import copy
+        mutations = [lambda r: r['reviews']['audio'].update(status='passed'),
+                     lambda r: r['technical'].update(stream_count={'video': True, 'audio': False}),
+                     lambda r: r['sound_applicability']['record'].update(status='rejected'),
+                     lambda r: r['reviews']['audio'].update(reason={'text': 'fake'}),
+                     lambda r: r['reviews']['audio'].update(signer_key_sha256='f'*64),
+                     lambda r: r.pop('evidence_index'),
+                     lambda r: r.update(evidence_index=['not an artifact']),
+                     lambda r: r.update(evidence_index=None),
+                     lambda r: r.pop('sound_applicability')]
+        for mutate in mutations:
+            invalid = copy.deepcopy(result)
+            mutate(invalid)
+            self.assertTrue(validate_report(invalid), invalid)
+
+    def test_silent_authorization_rejects_wrong_scope_and_fabricated_authority(self):
+        for i, changes in enumerate(({'movie_sha256': 'f'*64}, {'authority': 'producer'},
+                {'authorization_text': ''}, {'approval_reference': ''}, {'schema': True},
+                {'extra': 'not permitted'})):
+            self.authorize_silence(**changes)
+            code, result = self.run_gate(project='invalid-silence-'+str(i))
+            self.assertEqual(code, 2, result)
+
+    def test_silent_does_not_hide_supplied_audio_review(self):
+        self.authorize_silence()
+        self.save_review('audio')
+        self.assertEqual(self.run_gate()[0], 2)
+
+    def test_silent_still_requires_visual_review(self):
+        self.authorize_silence()
+        self.packet['reviews'] = {}
+        code, result = self.run_gate()
+        self.assertEqual(code, 1, result)
+        self.assertEqual(result['reviews']['audio']['status'], 'not_applicable')
+
+    def test_silent_authorization_is_hash_bound_and_rechecked(self):
+        self.authorize_silence()
+        (self.root/'silent.json').write_text('{}')
+        self.assertEqual(self.run_gate()[0], 2)
+
+    def test_no_declaration_cannot_skip_audio(self):
+        self.packet['reviews'] = {'visual': self.packet['reviews']['visual']}
+        code, result = self.run_gate()
+        self.assertEqual(code, 1, result)
+        self.assertNotEqual(result['reviews']['audio']['status'], 'not_applicable')
+
+    @unittest.skipUnless(shutil.which('ffmpeg') and shutil.which('ffprobe'), 'Existing media tools required')
+    def test_real_silent_media_and_audio_presence_enforced(self):
+        self.video = self.root/'silent.mp4'
+        subprocess.run(['ffmpeg', '-nostdin', '-v', 'error', '-f', 'lavfi', '-i',
+            'color=c=blue:s=32x32:r=10:d=1', '-c:v', 'mpeg4', str(self.video)], check=True, capture_output=True)
+        self.movie = gate.inspect(self.video, 'ffprobe')
+        self.packet['movie_sha256'] = self.movie['sha256']
+        for kind in gate.METHODS:
+            self.records[kind]['movie_sha256'] = self.movie['sha256']
+            self.save_review(kind)
+        self.authorize_silence()
+        has_renderer = (Path(gate.__file__).resolve().parents[3] / 'tools/reference-benchmark/report.py').is_file()
+        code, result = self.run_gate(mock_technical=False, mock_renderer=not has_renderer)
+        self.assertEqual(code, 0, result)
+        self.assertEqual(result['technical']['stream_count'], {'video': 1, 'audio': 0})
+        with self.assertRaisesRegex(ValueError, 'one audio stream'):
+            gate.technical(self.video, 'ffprobe', 'ffmpeg', gate.Inputs(self.root))
+        audible = self.root/'audible.mp4'
+        subprocess.run(['ffmpeg', '-nostdin', '-v', 'error', '-i', str(self.video),
+            '-f', 'lavfi', '-i', 'anullsrc=r=8000:cl=mono', '-t', '1', '-c:v', 'copy', '-c:a', 'aac', str(audible)], check=True, capture_output=True)
+        with self.assertRaisesRegex(ValueError, 'no audio stream'):
+            gate.technical(audible, 'ffprobe', 'ffmpeg', gate.Inputs(self.root), silent=True)
 
     def model_source(self):
         source = {'schema_version': 1, 'status': 'model_assisted_review_completed',
@@ -233,6 +321,15 @@ class FinalDeliveryTests(unittest.TestCase):
         self.assertIn('data:image/png;base64,', report)
         self.assertNotIn('<script>alert("fixture")</script>', report)
         self.assertIn('&lt;script&gt;', report)
+
+    def test_authorized_silent_real_canonical_report(self):
+        self.authorize_silence()
+        self.test_user_reports_are_fixed_png_and_html_only_and_review_text_is_escaped()
+        path = self.root/'output/review/report.html'
+        if path.exists():
+            self.assertIn('NOT_APPLICABLE', path.read_text())
+            self.assertIn('authorized_silent', path.read_text())
+            self.assertIn('候选无音轨 · NOT_APPLICABLE', path.read_text())
 
     def test_explicit_renderer_and_missing_renderer_contract(self):
         explicit = self.root / 'trusted-fixture-renderer.py'

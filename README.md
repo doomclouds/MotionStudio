@@ -209,7 +209,7 @@ python3 tools/reference-benchmark/event_intervals.py evaluate --help
 
 [交付工作流](skills/motion-film-director/references/delivery-workflow.md)要求用户样片至少7秒；样片获准后直接进入完整制作，不反复提交不同长度小样。完整候选必须同时交付可视化报告，分别列明视觉、真实感知听审、声画同步与技术结果。
 
-新增`check_final_delivery.py`完整交付门将媒体、审查证据和报告绑定到SHA-256；缺少听审（包括`NOT_LISTENED`）只能作为明确标注的待审候选。完整片统一使用该完整交付门，输出固定PNG＋HTML；样片时长CLI只接受`user-sample`和`internal-test`，不再接受`--role final`。[证据模板与信任边界](skills/motion-film-director/references/final-delivery-evidence.md)说明完整声明式记录可用于流程门、签名仅是可选来源认证，二者都不能由布尔值证明人或模型实际听过。
+新增`check_final_delivery.py`完整交付门将媒体、审查证据和报告绑定到SHA-256；有声影片缺少听审（包括`NOT_LISTENED`）只能作为明确标注的待审候选。只有明确用户/已批准作品合同授权且实测零音轨的整片，可按证据合同声明声音与同步不适用；视觉与技术门不变。完整片统一使用该完整交付门，输出固定PNG＋HTML；样片时长CLI只接受`user-sample`和`internal-test`，不再接受`--role final`。[证据模板与信任边界](skills/motion-film-director/references/final-delivery-evidence.md)说明完整声明式记录可用于流程门、签名仅是可选来源认证，二者都不能由布尔值证明人或模型实际听过。
 
 <details>
 <summary><strong>审查与测试入口</strong></summary>

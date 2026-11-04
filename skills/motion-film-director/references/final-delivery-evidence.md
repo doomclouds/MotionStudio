@@ -35,6 +35,8 @@
 
 ## 三类记录分开，不借门通过
 
+以下为默认有声合同；仅本页明确授权无音轨分支省去听觉和声画同步记录，并保留可见的不适用状态。
+
 以尚未听审的音频记录为例：
 
 ```json
@@ -94,3 +96,14 @@ openssl pkeyutl -sign -rawin -inkey /secure/reviewer-private.pem \
 5. 明确的`review_candidate`或`ready_for_owner_review`，不预填OWNER接受。
 
 stdout结果清单绑定固定PNG与HTML的SHA-256；用户交付包含成片、`overview.png`与`report.html`，机器清单仅作内部证据。使用`--project-root`选择项目，工具只写`output/review/`下这两个固定文件，拒绝覆盖已有报告或输入。复验前按项目版本流程保留旧报告，或选择新的版本项目目录；不删除历史、也不再提供`--report`或HTML-only旁路。报告里的画面不是“报告通过”的替代证据；交付前应打开生成的HTML检查实际可读性、图片呈现与状态是否误导。若成片或证据改变，重跑检查；若报告之后被修改，清单hash失效。没有报错不等于画面/听觉审美成功，`ready_for_owner_review`也不等于OWNER已经接受。
+
+
+## 明确授权的无声整片：声音适用性，不是听审豁免
+
+默认仍按有声影片处理。只有当前用户明确要求本作品无声，或用户已批准的作品合同明确约定无声时，才允许 `packet.silent_authorization` 指向本地声明文件（`path` / `sha256`，沿用同一证据根与 hash 规则）。参考没有音轨、工具不能听、音频制作未完成、制作方自行选择静音都不能替代授权；不得为了过门添加空音轨或删除现有音轨。
+
+声明恰含以下字段：`schema: 1`、`kind: authorized-silent-delivery`、`movie_sha256`、`authority: user` 或 `user_approved_work_contract`、非空 `authorization_text`（实际指示原文）、非空 `approval_reference`（可追溯的用户指示或已批准合同来源）。占位符不是授权，不得自行编造。它只适用于所绑定成片，不授权其他版本自动改为无声。工具核结构与身份，不能认证用户身份或指示真实性；操作者必须核原始授权，报告保留 `declared_not_authenticated`。
+
+此分支要求实际视频恰好一个视频流、零音频流；即使音轨全部为零也不能按无音轨通过。packet 的 reviews 仅提交 visual，不得同时提供 audio / av_sync 声称。全长常速视觉、技术解码/时长、问题关闭、同版视觉证据与固定 PNG/HTML 报告门保持不变。输出 `sound_applicability.mode=authorized_silent`，audio / av_sync 为 `not_applicable`，不写 passed、已听审或同步通过。声明加入证据索引并在最终发布前重新核 hash。
+
+无声明时不从媒体缺音推定许可，有声交付照旧要求实际感知听审与常速声画同步。参考比较仍须提供既有完整诊断页，缺声音的图表保留真实缺失/不适用说明，不填造波形、频谱或听审数据；数值诊断不升级为质量认可。

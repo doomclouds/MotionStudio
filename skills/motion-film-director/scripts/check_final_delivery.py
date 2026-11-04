@@ -245,7 +245,32 @@ def review(kind, spec, inputs, keys, movie, duration):
     return result
 
 
-def technical(video, ffprobe, ffmpeg, inputs):
+def sound_applicability(packet, inputs):
+    """Explicit, media-bound declaration; never infer permission from absent audio."""
+    spec = packet.get('silent_authorization')
+    if 'silent_authorization' not in packet:
+        return {'mode': 'required'}
+    if not isinstance(spec, dict) or set(spec) != {'path', 'sha256'}:
+        raise ValueError('Silent authorization requires exact path and SHA256 reference')
+    record = load_json(inputs.artifact(spec))
+    fields = {'schema', 'kind', 'movie_sha256', 'authority', 'authorization_text', 'approval_reference'}
+    if not isinstance(record, dict) or set(record) != fields:
+        raise ValueError('Silent authorization requires the exact documented fields')
+    if type(record['schema']) is not int or record['schema'] != 1 or record['kind'] != 'authorized-silent-delivery':
+        raise ValueError('Invalid silent authorization kind/schema')
+    if record['authority'] not in ('user', 'user_approved_work_contract'):
+        raise ValueError('Silence requires user or user-approved work authorization')
+    if any(not nonempty(record[k]) for k in ('authorization_text', 'approval_reference')):
+        raise ValueError('Silent authorization requires actual instruction and approval reference')
+    if record['movie_sha256'] != packet.get('movie_sha256'):
+        raise ValueError('Silent authorization media hash mismatch')
+    if any(k in packet.get('reviews', {}) for k in ('audio', 'av_sync')):
+        raise ValueError('Authorized silent delivery must not contain audio/av_sync review claims')
+    return {'mode': 'authorized_silent', 'authorization': dict(spec), 'record': record,
+            'authentication': 'declared_not_authenticated'}
+
+
+def technical(video, ffprobe, ffmpeg, inputs, *, silent=False):
     movie = inspect(video, ffprobe)
     inputs.bindings[Path(movie['path'])] = movie['sha256']
     result = subprocess.run([ffprobe, '-v', 'error', '-protocol_whitelist', 'file,pipe',
@@ -254,17 +279,18 @@ def technical(video, ffprobe, ffmpeg, inputs):
     streams = load_json(result.stdout)['streams']
     videos = [s for s in streams if s.get('codec_type') == 'video']
     audios = [s for s in streams if s.get('codec_type') == 'audio']
-    if len(videos) != 1 or len(audios) != 1:
-        raise ValueError('Delivery requires one unambiguous video and one audio stream')
+    if len(videos) != 1 or len(audios) != (0 if silent else 1):
+        raise ValueError('Authorized silent delivery requires no audio stream' if silent else 'Delivery requires one unambiguous video and one audio stream')
     frames = int(videos[0]['nb_read_frames'])
     if frames <= 0:
         raise ValueError('No decoded video frames')
     # No shell, remote protocols, paid services, installs, or producer-provided success flags.
+    maps = ['-map', '0:v:0'] + ([] if silent else ['-map', '0:a:0'])
     subprocess.run([ffmpeg, '-nostdin', '-v', 'error', '-xerror', '-protocol_whitelist',
-        'file,pipe', '-i', movie['path'], '-map', '0:v:0', '-map', '0:a:0',
+        'file,pipe', '-i', movie['path'], *maps,
         '-f', 'null', '-'], capture_output=True, check=True, timeout=600)
     return movie, {'status': 'passed', 'decoded_frames': frames,
-                   'full_av_decode': 'passed', 'stream_count': {'video': 1, 'audio': 1},
+                   'full_av_decode': 'passed', 'stream_count': {'video': 1, 'audio': len(audios)},
                    'note': 'Decode and frame census only; not visual, listening, sync or loudness approval.'}
 
 
@@ -290,6 +316,11 @@ def standardize(result, packet, inputs):
                 'end_s': end if scope == 'window' else None, 'severity': severity,
                 'finding': item['finding'], 'disposition': item.get('disposition') if item.get('disposition') in ('resolved', 'accepted') and nonempty(item.get('rationale')) else 'pending',
                 'rationale': item.get('rationale') or 'No disposition rationale recorded in source review.'})
+    applicability = result.get('sound_applicability', {})
+    if applicability.get('mode') == 'authorized_silent':
+        spec = applicability['authorization']
+        evidence[(spec['path'], spec['sha256'])] = dict(spec, kind='silent_authorization')
+        limits.append('Silent scope is declared, not authenticated; verify the actual user instruction or user-approved work contract. No listening or audiovisual sync is claimed.')
     before_after = packet.get('before_after', {'status': 'not_applicable',
         'reason': 'No comparison requested in packet; this does not assert that no revisions occurred.', 'pairs': []})
     if packet.get('revision_kind') == 'repair' and (before_after.get('status') != 'included' or not before_after.get('pairs')):
@@ -449,7 +480,9 @@ def main(argv=None):
         if not isinstance(packet, dict) or type(packet.get('schema')) is not int or packet.get('schema') != 1:
             raise ValueError('Expected delivery packet schema 1')
         keys = [inputs.read(key) for key in args.trusted_review_key]
-        movie, tech = technical(args.video, args.ffprobe, args.ffmpeg, inputs)
+        applicability = sound_applicability(packet, inputs)
+        silent = applicability['mode'] == 'authorized_silent'
+        movie, tech = technical(args.video, args.ffprobe, args.ffmpeg, inputs, silent=True) if silent else technical(args.video, args.ffprobe, args.ffmpeg, inputs)
         duration = number(movie['duration_seconds_exact'])
         if packet.get('movie_sha256') != movie['sha256']:
             raise ValueError('Packet media hash mismatch')
@@ -462,7 +495,9 @@ def main(argv=None):
         specs = packet.get('reviews', {})
         if not isinstance(specs, dict):
             raise ValueError('reviews must be an object')
-        reviews = {kind: review(kind, specs.get(kind), inputs, keys, movie, duration) for kind in METHODS}
+        reviews = {kind: ({'status': 'not_applicable', 'blockers': [],
+                    'reason': 'Explicit authorized silent delivery; no audio stream, listening or audiovisual sync claim.'}
+                    if silent and kind != 'visual' else review(kind, specs.get(kind), inputs, keys, movie, duration)) for kind in METHODS}
         for kind, item in reviews.items():
             blockers.extend(kind + ': ' + reason for reason in item['blockers'])
         pictures = []
@@ -484,6 +519,7 @@ def main(argv=None):
             blockers.append('Missing bound visual report artifacts')
         result = {'schema': 1, 'status': 'review_candidate' if blockers else 'ready_for_owner_review',
             'owner_approval': 'not_checked', 'movie': movie, 'technical': tech,
+            'sound_applicability': applicability,
             'target_duration_seconds': str(target), 'reviews': reviews, 'blockers': blockers,
             'packet_sha256': inputs.bindings[args.packet.resolve()],
             'visual_artifacts': packet.get('visual_artifacts', []),

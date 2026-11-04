@@ -55,7 +55,9 @@ python3 skills/motion-film-director/scripts/check_final_delivery.py /local/compl
   --project-root /local/project
 ```
 
-工具使用已有本地`ffprobe`/`ffmpeg`核对单一视频流、单一音频流、实际帧数、视频时长和完整声画解码，在显式提供签名时以已有`openssl`校验签名，核验三类审查记录、证据和媒体hash，在`PROJECT/output/review/`生成固定`overview.png`与`report.html`，并在stdout清单中输出两份报告SHA-256。无需联网、上传、安装依赖或付费调用。签名是可选的来源认证增强，不是生产前置条件。无签名但完整真实的审查记录与原始证据可满足声明式审查门，认证状态保留`declared_not_authenticated`；不能据此称已认证听审。若提供签名，则必须验证成功；可重复指定`--trusted-review-key`，只提供独立确认的审查者公钥，不从packet自动信任公钥。运行前准备见[交付证据合同与模板](final-delivery-evidence.md)。
+工具使用已有本地`ffprobe`/`ffmpeg`核对单一视频流、有声分支的单一音频流（明确授权无声分支须零音轨）、实际帧数、视频时长和完整声画解码，在显式提供签名时以已有`openssl`校验签名，核验适用审查记录、证据和媒体hash，在`PROJECT/output/review/`生成固定`overview.png`与`report.html`，并在stdout清单中输出两份报告SHA-256。无需联网、上传、安装依赖或付费调用。签名是可选的来源认证增强，不是生产前置条件。无签名但完整真实的审查记录与原始证据可满足声明式审查门，认证状态保留`declared_not_authenticated`；不能据此称已认证听审。若提供签名，则必须验证成功；可重复指定`--trusted-review-key`，只提供独立确认的审查者公钥，不从packet自动信任公钥。运行前准备见[交付证据合同与模板](final-delivery-evidence.md)。
+
+下表的听觉与声画同步要求默认适用；仅[明确授权的无音轨整片](final-delivery-evidence.md#明确授权的无声整片声音适用性不是听审豁免)记这两项不适用，视觉、技术与报告门仍必备。
 
 | 层 | 必备证据 | 不能替代它的东西 |
 |---|---|---|
@@ -81,3 +83,6 @@ python3 skills/motion-film-director/scripts/check_final_delivery.py /local/compl
 再对最终 PNG/HTML 计算 hash 并一次发布，禁止后续独立排版覆盖已绑定文件；
 不依赖项目私有拼装脚本。展示版本不替代本节证据门，便携包不含完整 benchmark 时须通过
 `--report-renderer` 指向已安装依赖的仓库 renderer。不提供`--report`或HTML-only分支。
+
+
+明确由用户或用户已批准作品合同指定的**无音轨整片**，按[无声适用性合同](final-delivery-evidence.md#明确授权的无声整片声音适用性不是听审豁免)提交同版授权声明；声音/声画同步记不适用，不伪造听审或空音轨。未提供明确授权、有音轨（包括静音音轨）或仅听审受阻时，原有有声交付门不变。全长视觉、技术和报告要求仍适用。

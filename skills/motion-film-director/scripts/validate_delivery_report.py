@@ -105,9 +105,43 @@ def validate_report(report, finalized=True):
             errors.append('candidate report must explain blockers')
         if ready and not report['visual_artifacts']:
             errors.append('ready report requires visual evidence')
+        applicability = report.get('sound_applicability', {'mode': 'required'})
+        mode = applicability.get('mode')
+        silent = mode == 'authorized_silent'
+        if mode not in ('required', 'authorized_silent'):
+            errors.append('sound_applicability: invalid mode')
+        if not silent and set(applicability) != {'mode'}:
+            errors.append('required sound scope must not contain silent authorization')
+        if silent:
+            if set(applicability) != {'mode', 'authorization', 'record', 'authentication'}:
+                errors.append('silent applicability requires exact declaration fields')
+            authorization = applicability.get('authorization', {})
+            declaration = applicability.get('record', {})
+            if (applicability.get('authentication') != 'declared_not_authenticated'
+                    or declaration.get('kind') != 'authorized-silent-delivery'
+                    or type(declaration.get('schema')) is not int or declaration.get('schema') != 1
+                    or declaration.get('authority') not in ('user', 'user_approved_work_contract')
+                    or not isinstance(declaration.get('authorization_text'), str) or not declaration['authorization_text'].strip()
+                    or not isinstance(declaration.get('approval_reference'), str) or not declaration['approval_reference'].strip()
+                    or declaration.get('movie_sha256') != report['movie']['sha256']
+                    or not authorization.get('path') or not re.fullmatch('[0-9a-f]{64}', authorization.get('sha256', ''))):
+                errors.append('silent delivery requires media-bound declared user authorization')
+            streams = report['technical'].get('stream_count', {})
+            if (streams != {'video': 1, 'audio': 0} or any(type(streams.get(k)) is not int for k in ('video', 'audio'))):
+                errors.append('silent delivery requires measured absence of audio streams')
+            if not any(e.get('kind') == 'silent_authorization' and e.get('path') == authorization.get('path')
+                       and e.get('sha256') == authorization.get('sha256') for e in report.get('evidence_index', [])):
+                errors.append('silent authorization must be in evidence index')
         for kind in KINDS:
             review = report['reviews'][kind]
             record = review.get('record', {})
+            if silent and kind in ('audio', 'av_sync'):
+                if (set(review) != {'status', 'blockers', 'reason'} or review.get('status') != 'not_applicable' or review.get('blockers')
+                        or not isinstance(review.get('reason'), str) or not review['reason'].strip()):
+                    errors.append(kind + ': authorized silence must be explicit not_applicable, never reviewed/passed')
+                continue
+            if review.get('status') == 'not_applicable':
+                errors.append(kind + ': not_applicable requires explicit authorized silent scope and cannot waive visual review')
             if ready and (review['status'] != 'passed' or review['blockers']):
                 errors.append(kind + ': not passed in ready report')
             if ready and review.get('authentication') not in ('declared_not_authenticated', 'signed_attestation_not_proof_of_perception'):
