@@ -112,3 +112,7 @@ The [timing/glyph evidence index](recipes/batches/seventh-static-candidates/Inde
 ## Contour-aware raster rim candidate
 
 [Bounded merged-mask rim](recipes/candidates/contour-rim-candidate/README.md) separates a thin screen-space edge shade from a quiet face, with three original synthetic masks, two [content-driven consumers and selection guidance](recipes/candidates/contour-rim-candidate/design.md), and an isolated no-rim control. Source-only and unregistered; not extrusion geometry, PBR, a new design family or an accepted work.
+
+## Shared directional spotlight candidate
+
+[Callable light-field candidate](recipes/candidates/spotlight-field-candidate/README.md) links its design, pure solver, Canvas adapters, two original procedural scenes and tests. Shared lamp/beam/receiver coverage is art-directed 2D, not physical illumination; unregistered, no family-count increase, no source-film or private media projection, no user aesthetic/audio acceptance.

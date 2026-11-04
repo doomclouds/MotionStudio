@@ -1,0 +1,22 @@
+{
+  "id": "candidate.spotlight-field",
+  "version": 1,
+  "status": "source-candidate",
+  "entry": "index.mjs",
+  "guidance": "README.md",
+  "design": "design.md",
+  "rights": "RIGHTS.md",
+  "examples": [
+    "examples/archive-scene.mjs",
+    "examples/orbit-scene.mjs"
+  ],
+  "tests": [
+    "test/field.test.mjs",
+    "test/canvas.test.mjs",
+    "test/consumers.test.mjs"
+  ],
+  "registeredFamily": false,
+  "physicalLighting": false,
+  "userAestheticAcceptance": false,
+  "audioReview": "not-applicable-silent-technical-fixtures"
+}

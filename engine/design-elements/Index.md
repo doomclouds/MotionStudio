@@ -159,3 +159,7 @@ See [bounded drape and radial categories](recipes/batches/eighth-static-candidat
 ## Contour rim · reusable raster candidate
 
 [Selection and composition guidance](recipes/candidates/contour-rim-candidate/design.md) connects the [bounded same-alpha shader](recipes/candidates/contour-rim-candidate/README.md) to two actual content-driven consumers: a large serif invitation title and an authored open-loop object sheet. Isolated no-rim controls, caller-owned fonts/Canvas and external evidence; no new registered family, reviewed recipe, PBR claim or accepted work.
+
+## Shared directional spotlight candidate
+
+[Callable light-field candidate](recipes/candidates/spotlight-field-candidate/README.md) links its design, pure solver, Canvas adapters, two original procedural scenes and tests. Shared lamp/beam/receiver coverage is art-directed 2D, not physical illumination; unregistered, no family-count increase, no source-film or private media projection, no user aesthetic/audio acceptance.

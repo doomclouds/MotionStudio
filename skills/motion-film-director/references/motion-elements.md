@@ -350,3 +350,7 @@ glyph内部采样不加到公wrapper数。570次run提交不等于全程完整�
 ## 固定类别的分配变化
 
 `composition.ordered-bands` 的 `compileOrderedBands` / `sampleOrderedBands` 从固定同序 ID 的两端权重生成共享边界，不是每块独立运动或自动语义配色。通过[合同与设计取舍（便携包）](../runtime/motion-elements/lib/foundations/layout/ordered-bands/README.md)或[源码仓库入口](https://github.com/doomclouds/MotionStudio/blob/dev/engine/motion-elements/lib/foundations/layout/ordered-bands/README.md)进入真实消费者；固定预算适合横向分配叙事，总量变化时将总量与份额分开，别让归一化动画暗示物理库存连续变化。先核静态端点、零宽类别和小尺寸标签，再验证过渡及 reduced-motion。两种合成内容的实际渲染支持有限迁移，不等于用户作品、实时系统或常速/听审通过。
+
+## Unregistered shared light candidate
+
+For a visible lamp that reveals a registered material, inspect the [shared directional spotlight candidate](../../../engine/design-elements/recipes/candidates/spotlight-field-candidate/README.md) and its design/limits before writing a parallel helper. It has two original silent technical scenes and direct imports, not catalog registration or artistic/physical-light acceptance. Use existing iris/linear masks for transitions and light-echo-field for reflected light blobs instead when their intent matches.
