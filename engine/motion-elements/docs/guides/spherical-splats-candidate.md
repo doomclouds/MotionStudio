@@ -42,7 +42,7 @@ JS
 ```sh
 node --input-type=module <<'JS'
 import {sphericalSplatFrame} from './engine/motion-elements/examples/spherical-splats.mjs';
-import {copyRasterPixels} from './engine/motion-elements/lib/raster-effects.mjs';
+import {copyRasterPixels} from './engine/motion-elements/lib/index.mjs';
 const snapshot = sphericalSplatFrame(0, 2, {reducedMotion:false});
 const pixels = copyRasterPixels(snapshot);
 console.log(snapshot.width, snapshot.height, pixels.length);

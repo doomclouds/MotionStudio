@@ -140,7 +140,10 @@ test('raster category preserves two legacy feedback records while exposing eight
     assert.equal(e.evidence.ownerArtisticAcceptance,'LIMITED_ACCEPTANCE_NOT_STYLE_ENDORSEMENT');assert.equal(e.evidence.audioListening,'NOT_LISTENED');
     assert.equal(e.evidence.normalSpeedViewing,'NOT_DONE');assert.equal(e.evidence.originalProductionTransfer,'NOT_RUN');
     assert.equal(e.evidence.videoValidation,'VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE');
-    assert.match(e.evidence.validationCoverage,/actual samples/);assert.equal(e.evidence.guidance,'docs/raster-effects.md');
+    assert.match(e.evidence.validationCoverage,/actual samples/);assert.equal(e.evidence.guidance,{
+      'raster.displacement-map':'lib/foundations/raster/displacement-map/README.md',
+      'raster.matte':'lib/foundations/raster/matte/README.md'
+    }[e.id]);
     assert.match(e.evidence.sourceVersionRelation,/Catalog\/query classification/);
   }
   const cliResult=run(['list','--kind','raster']);assert.equal(cliResult.status,0,cliResult.stderr);

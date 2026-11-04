@@ -14,7 +14,7 @@ Use this page as a route map, not a second catalog or a production certificate.
 | Public names and executable registration examples | [public-api.json](public-api.json), [registered-foundations.mjs](../examples/registered-foundations.mjs); the [registration manifest](../examples/registration-manifest.json) describes this increment, not all future catalog contents |
 | Input validation and algorithm behavior | The actual implementation re-exported by the entry below; follow the catalog's guidance to its contract. Examples are not another validator |
 | Canonical responsibility paths and old direct imports | [foundation organization](foundation-organization.md); old wrappers have been removed; use canonical implementation paths directly, without compatibility fallbacks |
-| Existing recipes | Catalog rows with kind `recipe`; implementations in `lib/recipes.mjs` and `lib/recipes/`, not extra foundations |
+| Existing recipes | Catalog rows with kind `recipe`; implementations in `lib/recipes/offset-reassembly/index.mjs` and `lib/recipes/`, not extra foundations |
 | Historical proposal / origin contracts | [five-inventory history](history/candidates/README.md) and [twelve-inventory history](history/private-candidates/README.md); read their historical scope labels before reuse |
 
 ### Canonical implementation paths

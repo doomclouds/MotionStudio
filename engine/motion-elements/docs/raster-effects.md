@@ -8,8 +8,9 @@
 ## 最小接口
 
 ```js
-import {createRasterSnapshot, copyRasterPixels, sampleRasterMatte,
-  sampleRasterDisplacement} from '../lib/raster-effects.mjs';
+import {createRasterSnapshot,copyRasterPixels} from '../lib/internal/raster-snapshot.mjs';
+import {sampleRasterMatte} from '../lib/foundations/raster/matte/index.mjs';
+import {sampleRasterDisplacement} from '../lib/foundations/raster/displacement-map/index.mjs';
 import {drawRasterSnapshot} from '../adapters/raster-effects.mjs';
 const source = createRasterSnapshot({width, height, pixels: imageData.data});
 const map = createRasterSnapshot({width, height, pixels: displacementImageData.data});
@@ -44,49 +45,12 @@ const detachedBytes = copyRasterPixels(result); // 可修改的副本，不是�
   JSON数组的严格属性验证比typedarray字节复制昂贵。没有自动cache、池或多进程共享。
   Native画布的原生内存回收不一定随每帧JS结束而立即触发，长期循环需实际量测RSS，不能只看单帧预算。
 
-## matte：覆盖图不是几何clip
+## 当前算子合同
 
-`sampleRasterMatte({source,mask,mode,invert})`要求source/mask尺寸相同，不自动缩放、对齐或推断密度。
-可以传同模块快照或显式原始RGBA输入。
+- [覆盖合成matte](../lib/foundations/raster/matte/README.md)
+- [二维位移图](../lib/foundations/raster/displacement-map/README.md)
 
-alpha模式coverage=mask.alpha/255；luma模式再乘
-`(.2126R+.7152G+.0722B)/255`。invert在完整coverage后做`1−coverage`。
-输出alpha为source.alpha×coverage，再钳位并四舍五入至byte；RGB沿用source（包括不可见RGB）。
-输入不被修改，没有累计destination-in状态。
-
-luma是在**encoded-sRGB字节域**的加权亮度近似，不是线性光、HDR、色彩管理或光学亮度。
-一张半透明黑/白/灰mask都要同时考虑alpha；不能只拿RGB忽略透明度。
-与旧矩形/圆/多边形clip不同，本机制接受逐像素连续覆盖；但文字排版、描边和遮罩生成仍是调用方工作。
-
-## displacement：显式逆取样，不是真实折射
-
-`sampleRasterDisplacement({source,map,scaleX,scaleY,edge,filter})`要求source/map等尺寸；
-scaleX/Y为有限数−4096..4096（像素），edge必须为clamp或transparent，filter必须为nearest或bilinear。
-
-输出像素(x,y)读取源坐标
-`x+(map.R−128)/128*scaleX*(map.A/255)`、
-`y+(map.G−128)/128*scaleY*(map.A/255)`。
-R/G=128精确中性，通道范围对应−1..127/128，B忽略；透明map或零scale保持原字节。
-这是输出向源的反向查找，正offset不等于画面向正方向平移。
-map的8位量化与采样滤波是独立限制；bilinear不会把量化map变成无限精度连续场。
-
-- nearest对**IEEE运算得到的坐标**使用`floor(coordinate+.5)`，负半值也按此规则。
-  数学上恰为半像素的输入可能在浮点求值后落在阈值另一侧，选中相邻整像素；通道差可达255，
-  不是1LSB误差保证。例：R2、A187、scaleX−160从x0计算出115.49999999999999，取像素115；
-  精确有理数为115.5、应取116。合同不做exact-rational tie修正或任意epsilon补偿。
-- bilinear按相邻四tap的覆盖权重插值**预乘alpha的RGB**，再解预乘；避免透明像素的隐藏颜色污染边缘。
-  精确整数坐标直接保留源字节（包括hidden RGB）；真正分数插值且结果byte alpha为0时RGB置0。
-- clamp先钳住有效像素中心范围；transparent把越界tap视为透明黑，因此分数边缘可部分覆盖，
-  不在坐标一越界就整像素硬切。nearest越界采样为透明黑。
-- bilinear也使用IEEE浮点和8bit输出量化；已测半byte边界与精确有理数oracle有1LSB差，
-  这不是所有输入的误差上界，更不适用于nearest的整像素选择。
-  特别是数学alpha=.5与浮点alpha=.4999999999999999会分别量化为1/0；后者按合同清RGB为0，
-  因此RGB也可差255（预乘后的可见贡献仍很小），不能说bilinear每通道最多差1LSB；
-  不承诺精确rational取样、跨后端/平台逐字节一致或Pixi shader等价。不能靠加epsilon统一篡改round掩盖差异。
-
-滤波不负责给map生成流体、弹性、物理透镜或真正3D。不做forward splatting、洞修复、自动padding、
-地图缩放/旋转、色差或光学能量守恒。旧slice-displacement按条带整体错位，本机制每像素二维查找，
-两者去重依据是取样合同，不是视觉方向变化。
+两原算子详细合同已迁到对应资产；快照存储只保留单一内部模块，下面原Canvas和作品历史继续有效。
 
 ## Canvas输出与状态
 

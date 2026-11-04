@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {spawnSync} from 'node:child_process';
-import {gridLayout, constraintStackLayout} from '../lib/structured-layouts.mjs';
+import {gridLayout, constraintStackLayout} from '../lib/index.mjs';
 import {loadNativeCanvas} from '../../motion-render-core/lib/native.mjs';
 const grid = {itemIds:['a','b','c'],width:10,height:20,columns:2,gap:3};
 const stack = {items:[{itemId:'a',width:10,height:20},{itemId:'b',width:30,height:5}],axis:'y',gap:3};
@@ -49,7 +49,7 @@ test('Native pixel output is stable and preserves drawing context',()=>{
  assert.equal(ctx.getImageData(1,1,1,1).data[3],255);assert.equal(ctx.getImageData(11,1,1,1).data[3],0);
 });
 test('separate processes reproduce both layouts byte-for-byte',()=>{
- const url=new URL('../lib/structured-layouts.mjs',import.meta.url).href;
+ const url=new URL('../lib/index.mjs',import.meta.url).href;
  const code=`import {gridLayout as g,constraintStackLayout as s} from ${JSON.stringify(url)};console.log(JSON.stringify([g(${JSON.stringify(grid)}),s(${JSON.stringify(stack)})]));`;
  const run=()=>spawnSync(process.execPath,['--input-type=module','-e',code],{encoding:'utf8'});const a=run(),b=run();assert.equal(a.status,0,a.stderr);assert.equal(a.stdout,b.stdout);
 });

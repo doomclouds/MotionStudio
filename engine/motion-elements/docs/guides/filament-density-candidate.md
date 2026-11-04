@@ -32,7 +32,7 @@ JS
 ```sh
 node --input-type=module <<'JS'
 import {filamentDensityFrame} from './engine/motion-elements/examples/filament-density.mjs';
-import {copyRasterPixels} from './engine/motion-elements/lib/raster-effects.mjs';
+import {copyRasterPixels} from './engine/motion-elements/lib/index.mjs';
 const snapshot = filamentDensityFrame(0, 2, {reducedMotion:false});
 const pixels = copyRasterPixels(snapshot);
 console.log(snapshot.width, snapshot.height, pixels.length);

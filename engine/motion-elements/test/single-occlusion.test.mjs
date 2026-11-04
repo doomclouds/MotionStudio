@@ -1,7 +1,7 @@
 import {readFileSync} from 'node:fs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {createRasterSnapshot as snap,copyRasterPixels as copy} from '../lib/raster-effects.mjs';
+import {createRasterSnapshot as snap,copyRasterPixels as copy} from '../lib/internal/raster-snapshot.mjs';
 import {sampleSingleOcclusion as compose} from '../lib/support/single-occlusion.mjs';
 import {loadNativeCanvas} from '../../motion-render-core/lib/native.mjs';
 const one=p=>snap({width:1,height:1,pixels:p});

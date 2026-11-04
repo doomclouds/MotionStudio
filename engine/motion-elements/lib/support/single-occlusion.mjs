@@ -1,7 +1,7 @@
 /** Unregistered candidate: one subject, one coverage mask, uniform front color.
  * Straight RGBA8 snapshots; encoded-byte RGB, not linear-light compositing.
  */
-import {createRasterSnapshot,copyRasterPixels} from '../raster-effects.mjs';
+import {createRasterSnapshot,copyRasterPixels} from '../internal/raster-snapshot.mjs';
 import {object,integer} from '../validate.mjs';
 function record(value,keys){
  object(value,keys,keys);

@@ -27,18 +27,7 @@ reduced-motion 在组合层把残差设0，保留基础轨迹/时段；没有低
 
 ### Reveal：withLocalReveal
 
-```js
-withLocalReveal(ctx,{
-  bounds:{x:0,y:0,width:240,height:140},
-  progress:0.6, radius:12, direction:'left-to-right'
-},drawContent,{Path2D:canvasApi.Path2D});
-```
-
-`reveal.local-geometry` 是独立 catalog 机制。最后参数必须显式注入后端 Path2D（Native 或浏览器），要求支持 roundRect/rect 与 ctx.clip(path)；不自动下载或切换后端。方向只接受 left-to-right/right-to-left/top-to-bottom/bottom-to-top。bounds x/y 限±1e6，width/height 为(0,1e6]；radius∈[0,min(width,height)/2]，progress∈[0,1]，均不静默clamp。
-
-调用者拥有局部矩阵，API 不接收或重复施加矩阵。可见域=固定圆角边界∩方向条带，不将条带重新圆角。progress=0 不调用内容；progress=1 仍完整clip。用两个独立 Path2D，不修改调用者 current path；save/finally restore 保绘图状态。**内容callback自己修改current path或外部对象不在回滚保证内**。仅同步callback：AsyncFunction/thenable拒绝，不是能撤销恶意异步副作用的沙箱。
-
-这只是几何裁切，不是字形alpha mask、署名扫光、滤镜、任意SVG或多边形morph。透明孔洞仍透明。reduced模式在示例层按原时段中点cut，无低层另一个时钟。
+完整API、实现与测试见[局部几何揭示资产](../../lib/foundations/reveal/local-geometry/README.md)。finite-settle是不额外计数的共享基础，继续保留上段原合同。
 
 四格合成片分别展示：到位卡片、脚底锚定几何角色、非均匀父缩放和旋转下的图表窗口、两方向透明图标展示框；各机制两种内容。显式每4秒重复一次，8秒无声；当前只作技术展示，艺术/重量感/常速审看与真实迁移证据另计。
 

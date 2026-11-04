@@ -1,6 +1,6 @@
 /** Neutral material examples. Translation uses absolute seconds, not fluid advection. */
 import {compileFilamentDensity,sampleFilamentDensity} from '../lib/foundations/field/filament-density.mjs';
-import {createRasterSnapshot} from '../lib/raster-effects.mjs';
+import {createRasterSnapshot} from '../lib/internal/raster-snapshot.mjs';
 const settings=[
  {width:240,height:160,seed:29,scale:4,warp:1.2,ridgeWidth:.25,filamentMix:.85,base:[13,22,30],ink:[77,211,205]},
  {width:160,height:240,seed:814,scale:2.5,warp:.6,ridgeWidth:.48,filamentMix:.6,base:[27,18,29],ink:[223,176,104]},

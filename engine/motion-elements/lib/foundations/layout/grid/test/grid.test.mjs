@@ -1,0 +1,2 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {gridLayout as fn} from '../../../../index.mjs';
+test('grid: independent placement and rejection oracle',()=>{const spec={itemIds:['a','b','c','d','e'],width:3,height:5,columns:2,gap:1};const out=fn(spec);for(let i=0;i<5;i++)assert.deepEqual(out[i].matrix.slice(4),[(i%2)*4,Math.floor(i/2)*6]);assert.throws(()=>fn({...spec,itemIds:Array(2)}));});

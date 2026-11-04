@@ -1,7 +1,7 @@
 /** Neutral synthetic compositions, no source assets/fonts/shaders. */
 import {compileSphericalSplats, sampleSphericalSplats} from '../lib/foundations/field/spherical-splats.mjs';
 import {freeze} from '../lib/validate.mjs';
-import {createRasterSnapshot} from '../lib/raster-effects.mjs';
+import {createRasterSnapshot} from '../lib/internal/raster-snapshot.mjs';
 const make = (x,y,z,sigma,strength) => ({direction:{x,y,z},sigma,strength});
 export const sphericalSplatExamples = freeze([
   {id:'copper-cloud', size:192, duration:6, turns:1, pitch:.24, base:[10,17,25], color:[244,158,72], lobes:[make(-.8,-.3,.5,.48,1.2),make(.7,.5,.6,.3,2.6),make(.2,-.7,-.6,.52,1.8),make(-.4,.4,-.7,.24,2.5),make(.6,-.6,.2,.14,1.2)]},

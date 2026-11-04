@@ -1,5 +1,5 @@
 import {object,number,bool,fail} from '../lib/validate.mjs';
-import {createRasterSnapshot,copyRasterPixels} from '../lib/raster-effects.mjs';
+import {createRasterSnapshot,copyRasterPixels} from '../lib/internal/raster-snapshot.mjs';
 /** Explicit synchronous backend; scratch stays isolated and caller path is untouched. */
 export function drawRasterSnapshot(ctx,input,placement,backend){
  const raster=createRasterSnapshot(input);

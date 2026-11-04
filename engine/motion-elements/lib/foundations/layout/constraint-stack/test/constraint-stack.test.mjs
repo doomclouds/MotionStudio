@@ -1,0 +1,2 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {constraintStackLayout as fn} from '../../../../index.mjs';
+test('constraint-stack: independent placement and rejection oracle',()=>{const spec={items:[{itemId:'a',width:3,height:5},{itemId:'b',width:7,height:2},{itemId:'c',width:2,height:4}],axis:'y',gap:1};assert.deepEqual(fn(spec).map(x=>x.matrix.slice(4)),[[0,0],[0,6],[0,9]]);assert.throws(()=>fn({...spec,items:[{...spec.items[0],width:0}]}));});

@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import * as canonical from '../lib/foundations/field/attractor-field.mjs';
+import * as canonical from '../lib/foundations/field/attractor-orientation/index.mjs';
 import * as entry from '../lib/index.mjs';
 
 const definition = {bounds:{x:-40,y:12,width:120,height:80},columns:6,rows:4};
@@ -39,7 +39,7 @@ test('field canonical entry preserves isolation, singular and shuffled evaluatio
 });
 
 test('a distinct canonical module instance still has a distinct plan brand',async()=>{
-  const isolated=await import('../lib/foundations/field/attractor-field.mjs?compatibility-brand-probe');
+  const isolated=await import('../lib/foundations/field/attractor-orientation/index.mjs?compatibility-brand-probe');
   assert.notEqual(isolated.compileAttractorField,canonical.compileAttractorField);
   const normal=canonical.compileAttractorField(definition),separate=isolated.compileAttractorField(definition);
   assert.throws(()=>isolated.sampleAttractorField(normal,input),/compiled field plan/);

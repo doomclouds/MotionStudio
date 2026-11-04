@@ -2,7 +2,7 @@
 
 ## 当前入口（无旧路径兼容）
 
-`lib/index.mjs` 直接导出 `lib/foundations/field/attractor-field.mjs`、`lib/foundations/geometry/two-link-ik/index.mjs` 和 `lib/foundations/layout/sticky-interval/index.mjs`。三个同名平层 wrapper 已删除，现役消费者直接更新；不保重导出或路径回退。下文“保留旧入口”“三入口”“query wrapper”等属于当时迁移记录，不是当前可执行路径。原实现与作品锁未改；不得把当前目录整理称为原影片重渲染或升级接受状态。
+`lib/index.mjs` 直接导出 `lib/foundations/field/attractor-orientation/index.mjs`、`lib/foundations/geometry/two-link-ik/index.mjs` 和 `lib/foundations/layout/sticky-interval/index.mjs`。三个同名平层 wrapper 已删除，现役消费者直接更新；不保重导出或路径回退。下文“保留旧入口”“三入口”“query wrapper”等属于当时迁移记录，不是当前可执行路径。原实现与作品锁未改；不得把当前目录整理称为原影片重渲染或升级接受状态。
 
 ## 历史分类阶段记录
 
@@ -13,7 +13,7 @@
 
 | 职责 | canonical 实现 | 保留的旧入口 |
 |---|---|---|
-| 解析方向场 `field.attractor-orientation` | `lib/foundations/field/attractor-field.mjs` | `lib/attractor-field.mjs` |
+| 解析方向场 `field.attractor-orientation` | `lib/foundations/field/attractor-orientation/index.mjs` | `lib/attractor-field.mjs` |
 | 解析两连杆 IK（原ID不变） | `lib/foundations/geometry/two-link-ik.mjs` | `lib/two-link-ik.mjs` |
 | 纵向sticky区间（原ID不变） | `lib/foundations/layout/sticky-interval.mjs` | `lib/sticky-interval.mjs` |
 
@@ -21,7 +21,7 @@
 
 ```js
 import {compileAttractorField, sampleAttractorField}
-  from '../lib/foundations/field/attractor-field.mjs';
+  from '../lib/foundations/field/attractor-orientation/index.mjs';
 
 const plan = compileAttractorField({
   bounds: {x: 0, y: 0, width: 320, height: 180},

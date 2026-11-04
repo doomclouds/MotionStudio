@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {compileFilamentDensity as compile,sampleFilamentDensity as sample} from '../lib/foundations/field/filament-density.mjs';
 import {filamentDensityFrame} from '../examples/filament-density.mjs';
-import {copyRasterPixels} from '../lib/raster-effects.mjs';
+import {copyRasterPixels} from '../lib/internal/raster-snapshot.mjs';
 const spec=(x={})=>({seed:29,scale:4,warp:1.2,ridgeWidth:.25,filamentMix:.85,...x});
 const opts=(x={})=>({width:31,height:31,offsetX:.2,offsetY:-.1,...x});
 test('deterministic seed, seek, output/input isolation and fresh buffers',()=>{

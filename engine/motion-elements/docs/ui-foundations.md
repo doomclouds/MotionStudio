@@ -20,41 +20,10 @@
 
 ## 2. 两种布局：参数与输出
 
-从 `lib/structured-layouts.mjs` 导入。
+- [固定格网](../lib/foundations/layout/grid/README.md)
+- [尺寸约束堆叠](../lib/foundations/layout/constraint-stack/README.md)
 
-### gridLayout
-
-```js
-gridLayout({itemIds:['mon','tue','wed'],width:120,height:58,columns:3,gap:0});
-```
-
-- `itemIds`：1..128个不重复ID，遵循已有 `[a-zA-Z0-9_-]{1,64}` 合同。
-- `width/height`：每个格子的局部尺寸，0.001..10000。
-- `columns`：1..128整数，可以大于实际项数；按行优先排列。
-- `gap`：水平和垂直间距，0..10000局部单位。
-- 起点固定为(0,0)，不会自动缩放到视口；调用者显式设置父变换。
-
-### constraintStackLayout
-
-```js
-constraintStackLayout({
-  items:[{itemId:'work',width:224,height:16},{itemId:'focus',width:224,height:28}],
-  axis:'y',gap:12,
-});
-```
-
-- `items`：1..128项，每项是`{itemId,width,height}`；ID/尺寸限制同上。
-- `axis`：`x`或`y`；每项位置累加前项在该轴的实际尺寸及gap。
-- `gap`：0..10000；不改变输入顺序，另一轴起点保持0。
-
-两者都返回深冻结、与输入隔离的数组：
-`{itemId,rect,matrix,zIndex,geometryBounds}`。
-rect是局部`{x:0,y:0,width,height}`；matrix是`[1,0,0,1,x,y]`；
-zIndex按输入顺序。geometryBounds不含描边、阴影、光晕或滤镜外溢。
-
-空/稀疏数组、重复ID、额外对象或数组字段、显式null、非有限值和越界数值
-均拒绝，不悄悄删项或猜默认值。布局只计算空间，不自动动画；
-reduced-motion由调用者或明确配方处理。重新计算布局不会改掉已经画出的帧。
+完整API已各自共置；共用校验和placement构造只保留一个内部支持模块。
 
 ## 3. 关键帧轨道：明确等待与变化
 
@@ -67,7 +36,7 @@ reduced-motion由调用者或明确配方处理。重新计算布局不会改掉
 ```sh
 node --input-type=module <<'JS'
 import {rational as T} from './engine/motion-elements/lib/time.mjs';
-import {gridLayout, constraintStackLayout} from './engine/motion-elements/lib/structured-layouts.mjs';
+import {gridLayout, constraintStackLayout} from './engine/motion-elements/lib/index.mjs';
 import {compileLayoutHandoff, sampleLayoutHandoff} from './engine/motion-elements/lib/recipes/layout-handoff/index.mjs';
 const from = constraintStackLayout({
   items: ['brief','draft','review'].map(itemId => ({itemId,width:120,height:32})),

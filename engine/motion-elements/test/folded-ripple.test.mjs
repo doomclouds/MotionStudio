@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {compileFoldedRipple as compile,sampleFoldedRipple as sample} from '../lib/foundations/field/folded-ripple.mjs';
 import {foldedRippleFrame} from '../examples/folded-ripple.mjs';
-import {copyRasterPixels} from '../lib/raster-effects.mjs';
+import {copyRasterPixels} from '../lib/internal/raster-snapshot.mjs';
 const spec=(extra={})=>({scale:1.2,speed:.4,ridgeWidth:.2,pulse:{x:0,y:0,at:1,strength:.2,decay:2},...extra});
 const opts=(seconds,extra={})=>({width:31,height:31,seconds,...extra});
 test('independent analytic center at zero phase locks five-round ridge response',()=>{

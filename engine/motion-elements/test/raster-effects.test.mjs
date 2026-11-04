@@ -3,7 +3,9 @@ import assert from 'node:assert/strict';
 import {spawnSync} from 'node:child_process';
 import {createHash} from 'node:crypto';
 import {runInNewContext} from 'node:vm';
-import {createRasterSnapshot as snap,copyRasterPixels as copy,sampleRasterMatte as matte,sampleRasterDisplacement as displace,RASTER_LIMITS} from '../lib/raster-effects.mjs';
+import {createRasterSnapshot as snap,copyRasterPixels as copy,RASTER_LIMITS} from '../lib/internal/raster-snapshot.mjs';
+import {sampleRasterMatte as matte} from '../lib/foundations/raster/matte/index.mjs';
+import {sampleRasterDisplacement as displace} from '../lib/foundations/raster/displacement-map/index.mjs';
 import {drawRasterSnapshot as draw} from '../adapters/raster-effects.mjs';
 import {loadNativeCanvas} from '../../motion-render-core/lib/native.mjs';
 const raw=(width,height,pixels)=>({width,height,pixels}),rgba=s=>[...copy(s)];
@@ -114,7 +116,7 @@ test('each effect rejects missing/null/unknown fields, nonfinite scales and mism
 test('absolute inputs reproduce in reverse/random order and across a fresh process',()=>{
  const inputs=[0,.5,1,1.5,2].map(t=>({...spec(source,map(2,2,91,153)),scaleX:Math.sin(t),scaleY:Math.cos(t)})),expected=inputs.map(x=>rgba(displace(x)));
  for(const i of [4,0,3,1,2,1])assert.deepEqual(rgba(displace(inputs[i])),expected[i]);
- const url=new URL('../lib/raster-effects.mjs',import.meta.url).href;
+ const url=new URL('../lib/index.mjs',import.meta.url).href;
  const code=`import {sampleRasterDisplacement as run,copyRasterPixels as copy} from ${JSON.stringify(url)};console.log(JSON.stringify(${JSON.stringify(inputs)}.map(s=>[...copy(run(s))])));`;
  const r=spawnSync(process.execPath,['--input-type=module','-e',code],{encoding:'utf8'});assert.equal(r.status,0,r.stderr);assert.deepEqual(JSON.parse(r.stdout),expected);
 });
@@ -133,7 +135,7 @@ test('native masked-displacement pixels match reversed evaluation and fresh-proc
  const fixtures=[0,.25,.75,1].map(scaleX=>({...spec(s,map(2,2,0,192)),scaleX,scaleY:.7}));
  const hash=state=>{const c=api.createCanvas(2,2);draw(c.getContext('2d'),state,{x:0,y:0,width:2,height:2,smoothing:false},backend);return createHash('sha256').update(c.toBuffer('image/png')).digest('hex');};
  const render=i=>hash(matte({source:displace(fixtures[i]),mask:m,mode:'alpha',invert:false})),expected=fixtures.map((_,i)=>render(i));for(const i of [3,1,0,2])assert.equal(render(i),expected[i]);
- const paths={native:new URL('../../motion-render-core/lib/native.mjs',import.meta.url).href,lib:new URL('../lib/raster-effects.mjs',import.meta.url).href,adapter:new URL('../adapters/raster-effects.mjs',import.meta.url).href};
+ const paths={native:new URL('../../motion-render-core/lib/native.mjs',import.meta.url).href,lib:new URL('../lib/index.mjs',import.meta.url).href,adapter:new URL('../adapters/raster-effects.mjs',import.meta.url).href};
  const code=`import{loadNativeCanvas}from ${JSON.stringify(paths.native)};import{sampleRasterDisplacement as d,sampleRasterMatte as m}from ${JSON.stringify(paths.lib)};import{drawRasterSnapshot as draw}from ${JSON.stringify(paths.adapter)};import{createHash}from 'node:crypto';const{api}=loadNativeCanvas();console.log(JSON.stringify([0,.25,.75,1].map(scaleX=>{const c=api.createCanvas(2,2);draw(c.getContext('2d'),m({source:d({...${JSON.stringify(spec(source,map(2,2,0,192)))},scaleX,scaleY:.7}),mask:${JSON.stringify(mask)},mode:'alpha',invert:false}),{x:0,y:0,width:2,height:2,smoothing:false},{createCanvas:api.createCanvas});return createHash('sha256').update(c.toBuffer('image/png')).digest('hex')})));`;
  const r=spawnSync(process.execPath,['--input-type=module','-e',code],{encoding:'utf8'});assert.equal(r.status,0,r.stderr);assert.deepEqual(JSON.parse(r.stdout),expected);
 });

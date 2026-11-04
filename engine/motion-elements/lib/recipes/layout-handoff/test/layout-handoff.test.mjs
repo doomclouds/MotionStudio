@@ -58,7 +58,7 @@ test('union limits, enter/exit only, stable target order and size reduced policy
  extreme.matrix[4]=1e6+1;assert.throws(()=>compile({...input(),from:[],to:[extreme]}));
 });
 test('all legal maximum structured stack coordinates fit handoff domain',async()=>{
- const {constraintStackLayout}=await import('../../../structured-layouts.mjs');
+ const {constraintStackLayout}=await import('../../../index.mjs');
  const from=constraintStackLayout({items:Array.from({length:128},(_,i)=>({itemId:`i${i}`,width:10000,height:10000})),axis:'y',gap:10000});
  const p=compile({from,to:from,range:{start:T(0),end:T(1)}});
  assert.equal(sample(p,T(1)).items.at(-1).matrix[5],2540000);
@@ -72,7 +72,7 @@ test('large-to-small endpoint dimensions and translation remain exact',()=>{
  assert.deepEqual(sample(p,T(-1)).items[0].rect,from.rect);
 });
 test('minimum multi-item layouts and summed coordinate limits compose without narrowing input domains',async()=>{
- const {gridLayout,constraintStackLayout}=await import('../../../structured-layouts.mjs');
+ const {gridLayout,constraintStackLayout}=await import('../../../index.mjs');
  const {transformBounds}=await import('../../../matrix.mjs');
  const range={start:T(0),end:T(1)};
  const layouts=[gridLayout({itemIds:['a','b'],width:.001,height:.001,columns:2,gap:1}),

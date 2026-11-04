@@ -22,12 +22,12 @@
 | motion.opacity | sampleMotion | from/to 在 0..1 |
 | motion.anchored-squash | sampleMotion | amount 0..0.8、axis x/y、origin |
 | motion.shake | sampleMotion | amplitudeX/Y、rotation、frequencyHz、seed、elementId，可选 origin |
-| motion.stagger | compileStagger | itemIds、start、duration、step；三时间均为 Time |
+| [motion.stagger](../../lib/foundations/motion/stagger/README.md) | compileStagger | itemIds、start、duration、step；三时间均为 Time |
 | transition.push | sampleTransition | width、height、direction left/right/up/down |
 | transition.rect-wipe | sampleTransition | width、height、direction left/right/up/down |
-| composition.offset-cards | offsetCards | itemIds、origin、card、offset，可选 rotationStep、zOrder |
-| composition.split-panels | splitPanels | itemIds、viewport、axis，可选 gap |
-| recipe.offset-reassembly | sampleOffsetReassembly | 卡片布局参数、Time step、travel |
+| [composition.offset-cards](../../lib/foundations/layout/offset-cards/README.md) | offsetCards | itemIds、origin、card、offset，可选 rotationStep、zOrder |
+| [composition.split-panels](../../lib/foundations/layout/split-panels/README.md) | splitPanels | itemIds、viewport、axis，可选 gap |
+| [recipe.offset-reassembly](../../lib/recipes/offset-reassembly/README.md) | sampleOffsetReassembly | 卡片布局参数、Time step、travel |
 
 上表早期 motion/transition/recipe spec 有 `type,version:1,range,params` 和可选 curve；layout 与 stagger 直接接受表中参数。stagger 表示错峰启动，不是串行等待，返回稳定 itemId 和绝对 range。recipe 的整体 range 保持不变，每个卡片动画时长 = 总长 − 最后卡片延迟；不足正时长则拒绝。
 
