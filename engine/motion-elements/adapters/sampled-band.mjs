@@ -1,4 +1,4 @@
-import {assertSampledBand} from '../lib/sampled-band.mjs';
+import {assertSampledBand} from '../lib/foundations/geometry/sampled-band/index.mjs';
 import {object,fail} from '../lib/validate.mjs';
 /** Separate Path2D preserves current path; caller owns transform, alpha and layer ordering. */
 export function drawSampledBand(ctx,band,style,backend){

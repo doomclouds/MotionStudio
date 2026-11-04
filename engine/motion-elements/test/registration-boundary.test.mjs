@@ -16,7 +16,7 @@ function graph(url,seen=new Set(),externals=new Set()) {
 test('default entry does not acquire arrival runtime; legacy baseline crypto boundary remains explicit',()=>{
  const g=graph(new URL('lib/index.mjs',root));
  assert.deepEqual([...g.externals],['node:crypto']);
- assert(![...g.seen].some(x=>x.endsWith('/foundations/field/arrival-field.mjs')));
+ assert(![...g.seen].some(x=>x.endsWith('/foundations/field/arrival-field/index.mjs')));
  assert([...g.seen].some(x=>x.includes('/motion-timeline-core/lib/timeline.mjs')));
  for(const name of ['compileArrivalField','sampleArrivalField']){assert.equal(Object.hasOwn(base,name),false);assert.equal(typeof node[name],'function');}
  const n=graph(new URL('lib/node.mjs',root));assert([...n.seen].some(x=>x.includes('/motion-timeline-core/lib/timeline.mjs')));
@@ -55,5 +55,5 @@ test('retired candidate entry paths are absent; current public functions are can
  for(const path of ['lib/candidate-index.mjs','lib/seven-foundations-candidate-index.mjs','lib/attractor-field.mjs','lib/two-link-ik.mjs','lib/sticky-interval.mjs'])assert.equal(existsSync(new URL(path,root)),false);
  const mapping={voronoiCells:'geometry/voronoi-cells/index',minimumCostAssignment:'layout/minimum-cost-assignment/index',routeRectangles:'geometry/rectangle-obstacle-route/index',compileRadialWarp:'geometry/radial-landmark-warp/index',distanceTransform:'raster/distance-transform/index',paletteDiffuse:'raster/palette-diffusion/index',reactionDiffusion:'field/reaction-diffusion/index'};
  for(const [name,path]of Object.entries(mapping)){const m=await import(new URL('lib/foundations/'+path+'.mjs',root));assert.equal(base[name],m[name]);}
- const arrival=await import('../lib/foundations/field/arrival-field.mjs');assert.equal(node.compileArrivalField,arrival.compileArrivalField);
+ const arrival=await import('../lib/foundations/field/arrival-field/index.mjs');assert.equal(node.compileArrivalField,arrival.compileArrivalField);
 });

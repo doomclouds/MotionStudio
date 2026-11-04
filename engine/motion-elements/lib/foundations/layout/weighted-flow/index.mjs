@@ -1,7 +1,7 @@
 /** Original weighted port allocation; envelope compilation is an existing mechanism. */
 import {object,number,integer,id,freeze,fail} from '../../../validate.mjs';
 import {transformBounds} from '../../../matrix.mjs';
-import {compileSampledBand} from '../../../sampled-band.mjs';
+import {compileSampledBand} from '../../geometry/sampled-band/index.mjs';
 const lexical=(a,b)=>a<b?-1:a>b?1:0;
 function sum(values){let total=0,correction=0;for(const value of values){const adjusted=value-correction,next=total+adjusted;correction=(next-total)-adjusted;total=next;}return total;}
 function dense(a,max){

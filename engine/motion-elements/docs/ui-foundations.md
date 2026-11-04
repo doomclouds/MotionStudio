@@ -58,36 +58,7 @@ reduced-motion由调用者或明确配方处理。重新计算布局不会改掉
 
 ## 3. 关键帧轨道：明确等待与变化
 
-从`lib/keyframe-track.mjs`导入；`T`为既有`rational`函数。
-
-```js
-const spec = {
-  range: {start: T(1), end: T(5)},
-  params: {knots: [
-    {at: 0,    value: 0,   interpolation: 'hold'},
-    {at: 0.25, value: 20,  interpolation: 'linear'},
-    {at: 0.75, value: 100, interpolation: 'hold'},
-    {at: 1,    value: 100, interpolation: 'linear'},
-  ]},
-};
-const state = sampleKeyframeTrack(spec, T(3));
-// {phase:'active', progress:0.5, value:60, segment:1}
-```
-
-- 时间使用字符串整数有理数；start≥0，end>start，end≤24小时。
-- 2..256个连续数组节点；at严格递增，首尾精确为0和1。
-- value为±1e9内有限数；interpolation只允许linear或hold。
-- interpolation描述**离开该节点**后的区间；最后一个字段仍必填以保持结构一致，
-  但没有离开终点的区间。
-- 精确内部节点选择其后区间；达到/超过end返回最后精确值；start前返回首值。
-  hold允许有意跳变，不是平滑ease。
-- 区间选择按rational时间与数字节点的规范十进制表示精确比较，避免极近边界时
-  浮点进度提前触发hold；线性区间先计算精确局部差和宽度，再转换为浮点比例，
-  不从全局浮点progress相减，以免极近节点丢失区间内进度。
-
-context只接受`{reducedMotion:boolean}`。为true时value取终值、segment取最后区间
-索引`knots.length-2`，但phase/progress仍来自原项目时间。调用者应判断该策略是否
-适合对应属性：承载信息的计数或逐字内容不一定应跳到终值。不据此宣称无障碍审查通过。
+完整现役合同、设计、代码及测试见[关键帧资产](../lib/foundations/motion/keyframe-track/README.md)。它保持原项目时钟与明确hold/linear语义；下文共享组合和作品证据仍保留。
 
 ## 4. 可直接运行的布局交接
 
@@ -97,7 +68,7 @@ context只接受`{reducedMotion:boolean}`。为true时value取终值、segment�
 node --input-type=module <<'JS'
 import {rational as T} from './engine/motion-elements/lib/time.mjs';
 import {gridLayout, constraintStackLayout} from './engine/motion-elements/lib/structured-layouts.mjs';
-import {compileLayoutHandoff, sampleLayoutHandoff} from './engine/motion-elements/lib/recipes/layout-handoff.mjs';
+import {compileLayoutHandoff, sampleLayoutHandoff} from './engine/motion-elements/lib/recipes/layout-handoff/index.mjs';
 const from = constraintStackLayout({
   items: ['brief','draft','review'].map(itemId => ({itemId,width:120,height:32})),
   axis:'y', gap:8,
@@ -108,7 +79,7 @@ console.log(JSON.stringify(sampleLayoutHandoff(plan,T(1)),null,2));
 JS
 ```
 
-详见[同身份布局交接](layout-handoff.md)。配方只接受平移矩阵、显式一致的bounds，
+详见[同身份布局交接](../lib/recipes/layout-handoff/README.md)。配方只接受平移矩阵、显式一致的bounds，
 联合身份不超过128项；层序固定为to顺序＋退出项。位置与rect尺寸都可以变化。
 内容文字重排、宽高比保持与遮挡顺序由调用者负责；若开头必须保留原重叠顺序，
 不要直接使用这个固定target-first层序策略。
@@ -121,8 +92,8 @@ Canvas绘制时遍历items，save→应用matrix和opacity→按rect绘内容→
 
 ```sh
 node --test engine/motion-elements/test/structured-layouts.test.mjs \
-  engine/motion-elements/test/keyframe-track.test.mjs \
-  engine/motion-elements/test/layout-handoff.test.mjs
+  engine/motion-elements/lib/foundations/motion/keyframe-track/test/keyframe-track.test.mjs \
+  engine/motion-elements/lib/recipes/layout-handoff/test/layout-handoff.test.mjs
 ```
 
 合成测试检查正常/边界/非法输入、身份、尺寸、精确节点、normal/reduced策略、

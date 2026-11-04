@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {spawnSync} from 'node:child_process';
 import vm from 'node:vm';
 import {compileStagedLayoutHandoff as compile,sampleStagedLayoutHandoff as sample} from '../index.mjs';
-import {compileLayoutHandoff,sampleLayoutHandoff} from '../../layout-handoff.mjs';
+import {compileLayoutHandoff,sampleLayoutHandoff} from '../../layout-handoff/index.mjs';
 import {rational as T} from '../../../time.mjs';
 import {loadNativeCanvas} from '../../../../../motion-render-core/lib/native.mjs';
 const item=(itemId,x,y)=>({itemId,rect:{x:0,y:0,width:8,height:6},matrix:[1,0,0,1,x,y],zIndex:3,geometryBounds:{x,y,width:8,height:6}});

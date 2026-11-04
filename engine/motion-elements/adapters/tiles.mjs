@@ -1,4 +1,4 @@
-import {assertTileBinding} from '../lib/tiles.mjs';
+import {assertTileBinding} from '../lib/foundations/fragment/fixed-tiles/index.mjs';
 const sources=new WeakMap();
 /** The caller owns the source raster's immutable pixels and parent transform. */
 export function drawTileScatter(ctx,source,plan,state){

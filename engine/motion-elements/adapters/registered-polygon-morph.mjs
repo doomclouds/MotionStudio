@@ -1,4 +1,4 @@
-import {assertRegisteredPolygonState} from '../lib/registered-polygon-morph.mjs';
+import {assertRegisteredPolygonState} from '../lib/foundations/geometry/registered-polygon-morph/index.mjs';
 import {object,number} from '../lib/validate.mjs';
 /** Caller owns parent transform. No current-path mutation, no automatic correspondence or repair. */
 export function drawRegisteredPolygonMorph(ctx,state,style,backend){

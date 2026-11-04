@@ -1,5 +1,5 @@
-import {sampleLinearMask} from './linear-mask.mjs';
-import {sampleIris} from './iris.mjs';
+import {sampleLinearMask} from './foundations/transition/linear-mask/index.mjs';
+import {sampleIris} from './foundations/transition/iris-reveal/index.mjs';
 import {object,number,optional,choice,bool,freeze} from './validate.mjs';
 import {range,progress} from './time.mjs';
 import {curve} from './math.mjs';

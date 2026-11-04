@@ -1,5 +1,5 @@
 import {object} from '../lib/validate.mjs';
-import {assertLinearMaskState} from '../lib/linear-mask.mjs';
+import {assertLinearMaskState} from '../lib/foundations/transition/linear-mask/index.mjs';
 /** A stays behind transparent B, including after the reveal has completed. */
 export function drawLinearMask(ctx,state,callbacks,backend){
  assertLinearMaskState(state);

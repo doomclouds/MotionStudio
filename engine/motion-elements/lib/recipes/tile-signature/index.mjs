@@ -1,7 +1,7 @@
 import {object,id,number,choice,optional,bool,freeze} from '../../validate.mjs';
 import {time} from '../../time.mjs';
 import {rational,add,sub,compare} from '../../../../motion-timeline-core/lib/timeline.mjs';
-import {compileTileScatter,sampleTileScatter} from '../../tiles.mjs';
+import {compileTileScatter,sampleTileScatter} from '../../foundations/fragment/fixed-tiles/index.mjs';
 import {sampleMotion} from '../../motions.mjs';
 import {matrix,identity,multiply,transformBounds} from '../../matrix.mjs';
 const plans=new WeakSet(),R=n=>rational(n,100);

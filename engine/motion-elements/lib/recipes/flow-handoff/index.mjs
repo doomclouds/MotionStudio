@@ -2,7 +2,7 @@
 import {object,bool,freeze,fail} from '../../validate.mjs';
 import {range} from '../../time.mjs';
 import {curve,lerp} from '../../math.mjs';
-import {sampleKeyframeTrack} from '../../keyframe-track.mjs';
+import {sampleKeyframeTrack} from '../../foundations/motion/keyframe-track/index.mjs';
 import {weightedFlowLayout} from '../../foundations/layout/weighted-flow/index.mjs';
 const plans=new WeakSet();
 function conserved(flow){

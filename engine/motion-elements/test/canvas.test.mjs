@@ -37,7 +37,7 @@ test('push explicitly rejects unsupported fractional or rotated parent frames',(
  assert.throws(()=>sampleTransition({...spec,params:{...spec.params,width:31.5}},T(1,3)),/integer viewport/);
 });
 test('path two-content demo seeks pixel-identically with normal and reduced motion',async()=>{
- const {createGalleryScene:createPathScene}=await import('../examples/path-scene.mjs');
+ const {createGalleryScene:createPathScene}=await import('../lib/foundations/geometry/polyline-trail/examples/path-scene.mjs');
  for(const reducedMotion of [false,true]){
  const canvas=api.createCanvas(config.width,config.height),ctx=canvas.getContext('2d'),scene=await createPathScene({canvas,ctx,GlobalFonts:api.GlobalFonts,config},{reducedMotion});
  const hashes=new Map(),frames=[0,15,16,43,100,160,225,239];
@@ -57,7 +57,7 @@ test('settle and local reveal demo preserves frame timing and seek pixels in bot
  }
 });
 test('tile raster demo seeks identically in clean, debug, reversed and reduced views',async()=>{
- const {createGalleryScene:createStudy}=await import('../examples/tiles-scene.mjs');
+ const {createGalleryScene:createStudy}=await import('../lib/foundations/fragment/fixed-tiles/examples/tiles-scene.mjs');
  for(const reducedMotion of [false,true]){
   const canvas=api.createCanvas(config.width,config.height),ctx=canvas.getContext('2d'),scene=await createStudy({canvas,ctx,canvasApi:api,config},{reducedMotion});
   const hashes=new Map(),frames=[0,15,16,43,45,60,100,105,120,135,180,223,224,225,239];
@@ -90,7 +90,7 @@ test('tile signature two-source 8s sequence has repeatable normal/reduced and ne
  }
 });
 test('iris two-compositing-case demo seeks identically and checker stays inside its viewport',async()=>{
- const {createGalleryScene:createStudy,config:cfg}=await import('../examples/iris-scene.mjs');
+ const {createGalleryScene:createStudy,config:cfg}=await import('../lib/foundations/transition/iris-reveal/examples/iris-scene.mjs');
  for(const reducedMotion of [false,true]){
   const canvas=api.createCanvas(cfg.width,cfg.height),ctx=canvas.getContext('2d'),scene=await createStudy({canvas,ctx,canvasApi:api,config:cfg},{reducedMotion});
   const hashes=new Map(),frames=[0,29,30,60,89,90,120,149,150,151,239];

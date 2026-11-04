@@ -4,7 +4,7 @@ import vm from 'node:vm';
 import {spawnSync} from 'node:child_process';
 import {createHash} from 'node:crypto';
 import {intervalLaneLayout as layout} from '../index.mjs';
-import {compileLayoutHandoff,sampleLayoutHandoff} from '../../../../recipes/layout-handoff.mjs';
+import {compileLayoutHandoff,sampleLayoutHandoff} from '../../../../recipes/layout-handoff/index.mjs';
 import {rational as T} from '../../../../time.mjs';
 import {transformBounds,transformPoint} from '../../../../matrix.mjs';
 import {loadNativeCanvas} from '../../../../../../motion-render-core/lib/native.mjs';

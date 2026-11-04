@@ -1,6 +1,6 @@
 import test from 'node:test';import assert from 'node:assert/strict';import {spawnSync} from 'node:child_process';
 import {layeredDagLayout as layout} from '../index.mjs';
-import {compileLayoutHandoff} from '../../../../recipes/layout-handoff.mjs';
+import {compileLayoutHandoff} from '../../../../recipes/layout-handoff/index.mjs';
 import {rational as T} from '../../../../time.mjs';import {loadNativeCanvas} from '../../../../../../motion-render-core/lib/native.mjs';
 const node=(itemId,width=40,height=40)=>({itemId,width,height}),link=(linkId,fromId,toId)=>({linkId,fromId,toId});
 const spec=()=>({nodes:[node('a'),node('b',40,20),node('c',40,30),node('d')],links:[link('ab','a','b'),link('ac','a','c'),link('bd','b','d'),link('cd','c','d')],layerGap:10,nodeGap:10});

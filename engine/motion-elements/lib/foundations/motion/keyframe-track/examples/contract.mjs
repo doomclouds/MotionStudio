@@ -1,0 +1,10 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import * as api from '../../../../index.mjs';
+const catalog=JSON.parse(readFileSync(new URL('../../../../../catalog.json',import.meta.url)));
+const item=catalog.elements.find(e=>e.id==='motion.keyframe-track');
+assert(item);
+const q=(n,d=1)=>({n:String(n),d:String(d)});assert.equal(api.sampleKeyframeTrack(item.example,q(1,4)).value,0);const seam=api.sampleKeyframeTrack(item.example,q(1,2));assert.equal(seam.value,20);assert.equal(seam.segment,1);
+const middle=api.sampleKeyframeTrack(item.example,q(5,4));assert.equal(middle.value,60);assert.equal(api.sampleKeyframeTrack(item.example,q(2)).value,100);const reduced=api.sampleKeyframeTrack(item.example,q(1),{reducedMotion:true});assert.equal(reduced.value,100);assert.equal(reduced.progress,.5);
+assert.deepEqual(middle,api.sampleKeyframeTrack(item.example,q(5,4)));assert.throws(()=>api.sampleKeyframeTrack({...item.example,params:{knots:[]}},q(0)));
+console.log('motion.keyframe-track contract PASS');

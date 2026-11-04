@@ -20,7 +20,7 @@
 ```js
 import {flowWrapLayout} from './index.mjs';
 import {compileLayoutHandoff, sampleLayoutHandoff}
-  from '../../../recipes/layout-handoff.mjs';
+  from '../../../recipes/layout-handoff/index.mjs';
 import {rational as T} from '../../../time.mjs';
 
 const input = {

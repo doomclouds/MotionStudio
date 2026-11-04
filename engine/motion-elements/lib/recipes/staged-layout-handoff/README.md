@@ -83,6 +83,6 @@ node engine/motion-elements/lib/recipes/staged-layout-handoff/examples/contract.
 node --test engine/motion-elements/lib/recipes/staged-layout-handoff/test/*.test.mjs
 ```
 
-保留既有[layout-handoff](../layout-handoff.mjs)、[time](../../time.mjs)、[validate](../../validate.mjs)与相邻motion-timeline-core，不复制通用实现。纯数值例子不需字体、Canvas或媒体，不联网或生成影片。公共barrel间接加载相邻motion-timeline-core及Node内建crypto，需保留仓库/portable目录。跨资产组合与Native验证仍在包test目录；需要声明版本的@napi-rs/canvas，缺失应报告阻断，不移除测试。
+保留既有[layout-handoff](../layout-handoff/index.mjs)、[time](../../time.mjs)、[validate](../../validate.mjs)与相邻motion-timeline-core，不复制通用实现。纯数值例子不需字体、Canvas或媒体，不联网或生成影片。公共barrel间接加载相邻motion-timeline-core及Node内建crypto，需保留仓库/portable目录。跨资产组合与Native验证仍在包test目录；需要声明版本的@napi-rs/canvas，缺失应报告阻断，不移除测试。
 
 计划品牌仅当前canonical模块实例有效；保存原始定义并重新compile。结果复制并深冻，不保留可变输入或播放历史。代码适用[包MIT许可](../../../LICENSE)，不授权参考源码、字体、音频或影片再分发。工程、有限帧、常速、听审和艺术接受分开记录。

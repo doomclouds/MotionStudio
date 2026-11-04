@@ -2,7 +2,7 @@
 import {object,bool,freeze,fail} from '../../validate.mjs';
 import {range,progress,time} from '../../time.mjs';
 import {compare} from '../../../../motion-timeline-core/lib/timeline.mjs';
-import {compileLayoutHandoff,sampleLayoutHandoff} from '../layout-handoff.mjs';
+import {compileLayoutHandoff,sampleLayoutHandoff} from '../layout-handoff/index.mjs';
 const plans=new WeakMap();
 function dense(value,min,max) {
  if(!Array.isArray(value)||Object.getPrototypeOf(value)!==Array.prototype||value.length<min||value.length>max)fail('Expected bounded ordinary same-realm array');

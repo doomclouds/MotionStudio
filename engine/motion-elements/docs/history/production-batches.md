@@ -11,7 +11,7 @@
 新增 `composition.grid`、`composition.constraint-stack`、`motion.keyframe-track`，
 以及组合配方 `recipe.layout-handoff`；配方不算基础机制。
 完整中文用法、参数边界、反例与可执行示例见 [UI 使用指导](../ui-foundations.md)
-和 [布局交接配方](../layout-handoff.md)。该批公共入口为 `lib/index.mjs`；下文记录该批接入时的范围。
+和 [布局交接配方](../../lib/recipes/layout-handoff/README.md)。该批公共入口为 `lib/index.mjs`；下文记录该批接入时的范围。
 
 本批已在一支私有有声验证候选中实际调用，代码身份与调用回执经独立复核。
 验证视频、参考资源、实际参数/帧段、媒体 hash 和用户反馈留在私有交付，不进 Git。

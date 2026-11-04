@@ -1,0 +1,10 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import * as api from '../../../../node.mjs';
+const catalog=JSON.parse(readFileSync(new URL('../../../../../catalog.json',import.meta.url)));
+const item=catalog.elements.find(e=>e.id==='field.arrival-field');
+assert(item);
+const plan=api.compileArrivalField(item.example),points=[{id:'p',position:{x:3,y:4}}],state=api.sampleArrivalField(plan,{points});assert.deepEqual(state.points[0].arrival,{n:'5',d:'1'});assert.equal(state.points[0].winnerSourceId,'a');
+const shifted=api.compileArrivalField({...item.example,sources:[{...item.example.sources[0],at:{n:'1',d:'3'}}],speed:2,tickRate:2});assert.deepEqual(api.sampleArrivalField(shifted,{points}).points[0].arrival,{n:'17',d:'6'});
+assert(Object.isFrozen(state.points[0].winner));assert.deepEqual(state,api.sampleArrivalField(plan,{points}));assert.throws(()=>api.sampleArrivalField({...plan},{points}));assert.throws(()=>api.sampleArrivalField(plan,{points:[]}));
+console.log('field.arrival-field contract PASS');

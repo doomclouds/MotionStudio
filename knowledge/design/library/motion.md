@@ -22,7 +22,7 @@
 | 时间、对象状态与核心调用怎么组织 | [核心API与时间](../../../engine/motion-elements/docs/guides/core-api-and-time.md)、[Canvas组合](../../../engine/motion-elements/docs/guides/canvas-composition.md) |
 | 进场后落定、局部展开，保留可读焦点 | [落定与局部揭示](../../../engine/motion-elements/docs/guides/settle-and-local-reveal.md)、[揭示与转场](../../../engine/motion-elements/docs/guides/reveal-transitions.md) |
 | 多卡信息怎样接力，而不是同时争抢 | [焦点交接](../../../engine/motion-elements/lib/recipes/focus-handoff/README.md)、[布局交接](../../../engine/motion-elements/lib/recipes/staged-layout-handoff/README.md) |
-| 片块怎样拆开、回归并保持身份 | [固定片块](../../../engine/motion-elements/docs/guides/fixed-tiles.md)、[片块署名](../../../engine/motion-elements/lib/recipes/tile-signature/README.md) |
+| 片块怎样拆开、回归并保持身份 | [固定片块](../../../engine/motion-elements/lib/foundations/fragment/fixed-tiles/README.md)、[片块署名](../../../engine/motion-elements/lib/recipes/tile-signature/README.md) |
 | 路径、轮廓、带路文字 | [路径与轮廓](../../../engine/motion-elements/docs/guides/paths-and-contours.md)、[沿路径字格](../../../engine/motion-elements/lib/foundations/typography/glyph-run-path/README.md) |
 | 场、切片、光迹和栅格关系 | [场与切片](../../../engine/motion-elements/docs/guides/field-and-slices.md)、[光迹场](../../../engine/motion-elements/lib/recipes/light-echo-field/README.md)、[栅格效果](../../../engine/motion-elements/docs/raster-effects.md) |
 | 多版本比较的首尾正确，中途却互相遮挡？ | [比较副本的可见窗口](../../../skills/motion-film-director/references/motion.md#比较副本让可见窗口避开相互穿越)：先分离后出现、先退出后归位；内部实验反例，不是优秀作品或艺术通过证明。 |

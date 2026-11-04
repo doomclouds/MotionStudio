@@ -5,7 +5,7 @@ import {spawnSync} from 'node:child_process';
 import {createHash} from 'node:crypto';
 import {compileCubicPath,sampleCubicPath} from '../../../geometry/cubic-path/index.mjs';
 import {layoutGlyphRunOnPath} from '../index.mjs';
-import {compilePolyline} from '../../../../path.mjs';
+import {compilePolyline} from '../../../geometry/polyline-trail/index.mjs';
 import {loadNativeCanvas} from '../../../../../../motion-render-core/lib/native.mjs';
 const line=(p0={x:0,y:0},p3={x:100,y:0})=>compileCubicPath({segments:[{p0,p1:{x:p0.x+(p3.x-p0.x)/3,y:p0.y+(p3.y-p0.y)/3},p2:{x:p0.x+(p3.x-p0.x)*2/3,y:p0.y+(p3.y-p0.y)*2/3},p3}],tolerance:.001});
 const plan=line();

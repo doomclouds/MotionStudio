@@ -611,12 +611,14 @@
       ],
       "evidence": {
         "tests": [
-          "test/path.test.mjs"
+          "lib/foundations/geometry/polyline-trail/test/polyline-trail.test.mjs"
         ],
-        "demo": "examples/path-scene.mjs",
+        "demo": "lib/foundations/geometry/polyline-trail/examples/path-scene.mjs",
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN",
-        "guidance": "docs/guides/paths-and-contours.md"
+        "guidance": "lib/foundations/geometry/polyline-trail/README.md",
+        "executableExample": "lib/foundations/geometry/polyline-trail/examples/contract.mjs",
+        "sourceVersionRelation": "Asset-directory colocation preserves algorithm bodies and canonical module identity while relocating files and relative imports. Existing synthetic and scene evidence is not a new film-equivalence, production transfer or artistic acceptance claim."
       },
       "knowledgeLinks": [],
       "tags": [
@@ -724,12 +726,14 @@
       ],
       "evidence": {
         "tests": [
-          "test/tiles.test.mjs"
+          "lib/foundations/fragment/fixed-tiles/test/fixed-tiles.test.mjs"
         ],
-        "demo": "examples/tiles-scene.mjs",
+        "demo": "lib/foundations/fragment/fixed-tiles/examples/tiles-scene.mjs",
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN",
-        "guidance": "docs/guides/fixed-tiles.md"
+        "guidance": "lib/foundations/fragment/fixed-tiles/README.md",
+        "executableExample": "lib/foundations/fragment/fixed-tiles/examples/contract.mjs",
+        "sourceVersionRelation": "Asset-directory colocation preserves algorithm bodies and canonical module identity while relocating files and relative imports. Existing synthetic and scene evidence is not a new film-equivalence, production transfer or artistic acceptance claim."
       },
       "knowledgeLinks": [],
       "tags": [
@@ -909,12 +913,14 @@
       ],
       "evidence": {
         "tests": [
-          "test/iris.test.mjs"
+          "lib/foundations/transition/iris-reveal/test/iris-reveal.test.mjs"
         ],
-        "demo": "examples/iris-scene.mjs",
+        "demo": "lib/foundations/transition/iris-reveal/examples/iris-scene.mjs",
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN",
-        "guidance": "docs/guides/reveal-transitions.md"
+        "guidance": "lib/foundations/transition/iris-reveal/README.md",
+        "executableExample": "lib/foundations/transition/iris-reveal/examples/contract.mjs",
+        "sourceVersionRelation": "Asset-directory colocation preserves algorithm bodies and canonical module identity while relocating files and relative imports. Existing synthetic and scene evidence is not a new film-equivalence, production transfer or artistic acceptance claim."
       },
       "knowledgeLinks": [],
       "tags": [
@@ -992,12 +998,14 @@
       ],
       "evidence": {
         "tests": [
-          "test/registered-polygon-morph.test.mjs"
+          "lib/foundations/geometry/registered-polygon-morph/test/registered-polygon-morph.test.mjs"
         ],
-        "demo": "examples/registered-polygon-morph-scene.mjs",
+        "demo": "lib/foundations/geometry/registered-polygon-morph/examples/registered-polygon-morph-scene.mjs",
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN",
-        "guidance": "docs/guides/paths-and-contours.md"
+        "guidance": "lib/foundations/geometry/registered-polygon-morph/README.md",
+        "executableExample": "lib/foundations/geometry/registered-polygon-morph/examples/contract.mjs",
+        "sourceVersionRelation": "Asset-directory colocation preserves algorithm bodies and canonical module identity while relocating files and relative imports. Existing synthetic and scene evidence is not a new film-equivalence, production transfer or artistic acceptance claim."
       },
       "knowledgeLinks": [],
       "tags": [
@@ -1148,12 +1156,14 @@
       ],
       "evidence": {
         "tests": [
-          "test/linear-mask.test.mjs"
+          "lib/foundations/transition/linear-mask/test/linear-mask.test.mjs"
         ],
-        "demo": "examples/linear-mask-study.mjs",
+        "demo": "lib/foundations/transition/linear-mask/examples/linear-mask-study.mjs",
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN",
-        "guidance": "docs/guides/reveal-transitions.md"
+        "guidance": "lib/foundations/transition/linear-mask/README.md",
+        "executableExample": "lib/foundations/transition/linear-mask/examples/contract.mjs",
+        "sourceVersionRelation": "Asset-directory colocation preserves algorithm bodies and canonical module identity while relocating files and relative imports. Existing synthetic and scene evidence is not a new film-equivalence, production transfer or artistic acceptance claim."
       },
       "knowledgeLinks": [],
       "tags": [
@@ -1203,12 +1213,14 @@
       ],
       "evidence": {
         "technicalTests": [
-          "test/sampled-band.test.mjs"
+          "lib/foundations/geometry/sampled-band/test/sampled-band.test.mjs"
         ],
-        "visualDemo": "examples/sampled-band-study.mjs",
+        "visualDemo": "lib/foundations/geometry/sampled-band/examples/sampled-band-study.mjs",
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN",
-        "guidance": "docs/guides/paths-and-contours.md"
+        "guidance": "lib/foundations/geometry/sampled-band/README.md",
+        "executableExample": "lib/foundations/geometry/sampled-band/examples/contract.mjs",
+        "sourceVersionRelation": "Asset-directory colocation preserves algorithm bodies and canonical module identity while relocating files and relative imports. Existing synthetic and scene evidence is not a new film-equivalence, production transfer or artistic acceptance claim."
       },
       "knowledgeLinks": [],
       "tags": [
@@ -1537,7 +1549,7 @@
       ],
       "evidence": {
         "technicalTests": [
-          "test/keyframe-track.test.mjs"
+          "lib/foundations/motion/keyframe-track/test/keyframe-track.test.mjs"
         ],
         "visualDemo": null,
         "videoValidation": "VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE",
@@ -1548,8 +1560,9 @@
         "audioListening": "NOT_LISTENED",
         "ownerArtisticAcceptance": "PENDING_USER",
         "validationCoverage": "Hold keyframes used for the character count. Linear intervals are covered by synthetic tests, not this film.",
-        "guidance": "docs/ui-foundations.md",
-        "sourceVersionRelation": "Frozen film version; post-fix state and representative-frame equality are separate receipts, not a full new-version film render."
+        "guidance": "lib/foundations/motion/keyframe-track/README.md",
+        "sourceVersionRelation": "Frozen film version; post-fix state and representative-frame equality are separate receipts, not a full new-version film render. Later asset-directory colocation preserves algorithm bodies and canonical module identity while relocating files and relative imports; preceding byte-match/version-bridge evidence remains bound to its original version, not a new film-equivalence or acceptance claim.",
+        "executableExample": "lib/foundations/motion/keyframe-track/examples/contract.mjs"
       },
       "knowledgeLinks": [],
       "tags": [
@@ -1639,7 +1652,7 @@
       ],
       "evidence": {
         "technicalTests": [
-          "test/layout-handoff.test.mjs"
+          "lib/recipes/layout-handoff/test/layout-handoff.test.mjs"
         ],
         "visualDemo": null,
         "videoValidation": "VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE",
@@ -1650,8 +1663,9 @@
         "audioListening": "NOT_LISTENED",
         "ownerArtisticAcceptance": "PENDING_USER",
         "validationCoverage": "Shared-ID translation and rectangle resizing only. Enter/exit fades are not covered by the film. Caller explicitly time-remaps the source curve; not native arbitrary curve support.",
-        "guidance": "docs/ui-foundations.md",
-        "sourceVersionRelation": "Frozen film version; post-fix state and representative-frame equality are separate receipts, not a full new-version film render."
+        "guidance": "lib/recipes/layout-handoff/README.md",
+        "sourceVersionRelation": "Frozen film version; post-fix state and representative-frame equality are separate receipts, not a full new-version film render. Later asset-directory colocation preserves algorithm bodies and canonical module identity while relocating files and relative imports; preceding byte-match/version-bridge evidence remains bound to its original version, not a new film-equivalence or acceptance claim.",
+        "executableExample": "lib/recipes/layout-handoff/examples/contract.mjs"
       },
       "knowledgeLinks": [],
       "tags": [
@@ -3985,16 +3999,18 @@
       ],
       "evidence": {
         "technicalTests": [
+          "lib/foundations/field/arrival-field/test/arrival-field.test.mjs",
           "test/arrival-field-support.test.mjs"
         ],
-        "guidance": "docs/foundations/field.arrival-field.md",
+        "guidance": "lib/foundations/field/arrival-field/README.md",
         "visualDemo": null,
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN",
         "normalSpeedViewing": "NOT_DONE",
         "audioListening": "NOT_LISTENED",
         "registrationScope": "Local registration preparation only; published baseline remains 39 foundations + 7 recipes.",
-        "executableExample": "examples/registered-foundations.mjs"
+        "executableExample": "lib/foundations/field/arrival-field/examples/contract.mjs",
+        "sourceVersionRelation": "Asset-directory colocation preserves algorithm bodies and canonical Node module identity while relocating files and relative imports. Local registration and synthetic tests do not establish film-equivalence, production transfer or artistic acceptance."
       },
       "knowledgeLinks": [],
       "tags": [
