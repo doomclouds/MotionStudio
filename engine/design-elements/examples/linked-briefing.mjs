@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 // Original static composition example. No upstream text, fonts, icons or media.
 // Not a new family, ranking service, live connector or responsive UI.
-import {draw as surface} from '../material-surfaces.mjs';
+import {draw as surface} from '../families/material-surfaces/index.mjs';
 import {layoutMetricStrip} from '../recipes/candidates/metric-strip/metric-strip.mjs';
 const string=(s)=>{if(typeof s!=='string'||!s.trim()||/[\r\n]/.test(s))throw TypeError('nonempty single-line text');return s;};
 export function planBriefing(input){

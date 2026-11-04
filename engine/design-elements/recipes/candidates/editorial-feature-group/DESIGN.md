@@ -11,7 +11,7 @@ Compared against the tree based on e43bb1c81abdcda5cd76f9665626ab464a1abdb5:
 - `../feature-stack-candidate/`: measured icon/title/description lists in one or two equal columns. Prefer it for a list, rather than this six-cell hierarchy.
 - `../file-grid-candidate/`: file tiles and same-source summaries. It owns file-data presentation, not spanning editorial roles.
 - `../../../families/proportional-partition/index.mjs`: positive numeric values determine cell area. Reusing that for editorial importance would falsely suggest proportional data.
-- `../../../material-surfaces.mjs`: surface treatment and content bounds. It remains the reusable surface primitive; this candidate intentionally uses a minimal flat painter and does not claim a new material method.
+- `../../../families/material-surfaces/index.mjs`: surface treatment and content bounds. It remains the reusable surface primitive; this candidate intentionally uses a minimal flat painter and does not claim a new material method.
 
 The distinction is narrow, not an exhaustive novelty claim. Do not promote this to another foundational grid family on the basis of two examples. Independent review, content-fit evidence and actual downstream reuse are still needed. This candidate adds no catalog registration or portfolio item.
 

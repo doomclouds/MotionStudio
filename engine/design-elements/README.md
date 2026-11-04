@@ -13,7 +13,7 @@ See [recipe source roles](recipes/README.md) for the direct `reviewed/`, `candid
 | design.print-poster.v1 | [self-contained guide](families/print-poster/README.md), [code](families/print-poster/index.mjs) | paper panels, offset type; existing fixed poster recipe |
 | design.typographic-focus.v1 | [design card](families/typographic-focus/README.md), [code](families/typographic-focus/index.mjs) | authored short lines, typography roles and advance-based line regions |
 | design.color-sections.v1 | [design card](families/color-sections/README.md), [code](families/color-sections/index.mjs) | two semantic slots, order, area ratio and explicit colors |
-| design.material-surfaces.v1 | [design card](docs/material-surfaces.md), [code](material-surfaces.mjs) | paper / opaque / caller-supplied glass backdrop, content slot |
+| design.material-surfaces.v1 | [design card](families/material-surfaces/README.md), [code](families/material-surfaces/index.mjs) | paper / opaque / caller-supplied glass backdrop, content slot |
 | design.semantic-data.v1 | [design card](families/semantic-data/README.md), [code](families/semantic-data/index.mjs) | categories, values, legends and illustrative/quantitative distinction |
 | design.parameter-controls.v1 | [design card](families/parameter-controls/README.md), [code](families/parameter-controls/index.mjs) | value, range, units, orientation, selected/disabled states |
 | design.expressive-type.v1 | [design card](families/expressive-type/README.md), [code](families/expressive-type/index.mjs) | bounded layered/striped glyph effects, readable repeated label |

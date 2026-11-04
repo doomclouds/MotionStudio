@@ -52,8 +52,8 @@
     },
     {
       "id": "design.material-surfaces.v1",
-      "entry": "material-surfaces.mjs",
-      "guidance": "docs/material-surfaces.md",
+      "entry": "families/material-surfaces/index.mjs",
+      "guidance": "families/material-surfaces/design.md",
       "sourceCases": [
         "liquid-glass-study",
         "vinyl-study"

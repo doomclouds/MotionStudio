@@ -1,7 +1,7 @@
 /** Parameterized native surfaces; no remote resources, fonts or source images. */
 export const id = 'design.material-surfaces.v1';
 export const version = 1;
-export const guidance = './docs/material-surfaces.md';
+export const guidance = './design.md';
 const styleKeys=['fillStyle','strokeStyle','font','textAlign','textBaseline','lineWidth','lineCap','globalAlpha'];
 const snapshot=c=>Object.fromEntries(styleKeys.map(k=>[k,c[k]]));
 const restore=(c,s)=>{c.restore();for(const k of styleKeys)c[k]=s[k];};

@@ -1,6 +1,6 @@
 # design.material-surfaces.v1 · 材质与表面层级
 
-代码：[`material-surfaces.mjs`](../material-surfaces.mjs)。示例：[`examples/material-surfaces.mjs`](../examples/material-surfaces.mjs)。
+代码：[`material-surfaces.mjs`](index.mjs)。示例：[`examples/material-surfaces.mjs`](examples/cases.mjs)。
 
 ## 设计判断
 
@@ -14,7 +14,7 @@
 
 - width 120–1600，height 100–1200，有限坐标；padding 8–80 且不能占满内容区。
 - elevation 0–3。纸张生成硬影；其他表面生成有界 alpha-mask 三次 box blur 柔影。不是 CSS shadowBlur 等效声明。
-- opacity .04–.75 仅控制玻璃白色覆层，不代表真实材料透射率。
+- opacity .04–.75 仅控制theme.surface颜色的玻璃覆层，不代表真实材料透射率。
 - title/subtitle 单行最多100字符，绘制前按实际字体测量；溢出拒绝，不自动缩字。
 - `env.canvasApi.createCanvas` 用于阴影。glass 还必须提供 `env.backdrop({ctx,width,height,bounds})`，由调用者画该表面应采样的背景。无默认远程图像，无网络访问。
 - 返回 bounds、contentBounds、headingHeight、material。上层可把任意图表、正文或控件放进 contentBounds；本模块不负责整页内容。
@@ -32,7 +32,7 @@
 
 ## 轻量组合例：同一工作区的跨区主题一致性
 
-[shared-theme.mjs](../examples/shared-theme.mjs)以现有 material-surfaces、typographic-focus 和 parameter-controls 组合一个原创固定画幅示例；[测试与外置渲染](../examples/shared-theme.test.mjs)覆盖两套调色角色 × paused/active 两个演示状态。不是新主题资产、候选、框架或真实应用；不增加注册数量。现有 `theme` 输入已能承担这种组合，不需要仅为配色新增公共 API。
+[shared-theme.mjs](../../examples/shared-theme.mjs)以现有 material-surfaces、typographic-focus 和 parameter-controls 组合一个原创固定画幅示例；[测试与外置渲染](../../examples/shared-theme.test.mjs)覆盖两套调色角色 × paused/active 两个演示状态。不是新主题资产、候选、框架或真实应用；不增加注册数量。现有 `theme` 输入已能承担这种组合，不需要仅为配色新增公共 API。
 
 先声明角色及作用区，再在同一内容/状态下比较主题：背景、主表面、内层表面、正文、次要字、强调、边线、轨道分别来自单一 palette。侧栏、正文、参数卡、提示卡和输入区示意都消费这些角色；允许不同区域使用不同表面角色，不要求所有区域颜色完全相同。状态仍由独立输入决定，换主题不应改变内容 ID、参数值、禁用状态或几何。图中 paused/active 只标静态演示，不暗示后台任务或交互已执行。
 
@@ -50,7 +50,7 @@ DISABLE_SYSTEM_FONTS_LOAD=1 MOTION_ENGINE_ROOT=/absolute/installed/engine/motion
 
 ## 方向短笔触：非注册示例
 
-[directional-paint.mjs](../examples/directional-paint.mjs) 是单独可调用的原创绘制示例，不扩展上面的 `paper/opaque/glass` 契约、不注册新族。用于调用者已经画好底色和轮廓后，以短多边形色块和细高光表达局部方向；不是油画仿真或自动风格迁移。
+[directional-paint.mjs](../../examples/directional-paint.mjs) 是单独可调用的原创绘制示例，不扩展上面的 `paper/opaque/glass` 契约、不注册新族。用于调用者已经画好底色和轮廓后，以短多边形色块和细高光表达局部方向；不是油画仿真或自动风格迁移。
 
 `drawDirectionalPaint(ctx,{bounds,palette,seed,count,length,width,angleAt,brush})` 在矩形范围内确定性分布笔触；调用者先设置任意轮廓 clip，函数进一步裁到 bounds。`angleAt(u,v)` 接收归一化位置、返回弧度，须是纯函数且不访问画布；全部角度先检查后绘制。seed 为 uint32；count 1–10000；length 2–80px；width 1–20px 且不大于 length；bounds 尺寸16–2048px、坐标绝对值不超过1e6；palette 为2–8个六位十六进制颜色。画布继承调用者 alpha/合成/变换；绘制后恢复变换、clip、所改样式，但与普通 Canvas 绘制一样替换当前 path。输入/回调及 Canvas 后端是可信调用者资源，不是恶意对象沙箱。
 
@@ -65,9 +65,9 @@ CANVAS_MODULE=/absolute/path/to/node_modules/@napi-rs/canvas \
 node engine/design-elements/test-directional-paint.mjs /absolute/new-private-output
 ```
 
-[测试](../test-directional-paint.mjs)覆盖两输入实际出图、同seed重复、换seed差异、矩形与调用者clip、输入不变、状态恢复及非法输入绘制前拒绝。确定性只针对相同回调/输入/后端环境；没有跨后端逐像素、动画连续性、音频或用户接受结论。
+[测试](../../test-directional-paint.mjs)覆盖两输入实际出图、同seed重复、换seed差异、矩形与调用者clip、输入不变、状态恢复及非法输入绘制前拒绝。确定性只针对相同回调/输入/后端环境；没有跨后端逐像素、动画连续性、音频或用户接受结论。
 
-可选压力策略的[专项测试](../test-directional-pressure.mjs)需要调用者在仓库外提供固定改动前实现，避免把当前代码与自身比较。它比较两输入、三种seed的旧/省略/显式polygon逐像素输出，另验taper重现、边界和非法参数、晚发生方向错误、状态属性及后续实际填色/描边（含渐变与clip）。兼容性结论限定相同已安装Canvas后端；不把像素差当审美接受。示例包装函数也显式恢复颜色/线宽，避免部分Native后端restore后的属性不一致。
+可选压力策略的[专项测试](../../test-directional-pressure.mjs)需要调用者在仓库外提供固定改动前实现，避免把当前代码与自身比较。它比较两输入、三种seed的旧/省略/显式polygon逐像素输出，另验taper重现、边界和非法参数、晚发生方向错误、状态属性及后续实际填色/描边（含渐变与clip）。兼容性结论限定相同已安装Canvas后端；不把像素差当审美接受。示例包装函数也显式恢复颜色/线宽，避免部分Native后端restore后的属性不一致。
 
 ```sh
 # 从审查指定的改动前提交导出；BASE_SHA 必须由评审固定，不能使用改动后的 HEAD。
@@ -79,8 +79,13 @@ node engine/design-elements/test-directional-pressure.mjs /absolute/new-private-
 
 ### 与已有材料的分工
 
-- [print-poster](../families/print-poster/README.md) 是纸签与硬偏移叠印，不能代替方向笔触。
-- 漫画网点优先用现有 [halftone-screen](../../motion-elements/lib/foundations/geometry/halftone-screen/README.md) 或 [标量网点候选](../recipes/candidates/halftone-scalar-candidate/README.md)，保持各自原状态。集中线的位置/留白仍由构图决定，不为这一观察另建网点或排线积木。
-- 砖墙、喷漆、粗糙描边和滴流分别处理：墙缝应穿过未覆盖区域，喷漆局部透明度逐渐衰减；把它们烘为整张材质会锁死构图。当前不提供新的喷漆/砖墙函数，因为尚无独立双输入实渲验证；[drape候选](../recipes/candidates/drape-material-candidate/README.md) 的布面明暗也不能冒充这些材料。
+- [print-poster](../print-poster/README.md) 是纸签与硬偏移叠印，不能代替方向笔触。
+- 漫画网点优先用现有 [halftone-screen](../../../motion-elements/lib/foundations/geometry/halftone-screen/README.md) 或 [标量网点候选](../../recipes/candidates/halftone-scalar-candidate/README.md)，保持各自原状态。集中线的位置/留白仍由构图决定，不为这一观察另建网点或排线积木。
+- 砖墙、喷漆、粗糙描边和滴流分别处理：墙缝应穿过未覆盖区域，喷漆局部透明度逐渐衰减；把它们烘为整张材质会锁死构图。当前不提供新的喷漆/砖墙函数，因为尚无独立双输入实渲验证；[drape候选](../../recipes/candidates/drape-material-candidate/README.md) 的布面明暗也不能冒充这些材料。
 
 研究来源：[Open Design Usage Reset](https://open-design.ai/showcase/usage-reset-motion-video-design/) 的6秒私有研究，仅抽帧观察，不是连续观看、实际听审或声画同步验收。上述代码和两份输入是原创程序几何，适用仓库 MIT；未带入原片像素、标形、字体、音乐或私有对照报告。来源链接不转授参考设计/品牌权利。局部材质改善与此示例运行均不等于原片复刻或用户审美通过。
+
+
+## 当前族与冻结作品
+
+本目录只改变当前canonical说明路径，不改变draw/validate算法或两例输入。14件既有作品的源码、sourceCommit、模块hash、锁与接受声明不随共置改写；12件runtime依赖须另行提供固定历史源码，两件vendored snapshot保留其自身字节。当前新入口不是旧锁的替代品，当前树不保留旧路径兼容。严格静态验源不等于字体/素材/运行环境已恢复或作品可渲染；无历史Git对象只使选定作品BLOCKED，不影响索引发现。恢复命令、历史作品复渲与新视觉接受均未由此实现。完整自描述、执行样例与边界见[README](README.md)。

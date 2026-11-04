@@ -78,13 +78,13 @@
       "id": "design.material-surfaces.v1",
       "version": 1,
       "status": "published-source-technical-reviewed",
-      "entry": "material-surfaces.mjs",
+      "entry": "families/material-surfaces/index.mjs",
       "exports": [
         "validate",
         "draw"
       ],
-      "guidance": "docs/material-surfaces.md",
-      "example": "examples/material-surfaces.mjs",
+      "guidance": "families/material-surfaces/design.md",
+      "example": "families/material-surfaces/examples/render.mjs",
       "sourceCases": [
         "https://github.com/doomclouds/MotionStudio/blob/cae18d21f2fbef9702c8ce94ce68abd9eda826a4/portfolio/works/liquid-glass-study/README.md",
         "https://github.com/doomclouds/MotionStudio/blob/cae18d21f2fbef9702c8ce94ce68abd9eda826a4/portfolio/works/vinyl-study/README.md"
@@ -93,13 +93,14 @@
         "examples/compositions.mjs#reading-sessions",
         "examples/compositions.mjs#creative-lab"
       ],
-      "tests": "test/verify.mjs",
+      "tests": "families/material-surfaces/test/contract.mjs; test/verify.mjs",
       "verificationLimits": [
         "native-static",
         "not-browser",
         "not-motion",
         "not-user-approved-new-artwork"
-      ]
+      ],
+      "sample": "families/material-surfaces/examples/cases.mjs"
     },
     {
       "id": "design.semantic-data.v1",

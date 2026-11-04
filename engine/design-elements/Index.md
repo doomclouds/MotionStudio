@@ -15,7 +15,7 @@
 | design.print-poster.v1 | [独立入口](families/print-poster/README.md) | [源码](families/print-poster/index.mjs) | 既有印刷海报，保持原 API |
 | design.typographic-focus.v1 | [文字主视觉](families/typographic-focus/README.md) | [代码](families/typographic-focus/index.mjs) | 主张、章节标题、嵌套活动信息 |
 | design.color-sections.v1 | [色彩分区](families/color-sections/README.md) | [代码](families/color-sections/index.mjs) | 主张与证据分区、互换阅读顺序 |
-| design.material-surfaces.v1 | [材质表面](docs/material-surfaces.md) | [代码](material-surfaces.mjs) | 纸、实体、显式背景玻璃及内容槽 |
+| design.material-surfaces.v1 | [材质表面](families/material-surfaces/README.md) | [代码](families/material-surfaces/index.mjs) | 纸、实体、显式背景玻璃及内容槽 |
 | design.semantic-data.v1 | [语义序列](families/semantic-data/README.md) | [代码](families/semantic-data/index.mjs) | 类别、阶段、明确量程的面积符号 |
 | design.parameter-controls.v1 | [参数刻度](families/parameter-controls/README.md) | [代码](families/parameter-controls/index.mjs) | 有数值范围的横/纵静态参数 |
 | design.expressive-type.v1 | [层叠/切片](families/expressive-type/README.md) | [代码](families/expressive-type/index.mjs) | 有边界的2D标题效果 |

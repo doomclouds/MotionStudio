@@ -8,7 +8,7 @@ import*as diagonal from'./families/diagonal-field/index.mjs';
 import*as paths from'./families/authored-paths/index.mjs';
 import*as typography from'./families/typographic-focus/index.mjs';
 import*as sections from'./families/color-sections/index.mjs';
-import*as material from'./material-surfaces.mjs';
+import*as material from'./families/material-surfaces/index.mjs';
 import*as data from'./families/semantic-data/index.mjs';
 import*as controls from'./families/parameter-controls/index.mjs';
 export const registry=Object.freeze(Object.fromEntries([typography,sections,material,data,controls,expressive,radial,diagonal,paths,vertical,marks,partition,rings].map(m=>[m.id,Object.freeze({version:1,validate:m.validate,draw:m.draw})])));
