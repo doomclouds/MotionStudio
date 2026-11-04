@@ -4,6 +4,7 @@
 
 | 镜头/时间问题 | 原始指南入口 |
 |---|---|
+| 变速后 cue 对齐了，状态时长、模糊和曝光却不一致？ | [同一事件跨多个时钟](../../../skills/motion-film-director/references/reference-mechanism.md#同一事件跨多个时钟)：时点、区间两端、输出时钟差分与子样本分别映射；有限源码/合成反例，不是新变速器或视听接受。 |
 | 什么时候值得把刻版源码抽成独立排线能力？ | [复用边界](../studies/engraved-tone-and-cut-order.md#复用边界)：先定义拓扑、误差、预算与缓存失效，另验宿主接口，不将耦合场景直接晋级新库。 |
 | 刻线怎样形成体积而不糊成灰块，分组参数是否真是并发上限？ | [明暗职责](../studies/engraved-tone-and-cut-order.md#先分配明暗职责再安排刻制顺序)、[调度与采样](../studies/engraved-tone-and-cut-order.md#分组顺序不是硬并发或恒弧长速度)：区分层次、宽度桶、活跃线数与真实弧长速度。 |
 | 排线、色洗和圆窗为什么会在换形状或宿主后失真？ | [拓扑与遮挡](../studies/engraved-tone-and-cut-order.md#先确定孔洞和遮挡再生成排线)、[材料缓存](../studies/engraved-tone-and-cut-order.md#色洗是另一层信息不是流体模拟)、[放大与读窗](../studies/engraved-tone-and-cut-order.md#放大必须保留对象身份和完整读窗)：核fillRule、近似误差、有效像素和最终文字窗口。 |
