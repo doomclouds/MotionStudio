@@ -4,6 +4,8 @@
 
 | 镜头/时间问题 | 原始指南入口 |
 |---|---|
+| 网络逐步长成，怎样保持身份与已读文字稳定？ | [完成态标签](../studies/network-and-data-story.md#用最终网络安排稳定的阅读位置)、[线路语义](../studies/network-and-data-story.md#让颜色线形与图层承担不同职责)：预先排位、显示层级、颜色身份与挖空顺序分别验证。 |
+| 纸面投影、故事定格和数据判词如何避免偷换概念？ | [投影数据域](../studies/network-and-data-story.md#区分纸面深度与屏幕覆盖)、[双时钟](../studies/network-and-data-story.md#故事停顿不等于音乐停顿)、[数字口径](../studies/network-and-data-story.md#让数字的口径在画面里成立)：alpha深度、平台逆映射、真实事件消费和上屏事实一起核，抽帧不代常速与听审。 |
 | 音乐与密集界面怎样真正共享节奏，而不只是同一BPM？ | [共同时间表](../studies/phase-and-interface-story.md#让共同时间表真正被两边消费)、[分步布局](../studies/phase-and-interface-story.md#同类归位与界面换型分两步)：核实际事件消费与类别身份，节奏对齐不等于同音或听审。 |
 | 平面窗口扫光、光标触发与跳时缓存怎样分别验？ | [投影与照亮](../studies/phase-and-interface-story.md#透明内容先投影再照亮)、[可见因果链](../studies/phase-and-interface-story.md#主角动作需要看得见的因果链)、[状态与依赖](../studies/phase-and-interface-story.md#缓存状态与依赖按实际行为复验)：透明层、动作可见性与真实字体合同分别验证，不以资源恢复代常速审查。 |
 | 一个连续镜头怎样讲清系统与个体，而不在拉远时丢失主体？ | [同一空间的过程](../studies/continuous-map-story.md#用同一空间解释过程)、[穿透与拉远](../studies/continuous-map-story.md#穿透与拉远先保留可见锚点)：路线、对数尺度、可见锚点和图层退场共同验证，抽帧不代常速观看。 |

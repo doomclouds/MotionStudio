@@ -145,3 +145,5 @@ UI 导演先看整页与任务，再以对照定位局部，保留状态/文字/
 - [连续地图：尺度、焦点与声音职责](studies/continuous-map-story.md)
 
 - [共同节奏与界面：归位、换型和因果链](studies/phase-and-interface-story.md)
+
+- [网络与数据叙事：稳定标签、双时钟与事实口径](studies/network-and-data-story.md)
