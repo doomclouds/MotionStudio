@@ -4,6 +4,8 @@
 
 | 镜头/时间问题 | 原始指南入口 |
 |---|---|
+| 角色为什么从追逐转为自愿回返，停顿怎样有动作意义？ | [目标与选择](../studies/character-and-rhythm.md#让目标改变通过行动可见)、[可见节拍](../studies/character-and-rhythm.md#节拍声明与首个可见动作分开核)：撤手、凝视、姿态保持和首个实际生效帧分别检查，不以源码动作名替代表演。 |
+| 复古角色墨线、4:3画门与声音身份怎样协同？ | [画门和组件变换](../studies/character-and-rhythm.md#用有效画门约束镜头与组件变换)、[屏幕墨线](../studies/character-and-rhythm.md#手绘墨线保留几何与屏幕两种尺度)、[重量与选择的声音](../studies/character-and-rhythm.md#让声音区分重量与选择)：几何/墨线/摄影/休止分层，抽帧与调度不代常速合听。 |
 | 网络逐步长成，怎样保持身份与已读文字稳定？ | [完成态标签](../studies/network-and-data-story.md#用最终网络安排稳定的阅读位置)、[线路语义](../studies/network-and-data-story.md#让颜色线形与图层承担不同职责)：预先排位、显示层级、颜色身份与挖空顺序分别验证。 |
 | 纸面投影、故事定格和数据判词如何避免偷换概念？ | [投影数据域](../studies/network-and-data-story.md#区分纸面深度与屏幕覆盖)、[双时钟](../studies/network-and-data-story.md#故事停顿不等于音乐停顿)、[数字口径](../studies/network-and-data-story.md#让数字的口径在画面里成立)：alpha深度、平台逆映射、真实事件消费和上屏事实一起核，抽帧不代常速与听审。 |
 | 音乐与密集界面怎样真正共享节奏，而不只是同一BPM？ | [共同时间表](../studies/phase-and-interface-story.md#让共同时间表真正被两边消费)、[分步布局](../studies/phase-and-interface-story.md#同类归位与界面换型分两步)：核实际事件消费与类别身份，节奏对齐不等于同音或听审。 |

@@ -26,3 +26,5 @@ The query is read-only and excludes uncommitted edits. Per-package contracts, ri
 [Protected dual palette model](candidates/protected-palette-model-candidate/README.md) preserves semantic index identity and prepares two-palette selection for the existing indexed-pixel renderer. It adds no rasterizer, quantizer, registered family or portfolio work.
 
 [Fixed isometric camera](candidates/isometric-camera-candidate/README.md) adapts a fixed 30° projection, horizontal-plane inverse and positive log zoom into an immutable camera snapshot. It provides no renderer, depth sorting or timeline and adds no registered family or portfolio work.
+
+[Screen-space ink path](candidates/screen-ink-path-candidate/README.md) derives affine point transformation, fixed screen-distance resampling and deterministic normal displacement from credited LemoLab code. It returns geometry only, with open-endpoint and nonperiodic seam limits; no character rig, renderer, film, registered family or portfolio work.

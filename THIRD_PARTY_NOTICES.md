@@ -170,3 +170,7 @@ The [protected-palette model recipe](engine/design-elements/recipes/candidates/p
 ## LemoLab fixed isometric camera
 
 The [fixed isometric camera candidate](engine/design-elements/recipes/candidates/isometric-camera-candidate/README.md) adapts projection/inverse and logarithmic zoom from LemoLab’s isometric demo at `bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00`. [Credits and changes](engine/design-elements/recipes/candidates/isometric-camera-candidate/CREDITS.md) retain fixed source links; [LemoLab MIT](engine/design-elements/recipes/candidates/isometric-camera-candidate/LICENSE-LemoLab) and the adaptation MIT both remain intact. No upstream scene, film, image, font or audio is included; root MIT does not replace third-party rights.
+
+## LemoLab screen-space ink path
+
+The [screen-space ink path candidate](engine/design-elements/recipes/candidates/screen-ink-path-candidate/README.md) extracts the transform/resample/line-boil relation from LemoLab’s Rubber Hose `toon.js` and noise helpers at fixed commit `bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00`, retaining its noted Sci-Fi Toon lineage. [Credits and changes](engine/design-elements/recipes/candidates/screen-ink-path-candidate/CREDITS.md), [LemoLab MIT](engine/design-elements/recipes/candidates/screen-ink-path-candidate/LICENSE-LemoLab) and the adaptation MIT remain separate. No upstream character rig, scene, film, audio or font is bundled; source publication is not visual or production acceptance.
