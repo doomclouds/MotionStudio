@@ -4,6 +4,8 @@
 
 | 镜头/时间问题 | 原始指南入口 |
 |---|---|
+| 规则怎样变成同一对象的另一读法，而不是只换图？ | [规则与例外](../studies/rules-and-score.md#先建立规则再让例外改变结果)、[网格与乐谱](../studies/rules-and-score.md#同一网格必须真的被画面与声音消费)：先兑现秩序，再用真实字段关系让同一海报成为乐谱，不把共享JSON等同完整共同时间源。 |
+| 落拍、文字搬移和字体度量怎样各自验证？ | [开始与到达](../studies/rules-and-score.md#区分开始到达和首次可见)、[重排净空](../studies/rules-and-score.md#排版重排不能穿过已经占用的空间)、[真实字体与声音](../studies/rules-and-score.md#字体和印刷声音按实际依赖核对)：核可见边界、同色吞字和真实字形，技术检查不代常速或听审。 |
 | 角色为什么从追逐转为自愿回返，停顿怎样有动作意义？ | [目标与选择](../studies/character-and-rhythm.md#让目标改变通过行动可见)、[可见节拍](../studies/character-and-rhythm.md#节拍声明与首个可见动作分开核)：撤手、凝视、姿态保持和首个实际生效帧分别检查，不以源码动作名替代表演。 |
 | 复古角色墨线、4:3画门与声音身份怎样协同？ | [画门和组件变换](../studies/character-and-rhythm.md#用有效画门约束镜头与组件变换)、[屏幕墨线](../studies/character-and-rhythm.md#手绘墨线保留几何与屏幕两种尺度)、[重量与选择的声音](../studies/character-and-rhythm.md#让声音区分重量与选择)：几何/墨线/摄影/休止分层，抽帧与调度不代常速合听。 |
 | 网络逐步长成，怎样保持身份与已读文字稳定？ | [完成态标签](../studies/network-and-data-story.md#用最终网络安排稳定的阅读位置)、[线路语义](../studies/network-and-data-story.md#让颜色线形与图层承担不同职责)：预先排位、显示层级、颜色身份与挖空顺序分别验证。 |

@@ -149,3 +149,5 @@ UI 导演先看整页与任务，再以对照定位局部，保留状态/文字/
 - [网络与数据叙事：稳定标签、双时钟与事实口径](studies/network-and-data-story.md)
 
 - [角色与节奏：选择、有效画门和可见落拍](studies/character-and-rhythm.md)
+
+- [规则与乐谱：共同数据、落定边界和排版重排](studies/rules-and-score.md)
