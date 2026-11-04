@@ -18,7 +18,7 @@ const scene=await createGalleryScene({canvas,ctx,GlobalFonts:api.GlobalFonts,can
 if(frame!==undefined){scene.renderFrame(frame);await writeFile(join(out,'frame.png'),canvas.toBuffer('image/png'));console.log(JSON.stringify({out,frame,demo,reducedMotion,debug,font:scene.font}));}
 else {
   const output=join(out,'motion-elements-gallery.mp4'),partial=join(out,'gallery.partial.mp4');
-  const proc=spawn('ffmpeg',['-nostdin','-v','error','-f','rawvideo','-pix_fmt','rgba','-s',`${config.width}x${config.height}`,'-r',String(config.fps),'-i','pipe:0','-an','-c:v','libx264','-preset','medium','-crf','19','-pix_fmt','yuv420p','-movflags','+faststart','-n',partial],{stdio:['pipe','ignore','pipe']});
+  const proc=spawn('ffmpeg',['-nostdin','-v','error','-f','rawvideo','-pix_fmt','rgba','-s',`${config.width}x${config.height}`,'-r',String(config.fps),'-i','pipe:0','-an','-c:v','libx264','-threads:v','1','-preset','medium','-crf','19','-pix_fmt','yuv420p','-movflags','+faststart','-n',partial],{stdio:['pipe','ignore','pipe']});
   let error='',spawnError;proc.stderr.on('data',x=>{error=(error+x.toString()).slice(-65536);});
   proc.on('error',e=>{spawnError=e;});proc.stdin.on('error',()=>{});
   const done=new Promise(resolve=>proc.once('close',(code,signal)=>resolve({code,signal})));
@@ -33,10 +33,11 @@ else {
     if(spawnError||result.code!==0)throw Error(`FFmpeg failed: ${spawnError?.message||result.code}: ${error}`);
     await rename(partial,output);
   }catch(e){
-    proc.stdin.destroy();if(proc.exitCode===null)proc.kill('SIGTERM');
-    await done;await unlink(partial).catch(()=>{});throw e;
+    proc.stdin.destroy();if(proc.exitCode===null&&proc.signalCode===null)proc.kill('SIGTERM');
+    const result=await done;await unlink(partial).catch(()=>{});
+    throw new Error(`Gallery render failed: ${e.message}; FFmpeg exit=${result.code}, signal=${result.signal}${spawnError ? '; spawn='+spawnError.message : ''}; stderr: ${error || '(empty)'}`, {cause:e});
   }
   const sha256=createHash('sha256').update(await readFile(output)).digest('hex');
-  const verification={demo,frames:frameCount,fps:config.fps,duration:config.duration,width:config.width,height:config.height,reducedMotion,debug,canvas:version,font:scene.font,sha256,audio:'none',artisticReview:'NOT_RUN'};
+  const verification={demo,frames:frameCount,fps:config.fps,duration:config.duration,width:config.width,height:config.height,reducedMotion,debug,canvas:version,font:scene.font,encoder:{codec:'libx264',threads:1,preset:'medium',crf:19,pixelFormat:'yuv420p'},sha256,audio:'none',artisticReview:'NOT_RUN'};
   await writeFile(join(out,'render.json'),JSON.stringify(verification,null,2)+'\n');console.log(JSON.stringify({out,...verification}));
 }
