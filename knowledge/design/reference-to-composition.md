@@ -159,3 +159,5 @@ UI 导演先看整页与任务，再以对照定位局部，保留状态/文字/
 - [门、刻度与灯光：转场源图、字形拓扑与可见计数](studies/doors-and-counted-light.md)
 
 - [连续线与时间：拓扑、路径地址、准确停笔和真实消费](studies/continuous-line-and-time.md)
+
+- [刻线与图版：明暗职责、并发语义、拓扑和有效事件](studies/engraved-tone-and-cut-order.md)

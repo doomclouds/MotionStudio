@@ -4,6 +4,10 @@
 
 | 镜头/时间问题 | 原始指南入口 |
 |---|---|
+| 什么时候值得把刻版源码抽成独立排线能力？ | [复用边界](../studies/engraved-tone-and-cut-order.md#复用边界)：先定义拓扑、误差、预算与缓存失效，另验宿主接口，不将耦合场景直接晋级新库。 |
+| 刻线怎样形成体积而不糊成灰块，分组参数是否真是并发上限？ | [明暗职责](../studies/engraved-tone-and-cut-order.md#先分配明暗职责再安排刻制顺序)、[调度与采样](../studies/engraved-tone-and-cut-order.md#分组顺序不是硬并发或恒弧长速度)：区分层次、宽度桶、活跃线数与真实弧长速度。 |
+| 排线、色洗和圆窗为什么会在换形状或宿主后失真？ | [拓扑与遮挡](../studies/engraved-tone-and-cut-order.md#先确定孔洞和遮挡再生成排线)、[材料缓存](../studies/engraved-tone-and-cut-order.md#色洗是另一层信息不是流体模拟)、[放大与读窗](../studies/engraved-tone-and-cut-order.md#放大必须保留对象身份和完整读窗)：核fillRule、近似误差、有效像素和最终文字窗口。 |
+| 修改内容后，音乐为何仍吃旧事件，静默检查为何可能假通过？ | [有效事件与声音消费者](../studies/engraved-tone-and-cut-order.md#有效事件必须先于全部声音消费者)：先构建最终事件，再核真实字段、起音、总混音和失败退出。 |
 | 连续线怎样兼顾近景动作和最后整体，而不是靠连接线硬凑？ | [终图与拓扑](../studies/continuous-line-and-time.md#终图和局部动作共用一条拓扑)、[路径和时间地址](../studies/continuous-line-and-time.md#路径地址和时间地址分开)：先核进出点、回描、语义访问与采样尺度，再分配章节时序。 |
 | 时间非降就能停笔吗，跟笔框内就算镜头平顺吗？ | [准确停笔](../studies/continuous-line-and-time.md#非降时间不等于准确停笔)、[笔压与坐标](../studies/continuous-line-and-time.md#笔压镜头和纸面各守坐标)：区别epsilon行进、等时瞬跳、纸面速度和前瞻边界投影。 |
 | SVG移植与画面驱动声音怎样核到真正消费？ | [数值边界](../studies/continuous-line-and-time.md#迁移时保留数值与材料边界)、[声音消费者](../studies/continuous-line-and-time.md#声音事件必须走到消费者)：解析器身份、独立有限数值证据和音符实际字段分列，不把导出事件当自动同步。 |

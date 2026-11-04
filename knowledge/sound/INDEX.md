@@ -76,3 +76,5 @@
 - [空间化声音与静默的处理顺序](../design/studies/doors-and-counted-light.md#声音空间与静默按处理顺序核对)：实际分支消费、滤波尾声、duck增益和包时基分别核。
 
 - [连续线的声音消费者](../design/studies/continuous-line-and-time.md#声音事件必须走到消费者)：笔速/屏幕声像确有调用不代表corners已驱动谱面；分开音乐归零、room下降、原轨身份与新主题声音。
+
+- [图版的有效事件与声音消费者](../design/studies/engraved-tone-and-cut-order.md#有效事件必须先于全部声音消费者)：绑定构建顺序、有效对象和真实字段，区别名义cue、测得起音、总混音静默与失败退出。
