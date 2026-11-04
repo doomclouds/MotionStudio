@@ -73,18 +73,13 @@
       "kind": "documentation"
     },
     {
-      "path": "DESIGN-RETENTION.md",
-      "sha256": "8b73be6e24b2a17bd5d8e4c947c5fb649dc29e9c253088b2419708e4e2e0ad24",
-      "kind": "documentation"
-    },
-    {
       "path": "FONT-PROVENANCE.md",
       "sha256": "82cf87b48d9ceb0dc05e95c930438610b5669eb81e4f69e51e4d66adb2547cec",
       "kind": "documentation"
     },
     {
       "path": "README.md",
-      "sha256": "a2e3dfe966361d55b0e9bdff55e1c7061ae0bd05129411aa208c8e903d9734a6",
+      "sha256": "e89b92e60e58ecf0e1a823c07023c0f4650f05c6aaf24f9c374494705269e6db",
       "kind": "documentation"
     },
     {
@@ -166,6 +161,11 @@
       "path": "test.mjs",
       "sha256": "5dd3c2964034a6316cf71e6483805405b02c17bbf0f5263adf1d7b3553bb1b86",
       "kind": "source"
+    },
+    {
+      "path": "design.md",
+      "sha256": "49a8170c923416e45bb4a105000adedd16669181180e004a51859e29252fa480",
+      "kind": "documentation"
     }
   ],
   "resources": [
@@ -304,7 +304,7 @@
     }
   },
   "design": {
-    "decisionCard": "DESIGN-RETENTION.md",
+    "decisionCard": "design.md",
     "nonAssetNote": "Native Canvas case-local helpers; no MotionStudio public family dependency claimed.",
     "ruleRefs": [],
     "ruleStatus": "Local composition recipe only; no new public family.",

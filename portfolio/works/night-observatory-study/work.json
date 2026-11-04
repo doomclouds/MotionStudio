@@ -77,11 +77,6 @@
       "kind": "documentation"
     },
     {
-      "path": "DESIGN-RETENTION.md",
-      "sha256": "32d7eb1bb2ee4fbdc4040d10942a133bc793a2490fa093744ffb02315dfca908",
-      "kind": "documentation"
-    },
-    {
       "path": "LICENSES/Inter-OFL.txt",
       "sha256": "67c5d5206b96f8340b95fabd02ae60701e0b20ce2594d976216f1065e5aa3822",
       "kind": "license"
@@ -128,18 +123,13 @@
     },
     {
       "path": "README.md",
-      "sha256": "6decc2d8037b37a9bf84ad454d09e7bb027d11903c4be6ad35343077d4468bb6",
+      "sha256": "e69e5433781b19e9aac034d760138eb6221b32decbf340e74fec3b5bb5aceaf6",
       "kind": "documentation"
     },
     {
       "path": "cover.jpg",
       "sha256": "4a2a59fbaae1d081fa9ab6e3cae3e4c305c07658215c0528e50229ac731f14bc",
       "kind": "cover"
-    },
-    {
-      "path": "design/DESIGN-REASONING.md",
-      "sha256": "87b7ca071430361583f5100f1a4f21d59522a6383994bdc7e6a87ac2b2ea803f",
-      "kind": "documentation"
     },
     {
       "path": "design/scene.mjs",
@@ -180,6 +170,11 @@
       "path": "tests/recipe.test.mjs",
       "sha256": "3ba0d8ed89a49242453793fc95453f1863270339567bd94dd074df4ee2a7af5f",
       "kind": "source"
+    },
+    {
+      "path": "design.md",
+      "sha256": "b9b1228e3cc3b0ab4250ee88bc389c77a41a19da5add6a768138810213a28629",
+      "kind": "documentation"
     }
   ],
   "resources": [
@@ -350,13 +345,11 @@
     }
   },
   "design": {
-    "decisionCard": "DESIGN-RETENTION.md",
+    "decisionCard": "design.md",
     "nonAssetNote": "Night uses no public family. Docs uses material only for base surface; code runs and window audits are case-local recipes, not new families.",
     "ruleRefs": [],
     "ruleStatus": "Case time-domain audit / explicit code-line drawing recipe, not registered shared family.",
-    "sourceAnalysis": [
-      "design/DESIGN-REASONING.md"
-    ],
+    "sourceAnalysis": [],
     "assetUsage": []
   },
   "transfer": {

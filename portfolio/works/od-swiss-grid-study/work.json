@@ -80,11 +80,6 @@
       "kind": "documentation"
     },
     {
-      "path": "DESIGN-RETENTION.md",
-      "sha256": "f7fc9e8dbdf1b873cb0bed0498498a16c50f9df89a9e6a5808be5c9d13ede9f6",
-      "kind": "documentation"
-    },
-    {
       "path": "FONT-PROVENANCE.md",
       "sha256": "66186e6efdc880eaec6bcd9105a0b84ecb99dee2611de146c38086da1b285a47",
       "kind": "documentation"
@@ -101,7 +96,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "6f7e48132614e864616cfe98a314346b1d168f797ee44158cda23a7e28ea0011",
+      "sha256": "15dc1256a454d6bbfde28bf1ef66379798cf5ab8875fbe99bca777be6061a356",
       "kind": "documentation"
     },
     {
@@ -203,6 +198,11 @@
       "path": "test.cjs",
       "sha256": "9c98d8f45699bad3ead77940876e1133b9a78adac9f82fefbe5438414eb9aa53",
       "kind": "source"
+    },
+    {
+      "path": "design.md",
+      "sha256": "0c5768441b1c0a09180ab06f59cb0e1165939743b8d2da3f1da01ea9312012fc",
+      "kind": "documentation"
     }
   ],
   "resources": [
@@ -277,7 +277,7 @@
     }
   },
   "design": {
-    "decisionCard": "DESIGN-RETENTION.md",
+    "decisionCard": "design.md",
     "nonAssetNote": "No MotionStudio public family dependency claimed. Helper functions are not separately counted as recipes.",
     "ruleRefs": [],
     "ruleStatus": "One case-local bounded composition recipe; zero new public families. See recipe-manifest.json.",

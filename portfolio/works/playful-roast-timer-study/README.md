@@ -14,4 +14,6 @@
 真实使用 design.material-surfaces.v1，仅用于三设备底层。标准 engine/design-elements/material-surfaces.mjs 须 SHA256 70bf1fcfa89bfbf911f5cf735b1b08e8ae7f360e43bd43a8c831efef579696eb；运行时强校验，禁止静默换版。圆盘与温度管仍为案例代码。
 
 ## 验证范围
-全图与局部独立视觉审查；静态 Native 单帧复现。未测试浏览器、交互、视频。剩余纸纹/字体栅格或2D高光差异见 DESIGN-REASONING.md。烘焙例文参数非推荐工艺或实测。
+全图与局部独立视觉审查；静态 Native 单帧复现。未测试浏览器、交互、视频。剩余纸纹/字体栅格或2D高光差异见 design.md。烘焙例文参数非推荐工艺或实测。
+
+设计意图、场景结构、复用与验证边界见[design.md](design.md)。

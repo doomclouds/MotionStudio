@@ -9,3 +9,5 @@
 运行时再次验原源和派生SHA，缺失/错误即失败。无公共UI族依赖。
 
 原帧PNG SHA `b3c693eb6448da6175d8d4dd82e5b996ef7306995e6cbd0b3644a1ad338e533b`。公开树唯一图像cover.jpg来自自渲染，不含原图/字体/报告/验证输出。来源、许可见CREDITS与LICENSES；语义范围及残差见设计卡。未浏览器、响应式、交互、Motion、事实账本验证。
+
+设计意图、场景结构、复用与验证边界见[design.md](design.md)。

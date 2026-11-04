@@ -5,6 +5,8 @@ Install the exact external Canvas dependency from locks/npm-package-lock.json in
 
 Run `node render.cjs` then `node test.cjs`. Outputs and tests never need original screenshots. `node test-resources.cjs` checks missing/tampered inputs and package-local output rejection.
 
-See DESIGN-RETENTION.md for the actual composable helpers and limitations. Helpers are local reusable code, 0 new registered UI families. Owner approval covers static work; motion/interaction not checked. Orbital caller current path is unsupported; globe replaces it. Caller must use default alpha/filter/shadow/compositing, then beginPath after the helper.
+See design.md for the actual composable helpers and limitations. Helpers are local reusable code, 0 new registered UI families. Owner approval covers static work; motion/interaction not checked. Orbital caller current path is unsupported; globe replaces it. Caller must use default alpha/filter/shadow/compositing, then beginPath after the helper.
 
 Resource boundary: all font/runtime/output directories must resolve outside the entire repository. Every font call rechecks every regular non-symlink file and SHA; no cross-directory cache. Outputs reject symlinks and use exclusive create (wx), never overwrite. Use a fresh external output directory for each full render/test pass. Caller must not concurrently mutate resource directories.
+
+Design decisions, implementation links and limitations: [design.md](design.md).

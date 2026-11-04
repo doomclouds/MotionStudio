@@ -74,11 +74,6 @@
       "kind": "documentation"
     },
     {
-      "path": "DESIGN-RETENTION.md",
-      "sha256": "3eec024cd109b59f3f32c565553596eba7aec346566f87f5a70116991c954a9f",
-      "kind": "documentation"
-    },
-    {
       "path": "LICENSES/Archivo-OFL.txt",
       "sha256": "108b4e57c9c796d3d38d0428ca7ee39de47ad93187302718d9b2d8864b9b716b",
       "kind": "license"
@@ -110,18 +105,13 @@
     },
     {
       "path": "README.md",
-      "sha256": "7dcb7333e7f270c5ddde5adc6c6c597ed7cdc84abad0fffb12f40d4e5154842e",
+      "sha256": "171081a9e7e72a34a68902a71f38b2cbfae9a85f8707a4278bfee4c62d4eba4c",
       "kind": "documentation"
     },
     {
       "path": "cover.jpg",
       "sha256": "e75311525d8cf18afce8c89872dd8677e72ca198e0bbfc90d0894cb9921e3dac",
       "kind": "cover"
-    },
-    {
-      "path": "design/DESIGN-REASONING.md",
-      "sha256": "252b95472605e54e9b486e1a3ab3fbfea95d66eebfd7d635bea32b1970051fc0",
-      "kind": "documentation"
     },
     {
       "path": "design/narrative-metrics.mjs",
@@ -162,6 +152,11 @@
       "path": "tests/recipe.test.mjs",
       "sha256": "86d9ef4ebb9cc0b3cc3324b6425f42b1e1cc35b721e99a615700af9c5b5996dc",
       "kind": "source"
+    },
+    {
+      "path": "design.md",
+      "sha256": "5288676fdce2f3cb4c869197848c9a38b312883304e96d1dfdee6fd25abe607d",
+      "kind": "documentation"
     }
   ],
   "resources": [
@@ -428,13 +423,11 @@
     }
   },
   "design": {
-    "decisionCard": "DESIGN-RETENTION.md",
+    "decisionCard": "design.md",
     "nonAssetNote": "No public family fits without altering source; case-local metric and half-unit validations are not drawing families.",
     "ruleRefs": [],
     "ruleStatus": "Case arithmetic/semantic preflight, not registered shared family.",
-    "sourceAnalysis": [
-      "design/DESIGN-REASONING.md"
-    ],
+    "sourceAnalysis": [],
     "assetUsage": []
   },
   "transfer": {

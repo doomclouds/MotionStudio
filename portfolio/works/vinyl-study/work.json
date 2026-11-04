@@ -70,7 +70,7 @@
   "files": [
     {
       "path": "README.md",
-      "sha256": "6e5056e1dba4a95274f8a3a44abde6a6fdbd3c8e3fe0bbfa61609fc48f00f653",
+      "sha256": "57a358f42efcb69bb70daa0c9ecbf3a8c9b9ca7d235756b7c274954161cf6704",
       "kind": "documentation"
     },
     {
@@ -144,8 +144,8 @@
       "kind": "config"
     },
     {
-      "path": "DESIGN-RETENTION.md",
-      "sha256": "df2165e1ae5484b62ebdbe50677259a877d3732a662cd12f27aaddadcefe5a5e",
+      "path": "design.md",
+      "sha256": "45c5f9900b4b13e6d507a3f29590fca05f0cacb5c296ce924cdd29d207eb6133",
       "kind": "documentation"
     }
   ],
@@ -301,7 +301,7 @@
     }
   },
   "design": {
-    "decisionCard": "DESIGN-RETENTION.md",
+    "decisionCard": "design.md",
     "nonAssetNote": "Shared drawing helpers and case-local scene code are not public design families; no runtime reuse is inferred from visual similarity.",
     "ruleRefs": [],
     "ruleStatus": "No separate formal rule card claimed; use decisionCard and sourceAnalysis.",

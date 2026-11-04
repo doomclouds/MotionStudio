@@ -18,9 +18,9 @@
 |---|---|
 | 像素闯关怎样让阻碍造成动作后果，并接入整片？ | [Favorite52源码导航](../../../portfolio/works/favorite52/README.md#按表达问题读源码像素闯关与跨段接力)：先读10段调度，再看关卡失败/通过、角色与镜头的状态关系；逐帧复刻不是通用角色引擎，外置完整混音没有独立合成配方。 |
 | 日历产品怎样用同一对象的变化兑现承诺？ | [Tessel源码导航](../../../portfolio/works/tessel/README.md#按表达问题读源码日历重排怎样兑现产品承诺)：按事件ID连接输入、日程重排与功能后果，区分全片/局部时间；源码cue不证明声音贡献或新任务迁移有效。 |
-| 能否用对象自身结构讲主题，而不是添加装饰？ | [汉字解构](../../../portfolio/works/hanzi-poster-study/DESIGN-RETENTION.md)：完整对象与局部强调保持对应；部件必须有内容意义，不套用固定笔画数。 |
-| 品牌要有玩味，又不能让关键读数失序？ | [今天的浪](../../../portfolio/works/wave-weather-study/DESIGN-RETENTION.md)：表现文字与纸签可错位，数值和信息行仍保持阅读秩序；非物理波浪或真实预报。 |
-| 配色怎样成为内容线索，而非随意换肤？ | [节气行](../../../portfolio/works/solar-terms-study/DESIGN-RETENTION.md)：当季颜色连接标题、路线与选中项；顺序、身份和选中强调不冒充数量编码。 |
+| 能否用对象自身结构讲主题，而不是添加装饰？ | [汉字解构](../../../portfolio/works/hanzi-poster-study/design.md)：完整对象与局部强调保持对应；部件必须有内容意义，不套用固定笔画数。 |
+| 品牌要有玩味，又不能让关键读数失序？ | [今天的浪](../../../portfolio/works/wave-weather-study/design.md)：表现文字与纸签可错位，数值和信息行仍保持阅读秩序；非物理波浪或真实预报。 |
+| 配色怎样成为内容线索，而非随意换肤？ | [节气行](../../../portfolio/works/solar-terms-study/design.md)：当季颜色连接标题、路线与选中项；顺序、身份和选中强调不冒充数量编码。 |
 
 ## 方法：看适用与反例
 

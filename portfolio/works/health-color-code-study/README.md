@@ -14,4 +14,6 @@
 真实使用 design.material-surfaces.v1，用于两设备底层与右大浮卡三处。标准 engine/design-elements/material-surfaces.mjs 须 SHA256 70bf1fcfa89bfbf911f5cf735b1b08e8ae7f360e43bd43a8c831efef579696eb；运行时强校验，禁止静默换版。圆环、分期柱列及微型示意折线仍为案例代码。
 
 ## 验证范围
-全图与局部独立视觉审查；静态 Native 单帧复现。未测试浏览器、交互、视频。剩余阴影、细字与曲线栅格差异见 DESIGN-REASONING.md。健康数据与HRV曲线为源UI示意，非医学结论；源三环弧长与标签比例存在不一致，具体量化和已修字体别名缺陷在设计分析中披露。
+全图与局部独立视觉审查；静态 Native 单帧复现。未测试浏览器、交互、视频。剩余阴影、细字与曲线栅格差异见 design.md。健康数据与HRV曲线为源UI示意，非医学结论；源三环弧长与标签比例存在不一致，具体量化和已修字体别名缺陷在设计分析中披露。
+
+设计意图、场景结构、复用与验证边界见[design.md](design.md)。

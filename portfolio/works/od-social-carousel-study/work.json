@@ -77,11 +77,6 @@
       "kind": "documentation"
     },
     {
-      "path": "DESIGN-RETENTION.md",
-      "sha256": "94010c64dd60b2fa3e27c08ea1f11b31aabf060982378967bcd24e546d316c6f",
-      "kind": "documentation"
-    },
-    {
       "path": "LICENSES/OpenDesign-APACHE-2.txt",
       "sha256": "9d95806a26532623360eb84bb17d298f394b55ef73fb4c0796d99b4319b2b0da",
       "kind": "license"
@@ -98,7 +93,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "17d99b6f5274dd56f72de1d9624df5d9c751bd3320a4dc34022ba9e3d7b3918f",
+      "sha256": "c2945cf84756059df05fc86822de29986ace135d4ed01062719fdd0d97ec01a7",
       "kind": "documentation"
     },
     {
@@ -155,6 +150,11 @@
       "path": "test.mjs",
       "sha256": "0437f5f12407c9525d0402ef5a850124fae79488d5b9a5932e330c34e68755ba",
       "kind": "source"
+    },
+    {
+      "path": "design.md",
+      "sha256": "909a72a7e4e09f52068d1fb5c00df28a98b78817b5f8fb1989c7fcc1f5a33abe",
+      "kind": "documentation"
     }
   ],
   "resources": [
@@ -213,7 +213,7 @@
     }
   },
   "design": {
-    "decisionCard": "DESIGN-RETENTION.md",
+    "decisionCard": "design.md",
     "nonAssetNote": "Actual case-local helper calls retained; no published family runtime import. Cross-case adapters remain separate candidates, not original scene replacements.",
     "ruleRefs": [],
     "ruleStatus": "Case decision card only; no new formal rule index entry.",

@@ -4,7 +4,7 @@
 
 ![Native重建预览](cover.jpg)
 
-保留完整 `design/scene.mjs` 与 `design/helpers.mjs`、[设计逻辑](DESIGN-REASONING.md)、唯一代码重渲染封面及MIT/OFL条款。不是简化技术夹具，不以截图作为背景。
+保留完整 `design/scene.mjs` 与 `design/helpers.mjs`、[设计逻辑](design.md)、唯一代码重渲染封面及MIT/OFL条款。不是简化技术夹具，不以截图作为背景。
 
 ## 准备与渲染
 
@@ -22,3 +22,5 @@ HANZI_FONT_DIR=/absolute/external-fonts node ENGINE/scripts/render.mjs --scene A
 完整静帧、关键局部和说明已审看，用户决定保留。完整工程重渲染与已审画面一致；视觉仍标记PARTIAL而非像素无差。大字忠实采用原作五笔几何与移位，不是独创字体。正文和展讯按实图加重半档，仍有局部字体栅格化/字距差异。 仅静态Native；未浏览器、交互、响应式、音频或视频验证。
 
 准备脚本会校验原始字体SHA，拒绝错版本。修改文案时须同步font-charset.txt加入所需字符后重新准备字体；本例不是自动多语言字体回退系统。
+
+设计意图、场景结构、复用与验证边界见[design.md](design.md)。

@@ -4,7 +4,7 @@ Complete fixed-frame Native Canvas study. [Pinned original](https://github.com/a
 
 ![Code-rendered preview](cover.jpg)
 
-Complete editable source: `design/scene.mjs`. [Design reasoning](DESIGN-REASONING.md) explains content, brand, composition, type, color and remaining limits. Only this rebuilt cover is bundled; no source screenshot, bitmap font or generated artwork.
+Complete editable source: `design/scene.mjs`. [Design reasoning](design.md) explains content, brand, composition, type, color and remaining limits. Only this rebuilt cover is bundled; no source screenshot, bitmap font or generated artwork.
 
 ## Restore and render
 
@@ -24,3 +24,5 @@ All fonts and generated files remain outside Git. Missing/wrong fonts fail close
 ## Evidence and limits
 
 Full frame and critical details were visually reviewed; user elected to retain the work. Complete entrypoints reproduced the retained Native frame. Visual status remains PARTIAL: JPEG/antialiasing and small text residuals remain. Static only: no browser, responsive, interaction, audio or Motion validation. Source claims and interface values are examples, not verified facts.
+
+设计意图、场景结构、复用与验证边界见[design.md](design.md)。

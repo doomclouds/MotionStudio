@@ -13,4 +13,6 @@ Every font use rechecks all locked fonts. Runtime/font/output paths resolve outs
 ## Scope and count
 One case-local recipe, zero new registered MotionStudio families. Its helper functions are not separately counted as bricks. Source-specific brand/sample copy stays in the faithful study only and conveys no endorsement or verified statistic. Synthetic changed-content compositions are transfer tests, not new accepted works.
 
-No browser, responsive behavior, interaction, animation, video/audio or accessibility certification. Original comparison imagery and review reports stay in the private archive. The only JPEG here is a proposed cover made from our own exact rerender, not the upstream preview; it is not yet added to the global public allowlist in this isolated overlay.
+No browser, responsive behavior, interaction, animation, video/audio or accessibility certification. Original comparison imagery and review reports stay in the private archive. The only JPEG here is the cover made from the recorded Native rerender, not the upstream preview. Its current identity and publication scope are recorded in work.json; this documentation change did not rerender it.
+
+Design decisions, implementation links and limitations: [design.md](design.md).

@@ -20,3 +20,5 @@ This complete scene was rendered against supplied licensed fonts and visually co
 ![Native recreation preview](cover.jpg)
 
 此封面由完整代码重渲染帧转为JPEG，只用于项目内预览；不是上游截图。
+
+设计意图、实现入口与验证边界见[design.md](design.md)。

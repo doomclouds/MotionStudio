@@ -5,7 +5,7 @@
 ## 保留的是什么
 
 - design/scene.mjs：完整构图、几何、文字、颜色和材质，可直接编辑，非简化夹具。
-- DESIGN-REASONING.md：内容意图、品牌语言、构图、颜色与迁移边界。
+- design.md：内容意图、品牌语言、构图、颜色与迁移边界。
 - cover.jpg：当前已审版本的唯一预览，来自代码重渲染。
 - font-inputs.json与LICENSES：外置字体身份、来源和条款。
 
@@ -27,3 +27,5 @@ HARDWARE_FONT_DIR=/absolute/external-fonts node ENGINE/scripts/render.mjs --scen
 ![重渲染预览](cover.jpg)
 
 完整署名与权利边界见[CREDITS.md](CREDITS.md)。
+
+设计意图、场景结构、复用与验证边界见[design.md](design.md)。

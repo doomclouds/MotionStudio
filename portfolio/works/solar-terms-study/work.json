@@ -68,22 +68,12 @@
   "files": [
     {
       "path": "ASSET-USAGE.md",
-      "sha256": "f41cfb63282984fd81a67bbc5c187cdafee094d1cbf2f7218063535f19e01641",
+      "sha256": "0e09d74c089abba1453e29a94d78270470f3fb96aea751e0b1f894556242ba1f",
       "kind": "documentation"
     },
     {
       "path": "CREDITS.md",
       "sha256": "ead8aceb58c57013cd02e6d0528a79ffa5615e0afbd8eb4e4c82d37996cf8fff",
-      "kind": "documentation"
-    },
-    {
-      "path": "DESIGN-REASONING.md",
-      "sha256": "93438324496e083953ded403f30c5e7f408eb70cbdc593d11a75bfcdf9b07030",
-      "kind": "documentation"
-    },
-    {
-      "path": "DESIGN-RETENTION.md",
-      "sha256": "3ae848c2cbdb492b8f4a98e0cbab071e0dede96eda72cc816bdbbc0799319d82",
       "kind": "documentation"
     },
     {
@@ -103,7 +93,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "acc27baa23434117d1c2fa6304ef6fbdfc1705197a93ed9421837fc872026efc",
+      "sha256": "9cfdf9411d4f5af73641640ca83aa454dfbcb00e953c563d74d03453271d0bb2",
       "kind": "documentation"
     },
     {
@@ -160,6 +150,11 @@
       "path": "ui-dependencies.json",
       "sha256": "64674fa4f13ab875ee1a967ebb95447da5762464cbd7396fbc59db84ed9aafd5",
       "kind": "config"
+    },
+    {
+      "path": "design.md",
+      "sha256": "1572500114d24789794538372007c511a2369f1b78e813a42cc45302d9029870",
+      "kind": "documentation"
     }
   ],
   "resources": [
@@ -250,13 +245,11 @@
     }
   },
   "design": {
-    "decisionCard": "DESIGN-RETENTION.md",
+    "decisionCard": "design.md",
     "nonAssetNote": "Case-specific geometry, helpers and seasonal-strip are not registered public families. No unsupported 14-family migration claim.",
     "ruleRefs": [],
     "ruleStatus": "Case decision card and local recipe; no new registered public family.",
-    "sourceAnalysis": [
-      "DESIGN-REASONING.md"
-    ],
+    "sourceAnalysis": [],
     "assetUsage": [
       {
         "callToken": "surface",

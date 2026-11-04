@@ -71,11 +71,6 @@
       "kind": "documentation"
     },
     {
-      "path": "DESIGN-RETENTION.md",
-      "sha256": "d3b01608aa3a14b046c2cc0002121e21af79d80649895c122db764825359d8b0",
-      "kind": "documentation"
-    },
-    {
       "path": "LICENSES/Jost-OFL.txt",
       "sha256": "1af3438a4d5f0ed2bdbc5751a5a67ebf6d537334161184b7fbb68503ef0ea0c5",
       "kind": "license"
@@ -92,18 +87,13 @@
     },
     {
       "path": "README.md",
-      "sha256": "be21a8b042416edca5547895c8d547f509a2ff06124eb4c95f1826d4bc245f2a",
+      "sha256": "11026e5caff1b367e3c238493a8afffe5c5da4022085eeeec4d362bcb7b17841",
       "kind": "documentation"
     },
     {
       "path": "cover.jpg",
       "sha256": "17b9b7282aafd6d089050b8dd1c303968579b28075bcb34aa11af65a18e40412",
       "kind": "cover"
-    },
-    {
-      "path": "design/DESIGN-REASONING.md",
-      "sha256": "d6a9d668f723c8435310bcd44564c9192275d0b5443b499fac84dcfc368637f7",
-      "kind": "documentation"
     },
     {
       "path": "design/scene.mjs",
@@ -139,6 +129,11 @@
       "path": "tests/recipe.test.mjs",
       "sha256": "232b2f32aba640ddfb4a02b6fbc606a06b0b248ba332b153e3097b83db6b1f5f",
       "kind": "source"
+    },
+    {
+      "path": "design.md",
+      "sha256": "e67099a6f328c3f5242c2434467b1a1e017242fa36f2bed499981001d1881492",
+      "kind": "documentation"
     }
   ],
   "resources": [
@@ -293,13 +288,11 @@
     }
   },
   "design": {
-    "decisionCard": "DESIGN-RETENTION.md",
+    "decisionCard": "design.md",
     "nonAssetNote": "No public family fits without altering source; case-local metric and half-unit validations are not drawing families.",
     "ruleRefs": [],
     "ruleStatus": "Case arithmetic/semantic preflight, not registered shared family.",
-    "sourceAnalysis": [
-      "design/DESIGN-REASONING.md"
-    ],
+    "sourceAnalysis": [],
     "assetUsage": []
   },
   "transfer": {
