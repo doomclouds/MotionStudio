@@ -86,3 +86,5 @@ node engine/motion-elements/scripts/query-catalog.mjs show --id fragment.fixed-t
 技术、关键帧、常速观看、实际听审、同步、用户接受和跨场景迁移分别记录。参数、颜色、方向、快慢变体及helper不增加机制数量；公开知识链接只能指向已存在且获准公开的资料，不伪造经验或泄露私人回执。
 
 代码适用 [LICENSE](LICENSE)；第三方范围见仓库 [THIRD_PARTY_NOTICES](../../THIRD_PARTY_NOTICES.md) 和 [SOURCE-SCOPE](../../SOURCE-SCOPE.md)。代码许可不自动覆盖字体、图片、声音或私有影片；对应官方参考与许可取舍保留在专项docs，历史来源资料在 [history](docs/history/README.md)。
+
+- [覆盖率门控字符选择](lib/support/coverage-glyph/README.md)：未注册 direct-import support candidate，共置合同、设计、双内容示例和测试；不是新增正式族或视觉验收。
