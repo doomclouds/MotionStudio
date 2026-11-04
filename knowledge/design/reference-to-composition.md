@@ -155,3 +155,5 @@ UI 导演先看整页与任务，再以对照定位局部，保留状态/文字/
 - [物件与图案：身份、数量、循环和完整读窗](studies/objects-and-patterns.md)
 
 - [笔迹与状态：激活依据、时间纹理和纸面坐标](studies/sketch-and-state.md)
+
+- [门、刻度与灯光：转场源图、字形拓扑与可见计数](studies/doors-and-counted-light.md)
