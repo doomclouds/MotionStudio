@@ -2,10 +2,19 @@
 import base64, io, json, tempfile, unittest
 from pathlib import Path
 from unittest.mock import patch
+from datetime import datetime, timedelta
 import audiovisual_review as av
 
 class AVTests(unittest.TestCase):
     def setUp(self):
+        self.today = av.a.PRICE_DATE
+        owner = self
+        class FixtureDateTime(datetime):
+            @classmethod
+            def now(cls, tz=None):
+                return cls.combine(owner.today, cls.min.time(), tzinfo=av.a.timezone.utc)
+        clock = patch.object(av.a, 'datetime', FixtureDateTime)
+        clock.start(); self.addCleanup(clock.stop)
         self.tmp=tempfile.TemporaryDirectory();self.root=Path(self.tmp.name)
         self.manifest=self.root/'manifest.json'
         self.data={'movie':{'sha256':'a'*64},'audio':{'duration_s':25}}
@@ -15,7 +24,35 @@ class AVTests(unittest.TestCase):
     def send(self,*args,**kwargs):
         return {'summary':'synthetic','uncertainties':['no real review'],'observations':[]},{'prompt_tokens':100,'completion_tokens':100},{'request_id':'mock-id','model':av.a.MODEL,'response_text':'synthetic'}
     def run_call(self,**kw):
-        args=dict(manifest_path=self.manifest,session=self.session,key='synthetic-secret',consent=True,send=self.send);args.update(kw);return av.call(**args)
+        args=dict(manifest_path=self.manifest,session=self.session,key='synthetic-secret',consent=True,send=self.send,price_confirmed=self.today.isoformat());args.update(kw);return av.call(**args)
+    def test_current_price_enforced_in_api_before_payload(self):
+        for age in (-1, 8):
+            self.today = av.a.PRICE_DATE + timedelta(days=age)
+            with self.assertRaisesRegex(av.a.ReviewError, 'Reverify official'):
+                self.run_call()
+        self.assertFalse(self.session.exists())
+    def test_missing_price_ack_rejected(self):
+        with self.assertRaises(av.a.ReviewError): self.run_call(price_confirmed=None)
+    def test_total_budget_not_reset_by_second_call(self):
+        self.run_call()
+        self.data['movie']['sha256']='b'*64;self.manifest.write_text(json.dumps(self.data))
+        with self.assertRaisesRegex(av.a.ReviewError, 'Total session'):
+            self.run_call(acknowledge_previous=True,budget=av.RESERVATION)
+    def test_window_source_time_mapping_and_overlap_rejection(self):
+        self.data['source_window']={'start_s':30, 'end_s':50}
+        self.data['audio']['duration_s']=20;self.manifest.write_text(json.dumps(self.data))
+        def observed(*args,**kw):
+            r,u,m=self.send();r['observations']=[dict(start_s=1,end_s=2,category='other',evidence='synthetic',severity='info',suggestion='verify')]
+            return r,u,m
+        report=self.run_call(send=observed)
+        self.assertEqual(report['coverage_kind'],'selected_audio_window_plus_sparse_frames')
+        self.assertEqual(report['source_observations'][0]['start_s'],31)
+        self.assertEqual(report['review']['observations'][0]['start_s'],1)
+        self.data['source_window']={'start_s':49,'end_s':69};self.manifest.write_text(json.dumps(self.data))
+        with self.assertRaisesRegex(av.a.ReviewError,'overlapping'):
+            self.run_call(acknowledge_previous=True)
+        self.data['source_window']={'start_s':50,'end_s':70};self.manifest.write_text(json.dumps(self.data))
+        self.assertEqual(self.run_call(acknowledge_previous=True)['status'],'model_assisted_review_completed')
     def test_no_consent_no_call(self):
         with self.assertRaises(av.a.ReviewError):self.run_call(consent=False)
         self.assertFalse(self.session.exists())
@@ -186,5 +223,57 @@ class FixedConfigTests(unittest.TestCase):
         target=self.root/'private';target.write_text('synthetic');target.chmod(0o600)
         (self.root/'.env').symlink_to(target)
         with self.assertRaises(av.a.ReviewError):av.a.load_project_key(self.script)
+
+class WindowMediaTests(unittest.TestCase):
+    def setUp(self):
+        self.tmp=tempfile.TemporaryDirectory();self.root=Path(self.tmp.name)
+        self.movie=self.root/'long.mkv'
+        # Synthetic encoded source; compare window against its independently decoded PCM.
+        av.command(['ffmpeg','-v','error','-f','lavfi','-i','testsrc2=s=160x90:r=10:d=30',
+                    '-f','lavfi','-i','sine=frequency=440:sample_rate=48000:duration=30',
+                    '-c:v','libx264','-pix_fmt','yuv420p','-c:a','aac',str(self.root/'source.mp4')])
+        self.movie=self.root/'source.mp4'
+    def tearDown(self): self.tmp.cleanup()
+    def test_window_preparation_payload_and_sample_identity(self):
+        import wave
+        manifest=av.prepare(self.movie,av.sha(self.movie),self.root/'window',10,2)
+        self.assertEqual(manifest['schema_version'],3)
+        self.assertEqual(manifest['audio']['duration_s'],2)
+        self.assertEqual([f['source_time_s'] for f in manifest['frames']],[10,11])
+        full=self.root/'full.wav'
+        av.command(['ffmpeg','-v','error','-i',str(self.movie),'-vn','-c:a','pcm_s16le','-ar','48000',str(full)])
+        with wave.open(str(full)) as original, wave.open(manifest['audio']['path']) as segment:
+            original.setpos(10*48000)
+            self.assertEqual(segment.readframes(2*48000),original.readframes(2*48000))
+        body=av.payload(manifest)
+        text=body['messages'][1]['content'][0]['text']
+        self.assertIn('Other intervals are unreviewed',text)
+        self.assertNotIn('Audio spans the complete film',text)
+        # Prepared PCM can also use the bounded audio-only dry run, with source
+        # mapping kept in its parent manifest (not falsely in its clip report).
+        report=av.a.execute([manifest['audio']['path']],.10,self.root/'output')
+        self.assertEqual(report['mode'],'dry-run')
+        manifest['source_window']['start_sample'] += 1
+        with self.assertRaises(av.a.ReviewError): av.payload(manifest)
+    def test_long_film_requires_explicit_bounded_window(self):
+        with self.assertRaises(av.a.ReviewError): av.prepare(self.movie,av.sha(self.movie),self.root/'full')
+        for start,duration in [(None,2),(2,None),(-1,2),(0,21),(29,2),(float('nan'),1),(0,float('inf')),(.000001,1)]:
+            with self.subTest(start=start,duration=duration),self.assertRaises(av.a.ReviewError):
+                av.prepare(self.movie,av.sha(self.movie),self.root/'bad',start,duration)
+    def test_float_sample_boundary_regenerates_identically(self):
+        manifest=av.prepare(self.movie,av.sha(self.movie),self.root/'window',1.0000625,1)
+        self.assertEqual(len(manifest['frames']),1)
+        av.payload(manifest)
+    def test_maximum_window_float_roundtrip(self):
+        manifest=av.prepare(self.movie,av.sha(self.movie),self.root/'window',1.0000625,20)
+        av.payload(manifest)
+        self.assertEqual(len(manifest['frames']),20)
+    def test_window_without_in_range_frame_refused(self):
+        with self.assertRaises(av.a.ReviewError):
+            av.prepare(self.movie,av.sha(self.movie),self.root/'window',1.01,.01)
+    def test_window_frame_time_lie_rejected(self):
+        manifest=av.prepare(self.movie,av.sha(self.movie),self.root/'window',10,1)
+        manifest['frames'][0]['source_time_s']=0
+        with self.assertRaises(av.a.ReviewError):av.payload(manifest)
 
 if __name__=='__main__':unittest.main()

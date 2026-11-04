@@ -73,6 +73,8 @@ python3 scripts/audiovisual_review.py prepare /local/complete.mp4 \
   --expected-sha256 ACTUAL_MOVIE_SHA256 --output /local/review/model-input
 ```
 
+长片可用同一prepare入口显式加`--start-s 20 --duration-s 20`准备最多20秒选段（源片最多300秒）；不加参数仍是原全轨短片模式。选段独立绑定原片hash、48kHz采样窗与源时间，schema v3在调用前重新派生核验。最多两次/同一会话、总预留不超过¥0.10，第二次另行确认；未选区间、跨窗连续性与全片听审仍未验，不另建会话绕过总预算。音频WAV也可给audio-only dry-run，但必须另外保留来源manifest。
+
 实际`call`必须遵循该版本`--help`与配置说明，单独确认上传范围、当前价格及预算；没有授权不执行。只在真正调用后保存原始回执，不能把prepare或配置完成写成模型已审查。原型的片长/轨道/输入上限由工具校验，超过能力不能裁去未审段后假称全长覆盖。模型回执需按上节核证，不直接转成视觉或声画`passed`。
 
 ## D. 声画：常速完整观看＋高精度事件复核

@@ -52,6 +52,12 @@ class AudioReviewTests(unittest.TestCase):
             r = a.execute([self.audio], .10, self.out, transport=lambda *x: self.fail('Network'))
         self.assertEqual(r['native_audio_review'], 'unverified')
         self.assertFalse(self.out.exists())
+    def test_dry_run_cli_does_not_load_private_configuration(self):
+        with patch.object(a, 'load_project_key', side_effect=AssertionError('Private config read')), \
+             patch.object(a.sys, 'argv', ['audio_review.py', '--audio', str(self.audio)]), \
+             patch('sys.stdout', new=io.StringIO()):
+            self.assertEqual(a.main(), 0)
+        self.assertEqual(os.environ['DASHSCOPE_API_KEY'], 'synthetic-test-secret')
     def test_success_is_reviewed_not_passed(self):
         r = self.run_live()
         self.assertEqual(r['native_audio_review'], 'reviewed')

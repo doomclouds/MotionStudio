@@ -70,12 +70,68 @@ Fixed Beijing endpoint: `https://cn-beijing.maas.qianwenaiapi.com/compatible-mod
 Standard platform proxy/TLS behavior is preserved, with no redirects, fallback
 endpoints, tools/search or automatic retries. Model: `qwen3.8-omni-flash`.
 
-Official sources checked 2026-10-28:
-- https://www.qianwenai.com/models/qwen3.8-omni-flash
-- https://help.aliyun.com/en/model-studio/qwen-omni
-- https://help.aliyun.com/en/model-studio/model-pricing
+Official pricing and API documentation checked 2026-11-04 (non-realtime model only):
+- https://help.aliyun.com/zh/model-studio/qwen3-8-omni-flash
+- https://help.aliyun.com/zh/model-studio/qwen-omni
+- https://help.aliyun.com/zh/model-studio/model-pricing
 
-Price snapshot: CNY0.8/million input, CNY2.7/million output. AV per-call reservation
+Price snapshot: Beijing/Chinese-mainland CNY0.8/million ordinary input,
+CNY0.1/million cache-hit input, CNY2.7/million text output. The cache price is NOT
+an audio-specific rate. Input audio uses 7 tokens/second (under one second counts
+as one); images use 32x32 patches with default 1280-token/image ceiling. The
+adapters use uncached prices for reservations and usage-cost upper estimates,
+never assume a cache hit, free allowance, or discount. Actual billing may be
+lower and must be reconciled. `reasoning_effort=none` disables thinking in the
+verified Chat Completions mode; no tools/search/audio generation are requested.
+Both core execution APIs enforce acknowledgment of today's price check and reject
+snapshots older than seven days or future-dated snapshots. Dry-run never opens
+private configuration; renewing a snapshot requires checking official sources,
+not simply changing its date to make the gate pass.
+
+AV per-call reservation
 is CNY0.0430592 (40,000 input +4,096 output); two calls reserve CNY0.0861184.
 This is **not a provider-side billing cap**. Confirm current pricing before live
 execution, reconcile usage, and stop if actual cost exceeds reservation.
+
+## Explicit selected windows from longer films
+
+Preparation remains local and does not read credentials. To inspect an explicitly
+chosen interval of a longer source (maximum 300 seconds), supply both flags:
+
+```sh
+python scripts/audiovisual_review.py prepare FILM.mp4 --expected-sha256 SHA256 --output PRIVATE_NEW_WINDOW_DIR --start-s 20 --duration-s 20
+```
+
+Each window is <=20 seconds, wholly inside both zero-origin source streams, and
+aligned to decoded 48 kHz sample boundaries. This is additive: omitting both flags
+retains the unchanged <=25.1-second full-track preparation, including AAC tails.
+Schema v3 binds the original movie hash/timing, exact decoded sample interval,
+local clip timestamps and source seek times. Before any call, it independently
+regenerates the window from that original movie and checks those fields, PCM and
+JPEG hashes. Cropped boundaries must never be evaluated as the original ending.
+Use another new directory for another explicitly chosen interval; there is no
+implicit whole-film splitting or automatic paid loop.
+
+The prepared `audio.wav` is also valid for the existing <=20-second audio-only
+pilot. Keep its input manifest alongside any audio-only report: standalone audio
+reports contain clip-relative time, not verified original-film coordinates.
+The AV report retains clip-relative model observations and adds separately mapped
+`source_observations`, `source_interval_s` and
+`coverage_kind=selected_audio_window_plus_sparse_frames`. These are approximate
+model timestamps, not frame-exact measurements. Unselected intervals and
+cross-window continuity remain unreviewed; selected windows are not full-film
+listening even when adjacent windows cover most of a film.
+
+Calls require authorization covering the original media, selected intervals,
+Aliyun Beijing transmission, purpose and budget. Existing session rules remain:
+maximum two requests; default/maximum total reservation CNY0.10; second call only
+after reviewing the first and explicit acknowledgment; no retries after uncertain
+billing. `--budget-cny` may lower the shared session ceiling. Disjoint windows of
+the same source may occupy the two slots; repeated or overlapping intervals are
+refused. Do not create new sessions to evade an approved total or request limit.
+Two windows reserve CNY0.0861184 in total. A greater coverage/budget plan requires
+new authorization and is not implemented as an automatic batch capability.
+
+Offline/synthetic tests exercise these gates and real FFmpeg sample derivation.
+They do not certify real provider availability, successful billing, model quality,
+human listening, stereo perception or continuous audiovisual synchronization.

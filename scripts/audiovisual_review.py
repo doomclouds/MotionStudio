@@ -20,7 +20,7 @@ evidence:string,severity:(info,concern,problem),suggestion:string. Times refer t
 Explicitly distinguish audible evidence from visual evidence and uncertain alignment in evidence.'''
 MAX_OUTPUT = 4096
 MAX_INPUT_RESERVATION = 40_000
-RESERVATION = (MAX_INPUT_RESERVATION * .8 + MAX_OUTPUT * 2.7) / 1_000_000
+RESERVATION = (MAX_INPUT_RESERVATION * a.INPUT_CNY_PER_MILLION + MAX_OUTPUT * a.OUTPUT_CNY_PER_MILLION) / 1_000_000
 
 
 def sha(path):
@@ -34,7 +34,7 @@ def command(args):
     return p.stdout
 
 
-def stream_timing(stream):
+def stream_timing(stream, max_duration=25.1):
     """Require explicit, consistent stream duration and its integer timebase."""
     try:
         ticks = stream['duration_ts']
@@ -43,14 +43,20 @@ def stream_timing(stream):
         if type(ticks) is not int or ticks <= 0 or base <= 0:
             raise ValueError('Invalid stream timebase')
         duration = float(ticks * base)
-        if not math.isfinite(declared) or not 0 < duration <= 25.1 or abs(declared-duration) > .000001:
+        if not math.isfinite(declared) or not 0 < duration <= max_duration or abs(declared-duration) > .000001:
             raise ValueError('Ambiguous stream duration')
     except (KeyError, TypeError, ValueError, ZeroDivisionError, OverflowError):
         raise a.ReviewError('Explicit consistent stream duration/timebase required; no duration inference') from None
     return {'duration_s':duration, 'duration_ts':ticks, 'time_base':str(base)}
 
 
-def prepare(movie, expected, output):
+def prepare(movie, expected, output, start_s=None, duration_s=None):
+    windowed = start_s is not None or duration_s is not None
+    if windowed and (type(start_s) not in (int, float) or type(duration_s) not in (int, float)
+                     or not math.isfinite(start_s) or not math.isfinite(duration_s)
+                     or start_s < 0 or not 0 < duration_s <= 20):
+        raise a.ReviewError("Explicit finite start and duration (0 < duration <=20s) required")
+    limit = 300 if windowed else 25.1
     movie = Path(movie).resolve(strict=True)
     if sha(movie) != expected:
         raise a.ReviewError('Movie hash mismatch')
@@ -61,47 +67,84 @@ def prepare(movie, expected, output):
         raise a.ReviewError('Explicit container duration required') from None
     audio = [s for s in info['streams'] if s.get('codec_type') == 'audio']
     video = [s for s in info['streams'] if s.get('codec_type') == 'video']
-    if not 0 < duration <= 25.1 or len(audio) != 1 or len(video) != 1:
-        raise a.ReviewError('Prototype requires one audio track and film <=25.1 seconds')
+    if not 0 < duration <= limit or len(audio) != 1 or len(video) != 1:
+        raise a.ReviewError('Requires one audio/video track and bounded duration (full <=25.1s; window source <=300s)')
     starts = [float(stream.get('start_time', 'nan')) for stream in (audio[0], video[0])]
     if not all(math.isfinite(t) and abs(t) <= 0.000001 for t in starts):
         raise a.ReviewError('Audio/video must share zero origin; nonzero stream offsets require explicit mapping')
-    timing = {name:stream_timing(stream) for name, stream in (('audio',audio[0]),('video',video[0]))}
+    timing = {name:stream_timing(stream, limit) for name, stream in (('audio',audio[0]),('video',video[0]))}
     if abs(duration-max(t['duration_s'] for t in timing.values())) > .025:
         raise a.ReviewError('Container and stream coverage mismatch')
+    if abs(timing['audio']['duration_s'] - duration) > .025:
+        raise a.ReviewError('Audio coverage mismatch')
+    if windowed:
+        # Exact sample boundaries at the fixed decoded 48 kHz timebase. No rounding
+        # that could silently extend the approved source interval.
+        start_sample, end_sample = round(start_s * 48000), round((start_s + duration_s) * 48000)
+        if abs(start_sample / 48000 - start_s) > 1e-9 or abs(end_sample / 48000 - start_s - duration_s) > 1e-9:
+            raise a.ReviewError('Window boundaries must align to 48 kHz sample times')
+        start_s, duration_s = start_sample / 48000, (end_sample - start_sample) / 48000
+        if end_sample / 48000 > min(t['duration_s'] for t in timing.values()):
+            raise a.ReviewError('Window outside independent audio/video stream coverage')
     out = Path(output).resolve()
     out.mkdir(parents=True, exist_ok=False)
     wav = out/'audio.wav'
     # Preserve stereo. Decode final encoded soundtrack; do not normalize/gain-shape.
     audio_cmd = ['ffmpeg','-v','error','-protocol_whitelist','file','-i',str(movie),'-map','0:a:0','-vn','-c:a','pcm_s16le','-ar','48000',str(wav)]
+    if windowed:
+        audio_cmd[-1:-1] = ['-af', f'aresample=48000,atrim=start_sample={start_sample}:end_sample={end_sample},asetpts=PTS-STARTPTS']
     command(audio_cmd)
     metadata, _ = a.clip(wav, max_duration=25.2)
-    if (metadata['channels'] not in (1,2)
+    if windowed and abs(metadata['duration_s'] - duration_s) > 1 / 48000:
+        raise a.ReviewError('Window decoded audio coverage mismatch')
+    if not windowed and (metadata['channels'] not in (1,2)
             or abs(metadata['duration_s']-timing['audio']['duration_s']) > .025
             or abs(metadata['duration_s']-duration) > .025):
         raise a.ReviewError('Audio coverage mismatch')
     frames = []
-    for second in range(min(25, math.ceil(timing['video']['duration_s']))):
+    frame_count = (end_sample - start_sample + 47999) // 48000 if windowed else math.ceil(timing['video']['duration_s'])
+    for second in range(min(25, frame_count)):
+        source_second = (start_sample + second * 48000) / 48000 if windowed else second
         frame = out/f'frame-{second:02d}.jpg'
-        command(['ffmpeg','-v','error','-protocol_whitelist','file','-ss',str(second),'-i',str(movie),'-frames:v','1','-vf','scale=640:360:force_original_aspect_ratio=decrease','-q:v','4',str(frame)])
+        if windowed:
+            # Decode on the source timeline and filter by PTS before selecting a
+            # frame. Seeking alone may return the next frame OUTSIDE consent.
+            vf = f'select=gte(t\\,{source_second})*lt(t\\,{end_sample / 48000}),scale=640:360:force_original_aspect_ratio=decrease'
+            command(['ffmpeg','-v','error','-protocol_whitelist','file','-i',str(movie),'-frames:v','1','-vf',vf,'-fps_mode','vfr','-q:v','4',str(frame)])
+        else:
+            command(['ffmpeg','-v','error','-protocol_whitelist','file','-ss',str(source_second),'-i',str(movie),'-frames:v','1','-vf','scale=640:360:force_original_aspect_ratio=decrease','-q:v','4',str(frame)])
+        if not frame.is_file():
+            raise a.ReviewError('No in-window video frame at requested sample; choose a wider interval')
         frames.append({'path':str(frame),'sha256':sha(frame),'time_s':second,'timestamp_kind':'requested_seek_time_not_frame_exact'})
+        if windowed: frames[-1]['source_time_s'] = source_second
     if sha(movie) != expected:
         raise a.ReviewError('Movie changed during preparation')
     result={'schema_version':2,'movie':{'path':str(movie),'sha256':expected,'duration_s':duration,'stream_timing':timing},
         'audio':dict(metadata,path=str(wav),coverage_s=[0,metadata['duration_s']],conversion_command=audio_cmd),
         'frames':frames,'limitations':['Sparse frames do not establish continuous playback or frame-accurate sync.'],
         'model':a.MODEL,'endpoint':a.BASE_URL,'prepared_utc':datetime.now(timezone.utc).isoformat()}
+    if windowed:
+        result.update(schema_version=3, source_window={'start_s':start_s, 'end_s':end_sample / 48000,
+            'start_sample':start_sample, 'end_sample':end_sample, 'sample_rate':48000},
+            coverage_kind='selected_audio_window_plus_sparse_frames')
+        result['limitations'].append('Only this selected interval is supplied. No whole-film, cross-window or ending approval.')
     (out/'input-manifest.json').write_text(json.dumps(result,indent=2))
     return result
 
 
 def verify_derivation(manifest):
-    if manifest.get('schema_version') != 2:
+    if manifest.get('schema_version') not in (2, 3):
         raise a.ReviewError('Reprepare legacy manifest to bind independent audio/video stream timing')
     # An editable manifest is not provenance. Independently regenerate from the
     # actual movie using fixed commands; never execute a manifest-supplied command.
     with tempfile.TemporaryDirectory(prefix='av-verify-') as temp:
-        regenerated = prepare(manifest['movie']['path'], manifest['movie']['sha256'], Path(temp)/'derived')
+        window = manifest.get('source_window') if manifest['schema_version'] == 3 else None
+        if manifest['schema_version'] == 3 and not isinstance(window, dict):
+            raise a.ReviewError('Missing source window')
+        kwargs = {'start_s':window['start_s'], 'duration_s':(window['end_sample'] - window['start_sample']) / 48000} if window else {}
+        regenerated = prepare(manifest['movie']['path'], manifest['movie']['sha256'], Path(temp)/'derived', **kwargs)
+        if manifest.get('source_window') != regenerated.get('source_window'):
+            raise a.ReviewError('Source window mapping mismatch')
         if manifest['movie']['duration_s'] != regenerated['movie']['duration_s']:
             raise a.ReviewError('Movie duration declaration mismatch')
         if manifest['movie'].get('stream_timing') != regenerated['movie']['stream_timing']:
@@ -112,8 +155,8 @@ def verify_derivation(manifest):
         if len(manifest['frames']) != len(regenerated['frames']):
             raise a.ReviewError('Sparse frame schedule incomplete')
         for supplied, verified in zip(manifest['frames'],regenerated['frames']):
-            for field in ('sha256','time_s','timestamp_kind'):
-                if supplied.get(field) != verified[field]:
+            for field in ('sha256','time_s','timestamp_kind','source_time_s'):
+                if supplied.get(field) != verified.get(field):
                     raise a.ReviewError('Frame is not the declared movie-time derivation')
     return True
 
@@ -125,12 +168,20 @@ def payload(manifest):
         raise a.ReviewError('Movie changed')
     verify_derivation(manifest)
     meta, raw = a.clip(manifest['audio']['path'],max_duration=25.2)
-    if meta['sha256'] != manifest['audio']['sha256'] or abs(meta['duration_s']-manifest['movie']['stream_timing']['audio']['duration_s']) > .025:
+    window = manifest.get('source_window')
+    expected_duration = window['end_s'] - window['start_s'] if window else manifest['movie']['stream_timing']['audio']['duration_s']
+    if meta['sha256'] != manifest['audio']['sha256'] or abs(meta['duration_s']-expected_duration) > .025:
         raise a.ReviewError('Audio changed or incomplete')
     frames=manifest['frames']
     if not 1 <= len(frames) <= 25:
         raise a.ReviewError('Frame count outside bounded budget')
     content=[{'type':'text','text':PROMPT + f"\nVideo stream extent: 0 to {manifest['movie']['stream_timing']['video']['duration_s']} s; audio stream extent: 0 to {manifest['movie']['stream_timing']['audio']['duration_s']} s; complete decoded audio extent: 0 to {meta['duration_s']} s. Extents can differ; do not infer visuals beyond the video stream."},{'type':'input_audio','input_audio':{'data':'data:;base64,'+base64.b64encode(raw).decode(),'format':'wav'}}]
+    if window:
+        content[0]['text'] = PROMPT.replace('actual full supplied soundtrack', 'actual supplied soundtrack window').replace(
+            'Audio spans the complete film starting at zero.',
+            'Only a selected window is supplied, with local time starting at zero.').replace(
+            "Times refer to this film's own zero.", 'Return times relative to the supplied window, never source-film time.')
+        content[0]['text'] += f"\nSource interval: [{window['start_s']}, {window['end_s']}) seconds; local audio extent: [0, {meta['duration_s']}]. Do not judge whole-film progression or ending from a cropped boundary. Other intervals are unreviewed."
     for frame in frames:
         path=Path(frame['path'])
         frame_bytes = path.read_bytes()
@@ -150,11 +201,14 @@ def payload(manifest):
     return body
 
 
-def call(manifest_path, session, key, consent=False, acknowledge_previous=False, send=a.request_review):
+def call(manifest_path, session, key, consent=False, acknowledge_previous=False, send=a.request_review, price_confirmed=None, budget=.10):
     if not consent:
         raise a.ReviewError('Specific external review authorization required')
     if not key or any(c.isspace() for c in key):
         raise a.ReviewError('Missing or invalid stdin credential')
+    a.require_current_pricing(price_confirmed)
+    if not math.isfinite(budget) or not RESERVATION <= budget <= .10:
+        raise a.ReviewError('Session budget must cover reservation and be <=0.10 CNY')
     manifest_bytes=Path(manifest_path).read_bytes()
     manifest_digest=hashlib.sha256(manifest_bytes).hexdigest()
     manifest=json.loads(manifest_bytes)
@@ -171,14 +225,22 @@ def call(manifest_path, session, key, consent=False, acknowledge_previous=False,
             raise a.ReviewError('Two-call limit or uncertain prior call: no retry')
         if starts and not acknowledge_previous:
             raise a.ReviewError('Inspect the first valid response before authorizing second call')
-        if any(x['movie_sha256']==manifest['movie']['sha256'] for x in starts):
-            raise a.ReviewError('Duplicate media review refused')
+        if sum(x['reservation_cny'] for x in starts) + RESERVATION > budget:
+            raise a.ReviewError('Total session reservation exceeds authorized budget')
+        window = manifest.get('source_window')
+        interval = [window['start_s'], window['end_s']] if window else [0, manifest['audio']['duration_s']]
+        for prior in starts:
+            if prior['movie_sha256'] == manifest['movie']['sha256']:
+                previous = prior.get('source_interval_s', [0, float('inf')])
+                if max(previous[0], interval[0]) < min(previous[1], interval[1]):
+                    raise a.ReviewError('Duplicate or overlapping media review refused')
         index=len(starts)+1
-        a.append_record(log,{'state':'reserved','index':index,'movie_sha256':manifest['movie']['sha256'],'reservation_cny':RESERVATION,'time_utc':datetime.now(timezone.utc).isoformat()})
+        a.append_record(log,{'state':'reserved','index':index,'movie_sha256':manifest['movie']['sha256'],'reservation_cny':RESERVATION,'source_interval_s':interval,'time_utc':datetime.now(timezone.utc).isoformat()})
         report={'schema_version':1,'status':'blocked','human_listening':False,'delivery_approved':False,
             'input_manifest_sha256':manifest_digest,'input':manifest,'model':a.MODEL,'endpoint':a.BASE_URL,
             'region':'cn-beijing','reservation_cny':RESERVATION,'started_utc':datetime.now(timezone.utc).isoformat(),
-            'coverage_kind':'full_audio_plus_sparse_frames','audiovisual_sync':'unverified','adjudication':'required'}
+            'price_snapshot':a.PRICE_DATE.isoformat(),'session_budget_cny':budget,
+            'source_interval_s':interval,'coverage_kind':'selected_audio_window_plus_sparse_frames' if window else 'full_audio_plus_sparse_frames','audiovisual_sync':'unverified','adjudication':'required'}
         try:
             review,usage,receipt=send(b'',a.BASE_URL,key,payload_override=body,include_metadata=True)
             safe_usage,cost=a.usage_cost(usage)
@@ -188,6 +250,7 @@ def call(manifest_path, session, key, consent=False, acknowledge_previous=False,
                 raise a.ReviewError('Unsafe provider echo suppressed')
             if cost>RESERVATION:
                 raise a.ReviewError('Reservation exceeded: halt further calls')
+            report['source_observations'] = [dict(row, start_s=row['start_s'] + interval[0], end_s=row['end_s'] + interval[0]) for row in review['observations']]
             report.update(status='model_assisted_review_completed',review=review,provider_receipt=receipt,usage=safe_usage,estimated_actual_cost_cny=cost)
             a.append_record(log,{'state':'reviewed','index':index,'request_id':receipt['request_id'],'estimated_actual_cost_cny':cost})
         except BaseException:
@@ -201,16 +264,15 @@ def call(manifest_path, session, key, consent=False, acknowledge_previous=False,
 
 def main():
     p=argparse.ArgumentParser(description=__doc__); sub=p.add_subparsers(dest='action',required=True)
-    prepare_p=sub.add_parser('prepare');prepare_p.add_argument('movie');prepare_p.add_argument('--expected-sha256',required=True);prepare_p.add_argument('--output',required=True)
-    call_p=sub.add_parser('call');call_p.add_argument('manifest');call_p.add_argument('--session',required=True);call_p.add_argument('--consent-upload',action='store_true');call_p.add_argument('--acknowledge-previous',action='store_true');call_p.add_argument('--pricing-confirmed-on')
+    prepare_p=sub.add_parser('prepare');prepare_p.add_argument('movie');prepare_p.add_argument('--expected-sha256',required=True);prepare_p.add_argument('--output',required=True);prepare_p.add_argument('--start-s',type=float);prepare_p.add_argument('--duration-s',type=float)
+    call_p=sub.add_parser('call');call_p.add_argument('manifest');call_p.add_argument('--session',required=True);call_p.add_argument('--consent-upload',action='store_true');call_p.add_argument('--acknowledge-previous',action='store_true');call_p.add_argument('--pricing-confirmed-on');call_p.add_argument('--budget-cny',type=float,default=.10)
     args=p.parse_args()
     try:
-        if args.action=='prepare': prepare(args.movie,args.expected_sha256,args.output);print('PREPARED_NO_NETWORK');return 0
+        if args.action=='prepare': prepare(args.movie,args.expected_sha256,args.output,args.start_s,args.duration_s);print('PREPARED_NO_NETWORK');return 0
         key=a.load_project_key(__file__)
         if not key:
             print(json.dumps(a.skipped_not_configured(),ensure_ascii=False));return 0
-        if args.pricing_confirmed_on != datetime.now(timezone.utc).date().isoformat(): raise a.ReviewError('Current official pricing confirmation required')
-        result=call(args.manifest,args.session,key,args.consent_upload,args.acknowledge_previous)
+        result=call(args.manifest,args.session,key,args.consent_upload,args.acknowledge_previous,price_confirmed=args.pricing_confirmed_on,budget=args.budget_cny)
         print(result['status']);return 0 if result['status']=='model_assisted_review_completed' else 2
     except a.ReviewError as e: print(str(e),file=sys.stderr);return 2
     except Exception: print('LOCAL_PREPARATION_OR_CONFIGURATION_BLOCKED',file=sys.stderr);return 2
