@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {actionStatusExamples,createActionStatusExample} from '../examples/action-status-usage.mjs';
-import {sampleStagedLayoutHandoff} from '../lib/recipes/staged-layout-handoff.mjs';
+import {sampleStagedLayoutHandoff} from '../lib/recipes/staged-layout-handoff/index.mjs';
 import {rational as T} from '../lib/time.mjs';
 for(const config of actionStatusExamples) {
  test(`${config.name}: existing staged API is the geometry authority; seek and state are independent`,()=>{

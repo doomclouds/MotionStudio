@@ -1,0 +1,12 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import * as api from '../../../index.mjs';
+const catalog=JSON.parse(readFileSync(new URL('../../../../catalog.json',import.meta.url)));
+const item=catalog.elements.find(e=>e.id==='recipe.tile-signature');
+assert(item);
+const plan=api.compileTileSignature(item.example),q=(n,d=1)=>({n:String(n),d:String(d)});
+const start=api.sampleTileSignature(plan,q(0)),scatter=api.sampleTileSignature(plan,q(2)),home=api.sampleTileSignature(plan,q(375,100)),final=api.sampleTileSignature(plan,q(8));
+assert.equal(home.source.tileState.atHome,true);assert.equal(scatter.source.tileState.atHome,false);assert.equal(home.source.tilePlan,scatter.source.tilePlan);assert.deepEqual(start.source.matrix,home.source.matrix);
+assert.equal(final.source.geometryBounds.width,720);assert.equal(final.signature.reveal,1);assert.equal(final.signature.bindingId,item.example.signatureId);
+assert.deepEqual(final,api.sampleTileSignature(plan,q(8)));assert.throws(()=>api.sampleTileSignature({...plan},q(0)));assert.throws(()=>api.compileTileSignature({...item.example,signatureId:item.example.sourceId}));
+console.log('recipe.tile-signature contract PASS');

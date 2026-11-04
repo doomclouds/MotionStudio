@@ -4,8 +4,8 @@ import {spawnSync} from 'node:child_process';
 import {createHash} from 'node:crypto';
 import vm from 'node:vm';
 import {loadNativeCanvas} from '../../motion-render-core/lib/native.mjs';
-import {halftoneScreen} from '../lib/foundations/geometry/halftone-screen.mjs';
-import {morphologyCoverage} from '../lib/foundations/raster/morphology-coverage.mjs';
+import {halftoneScreen} from '../lib/foundations/geometry/halftone-screen/index.mjs';
+import {morphologyCoverage} from '../lib/foundations/raster/morphology-coverage/index.mjs';
 const screen=(values=[0,.5,1])=>({columns:values.length,rows:1,values,cellSize:10,origin:{x:2,y:3},angle:0});
 const mask=(data=[0,128,255,64,0,80],extras={})=>({width:3,height:2,data:new Uint8Array(data),operation:'dilate',radiusX:1,radiusY:1,boundary:'transparent',...extras});
 // Independent midpoint quadrature of vertical slices; not production intersection formula.
@@ -63,6 +63,6 @@ test('Native synthetic screen and coverage expansion render repeatably in a new 
   ctx.fillStyle='#d65c34';for(let i=0;i<m.data.length;i++){ctx.globalAlpha=m.data[i]/255;ctx.fillRect(105+(i%5)*7,30+Math.floor(i/5)*7,7,7);}return createHash('sha256').update(canvas.toBuffer('image/png')).digest('hex');
  }
  const angles=[0,.2,-.1],expected=angles.map(draw);assert.equal(new Set(expected).size,3);assert.deepEqual(angles.toReversed().map(draw),expected.toReversed());assert.deepEqual(angles.map(draw),expected);
- const code=`import{halftoneScreen}from ${JSON.stringify(new URL('../lib/foundations/geometry/halftone-screen.mjs',import.meta.url).href)};import{morphologyCoverage}from ${JSON.stringify(new URL('../lib/foundations/raster/morphology-coverage.mjs',import.meta.url).href)};import{loadNativeCanvas}from ${JSON.stringify(new URL('../../motion-render-core/lib/native.mjs',import.meta.url).href)};import{createHash}from'node:crypto';const{api}=loadNativeCanvas();const draw=${draw.toString()};console.log(JSON.stringify(${JSON.stringify(angles)}.map(draw)));`;
+ const code=`import{halftoneScreen}from ${JSON.stringify(new URL('../lib/foundations/geometry/halftone-screen/index.mjs',import.meta.url).href)};import{morphologyCoverage}from ${JSON.stringify(new URL('../lib/foundations/raster/morphology-coverage/index.mjs',import.meta.url).href)};import{loadNativeCanvas}from ${JSON.stringify(new URL('../../motion-render-core/lib/native.mjs',import.meta.url).href)};import{createHash}from'node:crypto';const{api}=loadNativeCanvas();const draw=${draw.toString()};console.log(JSON.stringify(${JSON.stringify(angles)}.map(draw)));`;
  const child=spawnSync(process.execPath,['--input-type=module','-e',code],{encoding:'utf8'});assert.equal(child.status,0,child.stderr);assert.deepEqual(JSON.parse(child.stdout),expected);
 });

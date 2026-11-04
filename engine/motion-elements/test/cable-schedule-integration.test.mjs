@@ -4,7 +4,7 @@ import {readFileSync} from 'node:fs';
 import * as api from '../lib/index.mjs';
 import * as cable from '../lib/foundations/geometry/catenary/index.mjs';
 import * as lanes from '../lib/foundations/layout/interval-lanes/index.mjs';
-import * as staged from '../lib/recipes/staged-layout-handoff.mjs';
+import * as staged from '../lib/recipes/staged-layout-handoff/index.mjs';
 import {queryCatalog} from '../lib/catalog-query.mjs';
 import {rational as T} from '../lib/time.mjs';
 import {transformBounds} from '../lib/matrix.mjs';

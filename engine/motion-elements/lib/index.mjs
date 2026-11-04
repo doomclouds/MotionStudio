@@ -12,8 +12,8 @@ export {sampleFiniteSettle} from './settle.mjs';
 export {withLocalReveal} from '../adapters/local-reveal.mjs';
 export {compileTileScatter,sampleTileScatter} from './tiles.mjs';
 export {drawTileScatter} from '../adapters/tiles.mjs';
-export {compileFocusHandoff,sampleFocusHandoff} from './recipes/focus-handoff.mjs';
-export {compileTileSignature,sampleTileSignature} from './recipes/tile-signature.mjs';
+export {compileFocusHandoff,sampleFocusHandoff} from './recipes/focus-handoff/index.mjs';
+export {compileTileSignature,sampleTileSignature} from './recipes/tile-signature/index.mjs';
 export {compileRegisteredPolygonMorph,sampleRegisteredPolygonMorph} from './registered-polygon-morph.mjs';
 export {drawRegisteredPolygonMorph} from '../adapters/registered-polygon-morph.mjs';
 export {compileAttractorField,sampleAttractorField} from './foundations/field/attractor-field.mjs';
@@ -21,8 +21,8 @@ export {compileSliceDisplacement,sampleSliceDisplacement} from './slice-displace
 export {withSliceDisplacement} from '../adapters/slice-displacement.mjs';
 export {compileSampledBand} from './sampled-band.mjs';
 export {drawSampledBand} from '../adapters/sampled-band.mjs';
-export {compileLightEchoField,sampleLightEchoField} from './recipes/light-echo-field.mjs';
-export {drawLightEchoField} from '../adapters/light-echo-field.mjs';
+export {compileLightEchoField,sampleLightEchoField} from './recipes/light-echo-field/index.mjs';
+export {drawLightEchoField} from './recipes/light-echo-field/canvas.mjs';
 export {gridLayout,constraintStackLayout} from './structured-layouts.mjs';
 export {sampleKeyframeTrack} from './keyframe-track.mjs';
 export {compileLayoutHandoff,sampleLayoutHandoff} from './recipes/layout-handoff.mjs';
@@ -42,7 +42,7 @@ export {compileHingedPanel, sampleHingedPanel, transformHingedPoint} from './fou
 
 export {compileCatenary, sampleCatenary, sampleCatenaryPolyline} from './foundations/geometry/catenary/index.mjs';
 export {intervalLaneLayout} from './foundations/layout/interval-lanes/index.mjs';
-export {compileStagedLayoutHandoff, sampleStagedLayoutHandoff} from './recipes/staged-layout-handoff.mjs';
+export {compileStagedLayoutHandoff, sampleStagedLayoutHandoff} from './recipes/staged-layout-handoff/index.mjs';
 
 export {compileContourGrid, extractIsoContours} from './foundations/geometry/iso-contour/index.mjs';
 
@@ -51,10 +51,10 @@ export {compileProjectiveRaster, warpProjectiveRGBA, projectRasterPoint, mapProj
 export {masonryLayout} from './foundations/layout/masonry/index.mjs';
 export {placeAnchoredLabels} from './foundations/layout/anchored-labels/index.mjs';
 
-export {halftoneScreen} from './foundations/geometry/halftone-screen.mjs';
-export {morphologyCoverage} from './foundations/raster/morphology-coverage.mjs';
-export {compileAffineSkin,sampleAffineSkin} from './foundations/geometry/affine-skin.mjs';
-export {compileDampedResponse,sampleDampedResponse} from './foundations/motion/damped-response.mjs';
+export {halftoneScreen} from './foundations/geometry/halftone-screen/index.mjs';
+export {morphologyCoverage} from './foundations/raster/morphology-coverage/index.mjs';
+export {compileAffineSkin,sampleAffineSkin} from './foundations/geometry/affine-skin/index.mjs';
+export {compileDampedResponse,sampleDampedResponse} from './foundations/motion/damped-response/index.mjs';
 // Registered mechanisms and two uncounted support extensions; canonical module instances.
 export {compileFiniteParticles, sampleFiniteParticles} from './foundations/motion/finite-particles/index.mjs';
 export {layoutWeightedHierarchy} from './foundations/layout/weighted-hierarchy/index.mjs';
@@ -74,4 +74,4 @@ export {compileRadialWarp} from './foundations/geometry/radial-landmark-warp.mjs
 export {distanceTransform} from './foundations/raster/distance-transform.mjs';
 export {paletteDiffuse} from './foundations/raster/palette-diffusion.mjs';
 export {reactionDiffusion} from './foundations/field/reaction-diffusion.mjs';
-export {compileOrderedBands, sampleOrderedBands} from './foundations/layout/ordered-bands.mjs';
+export {compileOrderedBands, sampleOrderedBands} from './foundations/layout/ordered-bands/index.mjs';

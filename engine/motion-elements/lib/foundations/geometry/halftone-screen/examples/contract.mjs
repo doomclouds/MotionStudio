@@ -1,0 +1,10 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import * as api from '../../../../index.mjs';
+const catalog=JSON.parse(readFileSync(new URL('../../../../../catalog.json',import.meta.url)));
+const item=catalog.elements.find(e=>e.id==='geometry.halftone-screen');
+assert(item);
+const state=api.halftoneScreen(item.example);assert.deepEqual(state.cells.map(c=>c.id),['0:0','1:0','2:0']);assert.deepEqual(state.cells[1].clip,[16,0,16,16]);
+const endpoints=api.halftoneScreen({...item.example,values:[0,Math.PI/4,1]});assert.equal(endpoints.cells[0].radius,0);assert(Math.abs(endpoints.cells[1].radius-8)<1e-12);assert.equal(endpoints.cells[2].radius,16*Math.SQRT1_2);
+assert(Object.isFrozen(state.cells[0].clip));assert.deepEqual(state,api.halftoneScreen(item.example));assert.throws(()=>api.halftoneScreen({...item.example,values:[2,0,0]}));
+console.log('geometry.halftone-screen contract PASS');

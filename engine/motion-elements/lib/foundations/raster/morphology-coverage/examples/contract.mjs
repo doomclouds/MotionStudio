@@ -1,0 +1,12 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import * as api from '../../../../index.mjs';
+const catalog=JSON.parse(readFileSync(new URL('../../../../../catalog.json',import.meta.url)));
+const item=catalog.elements.find(e=>e.id==='raster.coverage-morphology');
+assert(item);
+const input={...item.example,data:Uint8Array.from(item.example.data)},output=api.morphologyCoverage(input);
+assert.deepEqual([...output.data],[255,255,255,255,255,255]);assert.notEqual(output.data.buffer,input.data.buffer);assert(Object.isFrozen(output));
+const eroded=api.morphologyCoverage({...input,data:new Uint8Array(6).fill(255),operation:'erode'});assert.deepEqual([...eroded.data],[0,0,0,0,0,0]);
+const clamped=api.morphologyCoverage({...input,data:new Uint8Array(6).fill(255),operation:'erode',boundary:'clamp'});assert.deepEqual([...clamped.data],Array(6).fill(255));
+output.data[0]=3;assert.equal(input.data[0],0);assert.throws(()=>api.morphologyCoverage(item.example));assert.throws(()=>api.morphologyCoverage({...input,radiusX:65}));
+console.log('raster.coverage-morphology contract PASS');

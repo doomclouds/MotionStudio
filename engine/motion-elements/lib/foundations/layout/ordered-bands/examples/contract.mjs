@@ -1,0 +1,11 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import * as api from '../../../../index.mjs';
+const catalog=JSON.parse(readFileSync(new URL('../../../../../catalog.json',import.meta.url)));
+const item=catalog.elements.find(e=>e.id==='composition.ordered-bands');
+assert(item);
+const plan=api.compileOrderedBands(item.example),state=api.sampleOrderedBands(plan,.5);
+assert.equal(state.boundaries[0],0);assert.equal(state.boundaries[2],1);assert(Math.abs(state.boundaries[1]-.6)<1e-14);
+assert.deepEqual(state.bands.map(b=>b.id),['work','rest']);assert.equal(state.bands[0].end,state.bands[1].start);
+assert.deepEqual(state,api.sampleOrderedBands(plan,.5));assert.throws(()=>api.sampleOrderedBands({...plan},.5));assert.throws(()=>api.compileOrderedBands({...item.example,to:[...item.example.to].reverse()}));
+console.log('composition.ordered-bands contract PASS');

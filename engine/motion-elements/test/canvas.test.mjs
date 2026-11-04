@@ -68,7 +68,7 @@ test('tile raster demo seeks identically in clean, debug, reversed and reduced v
  }
 });
 test('focus handoff two-content 7s demo seeks consistently in both motion modes',async()=>{
- const {createGalleryScene:createStudy,config:cfg}=await import('../examples/focus-handoff-scene.mjs');
+ const {createGalleryScene:createStudy,config:cfg}=await import('../lib/recipes/focus-handoff/examples/focus-handoff-scene.mjs');
  assert.equal(cfg.duration*cfg.fps,210);
  for(const reducedMotion of [false,true]){
   const canvas=api.createCanvas(cfg.width,cfg.height),ctx=canvas.getContext('2d'),scene=await createStudy({canvas,ctx,canvasApi:api,config:cfg},{reducedMotion});
@@ -79,7 +79,7 @@ test('focus handoff two-content 7s demo seeks consistently in both motion modes'
  }
 });
 test('tile signature two-source 8s sequence has repeatable normal/reduced and near-home pixels',async()=>{
- const {createGalleryScene:createStudy,config:cfg}=await import('../examples/tile-signature-scene.mjs');
+ const {createGalleryScene:createStudy,config:cfg}=await import('../lib/recipes/tile-signature/examples/tile-signature-scene.mjs');
  assert.equal(cfg.duration*cfg.fps,240);
  for(const reducedMotion of [false,true]){
   const canvas=api.createCanvas(cfg.width,cfg.height),ctx=canvas.getContext('2d'),scene=await createStudy({canvas,ctx,canvasApi:api,config:cfg},{reducedMotion});

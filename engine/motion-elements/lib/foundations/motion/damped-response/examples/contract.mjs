@@ -1,0 +1,13 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import * as api from '../../../../index.mjs';
+const catalog=JSON.parse(readFileSync(new URL('../../../../../catalog.json',import.meta.url)));
+const item=catalog.elements.find(e=>e.id==='motion.damped-response');
+assert(item);
+const plan=api.compileDampedResponse(item.example);assert.equal(api.sampleDampedResponse(plan,0).position,0);
+const at=api.sampleDampedResponse(plan,.5);assert.equal(at.position,0);assert.equal(at.velocity,0);assert.equal(at.target,12);assert.equal(at.eventId,'lift');
+const ballistic=api.compileDampedResponse({initial:{position:2,velocity:3,target:99},frequencyHz:0,dampingRatio:.7,events:[{id:'tap',time:2,target:-5,velocityImpulse:4}]});
+assert.deepEqual(api.sampleDampedResponse(ballistic,2),{time:2,position:8,velocity:7,target:-5,eventId:'tap'});
+assert.equal(api.sampleDampedResponse(ballistic,3).position,15);assert(Object.isFrozen(plan.transitions));
+assert.deepEqual(api.sampleDampedResponse(plan,1.4),api.sampleDampedResponse(plan,1.4));assert.throws(()=>api.sampleDampedResponse({...plan},0));assert.throws(()=>api.sampleDampedResponse(plan,-1));
+console.log('motion.damped-response contract PASS');

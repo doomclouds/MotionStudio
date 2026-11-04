@@ -782,12 +782,14 @@
       ],
       "evidence": {
         "tests": [
-          "test/focus-handoff.test.mjs"
+          "lib/recipes/focus-handoff/test/focus-handoff.test.mjs"
         ],
-        "demo": "examples/focus-handoff-scene.mjs",
+        "demo": "lib/recipes/focus-handoff/examples/focus-handoff-scene.mjs",
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN",
-        "guidance": "docs/guides/focus-handoff.md"
+        "guidance": "lib/recipes/focus-handoff/README.md",
+        "executableExample": "lib/recipes/focus-handoff/examples/contract.mjs",
+        "sourceVersionRelation": "Asset-directory colocation changes only relative imports and file locations in implementation, existing synthetic scene and dedicated tests; light-echo also colocates its dedicated Canvas adapter. Original algorithm/drawing bodies and existing NOT_RUN quality gates are preserved. This is not new film-use, viewing, listening or acceptance evidence."
       },
       "knowledgeLinks": [],
       "tags": [
@@ -844,12 +846,14 @@
       ],
       "evidence": {
         "tests": [
-          "test/tile-signature.test.mjs"
+          "lib/recipes/tile-signature/test/tile-signature.test.mjs"
         ],
-        "demo": "examples/tile-signature-scene.mjs",
+        "demo": "lib/recipes/tile-signature/examples/tile-signature-scene.mjs",
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN",
-        "guidance": "docs/guides/tile-signature.md"
+        "guidance": "lib/recipes/tile-signature/README.md",
+        "executableExample": "lib/recipes/tile-signature/examples/contract.mjs",
+        "sourceVersionRelation": "Asset-directory colocation changes only relative imports and file locations in implementation, existing synthetic scene and dedicated tests; light-echo also colocates its dedicated Canvas adapter. Original algorithm/drawing bodies and existing NOT_RUN quality gates are preserved. This is not new film-use, viewing, listening or acceptance evidence."
       },
       "knowledgeLinks": [],
       "tags": [
@@ -1360,12 +1364,14 @@
       ],
       "evidence": {
         "technicalTests": [
-          "test/light-echo-field.test.mjs"
+          "lib/recipes/light-echo-field/test/light-echo-field.test.mjs"
         ],
-        "visualDemo": "examples/light-echo-field-scene.mjs",
+        "visualDemo": "lib/recipes/light-echo-field/examples/light-echo-field-scene.mjs",
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN",
-        "guidance": "docs/guides/light-echo-field.md"
+        "guidance": "lib/recipes/light-echo-field/README.md",
+        "executableExample": "lib/recipes/light-echo-field/examples/contract.mjs",
+        "sourceVersionRelation": "Asset-directory colocation changes only relative imports and file locations in implementation, existing synthetic scene and dedicated tests; light-echo also colocates its dedicated Canvas adapter. Original algorithm/drawing bodies and existing NOT_RUN quality gates are preserved. This is not new film-use, viewing, listening or acceptance evidence."
       },
       "knowledgeLinks": [],
       "tags": [
@@ -2890,16 +2896,17 @@
         "audioListening": "NOT_LISTENED",
         "ownerArtisticAcceptance": "PENDING_USER",
         "technicalTests": [
-          "test/staged-layout-handoff.test.mjs",
+          "lib/recipes/staged-layout-handoff/test/staged-layout-handoff.test.mjs",
           "test/cable-schedule-integration.test.mjs"
         ],
-        "guidance": "docs/staged-layout-handoff.md",
+        "guidance": "lib/recipes/staged-layout-handoff/README.md",
         "videoValidation": "VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE",
         "visualReview": "DECODED_FRAME_REVIEW_NO_BLOCKERS",
-        "sourceVersionRelation": "Runtime and all10 frozen runtime files byte-match the actual private film. Public index export is later integration. No historical film is relabeled as using this new API.",
+        "sourceVersionRelation": "Runtime and all10 frozen runtime files byte-match the actual private film. Public index export is later integration. No historical film is relabeled as using this new API. Later asset-directory colocation preserves algorithm bodies and canonical module identity while relocating files and relative imports; preceding byte-match/version-bridge evidence remains bound to its original version, not a new film-equivalence or acceptance claim.",
         "validationCoverage": "An8-second/480-frame candidate compiles1 plan from2 actual interval layouts and1 caller-authored waypoint;480 public samples feed the interaction. Internal old handoff/motion calls are reused, not separately counted as new mechanisms.",
         "callEvidenceScope": "Actual public calls and Native drawing ledger:313 submitted frames/1252 card draws,312 positive-alpha frames. Horizontal edit then vertical reassignment is the authored route, not an automatic collision guarantee. Independent decoded-frame and fresh-process evidence is scoped to this film.",
-        "compositionScope": "Reuses old layout-handoff/transform/opacity and rational time; before/after static endpoints come from interval-lanes. Waypoint, pointer, edited time and graphic/audio design remain caller-owned."
+        "compositionScope": "Reuses old layout-handoff/transform/opacity and rational time; before/after static endpoints come from interval-lanes. Waypoint, pointer, edited time and graphic/audio design remain caller-owned.",
+        "executableExample": "lib/recipes/staged-layout-handoff/examples/contract.mjs"
       },
       "knowledgeLinks": [],
       "tags": [
@@ -3311,15 +3318,17 @@
         "ownerArtisticAcceptance": "PENDING_USER",
         "visualReview": "DECODED_FRAME_REVIEW_WITH_DISCLOSED_LIMITS",
         "technicalTests": [
+          "lib/foundations/geometry/halftone-screen/test/halftone-screen.test.mjs",
           "test/coverage-print.test.mjs",
           "test/print-rig-integration.test.mjs"
         ],
-        "guidance": "docs/halftone-screen.md",
+        "guidance": "lib/foundations/geometry/halftone-screen/README.md",
         "videoValidation": "VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE_WITH_VERSION_EQUIVALENCE",
-        "sourceVersionRelation": "AFTER RAIN: original8.6-second/516-frame film. Public modules change only relative helper import paths, helper bytes unchanged. Complete516-frame scene state and usage match;36 representative raw PNGs match. Not all-frame pixel equivalence, a new encoded movie or new visual/listening approval.",
+        "sourceVersionRelation": "AFTER RAIN: original8.6-second/516-frame film. Public modules change only relative helper import paths, helper bytes unchanged. Complete516-frame scene state and usage match;36 representative raw PNGs match. Not all-frame pixel equivalence, a new encoded movie or new visual/listening approval. Later asset-directory colocation preserves algorithm bodies and canonical module identity while relocating files and relative imports; preceding byte-match/version-bridge evidence remains bound to its original version, not a new film-equivalence or acceptance claim.",
         "validationCoverage": "Two actual screens compiled once, rasterized and cached; the actual film draws those cached ink layers. Geometry area is not raster coverage calibration.",
         "callEvidenceScope": "Actual film source/runtime and returned-data consumption reviewed independently. Draw/state receipts are not proof every submitted shape is visible. No normal-speed viewing, actual listening or user artistic acceptance is inferred.",
-        "compositionScope": "One independent foundation. Helpers, parameters, caller art, audio and existing mechanisms do not increase the count."
+        "compositionScope": "One independent foundation. Helpers, parameters, caller art, audio and existing mechanisms do not increase the count.",
+        "executableExample": "lib/foundations/geometry/halftone-screen/examples/contract.mjs"
       },
       "knowledgeLinks": [],
       "tags": [
@@ -3371,15 +3380,17 @@
         "ownerArtisticAcceptance": "PENDING_USER",
         "visualReview": "DECODED_FRAME_REVIEW_WITH_DISCLOSED_LIMITS",
         "technicalTests": [
+          "lib/foundations/raster/morphology-coverage/test/morphology-coverage.test.mjs",
           "test/coverage-print.test.mjs",
           "test/print-rig-integration.test.mjs"
         ],
-        "guidance": "docs/coverage-morphology.md",
+        "guidance": "lib/foundations/raster/morphology-coverage/README.md",
         "videoValidation": "VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE_WITH_VERSION_EQUIVALENCE",
-        "sourceVersionRelation": "AFTER RAIN: original8.6-second/516-frame film. Public modules change only relative helper import paths, helper bytes unchanged. Complete516-frame scene state and usage match;36 representative raw PNGs match. Not all-frame pixel equivalence, a new encoded movie or new visual/listening approval.",
+        "sourceVersionRelation": "AFTER RAIN: original8.6-second/516-frame film. Public modules change only relative helper import paths, helper bytes unchanged. Complete516-frame scene state and usage match;36 representative raw PNGs match. Not all-frame pixel equivalence, a new encoded movie or new visual/listening approval. Later asset-directory colocation preserves algorithm bodies and canonical module identity while relocating files and relative imports; preceding byte-match/version-bridge evidence remains bound to its original version, not a new film-equivalence or acceptance claim.",
         "validationCoverage": "Actual1920x1080 mask dilated once with radius3 in each axis; expanded mask feeds the cached amber ink. Defined source-mask gap test closes the selected gap, not a theorem about every antialiased pixel.",
         "callEvidenceScope": "Actual film source/runtime and returned-data consumption reviewed independently. Draw/state receipts are not proof every submitted shape is visible. No normal-speed viewing, actual listening or user artistic acceptance is inferred.",
-        "compositionScope": "One independent foundation. Helpers, parameters, caller art, audio and existing mechanisms do not increase the count."
+        "compositionScope": "One independent foundation. Helpers, parameters, caller art, audio and existing mechanisms do not increase the count.",
+        "executableExample": "lib/foundations/raster/morphology-coverage/examples/contract.mjs"
       },
       "knowledgeLinks": [],
       "tags": [
@@ -3464,17 +3475,18 @@
         "ownerArtisticAcceptance": "PENDING_USER",
         "visualReview": "DECODED_FRAME_REVIEW_WITH_DISCLOSED_LIMITS",
         "technicalTests": [
-          "test/affine-skin.test.mjs",
+          "lib/foundations/geometry/affine-skin/test/affine-skin.test.mjs",
           "test/rig-response-data.test.mjs",
           "test/rig-response-fresh.test.mjs",
           "test/print-rig-integration.test.mjs"
         ],
-        "guidance": "docs/affine-skin.md",
+        "guidance": "lib/foundations/geometry/affine-skin/README.md",
         "videoValidation": "VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE_WITH_VERSION_EQUIVALENCE",
-        "sourceVersionRelation": "ROOM FOR TWO: original9.4-second/564-frame film. Public path bridge preserves original scene/art and192 original closure files except two bridge wrappers; three canonical implementation/helper files added. Nine fresh-process representative PNGs match. This explicitly expanded closure is not a claim the original Native dependency fingerprint includes the added modules.",
+        "sourceVersionRelation": "ROOM FOR TWO: original9.4-second/564-frame film. Public path bridge preserves original scene/art and192 original closure files except two bridge wrappers; three canonical implementation/helper files added. Nine fresh-process representative PNGs match. This explicitly expanded closure is not a claim the original Native dependency fingerprint includes the added modules. Later asset-directory colocation preserves algorithm bodies and canonical module identity while relocating files and relative imports; preceding byte-match/version-bridge evidence remains bound to its original version, not a new film-equivalence or acceptance claim.",
         "validationCoverage": "One3-bone plan with56 leaf outline/vein vertices; returned vertices feed the actual drawn splines across564 frames.",
         "callEvidenceScope": "Actual film source/runtime and returned-data consumption reviewed independently. Draw/state receipts are not proof every submitted shape is visible. No normal-speed viewing, actual listening or user artistic acceptance is inferred.",
-        "compositionScope": "One independent foundation. Helpers, parameters, caller art, audio and existing mechanisms do not increase the count."
+        "compositionScope": "One independent foundation. Helpers, parameters, caller art, audio and existing mechanisms do not increase the count.",
+        "executableExample": "lib/foundations/geometry/affine-skin/examples/contract.mjs"
       },
       "knowledgeLinks": [],
       "tags": [
@@ -3533,18 +3545,19 @@
         "ownerArtisticAcceptance": "PENDING_USER",
         "visualReview": "DECODED_FRAME_REVIEW_WITH_DISCLOSED_LIMITS",
         "technicalTests": [
-          "test/damped-response.test.mjs",
-          "test/damped-response-oracle.test.mjs",
+          "lib/foundations/motion/damped-response/test/damped-response.test.mjs",
+          "lib/foundations/motion/damped-response/test/damped-response-oracle.test.mjs",
           "test/rig-response-data.test.mjs",
           "test/rig-response-fresh.test.mjs",
           "test/print-rig-integration.test.mjs"
         ],
-        "guidance": "docs/damped-response.md",
+        "guidance": "lib/foundations/motion/damped-response/README.md",
         "videoValidation": "VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE_WITH_VERSION_EQUIVALENCE",
-        "sourceVersionRelation": "ROOM FOR TWO: original9.4-second/564-frame film. Public path bridge preserves original scene/art and192 original closure files except two bridge wrappers; three canonical implementation/helper files added. Nine fresh-process representative PNGs match. This explicitly expanded closure is not a claim the original Native dependency fingerprint includes the added modules.",
+        "sourceVersionRelation": "ROOM FOR TWO: original9.4-second/564-frame film. Public path bridge preserves original scene/art and192 original closure files except two bridge wrappers; three canonical implementation/helper files added. Nine fresh-process representative PNGs match. This explicitly expanded closure is not a claim the original Native dependency fingerprint includes the added modules. Later asset-directory colocation preserves algorithm bodies and canonical module identity while relocating files and relative imports; preceding byte-match/version-bridge evidence remains bound to its original version, not a new film-equivalence or acceptance claim.",
         "validationCoverage": "Absolute-time response sampled to drive the actual leaf bone pose throughout564 frames; random seek needs no sequential simulation.",
         "callEvidenceScope": "Actual film source/runtime and returned-data consumption reviewed independently. Draw/state receipts are not proof every submitted shape is visible. No normal-speed viewing, actual listening or user artistic acceptance is inferred.",
-        "compositionScope": "One independent foundation. Helpers, parameters, caller art, audio and existing mechanisms do not increase the count."
+        "compositionScope": "One independent foundation. Helpers, parameters, caller art, audio and existing mechanisms do not increase the count.",
+        "executableExample": "lib/foundations/motion/damped-response/examples/contract.mjs"
       },
       "knowledgeLinks": [],
       "tags": [
@@ -4514,20 +4527,21 @@
       ],
       "evidence": {
         "technicalTests": [
-          "test/ordered-bands.test.mjs",
-          "test/ordered-bands-studies.test.mjs",
-          "test/ordered-bands-integration.test.mjs"
+          "lib/foundations/layout/ordered-bands/test/ordered-bands.test.mjs",
+          "lib/foundations/layout/ordered-bands/test/ordered-bands-studies.test.mjs",
+          "lib/foundations/layout/ordered-bands/test/ordered-bands-integration.test.mjs"
         ],
-        "guidance": "docs/guides/ordered-bands-candidate.md",
+        "guidance": "lib/foundations/layout/ordered-bands/README.md",
         "visualDemo": null,
         "visualReview": "SYNTHETIC_KEYFRAME_REVIEW_NO_BLOCKERS",
         "validationCoverage": "Three neutral parameter variants; workload and inventory synthetic consumers, native rendered at 1280x720 and 640x360. Keyframes 0/.25/.5/.75/1; repeated fresh-process PNG identity and static reduced-motion PNG identity. Two content studies are transfer tests, not accepted customer productions.",
-        "executableExample": "examples/ordered-bands-studies.mjs",
+        "executableExample": "lib/foundations/layout/ordered-bands/examples/contract.mjs",
         "artisticReview": "PENDING_USER",
         "ownerArtisticAcceptance": "PENDING_USER",
         "originalProductionTransfer": "NOT_RUN",
         "normalSpeedViewing": "NOT_DONE",
-        "audioListening": "NOT_LISTENED"
+        "audioListening": "NOT_LISTENED",
+        "sourceVersionRelation": "Asset-directory colocation changes only relative imports and file locations in implementation, original synthetic examples and dedicated tests. Existing synthetic keyframe observations remain historical; this migration is not new viewing, listening, artistic acceptance or customer-production transfer."
       },
       "knowledgeLinks": [],
       "tags": [

@@ -1,0 +1,13 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import * as api from '../../../index.mjs';
+const catalog=JSON.parse(readFileSync(new URL('../../../../catalog.json',import.meta.url)));
+const item=catalog.elements.find(e=>e.id==='recipe.staged-layout-handoff');
+assert(item);
+const plan=api.compileStagedLayoutHandoff(item.example),q=(n,d=1)=>({n:String(n),d:String(d)});
+const first=api.sampleStagedLayoutHandoff(plan,q(3,2));assert.equal(first.stageIndex,0);assert.equal(first.stageProgress,.5);assert.equal(first.items[0].matrix[4],50);assert.equal(first.items[0].matrix[5],0);
+const seam=api.sampleStagedLayoutHandoff(plan,q(2));assert.equal(seam.stageIndex,1);assert.equal(seam.stageProgress,0);
+const second=api.sampleStagedLayoutHandoff(plan,q(3));assert.equal(second.items[0].matrix[4],100);assert.equal(second.items[0].matrix[5],20);
+const reduced=api.sampleStagedLayoutHandoff(plan,q(0),{reducedMotion:true});assert.equal(reduced.items[0].matrix[4],100);assert.equal(reduced.items[0].matrix[5],40);assert.equal(reduced.phase,'before');
+assert.deepEqual(second,api.sampleStagedLayoutHandoff(plan,q(3)));assert(Object.isFrozen(plan.snapshots));assert.throws(()=>api.sampleStagedLayoutHandoff({...plan},q(1)));
+console.log('recipe.staged-layout-handoff contract PASS');

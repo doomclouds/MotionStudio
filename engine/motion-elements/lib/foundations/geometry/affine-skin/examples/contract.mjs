@@ -1,0 +1,13 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import * as api from '../../../../index.mjs';
+const catalog=JSON.parse(readFileSync(new URL('../../../../../catalog.json',import.meta.url)));
+const item=catalog.elements.find(e=>e.id==='geometry.affine-skin');
+assert(item);
+const plan=api.compileAffineSkin(item.example),rest={bones:item.example.bones.map(b=>({id:b.id,world:b.rest}))};
+assert.deepEqual(api.sampleAffineSkin(plan,rest).vertices,[{id:'v00',x:40,y:6}]);
+const pose={bones:[{id:'base',world:[1,0,0,1,0,0]},{id:'tip',world:[1,0,0,1,80,10]}]};
+const state=api.sampleAffineSkin(plan,pose);assert.deepEqual(state.vertices,[{id:'v00',x:40,y:11}]);assert(Object.isFrozen(state.vertices[0]));
+assert.deepEqual(state,api.sampleAffineSkin(plan,{bones:[...pose.bones].reverse()}));
+assert.throws(()=>api.sampleAffineSkin({...plan},pose));assert.throws(()=>api.sampleAffineSkin(plan,{bones:[]}));
+console.log('geometry.affine-skin contract PASS');

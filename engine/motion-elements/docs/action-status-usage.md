@@ -31,7 +31,7 @@ The drawing function uses caller-available Canvas and a generic sans-serif font,
 Run from the repository root:
 
 ```sh
-node --test engine/motion-elements/test/action-status-usage.test.mjs engine/motion-elements/test/staged-layout-handoff.test.mjs
+node --test engine/motion-elements/test/action-status-usage.test.mjs engine/motion-elements/lib/recipes/staged-layout-handoff/lib/recipes/staged-layout-handoff/test/staged-layout-handoff.test.mjs
 ```
 
 The usage test checks both synthetic configurations over 121 samples each, exact delegation to the staged API, ID preservation, continuous stage-boundary geometry, bounded opacity/radius, reverse-seek equality, and reduced-motion geometry without premature status changes. The usage renderer also draws both sizes at all 121 samples, rejects an overflowing label, and checks selected reverse-seek PNG equality. Existing staged tests exercise validators and Native pixel equivalence. These tests do not validate arbitrary example-helper input, a real UI state machine, brand design, full film rhythm or actual listening. The helper is deliberately an example, not another supported runtime validator.

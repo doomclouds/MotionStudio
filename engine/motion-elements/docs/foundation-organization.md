@@ -68,7 +68,7 @@ const state = sampleAttractorField(plan, {
 
 技术门包括新旧函数identity、跨入口compile/sample、输入隔离、奇点、乱序求值、独立模块品牌拒绝，以及全库测试与完整portable。原有field/slice工程示例用于新旧状态/Native像素等价检查，不新增作品艺术认可，也不把该技术示例升级为高质量风格参考。对于将来迁移真正被作品锁直接绑定的模块，必须先建立锁与导入的兼容证据；不能直接改已批准作品源码以消除校验失败。
 
-显式分阶段交接位于 `lib/recipes/staged-layout-handoff.mjs`，只增加配方数量，不放入foundations职责目录或复算旧handoff为新基础。
+显式分阶段交接位于 `lib/recipes/staged-layout-handoff/index.mjs`，只增加配方数量，不放入foundations职责目录或复算旧handoff为新基础。
 
 `raster/`新域只放本批新模块；既有matte/displacement旧入口与冻结源码不移动、不复制。别名和点映射helper不增加基础数量。
 

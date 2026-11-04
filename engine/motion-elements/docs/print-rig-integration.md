@@ -4,10 +4,10 @@
 
 | ID | 公共职责路径 | 实际验证作品 |
 |---|---|---|
-| geometry.halftone-screen | lib/foundations/geometry/halftone-screen.mjs | AFTER RAIN，8.6秒、516帧 |
-| raster.coverage-morphology | lib/foundations/raster/morphology-coverage.mjs | AFTER RAIN，8.6秒、516帧 |
-| geometry.affine-skin | lib/foundations/geometry/affine-skin.mjs | ROOM FOR TWO，9.4秒、564帧 |
-| motion.damped-response | lib/foundations/motion/damped-response.mjs | ROOM FOR TWO，9.4秒、564帧 |
+| geometry.halftone-screen | lib/foundations/geometry/halftone-screen/index.mjs | AFTER RAIN，8.6秒、516帧 |
+| raster.coverage-morphology | lib/foundations/raster/morphology-coverage/index.mjs | AFTER RAIN，8.6秒、516帧 |
+| geometry.affine-skin | lib/foundations/geometry/affine-skin/index.mjs | ROOM FOR TWO，9.4秒、564帧 |
+| motion.damped-response | lib/foundations/motion/damped-response/index.mjs | ROOM FOR TWO，9.4秒、564帧 |
 
 ## 真实调用与版本桥接
 

@@ -28,7 +28,7 @@ reducedMotion只让共享项直接使用终态位置/尺寸；不改变phase/pro
 
 有界参考：[Tessel 编排](https://github.com/doomclouds/MotionStudio/blob/9806a1bd7c44f44cb331576b032417f58c655081/portfolio/works/tessel/src/choreography.mjs)对 shared 日程项先求目标空间进度，再用[反 smoothstep](https://github.com/doomclouds/MotionStudio/blob/9806a1bd7c44f44cb331576b032417f58c655081/portfolio/works/tessel/src/math.mjs)构造合成采样时间；返回矩形供场景绘制。这是调用者适配，不是配方原生支持任意曲线，也不证明新内容或整片审美通过。
 
-若采用这种适配，点击、字幕、阅读停留仍用原项目时间；返回的 `phase/progress` 对应合成时间，不能混作原时间或直接推进 [staged-layout-handoff](staged-layout-handoff.md) 的阶段边界。还需核端点、量化误差、所需曲线的单调性，以及新进/退出透明度是否也被改速。Tessel 的进入/退出由项目另行编排，不能据此宣称这些透明度路径已获该场景验证。先比较直接使用底层 API 的代价；本说明不新增 API、通用重映射器或兼容层。
+若采用这种适配，点击、字幕、阅读停留仍用原项目时间；返回的 `phase/progress` 对应合成时间，不能混作原时间或直接推进 [staged-layout-handoff](../lib/recipes/staged-layout-handoff/README.md) 的阶段边界。还需核端点、量化误差、所需曲线的单调性，以及新进/退出透明度是否也被改速。Tessel 的进入/退出由项目另行编排，不能据此宣称这些透明度路径已获该场景验证。先比较直接使用底层 API 的代价；本说明不新增 API、通用重映射器或兼容层。
 
 ## 限制与证据
 不能插值旋转/skew/透视，不处理碰撞、文字重排、手势物理、跨场景资源装载或内容宽高测量。内容绘制与Canvas状态隔离由调用者负责，本配方只输出纯状态。
