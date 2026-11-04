@@ -28,3 +28,5 @@ The query is read-only and excludes uncommitted edits. Per-package contracts, ri
 [Fixed isometric camera](candidates/isometric-camera-candidate/README.md) adapts a fixed 30° projection, horizontal-plane inverse and positive log zoom into an immutable camera snapshot. It provides no renderer, depth sorting or timeline and adds no registered family or portfolio work.
 
 [Screen-space ink path](candidates/screen-ink-path-candidate/README.md) derives affine point transformation, fixed screen-distance resampling and deterministic normal displacement from credited LemoLab code. It returns geometry only, with open-endpoint and nonperiodic seam limits; no character rig, renderer, film, registered family or portfolio work.
+
+[Umbrella pictogram geometry](candidates/umbrella-pictogram-geometry-candidate/README.md) extracts a credited normalized opening/furling silhouette and its shaft, hook and ferrule. It returns fixed-topology geometry only, with explicit bounded overshoot; no Canvas, palette, story, weather, physical cloth or registered family is bundled.

@@ -4,6 +4,8 @@
 
 | 镜头/时间问题 | 原始指南入口 |
 |---|---|
+| 同一物件怎样从用途变成群体图案？ | [动作与身份](../studies/objects-and-patterns.md#用动作保持物件身份)、[库存和呈现](../studies/objects-and-patterns.md#分开库存总数屏内数量和绘制次数)：开合/支撑与首尾状态改变分别核，总数、屏内成员、drawcall和完成帧不互代。 |
+| 纹样回卷、双语字幕和稀疏声音怎样避免纸面通过？ | [纹样连续性](../studies/objects-and-patterns.md#图案的身份连续性独立于颜色连续性)、[遮挡与读窗](../studies/objects-and-patterns.md#让遮挡规则与完整读窗各有依据)、[真实事件消费](../studies/objects-and-patterns.md#事件表和休止必须追到实际混音)：核周期域、完整文字窗口与混音总线，不以函数名、cue长度或文档静默代实测。 |
 | 规则怎样变成同一对象的另一读法，而不是只换图？ | [规则与例外](../studies/rules-and-score.md#先建立规则再让例外改变结果)、[网格与乐谱](../studies/rules-and-score.md#同一网格必须真的被画面与声音消费)：先兑现秩序，再用真实字段关系让同一海报成为乐谱，不把共享JSON等同完整共同时间源。 |
 | 落拍、文字搬移和字体度量怎样各自验证？ | [开始与到达](../studies/rules-and-score.md#区分开始到达和首次可见)、[重排净空](../studies/rules-and-score.md#排版重排不能穿过已经占用的空间)、[真实字体与声音](../studies/rules-and-score.md#字体和印刷声音按实际依赖核对)：核可见边界、同色吞字和真实字形，技术检查不代常速或听审。 |
 | 角色为什么从追逐转为自愿回返，停顿怎样有动作意义？ | [目标与选择](../studies/character-and-rhythm.md#让目标改变通过行动可见)、[可见节拍](../studies/character-and-rhythm.md#节拍声明与首个可见动作分开核)：撤手、凝视、姿态保持和首个实际生效帧分别检查，不以源码动作名替代表演。 |

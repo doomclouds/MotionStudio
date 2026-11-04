@@ -151,3 +151,5 @@ UI 导演先看整页与任务，再以对照定位局部，保留状态/文字/
 - [角色与节奏：选择、有效画门和可见落拍](studies/character-and-rhythm.md)
 
 - [规则与乐谱：共同数据、落定边界和排版重排](studies/rules-and-score.md)
+
+- [物件与图案：身份、数量、循环和完整读窗](studies/objects-and-patterns.md)

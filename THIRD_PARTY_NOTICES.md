@@ -174,3 +174,7 @@ The [fixed isometric camera candidate](engine/design-elements/recipes/candidates
 ## LemoLab screen-space ink path
 
 The [screen-space ink path candidate](engine/design-elements/recipes/candidates/screen-ink-path-candidate/README.md) extracts the transform/resample/line-boil relation from LemoLab’s Rubber Hose `toon.js` and noise helpers at fixed commit `bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00`, retaining its noted Sci-Fi Toon lineage. [Credits and changes](engine/design-elements/recipes/candidates/screen-ink-path-candidate/CREDITS.md), [LemoLab MIT](engine/design-elements/recipes/candidates/screen-ink-path-candidate/LICENSE-LemoLab) and the adaptation MIT remain separate. No upstream character rig, scene, film, audio or font is bundled; source publication is not visual or production acceptance.
+
+## LemoLab umbrella pictogram geometry
+
+The [umbrella pictogram geometry candidate](engine/design-elements/recipes/candidates/umbrella-pictogram-geometry-candidate/README.md) adapts `G.umbrella` from LemoLab’s Pictogram Motion engine at fixed commit `bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00`. [Credits and changes](engine/design-elements/recipes/candidates/umbrella-pictogram-geometry-candidate/CREDITS.md), [LemoLab MIT](engine/design-elements/recipes/candidates/umbrella-pictogram-geometry-candidate/LICENSE-LemoLab.txt) and the adaptation MIT are retained separately. It includes no demo scene, palette, film, audio, font or generic physical simulation; source publication does not establish visual or production acceptance.
