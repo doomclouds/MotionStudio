@@ -8,6 +8,8 @@ const rgba = shadeContourRim({width, height, alpha, bandWidth:5,
   face:[200,200,207], edgeBase:190, contrast:49, light:[.52,.85]});
 ```
 
+This README is the single entry for the helper contract, code, consumers and verification. [design.md](design.md) owns selection intent and visual tradeoffs; it does not redefine the API or create another registered asset.
+
 ## Contract
 Node 24+, no external dependency. Input alpha is a Uint8Array/Uint8ClampedArray with one byte per pixel; dimensions are integers 5..2048 with at most 1,048,576 pixels. All four outer borders must be transparent. Output is a fresh RGBA byte array preserving every input alpha byte. Caller supplies already merged shape/font pixels and handles premultiplication/compositing. Inputs are not mutated.
 
@@ -15,7 +17,7 @@ Node 24+, no external dependency. Input alpha is a Uint8Array/Uint8ClampedArray 
 
 Two-pass chamfer distance uses an alpha>127 interior threshold, not an exact Euclidean distance or subpixel curve. The strict condition is distance < bandWidth: on a binary mask every opaque pixel has distance at least 1, so bandWidth=1 adds no rim shading. Anti-aliased pixels with alpha 1..127 have distance 0 and can still receive rim color at bandWidth=1; their original alpha is preserved. Finite differences approximate a screen-space gradient; curves can staircase, thin strokes may be entirely rim, and adjacent shapes have no independent material identities. Use sufficient raster scale and inspect holes/diagonals at delivery size. Do not use it to claim correct perspective lighting or turn a flat mask through a 3D camera.
 
-Time is O(N) for N pixels, with a fixed number of raster passes. The two new typed arrays use approximately 8N bytes (4N Float32 distance + 4N RGBA output), excluding caller input, objects and runtime overhead. The maximum accepted budget is 1,048,576 pixels. No throughput, interactive latency or frame-rate guarantee is made.
+Time is O(N) for N pixels, with a fixed number of raster passes. With the rim enabled, the two new typed arrays use approximately 8N bytes (4N Float32 distance + 4N RGBA output), excluding caller input, objects and runtime overhead. The maximum accepted budget is 1,048,576 pixels. The disabled control validates the same contract but skips distance-field allocation and shading, using only the 4N-byte output. No throughput, interactive latency or frame-rate guarantee is made.
 
 ## Design choice and deduplication
 Existing material-surfaces implements paper/opaque/glass information panels; it does not shade contours of arbitrary masks. Existing Canvas masks and offset stacks remain responsible for clipping and projected thickness. Existing scalar halftone candidates handle background density. This candidate adds only the bounded alpha-to-rim operation: neither font layout, extrusion, sweep highlights nor dot backgrounds are copied here. It does not replace any registered API.
@@ -23,7 +25,23 @@ Existing material-surfaces implements paper/opaque/glass information panels; it 
 Prefer broad quiet faces with a narrow directional rim rather than high-contrast bands across the entire object. Always compare identical content/time with `enabled:false`; removing all depth or removing the background cannot isolate the rim's contribution. Keep decorative texture away from critical copy. Different words must be measured by actual ink bounds; this helper does not perform that layout.
 
 ## Synthetic verification
-Run `node --test engine/design-elements/recipes/candidates/contour-rim-candidate/test.mjs` from the repository root. `fixtures.mjs` supplies three original masks: ring, open bridge, diamond. Tests cover deterministic output, byte-for-byte alpha preservation, isolated output, input nonmutation, narrow-rim ablation, direction reversal, holes, empty masks, half-transparent AA bytes, one-pixel lines, band endpoints 1/32, exact maximum pixel budget, over-budget rejection, the minimum light norm and invalid inputs. These are bounded synthetic checks, not arbitrary geometry or typography coverage. A caller can put returned bytes into ImageData with an independently installed Canvas renderer; this package does not write media or load fonts.
+Run `node --test engine/design-elements/recipes/candidates/contour-rim-candidate/test.mjs` from the repository root. `fixtures.mjs` supplies three original masks: ring, open bridge, diamond. Tests cover deterministic output, byte-for-byte alpha preservation, isolated output, input nonmutation, narrow-rim ablation, direction reversal, holes, empty masks, half-transparent AA bytes, one-pixel lines, band endpoints 1/32, exact maximum pixel budget, over-budget rejection, the minimum light norm and invalid inputs. These are bounded synthetic checks, not arbitrary geometry or typography coverage. A caller can put returned bytes into ImageData with an independently installed Canvas renderer; the core helper does not write media or load fonts.
+
+## Content-driven transfer consumers
+
+Read [design intent, choices and counterexamples](design.md) before selecting this effect. [consumers.mjs](consumers.mjs) adds two original actual calls: a serif workshop invitation with holes/thin strokes and an independently authored carry-tool silhouette with a different layout responsibility. The same helper is used directly, without implementation copies or registry wrappers. Both have isolated `enabled:false` controls. Fixed-size examples return their mask bytes, placement bounds and copy regions for inspection.
+
+Execute with a caller-installed `@napi-rs/canvas` and licensed DejaVu Serif font (neither is bundled):
+
+```sh
+CONTOUR_CANVAS_MODULE=/absolute/path/to/node_modules/@napi-rs/canvas \
+CONTOUR_FONT_FILE=/absolute/path/to/DejaVuSerif.ttf \
+node engine/design-elements/recipes/candidates/contour-rim-candidate/verify-consumers.mjs /absolute/external-evidence
+```
+
+The runner requires all resources explicitly and writes evidence outside the repository. It checks alpha, actual enclosed holes, determinism, narrow-rim contribution, full-frame ablation isolation, input nonmutation and overflow rejection. The external report records the exact font SHA-256 and Node version. Native-size and half-size previews support visual inspection; small metadata must be recomposed for a genuinely smaller delivery layout. Other fonts and runtimes require remeasurement and fresh review.
+
+These executions strengthen the reusable raster helper, not a new public Design family. A shared raster foundation may eventually be a better cross-domain classification; Motion time sampling and temporal stability are not tested here. No registered counts change.
 
 ## Provenance and status
-Original implementation inspired by analysis of the official [Motion Future 20-second English adaptation](https://open-design.ai/showcase/futuristic-motion-graphics-design/), not a claim to have watched its third-party 62-second original. Source media, glyphs, typography binaries, original music and private rendered evidence are excluded. No source shader or mesh code is adapted. Static review and technical tests do not establish continuous playback, audio review, physical accuracy or user aesthetic approval. Candidate remains subject to independent review.
+Original implementation inspired by analysis of the official [Motion Future 20-second English adaptation](https://open-design.ai/showcase/futuristic-motion-graphics-design/), not a claim to have watched its third-party 62-second original. Source media, glyphs, typography binaries, original music and private rendered evidence are excluded. No source shader or mesh code is adapted. Static review and technical tests do not establish continuous playback, audio review, physical accuracy or user aesthetic approval. This revision received independent code and native-ablation review without blockers. It remains an unregistered static raster candidate; that scoped review does not establish Motion admission or user aesthetic approval.

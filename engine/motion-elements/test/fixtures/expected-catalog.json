@@ -53,6 +53,11 @@
       "api": "offsetCards"
     },
     {
+      "id": "composition.ordered-bands",
+      "kind": "composition",
+      "api": "compileOrderedBands"
+    },
+    {
       "id": "composition.plane-parallax",
       "kind": "composition",
       "api": "planeParallaxLayout"

@@ -9,7 +9,17 @@ export function shadeContourRim({width, height, alpha, bandWidth=5, face=[200,20
   if (typeof enabled!=='boolean') throw new TypeError('enabled must be boolean');
   for(let x=0;x<width;x++) if(alpha[x]||alpha[(height-1)*width+x]) throw new RangeError('Transparent one-pixel border required');
   for(let y=0;y<height;y++) if(alpha[y*width]||alpha[y*width+width-1]) throw new RangeError('Transparent one-pixel border required');
-  const d=new Float32Array(alpha.length), output=new Uint8ClampedArray(alpha.length*4), diagonal=Math.SQRT2;
+  const output=new Uint8ClampedArray(alpha.length*4);
+  // The control is a flat face, not a second distance-field computation. Keep
+  // the same strict validation above, including the transparent border.
+  if(!enabled){
+    for(let i=0;i<alpha.length;i++){
+      output[i*4+3]=alpha[i];
+      if(alpha[i])for(let k=0;k<3;k++)output[i*4+k]=face[k];
+    }
+    return output;
+  }
+  const d=new Float32Array(alpha.length), diagonal=Math.SQRT2;
   for(let i=0;i<d.length;i++) d[i]=alpha[i]>127?width+height:0;
   for(let y=1;y<height-1;y++) for(let x=1;x<width-1;x++){const i=y*width+x;d[i]=Math.min(d[i],d[i-1]+1,d[i-width]+1,d[i-width-1]+diagonal,d[i-width+1]+diagonal);}
   for(let y=height-2;y>0;y--) for(let x=width-2;x>0;x--){const i=y*width+x;d[i]=Math.min(d[i],d[i+1]+1,d[i+width]+1,d[i+width+1]+diagonal,d[i+width-1]+diagonal);}

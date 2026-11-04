@@ -4,6 +4,7 @@ import {compileOrderedBands, sampleOrderedBands} from '../lib/foundations/layout
 export const orderedBandExamples = freeze([
   {name:'work-allocation', ids:['research','build','review'], from:[2,5,3], to:[4,2,4], colors:['#355C70','#B9C8A4','#E4BD84']},
   {name:'capacity-allocation', ids:['reserved','active','idle','buffer'], from:[0,7,2,1], to:[3,0,2,5], colors:['#796B91','#D29B88','#A6C3BF','#E4DAB6']},
+  {name:'single-allocation', ids:['whole'], from:[1], to:[10], colors:['#355C70']},
 ]);
 export function createOrderedBandExample(index) {
   integer(index,0,orderedBandExamples.length-1);

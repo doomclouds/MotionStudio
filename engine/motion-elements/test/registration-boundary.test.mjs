@@ -41,7 +41,8 @@ test('explicit registration manifest matches catalog, API and excluded support a
  const api=JSON.parse(readFileSync(new URL('docs/public-api.json',root)));
  assert.equal(manifest.foundationIncrement,17);assert.equal(manifest.ids.length,17);assert.equal(new Set(manifest.ids).size,17);
  assert.equal(manifest.baselineFoundations+manifest.foundationIncrement,manifest.preparedFoundations);
- assert.equal(cat.elements.filter(e=>e.kind!=='recipe').length,manifest.preparedFoundations);
+ assert.equal(cat.elements.filter(e=>e.kind!=='recipe').length,manifest.preparedFoundations+1);
+ assert.equal(cat.elements.filter(e=>e.id==='composition.ordered-bands').length,1); // post-manifest registration
  assert.equal(cat.elements.filter(e=>e.kind==='recipe').length,manifest.recipes);
  assert.deepEqual(api.defaultExports,Object.keys(base).sort());assert.deepEqual(api.nodeOnlyAdditionalExports,['compileArrivalField','sampleArrivalField']);
  assert.deepEqual(api.catalog,cat.elements.map(({id,api,entry})=>({id,api,entry})));

@@ -1,6 +1,8 @@
 # Seventeen-mechanism registration adaptation
 
-This source tree registers **17 mechanisms** on the prior 43-foundation baseline, yielding **60 foundations + 7 separate recipes**. Foundation expansion pauses at 60. The two support extensions are excluded from the count. All entries remain experimental; technical or native-render evidence is not artistic acceptance.
+This source tree registers **17 mechanisms** on the prior 43-foundation baseline, yielding **60 foundations + 7 separate recipes**. That 17-mechanism increment is historical, not a permanent cap. Ordered shared-boundary partitioning is now separately registered, bringing the current total to **61 foundations + 7 recipes**; the original manifest remains a record of its 17-entry increment. The two support extensions are excluded from the count. All entries remain experimental; technical or native-render evidence is not artistic acceptance.
+
+Ordered partition API: `compileOrderedBands` / `sampleOrderedBands` from `lib/index.mjs`, canonical `lib/foundations/layout/ordered-bands.mjs`. Read [contract and synthetic content studies](guides/ordered-bands-candidate.md). This is experimental admission, not customer-production or artistic acceptance.
 
 ## Current navigation and authority
 

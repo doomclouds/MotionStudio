@@ -157,7 +157,9 @@ def main():
         run(['node', '--test', *map(str, tests)])
         query_cli = elements / 'scripts/query-catalog.mjs'
         listed = json.loads(subprocess.check_output(['node', str(query_cli), 'list']))
-        assert listed['total'] == 67 and len(listed['results']) == 20 and listed['truncated'] is True
+        assert listed['total'] == 68 and len(listed['results']) == 20 and listed['truncated'] is True
+        ordered = json.loads(subprocess.check_output(['node', str(query_cli), 'show', '--id', 'composition.ordered-bands']))
+        assert ordered['total'] == 1 and ordered['results'][0]['element']['status'] == 'experimental'
         rasters = json.loads(subprocess.check_output(['node', str(query_cli), 'list', '--kind', 'raster']))
         assert rasters['total'] == 8 and {r['element']['id'] for r in rasters['results']} == {'raster.coverage-morphology', 'raster.matte', 'raster.displacement-map', 'raster.neighborhood-convolution', 'raster.projective-quad', 'raster.temporal-exposure', 'raster.euclidean-distance-transform', 'raster.palette-error-diffusion'}
         sticky = json.loads(subprocess.check_output(['node', str(query_cli), 'show', '--id', 'composition.sticky-interval']))
@@ -280,7 +282,7 @@ def main():
         stale = subprocess.run([*cli_args, '--out', str(stale_path)], capture_output=True)
         assert stale.returncode == 1 and json.loads(stale_path.read_text())['collection_status'] == 'STALE'
         assert json.loads(stale_path.read_text())['events'] == []
-        print('Catalog 67/default-limit20/recipe7/raster8/no-match and standalone interval CLI synthetic/unsupported/stale gates passed; no decoding or approval')
+        print('Catalog 68/default-limit20/recipe7/raster8/no-match and standalone interval CLI synthetic/unsupported/stale gates passed; no decoding or approval')
         if args.skip_video:
             print('NOT_RUN: gallery video encoding/full decode and standalone reduced still smoke (--skip-video); other tests continue')
         else:

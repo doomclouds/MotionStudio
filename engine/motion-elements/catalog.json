@@ -4458,6 +4458,70 @@
         "projected-reaction-diffusion",
         "field"
       ]
+    },
+    {
+      "id": "composition.ordered-bands",
+      "version": 1,
+      "kind": "composition",
+      "status": "experimental",
+      "summary": "Fixed-order normalized partition transitions using shared boundaries, with explicit category identity.",
+      "api": "compileOrderedBands",
+      "entry": "lib/index.mjs",
+      "example": {
+        "from": [
+          {
+            "id": "work",
+            "weight": 2
+          },
+          {
+            "id": "rest",
+            "weight": 3
+          }
+        ],
+        "to": [
+          {
+            "id": "work",
+            "weight": 4
+          },
+          {
+            "id": "rest",
+            "weight": 1
+          }
+        ]
+      },
+      "applicability": [
+        "Explain redistribution within a fixed ordered set, without gaps or independent band easing.",
+        "Explicit workload shares or inventory composition, with separate labels for absolute totals."
+      ],
+      "counterexamples": [
+        "Reject identity reorder, insertion and deletion; retain zero-weight IDs explicitly.",
+        "Endpoint shares interpolate, not raw amounts. Tiny positive weights may collapse numerically; no minimum visible size.",
+        "Not a semantic classifier, physical mass simulation, accessible chart replacement or default style recommendation."
+      ],
+      "evidence": {
+        "technicalTests": [
+          "test/ordered-bands.test.mjs",
+          "test/ordered-bands-studies.test.mjs",
+          "test/ordered-bands-integration.test.mjs"
+        ],
+        "guidance": "docs/guides/ordered-bands-candidate.md",
+        "visualDemo": null,
+        "visualReview": "SYNTHETIC_KEYFRAME_REVIEW_NO_BLOCKERS",
+        "validationCoverage": "Three neutral parameter variants; workload and inventory synthetic consumers, native rendered at 1280x720 and 640x360. Keyframes 0/.25/.5/.75/1; repeated fresh-process PNG identity and static reduced-motion PNG identity. Two content studies are transfer tests, not accepted customer productions.",
+        "executableExample": "examples/ordered-bands-studies.mjs",
+        "artisticReview": "PENDING_USER",
+        "ownerArtisticAcceptance": "PENDING_USER",
+        "originalProductionTransfer": "NOT_RUN",
+        "normalSpeedViewing": "NOT_DONE",
+        "audioListening": "NOT_LISTENED"
+      },
+      "knowledgeLinks": [],
+      "tags": [
+        "ordered-bands",
+        "partition",
+        "shared-boundaries",
+        "layout"
+      ]
     }
   ]
 }

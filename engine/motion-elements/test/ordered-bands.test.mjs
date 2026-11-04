@@ -12,8 +12,8 @@ test('analytic shared-boundary oracle, not independent rectangle motion',()=>{
   sample(p,.25).boundaries.forEach((b,i)=>near(b,[0,.25,.675,1][i]));
   sample(p,.25).bands.forEach((b,i)=>near(b.fraction,[.25,.425,.325][i]));
 });
-test('two neutral examples: coverage, shared edges, normalized area and seek determinism',()=>{
-  for(let example=0;example<2;example++) {
+test('three neutral variants: coverage, shared edges, normalized area and seek determinism',()=>{
+  for(let example=0;example<orderedBandExamples.length;example++) {
     const e=createOrderedBandExample(example), remembered=e.sample(.37);
     for(const t of [1,0,.9,.001,.5,.37,.99,0,1]) {
       const s=e.sample(t); assert.equal(s.boundaries[0],0); assert.equal(s.boundaries.at(-1),1);
@@ -52,7 +52,7 @@ test('reject structural identity changes and invalid inputs, without invoking ac
 
 test('example configuration is immutable and draw bounds explicit',()=>{
   assert.throws(()=>{orderedBandExamples[0].colors[0]='red'});
-  for(const index of [-1,.5,'0',2])assert.throws(()=>createOrderedBandExample(index));
+  for(const index of [-1,.5,'0',orderedBandExamples.length])assert.throws(()=>createOrderedBandExample(index));
   const e=createOrderedBandExample(0);
   for(const width of [0,-1,NaN,Infinity])assert.throws(()=>e.draw({},.5,width,100));
 });

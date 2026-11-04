@@ -1,4 +1,4 @@
-/** Unregistered candidate: interpolate shared boundaries of a fixed ordered partition. */
+/** Experimental mechanism: interpolate shared boundaries of a fixed ordered partition. */
 import {object, number, id} from '../../validate.mjs';
 const plans = new WeakMap();
 function data(value, keys) {

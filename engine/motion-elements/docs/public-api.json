@@ -21,6 +21,7 @@
     "compileLayoutHandoff",
     "compileLightEchoField",
     "compileOpticalMedium",
+    "compileOrderedBands",
     "compilePolyline",
     "compilePolylineSections",
     "compileProjectiveRaster",
@@ -94,6 +95,7 @@
     "sampleLightEchoField",
     "sampleMotion",
     "sampleOffsetReassembly",
+    "sampleOrderedBands",
     "samplePath",
     "samplePoissonDisc",
     "sampleRasterDisplacement",
@@ -469,6 +471,11 @@
     {
       "id": "field.projected-reaction-diffusion",
       "api": "reactionDiffusion",
+      "entry": "lib/index.mjs"
+    },
+    {
+      "id": "composition.ordered-bands",
+      "api": "compileOrderedBands",
       "entry": "lib/index.mjs"
     }
   ]

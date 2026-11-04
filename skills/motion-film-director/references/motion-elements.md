@@ -4,7 +4,7 @@
 
 ## 本地注册适配边界
 
-当前目录为60基础＋7配方，在43基础上新增17机制后暂停增加；sprite-atlas/polyline-sections是支持扩展，不计数。`lib/index.mjs` 保留既有入口，arrival使用 `lib/node.mjs` / `motion-elements/node`。默认入口既有 timeline `node:crypto` 依赖，不可声称浏览器兼容；纯模块直导路径不变。参见包内 `docs/registered-foundations.md`、`docs/public-api.json` 和 `examples/registered-foundations.mjs`。历史私有记录不可作为本次公开发布证明。
+当前目录为61基础＋7配方；此前43基础新增17机制的阶段性暂停已由本轮缺口驱动提炼接续，新增有序共享边界分带，仍按原准入规则保持 experimental；sprite-atlas/polyline-sections是支持扩展，不计数。`lib/index.mjs` 保留既有入口，arrival使用 `lib/node.mjs` / `motion-elements/node`。默认入口既有 timeline `node:crypto` 依赖，不可声称浏览器兼容；纯模块直导路径不变。参见包内 `docs/registered-foundations.md`、`docs/public-api.json` 和 `examples/registered-foundations.mjs`。历史私有记录不可作为本次公开发布证明。
 
 ## 五层结构
 
@@ -242,7 +242,7 @@ Pixi官方shader与p5 mask具体源码/许可取舍见`docs/raster-reference-dec
 
 ## 角色：两段固定长度追随明确目标
 
-当前60基础＋7配方（67项），按当前目标暂停增加；数量与艺术接受分别报告。
+本段记录角色机制的既有使用边界；当前数量以 catalog 为准，不因历史阶段暂停而阻止有证据的新提炼。数量与艺术接受分别报告。
 `geometry.two-link-ik`是1个纯二维几何机制，无新配方，不是全身rig、碰撞、力学或3D。
 root/target来自作品同一绝对帧状态，显式bend/fallback；用返回joint/end画骨段，不能把不可达end偷偷画到target掩盖投影。
 实际手掌轮廓与IK端点不是同一个接触定义：数值误差0后仍要看真实编码邻帧是否早贴、滑动或错位。
@@ -341,3 +341,8 @@ glyph内部采样不加到公wrapper数。570次run提交不等于全程完整�
 两部实际有声候选分别覆盖2项；纸卡公共输入硬化与原片通过540帧实际buffer/draw桥接和22代表PNG+22新Node，不冒新编码；摄影两项保持原10文件runtime闭包字节，旧staged recipe复用不计新。保留49帧三注释全不透明的读时风险，数量/工程合格不是风格背书。常速、听审、用户与迁移门依catalog，不导入私人素材。
 
 印刷/柔性新增：halftone-screen、coverage-morphology、affine-skin、damped-response共4基础，不计helpers/参数变体为新项；AFTER RAIN与ROOM FOR TWO的技术证据不等于艺术认可，实际听审仍NOT_LISTENED。详见engine/motion-elements/docs/print-rig-integration.md。
+
+
+## 固定类别的分配变化
+
+`composition.ordered-bands` 的 `compileOrderedBands` / `sampleOrderedBands` 从固定同序 ID 的两端权重生成共享边界，不是每块独立运动或自动语义配色。通过[合同与设计取舍（便携包）](../runtime/motion-elements/docs/guides/ordered-bands-candidate.md)或[源码仓库入口](https://github.com/doomclouds/MotionStudio/blob/dev/engine/motion-elements/docs/guides/ordered-bands-candidate.md)进入真实消费者；固定预算适合横向分配叙事，总量变化时将总量与份额分开，别让归一化动画暗示物理库存连续变化。先核静态端点、零宽类别和小尺寸标签，再验证过渡及 reduced-motion。两种合成内容的实际渲染支持有限迁移，不等于用户作品、实时系统或常速/听审通过。

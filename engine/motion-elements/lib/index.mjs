@@ -74,3 +74,4 @@ export {compileRadialWarp} from './foundations/geometry/radial-landmark-warp.mjs
 export {distanceTransform} from './foundations/raster/distance-transform.mjs';
 export {paletteDiffuse} from './foundations/raster/palette-diffusion.mjs';
 export {reactionDiffusion} from './foundations/field/reaction-diffusion.mjs';
+export {compileOrderedBands, sampleOrderedBands} from './foundations/layout/ordered-bands.mjs';

@@ -111,4 +111,4 @@ The [timing/glyph evidence index](recipes/batches/seventh-static-candidates/Inde
 
 ## Contour-aware raster rim candidate
 
-[Bounded merged-mask rim](recipes/candidates/contour-rim-candidate/README.md) separates a thin screen-space edge shade from a quiet face, with three original synthetic masks and an isolated no-rim control. Source-only and unregistered; not extrusion geometry, PBR, a new design family or an accepted work.
+[Bounded merged-mask rim](recipes/candidates/contour-rim-candidate/README.md) separates a thin screen-space edge shade from a quiet face, with three original synthetic masks, two [content-driven consumers and selection guidance](recipes/candidates/contour-rim-candidate/design.md), and an isolated no-rim control. Source-only and unregistered; not extrusion geometry, PBR, a new design family or an accepted work.

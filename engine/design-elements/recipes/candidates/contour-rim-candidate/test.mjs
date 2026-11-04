@@ -58,3 +58,14 @@ test('light norm includes exactly 1e-6 and rejects a smaller norm',()=>{
  assert.throws(()=>shadeContourRim({...p,light:[0.999e-6,0]}),TypeError);
  assert.deepEqual(shadeContourRim({...p,light:[1e-6,0]}),shadeContourRim({...p,light:[1,0]}));
 });
+
+test('flat fast path preserves validation, zero-alpha RGB and fresh output',()=>{
+ const p=createFixture('ring'),args={...p,enabled:false,face:[0,127.5,255]};
+ const a=shadeContourRim(args),b=shadeContourRim(args);assert.notEqual(a,b);assert.deepEqual(a,b);
+ for(let i=0;i<p.alpha.length;i++){
+  assert.equal(a[4*i+3],p.alpha[i]);
+  assert.deepEqual([...a.slice(4*i,4*i+3)],p.alpha[i]?[0,128,255]:[0,0,0]);
+ }
+ for(const patch of [{bandWidth:0},{light:[0,0]},{contrast:128},{edgeBase:256},{face:[0,0,NaN]}])assert.throws(()=>shadeContourRim({...args,...patch}));
+ const alpha=p.alpha.slice();alpha[0]=1;assert.throws(()=>shadeContourRim({...args,alpha}),/border/);
+});

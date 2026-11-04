@@ -1,6 +1,6 @@
 # Motion Elements — 可组合动效基础库
 
-可组合的纯状态机制、配方与 Canvas 适配器，不是影片模板库。当前 [catalog.json](catalog.json) 为60基础＋7配方，全部 `experimental`；sprite-atlas、polyline-sections及数学/时间/适配支持不另计数。数量不代表艺术或生产成熟度。
+可组合的纯状态机制、配方与 Canvas 适配器，不是影片模板库。当前 [catalog.json](catalog.json) 为61基础＋7配方，全部 `experimental`；sprite-atlas、polyline-sections及数学/时间/适配支持不另计数。数量不代表艺术或生产成熟度。
 
 ## 入口与运行边界
 
@@ -62,6 +62,7 @@ node engine/motion-elements/scripts/query-catalog.mjs show --id fragment.fixed-t
 | 两场景圆域／斜向揭示 | [Iris与linear-mask](docs/guides/reveal-transitions.md) |
 | 方向场／分带错位 | [field与slices](docs/guides/field-and-slices.md) |
 | 焦点／片块署名／灯点映像配方 | [focus](docs/guides/focus-handoff.md)、[signature](docs/guides/tile-signature.md)、[light echo](docs/guides/light-echo-field.md) |
+| 固定类别份额变化／共享边界分带 | [合同与两种合成内容消费者](docs/guides/ordered-bands-candidate.md) |
 | UI、数据流、rig、raster与其余注册机制 | [catalog](catalog.json) 的具体 guidance；[当前注册导航](docs/registered-foundations.md) |
 | 合成gallery／技术检查／机制提炼 | [展示与收录](docs/guides/gallery-and-registration.md) |
 | 既有作品调用与版本桥接 | [历史批次及限定证据](docs/history/production-batches.md)，不是当前作品通过证明 |
@@ -69,8 +70,6 @@ node engine/motion-elements/scripts/query-catalog.mjs show --id fragment.fixed-t
 ## 未注册研究候选
 
 [球面光斑场](docs/guides/spherical-splats-candidate.md)：独立可测试的表面标量投影研究；尚未进入 catalog / 公共 barrel，不增加机制计数，不代表原参考 shader 或真实体积。
-
-[有序共享边界分带](docs/guides/ordered-bands-candidate.md)：固定同序 ID 的归一分区插值；拒绝跨身份重排，不提供语义推断，不增加正式机制计数。
 
 [折叠标量场与径向扰动](docs/guides/folded-ripple-candidate.md)：固定五轮二维场与单次绝对时间事件；源码机制研究，未与原例可视预览核验，不增加正式计数。
 

@@ -155,3 +155,7 @@ See [bounded drape and radial categories](recipes/batches/eighth-static-candidat
 ## Seeded resin illustration · unregistered candidate
 
 [Seeded resin surface](recipes/candidates/seeded-resin-candidate/README.md) generates bounded object-local inclusions and a wide curved light band for a stylized static surface. Two independent size/seed configurations; not photographic optics, live lighting or a flicker-removal guarantee. No new registered family, reviewed recipe or accepted work.
+
+## Contour rim · reusable raster candidate
+
+[Selection and composition guidance](recipes/candidates/contour-rim-candidate/design.md) connects the [bounded same-alpha shader](recipes/candidates/contour-rim-candidate/README.md) to two actual content-driven consumers: a large serif invitation title and an authored open-loop object sheet. Isolated no-rim controls, caller-owned fonts/Canvas and external evidence; no new registered family, reviewed recipe, PBR claim or accepted work.
