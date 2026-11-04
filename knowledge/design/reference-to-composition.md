@@ -143,3 +143,5 @@ UI 导演先看整页与任务，再以对照定位局部，保留状态/文字/
 - [索引、像素与状态：让系统承担叙事](studies/indexed-story-systems.md)
 
 - [连续地图：尺度、焦点与声音职责](studies/continuous-map-story.md)
+
+- [共同节奏与界面：归位、换型和因果链](studies/phase-and-interface-story.md)

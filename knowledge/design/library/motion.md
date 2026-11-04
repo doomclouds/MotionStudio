@@ -4,6 +4,8 @@
 
 | 镜头/时间问题 | 原始指南入口 |
 |---|---|
+| 音乐与密集界面怎样真正共享节奏，而不只是同一BPM？ | [共同时间表](../studies/phase-and-interface-story.md#让共同时间表真正被两边消费)、[分步布局](../studies/phase-and-interface-story.md#同类归位与界面换型分两步)：核实际事件消费与类别身份，节奏对齐不等于同音或听审。 |
+| 平面窗口扫光、光标触发与跳时缓存怎样分别验？ | [投影与照亮](../studies/phase-and-interface-story.md#透明内容先投影再照亮)、[可见因果链](../studies/phase-and-interface-story.md#主角动作需要看得见的因果链)、[状态与依赖](../studies/phase-and-interface-story.md#缓存状态与依赖按实际行为复验)：透明层、动作可见性与真实字体合同分别验证，不以资源恢复代常速审查。 |
 | 一个连续镜头怎样讲清系统与个体，而不在拉远时丢失主体？ | [同一空间的过程](../studies/continuous-map-story.md#用同一空间解释过程)、[穿透与拉远](../studies/continuous-map-story.md#穿透与拉远先保留可见锚点)：路线、对数尺度、可见锚点和图层退场共同验证，抽帧不代常速观看。 |
 | 地图里的数字、静默和技术检查各自证明什么？ | [数字与过程事实](../studies/continuous-map-story.md#数字图形与过程事实分开验证)、[声部退出](../studies/continuous-map-story.md#用声部退出建立尺度变化)、[程序与内容](../studies/continuous-map-story.md#程序成功不代替内容成立)：同源数据、滤波时间轴、检查覆盖与源码改编边界，不把执行成功当审美接受。 |
 | 原生像素画面如何避免整片同频抖动？ | [分层像素时钟](../studies/indexed-story-systems.md#不同动作使用各自的像素时钟)：角色、镜头、火焰与阅读分别采样，分块遮罩保留全局坐标。 |
