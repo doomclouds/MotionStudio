@@ -63,6 +63,18 @@ class DesignLayoutTests(unittest.TestCase):
         self.assertIn('旧版作为会失败的负对照', qa)
         self.assertNotIn('/workspace/', projected)
 
+    def test_runtime_readme_marks_repository_only_policy_context(self):
+        source = 'engine/motion-elements/README.md'
+        original = (ROOT/source).read_text()
+        projected = layout.source_bytes(ROOT, source).decode()
+        for name in ('SOURCE-SCOPE.md', 'THIRD_PARTY_NOTICES.md'):
+            self.assertIn('](../../' + name + ')', original)
+            self.assertNotIn('](../../' + name + ')', projected)
+            self.assertIn('仅完整仓库：' + name, projected)
+        self.assertIn('](LICENSE)', projected)
+        self.assertEqual(layout.source_bytes(ROOT, 'engine/motion-elements/LICENSE'),
+                         (ROOT/'engine/motion-elements/LICENSE').read_bytes())
+
     def test_fixed_historical_provenance_bytes_unchanged(self):
         self.assertEqual(layout.source_bytes(ROOT,'engine/design-elements/catalog.json'),(ROOT/'engine/design-elements/catalog.json').read_bytes())
         original=(ROOT/'knowledge/design/cases/ui-003-print-poster.md').read_text()

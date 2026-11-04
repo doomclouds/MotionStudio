@@ -16,7 +16,7 @@ def source_bytes(root, source):
         raise ValueError('Missing/symlink source: ' + source)
     data = path.read_bytes()
     if path.suffix != '.md' or not (source.startswith(('skills/motion-film-director/', 'knowledge/design/'))
-                                    or source == 'engine/design-elements/CASE-COVERAGE.md'):
+                                    or source in {'engine/design-elements/CASE-COVERAGE.md', 'engine/motion-elements/README.md'}):
         return data
     destination = package_path(source)
     def replace(match):
@@ -25,8 +25,9 @@ def source_bytes(root, source):
             return match[0]  # Historical fixed-commit provenance is not rewritten.
         path, sep, anchor = target.partition('#')
         resolved = os.path.normpath(str(Path(source).parent / path))
-        if resolved.startswith('portfolio/'):
-            # Portfolio is repository-only: preserve meaning without a package-external link.
+        if resolved.startswith('portfolio/') or resolved in {'SOURCE-SCOPE.md', 'THIRD_PARTY_NOTICES.md'}:
+            # Repository-only context: preserve its identity without a dangling package link.
+            # Actual bundled LICENSE/NOTICE files remain unchanged and required.
             return label + '（仅完整仓库：' + resolved + '）'
         relative = os.path.relpath(package_path(resolved), Path(destination).parent)
         return '[' + label + '](' + relative + (sep + anchor if sep else '') + ')'

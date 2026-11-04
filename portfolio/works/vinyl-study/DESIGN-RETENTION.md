@@ -4,7 +4,7 @@
 
 ## 证据与状态
 
-- [固定来源](https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/web/03-memphis-maximalism.html)；原作归属以CREDITS.md及entry.json为准，非原创构图声明。
+- [固定来源](https://github.com/alchaincyf/huashu-design/blob/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1/assets/style-specimens/web/03-memphis-maximalism.html)；原作归属以CREDITS.md及work.json为准，非原创构图声明。
 - 本次核对：`design/scene.mjs`、`README.md`、`work.json`、`design/content.json`；结合现有自渲染封面检查宏观关系。
 - 这是文档沉淀修复：未在本次重新渲染、浏览器验收或复算全部模型。既有验收/复现范围见work.json与README，封面缩略检查不替代完整尺寸视觉复核。
 

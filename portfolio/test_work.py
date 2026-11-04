@@ -10,6 +10,11 @@ class WorkContract(unittest.TestCase):
   rows=work.load_all(PORTFOLIO);self.assertEqual(len(rows),66)
   self.assertTrue(all(d['schema']=='motionstudio.work/1' for _,d in rows))
   for old in ['validate.py','retention.py','design-index.json','DESIGN-INDEX.md']:self.assertFalse((PORTFOLIO/old).exists())
+ def test_design_cards_reference_current_work_contract(self):
+  for folder,d in work.load_all(PORTFOLIO):
+   if 'design' not in d:continue
+   text=(folder/d['design']['decisionCard']).read_text()
+   self.assertNotIn('以CREDITS.md及entry.json为准',text,str(folder))
  def test_static_checks_and_candidates_are_separate(self):
   results=[admission.inspect(folder,ROOT) for folder,_ in work.load_all(PORTFOLIO)]
   self.assertEqual(sum(x['admissible'] for x in results),63)

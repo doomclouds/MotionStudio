@@ -1,5 +1,6 @@
 """Offline path-link regression for authored director guidance, in repo and package.
-Runtime snapshots retain their own repository documentation and are not in scope.
+The five bundled engine snapshots are checked too; standalone review-tools retain
+their own separately scoped documentation checks.
 Remote links are not fetched; pinned MotionStudio source targets are checked locally.
 """
 import argparse
@@ -41,13 +42,19 @@ def inspect(root, repository=None):
     if not root.is_dir() or not (root / 'SKILL.md').is_file():
         return 0, ['Missing Skill root or SKILL.md; refusing an empty success']
     errors, count = [], 0
-    for page in sorted(root.rglob('*.md')):
-        if 'runtime' in page.relative_to(root).parts:
-            continue
+    pages = list(root.rglob('*.md'))
+    if repository is not None:
+        pages += [page for page in (repository / 'engine').rglob('*.md')
+                  if 'node_modules' not in page.relative_to(repository / 'engine').parts]
+    for page in sorted(pages):
+        if page.is_relative_to(root):
+            parts = page.relative_to(root).parts
+            if parts[:2] == ('runtime', 'review-tools'):
+                continue
         for target in re.findall(r'\]\(([^)]+)\)', page.read_text()):
             count += 1
             if not local_target(root, page, target, repository):
-                errors.append(f'{page.relative_to(root)} -> {target}')
+                errors.append(f'{page.relative_to(repository if repository is not None else root)} -> {target}')
     return count, errors
 
 class PathLinkTests(unittest.TestCase):
@@ -69,6 +76,28 @@ class PathLinkTests(unittest.TestCase):
     def test_remote_and_local_anchor_are_not_fetched(self):
         self.assertTrue(local_target(self.root, self.page, 'https://example.invalid/doc'))
         self.assertTrue(local_target(self.root, self.page, '#scope'))
+    def test_runtime_engine_missing_link_is_checked(self):
+        (self.root / 'SKILL.md').write_text('Skill')
+        page = self.root / 'runtime/motion-elements/README.md'
+        page.parent.mkdir(parents=True)
+        page.write_text('[policy](../../SOURCE-SCOPE.md)')
+        count, errors = inspect(self.root)
+        self.assertEqual(count, 1)
+        self.assertEqual(len(errors), 1)
+        (self.root / 'SOURCE-SCOPE.md').write_text('Fixture policy')
+        self.assertEqual(inspect(self.root)[1], [])
+    def test_repository_engine_missing_link_is_checked(self):
+        skill = self.root / 'skills/director'
+        skill.mkdir(parents=True)
+        (skill / 'SKILL.md').write_text('Skill')
+        page = self.root / 'engine/example/README.md'
+        page.parent.mkdir(parents=True)
+        page.write_text('[missing](missing.md)')
+        self.assertEqual(len(inspect(skill, self.root)[1]), 1)
+        dependency = self.root / 'engine/example/node_modules/vendor/README.md'
+        dependency.parent.mkdir(parents=True)
+        dependency.write_text('[vendor-only](absent.md)')
+        self.assertEqual(len(inspect(skill, self.root)[1]), 1)
     def test_missing_portable_runtime_is_rejected(self):
         self.assertFalse(local_target(self.root, self.page, '../runtime/review-tools/missing.py'))
 
