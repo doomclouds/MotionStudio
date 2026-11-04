@@ -61,18 +61,8 @@
   },
   "files": [
     {
-      "path": "ASSET-USAGE.md",
-      "sha256": "efc26af1a1cf1a6b96c3c6cba12b5957bb0702c4cd1fcf0815a1f0f00ebefd39",
-      "kind": "documentation"
-    },
-    {
       "path": "CREDITS.md",
       "sha256": "bdf0a3a75eeeb89b25c63e5edd0aa235feb361b2fbfdc3f2dd9edcdd1a6643b3",
-      "kind": "documentation"
-    },
-    {
-      "path": "DESIGN-REASONING.md",
-      "sha256": "47de953ad073796a8c0396e9b11b8ba0e0ecf28ace798f04b30f9c31cea19666",
       "kind": "documentation"
     },
     {
@@ -92,7 +82,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "c4a4eddfc04c461b1b9c16dcfab45a7838e96dafd3ce163b734514388b8f889b",
+      "sha256": "e809d795588b42bfda42f95afd720eaee6ef9917e29aab3f084102edfef47024",
       "kind": "documentation"
     },
     {
@@ -141,8 +131,8 @@
       "kind": "config"
     },
     {
-      "path": "DESIGN-RETENTION.md",
-      "sha256": "d83353848648e8e392a6e4e2cd89d5b79155fccda63a9ad620e4fb2264256e58",
+      "path": "design.md",
+      "sha256": "e9965871f6b4a82f612258ebc9922f87e108f853f2bb853a2d91457fb2ba3baa",
       "kind": "documentation"
     }
   ],
@@ -202,13 +192,11 @@
     }
   },
   "design": {
-    "decisionCard": "DESIGN-RETENTION.md",
+    "decisionCard": "design.md",
     "nonAssetNote": "Shared drawing helpers and case-local scene code are not public design families; no runtime reuse is inferred from visual similarity.",
     "ruleRefs": [],
     "ruleStatus": "No separate formal rule card claimed; use decisionCard and sourceAnalysis.",
-    "sourceAnalysis": [
-      "DESIGN-REASONING.md"
-    ],
+    "sourceAnalysis": [],
     "assetUsage": [
       {
         "callToken": "drawOverprint",

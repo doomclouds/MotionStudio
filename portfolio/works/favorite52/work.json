@@ -187,7 +187,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "b2e30ff86b401c5ffb9aadae185ae7271b1428226a259bc9bb6ba00ed87b2f1a",
+      "sha256": "fa96cf69c75950725dea0bd903fdfa85d115520236415c32c63ddecd29326460",
       "kind": "documentation"
     },
     {
@@ -464,6 +464,11 @@
       "path": "test_prepare.py",
       "sha256": "0a82a306f533c749b5dbb0b287133a4f47c0cd06996be63131344f521ed4e1cf",
       "kind": "source"
+    },
+    {
+      "path": "design.md",
+      "sha256": "8c8c34338eef2d3e178bd99ed630a87c351f2a8bc48aec134eee1ec8290d461a",
+      "kind": "documentation"
     }
   ],
   "resources": [
@@ -728,5 +733,13 @@
     "reviewArtifacts": {
       "status": "NOT_INCLUDED"
     }
+  },
+  "design": {
+    "decisionCard": "design.md",
+    "sourceAnalysis": [],
+    "ruleRefs": [],
+    "ruleStatus": "Reading guide consolidated from retained documentation; no new formal rule or validation claimed.",
+    "assetUsage": [],
+    "nonAssetNote": "No public design-family usage is inferred here; existing runtime and motion dependencies remain in their original locks and source."
   }
 }
