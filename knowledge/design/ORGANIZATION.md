@@ -24,7 +24,7 @@
 | scripts/test-skill-links.py | 仓库模式核仓库内新目标，portable模式仍禁止包外逃逸 |
 | scripts/test-skill-package.py | 隔离索引收新源；逐字节核真源经原生布局转换，非Markdown代码不变 |
 | portfolio/works/vinyl-study/README.md | 直接引用 `knowledge/design/cases/ui-003-print-poster.md`；作品源码未删 |
-| engine/design-elements/print-poster.mjs guidance | 直接更新活动路径；导出名称及绘制API不变 |
+| engine/design-elements/families/print-poster/index.mjs guidance | 指向同目录README；方法卡只保存方法，导出名称及绘制API不变 |
 | engine/design-elements README/catalog、生成 portfolio/index.json | 固定旧commit guidance是历史来源溯源，不改写；作品索引由 portfolio/work.py index 统一生成，不手改 |
 | README、AGENTS、specs 的根导航/目录职责/阶段声明 | 由集成人统一更新中性真源与直接迁移状态；不能继续宣称有旧入口兼容 |
 

@@ -10,7 +10,7 @@ See [recipe source roles](recipes/README.md) for the direct `reviewed/`, `candid
 
 | Stable ID | Intent / code | Explicit input responsibility |
 |---|---|---|
-| design.print-poster.v1 | [existing guide](https://github.com/doomclouds/MotionStudio/blob/cae18d21f2fbef9702c8ce94ce68abd9eda826a4/skills/motion-film-director/research/design-knowledge/cases/ui-003-print-poster.md), [code](print-poster.mjs) | paper panels, offset type; existing fixed poster recipe |
+| design.print-poster.v1 | [self-contained guide](families/print-poster/README.md), [code](families/print-poster/index.mjs) | paper panels, offset type; existing fixed poster recipe |
 | design.typographic-focus.v1 | [design card](docs/typographic-focus.md), [code](typographic-focus.mjs) | authored short lines, typography roles and exact text bounds |
 | design.color-sections.v1 | [design card](docs/color-sections.md), [code](color-sections.mjs) | two semantic slots, order, area ratio and explicit colors |
 | design.material-surfaces.v1 | [design card](docs/material-surfaces.md), [code](material-surfaces.mjs) | paper / opaque / caller-supplied glass backdrop, content slot |
@@ -27,7 +27,7 @@ New assets export `id`, `validate(props)`, and `draw(ctx, props, env?)`. Props c
 
 Glass requires `env.canvasApi.createCanvas` plus a callback `env.backdrop({ctx,width,height,bounds})` which paints the caller's background crop. This is an explicit visual backdrop with overlay and soft shadow, not physical refraction or a promise of CSS backdrop-filter equivalence. Controls are static visual assets, not usable interactive widgets.
 
-The existing `print-poster.mjs` API is deliberately left compatible and separate; it is not silently wrapped into the new dispatcher. Source references and case-specific exclusions are in [CASE-COVERAGE.md](CASE-COVERAGE.md).
+The print-poster family now lives in `families/print-poster/` with README, design, implementation, examples and tests together. The old flat source/test paths have no compatibility wrappers. Its exported drawing API remains separate; it is not silently wrapped into the new dispatcher. Source references and case-specific exclusions are in [CASE-COVERAGE.md](CASE-COVERAGE.md).
 
 ## Actual composition
 

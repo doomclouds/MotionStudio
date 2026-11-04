@@ -14,7 +14,7 @@
 
 ## 可调用实现
 
-稳定实现ID `design.print-poster.v1`：[代码与接口](https://github.com/doomclouds/MotionStudio/tree/dev/engine/design-elements)，代码真源`engine/design-elements/print-poster.mjs`。
+稳定实现ID `design.print-poster.v1`：[独立资产入口](../../../engine/design-elements/families/print-poster/README.md)，代码真源`engine/design-elements/families/print-poster/index.mjs`。
 
 - `drawPaper`：纸签的有意角度、厚边、硬影。尺寸/位置/角度/色彩由调用者传入。
 - `drawOverprint`：用硬偏移组织强调而非柔光；字体由调用者提供，实测溢出直接拒绝。

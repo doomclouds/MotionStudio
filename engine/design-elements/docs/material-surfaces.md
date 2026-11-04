@@ -79,7 +79,7 @@ node engine/design-elements/test-directional-pressure.mjs /absolute/new-private-
 
 ### 与已有材料的分工
 
-- [print-poster](../print-poster.mjs) 是纸签与硬偏移叠印，不能代替方向笔触。
+- [print-poster](../families/print-poster/README.md) 是纸签与硬偏移叠印，不能代替方向笔触。
 - 漫画网点优先用现有 [halftone-screen](../../motion-elements/docs/halftone-screen.md) 或 [标量网点候选](../recipes/candidates/halftone-scalar-candidate/README.md)，保持各自原状态。集中线的位置/留白仍由构图决定，不为这一观察另建网点或排线积木。
 - 砖墙、喷漆、粗糙描边和滴流分别处理：墙缝应穿过未覆盖区域，喷漆局部透明度逐渐衰减；把它们烘为整张材质会锁死构图。当前不提供新的喷漆/砖墙函数，因为尚无独立双输入实渲验证；[drape候选](../recipes/candidates/drape-material-candidate/README.md) 的布面明暗也不能冒充这些材料。
 

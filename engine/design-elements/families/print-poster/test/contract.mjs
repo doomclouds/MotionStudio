@@ -1,5 +1,6 @@
-import assert from 'node:assert/strict';import {createRequire} from 'node:module';import {drawPoster,drawPaper,drawOverprint,recipes} from './print-poster.mjs';
-const require=createRequire((process.env.MOTION_ENGINE_ROOT||new URL('../motion-render-core',import.meta.url).pathname)+'/package.json');const {createCanvas}=require('@napi-rs/canvas');
+import assert from 'node:assert/strict';import {drawPoster,drawPaper,drawOverprint,recipes} from '../index.mjs';
+import {loadCanvas} from '../examples/runtime.mjs';
+const {createCanvas}=loadCanvas();
 const canvas=createCanvas(1000,600),ctx=canvas.getContext('2d');
 const render=r=>{drawPoster(ctx,r);return canvas.toBuffer('image/png');};
 const a=render(recipes.listening);assert.deepEqual(a,render(recipes.listening));const b=render(recipes.workshop);assert.notDeepEqual(a,b);assert.deepEqual(b,render(recipes.workshop));

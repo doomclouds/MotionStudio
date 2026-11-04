@@ -6,14 +6,15 @@
       "id": "design.print-poster.v1",
       "version": 1,
       "status": "existing-published",
-      "entry": "print-poster.mjs",
+      "entry": "families/print-poster/index.mjs",
       "exports": [
         "drawPaper",
         "drawOverprint",
         "drawPoster"
       ],
-      "guidance": "https://github.com/doomclouds/MotionStudio/blob/cae18d21f2fbef9702c8ce94ce68abd9eda826a4/skills/motion-film-director/research/design-knowledge/cases/ui-003-print-poster.md",
-      "verification": "existing test-print-poster.mjs; unchanged by this patch"
+      "guidance": "families/print-poster/README.md",
+      "verification": "families/print-poster/test/contract.mjs; static synthetic technical checks, not aesthetic acceptance",
+      "example": "families/print-poster/examples/render.mjs"
     },
     {
       "id": "design.typographic-focus.v1",

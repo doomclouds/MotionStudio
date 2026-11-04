@@ -83,12 +83,12 @@ def main():
         design = skill / 'runtime/design-elements'
         catalog = json.loads((design / 'catalog.json').read_text())
         assert len(catalog['assets']) == 14
-        assert (design / 'print-poster.mjs').read_bytes() == (ROOT / 'engine/design-elements/print-poster.mjs').read_bytes()
+        assert (design / 'families/print-poster/index.mjs').read_bytes() == (ROOT / 'engine/design-elements/families/print-poster/index.mjs').read_bytes()
         run(['node', '--input-type=module', '-e', "const m=await import(process.argv[1]);if(Object.keys(m.registry).length!==13)throw Error('Registry missing');", (design / 'index.mjs').as_uri()])
         if os.environ.get('MOTION_ENGINE_ROOT') and os.environ.get('UI_TEST_FONT_DIR') and os.environ.get('UI_B05_FONT_FILE'):
             run(['python3', str(design / 'test/verify-cjk-font.py')])
             run(['node', str(design / 'test/verify.mjs'), str(temp / 'design-test-results.json')])
-            run(['node', str(design / 'test-print-poster.mjs')])
+            run(['node', str(design / 'families/print-poster/test/contract.mjs')])
         else:
             print('NOT_RUN: design Canvas rendering tests require MOTION_ENGINE_ROOT, UI_TEST_FONT_DIR and UI_B05_FONT_FILE; extracted imports and source bytes checked')
         recipes = design / 'recipes/reviewed/b06'

@@ -1,6 +1,6 @@
 // Original bounded static primitives; no source artwork, fonts, or timing.
 export const id='design.print-poster.v1';
-export const guidance='../../knowledge/design/cases/ui-003-print-poster.md';
+export const guidance='./README.md';
 const finite=(v,label)=>{if(!Number.isFinite(v))throw new TypeError(label);};
 export function drawPaper(ctx,{x,y,width,height,rotation=0,fill='#f6eedc',ink='#202020',offset=8}){
  for(const [k,v]of Object.entries({x,y,width,height,rotation,offset}))finite(v,k);

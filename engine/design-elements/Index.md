@@ -12,7 +12,7 @@
 
 | 稳定 ID | 文字指导 | 代码 | 复用场景 |
 |---|---|---|---|
-| design.print-poster.v1 | 既有案例知识卡，见 catalog | [print-poster.mjs](print-poster.mjs) | 既有印刷海报，保持原 API |
+| design.print-poster.v1 | [独立入口](families/print-poster/README.md) | [源码](families/print-poster/index.mjs) | 既有印刷海报，保持原 API |
 | design.typographic-focus.v1 | [文字主视觉](docs/typographic-focus.md) | [代码](typographic-focus.mjs) | 主张、章节标题、嵌套活动信息 |
 | design.color-sections.v1 | [色彩分区](docs/color-sections.md) | [代码](color-sections.mjs) | 主张与证据分区、互换阅读顺序 |
 | design.material-surfaces.v1 | [材质表面](docs/material-surfaces.md) | [代码](material-surfaces.mjs) | 纸、实体、显式背景玻璃及内容槽 |
