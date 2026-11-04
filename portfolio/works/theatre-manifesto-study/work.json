@@ -72,11 +72,6 @@
       "kind": "documentation"
     },
     {
-      "path": "DESIGN-RETENTION.md",
-      "sha256": "bbae83f1714114faaac6c977d755f43f0ad21038ee123c4377880dd55f45c295",
-      "kind": "documentation"
-    },
-    {
       "path": "LICENSES/Anton-OFL.txt",
       "sha256": "ee67e6ee22790b7929f1a3769ca2801d565c64b5a9096942c1adf5596de9c9e4",
       "kind": "license"
@@ -98,18 +93,13 @@
     },
     {
       "path": "README.md",
-      "sha256": "eae128edf80cc0f2916d56a20f56120ce480ac21f1957009c34acfbc890366b9",
+      "sha256": "0a71ce0f2a6415bcae18df8a3d7ca37a7099f4e0c72a06cc8abb12472de5ed54",
       "kind": "documentation"
     },
     {
       "path": "cover.jpg",
       "sha256": "186ebadd944bbdbef3eb1dfc86034029d11c7b6652ab363cc13a4102a7a0ddd0",
       "kind": "cover"
-    },
-    {
-      "path": "design/DESIGN-ANALYSIS.md",
-      "sha256": "5e4e4b2b44cd02f4ac490857740c5b8c64d40c05ea4387d9be53a0443448ae88",
-      "kind": "documentation"
     },
     {
       "path": "design/SETTLEMENT.md",
@@ -165,6 +155,11 @@
       "path": "tests/recipe.test.mjs",
       "sha256": "360de6a72e796ec426f8abd66f86f1242a7b514c4ead4a611f6a3973ee8c535c",
       "kind": "source"
+    },
+    {
+      "path": "design.md",
+      "sha256": "da6bfe136eb15d35decab1b012eb332fd9d1654bcd93f97d0d0b783a7b58899c",
+      "kind": "documentation"
     }
   ],
   "resources": [
@@ -255,13 +250,11 @@
     }
   },
   "design": {
-    "decisionCard": "DESIGN-RETENTION.md",
+    "decisionCard": "design.md",
     "nonAssetNote": "Local data, geometry, audit and Canvas-state helpers are not public design families.",
     "ruleRefs": [],
     "ruleStatus": "Case recipe/audit not a new shared family.",
-    "sourceAnalysis": [
-      "design/DESIGN-ANALYSIS.md"
-    ],
+    "sourceAnalysis": [],
     "assetUsage": []
   },
   "transfer": {

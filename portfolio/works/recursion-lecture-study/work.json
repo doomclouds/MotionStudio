@@ -68,22 +68,12 @@
   "files": [
     {
       "path": "ASSET-USAGE.md",
-      "sha256": "b8ec6b250337b77a4627344b5e5d17ae094a7cd8c014871214e62e8bc2ab99ce",
+      "sha256": "63152b5bacbdb47e0d6284ef722d9f032576f43f515e9c9bf4dfa16213f893e4",
       "kind": "documentation"
     },
     {
       "path": "CREDITS.md",
       "sha256": "f8e6e5b6e309953ff8b10cc49d274766ef99b6b96b303a056cee2d68ebfcbdec",
-      "kind": "documentation"
-    },
-    {
-      "path": "DESIGN-REASONING.md",
-      "sha256": "9a1d27fc54a415c2375e79d3328e4a00cf5baf2f91e63892f2f1e5dcf0088211",
-      "kind": "documentation"
-    },
-    {
-      "path": "DESIGN-RETENTION.md",
-      "sha256": "abd79fd910c240540c18bad1005cd69c229da42d7a129f4f0271bd1e0564ce21",
       "kind": "documentation"
     },
     {
@@ -103,7 +93,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "a6eef6827dd3756e8a59a79a03d029a1527b6013555d93870a504d472b6867d5",
+      "sha256": "d6196bdcd6173997b27c48d53f4a10603ff63e401ea573677f65bd7f71b881c4",
       "kind": "documentation"
     },
     {
@@ -145,6 +135,11 @@
       "path": "ui-dependencies.json",
       "sha256": "64674fa4f13ab875ee1a967ebb95447da5762464cbd7396fbc59db84ed9aafd5",
       "kind": "config"
+    },
+    {
+      "path": "design.md",
+      "sha256": "31e89abaa25ccc6eeb01508f83759f02ef3067b75e6274cc8b57462dca34523e",
+      "kind": "documentation"
     }
   ],
   "resources": [
@@ -203,13 +198,11 @@
     }
   },
   "design": {
-    "decisionCard": "DESIGN-RETENTION.md",
+    "decisionCard": "design.md",
     "nonAssetNote": "Weather four-preset code is a case-local recipe, not a public family. No reuse inferred from visual similarity.",
     "ruleRefs": [],
     "ruleStatus": "Case decision card; no separate registered rule or new public family.",
-    "sourceAnalysis": [
-      "DESIGN-REASONING.md"
-    ],
+    "sourceAnalysis": [],
     "assetUsage": [
       {
         "callToken": "surface",

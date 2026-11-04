@@ -338,7 +338,7 @@ KPI 与小图是否来自同一口径须有证据；不要擅自把标签改为�
 
 ## 学习回顾：从可解释证据到下一次行动
 
-来源：实看 [Dear Data 官方项目页](https://www.dear-data.com/theproject) 中周36/42/52的图像及读图键（Giorgia Lupi、Stefanie Posavec），以及 [Bullet Journal 月度日志](https://bulletjournal.com/blogs/faq/monthly-log) 的日期页/任务页（Ryder Carroll）；观察日期2026-11-03。前者让个体记录可解读，后者把时间和待办分工，均不证明学习效果。同时实看仓库[城市周报](../../portfolio/works/editorial-weekly-study/DESIGN-RETENTION.md)与[茶馆七夜](../../portfolio/works/tea-conversation-map/DESIGN-RETENTION.md)的完整封面并阅读保留卡：前者提供主张到证据的编辑顺序，后者提供读图语法及口径不一致的反例；两者原有 PARTIAL 边界不因迁移而提升。相关原则在一件原创、演示数据的固定画幅学习回顾中实际组合、渲染，并经独立静态图审修订；原图、字体、作品与私人证据不随本方法提供，研究访问不转授素材许可。
+来源：实看 [Dear Data 官方项目页](https://www.dear-data.com/theproject) 中周36/42/52的图像及读图键（Giorgia Lupi、Stefanie Posavec），以及 [Bullet Journal 月度日志](https://bulletjournal.com/blogs/faq/monthly-log) 的日期页/任务页（Ryder Carroll）；观察日期2026-11-03。前者让个体记录可解读，后者把时间和待办分工，均不证明学习效果。同时实看仓库[城市周报](../../portfolio/works/editorial-weekly-study/design.md)与[茶馆七夜](../../portfolio/works/tea-conversation-map/DESIGN-RETENTION.md)的完整封面并阅读保留卡：前者提供主张到证据的编辑顺序，后者提供读图语法及口径不一致的反例；两者原有 PARTIAL 边界不因迁移而提升。相关原则在一件原创、演示数据的固定画幅学习回顾中实际组合、渲染，并经独立静态图审修订；原图、字体、作品与私人证据不随本方法提供，研究访问不转授素材许可。
 
 - **先组织判断，再选择皮肤。** 主张说明本次回顾要解决什么，趋势/分项提供证据，行动区指向需要处理的同一对象。不要把所有指标做成同等抢眼的卡片，也不要把一句鼓励当作数据结论。适合需要“看完后决定下一步”的回顾；纯监控、探索性分析或没有足够证据的场景不应强行生成行动建议。
 - **让跨区关系可核，而非只用同色暗示。** 分项中的对象名称、数值和优先状态应与解释、下一步任务对应；行动区说明依据与具体动作，不遮挡数据本身。颜色可辅助，但文字身份不可省略。这里只证明静态对应成立，不证明建议有效、用户会执行或按钮可操作。

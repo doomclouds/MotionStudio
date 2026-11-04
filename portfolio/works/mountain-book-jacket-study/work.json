@@ -68,22 +68,12 @@
   "files": [
     {
       "path": "ASSET-USAGE.md",
-      "sha256": "eff2b58b19529d2c943d524dbc3f483315c5d0a49aa8255345900e9aeaaf740c",
+      "sha256": "1e5fad95547f51f6aeb4285cbe71d31502fb567a3e96df93422b9747e5eb0600",
       "kind": "documentation"
     },
     {
       "path": "CREDITS.md",
       "sha256": "9ecc740602f6f0165fd31d086eaa09ee9d2897763130a8da73c5b80cac2e3e94",
-      "kind": "documentation"
-    },
-    {
-      "path": "DESIGN-REASONING.md",
-      "sha256": "c5b474518b8bdefe6bc22cb243a8994d4a7dad3b8506d5c7285c30ca6049ba3d",
-      "kind": "documentation"
-    },
-    {
-      "path": "DESIGN-RETENTION.md",
-      "sha256": "db6b935bcb8f454907efaadf446b0b54d57a2684516f6ffe495c2f781911298e",
       "kind": "documentation"
     },
     {
@@ -103,7 +93,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "143f08a99fe9e29f31a2cb3bfe9f411c6c056be732505e6f7be6d3e8c657876c",
+      "sha256": "cce48172d93e6d67155f4e73c4d3edaff1b37d483a9e7d66808b3ad7a1091231",
       "kind": "documentation"
     },
     {
@@ -150,6 +140,11 @@
       "path": "ui-dependencies.json",
       "sha256": "64674fa4f13ab875ee1a967ebb95447da5762464cbd7396fbc59db84ed9aafd5",
       "kind": "config"
+    },
+    {
+      "path": "design.md",
+      "sha256": "cc51df5657777d0f3b6e413c311965c93e3c11b4b774dc9e5a85bc59b2bf440a",
+      "kind": "documentation"
     }
   ],
   "resources": [
@@ -256,13 +251,11 @@
     }
   },
   "design": {
-    "decisionCard": "DESIGN-RETENTION.md",
+    "decisionCard": "design.md",
     "nonAssetNote": "Editorial role JSON is a content-design record, not an automatic compositor or public family. Geometry and typography stay case-local.",
     "ruleRefs": [],
     "ruleStatus": "Case design decision card; no separate registered rule or new public family.",
-    "sourceAnalysis": [
-      "DESIGN-REASONING.md"
-    ],
+    "sourceAnalysis": [],
     "assetUsage": [
       {
         "callToken": "surface",

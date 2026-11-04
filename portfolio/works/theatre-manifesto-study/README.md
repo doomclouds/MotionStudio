@@ -1,6 +1,6 @@
 # 剧场渐变宣言 · 固定静态复刻
 
-已获收藏同意，1200×750，完整入口design/scene.mjs。设计推理见DESIGN-RETENTION.md与design/DESIGN-ANALYSIS.md。
+已获收藏同意，1200×750，完整入口design/scene.mjs。设计推理见design.md。
 
 ## 离线恢复
 按font-inputs.json的来源及精确SHA合法提供外置原字体。执行`python prepare-fonts.py --font-dir /external/fonts`，要求fontTools 4.61.1；不联网下载。脚本先核原源，再生成更名派生，最后核派生SHA。
@@ -13,3 +13,5 @@
 剧场年份、48席、承诺为未核源例文；三行英文为显式基线及步长，仅测宽拒绝，不自动断行或避碰。
 
 真实公共资产依赖见work.json；0新公共族。仅Native固定静态验证，未测试浏览器/交互/响应式/视频/音频或真实业务正确性。可视报告及独审私有归档，字体和参考图不随源码分发。
+
+设计意图、场景结构、复用与验证边界见[design.md](design.md)。

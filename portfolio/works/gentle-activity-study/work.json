@@ -77,16 +77,6 @@
       "kind": "documentation"
     },
     {
-      "path": "DESIGN-REASONING.md",
-      "sha256": "61faabef4abd12e68e1dab062fd93e00837c3a7010614c22c26aedfa7286f666",
-      "kind": "documentation"
-    },
-    {
-      "path": "DESIGN-RETENTION.md",
-      "sha256": "11d70f6f2c98d16e03cb7ed4f25b001f0c9a21dfa13fe4560966e4a00c9db783",
-      "kind": "documentation"
-    },
-    {
       "path": "LICENSES/Huashu-MIT.txt",
       "sha256": "6d6a2a9caf2e6d2b76974050427053b2892d8aa4c33fd168ce63a537fcee9d96",
       "kind": "license"
@@ -103,7 +93,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "9a80710424ae4b272415d7b8e065e5cc73661efa8f37e181c573f2d4bac88336",
+      "sha256": "db4802994721b340b8bfa8ac63e046469b59fff49d0b54fddc0705bae073e5ee",
       "kind": "documentation"
     },
     {
@@ -145,6 +135,11 @@
       "path": "ui-dependencies.json",
       "sha256": "64674fa4f13ab875ee1a967ebb95447da5762464cbd7396fbc59db84ed9aafd5",
       "kind": "config"
+    },
+    {
+      "path": "design.md",
+      "sha256": "9cf3bd1842b4ec457fe26dc16f10c294adb0a39a12c6e507abd4c25c950d123e",
+      "kind": "documentation"
     }
   ],
   "resources": [
@@ -267,13 +262,11 @@
     }
   },
   "design": {
-    "decisionCard": "DESIGN-RETENTION.md",
+    "decisionCard": "design.md",
     "nonAssetNote": "Phone shells, path and dots are case code; 98px-high feedback card does not call material-surfaces.",
     "ruleRefs": [],
     "ruleStatus": "Case decision card and local recipe, no new registered public family.",
-    "sourceAnalysis": [
-      "DESIGN-REASONING.md"
-    ],
+    "sourceAnalysis": [],
     "assetUsage": [
       {
         "callToken": "surface",

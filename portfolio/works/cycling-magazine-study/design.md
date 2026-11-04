@@ -22,8 +22,14 @@
 
 
 ## 验收与代码关联
-用户已同意收藏，静态候选已独审；不推定数据事实、响应式或视频提升。完整入口design/scene.mjs，原帧身份见entry.cover，恢复回执见retention引用。案例内source-opacity-grid.mjs真实调用一次，二维格子不等于恢复真实骑行次数；heatmap.json明确编码透明度。
+用户已同意收藏，静态候选已独审；不推定数据事实、响应式或视频提升。完整入口design/scene.mjs，当前封面及文件身份见work.json；私人恢复回执与评审报告不随公开合同提供，本次整理没有重新执行历史验收。案例内source-opacity-grid.mjs真实调用一次，二维格子不等于恢复真实骑行次数；heatmap.json明确编码透明度。
 
 ## 后续受限组合研究
 
 [文本片段与数值格网](../../../engine/design-elements/recipes/reviewed/b10/README.md)参考本例设计逻辑但补充了复用的字形边界、量程和空值契约。原scene未迁移新接口，技术组合未用户审美认可，0新增公共族。
+
+## 当前实现与恢复入口
+
+完整固定场景见[design/scene.mjs](design/scene.mjs)，声明画幅为1200×750。运行命令、外置字体/运行依赖和输入要求见[README](README.md)；来源归属与许可见[CREDITS.md](CREDITS.md)。设计卡解释已有实现，不是独立运行包；仅有这份文字不能替代代码、合法输入或实际复验。
+
+本页合并原设计卡与其中已逐字包含的设计分析，不再维护平行正文。当前状态以[work.json](work.json)为准；历史技术与视觉叙述只支持其原记录范围，本次文档归并未新增渲染、听审或接受结论。

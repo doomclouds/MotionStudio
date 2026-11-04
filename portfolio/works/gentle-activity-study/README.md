@@ -7,3 +7,5 @@
 3. 仓库Native入口：`node engine/motion-render-core/scripts/render.mjs --scene ABS/design/scene.mjs --work /absolute/output --frames 0`。
 
 修改文案须同步font-charset并重新生成/登记字体SHA与画面审查。本工程不含源截图、字体二进制、私有报告；唯一位图cover.jpg为自渲染封面。
+
+设计意图、场景结构、复用与验证边界见[design.md](design.md)。

@@ -70,22 +70,12 @@
   "files": [
     {
       "path": "ASSET-USAGE.md",
-      "sha256": "96d908f46abe98ee3e361376c7c552bf574a4f14a39366bf60372705231be4b7",
+      "sha256": "2b5c7ef93548cd4e562b9feaa4523335869e8bf982bdb7f89a047091807151eb",
       "kind": "documentation"
     },
     {
       "path": "CREDITS.md",
       "sha256": "3a153296d6af6c70125fbc18d9a6e33c1013410a0b6f6d6d2c479fc2f035a09f",
-      "kind": "documentation"
-    },
-    {
-      "path": "DESIGN-REASONING.md",
-      "sha256": "ecbb99e8ec6c0612632e7ecb590bb2d9065590de8ec412a540ea79545b432d75",
-      "kind": "documentation"
-    },
-    {
-      "path": "DESIGN-RETENTION.md",
-      "sha256": "f05be9e2fcab3b1a08bada41a89938dcb5d324db87ac8fa6c9027c4865d4e091",
       "kind": "documentation"
     },
     {
@@ -110,7 +100,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "ee15f765ff41c62b0bc3bd57cea90af75e774b0be52b8a45ca1d7a2b91ba39e8",
+      "sha256": "bb2d27bfd6734fea0301becbb3f9833107c486355a6cf8bb074c35ec710e05b3",
       "kind": "documentation"
     },
     {
@@ -152,6 +142,11 @@
       "path": "prepare-fonts.py",
       "sha256": "5d24b684b243726213647a22ff3a3f884d572ca8375febf22f8c401c2f770dcc",
       "kind": "source"
+    },
+    {
+      "path": "design.md",
+      "sha256": "587df3e22d61fdf47df79d04a838789fb41c5dce5c9894f90d4d58c052c1617d",
+      "kind": "documentation"
     }
   ],
   "resources": [
@@ -274,13 +269,11 @@
     }
   },
   "design": {
-    "decisionCard": "DESIGN-RETENTION.md",
+    "decisionCard": "design.md",
     "nonAssetNote": "Editorial role JSON is a content-design record, not an automatic compositor or public family. Geometry and typography stay case-local.",
     "ruleRefs": [],
     "ruleStatus": "Case design decision card; no separate registered rule or new public family.",
-    "sourceAnalysis": [
-      "DESIGN-REASONING.md"
-    ],
+    "sourceAnalysis": [],
     "assetUsage": []
   },
   "transfer": {

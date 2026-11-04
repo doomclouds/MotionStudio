@@ -81,16 +81,6 @@
       "kind": "documentation"
     },
     {
-      "path": "DESIGN-REASONING.md",
-      "sha256": "a8c7ef1f2109de17e40147cba1240100bf256950f6d652c583b5a361a7080457",
-      "kind": "documentation"
-    },
-    {
-      "path": "DESIGN-RETENTION.md",
-      "sha256": "2acaf7b293d44fa0539370e5eb829550b0a9f245d7237720463ac128e082acce",
-      "kind": "documentation"
-    },
-    {
       "path": "LICENSES/ArchivoNarrow-OFL.txt",
       "sha256": "52dabc37e1a989d1339b800143251d2ea22ea676633b2ec0e2a45f30a559bd09",
       "kind": "license"
@@ -117,7 +107,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "44b6098e39581c702942c00944f03311174c667191c7d6e444216bdb54d711c3",
+      "sha256": "a26f3bf3154140fe939cbbbf0c691601082ceae680d44c903d049efb2b633b40",
       "kind": "documentation"
     },
     {
@@ -169,6 +159,11 @@
       "path": "test-opacity-grid.mjs",
       "sha256": "5408f5510a7591eae1301c43b7456afd127c3a4baca1be7b42c6cb0f3a1e217f",
       "kind": "source"
+    },
+    {
+      "path": "design.md",
+      "sha256": "41dc02d785370adfaa3e3288b758fe808004d28b8acf0394c702995386484822",
+      "kind": "documentation"
     }
   ],
   "resources": [
@@ -291,13 +286,11 @@
     }
   },
   "design": {
-    "decisionCard": "DESIGN-RETENTION.md",
+    "decisionCard": "design.md",
     "nonAssetNote": "Case-local opacity-grid recipe, 7x24 reference opacity values, no recovered counts; no new public family.",
     "ruleRefs": [],
     "ruleStatus": "Case decision card and local recipe, no new registered public family.",
-    "sourceAnalysis": [
-      "DESIGN-REASONING.md"
-    ],
+    "sourceAnalysis": [],
     "assetUsage": []
   },
   "transfer": {

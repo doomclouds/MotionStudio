@@ -68,22 +68,12 @@
   "files": [
     {
       "path": "ASSET-USAGE.md",
-      "sha256": "008a6f37e3f62f922ec7e7f3625bc18ac905ed1cec9da38882468a02d7cb1258",
+      "sha256": "0cd0ef471a63ca3e7a194d58472d6a8d73dc6a2a60e477fbca194608cda7f5ad",
       "kind": "documentation"
     },
     {
       "path": "CREDITS.md",
       "sha256": "206cecc8b076352daba57f97f37995f7f09030abefc561ab4607a553c4475c45",
-      "kind": "documentation"
-    },
-    {
-      "path": "DESIGN-REASONING.md",
-      "sha256": "05cc0447a83b5b4a78c3a2c33f346f7a832277dfc89b756c33a7949e7d0d328c",
-      "kind": "documentation"
-    },
-    {
-      "path": "DESIGN-RETENTION.md",
-      "sha256": "91197b4c3cbfcf7584d2cd55d3a04d6ed1262daf3b2abb9a1880000c1f61d7c3",
       "kind": "documentation"
     },
     {
@@ -103,7 +93,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "8a2217c687d953fae7131e9dbc01c2ea67cd3d2154f24aaa8961ae17ba522d19",
+      "sha256": "96c503df04f9346d5554fb6de7650eee49dfa89f73d9d9e894474af33868cf96",
       "kind": "documentation"
     },
     {
@@ -150,6 +140,11 @@
       "path": "test-weather-recipe.mjs",
       "sha256": "014b2285e2f9bb8a9b6ac631870aa3321615a4e8a1871a3b3ea32c9d63a78f8b",
       "kind": "source"
+    },
+    {
+      "path": "design.md",
+      "sha256": "852e49b83c09af17c964c0efd7df82f990ae7e691c27103d2c066c16603a7ea2",
+      "kind": "documentation"
     }
   ],
   "resources": [
@@ -208,13 +203,11 @@
     }
   },
   "design": {
-    "decisionCard": "DESIGN-RETENTION.md",
+    "decisionCard": "design.md",
     "nonAssetNote": "Weather four-preset code is a case-local recipe, not a public family. No reuse inferred from visual similarity.",
     "ruleRefs": [],
     "ruleStatus": "Case decision card; no separate registered rule or new public family.",
-    "sourceAnalysis": [
-      "DESIGN-REASONING.md"
-    ],
+    "sourceAnalysis": [],
     "assetUsage": []
   },
   "transfer": {

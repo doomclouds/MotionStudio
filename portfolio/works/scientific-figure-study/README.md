@@ -1,6 +1,6 @@
 # 科研图版 · 固定静态复刻
 
-已获收藏同意，1200×750，完整入口design/scene.mjs。设计推理见DESIGN-RETENTION.md与design/DESIGN-REASONING.md。
+已获收藏同意，1200×750，完整入口design/scene.mjs。设计推理见design.md。
 
 ## 离线恢复
 按font-inputs.json的来源及精确SHA合法提供外置原字体。执行`python prepare-fonts.py --font-dir /external/fonts`，要求fontTools 4.61.1；不联网下载。脚本先核原源，再生成更名派生，最后核派生SHA。
@@ -13,3 +13,5 @@
 60显示点相关r=-0.6371253865752605，与原标注-0.41不符；虚线不是该样本OLS。n/SE/P/盲评/Bonferroni无原实验背书，a/c纵轴从78截断；只核图形编码，不提供科学结论。
 
 真实公共资产依赖见work.json；0新公共族。仅Native固定静态验证，未测试浏览器/交互/响应式/视频/音频或真实业务正确性。可视报告及独审私有归档，字体和参考图不随源码分发。
+
+设计意图、场景结构、复用与验证边界见[design.md](design.md)。

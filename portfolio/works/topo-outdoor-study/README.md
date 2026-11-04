@@ -1,6 +1,6 @@
 # 户外地形工具 · 完整静态复刻
 
-已获收藏同意，固定1200×750。设计思考见DESIGN-RETENTION.md和DESIGN-REASONING.md；完整入口design/scene.mjs。
+已获收藏同意，固定1200×750。设计思考见design.md；完整入口design/scene.mjs。
 
 ## 恢复与验证
 1. 按font-inputs.json的官方来源合法提供精确SHA原字体到外置目录。缺文件/错版本明确失败，不自动下载。
@@ -17,3 +17,5 @@ material-surfaces.v1用于三台设备的底层壳面与柔影。route-halo-reci
 
 ## 边界
 原作地形、路线及海拔为示意路径，非可导航地图；峰值1,184与1200参考线同y的源编码问题保留披露。不能据此规划真实路线、计算坡度或给出安全建议。只验证固定Native静态；未通过浏览器/响应式/交互/Motion/音频或真实世界正确性测试。
+
+设计意图、场景结构、复用与验证边界见[design.md](design.md)。

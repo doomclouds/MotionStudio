@@ -72,22 +72,12 @@
   "files": [
     {
       "path": "ASSET-USAGE.md",
-      "sha256": "5070cbd977c9c6001baa9c5699dc5a9640c9a5c6d627928b8256fed206c41714",
+      "sha256": "4a9b322cc8500b76668c8f7280c793fa396cf98b04410f1ef9ec69ed30dfbd14",
       "kind": "documentation"
     },
     {
       "path": "CREDITS.md",
       "sha256": "61466ff78378190414478fd307969aee0fb45453c239d3d1918a73ac37144db6",
-      "kind": "documentation"
-    },
-    {
-      "path": "DESIGN-REASONING.md",
-      "sha256": "ac85c0fecfd6fc06477256b8270904f5120aa3f8109a17f4467b4d142f14184f",
-      "kind": "documentation"
-    },
-    {
-      "path": "DESIGN-RETENTION.md",
-      "sha256": "55679f89d87be1cda25b7de389c65b617b5b5d8fd5afe99abf617441d7434456",
       "kind": "documentation"
     },
     {
@@ -117,7 +107,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "35a415ccdeac9c6d0a24e4cb00ea9e43d2f446a39c30b35f874e85f9d5e76f85",
+      "sha256": "cc13476f368acaf4e8f77c9e06e0060379885dee361545b489ae7b11e7868fb0",
       "kind": "documentation"
     },
     {
@@ -169,6 +159,11 @@
       "path": "ui-dependencies.json",
       "sha256": "64674fa4f13ab875ee1a967ebb95447da5762464cbd7396fbc59db84ed9aafd5",
       "kind": "config"
+    },
+    {
+      "path": "design.md",
+      "sha256": "118913045461c91388b05b3efb30d5f7588498351fc642a2a43899fbf947f88f",
+      "kind": "documentation"
     }
   ],
   "resources": [
@@ -355,13 +350,11 @@
     }
   },
   "design": {
-    "decisionCard": "DESIGN-RETENTION.md",
+    "decisionCard": "design.md",
     "nonAssetNote": "Command rows are case-local same-code composition; brand-role JSON is a design decision record, not an automatic compositor or public family.",
     "ruleRefs": [],
     "ruleStatus": "Case decision card and local recipe, no new registered public family.",
-    "sourceAnalysis": [
-      "DESIGN-REASONING.md"
-    ],
+    "sourceAnalysis": [],
     "assetUsage": [
       {
         "callToken": "surface",

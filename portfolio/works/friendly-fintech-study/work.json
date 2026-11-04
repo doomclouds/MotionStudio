@@ -71,11 +71,6 @@
       "kind": "documentation"
     },
     {
-      "path": "DESIGN-RETENTION.md",
-      "sha256": "f3847269f90dc1fbaae67006a341dac19bc9d2051c4dac3d98a4784c01ba39e9",
-      "kind": "documentation"
-    },
-    {
       "path": "LICENSES/NotoSans-OFL.txt",
       "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
       "kind": "license"
@@ -92,18 +87,13 @@
     },
     {
       "path": "README.md",
-      "sha256": "15c3277660e84462130906908b5a151c533bf24ddf378598a491e125b516bb27",
+      "sha256": "a25ab77479be0938353a011b2602d2e88bd1c4053c96105a325cbed2b410016a",
       "kind": "documentation"
     },
     {
       "path": "cover.jpg",
       "sha256": "d19435c87f4c6d25a19265cc830c6b44a70ef9111217febc7e5e03bf3fbbef1d",
       "kind": "cover"
-    },
-    {
-      "path": "design/DESIGN-REASONING.md",
-      "sha256": "0e84f04f14f8a4a24537f410572cd60a72af3018f4a73c9260bd48f0843be42c",
-      "kind": "documentation"
     },
     {
       "path": "design/partition-audit-recipe.mjs",
@@ -149,6 +139,11 @@
       "path": "tests/recipe.test.mjs",
       "sha256": "246fe53541ad895359aba27307903835840c0e99c2212280983a07e130343b71",
       "kind": "source"
+    },
+    {
+      "path": "design.md",
+      "sha256": "5ea2fe5bb1d7d2483e2c040542fcc5f68f55ceb3b67e9b73c8d1a5606210537f",
+      "kind": "documentation"
     }
   ],
   "resources": [
@@ -351,13 +346,11 @@
     }
   },
   "design": {
-    "decisionCard": "DESIGN-RETENTION.md",
+    "decisionCard": "design.md",
     "nonAssetNote": "Local data, geometry, audit and Canvas-state helpers are not public design families.",
     "ruleRefs": [],
     "ruleStatus": "Case recipe/audit not a new shared family.",
-    "sourceAnalysis": [
-      "design/DESIGN-REASONING.md"
-    ],
+    "sourceAnalysis": [],
     "assetUsage": [
       {
         "callToken": "surface",

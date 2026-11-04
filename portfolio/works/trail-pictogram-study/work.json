@@ -71,16 +71,6 @@
       "kind": "documentation"
     },
     {
-      "path": "DESIGN-REASONING.md",
-      "sha256": "80916ed29ecaa3879e40e5022af1db8733d4d254e8c777b27a2b5eeffe7fa1c4",
-      "kind": "documentation"
-    },
-    {
-      "path": "DESIGN-RETENTION.md",
-      "sha256": "80de14a18032d484f5e605d04529b0c2fcd02c48544bf044d620fa960a7b5416",
-      "kind": "documentation"
-    },
-    {
       "path": "LICENSES/Jost-OFL.txt",
       "sha256": "1af3438a4d5f0ed2bdbc5751a5a67ebf6d537334161184b7fbb68503ef0ea0c5",
       "kind": "license"
@@ -97,7 +87,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "632b0b83ba093fc1e684d8da832669928e293f8f5d63d104a94a87a65972b60a",
+      "sha256": "f327a6a190eb661bd6bb14c760707742eb330fc258cc22e181514b231c89874a",
       "kind": "documentation"
     },
     {
@@ -139,6 +129,11 @@
       "path": "prepare-fonts.py",
       "sha256": "f5b42df61d337bbfa4dc1ae39ce76056b33a64312779f9b1fbbdb234bb3fd5f1",
       "kind": "source"
+    },
+    {
+      "path": "design.md",
+      "sha256": "1b4713a662b54743f4b20c4feb5a0d543f1a020edadb2cff110f7ab9d588e6b0",
+      "kind": "documentation"
     }
   ],
   "resources": [
@@ -277,13 +272,11 @@
     }
   },
   "design": {
-    "decisionCard": "DESIGN-RETENTION.md",
-    "nonAssetNote": "No runtime public UI-family import among the 14-family catalog. Caller-path / area-radius recipes are local code candidates, not counted shared assets. Their exact source hashes are listed in entry.json.",
+    "decisionCard": "design.md",
+    "nonAssetNote": "No runtime public UI-family import among the 14-family catalog. Caller-path / area-radius recipes are local code candidates, not counted shared assets. Their exact source hashes are listed in work.json.",
     "ruleRefs": [],
     "ruleStatus": "Case decision/recipe retained, no formal shared rule claimed.",
-    "sourceAnalysis": [
-      "DESIGN-REASONING.md"
-    ],
+    "sourceAnalysis": [],
     "assetUsage": []
   },
   "transfer": {

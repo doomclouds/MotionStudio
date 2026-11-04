@@ -71,16 +71,6 @@
       "kind": "documentation"
     },
     {
-      "path": "DESIGN-REASONING.md",
-      "sha256": "67a837e78dcac1fce5ffa41c0bbc632da65d19a6c2ebc9bc24b2e593fa4c93df",
-      "kind": "documentation"
-    },
-    {
-      "path": "DESIGN-RETENTION.md",
-      "sha256": "2648808a6b23110dbb4ada0445b35522fce39d72779808e4706acd5e09120583",
-      "kind": "documentation"
-    },
-    {
       "path": "LICENSES/NotoSans-OFL.txt",
       "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
       "kind": "license"
@@ -97,7 +87,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "e53a34cdf54adc136c4c66653fe8c2bb1efbcab5439309a57188719e4032c510",
+      "sha256": "3341a4b8a51d1d2699b9cce0e1a93cf4774cf14aee24465da7cb7e1d29c5e72d",
       "kind": "documentation"
     },
     {
@@ -149,6 +139,11 @@
       "path": "tests/recipe.test.mjs",
       "sha256": "3b7e0b35da4f03344d6fce9fcdb6c95c17a3a821db7b271d657f76138fab13a9",
       "kind": "source"
+    },
+    {
+      "path": "design.md",
+      "sha256": "99dd16082d26d5e5702815410634d6f07bd3e6a306a0ec4c51f7c9b6eb3acb12",
+      "kind": "documentation"
     }
   ],
   "resources": [
@@ -239,13 +234,11 @@
     }
   },
   "design": {
-    "decisionCard": "DESIGN-RETENTION.md",
+    "decisionCard": "design.md",
     "nonAssetNote": "Local vector/data/helper/preflight code is not a public UI family; no family promotion implied.",
     "ruleRefs": [],
     "ruleStatus": "Case preflight candidate, not shared formal rule or drawing composition.",
-    "sourceAnalysis": [
-      "DESIGN-REASONING.md"
-    ],
+    "sourceAnalysis": [],
     "assetUsage": [
       {
         "callToken": "surface",
