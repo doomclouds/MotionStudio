@@ -1,7 +1,7 @@
 import {object,number,integer,id,point,bool,optional,freeze} from '../../validate.mjs';
 import {range,progress} from '../../time.mjs';
 import {seededUnit,lerp,curve} from '../../math.mjs';
-import {sampleMotion} from '../../motions.mjs';
+import {sampleMotion} from '../../internal/element-dispatch.mjs';
 const compiled=new WeakSet(), sampled=new WeakSet();
 /** Art-directed same-ID light/vertical echo composition, not physical optics. */
 export function compileLightEchoField(input){

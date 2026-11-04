@@ -18,13 +18,13 @@
 
 | 元素 ID | API | 主要参数 |
 | --- | --- | --- |
-| motion.transform | sampleMotion | 完整 from/to `{x,y,scaleX,scaleY,rotation}`，可选 origin |
-| motion.opacity | sampleMotion | from/to 在 0..1 |
-| motion.anchored-squash | sampleMotion | amount 0..0.8、axis x/y、origin |
-| motion.shake | sampleMotion | amplitudeX/Y、rotation、frequencyHz、seed、elementId，可选 origin |
+| [motion.transform](../../lib/foundations/motion/transform/README.md) | sampleMotion | 完整 from/to `{x,y,scaleX,scaleY,rotation}`，可选 origin |
+| [motion.opacity](../../lib/foundations/motion/opacity/README.md) | sampleMotion | from/to 在 0..1 |
+| [motion.anchored-squash](../../lib/foundations/motion/anchored-squash/README.md) | sampleMotion | amount 0..0.8、axis x/y、origin |
+| [motion.shake](../../lib/foundations/motion/shake/README.md) | sampleMotion | amplitudeX/Y、rotation、frequencyHz、seed、elementId，可选 origin |
 | [motion.stagger](../../lib/foundations/motion/stagger/README.md) | compileStagger | itemIds、start、duration、step；三时间均为 Time |
-| transition.push | sampleTransition | width、height、direction left/right/up/down |
-| transition.rect-wipe | sampleTransition | width、height、direction left/right/up/down |
+| [transition.push](../../lib/foundations/transition/push/README.md) | sampleTransition | width、height、direction left/right/up/down |
+| [transition.rect-wipe](../../lib/foundations/transition/rect-wipe/README.md) | sampleTransition | width、height、direction left/right/up/down |
 | [composition.offset-cards](../../lib/foundations/layout/offset-cards/README.md) | offsetCards | itemIds、origin、card、offset，可选 rotationStep、zOrder |
 | [composition.split-panels](../../lib/foundations/layout/split-panels/README.md) | splitPanels | itemIds、viewport、axis，可选 gap |
 | [recipe.offset-reassembly](../../lib/recipes/offset-reassembly/README.md) | sampleOffsetReassembly | 卡片布局参数、Time step、travel |

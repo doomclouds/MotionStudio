@@ -1,6 +1,6 @@
 /** Original synthetic usage fixture. Not a new registered recipe or live UI. */
 import {compileStagedLayoutHandoff, sampleStagedLayoutHandoff} from '../lib/recipes/staged-layout-handoff/index.mjs';
-import {sampleMotion} from '../lib/motions.mjs';
+import {sampleMotion} from '../lib/internal/element-dispatch.mjs';
 import {rational as T} from '../lib/time.mjs';
 
 // Deliberately different content, dimensions, positions and authored timing.

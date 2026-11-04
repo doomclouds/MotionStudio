@@ -4,7 +4,7 @@ import {rational,add,compare} from '../../../../motion-timeline-core/lib/timelin
 import {offsetCards} from '../../foundations/layout/offset-cards/index.mjs';
 import {itemIds} from '../../internal/layout-input.mjs';
 import {compileStagger} from '../../foundations/motion/stagger/index.mjs';
-import {sampleMotion} from '../../motions.mjs';
+import {sampleMotion} from '../../internal/element-dispatch.mjs';
 import {multiply,matrix,identity,transformBounds} from '../../matrix.mjs';
 const compiled=new WeakSet(),R=(n,d=100)=>rational(n,d),rect={x:0,y:0,width:640,height:360},origin={x:320,y:180};
 export function compileFocusHandoff(input){

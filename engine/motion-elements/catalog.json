@@ -55,13 +55,16 @@
       ],
       "evidence": {
         "technicalTests": [
+          "lib/foundations/motion/transform/test/transform.test.mjs",
           "test/core.test.mjs",
           "test/canvas.test.mjs"
         ],
         "visualDemo": "examples/gallery-scene.mjs",
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN",
-        "guidance": "docs/guides/core-api-and-time.md"
+        "guidance": "lib/foundations/motion/transform/README.md",
+        "executableExample": "lib/foundations/motion/transform/examples/contract.mjs",
+        "sourceVersionRelation": "Asset-directory extraction moves the existing parameter and sampling branches into dedicated modules, retaining one canonical dispatcher and shared runtime. Differential and synthetic tests do not establish new film-equivalence, production transfer or artistic acceptance."
       },
       "knowledgeLinks": [],
       "tags": [
@@ -112,13 +115,16 @@
       ],
       "evidence": {
         "technicalTests": [
+          "lib/foundations/motion/opacity/test/opacity.test.mjs",
           "test/core.test.mjs",
           "test/canvas.test.mjs"
         ],
         "visualDemo": "examples/gallery-scene.mjs",
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN",
-        "guidance": "docs/guides/core-api-and-time.md"
+        "guidance": "lib/foundations/motion/opacity/README.md",
+        "executableExample": "lib/foundations/motion/opacity/examples/contract.mjs",
+        "sourceVersionRelation": "Asset-directory extraction moves the existing parameter and sampling branches into dedicated modules, retaining one canonical dispatcher and shared runtime. Differential and synthetic tests do not establish new film-equivalence, production transfer or artistic acceptance."
       },
       "knowledgeLinks": [],
       "tags": [
@@ -222,13 +228,16 @@
       ],
       "evidence": {
         "technicalTests": [
+          "lib/foundations/motion/anchored-squash/test/anchored-squash.test.mjs",
           "test/core.test.mjs",
           "test/canvas.test.mjs"
         ],
         "visualDemo": "examples/gallery-scene.mjs",
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN",
-        "guidance": "docs/guides/core-api-and-time.md"
+        "guidance": "lib/foundations/motion/anchored-squash/README.md",
+        "executableExample": "lib/foundations/motion/anchored-squash/examples/contract.mjs",
+        "sourceVersionRelation": "Asset-directory extraction moves the existing parameter and sampling branches into dedicated modules, retaining one canonical dispatcher and shared runtime. Differential and synthetic tests do not establish new film-equivalence, production transfer or artistic acceptance."
       },
       "knowledgeLinks": [],
       "tags": [
@@ -280,13 +289,16 @@
       ],
       "evidence": {
         "technicalTests": [
+          "lib/foundations/motion/shake/test/shake.test.mjs",
           "test/core.test.mjs",
           "test/canvas.test.mjs"
         ],
         "visualDemo": "examples/gallery-scene.mjs",
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN",
-        "guidance": "docs/guides/core-api-and-time.md"
+        "guidance": "lib/foundations/motion/shake/README.md",
+        "executableExample": "lib/foundations/motion/shake/examples/contract.mjs",
+        "sourceVersionRelation": "Asset-directory extraction moves the existing parameter and sampling branches into dedicated modules, retaining one canonical dispatcher and shared runtime. Differential and synthetic tests do not establish new film-equivalence, production transfer or artistic acceptance."
       },
       "knowledgeLinks": [],
       "tags": [
@@ -333,13 +345,16 @@
       ],
       "evidence": {
         "technicalTests": [
+          "lib/foundations/transition/push/test/push.test.mjs",
           "test/core.test.mjs",
           "test/canvas.test.mjs"
         ],
         "visualDemo": "examples/gallery-scene.mjs",
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN",
-        "guidance": "docs/guides/core-api-and-time.md"
+        "guidance": "lib/foundations/transition/push/README.md",
+        "executableExample": "lib/foundations/transition/push/examples/contract.mjs",
+        "sourceVersionRelation": "Asset-directory extraction moves the existing parameter and sampling branches into dedicated modules, retaining one canonical dispatcher and shared runtime. Differential and synthetic tests do not establish new film-equivalence, production transfer or artistic acceptance."
       },
       "knowledgeLinks": [],
       "tags": [
@@ -387,13 +402,16 @@
       ],
       "evidence": {
         "technicalTests": [
+          "lib/foundations/transition/rect-wipe/test/rect-wipe.test.mjs",
           "test/core.test.mjs",
           "test/canvas.test.mjs"
         ],
         "visualDemo": "examples/gallery-scene.mjs",
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN",
-        "guidance": "docs/guides/core-api-and-time.md"
+        "guidance": "lib/foundations/transition/rect-wipe/README.md",
+        "executableExample": "lib/foundations/transition/rect-wipe/examples/contract.mjs",
+        "sourceVersionRelation": "Asset-directory extraction moves the existing parameter and sampling branches into dedicated modules, retaining one canonical dispatcher and shared runtime. Differential and synthetic tests do not establish new film-equivalence, production transfer or artistic acceptance."
       },
       "knowledgeLinks": [],
       "tags": [

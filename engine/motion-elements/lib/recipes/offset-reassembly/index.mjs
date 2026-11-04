@@ -3,7 +3,7 @@ import {range,time} from '../../time.mjs';
 import {rational,sub,compare} from '../../../../motion-timeline-core/lib/timeline.mjs';
 import {offsetCards} from '../../foundations/layout/offset-cards/index.mjs';
 import {compileStagger} from '../../foundations/motion/stagger/index.mjs';
-import {sampleMotion} from '../../motions.mjs';
+import {sampleMotion} from '../../internal/element-dispatch.mjs';
 import {multiply,matrix,identity,transformBounds} from '../../matrix.mjs';
 /** A composition recipe, not a text-fracture or arbitrary-topology morph engine. */
 export function sampleOffsetReassembly(input,at,context={}) {

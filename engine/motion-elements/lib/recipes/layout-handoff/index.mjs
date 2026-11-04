@@ -1,7 +1,7 @@
 /** Identity-preserving composition of two caller-owned translation layouts. */
 import {object,number,integer,id,bool,freeze,fail} from '../../validate.mjs';
 import {range,progress} from '../../time.mjs';
-import {sampleMotion} from '../../motions.mjs';
+import {sampleMotion} from '../../internal/element-dispatch.mjs';
 import {curve,lerp} from '../../math.mjs';
 import {transformBounds} from '../../matrix.mjs';
 const plans=new WeakSet();
