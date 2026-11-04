@@ -7,19 +7,29 @@ One **restricted recipe candidate**, two tile factories, **zero formal public fa
 Use Node 24.22.1, `@napi-rs/canvas` 0.1.100, Python 3.12.14 and fontTools 4.61.1. The source package contains text only. Font binaries and generated PNGs must remain **outside this package directory**. No existing private study, screenshot, icon, report or asset is needed.
 
 ```sh
-# Run from this package. Set WORK to your own new absolute external directory.
-WORK=/absolute/path/to/new-file-grid-work
-mkdir -p "$WORK"
-npm ci --ignore-scripts --no-audit --no-fund
-python -m pip install -r requirements-fonts.txt
-python fetch-fonts.py --output "$WORK/inputs"
-python prepare-fonts.py --inputs "$WORK/inputs" --output "$WORK/fonts"
+PKG=/absolute/path/to/file-grid-candidate
+export PYTHONDONTWRITEBYTECODE=1
+WORK=/absolute/new-external-file-grid-work
+# WORK's parent must exist; WORK itself must be new and outside the repository.
+mkdir "$WORK"
+mkdir "$WORK/runtime" "$WORK/tmp"
+cp "$PKG/package.json" "$PKG/package-lock.json" "$WORK/runtime/"
+(cd "$WORK/runtime" && npm ci --ignore-scripts --no-audit --no-fund)
+export CANVAS_MODULE="$WORK/runtime/node_modules/@napi-rs/canvas"
+python3 -m venv "$WORK/venv"
+"$WORK/venv/bin/python" -m pip install -r "$PKG/requirements-fonts.txt"
+# The next command accesses fixed public font sources; run only when authorized.
+"$WORK/venv/bin/python" "$PKG/fetch-fonts.py" --output "$WORK/inputs"
+"$WORK/venv/bin/python" "$PKG/prepare-fonts.py" --inputs "$WORK/inputs" --output "$WORK/fonts"
 export PORTAGE_FONT_DIR="$WORK/fonts" PORTAGE_FONT_INPUTS="$WORK/inputs"
-npm test
-python test-resources.py
-npm run policy
-node render.mjs "$WORK/previews"
+export TMPDIR="$WORK/tmp" DISABLE_SYSTEM_FONTS_LOAD=1
+node --test "$PKG/test.mjs"
+"$WORK/venv/bin/python" "$PKG/test-resources.py"
+node "$PKG/policy.mjs"
+node "$PKG/render.mjs" "$WORK/previews"
 ```
+
+The existing loader accepts `CANVAS_MODULE` as an absolute Canvas module directory. If a separately installed, authorized Canvas 0.1.100 runtime already exists, point there instead of installing again. Dependency installation occurs only in the external runtime, Python packages only in the external venv; script paths still point at this source package. `TMPDIR` keeps resource-test scratch files outside the repository. The commands describe the supported setup, not a claim that a fresh network/font restore has been performed. Exact font inputs may also be supplied under the existing lock; do not substitute a different Inter build.
 
 `fetch-fonts.py` requires a **new** external output directory and downloads the fixed public Inter master plus OFL notice, validating complete SHA identities before writing. The offline preparation step verifies all inputs and derives two exact renamed instances. `font-lock.json` is copied with them; the runtime checks both font files and that lock before any font registration. Registration is process-global; rollback after a later registration failure is not promised. See the full filesystem/trust limits in `CONTRACT.md`.
 

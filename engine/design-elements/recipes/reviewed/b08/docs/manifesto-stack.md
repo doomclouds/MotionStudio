@@ -43,11 +43,14 @@ Native Canvas测试发现非零tracking时bbox和实际墨迹可有约2px差异�
 
 `test-manifesto.mjs`是纯代码专项测试，不生成图片。外置Native canvas与DejaVu Sans字体检验23项：实际高度/左右/advance边界、下伸字母、正负tracking、绘前拒绝且像素不变、测量不绘制、状态/输入保持、确定性及可用下游槽。最终视觉报告由整合层统一生成，本配方不把代码通过等同用户审美通过。
 
-```
+以下命令先进入当前b08源码包目录，路径必须指向已提供的精确锁定资源；不自动取字体。
+
+```sh
+cd /absolute/path/to/recipes/reviewed/b08
 MOTION_ENGINE_ROOT=/absolute/installed/motion-render-core \
 B08_DISPLAY_FONT=/absolute/Anton-Regular.ttf \
 B08_BODY_FONT=/absolute/DejaVuSans.ttf \
-node b08-recipe-retention/test-manifesto.mjs
+node test-manifesto.mjs
 ```
 
 ## 绘制状态约定

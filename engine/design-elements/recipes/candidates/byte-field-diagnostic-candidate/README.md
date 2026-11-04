@@ -1,18 +1,32 @@
 # Byte field diagnostic candidate
 
-A small static combination of an original synthetic byte field, its32-bin histogram and an exact sampled-byte note. Two new complete examples use different data and layouts. It is **one unregistered candidate**, not a new public family or a working diagnostic application. See CONTRACT.md and DESIGN-GUIDE.md.
+A small static combination of an original synthetic byte field, its 32-bin histogram and an exact sampled-byte note. Two new complete examples use different data and layouts. It is **one unregistered candidate**, not a new public family or a working diagnostic application. Package identity: `motionstudio-byte-field-diagnostic-candidate@0.0.0` in [package.json](package.json). See [CONTRACT.md](CONTRACT.md) and [DESIGN-GUIDE.md](DESIGN-GUIDE.md).
 
 ## Run with an external exact font
 
 Tested Node24.22.1 / Canvas0.1.100 on Linux. Node22+ is the declared package range, not a cross-platform pixel-equivalence guarantee.
 
+`loadNative()` resolves `@napi-rs/canvas` relative to this package's `runtime.mjs`, not the shell's current directory. It has no external-runtime environment-variable selector. Use a clean source-only package copy in a **new authorized directory outside the repository**, then install there. Do not install into `SOURCE`, copy a whole checkout, or regenerate the supplied lockfile.
+
+In this shell example, replace the absolute paths with authorized locations. `SOURCE` is the retained text package; `WORK` is its new standalone copy and the cwd for every following command and composition snippet; `OUTPUT` is a separate new output directory. Their parent directories and the test-scratch directory must already exist, with no symlink ancestors. Copy only the clean payload, including its original `package.json`, `package-lock.json`, font lock and notices, without `node_modules` or generated files.
+
 ```sh
-npm ci --ignore-scripts
-export DIAGNOSTIC_FONT=/absolute/external/LiberationSans-Regular.ttf
+set -eu
+SOURCE=/absolute/MotionStudio/engine/design-elements/recipes/candidates/byte-field-diagnostic-candidate
+WORK=/absolute/authorized-scratch/byte-field-source
+OUTPUT=/absolute/authorized-output/byte-field
+mkdir "$WORK"
+cp -R "$SOURCE/." "$WORK/"
+cd "$WORK"
+npm ci --ignore-scripts --no-audit --no-fund
+export DIAGNOSTIC_FONT=/absolute/external-assets/LiberationSans-Regular.ttf
+export DIAGNOSTIC_TEST_TMP=/absolute/existing-test-scratch
 export DISABLE_SYSTEM_FONTS_LOAD=1
 npm test
-node render.mjs /absolute/new/output-directory
+node render.mjs "$OUTPUT"
 ```
+
+The lockfile is not a bundled runtime. Offline installation additionally needs an independently available compatible populated npm cache; an empty-cache dependency install is not established by these instructions.
 
 Use the unmodified Liberation Sans2.1.5 file specified by bytes/SHA in font-lock.json. This package supplies the complete OFL/distribution notices but **no font binaries or automatic downloader**. Provide-exact is an explicit prerequisite; network exact recovery is NOT_VERIFIED. Do not substitute another system font and call the same images reproduced. The generated directory contains two PNGs, two layout JSON files and outputs.json. It must be outside the package/recognized repository; existing targets reject.
 

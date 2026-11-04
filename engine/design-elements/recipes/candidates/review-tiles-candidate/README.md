@@ -4,12 +4,29 @@
 
 Two composable Canvas tile factories, not a GitHub integration, inbox application or native desktop UI. No branded logo, personal data, network requests, credentials or original screenshot. Examples are fictional. **Candidate only: zero public families/registered recipes added; no per-item owner aesthetic acceptance is claimed.**
 
+Package identity: `motionstudio-review-tiles-candidate@0.1.0`; public entry `index.mjs`, export `createReviewTiles`. Read [CONTRACT.md](CONTRACT.md) for the factory and [CREDITS.md](CREDITS.md) for separate source/font rights.
+
+## Run from an external source copy
+
+The factory accepts an explicit trusted `canvasModule` option, but the supplied tests and examples also require `@napi-rs/canvas` directly and do not forward a runtime environment variable. Installing in an unrelated directory or changing cwd alone does not satisfy those source-relative imports. Copy the clean source-only package into a **new authorized directory outside the repository**, then install from its unchanged `package.json` and `package-lock.json` there. Include the asset lock and notices; exclude `node_modules` and generated files, not the licenses. Do not copy the entire checkout or install into the retained package.
+
+Replace the paths below: `SOURCE` is the retained package, `WORK` is the new standalone copy and cwd for the commands and composition snippet, and `OUTPUT` is a separate new external destination. Their parents must already exist. The exact-font directory must be separately supplied outside both source copies and the repository.
+
 ```sh
+set -eu
+SOURCE=/absolute/MotionStudio/engine/design-elements/recipes/candidates/review-tiles-candidate
+WORK=/absolute/authorized-scratch/review-tiles-source
+OUTPUT=/absolute/authorized-output/review-tiles
+mkdir "$WORK"
+cp -R "$SOURCE/." "$WORK/"
+cd "$WORK"
 npm ci --ignore-scripts --no-audit --no-fund
-export REVIEW_TILE_FONTS=/absolute/path/to/exact-fonts
+export REVIEW_TILE_FONTS=/absolute/external-assets/exact-review-fonts
 npm test
-npm run render -- /absolute/new/output-directory
+npm run render -- "$OUTPUT"
 ```
+
+Tests create temporary resource probes under the system temp directory; use an authorized external temp location. The examples CLI requires a new absolute output directory but does not detect repository ancestors. Keeping output outside the repository and both source copies is the caller's responsibility, not a claim about an unimplemented guard.
 
 Canvas is pinned to 0.1.100, tested on Node24.22.1. Offline installation requires a populated compatible cache, not just the lockfile. Font files are deliberately excluded. Supply all three exact files in `asset-lock.json`: two renamed Inter derivatives and Liberation Mono regular. Their original-font provenance and OFL notices are retained; automatic network download or reproducible derivation of these exact historical subsets is **not** offered. Without these assets this package is not runnable out of the box.
 

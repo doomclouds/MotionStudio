@@ -16,9 +16,30 @@ Read [CONTRACT.md](CONTRACT.md) before composition. Public entry exports only `c
 
 ## Reproduce
 
-Node22+ and Python3 standard library; tested Native dependency `@napi-rs/canvas@0.1.100` is pinned. Run `npm ci --ignore-scripts --no-audit --no-fund`, then `npm test`, `python3 verify-math.py`, `python3 check-source.py`. For air-gapped replay use an independently available matching npm cache with `npm ci --offline --ignore-scripts --cache <cache-directory>`; source package does **not** include dependencies or claim fresh empty-cache recovery.
+Node22+ and Python3 standard library; tested Native dependency `@napi-rs/canvas@0.1.100` is pinned. Package identity is `bounded-drape-material-candidate@0.0.0` in [package.json](package.json).
 
-Render with `DISABLE_SYSTEM_FONTS_LOAD=1 node render.mjs <new-absolute-output-directory>`. Output must be outside this package and a recognized MotionStudio repository. Parent directory must exist and be a regular non-symlink chain. The command builds five buffers before writing two PNG compositions, two JSON layouts and one standalone material PNG. It never loads a reference or font. The environment flag prevents Native's optional automatic system-font registration; the code itself calls no text/font API.
+The internal `runtime.mjs` resolves Canvas relative to its own file; changing cwd or setting an invented runtime variable does not redirect it. Copy the clean source package into a **new authorized directory outside the repository**, retaining the original `package.json`, `package-lock.json`, source policy and notices. Do not copy the whole checkout, `node_modules` or generated files, and do not install into the retained source.
+
+Replace the absolute paths below: `SOURCE` is the retained package, `WORK` is the new independent source copy and cwd for all commands/snippets, and `OUTPUT` is a separate new destination. All parent directories must already exist without symlink ancestors.
+
+```sh
+set -eu
+SOURCE=/absolute/MotionStudio/engine/design-elements/recipes/candidates/drape-material-candidate
+WORK=/absolute/authorized-scratch/drape-source
+OUTPUT=/absolute/authorized-output/drape
+mkdir "$WORK"
+cp -R "$SOURCE/." "$WORK/"
+cd "$WORK"
+npm ci --ignore-scripts --no-audit --no-fund
+npm test
+python3 verify-math.py
+python3 check-source.py
+npm run examples -- "$OUTPUT"
+```
+
+For air-gapped replay, replace the install command with `npm ci --offline --ignore-scripts --no-audit --no-fund --cache /absolute/compatible-populated-cache` while remaining in `WORK`. The source package does **not** include dependencies or claim fresh empty-cache recovery. `verify-math.py` and `check-source.py` are independent of Canvas; they do not establish raster or visual acceptance.
+
+The examples script sets `DISABLE_SYSTEM_FONTS_LOAD=1`; its direct equivalent from `WORK` is `DISABLE_SYSTEM_FONTS_LOAD=1 node render.mjs "$OUTPUT"`. Output must be outside this package and a recognized MotionStudio repository. Parent directory must exist and be a regular non-symlink chain. The command builds five buffers before writing two PNG compositions, two JSON layouts and one standalone material PNG. It never loads a reference or font. The environment flag prevents Native's optional automatic system-font registration; the code itself calls no text/font API.
 
 Two new examples: portrait **Material Study** with one copper field and model-derived endpoints/frequency; landscape **Drape Atlas** with six independent seeds/palettes and corresponding labels. Original elementary bitmap letter patterns are example-only geometry, not an imported font or newly promoted typography system.
 

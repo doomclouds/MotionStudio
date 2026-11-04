@@ -32,4 +32,4 @@ A使用相同数值仅验证全部100%均有图例，类别替换为明确虚构
 
 由`B08_PARTITION_EVIDENCE_DIR`指定的源码包外全新/空目录包含2份确定性示例PNG、100%/0特殊PNG和results.json。测试核对每项真实角份额与完整图例、调用者设置虚线/offset后的全量环8个圆周采样像素及dash状态恢复、1%小份额中点颜色、0值圆环区域无该类颜色且有图例、输入和上下文状态不变；10个非法/失效布局输入均抛错且PNG前后字节一致。该证据为技术与视觉自检，不代替用户审美批准。
 
-运行前设置：`MOTION_ENGINE_ROOT`为安装`@napi-rs/canvas@0.1.100`的项目目录，`B08_DISPLAY_FONT`和`B08_BODY_FONT`为源码包外且与font-lock.json哈希一致的字体绝对路径，`B08_PARTITION_EVIDENCE_DIR`为源码包外全新或空目录；随后 `node b08-recipe-retention/test-partition.mjs`。测试使用runtime的loadFonts和outputDirectory，不默认向源码包写任何证据。
+运行前设置：`MOTION_ENGINE_ROOT`为安装`@napi-rs/canvas@0.1.100`的项目目录，`B08_DISPLAY_FONT`和`B08_BODY_FONT`为源码包外且与font-lock.json哈希一致的字体绝对路径，`B08_PARTITION_EVIDENCE_DIR`为源码包外全新或空目录；随后在当前b08源码包目录（如`/absolute/path/to/recipes/reviewed/b08`）执行 `node test-partition.mjs`。测试使用runtime的loadFonts和outputDirectory，不默认向源码包写任何证据。

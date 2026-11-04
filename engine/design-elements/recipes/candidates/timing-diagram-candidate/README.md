@@ -6,17 +6,31 @@ This revision was re-extracted from a preserved licensed study after its earlier
 
 ## Run
 
-Node 24.22.1 and Native Canvas 0.1.100 were used. Install the pinned dependency with `npm ci --ignore-scripts --no-audit --no-fund`. Offline installation requires an already populated compatible npm cache; an empty-cache online install has not been verified here.
+Node 24.22.1 and Native Canvas 0.1.100 were used. Package identity is `bounded-timing-diagram-candidate@0.0.0` in [package.json](package.json); [provenance.json](provenance.json) retains this revision's reconstruction identity.
 
-Provide the exact unmodified font described by `font-lock.json` in an absolute, normalized external path. An arbitrary installed Liberation Sans is not necessarily the same bytes. Automatic public recovery of that exact binary is **not verified**.
+`loadNative()` resolves Canvas relative to `runtime.mjs`; it does not select an external install from cwd or a runtime environment variable. Copy the clean source package to a **new authorized directory outside the repository**, including its unchanged `package.json`, `package-lock.json`, font lock, source policy and notices, then install in that copy. Do not copy the whole repository, `node_modules` or generated files, and do not install into the retained source.
+
+Replace the absolute paths below. `SOURCE` is the retained package, `WORK` is the new independent copy and cwd for every command and composition snippet, and `OUTPUT` is a separate new destination. Parent directories and `TIMING_TEST_TMP` must already exist as regular non-symlink directory chains outside the repository and both source copies.
+
+Provide the exact unmodified font described by [font-lock.json](font-lock.json) in an absolute, normalized external path. An arbitrary installed Liberation Sans is not necessarily the same bytes. Automatic public recovery of that exact binary is **not verified**.
 
 ```sh
+set -eu
+SOURCE=/absolute/MotionStudio/engine/design-elements/recipes/candidates/timing-diagram-candidate
+WORK=/absolute/authorized-scratch/timing-source
+OUTPUT=/absolute/authorized-output/timing
+mkdir "$WORK"
+cp -R "$SOURCE/." "$WORK/"
+cd "$WORK"
+npm ci --ignore-scripts --no-audit --no-fund
 export TIMING_FONT=/absolute/external-assets/LiberationSans-Regular.ttf
 export TIMING_TEST_TMP=/absolute/existing-test-scratch
 npm test
 npm run check-source
-npm run examples -- /absolute/new-output-directory
+npm run examples -- "$OUTPUT"
 ```
+
+Offline installation requires an already populated compatible npm cache; an empty-cache online install has not been verified here. The package scripts set `DISABLE_SYSTEM_FONTS_LOAD=1` before Native loads. Direct composition must set the same flag before loading the dependency. `check-source.py` needs only Python3 standard library and can run without Native or the font; it is not a substitute for resource, raster or visual checks.
 
 The font and output must be outside this package and any ancestor recognized as a MotionStudio checkout. A `.git` directory alone is not sufficient recognition. Resource ancestors must be regular, not symbolic links; output is new-only. Keep resources and scratch outside any future repository when integrating.
 

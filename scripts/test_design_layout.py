@@ -82,6 +82,19 @@ class DesignLayoutTests(unittest.TestCase):
         import re
         links=lambda text:re.findall(r'https?://[^)\s]+',text)
         self.assertEqual(links(original),links(packaged))
+    def test_xhs08_current_source_entry_hashes(self):
+        import hashlib
+        import json
+        root = ROOT/'engine/design-elements/recipes/candidates/xhs08'
+        entry = json.loads((root/'entry.json').read_text())
+        self.assertEqual(sum(item['path'] == 'README.md' for item in entry['files']), 1)
+        for item in entry['files']:
+            with self.subTest(path=item['path']):
+                source = root/item['path']
+                self.assertEqual(hashlib.sha256(source.read_bytes()).hexdigest(), item['sha256'])
+                rel = source.relative_to(ROOT).as_posix()
+                self.assertEqual(hashlib.sha256(layout.source_bytes(ROOT, rel)).hexdigest(), item['sha256'])
+
     def test_package_byte_gate_uses_new_current_sources(self):
         spec=importlib.util.spec_from_file_location('package_check',ROOT/'scripts/test-skill-package.py')
         check=importlib.util.module_from_spec(spec);spec.loader.exec_module(check)

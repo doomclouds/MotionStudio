@@ -5,19 +5,45 @@ Three fixed-frame adapters: Bold Poster, Decision Tree, Creative Voltage.
 **User认可 source studies (“不错，可以沉淀几个积木”); new adapter/API review remains separate. User subsequently authorized “沉淀，提交，然后继续”; submission is pending unified integration, NOT yet published. No new registered recipes or public families.** No portfolio entry/cover/index/catalog is changed.
 
 ## Use
-Install with `npm ci --ignore-scripts --no-audit --no-fund` (Canvas exactly 0.1.100).
+Use a caller-authorized external Canvas 0.1.100 installation, or prepare a fresh one without installing into the source package:
+
+```sh
+export PKG=/absolute/path/to/od-second-group-candidate
+export PYTHONDONTWRITEBYTECODE=1
+RUNTIME=/absolute/new-external-runtime
+mkdir "$RUNTIME"
+cp "$PKG/package.json" "$PKG/package-lock.json" "$RUNTIME/"
+(cd "$RUNTIME" && npm ci --ignore-scripts --no-audit --no-fund)
+export CANVAS_MODULE="$RUNTIME/node_modules/@napi-rs/canvas"
+```
+
+The runtime parent must exist. All three JS tests accept CANVAS_MODULE; the core runtime API instead receives an explicit canvasApi object, as below.
 For each candidate, supply the exact external resource set listed in its asset-lock.json:
-`python prepare-assets.py bold-poster /path/to/supplied-assets /new/external/bold-poster`
+`python3 "$PKG/prepare-assets.py" bold-poster /absolute/supplied-assets /absolute/new-external/bold-poster`
 Preparation validates all bytes before creating the destination; no downloads or automatic source reconstruction are implied.
 
+The following ESM caller resolves both inputs explicitly from the environment above; it may live outside the source package and must not be saved into it.
+
 ```js
-import * as canvasApi from '@napi-rs/canvas';
-import {renderFrame, drawFrame} from './runtime.mjs';
+import {createRequire} from 'node:module';
+import {pathToFileURL} from 'node:url';
+const canvasApi = createRequire(import.meta.url)(process.env.CANVAS_MODULE);
+const {renderFrame, drawFrame} = await import(pathToFileURL(`${process.env.PKG}/runtime.mjs`).href);
 const frame = await renderFrame('bold-poster', {canvasApi, assetDir:'/external/bold-poster'});
 // Optional synthetic copy transfer: alternate:true, Bold Poster only; not another accepted work.
 drawFrame(frame, hostContext, {x:20,y:20,scale:0.25});
 ```
-Test: `OD_SECOND_ASSETS=/external npm test` (three named subdirectories).
+Once the three exact resource subdirectories exist, run the package scripts by their source paths:
+
+```sh
+export OD_SECOND_ASSETS=/absolute/external/exact-assets
+node "$PKG/test.mjs"
+node "$PKG/test-tilted-type.mjs"
+node "$PKG/test-font-failure.mjs"
+python3 "$PKG/test-prepare.py"
+```
+
+OD_SECOND_ASSETS contains bold-poster, decision-tree and creative-voltage as named by the existing locks. These tests do not obtain missing assets or substitute new fonts/emoji. Merely installing Native is not a complete resource restoration; missing exact inputs leave the resource-dependent tests unrun/blocked.
 
 ## Boundary
 Each renderer owns a fresh 1920×1080 canvas. Only successful complete frames are returned; no caller context enters study renderers. drawFrame accepts x/y within ±8192, scale 0.125..2, does not modify the caller current path or typography, and respects caller transform/clip/compositing. Caller owns final layout/overlap and canvas resource budget. This is not auto layout, a general decision-tree layout engine, arbitrary copy-fitting or a hardened output CLI. Internal native exports are not a stable public API.

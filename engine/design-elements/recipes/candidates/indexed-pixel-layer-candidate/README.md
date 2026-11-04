@@ -8,13 +8,28 @@ const spec={width:200,height:160,model:{
   columns:2,rows:2,palette:['#333955','#e8b47c'],indices:[0,1,-1,0]
 }};
 const rgba=renderIndexedPixels(spec); // no imports or external runtime
-const api=require('@napi-rs/canvas');
+const api=require(process.env.CANVAS_MODULE);
 const layer=createPixelLayer(spec,{createCanvas:(w,h)=>api.createCanvas(w,h)});
 // A host owns its background, labels, transforms and composition:
 hostContext.drawImage(layer.canvas,40,60);
 ```
 
-`npm ci --ignore-scripts --no-audit --no-fund`, then `npm test` installs the pinned optional-in-concept test/example backend (a declared package dependency) and runs the new projection's tests. `node examples.cjs /absolute/new/external/directory` writes two PNGs and layout JSON. `CANVAS_MODULE` may point to an existing absolute Canvas 0.1.100 module directory. Core does not read that variable or require Native. For locked restoration use the source bundle containing package-lock.json; npm pack conventionally omits that lock, so its tarball is not the complete locked source bundle.
+## Run without installing into the source tree
+
+The core is dependency-free; the example/test adapter accepts an existing absolute `CANVAS_MODULE` directory. Use an already authorized Canvas 0.1.100 installation, or prepare a new external runtime using this package's original lock:
+
+```sh
+PKG=/absolute/path/to/indexed-pixel-layer-candidate
+RUNTIME=/absolute/new-external-runtime
+mkdir "$RUNTIME"
+cp "$PKG/package.json" "$PKG/package-lock.json" "$RUNTIME/"
+(cd "$RUNTIME" && npm ci --ignore-scripts --no-audit --no-fund)
+export CANVAS_MODULE="$RUNTIME/node_modules/@napi-rs/canvas"
+node --test "$PKG/test.cjs" "$PKG/test-output.cjs"
+node "$PKG/examples.cjs" /absolute/new-external-output-directory
+```
+
+Both external directory parents must exist. The output must be new and outside the repository. No fonts or visual resources are downloaded; Native platform-package availability still applies, and an existing-cache run is not a fresh-network or all-platform guarantee. For locked restoration retain package-lock.json with the source bundle; npm pack conventionally omits it, so that tarball alone is not the complete locked bundle.
 
 The two original synthetic arrays and fixed compositions are fresh demonstrations, not the prior generated landscape/model. No screenshot, photograph, icon library, font, SVG, original study report, review identity or storage credential is included. PNG output stays outside the package/repository and is not part of this text-only source candidate.
 

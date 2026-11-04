@@ -12,19 +12,26 @@ Two original composable APIs, not a copied landing page. **0 formal families, 0 
 Author/cold verification on Linux x64 only. Node 24.22.1 / `@napi-rs/canvas` 0.1.100; Python 3.12.14 / fontTools 4.61.1. Core model tests do not load Native or fonts. No browser, upstream app, animation, audio, network service or 3D is executed.
 
 ```sh
-node --test test-model.mjs
-# In an isolated runtime directory, copy package.json and package-lock.json:
-npm ci --ignore-scripts --no-audit --no-fund
-# Obtain exact public font master per examples/font-sources.json in a separate folder.
-python3 prepare-fonts.py --input /absolute/master-folder --output /absolute/fresh-font-folder
-export COMPOSE_RUNTIME=/absolute/runtime/node_modules/@napi-rs/canvas
+PKG=/absolute/path/to/sampled-window-dialogue-candidate
+export PYTHONDONTWRITEBYTECODE=1
+node --test "$PKG/test-model.mjs"
+RUNTIME=/absolute/new-external-runtime
+mkdir "$RUNTIME"
+cp "$PKG/package.json" "$PKG/package-lock.json" "$RUNTIME/"
+(cd "$RUNTIME" && npm ci --ignore-scripts --no-audit --no-fund)
+# Obtain authorized exact font inputs per examples/font-sources.json separately.
+# Use the declared Python/fontTools environment; this preparation does not fetch.
+python3 "$PKG/prepare-fonts.py" --input /absolute/master-folder --output /absolute/fresh-font-folder
+export COMPOSE_RUNTIME="$RUNTIME/node_modules/@napi-rs/canvas"
 export COMPOSE_FONTS=/absolute/fresh-font-folder
 export DISABLE_SYSTEM_FONTS_LOAD=1
-node --test test-model.mjs test-native.mjs
-node examples/render.mjs --output /absolute/fresh-output-folder
-python3 package-tests.py --work /absolute/fresh-test-folder
-python3 build-package.py --output /absolute/fresh-package-folder
+node --test "$PKG/test-model.mjs" "$PKG/test-native.mjs"
+node "$PKG/examples/render.mjs" --output /absolute/fresh-output-folder
+python3 "$PKG/package-tests.py" --work /absolute/fresh-test-folder
+python3 "$PKG/build-package.py" --output /absolute/fresh-package-folder
 ```
+
+All directory parents must exist and generated destinations must be new, external to the repository. An existing authorized Canvas 0.1.100 module may be used by setting COMPOSE_RUNTIME directly and omitting installation. Native resolves that module path; the scripts still live in PKG, not the installation directory. Model/package checks do not establish font recovery or Native rendering; supply the exact locked font inputs before the resource-dependent commands.
 
 The font files are **not** in the text ZIP. `examples/font-lock.json` pins three complete derived Open Sans instances. Font preparation must reproduce this lock; `loadNative` first verifies the fixed complete lock SHA, then all three font bytes before loading/registering the Native dependency. Empty/missing/duplicate/altered lock lists cannot skip this gate. No system-font fallback guarantee for arbitrary caller-injected fonts; the renderer trusts the injected measurement/drawing environment. User-provided font families require their own licenses and actual-fit tests.
 

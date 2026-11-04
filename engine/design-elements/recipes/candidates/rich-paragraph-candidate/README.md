@@ -34,18 +34,26 @@ No font/runtime dependency is required to import `paragraph.cjs`. The core never
 
 The optional local adapter uses unmodified, fixed OFL Inter and JetBrains Mono masters. Their public source URLs, sizes, SHA256 and Git blobs are in `font-lock.json`. Keep the two files outside the **entire repository**, named `inter.ttf` and `mono.ttf`. Obtain them through an authorized official download or supply hash-identical files; this candidate does not auto-fetch. Aliases are registration-only; it does not modify internal font names. Emphasis is real Inter variable weight 600, **not italic**.
 
-Copy only `package.json` and `package-lock.json` to a new external runtime directory, then run there:
+Use an existing authorized external runtime, or copy only the original package files into a new external runtime directory. Keep the source package path separate; installing elsewhere does not move its scripts:
 
 ```sh
-npm ci --ignore-scripts --no-audit --no-fund
-export OD_RICH_CANVAS=/absolute/external/runtime/node_modules/@napi-rs/canvas
-export OD_RICH_FONTS=/absolute/external/fonts
-export OD_RICH_OUTPUT=/absolute/external/fresh-output-directory
-# Output directory must already exist. Output filenames must not already exist.
-node --test test.cjs test-runtime.cjs
-node examples/render.cjs
-python3 check-source.py
+PKG=/absolute/path/to/rich-paragraph-candidate
+export PYTHONDONTWRITEBYTECODE=1
+RUNTIME=/absolute/new-external-runtime
+mkdir "$RUNTIME"
+cp "$PKG/package.json" "$PKG/package-lock.json" "$RUNTIME/"
+(cd "$RUNTIME" && npm ci --ignore-scripts --no-audit --no-fund)
+export OD_RICH_CANVAS="$RUNTIME/node_modules/@napi-rs/canvas"
+export OD_RICH_FONTS=/absolute/external/exact-locked-fonts
+export OD_RICH_OUTPUT=/absolute/external/new-output-directory
+mkdir "$OD_RICH_OUTPUT"
+# Parents must exist; all paths are external and without symlink components.
+node --test "$PKG/test.cjs" "$PKG/test-runtime.cjs"
+node "$PKG/examples/render.cjs"
+python3 "$PKG/check-source.py"
 ```
+
+The font directory must already contain the two exact files described above. These commands do not download them or claim a fresh public-resource restoration. If runtime installation already exists, set OD_RICH_CANVAS directly and omit the installation steps.
 
 Native backend pinned to Canvas 0.1.100; tested on Node 24.22.1 / Linux x64. No Python package is needed. Runtime/resource/output paths must be external, absolute and without symlink components. Outputs are exclusive-create. No automatic retries, replacing existing outputs, or in-repository dependency installation.
 

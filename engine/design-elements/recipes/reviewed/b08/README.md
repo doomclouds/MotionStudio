@@ -15,11 +15,14 @@
 Node，`MOTION_ENGINE_ROOT` 指向安装了 `@napi-rs/canvas` **0.1.100** 的 Motion Studio native engine。
 设置 `B08_DISPLAY_FONT` 为 Anton-Regular.ttf、`B08_BODY_FONT` 为 DejaVuSans.ttf，均须包外绝对路径。具体文件SHA、官方来源与许可见 `font-lock.json`，渲染前失败关闭验证；不静默替换字体。没有字体二进制随本包分发，不从网络自动下载。
 
+```sh
+PKG=/absolute/path/to/recipes/reviewed/b08
+export PYTHONDONTWRITEBYTECODE=1
+export B08_EVIDENCE_DIR=/absolute/new-empty-directory
+node "$PKG/verify.mjs"
+python3 "$PKG/build-report.py" "$B08_EVIDENCE_DIR"
 ```
-B08_EVIDENCE_DIR=/absolute/new-empty-directory node verify.mjs
-python build-report.py /absolute/new-empty-directory
-```
-环境变量需一并提供。验证输出必须包外新/空目录，检查真实祖先避免symlink写回源树；不会覆盖既有证据。独立模块测试入口见各设计卡。
+MOTION_ENGINE_ROOT、B08_DISPLAY_FONT、B08_BODY_FONT需按上述约束一并提供；脚本用包的绝对路径执行，不要求在已退役的b08-recipe-retention目录运行。验证输出必须包外新/空目录，检查真实祖先避免symlink写回源树；不会覆盖既有证据。独立模块测试入口见各设计卡。
 
 ## 组合与适用边界
 两组合为修理工作坊与夜间文化节的**虚构计划**。同一数据驱动总量、圆环和全部图例，不假称真实活动；一组保留零值类，一组不同条目数与左右互换。仅固定1200×750：两个500px区域须在48px安全边距内，彼此至少40px间隔；越界/相交绘前拒绝，不做自动避碰。非响应式、自动跨字体系或Motion验证。它们是教学/技术表达验证，不宣称成熟品牌或创意突破。
