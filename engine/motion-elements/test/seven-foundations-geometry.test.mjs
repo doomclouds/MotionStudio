@@ -1,8 +1,8 @@
 import test from 'node:test';import assert from 'node:assert/strict';
-import {voronoiCells} from '../lib/foundations/geometry/voronoi-cells.mjs';
-import {minimumCostAssignment} from '../lib/foundations/layout/minimum-cost-assignment.mjs';
-import {routeRectangles} from '../lib/foundations/geometry/rectangle-obstacle-route.mjs';
-import {compileRadialWarp} from '../lib/foundations/geometry/radial-landmark-warp.mjs';
+import {voronoiCells} from '../lib/foundations/geometry/voronoi-cells/index.mjs';
+import {minimumCostAssignment} from '../lib/foundations/layout/minimum-cost-assignment/index.mjs';
+import {routeRectangles} from '../lib/foundations/geometry/rectangle-obstacle-route/index.mjs';
+import {compileRadialWarp} from '../lib/foundations/geometry/radial-landmark-warp/index.mjs';
 const close=(a,b,e=1e-7)=>assert.ok(Math.abs(a-b)<=e,`${a} != ${b}`);
 const area=p=>Math.abs(p.reduce((s,a,i)=>{const b=p[(i+1)%p.length];return s+a.x*b.y-a.y*b.x;},0))/2;
 const bounds={x:0,y:0,width:100,height:100};

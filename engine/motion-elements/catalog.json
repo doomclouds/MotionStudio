@@ -1701,7 +1701,7 @@
       ],
       "evidence": {
         "technicalTests": [
-          "test/layered-dag.test.mjs"
+          "lib/foundations/layout/layered-dag/test/layered-dag.test.mjs"
         ],
         "visualDemo": null,
         "videoValidation": "VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE",
@@ -1711,10 +1711,11 @@
         "normalSpeedViewing": "NOT_DONE",
         "audioListening": "NOT_LISTENED",
         "ownerArtisticAcceptance": "LIMITED_ACCEPTANCE_NOT_STYLE_ENDORSEMENT",
-        "guidance": "docs/data-flow.md",
-        "sourceVersionRelation": "Frozen film runtime retained; the post-film tiny-flow conservation fix is bound by separate all-frame state and representative Native-frame equality receipts, not a full fixed-version film re-render.",
+        "guidance": "lib/foundations/layout/layered-dag/README.md",
+        "sourceVersionRelation": "Frozen film runtime retained; the post-film tiny-flow conservation fix is bound by separate all-frame state and representative Native-frame equality receipts, not a full fixed-version film re-render. Later asset-directory colocation preserves algorithm bodies and canonical module identity while relocating files and relative imports; preceding byte-match/version-bridge evidence remains bound to its original version, not a new film-equivalence or acceptance claim.",
         "validationCoverage": "One compilation; six fixed node positions consumed in frames 157–839. No arbitrary graph or obstacle-routing visual coverage.",
-        "ownerFeedbackScope": "Limited acceptance of this delivered work; visual design is not endorsed as a style reference. Technical validity and migration evidence remain separate."
+        "ownerFeedbackScope": "Limited acceptance of this delivered work; visual design is not endorsed as a style reference. Technical validity and migration evidence remain separate.",
+        "executableExample": "lib/foundations/layout/layered-dag/examples/contract.mjs"
       },
       "knowledgeLinks": [],
       "tags": [
@@ -1805,7 +1806,7 @@
       ],
       "evidence": {
         "technicalTests": [
-          "test/weighted-flow.test.mjs"
+          "lib/foundations/layout/weighted-flow/test/weighted-flow.test.mjs"
         ],
         "visualDemo": null,
         "videoValidation": "VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE",
@@ -1815,10 +1816,11 @@
         "normalSpeedViewing": "NOT_DONE",
         "audioListening": "NOT_LISTENED",
         "ownerArtisticAcceptance": "LIMITED_ACCEPTANCE_NOT_STYLE_ENDORSEMENT",
-        "guidance": "docs/data-flow.md",
-        "sourceVersionRelation": "Frozen film runtime retained; the post-film tiny-flow conservation fix is bound by separate all-frame state and representative Native-frame equality receipts, not a full fixed-version film re-render.",
+        "guidance": "lib/foundations/layout/weighted-flow/README.md",
+        "sourceVersionRelation": "Frozen film runtime retained; the post-film tiny-flow conservation fix is bound by separate all-frame state and representative Native-frame equality receipts, not a full fixed-version film re-render. Later asset-directory colocation preserves algorithm bodies and canonical module identity while relocating files and relative imports; preceding byte-match/version-bridge evidence remains bound to its original version, not a new film-equivalence or acceptance claim.",
         "validationCoverage": "One direct initialization consumed in frames 161–407; recipe outputs consumed in frames 408–839. Six positive links, fixed scale; no zero/extreme/invalid-graph visual coverage.",
-        "ownerFeedbackScope": "Limited acceptance of this delivered work; visual design is not endorsed as a style reference. Technical validity and migration evidence remain separate."
+        "ownerFeedbackScope": "Limited acceptance of this delivered work; visual design is not endorsed as a style reference. Technical validity and migration evidence remain separate.",
+        "executableExample": "lib/foundations/layout/weighted-flow/examples/contract.mjs"
       },
       "knowledgeLinks": [],
       "tags": [
@@ -1928,7 +1930,7 @@
       ],
       "evidence": {
         "technicalTests": [
-          "test/flow-handoff.test.mjs"
+          "lib/recipes/flow-handoff/test/flow-handoff.test.mjs"
         ],
         "visualDemo": null,
         "videoValidation": "VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE",
@@ -1938,10 +1940,11 @@
         "normalSpeedViewing": "NOT_DONE",
         "audioListening": "NOT_LISTENED",
         "ownerArtisticAcceptance": "LIMITED_ACCEPTANCE_NOT_STYLE_ENDORSEMENT",
-        "guidance": "docs/data-flow.md",
-        "sourceVersionRelation": "Frozen film runtime retained; the post-film tiny-flow conservation fix is bound by separate all-frame state and representative Native-frame equality receipts, not a full fixed-version film re-render.",
+        "guidance": "lib/recipes/flow-handoff/README.md",
+        "sourceVersionRelation": "Frozen film runtime retained; the post-film tiny-flow conservation fix is bound by separate all-frame state and representative Native-frame equality receipts, not a full fixed-version film re-render. Later asset-directory colocation preserves algorithm bodies and canonical module identity while relocating files and relative imports; preceding byte-match/version-bridge evidence remains bound to its original version, not a new film-equivalence or acceptance claim.",
         "validationCoverage": "One compilation and 432 direct samples consumed in frames 408–839; interpolating frames 409–506 and settled frames 507–839. Positive-to-positive fixed topology only; no reduced-motion visual acceptance.",
-        "ownerFeedbackScope": "Limited acceptance of this delivered work; visual design is not endorsed as a style reference. Technical validity and migration evidence remain separate."
+        "ownerFeedbackScope": "Limited acceptance of this delivered work; visual design is not endorsed as a style reference. Technical validity and migration evidence remain separate.",
+        "executableExample": "lib/recipes/flow-handoff/examples/contract.mjs"
       },
       "knowledgeLinks": [],
       "tags": [
@@ -4156,16 +4159,18 @@
       ],
       "evidence": {
         "technicalTests": [
+          "lib/foundations/geometry/voronoi-cells/test/voronoi-cells.test.mjs",
           "test/seven-foundations-geometry.test.mjs"
         ],
-        "guidance": "docs/foundations/geometry.voronoi-cells.md",
+        "guidance": "lib/foundations/geometry/voronoi-cells/README.md",
         "visualDemo": null,
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN",
         "normalSpeedViewing": "NOT_DONE",
         "audioListening": "NOT_LISTENED",
         "registrationScope": "Local registration preparation only; published baseline remains 39 foundations + 7 recipes.",
-        "executableExample": "examples/registered-foundations.mjs"
+        "executableExample": "lib/foundations/geometry/voronoi-cells/examples/contract.mjs",
+        "sourceVersionRelation": "Asset-directory colocation changes only relative shared-helper imports and file locations. Original shared geometry suite and registered example remain available; new local contracts do not upgrade historical registration, viewing, listening, artistic or production-transfer status."
       },
       "knowledgeLinks": [],
       "tags": [
@@ -4200,16 +4205,18 @@
       ],
       "evidence": {
         "technicalTests": [
+          "lib/foundations/layout/minimum-cost-assignment/test/minimum-cost-assignment.test.mjs",
           "test/seven-foundations-geometry.test.mjs"
         ],
-        "guidance": "docs/foundations/composition.minimum-cost-assignment.md",
+        "guidance": "lib/foundations/layout/minimum-cost-assignment/README.md",
         "visualDemo": null,
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN",
         "normalSpeedViewing": "NOT_DONE",
         "audioListening": "NOT_LISTENED",
         "registrationScope": "Local registration preparation only; published baseline remains 39 foundations + 7 recipes.",
-        "executableExample": "examples/registered-foundations.mjs"
+        "executableExample": "lib/foundations/layout/minimum-cost-assignment/examples/contract.mjs",
+        "sourceVersionRelation": "Asset-directory colocation changes only relative shared-helper imports and file locations. Original shared geometry suite and registered example remain available; new local contracts do not upgrade historical registration, viewing, listening, artistic or production-transfer status."
       },
       "knowledgeLinks": [],
       "tags": [
@@ -4253,16 +4260,18 @@
       ],
       "evidence": {
         "technicalTests": [
+          "lib/foundations/geometry/rectangle-obstacle-route/test/rectangle-obstacle-route.test.mjs",
           "test/seven-foundations-geometry.test.mjs"
         ],
-        "guidance": "docs/foundations/geometry.rectangle-obstacle-route.md",
+        "guidance": "lib/foundations/geometry/rectangle-obstacle-route/README.md",
         "visualDemo": null,
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN",
         "normalSpeedViewing": "NOT_DONE",
         "audioListening": "NOT_LISTENED",
         "registrationScope": "Local registration preparation only; published baseline remains 39 foundations + 7 recipes.",
-        "executableExample": "examples/registered-foundations.mjs"
+        "executableExample": "lib/foundations/geometry/rectangle-obstacle-route/examples/contract.mjs",
+        "sourceVersionRelation": "Asset-directory colocation changes only relative shared-helper imports and file locations. Original shared geometry suite and registered example remain available; new local contracts do not upgrade historical registration, viewing, listening, artistic or production-transfer status."
       },
       "knowledgeLinks": [],
       "tags": [
@@ -4302,16 +4311,18 @@
       ],
       "evidence": {
         "technicalTests": [
+          "lib/foundations/geometry/radial-landmark-warp/test/radial-landmark-warp.test.mjs",
           "test/seven-foundations-geometry.test.mjs"
         ],
-        "guidance": "docs/foundations/geometry.radial-landmark-warp.md",
+        "guidance": "lib/foundations/geometry/radial-landmark-warp/README.md",
         "visualDemo": null,
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN",
         "normalSpeedViewing": "NOT_DONE",
         "audioListening": "NOT_LISTENED",
         "registrationScope": "Local registration preparation only; published baseline remains 39 foundations + 7 recipes.",
-        "executableExample": "examples/registered-foundations.mjs"
+        "executableExample": "lib/foundations/geometry/radial-landmark-warp/examples/contract.mjs",
+        "sourceVersionRelation": "Asset-directory colocation changes only relative shared-helper imports and file locations. Original shared geometry suite and registered example remain available; new local contracts do not upgrade historical registration, viewing, listening, artistic or production-transfer status."
       },
       "knowledgeLinks": [],
       "tags": [
@@ -4345,16 +4356,18 @@
       ],
       "evidence": {
         "technicalTests": [
+          "lib/foundations/raster/distance-transform/test/distance-transform.test.mjs",
           "test/seven-foundations-raster.test.mjs"
         ],
-        "guidance": "docs/foundations/raster.euclidean-distance-transform.md",
+        "guidance": "lib/foundations/raster/distance-transform/README.md",
         "visualDemo": null,
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN",
         "normalSpeedViewing": "NOT_DONE",
         "audioListening": "NOT_LISTENED",
         "registrationScope": "Local registration preparation only; published baseline remains 39 foundations + 7 recipes.",
-        "executableExample": "examples/registered-foundations.mjs"
+        "executableExample": "lib/foundations/raster/distance-transform/examples/contract.mjs",
+        "sourceVersionRelation": "Asset-directory colocation changes only relative shared-grid-helper imports and file locations. Original shared raster suite and registered example remain available; new local contracts do not upgrade historical registration, viewing, listening, artistic or production-transfer status."
       },
       "knowledgeLinks": [],
       "tags": [
@@ -4403,16 +4416,18 @@
       ],
       "evidence": {
         "technicalTests": [
+          "lib/foundations/raster/palette-diffusion/test/palette-diffusion.test.mjs",
           "test/seven-foundations-raster.test.mjs"
         ],
-        "guidance": "docs/foundations/raster.palette-error-diffusion.md",
+        "guidance": "lib/foundations/raster/palette-diffusion/README.md",
         "visualDemo": null,
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN",
         "normalSpeedViewing": "NOT_DONE",
         "audioListening": "NOT_LISTENED",
         "registrationScope": "Local registration preparation only; published baseline remains 39 foundations + 7 recipes.",
-        "executableExample": "examples/registered-foundations.mjs"
+        "executableExample": "lib/foundations/raster/palette-diffusion/examples/contract.mjs",
+        "sourceVersionRelation": "Asset-directory colocation changes only relative shared-grid-helper imports and file locations. Original shared raster suite and registered example remain available; new local contracts do not upgrade historical registration, viewing, listening, artistic or production-transfer status."
       },
       "knowledgeLinks": [],
       "tags": [
@@ -4469,16 +4484,18 @@
       ],
       "evidence": {
         "technicalTests": [
+          "lib/foundations/field/reaction-diffusion/test/reaction-diffusion.test.mjs",
           "test/seven-foundations-raster.test.mjs"
         ],
-        "guidance": "docs/foundations/field.projected-reaction-diffusion.md",
+        "guidance": "lib/foundations/field/reaction-diffusion/README.md",
         "visualDemo": null,
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN",
         "normalSpeedViewing": "NOT_DONE",
         "audioListening": "NOT_LISTENED",
         "registrationScope": "Local registration preparation only; published baseline remains 39 foundations + 7 recipes.",
-        "executableExample": "examples/registered-foundations.mjs"
+        "executableExample": "lib/foundations/field/reaction-diffusion/examples/contract.mjs",
+        "sourceVersionRelation": "Asset-directory colocation changes only relative shared-grid-helper imports and file locations. Original shared raster suite and registered example remain available; new local contracts do not upgrade historical registration, viewing, listening, artistic or production-transfer status."
       },
       "knowledgeLinks": [],
       "tags": [

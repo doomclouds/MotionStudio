@@ -1,0 +1,12 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import * as api from '../../../../index.mjs';
+const catalog=JSON.parse(readFileSync(new URL('../../../../../catalog.json',import.meta.url)));
+const item=catalog.elements.find(e=>e.id==='field.projected-reaction-diffusion');
+assert(item);
+const output=api.reactionDiffusion(item.example),u=.8+.1*(-.8*.15**2+.035*(1-.8)),v=.15+.1*(.8*.15**2-(.035+.06)*.15);
+for(const value of output.u)assert(Math.abs(value-u)<1e-14);for(const value of output.v)assert(Math.abs(value-v)<1e-14);
+const zero=api.reactionDiffusion({...item.example,steps:0});assert.deepEqual([...zero.u],item.example.u);assert.notEqual(zero.u,item.example.u);
+const two=api.reactionDiffusion({...item.example,steps:2}),chunk=api.reactionDiffusion({...item.example,...output});assert.deepEqual(two,chunk);
+assert.throws(()=>api.reactionDiffusion({...item.example,dt:.2}));
+console.log('field.projected-reaction-diffusion contract PASS');

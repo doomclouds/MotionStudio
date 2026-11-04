@@ -31,7 +31,7 @@ test('package self-reference resolves default and explicit Node entry to canonic
  assert.deepEqual(pkg.exports['./node'],{node:'./lib/node.mjs'});
 });
 test('new non-arrival implementation graphs introduce no Node or external dependencies',()=>{
- for(const path of ['foundations/motion/finite-particles/index.mjs','foundations/layout/weighted-hierarchy/index.mjs','foundations/raster/temporal-exposure/index.mjs','foundations/layout/poisson-disc/index.mjs','foundations/raster/sprite-atlas.mjs','foundations/motion/fixed-string-wave/index.mjs','foundations/geometry/visibility-fan/index.mjs','foundations/field/grid-transport/index.mjs','support/polyline-sections.mjs','foundations/motion/hard-disc-events/index.mjs','foundations/geometry/ray-chain/index.mjs','foundations/geometry/voronoi-cells.mjs','foundations/layout/minimum-cost-assignment.mjs','foundations/geometry/rectangle-obstacle-route.mjs','foundations/geometry/radial-landmark-warp.mjs','foundations/raster/distance-transform.mjs','foundations/raster/palette-diffusion.mjs','foundations/field/reaction-diffusion.mjs']){
+ for(const path of ['foundations/motion/finite-particles/index.mjs','foundations/layout/weighted-hierarchy/index.mjs','foundations/raster/temporal-exposure/index.mjs','foundations/layout/poisson-disc/index.mjs','foundations/raster/sprite-atlas.mjs','foundations/motion/fixed-string-wave/index.mjs','foundations/geometry/visibility-fan/index.mjs','foundations/field/grid-transport/index.mjs','support/polyline-sections.mjs','foundations/motion/hard-disc-events/index.mjs','foundations/geometry/ray-chain/index.mjs','foundations/geometry/voronoi-cells/index.mjs','foundations/layout/minimum-cost-assignment/index.mjs','foundations/geometry/rectangle-obstacle-route/index.mjs','foundations/geometry/radial-landmark-warp/index.mjs','foundations/raster/distance-transform/index.mjs','foundations/raster/palette-diffusion/index.mjs','foundations/field/reaction-diffusion/index.mjs']){
  assert.deepEqual([...graph(new URL('lib/'+path,root)).externals],[],path);
  }
 });
@@ -53,7 +53,7 @@ test('explicit registration manifest matches catalog, API and excluded support a
 
 test('retired candidate entry paths are absent; current public functions are canonical',async()=>{
  for(const path of ['lib/candidate-index.mjs','lib/seven-foundations-candidate-index.mjs','lib/attractor-field.mjs','lib/two-link-ik.mjs','lib/sticky-interval.mjs'])assert.equal(existsSync(new URL(path,root)),false);
- const mapping={voronoiCells:'geometry/voronoi-cells',minimumCostAssignment:'layout/minimum-cost-assignment',routeRectangles:'geometry/rectangle-obstacle-route',compileRadialWarp:'geometry/radial-landmark-warp',distanceTransform:'raster/distance-transform',paletteDiffuse:'raster/palette-diffusion',reactionDiffusion:'field/reaction-diffusion'};
+ const mapping={voronoiCells:'geometry/voronoi-cells/index',minimumCostAssignment:'layout/minimum-cost-assignment/index',routeRectangles:'geometry/rectangle-obstacle-route/index',compileRadialWarp:'geometry/radial-landmark-warp/index',distanceTransform:'raster/distance-transform/index',paletteDiffuse:'raster/palette-diffusion/index',reactionDiffusion:'field/reaction-diffusion/index'};
  for(const [name,path]of Object.entries(mapping)){const m=await import(new URL('lib/foundations/'+path+'.mjs',root));assert.equal(base[name],m[name]);}
  const arrival=await import('../lib/foundations/field/arrival-field.mjs');assert.equal(node.compileArrivalField,arrival.compileArrivalField);
 });

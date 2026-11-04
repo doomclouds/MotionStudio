@@ -1,6 +1,6 @@
 /** Synthetic 100-order batch for the proposed film; not a production result. */
-import {layeredDagLayout} from '../lib/layered-dag.mjs';
-import {compileFlowHandoff,sampleFlowHandoff} from '../lib/recipes/flow-handoff.mjs';
+import {layeredDagLayout} from '../lib/foundations/layout/layered-dag/index.mjs';
+import {compileFlowHandoff,sampleFlowHandoff} from '../lib/recipes/flow-handoff/index.mjs';
 import {rational} from '../lib/time.mjs';
 export const labels=Object.freeze({received:'Received',auto:'Auto cleared',review:'Review',held:'Held',ready:'Ready',fulfilled:'Fulfilled'});
 const links=held=>[

@@ -124,7 +124,11 @@ test('data-flow accounting and film coverage preserve independent quality gates'
     assert.equal(e.evidence.normalSpeedViewing,'NOT_DONE');
     assert.equal(e.evidence.originalProductionTransfer,'NOT_RUN');
     assert.match(e.evidence.validationCoverage,/frames/);
-    assert.equal(e.evidence.guidance,'docs/data-flow.md');
+    assert.equal(e.evidence.guidance,{
+      'composition.layered-dag':'lib/foundations/layout/layered-dag/README.md',
+      'composition.weighted-flow':'lib/foundations/layout/weighted-flow/README.md',
+      'recipe.flow-handoff':'lib/recipes/flow-handoff/README.md'
+    }[id]);
   }
 });
 

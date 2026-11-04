@@ -1,0 +1,10 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import * as api from '../../../../index.mjs';
+const catalog=JSON.parse(readFileSync(new URL('../../../../../catalog.json',import.meta.url)));
+const item=catalog.elements.find(e=>e.id==='raster.euclidean-distance-transform');
+assert(item);
+const output=api.distanceTransform(item.example);assert.deepEqual([...output.squaredDistances],[0,1,0]);
+const centered=api.distanceTransform({width:3,height:3,mask:[0,0,0,0,1,0,0,0,0]});assert.deepEqual([...centered.squaredDistances],[2,1,2,1,0,1,2,1,2]);
+assert.deepEqual([...api.distanceTransform({width:2,height:1,mask:[0,0]}).squaredDistances],[Infinity,Infinity]);output.squaredDistances[0]=9;assert.equal(item.example.mask[0],1);assert.throws(()=>api.distanceTransform({...item.example,mask:[1,.5,0]}));
+console.log('raster.euclidean-distance-transform contract PASS');

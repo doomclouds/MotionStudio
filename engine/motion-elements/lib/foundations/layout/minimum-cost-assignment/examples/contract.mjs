@@ -1,0 +1,10 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import * as api from '../../../../index.mjs';
+const catalog=JSON.parse(readFileSync(new URL('../../../../../catalog.json',import.meta.url)));
+const item=catalog.elements.find(e=>e.id==='composition.minimum-cost-assignment');
+assert(item);
+const assignment=api.minimumCostAssignment(item.example);assert.deepEqual(assignment,{columns:[1,0],totalCost:3});
+const tied=[[0,0],[0,0]];assert.deepEqual(api.minimumCostAssignment(tied),api.minimumCostAssignment(tied));assert.equal(new Set(api.minimumCostAssignment(tied).columns).size,2);
+assert.throws(()=>api.minimumCostAssignment([[1,2]]));assert.throws(()=>api.minimumCostAssignment([[Infinity]]));
+console.log('composition.minimum-cost-assignment contract PASS');

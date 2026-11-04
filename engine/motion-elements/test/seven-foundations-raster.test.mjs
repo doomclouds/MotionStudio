@@ -1,5 +1,5 @@
 import test from 'node:test';import assert from 'node:assert/strict';
-import {distanceTransform as edt} from '../lib/foundations/raster/distance-transform.mjs';import {paletteDiffuse as quant} from '../lib/foundations/raster/palette-diffusion.mjs';import {reactionDiffusion as rd} from '../lib/foundations/field/reaction-diffusion.mjs';
+import {distanceTransform as edt} from '../lib/foundations/raster/distance-transform/index.mjs';import {paletteDiffuse as quant} from '../lib/foundations/raster/palette-diffusion/index.mjs';import {reactionDiffusion as rd} from '../lib/foundations/field/reaction-diffusion/index.mjs';
 let seed=1827;const random=()=>((seed=(Math.imul(seed,1664525)+1013904223)>>>0)/2**32);const eq=(a,b)=>assert.deepEqual(Array.from(a),Array.from(b));
 const opts=(w=3,h=3)=>({width:w,height:h,u:Array(w*h).fill(.8),v:Array(w*h).fill(.15),steps:1,dt:.1,diffusionU:.8,diffusionV:.4,feed:.035,kill:.06});
 test('EDT exact brute-force oracle: 400 random grids',()=>{for(let t=0;t<400;t++){const width=1+Math.floor(random()*15),height=1+Math.floor(random()*15),mask=Array.from({length:width*height},()=>random()<.2?1:0),src=mask.flatMap((v,i)=>v?[i]:[]),r=edt({width,height,mask}).squaredDistances;for(let i=0;i<r.length;i++)assert.equal(r[i],Math.min(Infinity,...src.map(j=>(i%width-j%width)**2+(Math.floor(i/width)-Math.floor(j/width))**2)));}});

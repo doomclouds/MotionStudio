@@ -1,0 +1,10 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import * as api from '../../../../index.mjs';
+const catalog=JSON.parse(readFileSync(new URL('../../../../../catalog.json',import.meta.url)));
+const item=catalog.elements.find(e=>e.id==='raster.palette-error-diffusion');
+assert(item);
+const output=api.paletteDiffuse(item.example);assert.deepEqual([...output.indices],[0,1]);assert.deepEqual([...output.rgb],[0,0,0,1,1,1]);
+const gray=api.paletteDiffuse({width:3,height:1,rgb:Array(9).fill(.5),palette:[[0,0,0],[1,1,1]]});assert.deepEqual([...gray.indices],[0,1,0]);
+assert.deepEqual(output,api.paletteDiffuse(item.example));output.rgb[0]=9;assert.equal(item.example.rgb[0],.4);assert.throws(()=>api.paletteDiffuse({...item.example,palette:[[0,0,0]]}));
+console.log('raster.palette-error-diffusion contract PASS');

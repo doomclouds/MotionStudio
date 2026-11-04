@@ -1,0 +1,11 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import * as api from '../../../../index.mjs';
+const catalog=JSON.parse(readFileSync(new URL('../../../../../catalog.json',import.meta.url)));
+const item=catalog.elements.find(e=>e.id==='geometry.voronoi-cells');
+assert(item);
+const cells=api.voronoiCells(item.example),area=p=>Math.abs(p.reduce((s,a,i)=>{const b=p[(i+1)%p.length];return s+a.x*b.y-a.y*b.x;},0))/2;
+assert.equal(cells.length,2);for(const c of cells)assert(Math.abs(area(c.vertices)-5000)<1e-9);
+assert(cells[0].vertices.every(p=>p.x<=50));assert(cells[1].vertices.every(p=>p.x>=50));assert.deepEqual(cells,api.voronoiCells(item.example));
+assert.throws(()=>api.voronoiCells({...item.example,sites:[item.example.sites[0],item.example.sites[0]]}));
+console.log('geometry.voronoi-cells contract PASS');

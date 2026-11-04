@@ -24,7 +24,7 @@ Current callers use `lib/index.mjs`, or `lib/node.mjs` for arrival. The old cand
 | Responsibility | Canonical implementation |
 | --- | --- |
 | Voronoi, obstacle route, radial warp | `lib/foundations/geometry/{voronoi-cells,rectangle-obstacle-route,radial-landmark-warp}.mjs` |
-| Minimum-cost assignment | `lib/foundations/layout/minimum-cost-assignment.mjs` |
+| Minimum-cost assignment | `lib/foundations/layout/minimum-cost-assignment/index.mjs` |
 | Distance transform, palette diffusion | `lib/foundations/raster/{distance-transform,palette-diffusion}.mjs` |
 | Projected reaction diffusion, arrival | `lib/foundations/field/{reaction-diffusion,arrival-field}.mjs` |
 | Uncounted polyline support and event bindings | `lib/support/{polyline-sections,event-bindings}.mjs` |

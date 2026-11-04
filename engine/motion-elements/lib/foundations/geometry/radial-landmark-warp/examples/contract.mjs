@@ -1,0 +1,11 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import * as api from '../../../../index.mjs';
+const catalog=JSON.parse(readFileSync(new URL('../../../../../catalog.json',import.meta.url)));
+const item=catalog.elements.find(e=>e.id==='geometry.radial-landmark-warp');
+assert(item);
+const warp=api.compileRadialWarp(item.example);assert.deepEqual(warp.sample(item.example.source),item.example.target);
+const p=warp.sample([{x:3,y:0}])[0];assert(Math.abs(p.x-(3+Math.exp(-1)))<1e-12);assert(Math.abs(p.y-2*Math.exp(-1))<1e-12);
+assert.deepEqual(warp.sample([{x:3,y:0}],0),[{x:3,y:0}]);assert.deepEqual(warp.sample(item.example.source,.5),[{x:.5,y:1}]);
+assert.throws(()=>warp.sample([{x:0,y:0}],2));assert.throws(()=>api.compileRadialWarp({...item.example,target:[]}));
+console.log('geometry.radial-landmark-warp contract PASS');

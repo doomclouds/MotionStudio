@@ -1,0 +1,11 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import * as api from '../../../../index.mjs';
+const catalog=JSON.parse(readFileSync(new URL('../../../../../catalog.json',import.meta.url)));
+const item=catalog.elements.find(e=>e.id==='geometry.rectangle-obstacle-route');
+assert(item);
+const route=api.routeRectangles(item.example);assert.equal(route.reachable,true);assert(Math.abs(route.length-(2*Math.sqrt(13)+4))<1e-10);
+assert.deepEqual(route.vertices[0],item.example.start);assert.deepEqual(route.vertices.at(-1),item.example.end);
+assert.equal(api.routeRectangles({...item.example,obstacles:[]}).length,10);assert.equal(api.routeRectangles({...item.example,end:item.example.start,obstacles:[]}).length,0);
+assert.deepEqual(route,api.routeRectangles(item.example));assert.throws(()=>api.routeRectangles({...item.example,start:{x:5,y:0}}));
+console.log('geometry.rectangle-obstacle-route contract PASS');
