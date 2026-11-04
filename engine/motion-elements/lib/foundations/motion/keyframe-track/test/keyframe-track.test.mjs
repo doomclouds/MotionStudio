@@ -72,3 +72,21 @@ test('subnormal decimal knots do not overflow local ratio conversion',()=>{
  assert.ok(Number.isFinite(value));assert.ok(Math.abs(value-1e-27)<1e-42);
  assert.equal(sample(s,T(0)).value,0);assert.equal(sample(s,T(1)).value,100);
 });
+
+test('frame-intended holds retain declared decimal knots without implicit snapping',()=>{
+ const make=(end,knot)=>({range:{start:T(0),end:T(end)},params:{knots:[
+  {at:0,value:0,interpolation:'hold'},
+  {at:knot,value:1,interpolation:'hold'},
+  {at:1,value:1,interpolation:'hold'},
+ ]}});
+ const fps=30,targetFrame=27,rounded=(targetFrame/fps)/7;
+ assert.equal(String(rounded),'0.1285714285714286');
+ assert.ok(1285714285714286n*70n>9n*10000000000000000n);
+ const decimalLater=make(7,rounded),finiteDecimal=make(3,.3);
+ const frames=[targetFrame-1,targetFrame,targetFrame+1];
+ const values=track=>frames.map(frame=>sample(track,T(frame,fps)).value);
+ assert.deepEqual(values(decimalLater),[0,0,1]);
+ assert.deepEqual(values(finiteDecimal),[0,1,1]);
+ assert.equal(sample(decimalLater,T('9000000000000002','10000000000000000')).value,1);
+ // Only this isolated hold is equivalent; changing range is not generic retiming.
+});
