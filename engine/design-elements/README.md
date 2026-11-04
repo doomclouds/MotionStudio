@@ -15,7 +15,7 @@ See [recipe source roles](recipes/README.md) for the direct `reviewed/`, `candid
 | design.color-sections.v1 | [design card](docs/color-sections.md), [code](color-sections.mjs) | two semantic slots, order, area ratio and explicit colors |
 | design.material-surfaces.v1 | [design card](docs/material-surfaces.md), [code](material-surfaces.mjs) | paper / opaque / caller-supplied glass backdrop, content slot |
 | design.semantic-data.v1 | [design card](docs/semantic-data.md), [code](semantic-data.mjs) | categories, values, legends and illustrative/quantitative distinction |
-| design.parameter-controls.v1 | [design card](docs/parameter-controls.md), [code](parameter-controls.mjs) | value, range, units, orientation, selected/disabled states |
+| design.parameter-controls.v1 | [design card](families/parameter-controls/README.md), [code](families/parameter-controls/index.mjs) | value, range, units, orientation, selected/disabled states |
 | design.expressive-type.v1 | [design card](docs/expressive-type.md), [code](expressive-type.mjs) | bounded layered/striped glyph effects, readable repeated label |
 | design.radial-scale.v1 | [design card](docs/radial-scale.md), [code](radial-scale.mjs) | clockwise linear value, range, unit, knob/gauge |
 | design.diagonal-field.v1 | [design card](docs/diagonal-field.md), [code](diagonal-field.mjs) | authored color boundary and safe content rectangles |

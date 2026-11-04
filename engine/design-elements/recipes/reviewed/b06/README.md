@@ -7,7 +7,7 @@ Two fixed-size composition recipes; **zero new shared UI families**. Existing fo
 Requirements: installed MotionStudio native engine; Python/fontTools4.61.1; licensed full NotoSerifTC font matching `font-lock.json`. No font binary, PNG or HTML output is distributed with this source tree.
 
 ```sh
-export MOTION_UI_ASSETS_ROOT=/absolute/path/to/engine/design-elements
+export MOTION_UI_ASSETS_ROOT=/absolute/path/to/9cdf152-snapshot/engine/design-elements
 export MOTION_ENGINE_ROOT=/absolute/path/to/installed/engine/motion-render-core
 export B06_FONT_FILE=/user/fonts/NotoSerifTC-variable.ttf
 export B06_TEXT_FONT_FILE=/user/fonts/B06Text600.ttf
@@ -34,3 +34,7 @@ Font license: `licenses/OFL.txt`; official source repository https://github.com/
 - build-report.py: generates a private four-image report in the external evidence directory; do not publish generated artifacts with the skill/source.
 
 No source scene is migrated to a new recipe. Font binaries, generated evidence and reports stay private and outside the published code tree. Recipes passed bounded technical and independent static review, not automatically user-approved brand designs or a general layout/navigation system.
+
+## Frozen dependency recovery
+
+The current family layout is not the dependency snapshot pinned by this recipe. Restore the `engine/design-elements` tree from the real Git commit in `asset-lock.json` into an external historical checkout, then point `MOTION_UI_ASSETS_ROOT` there. `runtime.assertAssets` must verify every locked byte before rendering. Do not point this variable at current canonical families, rewrite the lock to bypass a mismatch, or reinstall old aliases in the current tree. This historical snapshot is a recipe dependency, not a compatibility entrypoint. The portable source package retains the lock but does not bundle the historical dependency tree; recipients need that exact source commit. The portable test restores and verifies it from repository Git objects when available. A future migration of this recipe requires separate dependency review and revalidation.

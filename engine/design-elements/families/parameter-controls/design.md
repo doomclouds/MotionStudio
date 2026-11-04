@@ -1,6 +1,6 @@
 # design.parameter-controls.v1 · 参数刻度与状态
 
-代码：[`parameter-controls.mjs`](../parameter-controls.mjs)。示例：[`examples/parameter-controls.mjs`](../examples/parameter-controls.mjs)。
+代码：[`index.mjs`](index.mjs)。示例：[`examples/cases.mjs`](examples/cases.mjs)。
 
 ## 设计判断
 

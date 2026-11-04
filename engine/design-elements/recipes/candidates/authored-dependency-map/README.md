@@ -2,7 +2,7 @@
 
 An original, source-only fixed-layout DAG painter. It retains the relationship between explicitly positioned nodes, stable IDs and directed dependencies. It does not include any reference poster, brand, screenshot, phone frame, private report or font. **0 registered families, 0 formal recipes, no portfolio acceptance.**
 
-`drawDependencyMap(ctx, {bounds,nodes,edges,theme})` validates the authored model and labels before painting nodes and directional edges. Use a fresh, trusted Canvas context and an already registered licensed font. See [CONTRACT.md](CONTRACT.md) for precise boundaries and [DEDUP.md](DEDUP.md) for the existing alternatives.
+`drawDependencyMap(ctx, {bounds,nodes,edges,theme})` validates the authored model and labels before painting nodes and directional edges. Use a fresh, trusted Canvas context and an already registered licensed font. Start with [design.md](design.md) for selection, composition and example interpretation; see [CONTRACT.md](CONTRACT.md) for precise boundaries and [DEDUP.md](DEDUP.md) for the existing alternatives.
 
 Two independently authored synthetic calls in `examples.mjs` use the same implementation:
 - Publishing: three sources → editorial review → two planned deliverables, a wide blue composition.

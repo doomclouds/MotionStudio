@@ -95,12 +95,36 @@ def main():
             run(['node', str(design / 'families/print-poster/examples/render.mjs')])
         else:
             print('NOT_RUN: print-poster Native examples require MOTION_ENGINE_ROOT and PRINT_POSTER_FONT_DIR (or UI_TEST_FONT_DIR); no CJK font dependency')
+        parameter = design / 'families/parameter-controls'
+        assert (parameter / 'index.mjs').read_bytes() == (ROOT / 'engine/design-elements/families/parameter-controls/index.mjs').read_bytes()
+        for old in ('parameter-controls.mjs', 'docs/parameter-controls.md', 'examples/parameter-controls.mjs'):
+            assert not (design / old).exists(), old
+        if os.environ.get('MOTION_ENGINE_ROOT') and (os.environ.get('PARAMETER_CONTROLS_FONT_DIR') or os.environ.get('UI_TEST_FONT_DIR')):
+            run(['node', str(parameter / 'test/contract.mjs')])
+            run(['node', str(parameter / 'examples/render.mjs')])
+        else:
+            print('NOT_RUN: parameter-controls Native tests require MOTION_ENGINE_ROOT and PARAMETER_CONTROLS_FONT_DIR (or UI_TEST_FONT_DIR)')
         recipes = design / 'recipes/reviewed/b06'
         manifest = json.loads((recipes / 'recipe-manifest.json').read_text())
         assert manifest['sharedFamilyCountDelta'] == 0 and len(manifest['recipes']) == 2
         assert all(not item['originalSceneCallsComposite'] for item in manifest['recipes'])
+        # B06 deliberately consumes its historical complete import closure, not
+        # current canonical families. Preserve provenance and verify every byte.
+        b06_lock = json.loads((recipes / 'asset-lock.json').read_text())
+        if subprocess.run(['git', 'cat-file', '-e', b06_lock['commit'] + '^{commit}'], cwd=ROOT, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL).returncode:
+            raise SystemExit('BLOCKED: B06 historical dependency commit ' + b06_lock['commit'] + ' is unavailable in local Git history; obtain the pinned source before verifying the portable recipe')
+        locked_assets = temp / 'b06-locked-design-assets'
+        locked_assets.mkdir()
+        for rel, expected in b06_lock['files'].items():
+            target = locked_assets / rel
+            assert not Path(rel).is_absolute() and '..' not in Path(rel).parts
+            data = subprocess.check_output(['git', 'show', b06_lock['commit'] + ':engine/design-elements/' + rel], cwd=ROOT)
+            assert hashlib.sha256(data).hexdigest() == expected, rel
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_bytes(data)
+        run(['node', '--input-type=module', '-e', "const m=await import(process.argv[1]);m.assertAssets(process.argv[2]);", (recipes / 'runtime.mjs').as_uri(), str(locked_assets)])
         if os.environ.get('MOTION_ENGINE_ROOT') and os.environ.get('B06_FONT_FILE'):
-            recipe_env = {**os.environ, 'MOTION_UI_ASSETS_ROOT': str(design), 'B06_TEXT_FONT_FILE': str(temp / 'b06-external-font.ttf'), 'B06_EVIDENCE_DIR': str(temp / 'b06-recipe-evidence')}
+            recipe_env = {**os.environ, 'MOTION_UI_ASSETS_ROOT': str(locked_assets), 'B06_TEXT_FONT_FILE': str(temp / 'b06-external-font.ttf'), 'B06_EVIDENCE_DIR': str(temp / 'b06-recipe-evidence')}
             run(['python3', str(recipes / 'prepare-font.py')], env=recipe_env)
             run(['node', str(recipes / 'verify.mjs')], env=recipe_env)
             run(['python3', str(recipes / 'verify-font.py')], env=recipe_env)

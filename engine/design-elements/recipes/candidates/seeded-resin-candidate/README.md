@@ -2,11 +2,7 @@
 
 One bounded original decorative surface generator. **Zero registered design families, zero reviewed recipes, zero portfolio works.** This candidate does not implement editor interaction, a timeline or a motion response. Only its surface generation is proposed for review; source-study event/response repairs are unrelated existing work.
 
-## Choose it for
-
-A quiet illustrated card/glyph surface with sparse rounded inclusions, a broad bent light band and darkened edges. Use a raster cached once per model when applying motion or repeated glyph clips. Keep important text on a separate quiet label. It is intentionally graphic, not photographed resin, optical transmission, volumetric refraction or physical bubbles. It always paints a rectangular colored base under its overlays; it does not sample the scene behind it.
-
-Do not choose it for cloth folds, photographic materials, live lighting, arbitrary 3D viewpoints, semantic scientific diagrams, or high-frequency moving texture. A new seed is a **different static model**, not a smooth animation control. Changing counts can reorganize the drawing; do not interpolate seeds as animation.
+Selection, visual hierarchy, alternatives and fixture interpretation are in [design.md](design.md). The callable contract and reproduction commands follow.
 
 ## Contract
 
@@ -17,14 +13,6 @@ Inputs are ordinary or null-prototype records containing enumerable own data fie
 `drawResin(ctx, model, {x?,y?}={})` draws a same-module owned model at finite placement ±16384 (default 0). It clips to its rectangle and returns frozen logical bounds plus count. Canvas context is caller-owned and trusted. Style values changed here (fillStyle, strokeStyle, lineWidth) are restored explicitly as well as save/restore, because Native Canvas 0.1.100 style accessors require explicit restoration in this usage. Caller transform and clip are preserved. **The current path is replaced**, as with ordinary beginPath drawing, and cannot be recovered by save/restore; do not invoke midway through an unfinished caller path. Caller alpha, compositing, shadows and filters affect the rendering. Clean/default raster state is required for the illustrated opaque fixture behavior.
 
 Coordinates and inclusion radii are object-local, independent of viewport placement. They are geometric stability, **not a pixel-equivalence or anti-flicker promise**. Rasterizing the same geometry into differently clipped/translated canvases can change curve antialiasing. If exact crop identity matters, draw once to a caller-owned full tile and crop that cached tile. Scaling changes filtering; inspect actual-size output and continuous playback before accepting a motion use. Sampling-error diagnostics compare renderer consistency only; they do not establish perceptual flicker removal.
-
-## Deduplication
-
-- Existing `material-surfaces` supplies paper/opaque/glass information panels and caller backdrop integration. This package neither replaces nor calls that API; it supplies seeded internal decorative geometry rather than a content container.
-- Existing `drape-material-candidate` uses analytic brightness columns for cloth-like folds. This candidate does not copy its field, sample formula or renderer.
-- Existing scalar/halftone candidates map supplied scalar fields to patterns. No scalar input, measured data or halftone is claimed here.
-- Existing contour-rim shades the boundary of an alpha mask. This package does not shade arbitrary masks or extrude glyphs; caller clipping remains separate.
-- Related matte-paper and glaze sketches were not extracted: generic layered paper and color pools alone did not justify another reusable candidate. No new “material engine” is claimed.
 
 ## Reproduction and evidence boundary
 

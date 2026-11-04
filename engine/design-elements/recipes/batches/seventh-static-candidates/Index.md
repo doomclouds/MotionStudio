@@ -10,7 +10,7 @@
 ## 真正增加的表达方法与去重
 
 - 时序候选增加离散高低电平和完整符号分区的共同坐标模型。通用 [interval lanes](../../../../motion-elements/lib/foundations/layout/interval-lanes.mjs) 仍用于任意区间排布，既有 [timeline](../../../../motion-timeline-core/lib/timeline.mjs) 仍处理时间运算；本候选不再造时间引擎，不把每个 lane 算一个新方法。tick 无物理单位，符号不解析成十六进制，非真实采样或协议仿真。
-- 字形证据的重点是同一固定字体轮廓与 cmap/hmtx 信息相互解释，不是另一套标题排版皮肤。既有 [expressive type](../../../expressive-type.mjs) 处理受限文字视觉效果；[参数刻度](../../../parameter-controls.mjs) 处理声明值的视觉编码。本候选把真实实例的轴元数据和字形度量绑定起来，但仍是 **unshaped**：无 kerning、GSUB/GPOS、ligature、BiDi、实时可变轴或完整字体编辑器，字形名不是数字 GID。
+- 字形证据的重点是同一固定字体轮廓与 cmap/hmtx 信息相互解释，不是另一套标题排版皮肤。既有 [expressive type](../../../expressive-type.mjs) 处理受限文字视觉效果；[参数刻度](../../../families/parameter-controls/index.mjs) 处理声明值的视觉编码。本候选把真实实例的轴元数据和字形度量绑定起来，但仍是 **unshaped**：无 kerning、GSUB/GPOS、ligature、BiDi、实时可变轴或完整字体编辑器，字形名不是数字 GID。
 - 两包内部的视图入口各自仍只构成一条受限配方；共享 Canvas、输入防护和 IO 帮助函数不另算公共族。四张固定组合是可迁移演示，不是四件新收藏作品。
 
 ## 组合与 motion 使用边界

@@ -130,13 +130,13 @@
       "id": "design.parameter-controls.v1",
       "version": 1,
       "status": "published-source-technical-reviewed",
-      "entry": "parameter-controls.mjs",
+      "entry": "families/parameter-controls/index.mjs",
       "exports": [
         "validate",
         "draw"
       ],
-      "guidance": "docs/parameter-controls.md",
-      "example": "examples/parameter-controls.mjs",
+      "guidance": "families/parameter-controls/README.md",
+      "example": "families/parameter-controls/examples/render.mjs",
       "sourceCases": [
         "https://github.com/doomclouds/MotionStudio/blob/cae18d21f2fbef9702c8ce94ce68abd9eda826a4/portfolio/works/hardware-sampler-study/README.md",
         "https://github.com/doomclouds/MotionStudio/blob/cae18d21f2fbef9702c8ce94ce68abd9eda826a4/portfolio/works/liquid-glass-study/README.md"
@@ -145,13 +145,14 @@
         "examples/compositions.mjs#reading-sessions",
         "examples/compositions.mjs#creative-lab"
       ],
-      "tests": "test/verify.mjs",
+      "tests": "families/parameter-controls/test/contract.mjs; test/verify.mjs",
       "verificationLimits": [
         "native-static",
         "not-browser",
         "not-motion",
         "not-user-approved-new-artwork"
-      ]
+      ],
+      "sample": "families/parameter-controls/examples/cases.mjs"
     },
     {
       "id": "design.expressive-type.v1",

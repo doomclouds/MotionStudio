@@ -8,7 +8,7 @@ A small, bounded composition recipe: an authored recommendation is always shown 
 
 `data` requires nonempty authored `recommendation`, `counter`, `measure`, `reversible` text. `label` defaults to “Recommended move”. Explicit line breaks are preserved; ordinary space-separated text wraps at word boundaries. It is not a general CJK typesetter. Width is at least 320 and height at least 480 pixels; the recommendation is capped at five lines and each support note at three. Content that cannot fit rejects before painting. It never truncates a counterargument to make a claim look stronger.
 
-This narrow recipe keeps a high-contrast recommendation above a lower group of limitations. It is suitable beside a problem statement and its evidence, not as a general card renderer or a substitute for a research ledger. The two-column split is already supplied by `design.color-sections.v1`; do not create another layout family for it. Larger headings, source statistics and page-level navigation belong to the host composition.
+Read [design.md](design.md) for the recommendation/limits hierarchy, when to choose it and how the two examples probe it.
 
 ## Learning and limits
 

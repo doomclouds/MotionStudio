@@ -272,7 +272,7 @@ KPI 与小图是否来自同一口径须有证据；不要擅自把标签改为�
 - 封面含 640×360 内画面及上下各 64px 暖灰留边；约 175×50px 黑胶囊、灰标签、轻影和右下光标共同形成层级。源码首帧等比适配后胶囊约 162×50.5px、标签白色，不能把封面直接称为源码零秒。保留来源 0、0.43、0.8 秒采样，另标手工封面状态重建；精确原片时刻未知，字体、阴影与边缘仍有残差。
 - **低透明标签不是禁用状态的证据。** 来源内容按时间淡出，灰字可能是退场样式；只看截图不能推断 enabled、disabled、loading 或可访问性达标。忠实研究保留外观，中性产品状态则显式指定语义和可读标签，不把影片淡出作为默认按钮皮肤。
 - 保持对象中心与轮廓身份，内容裁切于自身圆角边界；光标属于外层覆盖层，不随内容遮罩截断。阴影负责对象离底层的轻微分离，不应靠加重阴影代替标签层级。两状态静态对照只能证明端点，不能证明中间形变、弹簧手感或点击响应。
-- 中性 Prepare / preparing-items 两状态实际复用 [`withLocalReveal`](../../engine/motion-elements/lib/index.mjs)、[`parameter-controls`](../../engine/design-elements/docs/parameter-controls.md) 和 [`material-surfaces`](../../engine/design-elements/docs/material-surfaces.md)。50px 高胶囊低于表面族 100px 下限，使用局部圆角矩形；250px 展开面板才调用表面及控件，不放大参考来迎合 API，也不新建同义组件。
+- 中性 Prepare / preparing-items 两状态实际复用 [`withLocalReveal`](../../engine/motion-elements/lib/index.mjs)、[`parameter-controls`](../../engine/design-elements/families/parameter-controls/README.md) 和 [`material-surfaces`](../../engine/design-elements/docs/material-surfaces.md)。50px 高胶囊低于表面族 100px 下限，使用局部圆角矩形；250px 展开面板才调用表面及控件，不放大参考来迎合 API，也不新建同义组件。
 - 14 项有限断言核确定性、共同中心、局部遮罩拒绝外部绘制、光标不受遮罩影响、7/20 的值位映射、表面内容槽、非法状态与小尺寸拒绝，以及长标签宽度超限识别。未验浏览器、键盘/焦点、异步取消、响应式、完整原视频、声音、无障碍达标或用户接受；不增加基础积木、正式配方及已验收作品计数。
 
 ## 全幅字卡：字形边界、句点与注释的关系

@@ -89,8 +89,8 @@
     },
     {
       "id": "design.parameter-controls.v1",
-      "entry": "parameter-controls.mjs",
-      "guidance": "docs/parameter-controls.md",
+      "entry": "families/parameter-controls/index.mjs",
+      "guidance": "families/parameter-controls/README.md",
       "sourceCases": [
         "hardware-sampler-study",
         "liquid-glass-study"

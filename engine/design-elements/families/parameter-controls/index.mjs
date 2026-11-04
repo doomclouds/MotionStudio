@@ -1,7 +1,7 @@
 /** Semantic static parameter scale. This is a visual control, not an input widget. */
 export const id='design.parameter-controls.v1';
 export const version=1;
-export const guidance='./docs/parameter-controls.md';
+export const guidance='./README.md';
 const styleKeys=['fillStyle','strokeStyle','font','textAlign','textBaseline','lineWidth','lineCap','globalAlpha'];
 const snapshot=c=>Object.fromEntries(styleKeys.map(k=>[k,c[k]]));
 const restore=(c,s)=>{c.restore();for(const k of styleKeys)c[k]=s[k];};
