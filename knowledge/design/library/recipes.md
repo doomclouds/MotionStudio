@@ -49,6 +49,7 @@
 
 当主视觉需要有规则的场/纹理、像素组织、材料形态或空间分界时查这里；对照原契约判断它是有限静态构造还是本次所需的动态机制。
 
+- [固定等距相机](../../../engine/design-elements/recipes/candidates/isometric-camera-candidate/README.md)：固定30°投影、指定z平面逆投影与正值对数缩放；不做透视、旋转、深度排序或时间线，返回点坐标不等于完整渲染器。
 - [标量场](../../../engine/design-elements/recipes/candidates/scalar-field-candidate/README.md)、[网点标量](../../../engine/design-elements/recipes/candidates/halftone-scalar-candidate/README.md)、[索引色像素层](../../../engine/design-elements/recipes/candidates/indexed-pixel-layer-candidate/README.md)、[确定性粒子场](../../../engine/design-elements/recipes/candidates/deterministic-particle-field/README.md)。
 - [垂坠材质](../../../engine/design-elements/recipes/candidates/drape-material-candidate/README.md)、[互补分界](../../../engine/design-elements/recipes/candidates/complementary-seam-candidate/README.md)、[文件格网](../../../engine/design-elements/recipes/candidates/file-grid-candidate/README.md)、[特征堆栈](../../../engine/design-elements/recipes/candidates/feature-stack-candidate/README.md)。
 

@@ -141,3 +141,5 @@ UI 导演先看整页与任务，再以对照定位局部，保留状态/文字/
 - [源码辅助媒介学习：墨版、分层时钟与依赖行为](studies/material-logic-from-code.md)
 
 - [索引、像素与状态：让系统承担叙事](studies/indexed-story-systems.md)
+
+- [连续地图：尺度、焦点与声音职责](studies/continuous-map-story.md)

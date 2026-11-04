@@ -166,3 +166,7 @@ The source-only [spot-ink candidate](engine/design-elements/recipes/candidates/s
 ## LemoLab protected palette method
 
 The [protected-palette model recipe](engine/design-elements/recipes/candidates/protected-palette-model-candidate/README.md) adapts the semantic-index protection and dual-table selection studied in LemoLab’s Pixel RPG code at `bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00`. Its [credits](engine/design-elements/recipes/candidates/protected-palette-model-candidate/CREDITS.md) retain the fixed source and changes; [LemoLab MIT](engine/design-elements/recipes/candidates/protected-palette-model-candidate/licenses/LemoLab-MIT.txt) is distinct from the original MotionStudio adaptation’s MIT. Existing indexed-output dependencies retain their own notices. No ENDESGA palette, sprite, font or film is bundled.
+
+## LemoLab fixed isometric camera
+
+The [fixed isometric camera candidate](engine/design-elements/recipes/candidates/isometric-camera-candidate/README.md) adapts projection/inverse and logarithmic zoom from LemoLab’s isometric demo at `bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00`. [Credits and changes](engine/design-elements/recipes/candidates/isometric-camera-candidate/CREDITS.md) retain fixed source links; [LemoLab MIT](engine/design-elements/recipes/candidates/isometric-camera-candidate/LICENSE-LemoLab) and the adaptation MIT both remain intact. No upstream scene, film, image, font or audio is included; root MIT does not replace third-party rights.

@@ -248,3 +248,7 @@ Independent MIT implementation/helpers retain their notices; the8B design-origin
 ## Protected palette model candidate
 
 The [protected-palette-model-candidate](engine/design-elements/recipes/candidates/protected-palette-model-candidate/README.md) contains six text files: two bounded helpers, synthetic tests, contract and complete MIT notices. It prepares models for the existing indexed-pixel renderer without changing its dimensions or palette contract. No source story, character, pixel font, palette artwork, soundtrack, upstream test oracle, production evidence or generated media is included. No family, foundation, registry, portfolio or media exception is added.
+
+## Fixed isometric camera candidate
+
+The [isometric-camera-candidate](engine/design-elements/recipes/candidates/isometric-camera-candidate/README.md) retains six source/contract/license texts only: fixed-angle projection and plane inversion, positive log zoom, original synthetic tests and full MIT notices. It adds no renderer, world scene, family, foundation, registry, portfolio work or media exception. Source film, fonts, original or experimental audio, private oracle, render reports and production evidence remain external.

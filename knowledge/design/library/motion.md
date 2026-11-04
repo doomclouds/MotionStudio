@@ -4,6 +4,8 @@
 
 | 镜头/时间问题 | 原始指南入口 |
 |---|---|
+| 一个连续镜头怎样讲清系统与个体，而不在拉远时丢失主体？ | [同一空间的过程](../studies/continuous-map-story.md#用同一空间解释过程)、[穿透与拉远](../studies/continuous-map-story.md#穿透与拉远先保留可见锚点)：路线、对数尺度、可见锚点和图层退场共同验证，抽帧不代常速观看。 |
+| 地图里的数字、静默和技术检查各自证明什么？ | [数字与过程事实](../studies/continuous-map-story.md#数字图形与过程事实分开验证)、[声部退出](../studies/continuous-map-story.md#用声部退出建立尺度变化)、[程序与内容](../studies/continuous-map-story.md#程序成功不代替内容成立)：同源数据、滤波时间轴、检查覆盖与源码改编边界，不把执行成功当审美接受。 |
 | 原生像素画面如何避免整片同频抖动？ | [分层像素时钟](../studies/indexed-story-systems.md#不同动作使用各自的像素时钟)：角色、镜头、火焰与阅读分别采样，分块遮罩保留全局坐标。 |
 | 视觉退色和声音变薄如何有共同依据？ | [配色与配器段落](../studies/indexed-story-systems.md#用共同段落组织配色和配器)：声部退出、主题确认与静默允许项，时间表不代实际合听。 |
 | 一个控件怎样扩成新状态，又不丢失同一对象身份？ | [UI Morph：单容器形变](../../../skills/motion-film-director/references/reference-mechanism.md#单容器形变接触绑定与选中态字形遮罩)：先从官方页面/预览观察壳体、旧内容退出与新内容进入，再读有限方法；不用读取参考源码，也不获媒体许可。 |

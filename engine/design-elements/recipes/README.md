@@ -24,3 +24,5 @@ The query is read-only and excludes uncommitted edits. Per-package contracts, ri
 [Three spot-ink print](candidates/spot-ink-print-candidate/README.md) adapts a credited LemoLab shader into a bounded density-plate compositor and portable render plan. It is source-only, with synthetic tests and optional external-oracle diagnostics; it adds no registered family or portfolio work. Real-browser and artistic acceptance remain separate.
 
 [Protected dual palette model](candidates/protected-palette-model-candidate/README.md) preserves semantic index identity and prepares two-palette selection for the existing indexed-pixel renderer. It adds no rasterizer, quantizer, registered family or portfolio work.
+
+[Fixed isometric camera](candidates/isometric-camera-candidate/README.md) adapts a fixed 30° projection, horizontal-plane inverse and positive log zoom into an immutable camera snapshot. It provides no renderer, depth sorting or timeline and adds no registered family or portfolio work.
