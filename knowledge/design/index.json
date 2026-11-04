@@ -110,7 +110,7 @@
     },
     {
       "id": "reference-to-composition",
-      "version": 23,
+      "version": 24,
       "category": "workflow",
       "title": "参考到组合流程与按问题研究专题",
       "tags": [
@@ -213,7 +213,11 @@
         "静态接触",
         "粗细异材",
         "冷暖修补",
-        "同柜异材"
+        "同柜异材",
+        "编辑对照",
+        "修改作用域",
+        "步骤结果",
+        "建议错峰"
       ],
       "path": "reference-to-composition.md",
       "type": "decision-guide"
