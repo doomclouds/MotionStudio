@@ -57,16 +57,16 @@ export {compileAffineSkin,sampleAffineSkin} from './foundations/geometry/affine-
 export {compileDampedResponse,sampleDampedResponse} from './foundations/motion/damped-response.mjs';
 // Registered mechanisms and two uncounted support extensions; canonical module instances.
 export {compileFiniteParticles, sampleFiniteParticles} from './foundations/motion/finite-particles/index.mjs';
-export {layoutWeightedHierarchy} from './foundations/layout/weighted-hierarchy.mjs';
+export {layoutWeightedHierarchy} from './foundations/layout/weighted-hierarchy/index.mjs';
 export {compileTemporalExposure, sampleTemporalExposure} from './foundations/raster/temporal-exposure.mjs';
 export {samplePoissonDisc} from './foundations/layout/poisson-disc/index.mjs';
 export {compileSpriteAtlas, sampleSpriteAtlas} from './foundations/raster/sprite-atlas.mjs';
 export {compileFixedStringWave, sampleFixedStringWave} from './foundations/motion/fixed-string-wave/index.mjs';
-export {visibilityFan} from './foundations/geometry/visibility-fan.mjs';
-export {compileVelocityGrid, sampleVelocityGrid, compileGridTransport, sampleGridTransport} from './foundations/field/grid-transport.mjs';
+export {visibilityFan} from './foundations/geometry/visibility-fan/index.mjs';
+export {compileVelocityGrid, sampleVelocityGrid, compileGridTransport, sampleGridTransport} from './foundations/field/grid-transport/index.mjs';
 export {compilePolylineSections, extractPolylineSection} from './support/polyline-sections.mjs';
 export {compileHardDiscs, sampleHardDiscs} from './foundations/motion/hard-disc-events/index.mjs';
-export {compileOpticalMedium, traceOpticalRay} from './foundations/geometry/ray-chain.mjs';
+export {compileOpticalMedium, traceOpticalRay} from './foundations/geometry/ray-chain/index.mjs';
 export {voronoiCells} from './foundations/geometry/voronoi-cells.mjs';
 export {minimumCostAssignment} from './foundations/layout/minimum-cost-assignment.mjs';
 export {routeRectangles} from './foundations/geometry/rectangle-obstacle-route.mjs';

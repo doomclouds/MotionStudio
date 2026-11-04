@@ -1,5 +1,5 @@
 import test from 'node:test';import assert from 'node:assert/strict';
-import{compileVelocityGrid as grid,compileGridTransport as compile,sampleGridTransport as sample,sampleVelocityGrid as field}from'../lib/node.mjs';
+import{compileVelocityGrid as grid,compileGridTransport as compile,sampleGridTransport as sample,sampleVelocityGrid as field}from'../../../../node.mjs';
 function make(fn,n=5){return grid({columns:n,rows:n,vectors:Array.from({length:n*n},(_,i)=>fn(i%n/(n-1),Math.floor(i/n)/(n-1)))});}
 const constant=()=>make(()=>({x:.1,y:-.05}));const seed=[{x:.2,y:.6}];
 const near=(a,b,e=1e-12)=>assert.ok(Math.abs(a-b)<=e,`${a} differs ${b}`);

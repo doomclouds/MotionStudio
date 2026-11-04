@@ -19,9 +19,9 @@
 | design.semantic-data.v1 | [语义序列](docs/semantic-data.md) | [代码](semantic-data.mjs) | 类别、阶段、明确量程的面积符号 |
 | design.parameter-controls.v1 | [参数刻度](families/parameter-controls/README.md) | [代码](families/parameter-controls/index.mjs) | 有数值范围的横/纵静态参数 |
 | design.expressive-type.v1 | [层叠/切片](docs/expressive-type.md) | [代码](expressive-type.mjs) | 有边界的2D标题效果 |
-| design.radial-scale.v1 | [圆弧读数](docs/radial-scale.md) | [代码](radial-scale.mjs) | 旋钮/半圆量程，线性静态 |
-| design.diagonal-field.v1 | [斜切色域](docs/diagonal-field.md) | [代码](diagonal-field.mjs) | 带安全内容矩形的方向分区 |
-| design.authored-paths.v1 | [叙事路径](docs/authored-paths.md) | [代码](authored-paths.mjs) | 有声明的故事弧与序列示意 |
+| design.radial-scale.v1 | [圆弧读数](families/radial-scale/README.md) | [代码](families/radial-scale/index.mjs) | 旋钮/半圆量程，线性静态 |
+| design.diagonal-field.v1 | [斜切色域](families/diagonal-field/README.md) | [代码](families/diagonal-field/index.mjs) | 带安全内容矩形的方向分区 |
+| design.authored-paths.v1 | [叙事路径](families/authored-paths/README.md) | [代码](families/authored-paths/index.mjs) | 有声明的故事弧与序列示意 |
 
 ## 新增专项：技术复核，不等于用户审美验收
 

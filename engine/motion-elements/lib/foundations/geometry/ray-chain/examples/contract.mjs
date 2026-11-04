@@ -1,0 +1,17 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import * as api from '../../../../index.mjs';
+const catalog=JSON.parse(readFileSync(new URL('../../../../../catalog.json',import.meta.url)));
+const item=catalog.elements.find(e=>e.id==='geometry.ray-chain');
+assert(item);
+const plan=api.compileOpticalMedium(item.example);
+const input={origin:{x:100,y:500},direction:{x:1,y:0},maxInteractions:16};
+const result=api.traceOpticalRay(plan,input);
+assert.deepEqual(result.segments.map(s=>s.ending),['transmit','transmit','viewport']);
+assert.deepEqual(result.segments.map(s=>s.to),[{x:200,y:500},{x:800,y:500},{x:1000,y:500}]);
+assert.deepEqual(result.segments.map(s=>s.direction),[{x:1,y:0},{x:1,y:0},{x:1,y:0}]);
+assert.deepEqual(result,api.traceOpticalRay(plan,input));
+assert(Object.isFrozen(result.segments[0].to));
+assert.throws(()=>api.traceOpticalRay(plan,{...input,maxInteractions:1}));
+assert.throws(()=>api.traceOpticalRay(plan,{...input,origin:{x:200,y:500}}));
+console.log('geometry.ray-chain contract PASS');

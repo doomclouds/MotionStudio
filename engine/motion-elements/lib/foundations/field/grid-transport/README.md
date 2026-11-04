@@ -1,10 +1,16 @@
-# field.grid-transport
+# 网格输运：静态速度场中的绝对时间轨迹
+
+<!-- asset-self-description: field.grid-transport -->
 
 Midpoint integration and cached absolute-time transport through a bilinear velocity grid.
 
 当前注册状态：`experimental`；公共调用入口：`lib/index.mjs`，API：`compileGridTransport`。参数验证以实现为准，不把编译、采样或绘图支持再计数。
 
-实现：[lib/foundations/field/grid-transport.mjs](../../lib/foundations/field/grid-transport.mjs)。
+实现：[lib/foundations/field/grid-transport/index.mjs](./index.mjs)。
+
+## 设计意图与输出职责
+
+让一组材料点共享空间速度场，而非分别编写路径。先compileVelocityGrid，再compileGridTransport，最后sampleGridTransport。grid/plan均冻结并有模块实例身份；采样返回新的planIdentity、time、index、fraction与points，可变输出不会改变后续seek。不能用JSON重建plan，恢复时重新编译输入。
 
 ## 参数、用途与边界
 
@@ -32,7 +38,7 @@ Bilinear field is continuous but generally not smooth across cells; no general s
 
 ## 可执行输入
 
-按 [注册示例](../../examples/registered-foundations.mjs) 的 setup/compile/sample 顺序调用；以下为 catalog 输入，不是直接 eval 的代码。
+按 [注册示例](../../../../examples/registered-foundations.mjs) 的 setup/compile/sample 顺序调用；以下为catalog的transport输入，必须先用同一条记录exampleSetup.velocityGrid编译grid；[本目录示例](examples/contract.mjs)实际执行这两步，不把JSON当可eval代码。
 
 ```json
 {
@@ -49,8 +55,21 @@ Bilinear field is continuous but generally not smooth across cells; no general s
 
 ## 当前证据与来源边界
 
-注册、技术测试、原生像素、常速观看、实际听审、用户接受和跨场景迁移互不替代。本页没有新增执行或接受声明；当前状态以 [catalog](../../catalog.json) 的本条 evidence 为准。此批仍 experimental，通用生产迁移 NOT_RUN；历史试验不能自动升级当前源码。
+注册、技术测试、原生像素、常速观看、实际听审、用户接受和跨场景迁移互不替代。本页没有新增执行或接受声明；当前状态以 [catalog](../../../../catalog.json) 的本条 evidence 为准。此批仍 experimental，通用生产迁移 NOT_RUN；历史试验不能自动升级当前源码。
 
-测试入口：[test/grid-transport.test.mjs](../../test/grid-transport.test.mjs).
+测试入口：[lib/foundations/field/grid-transport/test/grid-transport.test.mjs](test/grid-transport.test.mjs).
 
-完整历史合同／研究及来源边界保留在 [历史记录](../history/private-candidates/grid-transport/ORIGIN-CONTRACT.md)；该记录中的旧路径不是调用入口。代码适用 [包许可](../../LICENSE)，引用算法、字体、媒体和私有影片不因此取得重新分发许可；相关 SOURCES/来源说明保留在同一历史目录。
+完整历史合同／研究及来源边界保留在 [历史记录](../../../../docs/history/private-candidates/grid-transport/ORIGIN-CONTRACT.md)；该记录中的旧路径不是调用入口。代码适用 [包许可](../../../../LICENSE)，引用算法、字体、媒体和私有影片不因此取得重新分发许可；相关 SOURCES/来源说明保留在同一历史目录。
+
+## 同目录使用入口与恢复
+
+本页是当前合同；[design.md](design.md)解释选择与导演取舍，[index.mjs](index.mjs)是实际实现，[examples/contract.mjs](examples/contract.mjs)是可执行公开入口示例。目录迁移不新增API或兼容层。机器身份与证据仍只由[catalog](../../../../catalog.json)登记。
+
+Node24+，从仓库根运行：
+
+```sh
+node engine/motion-elements/lib/foundations/field/grid-transport/examples/contract.mjs
+node --test engine/motion-elements/lib/foundations/field/grid-transport/test/*.test.mjs
+```
+
+实现无外部依赖。公开barrel示例间接依赖同级motion-timeline-core及Node内建crypto，恢复时保留仓库/portable相邻布局。无需Canvas、FFmpeg、字体、媒体或联网；不宣称浏览器原生兼容。示例只验证数值合同，不生成影片。目录调整不升级既有像素、观看、听审、用户接受与跨场景迁移证据。

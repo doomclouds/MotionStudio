@@ -8,7 +8,7 @@
 
 ## 自描述资产入口
 
-先由catalog的`evidence.guidance`直达当前合同，再读同目录design、实现、示例与测试。已共置[有限粒子](../../../engine/motion-elements/lib/foundations/motion/finite-particles/README.md)、[固定弦波](../../../engine/motion-elements/lib/foundations/motion/fixed-string-wave/README.md)、[孤立圆盘事件](../../../engine/motion-elements/lib/foundations/motion/hard-disc-events/README.md)、[最小间距点集](../../../engine/motion-elements/lib/foundations/layout/poisson-disc/README.md)。其余条目仍走各自guidance，不以这四项代表全库完成；共享底层不重复放进各资产。
+先由catalog的`evidence.guidance`直达当前合同，再读同目录design、实现、示例与测试。已共置[有限粒子](../../../engine/motion-elements/lib/foundations/motion/finite-particles/README.md)、[固定弦波](../../../engine/motion-elements/lib/foundations/motion/fixed-string-wave/README.md)、[孤立圆盘事件](../../../engine/motion-elements/lib/foundations/motion/hard-disc-events/README.md)、[最小间距点集](../../../engine/motion-elements/lib/foundations/layout/poisson-disc/README.md)。另有[层级面积](../../../engine/motion-elements/lib/foundations/layout/weighted-hierarchy/README.md)、[可见扇区](../../../engine/motion-elements/lib/foundations/geometry/visibility-fan/README.md)、[网格输运](../../../engine/motion-elements/lib/foundations/field/grid-transport/README.md)、[单介质光链](../../../engine/motion-elements/lib/foundations/geometry/ray-chain/README.md)。其余条目仍走各自guidance，不以这八项代表全库完成；共享底层不重复放进各资产。
 
 ## 五层结构
 

@@ -17,9 +17,9 @@ See [recipe source roles](recipes/README.md) for the direct `reviewed/`, `candid
 | design.semantic-data.v1 | [design card](docs/semantic-data.md), [code](semantic-data.mjs) | categories, values, legends and illustrative/quantitative distinction |
 | design.parameter-controls.v1 | [design card](families/parameter-controls/README.md), [code](families/parameter-controls/index.mjs) | value, range, units, orientation, selected/disabled states |
 | design.expressive-type.v1 | [design card](docs/expressive-type.md), [code](expressive-type.mjs) | bounded layered/striped glyph effects, readable repeated label |
-| design.radial-scale.v1 | [design card](docs/radial-scale.md), [code](radial-scale.mjs) | clockwise linear value, range, unit, knob/gauge |
-| design.diagonal-field.v1 | [design card](docs/diagonal-field.md), [code](diagonal-field.mjs) | authored color boundary and safe content rectangles |
-| design.authored-paths.v1 | [design card](docs/authored-paths.md), [code](authored-paths.mjs) | explicit illustrative anchors, not measured data |
+| design.radial-scale.v1 | [design card](families/radial-scale/README.md), [code](families/radial-scale/index.mjs) | clockwise linear value, range, unit, knob/gauge |
+| design.diagonal-field.v1 | [design card](families/diagonal-field/README.md), [code](families/diagonal-field/index.mjs) | authored color boundary and safe content rectangles |
+| design.authored-paths.v1 | [design card](families/authored-paths/README.md), [code](families/authored-paths/index.mjs) | explicit illustrative anchors, not measured data |
 
 ## Common contract
 

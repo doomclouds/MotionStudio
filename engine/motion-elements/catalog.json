@@ -3650,16 +3650,16 @@
       ],
       "evidence": {
         "technicalTests": [
-          "test/weighted-hierarchy.test.mjs"
+          "lib/foundations/layout/weighted-hierarchy/test/weighted-hierarchy.test.mjs"
         ],
-        "guidance": "docs/foundations/composition.weighted-hierarchy.md",
+        "guidance": "lib/foundations/layout/weighted-hierarchy/README.md",
         "visualDemo": null,
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN",
         "normalSpeedViewing": "NOT_DONE",
         "audioListening": "NOT_LISTENED",
         "registrationScope": "Local registration preparation only; published baseline remains 39 foundations + 7 recipes.",
-        "executableExample": "examples/registered-foundations.mjs"
+        "executableExample": "lib/foundations/layout/weighted-hierarchy/examples/contract.mjs"
       },
       "knowledgeLinks": [],
       "tags": [
@@ -3836,16 +3836,16 @@
       ],
       "evidence": {
         "technicalTests": [
-          "test/visibility-fan.test.mjs"
+          "lib/foundations/geometry/visibility-fan/test/visibility-fan.test.mjs"
         ],
-        "guidance": "docs/foundations/geometry.visibility-fan.md",
+        "guidance": "lib/foundations/geometry/visibility-fan/README.md",
         "visualDemo": null,
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN",
         "normalSpeedViewing": "NOT_DONE",
         "audioListening": "NOT_LISTENED",
         "registrationScope": "Local registration preparation only; published baseline remains 39 foundations + 7 recipes.",
-        "executableExample": "examples/registered-foundations.mjs"
+        "executableExample": "lib/foundations/geometry/visibility-fan/examples/contract.mjs"
       },
       "knowledgeLinks": [],
       "tags": [
@@ -3880,16 +3880,16 @@
       ],
       "evidence": {
         "technicalTests": [
-          "test/grid-transport.test.mjs"
+          "lib/foundations/field/grid-transport/test/grid-transport.test.mjs"
         ],
-        "guidance": "docs/foundations/field.grid-transport.md",
+        "guidance": "lib/foundations/field/grid-transport/README.md",
         "visualDemo": null,
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN",
         "normalSpeedViewing": "NOT_DONE",
         "audioListening": "NOT_LISTENED",
         "registrationScope": "Local registration preparation only; published baseline remains 39 foundations + 7 recipes.",
-        "executableExample": "examples/registered-foundations.mjs"
+        "executableExample": "lib/foundations/field/grid-transport/examples/contract.mjs"
       },
       "knowledgeLinks": [],
       "tags": [
@@ -4077,16 +4077,16 @@
       ],
       "evidence": {
         "technicalTests": [
-          "test/ray-chain.test.mjs"
+          "lib/foundations/geometry/ray-chain/test/ray-chain.test.mjs"
         ],
-        "guidance": "docs/foundations/geometry.ray-chain.md",
+        "guidance": "lib/foundations/geometry/ray-chain/README.md",
         "visualDemo": null,
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN",
         "normalSpeedViewing": "NOT_DONE",
         "audioListening": "NOT_LISTENED",
         "registrationScope": "Local registration preparation only; published baseline remains 39 foundations + 7 recipes.",
-        "executableExample": "examples/registered-foundations.mjs"
+        "executableExample": "lib/foundations/geometry/ray-chain/examples/contract.mjs"
       },
       "knowledgeLinks": [],
       "tags": [

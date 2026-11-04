@@ -1,4 +1,4 @@
-import{test}from'node:test';import assert from'node:assert/strict';import{visibilityFan}from'../lib/node.mjs';
+import{test}from'node:test';import assert from'node:assert/strict';import{visibilityFan}from'../../../../node.mjs';
 const base=()=>({bounds:{x:0,y:0,width:1000,height:800},source:{x:121,y:333},segments:[]});
 const area=r=>r.fans.reduce((sum,f)=>sum+((f.a.x-r.source.x)*(f.b.y-r.source.y)-(f.a.y-r.source.y)*(f.b.x-r.source.x))/2,0);
 const s=(ax,ay,bx,by)=>({a:{x:ax,y:ay},b:{x:bx,y:by}});

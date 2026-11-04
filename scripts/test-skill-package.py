@@ -104,6 +104,16 @@ def main():
             run(['node', str(parameter / 'examples/render.mjs')])
         else:
             print('NOT_RUN: parameter-controls Native tests require MOTION_ENGINE_ROOT and PARAMETER_CONTROLS_FONT_DIR (or UI_TEST_FONT_DIR)')
+        for family in ('radial-scale', 'diagonal-field', 'authored-paths'):
+            family_root = design / 'families' / family
+            assert (family_root / 'index.mjs').read_bytes() == (ROOT / 'engine/design-elements/families' / family / 'index.mjs').read_bytes()
+            for old in (family + '.mjs', 'docs/' + family + '.md', 'examples/' + family + '.mjs'):
+                assert not (design / old).exists(), old
+            if os.environ.get('MOTION_ENGINE_ROOT') and (os.environ.get(family.upper().replace('-', '_') + '_FONT_DIR') or os.environ.get('UI_TEST_FONT_DIR')):
+                run(['node', str(family_root / 'test/contract.mjs')])
+                run(['node', str(family_root / 'examples/render.mjs')])
+            else:
+                print('NOT_RUN: ' + family + ' Native examples require declared external runtime and DejaVu fonts')
         recipes = design / 'recipes/reviewed/b06'
         manifest = json.loads((recipes / 'recipe-manifest.json').read_text())
         assert manifest['sharedFamilyCountDelta'] == 0 and len(manifest['recipes']) == 2

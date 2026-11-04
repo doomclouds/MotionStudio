@@ -1,8 +1,8 @@
 /** Static, linear radial reading. Angles are degrees, clockwise from the right. */
-import {number,text,color,state,local,font} from './shared.mjs';
+import {number,text,color,state,local,font} from '../../shared.mjs';
 export const id='design.radial-scale.v1';
 export const version=1;
-export const guidance='./docs/radial-scale.md';
+export const guidance='./README.md';
 export function validate(props){
  const b=props?.bounds,d=props?.data,t=props?.theme||{};
  if(!b||!d)throw new TypeError('bounds and data required');

@@ -111,8 +111,8 @@
     },
     {
       "id": "design.radial-scale.v1",
-      "entry": "radial-scale.mjs",
-      "guidance": "docs/radial-scale.md",
+      "entry": "families/radial-scale/index.mjs",
+      "guidance": "families/radial-scale/README.md",
       "sourceCases": [
         "hardware-sampler-study"
       ],
@@ -121,8 +121,8 @@
     },
     {
       "id": "design.diagonal-field.v1",
-      "entry": "diagonal-field.mjs",
-      "guidance": "docs/diagonal-field.md",
+      "entry": "families/diagonal-field/index.mjs",
+      "guidance": "families/diagonal-field/README.md",
       "sourceCases": [
         "muqi-study"
       ],
@@ -131,8 +131,8 @@
     },
     {
       "id": "design.authored-paths.v1",
-      "entry": "authored-paths.mjs",
-      "guidance": "docs/authored-paths.md",
+      "entry": "families/authored-paths/index.mjs",
+      "guidance": "families/authored-paths/README.md",
       "sourceCases": [
         "theatre-narrative-wave",
         "bus-morning-study"

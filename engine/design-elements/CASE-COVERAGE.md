@@ -13,9 +13,9 @@
 |[design.semantic-data.v1](semantic-data.mjs)|[tea-conversation-map](../../portfolio/works/tea-conversation-map/README.md), [theatre-narrative-wave](../../portfolio/works/theatre-narrative-wave/README.md)|—|—|
 |[design.parameter-controls.v1](families/parameter-controls/index.mjs)|[hardware-sampler-study](../../portfolio/works/hardware-sampler-study/README.md), [liquid-glass-study](../../portfolio/works/liquid-glass-study/README.md)|—|—|
 |[design.expressive-type.v1](expressive-type.mjs)|[cycling-year-report](../../portfolio/works/cycling-year-report/README.md), [wave-weather-study](../../portfolio/works/wave-weather-study/README.md)|—|—|
-|[design.radial-scale.v1](radial-scale.mjs)|[hardware-sampler-study](../../portfolio/works/hardware-sampler-study/README.md)|—|—|
-|[design.diagonal-field.v1](diagonal-field.mjs)|[muqi-study](../../portfolio/works/muqi-study/README.md)|—|—|
-|[design.authored-paths.v1](authored-paths.mjs)|[theatre-narrative-wave](../../portfolio/works/theatre-narrative-wave/README.md), [bus-morning-study](../../portfolio/works/bus-morning-study/README.md)|—|—|
+|[design.radial-scale.v1](families/radial-scale/index.mjs)|[hardware-sampler-study](../../portfolio/works/hardware-sampler-study/README.md)|—|—|
+|[design.diagonal-field.v1](families/diagonal-field/index.mjs)|[muqi-study](../../portfolio/works/muqi-study/README.md)|—|—|
+|[design.authored-paths.v1](families/authored-paths/index.mjs)|[theatre-narrative-wave](../../portfolio/works/theatre-narrative-wave/README.md), [bus-morning-study](../../portfolio/works/bus-morning-study/README.md)|—|—|
 |[design.vertical-imprint.v1](vertical-imprint.mjs)|[song-block-print-study](../../portfolio/works/song-block-print-study/README.md)|—|—|
 |[design.geometric-marks.v1](geometric-marks.mjs)|[bauhaus-theatre-study](../../portfolio/works/bauhaus-theatre-study/README.md)|—|—|
 |[design.proportional-partition.v1](proportional-partition.mjs)|[ocean-plastic-treemap-study](../../portfolio/works/ocean-plastic-treemap-study/README.md)|—|—|

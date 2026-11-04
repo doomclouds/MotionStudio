@@ -1,0 +1,16 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import * as api from '../../../../index.mjs';
+const catalog=JSON.parse(readFileSync(new URL('../../../../../catalog.json',import.meta.url)));
+const item=catalog.elements.find(e=>e.id==='composition.weighted-hierarchy');
+assert(item);
+const result=api.layoutWeightedHierarchy(item.example);
+assert.equal(result.totalWeight,4);
+assert.deepEqual(result.nodes.find(n=>n.id==='a').rect,{x:0,y:0,width:25,height:80});
+assert.deepEqual(result.nodes.find(n=>n.id==='b').rect,{x:25,y:0,width:75,height:80});
+assert.deepEqual(result,api.layoutWeightedHierarchy(item.example));
+assert(Object.isFrozen(result.nodes[0].rect));
+const nested=api.layoutWeightedHierarchy({tree:{id:'r',children:[{id:'g',children:[{id:'a',weight:1},{id:'b',weight:3}]},{id:'c',weight:4}]},bounds:{x:0,y:0,width:80,height:40}});
+assert.deepEqual(nested.nodes.find(n=>n.id==='a').rect,{x:0,y:0,width:40,height:10});
+assert.throws(()=>api.layoutWeightedHierarchy({...item.example,tree:{id:'z',weight:0}}));
+console.log('composition.weighted-hierarchy contract PASS');
