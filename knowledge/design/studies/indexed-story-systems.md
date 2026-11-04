@@ -33,3 +33,11 @@
 字幕由一份规范化计划同时驱动画面和SRT，使用[项目精确时间](../../../engine/motion-timeline-core/README.md)。下一句过早、片尾不足或毫秒取整成空区间应报告冲突，不能裁短后冒充满足最小读时。[SRT导出器](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/core/render/srt.py#L7-L12)会裁重叠，但不是字幕验证器。
 
 缺数据、未检查、告警与通过分开：零项、skip、warning或退出0都不自动成为通过，[cuecheck](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/dataviz/demo/tools/cuecheck.py#L14-L23)可跳过缺失key，[mux](https://github.com/lemomo-ai/lemo-opuscar/blob/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/core/render/mux.sh#L60-L100)可在响度未达标时正常退出。反例应含迟完成打字、短闪、反向框、重复起点字幕与缺cue。最终编码检查、目标尺寸文字检查、常速观看和实际听审分别保留结果，不互相替代。
+
+## 歌词身份与定位证据分开
+
+Chan Meng《战士阿花》的[对齐脚本](https://github.com/ChanMeng666/mv-anti-marriage-universe/blob/59802e185c2217aa2251d361885cad4e31504a65/ahua/tools/align.py#L1-L71)区分正式歌词与ASR词时间，再由生成数据驱动[字幕和部分切镜](https://github.com/ChanMeng666/mv-anti-marriage-universe/blob/59802e185c2217aa2251d361885cad4e31504a65/ahua/film.js#L39-L83)。但文字仍手抄在脚本常量中，并未读取正式歌词文件；“单一真源”不能从生成数据的下游外推到整条制作链。新项目应绑定权威文本版本、人工修订理由、定位来源与未确定锚点，不让ASR误识改掉歌词，也不把演奏提示自动当作唱词。
+
+重复段先核文字、顺序和实际演唱时长，再考虑整小节平移锚点；不同take、变词、延长音、停拍或变速均须独立定位。源脚本只检查任意最近word起点，不能证明它就是目标词；合成反例中，即使无关词距目标仅0.01秒，仍是锚点未证实。源[字幕检查](https://github.com/ChanMeng666/mv-anti-marriage-universe/blob/59802e185c2217aa2251d361885cad4e31504a65/ahua/tools/cuecheck.py#L22-L28)只打印过短项、不据此失败；若项目要求最小读时，短于要求的行须保持未通过或记明获准例外，不能以退出0覆盖。
+
+复用上节字幕计划和现有精确时间，不新增对齐器或编译器。修改文字、任一重复段锚点或读时要求后，分别核字幕、SRT和实际切镜消费者；数值近邻、文本一致及拍点对齐仍不能替代原声合听。本节仅为源码/文档方法：作者代码MIT；歌曲、歌词和影片另按作者[媒体许可](https://github.com/ChanMeng666/mv-anti-marriage-universe/blob/59802e185c2217aa2251d361885cad4e31504a65/LICENSE-MEDIA.md)，字体及上游模块保留各自许可，不携入原媒体或歌词。

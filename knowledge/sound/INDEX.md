@@ -80,3 +80,5 @@
 - [图版的有效事件与声音消费者](../design/studies/engraved-tone-and-cut-order.md#有效事件必须先于全部声音消费者)：绑定构建顺序、有效对象和真实字段，区别名义cue、测得起音、总混音静默与失败退出。
 
 - [变速后的点事件与区间](../../skills/motion-film-director/references/reference-mechanism.md#同一事件跨多个时钟)：分别声明作者/实际时钟、窗口两端与自然尾音，不把 cue 起点映射等同音频波形伸缩；导数、曝光及实际合听另核。
+
+- [歌词身份与定位证据](../design/studies/indexed-story-systems.md#歌词身份与定位证据分开)：权威文本不由ASR覆盖，真重复确认后才平移锚点；最近词、短读时告警和实际合听分开，不新增强制对齐能力。
