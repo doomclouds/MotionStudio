@@ -1,0 +1,56 @@
+{
+  "schema": "sound-asset/1",
+  "id": "print-snap",
+  "version": 1,
+  "title": "印刷短拍",
+  "kind": "sfx",
+  "category": "texture",
+  "moods": [
+    "tactile",
+    "restrained"
+  ],
+  "status": "candidate",
+  "design": {
+    "intent": "用紧凑的宽带短拍支持图形/印刷画面的落位，区别于带音高UI轻触。",
+    "use_when": "图形面板或印刷图案明确切换/落定，作为一次短重音。",
+    "avoid_when": "状态确认、告警、每字输入、高频反复切换或已有密集军鼓。",
+    "mix_notes": "固定 recipe：seed=1977；LCG 1664525/1013904223/2^32；900/6000Hz双单极低通之差；exp(-55t)；幅度0.3；3ms端点保护。先与鼓组共同试听，避免叠成突兀噪声。"
+  },
+  "audio": {
+    "duration_seconds": 0.12,
+    "format": "wav",
+    "codec": "pcm_s16le",
+    "sample_rate": 48000,
+    "channels": 2,
+    "duration_basis": "recipe",
+    "loop": {
+      "mode": "one-shot",
+      "start_sample": null,
+      "end_sample": null,
+      "listened_seam": false
+    }
+  },
+  "source": {
+    "kind": "generated",
+    "entry": "../../../synth.py",
+    "recipe": "print-snap",
+    "sha256": null,
+    "creator": "MotionStudio contributors",
+    "provenance": "Original bounded procedural synthesis; no recordings, samples, borrowed melody or brand audio. Parameters and deterministic seed are stated in mix_notes. This standard-library recipe is a portable derivation, not a byte-identical copy of an earlier numerical-library draft."
+  },
+  "rights": {
+    "license": "MIT",
+    "license_entry": "../../../LICENSE",
+    "use": "allowed",
+    "standalone_distribution": "allowed",
+    "conditions": "Retain the MIT copyright and permission notice with the source and generated asset redistribution. No trademark, voice or endorsement rights implied.",
+    "basis": "Original source and synthesis without third-party samples."
+  },
+  "review": {
+    "technical": "RUN_REQUIRED",
+    "listening": "NOT_LISTENED",
+    "av_sync": "NOT_RUN",
+    "owner": "NOT_RUN",
+    "limits": "NOT_LISTENED: no timbre, pleasantness, material realism, mix suitability, seam or owner approval. Render receipts and Audio Core checks only establish technical execution. Do not classify it as accepted because an authored cue consumed it."
+  }
+}

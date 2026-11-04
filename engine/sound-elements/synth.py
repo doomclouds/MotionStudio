@@ -8,11 +8,13 @@ import struct
 import wave
 
 RATE = 48000
-DURATIONS = {'soft-tick': 0.12, 'settle-chime': 0.8, 'air-pass': 0.6, 'low-land': 0.35, 'quiet-pulse-bed': 8.0}
+DURATIONS = {'soft-tick': 0.12, 'settle-chime': 0.8, 'air-pass': 0.6, 'low-land': 0.35, 'quiet-pulse-bed': 8.0,
+             'paper-rub': 0.24, 'print-snap': 0.12, 'resonant-tap': 0.48}
 
 def samples(recipe):
     n = round(DURATIONS[recipe] * RATE)
     state = 1977
+    low_fast = low_slow = 0.0
     for i in range(n):
         t, u = i / RATE, i / (n - 1)
         envelope = math.sin(math.pi * u) ** 2  # both endpoints zero
@@ -25,6 +27,23 @@ def samples(recipe):
             value = .12 * (state / 2147483648 - 1) * envelope
         elif recipe == 'low-land':
             value = .2 * math.sin(2*math.pi*(100*t - 70*t*t)) * math.exp(-9*t) * envelope
+        elif recipe in {'paper-rub', 'print-snap'}:
+            # Bounded band-shaped deterministic noise. Fixed recipes, not arbitrary DSP.
+            # Difference of two one-pole lowpasses; not a claimed acoustic material model.
+            state = (1664525 * state + 1013904223) & 0xffffffff
+            noise = state / 2147483648 - 1
+            lo, hi = (450, 2500) if recipe == 'paper-rub' else (900, 6000)
+            low_fast += (1 - math.exp(-2*math.pi*hi/RATE)) * (noise-low_fast)
+            low_slow += (1 - math.exp(-2*math.pi*lo/RATE)) * (noise-low_slow)
+            edge = min(t/.003, (DURATIONS[recipe]-1/RATE-t)/.003, 1)
+            shape = (envelope * (.4+.6*math.sin(2*math.pi*41*t)**2)
+                     if recipe == 'paper-rub' else math.exp(-55*t))
+            value = .3 * (low_fast-low_slow) * shape * max(0, edge)
+        elif recipe == 'resonant-tap':
+            # Inharmonic, rapidly decaying accent; not a success chime or literal collision.
+            edge = max(0, min(t/.003, (DURATIONS[recipe]-1/RATE-t)/.003, 1))
+            value = .3 * edge * sum(a*math.sin(2*math.pi*f*t)*math.exp(-k*t)
+                                   for f,k,a in [(420,12,.8),(913,16,.35),(1647,24,.15)])
         elif recipe == 'quiet-pulse-bed':
             # 8 seconds at 60 BPM: integer cycles and modulation make a periodic source.
             pulse = .55 + .45 * math.cos(2*math.pi*t)

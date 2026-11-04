@@ -9,7 +9,7 @@
 | 状态发生、一次确认 | SFX / ui-feedback、confirmation；检查频率、语义、音高冲突，不为所有动作加声 |
 | 焦点穿行或转场 | SFX / transition；对齐能量峰值，避免只对齐文件起点 |
 | 物体落定或强调 | SFX / impact；低频重量与配乐低频不能互相掩蔽 |
-| 连续材质、空间和环境 | SFX / texture、ambience；目前空位，不把白噪声候选伪装成拟真实录 |
+| 连续材质、空间和环境 | SFX / texture、ambience；短材质联想可从资产目录查询，环境实录仍为空位；不把滤波噪声候选伪装成拟真实录 |
 | 叙事底床 | BGM / pulse-bed、ambient-bed、rhythmic、melodic、stinger；目前只有低密度脉冲生成候选，其他类别空位 |
 | 旁白和角色表演 | voice / narration、performance；目前空位，声音身份、表演与取得权利需另核 |
 

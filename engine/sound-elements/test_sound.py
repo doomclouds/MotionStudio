@@ -19,7 +19,7 @@ class SoundTests(unittest.TestCase):
         d=copy.deepcopy(self.d);edit(d)
         with self.assertRaises((ValueError,TypeError)):sound.validate(d,self.path.parent,sound.ROOT)
     def test_catalog_and_index(self):
-        self.assertEqual(len(self.rows),5)
+        self.assertEqual({d['id'] for d,_ in self.rows}, set(sound.synth.DURATIONS))
         self.assertEqual(sound.index(self.rows),(sound.ROOT/'INDEX.md').read_text())
         self.assertEqual([d['id'] for d,_ in sound.query(self.rows,kind='bgm')],['quiet-pulse-bed'])
         self.assertEqual(sound.query(self.rows,kind='voice'),[])
@@ -65,6 +65,31 @@ class SoundTests(unittest.TestCase):
                 self.assertEqual(f.getnframes(),round(d['audio']['duration_seconds']*48000))
                 if d['kind']=='sfx':
                     self.assertEqual(f.readframes(1),b'\0'*4);f.setpos(f.getnframes()-1);self.assertEqual(f.readframes(1),b'\0'*4)
+    def test_causal_recipes_are_distinct_and_bounded(self):
+        names=['paper-rub','print-snap','resonant-tap']
+        values={k:list(sound.synth.samples(k)) for k in names}
+        self.assertEqual(len({hashlib.sha256(bytes(str(v),'ascii')).hexdigest() for v in values.values()}),3)
+        for key,v in values.items():
+            self.assertEqual(len(v),round(sound.synth.DURATIONS[key]*48000))
+            self.assertEqual((v[0],v[-1]),(0,0))
+            self.assertLess(max(abs(x) for x in v),32767)
+        # Noise-texture recipes differ from a tonal UI tick and long broad air-pass.
+        self.assertNotEqual(values['print-snap'],list(sound.synth.samples('soft-tick')))
+        self.assertNotEqual(values['paper-rub'],list(sound.synth.samples('air-pass'))[:11520])
+
+    def test_causal_recipes_audio_core(self):
+        if not all(shutil.which(x) for x in ['node','ffmpeg','ffprobe']):
+            self.skipTest('Audio Core runtime unavailable')
+        for id in ['paper-rub','print-snap','resonant-tap']:
+            d,p=next((d,p) for d,p in self.rows if d['id']==id)
+            source=self.root/id;work=self.root/(id+'-mix')
+            sound.materialize(d,p,source)
+            cli=sound.ROOT.parent/'motion-audio-core/scripts/audio.mjs'
+            subprocess.run(['node',str(cli),'render','--timeline',str(source/'timeline.json'),'--source-root',str(source),'--work',str(work)],check=True,capture_output=True)
+            report=json.loads((work/'result/report.json').read_text())
+            self.assertEqual(report['review']['listening']['status'],'NOT_RUN')
+            self.assertEqual(report['review']['owner']['status'],'NOT_RUN')
+
     def test_no_overwrite_or_source_output(self):
         sound.materialize(self.d,self.path,self.root/'out')
         with self.assertRaises(ValueError):sound.materialize(self.d,self.path,self.root/'out')
