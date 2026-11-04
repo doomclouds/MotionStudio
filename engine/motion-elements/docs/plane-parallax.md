@@ -97,7 +97,7 @@ for (const layer of layers) {
 
 ```sh
 node --test engine/motion-elements/test/plane-parallax.test.mjs
-node --test engine/motion-elements/test/*.test.mjs
+npm --prefix engine/motion-elements test
 ```
 
 测试包括5000组独立校准世界点/针孔投影oracle、零相机、近远层比例、前后推移、viewport contain/平移、身份/顺序/删除隔离、near与派生数值限制、strict非法输入、深冻结、逆序/重复/独立Node，以及Native逐层应用matrix后的像素复现。

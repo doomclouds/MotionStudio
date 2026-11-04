@@ -56,7 +56,7 @@ IEEE运算、角函数和近满覆盖的敏感性仍存在，不承诺任意输�
 
 ```sh
 node --test engine/motion-elements/test/coverage-print.test.mjs
-node --test engine/motion-elements/test/*.test.mjs
+npm --prefix engine/motion-elements test
 ```
 
 合成测试包含独立截面积分、端点和高覆盖、subnormal正半径、矩阵与ID、深冻结/源隔离、非法结构零getter执行、资源上限、Native逆序/重复/新进程。绘图示例是调用方显式save/restore，不代表此纯函数新增了Canvas adapter。

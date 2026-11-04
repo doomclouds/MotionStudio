@@ -56,7 +56,7 @@ export {morphologyCoverage} from './foundations/raster/morphology-coverage.mjs';
 export {compileAffineSkin,sampleAffineSkin} from './foundations/geometry/affine-skin.mjs';
 export {compileDampedResponse,sampleDampedResponse} from './foundations/motion/damped-response.mjs';
 // Registered mechanisms and two uncounted support extensions; canonical module instances.
-export {compileFiniteParticles, sampleFiniteParticles} from './foundations/motion/finite-particles.mjs';
+export {compileFiniteParticles, sampleFiniteParticles} from './foundations/motion/finite-particles/index.mjs';
 export {layoutWeightedHierarchy} from './foundations/layout/weighted-hierarchy.mjs';
 export {compileTemporalExposure, sampleTemporalExposure} from './foundations/raster/temporal-exposure.mjs';
 export {samplePoissonDisc} from './foundations/layout/poisson-disc.mjs';

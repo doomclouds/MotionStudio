@@ -107,7 +107,7 @@ try {
 
 ```sh
 node --test engine/motion-elements/test/sticky-interval.test.mjs
-node --test engine/motion-elements/test/*.test.mjs
+npm --prefix engine/motion-elements test
 ```
 
 测试覆盖三阶段、两个边界、单点固定区间、相邻分区替换、负滚动与负pin、声明域极值、非法字段/类型/包含、深冻结和状态隔离。

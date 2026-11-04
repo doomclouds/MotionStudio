@@ -3595,9 +3595,9 @@
       ],
       "evidence": {
         "technicalTests": [
-          "test/finite-particles.test.mjs"
+          "lib/foundations/motion/finite-particles/test/finite-particles.test.mjs"
         ],
-        "guidance": "docs/foundations/motion.finite-particles.md",
+        "guidance": "lib/foundations/motion/finite-particles/README.md",
         "visualDemo": null,
         "artisticReview": "NOT_RUN",
         "originalProductionTransfer": "NOT_RUN",

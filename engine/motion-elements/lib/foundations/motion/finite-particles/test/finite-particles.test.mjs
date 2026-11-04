@@ -1,4 +1,4 @@
-import test from'node:test';import assert from'node:assert/strict';import{compileFiniteParticles as compile,sampleFiniteParticles as sample}from'../lib/foundations/motion/finite-particles.mjs';
+import test from'node:test';import assert from'node:assert/strict';import{compileFiniteParticles as compile,sampleFiniteParticles as sample}from'../index.mjs';
 const row=(id='a')=>({id,birth:2,position:{x:[10,10],y:[20,20]},velocity:{x:[3,3],y:[-4,-4]},acceleration:{x:2,y:6},lifetime:[4,4]});const input=()=>({seed:23,emissions:[row()]});
 test('one-particle independent constant-acceleration oracle',()=>{const p=compile(input());assert.deepEqual(sample(p,3).alive[0],{id:'a',birth:2,death:6,age:1,progress:.25,x:14,y:19,vx:5,vy:2});});
 test('birth included, death excluded, late seek empty',()=>{const p=compile(input());assert.equal(sample(p,2-Number.EPSILON).alive.length,0);assert.equal(sample(p,2).alive.length,1);assert.equal(sample(p,6-Number.EPSILON*4).alive.length,1);assert.equal(sample(p,6).alive.length,0);assert.equal(sample(p,3660).alive.length,0)});

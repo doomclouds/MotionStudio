@@ -83,7 +83,7 @@ joint可相差约0.001325，尽管名义骨长残差远小于2e−8。不得由�
 
 ```sh
 node --test engine/motion-elements/test/two-link-ik.test.mjs
-node --test engine/motion-elements/test/*.test.mjs
+npm --prefix engine/motion-elements test
 ```
 
 专属测试含：3-4-5已知三角形、内/外可达投影与边界、两bend、等长/异长重合、输入严格域、不可变输出、变换等变性；2500个由正向关节角构造的独立joint oracle；10000个极端几何组及端点/比例边界；乱序、重复、新进程；Native画出两段及末端的逆序/新进程PNG一致，以及仅扰动返回joint会改变同一绘制函数输出的反例。

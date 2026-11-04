@@ -110,7 +110,7 @@ Canvas的预乘/解预乘及缩放抗锯齿可能改低alpha字节；不可见RG
 
 ```sh
 node --test engine/motion-elements/test/raster-effects.test.mjs
-node --test engine/motion-elements/test/*.test.mjs
+npm --prefix engine/motion-elements test
 node engine/motion-elements/scripts/query-catalog.mjs list --kind raster
 python3 scripts/test-skill-package.py
 ```

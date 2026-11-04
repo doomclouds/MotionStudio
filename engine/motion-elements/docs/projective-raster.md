@@ -113,7 +113,7 @@ From `engine/motion-elements` run:
 
 ```sh
 node --test test/convolution.test.mjs test/projective-raster.test.mjs test/postcard-raster-fresh.test.mjs
-node --test test/*.test.mjs
+npm test
 ```
 
 The public tests use synthetic images and geometry only. They cover validation,

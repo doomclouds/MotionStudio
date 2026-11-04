@@ -152,7 +152,8 @@ def main():
         assert (skill / 'research/video-knowledge/STATIC-SCHEMA.md').is_file()
         print('Extracted typed video/static knowledge tests and empty-default validate/decide passed')
         elements = skill / 'runtime/motion-elements'
-        tests = sorted(elements.glob('test/*.test.mjs'))
+        # Asset-local tests must not disappear when implementations gain directories.
+        tests = sorted(elements.rglob('*.test.mjs'))
         assert tests, 'Portable motion-elements tests missing'
         run(['node', '--test', *map(str, tests)])
         query_cli = elements / 'scripts/query-catalog.mjs'

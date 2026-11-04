@@ -42,7 +42,7 @@ mask是离散字节，输出仍是邻域中某个输入/边界字节，不补亚
 
 ```sh
 node --test engine/motion-elements/test/coverage-print.test.mjs
-node --test engine/motion-elements/test/*.test.mjs
+npm --prefix engine/motion-elements test
 ```
 
 测试使用独立二维朴素max/min oracle、非均匀/透明/半覆盖/实心图、宽于图像的半径、零半径、扩张/收缩单调性、clamp补色对偶、矩形可分离、输入隔离、非法数据与buffer、合成白缝、Native新进程复现。原真实片的实际调用与缓存消费不由这些测试替代。

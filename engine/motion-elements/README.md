@@ -10,6 +10,10 @@
 - 基础机制按 `lib/foundations/<职责>/` 组织；配方在 `lib/recipes.mjs`／`lib/recipes/`，支持在 `lib/support/`，适配器在 `adapters/`。旧candidate barrel及field/IK/sticky平层wrapper已移除，不提供兼容路径。其他尚在平层的真实实现不是别名。
 - **运行时验证器管输入行为，catalog管稳定身份和检索，docs管使用边界。** 不从catalog动态执行外部代码，也不把JSON示例当另一个校验器。
 
+## 资产目录试点
+
+[有限粒子](lib/foundations/motion/finite-particles/README.md) 将使用合同、设计意图、实际实现、可运行示例和测试放在同一目录。catalog 的 `evidence.guidance` 直接进入资产 README；公开 API 保持不变。仅此项完成目录试点，其余条目仍按各自 guidance 进入，不把统一索引误称为全库整理完成。
+
 ## 未注册受限候选
 
 [过去位置与速度采样候选](docs/temporal-motion-candidate.md)：有界绝对时间回采与后向割线速度；区别于空间弧长拖尾及像素曝光，不负责绘图/形变策略，未进入 catalog 或公共 barrel。

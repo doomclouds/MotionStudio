@@ -36,4 +36,4 @@ const result = morphologyCoverage(input);
 - affine skin可能折叠、坍缩、不保面积；合法极端坐标存在消减误差。解析响应极长无阻尼相位有约5e−5绝对误差观察，独立高精度oracle不是全域误差定理。
 - 网屏是几何面积，不是校准印刷；形态学是离散矩形邻域，不自动选择trap或进行色彩管理。形态学4M像素严格验证可消耗显著内存，需按实际批次预算。
 
-运行`node --test engine/motion-elements/test/*.test.mjs`。这些证据不改变52秒/Tessel保护、SIDE STREET否决状态或历史作品的反馈与视听门。
+运行`npm --prefix engine/motion-elements test`。这些证据不改变52秒/Tessel保护、SIDE STREET否决状态或历史作品的反馈与视听门。

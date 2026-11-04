@@ -9,7 +9,7 @@
 在仓库根目录：
 
 ```sh
-node --test engine/motion-elements/test/*.test.mjs
+npm --prefix engine/motion-elements test
 node engine/motion-elements/scripts/render-gallery.mjs --out /tmp/elements-gallery-new
 node engine/motion-elements/scripts/render-gallery.mjs --out /tmp/elements-still-new --frame 43
 node engine/motion-elements/scripts/render-gallery.mjs --out /tmp/elements-reduced-new --reduced-motion
