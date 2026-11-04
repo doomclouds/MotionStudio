@@ -74,3 +74,5 @@
 [笔洗场景的静默与材质](../design/studies/sketch-and-state.md#从最终声音核对静默与材质)追查谱面归零之后的环境/混响、实际消费的脚步材质字段和编码末端；沿用原AAC不等于重建分轨，数字非零与主观安静各守证据边界。
 
 - [空间化声音与静默的处理顺序](../design/studies/doors-and-counted-light.md#声音空间与静默按处理顺序核对)：实际分支消费、滤波尾声、duck增益和包时基分别核。
+
+- [连续线的声音消费者](../design/studies/continuous-line-and-time.md#声音事件必须走到消费者)：笔速/屏幕声像确有调用不代表corners已驱动谱面；分开音乐归零、room下降、原轨身份与新主题声音。

@@ -4,6 +4,9 @@
 
 | 镜头/时间问题 | 原始指南入口 |
 |---|---|
+| 连续线怎样兼顾近景动作和最后整体，而不是靠连接线硬凑？ | [终图与拓扑](../studies/continuous-line-and-time.md#终图和局部动作共用一条拓扑)、[路径和时间地址](../studies/continuous-line-and-time.md#路径地址和时间地址分开)：先核进出点、回描、语义访问与采样尺度，再分配章节时序。 |
+| 时间非降就能停笔吗，跟笔框内就算镜头平顺吗？ | [准确停笔](../studies/continuous-line-and-time.md#非降时间不等于准确停笔)、[笔压与坐标](../studies/continuous-line-and-time.md#笔压镜头和纸面各守坐标)：区别epsilon行进、等时瞬跳、纸面速度和前瞻边界投影。 |
+| SVG移植与画面驱动声音怎样核到真正消费？ | [数值边界](../studies/continuous-line-and-time.md#迁移时保留数值与材料边界)、[声音消费者](../studies/continuous-line-and-time.md#声音事件必须走到消费者)：解析器身份、独立有限数值证据和音符实际字段分列，不把导出事件当自动同步。 |
 | 对称门叶为什么会消失，针孔相机里的文字是否都是真透视？ | [门叶与源图](../studies/doors-and-counted-light.md#门扇同时检查源图与屏幕空间)、[投影与卡片近似](../studies/doors-and-counted-light.md#针孔场景不等于每张卡片都是真透视)：分别核源裁片、变换、clip与第四角，不从名字推定三维能力。 |
 | 灯字、钟声和高潮怎样不只在事件表里完成？ | [事件与可见计数](../studies/doors-and-counted-light.md#事件数与观众看见的次数分开)、[时间的实际消费](../studies/doors-and-counted-light.md#时间线要跟到消费者和量化端点)：计数单位、分镜、稳态、节拍导出与媒体端点分别验证。 |
 | 字体生成灯点或换宿主时，要检查哪些不能靠注册成功证明的事？ | [字形拓扑](../studies/doors-and-counted-light.md#从字形到灯点先保留拓扑边界)、[字体状态](../studies/doors-and-counted-light.md#字体状态也是几何输入)：核小块/分支/焊接尺度、真字重和明确后备字形。 |
