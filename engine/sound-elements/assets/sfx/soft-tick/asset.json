@@ -1,0 +1,56 @@
+{
+  "schema": "sound-asset/1",
+  "id": "soft-tick",
+  "version": 1,
+  "title": "轻触短点",
+  "kind": "sfx",
+  "category": "ui-feedback",
+  "moods": [
+    "restrained",
+    "precise"
+  ],
+  "status": "candidate",
+  "design": {
+    "intent": "让低频率状态确认拥有可定位的短起点。",
+    "use_when": "在状态已经真实提交时少量使用；不是每次 hover 或每个字都响。",
+    "avoid_when": "高频重复操作、需要无障碍静音或错误警报。",
+    "mix_notes": "起音与确认帧对齐；响度在实际全混音中再定。"
+  },
+  "audio": {
+    "duration_seconds": 0.12,
+    "format": "wav",
+    "codec": "pcm_s16le",
+    "sample_rate": 48000,
+    "channels": 2,
+    "duration_basis": "recipe",
+    "loop": {
+      "mode": "one-shot",
+      "start_sample": null,
+      "end_sample": null,
+      "listened_seam": false
+    }
+  },
+  "source": {
+    "kind": "generated",
+    "entry": "../../../synth.py",
+    "recipe": "soft-tick",
+    "sha256": null,
+    "creator": "MotionStudio contributors",
+    "provenance": "Original procedural source; no external recording, samples or reference melody."
+  },
+  "rights": {
+    "license": "MIT",
+    "license_entry": "../../../LICENSE",
+    "use": "allowed",
+    "standalone_distribution": "allowed",
+    "conditions": "Retain the MIT copyright and permission notice with the source and generated asset redistribution. No trademark, voice or endorsement rights implied.",
+    "basis": "Original source and synthesis without third-party samples."
+  },
+  "review": {
+    "technical": "RUN_REQUIRED",
+    "listening": "NOT_LISTENED",
+    "av_sync": "NOT_RUN",
+    "owner": "NOT_RUN",
+    "limits": "Technical checks are per-output receipts. No listening, pleasantness, reference-match or film acceptance is asserted."
+  }
+}

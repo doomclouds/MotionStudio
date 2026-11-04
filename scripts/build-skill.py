@@ -28,9 +28,9 @@ def main():
             continue
         if name.startswith('skills/motion-film-director/'):
             rel = name.removeprefix('skills/motion-film-director/')
-        elif name.startswith('knowledge/design/') or name in ('scripts/design_knowledge.py', 'scripts/test_design_knowledge.py'):
+        elif name.startswith(('knowledge/design/', 'knowledge/sound/')) or name in ('scripts/design_knowledge.py', 'scripts/test_design_knowledge.py'):
             rel = name
-        elif any(name.startswith('engine/' + core + '/') for core in ('motion-render-core', 'motion-timeline-core', 'motion-audio-core', 'motion-elements', 'design-elements')):
+        elif any(name.startswith('engine/' + core + '/') for core in ('motion-render-core', 'motion-timeline-core', 'motion-audio-core', 'motion-elements', 'design-elements', 'sound-elements')):
             rel = 'runtime/' + name.removeprefix('engine/')
         elif name in ('tools/reference-benchmark/event_intervals.py', 'tools/reference-benchmark/test_event_intervals.py', 'tools/reference-benchmark/event-intervals.example.synthetic.json', 'tools/reference-benchmark/EVENT_INTERVALS.md', 'tools/reference-benchmark/event_interval_report.py', 'tools/reference-benchmark/test_event_interval_report.py', 'tools/reference-benchmark/EVENT_INTERVAL_REPORT.md', 'tools/reference-benchmark/stem_balance.py', 'tools/reference-benchmark/test_stem_balance.py', 'tools/reference-benchmark/STEM_BALANCE.md', 'tools/reference-benchmark/event_correspondence.py', 'tools/reference-benchmark/test_event_correspondence.py', 'tools/reference-benchmark/example_event_correspondence.py', 'tools/reference-benchmark/EVENT_CORRESPONDENCE.md'):
             rel = 'runtime/review-tools/' + name.rsplit('/', 1)[1]
@@ -49,6 +49,8 @@ def main():
     required += ['knowledge/design/INDEX.md', 'knowledge/design/index.json', 'knowledge/design/static-ui-reference-study.md', 'knowledge/design/NOTICE.md', 'scripts/design_knowledge.py', 'scripts/test_design_knowledge.py', 'references/design-to-motion.md']
     required += ['runtime/motion-elements/' + name for name in ('lib/foundations/geometry/voronoi-cells.mjs', 'lib/foundations/geometry/rectangle-obstacle-route.mjs', 'lib/foundations/geometry/radial-landmark-warp.mjs', 'lib/foundations/layout/minimum-cost-assignment.mjs', 'lib/foundations/raster/distance-transform.mjs', 'lib/foundations/raster/palette-diffusion.mjs', 'lib/foundations/field/arrival-field.mjs', 'lib/foundations/field/reaction-diffusion.mjs', 'lib/support/polyline-sections.mjs', 'lib/support/event-bindings.mjs', 'lib/internal/geometry-validation.mjs', 'lib/internal/grid-validation.mjs', 'lib/internal/arrival-validation.mjs')]
     required += ['runtime/motion-elements/lib/foundations/motion/finite-particles/' + name for name in ('README.md', 'design.md', 'index.mjs', 'examples/contract.mjs', 'test/finite-particles.test.mjs', 'test/asset-directory.test.mjs')]
+    required += ['runtime/sound-elements/README.md', 'runtime/sound-elements/LICENSE', 'runtime/sound-elements/INDEX.md', 'runtime/sound-elements/sound.py', 'runtime/sound-elements/synth.py', 'runtime/sound-elements/test_sound.py', 'knowledge/sound/INDEX.md']
+    required += ['runtime/sound-elements/assets/' + ('bgm/' if ident == 'quiet-pulse-bed' else 'sfx/') + ident + '/' + name for name in ('asset.json', 'design.md') for ident in ('soft-tick', 'settle-chime', 'air-pass', 'low-land', 'quiet-pulse-bed')]
     required += ['runtime/motion-render-core/scripts/render.mjs']
     required += ['scripts/video_knowledge.py', 'scripts/static_knowledge.py', 'scripts/test_video_knowledge.py', 'scripts/test_static_knowledge.py', 'research/video-knowledge/STATIC-SCHEMA.md']
     required += ['runtime/review-tools/' + name for name in ('audio_review.py', 'audiovisual_review.py', 'test_audio_review.py', 'test_audiovisual_review.py', 'AUDIO-REVIEW.md')]

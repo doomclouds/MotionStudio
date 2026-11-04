@@ -4,6 +4,7 @@
 
 | 本次问题 | 原文件 |
 |---|---|
+| 按职责找可保留的 SFX/BGM，读每资产用途/许可/调用合同 | [声音书架](../../sound/INDEX.md) → [声音资产目录](../../../engine/sound-elements/INDEX.md) |
 | 怎样先听参考、拆声画关系、制作分轨并让用户感受后回流 | [声音导演工作流](../../../skills/motion-film-director/references/sound-direction.md) |
 | 音乐、事件声、静默怎样支撑结构与动作 | [声音设计指导](../../../skills/motion-film-director/references/sound.md) |
 | 需要合法的声音候选，怎样比较并保留来源 | [声音寻源与比较](../../../skills/motion-film-director/references/sfx-sourcing.md) |

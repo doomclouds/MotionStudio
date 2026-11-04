@@ -318,3 +318,7 @@ The catalog contains 60 foundations + 7 separate recipes: seventeen registration
 [Ink-bay 受限文本候选](engine/design-elements/recipes/batches/thirteenth-static-candidates/Index.md)：32 原样文本，主标题实际墨迹与显式间隔共同确定相反侧剩余注记区，内容变化影响可容纳的次文本。墨迹测量/对齐本身复用既有思路，不另计；0 新正式族、配方或 portfolio。MIT 实现与外置 Native/OFL 通知分层，无原图、字体二进制、整页品牌或 GPL 队列。静态实际 fit 可拒绝合法内容，不声称自动换行/响应式/动画或逐项审美认可。
 
 作品采用单一[work/1合同](portfolio/README.md)，[统一索引](portfolio/INDEX.md)同时列静态、视频与明确标识的待复验候选；当前源码检查不代表最终验收。
+
+### 声音资产与书架
+
+[声音书架](knowledge/sound/INDEX.md) → [Sound Elements](engine/sound-elements/README.md) → [逐件资产目录](engine/sound-elements/INDEX.md)。与 Design/Motion 元素层并列，提供可调用 SFX/BGM 原创代码候选、单资产自描述合同及私有授权 WAV 恢复；Audio Core 负责执行混音。没有附音频二进制，也没有把技术通过当实际听审。

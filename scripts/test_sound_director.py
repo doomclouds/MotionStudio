@@ -39,6 +39,8 @@ class SoundDirectorTests(unittest.TestCase):
             sources = list((ROOT / 'skills/motion-film-director').rglob('*.md'))
             sources += list((ROOT / 'engine').rglob('README.md'))
             sources += list((ROOT / 'knowledge/design').rglob('*.md'))
+            sources += list((ROOT / 'knowledge/sound').rglob('*.md'))
+            sources += list((ROOT / 'engine/sound-elements').rglob('*.md'))
             for path in sources:
                 name = path.relative_to(ROOT).as_posix()
                 dest = root / layout.package_path(name)

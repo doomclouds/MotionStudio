@@ -1,0 +1,56 @@
+{
+  "schema": "sound-asset/1",
+  "id": "low-land",
+  "version": 1,
+  "title": "低频落点",
+  "kind": "sfx",
+  "category": "impact",
+  "moods": [
+    "grounded",
+    "brief"
+  ],
+  "status": "candidate",
+  "design": {
+    "intent": "给主要物体一次落定提供低频重量。",
+    "use_when": "少量主要事件，需检查小扬声器和低频遮蔽。",
+    "avoid_when": "拟真脚步、爆炸、所有UI元素逐一撞击。",
+    "mix_notes": "对齐落定而非动画开始；与BGM低频冲突时退让或静默。"
+  },
+  "audio": {
+    "duration_seconds": 0.35,
+    "format": "wav",
+    "codec": "pcm_s16le",
+    "sample_rate": 48000,
+    "channels": 2,
+    "duration_basis": "recipe",
+    "loop": {
+      "mode": "one-shot",
+      "start_sample": null,
+      "end_sample": null,
+      "listened_seam": false
+    }
+  },
+  "source": {
+    "kind": "generated",
+    "entry": "../../../synth.py",
+    "recipe": "low-land",
+    "sha256": null,
+    "creator": "MotionStudio contributors",
+    "provenance": "Original procedural source; no external recording, samples or reference melody."
+  },
+  "rights": {
+    "license": "MIT",
+    "license_entry": "../../../LICENSE",
+    "use": "allowed",
+    "standalone_distribution": "allowed",
+    "conditions": "Retain the MIT copyright and permission notice with the source and generated asset redistribution. No trademark, voice or endorsement rights implied.",
+    "basis": "Original source and synthesis without third-party samples."
+  },
+  "review": {
+    "technical": "RUN_REQUIRED",
+    "listening": "NOT_LISTENED",
+    "av_sync": "NOT_RUN",
+    "owner": "NOT_RUN",
+    "limits": "Technical checks are per-output receipts. No listening, pleasantness, reference-match or film acceptance is asserted."
+  }
+}

@@ -13,7 +13,7 @@ def run(args, **kwargs):
     kwargs['env'] = dict(kwargs.get('env', TEST_ENV), NODE_PATH=str(LOCAL_MODULES), MOTIONSTUDIO_CANVAS_MODULE=str(LOCAL_CANVAS))
     return subprocess.run(args, cwd=ROOT, check=True, **kwargs)
 def expected_source_bytes(rel, layout):
-    if rel.startswith('knowledge/design/') or rel in {'scripts/design_knowledge.py', 'scripts/test_design_knowledge.py'}:
+    if rel.startswith(('knowledge/design/', 'knowledge/sound/')) or rel in {'scripts/design_knowledge.py', 'scripts/test_design_knowledge.py'}:
         source = rel
     else:
         source = (('scripts/' if rel.rsplit('/', 1)[1] in {'audio_review.py', 'audiovisual_review.py', 'test_audio_review.py', 'test_audiovisual_review.py', 'AUDIO-REVIEW.md'} else 'tools/reference-benchmark/') + rel.removeprefix('runtime/review-tools/') if rel.startswith('runtime/review-tools/') else 'engine/' + rel.removeprefix('runtime/') if rel.startswith('runtime/') else rel if rel in {'LICENSE', '.env.example'} else 'skills/motion-film-director/' + rel)
@@ -35,9 +35,9 @@ def main():
         env = dict(os.environ, GIT_INDEX_FILE=str(index))
         # Only the explicitly authored source packages and synthetic wrapper test.
         sources = []
-        for core in ('motion-timeline-core', 'motion-audio-core', 'motion-elements'):
+        for core in ('motion-timeline-core', 'motion-audio-core', 'motion-elements', 'sound-elements'):
             for path in (ROOT / 'engine' / core).rglob('*'):
-                if path.is_file() and (path.suffix in {'.mjs', '.md', '.json', '.html'} or path.name == 'LICENSE'):
+                if path.is_file() and (path.suffix in {'.mjs', '.md', '.json', '.html', '.py'} or path.name == 'LICENSE'):
                     sources.append(str(path.relative_to(ROOT)))
         sources.extend(['tools/reference-benchmark/event_intervals.py', 'tools/reference-benchmark/test_event_intervals.py', 'tools/reference-benchmark/event-intervals.example.synthetic.json', 'tools/reference-benchmark/EVENT_INTERVALS.md', 'tools/reference-benchmark/event_interval_report.py', 'tools/reference-benchmark/test_event_interval_report.py', 'tools/reference-benchmark/EVENT_INTERVAL_REPORT.md'])
         sources.extend(['tools/reference-benchmark/' + name for name in ('event_correspondence.py', 'test_event_correspondence.py', 'example_event_correspondence.py', 'EVENT_CORRESPONDENCE.md')])
@@ -45,6 +45,7 @@ def main():
         sources.extend(['skills/motion-film-director/references/motion-elements.md', 'skills/motion-film-director/scripts/test-audio-timeline.mjs', 'skills/motion-film-director/references/knowledge-decision-example/index.json', 'skills/motion-film-director/references/knowledge-decision-example/cases/plan.json'])
         sources.extend(['skills/motion-film-director/scripts/static_knowledge.py', 'skills/motion-film-director/scripts/test_static_knowledge.py', 'skills/motion-film-director/research/video-knowledge/STATIC-SCHEMA.md'])
         sources.extend(str(p.relative_to(ROOT)) for p in (ROOT / 'knowledge/design').rglob('*') if p.is_file())
+        sources.extend(str(p.relative_to(ROOT)) for p in (ROOT / 'knowledge/sound').rglob('*') if p.is_file())
         sources.extend(['scripts/design_knowledge.py', 'scripts/test_design_knowledge.py', 'scripts/skill-layout.py'])
         sources.extend(subprocess.check_output(['git', 'diff', '--name-only'], cwd=ROOT).decode().splitlines())
         run(['git', 'add', '--', *sources], env=env)
@@ -151,6 +152,7 @@ def main():
         assert no_match['status'] == 'no-match' and no_match['recommendations'] == []
         assert (skill / 'research/video-knowledge/STATIC-SCHEMA.md').is_file()
         print('Extracted typed video/static knowledge tests and empty-default validate/decide passed')
+        run(['python3', '-m', 'unittest', 'discover', '-s', str(skill / 'runtime/sound-elements'), '-p', 'test_*.py'])
         elements = skill / 'runtime/motion-elements'
         # Asset-local tests must not disappear when implementations gain directories.
         tests = sorted(elements.rglob('*.test.mjs'))

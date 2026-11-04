@@ -1,0 +1,56 @@
+{
+  "schema": "sound-asset/1",
+  "id": "quiet-pulse-bed",
+  "version": 1,
+  "title": "低密度脉冲底床",
+  "kind": "bgm",
+  "category": "pulse-bed",
+  "moods": [
+    "steady",
+    "minimal"
+  ],
+  "status": "candidate",
+  "design": {
+    "intent": "用简单周期底床支持节拍试排，保留旁白空间。",
+    "use_when": "60 BPM、8拍的原创技术候选，可测试显式循环。",
+    "avoid_when": "完整歌曲、已听审优质配乐、需要自然演奏或强情感起伏。",
+    "mix_notes": "A/E音高的简单双音；周期边界技术连续不等于音乐上无缝或悦耳。"
+  },
+  "audio": {
+    "duration_seconds": 8,
+    "format": "wav",
+    "codec": "pcm_s16le",
+    "sample_rate": 48000,
+    "channels": 2,
+    "duration_basis": "recipe",
+    "loop": {
+      "mode": "explicit-repeat",
+      "start_sample": 0,
+      "end_sample": 384000,
+      "listened_seam": false
+    }
+  },
+  "source": {
+    "kind": "generated",
+    "entry": "../../../synth.py",
+    "recipe": "quiet-pulse-bed",
+    "sha256": null,
+    "creator": "MotionStudio contributors",
+    "provenance": "Original procedural source; no external recording, samples or reference melody."
+  },
+  "rights": {
+    "license": "MIT",
+    "license_entry": "../../../LICENSE",
+    "use": "allowed",
+    "standalone_distribution": "allowed",
+    "conditions": "Retain the MIT copyright and permission notice with the source and generated asset redistribution. No trademark, voice or endorsement rights implied.",
+    "basis": "Original source and synthesis without third-party samples."
+  },
+  "review": {
+    "technical": "RUN_REQUIRED",
+    "listening": "NOT_LISTENED",
+    "av_sync": "NOT_RUN",
+    "owner": "NOT_RUN",
+    "limits": "Technical checks are per-output receipts. No listening, pleasantness, reference-match or film acceptance is asserted."
+  }
+}

@@ -15,7 +15,7 @@ def source_bytes(root, source):
     if path.is_symlink() or not path.is_file():
         raise ValueError('Missing/symlink source: ' + source)
     data = path.read_bytes()
-    if path.suffix != '.md' or not (source.startswith(('skills/motion-film-director/', 'knowledge/design/'))
+    if path.suffix != '.md' or not (source.startswith(('skills/motion-film-director/', 'knowledge/design/', 'knowledge/sound/', 'engine/sound-elements/'))
                                     or source in {'engine/design-elements/CASE-COVERAGE.md', 'engine/motion-elements/README.md'}):
         return data
     destination = package_path(source)

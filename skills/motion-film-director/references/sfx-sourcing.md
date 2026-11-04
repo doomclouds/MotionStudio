@@ -9,7 +9,7 @@
 
 每个关键职责先找少量有区别的合法候选，加上**原创合成/自录**选项；已有合适声音不为凑数重选。可搜 `soft single bell dry short CC0`、`short airy whoosh CC0`、`tight low impact no reverb CC0`、`subtle UI pop CC0`。在 Freesound 单条页或原作者 OpenGameArt 作品页核对，不把搜索摘要、聚合转载、整站“免费”当单文件许可。
 
-本公开工具集不附实际素材候选目录、下载索引、探测记录或私人试听报告。通用 `scripts/sfx_catalog.py --catalog /absolute/path/to/private/catalog.json validate` 可检查用户自备本地目录；默认目录为空。请在自己的私有工作目录记录合法候选与实际检查；文件探测不代表试听，许可核对不代表已经取得文件。
+先查 [声音资产目录](../../../engine/sound-elements/INDEX.md) 的原创代码候选与逐件合同；它登记可复用资产，不等于外部下载目录或已听审素材。本公开工具集不附外部素材候选目录、下载索引、探测记录或私人试听报告。通用 `scripts/sfx_catalog.py --catalog /absolute/path/to/private/catalog.json validate` 可检查用户自备本地目录；默认目录为空。请在自己的私有工作目录记录合法候选与实际检查；文件探测不代表试听，许可核对不代表已经取得文件。
 
 ## 2. 逐文件权利门
 

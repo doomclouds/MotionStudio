@@ -8,6 +8,8 @@ This document defines the publication and rights boundaries. The machine-readabl
 
 ## Included
 
+- `engine/sound-elements/` retains original procedural SFX/BGM candidate source, per-asset self-describing contracts, derived navigation and synthetic tests. `knowledge/sound/` is its reading/navigation layer, not a second inventory. No audio binary or private listening record is added; outputs remain outside the repository. Existing exact-media permissions are unchanged. These unlistened candidates do not establish artistic acceptance.
+
 - Original bounded static design primitives (existing print-poster plus typography, color sections, material surfaces, semantic node sequences, parameter controls, expressive typography, radial scales, diagonal fields and illustrative authored paths), design guidance, synthetic composition recipes and tests in `engine/design-elements/`, linked to public design guidance. No source artwork, production recreation, bundled fonts, generated previews or private review evidence are included.
 
 - Native Canvas rendering core, bounded local audio edit/mix core, shared rational audio-timeline contract, small original technical fixtures, and synthetic tests. Video clip editing remains deferred.
