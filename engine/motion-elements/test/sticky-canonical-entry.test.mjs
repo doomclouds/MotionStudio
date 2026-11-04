@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import vm from 'node:vm';
-import * as canonical from '../lib/foundations/layout/sticky-interval.mjs';
+import * as canonical from '../lib/foundations/layout/sticky-interval/index.mjs';
 import * as aggregate from '../lib/index.mjs';
 const input=()=>({itemId:'section',rect:{x:8,y:60,width:120,height:24},container:{start:40,end:240},scrollOffset:90,pinY:12});
 const entries=[canonical,aggregate];
@@ -29,6 +29,6 @@ test('migration preserves existing validation including realm and accessor behav
  assert.deepEqual(canonical.stickyIntervalLayout(accessor),canonical.stickyIntervalLayout(input()));assert.ok(reads>0);
 });
 test('canonical query imports create independent functions with equal pure results',async()=>{
- const isolated=await import('../lib/foundations/layout/sticky-interval.mjs?instance-probe');
+ const isolated=await import('../lib/foundations/layout/sticky-interval/index.mjs?instance-probe');
  assert.notEqual(isolated.stickyIntervalLayout,canonical.stickyIntervalLayout);assert.deepEqual(isolated.stickyIntervalLayout(input()),canonical.stickyIntervalLayout(input()));
 });

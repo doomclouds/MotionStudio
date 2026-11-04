@@ -2,8 +2,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {spawnSync} from 'node:child_process';
 import {createHash} from 'node:crypto';
-import {solveTwoLinkIK as solve} from '../lib/foundations/geometry/two-link-ik.mjs';
-import {loadNativeCanvas} from '../../motion-render-core/lib/native.mjs';
+import {solveTwoLinkIK as solve} from '../index.mjs';
+import {loadNativeCanvas} from '../../../../../../motion-render-core/lib/native.mjs';
 const base={root:{x:0,y:0},target:{x:50,y:0},upperLength:30,lowerLength:40,bend:'positive',fallbackAxis:{x:1,y:0}};
 const distance=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y);
 const near=(a,b,tol=2e-8)=>assert.ok(Math.abs(a-b)<=tol,`${a} != ${b}, tolerance ${tol}`);
@@ -84,7 +84,7 @@ test('bounded seeded extreme ratios, coordinates, projection and near-boundary c
 test('absolute input states are repeatable in shuffled order and a separate process',()=>{
  const inputs=Array.from({length:17},(_,i)=>({...base,root:{x:i*3,y:Math.sin(i)*10},target:{x:50-i*2,y:Math.cos(i)*40},bend:i%2?'positive':'negative'})),expected=inputs.map(solve);
  for(const i of [16,0,8,4,12,1,16,3])assert.deepEqual(solve(inputs[i]),expected[i]);
- const script=`import{solveTwoLinkIK as solve}from ${JSON.stringify(new URL('../lib/foundations/geometry/two-link-ik.mjs',import.meta.url).href)};console.log(JSON.stringify(${JSON.stringify(inputs)}.map(solve)));`;
+ const script=`import{solveTwoLinkIK as solve}from ${JSON.stringify(new URL('../index.mjs',import.meta.url).href)};console.log(JSON.stringify(${JSON.stringify(inputs)}.map(solve)));`;
  const p=spawnSync(process.execPath,['--input-type=module','-e',script],{encoding:'utf8'});assert.equal(p.status,0,p.stderr);assert.deepEqual(JSON.parse(p.stdout),expected);
 });
 test('native returned-point rendering responds to joint changes and is stable in reverse/fresh-process replay; technical not art',()=>{
@@ -97,12 +97,12 @@ test('native returned-point rendering responds to joint changes and is stable in
  assert.notEqual(drawPoints(changed),drawPoints(original));
  assert.deepEqual(solve(inputs[0]),original);
  const hashes=inputs.map(draw);assert.deepEqual([...inputs].reverse().map(draw),[...hashes].reverse());
- const script=`import{solveTwoLinkIK as solve}from ${JSON.stringify(new URL('../lib/foundations/geometry/two-link-ik.mjs',import.meta.url).href)};import{loadNativeCanvas}from ${JSON.stringify(new URL('../../motion-render-core/lib/native.mjs',import.meta.url).href)};import{createHash}from'node:crypto';const{api}=loadNativeCanvas();const drawPoints=${drawPoints.toString()};const draw=${draw.toString()};console.log(JSON.stringify(${JSON.stringify(inputs)}.map(draw)));`;
+ const script=`import{solveTwoLinkIK as solve}from ${JSON.stringify(new URL('../index.mjs',import.meta.url).href)};import{loadNativeCanvas}from ${JSON.stringify(new URL('../../../../../../motion-render-core/lib/native.mjs',import.meta.url).href)};import{createHash}from'node:crypto';const{api}=loadNativeCanvas();const drawPoints=${drawPoints.toString()};const draw=${draw.toString()};console.log(JSON.stringify(${JSON.stringify(inputs)}.map(draw)));`;
  const p=spawnSync(process.execPath,['--input-type=module','-e',script],{encoding:'utf8'});assert.equal(p.status,0,p.stderr);assert.deepEqual(JSON.parse(p.stdout),hashes);
 });
 
 test('public index exposes the exact same pure solver function',async()=>{
- const api=await import('../lib/index.mjs');assert.equal(api.solveTwoLinkIK,solve);assert.deepEqual(api.solveTwoLinkIK(base),solve(base));
+ const api=await import('../../../../index.mjs');assert.equal(api.solveTwoLinkIK,solve);assert.deepEqual(api.solveTwoLinkIK(base),solve(base));
 });
 
 test('near-tangent IEEE distance classification is not a high-precision joint-position promise',()=>{

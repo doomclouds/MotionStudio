@@ -1,0 +1,17 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import * as api from '../../../../index.mjs';
+const catalog=JSON.parse(readFileSync(new URL('../../../../../catalog.json',import.meta.url)));
+const item=catalog.elements.find(e=>e.id==='geometry.two-link-ik');
+assert(item);
+const state=api.solveTwoLinkIK(item.example);
+assert(Math.abs(state.joint.x-18)<1e-10);assert(Math.abs(state.joint.y-24)<1e-10);
+assert.deepEqual(state.end,item.example.target);assert.equal(state.reach,'reachable');
+assert.equal(state.projected,false);assert(Object.isFrozen(state.joint));
+const outside=api.solveTwoLinkIK({...item.example,target:{x:100,y:0}});
+assert.equal(outside.reach,'outside');assert.equal(outside.end.x,70);assert.equal(outside.error.distance,30);
+const fallback=api.solveTwoLinkIK({...item.example,target:{x:0,y:0},upperLength:30,lowerLength:30});
+assert.equal(fallback.usedFallback,true);assert.deepEqual(fallback.end,{x:0,y:0});
+assert.deepEqual(state,api.solveTwoLinkIK(item.example));
+assert.throws(()=>api.solveTwoLinkIK({...item.example,upperLength:0}));
+console.log('geometry.two-link-ik contract PASS');

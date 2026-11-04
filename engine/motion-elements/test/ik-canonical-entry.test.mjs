@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import vm from 'node:vm';
-import * as canonical from '../lib/foundations/geometry/two-link-ik.mjs';
+import * as canonical from '../lib/foundations/geometry/two-link-ik/index.mjs';
 import * as aggregate from '../lib/index.mjs';
 const input=()=>({root:{x:10,y:20},target:{x:34,y:38},upperLength:18,lowerLength:24,bend:'positive',fallbackAxis:{x:1,y:0}});
 const entries=[canonical,aggregate];
@@ -23,6 +23,6 @@ test('existing validation/error behavior including null-prototype and cross-real
  let reads=0;const accessor=input();Object.defineProperty(accessor,'upperLength',{get(){reads++;return 18;}});assert.deepEqual(canonical.solveTwoLinkIK(accessor),canonical.solveTwoLinkIK(input()));assert.ok(reads>0);
 });
 test('canonical query imports create independent functions with equal pure results',async()=>{
- const isolated=await import('../lib/foundations/geometry/two-link-ik.mjs?instance-probe');
+ const isolated=await import('../lib/foundations/geometry/two-link-ik/index.mjs?instance-probe');
  assert.notEqual(isolated.solveTwoLinkIK,canonical.solveTwoLinkIK);assert.deepEqual(isolated.solveTwoLinkIK(input()),canonical.solveTwoLinkIK(input()));
 });

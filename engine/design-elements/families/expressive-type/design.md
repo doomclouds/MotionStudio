@@ -7,7 +7,7 @@
 这里抽取的是两种“主视觉字形处理”，不是源作品构图，更不是字库轮廓/汉字笔画拆解。两种模式共享同一短文本、度量、排布和效果边界契约。新实现不读原图，不拷贝品牌字形。
 
 ## 代码与契约
-`../expressive-type.mjs` 导出 id/version/guidance/validate/draw。`props.bounds`是固定尺寸目标区；`theme`要求surface/ink/muted/accent/fontFamily。字体由调用者安装并注册，模块不加载文件。`data.lines`是1–3行、每行不超过24字符；fontSize48–400、padding0–100、lineGap0–100；align为left/center/right；paintBackground:false可叠在其他材质上。
+[index.mjs](index.mjs) 导出 id/version/guidance/validate/draw。`props.bounds`是固定尺寸目标区；`theme`要求surface/ink/muted/accent/fontFamily。字体由调用者安装并注册，模块不加载文件。`data.lines`是1–3行、每行不超过24字符；fontSize48–400、padding0–100、lineGap0–100；align为left/center/right；paintBackground:false可叠在其他材质上。
 
 - layered-extrusion：depthX/depthY各-60..60，layers为2–60整数；theme.depthColors为1–6个明确颜色，从近到远。绘出实际度量文字的多层偏移，不包含模糊、透视、光源或真实厚度。
 - sliced-text：offsets是4–32个条带的水平偏移，每个-40..40；fillRatio为.2..1的保留高度比例，交替用ink/accent。条带剪切处理当前字体绘出的文字，不解析字形结构。
@@ -20,6 +20,9 @@
 大字样式不能证明内容真实。样例180是虚构参与分钟数，不是训练建议；MAKE WAVES是活动口号，不是真实天气。不得把切片偏移解释为声音/波浪数据。
 
 ## 两种组合与验证
-`examples/expressive-type.mjs`提供两种模式不同内容参数。本次本地交付证据目录`verification-expressive-type/`中的`verify.mjs`（本地独审证据，不随源码包发布）组合现有typographic-focus模块：运动活动是单个量化焦点+解释带，创意节是两行切片口号+完整可读标题。原场景不改。验证包含实际字形边界、极值/溢出绘前拒绝、上下文/输入不变、确定性、两张组合图实看；不宣称已通过用户审美确认或motion验证。
 
-来源路径均相对 MotionStudio 仓库根目录，不是外部依赖。公开运行入口为 `test/verify.mjs` 与 `examples/render.mjs`（相对 design-elements 根）；本地专项证据脚本只用于本次专项回归，不随源码包发布。
+[examples/cases.mjs](examples/cases.mjs)提供两种模式不同内容参数。历史专项说明曾记录仓库外`verification-expressive-type/verify.mjs`组合typographic-focus：运动活动是单个量化焦点与解释带，创意节是两行切片口号与完整可读标题，并记录两张组合图实看。该说明属于原专项的历史记录；证据脚本/图片不随源码分发，本次共置迁移不据此声称重新实看、视觉通过或用户接受。
+
+当前直接运行入口为同目录 [测试](test/contract.mjs)与[示例](examples/render.mjs)，完整使用合同见 [README](README.md)。它们检查实际字形/效果边界、非法输入绘前拒绝、输入/上下文恢复与确定性，属于Native静态技术验证。当前两份专题组合由design-elements/examples/specialist-compositions.mjs消费本族，不把历史私人脚本当必需运行入口。本次视觉审阅及用户接受仍为NOT_RUN。
+
+来源路径均相对MotionStudio仓库根目录，是方法来源而非必须加载的外部资源；源作品本身未在此次迁移中改写。

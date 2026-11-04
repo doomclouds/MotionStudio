@@ -159,7 +159,7 @@
 
 反例：为每层换字体、添加纸纹与柔影、把三栏都装进独立卡片，会削弱此例连续的印刷版面。源图的下部正文被截断；若转为用户可读成品，必须重新确定完整内容范围，不能把截断当作设计特征。
 
-实现选择要服从合同：[typographic-focus](../../engine/design-elements/docs/typographic-focus.md) 的固定标题字重和单一字形风格不能直接表达本例真斜体强调；已有 [rich-paragraph](../../engine/design-elements/recipes/candidates/rich-paragraph-candidate/README.md) 支持注入斜体字体，但受 ASCII、字号和换行域限制，不能为复用删掉原标点或改动关键断行。此例不新增通用代码积木；保留场景级绘制与上述组合判断。观察与局部复刻不等于新的已接受作品，也未证明跨内容迁移或交互表现。
+实现选择要服从合同：[typographic-focus](../../engine/design-elements/families/typographic-focus/README.md) 的固定标题字重和单一字形风格不能直接表达本例真斜体强调；已有 [rich-paragraph](../../engine/design-elements/recipes/candidates/rich-paragraph-candidate/README.md) 支持注入斜体字体，但受 ASCII、字号和换行域限制，不能为复用删掉原标点或改动关键断行。此例不新增通用代码积木；保留场景级绘制与上述组合判断。观察与局部复刻不等于新的已接受作品，也未证明跨内容迁移或交互表现。
 
 #### 同家族长页迁移：分区锚点、差异侧栏与行内断行
 
@@ -193,7 +193,7 @@
 - 品牌识别来自关系重复，不只是色值：同一斜向标识关联页头与产品，背景方向线强化前进感，导航、按钮和支持信息使用克制的同一字体系。此种联系适合表达身份/态度；不应把速度暗示当成已测性能，虚构品牌与概念产品应显式说明。
 - 将幕启“主张与具体主体由斜区相连”的关系改写为产品发布，而不是搬用白色收据、渐变或SaaS胶囊按钮。支持区承载描述性材料/形态信息，不伪造克重、速度增益或认证指标；如果后续任务要求性能比较，必须提供真实测量及其适用条件。
 
-**积木的实际作用与未实现部分。** 本次执行了[typographic-focus](../../engine/design-elements/docs/typographic-focus.md)的两行标题/正文及文字fit检查，也执行了[diagonal-field](../../engine/design-elements/families/diagonal-field/README.md)的-6°、cutoff 0.70分区；两个颜色站点相同，主动放弃渐变。标题未重涂背景，因而与整个品牌色域连续。返回的区域只被记录，未驱动CTA或鞋体布局；不能将“返回安全矩形”说成整个页面自动安全。鞋体、标识、方向线与导航为场景级绘制，不是新通用积木，也不把这些作者绘制归功于两次API调用。
+**积木的实际作用与未实现部分。** 本次执行了[typographic-focus](../../engine/design-elements/families/typographic-focus/README.md)的两行标题/正文及文字fit检查，也执行了[diagonal-field](../../engine/design-elements/families/diagonal-field/README.md)的-6°、cutoff 0.70分区；两个颜色站点相同，主动放弃渐变。标题未重涂背景，因而与整个品牌色域连续。返回的区域只被记录，未驱动CTA或鞋体布局；不能将“返回安全矩形”说成整个页面自动安全。鞋体、标识、方向线与导航为场景级绘制，不是新通用积木，也不把这些作者绘制归功于两次API调用。
 
 **可见反例与后续验证。** 方向线被矩形裁剪，在水平y=650处成批截断，而下方色域边缘是斜线；两种边界不一致削弱了连续方向。组合时应让装饰层消费同一边界或明确提前收束，并保留有/无方向线、矩形/同边界裁切的同内容对照后再判断改动收益，不能只增加线条。鞋体的平面插画质感清楚，但不足以证明高端摄影真实感；追求真实商品展示时应另选有授权的摄影或更充分的产品可视化。底部小字和导航只在当前桌面静帧查看，手机需重新分配信息而不是全图缩小。
 

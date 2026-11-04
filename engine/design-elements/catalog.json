@@ -20,13 +20,13 @@
       "id": "design.typographic-focus.v1",
       "version": 1,
       "status": "published-source-technical-reviewed",
-      "entry": "typographic-focus.mjs",
+      "entry": "families/typographic-focus/index.mjs",
       "exports": [
         "validate",
         "draw"
       ],
-      "guidance": "docs/typographic-focus.md",
-      "example": "examples/typographic-focus.mjs",
+      "guidance": "families/typographic-focus/README.md",
+      "example": "families/typographic-focus/examples/render.mjs",
       "sourceCases": [
         "https://github.com/doomclouds/MotionStudio/blob/cae18d21f2fbef9702c8ce94ce68abd9eda826a4/portfolio/works/slow-roast-study/README.md",
         "https://github.com/doomclouds/MotionStudio/blob/cae18d21f2fbef9702c8ce94ce68abd9eda826a4/portfolio/works/hanzi-poster-study/README.md",
@@ -36,13 +36,14 @@
         "examples/compositions.mjs#reading-sessions",
         "examples/compositions.mjs#creative-lab"
       ],
-      "tests": "test/verify.mjs",
+      "tests": "families/typographic-focus/test/contract.mjs; test/verify.mjs",
       "verificationLimits": [
         "native-static",
         "not-browser",
         "not-motion",
         "not-user-approved-new-artwork"
-      ]
+      ],
+      "sample": "families/typographic-focus/examples/cases.mjs"
     },
     {
       "id": "design.color-sections.v1",
@@ -103,13 +104,13 @@
       "id": "design.semantic-data.v1",
       "version": 1,
       "status": "published-source-technical-reviewed",
-      "entry": "semantic-data.mjs",
+      "entry": "families/semantic-data/index.mjs",
       "exports": [
         "validate",
         "draw"
       ],
-      "guidance": "docs/semantic-data.md",
-      "example": "examples/semantic-data.mjs",
+      "guidance": "families/semantic-data/README.md",
+      "example": "families/semantic-data/examples/render.mjs",
       "sourceCases": [
         "https://github.com/doomclouds/MotionStudio/blob/cae18d21f2fbef9702c8ce94ce68abd9eda826a4/portfolio/works/tea-conversation-map/README.md",
         "https://github.com/doomclouds/MotionStudio/blob/cae18d21f2fbef9702c8ce94ce68abd9eda826a4/portfolio/works/theatre-narrative-wave/README.md"
@@ -118,13 +119,14 @@
         "examples/compositions.mjs#reading-sessions",
         "examples/compositions.mjs#creative-lab"
       ],
-      "tests": "test/verify.mjs",
+      "tests": "families/semantic-data/test/contract.mjs; test/verify.mjs",
       "verificationLimits": [
         "native-static",
         "not-browser",
         "not-motion",
         "not-user-approved-new-artwork"
-      ]
+      ],
+      "sample": "families/semantic-data/examples/cases.mjs"
     },
     {
       "id": "design.parameter-controls.v1",
@@ -158,19 +160,20 @@
       "id": "design.expressive-type.v1",
       "version": 1,
       "status": "published-source-technical-reviewed",
-      "entry": "expressive-type.mjs",
+      "entry": "families/expressive-type/index.mjs",
       "exports": [
         "validate",
         "draw"
       ],
-      "guidance": "docs/expressive-type.md",
-      "example": "examples/expressive-type.mjs",
+      "guidance": "families/expressive-type/README.md",
+      "example": "families/expressive-type/examples/render.mjs",
       "sourceCases": [
         "https://github.com/doomclouds/MotionStudio/blob/cae18d21f2fbef9702c8ce94ce68abd9eda826a4/portfolio/works/cycling-year-report/README.md",
         "https://github.com/doomclouds/MotionStudio/blob/cae18d21f2fbef9702c8ce94ce68abd9eda826a4/portfolio/works/wave-weather-study/README.md"
       ],
-      "verification": "test/verify.mjs; examples/specialist-compositions.mjs",
-      "limits": "2D text ink offsets/strip masks; no 3D, font outline decomposition or semantic glyph parts"
+      "verification": "families/expressive-type/test/contract.mjs; test/verify.mjs; examples/specialist-compositions.mjs",
+      "limits": "2D text ink offsets/strip masks; no 3D, font outline decomposition or semantic glyph parts",
+      "sample": "families/expressive-type/examples/cases.mjs"
     },
     {
       "id": "design.radial-scale.v1",

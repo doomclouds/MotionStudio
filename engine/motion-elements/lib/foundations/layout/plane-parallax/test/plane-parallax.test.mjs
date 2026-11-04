@@ -3,9 +3,9 @@ import assert from 'node:assert/strict';
 import {spawnSync} from 'node:child_process';
 import {createHash} from 'node:crypto';
 import {runInNewContext} from 'node:vm';
-import {planeParallaxLayout as layout} from '../lib/plane-parallax.mjs';
-import {transformPoint,composeTransform} from '../lib/matrix.mjs';
-import {loadNativeCanvas} from '../../motion-render-core/lib/native.mjs';
+import {planeParallaxLayout as layout} from '../index.mjs';
+import {transformPoint,composeTransform} from '../../../../matrix.mjs';
+import {loadNativeCanvas} from '../../../../../../motion-render-core/lib/native.mjs';
 const base={planes:[{itemId:'near',depth:600},{itemId:'far',depth:2400}],reference:{width:1920,height:1080},camera:{x:0,y:0,z:0,focalLength:900},viewport:{x:0,y:0,width:1920,height:1080},near:1};
 const clone=x=>structuredClone(x);
 const near=(a,b,tolerance=1e-8)=>assert.ok(Math.abs(a-b)<=tolerance,`${a} != ${b} (tol ${tolerance})`);
@@ -111,7 +111,7 @@ test('inputs are untouched, results detached and deeply frozen without branding 
 test('absolute input order, repeat calls and an independent Node process produce identical values',()=>{
  const inputs=[0,.2,.5,.8,1].map(t=>({...base,camera:{...base.camera,x:160*t,y:-20*t,z:180*t}})),expected=inputs.map(layout);
  for(const i of [4,0,2,1,3,2])assert.deepEqual(layout(inputs[i]),expected[i]);
- const code=`import{planeParallaxLayout as layout}from ${JSON.stringify(new URL('../lib/plane-parallax.mjs',import.meta.url).href)};console.log(JSON.stringify(${JSON.stringify(inputs)}.map(layout)));`;
+ const code=`import{planeParallaxLayout as layout}from ${JSON.stringify(new URL('../index.mjs',import.meta.url).href)};console.log(JSON.stringify(${JSON.stringify(inputs)}.map(layout)));`;
  const r=spawnSync(process.execPath,['--input-type=module','-e',code],{encoding:'utf8'});assert.equal(r.status,0,r.stderr);assert.deepEqual(JSON.parse(r.stdout),expected);
 });
 test('Native layer matrices draw different depth motions, preserve caller state, and replay across process',()=>{
@@ -122,7 +122,7 @@ test('Native layer matrices draw different depth motions, preserve caller state,
   assert.equal(ctx.globalAlpha,before.alpha);assert.equal(ctx.lineWidth,before.line);assert.equal(ctx.getTransform().toString(),before.transform);
   return createHash('sha256').update(canvas.toBuffer('image/png')).digest('hex');};
  const hashes=inputs.map(draw);assert.equal(new Set(hashes).size,3);assert.deepEqual([...inputs].reverse().map(draw),[...hashes].reverse());
- const code=`import{planeParallaxLayout as layout}from ${JSON.stringify(new URL('../lib/plane-parallax.mjs',import.meta.url).href)};import{loadNativeCanvas}from ${JSON.stringify(new URL('../../motion-render-core/lib/native.mjs',import.meta.url).href)};import{createHash}from'node:crypto';import assert from'node:assert/strict';const{api}=loadNativeCanvas();const draw=${draw.toString()};console.log(JSON.stringify(${JSON.stringify(inputs)}.map(draw)));`;
+ const code=`import{planeParallaxLayout as layout}from ${JSON.stringify(new URL('../index.mjs',import.meta.url).href)};import{loadNativeCanvas}from ${JSON.stringify(new URL('../../../../../../motion-render-core/lib/native.mjs',import.meta.url).href)};import{createHash}from'node:crypto';import assert from'node:assert/strict';const{api}=loadNativeCanvas();const draw=${draw.toString()};console.log(JSON.stringify(${JSON.stringify(inputs)}.map(draw)));`;
  const r=spawnSync(process.execPath,['--input-type=module','-e',code],{encoding:'utf8'});assert.equal(r.status,0,r.stderr);assert.deepEqual(JSON.parse(r.stdout),hashes);
 });
 
@@ -137,5 +137,5 @@ test('exact derived translation limits are accepted and beyond-limit values reje
 });
 
 test('public index exposes the same plane projection function without a second state store',async()=>{
- const api=await import('../lib/index.mjs');assert.equal(api.planeParallaxLayout,layout);assert.deepEqual(api.planeParallaxLayout(base),layout(base));
+ const api=await import('../../../../index.mjs');assert.equal(api.planeParallaxLayout,layout);assert.deepEqual(api.planeParallaxLayout(base),layout(base));
 });

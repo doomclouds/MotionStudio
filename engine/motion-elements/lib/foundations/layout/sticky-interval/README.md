@@ -1,5 +1,14 @@
 # 容器内固定标题：能停住，也能在分区结束时离开
 
+<!-- asset-self-description: composition.sticky-interval -->
+
+## 当前资产入口
+
+身份和状态见[catalog](../../../../catalog.json)的`composition.sticky-interval`。本页为当前调用合同；[design.md](design.md)说明导演选择，[index.mjs](index.mjs)为实际实现，[examples/contract.mjs](examples/contract.mjs)实际调用公共barrel及catalog输入，[专属测试](test/sticky-interval.test.mjs)保留原数值与Native回归。无旧路径wrapper。
+
+本次资产共置只改变相对validate导入与文件位置，数学主体不变。下文真实作品和旧职责迁移段落均为历史记录，不是本次新重渲、像素等价、观看、听审或接受声明；旧manifest与冻结源码保持原样，不能声称当前路径/源码字节等于原影片。
+
+
 **Experimental。已有真实候选影片调用，技术与艺术状态分开，详见末节。** 本项是一个纵向区间约束（此次职责目录整理不新增机制）：标题随内容滚动、到达指定位置后停住、不能越过其所属内容分区的末端。滚动参数动画、裁切、列表布局、同ID卡片交接仍是既有能力，不另计基础机制或配方。
 
 ## 场景与效果
@@ -12,7 +21,7 @@
 ## 严格API和坐标合同
 
 ```js
-import {stickyIntervalLayout} from '../lib/foundations/layout/sticky-interval.mjs';
+import {stickyIntervalLayout} from './index.mjs';
 const heading = stickyIntervalLayout({
   itemId:'chapter-a',
   rect:{x:20,y:100,width:180,height:30},
@@ -106,7 +115,7 @@ try {
 ## 工程复现与待验范围
 
 ```sh
-node --test engine/motion-elements/test/sticky-interval.test.mjs
+node --test engine/motion-elements/lib/foundations/layout/sticky-interval/lib/foundations/layout/sticky-interval/test/sticky-interval.test.mjs
 npm --prefix engine/motion-elements test
 ```
 
@@ -140,9 +149,13 @@ Native夹具只证明正确的调用方clip/save/restore用法，不代表新增
 
 公开合成例只复现API合同；完整影片、制作、美术参数、音源和调用/哈希回执留在私有交付，不假称本源包可单独重制原片。
 复用应先核固定源码/素材身份，再重建状态、代表Native帧与声音，完整编码后审查实际遮挡、身份连续性及视听。
-官方参考与许可取舍见[ui-scroll-reference-decisions.md](ui-scroll-reference-decisions.md)。
+官方参考与许可取舍见[ui-scroll-reference-decisions.md](../../../../docs/ui-scroll-reference-decisions.md)。
 
-## 当前入口与历史迁移记录（0新增）
+## 历史职责迁移记录（非本次共置验收）
+
+以下保留旧阶段的路径和等价桥接身份；当前实现只从本目录index和公共barrel调用。
+
+
 
 当前只使用职责目录 canonical 实现和公共 index；旧平层 wrapper 已删除，无兼容路径。以下三入口与等价桥接叙述保留历史迁移范围，不是本次清理的新验证结果。
 
@@ -161,3 +174,16 @@ Native夹具只证明正确的调用方clip/save/restore用法，不代表新增
 仅旧入口和新增canonical文件改变，原108文件冻结源及媒体不变。
 这不是全750帧逐像素比较、新片编码、常速连续观看、实听或新的艺术认可；
 原UI作品有限认可而非风格背书的状态保持。
+
+## 运行、依赖与恢复
+
+Node24+；从完整仓库根运行：
+
+```sh
+node engine/motion-elements/lib/foundations/layout/sticky-interval/examples/contract.mjs
+node --test engine/motion-elements/lib/foundations/layout/sticky-interval/test/*.test.mjs
+```
+
+实际实现仅共享[validate.mjs](../../../validate.mjs)，不复制校验器。公共barrel示例还间接依赖相邻motion-timeline-core及Node内建crypto，保留仓库/portable布局。纯数值示例不需要Canvas；原专属测试含Native像素与新进程检查，需要已安装的声明版本@napi-rs/canvas。未安装应报告依赖阻断，不能删掉像素测试当通过。不需要字体、外部媒体、FFmpeg或联网，本例不生成影片。
+
+代码适用[包MIT许可](../../../../LICENSE)；不授予历史作品美术、字体、音频或参考库内容的再分发权。共用validator可能读取已知字段getter，这不是任意不可信对象的安全沙箱。纯函数无plan品牌或跨入口compile/sample协议，不应机械沿用其他资产的WeakMap限制。技术通过与新作品的观看、听审、用户接受、通用生产迁移分别判断。

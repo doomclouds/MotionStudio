@@ -3,7 +3,7 @@
 ## Reuse decision
 
 - [code-spans](../../reviewed/b10/recipes/code-spans.mjs) already validates actual glyph bounds for colored runs, but accepts caller-authored rows and one font. Use it for source/code rows; it does not supply continuous mixed-font paragraph reflow.
-- [typographic-focus](../../../typographic-focus.mjs) uses authored title/body lines and whole-line emphasis. Prefer it when those inputs are already the intended design.
+- [typographic-focus](../../../families/typographic-focus/index.mjs) uses authored title/body lines and whole-line emphasis. Prefer it when those inputs are already the intended design.
 - [editorial-evidence](../../reviewed/b06/recipes/editorial-evidence.mjs) composes authored columns and baselines; it does not turn continuous copy into lines.
 - [emphasis-tile](../../reviewed/b09/recipes/emphasis-tile.mjs) is a bounded rotated word/tile, not an inline line-breaking service.
 - [glyph-run-path](../../../../motion-elements/lib/foundations/typography/glyph-run-path.mjs) places caller-measured glyph cells along curves. It does not shape or wrap paragraphs.

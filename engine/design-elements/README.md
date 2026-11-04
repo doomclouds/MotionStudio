@@ -11,12 +11,12 @@ See [recipe source roles](recipes/README.md) for the direct `reviewed/`, `candid
 | Stable ID | Intent / code | Explicit input responsibility |
 |---|---|---|
 | design.print-poster.v1 | [self-contained guide](families/print-poster/README.md), [code](families/print-poster/index.mjs) | paper panels, offset type; existing fixed poster recipe |
-| design.typographic-focus.v1 | [design card](docs/typographic-focus.md), [code](typographic-focus.mjs) | authored short lines, typography roles and exact text bounds |
+| design.typographic-focus.v1 | [design card](families/typographic-focus/README.md), [code](families/typographic-focus/index.mjs) | authored short lines, typography roles and advance-based line regions |
 | design.color-sections.v1 | [design card](docs/color-sections.md), [code](color-sections.mjs) | two semantic slots, order, area ratio and explicit colors |
 | design.material-surfaces.v1 | [design card](docs/material-surfaces.md), [code](material-surfaces.mjs) | paper / opaque / caller-supplied glass backdrop, content slot |
-| design.semantic-data.v1 | [design card](docs/semantic-data.md), [code](semantic-data.mjs) | categories, values, legends and illustrative/quantitative distinction |
+| design.semantic-data.v1 | [design card](families/semantic-data/README.md), [code](families/semantic-data/index.mjs) | categories, values, legends and illustrative/quantitative distinction |
 | design.parameter-controls.v1 | [design card](families/parameter-controls/README.md), [code](families/parameter-controls/index.mjs) | value, range, units, orientation, selected/disabled states |
-| design.expressive-type.v1 | [design card](docs/expressive-type.md), [code](expressive-type.mjs) | bounded layered/striped glyph effects, readable repeated label |
+| design.expressive-type.v1 | [design card](families/expressive-type/README.md), [code](families/expressive-type/index.mjs) | bounded layered/striped glyph effects, readable repeated label |
 | design.radial-scale.v1 | [design card](families/radial-scale/README.md), [code](families/radial-scale/index.mjs) | clockwise linear value, range, unit, knob/gauge |
 | design.diagonal-field.v1 | [design card](families/diagonal-field/README.md), [code](families/diagonal-field/index.mjs) | authored color boundary and safe content rectangles |
 | design.authored-paths.v1 | [design card](families/authored-paths/README.md), [code](families/authored-paths/index.mjs) | explicit illustrative anchors, not measured data |

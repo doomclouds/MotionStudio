@@ -13,12 +13,12 @@
 | 稳定 ID | 文字指导 | 代码 | 复用场景 |
 |---|---|---|---|
 | design.print-poster.v1 | [独立入口](families/print-poster/README.md) | [源码](families/print-poster/index.mjs) | 既有印刷海报，保持原 API |
-| design.typographic-focus.v1 | [文字主视觉](docs/typographic-focus.md) | [代码](typographic-focus.mjs) | 主张、章节标题、嵌套活动信息 |
+| design.typographic-focus.v1 | [文字主视觉](families/typographic-focus/README.md) | [代码](families/typographic-focus/index.mjs) | 主张、章节标题、嵌套活动信息 |
 | design.color-sections.v1 | [色彩分区](docs/color-sections.md) | [代码](color-sections.mjs) | 主张与证据分区、互换阅读顺序 |
 | design.material-surfaces.v1 | [材质表面](docs/material-surfaces.md) | [代码](material-surfaces.mjs) | 纸、实体、显式背景玻璃及内容槽 |
-| design.semantic-data.v1 | [语义序列](docs/semantic-data.md) | [代码](semantic-data.mjs) | 类别、阶段、明确量程的面积符号 |
+| design.semantic-data.v1 | [语义序列](families/semantic-data/README.md) | [代码](families/semantic-data/index.mjs) | 类别、阶段、明确量程的面积符号 |
 | design.parameter-controls.v1 | [参数刻度](families/parameter-controls/README.md) | [代码](families/parameter-controls/index.mjs) | 有数值范围的横/纵静态参数 |
-| design.expressive-type.v1 | [层叠/切片](docs/expressive-type.md) | [代码](expressive-type.mjs) | 有边界的2D标题效果 |
+| design.expressive-type.v1 | [层叠/切片](families/expressive-type/README.md) | [代码](families/expressive-type/index.mjs) | 有边界的2D标题效果 |
 | design.radial-scale.v1 | [圆弧读数](families/radial-scale/README.md) | [代码](families/radial-scale/index.mjs) | 旋钮/半圆量程，线性静态 |
 | design.diagonal-field.v1 | [斜切色域](families/diagonal-field/README.md) | [代码](families/diagonal-field/index.mjs) | 带安全内容矩形的方向分区 |
 | design.authored-paths.v1 | [叙事路径](families/authored-paths/README.md) | [代码](families/authored-paths/index.mjs) | 有声明的故事弧与序列示意 |

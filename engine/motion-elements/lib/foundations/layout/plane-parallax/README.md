@@ -1,5 +1,14 @@
 # 平面视差：让近景与远景遵守同一投影关系
 
+<!-- asset-self-description: composition.plane-parallax -->
+
+## 当前资产入口
+
+身份和状态见[catalog](../../../../catalog.json)的`composition.plane-parallax`。本页为当前调用合同；[design.md](design.md)说明导演选择，[index.mjs](index.mjs)为实际实现，[examples/contract.mjs](examples/contract.mjs)实际调用公共barrel及catalog输入，[专属测试](test/plane-parallax.test.mjs)保留原数值与Native回归。无旧路径wrapper。
+
+本次资产共置只改变相对validate导入与文件位置，数学主体不变。下文真实作品和旧职责迁移段落均为历史记录，不是本次新重渲、像素等价、观看、听审或接受声明；旧manifest与冻结源码保持原样，不能声称当前路径/源码字节等于原影片。
+
+
 **Experimental。已有真实候选影片调用，技术与艺术状态分开，详见末节。** 一个机制覆盖不同深度平面的差速平移与推进缩放；不把每个图层、方向、相机移动或viewport变化拆成新元素。没有新handoff、遮罩或配方。
 
 ## 场景与边界
@@ -14,8 +23,8 @@
 ## 严格API
 
 ```js
-import {planeParallaxLayout} from '../lib/plane-parallax.mjs';
-import {transformPoint} from '../lib/matrix.mjs';
+import {planeParallaxLayout} from './index.mjs';
+import {transformPoint} from '../../../matrix.mjs';
 const layers=planeParallaxLayout({
   planes:[{itemId:'back',depth:800},{itemId:'hero',depth:300}],
   reference:{width:400,height:240},
@@ -96,7 +105,7 @@ for (const layer of layers) {
 ## 工程复现与待验范围
 
 ```sh
-node --test engine/motion-elements/test/plane-parallax.test.mjs
+node --test engine/motion-elements/lib/foundations/layout/plane-parallax/lib/foundations/layout/plane-parallax/test/plane-parallax.test.mjs
 npm --prefix engine/motion-elements test
 ```
 
@@ -126,4 +135,17 @@ Native小夹具只是工程测试，正确的caller save/restore也不能变成�
 
 公开合成例可复现API合同；完整制作、媒体、艺术参数与私有证据不包含在本源包，不假称仅凭该例能重制原片。
 复用时先核固定源和素材身份，重建声音/状态/代表Native帧，再完整编码和检查实际调用、视觉接缝及声音。
-官方代码与许可对照见[parallax-reference-decisions.md](parallax-reference-decisions.md)。
+官方代码与许可对照见[parallax-reference-decisions.md](../../../../docs/parallax-reference-decisions.md)。
+
+## 运行、依赖与恢复
+
+Node24+；从完整仓库根运行：
+
+```sh
+node engine/motion-elements/lib/foundations/layout/plane-parallax/examples/contract.mjs
+node --test engine/motion-elements/lib/foundations/layout/plane-parallax/test/*.test.mjs
+```
+
+实际实现仅共享[validate.mjs](../../../validate.mjs)，不复制校验器。公共barrel示例还间接依赖相邻motion-timeline-core及Node内建crypto，保留仓库/portable布局。纯数值示例不需要Canvas；原专属测试含Native像素与新进程检查，需要已安装的声明版本@napi-rs/canvas。未安装应报告依赖阻断，不能删掉像素测试当通过。不需要字体、外部媒体、FFmpeg或联网，本例不生成影片。
+
+代码适用[包MIT许可](../../../../LICENSE)；不授予历史作品美术、字体、音频或参考库内容的再分发权。共用validator可能读取已知字段getter，这不是任意不可信对象的安全沙箱。纯函数无plan品牌或跨入口compile/sample协议，不应机械沿用其他资产的WeakMap限制。技术通过与新作品的观看、听审、用户接受、通用生产迁移分别判断。

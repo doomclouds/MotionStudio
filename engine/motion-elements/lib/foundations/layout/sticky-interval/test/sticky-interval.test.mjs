@@ -3,8 +3,8 @@ import assert from 'node:assert/strict';
 import {spawnSync} from 'node:child_process';
 import {createHash} from 'node:crypto';
 import {runInNewContext} from 'node:vm';
-import {stickyIntervalLayout as layout} from '../lib/foundations/layout/sticky-interval.mjs';
-import {loadNativeCanvas} from '../../motion-render-core/lib/native.mjs';
+import {stickyIntervalLayout as layout} from '../index.mjs';
+import {loadNativeCanvas} from '../../../../../../motion-render-core/lib/native.mjs';
 const base={itemId:'heading',rect:{x:20,y:100,width:180,height:30},container:{start:80,end:400},scrollOffset:0,pinY:10};
 const copy=x=>structuredClone(x);
 const near=(a,b,tol=1e-8)=>assert.ok(Math.abs(a-b)<=tol,`${a} != ${b}, tolerance ${tol}`);
@@ -94,15 +94,15 @@ test('shiftY is the actual IEEE difference and may be slightly negative at a rou
 test('absolute inputs repeat in reverse/random order and in a new process',()=>{
  const inputs=[-100,90,200,360,361,600].map(scrollOffset=>({...base,scrollOffset})),expected=inputs.map(layout);
  for(const i of [5,2,0,4,1,3,2])assert.deepEqual(layout(inputs[i]),expected[i]);
- const r=spawnSync(process.execPath,['--input-type=module','-e',`import{stickyIntervalLayout as f}from ${JSON.stringify(new URL('../lib/foundations/layout/sticky-interval.mjs',import.meta.url).href)};console.log(JSON.stringify(${JSON.stringify(inputs)}.map(f)));`],{encoding:'utf8'});assert.equal(r.status,0,r.stderr);assert.deepEqual(JSON.parse(r.stdout),expected);
+ const r=spawnSync(process.execPath,['--input-type=module','-e',`import{stickyIntervalLayout as f}from ${JSON.stringify(new URL('../index.mjs',import.meta.url).href)};console.log(JSON.stringify(${JSON.stringify(inputs)}.map(f)));`],{encoding:'utf8'});assert.equal(r.status,0,r.stderr);assert.deepEqual(JSON.parse(r.stdout),expected);
 });
 test('Native caller clip and actual returned rectangles replay without leaking caller drawing state',()=>{
  const {api}=loadNativeCanvas();const inputs=[0,10,40,90].map(scrollOffset=>({itemId:'pixel',rect:{x:8,y:30,width:35,height:12},container:{start:20,end:90},scrollOffset,pinY:8}));
  const draw=s=>{const canvas=api.createCanvas(80,60),ctx=canvas.getContext('2d');ctx.fillStyle='#fff';ctx.fillRect(0,0,80,60);ctx.globalAlpha=.75;ctx.lineWidth=3;const before=[ctx.globalAlpha,ctx.lineWidth,ctx.getTransform().toString()];ctx.save();try{ctx.beginPath();ctx.rect(2,2,76,56);ctx.clip();const o=layout(s);ctx.fillStyle='#d85438';ctx.fillRect(o.rect.x,o.rect.y,o.rect.width,o.rect.height);}finally{ctx.restore();}assert.deepEqual([ctx.globalAlpha,ctx.lineWidth,ctx.getTransform().toString()],before);return createHash('sha256').update(canvas.toBuffer('image/png')).digest('hex');};
  const expected=inputs.map(draw);assert.equal(new Set(expected).size,4);assert.deepEqual([...inputs].reverse().map(draw),[...expected].reverse());
- const code=`import{stickyIntervalLayout as layout}from ${JSON.stringify(new URL('../lib/foundations/layout/sticky-interval.mjs',import.meta.url).href)};import{loadNativeCanvas}from ${JSON.stringify(new URL('../../motion-render-core/lib/native.mjs',import.meta.url).href)};import{createHash}from'node:crypto';import assert from'node:assert/strict';const{api}=loadNativeCanvas();const draw=${draw.toString()};console.log(JSON.stringify(${JSON.stringify(inputs)}.map(draw)));`;
+ const code=`import{stickyIntervalLayout as layout}from ${JSON.stringify(new URL('../index.mjs',import.meta.url).href)};import{loadNativeCanvas}from ${JSON.stringify(new URL('../../../../../../motion-render-core/lib/native.mjs',import.meta.url).href)};import{createHash}from'node:crypto';import assert from'node:assert/strict';const{api}=loadNativeCanvas();const draw=${draw.toString()};console.log(JSON.stringify(${JSON.stringify(inputs)}.map(draw)));`;
  const r=spawnSync(process.execPath,['--input-type=module','-e',code],{encoding:'utf8'});assert.equal(r.status,0,r.stderr);assert.deepEqual(JSON.parse(r.stdout),expected);
 });
 test('public index exports the same constraint function and exact results',async()=>{
- const api=await import('../lib/index.mjs');assert.equal(api.stickyIntervalLayout,layout);assert.deepEqual(api.stickyIntervalLayout(base),layout(base));
+ const api=await import('../../../../index.mjs');assert.equal(api.stickyIntervalLayout,layout);assert.deepEqual(api.stickyIntervalLayout(base),layout(base));
 });

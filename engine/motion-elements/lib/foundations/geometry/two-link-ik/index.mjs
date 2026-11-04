@@ -1,5 +1,5 @@
 /** Original analytic planar reach geometry; not physics, a rig, or an integrator. */
-import {object,number,choice,freeze,fail} from '../../validate.mjs';
+import {object,number,choice,freeze,fail} from '../../../validate.mjs';
 const fields=['root','target','upperLength','lowerLength','bend','fallbackAxis'];
 function position(p){object(p,['x','y'],['x','y']);return {x:number(p.x,-1e6,1e6),y:number(p.y,-1e6,1e6)};}
 /** World-space two-link solve. Positive bend is (-axis.y,axis.x). */

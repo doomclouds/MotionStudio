@@ -10,7 +10,7 @@
 
 Changing primary copy changes the available annotation width instead of leaving an independent fixed secondary column. The pure layout accepts a trusted metric callback; the actual kit uses exact locked aliases and checks every authored note line against the derived interval before output allocation. This can be used for static editorial bands, credits or programme cards in motion content; no animation, temporal interpolation or all-frame fitting is supplied.
 
-Existing [expressive-type](../../../expressive-type.mjs) already measures and aligns actual ink. [Typographic-focus](../../../typographic-focus.mjs) supplies title/body hierarchy; [FeatureStack](../../candidates/feature-stack-candidate/CONTRACT.md) uses fixed columns and [RichParagraph](../../candidates/rich-paragraph-candidate/CONTRACT.md) wraps styled runs. Those capabilities are not recounted. Generic composition can implement this relation; the increment is a bounded paired residual-bay contract, not invented ink metrics or universal typography.
+Existing [expressive-type](../../../families/expressive-type/index.mjs) already measures and aligns actual ink. [Typographic-focus](../../../families/typographic-focus/index.mjs) supplies title/body hierarchy; [FeatureStack](../../candidates/feature-stack-candidate/CONTRACT.md) uses fixed columns and [RichParagraph](../../candidates/rich-paragraph-candidate/CONTRACT.md) wraps styled runs. Those capabilities are not recounted. Generic composition can implement this relation; the increment is a bounded paired residual-bay contract, not invented ink metrics or universal typography.
 
 ## Restricted contract
 

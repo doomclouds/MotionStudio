@@ -1,5 +1,5 @@
 /** Original, absolute-input vertical sticky constraint. No DOM, clock or scroll state. */
-import {object,number,id,freeze,fail} from '../../validate.mjs';
+import {object,number,id,freeze,fail} from '../../../validate.mjs';
 const coordinate=value=>number(value,-1e6,1e6);
 export function stickyIntervalLayout(input){
  const fields=['itemId','rect','container','scrollOffset','pinY'];object(input,fields,fields);

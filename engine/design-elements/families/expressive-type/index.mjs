@@ -1,8 +1,8 @@
 /** Authored 2D text offsets and strip masks. Not perspective, physical extrusion, or font-outline decomposition. */
-import{bounds,theme,array,text,number,color,font,state,local}from'./shared.mjs';
+import{bounds,theme,array,text,number,color,font,state,local}from'../../shared.mjs';
 export const id='design.expressive-type.v1';
 export const version=1;
-export const guidance='./docs/expressive-type.md';
+export const guidance='./README.md';
 export function validate(p){
  bounds(p?.bounds);theme(p.theme);const d=p.data;if(!d)throw new TypeError('data required');
  if(!['layered-extrusion','sliced-text'].includes(d.variant))throw new RangeError('variant');

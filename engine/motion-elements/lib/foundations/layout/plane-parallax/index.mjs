@@ -1,5 +1,5 @@
 /** Original calibrated, screen-parallel plane projection. No camera clock or 3D renderer. */
-import {object,number,id,freeze,fail} from './validate.mjs';
+import {object,number,id,freeze,fail} from '../../../validate.mjs';
 const dimension=value=>number(value,.001,1e6);
 function size(input){object(input,['width','height'],['width','height']);return {width:dimension(input.width),height:dimension(input.height)};}
 function planes(input){

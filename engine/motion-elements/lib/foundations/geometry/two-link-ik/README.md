@@ -1,5 +1,14 @@
 # 二维两连杆 IK：让手端跟随明确的接触目标
 
+<!-- asset-self-description: geometry.two-link-ik -->
+
+## 当前资产入口
+
+身份和状态见[catalog](../../../../catalog.json)的`geometry.two-link-ik`。本页为当前调用合同；[design.md](design.md)说明导演选择，[index.mjs](index.mjs)为实际实现，[examples/contract.mjs](examples/contract.mjs)实际调用公共barrel及catalog输入，[专属测试](test/two-link-ik.test.mjs)保留原数值与Native回归。无旧路径wrapper。
+
+本次资产共置只改变相对validate导入与文件位置，数学主体不变。下文真实作品和旧职责迁移段落均为历史记录，不是本次新重渲、像素等价、观看、听审或接受声明；旧manifest与冻结源码保持原样，不能声称当前路径/源码字节等于原影片。
+
+
 **experimental基础机制，有实际有声验证候选，不等于艺术验收。** 只新增一个几何机制；两侧bend、关节数量、颜色、朝向不是不同积木。矩阵、路径、残差回弹和素材绘制复用旧项，不包装成新机制。
 
 ## 服务场景与非目标
@@ -11,7 +20,7 @@
 ## 严格接口
 
 ```js
-import {solveTwoLinkIK} from '../lib/foundations/geometry/two-link-ik.mjs';
+import {solveTwoLinkIK} from './index.mjs';
 const state=solveTwoLinkIK({
   root:{x:100,y:100}, target:{x:150,y:100},
   upperLength:30, lowerLength:40,
@@ -82,7 +91,7 @@ joint可相差约0.001325，尽管名义骨长残差远小于2e−8。不得由�
 在仓库根目录：
 
 ```sh
-node --test engine/motion-elements/test/two-link-ik.test.mjs
+node --test engine/motion-elements/lib/foundations/geometry/two-link-ik/lib/foundations/geometry/two-link-ik/test/two-link-ik.test.mjs
 npm --prefix engine/motion-elements test
 ```
 
@@ -96,7 +105,7 @@ npm --prefix engine/motion-elements test
 - [Paper.js Point](https://github.com/paperjs/paper.js/blob/fcdc9eb2e11965a5ee680923db210f77ce78239b/src/basic/Point.js)：实际阅读normalize/angle/rotate入口。其零向量可保留`_angle`；本API刻意不用隐藏角度状态，要求显式fallbackAxis。Paper Point不是本API的IK求解器。[实际MIT许可](https://github.com/paperjs/paper.js/blob/fcdc9eb2e11965a5ee680923db210f77ce78239b/LICENSE.txt)。
 - [Matter Constraint.solve](https://github.com/liabru/matter-js/blob/b8ee71cd7f9b49f53639ddaedd6254f1929bcbe5/src/constraint/Constraint.js#L140-L260)：实际阅读其距离约束与position/angle/constraintImpulse修改；它依赖迭代状态，不适合直接冒充本库乱序求值。未采用其物理solver，更不声称这里支持碰撞。[实际MIT许可](https://github.com/liabru/matter-js/blob/b8ee71cd7f9b49f53639ddaedd6254f1929bcbe5/LICENSE)。
 
-许可核查与具体源码对照不增加条目，也不替代作品验证。具体官方对照与其余参考库取舍见[character-reference-decisions.md](character-reference-decisions.md)。
+许可核查与具体源码对照不增加条目，也不替代作品验证。具体官方对照与其余参考库取舍见[character-reference-decisions.md](../../../../docs/character-reference-decisions.md)。
 
 
 ## 真实作品覆盖与视觉接触的限制
@@ -123,7 +132,11 @@ npm --prefix engine/motion-elements test
 私有复现应先核所有冻结源与音频身份，重建原创声音及代表Native帧，再完整编码/full-decode与比对调用范围。
 数值与像素的同机复现不等于跨平台后端一致；新作品仍需实际听看与用户验收。
 
-## 当前入口与历史迁移记录（0新增）
+## 历史职责迁移记录（非本次共置验收）
+
+以下保留旧阶段的路径和等价桥接身份；当前实现只从本目录index和公共barrel调用。
+
+
 
 当前只使用职责目录 canonical 实现和公共 index；旧平层 wrapper 已删除，无兼容路径。以下三入口与等价桥接叙述保留历史迁移范围，不是本次清理的新验证结果。
 
@@ -140,3 +153,16 @@ npm --prefix engine/motion-elements test
 共用validator边界保留；这次仅组织文件，不趁机收紧参数或改变数学。
 
 本次目录迁移另有私有等价桥接：原/新840个完整场景状态、1680次真实IK输入输出严格一致；9个原Native帧在正序/逆序/重复渲染及9个独立新Node中PNG相同。这不是修订影片重编码、全840帧像素比较、实听或新的艺术认可。原角色片被否的风格评价不变；分类整理不把它重新推荐为成功作品。
+
+## 运行、依赖与恢复
+
+Node24+；从完整仓库根运行：
+
+```sh
+node engine/motion-elements/lib/foundations/geometry/two-link-ik/examples/contract.mjs
+node --test engine/motion-elements/lib/foundations/geometry/two-link-ik/test/*.test.mjs
+```
+
+实际实现仅共享[validate.mjs](../../../validate.mjs)，不复制校验器。公共barrel示例还间接依赖相邻motion-timeline-core及Node内建crypto，保留仓库/portable布局。纯数值示例不需要Canvas；原专属测试含Native像素与新进程检查，需要已安装的声明版本@napi-rs/canvas。未安装应报告依赖阻断，不能删掉像素测试当通过。不需要字体、外部媒体、FFmpeg或联网，本例不生成影片。
+
+代码适用[包MIT许可](../../../../LICENSE)；不授予历史作品美术、字体、音频或参考库内容的再分发权。共用validator可能读取已知字段getter，这不是任意不可信对象的安全沙箱。纯函数无plan品牌或跨入口compile/sample协议，不应机械沿用其他资产的WeakMap限制。技术通过与新作品的观看、听审、用户接受、通用生产迁移分别判断。

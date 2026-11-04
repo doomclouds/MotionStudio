@@ -2136,7 +2136,7 @@
       ],
       "evidence": {
         "technicalTests": [
-          "test/two-link-ik.test.mjs"
+          "lib/foundations/geometry/two-link-ik/test/two-link-ik.test.mjs"
         ],
         "visualDemo": null,
         "videoValidation": "VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE",
@@ -2146,11 +2146,12 @@
         "normalSpeedViewing": "NOT_DONE",
         "audioListening": "NOT_LISTENED",
         "ownerArtisticAcceptance": "REJECTED_NOT_STYLE_REFERENCE",
-        "guidance": "docs/two-link-ik.md",
-        "sourceVersionRelation": "The original film solver and dependency bytes remain frozen privately. Current classification moves the same solver body to foundations/geometry with only its relative validate import changed; at that historical migration stage the legacy path re-exported the canonical function; the current cleanup removes that facade and directly routes the public entry to the canonical implementation. Public source hashes therefore differ, not a byte-identical-film claim. Separate original/current replays preserve all840 complete scene states and1680 actual solver results;9 original Native frames match in forward/reverse/repeated order and9 fresh Node processes. No new movie encode or artistic acceptance; historical film/manifests unchanged.",
+        "guidance": "lib/foundations/geometry/two-link-ik/README.md",
+        "sourceVersionRelation": "The original film solver and dependency bytes remain frozen privately. Current classification moves the same solver body to foundations/geometry with only its relative validate import changed; at that historical migration stage the legacy path re-exported the canonical function; the current cleanup removes that facade and directly routes the public entry to the canonical implementation. Public source hashes therefore differ, not a byte-identical-film claim. Separate original/current replays preserve all840 complete scene states and1680 actual solver results;9 original Native frames match in forward/reverse/repeated order and9 fresh Node processes. No new movie encode or artistic acceptance; historical film/manifests unchanged. Asset-directory colocation later changes only the relative shared-validator import and file location; the preceding film/version evidence remains historical, not a claim of byte-identical current film dependencies or newly replayed film equivalence.",
         "validationCoverage": "1680 solver results consumed in frames 0–839, two arms with fixed lengths and opposite bend. Declared contact frames are reachable with zero target error. No projected, fallback or singular-pose film coverage.",
         "callEvidenceScope": "Render-time state-result counters and reach/error records with frozen-source input/draw crosscheck, not independent per-call argument interception.",
-        "ownerFeedbackScope": "The delivered character work was rejected for visual/design quality and must not be recommended as a successful style reference. This does not invalidate the tested numerical IK contract or actual-call evidence."
+        "ownerFeedbackScope": "The delivered character work was rejected for visual/design quality and must not be recommended as a successful style reference. This does not invalidate the tested numerical IK contract or actual-call evidence.",
+        "executableExample": "lib/foundations/geometry/two-link-ik/examples/contract.mjs"
       },
       "knowledgeLinks": [],
       "tags": [
@@ -2211,7 +2212,7 @@
       ],
       "evidence": {
         "technicalTests": [
-          "test/plane-parallax.test.mjs"
+          "lib/foundations/layout/plane-parallax/test/plane-parallax.test.mjs"
         ],
         "visualDemo": null,
         "videoValidation": "VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE",
@@ -2221,11 +2222,12 @@
         "normalSpeedViewing": "NOT_DONE",
         "audioListening": "NOT_LISTENED",
         "ownerArtisticAcceptance": "POSITIVE_FEEDBACK_SCENE_SPECIFIC",
-        "guidance": "docs/plane-parallax.md",
-        "sourceVersionRelation": "Projection and actually imported dependency bytes match the frozen film. The scene imports the module directly; public index export is tested but not film-consumed. Catalog/test/guidance are later integration; the historical manifest is unchanged.",
+        "guidance": "lib/foundations/layout/plane-parallax/README.md",
+        "sourceVersionRelation": "Projection and actually imported dependency bytes match the frozen film. The scene imports the module directly; public index export is tested but not film-consumed. Catalog/test/guidance are later integration; the historical manifest is unchanged. Asset-directory colocation later changes only the relative shared-validator import and file location; the preceding film/version evidence remains historical, not a claim of byte-identical current film dependencies or newly replayed film equivalence.",
         "validationCoverage": "840 projections in frames 0–839, each with four matrices consumed by layer drawing. Main lateral/depth motion in frames 120–473; fixed calibration, uniform-aspect viewports and normal near distances only. Four encoded static frames reviewed, not continuous viewing.",
         "callEvidenceScope": "Render-time state-result/layer-draw records plus frozen-source input and consumer crosscheck; not independent per-call argument interception.",
-        "ownerFeedbackScope": "Positive owner feedback is limited to the delivered coastal scene and its convincing animated-water effect. It is not proof of listening review, all-parameter approval, generic style suitability or production transfer."
+        "ownerFeedbackScope": "Positive owner feedback is limited to the delivered coastal scene and its convincing animated-water effect. It is not proof of listening review, all-parameter approval, generic style suitability or production transfer.",
+        "executableExample": "lib/foundations/layout/plane-parallax/examples/contract.mjs"
       },
       "knowledgeLinks": [],
       "tags": [
@@ -2272,7 +2274,7 @@
       ],
       "evidence": {
         "technicalTests": [
-          "test/sticky-interval.test.mjs"
+          "lib/foundations/layout/sticky-interval/test/sticky-interval.test.mjs"
         ],
         "visualDemo": null,
         "videoValidation": "VERIFIED_PRIVATE_CANDIDATE_CALL_TRACE",
@@ -2282,11 +2284,12 @@
         "normalSpeedViewing": "NOT_DONE",
         "audioListening": "NOT_LISTENED",
         "ownerArtisticAcceptance": "LIMITED_ACCEPTANCE_NOT_STYLE_ENDORSEMENT",
-        "guidance": "docs/sticky-interval.md",
-        "sourceVersionRelation": "Responsibility-directory migration keeps the same solver body except the relative validator import; at that historical stage the legacy entry re-exported the canonical function; the current cleanup removes the facade and directly routes the public entry to the canonical implementation. This is not a byte-identical-film claim. The original film/runtime/manifest are unchanged. Separate baseline and migrated copies each replayed all 750 Native scene states and the 990 sticky input/result calls against the original receipt; 22 original PNGs matched in forward/reverse/repeat, plus the migrated version in 22 fresh Node processes. The public index remains unchanged and is not film-consumed. This is not new film encoding, full-frame pixel comparison, normal-speed viewing, listening or additional artistic acceptance.",
+        "guidance": "lib/foundations/layout/sticky-interval/README.md",
+        "sourceVersionRelation": "Responsibility-directory migration keeps the same solver body except the relative validator import; at that historical stage the legacy entry re-exported the canonical function; the current cleanup removes the facade and directly routes the public entry to the canonical implementation. This is not a byte-identical-film claim. The original film/runtime/manifest are unchanged. Separate baseline and migrated copies each replayed all 750 Native scene states and the 990 sticky input/result calls against the original receipt; 22 original PNGs matched in forward/reverse/repeat, plus the migrated version in 22 fresh Node processes. The public index remains unchanged and is not film-consumed. This is not new film encoding, full-frame pixel comparison, normal-speed viewing, listening or additional artistic acceptance. Asset-directory colocation later changes only the relative shared-validator import and file location; the preceding film/version evidence remains historical, not a claim of byte-identical current film dependencies or newly replayed film equivalence.",
         "validationCoverage": "990 successful calls and rectangle draws: two titles over frames 0–494. First title normal0–128, pinned129–275, released276–494; released geometry visible only276–323, later calculations are offscreen. No negative/extreme/single-point interval film coverage. Final-version nine encoded sticky frames plus four poster/handoff/end frames reviewed; old-version review is not reused as final-version evidence.",
         "callEvidenceScope": "Render-time actual sticky input/result snapshots and draw counters, crosschecked against frozen-source consumers; not independent parameter interception.",
-        "ownerFeedbackScope": "Limited acceptance of this delivered UI work, not rejection and not endorsement as a style reference. Technical validity, listening and generic production transfer remain separate."
+        "ownerFeedbackScope": "Limited acceptance of this delivered UI work, not rejection and not endorsement as a style reference. Technical validity, listening and generic production transfer remain separate.",
+        "executableExample": "lib/foundations/layout/sticky-interval/examples/contract.mjs"
       },
       "knowledgeLinks": [],
       "tags": [

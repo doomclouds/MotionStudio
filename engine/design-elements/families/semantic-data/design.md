@@ -4,9 +4,9 @@
 把内容属性映射为可解释的视觉编码，而不是无意义的装饰点。依据《茶馆七晚》的类别/人数符号、《剧场三年》的阶段叙事；保留明确图例、阅读顺序与注释，避免把隐喻误认作统计趋势。
 
 ## API与输入
-`../semantic-data.mjs` 的 `draw(ctx, props)`。`data.mode`必须是quantitative或illustrative；`metric`明确数值含义；`caption`必须说明测量/示意边界；2–24个`points`各有稳定id、类别、0–1的x/y、value和短标签；`categories`明确颜色/名称。x严格递增，表示阅读序列，不表示等距真实时间。y是构图位置，始终不是测量轴。
+[index.mjs](index.mjs) 的 `draw(ctx, props)`。`data.mode`必须是quantitative或illustrative；`metric`明确数值含义；`caption`必须说明测量/示意边界；2–24个`points`各有稳定id、类别、0–1的x/y、value和短标签；`categories`明确颜色/名称。x严格递增，表示阅读序列，不表示等距真实时间。y是构图位置，始终不是测量轴。
 
-quantitative模式以圆面积与value成正比（半径=根号比例×maxRadius）；0值无有色面积。`maxValue`是调用者明确的统一尺度，不能逐点重算。illustrative也用同一几何关系但明确不作量化声明。maxRadius 8–48。输出含每点位置/面积、编码说明和readingOrder，可供后续审查或未来动作绑定；当前无动画。
+quantitative模式以名义圆面积与value成正比（半径=根号比例×maxRadius）；0值无有色面积。`maxValue`是调用者明确的统一尺度，不能逐点重算。illustrative也用同一几何关系但明确不作量化声明。maxRadius 8–48。输出含每点名义圆包围盒、value/category、编码说明和readingOrder，可供后续审查或未来动作绑定；当前无动画。
 
 ## 可以用 / 禁用
 适合有限阶段、活动序列、定性故事与带明确说明的人工示意数据。不能拿它做时间轴统计、金融走势、地理地图、无数据依据的人数/效果主张。曲线/路径是阅读连接，不代表插值模型。若必须表达真实时间或轴尺度，需要另一种有刻度语义的图表，不以此凑合。
@@ -18,3 +18,7 @@ quantitative模式以圆面积与value成正比（半径=根号比例×maxRadius
 来源：`portfolio/works/tea-conversation-map`、`theatre-narrative-wave`；这两个源作品的可读性/数据边界均在本轮记录。和标题/分区配方组合，数据区的强调色要与类别图例一致，不用第二套无解释颜色。源码与例子是独立实现的合成数据，不复用源SVG或原图。
 
 量化场景必须在point.label提供实际数值或另组合明确的参考圆尺度；仅有面积比例正确不足以使读者读出数值。统一配方采用“Week 1 / 12”等数值标签，示意模式不伪造测量值。
+
+## 名义几何与实际墨迹
+
+实现以surface色挖掉半径min(3,r)的中心，因此实际有色面积不严格按value成比例，小正值尤其受影响。本次只搬迁和披露该边界，未修订算法或取得新视觉接受。独立样例的Session标签未显示数值，只是几何/调用夹具，不是量化可读性验收样例。完整输入与复验方法见 [README](README.md)。

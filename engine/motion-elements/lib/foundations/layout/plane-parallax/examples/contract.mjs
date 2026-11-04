@@ -1,0 +1,16 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import * as api from '../../../../index.mjs';
+const catalog=JSON.parse(readFileSync(new URL('../../../../../catalog.json',import.meta.url)));
+const item=catalog.elements.find(e=>e.id==='composition.plane-parallax');
+assert(item);
+const output=api.planeParallaxLayout(item.example);
+assert.deepEqual(output.map(p=>p.itemId),['back','hero']);
+const hero=output[1];assert(Math.abs(hero.scale-150/260)<1e-12);
+const point=api.transformPoint(hero.matrix,{x:200,y:120});
+assert(Math.abs(point.x-(112-3000/260))<1e-12);assert.equal(point.y,78);
+const zero=api.planeParallaxLayout({...item.example,camera:{x:0,y:0,z:0,focalLength:300}});
+for(const p of zero)assert.deepEqual(p.matrix,[.5,0,0,.5,12,18]);
+assert(Object.isFrozen(hero.matrix));assert.deepEqual(output,api.planeParallaxLayout(item.example));
+assert.throws(()=>api.planeParallaxLayout({...item.example,camera:{...item.example.camera,z:300}}));
+console.log('composition.plane-parallax contract PASS');

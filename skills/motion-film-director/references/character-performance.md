@@ -65,7 +65,7 @@
 
 选择依据是所需轮廓，而非工具偏好。Canvas或NativeCanvas同样可以表达部件层级、转轴、接触约束、姿态切换和非等时停顿；这些原理不要求引入GSAP或其他特定动画库。渲染后端只是实现手段。
 
-若选择二维两段定长肢体，先查既有`solveTwoLinkIK`及[两连杆合同](../../../engine/motion-elements/docs/two-link-ik.md#在作品里真正消费既有求解器)，不要另写同一公式。让目标来自同一接触物状态，并实际绘制返回的root/joint/end；明确镜头如何处理不可达投影、重合fallback与求解失败。数值调用、下游绘制消费、接触轮廓可读与艺术接受分别验证，不能只凭调用次数宣布复用有效。
+若选择二维两段定长肢体，先查既有`solveTwoLinkIK`及[两连杆合同](../../../engine/motion-elements/lib/foundations/geometry/two-link-ik/README.md#在作品里真正消费既有求解器)，不要另写同一公式。让目标来自同一接触物状态，并实际绘制返回的root/joint/end；明确镜头如何处理不可达投影、重合fallback与求解失败。数值调用、下游绘制消费、接触轮廓可读与艺术接受分别验证，不能只凭调用次数宣布复用有效。
 
 ## 6. 三道独立验收
 

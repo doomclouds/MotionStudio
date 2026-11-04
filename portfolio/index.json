@@ -23,8 +23,8 @@
     },
     {
       "id": "design.typographic-focus.v1",
-      "entry": "typographic-focus.mjs",
-      "guidance": "docs/typographic-focus.md",
+      "entry": "families/typographic-focus/index.mjs",
+      "guidance": "families/typographic-focus/README.md",
       "sourceCases": [
         "slow-roast-study",
         "hanzi-poster-study",
@@ -78,8 +78,8 @@
     },
     {
       "id": "design.semantic-data.v1",
-      "entry": "semantic-data.mjs",
-      "guidance": "docs/semantic-data.md",
+      "entry": "families/semantic-data/index.mjs",
+      "guidance": "families/semantic-data/README.md",
       "sourceCases": [
         "tea-conversation-map",
         "theatre-narrative-wave"
@@ -100,8 +100,8 @@
     },
     {
       "id": "design.expressive-type.v1",
-      "entry": "expressive-type.mjs",
-      "guidance": "docs/expressive-type.md",
+      "entry": "families/expressive-type/index.mjs",
+      "guidance": "families/expressive-type/README.md",
       "sourceCases": [
         "cycling-year-report",
         "wave-weather-study"

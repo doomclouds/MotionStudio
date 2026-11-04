@@ -8,7 +8,7 @@
 
 ## 自描述资产入口
 
-先由catalog的`evidence.guidance`直达当前合同，再读同目录design、实现、示例与测试。已共置[有限粒子](../../../engine/motion-elements/lib/foundations/motion/finite-particles/README.md)、[固定弦波](../../../engine/motion-elements/lib/foundations/motion/fixed-string-wave/README.md)、[孤立圆盘事件](../../../engine/motion-elements/lib/foundations/motion/hard-disc-events/README.md)、[最小间距点集](../../../engine/motion-elements/lib/foundations/layout/poisson-disc/README.md)。另有[层级面积](../../../engine/motion-elements/lib/foundations/layout/weighted-hierarchy/README.md)、[可见扇区](../../../engine/motion-elements/lib/foundations/geometry/visibility-fan/README.md)、[网格输运](../../../engine/motion-elements/lib/foundations/field/grid-transport/README.md)、[单介质光链](../../../engine/motion-elements/lib/foundations/geometry/ray-chain/README.md)。其余条目仍走各自guidance，不以这八项代表全库完成；共享底层不重复放进各资产。
+先由catalog的`evidence.guidance`直达当前合同，再读同目录design、实现、示例与测试。已共置[有限粒子](../../../engine/motion-elements/lib/foundations/motion/finite-particles/README.md)、[固定弦波](../../../engine/motion-elements/lib/foundations/motion/fixed-string-wave/README.md)、[孤立圆盘事件](../../../engine/motion-elements/lib/foundations/motion/hard-disc-events/README.md)、[最小间距点集](../../../engine/motion-elements/lib/foundations/layout/poisson-disc/README.md)。另有[层级面积](../../../engine/motion-elements/lib/foundations/layout/weighted-hierarchy/README.md)、[可见扇区](../../../engine/motion-elements/lib/foundations/geometry/visibility-fan/README.md)、[网格输运](../../../engine/motion-elements/lib/foundations/field/grid-transport/README.md)、[单介质光链](../../../engine/motion-elements/lib/foundations/geometry/ray-chain/README.md)。再有[两连杆IK](../../../engine/motion-elements/lib/foundations/geometry/two-link-ik/README.md)、[校准平面视差](../../../engine/motion-elements/lib/foundations/layout/plane-parallax/README.md)、[分区固定标题](../../../engine/motion-elements/lib/foundations/layout/sticky-interval/README.md)。其余条目仍走各自guidance，不以这十一项代表全库完成；共享底层不重复放进各资产。下文影片同字节/等价记录属于原冻结版本及当时迁移，当前IK、视差、sticky共置仅调相对validate导入，不把旧记录冒充新路径的影片等价或新艺术接受。
 
 ## 五层结构
 
@@ -250,7 +250,7 @@ Pixi官方shader与p5 mask具体源码/许可取舍见`docs/raster-reference-dec
 `geometry.two-link-ik`是1个纯二维几何机制，无新配方，不是全身rig、碰撞、力学或3D。
 root/target来自作品同一绝对帧状态，显式bend/fallback；用返回joint/end画骨段，不能把不可达end偷偷画到target掩盖投影。
 实际手掌轮廓与IK端点不是同一个接触定义：数值误差0后仍要看真实编码邻帧是否早贴、滑动或错位。
-完整参数/奇点/精度与复现见`docs/two-link-ik.md`；官方取舍见`docs/character-reference-decisions.md`。
+完整参数/奇点/精度与复现见`lib/foundations/geometry/two-link-ik/README.md`；官方取舍见`docs/character-reference-decisions.md`。
 
 14秒有声角色候选真实使用两臂正常可达两bend；旧路径、finite-settle和矩阵复用，不把脚步/表情/音效数成新项。
 原冻结求解器及实际导入依赖保持字节一致，真实调用与限段邻帧已核；作品此前视觉早贴版本不作成功证据，最终修版单独绑定。
@@ -263,7 +263,7 @@ root/target来自作品同一绝对帧状态，显式bend/fallback；用返回jo
 `composition.plane-parallax`将零相机对齐的平行画稿映到明确viewport，近远层横移/推进遵守同一关系。
 `planeParallaxLayout`不绘图、不排序、不clip，不把focalLength当独立光学变焦。
 实际14秒候选840次投影/每帧四层绘制，固定校准、同宽高比与正常near距离；其余数值边界只有工程验证。
-见`docs/plane-parallax.md`和`docs/parallax-reference-decisions.md`。直接模块及依赖字节绑定原片，公共index仅测试。
+见`lib/foundations/layout/plane-parallax/README.md`和`docs/parallax-reference-decisions.md`。直接模块及依赖字节绑定原片，公共index仅测试。
 技术和四个编码静帧核查不等于常速观看/听审：NOT_DONE、NOT_LISTENED保留；通用迁移NOT_RUN。
 用户正面反馈仅对应本海岸作品及逼真水面效果（POSITIVE_FEEDBACK_SCENE_SPECIFIC），不是所有参数或整库风格认可。
 主体身份、旧位移、裁切、生成画稿与声音不拆成更多机制；实际素材/参数/私有回执不含在公共源包。
@@ -275,7 +275,7 @@ root/target来自作品同一绝对帧状态，显式bend/fallback；用返回jo
 一支12.5秒候选两标题990次调用/绘制；三个phase有可见效果，离屏后的求值不算视觉覆盖。
 最终版9个sticky编码帧与4个交接/结尾帧限定审查通过；常速NOT_DONE、听审NOT_LISTENED及通用迁移NOT_RUN不改变。
 用户对本UI作品有限认可（LIMITED_ACCEPTANCE_NOT_STYLE_ENDORSEMENT），不误记为拒绝或优秀风格范例。
-完整合同见`docs/sticky-interval.md`；官方源码/许可判断见`docs/ui-scroll-reference-decisions.md`。
+完整合同见`lib/foundations/layout/sticky-interval/README.md`；官方源码/许可判断见`docs/ui-scroll-reference-decisions.md`。
 真实导入solver/依赖同字节，公共index只由测试验证；旧motion/reveal/shared handoff、海报美术和声音不重复计数。
 
 

@@ -2,7 +2,7 @@
 
 ## 当前入口（无旧路径兼容）
 
-`lib/index.mjs` 直接导出 `lib/foundations/field/attractor-field.mjs`、`lib/foundations/geometry/two-link-ik.mjs` 和 `lib/foundations/layout/sticky-interval.mjs`。三个同名平层 wrapper 已删除，现役消费者直接更新；不保重导出或路径回退。下文“保留旧入口”“三入口”“query wrapper”等属于当时迁移记录，不是当前可执行路径。原实现与作品锁未改；不得把当前目录整理称为原影片重渲染或升级接受状态。
+`lib/index.mjs` 直接导出 `lib/foundations/field/attractor-field.mjs`、`lib/foundations/geometry/two-link-ik/index.mjs` 和 `lib/foundations/layout/sticky-interval/index.mjs`。三个同名平层 wrapper 已删除，现役消费者直接更新；不保重导出或路径回退。下文“保留旧入口”“三入口”“query wrapper”等属于当时迁移记录，不是当前可执行路径。原实现与作品锁未改；不得把当前目录整理称为原影片重渲染或升级接受状态。
 
 ## 历史分类阶段记录
 
@@ -77,7 +77,7 @@ const state = sampleAttractorField(plan, {
 该阶段仅将两连杆solver归入已有geometry职责目录；旧入口显式re-export，index保持原路径，
 源码主体仅相对validate导入路径变化。0新增机制/作品，该历史节点计数为39基础＋7配方，不代表当前catalog总数。
 三入口函数===，同输入输出/异常合同不变。旧wrapper加query不再创建独立solver函数，
-需独立函数对象时使用canonical query URL；详见[two-link-ik.md](two-link-ik.md)。
+需独立函数对象时使用canonical query URL；详见[two-link-ik.md](../lib/foundations/geometry/two-link-ik/README.md)。
 
 Tessel锁13文件与Favorite52锁55文件均与本次迁移文件零交集，锁定字节未改。
 角色影片自己的冻结runtime/manifest不被改写；迁移版hash不同，不沿用历史同字节说法。
@@ -87,7 +87,7 @@ Tessel锁13文件与Favorite52锁55文件均与本次迁移文件零交集，锁
 
 此次只把既有纵向sticky约束归入layout职责目录，旧入口/index继续导出同一函数，0新增。
 数学主体仅相对validator路径变化，原API、IEEE阈值与验证行为保留。
-wrapper query与canonical query的身份差异见[sticky-interval.md](sticky-interval.md)。
+wrapper query与canonical query的身份差异见[sticky-interval.md](../lib/foundations/layout/sticky-interval/README.md)。
 Tessel13及Favorite52的55锁定文件零交集；原演出列表影片源码、runtime、manifest和媒体不变。
 迁移不是原片重制；用户有限认可、NOT_DONE常速、NOT_LISTENED听审、NOT_RUN通用迁移状态均不升级。
 
