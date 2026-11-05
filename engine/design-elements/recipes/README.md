@@ -30,3 +30,5 @@ The query is read-only and excludes uncommitted edits. Per-package contracts, ri
 [Screen-space ink path](candidates/screen-ink-path-candidate/README.md) derives affine point transformation, fixed screen-distance resampling and deterministic normal displacement from credited LemoLab code. It returns geometry only, with open-endpoint and nonperiodic seam limits; no character rig, renderer, film, registered family or portfolio work.
 
 [Umbrella pictogram geometry](candidates/umbrella-pictogram-geometry-candidate/README.md) extracts a credited normalized opening/furling silhouette and its shaft, hook and ferrule. It returns fixed-topology geometry only, with explicit bounded overshoot; no Canvas, palette, story, weather, physical cloth or registered family is bundled.
+
+[Original flat-color brush](candidates/flat-color-brush/README.md) draws a bounded tool illustration and returns its literal finite contact edge. Caller-owned straight ribbons and concave clipped rows are synthetic consumers, not a paint engine, formal family or accepted artwork.
