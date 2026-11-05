@@ -21,6 +21,34 @@ def shared_shelves_text():
 
 
 class DesignKnowledgeTests(unittest.TestCase):
+    def test_focus_and_tempo_guidance_has_one_body_and_reachable_routes(self):
+        # Navigation/contract regression only; never certify motion or listening.
+        skill = dk.ROOT.parents[1] / 'skills/motion-film-director'
+        if not skill.exists():
+            skill = dk.ROOT.parents[1]  # Portable skill layout.
+        body = (skill / 'references/motion.md').read_text()
+        heading = '## 重点交接与节奏判断'
+        self.assertEqual(body.count(heading), 1)
+        section = body.split(heading, 1)[1].split('\n## ', 1)[0]
+        for boundary in ('不是成功案例', '未实际听审就保留未验', '连续性不代替推进',
+                         '动作速度、有效变化密度与快慢对比', '可以有意硬切',
+                         '不设通用秒数、事件数或静止比例', '全部可见层'):
+            self.assertIn(boundary, section)
+        for page, target in (
+            (skill / 'SKILL.md', 'references/motion.md#重点交接与节奏判断'),
+            (skill / 'references/guided-self-review.md', 'motion.md#重点交接与节奏判断'),
+            (dk.ROOT / 'library/motion.md', '../../../skills/motion-film-director/references/motion.md#重点交接与节奏判断'),
+        ):
+            text = page.read_text()
+            # Portable layout rewriting makes the shelf link relative to its bundled body.
+            if page.is_relative_to(dk.ROOT) and not (dk.ROOT.parents[1] / 'skills').exists():
+                target = '../../../references/motion.md#重点交接与节奏判断'
+            self.assertIn('](' + target + ')', text)
+        review = (skill / 'references/guided-self-review.md').read_text()
+        for question in ('我首先看见什么', '哪里已经明白却还在等待', '哪里来不及读',
+                         '“更连续”与“更有节奏”分别裁决', '用户要求停止时'):
+            self.assertIn(question, review)
+
     def test_studies_are_direct_unique_routes_not_legacy_anchors(self):
         workflow = (dk.ROOT / 'reference-to-composition.md').read_text()
         self.assertLess(len(workflow.splitlines()), 180)
