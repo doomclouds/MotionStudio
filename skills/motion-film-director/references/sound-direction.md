@@ -2,6 +2,8 @@
 
 此页负责指挥与交接；[声音设计](sound.md)负责配乐/SFX、混音和技术边界，[主动寻源](sfx-sourcing.md)负责候选与来源，[视听审查](audiovisual-review-sop.md)负责证据。不要复制三套正文或另造验收 schema。仅安装 Motion portable 也可直接执行本页；仓库另有 `skills/sound-director/SKILL.md` 作为独立入口，不必启动额外代理。
 
+需要亲自完成音乐编排、配音take、拟音或混音取舍时，按需读[声音制作工艺](sound-craft.md)。它将叙事→声部→制作→听审展开为具体动作，引用一手资料但不冒称实际听过示例，也不把通用建议变成新API或已验配方。
+
 先查 [声音书架](../../../knowledge/sound/INDEX.md) 与 [声音资产目录](../../../engine/sound-elements/INDEX.md)，逐件读合同后选择，不把目录命中当适用或听审。资产代码/文件由 Sound Elements 管，裁剪/混音仍由 Audio Core 管；已有合适声音可保留，缺适用素材再按寻源流程核权。
 
 ## 1. 听懂委托，冻结基线

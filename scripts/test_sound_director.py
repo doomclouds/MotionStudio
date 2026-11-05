@@ -13,7 +13,8 @@ spec.loader.exec_module(layout)
 PAGES = ['skills/sound-director/SKILL.md', 'skills/sound-director/VALIDATION.md',
          'skills/motion-film-director/references/sound-direction.md',
          'skills/motion-film-director/references/voice-direction.md',
-         'skills/motion-film-director/references/rebuild-handoff.md']
+         'skills/motion-film-director/references/rebuild-handoff.md',
+         'skills/motion-film-director/references/sound-craft.md']
 
 class SoundDirectorTests(unittest.TestCase):
     def test_repository_routes(self):
@@ -92,6 +93,20 @@ class SoundDirectorTests(unittest.TestCase):
             self.assertIn('package-lock.json', text)
             self.assertNotIn('没有 lockfile', text)
             self.assertNotIn('npm install --ignore-scripts', text)
+
+    def test_sound_craft_is_routed_and_preserves_review_boundaries(self):
+        # Documentation regression only: these words cannot certify a listener,
+        # usable external TTS service, or an artistically successful soundtrack.
+        for name in ['skills/sound-director/SKILL.md',
+                     'knowledge/sound/INDEX.md', PAGES[2], PAGES[3],
+                     'skills/motion-film-director/references/sound.md']:
+            self.assertIn('sound-craft.md', (ROOT / name).read_text())
+        text = (ROOT / PAGES[-1]).read_text()
+        for required in ['先听角色', '写最小动机', '按完整意群', '感知锚点',
+                         '先编排和增益', 'NOT_LISTENED', '不是电影叙事质量评分法',
+                         '不是宣称已获得干净分轨', 'asset.json',
+                         '来源文字核对', '不新增引擎、资产库或验收协议']:
+            self.assertIn(required, text)
 
     def test_rebuild_handoff_has_all_director_consumers(self):
         for name in ['skills/motion-film-director/SKILL.md',

@@ -18,6 +18,7 @@
 ## 按工作阶段阅读
 
 - [声音导演](../../skills/motion-film-director/references/sound-direction.md)：brief、实际参考听审、AB选择、反馈和职责交接。
+- [声音制作工艺](../../skills/motion-film-director/references/sound-craft.md)：参考拆解、原创动机与段落、配音take、拟音/UI声、感知锚点、混音诊断与质量问题；一手资料支持的方法建议，不是已听审作品或新资产库存。
 - [声音设计](../../skills/motion-film-director/references/sound.md)：音乐/事件/静默关系。
 - [寻找新音效](../../skills/motion-film-director/references/sfx-sourcing.md)：外部原作者资料、逐项核权、私有候选采集；旧 SFX 工具保持空的公开来源种子，不复制已保留资产事实。
 - [Audio Core](../../engine/motion-audio-core/README.md) 和 [Timeline Core](../../engine/motion-timeline-core/README.md)：执行支持范围、源裁剪、显式增益和混音，不自动 ducking 或 loop。
