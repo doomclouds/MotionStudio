@@ -10,6 +10,8 @@ spec.loader.exec_module(policy)
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--output', required=True, type=Path)
+    parser.add_argument('--aliyun-skills', action='store_true',
+                        help='Bundle four Aliyun model skills beside one shared Motion dependency')
     parser.add_argument('--media-skills', action='store_true',
                         help='Bundle three media workflow skills beside one shared Motion dependency')
     args = parser.parse_args()
@@ -36,7 +38,7 @@ def main():
             rel = 'runtime/' + name.removeprefix('engine/')
         elif name in ('tools/reference-benchmark/event_intervals.py', 'tools/reference-benchmark/test_event_intervals.py', 'tools/reference-benchmark/event-intervals.example.synthetic.json', 'tools/reference-benchmark/EVENT_INTERVALS.md', 'tools/reference-benchmark/event_interval_report.py', 'tools/reference-benchmark/test_event_interval_report.py', 'tools/reference-benchmark/EVENT_INTERVAL_REPORT.md', 'tools/reference-benchmark/stem_balance.py', 'tools/reference-benchmark/test_stem_balance.py', 'tools/reference-benchmark/STEM_BALANCE.md', 'tools/reference-benchmark/event_correspondence.py', 'tools/reference-benchmark/test_event_correspondence.py', 'tools/reference-benchmark/example_event_correspondence.py', 'tools/reference-benchmark/EVENT_CORRESPONDENCE.md'):
             rel = 'runtime/review-tools/' + name.rsplit('/', 1)[1]
-        elif name in ('scripts/audio_review.py', 'scripts/audiovisual_review.py', 'scripts/test_audio_review.py', 'scripts/test_audiovisual_review.py', 'scripts/AUDIO-REVIEW.md'):
+        elif name in ('scripts/audio_review.py', 'scripts/audiovisual_review.py', 'scripts/test_audio_review.py', 'scripts/test_audiovisual_review.py', 'scripts/AUDIO-REVIEW.md', 'scripts/aliyun_video_review.py', 'scripts/test_aliyun_video_review.py', 'scripts/aliyun_audio_generation.py', 'scripts/test_aliyun_audio_generation.py', 'scripts/ALIYUN-MEDIA.md'):
             rel = 'runtime/review-tools/' + name.rsplit('/', 1)[1]
         elif name in ('LICENSE', '.env.example'):
             rel = name
@@ -108,7 +110,7 @@ def main():
     required += ['runtime/sound-elements/assets/' + ('bgm/' if ident == 'quiet-pulse-bed' else 'sfx/') + ident + '/' + name for name in ('asset.json', 'design.md') for ident in ('soft-tick', 'settle-chime', 'air-pass', 'low-land', 'quiet-pulse-bed', 'paper-rub', 'print-snap', 'resonant-tap', 'keyboard-press', 'keyboard-soft')]
     required += ['runtime/motion-render-core/scripts/render.mjs']
     required += ['scripts/video_knowledge.py', 'scripts/static_knowledge.py', 'scripts/test_video_knowledge.py', 'scripts/test_static_knowledge.py', 'research/video-knowledge/STATIC-SCHEMA.md']
-    required += ['runtime/review-tools/' + name for name in ('audio_review.py', 'audiovisual_review.py', 'test_audio_review.py', 'test_audiovisual_review.py', 'AUDIO-REVIEW.md')]
+    required += ['runtime/review-tools/' + name for name in ('audio_review.py', 'audiovisual_review.py', 'test_audio_review.py', 'test_audiovisual_review.py', 'AUDIO-REVIEW.md', 'aliyun_video_review.py', 'test_aliyun_video_review.py', 'aliyun_audio_generation.py', 'test_aliyun_audio_generation.py', 'ALIYUN-MEDIA.md')]
     required += ['references/audiovisual-review-sop.md', '.env.example',
                  'references/audiovisual-report-standard.md', 'references/report-schema.json',
                  'references/review-calibration-lessons.md', 'scripts/validate_delivery_report.py',
@@ -139,16 +141,20 @@ def main():
     manifest = {'schema': 1, 'files': [{'path': name, 'bytes': len(data), 'sha256': hashlib.sha256(data).hexdigest()} for name, data in sorted(payload.items())]}
     payload['manifest.json'] = (json.dumps(manifest, ensure_ascii=False, indent=2)+'\n').encode()
     archive_payload = {'motion-film-director/' + name: data for name, data in payload.items()}
-    if args.media_skills:
-        sources = ['skills/' + name + '/SKILL.md' for name in layout.MEDIA_SKILLS]
-        sources.append('skills/MEDIA-SKILLS.md')
+    if args.media_skills or args.aliyun_skills:
+        selected = (layout.MEDIA_SKILLS if args.media_skills else ()) + (layout.ALIYUN_SKILLS if args.aliyun_skills else ())
+        sources = ['skills/' + name + '/SKILL.md' for name in selected]
+        if args.media_skills:
+            sources.append('skills/MEDIA-SKILLS.md')
+        if args.aliyun_skills:
+            sources.append('skills/ALIYUN-SKILLS.md')
         for source in sources:
             if source not in names:
                 raise SystemExit('Required tracked media workflow source missing: ' + source)
             archive_payload[layout.media_bundle_path(source)] = layout.media_entry_bytes(ROOT, source)
         archive_payload['LICENSE'] = payload['LICENSE']
         bundle_manifest = {'schema': 'media-skills-bundle/1',
-            'skills': list(layout.MEDIA_SKILLS), 'shared_dependency': 'motion-film-director',
+            'skills': list(selected), 'shared_dependency': 'motion-film-director',
             'files': [{'path': name, 'bytes': len(data), 'sha256': hashlib.sha256(data).hexdigest()}
                       for name, data in sorted(archive_payload.items())]}
         archive_payload['bundle-manifest.json'] = (json.dumps(bundle_manifest, ensure_ascii=False, indent=2)+'\n').encode()

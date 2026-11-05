@@ -5,6 +5,7 @@
 - 开工记录实际分支、commit、任务范围和允许修改的路径；不要假设 dev 始终停在草案基线。
 - UI 设计（直接委托或影片中存在明确 UI 设计缺口）读 [UI 设计导演](skills/ui-design-director/SKILL.md)，共享知识只读 [knowledge/design](knowledge/design/INDEX.md) 真源，当前旧设计知识路径与CLI已直接迁移、不保留兼容层；此为仓库文件入口，不代表宿主自动注册或多代理调度。
 - 声音、配乐或旁白/配音任务读 [声音导演](skills/sound-director/SKILL.md)；从 [声音书架](knowledge/sound/INDEX.md) 发现 [独立资产合同](engine/sound-elements/INDEX.md)，复用现有声音/听审正文，不把结构验证当实际听审。
+- 明确使用阿里云模型时读 [阿里云媒体 Skills](skills/ALIYUN-SKILLS.md)：视频/音频审核走 Qwen3.8 Omni，配乐走北京邀测 FunMusic，配音/旁白走 Qwen TTS；默认只 dry-run，配置 key 不代表媒体传输/付费已授权。
 - 独立检查已有媒体时直达 [视频审核](skills/video-review/SKILL.md) 或 [音频审核](skills/audio-review/SKILL.md)，配乐制作/修订直达 [配乐生产](skills/soundtrack-production/SKILL.md)；三者复用既有正文与工具，不重复建引擎/证据合同，不因配置 key 自动上传或付费。
 - 制作任务再读 [导演 Skill](skills/motion-film-director/SKILL.md)；实现任务先读所属模块 README、契约与测试。查阅路径见 [按需加载](specs/production-and-knowledge.md)。
 - [源码范围](SOURCE-SCOPE.md)、[第三方声明](THIRD_PARTY_NOTICES.md)、各级 LICENSE/NOTICE/RIGHTS 与现有安全门禁不可因整理而删除、降级或绕过；冲突按 [治理规则](specs/README.md) 停止相关变更并报告。

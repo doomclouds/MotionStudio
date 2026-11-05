@@ -16,7 +16,7 @@ def expected_source_bytes(rel, layout):
     if rel.startswith(('knowledge/design/', 'knowledge/sound/')) or rel in {'scripts/design_knowledge.py', 'scripts/test_design_knowledge.py'}:
         source = rel
     else:
-        source = (('scripts/' if rel.rsplit('/', 1)[1] in {'audio_review.py', 'audiovisual_review.py', 'test_audio_review.py', 'test_audiovisual_review.py', 'AUDIO-REVIEW.md'} else 'tools/reference-benchmark/') + rel.removeprefix('runtime/review-tools/') if rel.startswith('runtime/review-tools/') else 'engine/' + rel.removeprefix('runtime/') if rel.startswith('runtime/') else rel if rel in {'LICENSE', '.env.example'} else 'skills/motion-film-director/' + rel)
+        source = (('scripts/' if rel.rsplit('/', 1)[1] in {'audio_review.py', 'audiovisual_review.py', 'test_audio_review.py', 'test_audiovisual_review.py', 'AUDIO-REVIEW.md', 'aliyun_video_review.py', 'test_aliyun_video_review.py', 'aliyun_audio_generation.py', 'test_aliyun_audio_generation.py', 'ALIYUN-MEDIA.md'} else 'tools/reference-benchmark/') + rel.removeprefix('runtime/review-tools/') if rel.startswith('runtime/review-tools/') else 'engine/' + rel.removeprefix('runtime/') if rel.startswith('runtime/') else rel if rel in {'LICENSE', '.env.example'} else 'skills/motion-film-director/' + rel)
     return layout.source_bytes(ROOT, source)
 
 def main():

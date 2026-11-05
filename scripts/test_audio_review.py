@@ -75,6 +75,20 @@ class AudioReviewTests(unittest.TestCase):
     def test_official_endpoint(self):
         self.assertEqual(a.endpoint(a.BASE_URL), a.BASE_URL)
         a.endpoint('https://workspace-123.cn-beijing.maas.aliyuncs.com/compatible-mode/v1')
+    def test_workspace_and_environment_cannot_redirect_cli(self):
+        expected = 'https://fixture-workspace.cn-beijing.maas.aliyuncs.com/compatible-mode/v1'
+        self.assertEqual(a.workspace_endpoint('fixture-workspace'), expected)
+        for value in (None, '', 'x.evil', '../x', 'x/route', 'x@evil', 'x' * 64):
+            with self.subTest(value=value), self.assertRaises(a.ReviewError):
+                a.workspace_endpoint(value)
+        for extra, route in [([], a.BASE_URL), (['--workspace-id', 'fixture-workspace'], expected)]:
+            with patch.dict(os.environ, {'DASHSCOPE_BASE_URL': 'https://untrusted.invalid'}), \
+                 patch.object(a, 'load_project_key', side_effect=AssertionError('Private config read')), \
+                 patch.object(a, 'execute', return_value={}) as run, \
+                 patch.object(a.sys, 'argv', ['audio_review.py', '--audio', str(self.audio)] + extra), \
+                 patch('sys.stdout', new=io.StringIO()):
+                self.assertEqual(a.main(), 0)
+                self.assertEqual(run.call_args.args[3], route)
     def test_budget_bounds(self):
         for value in (0, .00001, 1, float('nan'), float('inf')):
             with self.subTest(value=value), self.assertRaises(a.ReviewError): self.run_live(budget=value)

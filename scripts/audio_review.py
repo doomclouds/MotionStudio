@@ -18,7 +18,7 @@ import wave
 
 MODEL = 'qwen3.8-omni-flash'
 BASE_URL = 'https://cn-beijing.maas.qianwenaiapi.com/compatible-mode/v1'
-PRICE_DATE = date(2026, 11, 4)
+PRICE_DATE = date(2026, 11, 5)
 # Verified official Beijing non-realtime pricing; see AUDIO-REVIEW.md.
 INPUT_CNY_PER_MILLION = .8
 OUTPUT_CNY_PER_MILLION = 2.7
@@ -99,6 +99,13 @@ def endpoint(value):
     if value not in fixed and not re.fullmatch(workspace, value):
         raise ReviewError('Endpoint refused: only verified Beijing official endpoints are allowed')
     return value
+
+
+def workspace_endpoint(workspace_id):
+    """Non-secret workspace routing; never accepts a caller-controlled host."""
+    if not isinstance(workspace_id, str) or not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9-]{0,62}', workspace_id):
+        raise ReviewError('Invalid Beijing workspace ID')
+    return endpoint(f'https://{workspace_id}.cn-beijing.maas.aliyuncs.com/compatible-mode/v1')
 
 
 def clip(path, max_duration=20):
@@ -335,6 +342,7 @@ def main():
     p.add_argument('--budget-cny', type=float, default=.10)
     p.add_argument('--output', default='output/audio-review')
     p.add_argument('--live', action='store_true')
+    p.add_argument('--workspace-id', help='Non-secret Beijing workspace ID; no arbitrary endpoint override')
     p.add_argument('--consent-upload', action='store_true', help='Only after authorization covering these clips, provider, purpose and budget')
     p.add_argument('--pricing-confirmed-on', help='YYYY-MM-DD, after checking official current Beijing prices')
     args = p.parse_args()
@@ -347,7 +355,8 @@ def main():
             os.environ['DASHSCOPE_API_KEY'] = configured_key
         elif args.live:
             os.environ.pop('DASHSCOPE_API_KEY', None)
-        report = execute(args.audio, args.budget_cny, args.output, os.environ.get('DASHSCOPE_BASE_URL', BASE_URL), args.consent_upload, args.live, args.pricing_confirmed_on)
+        base = workspace_endpoint(args.workspace_id) if args.workspace_id else BASE_URL
+        report = execute(args.audio, args.budget_cny, args.output, base, args.consent_upload, args.live, args.pricing_confirmed_on)
         print(json.dumps(report, ensure_ascii=False, indent=2))
         return 0 if not args.live or report['native_audio_review'] == 'reviewed' else 2
     except ReviewError as e:

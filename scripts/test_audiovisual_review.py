@@ -58,6 +58,15 @@ class AVTests(unittest.TestCase):
         self.assertFalse(self.session.exists())
     def test_no_key_no_call(self):
         with self.assertRaises(av.a.ReviewError):self.run_call(key='')
+    def test_workspace_route_is_validated_and_used_in_transport_and_receipt(self):
+        base = av.a.workspace_endpoint('fixture-workspace')
+        def sender(*args, **kwargs):
+            self.assertEqual(args[1], base)
+            return self.send()
+        result = self.run_call(base=base, send=sender)
+        self.assertEqual(result['endpoint'], base)
+        with self.assertRaises(av.a.ReviewError):
+            self.run_call(base='https://untrusted.invalid/compatible-mode/v1')
     def test_success_never_approval(self):
         r=self.run_call();self.assertEqual(r['status'],'model_assisted_review_completed');self.assertFalse(r['human_listening']);self.assertFalse(r['delivery_approved']);self.assertEqual(r['audiovisual_sync'],'unverified')
     def test_failure_cannot_retry(self):

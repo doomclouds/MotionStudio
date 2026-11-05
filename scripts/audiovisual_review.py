@@ -201,11 +201,12 @@ def payload(manifest):
     return body
 
 
-def call(manifest_path, session, key, consent=False, acknowledge_previous=False, send=a.request_review, price_confirmed=None, budget=.10):
+def call(manifest_path, session, key, consent=False, acknowledge_previous=False, send=a.request_review, price_confirmed=None, budget=.10, base=a.BASE_URL):
+    base = a.endpoint(base)
     if not consent:
         raise a.ReviewError('Specific external review authorization required')
     if not key or any(c.isspace() for c in key):
-        raise a.ReviewError('Missing or invalid stdin credential')
+        raise a.ReviewError('Missing or invalid configured credential')
     a.require_current_pricing(price_confirmed)
     if not math.isfinite(budget) or not RESERVATION <= budget <= .10:
         raise a.ReviewError('Session budget must cover reservation and be <=0.10 CNY')
@@ -237,12 +238,12 @@ def call(manifest_path, session, key, consent=False, acknowledge_previous=False,
         index=len(starts)+1
         a.append_record(log,{'state':'reserved','index':index,'movie_sha256':manifest['movie']['sha256'],'reservation_cny':RESERVATION,'source_interval_s':interval,'time_utc':datetime.now(timezone.utc).isoformat()})
         report={'schema_version':1,'status':'blocked','human_listening':False,'delivery_approved':False,
-            'input_manifest_sha256':manifest_digest,'input':manifest,'model':a.MODEL,'endpoint':a.BASE_URL,
+            'input_manifest_sha256':manifest_digest,'input':manifest,'model':a.MODEL,'endpoint':base,
             'region':'cn-beijing','reservation_cny':RESERVATION,'started_utc':datetime.now(timezone.utc).isoformat(),
             'price_snapshot':a.PRICE_DATE.isoformat(),'session_budget_cny':budget,
             'source_interval_s':interval,'coverage_kind':'selected_audio_window_plus_sparse_frames' if window else 'full_audio_plus_sparse_frames','audiovisual_sync':'unverified','adjudication':'required'}
         try:
-            review,usage,receipt=send(b'',a.BASE_URL,key,payload_override=body,include_metadata=True)
+            review,usage,receipt=send(b'',base,key,payload_override=body,include_metadata=True)
             safe_usage,cost=a.usage_cost(usage)
             a.validate_review(review,manifest['audio']['duration_s'])
             serialized=json.dumps([review,receipt])
@@ -266,13 +267,15 @@ def main():
     p=argparse.ArgumentParser(description=__doc__); sub=p.add_subparsers(dest='action',required=True)
     prepare_p=sub.add_parser('prepare');prepare_p.add_argument('movie');prepare_p.add_argument('--expected-sha256',required=True);prepare_p.add_argument('--output',required=True);prepare_p.add_argument('--start-s',type=float);prepare_p.add_argument('--duration-s',type=float)
     call_p=sub.add_parser('call');call_p.add_argument('manifest');call_p.add_argument('--session',required=True);call_p.add_argument('--consent-upload',action='store_true');call_p.add_argument('--acknowledge-previous',action='store_true');call_p.add_argument('--pricing-confirmed-on');call_p.add_argument('--budget-cny',type=float,default=.10)
+    call_p.add_argument('--workspace-id', help='Non-secret Beijing workspace ID')
     args=p.parse_args()
     try:
         if args.action=='prepare': prepare(args.movie,args.expected_sha256,args.output,args.start_s,args.duration_s);print('PREPARED_NO_NETWORK');return 0
         key=a.load_project_key(__file__)
         if not key:
             print(json.dumps(a.skipped_not_configured(),ensure_ascii=False));return 0
-        result=call(args.manifest,args.session,key,args.consent_upload,args.acknowledge_previous,price_confirmed=args.pricing_confirmed_on,budget=args.budget_cny)
+        base=a.workspace_endpoint(args.workspace_id) if args.workspace_id else a.BASE_URL
+        result=call(args.manifest,args.session,key,args.consent_upload,args.acknowledge_previous,price_confirmed=args.pricing_confirmed_on,budget=args.budget_cny,base=base)
         print(result['status']);return 0 if result['status']=='model_assisted_review_completed' else 2
     except a.ReviewError as e: print(str(e),file=sys.stderr);return 2
     except Exception: print('LOCAL_PREPARATION_OR_CONFIGURATION_BLOCKED',file=sys.stderr);return 2

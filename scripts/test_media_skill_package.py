@@ -24,6 +24,9 @@ def digest(path):
 
 
 class MediaBundleTests(unittest.TestCase):
+    skills = SKILLS
+    flag = "--media-skills"
+    document = "MEDIA-SKILLS.md"
     @classmethod
     def run_command(cls, *args, cwd=None, env=None, check=True):
         result = subprocess.run([str(x) for x in args], cwd=cwd or cls.motion,
@@ -48,11 +51,12 @@ class MediaBundleTests(unittest.TestCase):
         cls.env = dict(os.environ, GIT_INDEX_FILE=str(disposable))
         # Include authored new paths before commit, without staging anyone's real index.
         paths = ['scripts/build-skill.py', 'scripts/skill-layout.py', 'scripts/audio_review.py',
-                 'scripts/AUDIO-REVIEW.md', 'skills/motion-film-director/SKILL.md', 'skills/MEDIA-SKILLS.md']
-        paths += ['skills/' + name + '/SKILL.md' for name in SKILLS]
+                 'scripts/AUDIO-REVIEW.md', 'skills/motion-film-director/SKILL.md', 'skills/' + cls.document]
+        paths += ['scripts/' + name for name in ('aliyun_video_review.py', 'test_aliyun_video_review.py', 'aliyun_audio_generation.py', 'test_aliyun_audio_generation.py', 'ALIYUN-MEDIA.md')]
+        paths += ['skills/' + name + '/SKILL.md' for name in cls.skills]
         cls.run_command('git', 'add', '--', *paths, cwd=ROOT)
         cls.archive = cls.root / 'media.zip'
-        cls.run_command('python3', ROOT / 'scripts/build-skill.py', '--media-skills', '--output', cls.archive, cwd=ROOT)
+        cls.run_command('python3', ROOT / 'scripts/build-skill.py', cls.flag, '--output', cls.archive, cwd=ROOT)
         cls.fresh = cls.root / 'fresh'
         with zipfile.ZipFile(cls.archive) as archive:
             archive.extractall(cls.fresh)
@@ -87,14 +91,14 @@ io.open = protect(io.open)
 
     def test_four_discoverable_entries_manifest_bytes_and_no_private_payload(self):
         manifest = json.loads((self.fresh / 'bundle-manifest.json').read_text())
-        self.assertEqual(manifest['skills'], list(SKILLS))
+        self.assertEqual(manifest['skills'], list(self.skills))
         self.assertEqual(manifest['shared_dependency'], 'motion-film-director')
         files = {p.relative_to(self.fresh).as_posix(): p for p in self.fresh.rglob('*') if p.is_file()}
         self.assertEqual({row['path'] for row in manifest['files']}, set(files) - {'bundle-manifest.json'})
         for row in manifest['files']:
             self.assertEqual(row['bytes'], files[row['path']].stat().st_size)
             self.assertEqual(row['sha256'], digest(files[row['path']]))
-        for name in (*SKILLS, 'motion-film-director'):
+        for name in (*self.skills, 'motion-film-director'):
             self.assertIn(f'name: {name}', (self.fresh / name / 'SKILL.md').read_text().split('---', 2)[1])
         for name in files:
             self.assertFalse(name.endswith(('.mp4', '.wav', '.mp3', '.env')), name)
@@ -102,7 +106,7 @@ io.open = protect(io.open)
         self.assertEqual([p.parent.parent for p in self.fresh.glob('*/runtime/motion-audio-core')], [self.motion])
 
     def test_all_new_relative_links_stay_inside_bundle_and_resolve(self):
-        pages = [self.fresh / name / 'SKILL.md' for name in SKILLS] + [self.fresh / 'MEDIA-SKILLS.md']
+        pages = [self.fresh / name / 'SKILL.md' for name in self.skills] + [self.fresh / self.document]
         for page in pages:
             for target in re.findall(r'\]\(([^)]+)\)', page.read_text()):
                 if re.match(r'[a-zA-Z][a-zA-Z0-9+.-]*:', target):

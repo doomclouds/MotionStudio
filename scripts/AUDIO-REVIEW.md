@@ -14,8 +14,9 @@ them beside one shared Motion dependency; the default single-skill archive is un
 it asks for observed music/speech/effects/ambience and uncertainty. The existing
 response categories remain compatible (`other` covers speech/ambience). This
 prompt change is not a real-listening or provider-quality validation.
-Neither adapter generates music, speech or stems. A configured Aliyun key is not
-proof that any music-generation service or model has been implemented.
+These two adapters do not generate audio. Dedicated Aliyun native-video, music
+and speech routes are documented in `ALIYUN-MEDIA.md` and `skills/ALIYUN-SKILLS.md`.
+A configured key does not prove model access or authorize media transmission/payment.
 
 ## Fixed private configuration
 
@@ -81,7 +82,11 @@ Fixed Beijing endpoint: `https://cn-beijing.maas.qianwenaiapi.com/compatible-mod
 Standard platform proxy/TLS behavior is preserved, with no redirects, fallback
 endpoints, tools/search or automatic retries. Model: `qwen3.8-omni-flash`.
 
-Official pricing and API documentation checked 2026-11-04 (non-realtime model only):
+Pass `--workspace-id WORKSPACE_ID` on audio/AV calls to use the current Beijing
+workspace endpoint `https://{WorkspaceId}.cn-beijing.maas.aliyuncs.com/compatible-mode/v1`.
+The existing fixed compatible endpoint remains the default; no environment URL override.
+
+Official pricing and API documentation checked 2026-11-05 (non-realtime model only):
 - https://help.aliyun.com/zh/model-studio/qwen3-8-omni-flash
 - https://help.aliyun.com/zh/model-studio/qwen-omni
 - https://help.aliyun.com/zh/model-studio/model-pricing

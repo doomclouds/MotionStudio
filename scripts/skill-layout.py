@@ -6,6 +6,8 @@ import re
 def package_path(source):
     if source.startswith('skills/motion-film-director/'):
         return source.removeprefix('skills/motion-film-director/')
+    if source in {'scripts/AUDIO-REVIEW.md', 'scripts/ALIYUN-MEDIA.md'}:
+        return 'runtime/review-tools/' + source.rsplit('/', 1)[1]
     if source.startswith('engine/'):
         return 'runtime/' + source.removeprefix('engine/')
     return source  # knowledge/design, shared scripts and root license retain their paths.
@@ -35,16 +37,17 @@ def source_bytes(root, source):
 
 
 MEDIA_SKILLS = ('video-review', 'audio-review', 'soundtrack-production')
+ALIYUN_SKILLS = ('aliyun-video-review', 'aliyun-audio-review', 'aliyun-music', 'aliyun-speech')
 
 
 def media_bundle_path(source):
     """One shared Motion dependency, with independently discoverable siblings."""
-    if source == 'skills/MEDIA-SKILLS.md':
-        return 'MEDIA-SKILLS.md'
-    if any(source.startswith('skills/' + name + '/') for name in MEDIA_SKILLS):
+    if source in ('skills/MEDIA-SKILLS.md', 'skills/ALIYUN-SKILLS.md'):
         return source.removeprefix('skills/')
-    if source == 'scripts/AUDIO-REVIEW.md':
-        return 'motion-film-director/runtime/review-tools/AUDIO-REVIEW.md'
+    if any(source.startswith('skills/' + name + '/') for name in MEDIA_SKILLS + ALIYUN_SKILLS):
+        return source.removeprefix('skills/')
+    if source in ('scripts/AUDIO-REVIEW.md', 'scripts/ALIYUN-MEDIA.md'):
+        return 'motion-film-director/runtime/review-tools/' + source.rsplit('/', 1)[1]
     return 'motion-film-director/' + package_path(source)
 
 
