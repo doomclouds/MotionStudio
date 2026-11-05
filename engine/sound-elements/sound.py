@@ -178,7 +178,7 @@ def main(argv=None):
     p.add_argument('--library',type=Path,default=ROOT)
     p.add_argument('--id');p.add_argument('--kind',choices=sorted(CATEGORIES));p.add_argument('--category');p.add_argument('--mood');p.add_argument('--include-retired',action='store_true')
     p.add_argument('--output',type=Path);p.add_argument('--repeats',type=int,default=1)
-    p.add_argument('--variant',type=int,default=0,help='Explicit synthesis variant: keyboard-press 0..3; all other assets 0 only')
+    p.add_argument('--variant',type=int,default=0,help='Explicit synthesis variant: keyboard-press/keyboard-soft 0..3; all other assets 0 only')
     a=p.parse_args(argv)
     try:
         require(a.command=='render' or a.variant==0,'--variant applies only to render')

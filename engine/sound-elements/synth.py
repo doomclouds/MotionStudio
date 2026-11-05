@@ -9,7 +9,8 @@ import wave
 
 RATE = 48000
 DURATIONS = {'soft-tick': 0.12, 'settle-chime': 0.8, 'air-pass': 0.6, 'low-land': 0.35, 'quiet-pulse-bed': 8.0,
-             'paper-rub': 0.24, 'print-snap': 0.12, 'resonant-tap': 0.48, 'keyboard-press': 0.052}
+             'paper-rub': 0.24, 'print-snap': 0.12, 'resonant-tap': 0.48, 'keyboard-press': 0.052,
+             'keyboard-soft': 0.04}
 
 # Finite authored alternatives, not unbounded randomization or an acoustic model.
 # (noise seed, body frequency multiplier, release onset in seconds)
@@ -17,10 +18,22 @@ DURATIONS = {'soft-tick': 0.12, 'settle-chime': 0.8, 'air-pass': 0.6, 'low-land'
 KEYBOARD_VARIANTS = ((84701, 1.0, .019), (45047, .985, .018),
                      (13337, 1.015, .020), (96731, .995, .0185))
 
+# (seed, upper Hz, lower Hz, body Hz, press decay, body decay,
+#  release seconds, press gain, body gain, release gain).
+# 0/1: alternate letter keys; 2: wider space key; 3: enter key.
+# These are authored synthesis roles, not measured hardware or a realism claim.
+SOFT_KEYBOARD_VARIANTS = (
+    (104729, 4200, 1150, 780, 235, 200, .012, .23, .23, .031),
+    (130363, 3900, 1050, 820, 250, 210, .011, .22, .24, .029),
+    (155921, 3300, 900, 490, 185, 155, .014, .19, .33, .036),
+    (196613, 3900, 1100, 620, 205, 175, .013, .24, .29, .033),
+)
+
 def validate_variant(recipe, variant):
     if recipe not in DURATIONS:
         raise ValueError('Unsupported recipe')
-    count = len(KEYBOARD_VARIANTS) if recipe == 'keyboard-press' else 1
+    count = (len(KEYBOARD_VARIANTS) if recipe == 'keyboard-press' else
+             len(SOFT_KEYBOARD_VARIANTS) if recipe == 'keyboard-soft' else 1)
     if type(variant) is not int or not 0 <= variant < count:
         raise ValueError(f'{recipe}: variant must be an integer from 0 to {count-1}')
 
@@ -29,7 +42,10 @@ def samples(recipe, variant=0):
     n = round(DURATIONS[recipe] * RATE)
     state, body_ratio, release_at = (KEYBOARD_VARIANTS[variant] if recipe == 'keyboard-press'
                                      else (1977, 1.0, .019))
-    low_fast = low_slow = 0.0
+    if recipe == 'keyboard-soft':
+        (state, upper, lower, body_hz, press_decay, body_decay, release_at,
+         press_gain, body_gain, release_gain) = SOFT_KEYBOARD_VARIANTS[variant]
+    low_fast = low_slow = low_body = 0.0
     for i in range(n):
         t, u = i / RATE, i / (n - 1)
         envelope = math.sin(math.pi * u) ** 2  # both endpoints zero
@@ -73,6 +89,22 @@ def samples(recipe, variant=0):
             release = min(release_t/.001, 1) * math.exp(-190*release_t)
             tail = max(0, min((DURATIONS[recipe]-1/RATE-t)/.004, 1))
             value = (.11*band*press + .075*body + .024*band*release) * tail
+        elif recipe == 'keyboard-soft':
+            # Short band-shaped noise only: no oscillator, bell, carriage return,
+            # metallic resonator, reverb or pitch slide. No auto key selection.
+            state = (1664525 * state + 1013904223) & 0xffffffff
+            noise = state / 2147483648 - 1
+            low_fast += (1 - math.exp(-2*math.pi*upper/RATE)) * (noise-low_fast)
+            low_slow += (1 - math.exp(-2*math.pi*lower/RATE)) * (noise-low_slow)
+            low_body += (1 - math.exp(-2*math.pi*body_hz/RATE)) * (noise-low_body)
+            attack = min(t/.0008, 1)
+            press = attack * math.exp(-press_decay*t)
+            body = attack * math.exp(-body_decay*t)
+            release_t = max(t-release_at, 0)
+            release = min(release_t/.0007, 1) * math.exp(-330*release_t)
+            tail = max(0, min((DURATIONS[recipe]-1/RATE-t)/.003, 1))
+            value = (press_gain*(low_fast-low_slow)*press + body_gain*low_body*body
+                     + release_gain*(low_fast-low_slow)*release) * tail
         elif recipe == 'quiet-pulse-bed':
             # 8 seconds at 60 BPM: integer cycles and modulation make a periodic source.
             pulse = .55 + .45 * math.cos(2*math.pi*t)

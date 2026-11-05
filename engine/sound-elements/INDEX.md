@@ -8,6 +8,8 @@
   以噪声能量包络支持跨区域移动。
 - [短键按压](assets/sfx/keyboard-press/design.md) · keyboard-press · ui-feedback · 0.052s · candidate / NOT_LISTENED
   以短噪声按压、低频键帽联想与延迟释键支持可见键入动作，不替代状态确认或泛用UI轻触。
+- [轻短电脑键盘](assets/sfx/keyboard-soft/design.md) · keyboard-soft · ui-feedback · 0.04s · candidate / NOT_LISTENED
+  面向现代软件界面的轻短电脑键盘方向候选，以快速衰减的带限噪声支持真实发生的键入；不是打字机、状态提示音或特定键盘实录。现代感与自然感仅为待听审目标。
 - [低频落点](assets/sfx/low-land/design.md) · low-land · impact · 0.35s · candidate / NOT_LISTENED
   给主要物体一次落定提供低频重量。
 - [纸质摩擦联想](assets/sfx/paper-rub/design.md) · paper-rub · texture · 0.24s · candidate / NOT_LISTENED

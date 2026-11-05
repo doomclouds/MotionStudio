@@ -14,6 +14,10 @@
 
 `keyboard-press` v2 允许显式选择四个有限变体（`--variant 0..3`），默认0保留原来的声音；各变体只改变固定噪声seed、少量键帽频率和释键起点，详见单件合同。不自动随机、轮换或把字符映射为声源，也不移动cue、变速或调整增益。需要交替时，分别生成到全新目录，再由消费者将每个带hash的声源和对应clip明确写进原时间线；不能以相同source ID覆盖不同文件。新增的两种合成节奏验证四个声源确实参与混音、重叠为相加、停顿保持静默，不证明变体可辨、自然或优于固定音色。
 
+现代软件界面可另选 `keyboard-soft`，它是40ms带限噪声候选，不改写既有 `keyboard-press` 的四变体或默认PCM。`--variant 0/1`为两种普通键方向，`2`为空格键方向，`3`为回车键方向；这些是作者约定，不是硬件实录或听感认证。无振子、金属共振、铃声或回车滚筒声。是否自然、轻、现代仍须在同画面同窗口实际听审。不能靠降低旧素材音量就宣称换成了现代键盘。
+
+复用时保留实际输入事件表（原生frame、key role、显式variant、gain）及字体/输入法语义，画面与音频共同消费该表。30fps下frame的音频起点为`frame*1600`采样，其他帧率用精确有理数，不累计小数延迟；普通键可少量改变力度和句内间隔，词间及思考停顿保持静默。空格移动光标、回车换行都可有按键声，但回车声不代表保存或发送成功。字幕整词出现或中文输入法提交不能虚构为逐物理键同步。每个变体独立声源ID、文件hash与回执；测试中的四声源合成表只证明路由/增益/停顿，不是自然节奏的通用配方。
+
 ## 本地调用
 
 需要 Python 3.10+；生成器仅用标准库。默认不联网、下载、安装、播放或上传任何素材。运行于仓库根：
@@ -24,11 +28,12 @@ python3 engine/sound-elements/sound.py query --kind sfx --category transition
 python3 engine/sound-elements/sound.py query --kind bgm --mood minimal
 python3 engine/sound-elements/sound.py render --id air-pass --output /authorized/new-air-pass
 python3 engine/sound-elements/sound.py render --id keyboard-press --variant 2 --output /authorized/new-key-2
+python3 engine/sound-elements/sound.py render --id keyboard-soft --variant 2 --output /authorized/new-soft-space
 python3 engine/sound-elements/sound.py render --id quiet-pulse-bed --repeats 2 --output /authorized/new-bed
 node engine/motion-audio-core/scripts/audio.mjs render --timeline /authorized/new-bed/timeline.json --source-root /authorized/new-bed --work /authorized/new-mix
 ```
 
-输出父目录必须存在，目标目录必须全新并在源码包、输入库之外。输出包含 `source.wav`、MIT/来源许可、`timeline.json` 与 `receipt.json`，并附 `asset.json` 与 `design.md` 合同快照供追溯（快照的相对源码入口仍以原资产目录为上下文，不是独立可运行资产库）。不得提交输出。生成器不覆盖已有路径，失败留下的内容不算成功。技术回执包括合同/代码或源文件/输出 hash、实际采样数、sample peak、Python 运行时，以及合成的 `generation.recipe/variant`（本地文件为null）；不量响度/true peak，不归一化、不限幅、不假装听过。精确 PCM 可重复性只承诺同一 Python/libm 环境。`--variant`仅适用于render；除keyboard-press外仅接受默认0，本地文件不做变体处理；负数、越界、非整数或给其他命令传非零变体均拒绝，不静默忽略。
+输出父目录必须存在，目标目录必须全新并在源码包、输入库之外。输出包含 `source.wav`、MIT/来源许可、`timeline.json` 与 `receipt.json`，并附 `asset.json` 与 `design.md` 合同快照供追溯（快照的相对源码入口仍以原资产目录为上下文，不是独立可运行资产库）。不得提交输出。生成器不覆盖已有路径，失败留下的内容不算成功。技术回执包括合同/代码或源文件/输出 hash、实际采样数、sample peak、Python 运行时，以及合成的 `generation.recipe/variant`（本地文件为null）；不量响度/true peak，不归一化、不限幅、不假装听过。精确 PCM 可重复性只承诺同一 Python/libm 环境。`--variant`仅适用于render；除keyboard-press与keyboard-soft外仅接受默认0，本地文件不做变体处理；负数、越界、非整数或给其他命令传非零变体均拒绝，不静默忽略。
 
 生成的 timeline 可由 Audio Core 直接消费，显式 stereo、48kHz、source hash、裁剪/摆位/声部。用户/导演仍需将它放入自己的时间线并决定增益。`--repeats` 只对声明的 loop 候选建立显式重复 clip，不调用未知 loop API；默认一次完整资产，重复时使用半开 loop sample 区间，最多32次且总长不超过600秒。周期算术连续不证明听感无缝。重复混音必须实际合听，长片/预算等仍受 Audio Core 自己的更严限制。
 
