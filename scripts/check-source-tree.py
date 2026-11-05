@@ -112,9 +112,10 @@ def paths(raw):
 
 MEDIA_EXTENSIONS = {'.png', '.jpg', '.jpeg', '.gif', '.webp', '.bmp', '.tif', '.tiff',
     '.mp4', '.m4v', '.mov', '.avi', '.webm', '.mkv', '.mpeg', '.mpg', '.m2ts',
-    '.m4a', '.mp3', '.aac', '.wav', '.ogg', '.flac', '.opus', '.ttf', '.otf', '.woff', '.woff2', '.ttc'}
+    '.m4a', '.mp3', '.aac', '.wav', '.ogg', '.flac', '.opus', '.ttf', '.otf', '.woff', '.woff2', '.ttc', '.gz'}
 
 def media_kind(head):
+    if head.startswith(b'\x1f\x8b'): return 'gzip-container'
     if head.startswith(b'\x89PNG\r\n\x1a\n'): return 'PNG'
     if head.startswith(b'\xff\xd8\xff'): return 'JPEG'
     if head.startswith((b'GIF87a', b'GIF89a', b'BM', b'II*\0', b'MM\0*')): return 'raster-image'

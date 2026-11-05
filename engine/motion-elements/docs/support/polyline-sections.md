@@ -57,3 +57,7 @@ const section=extractPolylineSection(plan,{startDistance:1,endDistance:10});
 2026-10-29实际读取 [W3C SVG2 Paths](https://www.w3.org/TR/SVG/latest/paths.html) 的路径、lineto/closepath与距离章节作为术语和边界参考。SVG允许的能力大于本支持模块；本模块不实现SVG解析、closepath接头语义或SVG完整规范。原理为基础分段直线几何，代码原创，没有复制规范示例/第三方实现。曲线细分资料仅曾搜索，未用于本限定折线实现。
 
 原始来源与阶段边界见[历史合同](../history/private-candidates/polyline-sections-origin.md)。
+
+## 纸面标注消费者
+
+[组合选择与反例](../guides/paper-annotation-composition.md)将同一前缀的最后顶点用作笔尖，避免两份时钟/路径漂移。[双内容例子](../../examples/annotation-prefix.mjs)实际消费本支持模块，线尾与笔尖共源，零区间不绘制。它不是新机制或影片模板，也不改变本页有限域与品牌合同。

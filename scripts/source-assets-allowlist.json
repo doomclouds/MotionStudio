@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "policy": "Only exact reviewed preview/cover paths and hashes listed below. No wildcard or other generated media, audio, fonts or private production assets.",
+  "policy": "Only exact reviewed preview/cover and explicitly reviewed OFL font paths and hashes listed below. No wildcard, other media or private production assets. Font exceptions are limited by SOURCE-SCOPE.md and their unmodified licenses.",
   "assets": {
     "docs/assets/report-overview.png": "bbf9e87737e3f84dfb9a998ee0c973081418631b76a745b017b012d76b95e7c1",
     "portfolio/works/tessel/cover.jpg": "ebfaf532643c1ac096ac44a05da0c81dede735e1703e2c3230ab3073857133f8",
@@ -68,6 +68,10 @@
     "portfolio/works/open-design-orbital-study/cover.jpg": "0ce91be86f4c98b7c0ac9fa84182edbf845e276c39cdd82dd125ef6d2311bbde",
     "portfolio/works/open-design-swiss-cover-study/cover.jpg": "526a621b966ea8414de82a2d3f75943a5d30f3b83da5821807c6c099e38baf49",
     "portfolio/works/od-swiss-grid-study/cover.jpg": "09ac9706b0af3a554931d6c748bb05c6dc8f77aa30747fabc269e7e3efa27ba5",
-    "portfolio/works/od-data-rollup-study/cover.jpg": "a72af5cadfb735fa5d3d5488f383bc82a8f2f9e88a8188eddb57b7dd52c35e98"
+    "portfolio/works/od-data-rollup-study/cover.jpg": "a72af5cadfb735fa5d3d5488f383bc82a8f2f9e88a8188eddb57b7dd52c35e98",
+    "engine/design-elements/assets/fonts/MaokenYingBiKaiShuJ_0.20.ttf": "68fb84b7a7eb2c1ffab59e7b75c90176c95bc1a078c4a1f66bd516c60ac75e1a",
+    "engine/design-elements/assets/fonts/LXGWMarkerGothic-Regular.ttf": "639cccdd040538c98cc0d6b7042f58a332187db4809022b36e9c44b502aec13c",
+    "engine/design-elements/assets/fonts/MaShanZheng-Regular.ttf": "b844c59bf20bf530e41c20d6ff12b383b23a2e553b9b68cc89f070869213155d",
+    "engine/design-elements/assets/fonts/LXGWWenKaiGBLite-Regular.ttf.gz": "fc1d40426d71ebe99a9069f9db26297d476b66698a3fc5cd88b5356a07051af2"
   }
 }

@@ -1,0 +1,34 @@
+{
+  "format": "whiteboard-external-inputs/1",
+  "purpose": "Optional pinned external ordered glyph data; no dataset bundled. Font binaries and their single metadata source are the reviewed design-elements/assets/fonts manifest.",
+  "resources": [
+    {
+      "kind": "ordered-glyph-data",
+      "character": "中",
+      "name": "中.json",
+      "url": "https://raw.githubusercontent.com/chanind/hanzi-writer-data/68d10a4b21150cae5e1ebbd223eed289cf32d90c/data/%E4%B8%AD.json",
+      "bytes": 1387,
+      "sha256": "6982c8c16e7e7f769011edef0608289443711dbb34046dd9ca763e79ec29192f",
+      "license": "Arphic Public License",
+      "licenseFile": "ARPHICPL.TXT",
+      "licenseUrl": "https://raw.githubusercontent.com/chanind/hanzi-writer-data/68d10a4b21150cae5e1ebbd223eed289cf32d90c/ARPHICPL.TXT",
+      "licenseBytes": 6900,
+      "licenseSha256": "5590533436c70f10f2f524ee61456238c290175c6662fbe1c700b5f038a6d328",
+      "strokeCount": 4
+    },
+    {
+      "kind": "ordered-glyph-data",
+      "character": "永",
+      "name": "永.json",
+      "url": "https://raw.githubusercontent.com/chanind/hanzi-writer-data/68d10a4b21150cae5e1ebbd223eed289cf32d90c/data/%E6%B0%B8.json",
+      "bytes": 1681,
+      "sha256": "009b7fd5b2fc186a0cdaa314fb4f88fe768c3c3ee4e98681ff8ff109c8c160cd",
+      "license": "Arphic Public License",
+      "licenseFile": "ARPHICPL.TXT",
+      "licenseUrl": "https://raw.githubusercontent.com/chanind/hanzi-writer-data/68d10a4b21150cae5e1ebbd223eed289cf32d90c/ARPHICPL.TXT",
+      "licenseBytes": 6900,
+      "licenseSha256": "5590533436c70f10f2f524ee61456238c290175c6662fbe1c700b5f038a6d328",
+      "strokeCount": 5
+    }
+  ]
+}

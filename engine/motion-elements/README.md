@@ -88,3 +88,8 @@ node engine/motion-elements/scripts/query-catalog.mjs show --id fragment.fixed-t
 代码适用 [LICENSE](LICENSE)；第三方范围见仓库 [THIRD_PARTY_NOTICES](../../THIRD_PARTY_NOTICES.md) 和 [SOURCE-SCOPE](../../SOURCE-SCOPE.md)。代码许可不自动覆盖字体、图片、声音或私有影片；对应官方参考与许可取舍保留在专项docs，历史来源资料在 [history](docs/history/README.md)。
 
 - [覆盖率门控字符选择](lib/support/coverage-glyph/README.md)：未注册 direct-import support candidate，共置合同、设计、双内容示例和测试；不是新增正式族或视觉验收。
+
+- [纸面标注与图卡交接](docs/guides/paper-annotation-composition.md)：先审计纸面、路径、笔跟随、重点标注与卡片交接；双内容技术例只复用既有 polyline-sections，不新增机制、纹理生成器或影片模板。
+
+- [中文有序笔画揭示](lib/support/ordered-stroke-reveal/README.md)：独立轮廓与中线、绝对时间及抬笔状态；未注册支持，不带字库，不把普通字体横扫称真实笔顺。
+- [分帧保持顶点扰动](lib/support/held-vertex-jitter/README.md)：受限direct-import支持，与整体shake分工；不是精确图表或汉字轮廓的通用扰动器。

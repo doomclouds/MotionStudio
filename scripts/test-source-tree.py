@@ -51,6 +51,27 @@ class SourceTreeFixtures(unittest.TestCase):
     def test_api_secret_in_arbitrary_file_rejected_without_echo(self):
         self.add('innocent.txt', b'sk-' + b'z'*32)
         self.audit(False, 'possible-api-secret')
+    def test_reviewed_whiteboard_fonts_exact_identity_only(self):
+        root = ROOT / 'engine/design-elements/assets/fonts'
+        manifest = json.loads((root / 'manifest.json').read_text())
+        self.assertTrue(manifest['fonts'])
+        for font in manifest['fonts']:
+            name = 'engine/design-elements/assets/fonts/' + font.get('storage', {}).get('file', font['file'])
+            data = (ROOT / name).read_bytes()
+            self.add(name, data); self.audit(True)
+            self.add(name, data + b'unreviewed change'); self.audit(False, 'approved-source-asset-hash-mismatch')
+            self.add(name, data)
+        self.add('engine/design-elements/assets/fonts/unreviewed.ttf', b'\x00\x01\x00\x00unreviewed font')
+        self.audit(False, 'unapproved-media:font')
+    def test_unlisted_gzip_font_rejected(self):
+        self.add('assets/unreviewed.ttf.gz', b'\x1f\x8bcompressed font fixture')
+        self.audit(False, 'unapproved-media:gzip-container')
+    def test_gzip_hidden_in_text_path_rejected(self):
+        self.add('innocent.txt', b'\x1f\x8bcompressed fixture')
+        self.audit(False, 'unapproved-media:gzip-container')
+    def test_gzip_extension_without_magic_rejected(self):
+        self.add('assets/unreviewed.gz', b'not a valid gzip stream')
+        self.audit(False, 'unapproved-media:extension')
     def test_external_large_font_is_forbidden(self):
         self.add('projects/favorite52-engine-rebuild/assets/fonts/Carousel-NotoSansCJKsc-Bold.otf', b'font fixture')
         self.audit(False, 'forbidden-path')
@@ -143,9 +164,13 @@ class SourceTreeFixtures(unittest.TestCase):
         for name in ['od-swiss-grid-study', 'od-data-rollup-study']:
             with self.subTest(work=name):
                 self.add('portfolio/works/'+name+'/cover.jpg',b'\xff\xd8\xff'+b'x'*(1024*1024));self.audit(False,'invalid-portfolio-cover-format-or-size')
-    def test_public_policy_only_allows_exact_reviewed_images(self):
+    def test_public_policy_only_allows_exact_reviewed_assets(self):
         allow = json.loads((ROOT / 'scripts/source-assets-allowlist.json').read_text())['assets']
         self.assertEqual(allow, {
+            'engine/design-elements/assets/fonts/LXGWWenKaiGBLite-Regular.ttf.gz': 'fc1d40426d71ebe99a9069f9db26297d476b66698a3fc5cd88b5356a07051af2',
+            'engine/design-elements/assets/fonts/MaokenYingBiKaiShuJ_0.20.ttf': '68fb84b7a7eb2c1ffab59e7b75c90176c95bc1a078c4a1f66bd516c60ac75e1a',
+            'engine/design-elements/assets/fonts/LXGWMarkerGothic-Regular.ttf': '639cccdd040538c98cc0d6b7042f58a332187db4809022b36e9c44b502aec13c',
+            'engine/design-elements/assets/fonts/MaShanZheng-Regular.ttf': 'b844c59bf20bf530e41c20d6ff12b383b23a2e553b9b68cc89f070869213155d',
             'portfolio/works/od-data-rollup-study/cover.jpg': 'a72af5cadfb735fa5d3d5488f383bc82a8f2f9e88a8188eddb57b7dd52c35e98',
             'portfolio/works/od-swiss-grid-study/cover.jpg': '09ac9706b0af3a554931d6c748bb05c6dc8f77aa30747fabc269e7e3efa27ba5',
 

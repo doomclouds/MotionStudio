@@ -163,3 +163,11 @@ See [bounded drape and radial categories](recipes/batches/eighth-static-candidat
 ## Shared directional spotlight candidate
 
 [Callable light-field candidate](recipes/candidates/spotlight-field-candidate/README.md) links its design, pure solver, Canvas adapters, two original procedural scenes and tests. Shared lamp/beam/receiver coverage is art-directed 2D, not physical illumination; unregistered, no family-count increase, no source-film or private media projection, no user aesthetic/audio acceptance.
+
+## 纸面与笔尖绘制候选
+
+[paper-drawing](recipes/candidates/paper-drawing/README.md)仅补静态纸纤维/颗粒/点格与以笔尖为锚的marker，继续复用既有paper容器和Motion路径裁切。合成内容和Native消费测试不等于正式族、整片迁移或用户美术验收；无新catalog计数。
+
+## 已审定字体输入（不计设计族）
+
+[字体资源入口](assets/fonts/README.md)提供默认霞鹜文楷常规楷体，以及硬笔、马克笔和毛笔展示备选字体原件、完整OFL、固定身份清单、离线cmap/Native验证。字体不含笔顺，根MIT不覆盖字体许可；只为确切文件开例外，不放开其他素材。
