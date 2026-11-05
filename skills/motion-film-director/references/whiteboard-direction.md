@@ -30,6 +30,7 @@
 
 - **纸卡与层级**：[material-surfaces](../../../engine/design-elements/families/material-surfaces/README.md)的paper容器/硬影继续用，不新造同样布局。
 - **纸面与笔形**：[paper-drawing](../../../engine/design-elements/recipes/candidates/paper-drawing/README.md)补固定种子的静态纤维/颗粒/可选点格及笔尖锚定marker。它不是物理纸/手，也不缓存整片；调用者初始化纸面并复用不可变快照。小字/数据优先对比度。
+- **三种笔按外观选择**：保留上述原创平面marker；渐变白杆/圆毡尖/投影选[LemoLab派生干擦笔](../../../engine/design-elements/recipes/candidates/dry-erase-marker/README.md)，木杆外观选[RyanBowie派生铅笔](../../../engine/design-elements/recipes/candidates/wooden-pencil/README.md)。不同尺寸不是新笔；三者均受限候选、非新增正式族。来源许可与名义接触锚/实际轮廓边界分别读各自合同；同一墨迹末点跟笔，运动由现有timeline负责。
 - **线生长与笔跟随**：[polyline-sections](../../../engine/motion-elements/docs/support/polyline-sections.md)保留原折点，前缀最后点是笔尖。路径、标注、笔形同一父变换一次。两份相似但独立的进度/路径会漂移。
 - **沸腾线**：[held-vertex-jitter](../../../engine/motion-elements/lib/support/held-vertex-jitter/README.md)按固定帧组更新顶点，不是整体shake。只用于允许小变形的插画；精确图表、文字/统计面积、连接拓扑不应随意扰动。
 - **逐笔与提笔**：[ordered-stroke-reveal](../../../engine/motion-elements/lib/support/ordered-stroke-reveal/README.md)明确before/stroke/lift/complete。lift的from/to/progress只作笔飞行提示，不生成跨笔墨线；完成后保留字，笔退场。marker可消费其tip，但中线端点不是宽圆头最前沿。

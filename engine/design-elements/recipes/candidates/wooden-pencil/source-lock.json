@@ -1,0 +1,20 @@
+{
+  "repository": "RyanBowie/ai-video-creation-guide",
+  "commit": "d40133983b8765f7ecf255448d38e99c65032c29",
+  "files": [
+    {
+      "path": "examples/launch-race/engine.js",
+      "git_blob": "70c05853e521b79ece2ccb8acbdb139e5f4a1889",
+      "sha256": "4e5ff2f08ddbe3f71caa1bdc0c2c4c0e1d475146e3c63a8fdf973ec722753b89",
+      "bytes": 33080,
+      "used": "drawPencil and its fixed COL.red palette value only"
+    },
+    {
+      "path": "LICENSE",
+      "git_blob": "d3362fd85747111cf64c5c7d923f59193cfb56e0",
+      "sha256": "4f01bf9ab15bded4a2993c9dd0b478f0176420d097329a50f125189e87051593",
+      "bytes": 1066,
+      "retained_as": "LICENSE-RyanBowie"
+    }
+  ]
+}

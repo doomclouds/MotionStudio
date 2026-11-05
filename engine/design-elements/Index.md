@@ -168,6 +168,14 @@ See [bounded drape and radial categories](recipes/batches/eighth-static-candidat
 
 [paper-drawing](recipes/candidates/paper-drawing/README.md)仅补静态纸纤维/颗粒/点格与以笔尖为锚的marker，继续复用既有paper容器和Motion路径裁切。合成内容和Native消费测试不等于正式族、整片迁移或用户美术验收；无新catalog计数。
 
+### 三种不同外观的笔
+
+- [原创平面马克笔](recipes/candidates/paper-drawing/README.md)：`drawMarker`保留原API；不同length/width参数仍是同一renderer。
+- [渐变白杆干擦笔](recipes/candidates/dry-erase-marker/README.md)：`drawDryEraseMarker`适配LemoLab MIT来源，保留圆毡尖、箍圈/白杆渐变、色带/尾帽及投影；名义接触锚与尖端轮廓分开说明。
+- [木杆铅笔](recipes/candidates/wooden-pencil/README.md)：独立保留RyanBowie MIT派生外观与契约。
+
+三者是可选择的受限绘制候选，不是三个正式设计族；运动/墨迹继续复用已有路径与timeline，不增加catalog或作品接受记录。各自完整来源、许可、输入域与验证限制见原入口。
+
 ## 已审定字体输入（不计设计族）
 
 [字体资源入口](assets/fonts/README.md)提供默认霞鹜文楷常规楷体，以及硬笔、马克笔和毛笔展示备选字体原件、完整OFL、固定身份清单、离线cmap/Native验证。字体不含笔顺，根MIT不覆盖字体许可；只为确切文件开例外，不放开其他素材。
