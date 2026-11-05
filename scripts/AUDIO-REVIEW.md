@@ -6,6 +6,17 @@ successfully. This means **not performed**, never “audio passed”. Genuine hu
 listening can independently satisfy the audio gate; no model is compulsory.
 Configured credentials do not automatically authorize paid requests.
 
+Repository task routing: read `skills/audio-review/SKILL.md` for audio critique,
+`skills/video-review/SKILL.md` for continuous visual/AV review, or
+`skills/soundtrack-production/SKILL.md` for music production. These thin entries
+reuse the existing contracts. The builder's optional `--media-skills` bundle ships
+them beside one shared Motion dependency; the default single-skill archive is unchanged. The audio-only prompt no longer assumes electronic launch-film effects:
+it asks for observed music/speech/effects/ambience and uncertainty. The existing
+response categories remain compatible (`other` covers speech/ambience). This
+prompt change is not a real-listening or provider-quality validation.
+Neither adapter generates music, speech or stems. A configured Aliyun key is not
+proof that any music-generation service or model has been implemented.
+
 ## Fixed private configuration
 
 - Source checkout: `<repository-root>/.env`.

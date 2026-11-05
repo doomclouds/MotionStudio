@@ -32,3 +32,33 @@ def source_bytes(root, source):
         relative = os.path.relpath(package_path(resolved), Path(destination).parent)
         return '[' + label + '](' + relative + (sep + anchor if sep else '') + ')'
     return re.sub(r'\[([^]\n]+)\]\(([^)]+)\)',replace,data.decode()).encode()
+
+
+MEDIA_SKILLS = ('video-review', 'audio-review', 'soundtrack-production')
+
+
+def media_bundle_path(source):
+    """One shared Motion dependency, with independently discoverable siblings."""
+    if source == 'skills/MEDIA-SKILLS.md':
+        return 'MEDIA-SKILLS.md'
+    if any(source.startswith('skills/' + name + '/') for name in MEDIA_SKILLS):
+        return source.removeprefix('skills/')
+    if source == 'scripts/AUDIO-REVIEW.md':
+        return 'motion-film-director/runtime/review-tools/AUDIO-REVIEW.md'
+    return 'motion-film-director/' + package_path(source)
+
+
+def media_entry_bytes(root, source):
+    path = root / source
+    if path.is_symlink() or not path.is_file():
+        raise ValueError('Missing/symlink media workflow source: ' + source)
+    destination = media_bundle_path(source)
+    def replace(match):
+        label, target = match[1], match[2]
+        if re.match(r'[a-zA-Z][a-zA-Z0-9+.-]*:', target) or target.startswith('#'):
+            return match[0]
+        target_path, sep, anchor = target.partition('#')
+        resolved = os.path.normpath(str(Path(source).parent / target_path))
+        relative = os.path.relpath(media_bundle_path(resolved), Path(destination).parent)
+        return '[' + label + '](' + relative + (sep + anchor if sep else '') + ')'
+    return re.sub(r'\[([^]\n]+)\]\(([^)]+)\)', replace, path.read_text()).encode()

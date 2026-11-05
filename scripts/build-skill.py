@@ -10,6 +10,8 @@ spec.loader.exec_module(policy)
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--output', required=True, type=Path)
+    parser.add_argument('--media-skills', action='store_true',
+                        help='Bundle three media workflow skills beside one shared Motion dependency')
     args = parser.parse_args()
     out = args.output.expanduser().resolve()
     if out == ROOT or ROOT in out.parents: parser.error('Output must be outside repository')
@@ -136,13 +138,27 @@ def main():
     payload['runtime-source.json'] = (json.dumps({'schema': 1, 'mode': 'bundled', 'relativePath': 'runtime/motion-render-core', 'policy': 'Generated snapshot; edit canonical MotionStudio source and rebuild.'}, indent=2)+'\n').encode()
     manifest = {'schema': 1, 'files': [{'path': name, 'bytes': len(data), 'sha256': hashlib.sha256(data).hexdigest()} for name, data in sorted(payload.items())]}
     payload['manifest.json'] = (json.dumps(manifest, ensure_ascii=False, indent=2)+'\n').encode()
+    archive_payload = {'motion-film-director/' + name: data for name, data in payload.items()}
+    if args.media_skills:
+        sources = ['skills/' + name + '/SKILL.md' for name in layout.MEDIA_SKILLS]
+        sources.append('skills/MEDIA-SKILLS.md')
+        for source in sources:
+            if source not in names:
+                raise SystemExit('Required tracked media workflow source missing: ' + source)
+            archive_payload[layout.media_bundle_path(source)] = layout.media_entry_bytes(ROOT, source)
+        archive_payload['LICENSE'] = payload['LICENSE']
+        bundle_manifest = {'schema': 'media-skills-bundle/1',
+            'skills': list(layout.MEDIA_SKILLS), 'shared_dependency': 'motion-film-director',
+            'files': [{'path': name, 'bytes': len(data), 'sha256': hashlib.sha256(data).hexdigest()}
+                      for name, data in sorted(archive_payload.items())]}
+        archive_payload['bundle-manifest.json'] = (json.dumps(bundle_manifest, ensure_ascii=False, indent=2)+'\n').encode()
     out.parent.mkdir(parents=True, exist_ok=True)
     with zipfile.ZipFile(out, 'x', compression=zipfile.ZIP_DEFLATED, compresslevel=9) as archive:
-        for name, data in sorted(payload.items()):
-            info = zipfile.ZipInfo('motion-film-director/' + name, (2026, 1, 1, 0, 0, 0))
+        for name, data in sorted(archive_payload.items()):
+            info = zipfile.ZipInfo(name, (2026, 1, 1, 0, 0, 0))
             info.compress_type = zipfile.ZIP_DEFLATED
             info.external_attr = 0o100644 << 16
             archive.writestr(info, data)
-    print(json.dumps({'output': str(out), 'files': len(payload), 'sha256': hashlib.sha256(out.read_bytes()).hexdigest()}))
+    print(json.dumps({'output': str(out), 'files': len(archive_payload), 'sha256': hashlib.sha256(out.read_bytes()).hexdigest()}))
 
 if __name__ == '__main__': main()

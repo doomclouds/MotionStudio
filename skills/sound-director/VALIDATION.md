@@ -39,6 +39,7 @@
 
 ```sh
 python3 scripts/test_sound_director.py
+python3 scripts/test_media_workflows.py
 python3 skills/motion-film-director/scripts/test_validate_delivery_report.py
 python3 scripts/test-skill-links.py
 python3 scripts/test_ui_design_director.py
@@ -46,3 +47,5 @@ node --test engine/motion-timeline-core/test/*.test.mjs engine/motion-audio-core
 ```
 
 这些命令分别检查路由/工作流包内可达性、现有链接、UI集成回归与音频核心技术能力。它们不观看/听见影片，不认证授权或艺术质量。完整便携包测试另按 `python3 scripts/test-skill-package.py` 的依赖要求执行；依赖缺失记录 BLOCKED，不把只验文档说成完整包通过。
+
+`test_media_workflows.py` 覆盖独立视频审核、音频审核、配乐生产的仓库路由、配置路径/源码排除，以及临时合成视频的解码与模型输入准备、真实候选生成→Audio Core 混音→PCM/AAC 解码、无 key dry-run。它不读取私人 `.env`，不调用 provider，不保存作品；真实听审、连续观看与音乐质量依旧未验。独立三个 Skill 通过构建器 `--media-skills` 与一份 Motion 依赖并列打包；另跑 `python3 scripts/test_media_skill_package.py` 验证真实解包路线，不把该测试称为宿主自动注册成功。
