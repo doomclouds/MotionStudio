@@ -91,7 +91,7 @@ joint可相差约0.001325，尽管名义骨长残差远小于2e−8。不得由�
 在仓库根目录：
 
 ```sh
-node --test engine/motion-elements/lib/foundations/geometry/two-link-ik/lib/foundations/geometry/two-link-ik/test/two-link-ik.test.mjs
+node --test engine/motion-elements/lib/foundations/geometry/two-link-ik/test/two-link-ik.test.mjs
 npm --prefix engine/motion-elements test
 ```
 
